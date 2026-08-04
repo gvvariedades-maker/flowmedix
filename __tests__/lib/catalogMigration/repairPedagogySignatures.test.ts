@@ -121,6 +121,37 @@ describe('repairLetterTruncationInPayload', () => {
       'SC admite volumes pequenos e limitados por sítio — não doses grandes.',
     );
   });
+
+  it('corta frase final “A erra…” sem travessão e limpa exam_hint só-julgamento', () => {
+    const payload = payloadWith([
+      {
+        type: 'concept_map',
+        items: [
+          {
+            label: 'Trilho',
+            detail:
+              'IV = imediata | IM = rápida | SC = lenta/contínua | VO = variável. A erra ao pedir absorção rápida (perfil de IV/IM).',
+          },
+        ],
+      },
+      {
+        type: 'golden_rule',
+        rows: [
+          {
+            label: 'Pegadinha',
+            value: 'Irritantes não vão por VO.',
+            exam_hint: 'B erra ao indicar irritantes e troca metabolismo gástrico por hepático.',
+          },
+        ],
+      },
+    ]);
+
+    expect(repairLetterTruncationInPayload(payload).changed).toBe(true);
+    const items = payload.reverse_study_slides[0].items as { detail: string }[];
+    const rows = payload.reverse_study_slides[1].rows as { exam_hint?: string }[];
+    expect(items[0].detail).toBe('IV = imediata | IM = rápida | SC = lenta/contínua | VO = variável.');
+    expect(rows[0].exam_hint).toBe('');
+  });
 });
 
 describe('repairLogicPaddingInPayload', () => {
@@ -249,6 +280,91 @@ describe('repairVfLabelsInPayload', () => {
     expect(result.changed).toBe(false);
     expect(result.skipped[0].reason).toBe('remainder_still_spoils');
   });
+
+  it('aceita chip curto de board VF (piso de strip, não truncagem longa)', () => {
+    const payload = payloadWith([
+      {
+        type: 'golden_rule',
+        rows: [
+          { label: 'A', value: 'Falsa: Artéria radial.' },
+          { label: 'B', value: 'Verdadeira: Artéria femoral.' },
+          { label: 'C', value: 'Falsa: I e II, apenas.' },
+          { label: 'D', value: 'Verdadeira: F, V, V, V.' },
+          { label: 'E', value: 'Falsa: I.' },
+          { label: 'F', value: 'Verdadeira: 15°' },
+          { label: 'G', value: 'Falsa: VO.' },
+        ],
+      },
+    ]);
+
+    const result = repairVfLabelsInPayload(payload);
+    expect(result.changed).toBe(true);
+    expect(result.edits).toHaveLength(7);
+    expect(result.skipped).toHaveLength(0);
+
+    const rows = payload.reverse_study_slides[0].rows as { value: string }[];
+    expect(rows.map((r) => r.value)).toEqual([
+      'Artéria radial.',
+      'Artéria femoral.',
+      'I e II, apenas.',
+      'F, V, V, V.',
+      'I.',
+      '15°',
+      'VO.',
+    ]);
+    expect(detectUnifiedPedagogy(payload).map((f) => f.code)).not.toContain(
+      'pedagogy_vf_verdict_spoiler',
+    );
+  });
+
+  it('relabela chip cujo texto é só Falsa/Verdadeira', () => {
+    const payload = payloadWith([
+      {
+        type: 'concept_map',
+        items: [
+          { label: 'Tema', detail: 'Contexto clínico.' },
+          { label: 'Falsa', detail: 'A proposição nega o conceito.' },
+        ],
+      },
+    ]);
+
+    const result = repairVfLabelsInPayload(payload);
+    expect(result.changed).toBe(true);
+    const items = payload.reverse_study_slides[0].items as { label: string }[];
+    expect(items[1].label).toBe('Proposição');
+    expect(detectUnifiedPedagogy(payload).map((f) => f.code)).not.toContain(
+      'pedagogy_vf_verdict_spoiler',
+    );
+  });
+
+  it('não trata °C está como spoiler de letra ao strippar veredito', () => {
+    const payload = payloadWith([
+      {
+        type: 'golden_rule',
+        rows: [
+          {
+            label: 'Temp',
+            value: 'Falsa: Um paciente com temperatura axilar de 36,6°C está febril.',
+          },
+        ],
+      },
+    ]);
+
+    const result = repairVfLabelsInPayload(payload);
+    expect(result.changed).toBe(true);
+    const rows = payload.reverse_study_slides[0].rows as { value: string }[];
+    expect(rows[0].value).toBe('Um paciente com temperatura axilar de 36,6°C está febril.');
+  });
+
+  it('pula veredito sem conceito (resto vazio ou só pontuação)', () => {
+    const payload = payloadWith([
+      { type: 'golden_rule', rows: [{ label: 'Chip', value: 'FALSA.' }] },
+    ]);
+
+    const result = repairVfLabelsInPayload(payload);
+    expect(result.changed).toBe(false);
+    expect(result.skipped[0].reason).toBe('remainder_too_short');
+  });
 });
 
 describe('repairGabaritoItemInPayload', () => {
@@ -350,7 +466,52 @@ describe('repairGabaritoItemInPayload', () => {
     expect(slide.footer_rule).toBe('I=V, II=V, III=F → I e II, apenas.');
   });
 
-  it('pula remoção que deixaria o concept_map com menos de 2 itens', () => {
+  it('aceita resto numérico curto de Cálculo (Letra C — 80.)', () => {
+    const payload = payloadWith([
+      {
+        type: 'concept_map',
+        items: [
+          { label: 'Fórmula', detail: 'gtt/min = volume × fator / tempo.' },
+          { label: 'Resultado', detail: 'Letra C — 80.' },
+          { label: 'Pegadinha', detail: 'Trocar fator 20 por 60.' },
+        ],
+      },
+    ]);
+
+    const result = repairGabaritoItemInPayload(payload);
+    expect(result.changed).toBe(true);
+    const items = payload.reverse_study_slides[0].items as { detail: string }[];
+    expect(items[1].detail).toBe('80.');
+    expect(detectUnifiedPedagogy(payload).map((f) => f.code)).not.toContain(
+      'pedagogy_letter_spoiler',
+    );
+  });
+
+  it('remove frase que só aponta a letra (“A letra A troca…”)', () => {
+    const payload = payloadWith([
+      {
+        type: 'concept_map',
+        items: [
+          {
+            label: 'Concentração',
+            detail:
+              '100 UI em 1 mL — não 10 UI. A letra A troca o dígito da concentração padrão.',
+          },
+          { label: 'Via', detail: 'Seguir a via prescrita.' },
+          { label: 'Checagem', detail: 'Conferir rótulo antes de aspirar.' },
+        ],
+      },
+    ]);
+
+    expect(repairGabaritoItemInPayload(payload).changed).toBe(true);
+    const items = payload.reverse_study_slides[0].items as { detail: string }[];
+    expect(items[0].detail).toBe('100 UI em 1 mL — não 10 UI.');
+    expect(detectUnifiedPedagogy(payload).map((f) => f.code)).not.toContain(
+      'pedagogy_letter_spoiler',
+    );
+  });
+
+  it('pula remoção que deixaria o concept_map com menos de 2 itens (ainda pode strip do detail)', () => {
     const payload = payloadWith([
       {
         type: 'concept_map',
@@ -362,8 +523,144 @@ describe('repairGabaritoItemInPayload', () => {
     ]);
 
     const result = repairGabaritoItemInPayload(payload);
-    expect(result.changed).toBe(false);
-    expect(result.skipped[0].reason).toBe('would_empty_pre_answer');
+    expect(result.skipped.some((s) => s.reason === 'would_empty_pre_answer')).toBe(true);
+    const items = payload.reverse_study_slides[0].items as { label: string; detail: string }[];
+    expect(items).toHaveLength(2);
+    expect(items[1].label).toBe('Gabarito');
+    // Prefixo Letra D — sai; o card permanece porque remover esvaziaria o mapa.
+    expect(items[1].detail.toLowerCase()).toContain('autoclave');
+    expect(items[1].detail).not.toMatch(/letra\s+d/i);
+  });
+
+  it('relabela Letra A/B no golden_rule a partir do value (P0 Vias)', () => {
+    const payload = payloadWith([
+      {
+        type: 'golden_rule',
+        content: 'VIAS',
+        rows: [
+          {
+            label: 'Letra A',
+            value: 'A insulina e a enoxaparina sódica.',
+            badge: 'ok',
+            emphasis: 'highlight',
+          },
+          {
+            label: 'Letra B',
+            value: 'O cetoprofeno e a penicilina benzatina.',
+            badge: 'warn',
+          },
+        ],
+      },
+    ]);
+
+    expect(detectUnifiedPedagogy(payload).map((f) => f.code)).toContain('pedagogy_letter_spoiler');
+    const result = repairGabaritoItemInPayload(payload);
+    expect(result.changed).toBe(true);
+    const rows = payload.reverse_study_slides[0].rows as { label: string }[];
+    expect(rows[0].label).toBe('Insulina e a enoxaparina sódica');
+    expect(rows[1].label).toBe('Cetoprofeno e a penicilina benzatina');
+    expect(detectUnifiedPedagogy(payload).map((f) => f.code)).not.toContain(
+      'pedagogy_letter_spoiler',
+    );
+  });
+
+  it('remove Gabarito da Questão e chip a partir de Alternativa B (P0 Imunização)', () => {
+    const payload = payloadWith([
+      {
+        type: 'golden_rule',
+        rows: [
+          {
+            label: 'Alternativa B (Correta)',
+            value: '9 meses — Idade recomendada para a 1ª dose da FA.',
+            badge: 'hot',
+            emphasis: 'highlight',
+          },
+          {
+            label: 'Gabarito da Questão',
+            value: "Letra B — '9 meses.'",
+            badge: 'ok',
+          },
+        ],
+      },
+    ]);
+
+    const result = repairGabaritoItemInPayload(payload);
+    expect(result.changed).toBe(true);
+    const rows = payload.reverse_study_slides[0].rows as { label: string; value: string }[];
+    expect(rows.some((r) => /^gabarito/i.test(r.label))).toBe(false);
+    expect(rows[0].label).toBe('9 meses');
+    expect(detectUnifiedPedagogy(payload).some((f) => f.code === 'pedagogy_letter_spoiler')).toBe(
+      false,
+    );
+  });
+
+  it('relabela “Letra B — gabarito” a partir do value e é idempotente (P0 Vias)', () => {
+    const payload = payloadWith([
+      {
+        type: 'golden_rule',
+        rows: [
+          { label: 'Intravenosa (IV)', value: 'Imediata — efeito rápido', badge: 'info' },
+          { label: 'Subcutânea (SC)', value: 'Lenta e contínua', badge: 'hot', emphasis: 'highlight' },
+          {
+            label: 'Letra B — gabarito',
+            value: 'Única que descreve o perfil farmacocinético da SC',
+          },
+          { label: 'Volume típico SC', value: 'Pequeno (até ~1–1,5 mL por sítio)' },
+        ],
+      },
+    ]);
+
+    const first = repairGabaritoItemInPayload(payload);
+    expect(first.changed).toBe(true);
+    const rows = payload.reverse_study_slides[0].rows as { label: string }[];
+    expect(rows.some((r) => /letra\s+[a-e]|gabarito/i.test(r.label))).toBe(false);
+    expect(rows).toHaveLength(4);
+    expect(rows[2].label.toLowerCase()).toContain('única');
+
+    const second = repairGabaritoItemInPayload(payload);
+    expect(second.changed).toBe(false);
+    expect(second.edits).toHaveLength(0);
+  });
+
+  it('corta → letra E, GABARITO: Letra e value puro Letra A (resíduo P0)', () => {
+    const payload = payloadWith([
+      {
+        type: 'concept_map',
+        items: [
+          { label: 'Tema', detail: 'Enquadramento do sítio de aplicação.' },
+          { label: 'Resposta certa', detail: 'Letra D — Ventro glúteo.' },
+          { label: 'Distratores', detail: 'Elimine por termo-chave anatômico.' },
+        ],
+        footer_rule: 'Exclua por termo-chave antes de confirmar letra D.',
+      },
+      {
+        type: 'golden_rule',
+        content: 'GABARITO: Letra B — Errado',
+        rows: [
+          { label: 'Combinação', value: 'II e III apenas → letra E', badge: 'hot' },
+          { label: 'Resposta final', value: 'Letra A', badge: 'hot', emphasis: 'highlight' },
+          { label: 'Regra', value: 'SC = absorção lenta e contínua.' },
+        ],
+      },
+    ]);
+
+    expect(repairGabaritoItemInPayload(payload).changed).toBe(true);
+    const cm = payload.reverse_study_slides[0] as {
+      items: { detail: string }[];
+      footer_rule: string;
+    };
+    const gr = payload.reverse_study_slides[1] as {
+      content?: string;
+      rows: { label: string; value: string }[];
+    };
+    expect(cm.items[1].detail).toBe('Ventro glúteo.');
+    expect(cm.footer_rule.toLowerCase()).not.toMatch(/letra\s+[a-e]/);
+    expect(gr.content).toBe('Errado');
+    expect(gr.rows.some((r) => /letra\s+[a-e]/i.test(r.value))).toBe(false);
+    expect(gr.rows.some((r) => /^resposta final$/i.test(r.label))).toBe(false);
+    expect(detectUnifiedPedagogy(payload).map((f) => f.code)).not.toContain(
+      'pedagogy_letter_spoiler',
+    );
   });
 });
 
@@ -432,3 +729,64 @@ describe('idempotência', () => {
     expect(JSON.stringify(payload)).toBe(snapshot);
   });
 });
+
+describe('P0 Sinais residue', () => {
+  it('relabela Letra A mesmo com value iniciando em Deficit', () => {
+    const payload = payloadWith([
+      {
+        type: 'golden_rule',
+        rows: [
+          {
+            label: 'Letra A',
+            value: 'O déficit de pulso ocorre quando a PA sistólica é menor que 90 mmHg.',
+            badge: 'warn',
+            emphasis: 'alert',
+          },
+          {
+            label: 'Letra D',
+            value: 'O déficit de pulso é a diferença entre FC apical e pulso radial.',
+            badge: 'ok',
+            emphasis: 'highlight',
+          },
+        ],
+      },
+    ]);
+
+    const result = repairGabaritoItemInPayload(payload);
+    expect(result.changed).toBe(true);
+    expect(result.skipped).toHaveLength(0);
+    const rows = payload.reverse_study_slides[0].rows as { label: string }[];
+    expect(rows[0].label.toLowerCase()).toContain('déficit');
+    expect(rows[0].label).not.toMatch(/letra\s+[a-e]/i);
+    expect(rows[1].label).not.toMatch(/letra\s+[a-e]/i);
+    expect(detectUnifiedPedagogy(payload).some((f) => f.code === 'pedagogy_letter_spoiler')).toBe(
+      false,
+    );
+  });
+
+  it('limpa exam_hint Letra/Gabarito', () => {
+    const payload = payloadWith([
+      {
+        type: 'golden_rule',
+        rows: [
+          {
+            label: 'Faixa etária',
+            value: 'Lactente: 100–160 bpm',
+            exam_hint: 'Letra B — idade errada.',
+          },
+          {
+            label: 'Fonte',
+            value: 'Enunciado cita Potter',
+            exam_hint: 'Gabarito A — fonte citada no enunciado.',
+          },
+        ],
+      },
+    ]);
+
+    expect(repairLetterTruncationInPayload(payload).changed).toBe(true);
+    const rows = payload.reverse_study_slides[0].rows as { exam_hint?: string }[];
+    expect(rows[0].exam_hint).toBe('');
+    expect(rows[1].exam_hint).toBe('');
+  });
+});
+

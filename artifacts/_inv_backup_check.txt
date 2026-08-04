@@ -1,0 +1,181 @@
+﻿# NeuroSlides G2 â€” InventÃ¡rio: variants sem primitives + prioridade
+
+**Data:** 2026-08-04  
+**Barra:** [`docs/NEUROSLIDES_VISUAL_BAR.md`](../docs/NEUROSLIDES_VISUAL_BAR.md)  
+**Raw JSON:** [`neuroslides-g2-primitives-inventory-raw.json`](neuroslides-g2-primitives-inventory-raw.json)  
+**Escopo escaneado:** `components/slides/variants/*.tsx` + `logicFlowShells/*.tsx` (**270** arquivos)
+
+---
+
+## Resumo executivo
+
+| Tier | Significado | Qtd |
+|------|-------------|----:|
+| **A** | Import **direto** de `primitives/` | **19** |
+| **B** | SÃ³ via **shell** (`LogicFocus` / `Rail` / `Isolate`) | **13** |
+| **B2** | Via **SoftLens** (wrapper â†’ `GoldenRuleSoftLensBoard` â†’ primitives) | **23** |
+| **C** | **Sem** primitives nem shell/SoftLens | **~219** efetivos |
+
+**Leitura:** ~14% do catÃ¡logo de variants jÃ¡ estÃ¡ no trilho G2 (A+B+B2). O resto ainda Ã© UI ad-hoc. O maior ROI **nÃ£o** Ã© migrar 219 arquivos um a um â€” P0 fechado (FocusShell + 3 genÃ©ricos no trilho). PrÃ³ximo: P1 logic_tap â†’ shells, depois encaixar tap-flows restantes nos shells.
+
+---
+
+## Tier A â€” jÃ¡ em primitives (manter / ratchet)
+
+| Arquivo |
+|---------|
+| `ConceptMapAdolescentCarePillarsDeck.tsx` |
+| `GoldenRuleAdolescentSpeakBarrierBoard.tsx` |
+| `LogicFlowAdolescentExcetoIsolateBoard.tsx` |
+| `DangerZoneAdolescentExcetoCompare.tsx` |
+| `LogicFlowPniExcetoIsolateBoard.tsx` |
+| `DangerZonePniExcetoCompare.tsx` |
+| `GoldenRulePniCalendarBoard.tsx` |
+| `UrgenciasXabcdeRailConceptMap.tsx` |
+| `AdmeJourneyRailConceptMap.tsx` |
+| `LogicFlowPtCraseFunnelBoard.tsx` |
+| `GoldenRulePtCraseFunnelBoard.tsx` |
+| `DangerZonePtCraseTrapArena.tsx` |
+| `GoldenRuleSoftLensBoard.tsx` |
+| `LogicIsolateShell.tsx` |
+| `ConceptMap.tsx` |
+| `GoldenRule.tsx` |
+| `DangerZone.tsx` |
+| `LogicFocusShell.tsx` |
+| `LogicRailShell.tsx` |
+
+**Status shells:** `LogicFocusShell` portado para BoardChrome + PolarityPanel (2026-08-04). Rail + Isolate jÃ¡ em primitives.
+
+---
+
+## Tier B â€” via shell (herdam Focus/Rail/Isolate)
+
+Inclui: `LogicFlow.tsx` (genÃ©rico), `LogicFlowStepLadder.tsx`,  
+`LogicFlowUrgenciasXabcdeTapFlow`, RCP, Protocol, SpProtocol, FarmacoProtocol,  
+`LogicFlowCamExcetoTapFlow`, `LogicFlowIvExcetoTapFlow`, `LogicFlowUrgenciasExcetoTapFlow`,  
+`LogicFlowBurnTriageTapFlow`, `LogicFlowWoundPrepTapFlow`.
+
+**Efeito:** quando `LogicFocusShell` subir para G2, **LogicFlow genÃ©rico + StepLadder + esses taps** sobem juntos.
+
+---
+
+## Tier B2 â€” SoftLens wrappers (jÃ¡ herdam SoftLens â†’ primitives)
+
+23 boards (`GoldenRule*ReferenceBoard` / params / Heimlich / Via / etc.) sÃ³ reexportam `GoldenRuleSoftLensBoard`.  
+**AÃ§Ã£o:** nenhuma migraÃ§Ã£o estrutural; SoftLens jÃ¡ estÃ¡ no kit.
+
+---
+
+## Tier C â€” prioridade de migraÃ§Ã£o
+
+### P0 â€” GenÃ©ricos + FocusShell (mÃ¡ximo ROI)
+
+| Item | Por quÃª | AÃ§Ã£o sugerida |
+|------|---------|----------------|
+| **`LogicFocusShell`** | âœ… feito (2026-08-04) | BoardChrome + PolarityPanel + CategoryStrip |
+| **`ConceptMap.tsx`** | âœ… feito (2026-08-04) | BoardChrome + PillarDeck / LabelBodyRow |
+| **`GoldenRule.tsx`** | âœ… feito (2026-08-04) | BoardChrome + LabelBodyRow / PolarityPanel |
+| **`DangerZone.tsx`** | âœ… feito (2026-08-04) | BoardChrome + PolarityPanel + AlertCallout |
+
+**Estimativa de impacto:** dezenas a centenas de questÃµes por render path, **sem** re-handcraft.
+
+### P1 â€” 37 logic_tap ainda fora de shell
+
+- VF juggle: Biosseg, Cam, Farmaco, Peri, Pni, Respiratorio, Seguranca, Trabalho, Via  
+- Mulher: Labor, Mama, Planejamento, Prenatal, Puerperio, Screening  
+- IV: Bundle, Complication, Device, Interval, Puncture  
+- Outros: Etiology, MentalCrisis, Peri Preop/Protocol/Srpa, PniCalendarElimination, Pt (Clitic/Comma/CraseFunnel/Term), Tb, Urgencias (Choking/Pediatric/Shock/Stroke), CriancaShared, CamAltoRisco  
+
+**AÃ§Ã£o:** EXCETO â†’ `LogicIsolateShell` Â· protocolo â†’ `LogicRailShell` Â· funil/eliminaÃ§Ã£o â†’ `LogicFocusShell` (apÃ³s P0).
+
+### P2 â€” Arenas e boards bespoke
+
+| Kind | ~Qtd | AÃ§Ã£o |
+|------|-----:|------|
+| `danger_arena` | 52 | `PolarityPanel` + `TwoColumnBoard` |
+| `golden_board` (nÃ£o SoftLens) | ~33 | `LabelBodyRow` / SoftLens se tabela |
+| `concept_bespoke` | 67 | `PillarDeck` / `ProtocolRailRow` quando couber |
+
+SÃ³ criar variant React nova se gesto **novo** ou â‰¥5 questÃµes.
+
+### P3 â€” Cauda
+
+`logic_bespoke` (~13), `danger_bespoke` (~9), `other` (~5): FÃ¡brica do pacote ou deprecate Ã³rfÃ£os.
+
+---
+
+## Ordem de execuÃ§Ã£o recomendada
+
+```text
+1. LogicFocusShell â†’ primitives/G2          âœ…
+2. ConceptMap + GoldenRule + DangerZone genÃ©ricos â†’ primitives  âœ…
+3. Envolver logic_tap â†’ shells â€” lote 1 âœ… (8) Â· lote 2 âœ… (MulherÃ—6 + VF hub); prÃ³ximo: PNI calendar/cold Â· Tb Â· Pt
+4. FÃ¡brica: arenas/boards por pacote com visual_bar: pass
+5. InventÃ¡rio de IDs Ã³rfÃ£os â†’ deprecate
+```
+
+**Proibido:** trocar os 4 `type`; re-handcraft em massa; 1 React por print.
+
+---
+
+## Contagens por kind (Tier C bruto)
+
+| Kind | Count |
+|------|------:|
+| concept_bespoke | 67 |
+| golden_board | 56 (inclui SoftLens wrappers â€” ver B2) |
+| danger_arena | 52 |
+| logic_tap | 37 |
+| logic_bespoke | 13 |
+| danger_bespoke | 9 |
+| other | 5 |
+| core_generic | 0 (ConceptMap / GoldenRule / DangerZone â†’ Tier A) |
+
+---
+
+## P1 lote 1 (2026-08-04) â€” logic_tap â†’ shells
+
+| Arquivo | Shell |
+|---------|-------|
+| `LogicFlowItuExcetoTap` | Isolate |
+| `LogicFlowAdolescentExcetoIsolateTap` | Isolate |
+| `LogicFlowPeriProtocolTapFlow` | Rail |
+| `LogicFlowPeriPreopDecisionTap` | Focus |
+| `LogicFlowPeriSrpaDecisionTap` | Focus |
+| `LogicFlowMentalCrisisDecisionTap` | Focus |
+| `LogicFlowMentalRapsClassifyTap` | Focus |
+| `LogicFlowEtiologyEliminationTap` | Focus |
+
+**PrÃ³ximo lote P1:** Mulher (6 taps com letter juggle + headerSlot), VF hub (`PniVfJuggleTap`), PNI calendar/cold-chain, Tb VF.
+
+---
+
+## P1 lote 2 (2026-08-04) â€” Mulher + VF hub
+
+| Arquivo | Shell / chassis |
+|---------|-----------------|
+| `LogicFlowMulherLaborTapFlow` | Focus + `LetterEliminationRail` (`renderHeader`) |
+| `LogicFlowMulherPrenatalTapFlow` | Focus + letter rail |
+| `LogicFlowMulherMamaTapFlow` | Focus + letter rail |
+| `LogicFlowMulherScreeningTapFlow` | Focus + letter rail |
+| `LogicFlowMulherPlanejamentoTapFlow` | Focus + letter rail |
+| `LogicFlowMulherPuerperioTapFlow` | Focus + letter rail |
+| `LogicFlowPniVfJuggleTap` (+ clones Via/Cam/â€¦) | BoardChrome + PolarityPanel (mantÃ©m Julgar/resumo) |
+
+**Novo no kit:** `logicFlowShells/LetterEliminationRail.tsx` Â· `LogicFocusShell.renderHeader`.
+
+**Lote 3:** ver seÃ§Ã£o abaixo. PrÃ³ximo: Adolescent VF weave / Z classify Â· Pt taps.
+
+## P1 lote 3 (2026-08-04) â€” PNI calendar/cold + Tb VF
+
+| Arquivo | Shell / chassis |
+|---------|-----------------|
+| `LogicFlowPniCalendarEliminationTap` | Focus + `LetterEliminationRail` + month chips |
+| `LogicFlowPniColdChainTap` | Focus + letter rail (MCQ) / chips Â°C (V/F) |
+| `LogicFlowTbVfEliminationTap` | Focus + `RomanVfStatusRail` (Iâ€“III) |
+
+**Novo no kit:** `logicFlowShells/RomanVfStatusRail.tsx` Â· `letterEliminationFromSteps` aceita `catchup_eliminate`.
+
+**PrÃ³ximo lote P1:** Adolescent VF weave / Z classify Â· Pt taps Â· IV taps Â· Urgencias cauda.
+
+

@@ -1,0 +1,301 @@
+[
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-0.json",
+    "correct": "B",
+    "instruction": "A notificação compulsória é a comunicação da ocorrência de determinada doença ou agravo à saúde, feita à autoridade sanitária por profissionais de saúde ouqualquer cidadão, para fins de adoção de medidas de intervenção pertinentes. Assinale a alternativa que apresenta uma doença de notificação compulsória imediata.",
+    "options": [
+      {
+        "id": "A",
+        "text": "HIV.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Febre amarela.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Hepatites virais.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Casos de dengue.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Tuberculose.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2022",
+      "orgao": "Pref Foz do Iguaçu / Enfermagem",
+      "prova": "Tec (F Iguaçu)"
+    }
+  },
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-2.json",
+    "correct": "E",
+    "instruction": "Sobre as doenças e agravos de notificação compulsória, assinale a alternativa que\nNÃO\napresenta uma dessas doenças ou agravos.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sífilis.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Coqueluche.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Infecção pelo Vírus da Imunodeficiência Humana (HIV).",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Leptospirose.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Influenza.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2021",
+      "orgao": "Pref B do Ribeiro",
+      "prova": "TEnf (B do Ribeiro)"
+    }
+  },
+  {
+    "file": "fundep-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-8.json",
+    "correct": "A",
+    "instruction": "O conjunto de ações que proporciona o conhecimento, a detecção ou a prevenção de qualquer mudança nos fatores determinantes e condicionantes da saúdeindividual ou coletiva, com a finalidade de recomendar e adotar medidas de prevenção e controle das doenças ou agravos (Brasil, 2010), é denominado",
+    "options": [
+      {
+        "id": "A",
+        "text": "Vigilância Epidemiológica.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Notificação Compulsória.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Investigação Epidemiológica.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Vigilância Sanitária.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fundep",
+      "ano": "2024",
+      "orgao": "Pref Carlos Chagas / Técnico de Enfermagem",
+      "prova": "Prof Enf TEnf (Pref Carlos Cha"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-4.json",
+    "correct": "A",
+    "instruction": "Epidemiologia é a ciência que estuda o processo saúde-doença na sociedade, analisando a distribuição populacional e os fatores determinantes das enfermidades,os danos à saúde e os eventos associados à saúde coletiva, propondo medidas específicas de prevenção, controle ou erradicação de doenças e fornecendo indicadoresque sirvam de suporte ao planejamento, à administração e à avaliação das ações de saúde. A Epidemiologia preocupa-se com o processo de ocorrência de doenças,mortes, quaisquer outros agravos ou situações de risco à saúde na comunidade ou em grupos dessa comunidade, com o objetivo de propor estratégias que melhorem onível de saúde das pessoas que compõem essa comunidade.\nConsiderando esta temática assinale a alternativa\ncorreta\n:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A construção de indicadores de saúde é necessária para analisar a situação atual de saúde, fazer comparações e avaliar mudanças ao longo do tempo. Osindicadores de saúde, tradicionalmente, têm sido construídos por meio de números. São medidas de ocorrência de doença, óbitos e agravos, que indicam suamagnitude na população. São expressos em taxas ou coeficientes por representarem frações da população, o que permite a comparação dos dados relativos à saúdee sua respectiva análise entre regiões e populações distintas. Os indicadores são utilizados para análise da situação de saúde de populações e avaliam a morbidadee a mortalidade.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "A morbidade é definida como a ocorrência de doenças e agravos à saúde em uma dada população, em um determinado período de tempo e em uma áreageográfica definida. Como indicador de morbidade tem-se apenas a incidência. A incidência é o risco de adoecer ou apresentar um agravo à saúde, e tal taxa éexpressa em número de casos confirmados de determinada doença, em determinada comunidade e tempo/população da área, no mesmo tempo x 10n.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A incidência expressa todos os casos conhecidos de uma doença ou agravo em um período de tempo determinado. Diferente da prevalência que computa apenasos casos novos, a incidência é a somatória de todos os casos, novos e antigos. Os eventos que aumentam a prevalência são os casos novos e a imigração depessoas acometidas da doença oriundas de outras populações. A cura, o óbito e a emigração reduzem a incidência.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O Diagrama de Controle apresenta a variação da frequência de uma doença ao longo do tempo. Por meio desse instrumento, compara-se a frequência em umdado período do ano, com a frequência observada da doença em anos prévios, o que se denomina de canal endêmico. A prevalência, como frequência absoluta, éutilizada com a finalidade de monitorar a ocorrência de epidemias ou endemias por meio do Diagrama de Controle.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Para Diabetes e Hipertensão, não é possível calcular a incidência e a prevalência por ser difícil detectar o início da doença, pois o diagnóstico, na maioria dasvezes, é realizado após longo período de portador assintomático. Somente estudos epidemiológicos de caso-controle podem estabelecer a incidência, poisacompanham uma população definida por longo período de tempo.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2025",
+      "orgao": "CISAMVE",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-2.json",
+    "correct": "C",
+    "instruction": "As ações voltadas ao conhecimento, detecção e prevenção de alterações nos fatores determinantes e condicionantes de saúde individual ou coletiva, com oobjetivo de recomendar e adotar medidas de prevenção e controle de doenças ou agravos, correspondem à função da:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Vigilância Coletiva.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Vigilância em Saúde do Trabalhador.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Vigilância Epidemiológica.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Vigilância Ambiental.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Vigilância Sanitária.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2025",
+      "orgao": "Pref Camboriú",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-0.json",
+    "correct": "D",
+    "instruction": "Dentre as opções citadas a seguir, assinale aquela que corresponde à taxa de incidência de febre amarela, considerando que, durante o ano de 2020, a Unidadede Saúde da Família de uma determinada cidade notificou 200 casos de febre amarela, dos quais 150 foram confirmados após resultado do exame e que essa Unidade deSaúde da Família acompanha um total de 5.000 pessoas:\n(Dados: constante = 100).",
+    "options": [
+      {
+        "id": "A",
+        "text": "A taxa de incidência da febre amarela nesse caso é de 2%.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A taxa de incidência da febre amarela nesse caso é de 4%.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A taxa de incidência da febre amarela nesse caso é de 10%.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A taxa de incidência da febre amarela nesse caso é de 3%.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "A taxa de incidência da febre amarela nesse caso é de 7%.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2023",
+      "orgao": "Pref Tijucas",
+      "prova": "ACS"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-1.json",
+    "correct": "C",
+    "instruction": "Analise o conceito a seguir:\nA\né a ciência que estuda o processo saúde-doença na humanidade, bem como a distribuição e os determinantes dos problemas de saúde na populaçãohumana.\nAssinale a alternativa que\ncorretamente\ncompleta a lacuna no excerto:",
+    "options": [
+      {
+        "id": "A",
+        "text": "doença",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "parasitologia",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "epidemiologia",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "infectologia",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "epidemia",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2023",
+      "orgao": "Pref Tijucas",
+      "prova": "ACS"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-7.json",
+    "correct": "C",
+    "instruction": "A letalidade em epidemiologia, mede a severidade de uma doença e é definida como a proporção de mortes dentre aqueles doentes por uma causa específica emum certo período de tempo. Podemos dizer que para se obter a letalidade de uma determinada doença, devemos:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Letalidade (%) = Incidência multiplicado pelo número de doentes por determinada doença no mesmo período multiplicado por 100.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Letalidade (%) = Número de mortes de uma determinada doença em certo período multiplicado pelo número de doentes por determinada doença no mesmoperíodo multiplicado por 100.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Letalidade (%) = Número de mortes de uma determinada doença em certo período dividido pelo número de doentes por determinada doença no mesmo períodomultiplicado por 100.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Letalidade (%) = Incidência dividido pelo número de doentes por determinada doença no mesmo período multiplicado por 100.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Letalidade (%) = Número de mortes de uma determinada doença em certo período multiplicado pela duração média da doença.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2022",
+      "orgao": "Vigilância Sanitária e Saúde Ambiental",
+      "prova": "Tec (Pref Blumenau)"
+    }
+  }
+]

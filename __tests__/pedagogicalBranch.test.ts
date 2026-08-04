@@ -843,3 +843,33 @@ describe('inferPedagogicalBranch — História da Enfermagem', () => {
     expect(inferPedagogicalBranch(subtopico, instruction, [], 'conceito')).toBe('historia_generico');
   });
 });
+
+describe('pedagogicalBranch — Epidemiologia e Vigilância Epidemiológica', () => {
+  const subtopico = 'Epidemiologia e Vigilância Epidemiológica';
+
+  it('infere epi_notificacao_compulsoria da lista imediata', () => {
+    const instruction =
+      'Qual item consta na Lista Nacional de Doenças de Notificação Compulsória Imediata?';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('epi_notificacao_compulsoria');
+    const design = getPresentationDesign(subtopico, 'epi_notificacao_compulsoria');
+    expect(design?.template).toBe('lime');
+  });
+
+  it('infere epi_indicadores de mortalidade/incidência', () => {
+    const instruction =
+      'Indicador calculado pela divisão do número de óbitos pela população em risco refere-se à mortalidade.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('epi_indicadores');
+  });
+
+  it('infere epi_vigilancia_acoes de vigilância epidemiológica', () => {
+    const instruction =
+      'Vigilância epidemiológica e vigilância sanitária são ações distintas no SUS.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('epi_vigilancia_acoes');
+  });
+
+  it('infere epi_ocorrencia_agravos de endemia/epidemia/surto', () => {
+    const instruction =
+      'Endemia, epidemia, pandemia e surto descrevem a ocorrência de agravos.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('epi_ocorrencia_agravos');
+  });
+});

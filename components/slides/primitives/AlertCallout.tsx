@@ -13,7 +13,7 @@ export interface AlertCalloutProps {
   role?: 'status' | 'note' | 'alert';
 }
 
-/** Callout “Atenção” / status — footer ou banner de comando. */
+/** Callout “Atenção” / status — banner com massa (barra G2). */
 export function AlertCallout({
   tone = 'warn',
   icon: Icon,
@@ -26,18 +26,22 @@ export function AlertCallout({
     <div
       role={role}
       className={cn(
-        'flex flex-col items-center gap-1 rounded-xl border px-3 py-2 text-center',
+        'relative flex flex-col items-center gap-1 overflow-hidden rounded-2xl border-2 px-3 py-2.5 text-center shadow-md',
         t.panel,
         className,
       )}
     >
+      <span
+        className={cn('pointer-events-none absolute inset-y-0 left-0 w-1.5', t.accent)}
+        aria-hidden
+      />
       <p
         className={cn(
-          'flex items-center justify-center gap-2 font-body text-xs font-semibold',
+          'relative flex items-center justify-center gap-2 font-body text-xs font-bold md:text-sm',
           t.text,
         )}
       >
-        {Icon ? <Icon className={cn('h-3.5 w-3.5 shrink-0', t.columnLabel)} aria-hidden /> : null}
+        {Icon ? <Icon className={cn('h-4 w-4 shrink-0', t.columnLabel)} aria-hidden /> : null}
         {children}
       </p>
     </div>

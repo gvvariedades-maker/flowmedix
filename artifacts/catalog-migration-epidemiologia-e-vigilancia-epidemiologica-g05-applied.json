@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:55:06.774Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cotec-fadenor-geral-epidemiologia-e-vigilancia-epidemiologica-1777103452899-2",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-9",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-6",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+    "decorp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-6",
+    "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-1",
+    "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-6",
+    "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cotec-fadenor-geral-epidemiologia-e-vigilancia-epidemiologica-1777103452899-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

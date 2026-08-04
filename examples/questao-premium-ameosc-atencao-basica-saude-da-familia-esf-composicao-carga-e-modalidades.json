@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "banca": "Ameosc",
+    "prova": "ACS (Pref Bandeirante-SC)",
+    "orgao": "Pref Bandeirante-SC",
+    "ano": "2022",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Atenção Básica / Saúde da Família",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "ab_esf_composicao",
+    "content_review": {
+      "reviewed_at": "2026-08-01",
+      "reviewer": "pipeline-ab",
+      "guideline_snapshot": "PNAB (Portaria GM/MS 2.436/2017) — Equipes de Saúde da Família Ribeirinha (eSFR): mínimo de dias mensais de atendimento",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pnab-2436-2017-esfr",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Portaria GM/MS nº 2.436/2017 — PNAB (Equipes de Saúde da Família Ribeirinha)",
+        "year": 2017,
+        "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html",
+        "covers": [
+          "eSF Ribeirinha",
+          "mínimo 14 dias mensais de atendimento",
+          "carga equivalente a 8h/dia",
+          "2 dias educação permanente / registro / planejamento"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "As Equipes de Saúde da Família Ribeirinha deverão prestar atendimento à população por, no mínimo, X dias mensais (carga horária equivalente à 8h/dia) e dois dias para atividades de educação permanente, registro da produção e planejamento das ações.",
+    "options": [
+      { "id": "A", "text": "21.", "is_correct": false },
+      { "id": "B", "text": "07.", "is_correct": false },
+      { "id": "C", "text": "14.", "is_correct": true },
+      { "id": "D", "text": "30.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "eSF Ribeirinha — carga mensal",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "items": [
+        {
+          "label": "Modalidade cobrada",
+          "detail": "Equipe de Saúde da Família Ribeirinha (eSFR) — atendimento em território fluvial/ribeirinho.",
+          "icon": "Ship"
+        },
+        {
+          "label": "O que a banca pede",
+          "detail": "Número mínimo de dias mensais de atendimento (cada dia = 8h) + bloco separado de 2 dias de gestão/educação.",
+          "icon": "Calendar"
+        },
+        {
+          "label": "Dois blocos distintos",
+          "detail": "Atendimento à população ≠ educação permanente / registro / planejamento (estes são os 2 dias extras).",
+          "icon": "Layers"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "Distratores usam semana cheia, “muitos dias no barco” ou mês civil — confundem com calendário.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Atendimento mínimo ≠ dias do mês civil"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "steps": [
+        "Isolar o X: dias mensais mínimos de atendimento à população (8h/dia).",
+        "Separar mentalmente os 2 dias de educação permanente / registro / planejamento — não são o X.",
+        "Lembrar o número PNAB para eSFR: 14 dias de atendimento.",
+        "Eliminar B: parece “uma semana”, mas fica abaixo do mínimo.",
+        "Eliminar A: infla o mínimo com “muitos dias”.",
+        "Eliminar D: mês civil — não é o parâmetro da norma.",
+        "Restar C (14 dias).",
+        "Marcar C.",
+        "Em similares: leia se a banca pergunta atendimento ou o bloco de gestão/EP."
+      ],
+      "footer_rule": "X = atendimento; gestão/EP à parte"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — eSFR (PNAB)",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "content": "EQUIPE DE SAÚDE DA FAMÍLIA RIBEIRINHA",
+      "rows": [
+        {
+          "label": "Atendimento",
+          "value": "Mínimo 14 dias/mês · equivalência 8h/dia.",
+          "badge": "ok"
+        },
+        {
+          "label": "Gestão / EP",
+          "value": "Mais 2 dias: educação permanente, registro da produção e planejamento.",
+          "badge": "ok"
+        },
+        {
+          "label": "Não confundir",
+          "value": "semana cheia, “muitos dias” ou mês civil — calendário ≠ norma.",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Decore: 14 + 2 (PNAB eSFR)"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "content": "PEGADINHAS — número da eSFR",
+      "items": [
+        {
+          "label": "Letra A — 21",
+          "detail": "“Muitos dias no barco” parece generoso e “completo”.",
+          "correct": "O mínimo normativo de atendimento é 14, não 21."
+        },
+        {
+          "label": "Letra B — 07",
+          "detail": "Uma semana cheia — número redondo e fácil de memorizar errado.",
+          "correct": "Fica abaixo do mínimo de atendimento da eSFR (valor certo é o da PNAB para eSFR)."
+        },
+        {
+          "label": "Letra D — 30",
+          "detail": "Confunde com dias do mês civil ou “sempre no território”.",
+          "correct": "A PNAB fixa mínimo de atendimento em 14 dias/mês — mês civil não é o parâmetro."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Prova pergunta o bloco de gestão/EP e o aluno responde o número de atendimento.",
+          "correct": "Atendimento = 14 dias; gestão/EP = dois dias à parte — leia o trecho cobrado."
+        }
+      ],
+      "footer_rule": "Calendário civil quase sempre é armadilha"
+    }
+  ]
+}

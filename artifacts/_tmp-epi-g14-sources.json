@@ -1,0 +1,281 @@
+[
+  {
+    "file": "furb-enfermagem-processo-de-enfermagem-1780011915153-4.json",
+    "correct": "A",
+    "instruction": "O termo __________ refere-se a uma doença habitualmente presente entre os membros de um determinado grupo, dentro dos limites esperados, em uma determinada área geográfica, por um período de tempo ilimitado.\nAssinale a alternativa que corretamente preenche a lacuna no excerto:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Endemia.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Epidemia.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Hiperendemia.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Pandemia.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Surto.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2026",
+      "orgao": "Enfermagem",
+      "prova": "Tec (FURB)"
+    }
+  },
+  {
+    "file": "gama-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-5.json",
+    "correct": "C",
+    "instruction": "Para avaliar a eficiência de um programa de saúde, qual das seguintes medidas é mais adequada?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Eficiência determina se o programa proporciona resultados desejados em relação ao custo envolvido, analisando a relação entre o investimento feito e osbenefícios obtidos.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Efetividade é a capacidade do programa de produzir resultados positivos independentemente dos custos ou recursos utilizados.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Eficácia avalia se o programa alcança os resultados esperados em condições controladas e experimentais.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Efetividade examina se o programa atinge os resultados desejados em um ambiente real, considerando variáveis externas e fatores contextuais.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Gama",
+      "ano": "2024",
+      "orgao": "Saúde",
+      "prova": "Ag (Pref Conc. dos Ouros)"
+    }
+  },
+  {
+    "file": "gama-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-3.json",
+    "correct": "C",
+    "instruction": "Em saúde coletiva, é crucial entender as diferenças entre eficácia, eficiência e efetividade para melhorar as práticas e os resultados das intervenções. Qual dasseguintes definições melhor descreve o conceito de efetividade?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Eficácia refere-se à capacidade de uma intervenção de produzir o efeito desejado em condições ideais, geralmente em um ambiente controlado e experimental.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Eficiência é a relação entre o custo e o resultado alcançado, medindo se a intervenção é econômica e se o benefício obtido justifica o custo envolvido.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Efetividade é a capacidade de uma intervenção de produzir o efeito desejado em condições do mundo real, onde fatores externos e variáveis podem influenciar oresultado.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Eficácia é a capacidade de uma intervenção de alcançar todos os objetivos estabelecidos sem considerar o impacto financeiro ou os recursos necessários.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Gama",
+      "ano": "2024",
+      "orgao": "Saúde",
+      "prova": "Ag (Pref Conc. dos Ouros)"
+    }
+  },
+  {
+    "file": "gama-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-4.json",
+    "correct": "A",
+    "instruction": "No contexto da saúde pública, o conceito de territorialização refere-se à/ao:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Processo de identificação e análise das características e necessidades de saúde de uma área específica para orientar as intervenções e recursos de saúde.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Definição de políticas públicas para a construção de infraestrutura de saúde em áreas com maior demanda populacional.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Divisão do território em áreas de atendimento para garantir que todos os residentes recebam serviços de saúde de forma equitativa.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Estabelecimento de postos de saúde em diferentes regiões para facilitar o acesso aos serviços médicos.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Gama",
+      "ano": "2024",
+      "orgao": "Saúde",
+      "prova": "Ag (Pref Conc. dos Ouros)"
+    }
+  },
+  {
+    "file": "gama-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-5.json",
+    "correct": "B",
+    "instruction": "Na Vigilância em Saúde, os conceitos e metodologias aplicados têm como objetivo a prevenção, controle e erradicação de doenças, bem como a promoção dasaúde da população. A alternativa que descreve\ncorretamente\num conceito fundamental ou uma metodologia utilizada na Vigilância em Saúde é:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A vigilância passiva depende exclusivamente de relatórios periódicos fornecidos pelas autoridades de saúde, sem a necessidade de notificação de casos suspeitosou confirmados por profissionais de saúde.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A vigilância ativa envolve a busca proativa de casos e a coleta sistemática de dados sobre doenças, incluindo visitas domiciliares, rastreamento de contatos einvestigação de surtos, com o objetivo de identificar e controlar rapidamente novas ameaças à saúde pública.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "A metodologia de vigilância sindrômica concentra-se na coleta de dados laboratoriais detalhados, utilizados para confirmar a etiologia específica de cada casonotificado, independentemente da presença de sintomas clínicos.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A vigilância em saúde ambiental se limita ao monitoramento da qualidade da água e do ar, sem integrar dados sobre vetores de doenças ou condiçõessocioeconômicas da população.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Gama",
+      "ano": "2024",
+      "orgao": "Pref Conc. dos Ouros",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "gama-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-6.json",
+    "correct": "B",
+    "instruction": "Sobre os elementos que compõem o processo saúde-doença, marque a alternativa\ncorreta\n:",
+    "options": [
+      {
+        "id": "A",
+        "text": "O agente etiológico, o reservatório e o hospedeiro são os únicos elementos desse processo, sendo a interação entre eles a responsável pelo adoecimento.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Além do agente etiológico, do reservatório e do hospedeiro, o ambiente e os determinantes sociais também são elementos fundamentais do processo saúde-doença.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "O processo saúde-doença é determinado apenas pelos fatores biológicos, sendo os aspectos sociais, econômicos e culturais irrelevantes para a ocorrência dedoenças.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O agente etiológico é o único elemento determinante do processo saúde-doença, uma vez que a presença do patógeno é condição suficiente para oadoecimento.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Gama",
+      "ano": "2024",
+      "orgao": "Pref Conc. dos Ouros",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-3.json",
+    "correct": "B",
+    "instruction": "Em relação à coleta de dados demográficos e socioeconômicos para planejamento em saúde, avalie as assertivas a seguir:\nI. A análise do perfil socioeconômico da comunidade contribui para identificar grupos populacionais vulneráveis e direcionar políticas públicas mais eficazes.\nII. A coleta de dados demográficos inclui informações sobre a estrutura etária da população, como a distribuição por faixa etária e sexo.\nIII. A pesquisa domiciliar é a única forma de coleta de dados demográficos confiável para comunidades de grande porte.\nEstá(ão) CORRETA(S) a(s) seguinte(s) proposição(ões):",
+    "options": [
+      {
+        "id": "A",
+        "text": "apenas III;",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "apenas I e II;",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "apenas II e III;",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "apenas II;",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "apenas I.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Ibade",
+      "ano": "2024",
+      "orgao": "Comunitário de Saúde",
+      "prova": "Ag (Pref Jaru)"
+    }
+  },
+  {
+    "file": "ibade-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-7.json",
+    "correct": "D",
+    "instruction": "Pensando na história natural da doença, o período compreendido entre a exposição ao agente causador até se tornar infeccioso é denominado:",
+    "options": [
+      {
+        "id": "A",
+        "text": "período de incubação.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "período de transmissibilidade.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "período de manifestações clínicas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "período de latência.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "período de cura.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Ibade",
+      "ano": "2022",
+      "orgao": "Centro Cirúrgico e Hemodinâmica",
+      "prova": "TE (INOVA Capixaba)"
+    }
+  }
+]

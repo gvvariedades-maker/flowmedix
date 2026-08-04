@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T13:48:46.802Z",
+  "generated_at": "2026-08-01T20:32:17.024Z",
   "lote": "saude-adolescente-g01",
   "mode": "apply",
   "total_files": 1,
@@ -7,11 +7,11 @@
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
-    "agirh-enfermagem-saude-do-adolescente-1777104229064-4"
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-6"
   ],
   "results": [
     {
-      "modulo_slug": "agirh-enfermagem-saude-do-adolescente-1777104229064-4",
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
       "status": "ok",
       "mode": "update",
       "detail": "conteudo_json aplicado"

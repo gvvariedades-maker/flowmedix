@@ -1,0 +1,242 @@
+{
+  "generated_at": "2026-08-03T22:48:30.187Z",
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "pacote_prefix": "atencao-basica-saude-da-familia",
+  "production_status_before": "none",
+  "technical_ready": true,
+  "production_ready": true,
+  "can_sell": true,
+  "continuous_eligible": true,
+  "ship_gate": {
+    "ok": true,
+    "blockers": []
+  },
+  "monitoring": {
+    "deprecated": true,
+    "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
+    "sessions_30d": 104
+  },
+  "layers": {
+    "L1": {
+      "pass": true,
+      "detail": "handcraft-dod PASS"
+    },
+    "L2": {
+      "pass": true,
+      "detail": "alignment OK (171 slugs)"
+    },
+    "L2b": {
+      "pass": true,
+      "detail": "numeric factcheck OK"
+    },
+    "L2c": {
+      "pass": true,
+      "detail": "pedagogia OK (171 slugs; leitor cego 0/171; 2 warn)"
+    },
+    "L3": {
+      "pass": true,
+      "detail": "L3 ok_generico ramos AB (acs/pnab/te/vigilancia/generico); ab_esf_composicao brief_pending_react — React só com Implementar molde: ab_esf_composicao"
+    },
+    "L4": {
+      "pass": true,
+      "detail": "capture cirúrgico — warn only (não bloqueia ship)"
+    },
+    "L5": {
+      "pass": true,
+      "detail": "content health OK"
+    },
+    "L6": {
+      "pass": true,
+      "detail": "all 22 lotes anchor pass"
+    }
+  },
+  "lote_stats": [
+    {
+      "lote": "atencao-basica-saude-da-familia-g01",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g02",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g03",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g04",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g05",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g06",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g07",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g08",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g09",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g10",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g11",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g12",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g13",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g14",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g16",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g17",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g18",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g19",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g20",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g21",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g22",
+      "scanned": 3,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    }
+  ],
+  "pedagogy": {
+    "slugs": 171,
+    "fail": 0,
+    "warn": 2,
+    "blind_reader_covered": 0,
+    "require_blind_reader": false,
+    "failing": []
+  },
+  "content_health": {
+    "subtopico": "Atenção Básica / Saúde da Família",
+    "sessions_30d": 104,
+    "open_reports": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 0,
+      "total": 0
+    },
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2,
+      "min_sessions_30d": 100,
+      "sessions_30d": 104,
+      "open_p1": 0,
+      "report_rate_pct": 0
+    },
+    "pass": true,
+    "blockers": []
+  },
+  "blockers": []
+}

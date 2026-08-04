@@ -48,7 +48,8 @@ Goldens copiáveis: `examples/eng/api-route-admin.example.ts` · `rsc-page-cache
 | Tarefa | Trigger | Rule / skill |
 |--------|---------|--------------|
 | Polish vitrine / player / dashboard | `Visual:` · `Polish vitrine` · `Polish player` · `craft UI` | [`.cursor/rules/avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) · [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md) |
-| Design visual de NeuroSlides (molde/retenção) | `Design visual:` · `Molde visual:` | [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](.cursor/skills/avant-neuroslides-visual/SKILL.md) |
+| Design visual de NeuroSlides (molde/retenção) | `Design visual:` · `Molde visual:` | [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](.cursor/skills/avant-neuroslides-visual/SKILL.md) · barra [`docs/NEUROSLIDES_VISUAL_BAR.md`](docs/NEUROSLIDES_VISUAL_BAR.md) · rule [`.cursor/rules/neuroslides-visual-bar.mdc`](.cursor/rules/neuroslides-visual-bar.mdc) |
+| Fábrica visual G2 (1 pacote) / P1 shells | `Fábrica visual G2: SUBTÓPICO: …` · `P1 NeuroSlides G2:` | [`docs/PROMPT_FABRICA_VISUAL_G2.md`](docs/PROMPT_FABRICA_VISUAL_G2.md) · inventário [`artifacts/neuroslides-g2-primitives-inventory.md`](artifacts/neuroslides-g2-primitives-inventory.md) |
 | LP alto impacto (copy + design + conversão) | `LP: home` · `LP: <path>` · `LP: polish visual` | [`.cursor/rules/lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc) · [`docs/LP_CONVERSA.md`](docs/LP_CONVERSA.md) · pesquisa [`docs/LP_RESEARCH_CAPABILITY_MAP.md`](docs/LP_RESEARCH_CAPABILITY_MAP.md) |
 
 Para **feature/bug de app** (comportamento + código), use `Feature:` / `Bug:` — não o trigger de handcraft. Para **só aparência** no design system existente, use `Visual:` / `Polish …`. Para **landing/LP com CRO**, use `LP:` — não `Visual:`.

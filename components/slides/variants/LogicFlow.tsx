@@ -22,6 +22,7 @@ import {
   logicFlowStepIconClass,
 } from '../core/logicFlowStepStyles';
 import { getLogicFlowBespoke } from '../registry/logicFlow';
+import { LogicFocusShell } from '../logicFlowShells';
 
 interface LogicFlowProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -164,6 +165,20 @@ export const LogicFlow = ({
       <motion.div className="flex min-h-full w-full min-w-0 items-center justify-center p-6">
         <p className="font-body text-base text-slate-400">Nenhum passo definido</p>
       </motion.div>
+    );
+  }
+
+  // Fase A — genéricos em tap: FocusShell (sem pilha de N cards).
+  if (isTapMode) {
+    return (
+      <LogicFocusShell
+        steps={normalizedSteps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+        accent="clinical"
+        applyTapBudget
+      />
     );
   }
 

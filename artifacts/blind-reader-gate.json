@@ -1,14 +1,14 @@
 {
   "corpus": "examples",
-  "generated_at": "2026-08-01T04:23:01.004Z",
-  "total": 165,
-  "judged": 164,
+  "generated_at": "2026-08-04T00:00:06.427Z",
+  "total": 175,
+  "judged": 174,
   "blocking": 0,
   "verdicts": {
     "fail_leak": 0,
     "warn_unsupported_hit": 0,
-    "pass_indeterminate": 164,
-    "pass_wrong_letter": 0,
+    "pass_indeterminate": 173,
+    "pass_wrong_letter": 1,
     "skip_no_gabarito": 0,
     "skip_no_concept_map": 1
   },
@@ -77,6 +77,61 @@
       "evidencia": "",
       "evidence_literal": false,
       "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-adm-atencao-basica-saude-da-familia-acs-atribuicoes-visita-e-territorio",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-epidemiologia-conceito-geral",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-indicadores-incidencia-prevalencia-morta",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-notificacao-compulsoria-sinan-lista-naci",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-vigilancia-epidemiologica-conceito-e-aco",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
       "model": "gemini-2.5-flash"
     },
     {
@@ -179,6 +234,17 @@
       "model": "gemini-2.5-flash"
     },
     {
+      "slug": "questao-premium-amauc-atencao-basica-saude-da-familia-atencao-basica-conceito-geral",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
       "slug": "questao-premium-amauc-imunizacao-bcg-dose-a4",
       "verdict": "pass_indeterminate",
       "blocking": false,
@@ -198,6 +264,17 @@
       "evidencia": "",
       "evidence_literal": false,
       "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-atencao-basica-saude-da-familia-esf-composicao-carga-e-modalidades",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
       "model": "gemini-2.5-flash"
     },
     {
@@ -234,13 +311,24 @@
       "model": "gemini-2.5-flash"
     },
     {
+      "slug": "questao-premium-ameosc-nocoes-de-anatomia-anat_esqueleto",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
       "slug": "questao-premium-ameosc-processo-de-enfermagem-documentacao",
       "verdict": "pass_indeterminate",
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "D",
-      "evidencia": "",
-      "evidence_literal": false,
+      "evidencia": "Julgue item a item antes de montar a sequência V-F",
+      "evidence_literal": true,
       "surfaces_count": 13,
       "model": "gemini-2.5-flash"
     },
@@ -261,7 +349,7 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "A",
-      "evidencia": "",
+      "evidencia": "O texto fornece a avaliação de algumas afirmativas (III VERDADEIRA · IV FALSA), mas não apresenta as alternativas (A-E) da questão original nem a correspondência entre a sequência de V/F e a letra do gabarito.",
       "evidence_literal": false,
       "surfaces_count": 11,
       "model": "gemini-2.5-flash"
@@ -349,8 +437,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "A",
-      "evidencia": "Via oral não usa SF como veículo rotineiro — banca mistura preparo injetável com administração VO.",
-      "evidence_literal": true,
+      "evidencia": "O material de estudo explica o comando da questão (\"Marque a conduta que NÃO é cuidado no preparo — quatro alternativas descrevem práticas corretas.\") e aponta uma \"pegadinha\" comum que descreve uma conduta incorreta (\"Via oral não usa SF como veículo rotineiro — banca mistura preparo injetável com administração VO.\"). No entanto, o texto não associa essa conduta incorreta a nenhuma letra de alternativa (A, B, C, D, E), apenas ensina o conteúdo.",
+      "evidence_literal": false,
       "surfaces_count": 9,
       "model": "gemini-2.5-flash"
     },
@@ -362,6 +450,17 @@
       "correct_letter": "B",
       "evidencia": "",
       "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-nocoes-de-anatomia-anat_generico",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "Leia os marcadores: adiposo + conexão profunda = hipoderme",
+      "evidence_literal": true,
       "surfaces_count": 9,
       "model": "gemini-2.5-flash"
     },
@@ -443,6 +542,17 @@
       "model": "gemini-2.5-flash"
     },
     {
+      "slug": "questao-premium-cebraspe-nocoes-de-anatomia-anat_cardiovascular",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
       "slug": "questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf",
       "verdict": "pass_indeterminate",
       "blocking": false,
@@ -470,7 +580,7 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "A",
-      "evidencia": "",
+      "evidencia": "O texto fornecido é um material de estudo que explica conceitos sobre vias injetáveis e o padrão de questões da banca, mas não apresenta as alternativas (A, B, C, D, E) da questão original para que se possa identificar qual delas é a incorreta.",
       "evidence_literal": false,
       "surfaces_count": 15,
       "model": "gemini-2.5-flash"
@@ -481,8 +591,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "B",
-      "evidencia": "",
-      "evidence_literal": false,
+      "evidencia": "A leve · B moderada · C grave",
+      "evidence_literal": true,
       "surfaces_count": 9,
       "model": "gemini-2.5-flash"
     },
@@ -492,8 +602,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "D",
-      "evidencia": "Preferir veias menos proeminentes é o erro — escolha veias calibrosas e acessíveis.",
-      "evidence_literal": true,
+      "evidencia": "",
+      "evidence_literal": false,
       "surfaces_count": 11,
       "model": "gemini-2.5-flash"
     },
@@ -668,7 +778,7 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "B",
-      "evidencia": "I está correta. II está correta.",
+      "evidencia": "",
       "evidence_literal": false,
       "surfaces_count": 13,
       "model": "gemini-2.5-flash"
@@ -829,12 +939,12 @@
     },
     {
       "slug": "questao-premium-cpcon-saude-mulher-pre-natal-vf",
-      "verdict": "pass_indeterminate",
+      "verdict": "pass_wrong_letter",
       "blocking": false,
-      "gabarito": "indeterminavel",
+      "gabarito": "C",
       "correct_letter": "B",
-      "evidencia": "",
-      "evidence_literal": false,
+      "evidencia": "III é falsa.",
+      "evidence_literal": true,
       "surfaces_count": 9,
       "model": "gemini-2.5-flash"
     },
@@ -921,8 +1031,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "C",
-      "evidencia": "Contexto poético fixa «descer» = anoitecer.",
-      "evidence_literal": true,
+      "evidencia": "",
+      "evidence_literal": false,
       "surfaces_count": 13,
       "model": "gemini-2.5-flash"
     },
@@ -1009,7 +1119,7 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "C",
-      "evidencia": "Motora",
+      "evidencia": "Motora\nResposta motora — obedece, localiza dor, retira, flexão ou extensão.\nGlasgow = O + V + M",
       "evidence_literal": false,
       "surfaces_count": 11,
       "model": "gemini-2.5-flash"
@@ -1020,8 +1130,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "C",
-      "evidencia": "",
-      "evidence_literal": false,
+      "evidencia": "Alarme = grupo C · Grave/choque = grupo D · Laço+ sem alarme = grupo B · Sem risco = grupo A",
+      "evidence_literal": true,
       "surfaces_count": 11,
       "model": "gemini-2.5-flash"
     },
@@ -1097,8 +1207,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "B",
-      "evidencia": "I=V, II=V, III=F → I e II, apenas.",
-      "evidence_literal": true,
+      "evidencia": "",
+      "evidence_literal": false,
       "surfaces_count": 11,
       "model": "gemini-2.5-flash"
     },
@@ -1196,8 +1306,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "B",
-      "evidencia": "",
-      "evidence_literal": false,
+      "evidencia": "Entre as alternativas da prova, só a Meningocócica C tem dose programada exatamente aos 3 meses.",
+      "evidence_literal": true,
       "surfaces_count": 15,
       "model": "gemini-2.5-flash"
     },
@@ -1284,8 +1394,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "A",
-      "evidencia": "Letra B cai por esse único item.",
-      "evidence_literal": true,
+      "evidencia": "",
+      "evidence_literal": false,
       "surfaces_count": 13,
       "model": "gemini-2.5-flash"
     },
@@ -1460,8 +1570,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "B",
-      "evidencia": "",
-      "evidence_literal": false,
+      "evidencia": "Abstinência imediata sem motivação (A) contraria redução de danos e afasta o usuário do cuidado.",
+      "evidence_literal": true,
       "surfaces_count": 9,
       "model": "gemini-2.5-flash"
     },
@@ -1537,8 +1647,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "C",
-      "evidencia": "Pareamento errado A\nDiscinesia tardia ≠ vigilância urinária como foco principal neste par.\nPareamento errado B\nXerostomia = boca seca — não se confunde com orientação primária sobre quedas (ataxia).",
-      "evidence_literal": true,
+      "evidencia": "Pareamento errado A\nPareamento errado B",
+      "evidence_literal": false,
       "surfaces_count": 9,
       "model": "gemini-2.5-flash"
     },
@@ -1724,7 +1834,7 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "E",
-      "evidencia": "Genética e neuroquímica influenciam, mas sozinhas não explicam o modelo do MS (A incompleto).",
+      "evidencia": "(A incompleto)",
       "evidence_literal": true,
       "surfaces_count": 7,
       "model": "gemini-2.5-flash"
@@ -1735,7 +1845,7 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "C",
-      "evidencia": "não minimizar efeitos sociais (A falsa). Depressão aumenta risco suicida (B falsa); APS detecta, acompanha e articula rede — não só encaminha (E falsa).",
+      "evidencia": "não minimizar efeitos sociais (A falsa); Depressão aumenta risco suicida (B falsa); não só encaminha (E falsa).",
       "evidence_literal": false,
       "surfaces_count": 9,
       "model": "gemini-2.5-flash"
@@ -1746,8 +1856,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "C",
-      "evidencia": "",
-      "evidence_literal": false,
+      "evidencia": "Início rastreio 50 anos — não aos 40 (A falsa).\nAutoexame Conscientização complementar — não substitui mamografia (E falsa).\nSintomáticos Rastreio em assintomáticas — B falsa.",
+      "evidence_literal": true,
       "surfaces_count": 9,
       "model": "gemini-2.5-flash"
     },
@@ -1757,7 +1867,7 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "C",
-      "evidencia": "não aos 40 (A falsa).\nRastreio em assintomáticas — B falsa.",
+      "evidencia": "não aos 40 (A falsa). Rastreio em assintomáticas — B falsa.",
       "evidence_literal": false,
       "surfaces_count": 9,
       "model": "gemini-2.5-flash"
@@ -1768,8 +1878,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "B",
-      "evidencia": "",
-      "evidence_literal": false,
+      "evidencia": "Indicada quando a banca pede absorção lenta e contínua — sem pico plasmático imediato.",
+      "evidence_literal": true,
       "surfaces_count": 15,
       "model": "gemini-2.5-flash"
     },
@@ -1801,8 +1911,8 @@
       "blocking": false,
       "gabarito": "indeterminavel",
       "correct_letter": "E",
-      "evidencia": "O item II descreve o AUXILIAR (certificado até 1964), não o Técnico. Muitos erram ao marcar II por confusão entre as categorias.",
-      "evidence_literal": true,
+      "evidencia": "",
+      "evidence_literal": false,
       "surfaces_count": 11,
       "model": "gemini-2.5-flash"
     },
@@ -1859,9 +1969,9 @@
     {
       "slug": "questao-formacao-palavras-siglas",
       "grade": "fail",
-      "score": 50,
+      "score": 75,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -1871,7 +1981,6 @@
         "pedagogy_density": 0
       },
       "blocking_codes": [
-        "pedagogy_letter_spoiler",
         "pedagogy_logic_missing_gabarito"
       ],
       "blind_reader": {
@@ -1880,7 +1989,6 @@
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_letter_spoiler @ concept_map.items[2].detail: concept_map.items[2].detail cita a letra da alternativa — gabarito só no logic_flow.",
         "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
       ]
     },
@@ -1981,11 +2089,11 @@
       "reasons": []
     },
     {
-      "slug": "questao-premium-admtec-imunizacao-adolescente-cartao-perdido",
-      "grade": "fail",
-      "score": 75,
+      "slug": "questao-premium-adm-atencao-basica-saude-da-familia-acs-atribuicoes-visita-e-territorio",
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -1994,17 +2102,123 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[5].value: golden_rule.rows[5].value cita a letra da alternativa — gabarito só no logic_flow."
-      ]
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-epidemiologia-conceito-geral",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-indicadores-incidencia-prevalencia-morta",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-notificacao-compulsoria-sinan-lista-naci",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-vigilancia-epidemiologica-conceito-e-aco",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-admtec-imunizacao-adolescente-cartao-perdido",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
     },
     {
       "slug": "questao-premium-admtec-oxigenoterapia-dispositivos",
@@ -2187,6 +2401,28 @@
       ]
     },
     {
+      "slug": "questao-premium-amauc-atencao-basica-saude-da-familia-atencao-basica-conceito-geral",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
       "slug": "questao-premium-amauc-imunizacao-bcg-dose-a4",
       "grade": "warn",
       "score": 94,
@@ -2212,6 +2448,28 @@
     },
     {
       "slug": "questao-premium-amauc-urgencias-cincinnati-avc",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ameosc-atencao-basica-saude-da-familia-esf-composicao-carga-e-modalidades",
       "grade": "pass",
       "score": 100,
       "signature_counts": {
@@ -2299,6 +2557,32 @@
       "reasons": []
     },
     {
+      "slug": "questao-premium-ameosc-nocoes-de-anatomia-anat_esqueleto",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
       "slug": "questao-premium-ameosc-processo-de-enfermagem-documentacao",
       "grade": "pass",
       "score": 100,
@@ -2316,7 +2600,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": false
+        "evidence_literal": true
       },
       "reasons": []
     },
@@ -2544,7 +2828,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": true
+        "evidence_literal": false
       },
       "reasons": []
     },
@@ -2569,6 +2853,32 @@
         "evidence_literal": false
       },
       "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-nocoes-de-anatomia-anat_generico",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
     },
     {
       "slug": "questao-premium-avancasp-perioperatoria-pre-operatorio",
@@ -2711,7 +3021,7 @@
       "grade": "fail",
       "score": 0,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 5,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -2721,7 +3031,6 @@
         "pedagogy_density": 3
       },
       "blocking_codes": [
-        "pedagogy_letter_spoiler",
         "pedagogy_polarity_risk"
       ],
       "blind_reader": {
@@ -2730,9 +3039,35 @@
         "evidence_literal": true
       },
       "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[1].exam_hint: golden_rule.rows[1].exam_hint cita a letra da alternativa — gabarito só no logic_flow.",
         "[fail] pedagogy_polarity_risk @ danger_zone.items[0].correct: danger_zone.items[0]: comando negativo + card que descreve conduta correta — molde renderiza \"ERRO #N\" sobre conteúdo válido.",
         "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-cebraspe-nocoes-de-anatomia-anat_cardiovascular",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=certo_errado): nenhum label referencia letra — cards não mapeiam os distratores."
       ]
     },
     {
@@ -2829,7 +3164,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": false
+        "evidence_literal": true
       },
       "reasons": [
         "[fail] pedagogy_letter_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value cita a letra da alternativa — gabarito só no logic_flow.",
@@ -2838,10 +3173,10 @@
     },
     {
       "slug": "questao-premium-cev-urca-puncao-exceto-med-endovenosa",
-      "grade": "fail",
-      "score": 0,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 5,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -2850,17 +3185,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": true
+        "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[1].label: golden_rule.rows[1].label cita a letra da alternativa — gabarito só no logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc",
@@ -2908,10 +3239,10 @@
     },
     {
       "slug": "questao-premium-consulpam-vias-absorcao-oral",
-      "grade": "fail",
-      "score": 57,
+      "grade": "warn",
+      "score": 82,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -2920,16 +3251,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 3
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[4].exam_hint: golden_rule.rows[4].exam_hint cita a letra da alternativa — gabarito só no logic_flow.",
         "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
       ]
     },
@@ -2957,11 +3285,11 @@
     },
     {
       "slug": "questao-premium-consulplan-saude-crianca-puericultura-vf",
-      "grade": "fail",
-      "score": 69,
+      "grade": "warn",
+      "score": 94,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -2969,16 +3297,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
         "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
       ]
     },
@@ -3122,11 +3447,11 @@
     },
     {
       "slug": "questao-premium-cpcon-dengue-zoonoses-vetor-vf",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3134,25 +3459,21 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3160,25 +3481,21 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-cpcon-dt-mescladas-prevencao-vf",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3186,17 +3503,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-cpcon-enfermagem-trabalho-nr32-vf",
@@ -3224,10 +3537,10 @@
     },
     {
       "slug": "questao-premium-cpcon-feridas-queimaduras-scq-vf",
-      "grade": "fail",
-      "score": 63,
+      "grade": "warn",
+      "score": 88,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -3236,26 +3549,23 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 2
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[8].value: golden_rule.rows[8].value cita a letra da alternativa — gabarito só no logic_flow.",
         "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 9 linhas (máx. recomendado 6) — o aluno não lê tudo."
       ]
     },
     {
       "slug": "questao-premium-cpcon-historia-enfermagem-nightingale",
-      "grade": "fail",
-      "score": 69,
+      "grade": "warn",
+      "score": 94,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3263,16 +3573,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[1].value: golden_rule.rows[1].value abre com veredito V/F — julgamento pertence ao logic_flow.",
         "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
       ]
     },
@@ -3394,11 +3701,11 @@
     },
     {
       "slug": "questao-premium-cpcon-precaucao-contato-higiene-vf",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3406,17 +3713,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-cpcon-processamento-artigos-prelimpeza-vf",
@@ -3466,11 +3769,11 @@
     },
     {
       "slug": "questao-premium-cpcon-saude-adolescente-gravidez-vf",
-      "grade": "fail",
-      "score": 69,
+      "grade": "warn",
+      "score": 94,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3478,26 +3781,23 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
         "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
       ]
     },
     {
       "slug": "questao-premium-cpcon-saude-crianca-aleitamento-vf",
-      "grade": "fail",
-      "score": 69,
+      "grade": "warn",
+      "score": 94,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3505,26 +3805,23 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
         "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
       ]
     },
     {
       "slug": "questao-premium-cpcon-saude-crianca-desenvolvimento-vf",
-      "grade": "fail",
-      "score": 69,
+      "grade": "warn",
+      "score": 94,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3532,26 +3829,23 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
         "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
       ]
     },
     {
       "slug": "questao-premium-cpcon-saude-crianca-triagem-neonatal-vf",
-      "grade": "fail",
-      "score": 69,
+      "grade": "warn",
+      "score": 94,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3559,16 +3853,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
         "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
       ]
     },
@@ -3610,9 +3901,9 @@
       },
       "blocking_codes": [],
       "blind_reader": {
-        "verdict": "pass_indeterminate",
-        "gabarito": "indeterminavel",
-        "evidence_literal": false
+        "verdict": "pass_wrong_letter",
+        "gabarito": "C",
+        "evidence_literal": true
       },
       "reasons": []
     },
@@ -3640,11 +3931,11 @@
     },
     {
       "slug": "questao-premium-cpcon-tuberculose-baar-aerossol-vf",
-      "grade": "fail",
-      "score": 69,
+      "grade": "warn",
+      "score": 94,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -3652,16 +3943,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
         "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
       ]
     },
@@ -3759,10 +4047,10 @@
     },
     {
       "slug": "questao-premium-decorp-imunizacao-triplice-viral-via",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -3771,17 +4059,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": true
       },
-      "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[5].value: golden_rule.rows[5].value cita a letra da alternativa — gabarito só no logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-educa-pb-portugues-sinonimos-consoada-descer",
@@ -3801,7 +4085,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": true
+        "evidence_literal": false
       },
       "reasons": []
     },
@@ -4003,14 +4287,40 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": false
+        "evidence_literal": true
       },
       "reasons": []
     },
     {
       "slug": "questao-premium-fepese-anatomia-anterior-ventral",
-      "grade": "pass",
-      "score": 100,
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-premium-fepese-anotacao-enfermagem-sae",
+      "grade": "warn",
+      "score": 82,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
@@ -4019,7 +4329,7 @@
         "pedagogy_polarity_risk": 0,
         "pedagogy_danger_orphan": 0,
         "pedagogy_logic_missing_gabarito": 0,
-        "pedagogy_density": 0
+        "pedagogy_density": 3
       },
       "blocking_codes": [],
       "blind_reader": {
@@ -4027,32 +4337,7 @@
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": []
-    },
-    {
-      "slug": "questao-premium-fepese-anotacao-enfermagem-sae",
-      "grade": "fail",
-      "score": 57,
-      "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
-        "pedagogy_vf_verdict_spoiler": 0,
-        "pedagogy_question_bound_label": 0,
-        "pedagogy_logic_padding": 0,
-        "pedagogy_polarity_risk": 0,
-        "pedagogy_danger_orphan": 0,
-        "pedagogy_logic_missing_gabarito": 0,
-        "pedagogy_density": 3
-      },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
-      "blind_reader": {
-        "verdict": "pass_indeterminate",
-        "gabarito": "indeterminavel",
-        "evidence_literal": false
-      },
       "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[5].label: golden_rule.rows[5].label cita a letra da alternativa — gabarito só no logic_flow.",
         "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
       ]
     },
@@ -4166,7 +4451,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": true
+        "evidence_literal": false
       },
       "reasons": []
     },
@@ -4330,11 +4615,11 @@
     },
     {
       "slug": "questao-premium-fundatec-agudas-deterioracao-sinais-vf",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -4342,17 +4627,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-fundatec-meningococica-3meses",
@@ -4372,7 +4653,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": false
+        "evidence_literal": true
       },
       "reasons": [
         "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
@@ -4490,10 +4771,10 @@
     },
     {
       "slug": "questao-premium-iacp-cme-autoclave-parametros",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -4502,17 +4783,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": true
       },
-      "reasons": [
-        "[fail] pedagogy_letter_spoiler @ concept_map.items[1].detail: concept_map.items[1].detail cita a letra da alternativa — gabarito só no logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-ibade-saude-mental-caps-acolhimento",
@@ -4538,10 +4815,10 @@
     },
     {
       "slug": "questao-premium-ibgp-agentes-etiologicos-todas-bacterias",
-      "grade": "fail",
-      "score": 0,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 6,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -4550,24 +4827,20 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": true
+        "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-idecan-calculo-equivalencias-gotas",
-      "grade": "fail",
-      "score": 0,
+      "grade": "warn",
+      "score": 94,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 4,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -4576,16 +4849,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 1
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[4].label: golden_rule.rows[4].label cita a letra da alternativa — gabarito só no logic_flow.",
         "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 10 linhas (máx. recomendado 6) — o aluno não lê tudo."
       ]
     },
@@ -4613,11 +4883,11 @@
     },
     {
       "slug": "questao-premium-idecan-centro-cirurgico-cirurgia-segura-vf",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -4625,17 +4895,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-idecan-cme-areas-esterilizacao-vf",
@@ -4753,10 +5019,10 @@
     },
     {
       "slug": "questao-premium-idecan-feridas-queimaduras-grau-vf",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -4765,17 +5031,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[5].value: golden_rule.rows[5].value cita a letra da alternativa — gabarito só no logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-idecan-fisiologia-homeostase-vf",
@@ -4801,10 +5063,10 @@
     },
     {
       "slug": "questao-premium-idecan-omeprazol-ev-ulcera",
-      "grade": "fail",
-      "score": 38,
+      "grade": "warn",
+      "score": 88,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 2,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -4813,16 +5075,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 2
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[1].exam_hint: golden_rule.rows[1].exam_hint cita a letra da alternativa — gabarito só no logic_flow.",
         "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 7 linhas (máx. recomendado 6) — o aluno não lê tudo."
       ]
     },
@@ -4894,11 +5153,11 @@
     },
     {
       "slug": "questao-premium-idecan-saude-crianca-neonatologia-vf",
-      "grade": "fail",
-      "score": 69,
+      "grade": "warn",
+      "score": 94,
       "signature_counts": {
         "pedagogy_letter_spoiler": 0,
-        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
         "pedagogy_polarity_risk": 0,
@@ -4906,16 +5165,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_vf_verdict_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
         "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
       ]
     },
@@ -4937,7 +5193,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": false
+        "evidence_literal": true
       },
       "reasons": []
     },
@@ -5038,9 +5294,9 @@
     {
       "slug": "questao-premium-idib-umirim-itu-cateter-exceto",
       "grade": "fail",
-      "score": 0,
+      "score": 69,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 6,
+        "pedagogy_letter_spoiler": 1,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -5102,7 +5358,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": true
+        "evidence_literal": false
       },
       "reasons": []
     },
@@ -5198,10 +5454,10 @@
     },
     {
       "slug": "questao-premium-sus-lei-8080-cesgranrio",
-      "grade": "fail",
-      "score": 57,
+      "grade": "warn",
+      "score": 82,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -5210,16 +5466,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 3
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
       "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[8].label: golden_rule.rows[8].label cita a letra da alternativa — gabarito só no logic_flow.",
         "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 8 itens (máx. recomendado 6) — o aluno não lê tudo."
       ]
     },
@@ -5452,10 +5705,10 @@
     },
     {
       "slug": "questao-premium-vunesp-respiratorio-crise-asmatica-exceto",
-      "grade": "fail",
-      "score": 75,
+      "grade": "pass",
+      "score": 100,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 1,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -5464,17 +5717,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 0
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
         "evidence_literal": false
       },
-      "reasons": [
-        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[4].value: golden_rule.rows[4].value cita a letra da alternativa — gabarito só no logic_flow."
-      ]
+      "reasons": []
     },
     {
       "slug": "questao-premium-vunesp-saude-mental-biopsicossocial",
@@ -5538,7 +5787,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": false
+        "evidence_literal": true
       },
       "reasons": [
         "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 7 linhas (máx. recomendado 6) — o aluno não lê tudo."
@@ -5568,10 +5817,10 @@
     },
     {
       "slug": "questao-premium-vunesp-via-subcutanea",
-      "grade": "fail",
-      "score": 7,
+      "grade": "warn",
+      "score": 82,
       "signature_counts": {
-        "pedagogy_letter_spoiler": 3,
+        "pedagogy_letter_spoiler": 0,
         "pedagogy_vf_verdict_spoiler": 0,
         "pedagogy_question_bound_label": 0,
         "pedagogy_logic_padding": 0,
@@ -5580,16 +5829,13 @@
         "pedagogy_logic_missing_gabarito": 0,
         "pedagogy_density": 3
       },
-      "blocking_codes": [
-        "pedagogy_letter_spoiler"
-      ],
+      "blocking_codes": [],
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": false
+        "evidence_literal": true
       },
       "reasons": [
-        "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow.",
         "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
       ]
     },
@@ -5665,7 +5911,7 @@
       "blind_reader": {
         "verdict": "pass_indeterminate",
         "gabarito": "indeterminavel",
-        "evidence_literal": true
+        "evidence_literal": false
       },
       "reasons": [
         "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
@@ -5725,10 +5971,10 @@
     }
   ],
   "pedagogical_summary": {
-    "total": 165,
-    "fail": 50,
-    "warn": 19,
-    "pass": 96,
-    "avg_score": 86.6
+    "total": 175,
+    "fail": 26,
+    "warn": 34,
+    "pass": 115,
+    "avg_score": 93
   }
 }

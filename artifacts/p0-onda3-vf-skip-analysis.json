@@ -1,0 +1,198 @@
+{
+  "generated_at": "2026-08-01T23:35:29.273Z",
+  "report": [
+    {
+      "lote": "sinais-vitais-completo",
+      "files": 527,
+      "vf": 31,
+      "letter": 8,
+      "wouldChange": 0,
+      "edits": 0,
+      "skipped": 31,
+      "skipReasons": {
+        "remainder_too_short": 29,
+        "remainder_still_spoils": 2
+      },
+      "skipSamples": [
+        {
+          "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-0",
+          "reason": "remainder_too_short",
+          "text": "Falsa: I."
+        },
+        {
+          "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-0",
+          "reason": "remainder_too_short",
+          "text": "Falsa: II."
+        },
+        {
+          "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-0",
+          "reason": "remainder_too_short",
+          "text": "Falsa: IV."
+        },
+        {
+          "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-0",
+          "reason": "remainder_too_short",
+          "text": "Verdadeira: V."
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-4",
+          "reason": "remainder_too_short",
+          "text": "Verdadeira: Dor"
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-3",
+          "reason": "remainder_too_short",
+          "text": "Verdadeira: Dor"
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-3",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 1."
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-3",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 2."
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-3",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 3."
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-3",
+          "reason": "remainder_too_short",
+          "text": "Verdadeira: 4."
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-3",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 5."
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 1."
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+          "reason": "remainder_too_short",
+          "text": "Verdadeira: 2."
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 3."
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 4."
+        }
+      ]
+    },
+    {
+      "lote": "vias-de-administracao-completo",
+      "files": 235,
+      "vf": 10,
+      "letter": 0,
+      "wouldChange": 0,
+      "edits": 0,
+      "skipped": 10,
+      "skipReasons": {
+        "remainder_too_short": 10
+      },
+      "skipSamples": [
+        {
+          "slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+          "reason": "remainder_too_short",
+          "text": "Falsa: VO."
+        },
+        {
+          "slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+          "reason": "remainder_too_short",
+          "text": "Falsa: IM."
+        },
+        {
+          "slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+          "reason": "remainder_too_short",
+          "text": "Falsa: IV."
+        },
+        {
+          "slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+          "reason": "remainder_too_short",
+          "text": "Falsa: SC."
+        },
+        {
+          "slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+          "reason": "remainder_too_short",
+          "text": "Verdadeira: HD."
+        },
+        {
+          "slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056409987-2",
+          "reason": "remainder_too_short",
+          "text": "Falsa: IM."
+        },
+        {
+          "slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-1",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 15°"
+        },
+        {
+          "slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-1",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 25°"
+        },
+        {
+          "slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-1",
+          "reason": "remainder_too_short",
+          "text": "Verdadeira: 45°"
+        },
+        {
+          "slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-1",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 90°"
+        }
+      ]
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "files": 188,
+      "vf": 5,
+      "letter": 0,
+      "wouldChange": 0,
+      "edits": 0,
+      "skipped": 5,
+      "skipReasons": {
+        "remainder_too_short": 5
+      },
+      "skipSamples": [
+        {
+          "slug": "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 1."
+        },
+        {
+          "slug": "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 2."
+        },
+        {
+          "slug": "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 3."
+        },
+        {
+          "slug": "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+          "reason": "remainder_too_short",
+          "text": "Verdadeira: 4."
+        },
+        {
+          "slug": "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+          "reason": "remainder_too_short",
+          "text": "Falsa: 6."
+        }
+      ]
+    }
+  ]
+}

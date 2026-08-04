@@ -1,7 +1,8 @@
 # Relatório nota-10 — `<PACOTE_PREFIX>`
 
 > Copiar para `artifacts/<pacote_prefix>-nota10-report.md` quando o ambiente permitir escrever em `artifacts/`.  
-> Programa: [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](PROMPT_PROGRAMA_COMPLETO_IDE.md) · DoD: [`PROGRAMA_COMPLETO_IDE_DOD.md`](PROGRAMA_COMPLETO_IDE_DOD.md)
+> Programa: [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](PROMPT_PROGRAMA_COMPLETO_IDE.md) · DoD: [`PROGRAMA_COMPLETO_IDE_DOD.md`](PROGRAMA_COMPLETO_IDE_DOD.md)  
+> **Fábrica Onda 3** (já `production_ready`, nota-10 visual): checklist Camada 7 em [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) · prompt [`PROMPT_FABRICA_VISUAL_G2.md`](PROMPT_FABRICA_VISUAL_G2.md). Não confundir com Strategy Onda 3 (Imu EXCETO).
 
 | Campo | Valor |
 |-------|--------|
@@ -29,6 +30,7 @@
 | Apply Supabase | 100% | | ☐ |
 | Barra conteúdo | verde | | ☐ |
 | Barra visual | verde | | ☐ |
+| Camada 7 Fábrica (se Onda 3) | gesto + print→primitivo + Playwright/captures | | ☐ / N/A |
 
 ---
 

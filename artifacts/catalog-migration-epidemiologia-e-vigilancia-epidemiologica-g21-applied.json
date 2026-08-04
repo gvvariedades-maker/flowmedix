@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:59:21.113Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g21",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-6",
+    "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-6",
+    "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-3",
+    "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-4",
+    "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-5",
+    "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-0",
+    "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-1",
+    "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

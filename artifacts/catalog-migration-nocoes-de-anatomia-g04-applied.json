@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T22:56:48.771Z",
+  "lote": "nocoes-de-anatomia-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fauel-enfermagem-nocoes-de-anatomia-1775447834740-7",
+    "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+    "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+    "fepese-enfermagem-nocoes-de-anatomia-1775448491347-7",
+    "fepese-enfermagem-nocoes-de-anatomia-1775448514037-1",
+    "fgv-enfermagem-nocoes-de-anatomia-1775447762008-4",
+    "fgv-enfermagem-nocoes-de-anatomia-1775448475837-7",
+    "fgv-enfermagem-nocoes-de-anatomia-1775448491347-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fauel-enfermagem-nocoes-de-anatomia-1775447834740-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775448491347-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775448514037-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775447762008-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448475837-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

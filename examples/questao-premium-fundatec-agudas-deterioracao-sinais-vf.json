@@ -91,7 +91,7 @@
         },
         {
           "label": "Esperar médico",
-          "value": "Falso — comunicar imediatamente",
+          "value": "Comunicar imediatamente",
           "emphasis": "alert",
           "badge": "warn"
         }

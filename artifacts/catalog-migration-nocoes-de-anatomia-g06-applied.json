@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-08-03T22:57:08.360Z",
+  "lote": "nocoes-de-anatomia-g06",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ibade-enfermagem-nocoes-de-anatomia-1775447762008-1",
+    "ibade-enfermagem-nocoes-de-anatomia-1775448275334-1",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-1",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-2",
+    "idecan-enfermagem-nocoes-de-anatomia-1778712122855-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775448275334-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-anatomia-1778712122855-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

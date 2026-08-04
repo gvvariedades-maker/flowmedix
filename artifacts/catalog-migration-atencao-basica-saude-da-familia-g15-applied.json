@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T22:48:00.167Z",
+  "lote": "atencao-basica-saude-da-familia-g15",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igecap-enfermagem-processo-de-enfermagem-1780004452857-0",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-3",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-6",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-7",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-0",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-2",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

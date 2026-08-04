@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-02T07:47:57.887Z",
+  "lote": "atencao-basica-saude-da-familia-g11",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundep-enfermagem-atencao-basica-saude-da-familia-1778968194611-8",
+    "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-1",
+    "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-2",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-5",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-6",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-7",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-8",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundep-enfermagem-atencao-basica-saude-da-familia-1778968194611-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

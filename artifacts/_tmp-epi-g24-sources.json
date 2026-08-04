@@ -1,0 +1,253 @@
+[
+  {
+    "file": "quadrix-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-0.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "A notificação compulsória é a comunicação obrigatória acerca de doença, agravo ou evento de saúde pública à autoridade de saúde, podendo ser realizada pordiversos profissionais de saúde ou responsáveis pelos estabelecimentos de saúde, públicos ou privados. A notificação facilita a identificação de surtos e também ocronograma organizacional para a reparação das ocorrências. Considerando essas informações, assinale a alternativa que apresenta doenças/agravos de notificaçãoimediata.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "síndrome respiratória aguda grave (SRAG), associada a coronavírus, tuberculose e violência doméstica",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "esquistossomose, cólera e doença aguda pelo vírus da Zika",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "leishmaniose visceral, malária e poliomielite",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "botulismo, cólera e óbitos por dengue",
+        "ok": true
+      },
+      {
+        "id": "E",
+        "text": "hanseníase, hantavirose e dengue",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "D: botulismo, cólera e óbitos por dengue"
+    ]
+  },
+  {
+    "file": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-8.json",
+    "family": "certo_errado",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "No âmbito da saúde coletiva, as doenças de notificação compulsória (DNC) representam condições de elevada relevância epidemiológica e, por isso, demandam‐se a identificação precoce, a notificação imediata e a adoção de medidas de vigilância e controle. Considerando essa informação, bem como o papel da enfermagem e dos serviços de saúde na detecção, na investigação e na prevenção dessas doenças, julgue o item a seguir.\nO tétano, o qual é uma doença bacteriana causada por Clostridium tetani, consiste em uma DNC, todavia a notificação é obrigatória apenas nos casos de tétano neonatal, dispensando, assim, a notificação em adultos.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certo",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Errado",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "B: Errado"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-8.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "A Norma Operacional Básica do SUS de 1996 (NOB/SUS 96) trouxe avanços importantes na gestão do Sistema Único de Saúde. Sobre suas disposições, é corretoafirmar que a NOB/SUS 96:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "eliminou a possibilidade de municípios assumirem a gestão do sistema local, concentrando a administração nos estados",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "instituiu a Programação Pactuada e Integrada (PPI), visando à regionalização e à hierarquização da assistência",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "estabeleceu que o financiamento da Atenção Básica deveria ser realizado exclusivamente com recursos estaduais",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "extinguiu as modalidades de gestão plena e avançada, criando apenas a gestão federalizada",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: instituiu a Programação Pactuada e Integrada (PPI), visando à regionalização e à hierarquização da assistência"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-7.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Uma técnica de enfermagem em uma Unidade Básica de Saúde (UBS) atende um paciente de 25 anos com febre alta, cefaleia intensa, rigidez de nuca e vômitoshá 24 horas. A suspeita diagnóstica levantada pela equipe é de meningite meningocócica. Por se tratar de uma situação que se baseia na vigilância epidemiológica e nalegislação sanitária brasileira, a equipe deve:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "realizar a notificação compulsória apenas após confirmação laboratorial do caso",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "aguardar a evolução clínica para registrar no sistema de notificação, pois a suspeita não é o suficiente",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "realizar notificação compulsória imediata, devendo ser comunicada em até 24 horas após a suspeita",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "aguardar, pois a notificação compulsória é de responsabilidade exclusiva do médico, não cabendo ao técnico de enfermagem qualquer ação",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: realizar notificação compulsória imediata, devendo ser comunicada em até 24 horas após a suspeita"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-7.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "A notificação compulsória deve ser realizada por meio do Sistema de Informação de Agravos de Notificação (Sinan), que é alimentado, principalmente, pelanotificação e investigação de casos de doenças e agravos que constam da lista nacional de doenças de notificação compulsória, como por exemplo o/a:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "hipertensão",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "diabetes tipo I",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "fibrose cística",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "acidente de trabalho",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: acidente de trabalho"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-7.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "A notificação compulsória, no contexto da vigilância epidemiológica em saúde, é uma prática essencial para o controle de doenças e agravos. A respeito dela,pode-se afirmar que:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "deve ser realizada apenas em casos de surtos ou epidemias, não sendo necessária em situações isoladas ou para doenças endêmicas",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "é uma prática obrigatória apenas para doenças com alta taxa de mortalidade e sua realização é de responsabilidade exclusiva dos profissionais médicos",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "o não cumprimento da notificação compulsória por parte dos profissionais de saúde é uma prática aceitável, desde que o caso não represente risco significativopara a saúde pública ou para a comunidade",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "é um instrumento legal que visa a identificar, monitorar e controlar doenças e agravos à saúde, sendo obrigatória para todos os profissionais de saúde, incluindomédicos, enfermeiros e outros membros da equipe de saúde",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: é um instrumento legal que visa a identificar, monitorar e controlar doenças e agravos à saúde, sendo obrigatória para todos os profissionais de saúde, incluindomédicos, enfermeiros e outros membros da equipe de saúde"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-8.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Em uma unidade de saúde de uma cidade de médio porte, um enfermeiro está conduzindo um estudo epidemiológico sobre a ocorrência de doenças respiratóriasem crianças menores de 5 anos. Durante um período de 12 meses, ele registra 120 casos de doenças respiratórias entre 1.000 crianças dessa faixa etária cadastradas naunidade de saúde. Com base nesse cenário, a medida epidemiológica mais adequada para descrever a proporção de crianças que apresentaram doenças respiratóriasdurante o ano é:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "incidência, pois reflete o número de novos casos de doenças respiratórias entre as crianças durante o período de estudo",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "taxa de mortalidade, pois indica o número de óbitos em crianças menores de 5 anos por doenças respiratórias no período",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "prevalência, pois descreve a proporção de crianças que apresentaram doenças respiratórias em relação ao total de crianças da população durante o período deestudo",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "risco relativo, pois compara a ocorrência de doenças respiratórias em diferentes grupos de crianças com características diferentes, mas suscetíveis aos mesmosdeterminantes",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: prevalência, pois descreve a proporção de crianças que apresentaram doenças respiratórias em relação ao total de crianças da população durante o período deestudo"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-0.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "O tempo decorrido entre a infecção e o aparecimento ou a detecção de um marcador da infecção é chamado de janela:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "primo-infecção",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "transdisciplinar",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "terapêutica",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "diagnóstica",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: diagnóstica"
+    ]
+  }
+]

@@ -92,7 +92,7 @@
         },
         {
           "label": "Dispensar asséptica",
-          "value": "Falso — tempo não importa",
+          "value": "Tempo não importa",
           "emphasis": "alert",
           "badge": "warn"
         }

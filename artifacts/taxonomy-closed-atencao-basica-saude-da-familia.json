@@ -1,0 +1,14 @@
+{
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "pacote_prefix": "atencao-basica-saude-da-familia",
+  "status": "closed",
+  "catch_all_mode": null,
+  "closed_at": "2026-08-01",
+  "inventory_snapshot": "artifacts/subtopico-inventory-audit.json",
+  "mismatch_count": 0,
+  "total_scanned": 171,
+  "manifest_slugs": 171,
+  "reclassified": false,
+  "signed_by": "audit:taxonomy-gate",
+  "notes": "Inventário ok, mas taxonomy.status ainda não é closed no registry. Handcraft permitido; fechar com npm run audit:taxonomy-gate -- --write-closed após validar."
+}

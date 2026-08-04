@@ -117,12 +117,6 @@
           "label": "Oxigênio",
           "value": "Suplementar se prescrito — monitorar",
           "badge": "ok"
-        },
-        {
-          "label": "Gabarito EXCETO",
-          "value": "Letra E — não restringir hidratação",
-          "emphasis": "success",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Crise: broncodilatador inalatório é primeira linha"

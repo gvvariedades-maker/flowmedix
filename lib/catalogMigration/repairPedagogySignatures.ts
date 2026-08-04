@@ -69,9 +69,10 @@ export type PedagogyRepairResult = {
 
 /**
  * Cláusula que julga alternativa por letra (`C erra ao dizer…`, `E é conduta correta`).
- * Sem `\b` final: `é` não é caractere de palavra em JS e a borda nunca casaria.
+ * Exige espaço após a letra: `\s*` casava `Déficit` (D + é sem espaço — `\b` ASCII
+ * trata `é` como não-palavra). Lookbehind evita FP `°C está` / `ºC estão`.
  */
-const LETTER_CLAUSE_RE = /\b[A-E]\b\s*(é|erra|erram|está|estão|são)/;
+const LETTER_CLAUSE_RE = /(?<![°º])\b[A-E]\b\s+(é|erra|erram|está|estão|são)/;
 const LETTER_NAMED_RE = /letra\s+[A-E]\b/i;
 
 /** Travessão com espaços — separador de cláusula usado nos goldens. */
@@ -90,21 +91,53 @@ const FIXACAO_STEP_RE = /^Fixa[çc][aã]o:/i;
 const LOGIC_GABARITO_RE = /marcar|gabarito|letra\s+[A-E]/i;
 
 /** Card pré-resposta que anuncia o gabarito (bucket ~39 do leitor cego). */
-const GABARITO_CARD_LABEL_RE = /^gabarito(?:\s*[|:—–-].*)?$/i;
+const GABARITO_CARD_LABEL_RE = /^gabarito\b/i;
 const LETRA_CARD_LABEL_RE = /^letra\s+[A-E]\b/i;
+/** Rótulo puro “Letra A” (Vias reference_table) — relabel, não remoção. */
+const PURE_LETRA_LABEL_RE = /^letra\s+[A-E]\s*$/i;
+/** Board que enumera alternativas no golden (Imunização calendário etc.). */
+const ALTERNATIVA_LABEL_RE = /^alternativa\s+[A-E]\b/i;
+/** Prefixo “Letra C — ensino…” no value/detail. */
+const LEADING_LETRA_DASH_RE = /^letra\s+[A-E]\s*[—–:|-]\s*/i;
 
 /** Sufixos que entregam a letra sem ser a cláusula `— A é…` da truncagem. */
 const NUCLEO_LETRA_SUFFIX_RE = /\s*N[uú]cleo da letra\s+[A-E]\.?\s*$/i;
 const GABARITO_LETRA_SUFFIX_RE =
   /\s*(?:Gabarito\s*(?:letra\s+)?[A-E]\b|Gabarito\s*[|:—–-]\s*Letra\s+[A-E]\b)[^.]*\.?\s*$/i;
-const ARROW_LETRA_SUFFIX_RE = /\s*→\s*letra\s+[A-E]\b\.?\s*$/i;
+const ARROW_LETRA_SUFFIX_RE = /\s*(?:→|⇒|->|=>)\s*letra\s+[A-E]\b\.?\s*$/i;
 const NA_LETRA_DASH_TAIL_RE = /\s+[—–]\s+[^.]*\bletra\s+[A-E]\b[^.]*\.?\s*$/i;
+/** Conteúdo inteiro “GABARITO: Letra B — Certo/Errado”. */
+const GABARITO_CONTENT_LINE_RE =
+  /^gabarito\s*:\s*letra\s+[A-E]\b(?:\s*[—–:|-]\s*(.+))?$/i;
+/** Cauda “: Letra A — ensino” no meio/fim do content. */
+const COLON_LETRA_DASH_RE = /\s*:\s*letra\s+[A-E]\s*[—–:|-]\s*/i;
+/** Footer “antes de confirmar letra D”. */
+const CONFIRMAR_LETRA_TAIL_RE = /\s*(?:antes de\s+)?confirmar letra\s+[A-E]\.?$/i;
+/** Value/detail que é só a letra. */
+const PURE_LETRA_VALUE_RE = /^letra\s+[A-E]\s*$/i;
+/** Label tipo “Combinação — gabarito”. */
+const LABEL_ENDS_GABARITO_RE = /[—–-]\s*gabarito\s*$/i;
+
+/** exam_hint que só aponta gabarito/letra (julgamento, não ensino). */
+const EXAM_HINT_LETTER_JUDGMENT_RE =
+  /^(?:letra\s+[A-E]\b|gabarito(?:\s*letra)?\s*[A-E]?\b)/i;
 
 /** Piso de texto restante — abaixo disso a truncagem viraria frase sem ensino. */
 const MIN_KEPT_CHARS = 20;
 const MIN_KEPT_WORDS = 3;
+/** Piso mais baixo após cortar sufixo/prefixo de letra (fórmulas I/II/III, sítios curtos, Certo/Errado). */
+const MIN_STRIP_CHARS = 4;
+const MIN_STRIP_WORDS = 1;
 const MIN_STEPS_AFTER = 3;
 const MIN_PRE_ANSWER_ITEMS = 2;
+
+/** Resto numérico típico de Cálculo (“Letra C — 80.” → “80.”) — ensino é o valor. */
+const NUMERIC_ANSWER_RE =
+  /^\d+([.,]\d+)?(\s*(m[lL]|UI|ui|mg|g|kg|%|gotas?|microgotas?|mcg|µg|ui\/m[lL]|m[lL]\/h))?\.?$/;
+
+/** Frase que só aponta a letra (“A letra A troca o dígito…”). */
+const LETTER_POINTING_SENTENCE_RE =
+  /(?:^|(?<=[.!?…]\s))[^.!?…]*\bletra\s+[A-E]\b[^.!?…]*(?:[.!?…]|$)/gi;
 
 const ITEM_KEYS = ['label', 'detail', 'correct'] as const;
 const ROW_KEYS = ['label', 'value', 'exam_hint', 'fixation'] as const;
@@ -220,7 +253,25 @@ export function repairLetterTruncationInPayload(payload: RepairPayload): Pedagog
 
   for (const surface of preAnswerSurfaces(payload)) {
     const cut = splitTrailingClause(surface.text);
-    if (!cut) continue;
+    if (!cut) {
+      // exam_hint de julgamento: `B erra…`, `Letra B — …`, `Gabarito A — …`.
+      if (
+        surface.key === 'exam_hint' &&
+        (spoilsByLetter(surface.text) || EXAM_HINT_LETTER_JUDGMENT_RE.test(surface.text.trim()))
+      ) {
+        surface.set('');
+        edits.push({
+          kind: 'letter_truncation',
+          action: 'rewrite',
+          path: surface.path,
+          slide: surface.slide,
+          key: surface.key,
+          before: surface.text,
+          after: '',
+        });
+      }
+      continue;
+    }
 
     const { kept } = cut;
     const base = {
@@ -262,6 +313,8 @@ export function repairLetterTruncationInPayload(payload: RepairPayload): Pedagog
  * Corta no último travessão quando a cauda julga alternativa por letra, mas só a partir
  * da frase que julga: `"… por sítio — não doses grandes. D erra ao falar em doses grandes."`
  * mantém `"… por sítio — não doses grandes."`.
+ *
+ * Também corta frases finais `A erra…` / `B erra…` sem travessão (exam_hint / trilho).
  */
 function splitTrailingClause(text: string): { kept: string } | null {
   const separators: { index: number; length: number }[] = [];
@@ -271,19 +324,26 @@ function splitTrailingClause(text: string): { kept: string } | null {
     separators.push({ index: match.index, length: match[0].length });
     match = DASH_SEPARATOR_RE.exec(text);
   }
-  if (separators.length === 0) return null;
+  if (separators.length > 0) {
+    const last = separators[separators.length - 1];
+    const before = text.slice(0, last.index).trim();
+    const dash = text.slice(last.index, last.index + last.length).trim();
+    const tail = text.slice(last.index + last.length).trim();
 
-  const last = separators[separators.length - 1];
-  const before = text.slice(0, last.index).trim();
-  const dash = text.slice(last.index, last.index + last.length).trim();
-  const tail = text.slice(last.index + last.length).trim();
+    const sentences = tail.split(SENTENCE_SPLIT_RE);
+    const judgingAt = sentences.findIndex((s) => LETTER_CLAUSE_RE.test(s));
+    if (judgingAt >= 0) {
+      const keptTail = sentences.slice(0, judgingAt).join(' ').trim();
+      return { kept: keptTail ? `${before} ${dash} ${keptTail}` : before };
+    }
+  }
 
-  const sentences = tail.split(SENTENCE_SPLIT_RE);
+  const sentences = text.split(SENTENCE_SPLIT_RE).map((s) => s.trim()).filter(Boolean);
+  if (sentences.length < 2) return null;
   const judgingAt = sentences.findIndex((s) => LETTER_CLAUSE_RE.test(s));
-  if (judgingAt < 0) return null;
-
-  const keptTail = sentences.slice(0, judgingAt).join(' ').trim();
-  return { kept: keptTail ? `${before} ${dash} ${keptTail}` : before };
+  if (judgingAt <= 0) return null;
+  const kept = sentences.slice(0, judgingAt).join(' ').trim();
+  return kept ? { kept } : null;
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
@@ -379,7 +439,27 @@ export function repairVfLabelsInPayload(payload: RepairPayload): PedagogyRepairR
 
     if (VF_VERDICT_PREFIX_RE.test(surface.text)) {
       const remainder = surface.text.replace(VF_VERDICT_PREFIX_RE, '').trim();
-      if (remainder.length < MIN_KEPT_CHARS || wordCount(remainder) < MIN_KEPT_WORDS) {
+      // Board VF: chips curtos ("I.", "Dor", "15°", "VO.") ainda ensinam o conteúdo do card.
+      // Label puro "Falsa"/"Verdadeira" (resto vazio) → relabel neutro; value/detail vazio → skip.
+      if (remainder.length === 0) {
+        if (surface.key === 'label') {
+          const next = 'Proposição';
+          surface.set(next);
+          edits.push({
+            kind: 'vf_label',
+            action: 'rewrite',
+            path: surface.path,
+            slide: surface.slide,
+            key: surface.key,
+            before: surface.text,
+            after: next,
+          });
+        } else {
+          skipped.push({ ...base, reason: 'remainder_too_short' });
+        }
+        continue;
+      }
+      if (wordCount(remainder) < 1) {
         skipped.push({ ...base, reason: 'remainder_too_short' });
         continue;
       }
@@ -432,18 +512,115 @@ export function repairVfLabelsInPayload(payload: RepairPayload): PedagogyRepairR
  * #4 — card/sufixo Gabarito no pré-resposta
  * ──────────────────────────────────────────────────────────────────────────── */
 
+/** Rótulo que só anuncia o gabarito (sem conceito útil no chip). */
+function isGabaritoOnlyLabel(label: string): boolean {
+  const L = label.trim().replace(/[.]+$/, '');
+  if (GABARITO_CARD_LABEL_RE.test(L)) return true;
+  // “Letra B — gabarito” / “Letra C (gabarito)”
+  if (LETRA_CARD_LABEL_RE.test(L) && /\bgabarito\b/i.test(L)) return true;
+  if (LABEL_ENDS_GABARITO_RE.test(L)) return true;
+  return false;
+}
+
+/** Value que, após tirar `→ letra X`, sobra só romano / travessão / vazio. */
+function isLetterOnlyValue(value: string): boolean {
+  const v = value.trim();
+  if (PURE_LETRA_VALUE_RE.test(v)) return true;
+  if (!ARROW_LETRA_SUFFIX_RE.test(v) && !LEADING_LETRA_DASH_RE.test(v)) return false;
+  const stripped = v
+    .replace(LEADING_LETRA_DASH_RE, '')
+    .replace(ARROW_LETRA_SUFFIX_RE, '')
+    .trim()
+    .replace(/^['"“”]+|['"“”]+$/g, '');
+  if (stripped.length === 0) return true;
+  if (/^(I{1,3}|IV|V|VI{0,3}|IX|X)$/i.test(stripped)) return true;
+  if (/^[—–-]+$/.test(stripped)) return true;
+  // “Letra C — 80.” / “2,0 mL” — valor numérico é ensino (Cálculo), não card vazio.
+  if (NUMERIC_ANSWER_RE.test(stripped)) return false;
+  if (stripped.length < MIN_STRIP_CHARS) return true;
+  return false;
+}
+
 function isGabaritoCard(label: string, detail: string): boolean {
   const L = label.trim();
+  // “Gabarito da Questão” / “Gabarito” — remover (ensino fica no logic_flow).
   if (GABARITO_CARD_LABEL_RE.test(L)) return true;
+  // “Letra A” puro com ensino no value → relabel (não remoção).
+  if (PURE_LETRA_LABEL_RE.test(L)) return false;
+  // “Letra B — gabarito” / “Combinação — gabarito” que não foi relabelado.
+  if (LETRA_CARD_LABEL_RE.test(L) && /\bgabarito\b/i.test(L)) return true;
+  if (LABEL_ENDS_GABARITO_RE.test(L) && (isLetterOnlyValue(detail) || spoilsByLetter(detail))) {
+    return true;
+  }
   if (LETRA_CARD_LABEL_RE.test(L) && (/gabarito/i.test(detail) || LETTER_NAMED_RE.test(detail))) {
     return true;
   }
+  // Row “Resposta final” | “Letra A” ou “I → letra A”
+  if (isLetterOnlyValue(detail) && /resposta|gabarito|correta|certa|combina/i.test(L)) {
+    return true;
+  }
+  if (isLetterOnlyValue(detail)) return true;
   return false;
+}
+
+/**
+ * Chip semântico a partir do value — evita label “Letra A” / “Alternativa B (Correta)”.
+ * Conservador: se o resto ainda spoilar ou for curto demais, devolve null.
+ */
+function deriveChipFromValue(value: string): string | null {
+  let t = value.trim().replace(LEADING_LETRA_DASH_RE, '').trim();
+  t = t.replace(/^['"“”]+|['"“”]+$/g, '').trim();
+  // Boards VF: “Falsa: Enteral” / “Verdadeira — Endovenosa” não podem virar o chip.
+  t = t.replace(/^(falsa|verdadeira|falso|verdadeiro)\b[\s.:;,—–-]*/i, '').trim();
+  // Preferir o núcleo antes de travessão explicativo (“9 meses — Idade recomendada…”).
+  const head = (t.split(/\s+[—–]\s+/)[0] ?? t).trim();
+  let chip = head.replace(/^(o|a|os|as|um|uma)\s+/i, '').trim();
+  if (chip.length > 48) {
+    chip = chip.slice(0, 48).replace(/\s+\S*$/, '').trim();
+  }
+  chip = chip.replace(/[.]+$/, '').trim();
+  if (chip.length < 3 || wordCount(chip) < 1) return null;
+  if (spoilsByLetter(chip)) return null;
+  if (/^(falsa|verdadeira|falso|verdadeiro)\b/i.test(chip)) return null;
+  return upperFirst(chip);
+}
+
+function polarityFallbackLabel(row: Record<string, unknown>): string {
+  const badge = String(row.badge ?? '');
+  const emphasis = String(row.emphasis ?? '');
+  if (badge === 'ok' || badge === 'hot' || emphasis === 'highlight' || emphasis === 'success') {
+    return 'Referência';
+  }
+  if (badge === 'warn' || badge === 'alert' || emphasis === 'alert') return 'Pegadinha';
+  return 'Item';
 }
 
 function stripGabaritoSuffix(text: string): string | null {
   let next = text;
   let changed = false;
+
+  const gabaritoLine = next.match(GABARITO_CONTENT_LINE_RE);
+  if (gabaritoLine) {
+    const tail = (gabaritoLine[1] ?? '').trim();
+    // “GABARITO: Letra B — Errado” → “Errado”; linha só com letra → sinaliza remoção via ''.
+    next = tail;
+    changed = true;
+  }
+
+  if (LEADING_LETRA_DASH_RE.test(next)) {
+    next = next.replace(LEADING_LETRA_DASH_RE, '').trim();
+    changed = true;
+  }
+
+  if (COLON_LETRA_DASH_RE.test(next)) {
+    next = next.replace(COLON_LETRA_DASH_RE, ': ').replace(/:\s*$/, '').trim();
+    changed = true;
+  }
+
+  if (CONFIRMAR_LETRA_TAIL_RE.test(next)) {
+    next = next.replace(CONFIRMAR_LETRA_TAIL_RE, '').trim();
+    changed = true;
+  }
 
   // Parentéticos em qualquer posição — evita deixar "(" pendente.
   const parenRe =
@@ -466,6 +643,15 @@ function stripGabaritoSuffix(text: string): string | null {
   }
 
   next = next.replace(/\(\s*$/, '').trim().replace(/\s{2,}/g, ' ');
+
+  // Frases que só apontam a letra (“A letra A troca o dígito…”) — ensino fica no logic_flow.
+  if (LETTER_POINTING_SENTENCE_RE.test(next)) {
+    LETTER_POINTING_SENTENCE_RE.lastIndex = 0;
+    next = next.replace(LETTER_POINTING_SENTENCE_RE, ' ').replace(/\s{2,}/g, ' ').trim();
+    changed = true;
+  }
+
+  if (changed) next = upperFirst(next.replace(/^['"“”]+|['"“”]+$/g, '').trim());
   return changed ? next : null;
 }
 
@@ -482,6 +668,48 @@ export function repairGabaritoItemInPayload(payload: RepairPayload): PedagogyRep
   for (const slide of slidesOfPayload(payload)) {
     const type = String(slide.type ?? '');
     if (!PRE_ANSWER_SLIDES.has(type)) continue;
+
+    // Relabel “Letra A” / “Alternativa B” / “Letra B — gabarito” → chip do value.
+    if (Array.isArray(slide.rows)) {
+      slide.rows.forEach((raw, idx) => {
+        if (!raw || typeof raw !== 'object') return;
+        const row = raw as Record<string, unknown>;
+        const label = typeof row.label === 'string' ? row.label.trim() : '';
+        const value = typeof row.value === 'string' ? row.value : '';
+        // “Gabarito da Questão” não vira chip — remoção abaixo.
+        if (GABARITO_CARD_LABEL_RE.test(label)) return;
+        const needsRelabel =
+          PURE_LETRA_LABEL_RE.test(label) ||
+          ALTERNATIVA_LABEL_RE.test(label) ||
+          (LETRA_CARD_LABEL_RE.test(label) && /\bgabarito\b/i.test(label)) ||
+          LABEL_ENDS_GABARITO_RE.test(label);
+        if (!needsRelabel) return;
+
+        const chip = deriveChipFromValue(value) ?? polarityFallbackLabel(row);
+        if (spoilsByLetter(chip) || isGabaritoOnlyLabel(chip)) {
+          skipped.push({
+            kind: 'gabarito_item',
+            path: `${type}.rows[${idx}].label`,
+            slide: type,
+            key: 'label',
+            text: label,
+            reason: 'remainder_still_spoils',
+          });
+          return;
+        }
+        if (chip === label) return;
+        edits.push({
+          kind: 'gabarito_item',
+          action: 'rewrite',
+          path: `${type}.rows[${idx}].label`,
+          slide: type,
+          key: 'label',
+          before: label,
+          after: chip,
+        });
+        row.label = chip;
+      });
+    }
 
     // Remoção de cards — de trás pra frente, para o índice do path bater com o array original.
     if (Array.isArray(slide.items)) {
@@ -575,16 +803,61 @@ export function repairGabaritoItemInPayload(payload: RepairPayload): PedagogyRep
       text: surface.text,
     };
 
-    const minWords = surface.key === 'label' ? 1 : MIN_KEPT_WORDS;
-    const minChars = surface.key === 'label' ? 3 : MIN_KEPT_CHARS;
-    if (stripped.length < minChars || wordCount(stripped) < minWords) {
+    // Content que era só “GABARITO: Letra X” → limpar (schema aceita content opcional com rows).
+    if (surface.key === 'content' && stripped.length === 0) {
+      surface.set('');
+      edits.push({
+        kind: 'gabarito_item',
+        action: 'rewrite',
+        path: surface.path,
+        slide: surface.slide,
+        key: surface.key,
+        before: surface.text,
+        after: '',
+      });
+      continue;
+    }
+
+    const useStripFloor =
+      surface.key === 'label' ||
+      surface.key === 'value' ||
+      surface.key === 'detail' ||
+      surface.key === 'content' ||
+      surface.key === 'footer_rule' ||
+      surface.key === 'exam_hint';
+    const minWords = useStripFloor ? MIN_STRIP_WORDS : MIN_KEPT_WORDS;
+    const minChars = useStripFloor ? MIN_STRIP_CHARS : MIN_KEPT_CHARS;
+    const numericOk = NUMERIC_ANSWER_RE.test(stripped);
+    if (
+      !numericOk &&
+      (stripped.length < minChars || wordCount(stripped) < minWords)
+    ) {
+      if (surface.key === 'exam_hint') {
+        surface.set('');
+        edits.push({
+          kind: 'gabarito_item',
+          action: 'rewrite',
+          path: surface.path,
+          slide: surface.slide,
+          key: surface.key,
+          before: surface.text,
+          after: '',
+        });
+        continue;
+      }
+      skipped.push({ ...base, reason: 'remainder_too_short' });
+      continue;
+    }
+    // Não criar label “Gabarito.” a partir de “Letra B — gabarito” (quebra idempotência).
+    if (surface.key === 'label' && isGabaritoOnlyLabel(stripped)) {
       skipped.push({ ...base, reason: 'remainder_too_short' });
       continue;
     }
     // Se ainda sobrar spoiler de letra (`— A erra…`), a truncagem (#1) limpa o resto.
     // Aplicar o sufixo mesmo assim — progresso parcial é melhor que pular.
 
-    const next = closeSentence(stripped);
+    const next =
+      surface.key === 'content' && stripped.length < 12 ? stripped : closeSentence(stripped);
     if (next === surface.text) continue;
 
     surface.set(next);

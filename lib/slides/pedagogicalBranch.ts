@@ -153,6 +153,27 @@ export type PedagogicalBranchId =
   | 'sae_etapas'
   | 'sae_exceto'
   | 'sae_generico'
+  // Atenção Básica / Saúde da Família
+  | 'ab_acs_territorio'
+  | 'ab_esf_composicao'
+  | 'ab_pnab_principios'
+  | 'ab_te_aps'
+  | 'ab_vigilancia_ads'
+  | 'ab_generico'
+  // Epidemiologia e Vigilância Epidemiológica
+  | 'epi_notificacao_compulsoria'
+  | 'epi_indicadores'
+  | 'epi_ocorrencia_agravos'
+  | 'epi_vigilancia_acoes'
+  | 'epi_cadeia_transmissao'
+  | 'epi_generico'
+  // Noções de Anatomia
+  | 'anat_terminologia_planos'
+  | 'anat_esqueleto'
+  | 'anat_muscular'
+  | 'anat_cardiovascular'
+  | 'anat_cavidades'
+  | 'anat_generico'
   // História da Enfermagem
   | 'historia_nightingale'
   | 'historia_humanizacao'
@@ -255,6 +276,33 @@ const SAE_BESPOKE: SubtopicDesign = {
   goldenRule: 'sae-reference-board',
   logicFlow: 'sae-decision-tap',
   dangerZone: 'norm-reveal',
+};
+
+/** Atenção Básica — genérico emerald (bespoke eSF orbit só após Implementar molde). */
+const AB_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'emerald',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Epidemiologia — genérico lime (bespoke lista-trap / formula-rail só após Implementar molde). */
+const EPI_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'lime',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Anatomia — genérico rose (bespoke eixos só após Implementar molde). */
+const ANAT_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'rose',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
 };
 
 /** Documentação / anotação / prontuário — concept_map sae-documentation. */
@@ -1525,6 +1573,62 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     crianca_desidratacao: CRIANCA_DESIDRATACAO_MOLD,
     crianca_generico: CRIANCA_PEDIATRIC_HUB_MOLD,
   },
+  'atencao basica / saude da familia': {
+    ab_acs_territorio: AB_GENERIC_DESIGN,
+    ab_esf_composicao: AB_GENERIC_DESIGN,
+    ab_pnab_principios: AB_GENERIC_DESIGN,
+    ab_te_aps: AB_GENERIC_DESIGN,
+    ab_vigilancia_ads: AB_GENERIC_DESIGN,
+    ab_generico: AB_GENERIC_DESIGN,
+  },
+  'atencao basica': {
+    ab_acs_territorio: AB_GENERIC_DESIGN,
+    ab_esf_composicao: AB_GENERIC_DESIGN,
+    ab_pnab_principios: AB_GENERIC_DESIGN,
+    ab_te_aps: AB_GENERIC_DESIGN,
+    ab_vigilancia_ads: AB_GENERIC_DESIGN,
+    ab_generico: AB_GENERIC_DESIGN,
+  },
+  'saude da familia': {
+    ab_acs_territorio: AB_GENERIC_DESIGN,
+    ab_esf_composicao: AB_GENERIC_DESIGN,
+    ab_pnab_principios: AB_GENERIC_DESIGN,
+    ab_te_aps: AB_GENERIC_DESIGN,
+    ab_vigilancia_ads: AB_GENERIC_DESIGN,
+    ab_generico: AB_GENERIC_DESIGN,
+  },
+  'epidemiologia e vigilancia epidemiologica': {
+    epi_notificacao_compulsoria: EPI_GENERIC_DESIGN,
+    epi_indicadores: EPI_GENERIC_DESIGN,
+    epi_ocorrencia_agravos: EPI_GENERIC_DESIGN,
+    epi_vigilancia_acoes: EPI_GENERIC_DESIGN,
+    epi_cadeia_transmissao: EPI_GENERIC_DESIGN,
+    epi_generico: EPI_GENERIC_DESIGN,
+  },
+  epidemiologia: {
+    epi_notificacao_compulsoria: EPI_GENERIC_DESIGN,
+    epi_indicadores: EPI_GENERIC_DESIGN,
+    epi_ocorrencia_agravos: EPI_GENERIC_DESIGN,
+    epi_vigilancia_acoes: EPI_GENERIC_DESIGN,
+    epi_cadeia_transmissao: EPI_GENERIC_DESIGN,
+    epi_generico: EPI_GENERIC_DESIGN,
+  },
+  'nocoes de anatomia': {
+    anat_terminologia_planos: ANAT_GENERIC_DESIGN,
+    anat_esqueleto: ANAT_GENERIC_DESIGN,
+    anat_muscular: ANAT_GENERIC_DESIGN,
+    anat_cardiovascular: ANAT_GENERIC_DESIGN,
+    anat_cavidades: ANAT_GENERIC_DESIGN,
+    anat_generico: ANAT_GENERIC_DESIGN,
+  },
+  anatomia: {
+    anat_terminologia_planos: ANAT_GENERIC_DESIGN,
+    anat_esqueleto: ANAT_GENERIC_DESIGN,
+    anat_muscular: ANAT_GENERIC_DESIGN,
+    anat_cardiovascular: ANAT_GENERIC_DESIGN,
+    anat_cavidades: ANAT_GENERIC_DESIGN,
+    anat_generico: ANAT_GENERIC_DESIGN,
+  },
   'historia da enfermagem': {
     historia_nightingale: HISTORIA_NIGHTINGALE_MOLD,
     historia_humanizacao: HISTORIA_HUMANIZACAO_MOLD,
@@ -2242,6 +2346,116 @@ function inferSaeBranch(
     return 'sae_etapas';
   }
   return 'sae_generico';
+}
+
+function inferAnatBranch(corpus: string): PedagogicalBranchId {
+  if (
+    /anterior|posterior|ventral|dorsal|medial|lateral|proximal|distal|cranial|caudal|plano sagital|plano frontal|plano transverso|plano coronal|plano vertical|linha m[eé]dia|parasagital|posi[cç][aã]o anat|terminologia/.test(
+      corpus,
+    )
+  ) {
+    return 'anat_terminologia_planos';
+  }
+  if (/epiderme|derme|hipoderme|tecido epitelial|papilas gustativas|endomi[eé]trio/.test(corpus)) {
+    return 'anat_generico';
+  }
+  if (
+    /cora[cç][aã]o|valva|v[aá]lvula|art[eé]ria|veia cava|veia porta|circula[cç][aã]o|[aá]trio|ventr[ií]culo|sistema cardiovascular|grande circula/.test(
+      corpus,
+    )
+  ) {
+    return 'anat_cardiovascular';
+  }
+  if (
+    /osso|esqueleto|coluna vertebral|v[eé]rtebr|úmero|f[eê]mur|t[ií]bia|f[ií]bula|cr[aâ]nio|costela|articula[cç][aã]o|fratura|luxa[cç][aã]o|osteotomia|gesso|tala/.test(
+      corpus,
+    )
+  ) {
+    return 'anat_esqueleto';
+  }
+  if (
+    /m[uú]sculo|tend[aã]o|ligamento|origem|inser[cç][aã]o|b[ií]ceps|tr[ií]ceps|diafragma/.test(corpus)
+  ) {
+    return 'anat_muscular';
+  }
+  if (/cavidade|t[oó]rax|abdome|p[eé]lvis|topograf/.test(corpus)) {
+    return 'anat_cavidades';
+  }
+  return 'anat_generico';
+}
+
+function inferEpiBranch(corpus: string): PedagogicalBranchId {
+  if (
+    /notifica[cç][aã]o compuls[oó]ria|lista nacional|sinan|ficha de notifica|notifica[cç][aã]o imediata|notifica[cç][aã]o semanal|doen[cç]as de notifica[cç][aã]o|agravos de notifica[cç][aã]o/i.test(
+      corpus,
+    )
+  ) {
+    return 'epi_notificacao_compulsoria';
+  }
+  if (
+    /incid[eê]ncia|preval[eê]ncia|letalidade|\bmortalidade\b|\bmorbidade\b|taxa de mortalidade|coeficiente de|indicador(es)?(\s|$)|indicador(es)? (de sa[uú]de|epidemiol)/i.test(
+      corpus,
+    )
+  ) {
+    return 'epi_indicadores';
+  }
+  if (/\bendemia\b|\bepidemia\b|\bpandemia\b|\bsurto\b/i.test(corpus)) {
+    return 'epi_ocorrencia_agravos';
+  }
+  if (
+    /cadeia (de )?transmiss|agente etiol[oó]gico|hospedeiro|reservat[oó]rio|porta de entrada|modo de transmiss|per[ií]odo de (incuba[cç][aã]o|lat[eê]ncia|transmissibilidade)|hist[oó]rico natural/i.test(
+      corpus,
+    )
+  ) {
+    return 'epi_cadeia_transmissao';
+  }
+  if (
+    /vigil[aâ]ncia epidemiol[oó]gica|vigil[aâ]ncia em sa[uú]de|a[cç][oõ]es de vigil[aâ]ncia|investiga[cç][aã]o epidemiol|vigil[aâ]ncia sentinela|vigil[aâ]ncia sanit[aá]ria/i.test(
+      corpus,
+    )
+  ) {
+    return 'epi_vigilancia_acoes';
+  }
+  return 'epi_generico';
+}
+
+function inferAbBranch(corpus: string): PedagogicalBranchId {
+  if (
+    /agente comunit[aá]rio|\bacs\b|visita domiciliar|micro[aá]rea|adscri[cç][aã]o|cadastro.*fam[ií]lia|[aá]rea de abrang/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_acs_territorio';
+  }
+  if (
+    /equipe de sa[uú]de da fam[ií]lia|\besf\b|composi[cç][aã]o da equipe|nasf|emulti|ribeirinh|fluvial|4\.?000.*pessoas|carga hor[aá]ria.*equipe/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_esf_composicao';
+  }
+  if (
+    /pnab|portaria.*2\.436|pol[ií]tica nacional de aten[cç][aã]o b[aá]sica|longitudinalidade|coorden[aá][cç][aã]o do cuidado|atributos.*(aps|aten[cç][aã]o)|aten[cç][aã]o prim[aá]ria [àa] sa[uú]de/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_pnab_principios';
+  }
+  if (
+    /agente de combate|\bace\b|endemias|notifica[cç][aã]o|vigil[aâ]ncia.*territ[oó]rio|sinan|controle de vetor/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_vigilancia_ads';
+  }
+  if (
+    /t[eé]cnico de enfermagem.*(aten[cç][aã]o b[aá]sica|ubs|esf)|auxiliar de enfermagem.*(aten[cç][aã]o b[aá]sica|ubs)|atribui[cç][oõ]es.*(t[eé]cnico|auxiliar).*ubs/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_te_aps';
+  }
+  return 'ab_generico';
 }
 
 function inferSondaBranch(corpus: string): PedagogicalBranchId {
@@ -3189,6 +3403,19 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('saude da crianca') || mapKey === 'pediatria') {
     return inferCriancaBranch(corpus, familyId);
+  }
+  if (mapKey.includes('atencao basica') || mapKey.includes('saude da familia')) {
+    return inferAbBranch(corpus);
+  }
+  if (
+    mapKey.includes('epidemiologia e vigilancia') ||
+    mapKey.includes('vigilancia epidemiologica') ||
+    mapKey === 'epidemiologia'
+  ) {
+    return inferEpiBranch(corpus);
+  }
+  if (mapKey.includes('nocoes de anatomia') || mapKey === 'anatomia') {
+    return inferAnatBranch(corpus);
   }
   if (
     mapKey.includes('crase') ||

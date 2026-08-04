@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-27",
+  "updated_at": "2026-08-04",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -104,7 +104,8 @@
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
-      }
+      },
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/cme.json"
     },
     "Saúde Mental": {
       "pacote_prefix": "saude-mental",
@@ -149,7 +150,8 @@
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
-      }
+      },
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/saude-mental.json"
     },
     "Saúde do Adolescente": {
       "pacote_prefix": "saude-adolescente",
@@ -529,7 +531,8 @@
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
-      }
+      },
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/enfermagem-do-trabalho.json"
     },
     "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)": {
       "pacote_prefix": "doencas-bacterianas",
@@ -729,6 +732,7 @@
       "total_slugs": 59,
       "handcraft_applied": 59,
       "anchor_glob": "examples/questao-premium-*-seguranca-paciente-*.json,examples/questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/seguranca-do-paciente.json",
       "guideline": null,
       "production_status": "production_ready",
       "quality": {
@@ -1211,6 +1215,56 @@
           "last_blocked_reason": null
         }
       }
+    },
+    "Atenção Básica / Saúde da Família": {
+      "pacote_prefix": "atencao-basica-saude-da-familia",
+      "manifest": "data/catalog-migration/atencao-basica-saude-da-familia-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/atencao-basica-saude-da-familia-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/atencao-basica-saude-da-familia-completo/README.md",
+      "cluster_command": "npm run cluster:atencao-basica",
+      "cluster_report": "artifacts/atencao-basica-saude-da-familia-topic-cluster-report.json",
+      "lote_pattern": "atencao-basica-saude-da-familia-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 171,
+      "handcraft_applied": 171,
+      "anchor_glob": "examples/questao-premium-*-atencao-basica*.json,examples/questao-premium-*-saude-familia*.json,examples/questao-premium-*-esf-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/atencao-basica-saude-da-familia.json",
+      "l3_brief_index": "artifacts/l3-brief-atencao-basica-saude-da-familia-INDEX.md",
+      "guideline": "lib/guidelines/atencaoBasica.ts",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-08-01",
+        "closed_artifact": "artifacts/taxonomy-closed-atencao-basica-saude-da-familia.json",
+        "audit_artifact": "artifacts/taxonomy-gate-atencao-basica-saude-da-familia.json",
+        "mismatch_count_at_close": 0,
+        "notes": "Export 171; inventory mismatch=0. Aceitar drift de URL legada (processo-de-enfermagem no slug) se meta canônico. 4 drifts cluster absorvidos."
+      },
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-08-03",
+        "production_ready_at": "2026-08-03",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L2c": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-08-03T22:48:30.210Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      },
+      "updated_at": "2026-08-03"
     },
     "Saúde da Criança": {
       "pacote_prefix": "saude-da-crianca",
@@ -1817,28 +1871,103 @@
     },
     "Noções de Anatomia": {
       "pacote_prefix": "nocoes-de-anatomia",
-      "manifest": "data/catalog-migration/nocoes-de-anatomia-lote-01/manifest.json",
-      "lote_pattern": "nocoes-de-anatomia-lote-{NN}",
-      "lote_size": 50,
-      "status": "in_progress",
-      "total_slugs": 48,
-      "handcraft_applied": 0,
-      "production_status": "none",
-      "notes": "Bootstrap de autoridade G0.4 (Fênix nc-g03-4cb9405b8309b9bc). Sem promote production_ready neste lote. Dois slugs saíram do manifest para evitar colisão de autoridade: fau-unicentro-…-1775447762008-2 (autoridade: saude-da-mulher-completo) e ibfc-…-1775448458316-0 (autoridade: urgencias-e-emergencias-completo).",
+      "manifest": "data/catalog-migration/nocoes-de-anatomia-completo/manifest.json",
+      "lote_pattern": "nocoes-de-anatomia-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 46,
+      "handcraft_applied": 46,
+      "production_status": "production_ready",
+      "notes": "Onda1-anatomia 2026-08-03: g01–g06 applied 46/46. Próximo: Qualidade vendável.",
       "quality": {
-        "technical_ready_at": null,
-        "production_ready_at": null,
+        "technical_ready_at": "2026-08-03",
+        "production_ready_at": "2026-08-03",
         "monitoring_until": null,
         "layers": {
-          "L1": false,
-          "L2": false,
-          "L2b": false,
-          "L3": false,
-          "L4": false,
-          "L5": false,
-          "L6": false
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L2c": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-08-03T22:55:57.675Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
         }
-      }
+      },
+      "handcraft_meta": "data/catalog-migration/nocoes-de-anatomia-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/nocoes-de-anatomia-completo/README.md",
+      "cluster_command": "npm run cluster:anatomia",
+      "cluster_report": "artifacts/nocoes-de-anatomia-topic-cluster-report.json",
+      "anchor_glob": "examples/questao-premium-*-anatomia*.json,examples/questao-premium-*-nocoes-de-anatomia*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/nocoes-de-anatomia.json",
+      "l3_brief_index": "artifacts/l3-brief-nocoes-de-anatomia-INDEX.md",
+      "guideline": "lib/guidelines/anatomiaBasica.ts",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-08-03",
+        "closed_artifact": "artifacts/taxonomy-closed-nocoes-de-anatomia.json",
+        "audit_artifact": "artifacts/taxonomy-gate-nocoes-de-anatomia.json",
+        "mismatch_count_at_close": 0,
+        "notes": "Inventário mismatch=0 após patch meta vazio (2). Authority 46. Fechado onda1-anatomia."
+      },
+      "updated_at": "2026-08-03"
+    },
+    "Epidemiologia e Vigilância Epidemiológica": {
+      "pacote_prefix": "epidemiologia-e-vigilancia-epidemiologica",
+      "manifest": "data/catalog-migration/epidemiologia-e-vigilancia-epidemiologica-completo/manifest.json",
+      "cluster_command": "npm run cluster:epidemiologia",
+      "cluster_report": "artifacts/epidemiologia-e-vigilancia-epidemiologica-topic-cluster-report.json",
+      "lote_pattern": "epidemiologia-e-vigilancia-epidemiologica-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 218,
+      "handcraft_applied": 218,
+      "anchor_glob": "examples/questao-premium-*-epidemiologia-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/epidemiologia-e-vigilancia-epidemiologica.json",
+      "l3_brief_index": "artifacts/l3-brief-epidemiologia-e-vigilancia-epidemiologica-INDEX.md",
+      "guideline": "lib/guidelines/epidemiologia.ts",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-08-03",
+        "closed_artifact": "artifacts/taxonomy-closed-epidemiologia-e-vigilancia-epidemiologica.json",
+        "audit_artifact": "artifacts/taxonomy-gate-epidemiologia-e-vigilancia-epidemiologica.json",
+        "mismatch_count_at_close": 0,
+        "notes": "Export 218; inventory mismatch=0. Aceitar drift de URL legada (AB/processo/auditoria) se meta canônico. Fechado onda1-epi 2026-08-03."
+      },
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-08-04",
+        "production_ready_at": "2026-08-04",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L2c": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-08-04T01:30:56.196Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      },
+      "notes": "Onda1-epi 2026-08-03: taxonomy closed; BRANCH wired; 4 âncoras READY; briefs+EPI_GENERIC; g01 handcraft ready dry-run (sem apply). | Apply g01-g28 concluído 2026-08-03 (218/218). L6 agent record-pass. Aguarda Fase 2 qualidade/--promote.",
+      "updated_at": "2026-08-04"
     }
   },
   "subtopicos_canonicos": [

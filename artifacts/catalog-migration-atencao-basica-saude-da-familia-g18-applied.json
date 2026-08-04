@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T20:48:30.562Z",
+  "lote": "atencao-basica-saude-da-familia-g18",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-processo-de-enfermagem-1780010566816-3",
+    "igeduc-enfermagem-saude-do-idoso-1780001440222-1",
+    "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-0",
+    "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-1",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-3",
+    "instituto-access-enfermagem-atencao-basica-saude-da-familia-1778968221218-0",
+    "instituto-access-geral-atencao-basica-saude-da-familia-1778968207422-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-atencao-basica-saude-da-familia-1778968221218-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-geral-atencao-basica-saude-da-familia-1778968207422-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

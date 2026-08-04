@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "Cebraspe (Cespe)",
+    "orgao": "Técnico em Enfermagem",
+    "prova": "Ass Tec Sau (Pref Boa Vista)",
+    "cargo_header": "Técnico de enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Noções de Anatomia",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "pedagogical_branch": "anat_cardiovascular",
+    "content_review": {
+      "reviewed_at": "2026-08-03",
+      "reviewer": "onda1-anatomia",
+      "guideline_snapshot": "Coração no mediastino/cavidade torácica, posterior ao esterno, superior ao diafragma",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "anatomia-coracao-topografia",
+        "tier": "B",
+        "issuer": "Referência acadêmica de anatomia",
+        "title": "Topografia cardíaca — tórax, esterno, diafragma",
+        "year": 2020,
+        "covers": ["localização do coração", "esterno", "diafragma", "cavidade torácica"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Julgue o item que se segue, relativo a anatomia e fisiologia do sistema cardiovascular.\nO coração, anatomicamente, localiza-se na cavidade torácica, atrás do osso esterno e acima do músculo diafragma.",
+    "options": [
+      { "id": "A", "text": "Certo", "is_correct": true },
+      { "id": "B", "text": "Errado", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Coração — onde fica no tórax",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "items": [
+        {
+          "label": "Cenário da prova",
+          "detail": "Item C/E descreve a topografia cardíaca: tórax, esterno e diafragma.",
+          "icon": "Target"
+        },
+        {
+          "label": "Cavidade torácica",
+          "detail": "O coração ocupa o mediastino, dentro do tórax — não a cavidade abdominal.",
+          "icon": "Heart"
+        },
+        {
+          "label": "Esterno × diafragma",
+          "detail": "Fica atrás do esterno e acima do diafragma (assoalho torácico).",
+          "icon": "MapPin"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "Trocar ‘atrás do esterno’ por ‘à frente’ ou colocar o coração abaixo do diafragma.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Três âncoras: tórax + posterior ao esterno + superior ao diafragma"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "steps": [
+        "Ler o item: localização do coração em relação a tórax, esterno e diafragma.",
+        "Checar cavidade: torácica — coerente com mediastino.",
+        "Checar esterno: atrás do osso — orientação clássica.",
+        "Checar diafragma: acima do músculo — coração não ‘desce’ para o abdome.",
+        "Concluir: o item está certo → alternativa A.",
+        "Em similares: se inverter uma das três âncoras (ex. abaixo do diafragma), marque Errado."
+      ],
+      "footer_rule": "Certo só se as três âncoras topográficas baterem"
+    },
+    {
+      "type": "golden_rule",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "content": "TOPOGRAFIA CARDÍACA — 3 MARCOS",
+      "rows": [
+        { "label": "Cavidade", "value": "Torácica (mediastino)" },
+        { "label": "Esterno", "value": "Coração fica posterior (atrás)" },
+        { "label": "Diafragma", "value": "Coração fica superior (acima)" }
+      ],
+      "footer_rule": "Memorize os três marcos; a banca inverte um deles"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "content": "INVERSÕES DE TOPOGRAFIA",
+      "items": [
+        {
+          "label": "Coração no abdome",
+          "detail": "Confunde cavidade torácica com abdominal.",
+          "correct": "Coração fica no tórax/mediastino, não no abdome."
+        },
+        {
+          "label": "À frente do esterno",
+          "detail": "Inverte a relação com o osso.",
+          "correct": "O coração fica atrás do esterno."
+        },
+        {
+          "label": "Abaixo do diafragma",
+          "detail": "Coloca o coração sob o assoalho torácico.",
+          "correct": "O coração fica acima do diafragma."
+        },
+        {
+          "label": "Em similares (valvas)",
+          "detail": "Mitral no lado direito.",
+          "correct": "Mitral/bicúspide = átrio–ventrículo esquerdos; direita = tricúspide."
+        }
+      ],
+      "footer_rule": "Uma inversão topográfica basta para Errado"
+    }
+  ]
+}

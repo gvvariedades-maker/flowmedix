@@ -26,48 +26,94 @@
       "id": "mulher_prenatal",
       "when": "Pré-natal, gestação, captação precoce, periodicidade consultas, TTGO, ácido fólico, V/F I–III",
       "mold": "mulher-gestation-timeline · mulher-prenatal-board · mulher-prenatal-tap-flow · mulher-prenatal-trap-arena",
-      "anchors": ["examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json"],
-      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_prenatal.md"
+      "anchors": [
+        "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json"
+      ],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_prenatal.md",
+      "visual_gallery": {
+        "status": "pending",
+        "captures_dir": "artifacts/visual-mold-regression",
+        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+      }
     },
     {
       "id": "mulher_parto",
       "when": "Trabalho de parto, parto humanizado, OMS, fases, expulsivo, ocitocina HPP, enema, depilação",
       "mold": "mulher-labor-phase-deck · mulher-parto-humanizado-board · mulher-labor-tap-flow · mulher-parto-trap-arena",
-      "anchors": ["examples/questao-premium-admtec-saude-mulher-parto-humanizado-vf.json"],
-      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_parto.md"
+      "anchors": [
+        "examples/questao-premium-admtec-saude-mulher-parto-humanizado-vf.json"
+      ],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_parto.md",
+      "visual_gallery": {
+        "status": "pending",
+        "captures_dir": "artifacts/visual-mold-regression",
+        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+      }
     },
     {
       "id": "mulher_papanicolau",
       "when": "Papanicolau, rastreio colo, HPV, citologia, 25–64 trienal, fatores de risco",
       "mold": "mulher-screening-spectrum · mulher-papanicolau-board · mulher-screening-tap-flow · mulher-screening-trap-arena",
-      "anchors": ["examples/questao-premium-vunesp-saude-mulher-papanicolau.json"],
-      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_papanicolau.md"
+      "anchors": [
+        "examples/questao-premium-vunesp-saude-mulher-papanicolau.json"
+      ],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_papanicolau.md",
+      "visual_gallery": {
+        "status": "pending",
+        "captures_dir": "artifacts/visual-mold-regression",
+        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+      }
     },
     {
       "id": "mulher_mama",
       "when": "Mamografia, rastreio mama, 50–69 bienal, autoexame complementar, faixa etária",
       "mold": "mulher-mammography-spectrum · mulher-mama-board · mulher-mama-tap-flow · mulher-mama-trap-arena",
-      "anchors": ["examples/questao-premium-vunesp-saude-mulher-mamografia.json"],
-      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_mama.md"
+      "anchors": [
+        "examples/questao-premium-vunesp-saude-mulher-mamografia.json"
+      ],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_mama.md",
+      "visual_gallery": {
+        "status": "pending",
+        "captures_dir": "artifacts/visual-mold-regression",
+        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+      }
     },
     {
       "id": "mulher_puerperio",
       "when": "Puerpério, lactação, aleitamento, amamentação, colostro, consulta 42 dias",
       "mold": "mulher-puerperio-timeline · mulher-puerperio-board · mulher-puerperio-tap-flow · mulher-puerperio-trap-arena",
-      "anchors": ["examples/questao-premium-ms-saude-mulher-puerperio-consulta.json"],
-      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_puerperio.md"
+      "anchors": [
+        "examples/questao-premium-ms-saude-mulher-puerperio-consulta.json"
+      ],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_puerperio.md",
+      "visual_gallery": {
+        "status": "pending",
+        "captures_dir": "artifacts/visual-mold-regression",
+        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+      }
     },
     {
       "id": "mulher_planejamento",
       "when": "Planejamento familiar, contracepção, DIU, anticoncepcionais, métodos comportamentais",
       "mold": "mulher-contraception-spectrum · mulher-planejamento-board · mulher-planejamento-tap-flow · mulher-planejamento-trap-arena",
-      "anchors": ["examples/questao-premium-cpcon-saude-mulher-planejamento-vf.json"],
-      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_planejamento.md"
+      "anchors": [
+        "examples/questao-premium-cpcon-saude-mulher-planejamento-vf.json"
+      ],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_planejamento.md",
+      "visual_gallery": {
+        "status": "pending",
+        "captures_dir": "artifacts/visual-mold-regression",
+        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+      }
     },
     {
       "id": "mulher_generico",
       "when": "Conceito geral, anatomia, semiologia, drift residual — sem fit nos ramos acima",
-      "mold": "morphological · reference_table · vertical · compare (genérico)"
+      "mold": "morphological · reference_table · vertical · compare (genérico)",
+      "visual_gallery": {
+        "status": "ok_generico",
+        "note": "morphological/reference_table/compare"
+      }
     }
   ],
   "validation": {
@@ -124,7 +170,10 @@
       "why": "Âncoras puerpério/planejamento prontas 2026-07-10; L3 genérico com gramática golden L2"
     }
   ],
-  "proibido": ["ai:generate", "catalog:upgrade-premium"],
+  "proibido": [
+    "ai:generate",
+    "catalog:upgrade-premium"
+  ],
   "modes": {
     "subtopico_handcraft": {
       "label": "Handcraft golden-v1 — 263 slugs em lotes saude-da-mulher-gNN",
@@ -151,5 +200,14 @@
         "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
       ]
     }
+  },
+  "l3_brief_index": "artifacts/l3-brief-saude-da-mulher-INDEX.md",
+  "l3_visual_gallery_index": "artifacts/l3-design-visual-saude-da-mulher-onda3.md",
+  "onda3_visual": {
+    "status": "design_documented_playwright_blocked",
+    "updated_at": "2026-08-04",
+    "note": "Camada 7: Design visual + INDEX; Playwright /dev/slide-mold-review timeout local — re-run quando server saudável",
+    "reusar_moldes": true,
+    "implementar_molde": false
   }
 }

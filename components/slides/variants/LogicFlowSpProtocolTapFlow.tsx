@@ -2,7 +2,7 @@
 
 import type { ThemeColors } from '../core/themeGenerator';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import { LogicFlowStepLadder } from './LogicFlowStepLadder';
+import { LogicRailShell } from '../logicFlowShells';
 
 interface LogicFlowSpProtocolTapFlowProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -11,11 +11,21 @@ interface LogicFlowSpProtocolTapFlowProps {
   footerRule?: string;
 }
 
-/** Trilho tap-flow NSP — elos amber com revelação passo a passo (quedas / eventos). */
+/** Trilho NSP — RailShell. */
 export function LogicFlowSpProtocolTapFlow({
   steps,
   theme,
   revealMode = 'tap',
+  footerRule,
 }: LogicFlowSpProtocolTapFlowProps) {
-  return <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} accent="seguranca" />;
+  return (
+    <LogicRailShell
+      steps={steps}
+      theme={theme}
+      revealMode={revealMode}
+      footerRule={footerRule}
+      accent="seguranca"
+      eyebrow="Protocolo · NSP"
+    />
+  );
 }

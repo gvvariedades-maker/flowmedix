@@ -63,6 +63,7 @@ export function DangerZoneAdolescentExcetoCompare({
       title={content || undefined}
       titleClassName="text-sm md:text-base"
       eyebrow="Compare — conduta × exceção"
+      footerLabel="Transferência"
       footerRule={footerRule}
     >
       <div className="flex flex-col gap-2.5">

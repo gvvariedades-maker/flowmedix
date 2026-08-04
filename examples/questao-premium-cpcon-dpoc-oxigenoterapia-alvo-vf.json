@@ -91,7 +91,7 @@
         },
         {
           "label": "SpO₂ 98–100% sempre",
-          "value": "Falso no retentor de CO₂",
+          "value": "No retentor de CO₂",
           "emphasis": "alert",
           "badge": "warn"
         }

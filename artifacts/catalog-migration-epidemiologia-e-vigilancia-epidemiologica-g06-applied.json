@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:55:20.846Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g06",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-1",
+    "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5",
+    "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-3",
+    "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-4",
+    "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-0",
+    "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-1",
+    "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-2",
+    "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

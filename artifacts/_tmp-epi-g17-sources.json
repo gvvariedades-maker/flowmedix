@@ -1,0 +1,273 @@
+[
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-3.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "A notificação de doenças e agravos à saúde é um dos principais instrumentos da Vigilância Epidemiológica, permitindo a identificação de padrões epidemiológicos e a rápida intervenção em situações de risco. No Brasil, algumas doenças são de notificação compulsória, ou seja, devem ser comunicadas obrigatoriamente às autoridades de saúde para o monitoramento adequado da situação epidemiológica. Além da notificação, outras fontes de dados, como sistemas de informação hospitalar e investigações epidemiológicas, também são utilizadas para subsidiar a tomada de decisão. Considerando esse contexto, assinale a alternativa correta sobre a notificação de doenças no âmbito da Vigilância Epidemiológica.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deve ser realizada apenas após a confirmação laboratorial do diagnóstico.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "É obrigatória para todas as doenças, independentemente da relevância epidemiológica.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "É utilizada exclusivamente para o controle de doenças infecciosas, sem abranger outros agravos.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Pode ser feita por qualquer profissional de saúde e, em alguns casos, por qualquer cidadão.",
+        "ok": true
+      },
+      {
+        "id": "E",
+        "text": "Sua realização depende da autorização prévia do paciente ou de seus familiares.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "D: Pode ser feita por qualquer profissional de saúde e, em alguns casos, por qualquer cidadão."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-4.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "A vigilância epidemiológica é uma ferramenta essencial na prevenção e controle de doenças infecciosas, fornecendo dados cruciais para a tomada de decisões em saúde pública. Sobre a função direta da vigilância epidemiológica, assinale a alternativa correta.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Implementação de medidas de educação em saúde.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Monitoramento de tendências temporais e espaciais de doenças.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Fornecimento de saneamento básico adequado.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Criação de políticas de saúde pública voltadas para doenças não infecciosas.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Diagnóstico precoce e imediato tratamento.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Monitoramento de tendências temporais e espaciais de doenças."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-5.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Durante a investigação de surtos, assinale a alternativa que corretamente indica uma abordagem específica que é recomendada para a coleta de dados.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Conduzir entrevistas utilizando um questionário padronizado.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Focar apenas em dados demográficos dos afetados.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Utilizar entrevistas informais com os afetados.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Depender exclusivamente de dados secundários de hospitais",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Realizar análises estatísticas sem coleta de dados primários.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Conduzir entrevistas utilizando um questionário padronizado."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-6.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Sobre a epidemiologia, história natural e prevenção das doenças, três assuntos que estão intimamente interligados e ajudam na compreensão de como as doenças ocorrem e como preveni-las, identifique a alternativa correta.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "No nível de prevenção secundária de doenças são adotadas ações de manutenção à saúde, evitando a sua ocorrência.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "A reabilitação da saúde tem por objetivo, identificar a doença (diagnóstico), limitar as lesões e evitar o aparecimento de complicações e sequelas.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Na fase pré-clínica de uma doença surgem os principais sinais e sintomas, mas ainda sem alterações importantes, como por exemplo dor na nuca em pacientes com hipertensão arterial.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "A vacinação, cessação de tabagismo, uso de cinto de segurança, são exemplos de medidas de proteção específicas, ou seja, que evitam o surgimento de doenças ou agravos à saúde específicos.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: A vacinação, cessação de tabagismo, uso de cinto de segurança, são exemplos de medidas de proteção específicas, ou seja, que evitam o surgimento de doenças ou agravos à saúde específicos."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-7.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "A Epidemiologia pode ser entendida como a ciência que estuda o processo saúde-doença em coletividades humanas, analisando a distribuição e os fatores determinantes das enfermidades, danos à saúde e eventos associados à saúde coletiva, além de propor medidas de prevenção, controle ou erradicação dessas doenças. Sobre os termos mais utilizados em epidemiologia, assinale a afirmativa correta.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pandemia é a ocorrência, em uma comunidade ou região, de casos de natureza semelhante, claramente excessiva em relação ao esperado, como por exemplo a recente pandemia de COVID.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Surto corresponde ao número de novos casos de uma doença ou agravo, em uma determinada população, em um período de tempo",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Endemia identifica-se como aumento inesperado do número de casos de uma doença, em uma população específica e em uma área geográfica limitada",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Morbidade refere-se ao conjunto de indivíduos que adquirem doenças num dado intervalo de tempo, em uma determinada população",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: Morbidade refere-se ao conjunto de indivíduos que adquirem doenças num dado intervalo de tempo, em uma determinada população"
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-8.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Assinale a afirmativa, a qual descreve o principal objetivo da vigilância sanitária.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Promover fiscalização estrita em bares em restaurantes para que esses prestem serviços e produtos que não sejam nocivos à saúde da população.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Regulamentar, controlar e fiscalizar práticas e atividades a fim de proteger a saúde da população.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Coordenar campanhas de vacinação em áreas com baixo índice de imunização.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Prevenir a ocorrência de doenças infecciosas e transmissíveis que possam causar problemas de saúde à população.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Regulamentar, controlar e fiscalizar práticas e atividades a fim de proteger a saúde da população."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-9.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "O Levantamento Rápido de Índices para o Aedes aegypti — LIRAa consiste em",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "um sistema informatizado que permite o conhecimento de forma rápida, por satélite, da quantidade de imóveis com a presença de recipientes com larvas de Aedes aegypti, mosquito transmissor da Dengue, Chikungunya, Febre pelo vírus Zika e Febre Amarela.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "um programa estatístico de tabulação de dados, que permite o conhecimento de forma rápida, por amostragem, da quantidade de pessoas com Dengue, Chikungunya, Febre pelo vírus Zika e Febre Amarela.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "uma metodologia que permite o conhecimento de forma rápida, por amostragem, da quantidade de bairros e cidades com a presença do Aedes aegypti, mosquito transmissor da Dengue, Chikungunya, Febre pelo vírus Zika e Febre Amarela.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "uma metodologia que permite o conhecimento de forma rápida, por amostragem, da quantidade de imóveis com a presença de recipientes com larvas de Aedes aegypti, mosquito transmissor da Dengue, Chikungunya, Febre pelo vírus Zika e Febre Amarela.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: uma metodologia que permite o conhecimento de forma rápida, por amostragem, da quantidade de imóveis com a presença de recipientes com larvas de Aedes aegypti, mosquito transmissor da Dengue, Chikungunya, Febre pelo vírus Zika e Febre Amarela."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066961947-9.json",
+    "family": "certo_errado",
+    "branch": "epi_generico",
+    "instruction": "O Levantamento de Índice Rápido de Infestação por Aedes aegypti (LIRAa) permite determinar com rapidez e precisão os seguintes índices, EXCETO:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Índice de armazenamento: é a relação entre o número de recipientes encontrados com larvas dividido pela quantidade de larvas.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Índice de infestação predial: é a relação expressa em porcentagem entre o número de imóveis positivos e o número de imóveis pesquisados.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Índice de recipiente: é a relação em porcentagem entre o número do tipo de recipientes positivos e o número de recipientes positivos pesquisados (qualitativo).",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Índice de Breteau: é a relação entre número de recipientes positivos e número de imóveis pesquisados corrigidos de forma que o resultado seja expresso para 100 imóveis (densidade vetorial).",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Índice de armazenamento: é a relação entre o número de recipientes encontrados com larvas dividido pela quantidade de larvas."
+    ]
+  }
+]

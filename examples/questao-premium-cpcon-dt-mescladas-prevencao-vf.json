@@ -91,7 +91,7 @@
         },
         {
           "label": "ATB rotina gripe",
-          "value": "Falso — gripe é viral",
+          "value": "Gripe é viral",
           "emphasis": "alert",
           "badge": "warn"
         }

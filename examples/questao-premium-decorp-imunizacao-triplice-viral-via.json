@@ -27,7 +27,11 @@
         "title": "Calendário Nacional de Vacinação — tríplice viral (SCR)",
         "year": 2025,
         "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
-        "covers": ["SCR 12 meses", "via subcutânea", "SCRV 15 meses"]
+        "covers": [
+          "SCR 12 meses",
+          "via subcutânea",
+          "SCRV 15 meses"
+        ]
       }
     ]
   },
@@ -125,7 +129,7 @@
         },
         {
           "label": "Conduta desta questão",
-          "value": "Letra A — via subcutânea",
+          "value": "Via subcutânea.",
           "emphasis": "success",
           "badge": "hot"
         }

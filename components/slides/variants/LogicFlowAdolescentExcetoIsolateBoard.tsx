@@ -144,7 +144,7 @@ export function LogicFlowAdolescentExcetoIsolateBoard({
   const nextDelay = () => delay++;
 
   return (
-    <BoardChrome theme={theme} footerRule={footerRule}>
+    <BoardChrome theme={theme} footerLabel="Fixação" footerRule={footerRule}>
       <AlertCallout tone="warn" icon={Hand}>
         Isolar a única conduta que afasta o adolescente
       </AlertCallout>

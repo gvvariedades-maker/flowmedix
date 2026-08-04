@@ -3,7 +3,7 @@
 import { useMemo } from 'react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import { LogicFlowStepLadder } from './LogicFlowStepLadder';
+import { LogicRailShell } from '../logicFlowShells';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import { applyProtocolTapBudget } from '@/lib/slides/protocolTapBudget';
 
@@ -14,15 +14,26 @@ interface LogicFlowFarmacoProtocolTapFlowProps {
   footerRule?: string;
 }
 
-/** Tap-flow farmaco/protocolo — orçamento ≤3 taps; tokens via ladder stroke (Onda 4). */
+/** Protocolo farmaco — RailShell + ≤3 taps. */
 export function LogicFlowFarmacoProtocolTapFlow({
   steps,
   theme,
   revealMode = 'tap',
+  footerRule,
 }: LogicFlowFarmacoProtocolTapFlowProps) {
   const budgeted = useMemo(
     () => applyProtocolTapBudget(normalizeLogicFlowSteps(steps)),
     [steps],
   );
-  return <LogicFlowStepLadder steps={budgeted} theme={theme} revealMode={revealMode} accent="stroke" />;
+  return (
+    <LogicRailShell
+      steps={budgeted}
+      theme={theme}
+      revealMode={revealMode}
+      footerRule={footerRule}
+      accent="stroke"
+      eyebrow="Protocolo · farmaco"
+      applyTapBudget={false}
+    />
+  );
 }

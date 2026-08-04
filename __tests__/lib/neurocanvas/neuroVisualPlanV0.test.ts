@@ -153,6 +153,51 @@ describe('neuroVisualPlanV0 (hermético)', () => {
     expect(mismatch).toBeNull();
   });
 
+  it('F1: dangerItemPolarities fica fora de presentation (divergência intencional do chrome)', () => {
+    const slide = {
+      type: 'danger_zone' as const,
+      content: 'Pegadinhas EXCETO',
+      items: [
+        {
+          label: 'Letra A — sítio clássico',
+          detail: 'Parece óbvio.',
+          correct: 'Afirmativa correta: artéria braquial no membro superior.',
+        },
+        {
+          label: 'Letra B — insuflar até 300 mmHg',
+          detail: 'Parece garantir a leitura.',
+          correct: 'Incorreta: 20–30 mmHg acima do desaparecimento do pulso.',
+        },
+      ],
+    };
+    const options = [
+      { id: 'A', text: 'Braquial', is_correct: false },
+      { id: 'B', text: '300 mmHg', is_correct: true },
+    ];
+    const plan = buildNeuroVisualPlanV0({
+      slide,
+      questionHash: SLUG,
+      slideIndex: 3,
+      questionInstruction: 'Assinale a alternativa INCORRETA.',
+      questionOptions: options,
+      includeTheme: false,
+    });
+    expect(plan.dangerItemPolarities).toEqual(['valid_conduct', 'trap']);
+    expect(
+      Object.prototype.hasOwnProperty.call(plan.presentation, 'dangerItemPolarities'),
+    ).toBe(false);
+
+    const mismatch = compareSlideVisualParity({
+      slide,
+      slug: SLUG,
+      slideIndex: 3,
+      instruction: 'Assinale a alternativa INCORRETA.',
+      options,
+      allSlides: [slide],
+    });
+    expect(mismatch).toBeNull();
+  });
+
   it('presentation do plano equivale a resolveSlidePresentation direto (objeto integral)', () => {
     const slide = conceptMapSlide('Vias de Administração');
     const ctx = enrichPresentationContext(

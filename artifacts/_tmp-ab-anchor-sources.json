@@ -1,0 +1,112 @@
+{
+  "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Adm&Tec",
+      "orgao": "Enfermagem / Sem Especialidade",
+      "prova": "Tec (Pref João Alfredo)",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Uma família residente em área rural enfrenta dificuldade no comparecimento ao posto de saúde. Após visitas domiciliares, o técnico de enfermagem identifica\nproblemas como falta de saneamento básico, abastecimento hídrico irregular e desconhecimento de práticas de higiene. Como abordar esse grupo familiar, alinhando-se\nàs estratégias de visita domiciliar e promoção da saúde?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Verificar a existência de potenciais criadouros de vetores e avaliar práticas de higiene no domicílio, implementando estratégias de controle ambiental associadas ao uso de substâncias saneantes quando necessário e priorizar a eliminação dos riscos físicos e biológicos identificados, sem a necessidade de estratégias educativas formais ou visitas subsequentes para acompanhamento da adesão familiar",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Iniciar apenas um diálogo superficial com as lideranças comunitárias para citar possíveis barreiras no abastecimento de água, sem envolver a própria família ou outras áreas da equipe de saúde na busca de soluções, e contatar exclusivamente a vigilância sanitária para fiscalizar as condições do local, ignorando quaisquer orientações educativas ou acompanhamento continuado.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Orientar práticas de higiene pessoal e do ambiente, destacando a importância de prevenir agravos infecciosos e interromper o acompanhamento se a família não aderir de imediato às recomendações, redirecionando recursos apenas para quem manifeste interesse formal.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Estabelecer um plano de visitas contínuas, envolvendo diferentes setores (educação, assistência social e saneamento) e orientar a família sobre práticas de higiene, potabilidade da água e prevenção de agravos, considerando a realidade sociocultural local.",
+        "is_correct": true
+      }
+    ],
+    "has_slides": 4
+  },
+  "amauc-enfermagem-processo-de-enfermagem-1780006486032-7": {
+    "meta": {
+      "ano": "2026",
+      "banca": "Amauc",
+      "orgao": "Pref Ipumirim",
+      "prova": "Aux Enf",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "A atenção básica constitui componente estratégico da organização do sistema de saúde, orientando-se por princípios como territorialização, vínculo, continuidade do cuidado e responsabilização sanitária. Analise as afirmativas abaixo:\nI.A atenção básica constitui porta de entrada preferencial do sistema de saúde.\nII.A atenção básica atua com enfoque familiar e comunitário.\nIII.A atenção básica restringe-se ao atendimento de demanda espontânea.\nIV.A atenção básica desenvolve ações de prevenção e promoção da saúde.\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I e III.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I, III e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I, II, III e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e IV.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "II e III.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0": {
+    "meta": {
+      "ano": "2022",
+      "banca": "Ameosc",
+      "orgao": "Pref Bandeirante-SC",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "As Equipes de Saúde da Família Ribeirinha deverão prestar atendimento à população por, no mínimo, X dias mensais (carga horária equivalente à 8h/dia) e dois\ndias para atividades de educação permanente, registro da produção e planejamento das ações.",
+    "options": [
+      {
+        "id": "A",
+        "text": "21.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "07.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "14.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "30.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  }
+}

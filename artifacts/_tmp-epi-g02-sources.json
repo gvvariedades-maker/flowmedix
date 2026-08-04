@@ -1,0 +1,281 @@
+[
+  {
+    "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1.json",
+    "meta": {
+      "banca": "Ameosc",
+      "ano": "2025",
+      "orgao": "ESF",
+      "prova": "TEnf (Pref São José Cedro)",
+      "cargo_header": "Técnico de enfermagem"
+    },
+    "instruction": "Durante uma visita domiciliar, um Técnico de Enfermagem compartilha relatos de diarreia em vários moradores da mesma comunidade. O profissional orientou-sesobre a coleta adequada de amostras, o uso de medidas preventivas como a fervura da água e a higienização correta das mãos, além de fortalecer a importância deinformar sinais de gravidade à equipe de vigilância epidemiológica. Assim, assinale a alternativa que apresenta as medidas de saúde pública e/ou vigilância epidemiológicacorreta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Informar à vigilância epidemiológica sinais de gravidade, como febre alta persistente e desidratação, ainda que os exames laboratoriais não tenham sidoconcluídos.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Registrar a ocorrência no sistema local de saúde apenas após a confirmação laboratorial do agente etiológico causador do surto.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Coletar as amostras em frascos estéreis e enviá-las ao laboratório no mesmo dia, mantendo a refrigeração adequada até o envio.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Recomendar o consumo de água tratada ou fervida apenas nos casos em que os exames laboratoriais confirmem a presença de agentes bacterianos.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5.json",
+    "meta": {
+      "banca": "Ameosc",
+      "ano": "2025",
+      "orgao": "Pref São José Cedro",
+      "prova": "TEnf",
+      "cargo_header": "Técnico de enfermagem"
+    },
+    "instruction": "A Vigilância Epidemiológica é um componente essencial da Vigilância em Saúde, responsável por um conjunto de ações que proporcionam o conhecimento e adetecção de mudanças nos fatores que determinam o processo saúde-doença na população. Seus instrumentos, como a notificação compulsória, são fundamentais paraque as autoridades de saúde possam planejar e executar medidas de prevenção e controle de doenças e agravos. Sobre os procedimentos de vigilância epidemiológica,analise as afirmativas a seguir.\nI\n.A notificação compulsória de uma doença constante na lista nacional só deve ser realizada pelo profissional de saúde após a confirmação do caso por meio deexames laboratoriais, para evitar o registro de casos falsos no sistema.\nII\n.A principal finalidade da vigilância epidemiológica é fornecer subsídios para a tomada de decisões, recomendando e adotando medidas de prevenção e controlede doenças e agravos que sejam baseadas em evidências.\nIII\n.A obrigação de realizar a notificação compulsória de doenças é uma atribuição exclusiva do profissional enfermeiro, que é o responsável por centralizar asinformações e comunicá-las à secretaria de saúde.\nEstá\ncorreto\no que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I , II e III .",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "II apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "I apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I e III apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-5.json",
+    "meta": {
+      "banca": "Ameosc",
+      "ano": "2022",
+      "orgao": "Pref Bandeirante-SC",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem"
+    },
+    "instruction": "Com base nas doenças de notificação compulsória, assinale a alternativa CORRETA que corresponde a uma doença ou agravo de periodicidade de notificaçãosemanal.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Febre Amarela.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Febre Tifoide.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Dengue - Casos.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Acidente de trabalho: grave, fatal e em crianças e adolescentes.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6.json",
+    "meta": {
+      "banca": "Ameosc",
+      "ano": "2021",
+      "orgao": "Pref Belmonte (SC)",
+      "prova": "TEf (Pref Belmonte)",
+      "cargo_header": "Técnico de enfermagem"
+    },
+    "instruction": "Marque Verdadeiro (V) ou Falso (F) nas afirmativas abaixo.\n( ) O período de latência é o tempo que transcorre desde a infecção até que a pessoa se torne infectada.\n( ) O sarampo e a varicela são exemplos de baixa infectividade; a caxumba e a rubéola, de infectividade intermediária; e a lepra, de infectividade relativamentealta.\n( ) Infecção inaparente: é a presença de um agente infeccioso em um hospedeiro sem que apareçam sinais ou sintomas clínicos manifestos.\n( ) As espécies que ocasionam doença humana são denominadas patogênicas.\nApós sua análise assinale a alternativa que apresenta a sequência\nCORRETA\n.",
+    "options": [
+      {
+        "id": "A",
+        "text": "V, F, V, F.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "F, V, F, F.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "V, F, V, V.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "F, V, F, V.",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1.json",
+    "meta": {
+      "banca": "Ameosc",
+      "ano": "2021",
+      "orgao": "Pref Guaraciaba (SC) / ESF",
+      "prova": "Tec Enf (Pref Guaraciaba (SC))",
+      "cargo_header": "Técnico de enfermagem"
+    },
+    "instruction": "Com base em epidemiologia, marque (\nV\n) Verdadeiro ou (\nF\n) Falso nos itens abaixo.\n(\n)A caracterização epidemiológica das doenças permite conhecer sua natureza e comportamento e decidir o tipo de resposta necessária para o seu controle.\n(\n)Enfoque epidemiológico considera apenas que a doença na população: não ocorre por acaso e não está distribuída de forma homogênea.\n(\n)Conjunto mínimo de condições que age em sintonia e causa a doença é denominado causa insuficiente.\n(\n)A Tríade Epidemiológica é o modelo tradicional de causalidade das doenças transmissíveis; nesse, a doença é o resultado da interação entre o agente, ohospedeiro suscetível e o ambiente.\nApós análise, marque a opção\nCORRETA\n.",
+    "options": [
+      {
+        "id": "A",
+        "text": "V , V , F , F",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "F , V , V , F .",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "V , F , F , V .",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "F , F , V , V .",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-0.json",
+    "meta": {
+      "banca": "AVANÇASP",
+      "ano": "2024",
+      "orgao": "Enfermagem / Trabalho",
+      "prova": "Tec (Pref Lorena)",
+      "cargo_header": "Técnico de enfermagem"
+    },
+    "instruction": "Em certo município, entre 600 crianças cadastradas na Estratégia Saúde da Família e acompanhadas durante um ano, foram diagnosticados, neste período, 30casos novos de anemia.\nConsiderando os conceitos básicos de epidemiologia, é correto afirmar que, para cada 1.000 crianças, o número de casos novos no ano de anemia será de:",
+    "options": [
+      {
+        "id": "A",
+        "text": "50",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "120",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "30",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "65",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "75",
+        "is_correct": false
+      }
+    ]
+  },
+  {
+    "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-6.json",
+    "meta": {
+      "banca": "AVANÇASP",
+      "ano": "2024",
+      "orgao": "Pref SL da Serra",
+      "prova": "AEnf (SL da Serra)",
+      "cargo_header": "Técnico de enfermagem"
+    },
+    "instruction": "São doenças e agravos de notificação compulsória no Brasil:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cólera; Covid-19; Asma.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Difteria; Doença de Chagas Aguda; Bronquite.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Doença Meningocócica e outras meningites; Varíola; Otite média.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Ebola; Doença aguda pelo vírus Zika; Amidalite.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Sífilis; Toxoplasmose gestacional e congênita; Dengue.",
+        "is_correct": true
+      }
+    ]
+  },
+  {
+    "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-7.json",
+    "meta": {
+      "banca": "AVANÇASP",
+      "ano": "2024",
+      "orgao": "Pref SL da Serra",
+      "prova": "AEnf (SL da Serra)",
+      "cargo_header": "Técnico de enfermagem"
+    },
+    "instruction": "\"A cidade de São Paulo já soma mais de 100 mil casos de dengue neste ano. O município também registra 19 mortes causadas pela doença, sendo duas decrianças entre 5 e 9 anos\". Jornal G1 SP.\nDisponível em: https://encurtador.com.br/jyEMU.\nAs notificações compulsórias dos casos de Dengue devem ser realizadas:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Imediata (até 24 horas)",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Imediata (até 48 horas)",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Semanalmente.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Quinzenalmente.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Mensalmente.",
+        "is_correct": false
+      }
+    ]
+  }
+]

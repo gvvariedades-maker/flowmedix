@@ -786,6 +786,9 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | [`TESTES_QUICK_START.md`](docs/TESTES_QUICK_START.md) | Jest e Playwright |
 | [`ZOOM_MOBILE_POLICY.md`](docs/ZOOM_MOBILE_POLICY.md) | Pinch vs toolbar A+/A− no mobile (Modelos A/B/E) |
 | [`DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) | Hub onboarding designer front — App UI vs NeuroSlides |
+| [`DECISAO_NEUROSLIDES_GERACAO_2.md`](docs/DECISAO_NEUROSLIDES_GERACAO_2.md) | ADR Visual OS — 4 tipos imutáveis; chassis glanceable |
+| [`NEUROSLIDES_VISUAL_BAR.md`](docs/NEUROSLIDES_VISUAL_BAR.md) | Piso best-in-market + ratchet (cada molde só melhora) |
+| [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](docs/NEUROSLIDES_GERACAO_2_ROADMAP.md) | Roadmap G2: flagships → Fábrica → cauda genérica |
 | [`auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md`](docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md) | Rebrand editorial — escopo, telhas T1–T11, WCAG |
 | [`auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) | Direção visual v3 — Clinical Study, paleta híbrida, mapeamento skills |
 | [`auditoria-visual-v2/LANDING-AVANT-v3.md`](docs/auditoria-visual-v2/LANDING-AVANT-v3.md) | Brief histórico landing `/` (síntese Estudei) |

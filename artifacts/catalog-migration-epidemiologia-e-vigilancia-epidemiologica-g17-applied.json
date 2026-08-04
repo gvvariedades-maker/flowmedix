@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:58:33.956Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g17",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-3",
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-4",
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-5",
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-6",
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-7",
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-8",
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-9",
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066961947-9"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066961947-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

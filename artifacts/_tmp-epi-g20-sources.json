@@ -1,0 +1,248 @@
+[
+  {
+    "file": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-8.json",
+    "family": "vf",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Entende-se por vigilância epidemiológica um conjunto de ações que proporcionam o conhecimento, a detecção ou prevenção de qualquer mudança nos fatoresdeterminantes e condicionantes de saúde individual ou coletiva, com a finalidade de recomendar e adotar as medidas de prevenção e controle das doenças ou agravos.De acordo com as funções da vigilância epidemiológica, marque\nV\npara as afirmativas verdadeiras e\nF\npara as falsas.\n( ) Avaliar as condições de funcionamento e identificar os riscos e os danos à saúde dos pacientes.\n( ) Coletar dados, processar os dados coletados, analisá-los e interpretá-los.\n( ) Verificar e promover adesão às normas e aos regulamentos técnicos vigentes.\n( ) Avaliar a eficácia e a efetividade das medidas adotadas e, ainda, a omissão de informações pertinentes.\nA sequência está correta em",
+    "text_fragment": "<p>\"Sem Especialidade\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "V, V, F, F.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "F, F, F, F.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "F, V, F, F.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "F, V, F, V.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: F, V, F, F."
+    ]
+  },
+  {
+    "file": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-5.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Tendo em vista que a notificação de doenças junto aos serviços de vigilância epidemiológica do município é uma das tarefas mais importantes do profissional queatua junto à Atenção Básica, sobre a periodicidade de notificação, assinale a afirmativa correta.",
+    "text_fragment": "<p>\"Sem Especialidade\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tuberculose deverá ser notificada em até 24h.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Covid-19 e febre amarela são doenças notificáveis em até 24h.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Sarampo, sífilis e clamidiose são agravos de notificação compulsória.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Dengue e dengue grave não são mais notificadas, exceto em casos de epidemias.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Covid-19 e febre amarela são doenças notificáveis em até 24h."
+    ]
+  },
+  {
+    "file": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-5.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "A vigilância epidemiológica é uma das principais estratégias utilizadas na saúde pública para o controle de doenças transmissíveis. Ela envolve a coleta, a análise ea interpretação de dados relacionados à ocorrência de doenças. Dentre os objetivos da vigilância epidemiológica, assinale a afirmativa correta.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Realizar exclusivamente o controle de surtos hospitalares.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Monitorar e avaliar a eficácia das intervenções de saúde pública.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Substituir a notificação compulsória de doenças por pesquisas esporádicas.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Desenvolver protocolos de tratamento para todas as doenças identificadas.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Monitorar e avaliar a eficácia das intervenções de saúde pública."
+    ]
+  },
+  {
+    "file": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-2.json",
+    "family": "certo_errado",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "A Notificação Compulsória Imediata (NCI), uma comunicação oficial da ocorrência de casos confirmados ou suspeitos de certas doenças a autoridadescompetentes, deve ser realizada para doenças cujo prazo é de 24 horas para a citação.\nSão consideradas doenças de Notificação Compulsória Imediata (NCI), os seguintes casos suspeitos ou confirmados de, EXCETO:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cólera.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Coqueluche.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Raiva humana.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Corbúnculo ou antraz.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Coqueluche."
+    ]
+  },
+  {
+    "file": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-0.json",
+    "family": "conceito",
+    "branch": "epi_cadeia_transmissao",
+    "instruction": "A identificação dos agentes biológicos mais prováveis em função da localização geográfica e da característica do serviço de saúde e seus setores, considerandoinformações como fontes de exposição e reservatórios; transmissibilidade; patogenicidade; e, virulência do agente, dentre outras, devem estar especificadas na etapa deidentificação de perigos no seguinte documento:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Programa de Gerenciamento de Riscos (PGR).",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Programa de Controle Médico de Saúde Ocupacional (PCMSO).",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Plano de Gerenciamento de Resíduos de Serviço de Saúde (PGRSS).",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Planejamento do setor de gestão de pessoas dos estabelecimentos de saúde.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Programa de Gerenciamento de Riscos (PGR)."
+    ]
+  },
+  {
+    "file": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-1.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "São consideradas doenças de notificação compulsória:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "HIV/AIDS; febre amarela; cisticercose; e, sífilis.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Febre amarela; cisticercose; sífilis; e, toxoplasmose.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Hepatites virais; HIV/AIDS; tuberculose; e, febre amarela.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Todos os tipos de hepatites; HIV; tuberculose; e, giardíase.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Hepatites virais; HIV/AIDS; tuberculose; e, febre amarela."
+    ]
+  },
+  {
+    "file": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-3.json",
+    "family": "certo_errado",
+    "branch": "epi_indicadores",
+    "instruction": "Em epidemiologia, o termo incidência refere-se ao número total de casos, novos e antigos, de uma determinada doença em uma população específica e em um dado momento.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certo",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Errado",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "B: Errado"
+    ]
+  },
+  {
+    "file": "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-1.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Vigilância em Saúde trata-se de um processo contínuo e sistemático de coleta, consolidação, análise e disseminação de dados sobre eventos relacionados à saúde.A Política Nacional de Vigilância em Saúde, instituída em 2018, visa a garantir o planejamento e a implementação de medidas de saúde pública para a proteção da saúdeda população, a prevenção e o controle de riscos, agravos e doenças, bem como para a promoção da saúde. As quatro áreas que compõem a Vigilância em Saúde são",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Vigilâncias Sanitária, Entomológica, Ambiental e do Óbito.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Vigilâncias Epidemiológica, Sanitária, Entomológica e do Óbito.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Vigilâncias Sanitária, Ambiental, do Óbito e Saúde do Trabalhador.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Vigilâncias Epidemiológica, Sanitária, Ambiental e Saúde do Trabalhador.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: Vigilâncias Epidemiológica, Sanitária, Ambiental e Saúde do Trabalhador."
+    ]
+  }
+]

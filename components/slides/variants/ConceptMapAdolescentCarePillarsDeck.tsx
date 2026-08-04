@@ -58,6 +58,7 @@ export function ConceptMapAdolescentCarePillarsDeck({
       theme={theme}
       washOpacity={0.35}
       eyebrow="Espaço do adolescente — quatro pilares"
+      footerLabel="Transferência de prova"
       footerRule={footerRule}
     >
       <PillarDeck items={items} />

@@ -1,0 +1,16 @@
+{
+  "lote": "atencao-basica-saude-da-familia-g18",
+  "status": "applied",
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "slug_count": 8,
+  "applied_at": "2026-08-03T20:48:30.562Z",
+  "applied_report": "artifacts/catalog-migration-atencao-basica-saude-da-familia-g18-applied.json",
+  "anchor_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-3",
+  "anchor_second_review": {
+    "reviewed_at": "2026-08-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/atencao-basica-saude-da-familia-g18.json"
+  }
+}

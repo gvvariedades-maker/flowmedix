@@ -1,0 +1,158 @@
+{
+  "generated_at": "2026-08-01T23:22:47.853Z",
+  "phase": "recheck-sinais",
+  "results": [
+    {
+      "lote": "sinais-vitais-completo",
+      "missing": false,
+      "files": 527,
+      "counts": {
+        "pedagogy_letter_spoiler": 13,
+        "pedagogy_vf_verdict_spoiler": 584,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "named_letter_pre_answer": 5,
+      "clause_only_pre_answer": 8,
+      "other_fp_pre_answer": 0,
+      "files_with_named": 3,
+      "named_samples": [
+        {
+          "slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+          "slide": "golden_rule",
+          "evidence": "Letra B — idade errada."
+        },
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+          "slide": "golden_rule",
+          "evidence": "Letra A"
+        },
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+          "slide": "golden_rule",
+          "evidence": "Letra D"
+        },
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+          "slide": "golden_rule",
+          "evidence": "Letra E"
+        },
+        {
+          "slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+          "slide": "golden_rule",
+          "evidence": "Letra A inverte exatamente esses termos — distrator A."
+        }
+      ],
+      "residue": [
+        {
+          "slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+          "slide": "golden_rule",
+          "key": "exam_hint",
+          "path": "golden_rule.rows[2].exam_hint",
+          "evidence": "Letra B — idade errada.",
+          "kind": "named"
+        },
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+          "slide": "golden_rule",
+          "key": "label",
+          "path": "golden_rule.rows[0].label",
+          "evidence": "Letra A",
+          "kind": "named"
+        },
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+          "slide": "golden_rule",
+          "key": "label",
+          "path": "golden_rule.rows[3].label",
+          "evidence": "Letra D",
+          "kind": "named"
+        },
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+          "slide": "golden_rule",
+          "key": "label",
+          "path": "golden_rule.rows[4].label",
+          "evidence": "Letra E",
+          "kind": "named"
+        },
+        {
+          "slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-4",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[4].detail",
+          "evidence": "30–35 °C é faixa de hipotermia grave — impossível como normalidade.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-3",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "Déficit de pulso é a diferença entre o pulso apical e o pulso periférico.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-3",
+          "slide": "golden_rule",
+          "key": "value",
+          "path": "golden_rule.rows[0].value",
+          "evidence": "Falsa: Déficit de pulso é a diferença entre o pulso apical e o pulso periférico.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+          "slide": "golden_rule",
+          "key": "exam_hint",
+          "path": "golden_rule.rows[4].exam_hint",
+          "evidence": "Letra A inverte exatamente esses termos — distrator A.",
+          "kind": "named"
+        },
+        {
+          "slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-5",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "Um paciente com temperatura axilar de 36,6°C está febril.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-5",
+          "slide": "golden_rule",
+          "key": "value",
+          "path": "golden_rule.rows[0].value",
+          "evidence": "Falsa: Um paciente com temperatura axilar de 36,6°C está febril.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-7",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[1].detail",
+          "evidence": "Débito urinário horário monitorado continuamente, refletindo perfusão e função renal imediata.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-7",
+          "slide": "concept_map",
+          "key": "correct",
+          "path": "concept_map.items[1].correct",
+          "evidence": "Débito urinário horário monitorado continuamente, refletindo perfusão e função renal imediata.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-7",
+          "slide": "golden_rule",
+          "key": "value",
+          "path": "golden_rule.rows[4].value",
+          "evidence": "Verdadeira: Débito urinário horário monitorado continuamente, refletindo perfusão e função renal imediata.",
+          "kind": "clause_only"
+        }
+      ]
+    }
+  ]
+}

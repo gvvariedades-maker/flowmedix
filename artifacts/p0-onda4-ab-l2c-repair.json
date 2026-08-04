@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-08-03T22:09:07.083Z",
+  "report": [
+    {
+      "slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2",
+      "lote": "atencao-basica-saude-da-familia-g03",
+      "edits": [
+        "cm.detail"
+      ]
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "lote": "atencao-basica-saude-da-familia-g05",
+      "edits": [
+        "gr.vf_label",
+        "gr.vf_label"
+      ]
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-2",
+      "lote": "atencao-basica-saude-da-familia-g06",
+      "edits": [
+        "gr.label"
+      ]
+    },
+    {
+      "slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9",
+      "lote": "atencao-basica-saude-da-familia-g13",
+      "edits": [
+        "lf.marcar_C"
+      ]
+    },
+    {
+      "slug": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712315153-8",
+      "lote": "atencao-basica-saude-da-familia-g13",
+      "edits": [
+        "lf.marcar_D"
+      ]
+    },
+    {
+      "slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+      "lote": "atencao-basica-saude-da-familia-g13",
+      "edits": [
+        "lf.marcar_C"
+      ]
+    },
+    {
+      "slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-4",
+      "lote": "atencao-basica-saude-da-familia-g13",
+      "edits": [
+        "lf.marcar_C"
+      ]
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-0",
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "edits": [
+        "lf.marcar_B"
+      ]
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-3",
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "edits": [
+        "lf.marcar_B"
+      ]
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "edits": [
+        "lf.marcar_A"
+      ]
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-6",
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "edits": [
+        "lf.marcar_A"
+      ]
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-0",
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "edits": [
+        "lf.marcar_A"
+      ]
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-2",
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "edits": [
+        "lf.marcar_B"
+      ]
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-3",
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "edits": [
+        "lf.marcar_B"
+      ]
+    }
+  ]
+}

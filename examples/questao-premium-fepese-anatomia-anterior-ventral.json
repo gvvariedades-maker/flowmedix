@@ -6,9 +6,29 @@
     "prova": "TEn (Ágs de Chapecó)",
     "topico": "Enfermagem",
     "subtopico": "Noções de Anatomia",
-    "cargo_header": "Técnico de Enfermagem"
+    "cargo_header": "Técnico de Enfermagem",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "anat_terminologia_planos",
+    "content_review": {
+      "reviewed_at": "2026-08-03",
+      "reviewer": "onda1-anatomia",
+      "guideline_snapshot": "ANATOMIA_TERMINOLOGIA — pares anterior/ventral, posterior/dorsal, superior/cranial, inferior/caudal; medial≠lateral; proximal≠distal",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "anatomia-terminologia",
+        "tier": "B",
+        "issuer": "Nomenclatura anatômica internacional",
+        "title": "Terminologia de posição anatômica (pares clássicos)",
+        "year": 2020,
+        "covers": ["anterior-ventral", "posterior-dorsal", "medial-lateral", "proximal-distal"]
+      }
+    ]
   },
   "question_data": {
+    "instruction": "Na anatomia, utiliza-se terminologia padronizada para descrever posições e relações entre estruturas.\nAssinale a alternativa correta em relação ao tema.",
     "options": [
       {
         "id": "A",
@@ -35,121 +55,98 @@
         "text": "\"Anterior\" é sinônimo de \"ventral\", indicando a parte da frente do corpo.",
         "is_correct": true
       }
-    ],
-    "instruction": "Na anatomia, utiliza-se terminologia padronizada para descrever posições e relações entre estruturas.\nAssinale a alternativa correta em relação ao tema."
+    ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "subject": "Enfermagem",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Noções de Anatomia"
-      },
-      "slide_title": "Terminologia anatômica",
+      "slide_title": "Eixos do corpo — pares clássicos",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
       "items": [
         {
-          "id": "1",
-          "icon": "ArrowRight",
-          "label": "Anterior / Ventral",
-          "detail": "Parte da frente do corpo."
+          "label": "Cenário da prova",
+          "detail": "A banca cobra sinônimos e sentidos de posição na posição anatômica.",
+          "icon": "Target"
         },
         {
-          "id": "2",
-          "icon": "ArrowRight",
-          "label": "Posterior / Dorsal",
-          "detail": "Parte de trás do corpo."
+          "label": "Eixo frente ↔ costas",
+          "detail": "Anterior/ventral aponta para a frente; posterior/dorsal aponta para as costas.",
+          "icon": "MoveHorizontal"
         },
         {
-          "id": "3",
-          "icon": "ArrowRight",
-          "label": "Superior / Cranial",
-          "detail": "Em direção à cabeça."
+          "label": "Eixo cabeça ↔ pés",
+          "detail": "Superior/cranial sobe; inferior/caudal desce — não misturar com costas.",
+          "icon": "ArrowUpDown"
         },
         {
-          "id": "4",
-          "icon": "ArrowRight",
-          "label": "Inferior / Caudal",
-          "detail": "Em direção aos pés."
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "A banca troca o par: medial com lateral, proximal com distal, ou posterior com cranial.",
+          "icon": "AlertTriangle"
         }
       ],
-      "footer_rule": "A posição anatômica padroniza a descrição do corpo humano."
-    },
-    {
-      "type": "golden_rule",
-      "subject": "Enfermagem",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Noções de Anatomia"
-      },
-      "content": "ANTERIOR É SINÔNIMO DE VENTRAL.",
-      "rows": [
-        {
-          "label": "Anterior",
-          "value": "Ventral"
-        },
-        {
-          "label": "Posterior",
-          "value": "Dorsal"
-        },
-        {
-          "label": "Superior",
-          "value": "Cranial"
-        },
-        {
-          "label": "Inferior",
-          "value": "Caudal"
-        }
-      ],
-      "footer_rule": "Memorize os pares clássicos e evite inverter os eixos."
+      "footer_rule": "Antes de marcar, confira se o termo e o sinônimo estão no mesmo eixo"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "subject": "Enfermagem",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Noções de Anatomia"
-      },
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
       "steps": [
-        "Ler o termo anatômico principal da alternativa.",
-        "Buscar o sinônimo clássico usado na posição anatômica.",
-        "Comparar com o sentido oposto para evitar pegadinha.",
-        "Confirmar que anterior corresponde a ventral.",
-        "Marcar a alternativa E."
+        "Identificar o comando: escolher a definição correta de terminologia de posição.",
+        "Eliminar A: medial é perto da linha média — afastado é lateral.",
+        "Eliminar B: proximal é perto da origem do membro — distante é distal.",
+        "Eliminar C e D: posterior≠cranial e superior≠caudal (eixos diferentes).",
+        "Validar E: anterior = ventral = frente do corpo.",
+        "Em similares: teste o par no eixo; se inverter o oposto, a alternativa cai."
       ],
-      "footer_rule": "Quando a banca pergunta posição, compare sempre com o eixo oposto."
+      "footer_rule": "Par certo no eixo certo — o resto é inversão"
+    },
+    {
+      "type": "golden_rule",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "content": "PARES CLÁSSICOS DA POSIÇÃO ANATÔMICA",
+      "rows": [
+        { "label": "Anterior", "value": "Ventral (frente)" },
+        { "label": "Posterior", "value": "Dorsal (costas)" },
+        { "label": "Superior", "value": "Cranial (cabeça)" },
+        { "label": "Inferior", "value": "Caudal (pés)" },
+        { "label": "Medial / Lateral", "value": "Perto / longe da linha média" },
+        { "label": "Proximal / Distal", "value": "Perto / longe da origem do membro" }
+      ],
+      "footer_rule": "Memorize o par; a pegadinha é trocar o oposto"
     },
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "subject": "Enfermagem",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Noções de Anatomia"
-      },
-      "content": "PEGADINHAS DE TERMINOLOGIA ANATÔMICA",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "content": "INVERSÕES QUE A BANCA AMA",
       "items": [
         {
-          "id": "1",
-          "label": "Medial é afastado",
-          "detail": "Trocar medial com lateral.",
-          "correct": "Medial é próximo da linha média; lateral é afastado."
+          "label": "Medial = afastado",
+          "detail": "Confunde com lateral.",
+          "correct": "Medial fica perto da linha média; lateral fica afastado."
         },
         {
-          "id": "2",
-          "label": "Proximal é distante",
-          "detail": "Trocar proximal com distal.",
-          "correct": "Proximal é próximo da origem; distal é distante."
+          "label": "Proximal = distante",
+          "detail": "Confunde com distal.",
+          "correct": "Proximal fica perto da origem; distal fica longe."
         },
         {
-          "id": "3",
-          "label": "Posterior é cranial",
-          "detail": "Misturar costas com direção à cabeça.",
-          "correct": "Posterior é dorsal; cranial é superior."
+          "label": "Posterior = cranial",
+          "detail": "Mistura costas com direção à cabeça.",
+          "correct": "Posterior/dorsal = costas; cranial = superior."
+        },
+        {
+          "label": "Superior = caudal",
+          "detail": "Inverte o eixo cabeça–pés.",
+          "correct": "Superior/cranial sobe; caudal/inferior desce."
+        },
+        {
+          "label": "Em similares",
+          "detail": "Plano sagital ≠ frontal ≠ transverso.",
+          "correct": "Cada plano corta um eixo diferente — não misture os cortes."
         }
       ],
-      "footer_rule": "Sinônimos anatômicos caem muito quando a banca troca os pares opostos."
+      "footer_rule": "Se o texto inverter o oposto do par, descarte"
     }
   ]
 }

@@ -92,7 +92,7 @@
         },
         {
           "label": "Via respiratória",
-          "value": "Falso — transmissão vetorial",
+          "value": "Transmissão vetorial",
           "emphasis": "alert",
           "badge": "warn"
         }

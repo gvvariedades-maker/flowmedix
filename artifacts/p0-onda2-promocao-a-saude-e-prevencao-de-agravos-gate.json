@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-08-03T23:59:52.178Z",
+  "onda": "2-p0-residual",
+  "pacote": "Promoção à Saúde e Prevenção de Agravos",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-completo",
+  "baseline": {
+    "named": 190,
+    "letter_spoiler": 190,
+    "vf": 5
+  },
+  "after": {
+    "named": 0,
+    "letter": 0,
+    "clauseOnly": 0,
+    "vf": 0,
+    "files": 111
+  },
+  "second_pass": {
+    "gabarito_would_change": 0,
+    "trunc_would_change": 0,
+    "vf_would_change": 0
+  },
+  "dry_run": {
+    "ok": 109,
+    "failed": 2,
+    "skipped": 0,
+    "report": "artifacts/catalog-migration-promocao-a-saude-e-prevencao-de-agravos-completo-dry-run.json"
+  },
+  "apply_status": "applied_supabase_partial",
+  "blockers": [
+    {
+      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
+      "detail": "gabarito diverge: DB=A local=D",
+      "classification": "HUMAN_REVIEW"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8",
+      "detail": "gabarito diverge: DB=A local=C",
+      "classification": "HUMAN_REVIEW"
+    }
+  ],
+  "fp_classification": [],
+  "apply_cmd": "npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-completo --apply --allow-generic --skip-preflight --skip-risk-approval --skip-anchor-review",
+  "next": [
+    "Segurança do Paciente",
+    "Saúde da Criança"
+  ],
+  "applied": {
+    "ok": 109,
+    "failed": 2,
+    "skipped": 0,
+    "generated_at": "2026-08-04T00:03:43.023Z",
+    "report": "artifacts/catalog-migration-promocao-a-saude-e-prevencao-de-agravos-completo-applied.json"
+  },
+  "updated_at": "2026-08-04T00:04:15.018Z"
+}

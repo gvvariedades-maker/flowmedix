@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "subtopico": "Saúde da Mulher",
+  "pacote_prefix": "saude-da-mulher",
+  "mode": "full",
+  "total_slugs": 246,
+  "handcraft_applied": 246,
+  "production_status": "production_ready",
+  "next_unit": {
+    "type": "done",
+    "id": "production_ready",
+    "detail": "Pacote já production_ready — use audit:subtopico-health se pós-venda"
+  },
+  "completed_units": [],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-08-04T01:04:41.024Z",
+  "notes": null
+}

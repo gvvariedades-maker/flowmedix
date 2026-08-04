@@ -2,7 +2,6 @@
 
 import { useMemo } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Check, MessageCircleWarning, Shield } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { GoldenRuleRow } from './GoldenRule';
 import {
@@ -38,17 +37,6 @@ function sideTone(side: SpeakBarrierSide): BoardTone {
   }
 }
 
-function sideIcon(side: SpeakBarrierSide) {
-  switch (side) {
-    case 'barrier':
-      return MessageCircleWarning;
-    case 'rights':
-      return Shield;
-    default:
-      return Check;
-  }
-}
-
 /** Contraste “como falar × como NÃO falar” — scan em uma tela. */
 export function GoldenRuleAdolescentSpeakBarrierBoard({
   content,
@@ -77,6 +65,7 @@ export function GoldenRuleAdolescentSpeakBarrierBoard({
       theme={theme}
       title={content}
       eyebrow="Informação completa ≠ jargão"
+      footerLabel="Decore"
       footerRule={footerRule}
     >
       <TwoColumnBoard
@@ -84,6 +73,7 @@ export function GoldenRuleAdolescentSpeakBarrierBoard({
         rightTitle="Como NÃO falar"
         leftTone="ok"
         rightTone="barrier"
+        emphasize="right"
         left={
           <>
             {okish.map(({ row, side }, i) => (
@@ -93,11 +83,10 @@ export function GoldenRuleAdolescentSpeakBarrierBoard({
                 animate={{ opacity: 1, y: 0 }}
               >
                 <LabelBodyRow
-                  chip={row.label}
+                  layout="rail"
+                  chip={row.label || 'Falar'}
                   body={row.value}
                   tone={sideTone(side)}
-                  icon={sideIcon(side)}
-                  iconClassName="text-emerald-700"
                   hint={row.exam_hint}
                 />
               </motion.div>
@@ -113,14 +102,12 @@ export function GoldenRuleAdolescentSpeakBarrierBoard({
                 animate={{ opacity: 1, y: 0 }}
               >
                 <LabelBodyRow
-                  chip={row.label}
+                  layout="rail"
+                  chip={row.label || 'Barreira'}
                   body={row.value}
                   tone="barrier"
-                  icon={MessageCircleWarning}
-                  iconClassName="text-rose-700"
                   bodyStrong
                   hint={row.exam_hint}
-                  className="ring-1 ring-rose-200"
                 />
               </motion.div>
             ))}

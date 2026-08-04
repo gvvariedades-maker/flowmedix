@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-08-03T20:49:10.527Z",
+  "lote": "atencao-basica-saude-da-familia-g22",
+  "mode": "apply",
+  "total_files": 3,
+  "ok": 3,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-4",
+    "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-0",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

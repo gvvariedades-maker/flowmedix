@@ -152,31 +152,31 @@
           "badge": "hot"
         },
         {
-          "label": "Letra A",
+          "label": "Correta: técnica de punção com bisel voltado",
           "value": "Correta: técnica de punção com bisel voltado para cima.",
           "emphasis": "default",
           "badge": "ok"
         },
         {
-          "label": "Letra B",
+          "label": "Correta no enunciado: antissepsia com álcool",
           "value": "Correta no enunciado: antissepsia com álcool 70% antes da punção.",
           "emphasis": "default",
           "badge": "ok"
         },
         {
-          "label": "Letra C",
+          "label": "Correta: identificação do acesso após o",
           "value": "Correta: identificação do acesso após o procedimento.",
           "emphasis": "default",
           "badge": "ok"
         },
         {
-          "label": "Letra D",
+          "label": "EXCETO: preferir veias menos proeminentes",
           "value": "EXCETO: preferir veias menos proeminentes contradiz seleção por veias calibrosas e acessíveis.",
           "emphasis": "alert",
           "badge": "warn"
         },
         {
-          "label": "Letra E",
+          "label": "Correta: cateter novo a cada tentativa de",
           "value": "Correta: cateter novo a cada tentativa de punção.",
           "emphasis": "default",
           "badge": "ok"

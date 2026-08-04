@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:54:35.026Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7",
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5",
+    "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8",
+    "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-6",
+    "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6",
+    "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7",
+    "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-4",
+    "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

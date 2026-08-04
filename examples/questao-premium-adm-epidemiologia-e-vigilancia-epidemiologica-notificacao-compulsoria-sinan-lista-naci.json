@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "banca": "Adm&Tec",
+    "prova": "Tec (Pref BM de Deus)",
+    "orgao": "Pref BM de Deus",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "epi_notificacao_compulsoria",
+    "content_review": {
+      "reviewed_at": "2026-08-03",
+      "reviewer": "pipeline-epi",
+      "guideline_snapshot": "Lista Nacional de Notificação Compulsória — Portaria de Consolidação nº 4/2017 (Anexo V), atualizada pela Portaria GM/MS nº 1.061/2020: prazo imediato (24h) x semanal (7 dias)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "portaria-1061-2020",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Portaria GM/MS nº 1.061/2020 — altera a Lista Nacional de Notificação Compulsória (Anexo V da Portaria de Consolidação nº 4/2017)",
+        "year": 2020,
+        "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2020/prt1061_18_05_2020.html",
+        "covers": [
+          "prazo de notificação imediata (24h)",
+          "prazo de notificação semanal (7 dias)",
+          "botulismo como notificação imediata",
+          "dengue e esquistossomose como notificação de rotina"
+        ]
+      },
+      {
+        "id": "guia-vigilancia-saude-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Guia de Vigilância em Saúde",
+        "year": 2022,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_5ed_2022.pdf",
+        "covers": [
+          "critérios de notificação compulsória",
+          "doenças crônicas não transmissíveis fora do SINAN individual"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Qual dos itens abaixo consta na Lista Nacional de Doenças de Notificação Compulsória Imediata?",
+    "options": [
+      { "id": "A", "text": "Botulismo.", "is_correct": true },
+      { "id": "B", "text": "Casos de dengue.", "is_correct": false },
+      { "id": "C", "text": "Asma.", "is_correct": false },
+      { "id": "D", "text": "Esquistossomose.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Notificação compulsória — 24h x 7 dias",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "items": [
+        {
+          "label": "Cenário da prova",
+          "detail": "A banca pede o item que está na lista de notificação IMEDIATA — prazo de 24 horas.",
+          "icon": "Siren"
+        },
+        {
+          "label": "Eixo de leitura",
+          "detail": "Existe notificação imediata (24h, alto risco) e semanal (7 dias, rotina) — nem toda doença notificável é imediata.",
+          "icon": "Clock"
+        },
+        {
+          "label": "Fora da lista",
+          "detail": "Doenças crônicas não transmissíveis não entram no SINAN individual por notificação compulsória.",
+          "icon": "FileX"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "A banca troca a doença de resposta rápida por outra notificável, mas de rotina, ou por uma doença crônica.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Notificável ≠ imediata: confira sempre o prazo"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "steps": [
+        "Ler o comando: pede a doença que consta na Lista Nacional de Notificação Compulsória IMEDIATA (até 24h).",
+        "Fixar o critério: notificação imediata cobre agravos de alto risco de disseminação ou gravidade, com resposta rápida da vigilância.",
+        "Testar dengue: é notificável, mas em regra semanal (7 dias); só se torna imediata com sinal de alarme, óbito ou surto. Eliminar como resposta genérica.",
+        "Testar asma: doença crônica não transmissível — não entra na lista de notificação compulsória ao SINAN.",
+        "Testar esquistossomose: notificável em área endêmica, porém no fluxo semanal, não no imediato.",
+        "Restar botulismo: intoxicação de alto risco que exige investigação e resposta em até 24 horas.",
+        "Marcar letra A.",
+        "Em similares: separe sempre 'é notificável' (existe na lista) de 'é imediata' (prazo de 24h) antes de escolher."
+      ],
+      "footer_rule": "Prazo de 24h decide, não só a lista"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — prazos de notificação",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "content": "NOTIFICAÇÃO COMPULSÓRIA — PRAZOS",
+      "rows": [
+        {
+          "label": "Imediata (24h)",
+          "value": "Alto risco/gravidade — ex.: botulismo, doença meningocócica, febre amarela, sarampo.",
+          "badge": "warn"
+        },
+        {
+          "label": "Semanal (7 dias)",
+          "value": "Rotina em vigilância — ex.: dengue sem sinal de alarme, esquistossomose em área endêmica.",
+          "badge": "ok"
+        },
+        {
+          "label": "Fora da lista",
+          "value": "Doenças crônicas não transmissíveis (ex.: asma) não entram no SINAN individual.",
+          "badge": "hot"
+        },
+        {
+          "label": "Critério",
+          "value": "Potencial de disseminação + gravidade + necessidade de resposta rápida da vigilância.",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "Decore: 24h = risco imediato; 7 dias = rotina; crônica não notifica"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "content": "PEGADINHAS — notificação imediata x semanal",
+      "items": [
+        {
+          "label": "Letra B — Casos de dengue",
+          "detail": "Parece óbvia porque dengue é doença de notificação conhecida.",
+          "correct": "Dengue sem sinal de alarme é notificação semanal (7 dias); só surto, sinal de alarme ou óbito viram imediata."
+        },
+        {
+          "label": "Letra C — Asma",
+          "detail": "Distrator fácil para quem associa 'doença respiratória' a notificação.",
+          "correct": "Asma é crônica não transmissível — não integra a lista de notificação compulsória ao SINAN."
+        },
+        {
+          "label": "Letra D — Esquistossomose",
+          "detail": "Parasitose notificável seduz quem só confere 'é notificável' sem checar o prazo.",
+          "correct": "Esquistossomose em área endêmica é notificação semanal, não imediata."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Em outra prova: troca botulismo por sarampo, febre amarela ou doença meningocócica mantendo a mesma armadilha de prazo.",
+          "correct": "Pergunte sempre: essa doença exige resposta em 24h ou é acompanhamento de rotina em 7 dias?"
+        }
+      ],
+      "footer_rule": "Se a alternativa não fala em 24h de risco, geralmente é semanal"
+    }
+  ]
+}

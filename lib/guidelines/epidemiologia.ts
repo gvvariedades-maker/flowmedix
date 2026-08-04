@@ -132,5 +132,12 @@ export const EPIDEMIOLOGIA_MS: GuidelineTable = {
       detail: 'Portaria de notificação compulsória — sarampo, meningite, raiva, violência, etc.',
       sourceId: 'epidemiologia-ms',
     },
+    {
+      id: 'notificacao-semanal-7dias',
+      label: 'Notificação semanal',
+      value: 'comunicar à autoridade de saúde em até 7 dias',
+      detail: 'Portaria de notificação compulsória — agravos de rotina (ex.: dengue sem sinal de alarme, esquistossomose em área endêmica, hepatites virais).',
+      sourceId: 'epidemiologia-ms',
+    },
   ],
 };

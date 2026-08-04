@@ -1,25 +1,27 @@
 {
-  "generated_at": "2026-07-14T03:11:41.717Z",
+  "generated_at": "2026-08-01T01:23:01.291Z",
   "subtopico": "Farmacodinâmica e Farmacocinética",
   "pacote_prefix": "farmacodinamica-e-farmacocinetica",
   "production_status_before": "production_ready",
   "technical_ready": true,
-  "production_ready": true,
+  "production_ready": false,
   "can_sell": true,
   "continuous_eligible": true,
   "ship_gate": {
-    "ok": true,
-    "blockers": []
+    "ok": false,
+    "blockers": [
+      "L2c: 9 slug(s) com fail pedagógico: cetrede-enfermagem-vias-de-administracao-1778968997293-3, idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4, idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6, idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7, fundatec-enfermagem-processo-de-enfermagem-1780006976703-0 (+4)"
+    ]
   },
   "monitoring": {
     "deprecated": true,
     "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
-    "sessions_30d": 208
+    "sessions_30d": 131
   },
   "layers": {
     "L1": {
       "pass": true,
-      "detail": "handcraft-dod PASS"
+      "detail": "skipped"
     },
     "L2": {
       "pass": true,
@@ -29,9 +31,13 @@
       "pass": true,
       "detail": "numeric factcheck OK"
     },
+    "L2c": {
+      "pass": false,
+      "detail": "9 slug(s) com fail pedagógico: cetrede-enfermagem-vias-de-administracao-1778968997293-3, idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4, idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6, idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7, fundatec-enfermagem-processo-de-enfermagem-1780006976703-0 (+4)"
+    },
     "L3": {
       "pass": true,
-      "detail": "Playwright L3 Farmacodinâmica — 3 branches (2 bespoke + genérico); PNGs em artifacts/visual-mold-regression/"
+      "detail": "L3 skipped (--skip-l3)"
     },
     "L4": {
       "pass": true,
@@ -51,18 +57,83 @@
       "lote": "farmacodinamica-e-farmacocinetica-g01",
       "scanned": 5,
       "alignment_fail": 0,
-      "numeric_fail": 0
+      "numeric_fail": 0,
+      "pedagogy_fail": 4
     },
     {
       "lote": "farmacodinamica-e-farmacocinetica-g02",
       "scanned": 8,
       "alignment_fail": 0,
-      "numeric_fail": 0
+      "numeric_fail": 0,
+      "pedagogy_fail": 5
     }
   ],
+  "pedagogy": {
+    "slugs": 13,
+    "fail": 9,
+    "warn": 2,
+    "blind_reader_covered": 0,
+    "require_blind_reader": false,
+    "failing": [
+      {
+        "slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+        "reasons": [
+          "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow."
+        ]
+      },
+      {
+        "slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+        "reasons": [
+          "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[0].value: golden_rule.rows[0].value abre com veredito V/F — julgamento pertence ao logic_flow."
+        ]
+      },
+      {
+        "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+        "reasons": [
+          "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow."
+        ]
+      },
+      {
+        "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+        "reasons": [
+          "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow."
+        ]
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+        "reasons": [
+          "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow."
+        ]
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+        "reasons": [
+          "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow."
+        ]
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+        "reasons": [
+          "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow."
+        ]
+      },
+      {
+        "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+        "reasons": [
+          "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow."
+        ]
+      },
+      {
+        "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+        "reasons": [
+          "[fail] pedagogy_letter_spoiler @ concept_map.items[4].detail: concept_map.items[4].detail cita a letra da alternativa — gabarito só no logic_flow."
+        ]
+      }
+    ]
+  },
   "content_health": {
     "subtopico": "Farmacodinâmica e Farmacocinética",
-    "sessions_30d": 208,
+    "sessions_30d": 131,
     "open_reports": {
       "p0": 0,
       "p1": 0,
@@ -77,12 +148,14 @@
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 208,
+      "sessions_30d": 131,
       "open_p1": 0,
       "report_rate_pct": 0
     },
     "pass": true,
     "blockers": []
   },
-  "blockers": []
+  "blockers": [
+    "L2c: 9 slug(s) com fail pedagógico: cetrede-enfermagem-vias-de-administracao-1778968997293-3, idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4, idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6, idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7, fundatec-enfermagem-processo-de-enfermagem-1780006976703-0 (+4)"
+  ]
 }

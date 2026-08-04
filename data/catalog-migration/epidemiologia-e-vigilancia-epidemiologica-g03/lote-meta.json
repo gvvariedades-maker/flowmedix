@@ -1,0 +1,35 @@
+{
+    "lote":  "epidemiologia-e-vigilancia-epidemiologica-g03",
+    "subtopico":  "Epidemiologia e Vigilância Epidemiológica",
+    "anchor_second_review":  {
+                                 "reviewed_at":  "2026-08-04",
+                                 "reviewer":  "agent",
+                                 "method":  "agent",
+                                 "status":  "pass",
+                                 "artifact":  "artifacts/anchor-review/epidemiologia-e-vigilancia-epidemiologica-g03.json"
+                             },
+    "gates":  {
+                  "readiness":  "8/8",
+                  "goldens":  "0 failures",
+                  "preflight":  "8/8",
+                  "dry_run":  "ok=8 failed=0"
+              },
+    "notes":  "Handcraft Cursor Grok 4.5; aguarda pode aplicar.",
+    "handcraft_ready":  true,
+    "applied_at":  "2026-08-04",
+    "handcraft_ready_at":  "2026-08-03",
+    "slugs":  [
+                  "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7",
+                  "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5",
+                  "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8",
+                  "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-6",
+                  "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6",
+                  "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7",
+                  "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-4",
+                  "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5"
+              ],
+    "anchor_slug":  "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7",
+    "status":  "applied",
+    "pacote_prefix":  "epidemiologia-e-vigilancia-epidemiologica",
+    "slug_count":  8
+}

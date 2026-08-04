@@ -1,0 +1,1762 @@
+{
+  "generated_at": "2026-08-01T23:34:24.227Z",
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "lote": "atencao-basica-saude-da-familia-completo",
+  "total": 171,
+  "strong_threshold": 18,
+  "drift_total": 4,
+  "branch_totals": {
+    "ab_acs_territorio": 66,
+    "ab_te_aps": 5,
+    "ab_generico": 70,
+    "ab_esf_composicao": 18,
+    "ab_pnab_principios": 6,
+    "ab_vigilancia_ads": 6
+  },
+  "strong_branches": [
+    {
+      "branch": "ab_acs_territorio",
+      "count": 66,
+      "l3": "morphological · reference_table · vertical/cards · compare (genérico emerald)"
+    },
+    {
+      "branch": "ab_generico",
+      "count": 70,
+      "l3": "morphological · reference_table · vertical/cards · compare (genérico emerald)"
+    },
+    {
+      "branch": "ab_esf_composicao",
+      "count": 18,
+      "l3": "ab-esf-orbit-deck · ab-esf-reference-board · ab-esf-tap-flow · ab-esf-scope-trap (molde_inedito — brief 4/4)"
+    }
+  ],
+  "inedito_packages_needed": 1,
+  "handcrafts_needed": 171,
+  "cluster_decisions": [
+    {
+      "cluster": "ACS — atribuições, visita e território",
+      "count": 66,
+      "pct": 38.6,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-adm-atencao-basica-saude-da-familia-acs-atribuicoes-visita-e-territorio.json",
+      "branch_id": "ab_acs_territorio",
+      "family_counts": {
+        "conceito": 52,
+        "vf": 8,
+        "certo_errado": 5,
+        "protocolo": 1
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+        "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+        "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+        "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical/cards · compare (genérico emerald)"
+    },
+    {
+      "cluster": "Atenção Básica — conceito geral",
+      "count": 66,
+      "pct": 38.6,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-amauc-atencao-basica-saude-da-familia-atencao-basica-conceito-geral.json",
+      "branch_id": "ab_generico",
+      "family_counts": {
+        "conceito": 47,
+        "vf": 10,
+        "certo_errado": 5,
+        "protocolo": 3,
+        "calc": 1
+      },
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+        "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+        "cebraspe-cespe-enfermagem-atencao-basica-saude-da-familia-1778968144588-6"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical/cards · compare (genérico emerald)"
+    },
+    {
+      "cluster": "eSF — composição, carga e modalidades",
+      "count": 18,
+      "pct": 10.5,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-ameosc-atencao-basica-saude-da-familia-esf-composicao-carga-e-modalidades.json",
+      "branch_id": "ab_esf_composicao",
+      "family_counts": {
+        "conceito": 13,
+        "vf": 2,
+        "certo_errado": 2,
+        "text_fragment": 1
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "molde_inedito",
+      "l3_package": "ab-esf-orbit-deck · ab-esf-reference-board · ab-esf-tap-flow · ab-esf-scope-trap (molde_inedito — brief 4/4)"
+    },
+    {
+      "cluster": "PNAB / princípios e atributos da APS",
+      "count": 6,
+      "pct": 3.5,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "ab_pnab_principios",
+      "family_counts": {
+        "vf": 1,
+        "conceito": 5
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+        "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968125784-0",
+        "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9",
+        "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-5"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical/cards · compare (genérico emerald)"
+    },
+    {
+      "cluster": "Vigilância / ACE no território",
+      "count": 6,
+      "pct": 3.5,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "ab_vigilancia_ads",
+      "family_counts": {
+        "conceito": 3,
+        "vf": 3
+      },
+      "sample_slugs": [
+        "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-7",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-3",
+        "igeduc-enfermagem-processo-de-enfermagem-1780009392850-6"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical/cards · compare (genérico emerald)"
+    },
+    {
+      "cluster": "Técnico de enfermagem na AB",
+      "count": 5,
+      "pct": 2.9,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "ab_te_aps",
+      "family_counts": {
+        "conceito": 5
+      },
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780006486032-5",
+        "fgv-enfermagem-atencao-basica-saude-da-familia-1778968180610-6",
+        "fundep-enfermagem-atencao-basica-saude-da-familia-1778968194611-8",
+        "igecap-enfermagem-processo-de-enfermagem-1780004452857-0"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical/cards · compare (genérico emerald)"
+    },
+    {
+      "cluster": "Slug segment fora do pacote (drift?)",
+      "count": 3,
+      "pct": 1.8,
+      "drift_in_cluster": 3,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "ab_generico",
+      "family_counts": {
+        "conceito": 3
+      },
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-0",
+        "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-4",
+        "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-0"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical/cards · compare (genérico emerald)"
+    },
+    {
+      "cluster": "Imunização (drift?)",
+      "count": 1,
+      "pct": 0.6,
+      "drift_in_cluster": 1,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "ab_generico",
+      "family_counts": {
+        "conceito": 1
+      },
+      "sample_slugs": [
+        "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-3"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical/cards · compare (genérico emerald)"
+    }
+  ],
+  "rows": [
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Uma família residente em área rural enfrenta dificuldade no comparecimento ao posto de saúde. Após v",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Motoristas de UTI Móvel, como integrantes de uma equipe multidisciplinar de saúde, muitas vezes cola",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Analise as afirmativas a seguir: I. É considerada atividade do Agente Comunitário de Saúde, comparti",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Analise as afirmativas a seguir: I. Todo Agente Comunitário de Saúde deve atuar na medição de glicem",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Analise as afirmativas a seguir: I. Agindo de forma independente, o Agente Comunitário de Saúde deve",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-0",
+      "family": "vf",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A catapora (varicela) é uma doença infecciosa altamente transmissível, comum na infância, que exige ",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-5",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A saúde bucal é fundamental para o bem-estar geral, pois influencia a mastigação, a digestão, a auto",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-5",
+      "family": "conceito",
+      "topic": "Técnico de enfermagem na AB",
+      "pedagogical_cluster": "Técnico de enfermagem na AB",
+      "pedagogical_branch_proposed": "ab_te_aps",
+      "instruction_preview": "O trabalho do Auxiliar de Enfermagem junto com a equipe na atenção básica pressupõe integração de sa",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A atenção básica constitui componente estratégico da organização do sistema de saúde, orientando-se ",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "No modelo de atenção em saúde fundamentado na assistência multiprofissional em saúde da família, são",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "As Equipes de Saúde da Família Ribeirinha deverão prestar atendimento à população por, no mínimo, X ",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "Cada equipe de Saúde da Família (eSF) deve ser responsável por, no máximo, 4.000 pessoas, sendo a mé",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Em um atendimento na Unidade Básica de Saúde (UBS), o técnico em enfermagem utiliza o prontuário ele",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+      "family": "vf",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "O Técnico de Enfermagem desempenha um papel essencial no monitoramento de condições crônicas, como a",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "O técnico de enfermagem, como membro da equipe de Saúde da Família, desempenha um papel fundamental ",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4",
+      "family": "vf",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "O monitoramento contínuo das condições de saúde da população adscrita a uma unidade de Atenção Primá",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A atuação do técnico em enfermagem na atenção básica é fundamental para a promoção da saúde e preven",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+      "family": "vf",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A visita domiciliar (VD) é uma ferramenta tecnológica fundamental na Estratégia de Saúde da Família ",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "Em uma Unidade de Saúde da Família de um município, o técnico de enfermagem participa rotineiramente",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+      "family": "vf",
+      "topic": "PNAB / princípios e atributos da APS",
+      "pedagogical_cluster": "PNAB / princípios e atributos da APS",
+      "pedagogical_branch_proposed": "ab_pnab_principios",
+      "instruction_preview": "Em uma Unidade de Saúde da Família (USF) de um município, o técnico de enfermagem integra a equipe m",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
+      "family": "vf",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "A segurança do paciente na administração de medicamentos é regida por protocolos que visam a elimina",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O preparo pré-operatório realizado na atenção básica visa minimizar riscos e garantir que o paciente",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-0",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Em uma Unidade Básica de Saúde (UBS) localizada em área de vulnerabilidade social, o Técnico de Enfe",
+      "drift": false
+    },
+    {
+      "slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2",
+      "family": "certo_errado",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "São atribuições específicas do ACS, EXCETO:",
+      "drift": false
+    },
+    {
+      "slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Os Agentes Comunitários de Saúde, realizam visitas domiciliares que é uma atividade central do proce",
+      "drift": false
+    },
+    {
+      "slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Marque a alternativa correta sobre onde o ACS pode contribuir com a organização da comunidade e de g",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-5",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Sobre as visitas domiciliares realizadas pelos Agentes Comunitários de Saúde (ACS), assinale a alter",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-6",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Sobre a atuação do Agente Comunitário de Saúde (ACS) no controle da dengue, assinale a alternativa c",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-7",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Sobre o conceito de intersetorialidade no trabalho do ACS, assinale a alternativa correta.",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-geral-atencao-basica-saude-da-familia-1778968221218-4",
+      "family": "vf",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Acerca das informações importantes coletadas para o diagnóstico da comunidade, analise os itens a se",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-atencao-basica-saude-da-familia-1778968144588-6",
+      "family": "certo_errado",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Considerados saberes validados pelo Ministério da Saúde acerca de assistência em saúde coletiva, jul",
+      "drift": false
+    },
+    {
+      "slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-2",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Uma equipe de atenção básica realiza acompanhamento domiciliar de um paciente em cuidados paliativos",
+      "drift": false
+    },
+    {
+      "slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A disúria é um sintoma prevalente no atendimento da demanda espontânea das UBSs e pode ser definida ",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "No atendimento à população, o processo pelo qual se utilizam critérios clínicos, sociais, econômicos",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "No trabalho da unidade básica de saúde, os profissionais se deparam com famílias com estruturas muit",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "family": "vf",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Analise as assertivas a respeito da visita domiciliar realizada pelo Agente Comunitário de Saúde. I-",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5",
+      "family": "certo_errado",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Levando-se em consideração os Protocolos de Encaminhamento da Atenção Básica para a atenção especial",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "No exercício de suas atribuições, o Agente Comunitário de Saúde exerce suas atividades de prevenção ",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A Avaliação do Risco Familiar é uma ferramenta eficaz no direcionamento das ações do Agente Comunitá",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-2",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Uma das atribuições dos Agentes Comunitários de Saúde é identificar áreas e situações de risco indiv",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-5",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Na visita domiciliar, é importante que o Agente Comunitário de Saúde (ACS) identifique as pessoas se",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-6",
+      "family": "protocolo",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A gravidez não é doença e a maioria das gestantes não apresenta complicações durante a gestação, mas",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-9",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Segundo o Ministério da Saúde, \"o planejamento em saúde é uma atividade obrigatória para adequar as ",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-0",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A forma de organização do serviço que permite que pessoas busquem a unidade por quaisquer problemas ",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-5",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Durante uma visita domiciliar, o técnico de enfermagem buscou compreender o quanto Jaime, 78 anos, e",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-7",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Durante uma visita domiciliar, o técnico de enfermagem observa que o paciente relata sentir um desco",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-2",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Em uma Instituição de Longa Permanência para Idosos (ILPI), a técnica de enfermagem revisa com a equ",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-6",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Qual das ações abaixo NÃO faz parte das atribuições do Agente Comunitário de Saúde junto à gestante ",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-2",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "\"A intersetorialidade possibilita que ações de outros setores da sociedade colaborem com o setor saú",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-3",
+      "family": "vf",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "\"Todas as informações que você, ACS, conseguir sobre a comunidade ajudará na organização do seu trab",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779344779828-1",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A visita domiciliar oferece cuidados diretos ao paciente e fortalece a relação de confiança entre el",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968028412-8",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Durante visitas domiciliares, o ACS deve avaliar a capacidade funcional de idosos utilizando ferrame",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-0",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "O conceito de determinantes sociais da saúde é essencial para a atuação do ACS. Qual das alternativa",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-1",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "As visitas domiciliares são parte integrante das atribuições do ACS. Sobre as responsabilidades do A",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-2",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A territorialização é um processo essencial para o planejamento eficaz das ações de saúde, permitind",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-4",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "As avaliações em saúde desempenham um papel fundamental na melhoria contínua da qualidade dos serviç",
+      "drift": false
+    },
+    {
+      "slug": "fadesp-enfermagem-atencao-basica-saude-da-familia-1778968194611-6",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Durante uma visita domiciliar da equipe de saúde a uma idosa residente na área da Estratégia Saúde d",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-6",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O SIAB é um sistema idealizado para agregar e para processar as informações sobre a população visita",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-7",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "Para equipe de Saúde da Família (eSF) há a obrigatoriedade de carga horária de 40 (quarenta) horas s",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-0",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "Analise os itens e assinale a alternativa correta quanto às atribuições do Técnico de Enfermagem na ",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-6",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "Um \"Modelo de Atenção à Saúde\" define como a saúde é organizada e entregue, incluindo como os serviç",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-7",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Assinale a alternativa que descreve uma visita domiciliar.",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-0",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Qual o nome dado aos horários reservados no cronograma de atividades da Unidade de Saúde para que a ",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-1",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A definição a seguir diz respeito a uma ação importante no processo de trabalho do Agente Comunitári",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-2",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "Cada Equipe de Saúde da Família (ESF) deve ser responsável por quantas pessoa? Respeitando critérios",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-0",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Paciente recebe alta hospitalar após AVC; na visita domiciliar a equipe de Saúde da Família (eSF) id",
+      "drift": false
+    },
+    {
+      "slug": "fcm-enfermagem-atencao-basica-saude-da-familia-1778967504475-1",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Considerando os principais procedimentos e cuidados na atenção domiciliar, associe corretamente o pr",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-atencao-basica-saude-da-familia-1778968180610-6",
+      "family": "conceito",
+      "topic": "Técnico de enfermagem na AB",
+      "pedagogical_cluster": "Técnico de enfermagem na AB",
+      "pedagogical_branch_proposed": "ab_te_aps",
+      "instruction_preview": "Entre as atribuições específicas dos Técnicos de Enfermagem nas equipes de atenção básica está",
+      "drift": false
+    },
+    {
+      "slug": "fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A assistência de enfermagem em visita domiciliar é uma das atribuições do Técnico de Enfermagem. Qua",
+      "drift": false
+    },
+    {
+      "slug": "funatec-enfermagem-atencao-basica-saude-da-familia-1778968239687-0",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A comunicação terapêutica é uma habilidade essencial na enfermagem. Sobre as técnicas de comunicação",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-atencao-basica-saude-da-familia-1778968144588-7",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O processo de acolhimento aos usuários pelo Técnico de Enfermagem na estratégia saúde da família dev",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-atencao-basica-saude-da-familia-1778968156152-0",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Durante a realização do acolhimento e escuta qualificada de usuários nas unidades básicas de saúde, ",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-seguranca-do-paciente-1777102861438-5",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Ao prestar assistência a um paciente idoso acamado durante a visita domiciliar, o técnico de enferma",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-0",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Conforme a publicação Processos Fundamentais da APS RS (2024), analise a sentença abaixo: A territor",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-1",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Um técnico de enfermagem atua em uma equipe de Estratégia de Saúde da Família e realiza visitas domi",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-5",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A Atenção Básica é o conjunto de ações de saúde individuais, familiares e coletivas que envolvem pro",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-6",
+      "family": "protocolo",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Segundo a PNAB, procedimentos realizados no domicílio dos usuários, como aferição de pressão arteria",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968125784-0",
+      "family": "conceito",
+      "topic": "PNAB / princípios e atributos da APS",
+      "pedagogical_cluster": "PNAB / princípios e atributos da APS",
+      "pedagogical_branch_proposed": "ab_pnab_principios",
+      "instruction_preview": "Na Atenção Básica, as equipes devem atender a todos que chegarem na Unidade Básica de Saúde com post",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968221218-2",
+      "family": "certo_errado",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "São atribuições comuns a todos os membros das equipes que atuam na Atenção Básica, EXCETO:",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-4",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "O técnico em enfermagem faz parte da equipe de Saúde da Família (eSF), tendo uma carga horária de 40",
+      "drift": false
+    },
+    {
+      "slug": "fundep-enfermagem-atencao-basica-saude-da-familia-1778968194611-8",
+      "family": "conceito",
+      "topic": "Técnico de enfermagem na AB",
+      "pedagogical_cluster": "Técnico de enfermagem na AB",
+      "pedagogical_branch_proposed": "ab_te_aps",
+      "instruction_preview": "Em relação às atribuições específicas do técnico e / ou auxiliar de Enfermagem na Atenção Básica, an",
+      "drift": false
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-1",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A visita domiciliar é a atividade mais importante do processo de trabalho do Agente Comunitário de S",
+      "drift": false
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-2",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "No que diz respeito às Unidades de Saúde Básica (UBS) e à atuação dos diferentes profissionais de en",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-5",
+      "family": "vf",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A visita domiciliar consiste em um instrumento de intervenção fundamental da estratégia de saúde da ",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-6",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "No que se refere à microárea, analise as afirmativas a seguir: A Microárea corresponde ao espaço geo",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-7",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A área, na Estratégia de Saúde da Família, é definida como o conjunto de microáreas contíguas sob a ",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-8",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A territorialização consiste no processo pelo qual populações, indivíduos, grupos, organizações e in",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-4",
+      "family": "vf",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "O cadastramento é uma das formas de conhecer a dinâmica da comunidade e sua realidade, momento de fo",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-5",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Em relação às atribuições do agente comunitário de saúde, analise as afirmativas a seguir: I.O agent",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-6",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "No que diz respeito às atividades do Agente Comunitário de Saúde (ACS), analise as afirmativas a seg",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968323839-1",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A visita domiciliar do ACS deverá ser planejada juntamente com o enfermeiro, de acordo com a vulnera",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-3",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Durante uma visita domiciliar, o agente comunitário de saúde precisa abordar um morador sobre a impo",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-4",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Durante o planejamento das visitas domiciliares, o agente comunitário de saúde deve considerar diver",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-5",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O cadastramento familiar e territorial é uma ferramenta importante para os agentes comunitários de s",
+      "drift": false
+    },
+    {
+      "slug": "iaupe-enfermagem-atencao-basica-saude-da-familia-1778968239687-3",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A territorialização é uma ferramenta utilizada para definir a abrangência de atuação dos serviços pa",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-1",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Acerca de noções de psicologia aplicadas ao trabalho do Agente Comunitário de Saúde (ACS), julgue as",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-2",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Acerca da identificação de situações de risco e vulnerabilidade, relacionadas à atuação do Agente Co",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-4",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Considere a seguinte situação: Uma família beneficiária do Programa Bolsa-Família está enfrentando d",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-5",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "No que se refere às estratégias de mobilização social para a participação da comunidade em ações de ",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9",
+      "family": "conceito",
+      "topic": "PNAB / princípios e atributos da APS",
+      "pedagogical_cluster": "PNAB / princípios e atributos da APS",
+      "pedagogical_branch_proposed": "ab_pnab_principios",
+      "instruction_preview": "Lucas é técnico de enfermagem em uma Unidade Básica de Saúde (UBS) e percebe que muitos pacientes co",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-0",
+      "family": "certo_errado",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "São atribuições do Agente Comunitário de Saúde na atenção ao pré-natal, EXCETO:",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712315153-8",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Maria trabalha como técnica de enfermagem e percebe que a fragmentação dos serviços de saúde dificul",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+      "family": "conceito",
+      "topic": "Vigilância / ACE no território",
+      "pedagogical_cluster": "Vigilância / ACE no território",
+      "pedagogical_branch_proposed": "ab_vigilancia_ads",
+      "instruction_preview": "A luz das diretrizes nacionais voltadas à promoção de uma cultura de paz e à prevenção de diferentes",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-4",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "A Estratégia Saúde da Família (ESF) é um modelo de atenção à saúde que utiliza equipes multidiscipli",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-5",
+      "family": "conceito",
+      "topic": "PNAB / princípios e atributos da APS",
+      "pedagogical_cluster": "PNAB / princípios e atributos da APS",
+      "pedagogical_branch_proposed": "ab_pnab_principios",
+      "instruction_preview": "No âmbito da Atenção Primária à Saúde (APS), o conceito de longitudinalidade é fundamental para a qu",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-6",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A intersetorialidade, além de estar em inerente consonância com a magnitude do objeto da saúde, tem ",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-3",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "A Estratégia Saúde da Família (ESF) é um modelo de atenção à saúde que utiliza equipes multidiscipli",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-4",
+      "family": "conceito",
+      "topic": "PNAB / princípios e atributos da APS",
+      "pedagogical_cluster": "PNAB / princípios e atributos da APS",
+      "pedagogical_branch_proposed": "ab_pnab_principios",
+      "instruction_preview": "No âmbito da Atenção Primária à Saúde (APS), o conceito de longitudinalidade é fundamental para a qu",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-5",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "A Hipertensão Arterial Sistêmica (HAS) é uma das doenças crônicas mais prevalentes entre os idosos n",
+      "drift": false
+    },
+    {
+      "slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-3",
+      "family": "conceito",
+      "topic": "Imunização (drift?)",
+      "pedagogical_cluster": "Imunização (drift?)",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Considerando a seguinte lista de assertivas sobre as tarefas de um técnico em enfermagem em um centr",
+      "drift": true
+    },
+    {
+      "slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-4",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Os técnicos em enfermagem muitas vezes auxiliam no processo de reabilitação. Qual é uma de suas resp",
+      "drift": false
+    },
+    {
+      "slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-5",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A atenção básica é o primeiro nível de contato dos indivíduos com o sistema de saúde. Qual programa ",
+      "drift": false
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-0",
+      "family": "conceito",
+      "topic": "Técnico de enfermagem na AB",
+      "pedagogical_cluster": "Técnico de enfermagem na AB",
+      "pedagogical_branch_proposed": "ab_te_aps",
+      "instruction_preview": "No contexto das ações educativas desenvolvidas pelo técnico de enfermagem na atenção básica, visando",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-3",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O diabetes mellitus é uma condição crônica acompanhada rotineiramente na Estratégia Saúde da Família",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "As verminoses são agravos frequentes na Atenção Básica, especialmente em áreas com condições sanitár",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-6",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A Enfermagem em Saúde Coletiva na Estratégia Saúde da Família envolve ações voltadas à promoção da s",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-7",
+      "family": "vf",
+      "topic": "Vigilância / ACE no território",
+      "pedagogical_cluster": "Vigilância / ACE no território",
+      "pedagogical_branch_proposed": "ab_vigilancia_ads",
+      "instruction_preview": "A Enfermagem em saúde coletiva envolve ações voltadas à promoção da saúde, à prevenção de agravos e ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-0",
+      "family": "certo_errado",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Julgue o item subsequente. No nível da atenção básica, a assistência aos idosos é operacionalizada t",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-2",
+      "family": "certo_errado",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Todo profissional de saúde deve manter sigilo sobre as informações às quais tem acesso e, portanto, ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-3",
+      "family": "certo_errado",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A Ficha B-DIA serve para o cadastramento e acompanhamento mensal dos diabéticos. Nela devem ser cada",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-9",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O diabetes mellitus é uma condição crônica acompanhada rotineiramente na Estratégia Saúde da Família",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-0",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "As verminoses são agravos frequentes na Atenção Básica, especialmente em áreas com condições sanitár",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-2",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A Enfermagem em Saúde Coletiva na Estratégia Saúde da Família envolve ações voltadas à promoção da s",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-3",
+      "family": "vf",
+      "topic": "Vigilância / ACE no território",
+      "pedagogical_cluster": "Vigilância / ACE no território",
+      "pedagogical_branch_proposed": "ab_vigilancia_ads",
+      "instruction_preview": "A Enfermagem em saúde coletiva envolve ações voltadas à promoção da saúde, à prevenção de agravos e ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780001148264-3",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "As viroses constituem importante grupo de agravos acompanhados na Atenção Básica, exigindo ações de ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Os primeiros socorros consistem em cuidados imediatos prestados à vítima de acidente ou mal súbito, ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-6",
+      "family": "vf",
+      "topic": "Vigilância / ACE no território",
+      "pedagogical_cluster": "Vigilância / ACE no território",
+      "pedagogical_branch_proposed": "ab_vigilancia_ads",
+      "instruction_preview": "A vigilância epidemiológica é um conjunto de ações destinadas à coleta, análise e interpretação de d",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-7",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A administração de medicamentos é uma das atividades mais frequentes e críticas desempenhadas pelo T",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-0",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A Atenção Básica e a Estratégia Saúde da Família constituem a porta de entrada preferencial do Siste",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-3",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O registro e a anotação de enfermagem são instrumentos essenciais para a continuidade do cuidado, a ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-4",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "As técnicas assépticas e antissépticas são fundamentais para a prevenção de infecções relacionadas à",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-5",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O controle de infecções relacionadas à assistência à saúde é um conjunto de ações sistemáticas desti",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-6",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A educação em saúde é uma estratégia fundamental da Atenção Básica, voltada para a promoção da auton",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-7",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A segurança do paciente envolve ações sistemáticas destinadas a reduzir riscos, prevenir danos evitá",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-8",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "As doenças transmissíveis e não transmissíveis representam importantes desafios para a Atenção Básic",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-0",
+      "family": "calc",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O cálculo e a diluição de medicamentos são procedimentos que exigem atenção, conhecimento técnico e ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-3",
+      "family": "vf",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O transporte e o posicionamento do paciente são procedimentos que exigem técnica adequada, atenção à",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-1",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "O cuidado à saúde da pessoa idosa na Atenção Básica envolve ações contínuas de acompanhamento, preve",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-0",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "O Agente Comunitário de Saúde (ACS) deve estar atento a diversas condições que podem impactar a saúd",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-1",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "São atribuições específicas dos Agentes Comunitários de Saúde (ACS), considere: (__) - Informar os u",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-3",
+      "family": "conceito",
+      "topic": "PNAB / princípios e atributos da APS",
+      "pedagogical_cluster": "PNAB / princípios e atributos da APS",
+      "pedagogical_branch_proposed": "ab_pnab_principios",
+      "instruction_preview": "\"A Atenção Primária à Saúde constitui o primeiro nível de contato dos indivíduos com o sistema de sa",
+      "drift": false
+    },
+    {
+      "slug": "instituto-access-enfermagem-atencao-basica-saude-da-familia-1778968221218-0",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Quais são as principais ferramentas de trabalho do Agente Comunitário de Saúde?",
+      "drift": false
+    },
+    {
+      "slug": "instituto-access-geral-atencao-basica-saude-da-familia-1778968207422-8",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Qual é a importância do conhecimento do território na atuação do Agente Comunitário de Saúde?",
+      "drift": false
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-7",
+      "family": "certo_errado",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "São resultados esperados da Política Nacional de Humanização (PNH) todos os descritos a seguir, EXCE",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-3",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "Considerando que o trabalho desenvolvido pela Equipe de Saúde da Família (ESF) demanda uma reflexão ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-5",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "É muito importante considerar que trajetórias, visões de mundo e condições de vida ajudam a consider",
+      "drift": false
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-7",
+      "family": "certo_errado",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "No âmbito da Estratégia Saúde da Família (ESF), as atribuições do técnico de enfermagem restringem-s",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Os métodos para controle de vetores compreendem toda prática que busca a prevenção, repressão ou exc",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-2",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A atenção domiciliar (AD) é uma modalidade de assistência à saúde, integrada à rede de atenção à saú",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-5",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "A Política Nacional de Atenção Básica estabeleceu as diretrizes para a organização da atenção básica",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-geral-epidemiologia-e-vigilancia-epidemiologica-1777103590498-0",
+      "family": "conceito",
+      "topic": "Vigilância / ACE no território",
+      "pedagogical_cluster": "Vigilância / ACE no território",
+      "pedagogical_branch_proposed": "ab_vigilancia_ads",
+      "instruction_preview": "A dengue, o Zika vírus e a Chikungunya são problemas de saúde pública, afetando número relevante de ",
+      "drift": false
+    },
+    {
+      "slug": "intec-enfermagem-atencao-basica-saude-da-familia-1778968357339-5",
+      "family": "protocolo",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A obesidade se tornou um problema de saúde pública. Diante deste cenário existe protocolo no qual a ",
+      "drift": false
+    },
+    {
+      "slug": "itame-enfermagem-atencao-basica-saude-da-familia-1778968263411-1",
+      "family": "text_fragment",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "O Ministério da Saúde conceitua: . Acerca do matriciamento, avalie as afirmativas, assinalando a cor",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-atencao-basica-saude-da-familia-1778968263411-8",
+      "family": "protocolo",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A hipertensão arterial sistêmica (HAS) é uma condição clínica multifatorial caracterizada por níveis",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
+      "family": "conceito",
+      "topic": "Vigilância / ACE no território",
+      "pedagogical_cluster": "Vigilância / ACE no território",
+      "pedagogical_branch_proposed": "ab_vigilancia_ads",
+      "instruction_preview": "Com base nas diretrizes da Reforma Psiquiátrica Brasileira e no funcionamento do Serviço Residencial",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-atencao-basica-saude-da-familia-1778968207422-6",
+      "family": "conceito",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Em relação aos procedimentos cadastrais de famílias, ferramenta básica de trabalho de um Agente Comu",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-0",
+      "family": "conceito",
+      "topic": "Slug segment fora do pacote (drift?)",
+      "pedagogical_cluster": "Slug segment fora do pacote (drift?)",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Considerando-se a responsabilidade na rede de atenção à saúde, analisar os itens abaixo: I . O cuida",
+      "drift": true
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-7",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "No contexto da atenção básica e hospitalar, a informação à saúde é fundamental para o cuidado integr",
+      "drift": false
+    },
+    {
+      "slug": "reis-e-reis-enfermagem-atencao-basica-saude-da-familia-1778968357339-1",
+      "family": "certo_errado",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "São atribuições específicas do Auxiliar e do Técnico de Enfermagem no programa Saúde da família, exc",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-atencao-basica-saude-da-familia-1778968125784-2",
+      "family": "conceito",
+      "topic": "Técnico de enfermagem na AB",
+      "pedagogical_cluster": "Técnico de enfermagem na AB",
+      "pedagogical_branch_proposed": "ab_te_aps",
+      "instruction_preview": "A atenção básica caracteriza-se por um conjunto de ações de saúde, no âmbito individual e coletivo, ",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-atencao-basica-saude-da-familia-1778968207422-2",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "\"Disponibilidade para receber o pedido do usuário e realizar a escuta de sua queixa, buscando compre",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968357339-7",
+      "family": "certo_errado",
+      "topic": "ACS — atribuições, visita e território",
+      "pedagogical_cluster": "ACS — atribuições, visita e território",
+      "pedagogical_branch_proposed": "ab_acs_territorio",
+      "instruction_preview": "Todas as alternativas apresentam atividades típicas de qualquer Agente Comunitário de Saúde, mesmo s",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968039063-5",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Um usuário do Centro de Atenção Psicossocial (CAPS) da região busca a Unidade Básica de Saúde (UBS) ",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968077998-8",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Assinale a alternativa correta sobre o cuidado integral à família na atenção básica.",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968094018-0",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A atuação da equipe de enfermagem em grupos por patologias apresenta vantagens na abordagem coletiva",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+      "family": "conceito",
+      "topic": "eSF — composição, carga e modalidades",
+      "pedagogical_cluster": "eSF — composição, carga e modalidades",
+      "pedagogical_branch_proposed": "ab_esf_composicao",
+      "instruction_preview": "Assinale a alternativa que completa corretamente a afirmação apresentada a seguir. A Política Nacion",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968180610-7",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Assinale a alternativa correta no que diz respeito ao Programa Melhor em Casa (PMeC).",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Para o planejamento de ações estratégicas de saúde, são considerados o perfil e as necessidades do c",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-4",
+      "family": "conceito",
+      "topic": "Slug segment fora do pacote (drift?)",
+      "pedagogical_cluster": "Slug segment fora do pacote (drift?)",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "É necessário o trabalho em equipe entre os profissionais de saúde e entre eles e os usuários dos ser",
+      "drift": true
+    },
+    {
+      "slug": "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-0",
+      "family": "conceito",
+      "topic": "Slug segment fora do pacote (drift?)",
+      "pedagogical_cluster": "Slug segment fora do pacote (drift?)",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "A.A., 42 anos, sexo masculino, informou ao técnico de enfermagem (TE) da equipe de saúde da família ",
+      "drift": true
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-3",
+      "family": "conceito",
+      "topic": "Atenção Básica — conceito geral",
+      "pedagogical_cluster": "Atenção Básica — conceito geral",
+      "pedagogical_branch_proposed": "ab_generico",
+      "instruction_preview": "Para o planejamento de uma ação de atenção à saúde comunitária, em reunião de equipe que atua na ate",
+      "drift": false
+    }
+  ]
+}

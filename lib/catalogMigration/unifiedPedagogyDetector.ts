@@ -180,8 +180,12 @@ export type UnifiedPedagogyFinding = {
   evidence?: string;
 };
 
-/** Letra da alternativa citada fora do logic_flow. Sem flag `i`: letra maiúscula. */
-const LETTER_VERDICT_RE = /\b[A-E]\b\s*(é|erra|está|são)/;
+/**
+ * Letra da alternativa citada fora do logic_flow. Sem flag `i`: letra maiúscula.
+ * Exige espaço após a letra — `\s*` casava `Déficit` (D + é; `\b` ASCII).
+ * Lookbehind evita FP `°C está`.
+ */
+const LETTER_VERDICT_RE = /(?<![°º])\b[A-E]\b\s+(é|erra|está|são)/;
 const LETTER_NAMED_RE = /letra\s+[A-E]\b/i;
 
 /** Veredito V/F no início do texto, com qualquer pontuação (ou nenhuma). */

@@ -1,11 +1,8 @@
 'use client';
 
-import { useMemo } from 'react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import { LogicFlowStepLadder } from './LogicFlowStepLadder';
-import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
-import { applyProtocolTapBudget } from '@/lib/slides/protocolTapBudget';
+import { LogicRailShell } from '../logicFlowShells';
 
 interface LogicFlowUrgenciasXabcdeTapFlowProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -14,15 +11,21 @@ interface LogicFlowUrgenciasXabcdeTapFlowProps {
   footerRule?: string;
 }
 
-/** Trilho tap-flow XABCDE — orçamento ≤3 taps (Onda 4). */
+/** Trilho XABCDE — LogicRailShell + orçamento ≤3 taps. */
 export function LogicFlowUrgenciasXabcdeTapFlow({
   steps,
   theme,
   revealMode = 'tap',
+  footerRule,
 }: LogicFlowUrgenciasXabcdeTapFlowProps) {
-  const budgeted = useMemo(
-    () => applyProtocolTapBudget(normalizeLogicFlowSteps(steps)),
-    [steps],
+  return (
+    <LogicRailShell
+      steps={steps}
+      theme={theme}
+      revealMode={revealMode}
+      footerRule={footerRule}
+      accent="xabcde"
+      eyebrow="Trilho XABCDE"
+    />
   );
-  return <LogicFlowStepLadder steps={budgeted} theme={theme} revealMode={revealMode} accent="xabcde" />;
 }

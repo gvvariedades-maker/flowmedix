@@ -18,6 +18,7 @@ export {
   BOARD_EYEBROW,
   BOARD_COLUMN_EYEBROW,
   BOARD_FOOTER,
+  BOARD_FOOTER_LABEL,
   showBoardAuthoringHints,
   type BoardTone,
   type BoardToneClasses,

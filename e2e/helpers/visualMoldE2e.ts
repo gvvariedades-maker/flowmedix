@@ -387,6 +387,19 @@ export const PROMOCAO_BRANCHES = [
 /** Promoção — molde bespoke sus-art4-orbit (Art. 4º Lei 8.080). */
 export const PROMOCAO_BESPOKE_BRANCHES = ['promocao_art4_composicao'] as const;
 
+/** Ramos Epidemiologia — regressão L3 (6 ramos; EPI_GENERIC_DESIGN até bespoke React). */
+export const EPI_BRANCHES = [
+  'epi_notificacao_compulsoria',
+  'epi_indicadores',
+  'epi_ocorrencia_agravos',
+  'epi_vigilancia_acoes',
+  'epi_cadeia_transmissao',
+  'epi_generico',
+] as const;
+
+/** Epidemiologia — bespoke React ainda pending (lista-trap / formula-rail). */
+export const EPI_BESPOKE_BRANCHES = [] as const;
+
 /** Ramos História com concept_map bridge (marcos / ética COFEN). */
 export const HISTORIA_BESPOKE_BRANCHES = [
   'historia_nightingale',

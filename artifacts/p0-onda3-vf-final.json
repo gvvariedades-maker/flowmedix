@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-08-01T23:42:48.876Z",
+  "summary": [
+    {
+      "lote": "sinais-vitais-completo",
+      "files": 527,
+      "vf": 1,
+      "letter": 3,
+      "named_letter": 0
+    },
+    {
+      "lote": "vias-de-administracao-completo",
+      "files": 235,
+      "vf": 0,
+      "letter": 0,
+      "named_letter": 0
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "files": 188,
+      "vf": 0,
+      "letter": 0,
+      "named_letter": 0
+    }
+  ],
+  "residual_count": 1,
+  "residual": [
+    {
+      "lote": "sinais-vitais-completo",
+      "slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-6",
+      "path": "golden_rule.rows[2].value",
+      "reason": "remainder_still_spoils",
+      "text": "Verdadeira: Apenas as alternativas A e D estão corretas.",
+      "after_strip": "Apenas as alternativas A e D estão corretas."
+    }
+  ]
+}

@@ -136,7 +136,7 @@
           "label": "Diluição",
           "value": "Soro fisiológico ou glicose — não fosfato com aquecimento inadequado",
           "badge": "warn",
-          "exam_hint": "A erra diluente e temperatura para parecer ação rápida.",
+          "exam_hint": "",
           "fixation": "Omeprazol EV: solvente compatível da bula — não inventar fosfato quente."
         },
         {
@@ -151,7 +151,7 @@
           "value": "Resposta clínica + pH gástrico → ajuste de dose possível",
           "emphasis": "success",
           "badge": "hot",
-          "exam_hint": "B é a única conduta compatível com terapia EV monitorada.",
+          "exam_hint": "",
           "fixation": "Titular infusão conforme pH e evolução clínica."
         },
         {

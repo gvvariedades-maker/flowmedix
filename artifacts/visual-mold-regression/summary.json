@@ -1,9 +1,14 @@
 {
-  "generated_at": "2026-07-24T07:08:01.963Z",
-  "pacote_prefix": "sinonimos-antonimos-e-polissemia",
+  "generated_at": "2026-08-04T01:26:48.928Z",
+  "pacote_prefix": "epidemiologia-e-vigilancia-epidemiologica",
   "pass": true,
-  "detail": "Playwright L3 PT Sinônimos — 1 branch ok_generico (vocabulário contexto 4/4); PNGs em artifacts/visual-mold-regression/",
+  "detail": "Playwright L3 Epidemiologia — 6 branches (EPI_GENERIC_DESIGN; desktop + mobile-375); PNGs em artifacts/visual-mold-regression/",
   "branches": [
-    "pt_sinonimos_polissemia"
+    "epi_notificacao_compulsoria",
+    "epi_indicadores",
+    "epi_ocorrencia_agravos",
+    "epi_vigilancia_acoes",
+    "epi_cadeia_transmissao",
+    "epi_generico"
   ]
 }

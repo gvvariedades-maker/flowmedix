@@ -1,0 +1,18 @@
+{
+  "lote": "atencao-basica-saude-da-familia-g15",
+  "exported_at": "2026-08-03T20:08:38.975Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/atencao-basica-saude-da-familia-g15/manifest.json"
+  },
+  "slugs": [
+    "igecap-enfermagem-processo-de-enfermagem-1780004452857-0",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-3",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-6",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-7",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-0",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-2",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-3"
+  ]
+}

@@ -1,17 +1,17 @@
 # Portão do leitor cego (F2b)
 
-Corpus: `examples` · gerado em 2026-08-01T04:23:01.004Z
+Corpus: `examples` · gerado em 2026-08-04T00:00:06.427Z
 
-- Questões percorridas: **165**
-- Julgadas (com concept_map e gabarito): **164**
+- Questões percorridas: **175**
+- Julgadas (com concept_map e gabarito): **174**
 - Bloqueando (`fail_leak`): **0**
 
 | veredito | n |
 |---|---|
 | `fail_leak` | 0 |
 | `warn_unsupported_hit` | 0 |
-| `pass_indeterminate` | 164 |
-| `pass_wrong_letter` | 0 |
+| `pass_indeterminate` | 173 |
+| `pass_wrong_letter` | 1 |
 | `skip_no_gabarito` | 0 |
 | `skip_no_concept_map` | 1 |
 

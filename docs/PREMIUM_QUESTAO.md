@@ -16,7 +16,7 @@ Use este arquivo quando alguém perguntar “o que é premium?”. Ele **define 
 |:-----:|------|-----------------|-------------------|
 | **L1** | Estrutural | Toda questão AVANT válida | `QuestaoCompletaSchema` + 4 slides planos |
 | **L2** | Conteúdo premium | Estudo reverso específico da questão | L1 + **zero** `PREMIUM_STUB_MARKERS` |
-| **L3** | Experiência premium | Visual bespoke do subtópico no player | L2 + contrato do molde (`premiumGate`) |
+| **L3** | Experiência premium | Visual bespoke do subtópico no player | L2 + contrato do molde (`premiumGate`) + barra visual G2 ([`NEUROSLIDES_VISUAL_BAR.md`](NEUROSLIDES_VISUAL_BAR.md)) |
 
 **No dia a dia**, “questão premium” = **L2 no mínimo**.
 

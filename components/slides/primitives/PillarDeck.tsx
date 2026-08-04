@@ -32,7 +32,7 @@ export interface PillarDeckProps {
 
 /**
  * Deck de pilares (3–4 colunas / grid) — care-pillars, CF 3 eixos.
- * Glanceable; tap opcional só destaca.
+ * Barra G2: fill saturado + barra lateral + sombra (sem branco-no-branco).
  */
 export function PillarDeck({
   items,
@@ -59,7 +59,7 @@ export function PillarDeck({
   if (items.length === 0) return null;
 
   return (
-    <div className={cn('grid grid-cols-1 gap-2.5 min-[380px]:grid-cols-2', className)}>
+    <div className={cn('grid grid-cols-1 gap-3 min-[380px]:grid-cols-2', className)}>
       {items.map((item, index) => {
         const tone = item.tone ?? 'accent';
         const t = boardTone(tone);
@@ -78,33 +78,47 @@ export function PillarDeck({
           <Comp
             key={item.id ?? index}
             {...interactiveProps}
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: reduceMotion ? 0 : index * 0.04 }}
+            transition={{ delay: reduceMotion ? 0 : index * 0.05 }}
             className={cn(
-              'rounded-2xl border-2 bg-white/95 p-3 text-left shadow-sm transition-shadow',
-              t.border,
+              'relative overflow-hidden rounded-2xl border-2 p-3.5 text-left shadow-md transition-shadow',
+              t.panel,
               interactive && 'min-h-[44px]',
-              isActive ? 'ring-2 ring-sky-400/50 shadow-md' : interactive && 'hover:shadow-md',
+              isActive ? cn(t.heroRing) : interactive && 'hover:shadow-lg',
             )}
           >
-            {(item.category || renderLeading) && (
-              <div className="mb-2 flex items-center gap-2">
-                {item.category ? <CategoryStrip label={item.category} tone={tone} /> : null}
-                {renderLeading?.(item, index)}
-              </div>
-            )}
-            <div className="flex gap-2">
-              {Icon ? <Icon className="mt-0.5 h-5 w-5 shrink-0 text-sky-700" aria-hidden /> : null}
-              <div className="min-w-0">
-                <p className="font-body text-sm font-bold leading-snug text-slate-900">
-                  {item.title}
-                </p>
-                {item.detail ? (
-                  <p className="mt-1 font-body text-xs leading-relaxed text-slate-600">
-                    {item.detail}
-                  </p>
+            <span
+              className={cn('pointer-events-none absolute inset-y-0 left-0 w-1.5', t.accent)}
+              aria-hidden
+            />
+            <span
+              className="pointer-events-none absolute right-2 top-1 font-mono text-3xl font-black leading-none opacity-[0.12]"
+              aria-hidden
+            >
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <div className="relative pl-1.5">
+              {(item.category || renderLeading) && (
+                <div className="mb-2 flex items-center gap-2">
+                  {item.category ? <CategoryStrip label={item.category} tone={tone} /> : null}
+                  {renderLeading?.(item, index)}
+                </div>
+              )}
+              <div className="flex gap-2">
+                {Icon ? (
+                  <Icon className={cn('mt-0.5 h-5 w-5 shrink-0', t.columnLabel)} aria-hidden />
                 ) : null}
+                <div className="min-w-0">
+                  <p className={cn('font-body text-sm font-bold leading-snug', t.text)}>
+                    {item.title}
+                  </p>
+                  {item.detail ? (
+                    <p className="mt-1 font-body text-xs font-medium leading-relaxed text-slate-700">
+                      {item.detail}
+                    </p>
+                  ) : null}
+                </div>
               </div>
             </div>
           </Comp>

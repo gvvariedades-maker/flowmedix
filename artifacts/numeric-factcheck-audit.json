@@ -1,42 +1,17 @@
 {
-  "generated_at": "2026-07-24T07:01:10.758Z",
-  "scanned": 7,
-  "passed": 7,
+  "generated_at": "2026-08-04T01:18:59.474Z",
+  "scanned": 2,
+  "passed": 2,
   "failed": 0,
   "warn_only": 0,
   "results": [
     {
-      "slug": "apice-acs-pr-sinonimos-analise-as-palavras-destacadas-nas-f-3951883",
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "apice-ap-ei-sinonimos-disponivel-em-acesso-em-06-mar-2023-4037448",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "apice-ap-ei-sinonimos-inteligencia-artificial-e-a-transfor-4037423",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-e-responda-a-questao-4018183",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "educa-pb-ace-sinonimos-15-07-2026-19-38-43-98-297-298-299-c-3820034",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "facet-aad-pr-sinonimos-complete-as-lacunas-a-seguir-com-os-3614658",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "vunesp-tenf-sinonimos-leia-a-charge-a-seguir-nani-disponiv-3840788",
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-3",
       "ok": true,
       "issues": []
     }

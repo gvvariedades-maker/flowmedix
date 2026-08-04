@@ -117,6 +117,8 @@ Sem isso → **não** declarar “assunto 100% concluído” nem “altíssima q
 | **Conteúdo** | golden-v1, readiness strict, validate, slug-alignment, factcheck, L6, A4 |
 | **Visual** | brief 4/4 + neuroslides-visual; Playwright 4/4 **ou** galeria/captures âncora + ok_generico 3/3 |
 
+**Fábrica Onda 3 (já `production_ready`):** DoD Camada 7 em [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) + catálogo print→primitivo. **Não** confundir com Strategy Onda 3 (Imu EXCETO).
+
 Declarar só uma barra → **não** é nota-10 deste programa.
 
 ---

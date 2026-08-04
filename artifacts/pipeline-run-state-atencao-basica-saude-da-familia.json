@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "pacote_prefix": "atencao-basica-saude-da-familia",
+  "mode": "full",
+  "total_slugs": 171,
+  "handcraft_applied": 171,
+  "production_status": "none",
+  "next_unit": {
+    "type": "ship",
+    "id": "promote",
+    "detail": "Fase 2 — reconcile, L1–L6, visual-mold-regression, --promote"
+  },
+  "completed_units": [
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g13",
+      "completed_at": "2026-08-03T20:51:11.402Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    },
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g14",
+      "completed_at": "2026-08-03T20:51:11.403Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    },
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g15",
+      "completed_at": "2026-08-03T20:51:11.403Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    },
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g16",
+      "completed_at": "2026-08-03T20:51:11.403Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    },
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g17",
+      "completed_at": "2026-08-03T20:51:11.403Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    },
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g18",
+      "completed_at": "2026-08-03T20:51:11.403Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    },
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g19",
+      "completed_at": "2026-08-03T20:51:11.403Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    },
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g20",
+      "completed_at": "2026-08-03T20:51:11.403Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    },
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g21",
+      "completed_at": "2026-08-03T20:51:11.403Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    },
+    {
+      "unit": "handcraft_lote:atencao-basica-saude-da-familia-g22",
+      "completed_at": "2026-08-03T20:51:11.403Z",
+      "notes": "golden-v1 handcraft + gates + apply ok=failed=0 (onda1-ab)"
+    }
+  ],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-08-03T20:51:11.403Z",
+  "notes": "Onda1 AB: g13-g22 applied. Next=ship:promote (Fase 2 qualidade). production_status still none.",
+  "status": "applied"
+}

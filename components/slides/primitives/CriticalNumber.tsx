@@ -18,7 +18,7 @@ const EMPHASIS_TONE: Record<NonNullable<CriticalNumberProps['emphasis']>, BoardT
   ok: 'ok',
 };
 
-/** Número crítico de prova — doses, prazos, jatos. */
+/** Número crítico de prova — doses, prazos, jatos (âncora G2). */
 export function CriticalNumber({
   value,
   unit,
@@ -30,8 +30,9 @@ export function CriticalNumber({
   return (
     <div
       className={cn(
-        'inline-flex flex-col items-center rounded-2xl border-2 px-4 py-3 text-center shadow-sm',
+        'inline-flex flex-col items-center rounded-2xl border-2 px-4 py-3 text-center shadow-lg',
         t.panel,
+        t.heroRing,
         className,
       )}
     >
@@ -40,7 +41,7 @@ export function CriticalNumber({
           {label}
         </span>
       ) : null}
-      <span className={cn('font-display text-3xl font-black leading-none tracking-tight', t.text)}>
+      <span className={cn('font-body text-3xl font-black leading-none tracking-tight', t.text)}>
         {value}
         {unit ? (
           <span className="ml-1 font-body text-base font-semibold opacity-80">{unit}</span>

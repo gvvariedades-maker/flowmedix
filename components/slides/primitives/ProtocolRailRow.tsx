@@ -31,15 +31,19 @@ export function ProtocolRailRow({
   return (
     <div
       className={cn(
-        'flex min-h-[44px] items-start gap-3 rounded-2xl border-2 p-3 shadow-sm',
+        'relative flex min-h-[44px] items-start gap-3 overflow-hidden rounded-2xl border-2 p-3.5 shadow-md',
         t.panel,
-        active && 'ring-2 ring-offset-1 ring-sky-300/60',
+        active && t.heroRing,
         className,
       )}
     >
       <span
+        className={cn('pointer-events-none absolute inset-y-0 left-0 w-1.5', t.accent)}
+        aria-hidden
+      />
+      <span
         className={cn(
-          'flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-mono text-sm font-black',
+          'relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-mono text-sm font-black shadow-sm',
           t.badge,
           t.badgeText,
         )}
@@ -47,10 +51,12 @@ export function ProtocolRailRow({
       >
         {badge}
       </span>
-      <div className="min-w-0 flex-1">
-        <p className="font-body text-sm font-bold leading-snug text-slate-900">{title}</p>
+      <div className="relative min-w-0 flex-1">
+        <p className={cn('font-body text-sm font-bold leading-snug', t.text)}>{title}</p>
         {detail ? (
-          <div className="mt-1 font-body text-xs leading-relaxed text-slate-600">{detail}</div>
+          <div className="mt-1 font-body text-xs font-medium leading-relaxed text-slate-700">
+            {detail}
+          </div>
         ) : null}
       </div>
     </div>

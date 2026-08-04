@@ -83,7 +83,7 @@
         },
         {
           "label": "Protozoário — malária",
-          "detail": "Malária = Plasmodium (protozoário), não bactéria. Letra B cai por esse único item.",
+          "detail": "Malária = Plasmodium (protozoário), não bactéria.",
           "icon": "Microscope"
         },
         {
@@ -109,31 +109,31 @@
       "content": "BACTÉRIA · VÍRUS · PROTOZOÁRIO",
       "rows": [
         {
-          "label": "Letra A — cólera a TB",
+          "label": "Cólera a TB.",
           "value": "100% bacterianas",
           "badge": "hot",
           "emphasis": "success"
         },
         {
-          "label": "Letra B — dengue",
+          "label": "Dengue.",
           "value": "Vírus → elimina B",
           "badge": "warn",
           "emphasis": "alert"
         },
         {
-          "label": "Letra B — malária",
+          "label": "Malária.",
           "value": "Plasmodium → elimina B",
           "badge": "warn",
           "emphasis": "alert"
         },
         {
-          "label": "Letra C — varicela/herpes",
+          "label": "Varicela/herpes.",
           "value": "Vírus → elimina C",
           "badge": "warn",
           "emphasis": "alert"
         },
         {
-          "label": "Letra D — raiva/resfriado/HPV",
+          "label": "Raiva/resfriado/HPV.",
           "value": "Vírus → elimina D",
           "badge": "warn",
           "emphasis": "alert"

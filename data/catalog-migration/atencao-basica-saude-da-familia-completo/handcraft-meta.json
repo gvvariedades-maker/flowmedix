@@ -1,0 +1,26 @@
+{
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "trilho": "A",
+  "total_slugs": 171,
+  "lote_size": 8,
+  "lote_pattern": "atencao-basica-saude-da-familia-g{NN}",
+  "anchor_glob": "examples/questao-premium-*-atencao-basica*.json,examples/questao-premium-*-saude-familia*.json,examples/questao-premium-*-esf-*.json",
+  "guideline": null,
+  "clusters": [
+    "ACS — atribuições, visita e território",
+    "eSF — composição, carga e modalidades",
+    "PNAB / princípios e atributos da APS",
+    "Técnico de enfermagem na AB",
+    "Vigilância / ACE no território",
+    "Atenção Básica — conceito geral"
+  ],
+  "taxonomy": {
+    "status": "closed",
+    "closed_at": "2026-08-01",
+    "manifest_slugs": 171
+  },
+  "nota_manifest": "Export completo 171 slugs; handcraft g01-g22 applied 2026-08-03 (onda1-ab).",
+  "handcraft_applied": 171,
+  "status": "applied",
+  "updated_at": "2026-08-03"
+}

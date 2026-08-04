@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-08-02T03:51:47.021Z",
+  "onda": "P0-2",
+  "status": "applied_supabase",
+  "flags": [
+    "--skip-preflight",
+    "--skip-anchor-review",
+    "--skip-risk-approval",
+    "--allow-generic"
+  ],
+  "note": "allow-generic: stubs preexistentes + molde apos remocao Gabarito; live ja tinha stubs; apply remove named letter.",
+  "lotes": [
+    {
+      "lote": "processo-de-enfermagem-completo",
+      "applied_ok": 285,
+      "failed": 0,
+      "skipped": 1,
+      "total": 286,
+      "dry_ok": 15,
+      "dry_failed": 271,
+      "skipped_detail": [
+        {
+          "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4",
+          "detail": "slug não encontrado (use --allow-insert)"
+        }
+      ]
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "applied_ok": 188,
+      "failed": 0,
+      "skipped": 0,
+      "total": 188,
+      "dry_ok": 162,
+      "dry_failed": 26,
+      "skipped_detail": []
+    },
+    {
+      "lote": "saude-da-mulher-completo",
+      "applied_ok": 264,
+      "failed": 0,
+      "skipped": 0,
+      "total": 264,
+      "dry_ok": 67,
+      "dry_failed": 197,
+      "skipped_detail": []
+    }
+  ]
+}

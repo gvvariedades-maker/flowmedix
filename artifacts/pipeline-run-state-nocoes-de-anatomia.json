@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "subtopico": "Noções de Anatomia",
+  "pacote_prefix": "nocoes-de-anatomia",
+  "mode": "full",
+  "total_slugs": 46,
+  "handcraft_applied": 46,
+  "production_status": "production_ready",
+  "next_unit": {
+    "type": "done",
+    "id": "production_ready",
+    "detail": "Vendável. Opcional: audit:subtopico-health"
+  },
+  "completed_units": [
+    "handcraft_lote:g01",
+    "handcraft_lote:g02",
+    "handcraft_lote:g03",
+    "handcraft_lote:g04",
+    "handcraft_lote:g05",
+    "handcraft_lote:g06",
+    "ship:qualidade-vendavel"
+  ],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": 0,
+  "last_error": null,
+  "updated_at": "2026-08-03T22:57:08.596Z",
+  "notes": "production_ready 2026-08-03. L2c repair Validar→Marcar re-applied. L3 ok_generico; anat_terminologia_planos React pending."
+}

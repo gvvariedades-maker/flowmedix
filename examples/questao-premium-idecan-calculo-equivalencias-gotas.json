@@ -129,21 +129,21 @@
           "badge": "warn"
         },
         {
-          "label": "Letra B — gabarito",
+          "label": "Única equivalência correta da questão",
           "value": "Única equivalência correta da questão",
           "emphasis": "success",
           "badge": "hot"
         },
         {
-          "label": "Letra A — erro",
+          "label": "Erro.",
           "value": "10 UI/mL — troca 100 por 10 na U-100"
         },
         {
-          "label": "Letra C — erro",
+          "label": "Erro.",
           "value": "35 microgotas/gota — valor inventado"
         },
         {
-          "label": "Letra D — erro",
+          "label": "Erro.",
           "value": "10 microgotas/macrogota — deveria ser 3"
         },
         {

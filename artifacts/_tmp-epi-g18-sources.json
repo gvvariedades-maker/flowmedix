@@ -1,0 +1,273 @@
+[
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066977710-0.json",
+    "family": "conceito",
+    "branch": "epi_indicadores",
+    "instruction": "As doenças de transmissões hídrica e alimentar, uma importante causa de morbidade e mortalidade em todo o mundo, são transmitidas pela ingestão de água e/ou alimentos contaminados. No Rio Grande do Norte, a exemplo do Brasil, faz-se a vigilância epidemiológica de surtos de DTHA e de casos individuais de:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Botulismo, hanseníase e cólera.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Dengue, hepatites e febre amarela.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Doença de Chagas, HPV e diabetes.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Botulismo, febre tifoide, cólera e hepatites virais.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: Botulismo, febre tifoide, cólera e hepatites virais."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-6.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "A vigilância epidemiológica é fundamental para o controle de doenças infecciosas no Sistema Único de Saúde (SUS). Considerando as informações apresentadas no estudo, aponte qual das alternativas abaixo representa uma ação essencial da vigilância epidemiológica no controle de doenças como a malária.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Realizar a identificação de áreas de transmissão por meio da vigilância entomológica e epidemiológica.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Substituir o tratamento médico por medidas de prevenção baseadas em medicamentos naturais.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Priorizar apenas a vacinação em áreas urbanas, excluindo as regiões rurais.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Reduzir a coleta de dados para evitar a sobrecarga dos sistemas de informação em saúde.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Eliminar a necessidade de campanhas de educação em saúde para a população. IDECAN - ACS (Pref Maracanaú)/Pref Maracanaú/2023 Enfermagem - Arboviroses e Doenças Transmitidas por Vetores (Dengue, Zika, Malária, Febre Amarela etc)",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Realizar a identificação de áreas de transmissão por meio da vigilância entomológica e epidemiológica."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-4.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "O Programa Nacional de Controle da Dengue – PNCD, procura incorporar as lições das experiências nacionais e internacionais de controle da doença, enfatizando a necessidade de mudança nos modelos anteriores, fundamentalmente em alguns aspectos essenciais, os quais umas das alternativas a seguir, não se alinha.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "A atuação multissetorial por meio do fomento à destinação adequada de resíduos sólidos e a utilização de recipientes seguros para armazenagem de água.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "O desenvolvimento de campanhas de informação e de mobilização das pessoas, de maneira a se criar uma maior responsabilização de cada família na manutenção de seu ambiente doméstico, livre de potenciais criadouros do vetor.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "A elaboração de programas permanentes, uma vez que não existe qualquer evidência técnica de que a erradicação do mosquito seja possível a curto prazo.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "O fortalecimento da vigilância sanitária para ampliar a capacidade de predição e de detecção precoce de surtos da doença. IDECAN - ACE (Pref Maracanaú)/Pref Maracanaú/2023 Enfermagem - Arboviroses e Doenças Transmitidas por Vetores (Dengue, Zika, Malária, Febre Amarela etc)",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: O fortalecimento da vigilância sanitária para ampliar a capacidade de predição e de detecção precoce de surtos da doença. IDECAN - ACE (Pref Maracanaú)/Pref Maracanaú/2023 Enfermagem - Arboviroses e Doenças Transmitidas por Vetores (Dengue, Zika, Malária, Febre Amarela etc)"
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712325916-0.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "O Brasil vivencia um processo acelerado de transição epidemiológica, caracterizado pela redução das doenças infecciosas e pelo aumento das doenças crônicas não transmissíveis. Esse fenômeno impõe desafios para o SUS, exigindo mudanças na organização dos serviços de saúde para garantir uma resposta mais adequada às novas necessidades da população.\nDiante desse cenário, aponte abaixo a alternativa que melhor caracteriza os desafios da transição epidemiológica no Brasil.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "A substituição completa dos serviços de atenção básica por unidades de alta complexidade, devido à predominância de doenças crônicas.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "A necessidade de reorganizar o SUS para garantir um modelo de atenção integral, que considere tanto as condições agudas quanto as crônicas.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "A priorização exclusiva do tratamento hospitalar, uma vez que as doenças crônicas exigem internações frequentes.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "A redução da importância da prevenção e da promoção da saúde, já que as doenças infecciosas foram erradicadas.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "A eliminação do financiamento da atenção primária, pois as doenças crônicas exigem apenas atendimento especializado.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: A necessidade de reorganizar o SUS para garantir um modelo de atenção integral, que considere tanto as condições agudas quanto as crônicas."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-8.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "As emergências em saúde pública exigem uma resposta rápida e coordenada para minimizar impactos na população. Situações como surtos epidêmicos, desastres naturais e eventos de desassistência demandam ações organizadas entre diferentes esferas do Sistema Único de Saúde (SUS). Para isso, foram estabelecidos protocolos e diretrizes que orientam a mobilização de recursos, a comunicação entre os órgãos envolvidos e a implementação de medidas preventivas e assistenciais.\nCom base no Plano de Resposta às Emergências em Saúde Pública, marque a alternativa que representa corretamente um dos seus objetivos principais.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Centralizar todas as decisões no governo federal, excluindo estados e municípios da resposta às emergências.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Definir estratégias para uma resposta coordenada, garantindo articulação entre diferentes esferas do SUS e otimização dos recursos disponíveis.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Priorizar apenas a resposta a emergências epidemiológicas, sem considerar desastres naturais ou situações de desassistência.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Estabelecer protocolos rígidos que não podem ser adaptados conforme a gravidade e a complexidade do evento.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Focar apenas no atendimento hospitalar, sem considerar medidas preventivas ou de controle de riscos em nível comunitário.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Definir estratégias para uma resposta coordenada, garantindo articulação entre diferentes esferas do SUS e otimização dos recursos disponíveis."
+    ]
+  },
+  {
+    "file": "idib-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778934900821-5.json",
+    "family": "conceito",
+    "branch": "epi_ocorrencia_agravos",
+    "instruction": "Considerando as características epidemiológicas de cada situação, assinale o item que contempla corretamente o conceito de endemia.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "A endemia é quando uma epidemia passa de um continente para outro, tomando proporções mundiais.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "A endemia abrange uma determinada condição clínica ou doença que ocorre com certa periodicidade em uma determinada região.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "A endemia é caracterizada por um aumento do número de casos de uma doença de forma repentina e inesperada, ocorrendo em uma população específica e bem delimitada, como em um hospital, UTI, berçário etc.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "A endemia é a manifestação, em uma coletividade ou região, de um corpo de casos de alguma enfermidade que excede claramente a incidência prevista.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: A endemia abrange uma determinada condição clínica ou doença que ocorre com certa periodicidade em uma determinada região."
+    ]
+  },
+  {
+    "file": "idib-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778934900821-6.json",
+    "family": "certo_errado",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "A Vigilância Epidemiológica tem por finalidade promover a detecção e prevenção de doenças e agravos transmissíveis à saúde e seus fatores de risco, bem como a elaboração de estudos e normas para as ações de vigilância epidemiológica. Assinale a afirmativa incorreta sobre as competências da vigilância epidemiológica.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Coordenar a resposta estadual às doenças e agravos transmissíveis de notificação compulsória, além dos riscos existentes ou potenciais, com ênfase no planejamento, monitoramento, avaliação, produção e divulgação de conhecimento/informação para a prevenção e controle das condições de saúde da população, no âmbito da saúde coletiva, baseados nos princípios e diretrizes do SUS.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Instituir, desenvolver, implementar, capacitar, coordenar e avaliar ações de vigilância epidemiológica e assistenciais, relativas somente às infecções sexualmente transmissíveis (IST), HIV/Aids e Hepatites Bacterianas.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Gerir e apoiar a operacionalização do Programa de Imunizações no Estado; contribuindo para o controle, eliminação e/ou erradicação de doenças imunopreveníveis, utilizando estratégias básicas de vacinação de rotina e de campanhas anuais, desenvolvidas de forma hierarquizada e descentralizada.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Planejar, acompanhar e normatizar técnicas das ações de imunização no Estado.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Instituir, desenvolver, implementar, capacitar, coordenar e avaliar ações de vigilância epidemiológica e assistenciais, relativas somente às infecções sexualmente transmissíveis (IST), HIV/Aids e Hepatites Bacterianas."
+    ]
+  },
+  {
+    "file": "ieses-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-3.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "A vigilância epidemiológica desempenha um papel fundamental no controle de infecções hospitalares. A equipe de enfermagem deve compreender seu objetivoprincipal para implementar medidas eficazes de controle. Qual é o principal objetivo da vigilância epidemiológica?",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Promover a educação em saúde.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Monitorar o uso de medicamentos.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Controlar doenças transmissíveis.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Avaliar a nutrição dos pacientes.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Controlar doenças transmissíveis."
+    ]
+  }
+]

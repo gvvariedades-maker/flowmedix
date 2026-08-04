@@ -126,28 +126,28 @@
           "badge": "hot"
         },
         {
-          "label": "Letra A",
+          "label": "Higiene do meato",
           "value": "Higiene do meato — cuidado correto de prevenção",
           "badge": "ok"
         },
         {
-          "label": "Letra B",
+          "label": "Fluxo de urina desobstruído",
           "value": "Fluxo de urina desobstruído — conduta correta",
           "badge": "ok"
         },
         {
-          "label": "Letra C",
+          "label": "Sistema de drenagem fechado e estéril",
           "value": "Sistema de drenagem fechado e estéril — conduta correta",
           "badge": "ok"
         },
         {
-          "label": "Letra D",
+          "label": "EXCETO: pinçar cateter antes da remoção quebra",
           "value": "EXCETO: pinçar cateter antes da remoção quebra o sistema fechado",
           "emphasis": "alert",
           "badge": "warn"
         },
         {
-          "label": "Letra E",
+          "label": "Bolsa coletora abaixo da bexiga",
           "value": "Bolsa coletora abaixo da bexiga — conduta correta",
           "badge": "ok"
         }

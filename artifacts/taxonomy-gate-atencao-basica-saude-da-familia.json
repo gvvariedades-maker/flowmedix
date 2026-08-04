@@ -1,0 +1,37 @@
+{
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "pacote_prefix": "atencao-basica-saude-da-familia",
+  "gate": "pass",
+  "is_catch_all_bucket": false,
+  "catch_all_mode": null,
+  "registry_taxonomy_status": "closed",
+  "inventory": {
+    "total_scanned": 171,
+    "mismatch_count": 0,
+    "non_canonical_titulo_aula": 0,
+    "non_canonical_meta_subtopico": 0,
+    "missing_titulo_aula": 0,
+    "missing_meta_subtopico": 0
+  },
+  "manifest": {
+    "manifest_slugs": 171,
+    "found_in_catalog": 171,
+    "missing_slugs": [],
+    "still_in_catch_all": 171,
+    "mismatch_count": 0,
+    "non_canonical_titulo": 0,
+    "reclassified": false,
+    "destinations": []
+  },
+  "reasons": [
+    "Taxonomia fechada no handcraft-registry.",
+    "Export 171; inventory mismatch=0. Aceitar drift de URL legada (processo-de-enfermagem no slug) se meta canônico. 4 drifts cluster absorvidos."
+  ],
+  "handcraft_allowed": true,
+  "promote_requires_infer": false,
+  "vitrine_groups_by_canonical_titulo": false,
+  "generated_at": "2026-08-01T23:38:00.229Z",
+  "artifact": "artifacts/taxonomy-gate-atencao-basica-saude-da-familia.json",
+  "closed_artifact": "artifacts/taxonomy-closed-atencao-basica-saude-da-familia.json",
+  "registry_closed_artifact": "artifacts/taxonomy-closed-atencao-basica-saude-da-familia.json"
+}

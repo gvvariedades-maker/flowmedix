@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-02T07:47:47.485Z",
+  "lote": "atencao-basica-saude-da-familia-g10",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "funcern-enfermagem-seguranca-do-paciente-1777102861438-5",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-0",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-1",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-5",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-6",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968125784-0",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968221218-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102861438-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968125784-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968221218-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -93,6 +93,11 @@ const EnvSchema = z.object({
    * `legacy` = concept_map → golden_rule → logic_flow → danger_zone (catálogo antigo).
    */
   NEXT_PUBLIC_REVERSE_STUDY_SLIDE_ORDER: z.enum(['legacy', 'v2']).optional(),
+  /**
+   * Projeção de 2 telas (Aula + Prova) — F7. Omitida = off; `1` liga só nos
+   * subtópicos do piloto em `lib/lesson/lessonProjectionConfig.ts`.
+   */
+  NEXT_PUBLIC_LESSON_PROJECTION: z.enum(['0', '1']).optional(),
   /** Token usado só em CI para upload de source maps (withSentryConfig). */
   SENTRY_AUTH_TOKEN: z.string().min(1).optional(),
   SENTRY_ORG: z.string().min(1).optional(),

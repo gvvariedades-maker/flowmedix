@@ -11,6 +11,12 @@ import type { LogicFlowRevealMode } from './logicFlowReveal';
 import type { DangerZoneItemPolarity } from '../core/dangerZonePolarity';
 import { getDangerZoneBespoke } from '../registry/dangerZone';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
+import {
+  AlertCallout,
+  BoardChrome,
+  CategoryStrip,
+  PolarityPanel,
+} from '../primitives';
 
 export interface DangerZoneItem {
   id?: string;
@@ -44,13 +50,16 @@ function TrapBullet({
 }) {
   if (bulletStyle === 'x_icon') {
     return (
-      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100 ring-2 ring-red-200" aria-hidden>
-        <X className="h-5 w-5 text-red-600" strokeWidth={3} />
+      <span
+        className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-rose-600 text-white shadow-md"
+        aria-hidden
+      >
+        <X className="h-5 w-5" strokeWidth={3} />
       </span>
     );
   }
   return (
-    <span className="shrink-0 font-mono tabular-nums text-sm text-red-600 md:text-lg">
+    <span className="shrink-0 font-mono tabular-nums text-sm font-bold text-rose-700 md:text-lg">
       {itemId || `${index + 1}.`}
     </span>
   );
@@ -66,17 +75,17 @@ function ItemContent({
   bulletStyle: DangerZoneBulletStyle;
 }) {
   return (
-    <motion.div layout className="flex items-start gap-3">
+    <div className="flex items-start gap-3">
       <TrapBullet bulletStyle={bulletStyle} index={index} itemId={item.id} />
       <div className="min-w-0 flex-1">
-        <h4 className="mb-2 font-display text-base font-bold text-red-800 md:text-lg">
+        <h4 className="mb-1.5 font-body text-base font-bold text-rose-950 md:text-lg">
           {item.label || item.title || 'Pegadinha'}
         </h4>
-        <p className="font-body text-base leading-relaxed text-red-900/80">
+        <p className="font-body text-sm leading-relaxed text-rose-900/90 md:text-base">
           {item.detail || item.description || ''}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -105,40 +114,36 @@ function CompareItemPanel({
   const showCorrect = !isTapMode || isRevealed;
 
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-      <div className="border-l-4 border-l-red-500 bg-gradient-to-br from-red-50 to-white p-4">
+    <div className="flex flex-col gap-2">
+      <PolarityPanel tone="exception" emphasized={!showCorrect}>
         <div className="flex items-start gap-3">
           <TrapBullet bulletStyle={bulletStyle} index={index} itemId={itemId} />
           <div className="min-w-0 flex-1">
-            <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-red-600">
-              {label} — Pegadinha
-            </p>
-            <p className="mt-1.5 font-body text-sm font-semibold leading-relaxed text-slate-900">
+            <CategoryStrip label={`${label} — Pegadinha`} tone="exception" />
+            <p className="mt-2 font-body text-sm font-semibold leading-relaxed text-rose-950">
               {trapText}
             </p>
           </div>
         </div>
-      </div>
+      </PolarityPanel>
 
       {showCorrect ? (
-        <div className="border-t border-slate-100 border-l-4 border-l-emerald-500 bg-gradient-to-br from-emerald-50 to-white p-4">
+        <PolarityPanel tone="keep" emphasized>
           <div className="flex items-start gap-2">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" aria-hidden />
+            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" aria-hidden />
             <div className="min-w-0 flex-1">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-emerald-800">
-                {backFaceLabel}
-              </p>
-              <p className="mt-1 font-body text-sm font-semibold leading-relaxed text-emerald-950">
+              <CategoryStrip label={backFaceLabel} tone="keep" />
+              <p className="mt-2 font-body text-sm font-semibold leading-relaxed text-emerald-950">
                 {correctText || '—'}
               </p>
             </div>
           </div>
-        </div>
+        </PolarityPanel>
       ) : (
         <button
           type="button"
           onClick={onReveal}
-          className="w-full border-t border-red-100 bg-white px-4 py-3 text-center font-body text-sm font-semibold text-red-700 transition-colors hover:bg-red-50 active:bg-red-100"
+          className="min-h-[48px] w-full rounded-2xl border-2 border-rose-300 bg-white px-4 py-3 text-center font-body text-sm font-bold text-rose-800 shadow-sm transition-colors hover:bg-rose-50 active:bg-rose-100"
         >
           Ver resposta correta
         </button>
@@ -149,21 +154,20 @@ function CompareItemPanel({
 
 function DangerZoneCompare({
   content,
+  theme,
   items,
   footerRule,
   bulletStyle,
   compareRevealMode = 'auto',
 }: {
   content: string;
+  theme: ThemeColors;
   items: DangerZoneItem[];
   footerRule?: string;
   bulletStyle: DangerZoneBulletStyle;
   compareRevealMode?: LogicFlowRevealMode;
 }) {
-  const { revealItem, isTapMode } = useDangerZoneCompareReveal(
-    items.length,
-    compareRevealMode,
-  );
+  const { revealItem, isTapMode } = useDangerZoneCompareReveal(items.length, compareRevealMode);
   const [revealedIndices, setRevealedIndices] = useState<Set<number>>(() => new Set());
 
   const handleReveal = useCallback(
@@ -180,19 +184,22 @@ function DangerZoneCompare({
     [isTapMode, revealItem],
   );
 
-  const revealedCount = isTapMode
-    ? revealedIndices.size
-    : items.length;
+  const revealedCount = isTapMode ? revealedIndices.size : items.length;
   const allRevealed = revealedCount >= items.length;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 pb-6 md:p-6 md:pb-8">
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.35}
+      eyebrow="Arena da pegadinha"
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+      maxWidth="2xl"
+    >
       {content ? (
-        <div className="mb-3 rounded-xl border border-red-300 border-l-4 border-l-red-600 bg-gradient-to-r from-red-100 to-red-50 px-4 py-3 text-center shadow-sm md:mb-4 md:px-5 md:py-3.5">
-          <p className="font-display text-xs font-extrabold uppercase tracking-wide text-red-900 md:text-sm">
-            {content}
-          </p>
-        </div>
+        <AlertCallout tone="warn" icon={AlertTriangle}>
+          {content}
+        </AlertCallout>
       ) : null}
 
       <div className="space-y-3">
@@ -225,33 +232,73 @@ function DangerZoneCompare({
         })}
       </div>
 
-      {footerRule ? (
-        <div className="mt-6 rounded-xl border border-red-200 bg-red-50 p-4 md:p-5">
-          <p className="font-body text-sm italic text-red-800 md:text-base">💡 {footerRule}</p>
-        </div>
-      ) : null}
-
       {allRevealed ? (
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-4 flex items-center justify-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-center"
+          className="flex items-center justify-center gap-2"
         >
-          <CheckCircle2 className="h-4 w-4 shrink-0 text-green-600" aria-hidden />
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-green-800">
-            {isTapMode ? 'Todas as pegadinhas mapeadas' : 'Domínio ativado — revise antes da prova'}
-          </span>
+          <CategoryStrip
+            label={isTapMode ? 'Todas as pegadinhas mapeadas' : 'Domínio ativado — revise antes da prova'}
+            tone="keep"
+          />
         </motion.div>
       ) : null}
-    </div>
+    </BoardChrome>
+  );
+}
+
+function TrapListBoard({
+  theme,
+  content,
+  items,
+  footerRule,
+  bulletStyle,
+  dense = false,
+}: {
+  theme: ThemeColors;
+  content: string;
+  items?: DangerZoneItem[];
+  footerRule?: string;
+  bulletStyle: DangerZoneBulletStyle;
+  dense?: boolean;
+}) {
+  return (
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.35}
+      eyebrow="Arena da pegadinha"
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+      maxWidth={dense ? '2xl' : '3xl'}
+    >
+      <div className="mb-1 flex items-center gap-2">
+        <AlertTriangle className="h-5 w-5 shrink-0 text-rose-600" aria-hidden />
+        <CategoryStrip label={dense ? 'Cuidado' : 'Cuidado com a pegadinha'} tone="exception" />
+      </div>
+
+      {content ? (
+        <AlertCallout tone="warn" icon={ShieldAlert}>
+          {content}
+        </AlertCallout>
+      ) : null}
+
+      {items && items.length > 0 ? (
+        <div className={dense ? 'space-y-2' : 'space-y-3'}>
+          {items.map((item, index) => (
+            <PolarityPanel key={index} tone="exception">
+              <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
+            </PolarityPanel>
+          ))}
+        </div>
+      ) : null}
+    </BoardChrome>
   );
 }
 
 // ============================================================================
 // DANGER ZONE: Pegadinhas — list | cards | compact | compare (trap × correct)
-// layout_variant compare: automático quando ≥1 item tem `correct` (string)
-// bullet_style: numbered (padrão) | x_icon
-// compare + reveal_mode tap: coluna correta revelada por item
+// Chassis G2: BoardChrome + PolarityPanel (+ AlertCallout)
 // ============================================================================
 export const DangerZone = ({
   content,
@@ -286,11 +333,11 @@ export const DangerZone = ({
       ? 'compare'
       : explicitVariant;
 
-  // VARIANTE COMPARE — duas colunas: pegadinha × correto
   if (variant === 'compare' && items && items.length > 0) {
     return (
       <DangerZoneCompare
         content={content}
+        theme={theme}
         items={items}
         footerRule={footerRule}
         bulletStyle={bulletStyle}
@@ -299,134 +346,60 @@ export const DangerZone = ({
     );
   }
 
-  // VARIANTE 1: LIST (padrão) - Lista com borda vermelha
-  if (variant === 'list') {
+  if (variant === 'cards' && items && items.length > 0) {
     return (
-      <motion.div layout className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 pb-8 md:p-6 md:pb-10 lg:p-8 lg:pb-12">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-50/80 via-white to-red-50/50" />
-        <div
-          className="danger-zone-container relative z-10 mt-2 mb-4 w-full rounded-2xl border border-red-200 border-l-4 border-l-red-500 bg-red-50/40 p-5 md:mt-4 md:mb-6 md:rounded-3xl md:border-l-8 md:p-7 lg:p-9"
-          style={{ minHeight: '200px' }}
-        >
-          <div className="danger-zone-alert-icon absolute top-4 right-4 opacity-20">
-            <AlertTriangle size={100} className="text-red-500" />
-          </div>
-          <div className="relative z-10 space-y-4">
-            <h3 className="danger-zone-title flex items-center gap-3 font-mono text-sm font-black text-red-700 md:text-2xl">
-              <AlertTriangle className="h-6 w-6 shrink-0 animate-pulse md:h-7 md:w-7" strokeWidth={2} /> CUIDADO COM A PEGADINHA
-            </h3>
-            {content && (
-              <div className="danger-zone-content rounded-xl border border-red-200 bg-white p-4 md:p-5">
-                <p className="font-body text-base font-semibold leading-relaxed text-slate-900 md:text-2xl">{content}</p>
-              </div>
-            )}
-            {items && items.length > 0 && (
-              <div className="space-y-4">
-                {items.map((item, index) => (
-                  <div key={index} className="danger-zone-item rounded-xl border border-red-200 border-l-4 border-l-red-500 bg-white p-4 shadow-sm">
-                    <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
-                  </div>
-                ))}
-              </div>
-            )}
-            {footerRule && (
-              <div className="danger-zone-footer rounded-xl border border-red-200 bg-red-50 p-4">
-                <p className="font-body text-sm italic text-red-800 md:text-base">💡 {footerRule}</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </motion.div>
-    );
-  }
-
-  // VARIANTE 2: CARDS - Itens em cards separados
-  if (variant === 'cards') {
-    return (
-      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 relative">
-        <motion.div className="absolute inset-0 bg-gradient-to-br from-red-50/80 via-white to-red-50/50" aria-hidden />
-        <div className="relative z-10 w-full max-w-5xl flex flex-col gap-6 py-5">
-          {content && (
-            <div className="rounded-2xl border-2 border-red-200 bg-red-50 p-6">
-              <p className="font-body text-lg font-semibold leading-relaxed text-red-900 md:text-xl">{content}</p>
-            </div>
-          )}
-          {items && items.length > 0 && (
-            <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {items.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="rounded-xl border-2 border-red-200 bg-white p-4 shadow-sm transition-colors hover:border-red-300"
-                >
-                  <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
-                </motion.div>
-              ))}
+      <BoardChrome
+        theme={theme}
+        washOpacity={0.35}
+        eyebrow="Arena da pegadinha"
+        footerRule={footerRule}
+        footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+        maxWidth="5xl"
+      >
+        {content ? (
+          <AlertCallout tone="warn" icon={AlertTriangle}>
+            {content}
+          </AlertCallout>
+        ) : null}
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {items.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <PolarityPanel tone="exception">
+                <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
+              </PolarityPanel>
             </motion.div>
-          )}
-          {footerRule && (
-            <div className="rounded-xl border border-red-200 bg-red-50 p-4">
-              <p className="font-body text-sm italic text-red-800 md:text-sm">💡 {footerRule}</p>
-            </div>
-          )}
+          ))}
         </div>
-      </div>
+      </BoardChrome>
     );
   }
 
-  // VARIANTE 3: COMPACT - Layout condensado
   if (variant === 'compact') {
     return (
-      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
-        <div className="absolute inset-0 bg-slate-50" />
-        <motion.div className="relative z-10 w-full max-w-3xl space-y-4">
-          <div className="flex items-center gap-2 font-mono text-sm text-red-700 md:text-lg">
-            <ShieldAlert size={24} className="shrink-0" /> CUIDADO
-          </div>
-          {content && <p className="font-body text-base text-slate-800 md:text-lg">{content}</p>}
-          {items && items.length > 0 && (
-            <div className="space-y-2">
-              {items.map((item, index) => (
-                <div key={index} className="flex gap-3 border-b border-slate-200 py-2 last:border-0">
-                  {bulletStyle === 'x_icon' ? (
-                    <X className="mt-0.5 h-4 w-4 shrink-0 text-red-600" strokeWidth={3} aria-hidden />
-                  ) : (
-                    <span className="shrink-0 font-mono tabular-nums text-sm text-red-600 md:text-base">
-                      {item.id || `${index + 1}.`}
-                    </span>
-                  )}
-                  <div className="min-w-0 text-slate-700">
-                    <span className="font-display text-base font-bold text-red-800">{item.label || item.title || 'Pegadinha'}: </span>
-                    <span className="font-body text-base md:text-sm">{item.detail || item.description || ''}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-          {footerRule && <p className="pt-2 font-body text-sm italic text-red-800">💡 {footerRule}</p>}
-        </motion.div>
-      </div>
+      <TrapListBoard
+        theme={theme}
+        content={content}
+        items={items}
+        footerRule={footerRule}
+        bulletStyle={bulletStyle}
+        dense
+      />
     );
   }
 
-  // Fallback: list
+  // list + fallback
   return (
-    <div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-start p-4 pb-8">
-      <div className="absolute inset-0 bg-gradient-to-br from-red-50/80 via-white to-red-50/50" />
-      <div className="relative z-10 my-4 w-full max-w-4xl rounded-2xl border border-red-200 border-l-4 border-l-red-500 bg-red-50/40 p-5">
-        <h3 className="mb-4 flex items-center gap-2 font-mono text-sm font-black text-red-700 md:text-2xl">
-          <AlertTriangle size={24} className="shrink-0" /> CUIDADO
-        </h3>
-        {content && <p className="mb-4 font-body text-base font-semibold text-slate-900 md:text-lg">{content}</p>}
-        {items && items.length > 0 && items.map((item, index) => (
-          <motion.div key={index} className="mb-2 rounded-lg border border-red-200 border-l-4 border-l-red-500 bg-white p-4 shadow-sm">
-            <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
-          </motion.div>
-        ))}
-        {footerRule && <p className="mt-4 font-body text-sm italic text-red-800">💡 {footerRule}</p>}
-      </div>
-    </div>
+    <TrapListBoard
+      theme={theme}
+      content={content}
+      items={items}
+      footerRule={footerRule}
+      bulletStyle={bulletStyle}
+    />
   );
 };

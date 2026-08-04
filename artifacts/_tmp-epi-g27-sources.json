@@ -1,0 +1,298 @@
+[
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-0.json",
+    "family": "conceito",
+    "branch": "epi_indicadores",
+    "instruction": "Durante uma reunião dos profissionais que compõem o Serviço Especializado em Engenharia de Segurança e em Medicina do Trabalho (SESMT) da instituição, omédico do trabalho expôs que, de acordo com os dados do Programa de Conservação Auditiva, relativos ao último ano, a incidência de perda auditiva induzida por níveisde pressão sonora elevada (PAINPSE) havia aumentado. Essa informação significa que, em relação à ocorrência de PAINSPE entre os trabalhadores expostos ao ruídoavaliados, observou-se",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "a ocorrência de casos novos.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "a estabilidade no número de trabalhadores que já apresentavam esse diagnóstico.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "uma epidemia.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "um surto.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "um aumento sazonal no número de casos em função da época do ano em que o exame foi realizado.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: a ocorrência de casos novos."
+    ]
+  },
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-5.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "No atendimento da demanda espontânea de uma UBS foi identificado um caso suspeito de tuberculose pulmonar, que é uma doença de notificação compulsória.\nA respeito dessa notificação, é\ncorreto\nafirmar que",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "a notificação é privativa do médico.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "deve ser realizada após a confirmação do caso.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "é necessária para a realização dos exames confirmatórios.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "é realizada ao término do tratamento.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "é de notificação imediata ao Ministério da Saúde.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: deve ser realizada após a confirmação do caso."
+    ]
+  },
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-6.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "O auxiliar de enfermagem, Pedro, trabalha em uma unidade de saúde e realiza um teste rápido de covid-19 em José, para o qual o resultado é positivo.\nQual das seguintes condutas é a mais adequada para Pedro, de acordo com as normas do Sistema de Informação de Agravos de Notificação (Sinan)?",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Notificar o caso imediatamente no Sinan, registrando o resultado positivo para monitoramento epidemiológico.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Registrar o caso apenas se o paciente apresentar agravamento dos sintomas respiratórios, pois somente casos graves são obrigatórios.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Aguardar a confirmação de um teste PCR antes de realizar a notificação no Sinan, devido à possibilidade de resultados falsos positivos no teste rápido.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Registrar o caso de covid-19 no Sinan apenas de forma semanal, seguindo a rotina de notificação para doenças de menor gravidade.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Solicitar ao médico responsável que notifique o caso apenas se o paciente relatar contato com outros casos suspeitos.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Notificar o caso imediatamente no Sinan, registrando o resultado positivo para monitoramento epidemiológico."
+    ]
+  },
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-5.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Em relação às doenças de notificação compulsória, deve-se notificar um caso suspeito de meningite bacteriana em",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "até 24 horas após a suspeita clínica.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "até 48 horas após o diagnóstico confirmado.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "até 7 dias após a suspeita clínica.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "até 72 horas após o tratamento inicial.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "surtos epidêmicos.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: até 24 horas após a suspeita clínica."
+    ]
+  },
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-4.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Em caso de doença meningocócica, no que diz respeito às ações de vigilância epidemiológica, é\ncorreto\nafirmar que",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "todos os casos suspeitos e confirmados devem ser notificados às autoridades competentes.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "a notificação de casos confirmados deve ser realizada em até 48 horas para as Secretarias Municipais e Estaduais de Saúde e ao Ministério da Saúde.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "a notificação compulsória dos casos da doença é de responsabilidade exclusiva da instituição hospitalar onde foi realizado o diagnóstico.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "para prevenir a ocorrência de novos casos, todos os indivíduos que tiveram contato com o doente nos 15 dias que antecederam os primeiros sinais e sintomasdevem receber a quimioprofilaxia.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "independentemente da utilização de máscaras e demais equipamentos de proteção individual, todos os profissionais de saúde que atenderam o caso de doençameningocócica devem receber a quimioprofilaxia para evitar a disseminação da doença.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: todos os casos suspeitos e confirmados devem ser notificados às autoridades competentes."
+    ]
+  },
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-8.json",
+    "family": "conceito",
+    "branch": "epi_indicadores",
+    "instruction": "Um dos objetivos da vigilância epidemiológica dos casos de covid-19 é monitorar e descrever o padrão de morbidade da doença. Nesse sentido, é importantereconhecer os sinais de agravamento dos casos, como a instalação da Síndrome Respiratória Aguda Grave – SARS, que tem como sinais definidores:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "obstrução nasal acompanhada de tiragem intercostal.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "pressão arterial muito elevada ou dor persistente no tórax.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "dispneia ou saturação de O2 menor que 95% em ar ambiente.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "febre alta acompanhada de sintomas gastrointestinais.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "adinamia, prostração, anosmia e ageusia.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: dispneia ou saturação de O2 menor que 95% em ar ambiente."
+    ]
+  },
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-3.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "De acordo com a Portaria no 264 do Ministério da Saúde que se refere a lista nacional de notificação compulsória de doenças, agravos e eventos de saúde pública,assinale a alternativa que indique a doença e/ou agravo de notificação semanal (em até 7 dias a partir da identificação).",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Doença aguda pelo vírus Zika.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Febre amarela.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Síndrome da rubéola congênita.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Dengue-óbitos.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Acidente por animal peçonhento.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Doença aguda pelo vírus Zika."
+    ]
+  },
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-7.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Conforme a Lista Nacional de Notificação Compulsória de Doenças, Agravos e Eventos de Saúde Pública, assinale a alternativa cujas doenças e cujos agravoscorrespondem à notificação imediata.",
+    "text_fragment": "<p>\"Sem Área\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Acidente de trabalho com exposição a material biológico; dengue (casos).",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Doença de Chagas crônica; doença de Creutzfeldt- -Jakob.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Doença aguda pelo vírus zika; febre de Chikungunya.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Febre tifoide; violência sexual e tentativa de suicídio.",
+        "ok": true
+      },
+      {
+        "id": "E",
+        "text": "Tuberculose; violência doméstica e/ou outras violências.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "D: Febre tifoide; violência sexual e tentativa de suicídio."
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+---
+description: >-
+  Barra visual mínima dos NeuroSlides (best-in-market) + ratchet: cada molde
+  só melhora. Ativa em Design visual / Implementar molde / Fábrica nota-10 /
+  variants de slides.
+globs: components/slides/**/*
+alwaysApply: false
+---
+
+# NeuroSlides — barra visual + ratchet
+
+**Canônico:** [`docs/NEUROSLIDES_VISUAL_BAR.md`](../../NEUROSLIDES_VISUAL_BAR.md)  
+**Piso vivo:** [`artifacts/neuroslides-g2-demo.html`](../../artifacts/neuroslides-g2-demo.html)  
+**ADR:** [`docs/DECISAO_NEUROSLIDES_GERACAO_2.md`](../../DECISAO_NEUROSLIDES_GERACAO_2.md)
+
+## Piso (obrigatório em molde novo / redesign)
+
+Todo NeuroSlide novo ou redesenhado deve ficar **neste nível ou acima** da demo G2:
+
+1. **1 herói por tela** (EXCEÇÃO / ✓ / ÂNCORA / número crítico)
+2. **Cards com massa** — fill + borda de cor; proibido branco-no-branco
+3. **Cor = decisão** (keep / exception / command / trap)
+4. **Fonte legível** (UI sans; sem display ultra-largo ilegível)
+5. **Footer de transferência** de prova
+6. **JSON alimenta tudo** — zero hardcode de gabarito/letra no TSX
+7. Compõe **primitives** (`BoardChrome`, `PolarityPanel`, …) salvo exceção documentada
+
+## Ratchet (sempre melhorar)
+
+- Cada molde / variant / onda **só sobe** a barra vs. o anterior do mesmo gesto.
+- **Proibido** regressar para pastel flat, lista sem massa, tipografia que atrapalha TE, ou mais taps sem ganho pedagógico.
+- Em report/brief: `visual_bar: pass|fail` + o que melhorou.
+
+## Não fazer
+
+- Trocar os 4 `type` (`concept_map` / `logic_flow` / `golden_rule` / `danger_zone`)
+- Clonar carrossel Instagram / 3D / watermark de feed
+- Declarar nota-10 visual sem checklist PASS da barra
+- Aplicar esta rule à vitrine/dashboard (`Visual:` → `avant-ui-visual`)
+
+## Triggers
+
+`Design visual:` · `Molde visual:` · `Implementar molde:` · Fábrica nota-10 · edição em `components/slides/**`

@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "pacote_prefix": "atencao-basica-saude-da-familia",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-atencao-basica*.json,examples/questao-premium-*-saude-familia*.json,examples/questao-premium-*-esf-*.json",
+  "guideline": null,
+  "handcraft_meta": "data/catalog-migration/atencao-basica-saude-da-familia-completo/handcraft-meta.json",
+  "l3_brief_index": "artifacts/l3-brief-atencao-basica-saude-da-familia-INDEX.md",
+  "slug_selection": "Supabase: meta.subtopico canônico; aceitar drift de URL legada (segmento processo-de-enfermagem) se meta = Atenção Básica / Saúde da Família",
+  "clusters": [
+    "ACS — atribuições, visita e território",
+    "eSF — composição, carga e modalidades",
+    "PNAB / princípios e atributos da APS",
+    "Técnico de enfermagem na AB",
+    "Vigilância / ACE no território",
+    "Atenção Básica — conceito geral"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "ab_acs_territorio",
+      "when": "ACS, visita domiciliar, microárea, adscrição, cadastro familiar",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": [
+        "examples/questao-premium-adm-atencao-basica-saude-da-familia-acs-atribuicoes-visita-e-territorio.json"
+      ]
+    },
+    {
+      "id": "ab_esf_composicao",
+      "when": "Composição/núcleo eSF, NASF/eMulti, ribeirinha, carga horária, teto 4.000",
+      "l3_decision": "molde_inedito",
+      "bespoke_target": "ab-esf-orbit",
+      "mold": "ab-esf-orbit-deck · ab-esf-reference-board · ab-esf-tap-flow · ab-esf-scope-trap",
+      "anchors": [
+        "examples/questao-premium-ameosc-atencao-basica-saude-da-familia-esf-composicao-carga-e-modalidades.json"
+      ]
+    },
+    {
+      "id": "ab_pnab_principios",
+      "when": "PNAB, Portaria 2.436, atributos APS, longitudinalidade, coordenação do cuidado",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": []
+    },
+    {
+      "id": "ab_te_aps",
+      "when": "Atribuições do TE/AE na UBS/eSF sem ACS/eSF como eixo dominante",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": []
+    },
+    {
+      "id": "ab_vigilancia_ads",
+      "when": "ACE, endemias, notificação e vigilância no território da AB",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": []
+    },
+    {
+      "id": "ab_generico",
+      "when": "Demais — sem fit claro nos ramos acima",
+      "l3_decision": "cauda_longa",
+      "mold": "genérico premium emerald (SUBTOPIC_DESIGN_MAP)",
+      "anchors": [
+        "examples/questao-premium-amauc-atencao-basica-saude-da-familia-atencao-basica-conceito-geral.json"
+      ]
+    }
+  ],
+  "visual_gallery": {
+    "ab_esf_composicao": {
+      "status": "brief_pending_react",
+      "layouts": ["ab-esf-orbit-deck", "ab-esf-reference-board", "ab-esf-tap-flow", "ab-esf-scope-trap"],
+      "note": "Brief 4/4 obrigatório; React só com Implementar molde: ab_esf_composicao"
+    }
+  },
+  "modes": {
+    "subtopico_handcraft": {
+      "first_lote": "atencao-basica-saude-da-familia-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run validate:goldens -- --lote=<lote> --strict",
+        "npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=\"Atenção Básica / Saúde da Família\" --only-premium --apply"
+      ]
+    },
+    "single_slug": {
+      "lote_dir": "data/catalog-migration/atencao-basica-saude-da-familia-g01/questions",
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
+      ]
+    }
+  },
+  "sources_tier_a": [
+    "Portaria GM/MS nº 2.436/2017 (PNAB)",
+    "Portaria de Consolidação nº 2/2017 (anexos APS, quando cobrada)",
+    "Lei 8.080/1990 (contexto APS no SUS)",
+    "COFEN — atribuições TE/AE na atenção básica"
+  ],
+  "notes": "Pacote novo 2026-08-01. Limiar forte = 18/171. ACS = ok_generico (texto×texto). eSF = molde_inedito (órbita/matriz de equipe)."
+}

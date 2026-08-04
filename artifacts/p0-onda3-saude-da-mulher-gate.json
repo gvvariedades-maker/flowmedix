@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-04T01:16:20.967Z",
+  "onda": "3-nota10-visual",
+  "pacote": "Saúde da Mulher",
+  "lote": "saude-da-mulher",
+  "design_visual": "artifacts/l3-design-visual-saude-da-mulher-onda3.md",
+  "index": "artifacts/l3-brief-saude-da-mulher-INDEX.md",
+  "nota10": "artifacts/saude-da-mulher-nota10-report.md",
+  "implementar_molde": false,
+  "reusar_moldes": true,
+  "playwright": "blocked_slide_mold_review_timeout",
+  "anchor_ready": [
+    "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json"
+  ],
+  "camada7": {
+    "gesto_ramos": true,
+    "print_primitivo": true,
+    "playwright_or_captures": false,
+    "nota10_report": true,
+    "react_novo": false
+  },
+  "next": "Processo de Enfermagem"
+}

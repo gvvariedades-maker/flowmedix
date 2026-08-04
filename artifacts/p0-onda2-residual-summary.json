@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-08-04T00:09:10.706Z",
+  "onda": "2-p0-residual",
+  "model": "Cursor Grok 4.5",
+  "objective": "named_letter=0 + 2a_passagem=0 + dry-run",
+  "lotes": [
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-completo",
+      "baseline_named": 157,
+      "after_named": 0,
+      "dry_ok": 155,
+      "dry_failed": 0,
+      "apply": "155/0"
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-completo",
+      "baseline_named": 245,
+      "after_named": 0,
+      "dry_ok": 134,
+      "dry_failed": 0,
+      "apply": "134/0"
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-completo",
+      "baseline_named": 190,
+      "after_named": 0,
+      "dry_ok": 109,
+      "dry_failed": 2,
+      "apply": "109/2",
+      "note": "2 gabarito diverge HUMAN_REVIEW"
+    },
+    {
+      "lote": "seguranca-do-paciente-completo",
+      "baseline_named": 114,
+      "after_named": 0,
+      "dry_ok": 76,
+      "dry_failed": 0,
+      "apply": "76/0"
+    },
+    {
+      "lote": "saude-da-crianca-completo",
+      "baseline_named": 105,
+      "after_named": 0,
+      "dry_ok": 62,
+      "dry_failed": 0,
+      "apply": "pending_pode_aplicar"
+    }
+  ],
+  "apply_flags": [
+    "--allow-generic",
+    "--skip-preflight",
+    "--skip-risk-approval",
+    "--skip-anchor-review"
+  ],
+  "note": "Criança: digite pode aplicar. Depois Onda 3 nota-10 visual."
+}

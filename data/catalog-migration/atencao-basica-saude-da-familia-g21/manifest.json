@@ -1,0 +1,27 @@
+{
+  "lote": "atencao-basica-saude-da-familia-g21",
+  "exported_at": "2026-08-03T20:32:44.933Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "selecon-enfermagem-atencao-basica-saude-da-familia-1778968207422-2",
+      "unesc-enfermagem-atencao-basica-saude-da-familia-1778968357339-7",
+      "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968039063-5",
+      "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968077998-8",
+      "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968094018-0",
+      "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+      "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968180610-7",
+      "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0"
+    ]
+  },
+  "slugs": [
+    "selecon-enfermagem-atencao-basica-saude-da-familia-1778968207422-2",
+    "unesc-enfermagem-atencao-basica-saude-da-familia-1778968357339-7",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968039063-5",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968077998-8",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968094018-0",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968180610-7",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0"
+  ]
+}

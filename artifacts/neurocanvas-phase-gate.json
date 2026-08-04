@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-08-01T02:18:53.200Z",
+  "gate": "F6",
+  "provenance": {
+    "present": true,
+    "status": "awaiting_founder_decision",
+    "decisions_required": [
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "decisions_taken": [],
+    "phase_0b_ready": false,
+    "unresolved": 342,
+    "s3_count": 6
+  },
+  "content": {
+    "present": true,
+    "corpus": "examples",
+    "measured_at": "2026-08-01T00:41:12.374Z",
+    "total": 165,
+    "judged": 164,
+    "blocking": 52,
+    "pedagogy_total": 165,
+    "pedagogy_fail": 107,
+    "pedagogy_warn": 10
+  },
+  "phase_0b": {
+    "resumable": false,
+    "blockers": [
+      "F5 status=awaiting_founder_decision — decisão do fundador pendente.",
+      "F5: 6 decisão(ões) sem registro — D1, D2, D3, D4, D5, D6.",
+      "Estabilidade medida em corpus=examples — F6 exige corpus=catalog (o cache da Fase 0B indexa o catálogo inteiro).",
+      "52 slug(s) com fail_leak no leitor cego — repair F3 pendente.",
+      "107 slug(s) com fail pedagógico — repair F3 pendente.",
+      "F5 declara phase_0b_ready=false — fechamento editorial não concluído."
+    ]
+  },
+  "phase_2": {
+    "resumable": false,
+    "blockers": [
+      "F5 status=awaiting_founder_decision — decisão do fundador pendente.",
+      "F5: 6 decisão(ões) sem registro — D1, D2, D3, D4, D5, D6.",
+      "Estabilidade medida em corpus=examples — F6 exige corpus=catalog (o cache da Fase 0B indexa o catálogo inteiro).",
+      "52 slug(s) com fail_leak no leitor cego — repair F3 pendente.",
+      "107 slug(s) com fail pedagógico — repair F3 pendente."
+    ]
+  }
+}

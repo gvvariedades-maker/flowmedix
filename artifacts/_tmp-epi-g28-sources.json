@@ -1,0 +1,71 @@
+[
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "De acordo com a Lista Nacional de devem ser notificados semanalmente, entre outros itens, os casos suspeitos e/ou confirmados de",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "acidentes de trabalho com exposição a material biológico e sarampo.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "dengue e febre amarela.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "coqueluche e acidente por animal peçonhento.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "infecção pelo Vírus da Imunodeficiência Humana- -HIV e leptospirose.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "tuberculose e hanseníase.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "E: tuberculose e hanseníase."
+    ]
+  },
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-3.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Notificação compulsória refere-se à comunicação às autoridades sanitárias, visando a investigação e o controle de casos suspeitos ou confirmados dedeterminadas doenças, agravos e eventos de saúde pública. Requer notificação semanal:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "hantavirose.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "leptospirose.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "toxoplasmose gestacional e congênita.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "botulismo.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: toxoplasmose gestacional e congênita."
+    ]
+  }
+]

@@ -8,13 +8,13 @@ Gerado por `scripts/audit-variant-click-scorecard.ts`.
 
 | Métrica | Valor |
 |---------|------:|
-| Variantes (bespoke + genéricos) | 301 |
+| Variantes (bespoke + genéricos) | 304 |
 | concept_map | 82 |
-| logic_flow | 72 |
+| logic_flow | 74 |
 | golden_rule | 73 |
-| danger_zone | 74 |
+| danger_zone | 75 |
 | click **high** (score 3) | 33 |
-| click **medium** (score 2) | 187 |
+| click **medium** (score 2) | 190 |
 | click **low** (score 1) | 81 |
 | high sem ramo no BRANCH_DESIGN_MAP | 9 |
 
@@ -22,8 +22,8 @@ Gerado por `scripts/audit-variant-click-scorecard.ts`.
 
 | Gesto | Qtde |
 |-------|-----:|
+| matrix_board | 65 |
 | arena_trap | 65 |
-| matrix_board | 63 |
 | funnel | 58 |
 | deck | 35 |
 | rail | 27 |
@@ -32,8 +32,8 @@ Gerado por `scripts/audit-variant-click-scorecard.ts`.
 | timeline | 10 |
 | spectrum | 8 |
 | orbit_hub | 4 |
+| compare | 3 |
 | curtain_gate | 2 |
-| compare | 2 |
 | other | 1 |
 
 ## Top high-click (mapeados a ramo)

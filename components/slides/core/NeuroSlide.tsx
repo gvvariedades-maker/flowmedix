@@ -12,6 +12,10 @@ import { getThemeForSlide } from './themeGenerator';
 import { resolveSlidePresentation, enrichPresentationContext, type SlidePresentationContext } from './slidePresentation';
 import type { FamilyId } from './questionFamily';
 import {
+  buildNeuroVisualPlanV0,
+  type NeuroVisualPlanSlideInput,
+} from '@/lib/neurocanvas/neuroVisualPlanV0';
+import {
   isVersusArenaSideReady,
   normalizeLogicFlowSteps,
   normalizeReverseStudySlide,
@@ -57,6 +61,7 @@ export const NeuroSlideHub = ({
       slideIndex,
       jsonLayoutVariant,
       familyId: questionFamilyId,
+      options: questionOptions,
     },
     slide.meta,
     questionInstruction,
@@ -71,7 +76,25 @@ export const NeuroSlideHub = ({
     bulletStyle: dangerBulletStyle,
     rows: goldenRows,
   } = resolveSlidePresentation(slide, presentationContext);
-  
+
+  // F1: 1ª consumação real do NeuroVisualPlan — polaridade fora de presentation.
+  const dangerItemPolarities =
+    slide.type === 'danger_zone'
+      ? buildNeuroVisualPlanV0({
+          slide,
+          questionHash,
+          questionSlug: questionSlug ?? questionHash,
+          slideIndex,
+          jsonLayoutVariant,
+          familyId: questionFamilyId,
+          questionInstruction,
+          questionOptions,
+          questionSlides: questionSlides as NeuroVisualPlanSlideInput[] | undefined,
+          questionMeta,
+          includeTheme: false,
+        }).dangerItemPolarities
+      : undefined;
+
   // Helper para mapear items para concepts quando necessário
   const getConcepts = () => {
     if (slide.concepts && Array.isArray(slide.concepts)) {
@@ -103,7 +126,14 @@ export const NeuroSlideHub = ({
           />
         );
       }
-      return <ConceptMap concepts={concepts} theme={theme} layoutVariant={layoutVariant} />;
+      return (
+        <ConceptMap
+          concepts={concepts}
+          theme={theme}
+          layoutVariant={layoutVariant}
+          footerRule={slide.footer_rule}
+        />
+      );
     }
     case 'golden_rule':
       return (
@@ -131,6 +161,7 @@ export const NeuroSlideHub = ({
           layoutVariant={layoutVariant}
           bulletStyle={dangerBulletStyle}
           compareRevealMode={dangerRevealMode}
+          itemPolarities={dangerItemPolarities}
         />
       );
     case 'logic_flow':
@@ -215,6 +246,7 @@ export default function NeuroSlide({
           slideIndex,
           jsonLayoutVariant: safeData.layout_variant,
           familyId: questionFamilyId,
+          options: questionOptions,
         },
         safeData.meta,
         questionInstruction,
@@ -230,6 +262,7 @@ export default function NeuroSlide({
       questionInstruction,
       questionSlides,
       questionMeta,
+      questionOptions,
     ],
   );
 
@@ -380,6 +413,7 @@ export default function NeuroSlide({
               concepts={concepts}
               theme={theme}
               layoutVariant={legacyPresentation.layoutVariant}
+              footerRule={normalizedData.footer_rule}
             />
           );
         }
@@ -406,6 +440,24 @@ export default function NeuroSlide({
             footerRule={normalizedData.footer_rule}
             bulletStyle={legacyPresentation.bulletStyle}
             compareRevealMode={legacyPresentation.dangerRevealMode}
+            itemPolarities={
+              buildNeuroVisualPlanV0({
+                slide: {
+                  ...normalizedData,
+                  type: 'danger_zone',
+                },
+                questionHash: hashSource,
+                questionSlug: slugSource,
+                slideIndex,
+                jsonLayoutVariant: safeData.layout_variant,
+                familyId: questionFamilyId,
+                questionInstruction,
+                questionOptions,
+                questionSlides: questionSlides as NeuroVisualPlanSlideInput[] | undefined,
+                questionMeta,
+                includeTheme: false,
+              }).dangerItemPolarities
+            }
           />
         );
         break;

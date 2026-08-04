@@ -1,0 +1,291 @@
+[
+  {
+    "file": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-3.json",
+    "correct": "C",
+    "instruction": "Em determinada comunidade, observou-se aumento inesperado de novos casos de uma doença em período curto, acima do padrão historicamente esperado para aquela área. Esse comportamento epidemiológico caracteriza:",
+    "options": [
+      {
+        "id": "A",
+        "text": "endemia, por distribuição estável e contínua.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "surto, por ocorrência sempre internacional.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "epidemia, por elevação além do esperado.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "pandemia, por restrição local e sazonal.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fênix Instituto",
+      "ano": "2026",
+      "orgao": "Enfermagem",
+      "prova": "Tec (FHSTE)"
+    }
+  },
+  {
+    "file": "fepese-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-9.json",
+    "correct": "D",
+    "instruction": "Assinale a alternativa que contém\napenas\ndoenças, agravos ou eventos de saúde pública que são de notificação compulsória.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Verrugas genitais, diabetes tipo 1 e dengue",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Violência doméstica, herpes zoster, infecção por clamídia",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Sífilis, doença de hashimoto, arterite de células gigantes",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Infecção por HTLV, intoxicação exógena e tuberculose",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Sjogren, febre amarela, esclerose lateral amiotrófica",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "FEPESE",
+      "ano": "2024",
+      "orgao": "Pref Concórdia",
+      "prova": "ACE"
+    }
+  },
+  {
+    "file": "fepese-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-2.json",
+    "correct": "E",
+    "instruction": "A notificação compulsória refere-se à comunicação obrigatória à autoridade de saúde sobre a ocorrência de suspeita ou confirmação de doença, agravo ou eventode saúde pública.\nSobre a notificação compulsória, é\ncorreto\nafirmar:",
+    "options": [
+      {
+        "id": "A",
+        "text": "É obrigatória apenas para os médicos, sendo opcional ser realizada por outros profissionais de saúde ou responsáveis pelos serviços públicos e privados desaúde, que prestam assistência ao paciente.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A notificação compulsória será realizada apenas diante da confirmação de doença ou agravo. Em casos de suspeita, a notificação não deve ser realizada até quese tenha certeza do caso.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A autoridade de saúde que receber a notificação compulsória imediata deverá informá-la, em até 30 dias desse recebimento, às demais esferas de gestão doSUS.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "As autoridades de saúde divulgarão as informações pessoais integrantes da notificação compulsória que estejam sob sua responsabilidade, para domínio público,como forma de alerta e prevenção.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A notificação compulsória imediata deve ser realizada pelo profissional de saúde ou responsável pelo serviço assistencial que prestar o primeiro atendimento aopaciente, em até 24 horas desse atendimento, pelo meio mais rápido disponível.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "FEPESE",
+      "ano": "2021",
+      "orgao": "Pref Araranguá / I",
+      "prova": "TEnf (Araranguá)"
+    }
+  },
+  {
+    "file": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-1.json",
+    "correct": "D",
+    "instruction": "Acerca da\nnotificação compulsória\nde doenças, assinale a afirmativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A hanseníase é uma doença de notificação facultativa.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Apenas os casos confirmados de dengue devem ser notificados.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A tuberculose deve ser notificada em até 24 horas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A notificação do óbito com suspeita de doença pelo vírus Zika deve ser imediata.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "FGV",
+      "ano": "2024",
+      "orgao": "Técnico em Enfermagem",
+      "prova": "Prof NM (SES MT)"
+    }
+  },
+  {
+    "file": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-6.json",
+    "correct": "B",
+    "instruction": "Diante da ocorrência de um caso suspeito ou confirmado de\ndengue\n, o profissional responsável deverá realizar a notificação compulsória em até",
+    "options": [
+      {
+        "id": "A",
+        "text": "5 dias.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "7 dias.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "10 dias.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "12 horas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "24 horas.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "FGV",
+      "ano": "2023",
+      "orgao": "Técnico Enfermagem / 30H",
+      "prova": "PENF (FHEMIG)"
+    }
+  },
+  {
+    "file": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-5.json",
+    "correct": "B",
+    "instruction": "A notificação compulsória relacionada a acidentes com ferroada de escorpião marrom, deve ser realizada em até",
+    "options": [
+      {
+        "id": "A",
+        "text": "12 horas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "24 horas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "48 horas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "7 dias.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "15 dias.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "FGV",
+      "ano": "2024",
+      "orgao": "Pref Abreu e Lima",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-0.json",
+    "correct": "A",
+    "instruction": "Sobre a notificação compulsória de um caso suspeito de\nsarampo\n, assinale a afirmativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Casos suspeitos ou confirmados de sarampo são de notificação compulsória imediata.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Compete somente ao médico assistente fazer a notificação compulsória de doenças.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A notificação de doenças e agravos é competência exclusiva do enfermeiro.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A notificação do sarampo deve ser feita em até 15 dias após o atendimento.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Não cabe notificação compulsória diante de um caso suspeito.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "FGV",
+      "ano": "2021",
+      "orgao": "Enfermagem",
+      "prova": "Tec (FunSaúde CE)"
+    }
+  },
+  {
+    "file": "funatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-0.json",
+    "correct": "C",
+    "instruction": "Doenças de notificação compulsória têm a comunicação obrigatória à autoridade de saúde, sobre a ocorrência de suspeita ou confirmação de doença, agravo ouevento de saúde pública, podendo ser imediata ou semanal. De acordo com a Lista Nacional de Doenças e Agravos de Notificação Compulsória, assinale a alternativa quecontém apenas doenças de notificação compulsória imediata:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Covid 19, Hipertensão Arterial, Diabetes e Leptospirose.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Covid 19, Rubéola, Diabetes, Tétano.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Covid 19, Botulismo, Febre Amarela, Raiva humana",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Dengue, Sarampo, Angina, Infarto do Miocárdio",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Funatec",
+      "ano": "2024",
+      "orgao": "Pref Pinheiro (MA)",
+      "prova": "Aux Enf (Pref Pinheiro (MA))"
+    }
+  }
+]

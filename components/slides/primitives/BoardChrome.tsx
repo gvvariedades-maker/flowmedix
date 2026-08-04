@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { cn } from '@/lib/utils';
-import { BOARD_EYEBROW, BOARD_FOOTER } from './boardTokens';
+import { BOARD_EYEBROW, BOARD_FOOTER, BOARD_FOOTER_LABEL } from './boardTokens';
 
 export type BoardChromeMaxWidth = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '5xl';
 
@@ -26,6 +26,8 @@ export interface BoardChromeProps {
   /** Override do título (ex.: danger compare usa text-sm). */
   titleClassName?: string;
   footerRule?: string;
+  /** Label acima do footer (ex.: FIXAÇÃO, TRANSFERÊNCIA DE PROVA). */
+  footerLabel?: string;
   maxWidth?: BoardChromeMaxWidth;
   className?: string;
   children: ReactNode;
@@ -33,7 +35,7 @@ export interface BoardChromeProps {
 
 /**
  * Shell glanceable: gradient wash + container max-w + eyebrow/title/footer.
- * Substitui wrappers duplicados nos moldes ética / boards de mercado.
+ * Footer escuro = transferência de prova (barra visual G2).
  */
 export function BoardChrome({
   theme,
@@ -42,6 +44,7 @@ export function BoardChrome({
   title,
   titleClassName,
   footerRule,
+  footerLabel,
   maxWidth = 'xl',
   className,
   children,
@@ -56,7 +59,7 @@ export function BoardChrome({
 
       <div
         className={cn(
-          'relative z-10 mx-auto flex w-full flex-col gap-3',
+          'relative z-10 mx-auto flex w-full flex-col gap-3.5',
           MAX_WIDTH[maxWidth],
           className,
         )}
@@ -64,7 +67,7 @@ export function BoardChrome({
         {title ? (
           <h2
             className={cn(
-              'text-center font-display text-base font-black uppercase tracking-wide text-slate-900 md:text-lg',
+              'text-center font-body text-base font-bold tracking-tight text-slate-900 md:text-lg',
               titleClassName,
             )}
           >
@@ -76,7 +79,12 @@ export function BoardChrome({
 
         {children}
 
-        {footerRule ? <p className={BOARD_FOOTER}>{footerRule}</p> : null}
+        {footerRule ? (
+          <div className={BOARD_FOOTER}>
+            {footerLabel ? <span className={BOARD_FOOTER_LABEL}>{footerLabel}</span> : null}
+            <p className="m-0">{footerRule}</p>
+          </div>
+        ) : null}
       </div>
     </div>
   );

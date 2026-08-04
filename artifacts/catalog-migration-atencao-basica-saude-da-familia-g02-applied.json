@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-02T07:46:18.585Z",
+  "lote": "atencao-basica-saude-da-familia-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

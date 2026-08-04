@@ -120,7 +120,7 @@
         },
         {
           "label": "Comparativo de vias",
-          "detail": "IV = imediata | IM = rápida | SC = lenta/contínua | VO = variável. A erra ao pedir absorção rápida (perfil de IV/IM).",
+          "detail": "IV = imediata | IM = rápida | SC = lenta/contínua | VO = variável.",
           "icon": "GitCompare"
         },
         {
@@ -187,7 +187,7 @@
           "value": "Lenta e contínua — depósito no tecido hipodérmico",
           "emphasis": "success",
           "badge": "hot",
-          "exam_hint": "B é a única alternativa com perfil farmacocinético da SC (lenta e contínua).",
+          "exam_hint": "",
           "fixation": "SC = lenta e contínua — liberação gradual sem pico imediato."
         },
         {
@@ -199,7 +199,7 @@
           "label": "Volume típico SC",
           "value": "Volume limitado por sítio — pequenas doses",
           "badge": "warn",
-          "exam_hint": "D erra ao juntar dose grande com efeito rápido.",
+          "exam_hint": "",
           "fixation": "SC = volume pequeno + absorção gradual."
         },
         {

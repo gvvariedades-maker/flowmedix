@@ -1,26 +1,26 @@
 # NeuroCanvas — clusters de blockers (baseline determinística)
 
-Gerado em: 2026-07-28T00:45:41.866Z
+Gerado em: 2026-08-01T02:00:48.924Z
 
-Blockers: **339** · Clusters: **104**
+Blockers: **342** · Clusters: **106**
 
 ## Partição exaustiva de slugs
 
 | Categoria | Count |
 |-----------|------:|
 | singleton_disk | 2206 |
-| duplicate_byte_identical | 100 |
-| duplicate_semantic_identical | 137 |
-| duplicate_divergent_resolved | 2869 |
-| duplicate_divergent_unresolved | 339 |
+| duplicate_byte_identical | 94 |
+| duplicate_semantic_identical | 131 |
+| duplicate_divergent_resolved | 2878 |
+| duplicate_divergent_unresolved | 342 |
 | duplicate_invalid | 0 |
 | other | 0 |
 
-**Reconciliação:** 5312 + 339 + 0 = 5651
+**Reconciliação:** 5309 + 342 + 0 = 5651
 
 Partição exaustiva: baseline + unresolved + invalid = slugs em disco. Contagem 4.974 era execução anterior (pré-correção BOM UTF-8); atual: 4.975.
 
-**Grupos divergentes:** 3208 = 2869 resolvidos + 339 unresolved
+**Grupos divergentes:** 3220 = 2878 resolvidos + 342 unresolved
 
 Relatório anterior citava 2.758 resolvidos; reexecução: 2.759. Total 3.435 = 2.759 + 676 (sem grupo omitido).
 
@@ -28,8 +28,8 @@ Relatório anterior citava 2.758 resolvidos; reexecução: 2.759. Total 3.435 = 
 
 - **S0**: 0
 - **S1**: 74
-- **S2**: 260
-- **S3**: 5
+- **S2**: 262
+- **S3**: 6
 - **S4**: 0
 
 Divergência de gabarito detectada: **sim**
@@ -38,31 +38,31 @@ Divergência de gabarito detectada: **sim**
 
 | cluster_id | count | cum% | severity | evidence |
 |------------|------:|-----:|----------|----------|
-| calculo-de-administracao-de-medicamentos-e-infusoes-completo | 35 | 10.3% | S1 | sem_manifest_documentado |
-| cuidados-na-administracao-de-medicamentos-repair-lote-01↔pro | 26 | 18% | S2 | sem_manifest_documentado |
-| biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=no | 16 | 22.7% | S2 | sem_manifest_documentado |
-| coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none | 15 | 27.1% | S2 | sem_manifest_documentado |
-| curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S | 15 | 31.6% | S2 | sem_manifest_documentado |
-| curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de | 14 | 35.7% | S2 | sem_manifest_documentado |
-| curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S | 10 | 38.6% | S2 | sem_manifest_documentado |
-| instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enf | 10 | 41.6% | S2 | sem_manifest_documentado |
-| curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S | 9 | 44.2% | S2 | sem_manifest_documentado |
-| cuidados-na-administracao-de-medicamentos-repair-lote-02↔pro | 9 | 46.9% | S2 | sem_manifest_documentado |
-| curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de | 9 | 49.6% | S2 | sem_manifest_documentado |
-| calculo-de-administracao-de-medicamentos-e-infusoes-completo | 8 | 51.9% | S1 | sem_manifest_documentado |
-| curativos-e-manejo-de-feridas-completo↔curativos-lote-05+2|S | 7 | 54% | S2 | sem_manifest_documentado |
-| infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔pro | 6 | 55.8% | S2 | sem_manifest_documentado |
-| curativos-e-manejo-de-feridas-completo↔processo-de-enfermage | 5 | 57.2% | S1 | sem_manifest_documentado |
-| curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de | 5 | 58.7% | S2 | sem_manifest_documentado |
-| puncao-titulo-cleanup-20↔seguranca-do-paciente-completo+1|S2 | 5 | 60.2% | S2 | sem_manifest_documentado |
-| promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a- | 5 | 61.7% | S1 | sem_manifest_documentado |
-| calculo-de-administracao-de-medicamentos-e-infusoes-completo | 5 | 63.1% | S1 | sem_manifest_documentado |
-| promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a- | 4 | 64.3% | S1 | sem_manifest_documentado |
-| curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de | 4 | 65.5% | S2 | sem_manifest_documentado |
-| cuidados-na-administracao-de-medicamentos-completo↔cuidados- | 3 | 66.4% | S2 | sem_manifest_documentado |
-| coleta-de-exames-laboratoriais-repair-lote-01↔processo-de-en | 3 | 67.3% | S2 | sem_manifest_documentado |
-| processo-de-enfermagem-completo↔processo-de-enfermagem-lote- | 3 | 68.1% | S2 | sem_manifest_documentado |
-| processo-de-enfermagem-completo↔processo-de-enfermagem-lote- | 3 | 69% | S2 | sem_manifest_documentado |
+| calculo-de-administracao-de-medicamentos-e-infusoes-completo | 35 | 10.2% | S1 | sem_manifest_documentado |
+| cuidados-na-administracao-de-medicamentos-repair-lote-01↔pro | 26 | 17.8% | S2 | sem_manifest_documentado |
+| biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=no | 16 | 22.5% | S2 | sem_manifest_documentado |
+| coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none | 15 | 26.9% | S2 | sem_manifest_documentado |
+| curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S | 15 | 31.3% | S2 | sem_manifest_documentado |
+| curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de | 14 | 35.4% | S2 | sem_manifest_documentado |
+| curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S | 10 | 38.3% | S2 | sem_manifest_documentado |
+| instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enf | 10 | 41.2% | S2 | sem_manifest_documentado |
+| curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S | 9 | 43.9% | S2 | sem_manifest_documentado |
+| cuidados-na-administracao-de-medicamentos-repair-lote-02↔pro | 9 | 46.5% | S2 | sem_manifest_documentado |
+| curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de | 9 | 49.1% | S2 | sem_manifest_documentado |
+| calculo-de-administracao-de-medicamentos-e-infusoes-completo | 8 | 51.5% | S1 | sem_manifest_documentado |
+| curativos-e-manejo-de-feridas-completo↔curativos-lote-05+2|S | 7 | 53.5% | S2 | sem_manifest_documentado |
+| infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔pro | 6 | 55.3% | S2 | sem_manifest_documentado |
+| curativos-e-manejo-de-feridas-completo↔processo-de-enfermage | 5 | 56.7% | S1 | sem_manifest_documentado |
+| curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de | 5 | 58.2% | S2 | sem_manifest_documentado |
+| puncao-titulo-cleanup-20↔seguranca-do-paciente-completo+1|S2 | 5 | 59.6% | S2 | sem_manifest_documentado |
+| promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a- | 5 | 61.1% | S1 | sem_manifest_documentado |
+| calculo-de-administracao-de-medicamentos-e-infusoes-completo | 5 | 62.6% | S1 | sem_manifest_documentado |
+| promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a- | 4 | 63.7% | S1 | sem_manifest_documentado |
+| curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de | 4 | 64.9% | S2 | sem_manifest_documentado |
+| cuidados-na-administracao-de-medicamentos-completo↔cuidados- | 3 | 65.8% | S2 | sem_manifest_documentado |
+| coleta-de-exames-laboratoriais-repair-lote-01↔processo-de-en | 3 | 66.7% | S2 | sem_manifest_documentado |
+| processo-de-enfermagem-completo↔processo-de-enfermagem-lote- | 3 | 67.5% | S2 | sem_manifest_documentado |
+| processo-de-enfermagem-completo↔processo-de-enfermagem-lote- | 3 | 68.4% | S2 | sem_manifest_documentado |
 
 ## Campos divergentes mais frequentes
 
@@ -73,26 +73,26 @@ Divergência de gabarito detectada: **sim**
 | reverse_study_slides[1].meta.subtopico | 164 | visual_only |
 | reverse_study_slides[2].meta.subtopico | 164 | visual_only |
 | reverse_study_slides[3].meta.subtopico | 158 | visual_only |
-| reverse_study_slides[0].footer_rule | 93 | visual_only |
-| reverse_study_slides[0].items.length | 91 | pedagogical |
-| reverse_study_slides[1].steps[1] | 88 | pedagogical |
-| reverse_study_slides[3].content | 87 | pedagogical |
-| reverse_study_slides[2].content | 78 | pedagogical |
-| reverse_study_slides[2].footer_rule | 78 | visual_only |
-| reverse_study_slides[2].subject | 78 | visual_only |
-| reverse_study_slides[1].steps[8] | 46 | pedagogical |
-| reverse_study_slides[2].rows | 46 | pedagogical |
-| reverse_study_slides[2].slide_title | 45 | visual_only |
-| reverse_study_slides[0].slide_title | 44 | visual_only |
-| reverse_study_slides[1].footer_rule | 44 | visual_only |
+| reverse_study_slides[0].footer_rule | 96 | visual_only |
+| reverse_study_slides[0].items.length | 94 | pedagogical |
+| reverse_study_slides[1].steps[1] | 91 | pedagogical |
+| reverse_study_slides[3].content | 90 | pedagogical |
+| reverse_study_slides[2].content | 81 | pedagogical |
+| reverse_study_slides[2].footer_rule | 81 | visual_only |
+| reverse_study_slides[2].subject | 81 | visual_only |
+| reverse_study_slides[2].rows | 48 | pedagogical |
+| reverse_study_slides[2].slide_title | 48 | visual_only |
+| reverse_study_slides[1].steps[8] | 47 | pedagogical |
+| reverse_study_slides[0].slide_title | 47 | visual_only |
+| reverse_study_slides[1].footer_rule | 47 | visual_only |
+| reverse_study_slides[1].steps[2] | 41 | pedagogical |
+| reverse_study_slides[1].steps[5] | 41 | pedagogical |
+| reverse_study_slides[3].footer_rule | 41 | visual_only |
 | reverse_study_slides[1].steps[7] | 41 | pedagogical |
-| reverse_study_slides[1].steps[2] | 38 | pedagogical |
-| reverse_study_slides[1].steps[5] | 38 | pedagogical |
-| reverse_study_slides[3].footer_rule | 38 | visual_only |
-| reverse_study_slides[1].slide_title | 37 | visual_only |
-| reverse_study_slides[1].steps[3] | 37 | pedagogical |
-| reverse_study_slides[3].chip_label | 37 | visual_only |
-| reverse_study_slides[0].chip_label | 36 | visual_only |
+| reverse_study_slides[1].slide_title | 40 | visual_only |
+| reverse_study_slides[1].steps[3] | 40 | pedagogical |
+| reverse_study_slides[3].chip_label | 40 | visual_only |
+| reverse_study_slides[0].chip_label | 39 | visual_only |
 
 ## Potencial de resolução por contrato
 
@@ -114,4 +114,4 @@ Divergência de gabarito detectada: **sim**
 | infeccoes-sexualmente-transmissiveis-ist | 6 | medium | Incluir slug em manifest.slugs[] do completo OU parent explícito no playbook |
 | curativos-e-manejo-de-feridas-completo↔p | 5 | low | Incluir slug em manifest.slugs[] do completo OU parent explícito no playbook |
 
-Decisões de contrato estimadas (mínimo): **104** (uma por cluster).
+Decisões de contrato estimadas (mínimo): **106** (uma por cluster).

@@ -1,0 +1,236 @@
+[
+  {
+    "file": "agirh-enfermagem-vias-de-administracao-1778968787431-0.json",
+    "findings_n": 4,
+    "sample_findings": [
+      {
+        "code": "pedagogy_letter_spoiler",
+        "message": "golden_rule.rows[0].label cita a letra da alternativa — gabarito só no logic_flow.",
+        "path": "golden_rule.rows[0].label",
+        "slide": "golden_rule",
+        "key": "label",
+        "evidence": "Letra A"
+      },
+      {
+        "code": "pedagogy_letter_spoiler",
+        "message": "golden_rule.rows[1].label cita a letra da alternativa — gabarito só no logic_flow.",
+        "path": "golden_rule.rows[1].label",
+        "slide": "golden_rule",
+        "key": "label",
+        "evidence": "Letra B"
+      },
+      {
+        "code": "pedagogy_letter_spoiler",
+        "message": "golden_rule.rows[2].label cita a letra da alternativa — gabarito só no logic_flow.",
+        "path": "golden_rule.rows[2].label",
+        "slide": "golden_rule",
+        "key": "label",
+        "evidence": "Letra C"
+      }
+    ],
+    "rows_before": [
+      {
+        "label": "Letra A",
+        "value": "A insulina e a enoxaparina sódica.",
+        "emphasis": "highlight",
+        "badge": "ok",
+        "exam_hint": "Combinação correta — reúne apenas afirmativas verdadeiras do enunciado.",
+        "fixation": "Núcleo do gabarito — confirme julgando cada afirmativa I–IV."
+      },
+      {
+        "label": "Letra B",
+        "value": "O cetoprofeno e a penicilina benzatina.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: o cetoprofeno e a penicilina benzatina.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra C",
+        "value": "A dipirona e a escopolamina.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: a dipirona e a escopolamina.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra D",
+        "value": "A ceftriaxona e a cefazolina.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: a ceftriaxona e a cefazolina.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      }
+    ],
+    "gabarito": {
+      "changed": false,
+      "edits": [],
+      "skipped": []
+    },
+    "trunc": {
+      "changed": false,
+      "edits": [],
+      "skipped": []
+    },
+    "letter_after": 4,
+    "rows_after": [
+      {
+        "label": "Letra A",
+        "value": "A insulina e a enoxaparina sódica.",
+        "emphasis": "highlight",
+        "badge": "ok",
+        "exam_hint": "Combinação correta — reúne apenas afirmativas verdadeiras do enunciado.",
+        "fixation": "Núcleo do gabarito — confirme julgando cada afirmativa I–IV."
+      },
+      {
+        "label": "Letra B",
+        "value": "O cetoprofeno e a penicilina benzatina.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: o cetoprofeno e a penicilina benzatina.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra C",
+        "value": "A dipirona e a escopolamina.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: a dipirona e a escopolamina.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra D",
+        "value": "A ceftriaxona e a cefazolina.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: a ceftriaxona e a cefazolina.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      }
+    ]
+  },
+  {
+    "file": "amauc-enfermagem-vias-de-administracao-1776056374837-6.json",
+    "findings_n": 5,
+    "sample_findings": [
+      {
+        "code": "pedagogy_letter_spoiler",
+        "message": "golden_rule.rows[0].label cita a letra da alternativa — gabarito só no logic_flow.",
+        "path": "golden_rule.rows[0].label",
+        "slide": "golden_rule",
+        "key": "label",
+        "evidence": "Letra A"
+      },
+      {
+        "code": "pedagogy_letter_spoiler",
+        "message": "golden_rule.rows[1].label cita a letra da alternativa — gabarito só no logic_flow.",
+        "path": "golden_rule.rows[1].label",
+        "slide": "golden_rule",
+        "key": "label",
+        "evidence": "Letra B"
+      },
+      {
+        "code": "pedagogy_letter_spoiler",
+        "message": "golden_rule.rows[2].label cita a letra da alternativa — gabarito só no logic_flow.",
+        "path": "golden_rule.rows[2].label",
+        "slide": "golden_rule",
+        "key": "label",
+        "evidence": "Letra C"
+      }
+    ],
+    "rows_before": [
+      {
+        "label": "Letra A",
+        "value": "Falsa: I e III apenas.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: I e III apenas.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra B",
+        "value": "Falsa: III apenas.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: III apenas.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra C",
+        "value": "Falsa: I e II apenas.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: I e II apenas.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra D",
+        "value": "Falsa: II e III apenas.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: II e III apenas.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra E",
+        "value": "Verdadeira: I, II e III.",
+        "emphasis": "highlight",
+        "badge": "ok",
+        "exam_hint": "Combinação correta — reúne apenas afirmativas verdadeiras do enunciado.",
+        "fixation": "Núcleo do gabarito — confirme julgando cada afirmativa I–IV."
+      }
+    ],
+    "gabarito": {
+      "changed": false,
+      "edits": [],
+      "skipped": []
+    },
+    "trunc": {
+      "changed": false,
+      "edits": [],
+      "skipped": []
+    },
+    "letter_after": 5,
+    "rows_after": [
+      {
+        "label": "Letra A",
+        "value": "Falsa: I e III apenas.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: I e III apenas.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra B",
+        "value": "Falsa: III apenas.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: III apenas.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra C",
+        "value": "Falsa: I e II apenas.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: I e II apenas.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra D",
+        "value": "Falsa: II e III apenas.",
+        "emphasis": "alert",
+        "badge": "warn",
+        "exam_hint": "Distrator: II e III apenas.",
+        "fixation": "Elimine: inclui item falso ou omite verdadeiro do gabarito."
+      },
+      {
+        "label": "Letra E",
+        "value": "Verdadeira: I, II e III.",
+        "emphasis": "highlight",
+        "badge": "ok",
+        "exam_hint": "Combinação correta — reúne apenas afirmativas verdadeiras do enunciado.",
+        "fixation": "Núcleo do gabarito — confirme julgando cada afirmativa I–IV."
+      }
+    ]
+  }
+]

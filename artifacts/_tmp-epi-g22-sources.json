@@ -1,0 +1,273 @@
+[
+  {
+    "file": "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-7.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "É a comunicação da ocorrência de determinada doença ou agravo à saúde, feita à autoridade sanitária por profissionais de saúde ou qualquer cidadão, para finsde adoção de medidas de intervenção pertinentes:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Verificação.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Notificação.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Apontamento.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Listagem.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Notificação."
+    ]
+  },
+  {
+    "file": "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-0.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Nos termos da Portaria no 204/16, que define a Lista Nacional de Notificação Compulsória de doenças, agravos e eventos de saúde pública nos serviços de saúdepúblicos e privados em todo o território nacional, qual é a periodicidade de notificação dos casos de Dengue, não incluindo os óbitos?",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Imediata (em até 2 horas).",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Imediata (em até 24 horas).",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Semanal.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Mensal.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Semanal."
+    ]
+  },
+  {
+    "file": "lj-assessoria-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-2.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Modelos assistenciais são a forma como a assistência à saúde é organizada. Esses modelos costumam variar muito ao longo do tempo e espaço em que sãoinseridos, de acordo com as mudanças que ocorrem na sociedade. Assinale a assertiva que apresenta um modelo assistencial que é constituído de campanhas de saúde,programas especiais e vigilâncias e tem como principais exemplos de sua atividade: vacinação, controle de epidemias e erradicação de endemias.\n4686)\n4687)\n4688)\n4689)\n4690)",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Modelo assistencial preventivo.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Modelos hegemônios.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Modelo da atenção gerenciada.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Modelo sanitarista.",
+        "ok": true
+      },
+      {
+        "id": "E",
+        "text": "Propostas alternativas.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "D: Modelo sanitarista."
+    ]
+  },
+  {
+    "file": "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-4.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Assinale a alternativa que não apresenta uma doença ou agravo de notificação compulsória imediata:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Botulismo.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Cólera.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Varíola.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Lassae.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Doença aguda pelo vírus Zika.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "E: Doença aguda pelo vírus Zika."
+    ]
+  },
+  {
+    "file": "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-5.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "É um estudo seccional, geralmente do tipo amostral, levado a efeito quando as informações existentes são inadequadas ou insuficientes, em virtude de diversosfatores, dentre os quais pode-se destacar: notificação imprópria ou deficiente; mudança no comportamento epidemiológico de uma determinada doença; dificuldade emse avaliar coberturas vacinais ou eficácia de vacinas, necessidade de se avaliar eficácia das medidas de controle de um programa; descoberta de agravos inusitados:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Inquérito epidemiológico.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Levantamento epidemiológico.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Evento sentinela.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Bloqueio epidemiológico.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Controle de agravos.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Inquérito epidemiológico."
+    ]
+  },
+  {
+    "file": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-5.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "As doenças reemergentes são conhecidas há algum tempo, estavam controladas, mas retornaram causando preocupação, podendo também indicar problemas navigilância sanitária. Qual alternativa representa uma doença reemergente?",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Covid-19.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Ebola.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Dengue.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Pneumonia.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Dengue."
+    ]
+  },
+  {
+    "file": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-7.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Sabe-se que a vigilância em saúde é o processo sistemático de coleta, consolidação e disseminação de dados sobre eventos relacionados à saúde, que irão ajudarno planejamento e implementação das ações de saúde. Sobre o tema, assinale a alternativa correta.\n4669)\n4670)\n4671)\n4672)\n4673)",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "A vigilância sanitária visa ao conhecimento e à detecção, ou prevenção de qualquer mudança nos fatores determinantes e condicionantes do ambiente queinterferiram na saúde humana.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "A vigilância hospitalar caracteriza-se por ser um conjunto de atividades destinadas à promoção e proteção, recuperação e reabilitação da saúde dostrabalhadores submetidos aos riscos e agravos advindos das condições de trabalho.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "A vigilância ambiental é o conjunto de ações capazes de eliminar, diminuir, ou prevenir riscos à saúde e de intervir nos problemas sanitários decorrentes do meioambiente, na produção, circulação de bens e na prestação de serviços de interesse da saúde.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "A vigilância epidemiológica é um conjunto de ações que proporciona o conhecimento, a detecção, ou prevenção de qualquer mudança nos fatores determinantese condicionantes da saúde individual, ou coletiva, com a finalidade de se recomendar e adotar as medidas de prevenção e controle das doenças, ou agravos.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: A vigilância epidemiológica é um conjunto de ações que proporciona o conhecimento, a detecção, ou prevenção de qualquer mudança nos fatores determinantese condicionantes da saúde individual, ou coletiva, com a finalidade de se recomendar e adotar as medidas de prevenção e controle das doenças, ou agravos."
+    ]
+  },
+  {
+    "file": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-8.json",
+    "family": "conceito",
+    "branch": "epi_indicadores",
+    "instruction": "A OPAS - Organização Pan-Americana da Saúde, é o órgão responsável por mensurar dados e incidências para determinadas ações, no campo da saúde em geral,tendo como um dos parâmetros de pesquisa, os indicadores, disponível em www.saude.gov.br.\nOs principais indicadores são Mortalidade e:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Morbidade, Faturamento, Produtividade Clínica, Giro de Leitos, Nutrição, Saúde Ambiental.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Morbidade, Nutrição, Aspectos Demográficos, Condições Socioeconômicas, Saúde Ambiental, Serviços de Saúde.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Morbidade, Rentabilidade, Experiência do Paciente, Nutrição, Aspectos Demográficos, Condições Socioeconômicas.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Morbidade, Taxa de Ocupação de Leitos, Produtividade Clínica, Experiência do Paciente, Nutrição, Aspectos Demográficos.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Morbidade, Nutrição, Aspectos Demográficos, Condições Socioeconômicas, Saúde Ambiental, Serviços de Saúde."
+    ]
+  }
+]

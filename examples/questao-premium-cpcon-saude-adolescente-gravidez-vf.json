@@ -115,7 +115,7 @@
         },
         {
           "label": "Sigilo absoluto zero",
-          "value": "Falso — há critérios legais",
+          "value": "Há critérios legais",
           "emphasis": "alert",
           "badge": "warn"
         }

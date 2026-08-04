@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "pacote_prefix": "cuidados-na-administracao-de-medicamentos",
+  "mode": "full",
+  "total_slugs": 123,
+  "handcraft_applied": 123,
+  "production_status": "production_ready",
+  "next_unit": {
+    "type": "done",
+    "id": "production_ready",
+    "detail": "Pacote já production_ready — use audit:subtopico-health se pós-venda"
+  },
+  "completed_units": [],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-08-03T23:47:13.455Z",
+  "notes": null
+}

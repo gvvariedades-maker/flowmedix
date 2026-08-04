@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T20:48:42.443Z",
+  "lote": "atencao-basica-saude-da-familia-g19",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-3",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-5",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-7",
+    "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+    "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-2",
+    "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-5",
+    "instituto-verbena-geral-epidemiologia-e-vigilancia-epidemiologica-1777103590498-0",
+    "intec-enfermagem-atencao-basica-saude-da-familia-1778968357339-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-epidemiologia-e-vigilancia-epidemiologica-1777103590498-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "intec-enfermagem-atencao-basica-saude-da-familia-1778968357339-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ Leitura estimada: **~15 minutos**. Guia para criar uma **variante inédita** com
 
 **Público:** devs, agentes de conteúdo, revisores.
 
-**Complementa:** [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) (pedagogia), [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (layouts genéricos), [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) (brief de design 4/4 — versão enxuta e completa para agentes), [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) (primitivos + glanceable + ondas).
+**Complementa:** [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) (pedagogia), [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (layouts genéricos), [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) (brief de design 4/4 — versão enxuta e completa para agentes), [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) (primitivos + glanceable + ondas), [`NEUROSLIDES_VISUAL_BAR.md`](NEUROSLIDES_VISUAL_BAR.md) (**piso best-in-market + ratchet** — cada molde ≥ demo G2).
 
 > **Antes da Fase 0 (questão âncora):** rodar **Fase 3b** do [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) — brief obrigatório em [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) para cada ramo forte (`molde_redesign` / `molde_inedito`). Cauda longa dispensa.
 
@@ -141,6 +141,8 @@ Tokens: `boardTokens.ts` (`tone`: ok / barrier / command / transfer / rights…)
 Piloto que já compõe o kit: ética Adolescente v2 (`adolescent-*-deck|board|compare`).
 
 **Onda 4 (flagships):** `urgencias-xabcde-rail` e `adme-journey-rail` compõem `ProtocolRailRow`; tap-flows XABCDE/RCP/farmaco aplicam `applyProtocolTapBudget` (≤3); `pt-crase-funnel-board` / `pt-crase-trap-arena` / buckets do funil usam `PolarityPanel`. Helper: [`lib/slides/protocolTapBudget.ts`](../lib/slides/protocolTapBudget.ts).
+
+**Shells logic_flow (Fase A+B):** [`components/slides/logicFlowShells/`](../components/slides/logicFlowShells/) — `LogicFocusShell` · `LogicRailShell` · `LogicIsolateShell`. `LogicFlowStepLadder` e genéricos em `reveal_mode: tap` usam Focus; protocolos XABCDE/RCP/NSP usam Rail; EXCETO wrappers usam Isolate. IDs de `layout_variant` **não** são apagados. Ver [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) Camada 4.
 
 **Padrão de inferência (recomendado):**
 

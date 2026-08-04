@@ -275,6 +275,11 @@
     "cluster:saude-da-crianca": "tsx scripts/cluster-saude-da-crianca-topics.ts",
     "cluster:curativos-e-manejo-de-feridas": "tsx scripts/cluster-curativos-e-manejo-de-feridas-topics.ts",
     "cluster:promocao": "tsx scripts/cluster-promocao-a-saude-e-prevencao-de-agravos-topics.ts",
+    "cluster:atencao-basica": "tsx scripts/cluster-atencao-basica-saude-da-familia-topics.ts",
+    "plan:atencao-basica-batches": "tsx scripts/plan-atencao-basica-saude-da-familia-batches.ts",
+    "cluster:epidemiologia": "tsx scripts/cluster-epidemiologia-e-vigilancia-epidemiologica-topics.ts",
+    "cluster:anatomia": "tsx scripts/cluster-nocoes-de-anatomia-topics.ts",
+    "plan:anatomia-batches": "tsx scripts/plan-nocoes-de-anatomia-batches.ts",
     "cluster:lingua-portuguesa": "python scripts/cluster-lingua-portuguesa-topics.py",
     "gran:elias-extract-outlines": "python scripts/tools/gran_elias_extract_outlines.py",
     "gran:elias-generate-modules": "python scripts/tools/gran_elias_generate_modules.py",
@@ -533,7 +538,8 @@
     "backup:assemble": "powershell -ExecutionPolicy Bypass -File scripts/assemble-avant-backup.ps1",
     "prepare": "husky",
     "fsrs:ops-report": "tsx scripts/fsrs-mvp-ops-report.ts",
-    "fsrs:staging-smoke": "tsx scripts/fsrs-mvp-staging-smoke.ts"
+    "fsrs:staging-smoke": "tsx scripts/fsrs-mvp-staging-smoke.ts",
+    "plan:epidemiologia-batches": "tsx scripts/plan-epidemiologia-e-vigilancia-epidemiologica-batches.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

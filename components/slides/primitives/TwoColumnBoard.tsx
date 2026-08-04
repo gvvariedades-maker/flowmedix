@@ -11,6 +11,8 @@ export interface TwoColumnBoardProps {
   rightTitle?: string;
   leftTone?: BoardTone;
   rightTone?: BoardTone;
+  /** Coluna com peso de vitória / herói (barra G2). */
+  emphasize?: 'left' | 'right' | 'none';
   className?: string;
 }
 
@@ -24,6 +26,7 @@ export function TwoColumnBoard({
   rightTitle,
   leftTone = 'ok',
   rightTone = 'barrier',
+  emphasize = 'none',
   className,
 }: TwoColumnBoardProps) {
   const leftMeta = boardTone(leftTone);
@@ -31,13 +34,23 @@ export function TwoColumnBoard({
 
   return (
     <div className={cn('grid grid-cols-1 gap-3 md:grid-cols-2', className)}>
-      <div className="flex flex-col gap-2">
+      <div
+        className={cn(
+          'flex flex-col gap-2 transition-transform',
+          emphasize === 'left' && 'relative z-[1] md:scale-[1.02]',
+        )}
+      >
         {leftTitle ? (
           <p className={cn(BOARD_COLUMN_EYEBROW, leftMeta.columnLabel)}>{leftTitle}</p>
         ) : null}
         {left}
       </div>
-      <div className="flex flex-col gap-2">
+      <div
+        className={cn(
+          'flex flex-col gap-2 transition-transform',
+          emphasize === 'right' && 'relative z-[1] md:scale-[1.02]',
+        )}
+      >
         {rightTitle ? (
           <p className={cn(BOARD_COLUMN_EYEBROW, rightMeta.columnLabel)}>{rightTitle}</p>
         ) : null}

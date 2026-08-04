@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:57:23.712Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g11",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-3",
+    "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-0",
+    "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-2",
+    "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-3",
+    "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-4",
+    "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-8",
+    "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-8",
+    "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

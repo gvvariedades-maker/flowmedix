@@ -1,0 +1,78 @@
+{
+  "gate": "F5",
+  "measured_at": "2026-07-31",
+  "status": "awaiting_founder_decision",
+  "audits": {
+    "audit:neurocanvas-blockers": {
+      "exit": 0,
+      "blockers": 342,
+      "clusters": 106,
+      "s3": 6,
+      "has_answer_key_divergence": true
+    },
+    "audit:neurocanvas-editorial-queue": {
+      "exit": 1,
+      "reason": "drift_vs_G04_baseline",
+      "total_cases": 342,
+      "cluster_count": 106,
+      "official_lane_count": 14,
+      "expected": {
+        "total_cases": 339,
+        "cluster_count": 104,
+        "official_lane_count": 11
+      }
+    }
+  },
+  "catalog": {
+    "total_disk_slugs": 5651,
+    "baseline_selections": 5309,
+    "unresolved": 342
+  },
+  "exclusive_partition": {
+    "official_lane": 14,
+    "pedagogical_s2_slide": 84,
+    "s2_non_slide_residual": 170,
+    "metadata_s1": 74
+  },
+  "severity": {
+    "S0": 0,
+    "S1": 74,
+    "S2": 262,
+    "S3": 6,
+    "S4": 0
+  },
+  "root_cause": "sem_manifest_documentado",
+  "drift_vs_g04": {
+    "added_official_slugs": [
+      "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+      "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8",
+      "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6"
+    ]
+  },
+  "s3_slugs": [
+    "cotec-fadenor-enfermagem-saude-da-mulher-1777104235003-1",
+    "decorp-enfermagem-exames-laboratoriais-1779563553840-3",
+    "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011879977-3",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-1",
+    "instituto-darwin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-7"
+  ],
+  "decisions_required": [
+    "D1",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "D6"
+  ],
+  "agent_recommendation": {
+    "D1": "A",
+    "D2": "S3-strict for urgencias; S3-pragmatic for other 5",
+    "D3": "Keep-defer-VUNESP + IDECAN-batch",
+    "D4": "Cluster-top-first",
+    "D5": "Investigate-first then Bump-G04b",
+    "D6": "Block-until-official-clear"
+  },
+  "phase_0b_ready": false,
+  "brief": "artifacts/neurocanvas-f5-provenance-decision.md"
+}
