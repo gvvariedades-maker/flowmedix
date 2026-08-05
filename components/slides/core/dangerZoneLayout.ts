@@ -22,7 +22,6 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'dose-trap',
   'farmaco-trap',
   'farmaco-clinico-trap',
-  'farmaco-generico-trap',
   'catheter-danger-arena',
   'lab-prep-trap',
   'lab-specimen-arena',
@@ -114,7 +113,6 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'dose-trap') return 'dose-trap';
   if (explicitVariant === 'farmaco-trap') return 'farmaco-trap';
   if (explicitVariant === 'farmaco-clinico-trap') return 'farmaco-clinico-trap';
-  if (explicitVariant === 'farmaco-generico-trap') return 'farmaco-generico-trap';
   if (explicitVariant === 'catheter-danger-arena') return 'catheter-danger-arena';
   if (explicitVariant === 'lab-prep-trap') return 'lab-prep-trap';
   if (explicitVariant === 'lab-specimen-arena') return 'lab-specimen-arena';
@@ -193,9 +191,6 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'farmaco-clinico-trap') {
       return 'farmaco-clinico-trap';
-    }
-    if (!explicitVariant && fallbackVariant === 'farmaco-generico-trap') {
-      return 'farmaco-generico-trap';
     }
     if (!explicitVariant && fallbackVariant === 'catheter-danger-arena') {
       return 'catheter-danger-arena';

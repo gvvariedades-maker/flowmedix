@@ -350,10 +350,10 @@ const FARMACO_CLINICO_MOLD: SubtopicDesign = {
 
 const FARMACO_GENERIC_MOLD: SubtopicDesign = {
   template: 'purple',
-  conceptMap: 'farmaco-hub-pillar-deck',
-  goldenRule: 'farmaco-generico-reference-board',
-  logicFlow: 'farmaco-generico-isolate-board',
-  dangerZone: 'farmaco-generico-trap',
+  conceptMap: 'morphological',
+  goldenRule: 'center',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
 };
 
 const IMUNIZACAO_VF_MOLD: SubtopicDesign = {

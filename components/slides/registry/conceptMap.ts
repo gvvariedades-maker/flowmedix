@@ -205,11 +205,6 @@ const Dyn_infusao_ev_station_deck = dynamic(
   { ssr: true, loading: () => null },
 );
 
-const Dyn_farmaco_hub_pillar_deck = dynamic(
-  () => loadNamedVariant(() => import('../variants/ConceptMapFarmacoHubPillarDeck') as Promise<Record<string, unknown>>, 'ConceptMapFarmacoHubPillarDeck'),
-  { ssr: true, loading: () => null },
-);
-
 const Dyn_dose_equivalence_rail = dynamic(
   () => loadNamedVariant(() => import('../variants/DoseEquivalenceRailConceptMap') as Promise<Record<string, unknown>>, 'DoseEquivalenceRailConceptMap'),
   { ssr: true, loading: () => null },
@@ -463,7 +458,6 @@ export const CONCEPT_MAP_REGISTRY: Record<string, BespokeVariantEntry> = {
   'absorption-speed-rail': { Component: Dyn_absorption_speed_rail },
   'adme-journey-rail': { Component: Dyn_adme_journey_rail },
   'infusao-ev-station-deck': { Component: Dyn_infusao_ev_station_deck },
-  'farmaco-hub-pillar-deck': { Component: Dyn_farmaco_hub_pillar_deck },
   'dose-equivalence-rail': { Component: Dyn_dose_equivalence_rail },
   'oxygen-protocol-deck': { Component: Dyn_oxygen_protocol_deck },
   'iv-care-orbit': { Component: Dyn_iv_care_orbit },

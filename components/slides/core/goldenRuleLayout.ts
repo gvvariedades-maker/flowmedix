@@ -30,7 +30,6 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'via-reference-board',
   'pk-pd-reference-board',
   'farmaco-clinico-reference-board',
-  'farmaco-generico-reference-board',
   'adolescent-sigilo-spectrum',
   'adolescent-speak-barrier-board',
   'adolescent-z-band-board',
@@ -124,7 +123,6 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'via-reference-board') return 'via-reference-board';
   if (explicitVariant === 'pk-pd-reference-board') return 'pk-pd-reference-board';
   if (explicitVariant === 'farmaco-clinico-reference-board') return 'farmaco-clinico-reference-board';
-  if (explicitVariant === 'farmaco-generico-reference-board') return 'farmaco-generico-reference-board';
   if (explicitVariant === 'adolescent-sigilo-spectrum') return 'adolescent-sigilo-spectrum';
   if (explicitVariant === 'adolescent-speak-barrier-board') return 'adolescent-speak-barrier-board';
   if (explicitVariant === 'adolescent-z-band-board') return 'adolescent-z-band-board';
