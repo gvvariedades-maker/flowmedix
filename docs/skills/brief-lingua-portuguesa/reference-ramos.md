@@ -28,7 +28,13 @@ Se o playbook divergir, **vence o playbook**.
 | `pt_regencia` | prep. exigida, sentidos do verbo | `molde_redesign` | `pt-regency-arrow` | `…-pt_regencia.md` |
 | `pt_tipologia` | gêneros / tipologia / função do texto | `ok_generico` | — (text-zones se text_fragment dominar) | dispensado |
 | `pt_coesao_conectivos` | coesão, anáfora, conectivos | `ok_generico` | — | dispensado |
-| `pt_classes_palavras` | classes, formação de palavras | `ok_generico` | — | dispensado |
+| `pt_classes_palavras` | umbrella legado (applied); split → `classes-de-palavras.json` | `ok_generico` | — | dispensado |
+| `pt_classes_conjuncao` | conjunção / valor semântico como classe | `ok_generico` | — | dispensado |
+| `pt_classes_nominais` | artigo · substantivo · adj · numeral · substantivação | `ok_generico` | — | dispensado |
+| `pt_classes_adverbio` | advérbio / loc. adverbial / adv×adj | `ok_generico` | — | dispensado |
+| `pt_classes_preposicao` | prep / loc. prep / prep×artigo (não regência completa) | `ok_generico` | — | dispensado |
+| `pt_classes_exceto` | EXCETO/INCORRETA no eixo classes | `ok_generico` | — | dispensado |
+| `pt_classes_generico` | VF multi-classe · formação residual · cauda | `ok_generico` / cauda | — | dispensado |
 | `pt_verbos` | tempos, modos, vozes | `ok_generico` | — | dispensado |
 | `pt_sinonimos_polissemia` | sinônimos, polissemia, parônimos | `ok_generico` | — | dispensado |
 | `pt_denotacao_conotacao` | denotação, conotação, figuras | `ok_generico` | — | dispensado |
@@ -50,7 +56,7 @@ Se o playbook divergir, **vence o playbook**.
 | Regência verbal e nominal | `pt_regencia` |
 | Tipologia e gêneros textuais | `pt_tipologia` |
 | Coesão, coerência e conectivos | `pt_coesao_conectivos` |
-| Classes de palavras | `pt_classes_palavras` |
+| Classes de palavras | split: `pt_classes_conjuncao` · `pt_classes_nominais` · `pt_classes_adverbio` · `pt_classes_preposicao` · `pt_classes_exceto` · `pt_classes_generico` (umbrella legado `pt_classes_palavras`) |
 | Verbos — tempos, modos e vozes | `pt_verbos` |
 | Sinônimos, antônimos e polissemia | `pt_sinonimos_polissemia` |
 | Denotação, conotação e figuras de linguagem | `pt_denotacao_conotacao` |

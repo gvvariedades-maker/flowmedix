@@ -1478,24 +1478,33 @@
       "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
       "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
       "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
-      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_classes_palavras.md",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-index.md",
+      "mapa_gestos": "artifacts/glance-os-classes-de-palavras-MAPA-8-GESTOS.md",
       "lote_pattern": "classes-de-palavras-g{NN}",
       "lote_size": 8,
       "status": "applied",
       "total_slugs": 93,
       "handcraft_applied": 93,
       "anchor_glob": "examples/questao-premium-*-portugues-classes-*.json,examples/questao-formacao-palavras-siglas.json",
-      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/classes-de-palavras.json",
       "disciplina": "Conhecimentos Básicos",
       "modulo_nome": "Língua Portuguesa",
       "titulo_aula_card": "Classes de palavras",
       "pedagogical_branch": "pt_classes_palavras",
+      "pedagogical_branches_split": [
+        "pt_classes_conjuncao",
+        "pt_classes_nominais",
+        "pt_classes_adverbio",
+        "pt_classes_preposicao",
+        "pt_classes_exceto",
+        "pt_classes_generico"
+      ],
       "taxonomy": {
         "status": "closed",
         "closed_at": "2026-07-20",
         "source": "cluster:lingua-portuguesa"
       },
-      "note": "Card Classes de palavras — 93 slugs PDF cluster B—Morfologia. Âncora formação/siglas (pt_classes_palavras). Fase 0 pipeline 2026-07-20.",
+      "note": "Card Classes de palavras — 93 slugs B—Morfologia. Split L3 Âncoras 100% Fase 0a (2026-08-05): 6 ramos. Umbrella legado pt_classes_palavras nos g01–g12 applied. Playbook dedicado classes-de-palavras.json.",
       "production_status": "production_ready",
       "quality": {
         "layers": {

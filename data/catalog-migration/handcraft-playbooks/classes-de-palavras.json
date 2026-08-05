@@ -1,0 +1,193 @@
+{
+  "version": 2,
+  "subtopico": "Classes de palavras",
+  "disciplina": "Conhecimentos Básicos",
+  "pacote_prefix": "classes-de-palavras",
+  "modulo_nome": "Língua Portuguesa",
+  "scope_default": "subtopico_handcraft",
+  "source_manifest": "data/sources/lingua-portuguesa/manifest.json",
+  "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+  "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+  "elias_metodo": "docs/LINGUA_PORTUGUESA_ELIAS_METODO.md",
+  "guideline": "lib/guidelines/linguaPortuguesa/classesPalavras.ts",
+  "parent_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+  "anchor_glob": "examples/questao-premium-*-portugues-classes-*.json,examples/questao-formacao-palavras-siglas.json",
+  "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+  "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-index.md",
+  "mapa_gestos": "artifacts/glance-os-classes-de-palavras-MAPA-8-GESTOS.md",
+  "slug_selection": "PDF cluster B—Morfologia (93 slugs). Handcraft applied g01–g12 sob umbrella legado `pt_classes_palavras`. Âncoras 100%: 1 golden por ramo L3 do split abaixo; re-tag de lotes aplicados = conversa futura (não nesta).",
+  "classification": {
+    "meta.topico": "Língua Portuguesa",
+    "meta.subtopico": "Classes de palavras",
+    "titulo_aula": "Classes de palavras",
+    "modulo_nome": "Língua Portuguesa",
+    "policy": "tema_real_no_handcraft; pergunta-teste M02 «O que a palavra faz na oração?»",
+    "split_note": "Card era split_candidate (93) — Fase 0a Âncoras 100% formaliza ramos L3 (nominais × advérbio × prep × conjunção × EXCETO × generico). Umbrella `pt_classes_palavras` = legado aplicado; novas âncoras usam ids do split."
+  },
+  "clusters": [
+    "Conjunção / valor semântico do conectivo como classe (~28–35 · ~30% — pt_classes_conjuncao)",
+    "Nominais — artigo · substantivo · substantivação · adjetivo · numeral (~15–25 · pt_classes_nominais)",
+    "Advérbio / locução adverbial / adv×adj (~14 · pt_classes_adverbio)",
+    "Preposição / loc. prepositiva / prep×artigo (~7 · pt_classes_preposicao)",
+    "EXCETO / INCORRETA no eixo classes (~5 · pt_classes_exceto)",
+    "Cauda — VF multi-classe · dupla classe · formação residual · mesclado (pt_classes_generico)"
+  ],
+  "glance_os_ancoras_100": {
+    "started_at": "2026-08-05",
+    "completed_at": null,
+    "status": "fase_0a",
+    "mapa_gestos": "artifacts/glance-os-classes-de-palavras-MAPA-8-GESTOS.md",
+    "report": null,
+    "default_clicks": 0,
+    "visual_bar": "docs/NEUROSLIDES_VISUAL_BAR.md",
+    "reference_piloto": "artifacts/glance-os-piloto-farmacodinamica-INDEX.md",
+    "note": "Fase 0a — playbook + mapa. Sem polish de âncora até GATE 0a + inventário 0b."
+  },
+  "pedagogical_branches": [
+    {
+      "id": "pt_classes_conjuncao",
+      "when": "Conjunção coordenativa/subordinativa; valor semântico do conectivo como CLASSE (adversativa, causal, concessiva, conclusiva, proporcional, condicional); reescrita mas→porém; oposição Todavia/Entretanto",
+      "gesture": "CLASSIFICAR (+ PEGADINHA valor semântico)",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "~30% do card; morphological + rows (conectivo × valor) + tap + compare; Glance OS = board 0 taps (gap wrap/polish genérico G2 — sem bespoke obrigatório nesta onda)",
+      "mold_gap": "wrap_polish_g2 — preferir 0 taps; não forçar pt-period-rail (oração) se a prova pede só CLASSE do conectivo",
+      "ancoras_100_status": "pending",
+      "anchors": [],
+      "anchor_candidate_notes": [
+        "VUNESP «já que» causal tec 3776325",
+        "QUADRIX «No entanto» adversativa tec 3779677",
+        "FCC «visto que» causal tec 3908393"
+      ]
+    },
+    {
+      "id": "pt_classes_nominais",
+      "when": "Artigo (definido/indefinido); substantivo (comum/próprio/coletivo/abstrato); substantivação (artigo+cor/qualidade); adjetivo (grau, flexão, função adjetiva); numeral (cardinal/ordinal); adj×substantivo",
+      "gesture": "CLASSIFICAR",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "Pergunta-teste M02/M03; rows classe×teste; compare adj×subst / artigo×pronome",
+      "mold_gap": "wrap_polish_g2 — deck «peças nominais» tudo visível; 0 taps",
+      "ancoras_100_status": "pending",
+      "anchors": [],
+      "anchor_candidate_notes": [
+        "AVANÇASP artigos Um/O Rubem Alves tec 3709821 (VF asserções)",
+        "AVANÇASP «o essencial» substantivo tec 3839425",
+        "AVANÇASP substantivação «o cinza» tec 4003512"
+      ]
+    },
+    {
+      "id": "pt_classes_adverbio",
+      "when": "Advérbio (modo, tempo, lugar, intensidade); locução adverbial; palavra de forma adjetiva com função adverbial (alto, rápido); adv×adj",
+      "gesture": "CLASSIFICAR (+ PEGADINHA adv×adj)",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "~15%; board modifica verbo/adj/adv; pegadinha -mente / forma adjetiva",
+      "mold_gap": "wrap_polish_g2 — arena adv×adj aberta 0 taps",
+      "ancoras_100_status": "pending",
+      "anchors": [],
+      "anchor_candidate_notes": [
+        "EDUCA PB «essencialmente» tec 3913810",
+        "AVANÇASP «rápido» advérbio tec 3962475",
+        "AVANÇASP «alto» adj como adv tec 3460253"
+      ]
+    },
+    {
+      "id": "pt_classes_preposicao",
+      "when": "Preposição essencial; locução prepositiva; «a» prep × artigo; prep × conjunção; valor da preposição (causa, finalidade) quando a prova cobra CLASSE/função da peça — não regência completa (→ pt_regencia)",
+      "gesture": "CLASSIFICAR (+ PEGADINHA prep×artigo / prep×conj)",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "~7–8%; rows peça×teste; anti-gesto: não virar pt-regency-arrow",
+      "mold_gap": "wrap_polish_g2 — board 0 taps; contraste prep×artigo",
+      "ancoras_100_status": "pending",
+      "anchors": [],
+      "anchor_candidate_notes": [
+        "AVANÇASP «a» prep × artigo tec 3839714",
+        "Ápice locução «além da» tec 4037406",
+        "FACET «com medo de» loc. prep tec 3358539"
+      ]
+    },
+    {
+      "id": "pt_classes_exceto",
+      "when": "Comando EXCETO ou INCORRETA (ou «valor semântico INCORRETO») no eixo classes de palavras / conectivo como classe",
+      "gesture": "EXCETO / PEGADINHA",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "~5%; isolate keep×exception + compare por letra; se volume subir → alinhar a pt-exceto-arena (PT transversal)",
+      "mold_gap": "wrap_polish_g2 — preferir isolate board 0 taps (padrão imunizacao_exceto)",
+      "ancoras_100_status": "pending",
+      "anchors": [],
+      "anchor_candidate_notes": [
+        "AVANÇASP EXCETO advérbio «de manhã» tec 3374812",
+        "AOCP valor INCORRETO «Como» tec 3804085",
+        "AOCP valor INCORRETO kidults tec 3840780"
+      ]
+    },
+    {
+      "id": "pt_classes_generico",
+      "when": "VF / I–II–III multi-classe; dupla classe da mesma forma; formação/siglas residual neste card; classificação mesclada sem fit nos ramos acima; umbrella legado `pt_classes_palavras`",
+      "gesture": "VF / CLASSIFICAR (fallback)",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "cauda_longa",
+      "ok_generico_3_3": "Cauda + legado formação/siglas; piso G2 demo — sem forçar conjunção/nominal",
+      "mold_gap": "wrap_polish_g2 — âncora legada examples/questao-formacao-palavras-siglas.json está below_bar (subtópico drift «Formação…», layout_variant salvo, ordem slides legado)",
+      "legacy_umbrella": "pt_classes_palavras",
+      "ancoras_100_status": "pending",
+      "anchors": [
+        "examples/questao-formacao-palavras-siglas.json"
+      ],
+      "anchor_styles": {
+        "formacao_siglas_legado": {
+          "golden_reference": "examples/questao-formacao-palavras-siglas.json",
+          "anchor_slug": "questao-formacao-palavras-siglas",
+          "note": "LEGADO — drift_ramo + below_bar; elevar ou substituir na Fase 1 (não aprovar no estado atual)"
+        }
+      }
+    }
+  ],
+  "legacy_branch_alias": {
+    "pt_classes_palavras": {
+      "maps_to": "pt_classes_generico",
+      "note": "93 slugs applied g01–g12 usam este id. Reconcile/patch por ramo = conversa futura pós-âncoras 100%."
+    }
+  },
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy"
+  },
+  "golden_v1_grammar": {
+    "concept_map": "Pergunta-teste M02 + classe em disputa — SEM gabarito/letra",
+    "golden_rule": "rows: peça × teste portátil — SEM row «Gabarito letra X»",
+    "logic_flow": "Único lugar com eliminação + gabarito; reveal_mode tap (ou board 0 taps Glance OS)",
+    "danger_zone": "correct único por item; ≥1 transferência «Em outra banca…»"
+  },
+  "proibido": [
+    "ai:generate",
+    "catalog:upgrade-premium",
+    "catalog:apply-lote --apply sem pedido explícito",
+    "publicar referência TecConcursos no JSON",
+    "handcraft em massa / gNN nesta conversa Âncoras 100%",
+    "forçar ADME/EV/regência completa/pt-period-rail quando a prova pede só classe morfológica"
+  ],
+  "modes": {
+    "subtopico_handcraft": {
+      "label": "Handcraft golden-v1 — 93 slugs (já applied). Próximo após Âncoras 100%: re-tag ramos ou repair pontual.",
+      "first_lote": "classes-de-palavras-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run validate:goldens -- --lote=<lote> --strict",
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run catalog:apply-lote -- --lote=<lote> --dry-run",
+        "# apply SOMENTE se usuário pedir:",
+        "npm run catalog:apply-lote -- --lote=<lote> --apply"
+      ]
+    },
+    "single_slug": {
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy"
+      ]
+    }
+  }
+}

@@ -304,12 +304,24 @@
     },
     {
       "id": "pt_classes_palavras",
-      "when": "Classes gramaticais, formação de palavras, artigo a numeral",
+      "when": "Classes gramaticais, formação de palavras, artigo a numeral — UMBRELLA LEGADO (applied g01–g12). Split L3: ver playbook dedicado classes-de-palavras.json",
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "ok_generico",
+      "ok_generico_3_3": "split_candidate fechado em Âncoras 100% Fase 0a → 6 ramos (conjuncao · nominais · adverbio · preposicao · exceto · generico)",
+      "dedicated_playbook": "data/catalog-migration/handcraft-playbooks/classes-de-palavras.json",
+      "mapa_gestos": "artifacts/glance-os-classes-de-palavras-MAPA-8-GESTOS.md",
+      "child_branches": [
+        "pt_classes_conjuncao",
+        "pt_classes_nominais",
+        "pt_classes_adverbio",
+        "pt_classes_preposicao",
+        "pt_classes_exceto",
+        "pt_classes_generico"
+      ],
       "anchors": [
         "examples/questao-formacao-palavras-siglas.json"
-      ]
+      ],
+      "note": "Novas âncoras 100% usam child_branches; este id permanece só como alias dos 93 slugs já applied."
     },
     {
       "id": "pt_verbos",
