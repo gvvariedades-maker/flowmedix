@@ -169,10 +169,18 @@ export function countMoldInteractiveSlots(variant: string, slide: MoldAffinitySl
       return countExcetoIsolateBoardSlots(slide, parseAdolescentExcetoStep);
     case 'pni-exceto-isolate-board':
       return countExcetoIsolateBoardSlots(slide, parsePniExcetoStep);
+    case 'pni-via-isolate-board':
+      return Array.isArray(slide.steps) ? slide.steps.filter(Boolean).length : 0;
+    case 'pni-exceto-command-hub':
+    case 'pni-via-route-hub':
+      return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
+    case 'pni-exceto-rule-board':
+      return Array.isArray(slide.rows) ? slide.rows.filter(Boolean).length : 0;
     case 'adolescent-consent-gate':
       return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
     case 'adolescent-exceto-compare':
     case 'pni-exceto-compare':
+    case 'pni-via-trap-arena':
       return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
     case 'adolescent-growth-z-rail':
       return countAdolescentGrowthZRailSlots(slide);

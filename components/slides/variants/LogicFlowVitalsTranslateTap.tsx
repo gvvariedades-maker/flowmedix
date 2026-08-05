@@ -23,8 +23,9 @@ interface LogicFlowVitalsTranslateTapProps {
 }
 
 /**
- * Tradução SV — chassis G2 (BoardChrome + CriticalNumber + PolarityPanel).
- * Mantém Traduzir → / resumo (P1 lote 4).
+ * SV logic_flow:
+ * - Tradução valor→termo (interpretação): tap "Traduzir →"
+ * - Eliminação/técnica (PA, EXCETO, C/E): board glanceable 0 taps
  */
 export function LogicFlowVitalsTranslateTap({
   steps,
@@ -39,6 +40,19 @@ export function LogicFlowVitalsTranslateTap({
     () => normalizedSteps.map((step, index) => parseTranslationStep(step, index)),
     [normalizedSteps],
   );
+
+  const translationCount = parsedSteps.filter((s) => s.kind === 'translation').length;
+  const eliminationCueCount = parsedSteps.filter(
+    (s) =>
+      s.kind === 'plain' &&
+      /eliminar|gabarito|comando:|em similares|^[a-e]\s*[:—-]|candidat/i.test(s.text),
+  ).length;
+  // Glance OS: MCQ/eliminação = board 0 taps (não carousel 8 cliques)
+  const isEliminationBoard =
+    parsedSteps.length > 0 &&
+    (translationCount === 0 ||
+      (eliminationCueCount >= Math.ceil(parsedSteps.length / 2) &&
+        translationCount < eliminationCueCount));
 
   const [index, setIndex] = useState(0);
   const [revealed, setRevealed] = useState<Set<number>>(() => new Set());
@@ -72,6 +86,46 @@ export function LogicFlowVitalsTranslateTap({
       <div className="flex min-h-full items-center justify-center p-6">
         <p className="font-body text-slate-400">Nenhum passo definido</p>
       </div>
+    );
+  }
+
+  // ---- Glance OS: eliminação / técnica — todos os passos visíveis ----
+  if (isEliminationBoard) {
+    const stepTones = ['command', 'warn', 'barrier', 'teal', 'rights', 'keep', 'transfer'] as const;
+    return (
+      <BoardChrome
+        theme={theme}
+        washOpacity={0.5}
+        eyebrow="Eliminação"
+        title="Checklist → letra"
+        footerRule={footerRule}
+        footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+        maxWidth="lg"
+      >
+        <div className="flex flex-col gap-2.5" role="list" aria-label="Passos de eliminação">
+          {parsedSteps.map((step, i) => {
+            if (step.kind !== 'plain') return null;
+            const isConclusion = /conclus|gabarito|em similares/i.test(step.title + step.text);
+            const tone = isConclusion ? 'keep' : stepTones[i % stepTones.length];
+            return (
+              <PolarityPanel key={i} tone={tone} emphasized={isConclusion}>
+                <div className="flex items-start gap-3">
+                  <span
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-mono text-xs font-black text-white shadow ${
+                      isConclusion ? 'bg-emerald-600' : boardTone(tone).badge
+                    }`}
+                  >
+                    {isConclusion ? '✓' : i + 1}
+                  </span>
+                  <p className="min-w-0 flex-1 font-body text-sm font-semibold leading-relaxed text-slate-900 md:text-base">
+                    {step.text}
+                  </p>
+                </div>
+              </PolarityPanel>
+            );
+          })}
+        </div>
+      </BoardChrome>
     );
   }
 

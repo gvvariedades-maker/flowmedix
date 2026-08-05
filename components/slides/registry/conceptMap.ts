@@ -110,6 +110,16 @@ const Dyn_cold_chain_hub = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pni_exceto_command_hub = dynamic(
+  () => loadNamedVariant(() => import('../variants/PniExcetoCommandConceptMap') as Promise<Record<string, unknown>>, 'PniExcetoCommandConceptMap'),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pni_via_route_hub = dynamic(
+  () => loadNamedVariant(() => import('../variants/PniViaRouteConceptMap') as Promise<Record<string, unknown>>, 'PniViaRouteConceptMap'),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pni_rules_deck = dynamic(
   () => loadNamedVariant(() => import('../variants/PniRulesDeckConceptMap') as Promise<Record<string, unknown>>, 'PniRulesDeckConceptMap'),
   { ssr: true, loading: () => null },
@@ -192,6 +202,11 @@ const Dyn_adme_journey_rail = dynamic(
 
 const Dyn_infusao_ev_station_deck = dynamic(
   () => loadNamedVariant(() => import('../variants/InfusaoEvStationDeckConceptMap') as Promise<Record<string, unknown>>, 'InfusaoEvStationDeckConceptMap'),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_farmaco_hub_pillar_deck = dynamic(
+  () => loadNamedVariant(() => import('../variants/ConceptMapFarmacoHubPillarDeck') as Promise<Record<string, unknown>>, 'ConceptMapFarmacoHubPillarDeck'),
   { ssr: true, loading: () => null },
 );
 
@@ -429,6 +444,8 @@ export const CONCEPT_MAP_REGISTRY: Record<string, BespokeVariantEntry> = {
   'crianca-neonatal-deck': { Component: Dyn_crianca_neonatal_deck },
   'crianca-dev-milestones-rail': { Component: Dyn_crianca_dev_milestones_rail },
   'cold-chain-hub': { Component: Dyn_cold_chain_hub },
+  'pni-exceto-command-hub': { Component: Dyn_pni_exceto_command_hub },
+  'pni-via-route-hub': { Component: Dyn_pni_via_route_hub },
   'pni-rules-deck': { Component: Dyn_pni_rules_deck },
   'cam-certos-deck': { Component: Dyn_cam_certos_deck },
   'pt-crase-funnel-deck': { Component: Dyn_pt_crase_funnel_deck },
@@ -446,6 +463,7 @@ export const CONCEPT_MAP_REGISTRY: Record<string, BespokeVariantEntry> = {
   'absorption-speed-rail': { Component: Dyn_absorption_speed_rail },
   'adme-journey-rail': { Component: Dyn_adme_journey_rail },
   'infusao-ev-station-deck': { Component: Dyn_infusao_ev_station_deck },
+  'farmaco-hub-pillar-deck': { Component: Dyn_farmaco_hub_pillar_deck },
   'dose-equivalence-rail': { Component: Dyn_dose_equivalence_rail },
   'oxygen-protocol-deck': { Component: Dyn_oxygen_protocol_deck },
   'iv-care-orbit': { Component: Dyn_iv_care_orbit },

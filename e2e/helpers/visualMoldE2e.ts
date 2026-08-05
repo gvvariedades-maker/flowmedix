@@ -213,10 +213,11 @@ export const FARMACO_BRANCHES = [
   'farmaco_generico',
 ] as const;
 
-/** Ramos Farmacodinâmica com pacote bespoke 4/4 (clínico EV + ADME journey). */
+/** Ramos Farmacodinâmica com pacote bespoke 4/4 (clínico EV + ADME + cauda EXCETO). */
 export const FARMACO_BESPOKE_BRANCHES = [
   'farmaco_clinico_protocolo',
   'farmaco_pk_pd_vf',
+  'farmaco_generico',
 ] as const;
 
 /** Ramos Cálculo — regressão L3 (dose bespoke + conceito genérico; calc_generico cauda vazia no pacote). */

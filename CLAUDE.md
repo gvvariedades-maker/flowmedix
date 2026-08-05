@@ -15,6 +15,7 @@ Leitura estimada: **~5 min** (atalho + um perfil) · **~30–40 min** (arquivo i
 | Objetivo | Escreva na conversa |
 |----------|---------------------|
 | Subtópico novo ou continuar lote | `Pipeline completo: <Subtópico canônico>` ou `Handcraft: <Subtópico> gNN` |
+| Âncoras 100% (base do pacote, pré-venda) | `Âncoras 100%: <Subtópico canônico>` — [`PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md) |
 | Zero → nota-10 no IDE (sem SDK) | `Programa completo IDE: <Subtópico>` — [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](docs/PROMPT_PROGRAMA_COMPLETO_IDE.md) · DoD [`PROGRAMA_COMPLETO_IDE_DOD.md`](docs/PROGRAMA_COMPLETO_IDE_DOD.md) |
 | Paridade + L3 bespoke + SDK (programa completo) | `Pipeline + paridade Adolescente + L3 bespoke + orquestrador: SUBTÓPICO: <Subtópico>` — [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](docs/PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
 | Continuar 1 unidade (run-state) | `Continuar programa: <Subtópico>` ou `Continuar pipeline: <Subtópico>` + `@artifacts/pipeline-run-state-*.json` |
@@ -25,7 +26,7 @@ Leitura estimada: **~5 min** (atalho + um perfil) · **~30–40 min** (arquivo i
 | Landing / LP (copy + conversão + design) | `LP: home` · `LP: <path>` · `LP: polish visual` — [`LP_CONVERSA.md`](docs/LP_CONVERSA.md) |
 | Feature de UI / bug no app | Descreva a tela + anexe arquivos; **não** use trigger de handcraft |
 
-**Triggers completos:** [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) · [`.cursor/rules/programa-completo-ide.mdc`](.cursor/rules/programa-completo-ide.mdc) · [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) · [`handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) · [`quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) · [`avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) · [`lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc)
+**Triggers completos:** [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) · [`.cursor/rules/ancoras-100.mdc`](.cursor/rules/ancoras-100.mdc) · [`.cursor/rules/programa-completo-ide.mdc`](.cursor/rules/programa-completo-ide.mdc) · [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) · [`handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) · [`quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) · [`avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) · [`lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc)
 
 ## Comandos rápidos
 
@@ -788,6 +789,7 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | [`DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) | Hub onboarding designer front — App UI vs NeuroSlides |
 | [`DECISAO_NEUROSLIDES_GERACAO_2.md`](docs/DECISAO_NEUROSLIDES_GERACAO_2.md) | ADR Visual OS — 4 tipos imutáveis; chassis glanceable |
 | [`NEUROSLIDES_VISUAL_BAR.md`](docs/NEUROSLIDES_VISUAL_BAR.md) | Piso best-in-market + ratchet (cada molde só melhora) |
+| [`PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md) | Âncoras 100% — playbook+mapa → âncoras aprovadas (pré-venda) |
 | [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](docs/NEUROSLIDES_GERACAO_2_ROADMAP.md) | Roadmap G2: flagships → Fábrica → cauda genérica |
 | [`auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md`](docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md) | Rebrand editorial — escopo, telhas T1–T11, WCAG |
 | [`auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) | Direção visual v3 — Clinical Study, paleta híbrida, mapeamento skills |

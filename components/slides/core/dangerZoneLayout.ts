@@ -22,6 +22,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'dose-trap',
   'farmaco-trap',
   'farmaco-clinico-trap',
+  'farmaco-generico-trap',
   'catheter-danger-arena',
   'lab-prep-trap',
   'lab-specimen-arena',
@@ -32,6 +33,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'adolescent-consent-gate',
   'adolescent-exceto-compare',
   'pni-exceto-compare',
+  'pni-via-trap-arena',
   'adolescent-z-threshold-trap',
   'burn-trap-arena',
   'trabalho-pep-trap-arena',
@@ -112,6 +114,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'dose-trap') return 'dose-trap';
   if (explicitVariant === 'farmaco-trap') return 'farmaco-trap';
   if (explicitVariant === 'farmaco-clinico-trap') return 'farmaco-clinico-trap';
+  if (explicitVariant === 'farmaco-generico-trap') return 'farmaco-generico-trap';
   if (explicitVariant === 'catheter-danger-arena') return 'catheter-danger-arena';
   if (explicitVariant === 'lab-prep-trap') return 'lab-prep-trap';
   if (explicitVariant === 'lab-specimen-arena') return 'lab-specimen-arena';
@@ -126,6 +129,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'adolescent-consent-gate') return 'adolescent-consent-gate';
   if (explicitVariant === 'adolescent-exceto-compare') return 'adolescent-exceto-compare';
   if (explicitVariant === 'pni-exceto-compare') return 'pni-exceto-compare';
+  if (explicitVariant === 'pni-via-trap-arena') return 'pni-via-trap-arena';
   if (explicitVariant === 'adolescent-z-threshold-trap') return 'adolescent-z-threshold-trap';
   if (explicitVariant === 'burn-trap-arena') return 'burn-trap-arena';
   if (explicitVariant === 'trabalho-pep-trap-arena') return 'trabalho-pep-trap-arena';
@@ -190,6 +194,9 @@ export function resolveDangerZoneLayoutVariant(
     if (!explicitVariant && fallbackVariant === 'farmaco-clinico-trap') {
       return 'farmaco-clinico-trap';
     }
+    if (!explicitVariant && fallbackVariant === 'farmaco-generico-trap') {
+      return 'farmaco-generico-trap';
+    }
     if (!explicitVariant && fallbackVariant === 'catheter-danger-arena') {
       return 'catheter-danger-arena';
     }
@@ -231,6 +238,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'pni-exceto-compare') {
       return 'pni-exceto-compare';
+    }
+    if (!explicitVariant && fallbackVariant === 'pni-via-trap-arena') {
+      return 'pni-via-trap-arena';
     }
     if (!explicitVariant && fallbackVariant === 'adolescent-z-threshold-trap') {
       return 'adolescent-z-threshold-trap';

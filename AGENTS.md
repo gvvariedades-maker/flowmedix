@@ -34,6 +34,7 @@ Goldens copiáveis: `examples/eng/api-route-admin.example.ts` · `rsc-page-cache
 | Paridade pedagógica Adolescente | `Paridade Adolescente: <Subtópico>` | [`.cursor/rules/paridade-adolescente.mdc`](.cursor/rules/paridade-adolescente.mdc) · [`docs/PROMPT_PARIDADE_ADOLESCENTE.md`](docs/PROMPT_PARIDADE_ADOLESCENTE.md) |
 | Programa completo (paridade + L3 + SDK) | `Pipeline + paridade Adolescente + L3 bespoke + orquestrador: SUBTÓPICO: …` | [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) · [`docs/PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](docs/PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
 | Continuar 1 unidade (run-state) | `Continuar pipeline: <Subtópico>` + `@artifacts/pipeline-run-state-*.json` | [`.cursor/rules/pipeline-orchestrator.mdc`](.cursor/rules/pipeline-orchestrator.mdc) |
+| Âncoras 100% premium (base do pacote) | `Âncoras 100%: <Subtópico>` | [`.cursor/rules/ancoras-100.mdc`](.cursor/rules/ancoras-100.mdc) · [`docs/PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md) |
 | Âncoras faltantes (pré-g01) | `Criar âncoras: <Subtópico>` | skill `avant-golden-anchor-bootstrap` |
 | Progresso por pacote | — | [`data/catalog-migration/handcraft-registry.json`](data/catalog-migration/handcraft-registry.json) |
 

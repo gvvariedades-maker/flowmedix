@@ -1,11 +1,13 @@
 import {
   extractPniMonths,
+  inferColdChainCardCategory,
   inferIntervalChips,
   inferPniCategory,
   inferPniIconName,
   inferPniMatrixRowBadge,
   inferPniRowChip,
   inferPniTrapSlots,
+  extractTempMarkers,
   inferVfJudgement,
   isPniConclusionRow,
   parsePniVfStep,
@@ -21,10 +23,21 @@ describe('pniSlideUtils', () => {
   });
 
   it('infere ícone por categoria', () => {
-    expect(inferPniIconName('3º mês BCG')).toBe('Calendar');
+    expect(inferPniIconName('3º mês Meningocócica')).toBe('Calendar');
     expect(inferPniIconName('Intervalo 30 dias SCR × FA')).toBe('Clock');
     expect(inferPniIconName('Termômetro 2–8°C')).toBe('Thermometer');
     expect(inferPniIconName('Marcar letra C')).toBe('CheckCircle');
+    expect(inferPniIconName('BCG intradérmica')).toBe('Syringe');
+    expect(inferPniIconName('Pentavalente DTP')).toBe('Shield');
+    expect(inferPniIconName('Técnico não prescreve')).toBe('UserX');
+    expect(inferPniIconName('Cadeia rompida — agitar')).toBe('AlertTriangle');
+  });
+
+  it('inferColdChainCardCategory evita vazamento de calendário', () => {
+    expect(inferColdChainCardCategory('BCG intradérmica braço direito')).toBe('cuidado');
+    expect(inferColdChainCardCategory('Pentavalente DTP + Hib')).toBe('cuidado');
+    expect(inferColdChainCardCategory('Faixa 2–8 °C conservação')).toBe('rede_frio');
+    expect(inferColdChainCardCategory('Agitar ≠ recuperar')).toBe('gabarito');
   });
 
   it('extrai chips de intervalo', () => {
@@ -113,5 +126,11 @@ describe('pniSlideUtils', () => {
   it('formata label de mês', () => {
     expect(pniMonthLabel(0)).toBe('0');
     expect(pniMonthLabel(3)).toBe('3M');
+  });
+
+  it('extractTempMarkers não marca 0 °C em “nunca congelador”', () => {
+    expect(extractTempMarkers('Parte central da geladeira — nunca porta nem congelador')).toEqual([]);
+    expect(extractTempMarkers('Parte central da geladeira (2–8 °C) — nunca na porta')).toEqual([2, 8]);
+    expect(extractTempMarkers('Câmara negativa — Freezer SCR')).toEqual([0]);
   });
 });

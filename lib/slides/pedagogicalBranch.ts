@@ -330,7 +330,7 @@ const SONDA_GENERIC: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
-/** Pacote VF PK/PD — trilho adme-journey-rail (âncora FUNCAMP). */
+/** Pacote VF PK/PD — Glance OS 0 taps (âncora FUNCAMP). */
 const FARMACO_VF_MOLD: SubtopicDesign = {
   template: 'purple',
   conceptMap: 'adme-journey-rail',
@@ -350,10 +350,10 @@ const FARMACO_CLINICO_MOLD: SubtopicDesign = {
 
 const FARMACO_GENERIC_MOLD: SubtopicDesign = {
   template: 'purple',
-  conceptMap: 'morphological',
-  goldenRule: 'center',
-  logicFlow: 'vertical',
-  dangerZone: 'compare',
+  conceptMap: 'farmaco-hub-pillar-deck',
+  goldenRule: 'farmaco-generico-reference-board',
+  logicFlow: 'farmaco-generico-isolate-board',
+  dangerZone: 'farmaco-generico-trap',
 };
 
 const IMUNIZACAO_VF_MOLD: SubtopicDesign = {
@@ -383,18 +383,18 @@ const IMUNIZACAO_CADEIA_FRIO_MOLD: SubtopicDesign = {
 /** EXCETO / INCORRETA — compare semântico por letra (distratores corretos × exceção). */
 const IMUNIZACAO_EXCETO_MOLD: SubtopicDesign = {
   template: 'lime',
-  conceptMap: 'morphological',
-  goldenRule: 'reference_table',
+  conceptMap: 'pni-exceto-command-hub',
+  goldenRule: 'pni-exceto-rule-board',
   logicFlow: 'pni-exceto-isolate-board',
   dangerZone: 'pni-exceto-compare',
 };
 
 const IMUNIZACAO_GENERIC_MOLD: SubtopicDesign = {
   template: 'lime',
-  conceptMap: 'morphological',
+  conceptMap: 'pni-via-route-hub',
   goldenRule: 'reference_table',
-  logicFlow: 'vertical',
-  dangerZone: 'compare',
+  logicFlow: 'pni-via-isolate-board',
+  dangerZone: 'pni-via-trap-arena',
 };
 
 const VIA_VF_MOLD: SubtopicDesign = {
@@ -2521,6 +2521,16 @@ function inferImunizacaoBranch(
 
   if (cadeiaScore > 0) {
     return 'imunizacao_cadeia_frio';
+  }
+
+  // Via / técnica de sala — mesmo com idade no enunciado (ex.: SCR aos 12m)
+  if (
+    /via de administra[cç][aã]o|apresenta a via|via correta|via de aplica[cç][aã]o/i.test(anchor) ||
+    (/subcut[aâ]nea|intrad[eé]rmica|intramuscular|endovenosa/i.test(anchor) &&
+      /via/i.test(anchor) &&
+      /vacina|tr[ií]plice|scr|bcg|pni/i.test(anchor))
+  ) {
+    return 'imunizacao_generico';
   }
 
   if (countPatternMatches(corpus, IMUNIZACAO_CALENDARIO) > 0) {

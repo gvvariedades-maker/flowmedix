@@ -11,8 +11,8 @@
     "content_standard": "golden-v1",
     "family": "certo_errado",
     "content_review": {
-      "reviewed_at": "2026-07-02",
-      "reviewer": "professor-para-concurso",
+      "reviewed_at": "2026-08-04",
+      "reviewer": "ancoras-100",
       "guideline_snapshot": "PNI 2025 — eventos adversos, orientação pós-vacina; antibiótico não adia rotina",
       "exam_vs_current": "none",
       "catalog_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
@@ -64,7 +64,7 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "Comando INCORRETA — sala de vacina",
+      "slide_title": "INCORRETA — vacinas / sala de vacina",
       "chip_label": "PNI",
       "meta": {
         "topico": "Enfermagem",
@@ -72,31 +72,31 @@
       },
       "items": [
         {
-          "label": "Comando",
-          "detail": "Marque a afirmativa falsa sobre vacinas — três alternativas são verdadeiras do Manual PNI.",
+          "label": "Comando INCORRETA",
+          "detail": "Ache a afirmativa falsa — três opções são verdadeiras do Manual PNI.",
           "icon": "Target"
         },
         {
-          "label": "Vacinação em SP",
-          "detail": "Prevenção de doenças infecciosas: medida segura, custo-efetiva e sucesso em saúde pública.",
+          "label": "Antibiótico × calendário",
+          "detail": "Antibiótico de rotina não contraindica nem adia vacina do calendário PNI — mito clássico de prova.",
+          "icon": "Pill"
+        },
+        {
+          "label": "Vacinação em saúde pública",
+          "detail": "Medida segura, custo-efetiva e um dos maiores sucessos em prevenção de doenças infecciosas.",
           "icon": "Shield"
         },
         {
           "label": "Eventos adversos",
-          "detail": "Reações locais/leves são esperadas; orientar retorno se intensificar ou surgirem sinais novos.",
+          "detail": "Reações locais/leves esperadas; orientar retorno se intensificar, demorar ou surgirem sinais novos.",
           "icon": "BellRing"
-        },
-        {
-          "label": "Pegadinha antibiótico",
-          "detail": "Antibiótico de rotina não suspende calendário — banca mistura infecção tratada com contraindicação vacinal.",
-          "icon": "Pill"
         }
       ],
-      "footer_rule": "INCORRETA = achar a afirmativa falsa, não a mais “clínica”"
+      "footer_rule": "INCORRETA = achar a falsa — não a mais clínica"
     },
     {
       "type": "logic_flow",
-      "slide_title": "Achar a INCORRETA",
+      "slide_title": "Isolar a afirmativa falsa",
       "chip_label": "PASSO A PASSO",
       "reveal_mode": "tap",
       "meta": {
@@ -104,14 +104,15 @@
         "subtopico": "Imunização"
       },
       "steps": [
-        "Comando: é INCORRETO afirmar — três alternativas são verdadeiras, uma é falsa.",
-        "A — vacinação como sucesso em saúde pública e custo-efetividade → afirmativa correta → eliminar.",
-        "B — orientar retorno se evento adverso intenso ou prolongado → conduta PNI → eliminar.",
-        "D — eventos adversos variam com componente da vacina e resposta individual → verdadeiro → eliminar.",
+        "Comando: é INCORRETO afirmar — três verdadeiras, uma falsa.",
+        "A — vacinação sucesso em saúde pública / custo-efetiva → verdadeira → eliminar.",
+        "B — orientar retorno se evento adverso intenso → conduta PNI → eliminar.",
+        "D — eventos adversos dependem do imunobiológico e resposta individual → verdadeira → eliminar.",
         "C — antibiótico interfere e exige esperar para vacinar → mito na rotina PNI → esta é a INCORRETA.",
-        "Gabarito: letra C."
+        "Marcar letra C.",
+        "Em similares: antibiótico de rotina não adia vacina do calendário — doença leve não é contraindicação."
       ],
-      "footer_rule": "Doença leve/antibiótico ≠ adiar vacina de rotina"
+      "footer_rule": "Doença leve / antibiótico não adia vacina de rotina"
     },
     {
       "type": "golden_rule",
@@ -121,25 +122,28 @@
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
-      "content": "AFIRMAÇÕES VERDADEIRAS (NÃO SÃO O GABARITO)",
+      "content": "CONDUTAS PNI — O QUE É VERDADEIRO NA PROVA",
       "rows": [
-        {
-          "label": "Impacto da vacinação",
-          "value": "Segura, custo-efetiva e um dos maiores sucessos em saúde pública"
-        },
-        {
-          "label": "Orientação pós-vacina",
-          "value": "Retornar à UBS se reação comum piorar, durar demais ou surgirem sinais novos"
-        },
-        {
-          "label": "Eventos adversos",
-          "value": "Dependem do imunobiológico e da resposta individual do vacinado"
-        },
         {
           "label": "Antibiótico × vacina",
           "value": "Não adia rotina — infecção leve tratada não contraindica calendário",
           "emphasis": "highlight",
           "badge": "hot"
+        },
+        {
+          "label": "Impacto da vacinação",
+          "value": "Segura, custo-efetiva e sucesso em saúde pública",
+          "badge": "ok"
+        },
+        {
+          "label": "Orientação pós-vacina",
+          "value": "Retornar à UBS se reação comum piorar, durar demais ou surgirem sinais novos",
+          "badge": "ok"
+        },
+        {
+          "label": "Eventos adversos",
+          "value": "Dependem do imunobiológico e da resposta individual do vacinado",
+          "badge": "info"
         }
       ],
       "footer_rule": "PNI: vacinar no calendário; notificar EAPV grave"
@@ -156,28 +160,28 @@
       "content": "PEGADINHAS — INCORRETA SOBRE VACINAS",
       "items": [
         {
-          "label": "A — sucesso em saúde pública",
-          "detail": "Parece genérico demais para ser verdade.",
+          "label": "Letra A — sucesso em saúde pública",
+          "detail": "Parece genérico demais para ser verdade na prova.",
           "correct": "Afirmativa correta — vacinação é referência de custo-efetividade no SUS."
         },
         {
-          "label": "B — retorno à unidade",
+          "label": "Letra B — retorno à unidade",
           "detail": "Aluno acha que reação leve sempre impede nova dose.",
           "correct": "Orientação correta do PNI para eventos adversos intensos ou atípicos."
         },
         {
-          "label": "D — resposta individual",
-          "detail": "Confunde com contraindicação absoluta.",
-          "correct": "Verdadeiro: componentes da vacina e organismo do vacinado modulam a reação."
+          "label": "Letra D — resposta individual",
+          "detail": "Confunde variação de reação com contraindicação absoluta.",
+          "correct": "Afirmativa verdadeira: componentes da vacina e organismo do vacinado modulam a reação."
         },
         {
-          "label": "C — antibiótico suspende vacina",
+          "label": "Letra C — antibiótico suspende vacina",
           "detail": "Seduz quem associa qualquer medicamento à espera.",
-          "correct": "INCORRETA: antibiótico de rotina não exige adiar vacina do calendário."
+          "correct": "Esta é a INCORRETA: antibiótico de rotina não exige adiar vacina do calendário."
         },
         {
-          "label": "Transferência",
-          "detail": "Criança em amoxicilina para otite leve.",
+          "label": "Transferência — otite + amoxicilina",
+          "detail": "Criança em amoxicilina para otite leve, no dia da vacina.",
           "correct": "Vacinar conforme calendário — não postergar só por antibiótico."
         }
       ],

@@ -277,6 +277,29 @@ describe('P1 lote 4 — Adolescente VF/Z + Vitals', () => {
     fireEvent.click(screen.getByRole('button', { name: /traduzir/i }));
     expect(screen.getByText(/taquicardia/i)).toBeInTheDocument();
   });
+
+  it('VitalsTranslateTap elimination board is glanceable (0 taps)', async () => {
+    const { LogicFlowVitalsTranslateTap } = await import(
+      '@/components/slides/variants/LogicFlowVitalsTranslateTap'
+    );
+    render(
+      <LogicFlowVitalsTranslateTap
+        steps={[
+          'A: temperatura após exercício → eliminar.',
+          'B: pulso com polegar → eliminar.',
+          'Gabarito: letra D.',
+          'Em similares: elimine erros de técnica antes do checklist de PA.',
+        ]}
+        theme={theme}
+        footerRule="PA: nível do coração + manguito certo fecha a questão"
+      />,
+    );
+    expect(screen.getByText(/eliminação/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/passos de eliminação/i)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /traduzir/i })).not.toBeInTheDocument();
+    expect(screen.queryByText(/valor → termo/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/gabarito: letra d/i)).toBeInTheDocument();
+  });
 });
 
 describe('P1 lote 3 — PNI calendar/cold + Tb VF', () => {
@@ -295,28 +318,54 @@ describe('P1 lote 3 — PNI calendar/cold + Tb VF', () => {
     expect(winnerLetter).toBe('B');
   });
 
-  it('PniCalendar wraps FocusShell + letter rail', async () => {
+  it('PniCalendar renders Glance OS board (0 taps)', async () => {
     const { LogicFlowPniCalendarEliminationTap } = await import(
       '@/components/slides/variants/LogicFlowPniCalendarEliminationTap'
     );
     render(
       <LogicFlowPniCalendarEliminationTap
         steps={[
-          'Testar A (BCG): ao nascer → eliminar.',
-          'Fixar marco: 3º mês de vida.',
-          'Marcar B: única alternativa aos 3 meses.',
+          'Fixar o marco etário: 3º mês de vida.',
+          'Testar A — BCG: ao nascer → eliminar.',
+          'Testar C — difteria: 2-4-6 → eliminar.',
+          'Marcar B — única alinhada ao 3º mês no PNI.',
+          'Em similares: idade → calendário → descartar vizinhos.',
         ]}
         theme={theme}
         footerRule="Na prova: idade × vacina do calendário."
       />,
     );
-    expect(screen.getByText(/calendário pni/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/alternativas/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /próximo passo/i })).toBeInTheDocument();
+    expect(screen.getByText(/board — calendário pni/i)).toBeInTheDocument();
+    expect(screen.getByText(/^B$/)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /próximo passo/i })).not.toBeInTheDocument();
     expect(screen.getByText(/transferência/i)).toBeInTheDocument();
   });
 
-  it('PniColdChain wraps FocusShell + letter rail (MCQ)', async () => {
+  it('PniColdChain VF renders Glance OS board (0 taps)', async () => {
+    const { LogicFlowPniColdChainTap } = await import(
+      '@/components/slides/variants/LogicFlowPniColdChainTap'
+    );
+    render(
+      <LogicFlowPniColdChainTap
+        steps={[
+          'I — BCG intradérmica → V.',
+          'II — agitar recupera cadeia → F.',
+          'III — pentavalente DTP+Hib → V.',
+          'IV — técnico prescreve fora → F.',
+          'Combinar sequência V, F, V, F → letra C.',
+          'Marcar C.',
+          'Em similares: agitar ≠ recuperar.',
+        ]}
+        theme={theme}
+        footerRule="Julgue cada linha antes de combinar."
+      />,
+    );
+    expect(screen.getByText(/board v\/f — cadeia de frio/i)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /próximo passo/i })).not.toBeInTheDocument();
+    expect(screen.getByText(/transferência/i)).toBeInTheDocument();
+  });
+
+  it('PniColdChain MCQ renders board (0 taps)', async () => {
     const { LogicFlowPniColdChainTap } = await import(
       '@/components/slides/variants/LogicFlowPniColdChainTap'
     );
@@ -326,14 +375,15 @@ describe('P1 lote 3 — PNI calendar/cold + Tb VF', () => {
           'Decore: temperatura positiva = 2 °C a 8 °C.',
           'Eliminar A: piso abaixo de 2 °C.',
           'Marcar B: única faixa 2–8 °C.',
+          'Em similares: 2–8 °C é o piso/teto.',
         ]}
         theme={theme}
         footerRule="Na prova: 2–8 °C é o piso/teto."
       />,
     );
-    expect(screen.getByText(/rede de frio pni/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/alternativas/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /próximo passo/i })).toBeInTheDocument();
+    expect(screen.getByText(/board — rede de frio/i)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /próximo passo/i })).not.toBeInTheDocument();
+    expect(screen.getByText(/transferência/i)).toBeInTheDocument();
   });
 
   it('TbVfElimination wraps FocusShell + roman V/F rail', async () => {

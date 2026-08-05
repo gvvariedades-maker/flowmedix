@@ -256,6 +256,13 @@ const FARMACO_CLINICO_VARIANTS = new Set([
   'farmaco-clinico-trap',
 ]);
 
+const FARMACO_GENERIC_VARIANTS = new Set([
+  'farmaco-hub-pillar-deck',
+  'farmaco-generico-reference-board',
+  'farmaco-generico-isolate-board',
+  'farmaco-generico-trap',
+]);
+
 const PNI_VF_VARIANTS = new Set([
   'pni-rules-deck',
   'pni-interval-matrix',
@@ -271,6 +278,8 @@ const PNI_CALENDARIO_VARIANTS = new Set([
 ]);
 
 const PNI_EXCETO_VARIANTS = new Set([
+  'pni-exceto-command-hub',
+  'pni-exceto-rule-board',
   'pni-exceto-isolate-board',
   'pni-exceto-compare',
 ]);
@@ -281,6 +290,8 @@ const PNI_CADEIA_FRIO_VARIANTS = new Set([
   'pni-cold-chain-tap',
   'temperature-mismatch',
 ]);
+
+const PNI_GENERIC_VARIANTS = new Set(['pni-via-route-hub', 'pni-via-isolate-board', 'pni-via-trap-arena']);
 
 const MULHER_PRENATAL_VARIANTS = new Set([
   'mulher-gestation-timeline',
@@ -805,10 +816,51 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     minPositive: 1,
   },
 
+  'pni-exceto-command-hub': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc'],
+    positivePatterns: [/exceto|incorret[oa]|antibiótico|antibiotico|vacina|imuniz|pni/i],
+    minPositive: 1,
+  },
+
+  'pni-exceto-rule-board': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc'],
+    positivePatterns: [/exceto|incorret[oa]|antibiótico|antibiotico|vacina|imuniz|pni|calend/i],
+    minPositive: 1,
+  },
+
   'pni-exceto-compare': {
     homeSubtopicFragments: ['imunizacao', 'vacinacao'],
     blockFamilies: ['calc'],
     positivePatterns: [/exceto|incorret[oa]|alternativa.*incorreta|vacina|imuniz|pni|calend/i],
+    minPositive: 1,
+  },
+
+  'pni-via-route-hub': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /via de administra|via correta|subcut[aâ]nea|intrad[eé]rmica|intramuscular|tr[ií]plice|scr\b|vacina|imuniz|pni/i,
+    ],
+    minPositive: 1,
+  },
+
+  'pni-via-isolate-board': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /via|subcut|eliminar|marcar [a-e]|scr\b|vacina|imuniz|pni/i,
+    ],
+    minPositive: 1,
+  },
+
+  'pni-via-trap-arena': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /via|subcut|intrad|intramusc|endoven|pegadinha|letra [a-e]|scr\b|vacina|imuniz|pni/i,
+    ],
     minPositive: 1,
   },
 
@@ -1199,6 +1251,31 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
     blockFamilies: ['vf', 'calc', 'legis'],
     positivePatterns: [/letra [a-e]|fosfato|subcut|bólus|alumínio|dilui/i],
+    minPositive: 1,
+  },
+
+  'farmaco-hub-pillar-deck': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    blockFamilies: ['vf', 'protocolo', 'calc', 'legis'],
+    positivePatterns: [/farmac|medicamento|incorreta|exceto|efeito|neurotox|convuls/i],
+    minPositive: 1,
+  },
+  'farmaco-generico-reference-board': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    blockFamilies: ['vf', 'protocolo', 'calc', 'legis'],
+    positivePatterns: [/incorreta|exceto|risco|clearance|fator/i],
+    minPositive: 1,
+  },
+  'farmaco-generico-isolate-board': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    blockFamilies: ['vf', 'protocolo', 'calc', 'legis'],
+    positivePatterns: [/comando|incorreta|marcar|afirmativa correta|exceto/i],
+    minPositive: 1,
+  },
+  'farmaco-generico-trap': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    blockFamilies: ['vf', 'protocolo', 'calc', 'legis'],
+    positivePatterns: [/letra [a-e]|incorreta|gabarito|pegadinha/i],
     minPositive: 1,
   },
 
@@ -2231,6 +2308,12 @@ export function bespokeMoldHasContentAffinity(
     }
   }
 
+  if (FARMACO_GENERIC_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'farmaco_generico') {
+      return false;
+    }
+  }
+
   if (PNI_VF_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_vf_intervalos') {
       return false;
@@ -2251,6 +2334,12 @@ export function bespokeMoldHasContentAffinity(
 
   if (PNI_CADEIA_FRIO_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_cadeia_frio') {
+      return false;
+    }
+  }
+
+  if (PNI_GENERIC_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_generico') {
       return false;
     }
   }

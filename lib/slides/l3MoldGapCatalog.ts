@@ -415,10 +415,10 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       branch_id: 'imunizacao_exceto',
       branch_implemented: true,
       ideal_mold_package:
-        'morphological · reference_table · pni-exceto-isolate-board · pni-exceto-compare (bespoke Onda 3)',
+        'pni-exceto-command-hub · pni-exceto-rule-board · pni-exceto-isolate-board · pni-exceto-compare',
       base_decision: 'molde_redesign',
       rationale:
-        'EXCETO/INCORRETA PNI — isolate-board + compare glanceable (tokens lime); gesto portado da ética Adolescente.',
+        'EXCETO/INCORRETA PNI — hub INCORRETA+mito; NÃO ADIA; isolate-board + compare letras (Glance OS).',
     },
   ],
   'vias de administracao': [
