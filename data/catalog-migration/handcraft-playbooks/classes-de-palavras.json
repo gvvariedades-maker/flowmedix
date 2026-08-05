@@ -52,10 +52,10 @@
       "id": "pt_classes_conjuncao",
       "when": "Conjunção coordenativa/subordinativa; valor semântico do conectivo como CLASSE (adversativa, causal, concessiva, conclusiva, proporcional, condicional); reescrita mas→porém; oposição Todavia/Entretanto",
       "gesture": "CLASSIFICAR (+ PEGADINHA valor semântico)",
-      "mold": "morphological · reference_table · tap · compare",
+      "mold": "grid · reference_table · pt-classes-classify-board · compare",
       "l3_decision": "ok_generico",
-      "ok_generico_3_3": "~30% do card; morphological + rows (conectivo × valor) + tap + compare; Glance OS = board 0 taps (gap wrap/polish genérico G2)",
-      "mold_gap": "wrap_polish_g2 — preferir 0 taps; não forçar pt-period-rail se a prova pede só CLASSE do conectivo",
+      "ok_generico_3_3": "~30% do card; grid/PillarDeck colorido + rows com emphasis + classify-board 0 taps + compare reveal auto; copy PT",
+      "mold_gap": "classify-board + grid shipped; não forçar pt-period-rail se a prova pede só CLASSE do conectivo",
       "anchors_target": 2,
       "ancoras_100_status": "in_progress",
       "anchors": [
@@ -70,7 +70,7 @@
             "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
             "fcc-tec-classes-considere-o-texto-abaixo-para-respon-3908393"
           ],
-          "note": "Fase 1 polish 2026-08-05 — anti-spoiler concept_map/golden_rule; aguarda aprovação humana",
+          "note": "Fase 1 polish Glance: board 0 taps + danger 3 itens + shell PT; aguarda aprovação humana",
           "anchor_slug": "questao-premium-vunesp-portugues-classes-conjuncao-causal",
           "catalog_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
           "ready_at": "2026-08-05",

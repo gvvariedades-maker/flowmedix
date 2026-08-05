@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Equivalências e fórmulas de cálculo — padrão brasileiro de prova técnica.
- * Referência: COFEN (administração de medicamentos) + prática consagrada em bancas.
+ * Referências: prática consagrada (equipos 20/60) · Anvisa Protocolo medicamentos ·
+ * ISMP-Brasil (KCl concentrado >40 mEq/L).
  */
 export const CALCULO_EQUIVALENCIAS_BR: GuidelineTable = {
   id: 'calc-equivalencias-br',
-  snapshot: 'Equivalências gts/mL e infusão — padrão BR',
-  issuer: 'COFEN / referência técnica enfermagem',
+  snapshot: 'Equivalências gts/mL + KCl ISMP/Anvisa — padrão BR',
+  issuer: 'COFEN / Anvisa / ISMP-Brasil',
   title: 'Cálculo de administração de medicamentos e infusões',
-  year: 2021,
-  url: 'https://www.cofen.gov.br/',
+  year: 2024,
+  url: 'https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/publicacoes/protocolo-de-seguranca-na-prescricao-uso-e-administracao-de-medicamentos',
   entries: [
     {
       id: 'equiv-ml-gotas',
@@ -204,14 +205,16 @@ export const CALCULO_EQUIVALENCIAS_BR: GuidelineTable = {
       id: 'kcl-diluicao-max',
       label: 'KCl — diluição máxima periférica',
       value: 'máximo 40 mEq/L em veia periférica — acima disso, via central',
-      detail: 'Referência técnica de prova — concentração alta causa flebite e arritmia.',
+      detail:
+        'ISMP-Brasil: concentração >40 mEq/L (ou >0,3%) = KCl concentrado — alto risco fatal; Anvisa Protocolo medicamentos — eletrólitos concentrados fora da unidade.',
       sourceId: 'calc-equivalencias-br',
     },
     {
       id: 'kcl-velocidade-max',
       label: 'KCl — velocidade máxima de infusão',
       value: 'máximo 10–20 mEq/h em adulto — nunca em bolus',
-      detail: 'Monitorar ECG e níveis séricos — diluir antes de infundir.',
+      detail:
+        'Protocolos de segurança (ISMP/institucionais): sem bolus; monitorar ECG e K sérico; bomba de infusão.',
       sourceId: 'calc-equivalencias-br',
     },
     {

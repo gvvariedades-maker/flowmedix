@@ -2,15 +2,15 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * História da enfermagem e marcos regulatórios brasileiros.
- * Fonte: COFEN — Código de Ética e historiografia clássica.
+ * Fontes: COFEN (escolas, Anna Nery, Dia Internacional) · Lei 7.498/86 · Decreto 94.406/87 · CEPE 564/2017.
  */
 export const HISTORIA_ENFERMAGEM_COFEN: GuidelineTable = {
   id: 'historia-enfermagem-cofen',
-  snapshot: 'Nightingale, COFEN e ética profissional',
-  issuer: 'COFEN',
+  snapshot: 'Nightingale · Anna Nery · escolas COFEN · Lei 7.498',
+  issuer: 'COFEN / Planalto',
   title: 'História da Enfermagem',
   year: 2024,
-  url: 'https://www.cofen.gov.br/',
+  url: 'https://www.cofen.gov.br/raizes-historicas-da-profissao-primeiras-escolas-de-enfermagem-no-brasil/',
   entries: [
     {
       id: 'nightingale',
@@ -35,8 +35,9 @@ export const HISTORIA_ENFERMAGEM_COFEN: GuidelineTable = {
     },
     {
       id: 'codigo-etica',
-      label: 'Código de Ética',
-      value: 'norma do COFEN que orienta conduta da categoria',
+      label: 'Código de Ética (CEPE)',
+      value: 'Resolução COFEN nº 564/2017',
+      detail: 'Orienta direitos, deveres e proibições da enfermagem — vigente no Sistema COFEN/Conselhos Regionais.',
       sourceId: 'historia-enfermagem-cofen',
     },
     {
@@ -54,16 +55,26 @@ export const HISTORIA_ENFERMAGEM_COFEN: GuidelineTable = {
     },
     {
       id: 'eulalia-paiva-queiroz',
-      label: 'Eulália Paiva de Queiroz',
-      value: 'pioneira da enfermagem brasileira — Escola Anna Nery (RJ)',
-      detail: 'Primeira escola de enfermagem do Brasil (1890); formou gerações de enfermeiras profissionais.',
+      label: 'Primeiras escolas — pegadinha de prova',
+      value: 'não confundir Alfredo Pinto (1890) com Escola Anna Nery (1923)',
+      detail:
+        'COFEN: 1ª escola = Escola Profissional/Alfredo Pinto (1890). Anna Nery = 1ª escola modelo Nightingale/ANA (1923). exam_vs_current: algumas provas atribuem “Eulália Paiva / 1890” à Anna Nery — erro factual.',
       sourceId: 'historia-enfermagem-cofen',
     },
     {
       id: 'ana-neri',
-      label: 'Ana Néri',
-      value: 'heroína da Guerra do Paraguai — símbolo da enfermagem no Brasil',
-      detail: 'Voluntária que cuidou de feridos; não foi a primeira enfermeira diplomada, mas marco histórico nacional.',
+      label: 'Anna Nery (Ana Néri)',
+      value: 'voluntária da Guerra do Paraguai (1865–1870) — símbolo da enfermagem no Brasil',
+      detail:
+        'COFEN: nascida 13/12/1814 (BA), falecida 20/05/1880 (RJ); heroína da Pátria (2009). Não foi a primeira enfermeira diplomada.',
+      sourceId: 'historia-enfermagem-cofen',
+    },
+    {
+      id: 'escola-alfredo-pinto',
+      label: 'Escola Alfredo Pinto',
+      value: 'primeira escola de enfermagem do Brasil (1890, RJ)',
+      detail:
+        'COFEN: Escola Profissional de Enfermeiros e Enfermeiras (Dec. 791/1890), Hospital Nacional de Alienados — modelo francês; hoje EEAP/UNIRIO.',
       sourceId: 'historia-enfermagem-cofen',
     },
     {
@@ -97,14 +108,24 @@ export const HISTORIA_ENFERMAGEM_COFEN: GuidelineTable = {
     {
       id: 'escola-anna-nery',
       label: 'Escola Anna Nery',
-      value: 'primeira escola de enfermagem do Brasil (1890, Rio de Janeiro)',
-      detail: 'Fundada por Eulália Paiva de Queiroz — marco da profissionalização nacional.',
+      value: 'fundada em 1923 (DNSP/RJ) — primeira escola modelo Nightingale/ANA no Brasil',
+      detail:
+        'COFEN/SciELO: Escola de Enfermeiras do DNSP (1923), homenagem a Anna Nery; padrão Rockefeller — distinta da Alfredo Pinto (1890).',
       sourceId: 'historia-enfermagem-cofen',
     },
     {
       id: 'pegadinha-ana-eulalia',
       label: 'Pegadinha pioneiras',
-      value: 'Ana Néri é símbolo histórico; Eulália Paiva fundou a primeira escola formal',
+      value: 'Anna Nery = símbolo da Guerra do Paraguai; 1ª escola formal = Alfredo Pinto (1890)',
+      detail: 'Escola Anna Nery (1923) é a 1ª no modelo científico moderno — não a primeira escola do país.',
+      sourceId: 'historia-enfermagem-cofen',
+    },
+    {
+      id: 'dia-enfermeiro-brasil-20-maio',
+      label: 'Dia do Enfermeiro (Brasil)',
+      value: '20 de maio — homenagem a Anna Nery (data de falecimento)',
+      detail:
+        'COFEN celebra 20/05; Dia Internacional permanece 12/05 (Nightingale). exam_vs_current: Dec. 2.956/1938 fixou 12/05 com homenagens a Anna Nery.',
       sourceId: 'historia-enfermagem-cofen',
     },
     {
@@ -166,8 +187,9 @@ export const HISTORIA_ENFERMAGEM_COFEN: GuidelineTable = {
     {
       id: 'hepatite-b-sinan-epidemiologia',
       label: 'Hepatite B — Sinan (MS)',
-      value: '36,8% das hepatites virais confirmadas entre 2000 e 2023',
-      detail: 'Segunda maior causa de óbito entre hepatites virais (21,7% dos óbitos 2000–2022) — Boletim Epidemiológico MS.',
+      value: '36,8% das hepatites virais confirmadas (2000–2023)',
+      detail:
+        'Boletim Epidemiológico Hepatites Virais MS (jul/2024): 289.029/785.571. Série 2000–2024 (boletim 2025): ~36,6% — exam_vs_current se prova citar percentual arredondado.',
       sourceId: 'historia-enfermagem-cofen',
     },
   ],

@@ -93,9 +93,10 @@ export const HISTORIA_CLAIM_WHITELIST: readonly HistoriaWhitelistClaim[] = [
     axis: 'pioneiras',
     match:
       /eul[aá]lia|escola\s+anna\s+nery|primeira\s+escola.{0,30}enferm/i,
-    canonical: 'Eulália Paiva / Escola Anna Nery — primeira escola formal (1890)',
+    canonical:
+      '1ª escola formal = Alfredo Pinto (1890); Escola Anna Nery = 1923 (modelo Nightingale) — não confundir',
     guidelineEntryId: 'escola-anna-nery',
-    groundsNumeric: false,
+    groundsNumeric: true,
   },
   {
     id: 'lei-7498',

@@ -29,9 +29,14 @@ export function getCompareCorrectColumnTitle(label: string, correctText: string)
 }
 
 /** Rótulo da face verde no compare — distrator ≠ gabarito (evita "Resposta correta" em pegadinha). */
-export function getCompareBackFaceLabel(label: string, correctText: string): string {
+export function getCompareBackFaceLabel(
+  label: string,
+  correctText: string,
+  /** Default clínico TE; PT / Conhecimentos Básicos usa "Resposta certa". */
+  backFaceDefault: string = 'Conduta certa na prova',
+): string {
   const backTitle = getCompareCorrectColumnTitle(label, correctText);
   if (backTitle === 'Resposta certa') return 'Resposta certa';
   if (/gabarito/i.test(label.trim())) return 'Resposta certa';
-  return 'Conduta certa na prova';
+  return backFaceDefault;
 }

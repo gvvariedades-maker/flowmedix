@@ -14,7 +14,7 @@
     "anchor_role": "golden_anchor",
     "content_review": {
       "reviewed_at": "2026-08-05",
-      "reviewer": "ancoras-100:classes-de-palavras/conjuncao-causal",
+      "reviewer": "ancoras-100:classes-de-palavras/conjuncao-causal-glance",
       "guideline_snapshot": "M02 Elias — «O que a palavra faz na oração?» · conjunção causal (já que / pois / visto que) × adversativa × condicional",
       "exam_vs_current": "none",
       "catalog_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325"
@@ -86,7 +86,7 @@
     {
       "type": "concept_map",
       "slide_title": "Lacuna — valor da conjunção",
-      "chip_label": "M02 — conjunção",
+      "chip_label": "Peças · conjunção",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
@@ -104,17 +104,12 @@
         },
         {
           "label": "Pista no trecho",
-          "detail": "«por ser beneficente» — motivo de ir ao show neste final de semana.",
+          "detail": "«por ser beneficente» — motivo da professora ir ao show neste final de semana.",
           "icon": "Search"
         },
         {
-          "label": "Lacuna",
-          "detail": "Peça que a professora usaria entre as duas orações do relato.",
-          "icon": "TextCursorInput"
-        },
-        {
           "label": "Famílias em disputa",
-          "detail": "Causal/explicativa × adversativa × condicional × concessiva.",
+          "detail": "Causal × adversativa × condicional × concessiva.",
           "icon": "GitBranch"
         },
         {
@@ -127,22 +122,22 @@
     },
     {
       "type": "logic_flow",
-      "reveal_mode": "tap",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
       "steps": [
-        "Comando: preencher a lacuna entre as duas orações da professora.",
-        "Ler a pista: «por ser beneficente» = MOTIVO da ida → relação causal/explicativa.",
-        "A «contanto que» = condição («desde que») — eliminar.",
-        "B «contudo» e E «porém» = oposição — eliminar.",
+        "Comando: preencher a lacuna no relato da professora entre as duas orações.",
+        "Pista no trecho: «por ser beneficente» = MOTIVO da ida ao show → relação causal/explicativa.",
+        "A «contanto que» = condição — eliminar. B/E «contudo/porém» = oposição — eliminar.",
         "D «conquanto» = concessão («embora») — eliminar.",
-        "C «já que» = pois / visto que — encaixa a justificativa.",
-        "Gabarito C — já que.",
-        "Em similares: se a 2ª oração explica o motivo, teste «pois / já que / visto que»."
+        "Gabarito C — «já que» (pois / visto que) fecha o motivo beneficente.",
+        "Em similares: 2ª oração explica motivo → teste pois / já que / visto que."
       ],
-      "footer_rule": "C — já que (causa)."
+      "footer_rule": "C — já que (causa).",
+      "slide_title": "Eliminar valor errado",
+      "chip_label": "Classes · conjunção",
+      "reveal_mode": "tap"
     },
     {
       "type": "golden_rule",
@@ -154,26 +149,34 @@
       "rows": [
         {
           "label": "Causais",
-          "value": "porque, pois, já que, visto que, uma vez que."
+          "value": "porque, pois, já que, visto que, uma vez que.",
+          "emphasis": "success"
         },
         {
           "label": "Adversativas",
-          "value": "mas, porém, contudo, todavia."
+          "value": "mas, porém, contudo, todavia.",
+          "emphasis": "alert"
         },
         {
           "label": "Condicionais",
-          "value": "contanto que, desde que, se."
+          "value": "contanto que, desde que, se.",
+          "emphasis": "highlight"
         },
         {
           "label": "Concessivas",
-          "value": "embora, conquanto, ainda que."
+          "value": "embora, conquanto, ainda que.",
+          "emphasis": "default"
         },
         {
           "label": "Nesta prova",
-          "value": "Motivo («beneficente») → peça da família causal."
+          "value": "Motivo beneficente no relato da professora → peça da família causal.",
+          "emphasis": "highlight",
+          "badge": "hot"
         }
       ],
-      "footer_rule": "Explica motivo → conjunção causal."
+      "footer_rule": "Explica motivo → conjunção causal.",
+      "slide_title": "Famílias do conectivo",
+      "chip_label": "Tabela de bolso"
     },
     {
       "type": "danger_zone",
@@ -182,35 +185,28 @@
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
-      "content": "Cada distrator erra o sentido",
+      "content": "Oposição e condição roubam a lacuna causal",
       "items": [
         {
           "label": "A — contanto que",
-          "detail": "Exige condição para validar a ação.",
-          "correct": "Não é «desde que» — o motivo já está dado (beneficente)."
+          "detail": "Exige condição («desde que») para validar a ida ao show.",
+          "correct": "O motivo beneficente já está dado — peça causal, não condicional."
         },
         {
-          "label": "B — contudo",
-          "detail": "Contrasta com a primeira oração.",
-          "correct": "Não há oposição — há explicação do motivo."
-        },
-        {
-          "label": "D — conquanto",
-          "detail": "Concessiva — «embora».",
-          "correct": "A professora não admite obstáculo — justifica a ida."
-        },
-        {
-          "label": "E — porém",
-          "detail": "Mesma função adversativa de B.",
-          "correct": "Relação é de causa, não de contraste."
+          "label": "B/E — contudo / porém",
+          "detail": "Contrastam com a 1ª oração (adversativas).",
+          "correct": "No relato da professora não há oposição — a 2ª oração explica o motivo."
         },
         {
           "label": "Em outra banca…",
-          "detail": "Trocam «beneficente» por «em sua cidade».",
+          "detail": "Trocariam «beneficente» por «em sua cidade».",
           "correct": "Mesmo trilho: 2ª oração explica → peça causal (já que / pois)."
         }
       ],
-      "footer_rule": "Só a peça causal fecha a lacuna."
+      "footer_rule": "Só a peça causal fecha a lacuna.",
+      "slide_title": "Armadilhas do conectivo",
+      "chip_label": "Pegadinhas",
+      "reveal_mode": "auto"
     }
   ]
 }

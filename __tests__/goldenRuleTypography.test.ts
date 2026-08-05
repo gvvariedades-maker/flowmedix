@@ -44,6 +44,12 @@ describe('goldenRuleTypography', () => {
       'Resposta certa',
     );
   });
+
+  it('compare back face: PT pode forçar Resposta certa no default', () => {
+    expect(
+      getCompareBackFaceLabel('A — contanto que', 'Peça causal, não condicional.', 'Resposta certa'),
+    ).toBe('Resposta certa');
+  });
 });
 
 describe('logicFlowStepStyles', () => {

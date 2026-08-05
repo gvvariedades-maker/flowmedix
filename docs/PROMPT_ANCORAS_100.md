@@ -37,6 +37,7 @@ Ou forma longa:
 
 ```text
 @docs/PROMPT_ANCORAS_100.md
+@docs/ANCHOR_CHECKLIST_100.md
 @docs/GOLDEN_CONTENT_STANDARD.md
 @docs/GOLDEN_HANDCRAFT_MODEL.md
 @docs/NEUROSLIDES_VISUAL_BAR.md
@@ -78,6 +79,7 @@ Contexto: AVANT pré-venda — qualidade da base > velocidade de lote. NÃO esca
 
 Anexos:
 @docs/PROMPT_ANCORAS_100.md
+@docs/ANCHOR_CHECKLIST_100.md
 @docs/GOLDEN_CONTENT_STANDARD.md
 @docs/GOLDEN_HANDCRAFT_MODEL.md
 @docs/NEUROSLIDES_VISUAL_BAR.md
@@ -113,7 +115,9 @@ NÃO FAZER:
 - Commit/push sem pedido explícito
 - Editar âncora antes do playbook/mapa estarem OK
 - Próximo subtópico nesta conversa
-- Declarar 100% sem aprovação humana do preview
+- Declarar 100% sem `audit:anchor-100` com approval.status=pass
+- Writer auto-assinar no mesmo turno sem `--sign-agent` / artefato
+- Pular humano quando verdict=human_required (risco alto)
 
 ---
 
@@ -164,20 +168,29 @@ B) Polish âncora (golden-anchor-handcraft + professor + json-template):
    - danger_zone: correct único; cobertura distratores; ≥1 transferência
    - sources A/B; exam_vs_current se necessário
    - SEM template/layout_variant salvo override
-C) Gates:
-   npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]
+C) Gates (checklist executável — Writer ≠ assinatura):
+   npm run audit:anchor-100 -- --file=<path>
+   → gates_pass + artefato artifacts/anchor-checklist/<slug>.json
+   (equivale READY strict-v2 + spoiler + DZ + densidade; ver docs/ANCHOR_CHECKLIST_100.md)
 D) Visual:
    http://localhost:3000/dev/slide-mold-review?branch=<branch_id>
    Checklist NEUROSLIDES_VISUAL_BAR; Glance OS preferir 0 taps
-E) Atualizar visual-anchors + playbook
-F) PARAR: “Aprovar âncora <branch_id>? Preview: <url>”
-   Avançar só após eu escrever aprovado / ok / pode seguir
+   Fechar 100%: npm run audit:anchor-100 -- --file=<path> --require-visual
+E) Revisor B (turno separado se teach_once/gesture duvidosos):
+   --reviewer-file=artifacts/anchor-reviewer-b-<slug>.json
+F) Assinatura (não declarar “aprovado” só no chat):
+   - risk baixo/médio + agent_may_sign:
+     npm run audit:anchor-100 -- --file=<path> --sign-agent --write-meta
+   - risk alto / human_required:
+     PARAR → humano: --sign-human=<Nome> --write-meta
+   Avançar próximo ramo só com approval.status=pass
+G) Atualizar visual-anchors + playbook
 
 ---
 
 FASE 2 — Fechamento do subtópico
 
-Só quando TODAS as âncoras tiverem aprovado_humano:
+Só quando TODAS as âncoras tiverem `anchor_100_approval.status=pass` (agent ou humano):
 
 1. Tabela final | branch | path | READY | visual_bar | aprovado_humano | spoiler_livre |
 2. artifacts/<pacote_prefix>-ancoras-100-report.md (ou INDEX do pacote)
@@ -188,18 +201,21 @@ Só quando TODAS as âncoras tiverem aprovado_humano:
 
 DoD âncora
 □ Playbook/gesto do ramo OK (Fase 0a)
-□ [READY] strict-v2-pedagogy
+□ `audit:anchor-100` gates_pass (READY + spoiler + DZ + densidade)
 □ Sem spoiler letra em concept_map e golden_rule
-□ Gesto = molde do ramo; preview ≥ piso G2
+□ Gesto = molde do ramo; preview ≥ piso G2 (`--require-visual` ao fechar)
 □ visual-anchors + playbook
-□ Aprovação humana explícita
+□ `meta.anchor_100_approval.status=pass` (ou artefato assinado)
+  — agent se risco baixo/médio; humano se risco alto
 
 DoD subtópico
-□ Todas as âncoras aprovadas
+□ Todas as âncoras com approval.status=pass
 □ Report/INDEX atualizado
 □ Próximo passo sugerido em NOVA conversa (Handcraft g01 ou Fábrica visual)
 
 Começar: FASE 0a (playbook + mapa). Não editar âncora antes da tabela de ramos.
+
+Contrato de aprovação: [`ANCHOR_CHECKLIST_100.md`](ANCHOR_CHECKLIST_100.md)
 ```
 
 ---

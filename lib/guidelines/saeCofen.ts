@@ -1,41 +1,47 @@
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
- * Sistematização da Assistência de Enfermagem (SAE).
- * Fonte: Resolução COFEN nº 358/2009 + Lei 7.498/86.
+ * Processo de Enfermagem (PE) / SAE.
+ * Fonte vigente: Resolução COFEN nº 736/2024 (revoga a 358/2009) + Lei 7.498/86.
+ * ID da tabela mantido (`sae-cofen-358`) por estabilidade de sourceId nos goldens.
+ * @see https://www.cofen.gov.br/resolucao-cofen-no-736-de-17-de-janeiro-de-2024/
  */
 export const SAE_COFEN_358: GuidelineTable = {
   id: 'sae-cofen-358',
-  snapshot: 'SAE — etapas e registros (COFEN 358/2009)',
+  snapshot: 'Processo de Enfermagem — COFEN 736/2024 (revoga 358/2009)',
   issuer: 'COFEN',
   title: 'Processo de Enfermagem e SAE',
-  year: 2009,
-  url: 'https://www.cofen.gov.br/',
+  year: 2024,
+  url: 'https://www.cofen.gov.br/resolucao-cofen-no-736-de-17-de-janeiro-de-2024/',
   entries: [
     {
       id: 'sae-etapas',
       label: 'Etapas do Processo de Enfermagem',
-      value: 'coleta de dados → diagnóstico → planejamento → implementação → avaliação',
+      value: 'avaliação → diagnóstico → planejamento → implementação → evolução',
+      detail:
+        'Res. COFEN 736/2024: 5 etapas cíclicas. Nomenclatura antiga (coleta/avaliação final) pode aparecer em provas — exam_vs_current.',
       sourceId: 'sae-cofen-358',
     },
     {
       id: 'sae-privativa-diagnostico',
       label: 'Privativa do enfermeiro',
-      value: 'diagnóstico de enfermagem + evolução ou avaliação de enfermagem',
-      detail: 'Lei 7.498/86, Art. 11; Res. COFEN 358/2009.',
+      value: 'diagnóstico de enfermagem + prescrição de enfermagem',
+      detail:
+        'Res. COFEN 736/2024 Art. 6º + Lei 7.498/86. TE participa com anotações, implementação e checagem sob supervisão.',
       sourceId: 'sae-cofen-358',
     },
     {
       id: 'sae-anotacao',
       label: 'Anotação de enfermagem',
       value: 'registro das ações executadas pela equipe de enfermagem',
-      detail: 'Não confundir com diagnóstico ou evolução.',
+      detail: '736/2024: TE/auxiliar — anotação + checagem da prescrição; não diagnóstico nem evolução.',
       sourceId: 'sae-cofen-358',
     },
     {
       id: 'sae-tecnico-registro',
       label: 'Técnico / auxiliar',
-      value: 'registra cuidados executados — não registra diagnóstico nem evolução',
+      value: 'anotação, implementação dos cuidados prescritos e checagem — sob supervisão',
+      detail: 'Não registra diagnóstico nem evolução (736/2024 Art. 7º).',
       sourceId: 'sae-cofen-358',
     },
     {
@@ -95,9 +101,10 @@ export const SAE_COFEN_358: GuidelineTable = {
     },
     {
       id: 'sae-coleta-dados',
-      label: 'Coleta de dados (anamnese)',
-      value: 'história de saúde, exame físico e dados complementares',
-      detail: 'Primeira etapa — enfermeiro, técnico e auxiliar participam conforme competência.',
+      label: 'Avaliação de Enfermagem (etapa 1)',
+      value: 'história de saúde, exame físico e dados complementares — contínua',
+      detail:
+        '736/2024: etapa inicial chamada Avaliação (substitui “coleta de dados” da 358). Enfermeiro conduz; TE colabora conforme competência.',
       sourceId: 'sae-cofen-358',
     },
     {
@@ -123,23 +130,24 @@ export const SAE_COFEN_358: GuidelineTable = {
     },
     {
       id: 'sae-avaliacao-resultado',
-      label: 'Avaliação do resultado',
-      value: 'comparar achados atuais com metas (NOC) — evolução de enfermagem',
-      detail: 'Última etapa — privativa do enfermeiro; decide continuar, modificar ou encerrar o plano.',
+      label: 'Evolução de Enfermagem (etapa 5)',
+      value: 'comparar achados atuais com metas (NOC) — revisão do PE',
+      detail:
+        '736/2024: etapa final = Evolução. Enfermeiro registra todas as etapas; decide continuar, modificar ou encerrar o plano.',
       sourceId: 'sae-cofen-358',
     },
     {
       id: 'sae-cinco-etapas',
-      label: 'SAE — 5 etapas integradas',
-      value: 'coleta → diagnóstico → planejamento → implementação → avaliação',
-      detail: 'Res. COFEN 358/2009 — processo cíclico e contínuo, não linear rígido.',
+      label: 'PE — 5 etapas integradas',
+      value: 'avaliação → diagnóstico → planejamento → implementação → evolução',
+      detail: 'Res. COFEN 736/2024 — processo cíclico e contínuo (revoga 358/2009).',
       sourceId: 'sae-cofen-358',
     },
     {
       id: 'sae-etapa1-coleta',
-      label: 'Etapa 1 — Coleta de dados',
+      label: 'Etapa 1 — Avaliação de Enfermagem',
       value: 'anamnese, exame físico de enfermagem, exames complementares e dados do prontuário',
-      detail: 'Base objetiva e subjetiva — enfermeiro conduz; técnico/auxiliar colabora na aferição e registro.',
+      detail: '736/2024: Avaliação (inicial e contínua). Enfermeiro conduz; TE colabora na aferição e anotação.',
       sourceId: 'sae-cofen-358',
     },
     {
@@ -165,23 +173,32 @@ export const SAE_COFEN_358: GuidelineTable = {
     },
     {
       id: 'sae-etapa5-avaliacao',
-      label: 'Etapa 5 — Avaliação',
-      value: 'comparar resultado atual com metas (NOC) — evolução de enfermagem',
-      detail: 'Privativa do enfermeiro; decide manter, modificar ou encerrar o plano de cuidados.',
+      label: 'Etapa 5 — Evolução de Enfermagem',
+      value: 'comparar resultado atual com metas (NOC) e revisar o PE',
+      detail: '736/2024: Evolução (antes “Avaliação”). Enfermeiro registra; TE não elabora evolução.',
       sourceId: 'sae-cofen-358',
     },
     {
       id: 'sae-privativa-lista',
-      label: 'Privativas do enfermeiro (Lei 7.498/86)',
-      value: 'diagnóstico de enfermagem + prescrição + evolução/avaliação de enfermagem',
-      detail: 'Art. 11 — técnico e auxiliar não realizam estas três atividades.',
+      label: 'Privativas do enfermeiro (Lei 7.498/86 + 736/2024)',
+      value: 'diagnóstico de enfermagem + prescrição de enfermagem',
+      detail:
+        '736/2024 Art. 6º. Enfermeiro registra todas as etapas do PE; TE: anotação, implementação e checagem.',
       sourceId: 'sae-cofen-358',
     },
     {
       id: 'sae-tecnico-anotacao',
       label: 'Técnico — anotação de enfermagem',
-      value: 'registra apenas cuidados executados por si — não diagnóstico, prescrição nem evolução',
-      detail: 'Res. COFEN 358/2009 — registro factual do que foi feito, com carimbo e assinatura.',
+      value: 'anotação + implementação + checagem — não diagnóstico, prescrição nem evolução',
+      detail: 'Res. COFEN 736/2024 Art. 7º — sob supervisão do enfermeiro; carimbo e assinatura.',
+      sourceId: 'sae-cofen-358',
+    },
+    {
+      id: 'sae-vs-pe-736',
+      label: 'SAE × Processo de Enfermagem',
+      value: 'PE = método de trabalho em 5 etapas; SAE organiza a assistência',
+      detail:
+        '736/2024 distingue conceitualmente SAE e PE — provas antigas tratam como sinônimos (exam_vs_current).',
       sourceId: 'sae-cofen-358',
     },
     {
@@ -237,7 +254,7 @@ export const SAE_COFEN_358: GuidelineTable = {
       id: 'sae-prontuario-carimbo',
       label: 'Prontuário — carimbo e assinatura',
       value: 'nome legível, carimbo com COREN e assinatura em todo registro firmado',
-      detail: 'Res. COFEN 358/2009 — identificação obrigatória; registro sem autoria é inválido.',
+      detail: 'Res. COFEN 736/2024 — identificação obrigatória; registro sem autoria é inválido.',
       sourceId: 'sae-cofen-358',
     },
     {

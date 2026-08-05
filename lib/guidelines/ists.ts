@@ -2,15 +2,17 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Prevenção e vigilância de ISTs.
- * Fonte: MS/SVS — PCDT e protocolos de prevenção combinada.
+ * Fontes: PCDT-IST (portal aids.gov.br) · PCDT PrEP Oral (Portaria SCTIE/MS 55/2024) ·
+ * PCDT PEP (Portaria SECTICS/MS 14/2024; anexo atualizado 2025).
+ * @see https://www.gov.br/aids/pt-br/central-de-conteudo/pcdts
  */
 export const ISTS_PREVENCAO_MS: GuidelineTable = {
   id: 'ists-prevencao-ms',
-  snapshot: 'IST — rotas de risco e prevenção MS',
-  issuer: 'Ministério da Saúde',
+  snapshot: 'PCDT-IST + PrEP Oral 55/2024 + PEP 14/2024',
+  issuer: 'Ministério da Saúde / CONITEC',
   title: 'Infecções sexualmente transmissíveis — prevenção',
-  year: 2022,
-  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/i/infeccoes-sexualmente-transmissiveis',
+  year: 2025,
+  url: 'https://www.gov.br/aids/pt-br/central-de-conteudo/pcdts',
   entries: [
     {
       id: 'ist-via-sexual',
@@ -49,8 +51,9 @@ export const ISTS_PREVENCAO_MS: GuidelineTable = {
     {
       id: 'ist-pep-janela',
       label: 'PEP HIV — janela',
-      value: 'até 72 horas',
-      detail: 'Profilaxia pós-exposição — quanto antes, melhor.',
+      value: 'até 72 horas após a exposição — duração 28 dias',
+      detail:
+        'PCDT PEP (Portaria SECTICS/MS 14/2024): urgência; sem benefício após 72 h. Quanto mais precoce, maior eficácia.',
       sourceId: 'ists-prevencao-ms',
     },
     {
@@ -180,9 +183,25 @@ export const ISTS_PREVENCAO_MS: GuidelineTable = {
     },
     {
       id: 'prep-hiv',
-      label: 'PrEP HIV',
-      value: 'profilaxia pré-exposição com antirretrovirais para populações de alto risco',
-      detail: 'Diferente da PEP (pós-exposição 72h); exige adesão, testagem prévia e acompanhamento — MS/SVS.',
+      label: 'PrEP HIV — oral',
+      value: '≥15 anos e ≥35 kg em contexto de vulnerabilidade — TDF/FTC',
+      detail:
+        'PCDT PrEP Oral (Portaria SCTIE/MS 55/2024): não restrita a populações-chave; testagem HIV negativa; diária ou sob demanda (elegíveis). Não substitui preservativo.',
+      sourceId: 'ists-prevencao-ms',
+    },
+    {
+      id: 'prep-sob-demanda',
+      label: 'PrEP oral sob demanda',
+      value: 'esquema 2+1+1 (TDF/FTC) para grupos elegíveis',
+      detail:
+        'PCDT 55/2024: 2 cp 2–24 h antes + 1 cp 24 h após + 1 cp 24 h depois; sexo <2×/semana e planejamento ≥2 h. Não para mulheres cis / uso de estradiol — nesses casos, PrEP diária.',
+      sourceId: 'ists-prevencao-ms',
+    },
+    {
+      id: 'prep-diaria-ataque',
+      label: 'PrEP oral diária — ataque',
+      value: '2 comprimidos TDF/FTC no 1º dia, depois 1/dia',
+      detail: 'PCDT PrEP Oral: modalidade diária para qualquer elegível ≥15 anos e ≥35 kg.',
       sourceId: 'ists-prevencao-ms',
     },
     {
@@ -216,8 +235,9 @@ export const ISTS_PREVENCAO_MS: GuidelineTable = {
     {
       id: 'pegadinha-pep-prep',
       label: 'Pegadinha PEP × PrEP',
-      value: 'PEP é pós-exposição (72h); PrEP é antes da exposição',
-      detail: 'Confundir janelas e indicações é pegadinha frequente — nenhuma substitui preservativo e testagem.',
+      value: 'PEP = pós (≤72h, 28 dias); PrEP = pré (≥15a, ≥35 kg)',
+      detail:
+        'Confundir janelas/modalidades é pegadinha frequente — nenhuma substitui preservativo e testagem (PCDT PEP 14/2024; PrEP 55/2024).',
       sourceId: 'ists-prevencao-ms',
     },
   ],

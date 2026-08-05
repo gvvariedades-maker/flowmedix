@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Sondagem nasogástrica, vesical e cuidados.
- * Fonte: COFEN / protocolos técnicos de enfermagem.
+ * Fonte: Anvisa Protocolo 3 — Prevenção de ITU-AC (2025) + técnica COFEN/prática TE.
+ * @see https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/publicacoes/Protocolo3PrevenodeITUFINAL.pdf
  */
 export const SONDAS_TECNICA_COFEN: GuidelineTable = {
   id: 'sondas-tecnica-cofen',
-  snapshot: 'SNG, SVD e manejo de sondas',
-  issuer: 'COFEN',
+  snapshot: 'SNG/SVD + Anvisa Protocolo ITU-AC 2025',
+  issuer: 'Anvisa / COFEN',
   title: 'Instalação e manejo de sondas',
-  year: 2020,
-  url: 'https://www.cofen.gov.br/',
+  year: 2025,
+  url: 'https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/publicacoes/Protocolo3PrevenodeITUFINAL.pdf',
   entries: [
     {
       id: 'sng-nex',
@@ -48,7 +49,17 @@ export const SONDAS_TECNICA_COFEN: GuidelineTable = {
     {
       id: 'svd-itu',
       label: 'Complicação mais frequente SVD',
-      value: 'infecção do trato urinário (ITU)',
+      value: 'ITU associada a cateter (ITU-AC)',
+      detail:
+        'Anvisa Protocolo 3 (2025): ITU-AC = infecção sintomática com CVD >2 dias consecutivos (D1 = instalação) ou removido no dia anterior.',
+      sourceId: 'sondas-tecnica-cofen',
+    },
+    {
+      id: 'svd-bundle-itu-ac-2025',
+      label: 'Bundle prevenção ITU-AC (Anvisa 2025)',
+      value: 'indicação justa · técnica asséptica · sistema fechado · bolsa abaixo · revisão diária para retirada',
+      detail:
+        'Protocolo Anvisa/EBSERH 2025 + NT 11/2025. Evitar CVD desnecessário; troca só por indicação/fabricante — não por rotina sem critério.',
       sourceId: 'sondas-tecnica-cofen',
     },
     {

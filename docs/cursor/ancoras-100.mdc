@@ -11,7 +11,8 @@ Quando a mensagem começar com **`Âncoras 100%:`** / **`Âncoras 100% premium:`
 
 - **1 subtópico = 1 conversa**
 - Objetivo: todas as âncoras de todos os ramos L3 em premium máximo (golden-v1 + Glance OS / barra G2)
-- **Aprovação humana âncora a âncora** (preview)
+- **Aprovação via gate** `npm run audit:anchor-100` (assinatura agent por risco; humano se alto)
+- Contrato: [`docs/ANCHOR_CHECKLIST_100.md`](docs/ANCHOR_CHECKLIST_100.md)
 - Pré-venda: **não** handcraft em massa / `gNN` / apply / `--promote` salvo pedido explícito
 
 Runbook: [`docs/PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md)
@@ -21,7 +22,7 @@ Runbook: [`docs/PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md)
 ```text
 Fase 0a — Playbook + mapa de gestos / L3  ★ ANTES de editar âncora
 Fase 0b — Inventário 1 âncora / ramo
-Fase 1  — Polish sequencial + gates + preview + “Aprovar?”
+Fase 1  — Polish + audit:anchor-100 + preview + --sign-agent|--sign-human
 Fase 2  — Report 100% do subtópico
 ```
 
@@ -32,7 +33,7 @@ Fase 2  — Report 100% do subtópico
 - `concept_map` / `golden_rule`: **sem** spoiler de letra / “Gabarito letra X”
 - `logic_flow`: eliminação + gabarito + fixação portátil
 - `danger_zone`: `correct` único + transferência
-- `audit:questao-readiness --strict-v2-pedagogy` → `[READY]`
+- `npm run audit:anchor-100 -- --file=…` → gates_pass; assinar com `--sign-agent` ou `--sign-human=`
 - Preview: `/dev/slide-mold-review?branch=<branch_id>`
 - Barra: [`docs/NEUROSLIDES_VISUAL_BAR.md`](docs/NEUROSLIDES_VISUAL_BAR.md)
 

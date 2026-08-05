@@ -33,6 +33,8 @@ interface LogicFlowProps {
   footerRule?: string;
   /** Override do chip interno (ex.: INSULINA · VIAS no molde via-vf-juggle-tap). */
   chipLabel?: string;
+  /** Override do eyebrow do FocusShell (PT → «Estratégia de prova»). */
+  focusEyebrow?: string;
 }
 
 /** Destaca a expressão "estudo reverso" (qualquer caixa) no texto do passo. */
@@ -121,6 +123,7 @@ export const LogicFlow = ({
   revealMode = 'auto',
   footerRule,
   chipLabel,
+  focusEyebrow,
 }: LogicFlowProps) => {
   const variant = layoutVariant || 'vertical';
 
@@ -176,6 +179,7 @@ export const LogicFlow = ({
         theme={theme}
         revealMode={revealMode}
         footerRule={footerRule}
+        eyebrow={focusEyebrow}
         accent="clinical"
         applyTapBudget
       />

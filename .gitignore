@@ -67,6 +67,8 @@ supabase/.temp/
 /*.png
 /artifacts/visual-mold-regression/
 /artifacts/questao-review/
+/artifacts/anchor-checklist/
+/artifacts/anchor-reviewer-b-*.json
 /artifacts/reclass/
 /artifacts/brand-maison-ae-v2/
 /artifacts/ai-generation/

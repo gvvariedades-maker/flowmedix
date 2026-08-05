@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Assistência perioperatória e centro cirúrgico.
- * Fontes: OMS (cirurgia segura), COFEN, Anvisa RDC CC.
+ * Fontes: MS/Anvisa Protocolo Cirurgia Segura (OMS); Anvisa Protocolo ISC + NT 03/2026;
+ * COFEN Parecer Normativo 1/2024 (porte/dimensionamento); COFEN 214/1998; COFEN 779/2025.
  */
 export const PERIOPERATORIO_CIRURGIA_SEGURA: GuidelineTable = {
   id: 'perioperatorio-cirurgia-segura',
-  snapshot: 'Cirurgia segura — checklist e SRPA',
-  issuer: 'OMS / COFEN',
+  snapshot: 'Cirurgia segura OMS/MS + ISC Anvisa 2026 + COFEN CC',
+  issuer: 'MS / Anvisa / OMS / COFEN',
   title: 'Assistência perioperatória e centro cirúrgico',
-  year: 2017,
-  url: 'https://www.cofen.gov.br/',
+  year: 2026,
+  url: 'https://www.gov.br/saude/pt-br/composicao/saes/seguranca-do-paciente/protocolos-de-seguranca-do-paciente/protocolo-cirurgia-segura.pdf',
   entries: [
     {
       id: 'cirurgia-segura-checklist',
@@ -95,8 +96,9 @@ export const PERIOPERATORIO_CIRURGIA_SEGURA: GuidelineTable = {
     {
       id: 'cirurgia-sign-out',
       label: 'Checklist — Sign Out',
-      value: 'antes de sair do centro cirúrgico',
-      detail: 'Contagem de compressas e instrumentos, rotulagem de peças e plano pós-operatório.',
+      value: 'antes de o paciente sair da sala de cirurgia',
+      detail:
+        'Protocolo MS/Anvisa/OMS — fase III: contagem de compressas/instrumentos, rotulagem de peças e plano pós-operatório.',
       sourceId: 'perioperatorio-cirurgia-segura',
     },
     {
@@ -186,22 +188,47 @@ export const PERIOPERATORIO_CIRURGIA_SEGURA: GuidelineTable = {
     {
       id: 'isc-surveillance-30d',
       label: 'ISC — vigilância temporal',
-      value: '30 dias após cirurgia (ou 1 ano com implante)',
-      detail: 'Infecção de sítio cirúrgico — janela de vigilância CDC/NHSN para classificação.',
+      value: '30 dias sem implante; até 90 dias com implante',
+      detail:
+        'Anvisa Protocolo ISC + NT GVIMS 03/2026 (e Caderno 2): superficial 30 d; profunda/órgão-cavidade 30 d ou 90 d se implante. exam_vs_current: provas antigas podem citar 1 ano (critério CDC legado).',
       sourceId: 'perioperatorio-cirurgia-segura',
     },
     {
       id: 'porte-cirurgico-iv',
-      label: 'Porte cirúrgico IV — ABC',
-      value: 'acima de 6 horas de duração',
-      detail: 'Classificação da Associação Brasileira de Cirurgia — maior porte/tempo.',
+      label: 'Porte cirúrgico IV',
+      value: 'duração superior a 6 horas',
+      detail: 'COFEN Parecer Normativo nº 1/2024 — Porte 4 > 6 h (dimensionamento de enfermagem no CC).',
       sourceId: 'perioperatorio-cirurgia-segura',
     },
     {
       id: 'porte-cirurgico-iii',
-      label: 'Porte cirúrgico III — referência',
-      value: 'a partir de 3 horas até 6 horas',
-      detail: 'Portes menores: 2 h e 3 h são distratores frente ao porte IV (>6 h).',
+      label: 'Porte cirúrgico III',
+      value: 'duração entre 4 e 6 horas',
+      detail:
+        'COFEN Parecer 1/2024: Porte 1 ≤2 h; Porte 2 entre 2 e 4 h; Porte 3 entre 4 e 6 h; Porte 4 >6 h. exam_vs_current: algumas provas usam faixas “3–6 h”.',
+      sourceId: 'perioperatorio-cirurgia-segura',
+    },
+    {
+      id: 'porte-cirurgico-i-ii',
+      label: 'Porte cirúrgico I e II',
+      value: 'Porte 1 até 2 h; Porte 2 entre 2 e 4 h',
+      detail: 'COFEN Parecer Normativo nº 1/2024 — horas de enfermagem por porte no CC.',
+      sourceId: 'perioperatorio-cirurgia-segura',
+    },
+    {
+      id: 'antibiotico-profilaxia-60min',
+      label: 'Antibioticoprofilaxia cirúrgica',
+      value: 'administrar em até 60 minutos antes da incisão',
+      detail:
+        'Anvisa Protocolo de prevenção de ISC — indicador de processo; ajustar janela conforme fármaco (ex. vancomicina).',
+      sourceId: 'perioperatorio-cirurgia-segura',
+    },
+    {
+      id: 'cofen-nao-ato-cirurgico',
+      label: 'Enfermagem — ato cirúrgico',
+      value: 'proibido executar ato cirúrgico ou atuar como auxiliar de cirurgia',
+      detail:
+        'Código de Ética COFEN 564/2017 art. 75; NT COFEN 2025 após revogação da Res. 280/2003 pela Res. 779/2025 — não autoriza atos cirúrgicos.',
       sourceId: 'perioperatorio-cirurgia-segura',
     },
     {

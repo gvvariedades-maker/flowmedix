@@ -65,6 +65,7 @@
     "pipeline:sdk-check": "tsx scripts/pipeline-sdk-check.ts",
     "anchor:brief": "tsx scripts/anchor-brief.ts",
     "audit:golden-anchor-gate": "tsx scripts/audit-golden-anchor-gate-cli.ts",
+    "audit:anchor-100": "tsx scripts/audit-anchor-100.ts",
     "catalog:program-status": "tsx scripts/catalog-program-status.ts",
     "classify:l3-matrix": "tsx scripts/classify-l3-priority-matrix.ts",
     "audit:l3-mold-gap": "tsx scripts/audit-l3-mold-gap.ts",

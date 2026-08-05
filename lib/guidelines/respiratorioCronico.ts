@@ -1,16 +1,17 @@
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
- * Asma e DPOC — PCDT MS / SBPT.
+ * Asma e DPOC — PCDT MS/CONITEC.
  * Complementa oxigenoterapia-dispositivos-ms para SpO₂ alvo.
+ * Fontes: PCDT DPOC (Portaria/Relatório CONITEC 2025) · PCDT Asma (Portaria SAES/SECTICS 32/2023; atualização 2026).
  */
 export const RESPIRATORIO_CRONICO_MS: GuidelineTable = {
   id: 'respiratorio-cronico-ms',
-  snapshot: 'Asma e DPOC — diferenciação e O₂',
-  issuer: 'Ministério da Saúde / SBPT',
+  snapshot: 'Asma PCDT + DPOC PCDT CONITEC 2025 — SpO₂ e O₂',
+  issuer: 'Ministério da Saúde / CONITEC',
   title: 'Doenças respiratórias crônicas (asma, DPOC)',
-  year: 2021,
-  url: 'https://www.gov.br/saude/',
+  year: 2025,
+  url: 'https://www.gov.br/conitec/pt-br/midias/protocolos/pcdt-da-doenca-pulmonar-obstrutiva-cronica',
   entries: [
     {
       id: 'asma-reversibilidade',
@@ -35,9 +36,34 @@ export const RESPIRATORIO_CRONICO_MS: GuidelineTable = {
     },
     {
       id: 'dpoc-spo2-alvo',
-      label: 'SpO₂ alvo DPOC retentor',
+      label: 'SpO₂ alvo DPOC retentor (exacerbação)',
       value: '88 a 92%',
-      detail: 'Não buscar 98–100% cegamente — risco de hipercapnia.',
+      detail:
+        'Titular O₂ para evitar hiperóxia/hipercapnia. PCDT DPOC: SpO₂ <92% em repouso → gasometria; LTOT se SpO₂ <88% (critérios abaixo).',
+      sourceId: 'respiratorio-cronico-ms',
+    },
+    {
+      id: 'dpoc-espirometria',
+      label: 'DPOC — diagnóstico',
+      value: 'espirometria com VEF₁/CVF < 0,70 pós-broncodilatador',
+      detail:
+        'PCDT DPOC/GOLD: confirma obstrução persistente; classificação por sintomas e risco de exacerbações.',
+      sourceId: 'respiratorio-cronico-ms',
+    },
+    {
+      id: 'dpoc-spo2-gasometria',
+      label: 'DPOC — SpO₂ e gasometria',
+      value: 'SpO₂ < 92% → indicar gasometria arterial',
+      detail:
+        'PCDT DPOC CONITEC 2025: oximetria na 1ª consulta e no seguimento; VEF₁ <50% — SpO₂ em todas as consultas.',
+      sourceId: 'respiratorio-cronico-ms',
+    },
+    {
+      id: 'dpoc-ltot-criterios',
+      label: 'Oxigenoterapia domiciliar contínua (LTOT)',
+      value: 'PaO₂ < 55 mmHg ou SpO₂ < 88% (≥15 h/dia)',
+      detail:
+        'PCDT DPOC: ou PaO₂ 55–60 / SpO₂ = 88% com hipertensão pulmonar, edema/ICC ou Ht >55%; alvo SpO₂ ≥90% no ajuste de fluxo.',
       sourceId: 'respiratorio-cronico-ms',
     },
     {

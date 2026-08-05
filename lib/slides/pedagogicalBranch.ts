@@ -189,7 +189,15 @@ export type PedagogicalBranchId =
   | 'pt_termos_oracao'
   | 'pt_termos_oracao_generico'
   | 'pt_concordancia'
-  | 'pt_concordancia_generico';
+  | 'pt_concordancia_generico'
+  // Língua Portuguesa — Classes de palavras (split L3)
+  | 'pt_classes_conjuncao'
+  | 'pt_classes_nominais'
+  | 'pt_classes_adverbio'
+  | 'pt_classes_preposicao'
+  | 'pt_classes_exceto'
+  | 'pt_classes_generico'
+  | 'pt_classes_palavras'
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -1117,6 +1125,35 @@ const URGENCIAS_EMERGENCY_GENERIC_MOLD: SubtopicDesign = {
 };
 
 // ---- Língua Portuguesa — Crase (pacote bespoke pt-crase-funnel) ----
+/**
+ * Classes de palavras — CLASSIFICAR (Glance OS).
+ * logicFlow `pt-classes-classify-board` = 0 taps (JSON mantém reveal_mode tap para gate).
+ */
+const PT_CLASSES_CLASSIFY_MOLD: SubtopicDesign = {
+  template: 'amber',
+  /** grid → PillarDeck com massa/cor (morphological legado = branco-no-branco). */
+  conceptMap: 'grid',
+  goldenRule: 'reference_table',
+  logicFlow: 'pt-classes-classify-board',
+  dangerZone: 'compare',
+};
+
+const PT_CLASSES_EXCETO_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'grid',
+  goldenRule: 'reference_table',
+  logicFlow: 'pt-classes-classify-board',
+  dangerZone: 'compare',
+};
+
+const PT_CLASSES_GENERIC_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'grid',
+  goldenRule: 'reference_table',
+  logicFlow: 'pt-classes-classify-board',
+  dangerZone: 'compare',
+};
+
 const PT_CRASE_MOLD: SubtopicDesign = {
   template: 'amber',
   conceptMap: 'pt-crase-funnel-deck',
@@ -1732,6 +1769,15 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     trabalho_nr15_reference: TRABALHO_NR15_MOLD,
     trabalho_ergonomia: TRABALHO_ERGONOMIA_MOLD,
     trabalho_generico: TRABALHO_GENERIC_MOLD,
+  },
+  'classes de palavras': {
+    pt_classes_conjuncao: PT_CLASSES_CLASSIFY_MOLD,
+    pt_classes_nominais: PT_CLASSES_CLASSIFY_MOLD,
+    pt_classes_adverbio: PT_CLASSES_CLASSIFY_MOLD,
+    pt_classes_preposicao: PT_CLASSES_CLASSIFY_MOLD,
+    pt_classes_exceto: PT_CLASSES_EXCETO_MOLD,
+    pt_classes_generico: PT_CLASSES_GENERIC_MOLD,
+    pt_classes_palavras: PT_CLASSES_GENERIC_MOLD,
   },
   crase: {
     pt_crase: PT_CRASE_MOLD,
@@ -3206,6 +3252,25 @@ function inferHistoriaBranch(corpus: string, familyId?: FamilyId): PedagogicalBr
   return 'historia_generico';
 }
 
+function inferClassesPalavrasBranch(corpus: string): PedagogicalBranchId {
+  if (/\b(exceto|incorret[oa]|valor\s+sem[aâ]ntico\s+incorreto)\b/i.test(corpus)) {
+    return 'pt_classes_exceto';
+  }
+  if (/\b(conjun[cç][aã]o|conectivo|adversativ|causal|concessiv|condicional|todavia|entretanto|j[aá]\s+que|contudo|por[eé]m)\b/i.test(corpus)) {
+    return 'pt_classes_conjuncao';
+  }
+  if (/\b(adv[eé]rbio|locu[cç][aã]o\s+adverbial|adv\s*[×x]\s*adj)\b/i.test(corpus)) {
+    return 'pt_classes_adverbio';
+  }
+  if (/\b(preposi[cç][aã]o|locu[cç][aã]o\s+prepositiva)\b/i.test(corpus)) {
+    return 'pt_classes_preposicao';
+  }
+  if (/\b(artigo|substantiv|adjektiv|adjetivo|numeral|substantiva[cç][aã]o)\b/i.test(corpus)) {
+    return 'pt_classes_nominais';
+  }
+  return 'pt_classes_generico';
+}
+
 function inferCraseBranch(corpus: string): PedagogicalBranchId {
   if (countPatternMatches(corpus, PT_CRASE_SIGNALS) >= 1) {
     return 'pt_crase';
@@ -3426,6 +3491,9 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('nocoes de anatomia') || mapKey === 'anatomia') {
     return inferAnatBranch(corpus);
+  }
+  if (mapKey.includes('classes de palavras')) {
+    return inferClassesPalavrasBranch(corpus);
   }
   if (
     mapKey.includes('crase') ||

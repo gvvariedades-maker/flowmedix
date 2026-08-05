@@ -348,6 +348,15 @@ const Dyn_adolescent_exceto_isolate_board = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pt_classes_classify_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/LogicFlowPtClassesClassifyBoard') as Promise<Record<string, unknown>>,
+      'LogicFlowPtClassesClassifyBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pni_exceto_isolate_board = dynamic(
   () =>
     loadNamedVariant(
@@ -457,6 +466,7 @@ export const LOGIC_FLOW_REGISTRY: Record<string, BespokeVariantEntry> = {
   'adolescent-vf-weave-tap': { Component: Dyn_adolescent_vf_weave_tap },
   'adolescent-exceto-isolate-tap': { Component: Dyn_adolescent_exceto_isolate_tap },
   'adolescent-exceto-isolate-board': { Component: Dyn_adolescent_exceto_isolate_board },
+  'pt-classes-classify-board': { Component: Dyn_pt_classes_classify_board },
   'pni-exceto-isolate-board': { Component: Dyn_pni_exceto_isolate_board },
   'pni-via-isolate-board': { Component: Dyn_pni_via_isolate_board },
   'adolescent-z-classify-tap': { Component: Dyn_adolescent_z_classify_tap },

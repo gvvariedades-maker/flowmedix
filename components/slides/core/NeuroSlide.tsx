@@ -20,6 +20,7 @@ import {
   normalizeLogicFlowSteps,
   normalizeReverseStudySlide,
 } from '@/lib/reverseStudySlidesNormalize';
+import { getSlideShellCopy } from '@/lib/slides/slideShellCopy';
 import { ReverseStudyShell } from './ReverseStudyShell';
 import { getSlideTypeBgClass, SLIDE_SHELL_CARD } from './slideSurface';
 import type { ReverseStudyShellContext } from '@/types/lesson';
@@ -76,6 +77,11 @@ export const NeuroSlideHub = ({
     bulletStyle: dangerBulletStyle,
     rows: goldenRows,
   } = resolveSlidePresentation(slide, presentationContext);
+
+  const shellCopy = getSlideShellCopy(
+    questionMeta?.subtopico ?? slide.meta?.subtopico,
+    questionMeta?.pedagogical_branch,
+  );
 
   // F1: 1ª consumação real do NeuroVisualPlan — polaridade fora de presentation.
   const dangerItemPolarities =
@@ -143,6 +149,7 @@ export const NeuroSlideHub = ({
           theme={theme}
           layoutVariant={layoutVariant}
           footerRule={slide.footer_rule}
+          eyebrow={shellCopy.goldenEyebrow}
         />
       );
     case 'danger_zone':
@@ -162,6 +169,7 @@ export const NeuroSlideHub = ({
           bulletStyle={dangerBulletStyle}
           compareRevealMode={dangerRevealMode}
           itemPolarities={dangerItemPolarities}
+          compareBackFaceDefault={shellCopy.compareBackFaceDefault}
         />
       );
     case 'logic_flow':
@@ -173,6 +181,7 @@ export const NeuroSlideHub = ({
           revealMode={logicRevealMode}
           footerRule={slide.footer_rule}
           chipLabel={slide.chip_label}
+          focusEyebrow={shellCopy.logicFocusEyebrow}
         />
       );
     case 'syllable_scanner':
@@ -385,6 +394,10 @@ export default function NeuroSlide({
       },
       presentationContext,
     );
+    const legacyShellCopy = getSlideShellCopy(
+      questionMeta?.subtopico ?? normalizedData.meta?.subtopico,
+      questionMeta?.pedagogical_branch,
+    );
     switch (normalizedData.layout_type) {
       case 'concept_map': {
         const concepts =
@@ -427,6 +440,7 @@ export default function NeuroSlide({
             theme={theme}
             layoutVariant={legacyPresentation.layoutVariant}
             footerRule={normalizedData.footer_rule}
+            eyebrow={legacyShellCopy.goldenEyebrow}
           />
         );
         break;
@@ -440,6 +454,7 @@ export default function NeuroSlide({
             footerRule={normalizedData.footer_rule}
             bulletStyle={legacyPresentation.bulletStyle}
             compareRevealMode={legacyPresentation.dangerRevealMode}
+            compareBackFaceDefault={legacyShellCopy.compareBackFaceDefault}
             itemPolarities={
               buildNeuroVisualPlanV0({
                 slide: {
@@ -471,6 +486,7 @@ export default function NeuroSlide({
             revealMode={legacyPresentation.revealMode}
             footerRule={normalizedData.footer_rule}
             chipLabel={normalizedData.chip_label}
+            focusEyebrow={legacyShellCopy.logicFocusEyebrow}
           />
         );
         break;

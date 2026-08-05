@@ -1,16 +1,18 @@
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
- * Suporte Básico de Vida / RCP — Protocolo SAMU 192 / MS (alinhado AHA/ILCOR 2020).
+ * Suporte Básico de Vida / RCP — Protocolo SAMU 192 / MS, alinhado AHA/ILCOR 2025.
+ * Números-núcleo (30:2, 100–120/min, 5–6 cm) reafirmados em 2025; engasgo e opioides atualizados.
  * Núcleo RCP·DEA·pediatria — ver URGENCIAS_PROTOCOLOS_EMERGENCIA para trauma/triagem/clínica.
- * Fonte: https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf
+ * Fontes: MS SAMU SBV · AHA Guidelines CPR/ECC 2025 (Circulation).
+ * @see https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines
  */
 export const URGENCIAS_RCP_SBV: GuidelineTable = {
   id: 'urgencias-rcp-sbv-ms',
-  snapshot: 'Protocolo SBV/RCP — MS SAMU 192 (AHA 2020)',
+  snapshot: 'Protocolo SBV/RCP — MS SAMU 192 + AHA/ILCOR 2025',
   issuer: 'Ministério da Saúde',
   title: 'Suporte Básico de Vida e RCP em adulto e pediátrico',
-  year: 2020,
+  year: 2025,
   url: 'https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf',
   entries: [
     {
@@ -97,8 +99,9 @@ export const URGENCIAS_RCP_SBV: GuidelineTable = {
     {
       id: 'engasgo-adulto-consciente',
       label: 'Engasgo adulto consciente',
-      value: 'Manobras abdominais (Heimlich) até expulsão ou inconsciência',
-      detail: '5 golpes interescapulares + 5 compressões torácicas se gestante ou obeso; em inconsciente, iniciar RCP.',
+      value: 'Tapas nas costas (interescapulares) primeiro; depois compressões abdominais até expulsão ou inconsciência',
+      detail:
+        'AHA 2025: iniciar com back blows, depois abdominal thrusts. Gestante/obeso: compressões torácicas. Inconsciente → RCP. Provas antigas podem cobrar só Heimlich — registrar exam_vs_current no golden.',
       sourceId: 'urgencias-rcp-sbv-ms',
     },
     {
@@ -238,7 +241,8 @@ export const URGENCIAS_RCP_SBV: GuidelineTable = {
       id: 'overdose-opioides-naloxona',
       label: 'Overdose de opioides',
       value: 'Naloxona (antídoto) + suporte ventilatório; acionar 192',
-      detail: 'Sinais: depressão respiratória, pupilas puntiformes, inconsciência. Efeito da naloxona pode ser mais curto que o opioide.',
+      detail:
+        'AHA 2025: naloxona entra no algoritmo BLS em suspeita de overdose (parada respiratória/cardíaca). Sinais: depressão respiratória, pupilas puntiformes. Efeito pode ser mais curto que o opioide — manter suporte.',
       sourceId: 'urgencias-rcp-sbv-ms',
     },
     {

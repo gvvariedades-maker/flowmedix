@@ -1,13 +1,16 @@
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
-/** Intervalos e regras PNI — builders de Imunização devem citar estas entradas. */
+/**
+ * Intervalos e regras PNI — builders de Imunização devem citar estas entradas.
+ * Snapshot alinhado à IN do Calendário Nacional 2026 (DPNI/MS); id estável `pni-2025-intervalos`.
+ */
 export const PNI_INTERVALOS_2025: GuidelineTable = {
   id: 'pni-2025-intervalos',
-  snapshot: 'PNI / Manual MS 2025',
+  snapshot: 'PNI / Manual MS + IN Calendário Nacional 2026',
   issuer: 'Ministério da Saúde',
   title: 'Manual de Normas e Procedimentos para Vacinação — intervalos',
-  year: 2025,
-  url: 'https://www.gov.br/saude/pt-br/vacinacao/calendario',
+  year: 2026,
+  url: 'https://www.gov.br/saude/pt-br/composicao/svsa/pni/calendario-tecnico',
   entries: [
     {
       id: 'grace-period-4d',
@@ -26,6 +29,16 @@ export const PNI_INTERVALOS_2025: GuidelineTable = {
       id: 'vpc13-vpp23',
       label: 'VPC13 × VPP23',
       value: 'Não simultâneas; mín. 8 semanas; VPC13 primeiro; VPP23 antes → 1 ano para VPC13',
+      detail:
+        'IN 2026: VPC20 (pneumocócica 20-valente) passa a substituir VPP23 em grupos prioritários (ex.: ≥60 anos acamados/institucionalizados sem histórico; indígenas ≥5 anos sem conjugada). Ver entry vpc20-transicao.',
+      sourceId: 'pni-2025-intervalos',
+    },
+    {
+      id: 'vpc20-transicao',
+      label: 'VPC20 — transição (IN 2026)',
+      value: 'Dose única de VPC20 substitui esquema de 2 doses VPP23 nos grupos prioritários da IN',
+      detail:
+        'Se já tem 2 doses VPP23 → considerar vacinado. Se 1 dose VPP23 → completar com VPC20 respeitando intervalo mínimo. Sem histórico → dose única VPC20. Demais públicos: seguir calendário técnico vigente.',
       sourceId: 'pni-2025-intervalos',
     },
     {
@@ -244,8 +257,9 @@ export const PNI_INTERVALOS_2025: GuidelineTable = {
     {
       id: 'hpv-intervalo-5m',
       label: 'HPV — intervalo entre doses',
-      value: 'Esquema de 2 doses: mínimo 5 meses entre D1 e D2 (9–14 anos)',
-      detail: 'Esquema de 3 doses (≥15 anos): 0, 2 e 6 meses com mínimos de 4 semanas entre D1–D2 e 12 semanas entre D2–D3.',
+      value: 'Rotina CNV 2026: dose única 9–14 anos; multi-dose só em situações especiais',
+      detail:
+        'IN/Calendário Nacional 2026: rotina HPV4 = 1 dose. Intervalos de 2 ou 3 doses aplicam-se a esquemas legados/grupos especiais da IN — não à rotina atual.',
       sourceId: 'pni-2025-intervalos',
     },
     {

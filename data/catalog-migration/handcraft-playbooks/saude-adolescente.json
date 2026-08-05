@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "subtopico": "Saúde do Adolescente",
+  "pacote_prefix": "saude-adolescente",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-saude-adolescente-*.json",
+  "guideline": "lib/guidelines/saudeAdolescente.ts",
+  "handcraft_meta": "data/catalog-migration/saude-adolescente-completo/handcraft-meta.json",
+  "cluster_report": "artifacts/saude-adolescente-topic-cluster-report.json",
+  "l3_brief_pattern": "artifacts/l3-brief-saude-adolescente-<branch_id>.md",
+  "lote_pattern": "saude-adolescente-g{NN}",
+  "slug_selection": "16 slugs applied; ramos fortes: ética/sigilo, antropometria Z; cauda mental/violência/desenvolvimento/genérico; [READY] strict-v2; ou Slug: explícito",
+  "clusters": [
+    "EXCETO / diretrizes MS / promoção / bucal (6 · adolescente_generico)",
+    "Saúde mental / transtornos alimentares (3 · adolescente_saude_mental)",
+    "Gravidez / pré-natal / escuta e sigilo (2 · adolescente_etica_sigilo)",
+    "Violência sexual / rede de proteção (2 · adolescente_violencia_protecao)",
+    "Escore Z / Caderneta / obesidade (2 · adolescente_antropometria — só 1 com Z)",
+    "Puberdade / desenvolvimento (1 · adolescente_desenvolvimento)"
+  ],
+  "glance_os_ancoras_100": {
+    "started_at": "2026-08-05",
+    "mapa_gestos": "artifacts/glance-os-saude-adolescente-MAPA-8-GESTOS.md",
+    "default_clicks": 0,
+    "visual_bar": "docs/NEUROSLIDES_VISUAL_BAR.md",
+    "reference": "Farmacodinâmica Glance OS 3/3",
+    "branches_canonical": [
+      "adolescente_etica_sigilo",
+      "adolescente_antropometria",
+      "adolescente_violencia_protecao",
+      "adolescente_saude_mental",
+      "adolescente_desenvolvimento",
+      "adolescente_generico"
+    ],
+    "note": "Lista = e2e ADOLESCENTE_BRANCHES + visual-anchors. Onda 2 docs pedem glanceable nos 4 não-Z; BRANCH_DESIGN_MAP ainda GENERIC nesses 4.",
+    "policy": "A_conteudo_first_visual_after_mold_wrap",
+    "visual_bar_package": "pending_onda2_wrap_or_fabrica",
+    "mold_gap": {
+      "etica_v2": "ok_react",
+      "antropometria_z": "ok_react",
+      "onda2_glanceable_reuse": "docs_yes_code_generic — wrap BRANCH_DESIGN_MAP + ADOLESCENT_GLANCEABLE_BRANCHES antes de aprovar visual dos 4 ramos se preview < piso G2"
+    }
+  },
+  "pedagogical_branches": [
+    {
+      "id": "adolescente_etica_sigilo",
+      "when": "Escuta, sigilo, privacidade, gravidez na adolescência, pré-natal, autonomia progressiva, linguagem acessível",
+      "gesture": "VF / I-II-III + PROTOCOLO (sigilo ponderado) + EXCETO/PEGADINHA",
+      "mold": "adolescent-care-pillars-deck · adolescent-speak-barrier-board · adolescent-exceto-isolate-board · adolescent-exceto-compare",
+      "glance_os": "alvo 0 taps · pillars + speak-barrier + isolate-board + compare aberto",
+      "l3_brief": "artifacts/l3-brief-saude-adolescente-adolescente_etica_sigilo.md",
+      "l3_brief_v2": "artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md",
+      "l3_decision": "molde_redesign",
+      "anchor_style": "data/catalog-migration/saude-adolescente-g01/questions/idecan-enfermagem-saude-do-adolescente-1778712426701-6.json",
+      "anchors": [
+        "data/catalog-migration/saude-adolescente-g01/questions/idecan-enfermagem-saude-do-adolescente-1778712426701-6.json",
+        "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json"
+      ],
+      "ancora_100": {
+        "status": "pending_fase_0b",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_etica_sigilo",
+        "notes": "examples/gravidez-vf está em visual-anchors como generico — realinhar na Fase 1; golden com spoiler 'I correta'."
+      }
+    },
+    {
+      "id": "adolescente_antropometria",
+      "when": "Escore Z, Caderneta do Adolescente, classificação nutricional IMC/estatura, faixas ±1/±2/±3 DP",
+      "gesture": "TRILHO + NÚMERO + CLASSIFICAR",
+      "mold": "adolescent-growth-z-rail · adolescent-z-band-board · adolescent-z-classify-tap · adolescent-z-threshold-trap",
+      "glance_os": "alvo 0 taps · reta Z monoespaçada · trap 1 DP",
+      "l3_brief": "artifacts/l3-brief-saude-adolescente-adolescente_antropometria.md",
+      "l3_decision": "molde_inedito",
+      "anchor_style": "data/catalog-migration/saude-adolescente-g02/questions/ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0.json",
+      "anchors": [
+        "data/catalog-migration/saude-adolescente-g02/questions/ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0.json"
+      ],
+      "ancora_100": {
+        "status": "pending_fase_0b",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_antropometria",
+        "notes": "Cluster goldens_needed examples/…-escore-z.json; amauc obesidade sem Z NÃO usa este molde."
+      }
+    },
+    {
+      "id": "adolescente_violencia_protecao",
+      "when": "Violência sexual, rede de proteção, notificação compulsória, Conselho Tutelar, SINAN, não revitimizar",
+      "gesture": "PROTOCOLO + PEGADINHA",
+      "mold": "morphological · reference_table · vertical · compare (GENERIC hoje) — alvo Onda 2: glanceable v2",
+      "glance_os": "gap wrap → glanceable 0 taps OU genérico ≥ piso G2",
+      "l3_brief": "artifacts/l3-brief-saude-adolescente-adolescente_violencia_protecao.md",
+      "l3_decision": "ok_existente",
+      "anchor_style": "data/catalog-migration/saude-adolescente-g01/questions/funcern-enfermagem-saude-do-adolescente-1777104229064-1.json",
+      "anchors": [
+        "data/catalog-migration/saude-adolescente-g01/questions/funcern-enfermagem-saude-do-adolescente-1777104229064-1.json"
+      ],
+      "ancora_100": {
+        "status": "pending_fase_0b",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_violencia_protecao"
+      }
+    },
+    {
+      "id": "adolescente_saude_mental",
+      "when": "Anorexia, bulimia, transtorno alimentar, imagem corporal, autolesão, ideação suicida, depressão/ansiedade na adolescência",
+      "gesture": "PROTOCOLO + CLASSIFICAR risco + PEGADINHA",
+      "mold": "morphological · reference_table · vertical · compare (GENERIC hoje) — alvo Onda 2: glanceable v2",
+      "glance_os": "gap wrap → glanceable 0 taps OU genérico ≥ piso G2",
+      "l3_brief": "artifacts/l3-brief-saude-adolescente-adolescente_saude_mental.md",
+      "l3_decision": "ok_existente",
+      "anchor_style": "data/catalog-migration/saude-adolescente-g02/questions/cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1.json",
+      "anchors": [
+        "data/catalog-migration/saude-adolescente-g02/questions/cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1.json"
+      ],
+      "ancora_100": {
+        "status": "pending_fase_0b",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_saude_mental",
+        "notes": "Não forçar Z-rail sem escore Z."
+      }
+    },
+    {
+      "id": "adolescente_desenvolvimento",
+      "when": "Puberdade, Tanner, menarca, espermarquia, metamorfose física, atraso puberal",
+      "gesture": "CLASSIFICAR / NÚMERO (marcos) + PEGADINHA",
+      "mold": "morphological · reference_table · vertical · compare (GENERIC hoje) — alvo Onda 2: glanceable v2",
+      "glance_os": "gap wrap → glanceable; anti cortina/weave de sigilo",
+      "l3_brief": "artifacts/l3-brief-saude-adolescente-adolescente_desenvolvimento.md",
+      "l3_decision": "ok_existente",
+      "anchor_style": "data/catalog-migration/saude-adolescente-g02/questions/nao-informado-geral-saude-do-adolescente-1777104229064-0.json",
+      "anchors": [
+        "data/catalog-migration/saude-adolescente-g02/questions/nao-informado-geral-saude-do-adolescente-1777104229064-0.json"
+      ],
+      "ancora_100": {
+        "status": "pending_fase_0b",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_desenvolvimento"
+      }
+    },
+    {
+      "id": "adolescente_generico",
+      "when": "EXCETO/diretrizes MS, promoção, saúde bucal, conceito sem fit nos ramos temáticos",
+      "gesture": "EXCETO / VF / PEGADINHA (cauda)",
+      "mold": "morphological · reference_table · vertical · compare (GENERIC hoje) — alvo Onda 2: glanceable v2",
+      "glance_os": "gap wrap → glanceable OU genérico ≥ piso G2",
+      "l3_brief": "artifacts/l3-brief-saude-adolescente-adolescente_generico.md",
+      "l3_decision": "ok_existente",
+      "anchor_style": "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json",
+      "anchors": [
+        "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json"
+      ],
+      "ancora_100": {
+        "status": "pending_fase_0b",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_generico",
+        "notes": "Drift: âncora atual é gravidez/sigilo (ética). Preferir âncora EXCETO MS do g01/g02 na Fase 0b."
+      }
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=agent",
+    "a4_minimo": "npm run stamp:a4-minimo -- --lote=<lote>",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]",
+    "visual_regression": "npx playwright test e2e/visual-mold-regression.spec.ts --grep \"Saúde do Adolescente\""
+  },
+  "proibido": ["ai:generate", "catalog:upgrade-premium"]
+}

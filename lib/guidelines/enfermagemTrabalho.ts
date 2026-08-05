@@ -2,21 +2,24 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Enfermagem do Trabalho e segurança ocupacional em saúde.
- * Fonte: NR-32 (MTE) + protocolos MS de exposição a material biológico.
+ * Fonte: NR-32 consolidada (última Portaria MTP 4.219/2022; página MTE atualizada 2025)
+ * + protocolos MS de exposição a material biológico.
+ * @see https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/arquivos/normas-regulamentadoras/nr-32-atualizada-2022-1.pdf
  */
 export const ENFERMAGEM_TRABALHO_NR32: GuidelineTable = {
   id: 'enfermagem-trabalho-nr32',
-  snapshot: 'NR-32 — segurança em serviços de saúde',
-  issuer: 'Ministério do Trabalho / MS',
+  snapshot: 'NR-32 atualizada 2022 (MTE) — PGR, PCMSO, imunização',
+  issuer: 'Ministério do Trabalho e Emprego / MS',
   title: 'Enfermagem do Trabalho',
-  year: 2022,
+  year: 2025,
   url: 'https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadoras/norma-regulamentadora-no-32-nr-32',
   entries: [
     {
       id: 'nr32-escopo',
       label: 'NR-32',
       value: 'segurança e saúde em serviços de saúde',
-      detail: 'Riscos biológicos, químicos, físicos, ergonômicos e de acidentes.',
+      detail:
+        'Riscos biológicos, químicos, físicos, ergonômicos e de acidentes. Texto consolidado Portaria MTP 4.219/2022 (página MTE atualizada 2025).',
       sourceId: 'enfermagem-trabalho-nr32',
     },
     {
@@ -29,7 +32,17 @@ export const ENFERMAGEM_TRABALHO_NR32: GuidelineTable = {
     {
       id: 'vacina-hepatite-b',
       label: 'Vacina hepatite B',
-      value: 'estratégia de prevenção ocupacional quando indicada',
+      value: 'imunização gratuita obrigatória ao trabalhador da saúde',
+      detail:
+        'NR-32 item 32.2.4.17.1: tétano, difteria, hepatite B e demais do PCMSO — fornecidas gratuitamente; seguir calendário MS.',
+      sourceId: 'enfermagem-trabalho-nr32',
+    },
+    {
+      id: 'nr32-pgr',
+      label: 'PGR (Programa de Gerenciamento de Riscos)',
+      value: 'medidas de proteção a partir da avaliação de riscos do PGR',
+      detail:
+        'NR-32 atualizada (Portaria MTP 806/2022): referência ao PGR (substitui linguagem antiga de PPRA isolado em vários itens).',
       sourceId: 'enfermagem-trabalho-nr32',
     },
     {
@@ -88,8 +101,9 @@ export const ENFERMAGEM_TRABALHO_NR32: GuidelineTable = {
     {
       id: 'descarte-residuos',
       label: 'Descarte de resíduos',
-      value: 'segregação Grupo A, B, D e E conforme RDC Anvisa',
-      detail: 'Perfurocortantes em coletor rígido e identificado — nunca reencapar agulhas.',
+      value: 'segregação A–E conforme RDC Anvisa 222/2018',
+      detail:
+        'A infectantes; B químicos; C radioativos; D comuns; E perfurocortantes. Nunca reencapar agulhas (NR-32 / PPRAMP).',
       sourceId: 'enfermagem-trabalho-nr32',
     },
     {
@@ -115,9 +129,26 @@ export const ENFERMAGEM_TRABALHO_NR32: GuidelineTable = {
     },
     {
       id: 'nr32-anexos',
-      label: 'NR-32 — anexos',
-      value: 'Anexo I (riscos biológicos), II (químicos), III (físicos), IV (ergonômicos) e V (acidentes)',
-      detail: 'Cada anexo detalha medidas de prevenção específicas — prova cobra classificação correta do risco.',
+      label: 'NR-32 — Anexo I (agentes biológicos)',
+      value: 'classes de risco 1 a 4 (individual e coletivo)',
+      detail:
+        'Texto MTE consolidado (Portaria MTP 4.219/2022): Anexo I classifica agentes biológicos. Riscos químicos/físicos/ergonômicos também constam na NR-32 e nas NR gerais (NR-01/PGR, NR-09, NR-15, NR-17). exam_vs_current: provas que inventam “Anexos I–V por tipo de risco”.',
+      sourceId: 'enfermagem-trabalho-nr32',
+    },
+    {
+      id: 'nr32-ppra-vs-pgr',
+      label: 'PPRA × PGR',
+      value: 'medidas de proteção a partir da avaliação de riscos do PGR (NR-01/NR-32 atualizada)',
+      detail:
+        'Portaria MTP 806/2022 alinhou NR-32 ao PGR. exam_vs_current: provas antigas ainda dizem PPRA como programa isolado da NR-32.',
+      sourceId: 'enfermagem-trabalho-nr32',
+    },
+    {
+      id: 'nr32-dispositivo-seguranca',
+      label: 'Perfurocortantes com dispositivo de segurança',
+      value: 'empregador deve disponibilizar e capacitar no uso correto',
+      detail:
+        'NR-32 (Portaria 939/2008 e consolidações): substituição progressiva e capacitação sobre dispositivos de segurança.',
       sourceId: 'enfermagem-trabalho-nr32',
     },
     {

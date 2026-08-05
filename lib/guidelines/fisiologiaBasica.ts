@@ -9,8 +9,8 @@ export const FISIOLOGIA_HOMEOSTASE: GuidelineTable = {
   snapshot: 'Homeostase e parâmetros fisiológicos adulto',
   issuer: 'Referência clínica / MS',
   title: 'Noções de Fisiologia',
-  year: 2024,
-  url: 'https://www.gov.br/saude/',
+  year: 2025,
+  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z',
   entries: [
     {
       id: 'homeostase',
@@ -59,15 +59,17 @@ export const FISIOLOGIA_HOMEOSTASE: GuidelineTable = {
     {
       id: 'pa-normal-adulto',
       label: 'PA normal adulto',
-      value: 'Aproximadamente 120 × 80 mmHg (normotenso)',
-      detail: 'Faixa de referência ~90–140 × 60–90 mmHg; hipertensão ≥140 × 90 mmHg (SBC).',
+      value: 'Aproximadamente 120 × 80 mmHg (ótimo/normal)',
+      detail:
+        'Diretrizes Brasileiras de Hipertensão Arterial (SBC/DBHA): hipertensão ≥140 × 90 mmHg consultório — alinhar a sinais-vitais guideline.',
       sourceId: 'fisiologia-homeostase',
     },
     {
       id: 'glicemia-jejum',
       label: 'Glicemia de jejum',
       value: '70 a 99 mg/dL — normal',
-      detail: 'Pré-diabetes 100–125 mg/dL; diabetes ≥126 mg/dL (duas dosagens ou OGTT).',
+      detail:
+        'SBD/MS: pré-diabetes 100–125 mg/dL; diabetes ≥126 mg/dL (duas dosagens ou critérios complementares).',
       sourceId: 'fisiologia-homeostase',
     },
     {

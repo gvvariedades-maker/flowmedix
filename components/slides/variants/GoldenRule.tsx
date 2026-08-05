@@ -37,6 +37,8 @@ interface GoldenRuleProps {
   theme: ThemeColors;
   layoutVariant?: string;
   footerRule?: string;
+  /** Override do eyebrow (ex.: PT → «Decore gramática»). */
+  eyebrow?: string;
 }
 
 const BADGE_TONE: Record<GoldenRuleRowBadge, BoardTone> = {
@@ -74,11 +76,13 @@ function ReferenceTableLayout({
   rows,
   theme,
   footerRule,
+  eyebrow = 'Decore clínico',
 }: {
   content?: string;
   rows: GoldenRuleRow[];
   theme: ThemeColors;
   footerRule?: string;
+  eyebrow?: string;
 }) {
   const title = content?.trim();
   const reduceMotion = useReducedMotion();
@@ -88,7 +92,7 @@ function ReferenceTableLayout({
     <BoardChrome
       theme={theme}
       washOpacity={0.45}
-      eyebrow="Decore clínico"
+      eyebrow={eyebrow}
       title={title && !showMnemonic ? title : undefined}
       footerRule={footerRule}
       footerLabel={footerRule ? 'FIXAÇÃO' : undefined}
@@ -137,17 +141,19 @@ function ReferenceTableLayout({
 function TypographicBoard({
   theme,
   footerRule,
+  eyebrow = 'Decore clínico',
   children,
 }: {
   theme: ThemeColors;
   footerRule?: string;
+  eyebrow?: string;
   children: ReactNode;
 }) {
   return (
     <BoardChrome
       theme={theme}
       washOpacity={0.45}
-      eyebrow="Decore clínico"
+      eyebrow={eyebrow}
       footerRule={footerRule}
       footerLabel={footerRule ? 'FIXAÇÃO' : undefined}
       maxWidth="3xl"
@@ -169,6 +175,7 @@ export const GoldenRule = ({
   theme,
   layoutVariant = 'center',
   footerRule,
+  eyebrow = 'Decore clínico',
 }: GoldenRuleProps) => {
   const variant = layoutVariant || 'center';
 
@@ -180,14 +187,20 @@ export const GoldenRule = ({
 
   if (variant === 'reference_table' && rows && rows.length > 0) {
     return (
-      <ReferenceTableLayout content={content} rows={rows} theme={theme} footerRule={footerRule} />
+      <ReferenceTableLayout
+        content={content}
+        rows={rows}
+        theme={theme}
+        footerRule={footerRule}
+        eyebrow={eyebrow}
+      />
     );
   }
 
   // CENTER (padrão) — tipografia hero + footer G2
   if (variant === 'center') {
     return (
-      <TypographicBoard theme={theme} footerRule={footerRule}>
+      <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
         <GoldenRuleHeroCard content={content} theme={theme} />
       </TypographicBoard>
     );
@@ -196,7 +209,7 @@ export const GoldenRule = ({
   // COMPACT — ícone + texto
   if (variant === 'compact') {
     return (
-      <TypographicBoard theme={theme} footerRule={footerRule}>
+      <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
         <PolarityPanel tone="command">
           <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-sky-600 text-white">
             <Lightbulb size={20} aria-hidden />
@@ -212,7 +225,7 @@ export const GoldenRule = ({
   // MINIMAL — citação com massa
   if (variant === 'minimal') {
     return (
-      <TypographicBoard theme={theme} footerRule={footerRule}>
+      <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
         <PolarityPanel tone="neutral">
           <p className="font-body text-base italic leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto text-slate-900 md:text-xl">
             {content}
@@ -226,7 +239,7 @@ export const GoldenRule = ({
   if (variant === 'banner') {
     const titleSize = getGoldenRuleTitleSizeClass(content);
     return (
-      <TypographicBoard theme={theme} footerRule={footerRule}>
+      <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
         <PolarityPanel tone="warn" emphasized>
           <div className="mb-4 flex justify-center">
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-600 text-white md:h-16 md:w-16">
@@ -245,7 +258,7 @@ export const GoldenRule = ({
 
   // Fallback: center
   return (
-    <TypographicBoard theme={theme} footerRule={footerRule}>
+    <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
       <GoldenRuleHeroCard content={content} theme={theme} rounded="2xl" />
     </TypographicBoard>
   );

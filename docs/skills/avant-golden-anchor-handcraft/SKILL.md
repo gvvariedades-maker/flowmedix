@@ -212,6 +212,8 @@ npm run audit:questao-readiness -- --file=<caminho> --strict-v2-pedagogy
 Ship = `[READY]` + `ready_100: true`.  
 Risco `alto` (dose/conduta/divergência) → A4 humano. `baixo`/`medio` → agente pode fechar.
 
+**Âncoras 100% (base):** após READY, fechar com `npm run audit:anchor-100 -- --file=…` e assinar (`--sign-agent` ou `--sign-human=`). Ver `docs/ANCHOR_CHECKLIST_100.md`.
+
 O que o lint cobre vs o que não: [`reference-gates.md`](reference-gates.md).
 
 ---

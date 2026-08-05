@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Saúde do adolescente.
- * Fonte: MS — Linha de cuidado e Cadernos de Atenção Básica (adolescência).
+ * Fonte: MS — Caderneta de Saúde do Adolescente 4ª ed. (2024) + Calendário Nacional 2026 (HPV).
+ * @see https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/cadernetas-e-cartoes
  */
 export const SAUDE_ADOLESCENTE_MS: GuidelineTable = {
   id: 'saude-adolescente-ms',
-  snapshot: 'Adolescente — escuta, sigilo, violência e vacinação',
+  snapshot: 'Caderneta Adolescente MS 2024 + HPV dose única CNV 2026',
   issuer: 'Ministério da Saúde',
   title: 'Saúde do Adolescente',
-  year: 2021,
-  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/adolescente',
+  year: 2026,
+  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-do-adolescente/publicacoes/caderneta-de-saude-da-adolescente-feminina-4a-edicao',
   entries: [
     {
       id: 'adolescente-escuta',
@@ -68,8 +69,17 @@ export const SAUDE_ADOLESCENTE_MS: GuidelineTable = {
     {
       id: 'hpv-adolescente-pni',
       label: 'Vacina HPV (PNI)',
-      value: '9 a 14 anos — 2 doses (0 e 6 meses)',
-      detail: 'Meninas e meninos; esquema de 2 doses se iniciado antes dos 15 anos (intervalo mín. 5 meses).',
+      value: '9 a 14 anos, 11 m 29 d — dose única (HPV4)',
+      detail:
+        'Calendário Nacional 2026: 1 dose na rotina (meninas e meninos). Resgate 15–19 conforme estratégia estadual. Provas antigas com 2 doses → exam_vs_current.',
+      sourceId: 'saude-adolescente-ms',
+    },
+    {
+      id: 'faixa-adolescente-ms',
+      label: 'Faixa etária adolescente (saúde)',
+      value: '10 a 19 anos (OMS/MS nos serviços)',
+      detail:
+        'ECA: 12 a 18 anos. Caderneta MS e calendário do adolescente usam 10–19 anos — pegadinha clássica de prova.',
       sourceId: 'saude-adolescente-ms',
     },
     {

@@ -2,35 +2,39 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Punção venosa periférica e cuidados com cateteres.
- * Fontes: Anvisa (RDC dispositivos invasivos), COFEN, Potter & Perry 11ª ed. (Brasil), CDC/OMS bundle CVC.
+ * Fontes: Anvisa Protocolo IPCS + NT GVIMS 11/2025; COFEN; Potter & Perry 11ª ed. (Brasil).
+ * @see https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/publicacoes/Protocolo1PrevenodeIPCSFINAL.pdf
  */
 export const PUNCAO_CATETER_ANVISA: GuidelineTable = {
   id: 'puncao-cateter-anvisa',
-  snapshot: 'Acesso venoso, bundle CVC e manutenção',
+  snapshot: 'Anvisa Protocolo IPCS / NT 11/2025 — bundle CVC e manutenção',
   issuer: 'Anvisa / COFEN',
   title: 'Punção venosa e cuidados com cateteres',
-  year: 2021,
-  url: 'https://www.gov.br/anvisa/',
+  year: 2025,
+  url: 'https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/publicacoes/Protocolo1PrevenodeIPCSFINAL.pdf',
   entries: [
     {
       id: 'antissepsia-puncao',
-      label: 'Antissepsia da pele',
-      value: 'clorexidina alcoólica 0,5% a 2%',
-      detail: 'Não substituir por álcool 70% isolado na punção.',
+      label: 'Antissepsia — CVC / acesso central',
+      value: 'clorexidina alcoólica ≥0,5% (preferencial 2%) com tempo de secagem',
+      detail:
+        'Anvisa Protocolo IPCS: preparo da pele com clorexidina alcoólica no bundle de inserção. Não substituir por álcool 70% isolado no CVC.',
       sourceId: 'puncao-cateter-anvisa',
     },
     {
       id: 'antissepsia-alcool-70-puncao',
-      label: 'Antissepsia punção periférica (prova)',
-      value: 'álcool 70% — assepsia ampla no sítio',
-      detail: 'Padrão cobrado em concursos brasileiros; aguardar secagem antes da punção.',
+      label: 'Antissepsia — punção periférica (prova)',
+      value: 'álcool 70% — assepsia ampla no sítio; aguardar secagem',
+      detail:
+        'Padrão ainda cobrado em muitos editais de TE para cateter periférico curto. Bundle CVC exige clorexidina — não misturar as duas regras.',
       sourceId: 'puncao-cateter-anvisa',
     },
     {
       id: 'bundle-cvc',
       label: 'Bundle CVC — prevenção IPCS',
-      value: 'assepsia + barreira máxima + sítio adequado + curativo + remoção precoce',
-      detail: 'Medida isolada não substitui o pacote completo.',
+      value: 'higiene das mãos + barreira máxima + clorexidina + sítio adequado + remoção precoce',
+      detail:
+        'Anvisa Protocolo IPCS / NT 11/2025: checklist de inserção e manutenção. Medida isolada não substitui o pacote; antibiótico profilático não faz parte do bundle.',
       sourceId: 'puncao-cateter-anvisa',
     },
     {

@@ -1,6 +1,6 @@
 # Auditoria — Guidelines × Catálogo
 
-Gerado em: 2026-06-22T16:26:38.672Z
+Gerado em: 2026-08-05T18:17:27.540Z
 Fonte de contagens: **modulos_estudo**
 
 ## Resumo
@@ -10,94 +10,113 @@ Fonte de contagens: **modulos_estudo**
 | Subtópicos canônicos | 41 |
 | Com guideline mapeada | 41 |
 | Sem guideline | 0 |
-| Tabelas em lib/guidelines | 36 |
-| Total de entries | 1057 |
-| Questões no catálogo (soma) | 5069 |
+| Tabelas em lib/guidelines | 55 |
+| Total de entries | 1569 |
+| Questões no catálogo (soma) | 5175 |
 | Subtópicos com cobertura baixa/crítica | 0 |
 
 ## Por subtópico (ordenado por volume)
 
 | Subtópico | Questões | Entries | Entries/100q | Banda |
 |-----------|--------:|--------:|-------------:|-------|
-| Imunização | 575 | 90 | 15.65 | adequado |
-| Verificação de Sinais Vitais | 482 | 75 | 15.56 | adequado |
-| Urgências e Emergências | 348 | 55 | 15.8 | adequado |
-| Saúde da Mulher | 262 | 45 | 17.18 | adequado |
-| Vias de Administração | 231 | 58 | 25.11 | adequado |
-| Epidemiologia e Vigilância Epidemiológica | 224 | 66 | 29.46 | adequado |
-| Cuidados na Administração de Medicamentos | 216 | 40 | 18.52 | adequado |
-| Oxigenoterapia e Cuidados Respiratórios | 172 | 35 | 20.35 | adequado |
-| Atenção Básica / Saúde da Família | 170 | 35 | 20.59 | adequado |
-| Instalação e Manejo de Sondas | 169 | 35 | 20.71 | adequado |
-| Coleta de Exames Laboratoriais | 159 | 35 | 22.01 | adequado |
-| Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.) | 135 | 63 | 46.67 | adequado |
-| Processo de Enfermagem | 134 | 35 | 26.12 | adequado |
-| Promoção à Saúde e Prevenção de Agravos | 124 | 30 | 24.19 | adequado |
-| Curativos e Manejo de Feridas | 122 | 35 | 28.69 | adequado |
-| Enfermagem em Centro Cirúrgico | 122 | 30 | 24.59 | adequado |
-| Procedimentos Diversos | 118 | 45 | 38.14 | adequado |
-| Punção Venosa e Cuidados com Cateteres | 116 | 52 | 44.83 | adequado |
-| Cálculo de Administração de Medicamentos e Infusões | 114 | 35 | 30.7 | adequado |
-| Noções de Anatomia | 103 | 25 | 24.27 | adequado |
-| Mobilização e Posicionamento do Paciente | 91 | 49 | 53.85 | adequado |
-| Segurança do Paciente | 91 | 30 | 32.97 | adequado |
-| Noções de Fisiologia | 89 | 89 | 100 | adequado |
-| Saúde da Criança | 81 | 93 | 114.81 | adequado |
-| Infecções Sexualmente Transmissíveis (ISTs) | 76 | 30 | 39.47 | adequado |
-| Medidas de Prevenção e Precaução de Contato | 71 | 30 | 42.25 | adequado |
-| Assistência Perioperatória (Inclui SRPA) | 68 | 30 | 44.12 | adequado |
-| Doenças Parasitárias e Zoonoses | 62 | 28 | 45.16 | adequado |
-| Infecções no Contexto da Biossegurança | 54 | 30 | 55.56 | adequado |
-| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | 51 | 50 | 98.04 | adequado |
-| Enfermagem do Trabalho | 48 | 25 | 52.08 | adequado |
-| Saúde Mental | 37 | 25 | 67.57 | adequado |
-| Enfermagem em Central de Material e Esterilização (CME) | 35 | 28 | 80 | adequado |
-| Feridas e Queimaduras | 26 | 50 | 192.31 | adequado |
-| Farmacodinâmica e Farmacocinética | 25 | 30 | 120 | adequado |
-| História da Enfermagem | 18 | 22 | 122.22 | adequado |
-| Processamento de Artigos e Produtos de Saúde | 18 | 28 | 155.56 | adequado |
-| Saúde do Adolescente | 16 | 25 | 156.25 | adequado |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | 10 | 50 | 500 | adequado |
-| Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis | 6 | 123 | 2050 | adequado |
-| Questões Mescladas e Outras Doenças Agudas | 0 | 100 | — | sem_guideline |
+| Imunização | 584 | 121 | 20.72 | adequado |
+| Verificação de Sinais Vitais | 557 | 87 | 15.62 | adequado |
+| Urgências e Emergências | 342 | 113 | 33.04 | adequado |
+| Saúde da Mulher | 268 | 64 | 23.88 | adequado |
+| Vias de Administração | 224 | 72 | 32.14 | adequado |
+| Epidemiologia e Vigilância Epidemiológica | 221 | 94 | 42.53 | adequado |
+| Promoção à Saúde e Prevenção de Agravos | 191 | 31 | 16.23 | adequado |
+| Curativos e Manejo de Feridas | 187 | 37 | 19.79 | adequado |
+| Atenção Básica / Saúde da Família | 176 | 49 | 27.84 | adequado |
+| Coleta de Exames Laboratoriais | 171 | 35 | 20.47 | adequado |
+| Oxigenoterapia e Cuidados Respiratórios | 167 | 35 | 20.96 | adequado |
+| Cuidados na Administração de Medicamentos | 166 | 43 | 25.9 | adequado |
+| Instalação e Manejo de Sondas | 164 | 36 | 21.95 | adequado |
+| Processo de Enfermagem | 158 | 36 | 22.78 | adequado |
+| Noções de Anatomia | 157 | 25 | 15.92 | adequado |
+| Cálculo de Administração de Medicamentos e Infusões | 147 | 35 | 23.81 | adequado |
+| Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.) | 140 | 91 | 65 | adequado |
+| Infecções Sexualmente Transmissíveis (ISTs) | 136 | 32 | 23.53 | adequado |
+| Punção Venosa e Cuidados com Cateteres | 124 | 71 | 57.26 | adequado |
+| Enfermagem em Centro Cirúrgico | 118 | 48 | 40.68 | adequado |
+| Noções de Fisiologia | 106 | 101 | 95.28 | adequado |
+| Mobilização e Posicionamento do Paciente | 82 | 53 | 64.63 | adequado |
+| Segurança do Paciente | 78 | 49 | 62.82 | adequado |
+| Doenças Parasitárias e Zoonoses | 69 | 33 | 47.83 | adequado |
+| Medidas de Prevenção e Precaução de Contato | 62 | 33 | 53.23 | adequado |
+| Saúde da Criança | 62 | 111 | 179.03 | adequado |
+| Assistência Perioperatória (Inclui SRPA) | 61 | 48 | 78.69 | adequado |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | 48 | 66 | 137.5 | adequado |
+| Enfermagem em Central de Material e Esterilização (CME) | 37 | 39 | 105.41 | adequado |
+| Infecções no Contexto da Biossegurança | 36 | 33 | 91.67 | adequado |
+| Saúde Mental | 29 | 27 | 93.1 | adequado |
+| Enfermagem do Trabalho | 27 | 35 | 129.63 | adequado |
+| História da Enfermagem | 20 | 25 | 125 | adequado |
+| Saúde do Adolescente | 16 | 35 | 218.75 | adequado |
+| Feridas e Queimaduras | 15 | 66 | 440 | adequado |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | 11 | 57 | 518.18 | adequado |
+| Farmacodinâmica e Farmacocinética | 9 | 33 | 366.67 | adequado |
+| Processamento de Artigos e Produtos de Saúde | 9 | 39 | 433.33 | adequado |
+| Procedimentos Diversos | 0 | 49 | — | sem_guideline |
+| Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis | 0 | 148 | — | sem_guideline |
+| Questões Mescladas e Outras Doenças Agudas | 0 | 181 | — | sem_guideline |
 
 ## Tabelas (entries por arquivo)
 
 | ID | Entries | Snapshot |
 |----|--------:|----------|
-| `sv-adulto-referencia` | 75 | Referência MS/SBP — adulto e pediátrico |
-| `urgencias-rcp-sbv-ms` | 55 | Protocolo SBV/RCP — MS SAMU 192 |
-| `pni-calendario-2025` | 48 | PNI Calendário 2025 |
-| `sm-prenatal-baixo-risco-ms` | 45 | Caderno AB 32 — Pré-natal baixo risco |
-| `pni-2025-intervalos` | 42 | PNI / Manual MS 2025 |
-| `cuidados-admin-cofen` | 40 | 5/9 certos — administração segura |
-| `calc-equivalencias-br` | 35 | Equivalências gts/mL e infusão — padrão BR |
-| `oxigenoterapia-dispositivos-ms` | 35 | Oxigenoterapia — dispositivos, fluxo e FiO₂ |
-| `coleta-exames-sbpc-ml` | 35 | Coleta venosa — SBPC/ML + MS |
-| `curativos-lpp-npuap` | 35 | LPP, estágios e coberturas |
-| `sondas-tecnica-cofen` | 35 | SNG, SVD e manejo de sondas |
-| `sae-cofen-358` | 35 | SAE — etapas e registros (COFEN 358/2009) |
-| `atencao-basica-pnab` | 35 | PNAB — princípios e atributos da APS |
-| `farmaco-adme-anvisa` | 30 | ADME e farmacodinâmica — conceitos-base |
-| `ists-prevencao-ms` | 30 | IST — rotas de risco e prevenção MS |
-| `biosseguranca-anvisa` | 30 | Cadeia de infecção, EPI e precauções |
-| `perioperatorio-cirurgia-segura` | 30 | Cirurgia segura — checklist e SRPA |
-| `promocao-saude-sus` | 30 | Lei 8.080 — composição e princípios do SUS |
-| `cme-anvisa-rdc15` | 28 | CME — áreas, indicadores e validade |
-| `parasitarias-zoonoses-ms` | 28 | Dengue e zoonoses — vetor e controle |
-| `saude-mental-ms` | 25 | Saúde mental — acolhimento e risco suicida |
-| `enfermagem-trabalho-nr32` | 25 | NR-32 — segurança em serviços de saúde |
-| `saude-adolescente-ms` | 25 | Adolescente — escuta, sigilo, violência e vacinação |
-| `anatomia-terminologia` | 25 | Pares de sinônimos anatômicos |
-| `historia-enfermagem-cofen` | 22 | Nightingale, COFEN e ética profissional |
-| `tuberculose-ms` | 20 | TB — notificação, BAAR e precauções |
-| `saude-crianca-ms` | 18 | Aleitamento e alimentação — Caderneta MS |
-| `vias-administracao-cofen` | 18 | Vias IM, SC, EV — absorção e técnica |
-| `epidemiologia-ms` | 18 | Vigilância, indicadores e notificação |
-| `puncao-cateter-anvisa` | 17 | Acesso venoso, bundle CVC e manutenção |
-| `doencas-virais-ms` | 15 | Vigilância viral — notificação e vacinação |
-| `respiratorio-cronico-ms` | 15 | Asma e DPOC — diferenciação e O₂ |
-| `feridas-queimaduras-ms` | 15 | Queimaduras — graus e sinais clínicos |
-| `procedimentos-diversos-assepsia` | 15 | Assepsia, antissepsia e higiene das mãos |
-| `mobilizacao-posicionamento` | 14 | Decúbito, transferência e posições |
+| `sv-adulto-referencia` | 87 | MS/SBP + Diretriz Brasileira de HA 2025 (SBC) |
+| `pni-calendario-2025` | 74 | PNI Calendário — IN MS 2026 (base técnica 2025+) |
+| `sm-prenatal-baixo-risco-ms` | 64 | Caderneta Gestante MS 2026 (7 consultas) + INCA colo 2025 |
+| `urgencias-rcp-sbv-ms` | 62 | Protocolo SBV/RCP — MS SAMU 192 + AHA/ILCOR 2025 |
+| `urgencias-protocolos-emergencia-ms` | 51 | Protocolos emergência — MS SAMU 192 / AHA 2025 |
+| `atencao-basica-pnab` | 49 | PNAB Portaria 2.436/2017 — ESF prioritária, UBS, RAS |
+| `perioperatorio-cirurgia-segura` | 48 | Cirurgia segura OMS/MS + ISC Anvisa 2026 + COFEN CC |
+| `pni-2025-intervalos` | 47 | PNI / Manual MS + IN Calendário Nacional 2026 |
+| `cuidados-admin-cofen` | 43 | 5/9 certos + Res. COFEN 801/2026 (prescrição enfermeiro) |
+| `cme-anvisa-rdc15` | 39 | CME hospitalar — RDC 15/2012 (ainda citada NT 105/2026) + RDC 1002/2025 odonto |
+| `curativos-lpp-npuap` | 37 | LPP — Anvisa NT 05/2023 + NPIAP 2019 (estágios/Braden) |
+| `sondas-tecnica-cofen` | 36 | SNG/SVD + Anvisa Protocolo ITU-AC 2025 |
+| `sae-cofen-358` | 36 | Processo de Enfermagem — COFEN 736/2024 (revoga 358/2009) |
+| `calc-equivalencias-br` | 35 | Equivalências gts/mL + KCl ISMP/Anvisa — padrão BR |
+| `oxigenoterapia-dispositivos-ms` | 35 | Oxigenoterapia — dispositivos/FiO₂ (CONITEC/MS; revisão 2024/2025) |
+| `coleta-exames-sbpc-ml` | 35 | Coleta venosa — SBPC/ML 2ª ed. + RDC 222 |
+| `enfermagem-trabalho-nr32` | 35 | NR-32 atualizada 2022 (MTE) — PGR, PCMSO, imunização |
+| `saude-adolescente-ms` | 35 | Caderneta Adolescente MS 2024 + HPV dose única CNV 2026 |
+| `farmaco-adme-anvisa` | 33 | ADME + alta vigilância (Protocolo MS/Anvisa medicamentos) |
+| `biosseguranca-anvisa` | 33 | Anvisa Protocolo precauções/isolamento + NT 11/2025 IRAS |
+| `tuberculose-ms` | 33 | Manual TB MS 2ª ed. (2019; página MS 2024) + TRM-TB |
+| `parasitarias-zoonoses-ms` | 33 | Dengue 6ª ed. MS + raiva PEP + zoonoses |
+| `ists-prevencao-ms` | 32 | PCDT-IST + PrEP Oral 55/2024 + PEP 14/2024 |
+| `promocao-saude-sus` | 31 | Lei 8.080/8.142 + PNPS (Portaria 2.446/2014 · PRC 2/2017) |
+| `vias-administracao-cofen` | 29 | Vias IM, SC, EV — absorção e técnica (revisão 2026) |
+| `feridas-queimaduras-ms` | 29 | Queimaduras — cartilha MS 2012 (BVS) + regra dos 9 |
+| `saude-mental-ms` | 27 | RAPS (Port. 3.088) + Lei 10.216 + CVV 188 — revisão 2025/2026 |
+| `historia-enfermagem-cofen` | 25 | Nightingale · Anna Nery · escolas COFEN · Lei 7.498 |
+| `anatomia-terminologia` | 25 | Terminologia Anatômica — planos, eixos e sinônimos |
+| `saude-crianca-ms` | 24 | Caderneta da Criança MS 6ª ed. (2024) + digital Meu SUS |
+| `puncao-cateter-anvisa` | 23 | Anvisa Protocolo IPCS / NT 11/2025 — bundle CVC e manutenção |
+| `respiratorio-cronico-ms` | 22 | Asma PCDT + DPOC PCDT CONITEC 2025 — SpO₂ e O₂ |
+| `epidemiologia-ms` | 20 | Notificação compulsória Lista Nacional 2026 + indicadores |
+| `doencas-virais-ms` | 17 | Vigilância viral MS + Influenza/Sarampo NT 2026 |
+| `pt-pontuacao-concursos` | 17 | Pontuação — pergunta-teste «o que a vírgula isola?» + proibições clássicas de prova |
+| `seguranca-paciente-pnsp` | 16 | PNSP + Protocolos Anvisa (identificação/quedas) — revisão 2025 |
+| `mobilizacao-posicionamento` | 16 | Reposicionamento + prevenção LPP (Anvisa/PNSP) |
+| `procedimentos-diversos-assepsia` | 16 | Assepsia + 5 momentos HM (Protocolo PNSP / Anvisa) |
+| `pt-crase-concursos` | 16 | Crase — funil de 3 testes + casos clássicos de prova |
+| `pt-colocacao-pronominal` | 16 | Colocação pronominal — próclise / ênclise / mesóclise |
 | `fisiologia-homeostase` | 14 | Homeostase e parâmetros fisiológicos adulto |
+| `pt-concordancia-concursos` | 14 | Concordância — núcleo do sujeito + casos atípicos de prova |
+| `pt-termos-oracao-concursos` | 14 | Termos da oração — matriz função sintática (PS) |
+| `pt-regencia-concursos` | 13 | Regência — preposição exigida pelo verbo/nome + verbos de duplo sentido |
+| `pt-oracoes-subordinadas-concursos` | 13 | Período composto — coordenação, subordinação e testes de sentido |
+| `pt-classes-palavras-concursos` | 13 | Morfologia — classe gramatical pela função na oração |
+| `pt-verbos-concursos` | 13 | Verbos — tempo, modo, voz e correlação temporal |
+| `potter-perry-fundamentos-11ed-2024` | 12 | Fundamentos de Enfermagem — 11ª ed. Brasil |
+| `pt-tipologia-concursos` | 12 | Tipologia — função do texto, gênero e estrutura discursiva |
+| `pt-sujeito-predicado-concursos` | 12 | Sujeito e predicado — quem? + tipo de predicado |
+| `pt-coesao-conectivos-concursos` | 12 | Coesão textual — elos, conectivos e referência |
+| `pt-denotacao-conotacao-concursos` | 12 | Semântica — sentido literal, figurado e figuras de linguagem |
+| `pt-vocabulo-que-se-concursos` | 12 | «Que» polissêmico + «se» (índice, partícula, pronome reflexivo) |
+| `pt-formacao-palavras-concursos` | 11 | Formação de palavras — derivação, composição, prefixo e sufixo |
+| `pt-sinonimos-polissemia-concursos` | 11 | Semântica lexical — sinonímia, antonímia, polissemia e parônimos |

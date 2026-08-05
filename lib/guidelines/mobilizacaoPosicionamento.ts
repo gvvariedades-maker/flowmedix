@@ -2,20 +2,39 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Mobilização e posicionamento do paciente.
- * Fonte: COFEN + prevenção de LPP (NPUAP).
+ * Fontes: Anvisa NT GVIMS 05/2023 (LPP) · Protocolo PNSP Lesão por Pressão · NPIAP
+ * (reposicionamento individualizado; clássico 2/2 h ainda cobrado em provas).
  */
 export const MOBILIZACAO_POSICIONAMENTO: GuidelineTable = {
   id: 'mobilizacao-posicionamento',
-  snapshot: 'Decúbito, transferência e posições',
-  issuer: 'COFEN',
+  snapshot: 'Reposicionamento + prevenção LPP (Anvisa/PNSP)',
+  issuer: 'Anvisa / MS / NPIAP',
   title: 'Mobilização e posicionamento do paciente',
-  year: 2020,
-  url: 'https://www.cofen.gov.br/',
+  year: 2023,
+  url: 'https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/notas-tecnicas',
   entries: [
     {
       id: 'decubito-2h',
       label: 'Mudança de decúbito',
-      value: 'a cada 2 horas em paciente acamado com risco de LPP',
+      value: 'reposicionar com frequência — referência clássica a cada 2 horas se risco de LPP',
+      detail:
+        'Anvisa NT 05/2023 / NPIAP: intervalo individualizado pela tolerância tecidual e superfície de suporte. exam_vs_current: bancas fixam 2/2 h.',
+      sourceId: 'mobilizacao-posicionamento',
+    },
+    {
+      id: 'posicao-lateral-30',
+      label: 'Posição lateral — 30°',
+      value: 'inclinação lateral ~30° (não 90°) para redistribuir pressão',
+      detail:
+        'Protocolos PNSP/NPIAP: evitar decúbito lateral a 90° sobre trocânter; alternar D/E/dorsal.',
+      sourceId: 'mobilizacao-posicionamento',
+    },
+    {
+      id: 'cabaceira-max-30-lpp',
+      label: 'Cabeceira — cisalhamento',
+      value: 'elevar cabeceira no máximo ~30° quando possível (prevenção LPP)',
+      detail:
+        'Cabeceira alta aumenta cisalhamento sacro; equilibrar com necessidade respiratória (Fowler).',
       sourceId: 'mobilizacao-posicionamento',
     },
     {
@@ -47,7 +66,9 @@ export const MOBILIZACAO_POSICIONAMENTO: GuidelineTable = {
     {
       id: 'prevencao-lpp-mobilizacao',
       label: 'Prevenção LPP',
-      value: 'mobilização e alívio de pressão em proeminências',
+      value: 'mobilização, alívio de pressão e superfície de redistribuição',
+      detail:
+        'Anvisa NT 05/2023: nomenclatura lesão por pressão (não “úlcera”); proteger calcâneos; não arrastar — levantar com lençol móvel.',
       sourceId: 'mobilizacao-posicionamento',
     },
     {
