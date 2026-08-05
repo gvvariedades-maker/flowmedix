@@ -24,21 +24,42 @@
     "Conceito — tipos de vacina / imunobiológicos (8 · 1,4%)",
     "Contraindicações / eventos adversos (1 · cauda longa)"
   ],
+  "glance_os_ancoras_100": {
+    "started_at": "2026-08-04",
+    "completed_at": "2026-08-05",
+    "status": "approved_100",
+    "mapa_gestos": "artifacts/glance-os-imunizacao-MAPA-8-GESTOS.md",
+    "report": "artifacts/imunizacao-ancoras-100-report.md",
+    "default_clicks": 0,
+    "visual_bar": "docs/NEUROSLIDES_VISUAL_BAR.md",
+    "reference_piloto": "artifacts/glance-os-piloto-farmacodinamica-INDEX.md",
+    "note": "Fase 2 fechada — 5/5 ramos L3 com âncoras aprovadas (humano); sem gNN nesta conversa"
+  },
   "pedagogical_branches": [
     {
       "id": "imunizacao_vf_intervalos",
       "when": "I/II/III/IV, intervalos entre doses, simultaneidade, grace period, reforço × intervalo mínimo",
+      "gesture": "VF / I–II–III (+ NÚMERO em intervalos 4D/30D)",
       "mold": "pni-rules-deck · pni-interval-matrix · pni-vf-juggle-tap · pni-trap-chips",
       "l3_decision": "molde_redesign",
       "bespoke_target": "pni-vf-intervalos",
-      "anchors": ["examples/questao-premium-cpcon-imunizacao-intervalos-vf.json"]
+      "brief": "artifacts/l3-brief-imunizacao-imunizacao_vf_intervalos.md",
+      "glance_os": "100% — board V/F 0 taps · deck herói · trap arena (aprovado humano 2026-08-04)",
+      "ancoras_100_status": "approved",
+      "anchors": [
+        "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json"
+      ]
     },
     {
       "id": "imunizacao_calendario",
       "when": "Marco idade × vacina, esquema infantil/adolescente/adulto/idoso, gestante/puérpera, HPV, campanha, dose de reforço por faixa etária",
+      "gesture": "TRILHO (+ NÚMERO idade×vacina)",
       "mold": "vaccine-timeline · pni-calendar-board · pni-calendar-elimination-tap · calendar-mismatch",
       "l3_decision": "molde_redesign",
       "bespoke_target": "pni-calendar-board",
+      "brief": "artifacts/l3-brief-imunizacao-imunizacao_calendario.md",
+      "glance_os": "100% — board calendário 0 taps · timeline herói · arena (aprovado humano 2026-08-04)",
+      "ancoras_100_status": "approved",
       "anchors": [
         "examples/questao-premium-fundatec-meningococica-3meses.json",
         "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
@@ -47,9 +68,13 @@
     {
       "id": "imunizacao_cadeia_frio",
       "when": "Cadeia de frio, conservação, refrigeração/congelamento, validade, SI-PNI, caixa térmica, gelo, transporte de imunobiológico",
+      "gesture": "TRILHO + NÚMERO (2–8 °C) (+ VF no sub-padrão sala)",
       "mold": "cold-chain-hub · pni-temperature-rail · pni-cold-chain-tap · temperature-mismatch",
       "l3_decision": "molde_redesign",
       "bespoke_target": "pni-temperature-rail",
+      "brief": "artifacts/l3-brief-imunizacao-imunizacao_cadeia_frio.md",
+      "glance_os": "100% — AMEOSC V/F + AVANÇASP 2–8 aprovadas",
+      "ancoras_100_status": "approved",
       "anchors": [
         "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
         "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json"
@@ -58,17 +83,28 @@
     {
       "id": "imunizacao_exceto",
       "when": "Comando EXCETO ou INCORRETA — marcar afirmativa falsa entre condutas corretas",
-      "mold": "morphological · reference_table · tap · compare semântico",
-      "l3_decision": "ok_generico",
-      "ok_generico_3_3": "Pegadinha semântica por letra; ~7% (42 slugs); compare + correct por distrator ensina sem UI bespoke — gate imunizacao_exceto_semantic",
-      "anchors": ["examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json"]
+      "gesture": "EXCETO / PEGADINHA",
+      "mold": "pni-exceto-command-hub · pni-exceto-rule-board · pni-exceto-isolate-board · pni-exceto-compare",
+      "l3_decision": "molde_redesign",
+      "ok_generico_3_3": "Pegadinha semântica por letra; ~7% (42 slugs); isolate+compare wired (Glance OS) — gate imunizacao_exceto_semantic",
+      "brief": "artifacts/l3-brief-imunizacao-imunizacao_exceto.md",
+      "glance_os": "100% — Agirh INCORRETA aprovada (command-hub + rule-board + isolate + compare)",
+      "anchors": [
+        "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json"
+      ],
+      "ancoras_100_status": "approved"
     },
     {
       "id": "imunizacao_generico",
       "when": "Técnica de sala/via (6 certos), certo ou errado isolado, tipos de vacina/imunobiológico, contraindicações — sem fit nos ramos acima",
-      "mold": "genérico morphological · reference_table · tap · compare",
+      "gesture": "PROTOCOLO / PEGADINHA (fallback — via, tipos, C/E isolado)",
+      "mold": "pni-via-route-hub · reference_table · pni-via-isolate-board · pni-via-trap-arena",
       "l3_decision": "cauda_longa",
-      "anchors": ["examples/questao-premium-decorp-imunizacao-triplice-viral-via.json"]
+      "glance_os": "100% — DECORP SCR via aprovada (route-hub + isolate 0 taps + trap arena 0 taps)",
+      "anchors": [
+        "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json"
+      ],
+      "ancoras_100_status": "approved"
     }
   ],
   "validation": {
@@ -89,14 +125,41 @@
     "danger_zone": "Erro reproduzível × correção específica (espelha concept_map)"
   },
   "roi_priorities": [
-    { "priority": "P0", "action": "Fase 2 — reconcile:handcraft-manifest + catalog:preflight --strict-v2-pedagogy em g01–g83", "why": "Handcraft applied 575/575; gate L1 antes do promote" },
-    { "priority": "P0", "action": "audit:handcraft-dod + slug-alignment --strict + numeric-factcheck (subtópico inteiro)", "why": "L2 + L2b vendável" },
-    { "priority": "P1", "action": "audit:anchor-review --record-pass em todos g* + L6 checklist", "why": "Âncoras P0 fechadas; escalar L6 por lote" },
-    { "priority": "P1", "action": "test:e2e:visual-molds --grep=\"PNI Imunização\"", "why": "3 ramos bespoke wired (vf · calendário · cadeia frio)" },
-    { "priority": "P2", "action": "Ramo imunizacao_exceto — gate compare semântico (Agirh)", "why": "42 slugs ok_generico; validar danger_zone por letra" },
-    { "priority": "P2", "action": "audit:subtopico-quality --promote", "why": "Fecha production_ready" }
+    {
+      "priority": "P0",
+      "action": "Fase 2 — reconcile:handcraft-manifest + catalog:preflight --strict-v2-pedagogy em g01–g83",
+      "why": "Handcraft applied 575/575; gate L1 antes do promote"
+    },
+    {
+      "priority": "P0",
+      "action": "audit:handcraft-dod + slug-alignment --strict + numeric-factcheck (subtópico inteiro)",
+      "why": "L2 + L2b vendável"
+    },
+    {
+      "priority": "P1",
+      "action": "audit:anchor-review --record-pass em todos g* + L6 checklist",
+      "why": "Âncoras P0 fechadas; escalar L6 por lote"
+    },
+    {
+      "priority": "P1",
+      "action": "test:e2e:visual-molds --grep=\"PNI Imunização\"",
+      "why": "3 ramos bespoke wired (vf · calendário · cadeia frio)"
+    },
+    {
+      "priority": "P2",
+      "action": "Ramo imunizacao_exceto — gate compare semântico (Agirh)",
+      "why": "42 slugs ok_generico; validar danger_zone por letra"
+    },
+    {
+      "priority": "P2",
+      "action": "audit:subtopico-quality --promote",
+      "why": "Fecha production_ready"
+    }
   ],
-  "proibido": ["ai:generate", "catalog:upgrade-premium"],
+  "proibido": [
+    "ai:generate",
+    "catalog:upgrade-premium"
+  ],
   "modes": {
     "subtopico_handcraft": {
       "label": "Handcraft golden-v1 — 575 slugs em lotes imunizacao-gNN",

@@ -2,7 +2,6 @@
 
 import { useCallback, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 import { SlideLucideIcon } from '../core/SlideLucideIcon';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { GoldenRuleRow } from './GoldenRule';
@@ -20,6 +19,7 @@ import {
   CategoryStrip,
   CriticalNumber,
   LabelBodyRow,
+  PolarityPanel,
   type BoardTone,
 } from '../primitives';
 
@@ -74,14 +74,10 @@ function MonthRail({
 function CalendarRowCard({
   row,
   index,
-  expanded,
-  onToggle,
   dimmed,
 }: {
   row: GoldenRuleRow;
   index: number;
-  expanded: boolean;
-  onToggle: () => void;
   dimmed: boolean;
 }) {
   const reduceMotion = useReducedMotion();
@@ -91,14 +87,11 @@ function CalendarRowCard({
   const tone: BoardTone = hot ? 'lime' : 'neutral';
 
   return (
-    <motion.button
-      type="button"
+    <motion.div
       initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-      animate={{ opacity: dimmed ? 0.45 : 1, y: 0 }}
-      transition={{ delay: reduceMotion ? 0 : index * 0.05 }}
-      onClick={onToggle}
-      aria-expanded={expanded}
-      className="w-full text-left"
+      animate={{ opacity: dimmed ? 0.4 : 1, y: 0 }}
+      transition={{ delay: reduceMotion ? 0 : index * 0.04 }}
+      className="w-full"
     >
       <LabelBodyRow
         chip={row.label}
@@ -108,11 +101,11 @@ function CalendarRowCard({
           <span className="flex flex-col gap-2">
             <span className="flex items-start gap-2">
               <span
-                className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg ${
+                className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${
                   hot ? 'bg-lime-500 text-white' : 'bg-lime-100 text-lime-800'
                 }`}
               >
-                <SlideLucideIcon name={iconName} size={14} />
+                <SlideLucideIcon name={iconName} size={15} />
               </span>
               <span className="min-w-0 flex-1">
                 {row.badge ? (
@@ -125,19 +118,15 @@ function CalendarRowCard({
                     ))}
                   </div>
                 ) : null}
-                <span className={expanded ? '' : 'line-clamp-2'}>{row.value}</span>
+                <span className="font-body text-sm leading-snug text-slate-800 md:text-[15px]">
+                  {row.value}
+                </span>
               </span>
             </span>
-            {!expanded ? (
-              <span className="inline-flex items-center gap-1 self-start font-mono text-[9px] font-bold uppercase text-slate-500">
-                <ChevronDown className="h-2.5 w-2.5" aria-hidden />
-                expandir
-              </span>
-            ) : null}
           </span>
         }
       />
-    </motion.button>
+    </motion.div>
   );
 }
 
@@ -156,6 +145,10 @@ export function GoldenRulePniCalendarBoard({
   const dataRows = rows.filter((row) => !isPniConclusionRow(row.label, row.value));
   const conclusionRows = rows.filter((row) => isPniConclusionRow(row.label, row.value));
 
+  const hotRow = dataRows.find((row) =>
+    isCalendarHotRow(row.label, row.value, row.emphasis, row.badge),
+  );
+
   const activeMonths = useMemo(() => {
     const set = new Set<number>();
     for (const row of dataRows) {
@@ -167,11 +160,6 @@ export function GoldenRulePniCalendarBoard({
   }, [dataRows]);
 
   const [selectedMonth, setSelectedMonth] = useState<number | null>(null);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-  const toggleExpanded = useCallback((index: number) => {
-    setExpandedIndex((current) => (current === index ? null : index));
-  }, []);
 
   const toggleMonth = useCallback((month: number) => {
     setSelectedMonth((current) => (current === month ? null : month));
@@ -184,6 +172,8 @@ export function GoldenRulePniCalendarBoard({
       : title
         ? 'Calendário PNI — referência'
         : undefined;
+
+  const hotMonths = hotRow ? inferCalendarRowMonths(hotRow.label, hotRow.value) : [];
 
   return (
     <BoardChrome theme={theme} maxWidth="3xl" eyebrow={eyebrow} footerRule={footerRule}>
@@ -203,24 +193,49 @@ export function GoldenRulePniCalendarBoard({
         />
       ) : null}
 
-      <div className="flex flex-col gap-3">
-        {dataRows.map((row, index) => {
-          const rowMonths = inferCalendarRowMonths(row.label, row.value);
-          const dimmed =
-            selectedMonth !== null &&
-            rowMonths.length > 0 &&
-            !rowMonths.includes(selectedMonth);
-          return (
-            <CalendarRowCard
-              key={`${row.label}-${index}`}
-              row={row}
-              index={index}
-              expanded={expandedIndex === index}
-              onToggle={() => toggleExpanded(index)}
-              dimmed={dimmed}
-            />
-          );
-        })}
+      {hotRow && !catchUpMode ? (
+        <PolarityPanel tone="keep" emphasized>
+          <div className="flex items-start gap-3">
+            {hotMonths[0] != null ? (
+              <CriticalNumber
+                value={String(hotMonths[0] === 0 ? 0 : hotMonths[0])}
+                unit={hotMonths[0] === 0 ? undefined : 'M'}
+                label="FOCO"
+                emphasis="alert"
+                className="min-w-[4.25rem] shrink-0 px-2.5 py-2"
+              />
+            ) : null}
+            <div className="min-w-0 flex-1">
+              <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-lime-800">
+                LINHA QUENTE DO CALENDÁRIO
+              </p>
+              <p className="mt-0.5 font-body text-base font-bold text-slate-900 md:text-lg">
+                {hotRow.label}
+              </p>
+              <p className="mt-1 font-body text-sm leading-snug text-slate-700">{hotRow.value}</p>
+            </div>
+          </div>
+        </PolarityPanel>
+      ) : null}
+
+      <div className="flex flex-col gap-2.5">
+        {dataRows
+          .filter((row) => row !== hotRow)
+          .map((row, index) => {
+            const rowMonths = inferCalendarRowMonths(row.label, row.value);
+            const dimmed =
+              selectedMonth !== null &&
+              rowMonths.length > 0 &&
+              !rowMonths.includes(selectedMonth);
+            return (
+              <CalendarRowCard
+                key={`${row.label}-${index}`}
+                row={row}
+                index={index}
+                dimmed={dimmed}
+              />
+            );
+          })}
       </div>
 
       {conclusionRows.map((row, index) => {

@@ -262,8 +262,22 @@ describe('enrichPresentationContext — meta da questão', () => {
       'imunizacao_exceto',
     );
     const design = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_exceto');
+    expect(design?.conceptMap).toBe('pni-exceto-command-hub');
+    expect(design?.goldenRule).toBe('pni-exceto-rule-board');
     expect(design?.logicFlow).toBe('pni-exceto-isolate-board');
     expect(design?.dangerZone).toBe('pni-exceto-compare');
+  });
+
+  it('infere imunizacao_generico para via de administração SCR (não calendário só por idade)', () => {
+    const instruction =
+      'Em relação a administração da vacina tríplice viral (sarampo, caxumba e rubéola) em uma criança de um ano, assinale a alternativa que apresenta a via de administração correta, considerando as diretrizes do PNI.';
+    expect(inferPedagogicalBranch(imunizacaoSubtopico, instruction, [], 'conceito')).toBe(
+      'imunizacao_generico',
+    );
+    const design = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_generico');
+    expect(design?.conceptMap).toBe('pni-via-route-hub');
+    expect(design?.logicFlow).toBe('pni-via-isolate-board');
+    expect(design?.dangerZone).toBe('pni-via-trap-arena');
   });
 
   it('infere imunizacao_generico para campanha diabetes Portaria 2.048 (não calendário PNI)', () => {

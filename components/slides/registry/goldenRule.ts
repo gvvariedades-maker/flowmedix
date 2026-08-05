@@ -160,6 +160,11 @@ const Dyn_pni_temperature_rail = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pni_exceto_rule_board = dynamic(
+  () => loadNamedVariant(() => import('../variants/GoldenRulePniExcetoBoard') as Promise<Record<string, unknown>>, 'GoldenRulePniExcetoBoard'),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_vitals_reference_board = dynamic(
   () => loadNamedVariant(() => import('../variants/GoldenRuleVitalsReferenceBoard') as Promise<Record<string, unknown>>, 'GoldenRuleVitalsReferenceBoard'),
   { ssr: true, loading: () => null },
@@ -197,6 +202,11 @@ const Dyn_pk_pd_reference_board = dynamic(
 
 const Dyn_farmaco_clinico_reference_board = dynamic(
   () => loadNamedVariant(() => import('../variants/GoldenRuleFarmacoClinicoReferenceBoard') as Promise<Record<string, unknown>>, 'GoldenRuleFarmacoClinicoReferenceBoard'),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_farmaco_generico_reference_board = dynamic(
+  () => loadNamedVariant(() => import('../variants/GoldenRuleFarmacoGenericoReferenceBoard') as Promise<Record<string, unknown>>, 'GoldenRuleFarmacoGenericoReferenceBoard'),
   { ssr: true, loading: () => null },
 );
 
@@ -389,6 +399,7 @@ export const GOLDEN_RULE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'crianca-neonatal-board': { Component: Dyn_crianca_neonatal_board, requiresRows: true },
   'crianca-dev-board': { Component: Dyn_crianca_dev_board, requiresRows: true },
   'pni-temperature-rail': { Component: Dyn_pni_temperature_rail, requiresRows: true },
+  'pni-exceto-rule-board': { Component: Dyn_pni_exceto_rule_board, requiresRows: true },
   'vitals-reference-board': { Component: Dyn_vitals_reference_board, requiresRows: true },
   'ist-reference-board': { Component: Dyn_ist_reference_board, requiresRows: true },
   'biosseg-reference-board': { Component: Dyn_biosseg_reference_board, requiresRows: true },
@@ -397,6 +408,7 @@ export const GOLDEN_RULE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'via-reference-board': { Component: Dyn_via_reference_board, requiresRows: true },
   'pk-pd-reference-board': { Component: Dyn_pk_pd_reference_board, requiresRows: true },
   'farmaco-clinico-reference-board': { Component: Dyn_farmaco_clinico_reference_board, requiresRows: true },
+  'farmaco-generico-reference-board': { Component: Dyn_farmaco_generico_reference_board, requiresRows: true },
   'burn-rule-nine-board': { Component: Dyn_burn_rule_nine_board, requiresRows: true },
   'pt-crase-funnel-board': { Component: Dyn_pt_crase_funnel_board, requiresRows: true },
   'pt-clitic-rail-board': { Component: Dyn_pt_clitic_rail_board, requiresRows: true },

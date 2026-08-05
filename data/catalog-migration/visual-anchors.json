@@ -523,49 +523,210 @@
       "pedagogical_branch": "vitals_pa_tecnica",
       "slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
       "lote": "sinais-vitais-g01",
-      "json_path": "data/catalog-migration/sinais-vitais-g01/questions/ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3.json"
+      "json_path": "data/catalog-migration/sinais-vitais-g01/questions/ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3.json",
+      "ancora_100": {
+        "polished_at": "2026-08-04",
+        "pending_human_approval": false,
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=vitals_pa_tecnica",
+        "gate": "READY strict-v2-pedagogy",
+        "spoiler_livre": true,
+        "notes": "Conteudo + visual humanos OK. Arena colorida Glance OS; panel/eliminação/golden com massa G2.",
+        "status": "aprovado_100",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "approved_at": "2026-08-04",
+        "visual_approved_at": "2026-08-04",
+        "decision": "A",
+        "pending_visual_approval": false,
+        "mold_fixes": [
+          "vitals-panel technique/trap/case badges + 0 expand + massa cor",
+          "vitals-translate-tap elimination glance board colorido",
+          "reference-board skip faixa without measured vital + massa cor",
+          "vitals-classify-arena tickets ✗×✓ (0 taps)"
+        ]
+      }
     },
     "vitals_fc_faixas": {
       "pedagogical_branch": "vitals_fc_faixas",
       "slug": "idecan-fc-radial-ce",
       "lote": "sinais-vitais-g01",
-      "json_path": "examples/questao-premium-idecan-fc-radial-ce.json"
+      "json_path": "examples/questao-premium-idecan-fc-radial-ce.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-04",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "json_path": "examples/questao-premium-idecan-fc-radial-ce.json",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=vitals_fc_faixas",
+        "approved_at": "2026-08-04",
+        "decision": "A",
+        "notes": "Conteudo + visual humanos OK (molde compartilhado SV + C/E FC).",
+        "pending_visual_approval": false,
+        "visual_approved_at": "2026-08-04",
+        "pending_human_approval": false
+      }
     },
     "vitals_interpretacao": {
       "pedagogical_branch": "vitals_interpretacao",
       "slug": "fepese-sv-interpretacao-valores",
       "lote": "sinais-vitais-g01",
-      "json_path": "examples/questao-premium-fepese-sv-interpretacao-valores.json"
+      "json_path": "examples/questao-premium-fepese-sv-interpretacao-valores.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-04",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=vitals_interpretacao",
+        "approved_at": "2026-08-04",
+        "decision": "A",
+        "notes": "Conteudo + visual humanos OK. Panel NORMAL/ALTERADO + translate-tap valor->termo.",
+        "pending_visual_approval": false,
+        "visual_approved_at": "2026-08-04",
+        "pending_human_approval": false
+      }
     },
     "vitals_vf_faixas": {
       "pedagogical_branch": "vitals_vf_faixas",
       "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7",
       "lote": "sinais-vitais-g36",
-      "json_path": "data/catalog-migration/sinais-vitais-g36/questions/avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7.json"
+      "json_path": "data/catalog-migration/sinais-vitais-g36/questions/avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-04",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=vitals_vf_faixas",
+        "approved_at": "2026-08-04",
+        "visual_approved_at": "2026-08-04",
+        "pending_visual_approval": false,
+        "pending_human_approval": false,
+        "notes": "Conteudo + visual humanos OK. V/F I-IV: so II pegadinha; golden faixas sem duplicata; temp 36-37,5 guideline.",
+        "decision": "A",
+        "mold_fixes": [
+          "concept: III/IV nao-pegadinha",
+          "golden: faixa normativa REFERENCIA + anti-duplicata",
+          "temp alinhada guideline 36-37,5"
+        ]
+      }
     },
     "vitals_exceto_tecnica": {
       "pedagogical_branch": "vitals_exceto_tecnica",
       "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
       "lote": "sinais-vitais-exceto-piloto-g01",
-      "json_path": "examples/questao-premium-avancasp-sv-pa-incorreta-divergente.json"
+      "json_path": "examples/questao-premium-avancasp-sv-pa-incorreta-divergente.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-04",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=vitals_exceto_tecnica",
+        "approved_at": "2026-08-04",
+        "visual_approved_at": "2026-08-04",
+        "pending_visual_approval": false,
+        "pending_human_approval": false,
+        "notes": "Conteudo + visual OK. Arena EXCETO: distrator verde / gabarito amber; golden cards break-words; SpO2 oxim fix.",
+        "decision": "A",
+        "mold_fixes": [
+          "exceto arena: distrator vs gabarito cores",
+          "golden vitals: min-w-0 break-words",
+          "inferSvKind: oximetria antes de pulso; sem oxim em aproximam"
+        ]
+      }
     },
     "vitals_temperatura": {
       "pedagogical_branch": "vitals_temperatura",
       "slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1",
       "lote": "sinais-vitais-g39",
-      "json_path": "data/catalog-migration/sinais-vitais-g39/questions/amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1.json"
+      "json_path": "data/catalog-migration/sinais-vitais-g39/questions/amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-04",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=vitals_temperatura",
+        "approved_at": "2026-08-04",
+        "visual_approved_at": "2026-08-04",
+        "pending_visual_approval": false,
+        "pending_human_approval": false,
+        "notes": "Conteudo + visual OK. Golden tipografia prosa/faixa; foco piso 6 meses; typo trompanica corrigido.",
+        "decision": "A",
+        "mold_fixes": [
+          "golden: heroIsProse para faixa/prosa (sem tipografia de numero)",
+          "meta rows timpânica/axilar/febre",
+          "badge ALERTA em meta+emphasis alert"
+        ]
+      }
     },
     "vitals_fr_faixas": {
       "pedagogical_branch": "vitals_fr_faixas",
       "slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
       "lote": "sinais-vitais-g37",
-      "json_path": "data/catalog-migration/sinais-vitais-g37/questions/adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7.json"
+      "json_path": "data/catalog-migration/sinais-vitais-g37/questions/adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-04",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=vitals_fr_faixas",
+        "approved_at": "2026-08-04",
+        "visual_approved_at": "2026-08-04",
+        "pending_visual_approval": false,
+        "pending_human_approval": false,
+        "notes": "Conteudo + visual OK. Logic 0 taps (elim board); parser MCQ/irpm nao vira translate; golden lactente x adulto.",
+        "decision": "A",
+        "mold_fixes": [
+          "parseTranslationStep: letra MCQ + candidata != traducao",
+          "LogicFlow: force elim board quando cues de eliminacao",
+          "golden meta lactente x adulto"
+        ]
+      }
     },
     "vitals_generico": {
       "pedagogical_branch": "vitals_generico",
       "slug": "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
       "lote": "sinais-vitais-g48",
-      "json_path": "data/catalog-migration/sinais-vitais-g48/questions/instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0.json"
+      "json_path": "data/catalog-migration/sinais-vitais-g48/questions/instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-04",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "approved_at": "2026-08-05",
+        "visual_approved_at": "2026-08-05",
+        "pending_visual_approval": false,
+        "pending_human_approval": false,
+        "decision": "A",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=vitals_generico",
+        "notes": "Conteudo + visual OK. Glasgow: ocular 3=a voz; golden empilhado com linhas O/V/M; Arena Glasgow chips O/V/M/Total; logic 0 taps.",
+        "mold_fixes": [
+          "GoldenRuleVitalsReferenceBoard: cores por eixo Glasgow + lista vertical",
+          "DangerZoneVitalsClassifyArena: chips Glasgow (nao PA/FC/FR/Temp)",
+          "inferSvShortLabel/Icon: Glasgow O/V/M",
+          "Conteudo: ocular 3 a voz; pupilas fora da soma"
+        ]
+      }
     },
     "urgencias_rcp_sbv": {
       "pedagogical_branch": "urgencias_rcp_sbv",

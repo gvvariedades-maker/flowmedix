@@ -323,6 +323,15 @@ const Dyn_pni_exceto_compare = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pni_via_trap_arena = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/DangerZonePniViaTrapArena') as Promise<Record<string, unknown>>,
+      'DangerZonePniViaTrapArena',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_adolescent_z_threshold_trap = dynamic(
   () => loadNamedVariant(() => import('../variants/DangerZoneAdolescentZThresholdTrap') as Promise<Record<string, unknown>>, 'DangerZoneAdolescentZThresholdTrap'),
   { ssr: true, loading: () => null },
@@ -375,6 +384,11 @@ const Dyn_farmaco_trap = dynamic(
 
 const Dyn_farmaco_clinico_trap = dynamic(
   () => loadNamedVariant(() => import('../variants/DangerZoneFarmacoClinicoTrap') as Promise<Record<string, unknown>>, 'DangerZoneFarmacoClinicoTrap'),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_farmaco_generico_trap = dynamic(
+  () => loadNamedVariant(() => import('../variants/DangerZoneFarmacoGenericoTrap') as Promise<Record<string, unknown>>, 'DangerZoneFarmacoGenericoTrap'),
   { ssr: true, loading: () => null },
 );
 
@@ -439,6 +453,7 @@ export const DANGER_ZONE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'adolescent-consent-gate': { Component: Dyn_adolescent_consent_gate, requiresItems: true },
   'adolescent-exceto-compare': { Component: Dyn_adolescent_exceto_compare, requiresItems: true },
   'pni-exceto-compare': { Component: Dyn_pni_exceto_compare, requiresItems: true },
+  'pni-via-trap-arena': { Component: Dyn_pni_via_trap_arena, requiresItems: true },
   'adolescent-z-threshold-trap': { Component: Dyn_adolescent_z_threshold_trap, requiresItems: true },
   'vitals-classify-arena': { Component: Dyn_vitals_classify_arena, requiresItems: true },
   'trap-reveal': { Component: Dyn_trap_reveal, requiresItems: true },
@@ -450,6 +465,7 @@ export const DANGER_ZONE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'dose-trap': { Component: Dyn_dose_trap, requiresItems: true },
   'farmaco-trap': { Component: Dyn_farmaco_trap, requiresItems: true },
   'farmaco-clinico-trap': { Component: Dyn_farmaco_clinico_trap, requiresItems: true },
+  'farmaco-generico-trap': { Component: Dyn_farmaco_generico_trap, requiresItems: true },
 };
 
 export function getDangerZoneBespoke(layoutVariant: string): BespokeVariantEntry | undefined {

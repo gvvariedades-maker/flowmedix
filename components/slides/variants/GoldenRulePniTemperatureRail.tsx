@@ -178,11 +178,23 @@ export function GoldenRulePniTemperatureRail({
   }, [dataRows]);
 
   const [selectedMarker, setSelectedMarker] = useState<number | null>(null);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const hotIndex = useMemo(
+    () =>
+      dataRows.findIndex((row) =>
+        isTemperatureHotRow(row.label, row.value, row.emphasis, row.badge),
+      ),
+    [dataRows],
+  );
+  const [expandedIndex, setExpandedIndex] = useState<number | 'auto'>('auto');
+  const resolvedExpanded =
+    expandedIndex === 'auto' ? (hotIndex >= 0 ? hotIndex : null) : expandedIndex;
 
   const toggleExpanded = useCallback((index: number) => {
-    setExpandedIndex((current) => (current === index ? null : index));
-  }, []);
+    setExpandedIndex((current) => {
+      const open = current === 'auto' ? hotIndex : current;
+      return open === index ? 'auto' : index;
+    });
+  }, [hotIndex]);
 
   const toggleMarker = useCallback((marker: number) => {
     setSelectedMarker((current) => (current === marker ? null : marker));
@@ -205,17 +217,17 @@ export function GoldenRulePniTemperatureRail({
           </motion.p>
         ) : null}
 
-        {!vfMode ? (
-          <TemperatureRail
-            activeMarkers={activeMarkers}
-            selectedMarker={selectedMarker}
-            onSelect={toggleMarker}
-          />
-        ) : (
+        {/* Rail 2–8 sempre: gesto do ramo, mesmo em corpus V/F. */}
+        <TemperatureRail
+          activeMarkers={activeMarkers}
+          selectedMarker={selectedMarker}
+          onSelect={toggleMarker}
+        />
+        {vfMode ? (
           <p className="rounded-xl border border-teal-200/80 bg-teal-50/80 px-3 py-2 text-center font-mono text-[10px] font-bold uppercase tracking-widest text-teal-900">
-            Modo V/F — assertivas da prova
+            V/F — assertivas da sala de vacina
           </p>
-        )}
+        ) : null}
 
         <div className="flex flex-col gap-3">
           {dataRows.map((row, index) => {
@@ -229,7 +241,7 @@ export function GoldenRulePniTemperatureRail({
                 key={`${row.label}-${index}`}
                 row={row}
                 index={index}
-                expanded={expandedIndex === index}
+                expanded={resolvedExpanded === index}
                 onToggle={() => toggleExpanded(index)}
                 dimmed={dimmed}
               />

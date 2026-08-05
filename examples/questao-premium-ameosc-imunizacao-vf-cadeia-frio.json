@@ -11,13 +11,12 @@
     "content_standard": "golden-v1",
     "family": "vf",
     "content_review": {
-      "reviewed_at": "2026-07-02",
-      "reviewer": "professor-para-concurso",
+      "reviewed_at": "2026-08-04",
+      "reviewer": "ancoras-100",
       "guideline_snapshot": "PNI 2025 — BCG, pentavalente, cadeia de frio, papel do técnico",
       "exam_vs_current": "none",
       "catalog_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
       "repair_lote": "imunizacao-ameosc-cadeia-frio-repair",
-      "applied_at": "2026-07-02",
       "cluster": "Cadeia de frio / conservação / SI-PNI"
     },
     "sources": [
@@ -65,77 +64,39 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "V/F — sala de vacina",
+      "slide_title": "V/F — sala de vacina / cadeia de frio",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
       "items": [
         {
-          "label": "BCG",
-          "detail": "Intradérmica, preferencialmente no deltoide direito.",
-          "icon": "Syringe"
+          "label": "Agitar ≠ recuperar",
+          "detail": "Vacinas com alteração da cadeia de frio — descartar e notificar. Agitar não recupera. Pegadinha clássica.",
+          "icon": "AlertTriangle"
         },
         {
-          "label": "Cadeia de frio",
-          "detail": "Agitar não recupera vacina fora da temperatura — descartar e notificar.",
+          "label": "Faixa 2–8 °C",
+          "detail": "Temperatura positiva de conservação (PNI) — não improvisar.",
           "icon": "Thermometer"
         },
         {
+          "label": "BCG",
+          "detail": "Via intradérmica, preferencialmente no braço direito (deltoide).",
+          "icon": "Syringe"
+        },
+        {
           "label": "Pentavalente",
-          "detail": "Difteria, tétano, coqueluche, hepatite B e Hib.",
+          "detail": "Difteria, tétano, coqueluche, hepatite B e Haemophilus influenzae B (Hib).",
           "icon": "Shield"
         },
         {
           "label": "Papel do técnico",
-          "detail": "Técnico aplica no calendário PNI — não prescreve vacina extraoficial.",
+          "detail": "Técnico em Enfermagem aplica no calendário oficial — não prescreve novas vacinas.",
           "icon": "UserX"
-        },
-        {
-          "label": "Pegadinha — agitar cadeia",
-          "detail": "Erro reproduzível: agitar não recupera imunobiológico fora de 2–8 °C — descartar e notificar.",
-          "icon": "AlertTriangle"
         }
       ],
-      "footer_rule": "Sequência: V · F · V · F"
-    },
-    {
-      "type": "golden_rule",
-      "slide_title": "Decore rápido — PNI",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Imunização"
-      },
-      "content": "ASSERTIVAS DA PROVA",
-      "rows": [
-        {
-          "label": "BCG",
-          "value": "Intradérmica — braço direito",
-          "badge": "ok"
-        },
-        {
-          "label": "Cadeia rompida",
-          "value": "Não usar — agitar não salva",
-          "emphasis": "success",
-          "badge": "hot"
-        },
-        {
-          "label": "Pentavalente",
-          "value": "DTP + hepatite B + Hib",
-          "badge": "info"
-        },
-        {
-          "label": "Técnico",
-          "value": "Vacina no calendário — sem prescrição",
-          "badge": "warn"
-        },
-        {
-          "label": "Sequência V/F",
-          "value": "BCG · cadeia · penta · papel do técnico",
-          "badge": "ok"
-        }
-      ],
-      "footer_rule": "Cadeia fria: 2 °C a 8 °C — não improvisar"
+      "footer_rule": "CADEIA ROMPIDA → DESCARTAR — AGITAR NÃO SALVA"
     },
     {
       "type": "logic_flow",
@@ -145,15 +106,54 @@
         "subtopico": "Imunização"
       },
       "steps": [
-        "Comando: sequência V/F de cima para baixo (I a IV).",
-        "I — BCG intradérmica direita → V.",
-        "II — cadeia fria + agitar → F.",
-        "III — pentavalente DTP+Hib+HB → V.",
-        "IV — técnico prescreve fora do PNI → F.",
-        "Sequência V, F, V, F → letra C.",
-        "Marcar C."
+        "I — BCG intradérmica no braço direito → V.",
+        "II — cadeia rompida: agitar recupera → F.",
+        "III — pentavalente DTP + hepatite B + Hib → V.",
+        "IV — técnico prescreve fora do calendário oficial → F.",
+        "Combinar sequência V, F, V, F → letra C.",
+        "Marcar C.",
+        "Em similares: agitar ≠ recuperar imunobiológico fora de 2–8 °C — descartar e notificar."
       ],
-      "footer_rule": "Julgue cada linha antes de combinar"
+      "footer_rule": "Julgue cada linha antes de combinar a sequência"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore rápido — PNI / rede de frio",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "SALA DE VACINA — REGRAS QUE A BANCA COBRA",
+      "rows": [
+        {
+          "label": "Cadeia rompida",
+          "value": "Não utilizar se agitadas — potência não se restaura",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Faixa 2–8 °C",
+          "value": "Temperatura positiva de conservação (PNI)",
+          "emphasis": "highlight",
+          "badge": "ok"
+        },
+        {
+          "label": "BCG",
+          "value": "Via intradérmica — braço direito",
+          "badge": "ok"
+        },
+        {
+          "label": "Pentavalente",
+          "value": "Difteria, tétano, coqueluche, hepatite B e Hib",
+          "badge": "info"
+        },
+        {
+          "label": "Técnico",
+          "value": "Calendário oficial — sem prescrever novas vacinas",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Cadeia fria: 2 °C a 8 °C — não improvisar"
     },
     {
       "type": "danger_zone",
@@ -162,32 +162,27 @@
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
-      "content": "PEGADINHAS — SEQUÊNCIA",
+      "content": "PEGADINHAS — V/F CADEIA DE FRIO",
       "items": [
         {
           "label": "Letra A — F, V, V, F",
-          "detail": "Erra BCG e cadeia de frio.",
-          "correct": "BCG é V; vacina fora da cadeia não volta com agitação."
+          "detail": "Marca BCG falsa e vacinas agitadas como recuperáveis.",
+          "correct": "BCG é V; alteração da cadeia de frio não volta com agitar."
         },
         {
           "label": "Letra B — F, F, V, V",
-          "detail": "Marca BCG falsa e técnico prescritor verdadeiro.",
-          "correct": "BCG é V; técnico não prescreve fora do calendário."
+          "detail": "Marca BCG falsa e técnico prescritor de novas vacinas.",
+          "correct": "BCG é V; técnico não prescreve fora do calendário oficial."
         },
         {
           "label": "Letra D — V, F, F, V",
-          "detail": "Acerta 1ª e 2ª, tropeça na pentavalente e no papel do técnico.",
-          "correct": "Pentavalente é V; prescrição extraoficial é F."
+          "detail": "Erra pentavalente (Difteria/Hib) e papel do técnico.",
+          "correct": "Pentavalente é V; prescrição de novas vacinas é F."
         },
         {
-          "label": "Agitar ≠ recuperar (II)",
-          "detail": "Sequência marca II como V — agitar vacina fora da temperatura.",
-          "correct": "Cadeia rompida: não aplicar; agitação não restaura potência do imunobiológico."
-        },
-        {
-          "label": "Transferência",
-          "detail": "Geladeira quebrou ou caixa térmica aberta.",
-          "correct": "Seguir fluxo de perda de cadeia de frio — nunca aplicar por conta própria."
+          "label": "Transferência — geladeira / caixa térmica",
+          "detail": "Geladeira quebrou ou caixa térmica aberta no transporte.",
+          "correct": "Seguir fluxo de perda da cadeia de frio — nunca aplicar por conta."
         }
       ],
       "footer_rule": "Agitar ≠ recuperar imunobiológico"
