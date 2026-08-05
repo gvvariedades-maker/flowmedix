@@ -205,11 +205,6 @@ const Dyn_farmaco_clinico_reference_board = dynamic(
   { ssr: true, loading: () => null },
 );
 
-const Dyn_farmaco_generico_reference_board = dynamic(
-  () => loadNamedVariant(() => import('../variants/GoldenRuleFarmacoGenericoReferenceBoard') as Promise<Record<string, unknown>>, 'GoldenRuleFarmacoGenericoReferenceBoard'),
-  { ssr: true, loading: () => null },
-);
-
 const Dyn_burn_rule_nine_board = dynamic(
   () => loadNamedVariant(() => import('../variants/GoldenRuleBurnRuleNineBoard') as Promise<Record<string, unknown>>, 'GoldenRuleBurnRuleNineBoard'),
   { ssr: true, loading: () => null },
@@ -408,7 +403,6 @@ export const GOLDEN_RULE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'via-reference-board': { Component: Dyn_via_reference_board, requiresRows: true },
   'pk-pd-reference-board': { Component: Dyn_pk_pd_reference_board, requiresRows: true },
   'farmaco-clinico-reference-board': { Component: Dyn_farmaco_clinico_reference_board, requiresRows: true },
-  'farmaco-generico-reference-board': { Component: Dyn_farmaco_generico_reference_board, requiresRows: true },
   'burn-rule-nine-board': { Component: Dyn_burn_rule_nine_board, requiresRows: true },
   'pt-crase-funnel-board': { Component: Dyn_pt_crase_funnel_board, requiresRows: true },
   'pt-clitic-rail-board': { Component: Dyn_pt_clitic_rail_board, requiresRows: true },

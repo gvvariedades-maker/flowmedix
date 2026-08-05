@@ -387,11 +387,6 @@ const Dyn_farmaco_clinico_trap = dynamic(
   { ssr: true, loading: () => null },
 );
 
-const Dyn_farmaco_generico_trap = dynamic(
-  () => loadNamedVariant(() => import('../variants/DangerZoneFarmacoGenericoTrap') as Promise<Record<string, unknown>>, 'DangerZoneFarmacoGenericoTrap'),
-  { ssr: true, loading: () => null },
-);
-
 export const DANGER_ZONE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'catheter-danger-arena': { Component: Dyn_catheter_danger_arena, requiresItems: true },
   'lab-prep-trap': { Component: Dyn_lab_prep_trap, requiresItems: true },
@@ -465,7 +460,6 @@ export const DANGER_ZONE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'dose-trap': { Component: Dyn_dose_trap, requiresItems: true },
   'farmaco-trap': { Component: Dyn_farmaco_trap, requiresItems: true },
   'farmaco-clinico-trap': { Component: Dyn_farmaco_clinico_trap, requiresItems: true },
-  'farmaco-generico-trap': { Component: Dyn_farmaco_generico_trap, requiresItems: true },
 };
 
 export function getDangerZoneBespoke(layoutVariant: string): BespokeVariantEntry | undefined {

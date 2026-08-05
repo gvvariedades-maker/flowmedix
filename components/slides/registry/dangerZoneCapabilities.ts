@@ -37,7 +37,6 @@ export const DANGER_ZONE_VARIANT_CAPABILITIES: Record<string, DangerZoneVariantC
   'dose-trap': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },
   'dressing-choice-arena': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },
   'farmaco-clinico-trap': { defaultBulletStyle: 'x_icon' },
-  'farmaco-generico-trap': { defaultBulletStyle: 'x_icon' },
   'farmaco-trap': { defaultBulletStyle: 'x_icon' },
   'ist-trap-chips': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },
   'itu-catheter-trap': { dangerTapReveal: true },

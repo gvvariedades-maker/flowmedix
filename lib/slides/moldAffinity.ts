@@ -256,12 +256,7 @@ const FARMACO_CLINICO_VARIANTS = new Set([
   'farmaco-clinico-trap',
 ]);
 
-const FARMACO_GENERIC_VARIANTS = new Set([
-  'farmaco-hub-pillar-deck',
-  'farmaco-generico-reference-board',
-  'farmaco-generico-isolate-board',
-  'farmaco-generico-trap',
-]);
+const FARMACO_GENERIC_VARIANTS = new Set<string>([]);
 
 const PNI_VF_VARIANTS = new Set([
   'pni-rules-deck',
@@ -1251,31 +1246,6 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
     blockFamilies: ['vf', 'calc', 'legis'],
     positivePatterns: [/letra [a-e]|fosfato|subcut|bólus|alumínio|dilui/i],
-    minPositive: 1,
-  },
-
-  'farmaco-hub-pillar-deck': {
-    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
-    blockFamilies: ['vf', 'protocolo', 'calc', 'legis'],
-    positivePatterns: [/farmac|medicamento|incorreta|exceto|efeito|neurotox|convuls/i],
-    minPositive: 1,
-  },
-  'farmaco-generico-reference-board': {
-    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
-    blockFamilies: ['vf', 'protocolo', 'calc', 'legis'],
-    positivePatterns: [/incorreta|exceto|risco|clearance|fator/i],
-    minPositive: 1,
-  },
-  'farmaco-generico-isolate-board': {
-    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
-    blockFamilies: ['vf', 'protocolo', 'calc', 'legis'],
-    positivePatterns: [/comando|incorreta|marcar|afirmativa correta|exceto/i],
-    minPositive: 1,
-  },
-  'farmaco-generico-trap': {
-    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
-    blockFamilies: ['vf', 'protocolo', 'calc', 'legis'],
-    positivePatterns: [/letra [a-e]|incorreta|gabarito|pegadinha/i],
     minPositive: 1,
   },
 

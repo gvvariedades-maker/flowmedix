@@ -325,11 +325,6 @@ const Dyn_farmaco_protocol_tap_flow = dynamic(
   { ssr: true, loading: () => null },
 );
 
-const Dyn_farmaco_generico_isolate_board = dynamic(
-  () => loadNamedVariant(() => import('../variants/LogicFlowFarmacoGenericoIsolateBoard') as Promise<Record<string, unknown>>, 'LogicFlowFarmacoGenericoIsolateBoard'),
-  { ssr: true, loading: () => null },
-);
-
 const Dyn_adolescent_vf_weave_tap = dynamic(
   () => loadNamedVariant(() => import('../variants/LogicFlowAdolescentVfWeaveTap') as Promise<Record<string, unknown>>, 'LogicFlowAdolescentVfWeaveTap'),
   { ssr: true, loading: () => null },
@@ -459,7 +454,6 @@ export const LOGIC_FLOW_REGISTRY: Record<string, BespokeVariantEntry> = {
   'via-vf-juggle-tap': { Component: Dyn_via_vf_juggle_tap },
   'farmaco-vf-juggle-tap': { Component: Dyn_farmaco_vf_juggle_tap },
   'farmaco-protocol-tap-flow': { Component: Dyn_farmaco_protocol_tap_flow },
-  'farmaco-generico-isolate-board': { Component: Dyn_farmaco_generico_isolate_board },
   'adolescent-vf-weave-tap': { Component: Dyn_adolescent_vf_weave_tap },
   'adolescent-exceto-isolate-tap': { Component: Dyn_adolescent_exceto_isolate_tap },
   'adolescent-exceto-isolate-board': { Component: Dyn_adolescent_exceto_isolate_board },
