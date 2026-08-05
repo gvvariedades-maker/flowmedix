@@ -2,6 +2,7 @@
 
 **Âncoras 100% — Fase 0a — 2026-08-05**  
 **Pacote:** 93 slugs · `production_ready` / `applied` · **6 ramos L3** (split do card)  
+**Política âncoras:** **2 por ramo** (= **12** goldens) — `anchor_styles` distintos (padrão crase/pontuação)  
 **Referência Glance OS:** Farmacodinâmica 3/3 (`artifacts/glance-os-piloto-farmacodinamica-INDEX.md`)  
 **Playbook:** `data/catalog-migration/handcraft-playbooks/classes-de-palavras.json`  
 **Piso visual:** `docs/NEUROSLIDES_VISUAL_BAR.md` · `artifacts/neuroslides-g2-demo.html`  
@@ -115,14 +116,27 @@ Metáfora skill (`reference-metaforas.md`): **Peças** — radical · prefixo ·
 
 ---
 
-## Ordem de polish das âncoras (Fase 1 sugerida)
+## 2 âncoras por ramo (obrigatório)
 
-1. `pt_classes_conjuncao` (volume)
-2. `pt_classes_nominais`
-3. `pt_classes_adverbio`
-4. `pt_classes_preposicao`
-5. `pt_classes_exceto`
-6. `pt_classes_generico` (cauda + legado)
+| branch_id | estilo 01 | estilo 02 |
+|-----------|-----------|-----------|
+| `pt_classes_conjuncao` | `causal` | `adversativa` |
+| `pt_classes_nominais` | `artigo` | `substantivacao` |
+| `pt_classes_adverbio` | `modo_intensidade` | `adv_x_adj` |
+| `pt_classes_preposicao` | `prep_x_artigo` | `locucao_prepositiva` |
+| `pt_classes_exceto` | `exceto_classe` | `valor_incorreto` |
+| `pt_classes_generico` | `vf_multiclasse` | `formacao_siglas` (legado → elevar) |
+
+**DoD ramo:** 2/2 READY + aprovado_humano em ambas. Não fechar ramo com 1 só.
+
+## Ordem de polish (Fase 1 sugerida)
+
+1. `pt_classes_conjuncao` — causal → adversativa  
+2. `pt_classes_nominais` — artigo → substantivação  
+3. `pt_classes_adverbio` — modo/intensidade → adv×adj  
+4. `pt_classes_preposicao` — prep×artigo → locução  
+5. `pt_classes_exceto` — EXCETO → valor INCORRETO  
+6. `pt_classes_generico` — VF multi-classe → formação/siglas  
 
 ---
 
@@ -130,6 +144,7 @@ Metáfora skill (`reference-metaforas.md`): **Peças** — radical · prefixo ·
 
 - [x] Playbook dedicado com `pedagogical_branches[]` completos
 - [x] Mapa de gestos + anti-gesto
+- [x] Política **2 âncoras/ramo** (`anchors_per_branch: 2` · 12 no pacote)
 - [x] Mold gaps anotados (wrap_polish_g2; sem brief molde_redesign obrigatório)
 - [ ] Humano revisa tabela de ramos → liberar Fase 0b (inventário)
 

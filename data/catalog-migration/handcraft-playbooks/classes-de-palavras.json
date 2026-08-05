@@ -15,22 +15,23 @@
   "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
   "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-index.md",
   "mapa_gestos": "artifacts/glance-os-classes-de-palavras-MAPA-8-GESTOS.md",
-  "slug_selection": "PDF cluster B—Morfologia (93 slugs). Handcraft applied g01–g12 sob umbrella legado `pt_classes_palavras`. Âncoras 100%: 1 golden por ramo L3 do split abaixo; re-tag de lotes aplicados = conversa futura (não nesta).",
+  "anchors_per_branch": 2,
+  "slug_selection": "PDF cluster B—Morfologia (93 slugs). Handcraft applied g01–g12 sob umbrella legado `pt_classes_palavras`. Âncoras 100%: **2 goldens por ramo L3** (anchor_styles distintos, padrão crase/pontuação); re-tag de lotes aplicados = conversa futura.",
   "classification": {
     "meta.topico": "Língua Portuguesa",
     "meta.subtopico": "Classes de palavras",
     "titulo_aula": "Classes de palavras",
     "modulo_nome": "Língua Portuguesa",
     "policy": "tema_real_no_handcraft; pergunta-teste M02 «O que a palavra faz na oração?»",
-    "split_note": "Card era split_candidate (93) — Fase 0a Âncoras 100% formaliza ramos L3 (nominais × advérbio × prep × conjunção × EXCETO × generico). Umbrella `pt_classes_palavras` = legado aplicado; novas âncoras usam ids do split."
+    "split_note": "Card era split_candidate (93) — Fase 0a Âncoras 100% formaliza 6 ramos L3 × 2 âncoras/ramo (= 12 goldens). Umbrella `pt_classes_palavras` = legado aplicado."
   },
   "clusters": [
-    "Conjunção / valor semântico do conectivo como classe (~28–35 · ~30% — pt_classes_conjuncao)",
-    "Nominais — artigo · substantivo · substantivação · adjetivo · numeral (~15–25 · pt_classes_nominais)",
-    "Advérbio / locução adverbial / adv×adj (~14 · pt_classes_adverbio)",
-    "Preposição / loc. prepositiva / prep×artigo (~7 · pt_classes_preposicao)",
-    "EXCETO / INCORRETA no eixo classes (~5 · pt_classes_exceto)",
-    "Cauda — VF multi-classe · dupla classe · formação residual · mesclado (pt_classes_generico)"
+    "Conjunção / valor semântico do conectivo como classe (~28–35 · ~30% — pt_classes_conjuncao · 2 âncoras: causal + adversativa)",
+    "Nominais — artigo · substantivo · substantivação · adjetivo · numeral (~15–25 · pt_classes_nominais · 2: artigo + substantivação)",
+    "Advérbio / locução adverbial / adv×adj (~14 · pt_classes_adverbio · 2: modo/intensidade + adv×adj)",
+    "Preposição / loc. prepositiva / prep×artigo (~7 · pt_classes_preposicao · 2: prep×artigo + locução)",
+    "EXCETO / INCORRETA no eixo classes (~5 · pt_classes_exceto · 2: EXCETO classe + valor INCORRETO)",
+    "Cauda — VF multi-classe · formação residual (pt_classes_generico · 2: VF multi-classe + formação/siglas)"
   ],
   "glance_os_ancoras_100": {
     "started_at": "2026-08-05",
@@ -39,9 +40,11 @@
     "mapa_gestos": "artifacts/glance-os-classes-de-palavras-MAPA-8-GESTOS.md",
     "report": null,
     "default_clicks": 0,
+    "anchors_per_branch": 2,
+    "total_anchors_target": 12,
     "visual_bar": "docs/NEUROSLIDES_VISUAL_BAR.md",
     "reference_piloto": "artifacts/glance-os-piloto-farmacodinamica-INDEX.md",
-    "note": "Fase 0a — playbook + mapa. Sem polish de âncora até GATE 0a + inventário 0b."
+    "note": "Fase 0a — playbook + mapa. Política: 2 âncoras por ramo (12 no pacote). Sem polish até GATE 0a + inventário 0b."
   },
   "pedagogical_branches": [
     {
@@ -50,15 +53,31 @@
       "gesture": "CLASSIFICAR (+ PEGADINHA valor semântico)",
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "ok_generico",
-      "ok_generico_3_3": "~30% do card; morphological + rows (conectivo × valor) + tap + compare; Glance OS = board 0 taps (gap wrap/polish genérico G2 — sem bespoke obrigatório nesta onda)",
-      "mold_gap": "wrap_polish_g2 — preferir 0 taps; não forçar pt-period-rail (oração) se a prova pede só CLASSE do conectivo",
+      "ok_generico_3_3": "~30% do card; morphological + rows (conectivo × valor) + tap + compare; Glance OS = board 0 taps (gap wrap/polish genérico G2)",
+      "mold_gap": "wrap_polish_g2 — preferir 0 taps; não forçar pt-period-rail se a prova pede só CLASSE do conectivo",
+      "anchors_target": 2,
       "ancoras_100_status": "pending",
       "anchors": [],
-      "anchor_candidate_notes": [
-        "VUNESP «já que» causal tec 3776325",
-        "QUADRIX «No entanto» adversativa tec 3779677",
-        "FCC «visto que» causal tec 3908393"
-      ]
+      "anchor_styles": {
+        "causal": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+            "fcc-tec-classes-considere-o-texto-abaixo-para-respon-3908393"
+          ],
+          "note": "Âncora 01 — conjunção causal («já que» / «visto que»)"
+        },
+        "adversativa": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677",
+            "vunesp-ag-pr-classes-por-que-agora-a-solidao-nos-adoece-p-3419024"
+          ],
+          "note": "Âncora 02 — conjunção adversativa («No entanto» / Todavia+entretanto)"
+        }
+      }
     },
     {
       "id": "pt_classes_nominais",
@@ -68,13 +87,30 @@
       "l3_decision": "ok_generico",
       "ok_generico_3_3": "Pergunta-teste M02/M03; rows classe×teste; compare adj×subst / artigo×pronome",
       "mold_gap": "wrap_polish_g2 — deck «peças nominais» tudo visível; 0 taps",
+      "anchors_target": 2,
       "ancoras_100_status": "pending",
       "anchors": [],
-      "anchor_candidate_notes": [
-        "AVANÇASP artigos Um/O Rubem Alves tec 3709821 (VF asserções)",
-        "AVANÇASP «o essencial» substantivo tec 3839425",
-        "AVANÇASP substantivação «o cinza» tec 4003512"
-      ]
+      "anchor_styles": {
+        "artigo": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821",
+            "avancasp-mon-classes-schulz-charles-m-snoopy-jornal-da-ta-3739268"
+          ],
+          "note": "Âncora 01 — artigo definido/indefinido (Um/O · um→o)"
+        },
+        "substantivacao": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+            "avancasp-acs-classes-15-07-2026-19-33-1-88-3-4-5-6-dispon-3839425",
+            "avancasp-tla-classes-quando-o-verde-dos-teus-olhosse-espa-3726050"
+          ],
+          "note": "Âncora 02 — substantivação (artigo+cor/qualidade) ou substantivo abstrato «o essencial»"
+        }
+      }
     },
     {
       "id": "pt_classes_adverbio",
@@ -84,13 +120,30 @@
       "l3_decision": "ok_generico",
       "ok_generico_3_3": "~15%; board modifica verbo/adj/adv; pegadinha -mente / forma adjetiva",
       "mold_gap": "wrap_polish_g2 — arena adv×adj aberta 0 taps",
+      "anchors_target": 2,
       "ancoras_100_status": "pending",
       "anchors": [],
-      "anchor_candidate_notes": [
-        "EDUCA PB «essencialmente» tec 3913810",
-        "AVANÇASP «rápido» advérbio tec 3962475",
-        "AVANÇASP «alto» adj como adv tec 3460253"
-      ]
+      "anchor_styles": {
+        "modo_intensidade": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810",
+            "avancasp-afa-classes-assinale-a-alternativa-cujo-termo-de-3962475",
+            "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336126"
+          ],
+          "note": "Âncora 01 — advérbio de modo/intensidade («essencialmente» / «rápido» / «muito»)"
+        },
+        "adv_x_adj": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253",
+            "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812"
+          ],
+          "note": "Âncora 02 — pegadinha forma adjetiva com função adverbial / EXCETO locução×classe (se couber no ramo adv)"
+        }
+      }
     },
     {
       "id": "pt_classes_preposicao",
@@ -100,13 +153,29 @@
       "l3_decision": "ok_generico",
       "ok_generico_3_3": "~7–8%; rows peça×teste; anti-gesto: não virar pt-regency-arrow",
       "mold_gap": "wrap_polish_g2 — board 0 taps; contraste prep×artigo",
+      "anchors_target": 2,
       "ancoras_100_status": "pending",
       "anchors": [],
-      "anchor_candidate_notes": [
-        "AVANÇASP «a» prep × artigo tec 3839714",
-        "Ápice locução «além da» tec 4037406",
-        "FACET «com medo de» loc. prep tec 3358539"
-      ]
+      "anchor_styles": {
+        "prep_x_artigo": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714",
+            "selecon-rece-classes-leia-o-texto-a-seguir-ceo-da-empresa-3852269"
+          ],
+          "note": "Âncora 01 — «a» prep × artigo / homônimo classe"
+        },
+        "locucao_prepositiva": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406",
+            "facet-acs-pr-classes-leia-o-trecho-a-seguir-e-macabea-com-3358539"
+          ],
+          "note": "Âncora 02 — locução prepositiva («além da» / «com medo de»)"
+        }
+      }
     },
     {
       "id": "pt_classes_exceto",
@@ -114,15 +183,31 @@
       "gesture": "EXCETO / PEGADINHA",
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "ok_generico",
-      "ok_generico_3_3": "~5%; isolate keep×exception + compare por letra; se volume subir → alinhar a pt-exceto-arena (PT transversal)",
+      "ok_generico_3_3": "~5%; isolate keep×exception + compare por letra",
       "mold_gap": "wrap_polish_g2 — preferir isolate board 0 taps (padrão imunizacao_exceto)",
+      "anchors_target": 2,
       "ancoras_100_status": "pending",
       "anchors": [],
-      "anchor_candidate_notes": [
-        "AVANÇASP EXCETO advérbio «de manhã» tec 3374812",
-        "AOCP valor INCORRETO «Como» tec 3804085",
-        "AOCP valor INCORRETO kidults tec 3840780"
-      ]
+      "anchor_styles": {
+        "exceto_classe": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
+            "facet-acs-pr-classes-identifique-a-alternativa-em-que-a-c-3358522"
+          ],
+          "note": "Âncora 01 — comando EXCETO/INCORRETA de classe gramatical"
+        },
+        "valor_incorreto": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085",
+            "instituto-ao-classes-15-07-2026-19-33-55-88-130-131-leia-3840780"
+          ],
+          "note": "Âncora 02 — «valor semântico INCORRETO» do conectivo/classe"
+        }
+      }
     },
     {
       "id": "pt_classes_generico",
@@ -130,18 +215,30 @@
       "gesture": "VF / CLASSIFICAR (fallback)",
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "cauda_longa",
-      "ok_generico_3_3": "Cauda + legado formação/siglas; piso G2 demo — sem forçar conjunção/nominal",
-      "mold_gap": "wrap_polish_g2 — âncora legada examples/questao-formacao-palavras-siglas.json está below_bar (subtópico drift «Formação…», layout_variant salvo, ordem slides legado)",
+      "ok_generico_3_3": "Cauda + formação/siglas; piso G2 demo — sem forçar conjunção/nominal",
+      "mold_gap": "wrap_polish_g2 — legado siglas below_bar; 2ª âncora = VF multi-classe (tirinha)",
       "legacy_umbrella": "pt_classes_palavras",
+      "anchors_target": 2,
       "ancoras_100_status": "pending",
       "anchors": [
         "examples/questao-formacao-palavras-siglas.json"
       ],
       "anchor_styles": {
-        "formacao_siglas_legado": {
+        "vf_multiclasse": {
+          "golden_reference": null,
+          "status": "missing",
+          "catalog_slug_candidates": [
+            "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
+            "avancasp-ace-classes-leia-a-tirinha-a-seguir-para-respond-3353960",
+            "cpcon-uepb-a-classes-leia-o-texto-i-para-responder-a-ques-3836456"
+          ],
+          "note": "Âncora 01 — VF / multi-classe (tirinha ou lista de peças)"
+        },
+        "formacao_siglas": {
           "golden_reference": "examples/questao-formacao-palavras-siglas.json",
           "anchor_slug": "questao-formacao-palavras-siglas",
-          "note": "LEGADO — drift_ramo + below_bar; elevar ou substituir na Fase 1 (não aprovar no estado atual)"
+          "status": "below_bar",
+          "note": "Âncora 02 — formação/siglas LEGADO (drift_ramo + below_bar); elevar ou substituir na Fase 1 — não aprovar no estado atual"
         }
       }
     }
@@ -155,7 +252,8 @@
   "validation": {
     "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
     "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]",
-    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy"
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "ancoras_100_dod": "cada ramo: anchors.length === 2 + ambos READY + aprovado_humano"
   },
   "golden_v1_grammar": {
     "concept_map": "Pergunta-teste M02 + classe em disputa — SEM gabarito/letra",
@@ -169,7 +267,8 @@
     "catalog:apply-lote --apply sem pedido explícito",
     "publicar referência TecConcursos no JSON",
     "handcraft em massa / gNN nesta conversa Âncoras 100%",
-    "forçar ADME/EV/regência completa/pt-period-rail quando a prova pede só classe morfológica"
+    "forçar ADME/EV/regência completa/pt-period-rail quando a prova pede só classe morfológica",
+    "fechar ramo com só 1 âncora (política anchors_per_branch=2)"
   ],
   "modes": {
     "subtopico_handcraft": {

@@ -1504,7 +1504,8 @@
         "closed_at": "2026-07-20",
         "source": "cluster:lingua-portuguesa"
       },
-      "note": "Card Classes de palavras — 93 slugs B—Morfologia. Split L3 Âncoras 100% Fase 0a (2026-08-05): 6 ramos. Umbrella legado pt_classes_palavras nos g01–g12 applied. Playbook dedicado classes-de-palavras.json.",
+      "anchors_per_branch": 2,
+      "note": "Card Classes de palavras — 93 slugs B—Morfologia. Split L3 Âncoras 100% Fase 0a (2026-08-05): 6 ramos × 2 âncoras (=12). Umbrella legado pt_classes_palavras nos g01–g12 applied. Playbook dedicado classes-de-palavras.json.",
       "production_status": "production_ready",
       "quality": {
         "layers": {
