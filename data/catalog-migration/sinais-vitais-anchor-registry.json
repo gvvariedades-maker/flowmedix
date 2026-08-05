@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "updated_at": "2026-07-04",
+  "updated_at": "2026-08-05",
   "description": "Âncoras golden-v1 — Verificação de Sinais Vitais (referência de estilo por ramo; não substituem JSON por slug).",
   "readiness_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
   "anchors_readiness": {
-    "validated_at": "2026-07-04",
-    "summary": "9/9 READY",
-    "note": "vitals_pa_tecnica (3) · vitals_fc_faixas (2) · vitals_interpretacao (2) · vitals_exceto_tecnica (1) · paridade Imunização EXCETO"
+    "validated_at": "2026-08-05",
+    "summary": "8/8 ramos L3 aprovado_100 (âncoras 100%)",
+    "note": "vitals_pa_tecnica · fc_faixas · interpretacao · vf_faixas · exceto_tecnica · temperatura · fr_faixas · generico (Glasgow)"
   },
   "anchors": {
     "interpretacao_multi_sv": {
@@ -20,9 +20,22 @@
       "ano": "2024",
       "gabarito": "A",
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-04",
+      "readiness_validated_at": "2026-08-04",
       "anchor_role": "traduzir_valores_clinicos",
-      "notes": "Multi-SV — vitals-panel + translate-tap; cada parâmetro com badge NORMAL/ALTERADO."
+      "notes": "Multi-SV — vitals-panel + translate-tap; cada parâmetro com badge NORMAL/ALTERADO.",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "approved_at": "2026-08-04",
+        "decision": "A",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "notes": "Conteudo + visual humanos OK. Panel NORMAL/ALTERADO + translate-tap valor->termo.",
+        "visual_approved_at": "2026-08-04",
+        "pending_visual_approval": false,
+        "pending_human_approval": false
+      }
     },
     "fc_radial_ce": {
       "file": "examples/questao-premium-idecan-fc-radial-ce.json",
@@ -35,24 +48,47 @@
       "ano": "2022",
       "gabarito": "A",
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-04",
+      "readiness_validated_at": "2026-08-04",
       "anchor_role": "fc_tecnica_faixa",
-      "notes": "C/E clássico FC — reference-board 60–100 bpm; danger_zone pegadinhas polegar/15 s."
+      "notes": "C/E clássico FC — reference-board 60–100 bpm; danger_zone pegadinhas polegar/15 s.",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "approved_at": "2026-08-04",
+        "decision": "A",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "notes": "Conteudo + visual humanos OK (molde compartilhado SV + C/E FC).",
+        "visual_approved_at": "2026-08-04",
+        "pending_visual_approval": false,
+        "pending_human_approval": false
+      }
     },
     "pa_tecnica_posicao_manguito": {
       "file": "data/catalog-migration/sinais-vitais-g01/questions/ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3.json",
       "slug_catalog": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
       "subtopico": "Verificação de Sinais Vitais",
       "pedagogical_branch": "vitals_pa_tecnica",
-      "family": "conceito",
+      "family": "protocolo",
       "command": "CORRETO — boas práticas de aferição (idoso com tontura)",
       "banca": "AMEOSC",
       "ano": "2025",
       "gabarito": "D",
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-04",
+      "readiness_validated_at": "2026-08-04",
       "anchor_role": "pa_nivel_coracao_manguito",
-      "notes": "Piloto g01 — braço nível coração + manguito; elimina polegar/FR falando/temp pós-exercício."
+      "notes": "Piloto g01 — braço nível coração + manguito; elimina polegar/FR falando/temp pós-exercício.",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "approved_at": "2026-08-04",
+        "visual_approved_at": "2026-08-04",
+        "decision": "A",
+        "notes": "Conteudo + visual humanos OK. Arena colorida Glance OS; panel/eliminação/golden com massa G2."
+      }
     },
     "pa_vf_cuidados_pre_afericao": {
       "file": "data/catalog-migration/sinais-vitais-g01/questions/amauc-enfermagem-verificacao-de-sinais-vitais-1779344189558-7.json",
@@ -134,15 +170,64 @@
       "slug_catalog": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
       "subtopico": "Verificação de Sinais Vitais",
       "pedagogical_branch": "vitals_exceto_tecnica",
-      "family": "protocolo",
+      "family": "certo_errado",
       "command": "destaque o aspecto incorreto — PA",
       "banca": "AVANÇASP",
       "ano": "2026",
       "gabarito": "C",
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-04",
+      "readiness_validated_at": "2026-08-04",
       "anchor_role": "incorreta_pa_pressao_divergente",
-      "notes": "P2 piloto EXCETO/INCORRETA — compare semântico; distratores A/B/D/E corretos; C inverte pressão divergente."
+      "notes": "P2 piloto EXCETO/INCORRETA — compare semântico; distratores A/B/D/E corretos; C inverte pressão divergente.",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-04",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "approved_at": "2026-08-04",
+        "visual_approved_at": "2026-08-04",
+        "pending_visual_approval": false,
+        "pending_human_approval": false,
+        "notes": "Conteudo + visual OK. Arena EXCETO: distrator verde / gabarito amber; golden cards break-words; SpO2 oxim fix.",
+        "decision": "A",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=vitals_exceto_tecnica",
+        "mold_fixes": [
+          "exceto arena: distrator vs gabarito cores",
+          "golden vitals: min-w-0 break-words",
+          "inferSvKind: oximetria antes de pulso; sem oxim em aproximam"
+        ]
+      }
+    },
+    "glasgow_soma_componentes": {
+      "file": "data/catalog-migration/sinais-vitais-g48/questions/instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0.json",
+      "slug_catalog": "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
+      "subtopico": "Verificação de Sinais Vitais",
+      "pedagogical_branch": "vitals_generico",
+      "family": "conceito",
+      "command": "calcular Glasgow — O+V+M no trauma",
+      "banca": "Instituto Seletiva",
+      "ano": "2024",
+      "gabarito": "D",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-08-05",
+      "anchor_role": "glasgow_soma_pupilas_paralelo",
+      "notes": "Glasgow 4+4+6=14; pupilas fora da soma clássica; cauda vitals_generico.",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "aprovado_humano_conteudo": true,
+        "aprovado_humano_visual": true,
+        "visual_bar": "pass",
+        "approved_at": "2026-08-05",
+        "decision": "A",
+        "policy": "A_conteudo_first_visual_after_fabrica",
+        "notes": "Conteudo + visual OK. Glasgow: ocular 3=a voz; golden empilhado com linhas O/V/M; Arena Glasgow chips O/V/M/Total; logic 0 taps.",
+        "visual_approved_at": "2026-08-05",
+        "pending_visual_approval": false,
+        "pending_human_approval": false
+      }
     }
   },
   "family_grammar_refs": {

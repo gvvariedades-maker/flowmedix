@@ -6,15 +6,20 @@
     "prova": "TEnf (Concórdia)",
     "topico": "Enfermagem",
     "subtopico": "Verificação de Sinais Vitais",
-    "cargo_header": "Técnico de Enfermagem",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "pedagogical_branch": "vitals_interpretacao",
     "content_standard": "golden-v1",
     "family": "protocolo",
     "content_review": {
-      "reviewed_at": "2026-07-04",
-      "reviewer": "professor-para-concurso",
-      "guideline_snapshot": "COFEN/MS — faixas de sinais vitais do adulto (PA, FC 60–100 bpm, FR, temperatura axilar)",
-      "exam_vs_current": "none"
+      "reviewed_at": "2026-08-04",
+      "reviewer": "ancoras-100",
+      "guideline_snapshot": "COFEN/MS — faixas adulto: PA normotensa, FC 60–100, FR 12–20, temp axilar afebril",
+      "exam_vs_current": "none",
+      "ancora_100": {
+        "branch": "vitals_interpretacao",
+        "polished_at": "2026-08-04",
+        "policy": "A_conteudo_first_visual_after_fabrica"
+      }
     },
     "sources": [
       {
@@ -23,12 +28,18 @@
         "issuer": "COFEN / protocolos de enfermagem",
         "title": "Faixas de referência — sinais vitais do adulto",
         "year": 2024,
-        "covers": ["PA", "FC", "FR", "temperatura", "classificação clínica"]
+        "covers": [
+          "PA",
+          "FC",
+          "FR",
+          "temperatura",
+          "classificação clínica"
+        ]
       }
     ]
   },
   "question_data": {
-    "instruction": "Ao verificar os sinais vitais do paciente, você identificou os seguintes valores:\n\" PA 110×75 mmHg\n\" Temperatura axilar 36,5°C\n\" FC 110 bpm\n\" FR 30 mpm\nConsiderando os resultados acima, você diria que o paciente está:",
+    "instruction": "Ao verificar os sinais vitais do paciente, você identificou os seguintes valores:\n• PA 110×75 mmHg\n• Temperatura axilar 36,5°C\n• FC 110 bpm\n• FR 30 mpm\nConsiderando os resultados acima, você diria que o paciente está:",
     "options": [
       {
         "id": "A",
@@ -61,42 +72,59 @@
     {
       "type": "concept_map",
       "slide_title": "Leitura dos sinais vitais do caso",
-      "chip_label": "SV — MAPA",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Verificação de Sinais Vitais"
       },
       "items": [
         {
-          "id": "1",
           "icon": "Scale",
           "label": "PA 110×75 mmHg",
-          "detail": "Compatível com normotensão no adulto em repouso.",
-          "correct": "Normotenso"
+          "detail": "Compare com a faixa de normotensão do adulto em repouso."
         },
         {
-          "id": "2",
           "icon": "Thermometer",
           "label": "36,5°C axilar",
-          "detail": "Valor compatível com afebril / normotermia.",
-          "correct": "Afebril"
+          "detail": "Valor compatível com normotermia / ausência de febre."
         },
         {
-          "id": "3",
           "icon": "HeartPulse",
           "label": "FC 110 bpm",
-          "detail": "Acima de 100 bpm: taquicardia.",
-          "correct": "Taquicárdico"
+          "detail": "Confrontar com o limiar de 100 bpm no adulto."
         },
         {
-          "id": "4",
           "icon": "Wind",
           "label": "FR 30 mpm",
-          "detail": "Acima de 20 irpm: taquipneia.",
-          "correct": "Taquipneico"
+          "detail": "Confrontar com a faixa 12–20 irpm (adulto em repouso)."
+        },
+        {
+          "icon": "AlertTriangle",
+          "label": "Pegadinha FEPESE",
+          "detail": "Distratores trocam um único termo (febril, hipotenso, normocárdico, eupneico) e mantêm o resto."
         }
       ],
-      "footer_rule": "Leia cada sinal vital e traduza o valor em termo clínico antes de marcar a alternativa."
+      "footer_rule": "Traduza cada número em termo clínico antes de montar a combinação"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "steps": [
+        "PA 110×75 mmHg → normotenso (não hipo/hipertenso).",
+        "Temp 36,5°C axilar → afebril.",
+        "FC 110 bpm → taquicárdico (>100).",
+        "FR 30 mpm → taquipneico (>20).",
+        "B: febril + eupneico → eliminar.",
+        "C: hipotenso + normocárdico → eliminar.",
+        "D: hipertenso → eliminar.",
+        "E: normocárdico na FC → eliminar.",
+        "Gabarito: letra A — normotenso, afebril, taquicárdico e taquipneico.",
+        "Em similares: traduza os 4 sinais e elimine a letra que erra um único termo."
+      ],
+      "footer_rule": "Combinação do caso: PA e temp normais · FC e FR elevadas"
     },
     {
       "type": "golden_rule",
@@ -105,106 +133,71 @@
         "topico": "Enfermagem",
         "subtopico": "Verificação de Sinais Vitais"
       },
-      "content": "PA NORMAL, FEBRE AUSENTE, FC E FR ELEVADAS: A BANCA QUER A CLASSIFICAÇÃO CORRETA.",
+      "content": "VALOR → TERMO CLÍNICO",
       "rows": [
         {
           "label": "PA 110×75 mmHg",
           "value": "Normotenso",
-          "emphasis": "success",
+          "sv_kind": "pa",
           "badge": "ok"
         },
         {
           "label": "Temperatura axilar 36,5°C",
           "value": "Afebril",
-          "emphasis": "success",
+          "sv_kind": "temp",
           "badge": "ok"
         },
         {
           "label": "FC 110 bpm",
           "value": "Taquicárdico",
-          "emphasis": "alert",
+          "sv_kind": "fc",
           "badge": "warn"
         },
         {
           "label": "FR 30 mpm",
           "value": "Taquipneico",
-          "emphasis": "alert",
+          "sv_kind": "fr",
           "badge": "warn"
         }
       ],
-      "footer_rule": "A leitura clínica é combinada: pressão e temperatura normais, frequência cardíaca e respiratória elevadas."
-    },
-    {
-      "type": "logic_flow",
-      "slide_title": "Como resolver — interpretação de SV",
-      "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Verificação de Sinais Vitais"
-      },
-      "steps": [
-        "Interpretar a pressão arterial: 110×75 mmHg = normotenso.",
-        "Interpretar a temperatura axilar: 36,5°C = afebril.",
-        "Interpretar a frequência cardíaca: 110 bpm = taquicárdico.",
-        "Interpretar a frequência respiratória: 30 mpm = taquipneico.",
-        "Testar B: febril e eupneico — eliminar: 36,5°C é afebril e FR 30 mpm é taquipneico.",
-        "Testar C: hipotenso e normocárdico — eliminar: PA normal e FC 110 bpm é taquicárdico.",
-        "Testar D: hipertenso — eliminar: PA 110×75 mmHg é normotenso.",
-        "Testar E: normocárdico na FC — eliminar: 110 bpm é taquicárdico.",
-        "Eliminar B, C, D e E — combinação correta: normotenso, afebril, taquicárdico e taquipneico.",
-        "Marcar letra A."
-      ],
-      "footer_rule": "Na interpretação de SV, traduza cada número para o termo clínico correspondente."
+      "footer_rule": "A banca cobra a combinação dos quatro termos — não um sinal isolado"
     },
     {
       "type": "danger_zone",
-      "slide_title": "Armadilhas que a banca monta",
-      "chip_label": "ARMADILHAS DE PROVA",
       "bullet_style": "x_icon",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Verificação de Sinais Vitais"
       },
-      "content": "PEGADINHAS NA INTERPRETAÇÃO DOS VALORES",
+      "content": "PEGADINHAS — INTERPRETAÇÃO DE VALORES",
       "items": [
         {
-          "id": "D",
-          "label": "Letra D — chamar 110×75 de hipertenso",
-          "detail": "PA 110×75 mmHg está na faixa normal do adulto; a letra D inventa uma hipertensão que não existe no caso.",
+          "label": "Letra D — 110×75 como hipertenso",
+          "detail": "Inventa hipertensão em PA dentro da normalidade.",
           "correct": "PA 110×75 mmHg = normotenso, não hipertenso."
         },
         {
-          "id": "C",
           "label": "Letra C — hipotenso e normocárdico",
-          "detail": "Rebaixa a PA normal para hipotensão e ainda chama a FC de 110 bpm de normal.",
+          "detail": "Rebaixa a PA e chama FC 110 de normal.",
           "correct": "PA normal (normotenso) e FC 110 bpm = taquicárdico."
         },
         {
-          "id": "B",
           "label": "Letra B — febril e eupneico",
-          "detail": "Transforma 36,5°C em febre e diz que a respiração está normal, ignorando a FR elevada.",
+          "detail": "Transforma 36,5°C em febre e ignora FR 30.",
           "correct": "36,5°C = afebril e FR 30 mpm = taquipneico."
         },
         {
-          "id": "E",
           "label": "Letra E — FC 110 como normocárdico",
-          "detail": "Acerta quase tudo, mas classifica a FC de 110 bpm como normal — é o distrator mais próximo da resposta A.",
+          "detail": "Distrator mais próximo: acerta quase tudo, erra só a FC.",
           "correct": "FC 110 bpm = taquicárdico (acima de 100 bpm)."
         },
         {
-          "id": "5",
-          "label": "Chamar FR 30 de eupneia",
-          "detail": "Respiração acima de 20 irpm no adulto em repouso não é eupneia.",
-          "correct": "FR 30 mpm = taquipneia (acima de 20 irpm)."
-        },
-        {
-          "id": "6",
-          "label": "Classificar olhando um sinal só",
-          "detail": "Marcar pela PA ou pela febre isolada ignora que o enunciado pede a leitura combinada dos quatro sinais.",
-          "correct": "Interprete os 4 sinais juntos antes de marcar a alternativa."
+          "label": "Em similares / outra banca",
+          "detail": "Marcar pela PA ou pela temperatura isolada e ignorar FC/FR.",
+          "correct": "Transferência: interprete os 4 sinais juntos antes de fechar a combinação."
         }
       ],
-      "footer_rule": "A combinação correta do caso é normotenso, afebril, taquicárdico e taquipneico (letra A)."
+      "footer_rule": "Um termo errado elimina a letra — mesmo com o resto certo"
     }
   ]
 }
