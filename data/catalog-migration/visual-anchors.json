@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04",
+  "updated_at": "2026-08-05",
   "description": "Âncoras visuais por pedagogical_branch para regressão L3 (slide-mold-review).",
   "anchors": {
     "cme_vf_ce": {
@@ -1015,6 +1015,102 @@
       "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
       "lote": "epidemiologia-e-vigilancia-epidemiologica-g02",
       "json_path": "data/catalog-migration/epidemiologia-e-vigilancia-epidemiologica-g02/questions/ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6.json"
+    },
+    "pt_classes_conjuncao": {
+      "pedagogical_branch": "pt_classes_conjuncao",
+      "slug": "questao-premium-vunesp-portugues-classes-conjuncao-causal",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-vunesp-portugues-classes-conjuncao-causal.json",
+      "anchor_style": "causal",
+      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+    },
+    "pt_classes_nominais": {
+      "pedagogical_branch": "pt_classes_nominais",
+      "slug": "questao-premium-avancasp-portugues-classes-artigo-definido",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-avancasp-portugues-classes-artigo-definido.json",
+      "anchor_style": "artigo",
+      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+    },
+    "pt_classes_adverbio": {
+      "pedagogical_branch": "pt_classes_adverbio",
+      "slug": "questao-premium-educa-pb-portugues-classes-adverbio-essencialmente",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-educa-pb-portugues-classes-adverbio-essencialmente.json",
+      "anchor_style": "modo_intensidade",
+      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+    },
+    "pt_classes_preposicao": {
+      "pedagogical_branch": "pt_classes_preposicao",
+      "slug": "questao-premium-avancasp-portugues-classes-prep-x-artigo",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-avancasp-portugues-classes-prep-x-artigo.json",
+      "anchor_style": "prep_x_artigo",
+      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+    },
+    "pt_classes_exceto": {
+      "pedagogical_branch": "pt_classes_exceto",
+      "slug": "questao-premium-avancasp-portugues-classes-exceto-adverbio",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-avancasp-portugues-classes-exceto-adverbio.json",
+      "anchor_style": "exceto_classe",
+      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+    },
+    "pt_classes_generico": {
+      "pedagogical_branch": "pt_classes_generico",
+      "slug": "questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse.json",
+      "anchor_style": "vf_multiclasse",
+      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+    },
+    "pt_classes_conjuncao__adversativa": {
+      "pedagogical_branch": "pt_classes_conjuncao",
+      "slug": "questao-premium-quadrix-portugues-classes-conjuncao-adversativa",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-quadrix-portugues-classes-conjuncao-adversativa.json",
+      "anchor_style": "adversativa",
+      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+    },
+    "pt_classes_nominais__substantivacao": {
+      "pedagogical_branch": "pt_classes_nominais",
+      "slug": "questao-premium-avancasp-portugues-classes-substantivacao-cinza",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-avancasp-portugues-classes-substantivacao-cinza.json",
+      "anchor_style": "substantivacao",
+      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+    },
+    "pt_classes_adverbio__adv_x_adj": {
+      "pedagogical_branch": "pt_classes_adverbio",
+      "slug": "questao-premium-avancasp-portugues-classes-adv-x-adj-alto",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-avancasp-portugues-classes-adv-x-adj-alto.json",
+      "anchor_style": "adv_x_adj",
+      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+    },
+    "pt_classes_preposicao__locucao_prepositiva": {
+      "pedagogical_branch": "pt_classes_preposicao",
+      "slug": "questao-premium-apice-portugues-classes-locucao-prepositiva",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-apice-portugues-classes-locucao-prepositiva.json",
+      "anchor_style": "locucao_prepositiva",
+      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+    },
+    "pt_classes_exceto__valor_incorreto": {
+      "pedagogical_branch": "pt_classes_exceto",
+      "slug": "questao-premium-aocp-portugues-classes-valor-incorreto-como",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-premium-aocp-portugues-classes-valor-incorreto-como.json",
+      "anchor_style": "valor_incorreto",
+      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+    },
+    "pt_classes_generico__formacao_siglas": {
+      "pedagogical_branch": "pt_classes_generico",
+      "slug": "questao-formacao-palavras-siglas",
+      "lote": "classes-de-palavras-anchors",
+      "json_path": "examples/questao-formacao-palavras-siglas.json",
+      "anchor_style": "formacao_siglas",
+      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
     }
   }
 }

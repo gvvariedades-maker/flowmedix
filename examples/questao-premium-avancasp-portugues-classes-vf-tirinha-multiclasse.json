@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "ACS (Pref Amparo)",
+    "orgao": "Pref Amparo",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_generico",
+    "content_standard": "golden-v1",
+    "family": "text_fragment",
+    "content_review": {
+      "reviewed_at": "2026-07-20",
+      "reviewer": "handcraft:classes-de-palavras-g11",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · âncora → examples/questao-formacao-palavras-siglas.json",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — morfologia e função na oração",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "verbo tempo e modo",
+          "conjunção adversativa e aditiva",
+          "advérbio negação modo intensidade",
+          "pronome possessivo",
+          "locução prepositiva",
+          "preposição relação nominal",
+          "numeral ordinal e quantitativo",
+          "substantivo adjetivo numeral",
+          "pergunta-teste M02",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3352957",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "VF tirinha leu/mas/não-nem/minhas — AVANÇASP ACS Pref Amparo 2025 tec 3352957",
+        "year": 2025,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito",
+          "matriz pt_classes_palavras"
+        ]
+      }
+    ],
+    "anchor_style": "vf_multiclasse",
+    "anchor_role": "golden_anchor"
+  },
+  "question_data": {
+    "instruction": "Leia a tirinha a seguir para responder à questão.\n\nEm relação aos trechos a seguir, retirados da tirinha, analise as afirmativas e classifique-as em verdadeiro (V) ou falso (F). Em seguida, marque a alternativa correta.\n\n( ) «Você ao menos leu o capítulo do livro de história que eu mandei?» – «ler» está conjugado no pretérito perfeito do indicativo.\n\n( ) «Eu tentei, mas a editora do livro não usou um bom fixador de impressão.» – «mas» é uma conjunção adversativa.\n\n( ) «Não preciso nem dizer que quando eu peguei o livro, todas as letras caíram das páginas e ficaram espalhadas no chão.» – «Não» e «nem» são advérbios de modo.\n\n( ) «Acho que minhas desculpas precisam ser menos elaboradas» – «minhas» é uma preposição.",
+    "options": [
+      {
+        "id": "A",
+        "text": "V – V – V – V",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "V – V – F – F",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "F – V – V – V",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "F – V – F – V",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "F – F – F – F",
+        "is_correct": false
+      }
+    ],
+    "text_fragment": "<p>Tirinha (adaptada): diálogo sobre capítulo de história, fixador de impressão e letras que caem do livro — contexto para julgar classes morfológicas nos trechos citados.</p>"
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Quatro afirmativas VF",
+      "chip_label": "M02 — classes",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "O que a palavra faz? Teste classe por trecho.",
+          "icon": "Focus"
+        },
+        {
+          "label": "1 — leu",
+          "detail": "«Leu o capítulo do livro de história» — pretérito perfeito → V.",
+          "icon": "Check"
+        },
+        {
+          "label": "2 — mas",
+          "detail": "«Mas a editora» — conjunção adversativa opõe ideias → V.",
+          "icon": "Check"
+        },
+        {
+          "label": "3 — Não/nem",
+          "detail": "«Não preciso nem dizer» — negação, não advérbio de modo → F.",
+          "icon": "XCircle"
+        },
+        {
+          "label": "4 — minhas",
+          "detail": "«Minhas desculpas» menos elaboradas — pronome possessivo → F.",
+          "icon": "XCircle"
+        },
+        {
+          "label": "Fixador",
+          "detail": "Trecho da editora e do fixador de impressão — contexto da tirinha.",
+          "icon": "BookOpen"
+        }
+      ],
+      "footer_rule": "Julgue cada afirmativa antes de montar a sequência."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Trecho → V/F → B",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "Comando: classificar quatro afirmativas em V ou F.",
+        "1ª: «leu» no pretérito perfeito do indicativo — tempo e modo corretos → V.",
+        "2ª: «mas» liga orações em oposição — adversativa → V.",
+        "3ª: «Não» e «nem» negam/reforçam — não indicam modo (como «bem», «mal») → F.",
+        "4ª: «minhas» antecede «desculpas» com valor possessivo — pronome, não preposição → F.",
+        "Sequência: V – V – F – F.",
+        "Eliminar A (3ª e 4ª V), C/D/E (1ª F ou combinações erradas).",
+        "Gabarito B.",
+        "Em similares: teste «leu» (tempo), «mas» (oposição), negação × modo, possessivo × preposição."
+      ],
+      "footer_rule": "B — V V F F."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "ROTEIRO VF",
+      "rows": [
+        {
+          "label": "Leu / capítulo",
+          "value": "Pretérito perfeito do indicativo de «ler»."
+        },
+        {
+          "label": "Mas",
+          "value": "Conjunção adversativa (oposição)."
+        },
+        {
+          "label": "Não / nem",
+          "value": "Advérbio de negação / conjunção coordenativa — ≠ modo."
+        },
+        {
+          "label": "Minhas",
+          "value": "Pronome possessivo — ≠ preposição."
+        },
+        {
+          "label": "Nesta questão",
+          "value": "B — V V F F"
+        }
+      ],
+      "footer_rule": "Modo = como (bem, mal); negação é outra função."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Pegadinhas por classe vizinha",
+      "items": [
+        {
+          "label": "A — tudo V",
+          "detail": "«Não/nem» e «minhas» parecem inofensivos.",
+          "correct": "Não/nem não são de modo; minhas é pronome possessivo."
+        },
+        {
+          "label": "C — 1ª F",
+          "detail": "Confundir infinitivo «ler» com forma «leu».",
+          "correct": "A afirmativa refere o verbo conjugado «leu» — pretérito perfeito."
+        },
+        {
+          "label": "D — 4ª V",
+          "detail": "«Minhas» antecede substantivo como «de».",
+          "correct": "Possessivo qualifica «desculpas» — pronome, não preposição."
+        },
+        {
+          "label": "E — tudo F",
+          "detail": "Desconfiar de «mas» e «leu».",
+          "correct": "As duas primeiras afirmativas estão corretas."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam tirinha por charge escolar.",
+          "correct": "Mesmo trilho: uma afirmativa por classe morfológica."
+        }
+      ],
+      "footer_rule": "Só B — V V F F."
+    }
+  ]
+}

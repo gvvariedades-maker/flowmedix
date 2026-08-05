@@ -36,7 +36,7 @@
   "glance_os_ancoras_100": {
     "started_at": "2026-08-05",
     "completed_at": null,
-    "status": "fase_0a",
+    "status": "fase_0b",
     "mapa_gestos": "artifacts/glance-os-classes-de-palavras-MAPA-8-GESTOS.md",
     "report": null,
     "default_clicks": 0,
@@ -44,7 +44,8 @@
     "total_anchors_target": 12,
     "visual_bar": "docs/NEUROSLIDES_VISUAL_BAR.md",
     "reference_piloto": "artifacts/glance-os-piloto-farmacodinamica-INDEX.md",
-    "note": "Fase 0a — playbook + mapa. Política: 2 âncoras por ramo (12 no pacote). Sem polish até GATE 0a + inventário 0b."
+    "note": "Fase 0b — 11 bootstrapped + 1 legado below_bar. Polish fino = Fase 1 ramo a ramo.",
+    "inventory": "artifacts/classes-de-palavras-ancoras-0b-inventory.json"
   },
   "pedagogical_branches": [
     {
@@ -56,26 +57,33 @@
       "ok_generico_3_3": "~30% do card; morphological + rows (conectivo × valor) + tap + compare; Glance OS = board 0 taps (gap wrap/polish genérico G2)",
       "mold_gap": "wrap_polish_g2 — preferir 0 taps; não forçar pt-period-rail se a prova pede só CLASSE do conectivo",
       "anchors_target": 2,
-      "ancoras_100_status": "pending",
-      "anchors": [],
+      "ancoras_100_status": "inventoried_0b",
+      "anchors": [
+        "examples/questao-premium-vunesp-portugues-classes-conjuncao-causal.json",
+        "examples/questao-premium-quadrix-portugues-classes-conjuncao-adversativa.json"
+      ],
       "anchor_styles": {
         "causal": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-vunesp-portugues-classes-conjuncao-causal.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
             "fcc-tec-classes-considere-o-texto-abaixo-para-respon-3908393"
           ],
-          "note": "Âncora 01 — conjunção causal («já que» / «visto que»)"
+          "note": "Âncora 01 — conjunção causal («já que» / «visto que») · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-vunesp-portugues-classes-conjuncao-causal",
+          "catalog_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325"
         },
         "adversativa": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-quadrix-portugues-classes-conjuncao-adversativa.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677",
             "vunesp-ag-pr-classes-por-que-agora-a-solidao-nos-adoece-p-3419024"
           ],
-          "note": "Âncora 02 — conjunção adversativa («No entanto» / Todavia+entretanto)"
+          "note": "Âncora 02 — conjunção adversativa («No entanto» / Todavia+entretanto) · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-quadrix-portugues-classes-conjuncao-adversativa",
+          "catalog_slug": "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677"
         }
       }
     },
@@ -88,27 +96,34 @@
       "ok_generico_3_3": "Pergunta-teste M02/M03; rows classe×teste; compare adj×subst / artigo×pronome",
       "mold_gap": "wrap_polish_g2 — deck «peças nominais» tudo visível; 0 taps",
       "anchors_target": 2,
-      "ancoras_100_status": "pending",
-      "anchors": [],
+      "ancoras_100_status": "inventoried_0b",
+      "anchors": [
+        "examples/questao-premium-avancasp-portugues-classes-artigo-definido.json",
+        "examples/questao-premium-avancasp-portugues-classes-substantivacao-cinza.json"
+      ],
       "anchor_styles": {
         "artigo": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-avancasp-portugues-classes-artigo-definido.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821",
             "avancasp-mon-classes-schulz-charles-m-snoopy-jornal-da-ta-3739268"
           ],
-          "note": "Âncora 01 — artigo definido/indefinido (Um/O · um→o)"
+          "note": "Âncora 01 — artigo definido/indefinido (Um/O · um→o) · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-avancasp-portugues-classes-artigo-definido",
+          "catalog_slug": "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821"
         },
         "substantivacao": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-avancasp-portugues-classes-substantivacao-cinza.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
             "avancasp-acs-classes-15-07-2026-19-33-1-88-3-4-5-6-dispon-3839425",
             "avancasp-tla-classes-quando-o-verde-dos-teus-olhosse-espa-3726050"
           ],
-          "note": "Âncora 02 — substantivação (artigo+cor/qualidade) ou substantivo abstrato «o essencial»"
+          "note": "Âncora 02 — substantivação (artigo+cor/qualidade) ou substantivo abstrato «o essencial» · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-avancasp-portugues-classes-substantivacao-cinza",
+          "catalog_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512"
         }
       }
     },
@@ -121,27 +136,34 @@
       "ok_generico_3_3": "~15%; board modifica verbo/adj/adv; pegadinha -mente / forma adjetiva",
       "mold_gap": "wrap_polish_g2 — arena adv×adj aberta 0 taps",
       "anchors_target": 2,
-      "ancoras_100_status": "pending",
-      "anchors": [],
+      "ancoras_100_status": "inventoried_0b",
+      "anchors": [
+        "examples/questao-premium-educa-pb-portugues-classes-adverbio-essencialmente.json",
+        "examples/questao-premium-avancasp-portugues-classes-adv-x-adj-alto.json"
+      ],
       "anchor_styles": {
         "modo_intensidade": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-educa-pb-portugues-classes-adverbio-essencialmente.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810",
             "avancasp-afa-classes-assinale-a-alternativa-cujo-termo-de-3962475",
             "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336126"
           ],
-          "note": "Âncora 01 — advérbio de modo/intensidade («essencialmente» / «rápido» / «muito»)"
+          "note": "Âncora 01 — advérbio de modo/intensidade («essencialmente» / «rápido» / «muito») · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-educa-pb-portugues-classes-adverbio-essencialmente",
+          "catalog_slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810"
         },
         "adv_x_adj": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-avancasp-portugues-classes-adv-x-adj-alto.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253",
             "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812"
           ],
-          "note": "Âncora 02 — pegadinha forma adjetiva com função adverbial / EXCETO locução×classe (se couber no ramo adv)"
+          "note": "Âncora 02 — pegadinha forma adjetiva com função adverbial / EXCETO locução×classe (se couber no ramo adv) · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-avancasp-portugues-classes-adv-x-adj-alto",
+          "catalog_slug": "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253"
         }
       }
     },
@@ -154,26 +176,33 @@
       "ok_generico_3_3": "~7–8%; rows peça×teste; anti-gesto: não virar pt-regency-arrow",
       "mold_gap": "wrap_polish_g2 — board 0 taps; contraste prep×artigo",
       "anchors_target": 2,
-      "ancoras_100_status": "pending",
-      "anchors": [],
+      "ancoras_100_status": "inventoried_0b",
+      "anchors": [
+        "examples/questao-premium-avancasp-portugues-classes-prep-x-artigo.json",
+        "examples/questao-premium-apice-portugues-classes-locucao-prepositiva.json"
+      ],
       "anchor_styles": {
         "prep_x_artigo": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-avancasp-portugues-classes-prep-x-artigo.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714",
             "selecon-rece-classes-leia-o-texto-a-seguir-ceo-da-empresa-3852269"
           ],
-          "note": "Âncora 01 — «a» prep × artigo / homônimo classe"
+          "note": "Âncora 01 — «a» prep × artigo / homônimo classe · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-avancasp-portugues-classes-prep-x-artigo",
+          "catalog_slug": "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714"
         },
         "locucao_prepositiva": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-apice-portugues-classes-locucao-prepositiva.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406",
             "facet-acs-pr-classes-leia-o-trecho-a-seguir-e-macabea-com-3358539"
           ],
-          "note": "Âncora 02 — locução prepositiva («além da» / «com medo de»)"
+          "note": "Âncora 02 — locução prepositiva («além da» / «com medo de») · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-apice-portugues-classes-locucao-prepositiva",
+          "catalog_slug": "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406"
         }
       }
     },
@@ -186,26 +215,33 @@
       "ok_generico_3_3": "~5%; isolate keep×exception + compare por letra",
       "mold_gap": "wrap_polish_g2 — preferir isolate board 0 taps (padrão imunizacao_exceto)",
       "anchors_target": 2,
-      "ancoras_100_status": "pending",
-      "anchors": [],
+      "ancoras_100_status": "inventoried_0b",
+      "anchors": [
+        "examples/questao-premium-avancasp-portugues-classes-exceto-adverbio.json",
+        "examples/questao-premium-aocp-portugues-classes-valor-incorreto-como.json"
+      ],
       "anchor_styles": {
         "exceto_classe": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-avancasp-portugues-classes-exceto-adverbio.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
             "facet-acs-pr-classes-identifique-a-alternativa-em-que-a-c-3358522"
           ],
-          "note": "Âncora 01 — comando EXCETO/INCORRETA de classe gramatical"
+          "note": "Âncora 01 — comando EXCETO/INCORRETA de classe gramatical · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-avancasp-portugues-classes-exceto-adverbio",
+          "catalog_slug": "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812"
         },
         "valor_incorreto": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-aocp-portugues-classes-valor-incorreto-como.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085",
             "instituto-ao-classes-15-07-2026-19-33-55-88-130-131-leia-3840780"
           ],
-          "note": "Âncora 02 — «valor semântico INCORRETO» do conectivo/classe"
+          "note": "Âncora 02 — «valor semântico INCORRETO» do conectivo/classe · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-aocp-portugues-classes-valor-incorreto-como",
+          "catalog_slug": "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085"
         }
       }
     },
@@ -219,20 +255,23 @@
       "mold_gap": "wrap_polish_g2 — legado siglas below_bar; 2ª âncora = VF multi-classe (tirinha)",
       "legacy_umbrella": "pt_classes_palavras",
       "anchors_target": 2,
-      "ancoras_100_status": "pending",
+      "ancoras_100_status": "inventoried_0b",
       "anchors": [
+        "examples/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse.json",
         "examples/questao-formacao-palavras-siglas.json"
       ],
       "anchor_styles": {
         "vf_multiclasse": {
-          "golden_reference": null,
-          "status": "missing",
+          "golden_reference": "examples/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse.json",
+          "status": "bootstrapped_pending_polish",
           "catalog_slug_candidates": [
             "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
             "avancasp-ace-classes-leia-a-tirinha-a-seguir-para-respond-3353960",
             "cpcon-uepb-a-classes-leia-o-texto-i-para-responder-a-ques-3836456"
           ],
-          "note": "Âncora 01 — VF / multi-classe (tirinha ou lista de peças)"
+          "note": "Âncora 01 — VF / multi-classe (tirinha ou lista de peças) · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "anchor_slug": "questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse",
+          "catalog_slug": "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957"
         },
         "formacao_siglas": {
           "golden_reference": "examples/questao-formacao-palavras-siglas.json",

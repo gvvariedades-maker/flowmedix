@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "AEE (Pref Caieiras)",
+    "orgao": "Pref Caieiras",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_exceto",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-07-20",
+      "reviewer": "handcraft:classes-de-palavras-g04",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · âncora → examples/questao-formacao-palavras-siglas.json",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — morfologia e função na oração",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "advérbio e circunstância",
+          "advérbio de modo tempo lugar intensidade",
+          "locução adverbial",
+          "adjetivo com função de advérbio",
+          "pergunta-teste M02/M03",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3374812",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "EXCETO advérbio «de manhã» × substantivo — AVANÇASP AEE Pref Caieiras 2025 tec 3374812",
+        "year": 2025,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito",
+          "matriz pt_classes_palavras"
+        ]
+      }
+    ],
+    "anchor_style": "exceto_classe",
+    "anchor_role": "golden_anchor"
+  },
+  "question_data": {
+    "instruction": "Em todas as construções a seguir, os elementos destacados têm valor de advérbio, exceto em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A feira acontece de manhã.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Tem viajado de trem.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "O dia acabou de repente.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Apresentou-se de improviso.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Uma bela manhã de primavera.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Advérbio × substantivo",
+      "chip_label": "M02 — advérbio",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "Modifica verbo/adj/adv ou nomeia circunstância?",
+          "icon": "Focus"
+        },
+        {
+          "label": "De manhã / de trem",
+          "detail": "Locuções adverbiais de tempo e modo — circunstanciam o verbo.",
+          "icon": "Clock"
+        },
+        {
+          "label": "De repente / de improviso",
+          "detail": "Locuções adverbiais de modo — valor advérbial.",
+          "icon": "Zap"
+        },
+        {
+          "label": "E — manhã",
+          "detail": "«Manhã» é núcleo do sintagma nominal — substantivo comum.",
+          "icon": "Box"
+        },
+        {
+          "label": "Pegadinha EXCETO",
+          "detail": "«De manhã» (adv.) ≠ «uma manhã» (substantivo).",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "De + substantivo pode ser advérbio; substantivo sozinho, não."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "EXCETO → gabarito",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "Comando EXCETO: quatro frases têm advérbio/locução adverbial; uma não.",
+        "A «de manhã» — locução adverbial de tempo (quando a feira ocorre).",
+        "B «de trem» — locução adverbial de modo/meio (como viaja).",
+        "C «de repente» — locução adverbial de modo.",
+        "D «de improviso» — locução adverbial de modo.",
+        "E «uma bela manhã de primavera» — «manhã» é substantivo (núcleo nominal), não advérbio.",
+        "Gabarito E — única sem valor adverbial no destaque.",
+        "Em similares: «de manhã» (adv.) × «uma manhã» (sub.) — teste se nomeia ou circunstancia."
+      ],
+      "footer_rule": "E — manhã substantivo, não advérbio."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore de bolso",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "ADVÉRBIO × SUBSTANTIVO",
+      "rows": [
+        {
+          "label": "Pergunta-teste",
+          "value": "Circunstancia verbo/adj/adv ou nomeia coisa?"
+        },
+        {
+          "label": "Locução adverbial",
+          "value": "De manhã, de repente, de improviso, de trem."
+        },
+        {
+          "label": "Substantivo",
+          "value": "Uma manhã de primavera — «manhã» nomeia período."
+        },
+        {
+          "label": "EXCETO",
+          "value": "Quatro advérbios/locuções + uma exceção nominal."
+        },
+        {
+          "label": "Nesta questão",
+          "value": "E — substantivo «manhã»"
+        }
+      ],
+      "footer_rule": "De manhã (adv.) ≠ uma manhã (sub.)."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "EXCETO — cada letra certa exceto E",
+      "items": [
+        {
+          "label": "A — de manhã",
+          "detail": "Parece substantivo por conter «manhã».",
+          "correct": "«De manhã» é locução adverbial de tempo — valor advérbial."
+        },
+        {
+          "label": "B — de trem",
+          "detail": "Confunde meio de transporte com substantivo.",
+          "correct": "«De trem» circunstancia o verbo «viajado» — advérbio."
+        },
+        {
+          "label": "C — de repente",
+          "detail": "Locução fixa parece estranha.",
+          "correct": "Locução adverbial de modo — conta como advérbio."
+        },
+        {
+          "label": "D — de improviso",
+          "detail": "Mesmo padrão de C.",
+          "correct": "Locução adverbial de modo — advérbio válido."
+        },
+        {
+          "label": "E — manhã",
+          "detail": "«Manhã» parece igual a «de manhã».",
+          "correct": "Núcleo nominal «uma manhã» — substantivo, exceção do EXCETO."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam por «uma tarde de verão».",
+          "correct": "Mesmo teste: substantivo no núcleo = exceção."
+        }
+      ],
+      "footer_rule": "Só E não é advérbio."
+    }
+  ]
+}

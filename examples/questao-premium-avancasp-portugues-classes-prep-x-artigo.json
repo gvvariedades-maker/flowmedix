@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "AAE (Pref Potim)",
+    "orgao": "Pref Potim",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_preposicao",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-20",
+      "reviewer": "handcraft:classes-de-palavras-g05",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · âncora → examples/questao-formacao-palavras-siglas.json",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — morfologia e função na oração",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "advérbio adjetivo e modo",
+          "numeral ordinal e cardinal",
+          "artigo × preposição",
+          "locução prepositiva",
+          "preposição e valor semântico",
+          "pergunta-teste M02/M03",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3839714",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "«a» preposição × artigo regência — AVANÇASP AAE Pref Potim 2026 tec 3839714",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito",
+          "matriz pt_classes_palavras"
+        ]
+      }
+    ],
+    "anchor_style": "prep_x_artigo",
+    "anchor_role": "golden_anchor"
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa em que o vocábulo «a» em destaque NÃO exerce a função de artigo.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A atleta conquistou uma medalha em cada competição que disputou.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A meta principal do projeto é reduzir o desperdício de água.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Se houver uma solução viável, poderemos evitar a interdição do restaurante.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O grupo venceu a etapa do torneio com facilidade.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "O professor indicou uma leitura obrigatória a alunos e alunas.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "A = artigo ou prep.",
+      "chip_label": "M02 — preposição",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "Antecede substantivo (artigo) ou liga termos (prep.)?",
+          "icon": "Focus"
+        },
+        {
+          "label": "A atleta / a meta",
+          "detail": "«A» determina substantivo — artigo definido.",
+          "icon": "Type"
+        },
+        {
+          "label": "A interdição / a etapa",
+          "detail": "Artigo antes de substantivo feminino.",
+          "icon": "Check"
+        },
+        {
+          "label": "Indicou a alunos",
+          "detail": "«A» liga verbo a complemento — preposição.",
+          "icon": "Link"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "«A» minúsculo após substantivo parece artigo.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Artigo determina nome; preposição regência."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "NÃO artigo → gabarito",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "Comando: «a» que NÃO é artigo (função de preposição).",
+        "A «A atleta» — artigo definido — eliminar.",
+        "B «A meta» — artigo definido — eliminar.",
+        "C «a interdição» — artigo definido — eliminar.",
+        "D «a etapa» — artigo definido — eliminar.",
+        "E «indicou… a alunos» — preposição de regência (indicar algo a alguém).",
+        "Gabarito E — único «a» preposicional.",
+        "Em similares: entregar a, falar a, indicar a — preposição obrigatória."
+      ],
+      "footer_rule": "E — preposição."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "A × A",
+      "rows": [
+        {
+          "label": "Pergunta-teste",
+          "value": "Determina substantivo ou regência verbal?"
+        },
+        {
+          "label": "Artigo",
+          "value": "A/o/as/os + substantivo (a meta, a etapa)."
+        },
+        {
+          "label": "Preposição",
+          "value": "Verbo + a + complemento (indicar a alunos)."
+        },
+        {
+          "label": "Regência",
+          "value": "Indicar, entregar, falar, assistir exigem «a»."
+        },
+        {
+          "label": "Nesta questão",
+          "value": "E — preposição"
+        }
+      ],
+      "footer_rule": "Indicar a = preposição."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Cada «a» artigo",
+      "items": [
+        {
+          "label": "A — atleta",
+          "detail": "«A» inicia a frase — parece preposição.",
+          "correct": "Artigo definido feminino antes de «atleta»."
+        },
+        {
+          "label": "B — meta",
+          "detail": "Mesmo padrão inicial.",
+          "correct": "Artigo definido — determina «meta»."
+        },
+        {
+          "label": "C — interdição",
+          "detail": "«A» após verbo «evitar».",
+          "correct": "Ainda artigo: «evitar a interdição»."
+        },
+        {
+          "label": "D — etapa",
+          "detail": "«Venceu a etapa» — objeto direto.",
+          "correct": "«A» artigo definido antes de «etapa»."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam por «entregou o relatório a Maria».",
+          "correct": "«A» preposicional de regência — mesmo teste."
+        }
+      ],
+      "footer_rule": "Só E — não é artigo."
+    }
+  ]
+}

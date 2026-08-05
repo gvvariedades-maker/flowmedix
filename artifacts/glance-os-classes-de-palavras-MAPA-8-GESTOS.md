@@ -146,6 +146,8 @@ Metáfora skill (`reference-metaforas.md`): **Peças** — radical · prefixo ·
 - [x] Mapa de gestos + anti-gesto
 - [x] Política **2 âncoras/ramo** (`anchors_per_branch: 2` · 12 no pacote)
 - [x] Mold gaps anotados (wrap_polish_g2; sem brief molde_redesign obrigatório)
-- [ ] Humano revisa tabela de ramos → liberar Fase 0b (inventário)
+- [x] Humano OK GATE 0a → Fase 0b
+- [x] Inventário 0b: 11 bootstrapped + 1 legado below_bar (`artifacts/classes-de-palavras-ancoras-0b-inventory.json`)
+- [ ] Fase 1 — polish + aprovação humana âncora a âncora (2/ramo)
 
-*Não editar conteúdo fino de âncora antes do GATE 0a + tabela 0b.*
+*Polish fino = Fase 1 (começar por `pt_classes_conjuncao` / causal).*

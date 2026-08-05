@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "Cont (FUSAM)",
+    "orgao": "FUSAM",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_adverbio",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-20",
+      "reviewer": "handcraft:classes-de-palavras-g04",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · âncora → examples/questao-formacao-palavras-siglas.json",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — morfologia e função na oração",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "advérbio e circunstância",
+          "advérbio de modo tempo lugar intensidade",
+          "locução adverbial",
+          "adjetivo com função de advérbio",
+          "pergunta-teste M02/M03",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3460253",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "«alto» adjetivo como advérbio — AVANÇASP Cont FUSAM 2025 tec 3460253",
+        "year": 2025,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito",
+          "matriz pt_classes_palavras"
+        ]
+      }
+    ],
+    "anchor_style": "adv_x_adj",
+    "anchor_role": "golden_anchor"
+  },
+  "question_data": {
+    "instruction": "Um adjetivo funciona como advérbio apenas em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "O amarelo da bandeira remete à riqueza do país.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "De repente, a mídia, coagida, deixou de tocar no assunto.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A música na casa do vizinho tocou alto por trinta minutos.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "A caligrafia no bilhete era charmosa, com traços finos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A polícia seguiu o carro até a nova ponte da cidade.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Alto — adj. → adv.",
+      "chip_label": "M03 — função adverbial",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "Palavra de qualidade modificando verbo (não nome)?",
+          "icon": "Focus"
+        },
+        {
+          "label": "Tocou alto",
+          "detail": "«Alto» = intensidade do som — função de advérbio.",
+          "icon": "Volume2"
+        },
+        {
+          "label": "× O amarelo",
+          "detail": "Substantivação — «amarelo» é núcleo nominal.",
+          "icon": "Palette"
+        },
+        {
+          "label": "× Charmosa",
+          "detail": "Adjetivo qualificando «caligrafia» — função adjetiva.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "«De repente» já é locução adverbial, não adjetivo.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Adj. + verbo (sem nome) → função adverbial."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "Comando: adjetivo com função de advérbio (modifica verbo).",
+        "A «o amarelo» — substantivo (cor como nome) — eliminar.",
+        "B «de repente» — locução adverbial pronta, não adjetivo — eliminar.",
+        "C «tocou alto» — «alto» modifica verbo «tocou» (intensidade do som) — correto.",
+        "D «charmosa» qualifica «caligrafia» — adjetivo puro — eliminar.",
+        "E sem adjetivo funcionando como advérbio — eliminar.",
+        "Gabarito C.",
+        "Em similares: falar alto, cantar belo — adjetivo com valor adverbial."
+      ],
+      "footer_rule": "C — alto (adv.)."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "ADJETIVO → ADVÉRBIO",
+      "rows": [
+        {
+          "label": "Pergunta-teste",
+          "value": "Modifica verbo sem artigo antes?"
+        },
+        {
+          "label": "Tocou alto",
+          "value": "Alto = intensidade — função adverbial."
+        },
+        {
+          "label": "× substantivo",
+          "value": "O amarelo = nome da cor."
+        },
+        {
+          "label": "× adjetivo",
+          "value": "Charmosa = qualifica substantivo."
+        },
+        {
+          "label": "Nesta questão",
+          "value": "C — alto como advérbio"
+        }
+      ],
+      "footer_rule": "Verbo + alto/belo = advérbio."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Cada distrator mantém outra função",
+      "items": [
+        {
+          "label": "A — amarelo",
+          "detail": "Cor parece adjetivo.",
+          "correct": "«O amarelo» substantivado — função nominal."
+        },
+        {
+          "label": "B — de repente",
+          "detail": "É advérbio, mas não adjetivo convertido.",
+          "correct": "Locução adverbial fixa — não adj→adv."
+        },
+        {
+          "label": "D — charmosa",
+          "detail": "Adjetivo visível na frase.",
+          "correct": "Qualifica «caligrafia» — função adjetiva típica."
+        },
+        {
+          "label": "E — nova",
+          "detail": "«Nova ponte» — adjetivo adnominal.",
+          "correct": "Caracteriza substantivo — não função adverbial."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam por «falou baixo» ou «correu rápido».",
+          "correct": "Mesmo teste: adjetivo modificando verbo."
+        }
+      ],
+      "footer_rule": "Só C — adj. como adv."
+    }
+  ]
+}
