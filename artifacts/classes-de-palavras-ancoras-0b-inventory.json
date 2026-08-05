@@ -10,7 +10,9 @@
       "path": "examples/questao-premium-vunesp-portugues-classes-conjuncao-causal.json",
       "catalog_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
       "family": "text_fragment",
-      "status": "bootstrapped_pending_polish"
+      "status": "ready_pending_human",
+      "gate": "READY",
+      "preview": "http://localhost:3000/dev/slide-mold-review?branch=pt_classes_conjuncao"
     },
     {
       "branch": "pt_classes_conjuncao",

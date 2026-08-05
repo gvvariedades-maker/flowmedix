@@ -36,7 +36,7 @@
   "glance_os_ancoras_100": {
     "started_at": "2026-08-05",
     "completed_at": null,
-    "status": "fase_0b",
+    "status": "fase_1",
     "mapa_gestos": "artifacts/glance-os-classes-de-palavras-MAPA-8-GESTOS.md",
     "report": null,
     "default_clicks": 0,
@@ -44,7 +44,7 @@
     "total_anchors_target": 12,
     "visual_bar": "docs/NEUROSLIDES_VISUAL_BAR.md",
     "reference_piloto": "artifacts/glance-os-piloto-farmacodinamica-INDEX.md",
-    "note": "Fase 0b — 11 bootstrapped + 1 legado below_bar. Polish fino = Fase 1 ramo a ramo.",
+    "note": "Fase 1 — polish conjuncao/causal READY; aguarda aprovação humana",
     "inventory": "artifacts/classes-de-palavras-ancoras-0b-inventory.json"
   },
   "pedagogical_branches": [
@@ -57,7 +57,7 @@
       "ok_generico_3_3": "~30% do card; morphological + rows (conectivo × valor) + tap + compare; Glance OS = board 0 taps (gap wrap/polish genérico G2)",
       "mold_gap": "wrap_polish_g2 — preferir 0 taps; não forçar pt-period-rail se a prova pede só CLASSE do conectivo",
       "anchors_target": 2,
-      "ancoras_100_status": "inventoried_0b",
+      "ancoras_100_status": "in_progress",
       "anchors": [
         "examples/questao-premium-vunesp-portugues-classes-conjuncao-causal.json",
         "examples/questao-premium-quadrix-portugues-classes-conjuncao-adversativa.json"
@@ -65,14 +65,17 @@
       "anchor_styles": {
         "causal": {
           "golden_reference": "examples/questao-premium-vunesp-portugues-classes-conjuncao-causal.json",
-          "status": "bootstrapped_pending_polish",
+          "status": "ready_pending_human",
           "catalog_slug_candidates": [
             "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
             "fcc-tec-classes-considere-o-texto-abaixo-para-respon-3908393"
           ],
-          "note": "Âncora 01 — conjunção causal («já que» / «visto que») · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "note": "Fase 1 polish 2026-08-05 — anti-spoiler concept_map/golden_rule; aguarda aprovação humana",
           "anchor_slug": "questao-premium-vunesp-portugues-classes-conjuncao-causal",
-          "catalog_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325"
+          "catalog_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+          "ready_at": "2026-08-05",
+          "gate": "READY strict-v2-pedagogy",
+          "preview": "http://localhost:3000/dev/slide-mold-review?branch=pt_classes_conjuncao"
         },
         "adversativa": {
           "golden_reference": "examples/questao-premium-quadrix-portugues-classes-conjuncao-adversativa.json",
