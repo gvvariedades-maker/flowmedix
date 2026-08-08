@@ -208,7 +208,8 @@ export function parsePniVfStep(step: string, index: number): ParsedPniVfStep {
   const roman = extractRoman(step);
   const judgement = inferVfJudgement(step);
 
-  const romanLead = /^([IVX]+)\s*[—–-]/i.test(step);
+  // Aceita "I — …", "I - …" e "I: …" (handcraft FUNCAMP / farmaco VF)
+  const romanLead = /^([IVX]+)\s*[—–\-:]\s*/i.test(step);
   if (
     /^(?:julgar|avaliar)\s/i.test(step) ||
     (/afirmativa\s/i.test(step) && judgement) ||
@@ -224,7 +225,9 @@ export function parsePniVfStep(step: string, index: number): ParsedPniVfStep {
     };
   }
 
-  if (/montar conjunto|combinação|conjunto verdadeiro/i.test(lower)) {
+  if (
+    /montar conjunto|combinação|conjunto verdadeiro|verdadeiras?\s*:/i.test(lower)
+  ) {
     return { kind: 'combine', text: step, title: 'Montar combinação', roman, judgement };
   }
 

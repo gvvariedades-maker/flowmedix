@@ -269,7 +269,7 @@
         }
       },
       "visual_gallery": {
-        "status": "pending",
+        "status": "ready",
         "anchor_slug": "questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
         "layouts": [
           "pt-subject-focus-deck",
@@ -277,7 +277,8 @@
           "pt-subject-focus-tap-flow",
           "pt-subject-trap-arena"
         ],
-        "note": "Fase 0 pipeline — moldes wired (alias term-matrix); captures pós-g01."
+        "captures_dir": "artifacts/questao-review/questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
+        "note": "READY 2026-08-08 Composer pilot: ATELIER_PASS · gesto focus · reuso pt-subject-focus (alias term-matrix + LogicFocusShell) · capture mobile-375 · visual_bar pass · sem React novo."
       }
     },
     {
@@ -321,7 +322,20 @@
       "anchors": [
         "examples/questao-formacao-palavras-siglas.json"
       ],
-      "note": "Novas âncoras 100% usam child_branches; este id permanece só como alias dos 93 slugs já applied."
+      "note": "Novas âncoras 100% usam child_branches; este id permanece só como alias dos 93 slugs já applied. Galeria L3: playbook dedicado classes-de-palavras.json → pt_classes_conjuncao.",
+      "visual_gallery": {
+        "status": "ready",
+        "anchor_slug": "questao-premium-vunesp-portugues-classes-conjuncao-causal",
+        "layouts": [
+          "pt-classes-function-deck",
+          "pt-classes-classify-board",
+          "pt-classes-family-table",
+          "pt-classes-swap-arena"
+        ],
+        "captures_dir": "artifacts/questao-review/questao-premium-vunesp-portugues-classes-conjuncao-causal",
+        "dedicated_playbook_branch": "pt_classes_conjuncao",
+        "note": "READY 2026-08-07 via classes-de-palavras.json (child pt_classes_conjuncao)."
+      }
     },
     {
       "id": "pt_verbos",

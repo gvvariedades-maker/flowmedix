@@ -1,0 +1,9 @@
+<!-- AVANT gold  tra�os radiantes do t�tulo (gesto do print).
+     viewBox 0 0 24 24 � stroke 2 � Lucide.
+     Refs: lucide/sparkles pattern � lines geom�tricas -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" role="img" aria-label="Tra�os radiantes">
+  <title>Radiantes</title>
+  <path d="M4 8 L10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M2 12 H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M4 16 L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>

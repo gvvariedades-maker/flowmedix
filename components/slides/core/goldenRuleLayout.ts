@@ -33,6 +33,9 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'adolescent-sigilo-spectrum',
   'adolescent-speak-barrier-board',
   'adolescent-z-band-board',
+  'adolescent-mental-hub-board',
+  'adolescent-dev-vigilance-board',
+  'adolescent-generic-finance-checklist',
   'burn-rule-nine-board',
   'trabalho-nr32-reference-board',
   'sp-nsp-reference-board',
@@ -80,6 +83,9 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'pt-clitic-rail-board',
   'pt-comma-rail-board',
   'pt-term-matrix-board',
+  'pt-classes-family-table',
+  'pt-classes-adverb-arrow-cards',
+  'pt-classes-exceto-fix-board',
   'pt-subject-focus-board',
 ]);
 
@@ -126,6 +132,9 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'adolescent-sigilo-spectrum') return 'adolescent-sigilo-spectrum';
   if (explicitVariant === 'adolescent-speak-barrier-board') return 'adolescent-speak-barrier-board';
   if (explicitVariant === 'adolescent-z-band-board') return 'adolescent-z-band-board';
+  if (explicitVariant === 'adolescent-mental-hub-board') return 'adolescent-mental-hub-board';
+  if (explicitVariant === 'adolescent-dev-vigilance-board') return 'adolescent-dev-vigilance-board';
+  if (explicitVariant === 'adolescent-generic-finance-checklist') return 'adolescent-generic-finance-checklist';
   if (explicitVariant === 'burn-rule-nine-board') return 'burn-rule-nine-board';
   if (explicitVariant === 'trabalho-nr32-reference-board') return 'trabalho-nr32-reference-board';
   if (explicitVariant === 'sp-nsp-reference-board') return 'sp-nsp-reference-board';

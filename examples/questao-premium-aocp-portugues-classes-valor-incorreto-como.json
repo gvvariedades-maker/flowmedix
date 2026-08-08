@@ -11,9 +11,9 @@
     "content_standard": "golden-v1",
     "family": "text_fragment",
     "content_review": {
-      "reviewed_at": "2026-07-20",
-      "reviewer": "handcraft:classes-de-palavras-g06",
-      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · âncora → examples/questao-formacao-palavras-siglas.json",
+      "reviewed_at": "2026-08-08",
+      "reviewer": "ancoras-100:pt_classes_exceto:valor_incorreto",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — valor do conectivo na oração · causal ≠ explicativo · «Como» em pergunta indignada = causa",
       "exam_vs_current": "none",
       "catalog_slug": "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085"
     },
@@ -49,7 +49,16 @@
       }
     ],
     "anchor_style": "valor_incorreto",
-    "anchor_role": "golden_anchor"
+    "anchor_role": "golden_anchor",
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-08",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/questao-premium-aocp-portugues-classes-valor-incorreto-como.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
   },
   "question_data": {
     "instruction": "Considere o texto a seguir para responder à questão.\n\nAssinale a alternativa que apresenta, entre parênteses, o valor semântico INCORRETO para o termo destacado.",
@@ -85,63 +94,65 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "Parêntese errado",
-      "chip_label": "M02 — conjunção",
+      "slide_title": "CLASSIFICAÇÃO DOS × VALORES",
+      "chip_label": "INCORRETO",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
       "items": [
         {
-          "label": "Pergunta-teste",
-          "detail": "Qual par termo/(valor) está trocado?",
-          "icon": "Focus"
-        },
-        {
-          "label": "Askianakis",
-          "detail": "Texto sobre lixo espacial e órbita terrestre.",
-          "icon": "Rocket"
-        },
-        {
-          "label": "Como (C)",
-          "detail": "«Como pode permanecer...?» = causa — não explicativo.",
+          "label": "CAUSAL",
+          "detail": "POR QUE / MOTIVO",
+          "correct": "por esse motivo · porque · como (pergunta)",
           "icon": "HelpCircle"
         },
         {
-          "label": "Por esse motivo (A)",
-          "detail": "Causal — par correto.",
-          "icon": "Check"
+          "label": "ADVERSATIVO",
+          "detail": "OPOSIÇÃO",
+          "correct": "mas · porém · todavia",
+          "icon": "GitBranch"
         },
         {
-          "label": "Pegadinha",
-          "detail": "Chamar «Como» pergunta de «explicativo».",
-          "icon": "AlertTriangle"
+          "label": "EXPLICATIVO",
+          "detail": "EXPLICA EM AFIRMATIVA",
+          "correct": "pois · porque · já que",
+          "icon": "MessageCircle"
+        },
+        {
+          "label": "COMPARATIVO",
+          "detail": "SEMELHANÇA",
+          "correct": "como satélites · como que",
+          "icon": "Scale"
         }
       ],
-      "footer_rule": "Como indignado = causal, não explicativo."
+      "footer_rule": "Valor semântico no parêntese — confira se bate com o termo destacado."
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
+      "chip_label": "ISOLAR",
+      "slide_title": "O PAR ERRADO",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
       "steps": [
-        "Comando: valor INCORRETO entre parênteses.",
-        "A «por esse motivo» — causal — par correto.",
-        "B «Mas» — adversativo — par correto.",
-        "C «Como o lixo...?» — pergunta retórica de CAUSA (por que ninguém age?).",
-        "Parêntese diz «explicativo» — INCORRETO → letra C.",
-        "D «como que por intervenção divina» — comparação/coincidência — aceitável.",
-        "E «como satélites» — comparação — par correto.",
-        "Gabarito C.",
-        "Em similares: «Como» em pergunta indignada = causal — não rotule de explicativo."
+        "Identificar o pedido: assinale o valor semântico INCORRETO entre parênteses.",
+        "Manter A — «por esse motivo»: órbita terrestre monitorada — causal.",
+        "Manter B — «Mas»: fragmentos menores — adversativo.",
+        "Manter D — «como que por intervenção divina»: lei espacial — comparativo.",
+        "Manter E — «como satélites»: lixo espacial / detritos — comparativo.",
+        "EXCEÇÃO — «Como o lixo…?»: pergunta de causa — parêntese «explicativo» erra.",
+        "Gabarito: letra C.",
+        "Em similares: Como indignado (causal) × pois / já que (explicativo)"
       ],
-      "footer_rule": "C — explicativo errado; é causal."
+      "footer_rule": "Causa na pergunta ≠ explicação afirmativa."
     },
     {
       "type": "golden_rule",
+      "chip_label": "FIXAR",
+      "slide_title": "COMO — CAUSA × EXPLICAÇÃO",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
@@ -149,52 +160,59 @@
       "content": "COMO — CAUSA × EXPLICAÇÃO",
       "rows": [
         {
-          "label": "Causal",
-          "value": "Como ninguém faz nada? = por que?"
+          "label": "1. TESTE",
+          "value": "Troque «Como» por «Por que» na pergunta: se cabe, é causa."
         },
         {
-          "label": "Explicativo",
-          "value": "Pois, porque, já que — explicitam motivo em afirmativa."
+          "label": "2. CAUSAL / COMPARATIVO",
+          "value": "«Como ninguém faz nada?» ≈ por que · «como satélites» = semelhança"
         },
         {
-          "label": "Comparativo",
-          "value": "Como satélites — semelhança."
+          "label": "3. EXPLICATIVO",
+          "value": "Pois / porque / já que — motivo em frase afirmativa"
         },
         {
-          "label": "Nesta questão",
-          "value": "C — (explicativo) está errado."
+          "label": "4. INCORRETO",
+          "value": "Rotular «Como…?» de explicativo — o parêntese não bate"
         }
       ],
-      "footer_rule": "Pergunta «como» = causa/indignação."
+      "footer_rule": "Pergunta «como» indignada = causa."
     },
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
+      "chip_label": "PEGADINHA",
+      "slide_title": "CADA PAR",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
-      "content": "INCORRETO — cada par",
+      "content": "Rótulo do parêntese × Uso na oração",
       "items": [
         {
           "label": "A — causal",
-          "detail": "«Por esse motivo» é causal mesmo.",
-          "correct": "Par correto — não é o INCORRETO."
+          "detail": "«Por esse motivo» parece só frase longa.",
+          "correct": "«Por esse motivo» = CAUSAL (manter)."
         },
         {
           "label": "B — adversativo",
-          "detail": "«Mas» opõe dificuldade à monitoração.",
-          "correct": "Adversativo certo — eliminar."
+          "detail": "«Mas» parece leve demais.",
+          "correct": "«Mas» = ADVERSATIVO (manter)."
+        },
+        {
+          "label": "C — explicativo",
+          "detail": "«Como…?» parece explicação.",
+          "correct": "Parêntese erra — é CAUSAL = INCORRETO."
         },
         {
           "label": "D — comparativo",
-          "detail": "«Como que por intervenção divina» = como se fosse coincidência.",
-          "correct": "Valor comparativo/coincidente plausível."
+          "detail": "«Como que» parece ambíguo.",
+          "correct": "«Como que» = COMPARATIVO (manter)."
         },
         {
           "label": "E — como satélites",
-          "detail": "Comparação exemplificativa clara.",
-          "correct": "Par (comparativo) correto."
+          "detail": "Lista parece só exemplo solto.",
+          "correct": "«Como satélites» = COMPARATIVO (manter)."
         },
         {
           "label": "Em outra banca…",
@@ -202,7 +220,7 @@
           "correct": "Mesma função causal — não explicativa."
         }
       ],
-      "footer_rule": "Só C tem parêntese errado."
+      "footer_rule": "Só o parêntese trocado marca o INCORRETO."
     }
   ]
 }

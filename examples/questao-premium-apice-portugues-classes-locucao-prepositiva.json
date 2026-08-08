@@ -11,9 +11,9 @@
     "content_standard": "golden-v1",
     "family": "conceito",
     "content_review": {
-      "reviewed_at": "2026-07-20",
-      "reviewer": "handcraft:classes-de-palavras-g05",
-      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · âncora → examples/questao-formacao-palavras-siglas.json",
+      "reviewed_at": "2026-08-08",
+      "reviewer": "handcraft:prep-100-polish",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — locução prepositiva × conjuntiva / advérbio",
       "exam_vs_current": "none",
       "catalog_slug": "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406"
     },
@@ -26,9 +26,6 @@
         "year": 2024,
         "url": "https://www.academia.org.br/",
         "covers": [
-          "advérbio adjetivo e modo",
-          "numeral ordinal e cardinal",
-          "artigo × preposição",
           "locução prepositiva",
           "preposição e valor semântico",
           "pergunta-teste M02/M03",
@@ -41,12 +38,7 @@
         "issuer": "AVANT — caderno interno Língua Portuguesa",
         "title": "«além da» locução prepositiva IA Unifor — Ápice AP EI Pref SJ Cordeiros 2026 tec 4037406",
         "year": 2026,
-        "covers": [
-          "enunciado",
-          "alternativas",
-          "gabarito",
-          "matriz pt_classes_palavras"
-        ]
+        "covers": ["enunciado", "alternativas", "gabarito", "matriz pt_classes_preposicao"]
       }
     ],
     "anchor_style": "locucao_prepositiva",
@@ -85,63 +77,49 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "Além da",
-      "chip_label": "M02 — locução",
+      "slide_title": "LOCUÇÃO PREPOSITIVA",
+      "chip_label": "PREPOSIÇÃO",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
       "items": [
         {
-          "label": "IA e profissões",
-          "detail": "Texto Unifor / professor Marcos Blaque sobre mercado.",
-          "icon": "Cpu"
-        },
-        {
-          "label": "Habilidades além da área",
-          "detail": "Trecho sobre flexibilidade profissional.",
-          "icon": "Briefcase"
-        },
-        {
-          "label": "Pergunta-teste",
-          "detail": "Grupo com valor de preposição ou conjunção?",
-          "icon": "Focus"
-        },
-        {
-          "label": "Além da",
-          "detail": "Locução prepositiva — ultrapassa «área de atuação».",
+          "label": "ALÉM + DA",
+          "detail": "É · LOCUÇÃO PREPOSITIVA",
+          "correct": "habilidades além da área — Unifor · Marcos Blaque · IA · realidade",
           "icon": "ArrowRight"
         },
         {
-          "label": "× Conjuntiva",
-          "detail": "Não liga orações — não é «além de que».",
-          "icon": "XCircle"
+          "label": "ÁREA DE ATUAÇÃO",
+          "detail": "É · COMPLEMENTO",
+          "correct": "regido pela locução · profissões · carreiras",
+          "icon": "Target"
         },
         {
-          "label": "Pegadinha",
-          "detail": "«Além» isolado parece advérbio.",
-          "icon": "AlertTriangle"
+          "label": "× CONJUNTIVA",
+          "detail": "Seria · ALÉM DE QUE",
+          "correct": "liga orações — não é o destaque",
+          "icon": "XCircle"
         }
       ],
-      "footer_rule": "Além de/da/do = locução prepositiva."
+      "footer_rule": "ESTAS EXPRESSÕES SÃO · LOCUÇÕES PREPOSITIVAS · «ALÉM DA» = VALOR DE PREPOSIÇÃO"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "slide_title": "Expressão → gabarito",
+      "chip_label": "CLASSIFICA A",
+      "slide_title": "EXPRESSÃO",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
       "steps": [
-        "Texto inteligência artificial / Blaque: «habilidades além da sua área de atuação».",
-        "Profissional deve desenvolver competências — expressão em destaque: «além da».",
-        "«Além da sua área» — grupo introduz complemento (ultrapassar a área).",
-        "A substantivo — eliminar. B adjetivo — eliminar. C advérbio simples — eliminar.",
-        "E locução conjuntiva liga orações — não é o caso — eliminar.",
-        "D locução prepositiva — valor de preposição composta.",
-        "Gabarito D.",
-        "Em similares: «além de», «apesar de», «junto com» — locuções prepositivas."
+        "DESTAQUE · habilidades além da área de atuação",
+        "LOCUÇÃO PREPOSITIVA · além da, além de, apesar de",
+        "ELIMINAR · substantivo, adjetivo, advérbio, conjuntiva",
+        "GABARITO · letra D — locução prepositiva (Unifor · Blaque)",
+        "Em similares: apesar de, junto com — locução prepositiva (IA · profissões · flexibilidade · competência · transformação)"
       ],
       "footer_rule": "D — locução prepositiva."
     },
@@ -151,30 +129,26 @@
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
-      "content": "ALÉM DE/DA",
+      "content": "ALÉM DE / DA",
       "rows": [
         {
-          "label": "Pergunta-teste",
-          "value": "Preposição composta + complemento?"
+          "label": "1. TESTE",
+          "value": "Grupo com valor de preposição? · pergunta-teste"
         },
         {
-          "label": "Além da",
-          "value": "Locução prepositiva — ultrapassar limites."
+          "label": "2. LOCUÇÃO",
+          "value": "Além da / além de · habilidades além da área"
         },
         {
-          "label": "Regência",
-          "value": "Além de + substantivo (área de atuação)."
+          "label": "3. COMPLEMENTO",
+          "value": "Além de + substantivo · área de atuação · profissões"
         },
         {
-          "label": "× conjuntiva",
-          "value": "Não conecta orações adversativas."
-        },
-        {
-          "label": "Nesta questão",
-          "value": "D — locução prepositiva"
+          "label": "4. × CONJUNTIVA",
+          "value": "Não liga orações · não é «além de que»"
         }
       ],
-      "footer_rule": "Além da = prep. composta."
+      "footer_rule": "Além da = locução prepositiva."
     },
     {
       "type": "danger_zone",
@@ -183,32 +157,32 @@
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
-      "content": "Classe isolada",
+      "content": "Classe isolada × Locução",
       "items": [
         {
           "label": "A — substantivo",
           "detail": "«Além» parece nome.",
-          "correct": "Função preposicional do grupo «além da»."
+          "correct": "Grupo «além da» = locução prepositiva"
         },
         {
           "label": "B — adjetivo",
           "detail": "Qualificaria «habilidades».",
-          "correct": "Modifica relação espacial/limitativa — locução prep."
+          "correct": "Não qualifica — introduz complemento"
         },
         {
           "label": "C — advérbio",
-          "detail": "«Além» isolado é advérbio de lugar.",
-          "correct": "Com «da» forma locução prepositiva, não advérbio simples."
+          "detail": "«Além» isolado = advérbio de lugar.",
+          "correct": "Com «da» vira locução prepositiva"
         },
         {
           "label": "E — conjuntiva",
-          "detail": "«Além» sugere adição de ideias.",
-          "correct": "Não liga orações — complementa «desenvolver habilidades»."
+          "detail": "Sugere adição de ideias.",
+          "correct": "Não liga orações — regência nominal"
         },
         {
           "label": "Em outra banca…",
-          "detail": "Trocam por «apesar de» ou «junto com».",
-          "correct": "Mesma classe: locução prepositiva."
+          "detail": "Trocam por «apesar de» / «junto com».",
+          "correct": "Mesma classe: locução prepositiva"
         }
       ],
       "footer_rule": "Só D — loc. prep."

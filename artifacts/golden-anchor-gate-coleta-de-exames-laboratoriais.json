@@ -1,0 +1,15 @@
+{
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "pacote_prefix": "coleta-de-exames-laboratoriais",
+  "gate": "pass",
+  "handcraft_allowed": true,
+  "cluster_report": "artifacts/coleta-de-exames-laboratoriais-topic-cluster-report.json",
+  "goldens_needed": 0,
+  "missing": [],
+  "covered": [],
+  "warnings": [],
+  "reasons": [
+    "Todos os ramos novo_ramo/coberto com golden presente em examples/."
+  ],
+  "artifact": "artifacts/golden-anchor-gate-coleta-de-exames-laboratoriais.json"
+}

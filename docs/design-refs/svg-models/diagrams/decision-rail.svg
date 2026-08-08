@@ -1,0 +1,11 @@
+<!-- AVANT gold  trilho de decis�o (logic_flow). Grid 160�48. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="none" role="img" aria-label="Trilho de decis�o">
+  <title>Decision rail</title>
+  <circle cx="16" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+  <path d="M24 24 H48" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <rect x="48" y="12" width="32" height="24" rx="6" stroke="currentColor" stroke-width="2"/>
+  <path d="M80 24 H104" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <rect x="104" y="12" width="32" height="24" rx="6" stroke="currentColor" stroke-width="2"/>
+  <path d="M136 24 H144" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="152" cy="24" r="4" fill="currentColor"/>
+</svg>

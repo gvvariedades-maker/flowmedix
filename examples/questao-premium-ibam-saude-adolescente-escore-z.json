@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "Ibam",
+    "orgao": "Pref São Vicente",
+    "prova": "Tec Enf",
+    "cargo_header": "Técnico de enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde do Adolescente",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-05",
+      "reviewer": "anchor-100-writer",
+      "guideline_snapshot": "MS — Caderneta do Adolescente; classificação nutricional por escore Z (OMS, 5–19 anos)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "caderneta-adolescente-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Caderneta do Adolescente — avaliação antropométrica e escore Z",
+        "year": 2021,
+        "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/adolescente",
+        "covers": [
+          "escore Z",
+          "IMC adolescente",
+          "sobrepeso",
+          "curvas OMS",
+          "Caderneta"
+        ]
+      },
+      {
+        "id": "oms-growth-reference-5-19",
+        "tier": "A",
+        "issuer": "OMS / Ministério da Saúde",
+        "title": "Referência de crescimento 5–19 anos (IMC/estatura — escore Z)",
+        "year": 2007,
+        "covers": [
+          "faixas Z IMC",
+          "magreza",
+          "sobrepeso",
+          "obesidade"
+        ]
+      }
+    ],
+    "pedagogical_branch": "adolescente_antropometria",
+    "efficacy_contract": {
+      "a4_reviewed": true,
+      "a4_reviewer": "handcraft-qc",
+      "a4_reviewed_at": "2026-08-01",
+      "a4_note": "Piloto F3 Adolescente — escore Z Caderneta; spoiler letra removido do golden_rule; faixas alinhadas à Caderneta/OMS. | 2026-08-01: danger_zone D alinhado Caderneta (magreza vs acentuada).",
+      "risk_tier_at_review": "alto"
+    },
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-06",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
+  },
+  "question_data": {
+    "instruction": "Durante o atendimento de rotina, um profissional de saúde realiza a avaliação pondo-estatural de um adolescente, observando sinais clínicos, histórico familiar e\nhábitos alimentares. Ele utiliza os gráficos da Caderneta do Adolescente e o escore Z para classificar o crescimento, segundo a estatura e o IMC. Considerando a\nsistematização da avaliação e a categorização dos escores Z, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A classificação de sobrepeso é atribuída quando o escore Z do IMC situa-se entre +1 e +2, e deve ser complementada por orientações quanto a alimentação e atividade física.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "O escore Z entre +2 e +3 indica obesidade grave, especialmente quando associado a sinais clínicos de maturação sexual precoce.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A estatura muito baixa é classificada quando o escore Z da estatura se encontra entre -1 e -2, exigindo reavaliação a cada 12 meses.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A presença de magreza severa é identificada com escore Z entre -2 e -3, devendo-se considerar referência para tratamento quando houver associação com queixas alimentares.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Escore Z — adolescente",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde do Adolescente"
+      },
+      "items": [
+        {
+          "label": "Caderneta + OMS",
+          "detail": "Gráficos da Caderneta para avaliar crescimento (estatura e IMC, 5–19 anos).",
+          "icon": "BarChart3"
+        },
+        {
+          "label": "O que é o Z",
+          "detail": "Desvios-padrão do IMC/estatura em relação à mediana de referência.",
+          "icon": "TrendingUp"
+        },
+        {
+          "label": "Sobrepeso",
+          "detail": "IMC com Z entre +1 e +2 — orientar alimentação e atividade física.",
+          "icon": "Apple"
+        },
+        {
+          "label": "Conduta do TE",
+          "detail": "Classificar na Caderneta e orientar estilo de vida precocemente.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Banca desloca ±1 DP — troca sobrepeso por obesidade ou magreza por severa.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Z do IMC: memorize faixas da Caderneta — sobrepeso = +1 a +2"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde do Adolescente"
+      },
+      "steps": [
+        "Comando: classificar categorias de escore Z pela Caderneta (IMC e estatura).",
+        "A: Z do IMC entre +1 e +2 = sobrepeso + orientar alimentação e atividade física → mantém.",
+        "B: +2 a +3 como obesidade grave → faixa errada (nessa faixa = obesidade; grave = Z > +3) → elimina.",
+        "C: estatura muito baixa entre -1 e -2 → limiar errado (muito baixa exige Z < -3) → elimina.",
+        "D: magreza severa entre -2 e -3 → faixa errada (severa/acentuada = Z < -3) → elimina.",
+        "Marcar A.",
+        "Em similares: confira o limiar da Caderneta — a banca desloca ±1 DP nas faixas vizinhas."
+      ],
+      "footer_rule": "Calcule Z → classifique a faixa → confira se a alternativa bate com a Caderneta"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Escore Z — faixas IMC",
+      "content": "ESCORE Z DO IMC — FAIXAS SIMILARES NO TRILHO, SENTIDOS DIFERENTES",
+      "rows": [
+        {
+          "label": "Magreza acentuada",
+          "value": "Z < −3",
+          "badge": "warn"
+        },
+        {
+          "label": "Magreza",
+          "value": "−3 ≤ Z < −2",
+          "badge": "warn"
+        },
+        {
+          "label": "Eutrofia",
+          "value": "−2 ≤ Z ≤ +1",
+          "badge": "ok"
+        },
+        {
+          "label": "Sobrepeso",
+          "value": "+1 < Z ≤ +2",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Obesidade",
+          "value": "+2 < Z ≤ +3",
+          "badge": "warn"
+        },
+        {
+          "label": "Obesidade grave",
+          "value": "Z > +3",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Caderneta: sobrepeso = +1 a +2 + orientação de alimentação e atividade física",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde do Adolescente"
+      }
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde do Adolescente"
+      },
+      "content": "PEGADINHAS — ESCORE Z DO IMC (CADERNETA)",
+      "items": [
+        {
+          "label": "Obesidade grave",
+          "detail": "Chama +2 a +3 de obesidade grave",
+          "correct": "IMC: +2 a +3 = obesidade · obesidade grave só com Z > +3"
+        },
+        {
+          "label": "Estatura muito baixa",
+          "detail": "Usa −1 a −2 como muito baixa",
+          "correct": "Muito baixa exige Z < −3 · nunca faixa intermediária"
+        },
+        {
+          "label": "Magreza severa",
+          "detail": "Troca magreza por magreza acentuada",
+          "correct": "Severa/acentuada = Z < −3 · −3 ≤ Z < −2 = magreza"
+        },
+        {
+          "label": "Transferência",
+          "detail": "Em similares: escore Z do IMC na Caderneta do Adolescente",
+          "correct": "Sobrepeso = +1 a +2 no escore Z · grave/acentuado fica além de ±3"
+        }
+      ],
+      "footer_rule": "Caderneta: banca desloca ±1 DP no escore Z — grave/acentuado = além de ±3"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-08-06T01:31:14.675Z",
+  "lote": "coleta-de-exames-laboratoriais-g06",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2933
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-exames-laboratoriais-1779563631609-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3266
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3265
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2938
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2968
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2969
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2970
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2985
+    }
+  ]
+}

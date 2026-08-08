@@ -1,44 +1,164 @@
 {
-  "version": 1,
+  "version": 2,
   "subtopico": "Farmacodinâmica e Farmacocinética",
   "pacote_prefix": "farmacodinamica-e-farmacocinetica",
   "scope_default": "subtopico_handcraft",
-  "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json,examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+  "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json,examples/questao-premium-idecan-omeprazol-ev-ulcera.json,examples/questao-premium-aocp-farmacodinamica-isossorbida-angina.json",
   "golden_anchors_registry": "data/catalog-migration/farmacodinamica-golden-anchors.json",
   "handcraft_meta": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g02/lote-meta.json",
+  "cluster_report": "artifacts/farmacodinamica-topic-cluster-report.json",
+  "l3_brief_pattern": "artifacts/l3-brief-farmacodinamica-e-farmacocinetica-<branch_id>.md",
   "repair_lote_pattern": "farmacodinamica-*-repair",
-  "slug_selection": "Cluster PK/PD V/F ou clínico EV/infusão; audit [READY]; ou Slug: explícito",
+  "slug_selection": "Cluster PK/PD V/F ou clínico EV/infusão; audit [READY]; ou Slug: explícito. Pacote applied 13/13 production_ready — Âncoras 100% eleva base antes de novo handcraft em massa.",
   "clusters": [
     "PK/PD definições — ADME, meia-vida, 1ª passagem (âncora FUNCAMP V/F)",
     "Clínico hospitalar — IBP EV, infusão monitorada (âncora IDECAN omeprazol)",
     "Insulinas e hipoglicemiantes",
     "Interações e efeitos adversos"
   ],
+  "glance_os_ancoras_100": {
+    "started_at": "2026-08-07",
+    "completed_at": "2026-08-08",
+    "revalidated_at": "2026-08-08",
+    "status": "approved_100",
+    "mapa_gestos": "artifacts/glance-os-farmacodinamica-e-farmacocinetica-MAPA-8-GESTOS.md",
+    "report": "artifacts/farmacodinamica-e-farmacocinetica-ancoras-100-report.md",
+    "default_clicks": 0,
+    "visual_bar": "docs/NEUROSLIDES_VISUAL_BAR.md",
+    "reference_piloto": "Glance OS 3/3 VF + clínico + genérico",
+    "branches_canonical": [
+      "farmaco_pk_pd_vf",
+      "farmaco_clinico_protocolo",
+      "farmaco_generico"
+    ],
+    "note": "3/3 âncoras 100% + Fábrica G2 2026-08-08: gallery ready 3/3; Playwright L3 8/8; sem React novo.",
+    "policy": "A_conteudo_first_visual_after_mold",
+    "mold_gap": {
+      "farmaco_pk_pd_vf": "ok_react",
+      "farmaco_clinico_protocolo": "ok_react",
+      "farmaco_generico": "ok_generico_semantic"
+    },
+    "ancoras_100_status": "approved",
+    "ancoras_100_report": "artifacts/farmacodinamica-e-farmacocinetica-ancoras-100-report.md",
+    "fabrica_g2": {
+      "completed_at": "2026-08-08",
+      "status": "visual_bar_pass",
+      "report": "artifacts/farmacodinamica-e-farmacocinetica-fabrica-g2-report.md",
+      "composer": [
+        "artifacts/composer-visual-farmaco_pk_pd_vf.md",
+        "artifacts/composer-visual-farmaco_clinico_protocolo.md"
+      ],
+      "playwright": "8/8 Farmacodinâmica moldes L3"
+    }
+  },
   "pedagogical_branches": [
     {
       "id": "farmaco_pk_pd_vf",
       "when": "I/II/III, ADME, meia-vida, biodisponibilidade, 1ª passagem hepática",
-      "mold": "adme-journey-rail · reference_table · tap · compare",
-      "anchors": ["examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"]
+      "gesture": "VF / I–II–III + TRILHO ADME + NÚMERO (meia-vida 50%)",
+      "mold": "adme-journey-rail · pk-pd-reference-board · farmaco-vf-juggle-tap · farmaco-trap",
+      "l3_decision": "molde_redesign",
+      "brief": "artifacts/l3-brief-farmacodinamica-e-farmacocinetica-farmaco_pk_pd_vf.md",
+      "glance_os": "4/4 estático 0-tap · poster EBSERH · rail ADME · funil V/F · trap aberto",
+      "preview": "http://localhost:3000/dev/slide-mold-review?branch=farmaco_pk_pd_vf",
+      "ancoras_100_status": "approved",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "signed_by": "agent:anchor-checklist-v1",
+        "signed_at": "2026-08-08",
+        "revalidated_at": "2026-08-08",
+        "risk_tier": "medio",
+        "artifact": "artifacts/anchor-checklist/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+        "require_visual": true,
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=farmaco_pk_pd_vf"
+      },
+      "anchors": ["examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"],
+      "visual_gallery": {
+        "status": "ready",
+        "anchor_slug": "funcamp-farmacodinamica-vf",
+        "layouts": [
+          "adme-journey-rail",
+          "pk-pd-reference-board",
+          "farmaco-vf-juggle-tap",
+          "farmaco-trap"
+        ],
+        "captures_dir": "artifacts/questao-review/funcamp-farmacodinamica-vf",
+        "reviewed_at": "2026-08-08",
+        "atelier": "ATELIER_PASS",
+        "note": "READY 2026-08-08 redesign estático 4/4 (prints EBSERH/aleitamento): concept numerado · funil V/F · golden seções · trap aberto. Recapture questao-review. visual_bar: pass."
+      }
     },
     {
       "id": "farmaco_clinico_protocolo",
       "when": "Omeprazol EV, antibiótico EV, infusão contínua, diluição, monitorização clínica/pH",
+      "gesture": "PROTOCOLO + TRILHO EV (+ PEGADINHA via/bólus/SC)",
       "mold": "infusao-ev-station-deck · farmaco-clinico-reference-board · farmaco-protocol-tap-flow · farmaco-clinico-trap",
-      "anchors": ["examples/questao-premium-idecan-omeprazol-ev-ulcera.json"]
+      "l3_decision": "molde_redesign",
+      "brief": "artifacts/l3-brief-farmacodinamica-e-farmacocinetica-farmaco_clinico_protocolo.md",
+      "glance_os": "alvo ≤3 taps · deck estações · board norma · trap EV aberto",
+      "preview": "http://localhost:3000/dev/slide-mold-review?branch=farmaco_clinico_protocolo",
+      "ancoras_100_status": "approved",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "signed_by": "agent:anchor-checklist-v1",
+        "signed_at": "2026-08-08",
+        "revalidated_at": "2026-08-08",
+        "risk_tier": "medio",
+        "artifact": "artifacts/anchor-checklist/questao-premium-idecan-omeprazol-ev-ulcera.json",
+        "require_visual": true,
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=farmaco_clinico_protocolo"
+      },
+      "anchors": ["examples/questao-premium-idecan-omeprazol-ev-ulcera.json"],
+      "visual_gallery": {
+        "status": "ready",
+        "anchor_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+        "layouts": [
+          "infusao-ev-station-deck",
+          "farmaco-clinico-reference-board",
+          "farmaco-protocol-tap-flow",
+          "farmaco-clinico-trap"
+        ],
+        "captures_dir": "artifacts/questao-review/idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+        "note": "READY 2026-08-08 — slides 3–4 estáticos G2 (golden herói + danger ✗/✓ sem tap); audit:anchor-100 --require-visual approval=pass; capture refeita."
+      }
     },
     {
       "id": "farmaco_generico",
-      "when": "Demais — sem fit claro de cluster",
-      "mold": "genérico",
-      "anchors": ["examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"]
+      "when": "Demais — sem fit claro de cluster (conceito isolado, EXCETO genérico, classe sem EV)",
+      "gesture": "CLASSIFICAR / PEGADINHA (fallback — sem forçar ADME/EV)",
+      "mold": "morphological · center/reference_table · vertical · compare",
+      "l3_decision": "ok_generico",
+      "brief": "artifacts/l3-brief-farmacodinamica-e-farmacocinetica-farmaco_generico.md",
+      "glance_os": "piso G2 semântico · âncora própria (isossorbida AOCP)",
+      "preview": "http://localhost:3000/dev/slide-mold-review?branch=farmaco_generico",
+      "ancoras_100_status": "approved",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "signed_by": "agent:anchor-checklist-v1",
+        "signed_at": "2026-08-08",
+        "revalidated_at": "2026-08-08",
+        "risk_tier": "medio",
+        "artifact": "artifacts/anchor-checklist/questao-premium-aocp-farmacodinamica-isossorbida-angina.json",
+        "require_visual": true,
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=farmaco_generico"
+      },
+      "anchors": ["examples/questao-premium-aocp-farmacodinamica-isossorbida-angina.json"],
+      "notes": "Bootstrap 2026-08-08 — não reusar VF; visual-anchors aponta para AOCP isossorbida",
+      "visual_gallery": {
+        "status": "ready",
+        "anchor_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+        "layouts": ["morphological", "reference_table", "vertical", "compare"],
+        "captures_dir": "artifacts/questao-review/instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+        "note": "READY 2026-08-08 Fábrica G2: PNGs mold-review farmaco_generico desktop+375 (ok_generico; Composer longo pulado)."
+      }
     }
   ],
   "validation": {
     "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
     "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
     "lote": "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
-    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]"
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]",
+    "ancoras_100": "npm run audit:anchor-100 -- --file=<path> → approval.status=pass"
   },
   "proibido": ["ai:generate", "catalog:upgrade-premium"]
 }

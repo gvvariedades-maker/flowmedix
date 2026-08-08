@@ -62,3 +62,9 @@ npm run cluster:farmacodinamica
 npx playwright test e2e/visual-mold-regression.spec.ts --project=chromium --grep "Farmacodinâmica"
 npm run audit:subtopico-quality -- --subtopico="Farmacodinâmica e Farmacocinética"
 ```
+
+## Fábrica visual G2 (2026-08-08)
+
+- `visual_bar: pass` — gallery ready 3/3 · Playwright L3 8/8 · Composer ATELIER_PASS VF+clínico
+- Report: `artifacts/farmacodinamica-e-farmacocinetica-fabrica-g2-report.md`
+- Sem React novo

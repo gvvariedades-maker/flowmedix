@@ -1,0 +1,23 @@
+<!-- AVANT gold  gesto tipos de adv�rbio (grade). Grid 120�64, stroke 2, Lucide grammar.
+     Refs: @docs/design-refs/svg-models/lucide/circle.svg � target.svg � check.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 64" fill="none" role="img" aria-label="Tipos de adv�rbio em grade">
+  <title>Grade de tipos</title>
+  <rect x="4" y="8" width="26" height="22" rx="4" stroke="currentColor" stroke-width="2"/>
+  <circle cx="17" cy="16" r="3" stroke="currentColor" stroke-width="2"/>
+  <path d="M12 24h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <rect x="34" y="8" width="26" height="22" rx="4" stroke="currentColor" stroke-width="2"/>
+  <circle cx="47" cy="16" r="4" stroke="currentColor" stroke-width="2"/>
+  <path d="M47 14v2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <rect x="64" y="8" width="26" height="22" rx="4" stroke="currentColor" stroke-width="2"/>
+  <circle cx="77" cy="19" r="5" stroke="currentColor" stroke-width="2"/>
+  <circle cx="77" cy="19" r="2" stroke="currentColor" stroke-width="2"/>
+  <rect x="94" y="8" width="22" height="22" rx="4" stroke="currentColor" stroke-width="2"/>
+  <path d="M101 14c2 0 4 2 4 5v1h-8v-1c0-3 2-5 4-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="19" y="36" width="26" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+  <path d="M27 46l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="49" y="36" width="26" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+  <path d="M57 42l10 8M67 42l-10 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <rect x="79" y="36" width="26" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+  <circle cx="92" cy="46" r="5" stroke="currentColor" stroke-width="2"/>
+  <path d="M92 44v2.5M92 49h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>

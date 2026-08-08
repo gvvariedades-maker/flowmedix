@@ -128,6 +128,8 @@ export const NeuroSlideHub = ({
             concepts={concepts}
             theme={theme}
             footerRule={slide.footer_rule}
+            chipLabel={slide.chip_label}
+            slideTitle={slide.slide_title}
             questionOptions={questionOptions}
           />
         );
@@ -181,6 +183,7 @@ export const NeuroSlideHub = ({
           revealMode={logicRevealMode}
           footerRule={slide.footer_rule}
           chipLabel={slide.chip_label}
+          slideTitle={slide.slide_title}
           focusEyebrow={shellCopy.logicFocusEyebrow}
         />
       );
@@ -417,6 +420,8 @@ export default function NeuroSlide({
               concepts={concepts}
               theme={theme}
               footerRule={normalizedData.footer_rule}
+              chipLabel={normalizedData.chip_label}
+              slideTitle={normalizedData.slide_title}
               questionOptions={questionOptions}
             />
           );
@@ -486,6 +491,7 @@ export default function NeuroSlide({
             revealMode={legacyPresentation.revealMode}
             footerRule={normalizedData.footer_rule}
             chipLabel={normalizedData.chip_label}
+            slideTitle={normalizedData.slide_title}
             focusEyebrow={legacyShellCopy.logicFocusEyebrow}
           />
         );

@@ -10,10 +10,12 @@
     "pedagogical_branch": "pt_classes_conjuncao",
     "content_standard": "golden-v1",
     "family": "text_fragment",
+    "anchor_style": "adversativa",
+    "anchor_role": "golden_anchor",
     "content_review": {
-      "reviewed_at": "2026-07-20",
-      "reviewer": "handcraft:classes-de-palavras-g06",
-      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · âncora → examples/questao-formacao-palavras-siglas.json",
+      "reviewed_at": "2026-08-07",
+      "reviewer": "ancoras-100:classes-de-palavras/conjuncao-adversativa-glance",
+      "guideline_snapshot": "M02 Elias — «O que a palavra faz na oração?» · conjunção adversativa (no entanto / todavia / porém) × adição × alternância × comparação",
       "exam_vs_current": "none",
       "catalog_slug": "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677"
     },
@@ -22,16 +24,16 @@
         "id": "pt-classes-palavras-concursos",
         "tier": "A",
         "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
-        "title": "Classes de palavras — preposição e conjunção (valor semântico)",
+        "title": "Classes de palavras — conjunção e valor semântico adversativo",
         "year": 2024,
         "url": "https://www.academia.org.br/",
         "covers": [
-          "preposição e valor de causa",
-          "conjunção coordenada e subordinada",
-          "conjunção adversativa e explicativa",
-          "conjunção comparativa e consecutiva",
-          "pergunta-teste M02/M03",
-          "classificação morfológica"
+          "conjunção coordenativa adversativa",
+          "no entanto / todavia / porém / contudo / mas",
+          "contraste entre parágrafos",
+          "adição (mas também) × oposição",
+          "pergunta-teste M02",
+          "classificação morfológica do conectivo"
         ]
       },
       {
@@ -42,14 +44,22 @@
         "year": 2026,
         "covers": [
           "enunciado",
+          "text_fragment",
           "alternativas",
           "gabarito",
-          "matriz pt_classes_palavras"
+          "matriz pt_classes_conjuncao"
         ]
       }
     ],
-    "anchor_style": "adversativa",
-    "anchor_role": "golden_anchor"
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-07",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/questao-premium-quadrix-portugues-classes-conjuncao-adversativa.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
   },
   "question_data": {
     "instruction": "Texto para a questão.\n\nAssinale a opção correta, quanto à análise semântica e sintática do segundo parágrafo do texto (trecho que começa por «No entanto»).",
@@ -85,124 +95,157 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "No entanto — contraste",
-      "chip_label": "M02 — conjunção",
+      "slide_title": "2º parágrafo — valor do conectivo",
+      "chip_label": "Peças · conjunção",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
       "items": [
         {
-          "label": "Pergunta-teste",
-          "detail": "2º parágrafo opõe ou soma ao 1º?",
-          "icon": "Focus"
+          "label": "ADVERSATIVA",
+          "detail": "mas · porém · contudo · no entanto · todavia",
+          "correct": "Se puder trocar por «mas» (oposição) → é ADVERSATIVA.",
+          "icon": "Link"
         },
         {
-          "label": "Karnal / enfermagem",
-          "detail": "Texto COREN: dor inevitável × sofrimento evitável.",
-          "icon": "Heart"
-        },
-        {
-          "label": "Parágrafo 1",
-          "detail": "Budistas e estoicos — controlo sobre influência do mundo.",
-          "icon": "BookOpen"
-        },
-        {
-          "label": "No entanto",
-          "detail": "Adversativa — introduz contraste (revolta agrava dor).",
+          "label": "ADIÇÃO",
+          "detail": "e · mas também · além disso",
+          "correct": "Se puder trocar por «e» / «também» (soma) → é ADIÇÃO — não contraste.",
           "icon": "GitBranch"
         },
         {
-          "label": "Pegadinha E",
-          "detail": "«Tanto...quanto» está no 1º parágrafo, não no 2º.",
+          "label": "L · Ex.1",
+          "detail": "«No entanto» abre o 2º § e contrapõe revolta/sofrimento ao 1º (Karnal).",
+          "icon": "Check"
+        },
+        {
+          "label": "R · Ex.1",
+          "detail": "A dor é inevitável «e» o sofrimento também aparece — soma, não oposição.",
+          "icon": "Check"
+        },
+        {
+          "label": "L · Ex.2",
+          "detail": "Dor inevitável, «porém» o sofrimento pode ser evitado.",
+          "icon": "Check"
+        },
+        {
+          "label": "R · Ex.2",
+          "detail": "Pegadinha: levar peça do 1º § (budistas/estoicos) para o trecho do 2º.",
           "icon": "AlertTriangle"
         }
       ],
-      "footer_rule": "No entanto = todavia = contraste."
+      "footer_rule": "Abertura do 2º § = peça + valor entre parágrafos."
     },
     {
       "type": "logic_flow",
+      "slide_title": "Eliminar valor errado",
+      "chip_label": "Classes · conjunção",
       "reveal_mode": "tap",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
       "steps": [
-        "Texto Karnal: 1º parágrafo — dor × sofrimento; 2º — exemplo da quina.",
-        "«No entanto» liga os parágrafos por OPOSIÇÃO/CONTRASTE.",
-        "A «Mas também» adiciona — mudaria o sentido — eliminar.",
-        "B: contraste + troca por «Todavia» sem alterar sentido — correto.",
-        "C fala em alternância e «tempo» — incorreto.",
-        "D nega adversativa em texto formal — incorreto.",
-        "E confunde «tanto...quanto» do 1º parágrafo — eliminar.",
-        "Gabarito B.",
-        "Em similares: 2º § com «no entanto/porém» contrasta com o 1º — teste troca por «Todavia»."
+        "Comando: analisar o 2º parágrafo do texto Karnal (enfermagem) que abre com «No entanto».",
+        "Pista: 2º § contrapõe revolta/sofrimento ao que o 1º § já afirmou → relação de CONTRASTE.",
+        "«Mas também» soma ideia — muda a semântica — eliminar.",
+        "Alternância + «sentido do tempo» não descreve o vínculo dos parágrafos — eliminar.",
+        "Negar adversativa em texto formal — falso — eliminar.",
+        "«Tanto…quanto» está no 1º § (budistas e estoicos), não no 2º — eliminar.",
+        "Gabarito B — contraste + troca por «Todavia» sem alterar o sentido.",
+        "Em similares: 2º § com «no entanto/porém» → teste troca por «Todavia/contudo»."
       ],
       "footer_rule": "B — adversativa «No entanto»/«Todavia»."
     },
     {
       "type": "golden_rule",
+      "slide_title": "Funções do conectivo",
+      "chip_label": "Cards · valor",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
-      "content": "ADVERSATIVAS",
+      "content": "Principais valores do conectivo",
       "rows": [
         {
-          "label": "Coordenadas",
-          "value": "mas, porém, contudo, todavia, no entanto."
+          "label": "1. Adversativas",
+          "value": "Troca por «mas» / «todavia» = CONTRASTE. · Dor inevitável, «no entanto» o sofrimento pode ser evitado. · Queria ficar, «porém» precisei sair.",
+          "emphasis": "success"
         },
         {
-          "label": "Função",
-          "value": "Contraste entre ideias ou parágrafos."
+          "label": "2. Função entre §§",
+          "value": "Abre o 2º parágrafo e opõe ao que o 1º já afirmou. · 1º §: dor/inevitável. · 2º §: «No entanto» + sofrimento evitável.",
+          "emphasis": "highlight"
         },
         {
-          "label": "× Adição",
-          "value": "«Mas também» soma — não substitui «no entanto»."
+          "label": "3. × Aditivas",
+          "value": "«Mas também» / «e» SOMAM — não substituem contraste. · A dor é inevitável «e» o sofrimento aparece (soma). · «Mas também» altera a semântica do 2º §.",
+          "emphasis": "alert"
         },
         {
-          "label": "Nesta questão",
-          "value": "B — contraste; «Todavia» cabe."
+          "label": "4. Alternativas",
+          "value": "«Ou… ou» / «ora… ora» = escolha — não oposição de parágrafos. · «Ou» aceita a dor, «ou» foge do sofrimento.",
+          "emphasis": "default"
+        },
+        {
+          "label": "5. Troca segura",
+          "value": "Se o valor é contraste, «Todavia» / «Contudo» / «Porém» preservam o sentido. · «No entanto» ≈ «Todavia» neste texto.",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "6. Nesta prova",
+          "value": "2º § com «No entanto» → família adversativa. · Eliminar adição («mas também») e comparação («tanto…quanto» do 1º §). · Teste: troca por «Todavia» fecha.",
+          "emphasis": "highlight",
+          "badge": "hot"
         }
       ],
-      "footer_rule": "2º § contrasta com o 1º."
+      "footer_rule": "Contraste entre §§ → peça adversativa."
     },
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
+      "slide_title": "Coordenativas — tabela",
+      "chip_label": "Tabela prática",
+      "reveal_mode": "auto",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
-      "content": "Confundir parágrafos e conectivos",
+      "content": "Conjunções coordenativas",
       "items": [
         {
-          "label": "A — mas também",
-          "detail": "Adiciona em vez de contrastar.",
-          "correct": "«No entanto» opõe — «mas também» altera a semântica."
+          "label": "Aditivas",
+          "detail": "e, nem, mas também, como também",
+          "correct": "A dor é inevitável «e» o sofrimento também aparece — soma, não contraste."
         },
         {
-          "label": "C — alternância",
-          "detail": "Mistura «contudo» com noção de tempo.",
-          "correct": "Relação é adversativa, não alternância temporal."
+          "label": "Adversativas",
+          "detail": "mas, porém, contudo, todavia, no entanto",
+          "correct": "Dor inevitável, «no entanto» o sofrimento pode ser evitado."
         },
         {
-          "label": "D — formalidade",
-          "detail": "Texto formal admite adversativas.",
-          "correct": "«No entanto/todavia» é padrão em registro formal."
+          "label": "Alternativas",
+          "detail": "ou, ou… ou, ora… ora, quer… quer",
+          "correct": "«Ou» aceita a dor, «ou» foge do sofrimento — escolha, não oposição de §§."
         },
         {
-          "label": "E — tanto...quanto",
-          "detail": "Correlata está no 1º parágrafo (budistas e estoicos).",
-          "correct": "Não é comparação no 2º § — é adversativa «no entanto»."
+          "label": "Conclusivas",
+          "detail": "logo, portanto, por isso, assim, pois (conclusivo)",
+          "correct": "Há dor; «logo», o cuidado de enfermagem importa."
+        },
+        {
+          "label": "Explicativas",
+          "detail": "que, porque, porquanto, pois (explicativo)",
+          "correct": "Cuide bem, «pois» o sofrimento pode ser evitado."
         },
         {
           "label": "Em outra banca…",
-          "detail": "Trocam Karnal por outro texto com «porém».",
-          "correct": "Mesmo teste: parágrafo 2 contrasta com o 1º."
+          "detail": "Neste texto Karnal o 2º § abre com contraste.",
+          "correct": "Família adversativa («no entanto/todavia») — não aditiva («mas também»)."
         }
       ],
-      "footer_rule": "Só B descreve o 2º parágrafo."
+      "footer_rule": "2º § contrasta com o 1º → peça adversativa."
     }
   ]
 }

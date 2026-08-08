@@ -1,0 +1,11 @@
+<!-- AVANT gold  silhueta de uma fileira N�O ERRE MAIS (chave + corpo).
+     viewBox 0 0 120 40 � stroke 2 � AVANT diagram family.
+     Refs: @docs/design-refs/svg-models/diagrams/nao-erre-arrow-curve.svg � adverb-arrow-rail.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none" role="img" aria-label="Fileira pe�a e exemplo">
+  <title>Fileira chave + exemplo</title>
+  <rect x="2" y="4" width="30" height="32" rx="6" stroke="currentColor" stroke-width="2"/>
+  <rect x="36" y="4" width="82" height="32" rx="6" stroke="currentColor" stroke-width="2"/>
+  <path d="M48 14 H90" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+  <path d="M70 18 C82 16, 92 22, 98 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M92 28 L100 31 L94 36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

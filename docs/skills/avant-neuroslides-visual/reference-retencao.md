@@ -6,6 +6,22 @@ Complemento de `avant-neuroslides-visual`. Usar **depois** de nomear o ramo e o 
 
 ---
 
+## Banco Composer
+
+Índice canônico dos **8 gestos ouro** (gesto × âncoras player × primitives × gallery ready):
+
+| Artefato | Uso |
+|----------|-----|
+| [`artifacts/composer-visual-bank.md`](../../../artifacts/composer-visual-bank.md) | Fonte de verdade — máx. 1–2 âncoras ouro por `gesture_id`; status `gold` \| `thin` \| `gap` |
+| [`docs/PROMPT_COMPOSER_VISUAL.md`](../../PROMPT_COMPOSER_VISUAL.md) | Trigger `Composer visual:` — orquestrador (precede Fábrica se gallery `pending`/`thin`) |
+| [`docs/NEUROSLIDES_ATELIER_KIT.md`](../../NEUROSLIDES_ATELIER_KIT.md) | Crítica glanceable (Composer orquestra; Atelier julga) |
+
+**No Modo V / Composer:** abrir o banco → escolher `gesture_id` alinhado ao erro espacial → carregar **só** 1–2 paths ouro da linha (não moodboard). Proibido PNG de feed. Após capture que eleva o ouro: atualizar no máx. 1 path na linha do gesto.
+
+Mapeamento gesto → formato tipico da tabela §1 abaixo continua válido; o banco amarra cada gesto a primitive/shell e pacotes com gallery `ready`.
+
+---
+
 ## 1. Gesto → retenção
 
 | Gesto | Quando o aluno grava | Formatos típicos |
@@ -198,8 +214,10 @@ Se o ramo tiver `visual_gallery` no playbook:
 
 | status | Ação |
 |--------|------|
-| `pending` | Não há PNG ainda — usar brief + JSON |
-| `pilot` / `ready` | Abrir `captures_dir` (player AVANT) antes de redesenhar |
+| `pending` / `thin` / ausente | **Pré-passo Fábrica:** `Composer visual: <ramo>` → `ATELIER_PASS` antes de variant nova; brief + JSON + gestos ouro do banco |
+| `pilot` / `ready` | Abrir `captures_dir` (player AVANT) antes de redesenhar; Composer opcional se só polish |
 
 Índice PT: `artifacts/l3-visual-gallery-lingua-portuguesa-index.md`.  
-Preencher após `capture:questao-review` — **nunca** indexar posters externos (lote de inspiração de feed **não** entra na galeria).
+**Banco Composer (gesto × capture ouro):** [`artifacts/composer-visual-bank.md`](../../../artifacts/composer-visual-bank.md).  
+**Composer (orquestrador)** · **Atelier (crítica):** [`PROMPT_COMPOSER_VISUAL`](../../PROMPT_COMPOSER_VISUAL.md) · [`NEUROSLIDES_ATELIER_KIT`](../../NEUROSLIDES_ATELIER_KIT.md) · [`PROMPT_ATELIER_VISUAL`](../../PROMPT_ATELIER_VISUAL.md).  
+Preencher após `capture:questao-review` ou prints do player anexados na conversa — **nunca** indexar posters externos (lote de inspiração de feed **não** entra na galeria). Se elevou o ouro do gesto, atualizar a linha do banco (≤2 âncoras).

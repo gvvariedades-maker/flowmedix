@@ -1,0 +1,40 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-08-05",
+  "applied_at": "2026-08-05",
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "cluster": "Não-sanguínea — urina/fezes/escarro (P0)",
+  "pedagogical_branch_target": "coleta_nao_sanguinea",
+  "priority": "P0 — coleta_nao_sanguinea g01",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+  "golden_reference": "examples/questao-premium-ameosc-coleta-nao-sanguinea-urina.json",
+  "guideline": "lib/guidelines/coletaExames.ts (COLETA_EXAMES_SBPC)",
+  "slugs": [
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-1",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-0",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-7",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-6",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-4",
+    "avancasp-enfermagem-exames-laboratoriais-1779563549311-5",
+    "cogeps-unioeste-enfermagem-exames-laboratoriais-1779563650975-2"
+  ],
+  "slug_note": "cetrede biossegurança substituído por cogeps urina (drift taxonomia)",
+  "validate_command": "npm run validate:goldens -- --lote=coleta-de-exames-laboratoriais-g01 --strict",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=coleta-de-exames-laboratoriais-g01 --subtopico=\"Coleta de Exames Laboratoriais\" --slugs=...",
+    "npx tsx scripts/handcraft-coleta-de-exames-laboratoriais-g01.ts",
+    "npm run audit:questao-readiness -- --lote=coleta-de-exames-laboratoriais-g01 --strict-v2-pedagogy",
+    "npm run catalog:apply-lote -- --lote=coleta-de-exames-laboratoriais-g01 --apply"
+  ],
+  "gates": {
+    "validate_goldens": "PASS 8/8",
+    "questao_readiness": "READY 8/8",
+    "preflight": "PASS 8/8",
+    "apply": "ok=8 failed=0"
+  }
+}

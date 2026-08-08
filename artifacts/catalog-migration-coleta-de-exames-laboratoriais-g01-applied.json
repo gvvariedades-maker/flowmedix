@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-05T23:21:30.731Z",
+  "lote": "coleta-de-exames-laboratoriais-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-1",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-0",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-7",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-6",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-4",
+    "avancasp-enfermagem-exames-laboratoriais-1779563549311-5",
+    "cogeps-unioeste-enfermagem-exames-laboratoriais-1779563650975-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563549311-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-exames-laboratoriais-1779563650975-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

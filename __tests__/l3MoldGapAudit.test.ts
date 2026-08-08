@@ -5,12 +5,13 @@ describe('l3MoldGapCatalog', () => {
   const subtopico = 'Saúde do Adolescente';
   const generic = formatMoldPackage(ADOLESCENTE_GENERIC_DESIGN);
 
-  it('violência sexual → ok_existente com pacote glanceable (Onda 2)', () => {
+  it('violência sexual → molde_inedito com pacote calendário + timeline', () => {
     const r = resolveClusterIdeal(subtopico, 'Violência sexual e indicadores', 4, 25, generic);
     expect(r.branch_id).toBe('adolescente_violencia_protecao');
     expect(r.branch_implemented).toBe(true);
-    expect(r.decision).toBe('ok_existente');
-    expect(r.ideal_mold_package).toContain('adolescent-care-pillars-deck');
+    expect(r.decision).toBe('molde_inedito');
+    expect(r.ideal_mold_package).toContain('adolescent-violence-deck');
+    expect(r.ideal_mold_package).toContain('adolescent-violence-timeline');
   });
 
   it('gravidez → ok_existente adolescent-*', () => {
@@ -19,23 +20,25 @@ describe('l3MoldGapCatalog', () => {
     expect(r.decision).toBe('ok_existente');
   });
 
-  it('EXCETO diretrizes → ok_existente glanceable no ramo generico (Onda 2)', () => {
+  it('EXCETO diretrizes → molde_inedito bespoke no ramo generico', () => {
     const r = resolveClusterIdeal(subtopico, 'Diretrizes MS adolescente (EXCETO)', 2, 12, generic);
     expect(r.branch_id).toBe('adolescente_generico');
-    expect(r.decision).toBe('ok_existente');
-    expect(r.ideal_mold_package).toContain('adolescent-exceto-isolate-board');
+    expect(r.decision).toBe('molde_inedito');
+    expect(r.ideal_mold_package).toContain('adolescent-generic-hub-orbit');
   });
 
-  it('puberdade → ok_existente glanceable no ramo desenvolvimento (Onda 2)', () => {
+  it('puberdade → molde_inedito bespoke SUS no ramo desenvolvimento', () => {
     const r = resolveClusterIdeal(subtopico, 'Puberdade / Tanner / metamorfose física', 1, 6, generic);
     expect(r.branch_id).toBe('adolescente_desenvolvimento');
-    expect(r.decision).toBe('ok_existente');
+    expect(r.decision).toBe('molde_inedito');
+    expect(r.ideal_mold_package).toContain('adolescent-dev-pair-rail');
   });
 
-  it('transtorno alimentar → ok_existente glanceable saude_mental (Onda 2)', () => {
+  it('transtorno alimentar → molde_inedito saude_mental (Vias/XABCDE/Hub/Cálculo)', () => {
     const r = resolveClusterIdeal(subtopico, 'Transtorno alimentar / anorexia', 3, 18, generic);
     expect(r.branch_id).toBe('adolescente_saude_mental');
-    expect(r.decision).toBe('ok_existente');
+    expect(r.decision).toBe('molde_inedito');
+    expect(r.ideal_mold_package).toContain('adolescent-mental-route-list');
   });
 
   it('CME autoclave com volume alto pode elevar a molde_inedito', () => {

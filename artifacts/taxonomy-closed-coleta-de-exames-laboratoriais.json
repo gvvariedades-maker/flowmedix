@@ -1,0 +1,9 @@
+{
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "pacote_prefix": "coleta-de-exames-laboratoriais",
+  "closed_at": "2026-08-05",
+  "mismatch_count_at_close": 0,
+  "total_scanned": 171,
+  "notes": "Inventário mismatch=0. Drift de URL legada aceito se meta canônico. Fechado bootstrap paridade Adolescente.",
+  "audit_artifact": "artifacts/taxonomy-gate-coleta-de-exames-laboratoriais.json"
+}

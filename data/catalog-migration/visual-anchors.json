@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-05",
+  "updated_at": "2026-08-07",
   "description": "Âncoras visuais por pedagogical_branch para regressão L3 (slide-mold-review).",
   "anchors": {
     "cme_vf_ce": {
@@ -95,39 +95,132 @@
     },
     "adolescente_generico": {
       "pedagogical_branch": "adolescente_generico",
-      "slug": "cpcon-saude-adolescente-gravidez",
-      "lote": "saude-adolescente-g01",
-      "json_path": "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json"
+      "slug": "questao-premium-cpcon-saude-adolescente-gravidez-vf",
+      "lote": "examples",
+      "json_path": "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-07",
+        "approval_status": "pass",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_generico",
+        "policy": "A_conteudo_first_visual_after_mold_wrap",
+        "json_path": "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json",
+        "notes": "family vf; ordem v2; hub + níveis + checklist + versus; SVG soft-3D; visual 4/4 ready",
+        "signed_by": "agent:anchor-checklist-v1",
+        "risk_tier": "medio",
+        "visual_gallery": "artifacts/questao-review/questao-premium-cpcon-saude-adolescente-gravidez-vf",
+        "captures_dir": "artifacts/questao-review/questao-premium-cpcon-saude-adolescente-gravidez-vf",
+        "require_visual": true
+      }
     },
     "adolescente_etica_sigilo": {
       "pedagogical_branch": "adolescente_etica_sigilo",
       "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
       "lote": "saude-adolescente-g01",
-      "json_path": "data/catalog-migration/saude-adolescente-g01/questions/idecan-enfermagem-saude-do-adolescente-1778712426701-6.json"
+      "json_path": "data/catalog-migration/saude-adolescente-g01/questions/idecan-enfermagem-saude-do-adolescente-1778712426701-6.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-07",
+        "approval_status": "pass",
+        "signed_by": "agent:anchor-checklist-v1",
+        "risk_tier": "medio",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_etica_sigilo",
+        "policy": "A_conteudo_first_visual_after_mold_wrap",
+        "json_path": "data/catalog-migration/saude-adolescente-g01/questions/idecan-enfermagem-saude-do-adolescente-1778712426701-6.json",
+        "notes": "branch corrigido generico->etica_sigilo; ordem v2; speak-barrier+isolate slots; spoiler -B removido",
+        "captures_dir": "artifacts/questao-review/idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+        "visual_gallery": "ready",
+        "require_visual": true
+      }
     },
     "adolescente_antropometria": {
       "pedagogical_branch": "adolescente_antropometria",
       "slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
       "lote": "saude-adolescente-g02",
-      "json_path": "data/catalog-migration/saude-adolescente-g02/questions/ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0.json"
+      "json_path": "data/catalog-migration/saude-adolescente-g02/questions/ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-07",
+        "approval_status": "pass",
+        "signed_by": "agent:anchor-checklist-v1",
+        "risk_tier": "medio",
+        "visual_bar": "pass",
+        "visual_gallery": "artifacts/questao-review/ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_antropometria",
+        "policy": "A_conteudo_first_visual_after_mold_wrap",
+        "json_path": "data/catalog-migration/saude-adolescente-g02/questions/ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0.json",
+        "examples_path": "examples/questao-premium-ibam-saude-adolescente-escore-z.json",
+        "notes": "family conceito; ordem v2; faixas Caderneta; visual 4/4 ready (mold-review prints)",
+        "require_visual": true
+      }
     },
     "adolescente_desenvolvimento": {
       "pedagogical_branch": "adolescente_desenvolvimento",
       "slug": "nao-informado-geral-saude-do-adolescente-1777104229064-0",
       "lote": "saude-adolescente-g02",
-      "json_path": "data/catalog-migration/saude-adolescente-g02/questions/nao-informado-geral-saude-do-adolescente-1777104229064-0.json"
+      "json_path": "data/catalog-migration/saude-adolescente-g02/questions/nao-informado-geral-saude-do-adolescente-1777104229064-0.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-07",
+        "approval_status": "pass",
+        "signed_by": "agent:anchor-checklist-v1",
+        "risk_tier": "medio",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_desenvolvimento",
+        "policy": "A_conteudo_first_visual_after_mold_wrap",
+        "json_path": "data/catalog-migration/saude-adolescente-g02/questions/nao-informado-geral-saude-do-adolescente-1777104229064-0.json",
+        "notes": "family certo_errado; ordem v2; CM pares + LF objetivos + GR vigilância + DZ Atenção!; visual 4/4 ready",
+        "visual_gallery": "artifacts/questao-review/nao-informado-geral-saude-do-adolescente-1777104229064-0",
+        "require_visual": true
+      }
     },
     "adolescente_saude_mental": {
       "pedagogical_branch": "adolescente_saude_mental",
       "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
       "lote": "saude-adolescente-g02",
-      "json_path": "data/catalog-migration/saude-adolescente-g02/questions/cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1.json"
+      "json_path": "data/catalog-migration/saude-adolescente-g02/questions/cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-07",
+        "approval_status": "pass",
+        "signed_by": "agent:anchor-checklist-v1",
+        "risk_tier": "medio",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_saude_mental",
+        "policy": "A_conteudo_first_visual_after_mold_wrap",
+        "json_path": "data/catalog-migration/saude-adolescente-g02/questions/cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1.json",
+        "notes": "family conceito; ordem v2; CM Vias + LF carrossel + GR hub + DZ step-trap; visual 4/4 ready (mold-review prints)",
+        "visual_gallery": "artifacts/questao-review/cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+        "require_visual": true
+      }
     },
     "adolescente_violencia_protecao": {
       "pedagogical_branch": "adolescente_violencia_protecao",
       "slug": "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
       "lote": "saude-adolescente-g01",
-      "json_path": "data/catalog-migration/saude-adolescente-g01/questions/funcern-enfermagem-saude-do-adolescente-1777104229064-1.json"
+      "json_path": "data/catalog-migration/saude-adolescente-g01/questions/funcern-enfermagem-saude-do-adolescente-1777104229064-1.json",
+      "ancora_100": {
+        "status": "aprovado_100",
+        "gate": "READY",
+        "polished_at": "2026-08-07",
+        "approval_status": "pass",
+        "signed_by": "agent:anchor-checklist-v1",
+        "risk_tier": "medio",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=adolescente_violencia_protecao",
+        "policy": "A_conteudo_first_visual_after_mold_wrap",
+        "json_path": "data/catalog-migration/saude-adolescente-g01/questions/funcern-enfermagem-saude-do-adolescente-1777104229064-1.json",
+        "notes": "family conceito; ordem v2; CM dual-card + LF timeline + DZ calendário estático; visual 4/4 ready (mold-review prints)",
+        "visual_gallery": "artifacts/questao-review/funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+        "require_visual": true
+      }
     },
     "respiratorio_asma_crise": {
       "pedagogical_branch": "respiratorio_asma_crise",
@@ -844,9 +937,9 @@
     },
     "farmaco_generico": {
       "pedagogical_branch": "farmaco_generico",
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
       "lote": "farmacodinamica-e-farmacocinetica-g02",
-      "json_path": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"
+      "json_path": "examples/questao-premium-aocp-farmacodinamica-isossorbida-angina.json"
     },
     "calc_dose_equivalencia": {
       "pedagogical_branch": "calc_dose_equivalencia",
@@ -1022,7 +1115,8 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-vunesp-portugues-classes-conjuncao-causal.json",
       "anchor_style": "causal",
-      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+      "note": "Âncoras 100% + visual_gallery ready 2026-08-07",
+      "visual_gallery": "artifacts/questao-review/questao-premium-vunesp-portugues-classes-conjuncao-causal"
     },
     "pt_classes_nominais": {
       "pedagogical_branch": "pt_classes_nominais",
@@ -1030,7 +1124,7 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-avancasp-portugues-classes-artigo-definido.json",
       "anchor_style": "artigo",
-      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+      "note": "Âncoras 100% — approval.status=pass (agent) 2026-08-07"
     },
     "pt_classes_adverbio": {
       "pedagogical_branch": "pt_classes_adverbio",
@@ -1038,7 +1132,17 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-educa-pb-portugues-classes-adverbio-essencialmente.json",
       "anchor_style": "modo_intensidade",
-      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+      "note": "visual_gallery ready 2026-08-08 — polish 4/4 + prints mold-review",
+      "ancora_100": {
+        "status": "ready",
+        "gate": "READY",
+        "polished_at": "2026-08-08",
+        "approval_status": "approved_agent",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=pt_classes_adverbio",
+        "captures_dir": "artifacts/questao-review/questao-premium-educa-pb-portugues-classes-adverbio-essencialmente",
+        "json_path": "examples/questao-premium-educa-pb-portugues-classes-adverbio-essencialmente.json"
+      }
     },
     "pt_classes_preposicao": {
       "pedagogical_branch": "pt_classes_preposicao",
@@ -1046,7 +1150,17 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-avancasp-portugues-classes-prep-x-artigo.json",
       "anchor_style": "prep_x_artigo",
-      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+      "note": "visual_gallery ready 2026-08-08 — Artigo×Prep 4/4 + prints mold-review",
+      "ancora_100": {
+        "status": "ready",
+        "gate": "READY",
+        "polished_at": "2026-08-08",
+        "approval_status": "approved_agent",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3001/dev/slide-mold-review?branch=pt_classes_preposicao",
+        "captures_dir": "artifacts/questao-review/questao-premium-avancasp-portugues-classes-prep-x-artigo",
+        "json_path": "examples/questao-premium-avancasp-portugues-classes-prep-x-artigo.json"
+      }
     },
     "pt_classes_exceto": {
       "pedagogical_branch": "pt_classes_exceto",
@@ -1054,7 +1168,17 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-avancasp-portugues-classes-exceto-adverbio.json",
       "anchor_style": "exceto_classe",
-      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+      "note": "visual_gallery ready 2026-08-08 — 4/4 tip+fix · approval.status=pass",
+      "ancora_100": {
+        "status": "ready",
+        "gate": "READY",
+        "polished_at": "2026-08-08",
+        "approval_status": "pass",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3001/dev/slide-mold-review?branch=pt_classes_exceto",
+        "captures_dir": "artifacts/questao-review/questao-premium-avancasp-portugues-classes-exceto-adverbio",
+        "json_path": "examples/questao-premium-avancasp-portugues-classes-exceto-adverbio.json"
+      }
     },
     "pt_classes_generico": {
       "pedagogical_branch": "pt_classes_generico",
@@ -1070,7 +1194,7 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-quadrix-portugues-classes-conjuncao-adversativa.json",
       "anchor_style": "adversativa",
-      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+      "note": "Âncoras 100% — approval.status=pass (agent) 2026-08-07"
     },
     "pt_classes_nominais__substantivacao": {
       "pedagogical_branch": "pt_classes_nominais",
@@ -1078,7 +1202,7 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-avancasp-portugues-classes-substantivacao-cinza.json",
       "anchor_style": "substantivacao",
-      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+      "note": "Âncoras 100% — approval.status=pass (agent) 2026-08-07"
     },
     "pt_classes_adverbio__adv_x_adj": {
       "pedagogical_branch": "pt_classes_adverbio",
@@ -1086,7 +1210,16 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-avancasp-portugues-classes-adv-x-adj-alto.json",
       "anchor_style": "adv_x_adj",
-      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+      "note": "Âncora 02 polish 2026-08-08 — mesma galeria do ramo (âncora 01)",
+      "ancora_100": {
+        "status": "ready",
+        "gate": "READY",
+        "polished_at": "2026-08-08",
+        "approval_status": "approved_agent",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3000/dev/slide-mold-review?branch=pt_classes_adverbio",
+        "json_path": "examples/questao-premium-avancasp-portugues-classes-adv-x-adj-alto.json"
+      }
     },
     "pt_classes_preposicao__locucao_prepositiva": {
       "pedagogical_branch": "pt_classes_preposicao",
@@ -1102,7 +1235,17 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-aocp-portugues-classes-valor-incorreto-como.json",
       "anchor_style": "valor_incorreto",
-      "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+      "note": "visual_gallery ready 2026-08-08 — value-cards · approval.status=pass",
+      "ancora_100": {
+        "status": "ready",
+        "gate": "READY",
+        "polished_at": "2026-08-08",
+        "approval_status": "pass",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3001/dev/slide-mold-review?branch=pt_classes_exceto__valor_incorreto",
+        "captures_dir": "artifacts/questao-review/questao-premium-aocp-portugues-classes-valor-incorreto-como",
+        "json_path": "examples/questao-premium-aocp-portugues-classes-valor-incorreto-como.json"
+      }
     },
     "pt_classes_generico__formacao_siglas": {
       "pedagogical_branch": "pt_classes_generico",
@@ -1111,6 +1254,48 @@
       "json_path": "examples/questao-formacao-palavras-siglas.json",
       "anchor_style": "formacao_siglas",
       "note": "Âncora secundária do ramo (política 2/ramo) — Fase 0b"
+    },
+    "coleta_nao_sanguinea": {
+      "pedagogical_branch": "coleta_nao_sanguinea",
+      "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+      "lote": "examples-golden",
+      "json_path": "examples/questao-premium-ameosc-coleta-nao-sanguinea-urina.json"
+    },
+    "coleta_tubos_ordem": {
+      "pedagogical_branch": "coleta_tubos_ordem",
+      "slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+      "lote": "examples-golden",
+      "json_path": "examples/questao-premium-admtec-coleta-tubos-ordem.json"
+    },
+    "coleta_tecnica_venosa": {
+      "pedagogical_branch": "coleta_tecnica_venosa",
+      "slug": "cpcon-coleta-amostras-vf",
+      "lote": "examples-golden",
+      "json_path": "examples/questao-premium-cpcon-coleta-amostras-vf.json"
+    },
+    "coleta_hemocultura": {
+      "pedagogical_branch": "coleta_hemocultura",
+      "slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-0",
+      "lote": "examples-golden",
+      "json_path": "examples/questao-premium-avancasp-coleta-hemocultura.json"
+    },
+    "coleta_jejum_preparo": {
+      "pedagogical_branch": "coleta_jejum_preparo",
+      "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-5",
+      "lote": "examples-golden",
+      "json_path": "examples/questao-premium-ameosc-coleta-jejum-glicemia.json"
+    },
+    "coleta_capilar_glicemia": {
+      "pedagogical_branch": "coleta_capilar_glicemia",
+      "slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563225798-0",
+      "lote": "examples-golden",
+      "json_path": "examples/questao-premium-avancasp-coleta-capilar-glicemia.json"
+    },
+    "coleta_generico": {
+      "pedagogical_branch": "coleta_generico",
+      "slug": "fau-unicentro-enfermagem-coleta-de-exames-laboratoriais-1779563288910-4",
+      "lote": "examples-golden",
+      "json_path": "examples/questao-premium-fau-coleta-generico.json"
     }
   }
 }

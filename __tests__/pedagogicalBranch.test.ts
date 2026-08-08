@@ -33,29 +33,51 @@ describe('pedagogicalBranch', () => {
       'Em relação à violência sexual em crianças e adolescentes, é correto afirmar: notificação compulsória e rede de proteção.';
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('adolescente_violencia_protecao');
     const design = getPresentationDesign(subtopico, 'adolescente_violencia_protecao');
-    expect(design?.conceptMap).toBe('morphological');
+    expect(design?.conceptMap).toBe('adolescent-violence-deck');
+    expect(design?.logicFlow).toBe('adolescent-violence-timeline');
     expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_violencia_protecao')).toBe(
-      'morphological',
+      'adolescent-violence-deck',
     );
   });
 
-  it('ramo desenvolvimento usa layout genérico (≠ pacote ética)', () => {
+  it('ramo desenvolvimento usa pacote bespoke SUS (0 taps)', () => {
     const design = getPresentationDesign(subtopico, 'adolescente_desenvolvimento');
-    expect(design?.conceptMap).toBe('morphological');
+    expect(design?.conceptMap).toBe('adolescent-dev-pair-rail');
     expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_desenvolvimento')).toBe(
-      'morphological',
+      'adolescent-dev-pair-rail',
+    );
+    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'adolescente_desenvolvimento')).toBe(
+      'adolescent-dev-objective-flow',
+    );
+    expect(getLayoutVariantForBranch(subtopico, 'golden_rule', 'adolescente_desenvolvimento')).toBe(
+      'adolescent-dev-vigilance-board',
+    );
+    expect(getLayoutVariantForBranch(subtopico, 'danger_zone', 'adolescente_desenvolvimento')).toBe(
+      'adolescent-dev-budget-checklist',
     );
   });
 
-  it('ramo saúde mental usa logic_flow vertical (≠ isolate ética)', () => {
+  it('ramo saúde mental usa protocol-rail bespoke (≠ isolate ética)', () => {
     expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'adolescente_saude_mental')).toBe(
-      'vertical',
+      'adolescent-mental-protocol-rail',
+    );
+    expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_saude_mental')).toBe(
+      'adolescent-mental-route-list',
     );
   });
 
-  it('ramo genérico usa danger_zone compare (≠ exceto-compare ética)', () => {
+  it('ramo genérico usa pacote bespoke hub/níveis/checklist/versus (0 taps)', () => {
+    expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_generico')).toBe(
+      'adolescent-generic-hub-orbit',
+    );
+    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'adolescente_generico')).toBe(
+      'adolescent-generic-care-levels',
+    );
+    expect(getLayoutVariantForBranch(subtopico, 'golden_rule', 'adolescente_generico')).toBe(
+      'adolescent-generic-finance-checklist',
+    );
     expect(getLayoutVariantForBranch(subtopico, 'danger_zone', 'adolescente_generico')).toBe(
-      'compare',
+      'adolescent-generic-versus-blocks',
     );
   });
 

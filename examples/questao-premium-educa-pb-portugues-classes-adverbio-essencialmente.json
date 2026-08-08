@@ -11,9 +11,9 @@
     "content_standard": "golden-v1",
     "family": "conceito",
     "content_review": {
-      "reviewed_at": "2026-07-20",
-      "reviewer": "handcraft:classes-de-palavras-g03",
-      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · âncora → examples/questao-formacao-palavras-siglas.json",
+      "reviewed_at": "2026-08-08",
+      "reviewer": "handcraft:ancoras-100-adverbio-polish-gallery",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · circunstância · -mente",
       "exam_vs_current": "none",
       "catalog_slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810"
     },
@@ -26,9 +26,9 @@
         "year": 2024,
         "url": "https://www.academia.org.br/",
         "covers": [
-          "adjetivo e advérbio",
-          "substantivação e valor adjetivo",
+          "advérbio e circunstância",
           "advérbio de modo e intensidade",
+          "sufixo -mente",
           "pergunta-teste M02/M03",
           "classificação morfológica"
         ]
@@ -39,12 +39,7 @@
         "issuer": "AVANT — caderno interno Língua Portuguesa",
         "title": "«essencialmente» advérbio — EDUCA PB Ag Adm Pref Cajazeiras 2026 tec 3913810",
         "year": 2026,
-        "covers": [
-          "enunciado",
-          "alternativas",
-          "gabarito",
-          "matriz pt_classes_palavras"
-        ]
+        "covers": ["enunciado", "alternativas", "gabarito", "matriz pt_classes_adverbio"]
       }
     ],
     "anchor_style": "modo_intensidade",
@@ -78,40 +73,39 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "Essencialmente",
-      "chip_label": "M03 — advérbio",
+      "slide_title": "ADVÉRBIO",
+      "chip_label": "INDICA CIRCUNSTÂNCIA",
       "meta": {
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
       "items": [
         {
-          "label": "Pergunta-teste",
-          "detail": "Modifica adjetivo/verbo ou nomeia?",
-          "icon": "Focus"
+          "label": "Modo",
+          "detail": "Circunstância de maneira · As uniões eram «essencialmente» políticas.",
+          "correct": "COMO · -MENTE",
+          "icon": "Target"
         },
         {
-          "label": "Essencialmente",
-          "detail": "Circunstância de modo/intensidade de «políticas».",
-          "icon": "Zap"
+          "label": "Tempo",
+          "detail": "Quando a ação acontece · A banca «sempre» cobra a classe.",
+          "correct": "QUANDO · SEMPRE",
+          "icon": "Clock"
         },
         {
-          "label": "Reis / pagãos",
-          "detail": "A e B erram classe (substantivo/preposição).",
-          "icon": "Map"
+          "label": "Lugar",
+          "detail": "Onde a ação acontece · O trecho ficou «aqui» no texto.",
+          "correct": "ONDE · AQUI",
+          "icon": "MapPin"
         },
         {
-          "label": "Houve",
-          "detail": "Verbo na oração de C — não é o sublinhado pedido.",
-          "icon": "BookOpen"
-        },
-        {
-          "label": "Pegadinha",
-          "detail": "Termina em -mente → advérbio derivado.",
-          "icon": "AlertTriangle"
+          "label": "Intensidade",
+          "detail": "Grau / quanto · Houve «bastante» transformação urbana.",
+          "correct": "QUANTO · MUITO",
+          "icon": "Flame"
         }
       ],
-      "footer_rule": "-mente após adjetivo → advérbio."
+      "footer_rule": "Advérbio = circunstância (não nomeia)."
     },
     {
       "type": "logic_flow",
@@ -121,13 +115,14 @@
         "subtopico": "Classes de palavras"
       },
       "steps": [
-        "Texto histórico do casamento medieval — comando: classificar palavra sublinhada em cada opção.",
-        "A «reis» — substantivo; B «para» — preposição; C «houve» — verbo — eliminar.",
-        "D «essencialmente políticas»: -mente modifica «políticas e sociais» → advérbio.",
-        "Gabarito D.",
-        "Em similares: derivado em -mente de adjetivo = advérbio de modo."
+        "P · Pergunta — «essencialmente» modifica verbo/adj ou nomeia?",
+        "F · Função — modo (−mente) sobre «políticas e sociais»",
+        "C · Classe — **advérbio** (não adjetivo «essencial»)",
+        "E · Eliminar — A subst. · B prep. · C verbo (trechos errados)",
+        "G · Gabarito — D «essencialmente» = advérbio de modo",
+        "T · Transferência — −mente + circunstância = advérbio"
       ],
-      "footer_rule": "D — advérbio."
+      "footer_rule": "D — advérbio (−mente)."
     },
     {
       "type": "golden_rule",
@@ -135,30 +130,26 @@
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
-      "content": "SUFIXO -MENTE",
+      "content": "-MENTE e ESSENCIAL",
       "rows": [
         {
-          "label": "Pergunta-teste",
-          "value": "Termina em -mente? Modifica o quê?"
+          "label": "-MENTE",
+          "value": "É o contrário de «ADJETIVO» no teste · (advérbio de modo) · Uniões «essencialmente» políticas · (= modifica «políticas»)"
         },
         {
-          "label": "Essencialmente",
-          "value": "Advérbio — modo de ser «políticas/sociais»."
+          "label": "ESSENCIAL",
+          "value": "É o contrário de «ADVÉRBIO» no teste · (adjetivo) · União «essencial» · (= qualifica o substantivo)"
         },
         {
-          "label": "Essencial",
-          "value": "Adjetivo base — «união essencial»."
+          "label": "Dica",
+          "value": "Se puder trocar por BEM / COMO → use -mente (advérbio)."
         },
         {
-          "label": "Demais opções",
-          "value": "A subst. · B prep. · C verbo."
-        },
-        {
-          "label": "Nesta questão",
-          "value": "D — advérbio."
+          "label": "Dica",
+          "value": "Se puder trocar por BOM / QUAL → use adjetivo (essencial)."
         }
       ],
-      "footer_rule": "Essencialmente = advérbio."
+      "footer_rule": "-mente + circunstância = advérbio."
     },
     {
       "type": "danger_zone",
@@ -167,32 +158,32 @@
         "topico": "Língua Portuguesa",
         "subtopico": "Classes de palavras"
       },
-      "content": "Classe de outro termo",
+      "content": "Adjetivo × Advérbio",
       "items": [
         {
-          "label": "A — substantivo",
-          "detail": "«Reis» é substantivo, mas não é o foco correto da alternativa certa.",
-          "correct": "Gabarito pede trecho com «essencialmente» — advérbio."
+          "label": "A — reis",
+          "detail": "«Reis» nomeia (substantivo)",
+          "correct": "Peça certa é «essencialmente» = advérbio"
         },
         {
-          "label": "B — preposição",
-          "detail": "«Para» é preposição — opção incorreta.",
-          "correct": "Não confundir com advérbio do trecho D."
+          "label": "B — para",
+          "detail": "«Para» liga (preposição)",
+          "correct": "Não é a peça adverbial do trecho D"
         },
         {
-          "label": "C — verbo",
-          "detail": "«Houve» é verbo auxiliar/inexistente.",
-          "correct": "Sublinhado de D é «essencialmente» — advérbio."
+          "label": "C — houve",
+          "detail": "«Houve» é verbo",
+          "correct": "Sublinhado certo: «essencialmente»"
+        },
+        {
+          "label": "Essencial × -mente",
+          "detail": "«União essencial» = adjetivo",
+          "correct": "«Essencialmente políticas» = advérbio de modo"
         },
         {
           "label": "Em outra banca…",
-          "detail": "Trocam por «principalmente» / «basicamente».",
-          "correct": "Mesmo molde: -mente + adjetivo = advérbio."
-        },
-        {
-          "label": "Pegadinha",
-          "detail": "Achar que «essencialmente» é adjetivo.",
-          "correct": "Modifica «políticas» — função adverbial."
+          "detail": "Trocam por «principalmente» / «basicamente»",
+          "correct": "Mesmo teste: -mente + circunstância = advérbio"
         }
       ],
       "footer_rule": "Só D classifica certo."

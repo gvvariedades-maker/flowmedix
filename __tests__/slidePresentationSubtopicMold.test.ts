@@ -3063,27 +3063,61 @@ describe('slidePresentation — molde por subtópico', () => {
       expect(result.layoutVariant).toBe('reference_table');
     });
 
-    it('saúde mental → vertical genérico (≠ isolate ética)', () => {
+    it('violência/proteção → danger_zone calendário estático (≠ compare clicável)', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico },
+          content: 'VIOLÊNCIA SEXUAL — REDE DE PROTEÇÃO',
+          items: [
+            {
+              label: 'A — Negar notificação',
+              detail: 'Diz que não é agravo compulsório.',
+              correct: 'É agravo de notificação compulsória — suspeita ou confirmação.',
+            },
+            {
+              label: 'Transferência',
+              detail: 'Exige boletim antes de acolher.',
+              correct: 'Acolher e proteger não dependem de BO.',
+            },
+          ],
+          bullet_style: 'x_icon',
+        },
+        {
+          questionSlug: 'funcern-violencia-protecao-1',
+          slideIndex: 3,
+          familyId: 'conceito',
+          pedagogicalBranch: 'adolescente_violencia_protecao',
+        },
+      );
+      expect(result.layoutVariant).toBe('adolescent-violence-calendar');
+      expect(result.moldFallback).toBeFalsy();
+    });
+
+    it('saúde mental → protocol-rail bespoke (≠ isolate ética / ≠ vertical)', () => {
       const result = resolveSlidePresentation(
         {
           type: 'logic_flow',
           meta: { subtopico },
           steps: [
-            'Comando: EXCETO conduta punitiva em anorexia',
-            'Manter: acolhimento e vínculo',
-            'Exceção: restrição alimentar como punição',
-            'Gabarito letra B',
+            'Comando: julgue as asserções sobre anorexia e bulimia.',
+            'Julgar I: restrição e IMC baixo → anorexia → verdadeira.',
+            'Julgar II: bulimia = hiperfagia + purga → verdadeira.',
+            'Relação: II não justifica I.',
+            'Marcar D.',
+            'Em similares: peso e padrão alimentar decidem.',
           ],
           reveal_mode: 'tap',
         },
         {
-          questionSlug: 'fau-saude-mental-1',
+          questionSlug: 'cpcon-saude-mental-1',
           slideIndex: 1,
           familyId: 'conceito',
           pedagogicalBranch: 'adolescente_saude_mental',
         },
       );
-      expect(result.layoutVariant).toBe('vertical');
+      expect(result.layoutVariant).toBe('adolescent-mental-protocol-rail');
+      expect(result.moldFallback).toBeFalsy();
     });
   });
 

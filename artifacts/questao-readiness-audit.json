@@ -5,7 +5,7 @@
   "scanned": 1,
   "results": [
     {
-      "slug": "questao-premium-vunesp-portugues-classes-conjuncao-causal",
+      "slug": "questao-premium-aocp-portugues-classes-valor-incorreto-como",
       "subtopico": "Classes de palavras",
       "ready_100": true,
       "tier_pass": {
@@ -44,20 +44,22 @@
         {
           "tier": "A4",
           "code": "risk_tier",
-          "message": "Risco medio → auto_conditional [subtopic_immature] — Pacote ainda não está production_ready — confiança limitada.",
+          "message": "Risco medio → auto_conditional [numeric_claim_soft, subtopic_immature] — Claim numérico suave (%, tempo, escore) — amostragem elevada.",
           "severity": "info"
         }
       ],
       "family": "text_fragment",
-      "pedagogical_branch": "pt_classes_conjuncao",
-      "inferred_branch": "pt_classes_conjuncao",
+      "pedagogical_branch": "pt_classes_exceto",
+      "inferred_branch": "pt_classes_exceto",
       "risk": {
         "risk_tier": "medio",
         "approval_mode": "auto_conditional",
         "risk_factors": [
+          "numeric_claim_soft",
           "subtopic_immature"
         ],
         "reasons": [
+          "Claim numérico suave (%, tempo, escore) — amostragem elevada.",
           "Pacote ainda não está production_ready — confiança limitada."
         ]
       }

@@ -279,6 +279,7 @@
     "cluster:atencao-basica": "tsx scripts/cluster-atencao-basica-saude-da-familia-topics.ts",
     "plan:atencao-basica-batches": "tsx scripts/plan-atencao-basica-saude-da-familia-batches.ts",
     "cluster:epidemiologia": "tsx scripts/cluster-epidemiologia-e-vigilancia-epidemiologica-topics.ts",
+    "cluster:coleta": "tsx scripts/cluster-coleta-de-exames-laboratoriais-topics.ts",
     "cluster:anatomia": "tsx scripts/cluster-nocoes-de-anatomia-topics.ts",
     "plan:anatomia-batches": "tsx scripts/plan-nocoes-de-anatomia-batches.ts",
     "cluster:lingua-portuguesa": "python scripts/cluster-lingua-portuguesa-topics.py",

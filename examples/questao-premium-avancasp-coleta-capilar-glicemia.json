@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "TEnf (SL da Serra)",
+    "orgao": "Pref SL da Serra",
+    "ano": "2023",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Coleta de Exames Laboratoriais",
+    "pedagogical_branch": "coleta_capilar_glicemia",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-05",
+      "reviewer": "agent:golden-anchor",
+      "guideline_snapshot": "Potter 11ª ed. / MS — punção capilar: dedo ou lóbulo da orelha; sem espremer; evitar edema",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "potter-capilar-11ed",
+        "tier": "B",
+        "issuer": "Elsevier / Potter & Perry",
+        "title": "Fundamentos de Enfermagem — Punção capilar e glicemia",
+        "year": 2024,
+        "covers": [
+          "sítios de punção capilar",
+          "antissepsia com álcool 70%",
+          "profundidade da lanceta"
+        ]
+      },
+      {
+        "id": "ms-amostras-biologicas",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Coleta de Amostras Biológicas",
+        "year": 2020,
+        "url": "https://www.gov.br/saude/",
+        "covers": [
+          "punção capilar",
+          "glicemia capilar"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O técnico de enfermagem acompanhou um exame por punção capilar. Esse procedimento consiste em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "em obter uma amostra de sangue a partir da punção de um dedo ou lóbulo da orelha (adultos).",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "obter fios de cabelo para testes de drogas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "obter cabelos ou pelos do corpo para testes de paternidade.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "obter amostras de sangue superficial de locais com edema.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "massagear e espremer a pele, para coleta de sangue de extravasamento.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Punção capilar — definição",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "items": [
+        {
+          "label": "O que é capilar",
+          "detail": "Coleta de pequena amostra de sangue por perfuração superficial da pele — não é venosa.",
+          "icon": "Droplet"
+        },
+        {
+          "label": "Sítios usuais",
+          "detail": "Dedos (polpas) ou lóbulo da orelha em adultos — locais de fácil perfusão.",
+          "icon": "Hand"
+        },
+        {
+          "label": "Finalidade clínica",
+          "detail": "Glicemia capilar (HGT/AMGC) e outros exames de gota — não coleta de cabelo ou pelo.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Sem espremer",
+          "detail": "Massagear ou espremer distorce a amostra e pode hemolizar — técnica proscrita.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Evitar edema",
+          "detail": "Sítio edemaciado altera perfusão — não é local adequado para capilar.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Capilar = gota de sangue no dedo ou orelha — sem espremer"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "steps": [
+        "Comando: definição de punção capilar — o que o procedimento consiste em fazer.",
+        "Capilar = sangue por perfuração superficial, não amostra de cabelo ou pelo.",
+        "Eliminar B e C — testes de drogas/paternidade usam cabelo, não punção capilar.",
+        "Eliminar D — edema invalida o sítio; capilar não coleta em área edemaciada.",
+        "Eliminar E — espremer/massagear é erro técnico, não definição do procedimento.",
+        "Resta A — amostra de sangue por punção de dedo ou lóbulo da orelha.",
+        "Marcar A.",
+        "Em similares: capilar ≠ venosa — pense gota no dedo/orelha, sem milking."
+      ],
+      "footer_rule": "Definição: perfuração capilar → gota de sangue — não cabelo, edema ou espremer"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Parâmetros — punção capilar",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "PUNÇÃO CAPILAR — REFERÊNCIA RÁPIDA",
+      "rows": [
+        {
+          "label": "Sítio (adulto)",
+          "value": "Dedos ou lóbulo da orelha",
+          "badge": "ok"
+        },
+        {
+          "label": "Antissepsia",
+          "value": "Antisséptico tópico — aguardar secar antes da lanceta",
+          "badge": "ok"
+        },
+        {
+          "label": "Profundidade",
+          "value": "2,0 a 2,5 mm — evitar osso",
+          "badge": "info"
+        },
+        {
+          "label": "Coleta da gota",
+          "value": "Deixar formar espontaneamente — não espremer",
+          "badge": "hot"
+        },
+        {
+          "label": "Contraindicação local",
+          "value": "Evitar sítios com edema, lesão ou perfusão ruim",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Decore: dedo/orelha · secar álcool · gota espontânea · sem edema"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "PEGADINHAS — PUNÇÃO CAPILAR AVANÇASP",
+      "items": [
+        {
+          "label": "Letra B — fios de cabelo",
+          "detail": "Confunde capilar com toxicologia capilar de cabelo.",
+          "correct": "Punção capilar coleta sangue, não fio para teste de drogas."
+        },
+        {
+          "label": "Letra C — pelos para paternidade",
+          "detail": "Mistura coleta biológica capilar com amostra de pelo.",
+          "correct": "Capilar = sangue por lanceta — paternidade usa outro tipo de amostra."
+        },
+        {
+          "label": "Letra D — sangue em edema",
+          "detail": "Sugere coleta em área edemaciada.",
+          "correct": "Edema altera perfusão — sítio inadequado para punção capilar."
+        },
+        {
+          "label": "Letra E — espremer a pele",
+          "detail": "Descreve milking/extravasamento forçado.",
+          "correct": "Espremer hemolisa e distorce resultado — técnica incorreta, não definição."
+        },
+        {
+          "label": "Em similares — gota capilar",
+          "detail": "HGT e AMGC repetem a mesma lógica de sítio e técnica.",
+          "correct": "Capilar = dedo ou orelha, gota espontânea, sem espremer nem coletar em edema."
+        }
+      ],
+      "footer_rule": "Capilar não é cabelo, edema nem espremer — é gota no dedo ou orelha"
+    }
+  ]
+}

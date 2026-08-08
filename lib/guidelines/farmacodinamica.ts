@@ -50,8 +50,9 @@ export const FARMACO_ADME_BR: GuidelineTable = {
     {
       id: 'meia-vida',
       label: 'Meia-vida (t½)',
-      value: 'tempo para reduzir concentração plasmática pela metade',
-      detail: 'Define intervalo de doses e tempo até estado de equilíbrio.',
+      value: 'tempo para reduzir a concentração plasmática em 50% (pela metade)',
+      detail:
+        'Não é eliminar 100% da dose. Define intervalo de doses e tempo até estado de equilíbrio.',
       sourceId: 'farmaco-adme-anvisa',
     },
     {

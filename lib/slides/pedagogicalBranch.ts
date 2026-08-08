@@ -126,6 +126,14 @@ export type PedagogicalBranchId =
   | 'curativos_dreno'
   | 'curativos_termoterapia'
   | 'curativos_generico'
+  // Coleta de Exames Laboratoriais
+  | 'coleta_nao_sanguinea'
+  | 'coleta_tubos_ordem'
+  | 'coleta_tecnica_venosa'
+  | 'coleta_jejum_preparo'
+  | 'coleta_capilar_glicemia'
+  | 'coleta_hemocultura'
+  | 'coleta_generico'
   // Saúde da Mulher
   | 'mulher_prenatal'
   | 'mulher_parto'
@@ -215,8 +223,8 @@ const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
 export const ADOLESCENTE_GLANCEABLE_MOLD: SubtopicDesign = ADOLESCENTE_ETHICS_MOLD;
 
 /**
- * Layout padrão dos ramos Adolescente não-éticos / não-antropométricos.
- * Genérico, desenvolvimento, saúde mental, violência → morphological / reference_table.
+ * Layout padrão dos ramos Adolescente não-éticos / não-antropométricos / não-violência.
+ * Genérico, desenvolvimento, saúde mental → morphological / reference_table.
  */
 export const ADOLESCENTE_GENERIC_DESIGN: SubtopicDesign = {
   template: 'sky',
@@ -233,6 +241,42 @@ const ADOLESCENTE_ANTHROPOMETRY_MOLD: SubtopicDesign = {
   goldenRule: 'adolescent-z-band-board',
   logicFlow: 'adolescent-z-classify-tap',
   dangerZone: 'adolescent-z-threshold-trap',
+};
+
+/** Violência / rede de proteção — calendário (CM+DZ) + timeline estática (LF). */
+const ADOLESCENTE_VIOLENCE_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'adolescent-violence-deck',
+  goldenRule: 'reference_table',
+  logicFlow: 'adolescent-violence-timeline',
+  dangerZone: 'adolescent-violence-calendar',
+};
+
+/** Saúde mental — Vias (CM) + XABCDE (LF) + Hub SUS (GR) + Regra de Três (DZ); 0 taps. */
+const ADOLESCENTE_MENTAL_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'adolescent-mental-route-list',
+  goldenRule: 'adolescent-mental-hub-board',
+  logicFlow: 'adolescent-mental-protocol-rail',
+  dangerZone: 'adolescent-mental-step-trap',
+};
+
+/** Desenvolvimento / puberdade — pares SUS + objetivos + vigilância + checklist; 0 taps. */
+const ADOLESCENTE_DEV_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'adolescent-dev-pair-rail',
+  goldenRule: 'adolescent-dev-vigilance-board',
+  logicFlow: 'adolescent-dev-objective-flow',
+  dangerZone: 'adolescent-dev-budget-checklist',
+};
+
+/** Genérico / cauda — hub CF + níveis + checklist financiamento + versus COFEN; 0 taps. */
+const ADOLESCENTE_GENERIC_BESPOKE_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'adolescent-generic-hub-orbit',
+  goldenRule: 'adolescent-generic-finance-checklist',
+  logicFlow: 'adolescent-generic-care-levels',
+  dangerZone: 'adolescent-generic-versus-blocks',
 };
 
 const CME_DEFAULT: SubtopicDesign = {
@@ -298,6 +342,15 @@ const AB_GENERIC_DESIGN: SubtopicDesign = {
 /** Epidemiologia — genérico lime (bespoke lista-trap / formula-rail só após Implementar molde). */
 const EPI_GENERIC_DESIGN: SubtopicDesign = {
   template: 'lime',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Coleta de Exames Laboratoriais — genérico teal (bespoke tubos/hemocultura só após Implementar molde). */
+const COLETA_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'teal',
   conceptMap: 'morphological',
   goldenRule: 'reference_table',
   logicFlow: 'vertical',
@@ -1131,19 +1184,37 @@ const URGENCIAS_EMERGENCY_GENERIC_MOLD: SubtopicDesign = {
  */
 const PT_CLASSES_CLASSIFY_MOLD: SubtopicDesign = {
   template: 'amber',
-  /** grid → PillarDeck com massa/cor (morphological legado = branco-no-branco). */
-  conceptMap: 'grid',
-  goldenRule: 'reference_table',
+  /** Deck numerado · tabela famílias · camadas 1·2·3 · arena troca (Glance OS). */
+  conceptMap: 'pt-classes-function-deck',
+  goldenRule: 'pt-classes-family-table',
   logicFlow: 'pt-classes-classify-board',
-  dangerZone: 'compare',
+  dangerZone: 'pt-classes-swap-arena',
+};
+
+/** Advérbio — grade tipos · trilho mnemônico · seta circunstância · compare adj×adv. */
+const PT_CLASSES_ADVERB_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'pt-classes-adverb-types-grid',
+  goldenRule: 'pt-classes-adverb-arrow-cards',
+  logicFlow: 'pt-classes-adverb-mnemonic-rail',
+  dangerZone: 'pt-classes-adverb-compare',
+};
+
+/** Preposição — contrato · categorias (0 taps) · tabela famílias · compare ✗/✓. */
+const PT_CLASSES_PREP_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'pt-classes-prep-contract-rail',
+  goldenRule: 'pt-classes-family-table',
+  logicFlow: 'pt-classes-prep-category-stack',
+  dangerZone: 'pt-classes-adverb-compare',
 };
 
 const PT_CLASSES_EXCETO_MOLD: SubtopicDesign = {
   template: 'amber',
-  conceptMap: 'grid',
-  goldenRule: 'reference_table',
-  logicFlow: 'pt-classes-classify-board',
-  dangerZone: 'compare',
+  conceptMap: 'pt-classes-exceto-rule-pairs',
+  goldenRule: 'pt-classes-exceto-fix-board',
+  logicFlow: 'pt-classes-exceto-isolate-board',
+  dangerZone: 'pt-classes-exceto-tip-board',
 };
 
 const PT_CLASSES_GENERIC_MOLD: SubtopicDesign = {
@@ -1246,18 +1317,18 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
   'saude do adolescente': {
     adolescente_etica_sigilo: ADOLESCENTE_ETHICS_MOLD,
     adolescente_antropometria: ADOLESCENTE_ANTHROPOMETRY_MOLD,
-    adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_generico: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_desenvolvimento: ADOLESCENTE_DEV_MOLD,
+    adolescente_saude_mental: ADOLESCENTE_MENTAL_MOLD,
+    adolescente_violencia_protecao: ADOLESCENTE_VIOLENCE_MOLD,
+    adolescente_generico: ADOLESCENTE_GENERIC_BESPOKE_MOLD,
   },
   adolescente: {
     adolescente_etica_sigilo: ADOLESCENTE_ETHICS_MOLD,
     adolescente_antropometria: ADOLESCENTE_ANTHROPOMETRY_MOLD,
-    adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_generico: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_desenvolvimento: ADOLESCENTE_DEV_MOLD,
+    adolescente_saude_mental: ADOLESCENTE_MENTAL_MOLD,
+    adolescente_violencia_protecao: ADOLESCENTE_VIOLENCE_MOLD,
+    adolescente_generico: ADOLESCENTE_GENERIC_BESPOKE_MOLD,
   },
   'processamento de artigos e produtos de saude': {
     cme_preparo_limpeza: CME_DEFAULT,
@@ -1723,6 +1794,24 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     curativos_termoterapia: CURATIVOS_REFERENCE_MOLD,
     curativos_generico: CURATIVOS_GENERIC_MOLD,
   },
+  'coleta de exames laboratoriais': {
+    coleta_nao_sanguinea: COLETA_GENERIC_DESIGN,
+    coleta_tubos_ordem: COLETA_GENERIC_DESIGN,
+    coleta_tecnica_venosa: COLETA_GENERIC_DESIGN,
+    coleta_jejum_preparo: COLETA_GENERIC_DESIGN,
+    coleta_capilar_glicemia: COLETA_GENERIC_DESIGN,
+    coleta_hemocultura: COLETA_GENERIC_DESIGN,
+    coleta_generico: COLETA_GENERIC_DESIGN,
+  },
+  coleta: {
+    coleta_nao_sanguinea: COLETA_GENERIC_DESIGN,
+    coleta_tubos_ordem: COLETA_GENERIC_DESIGN,
+    coleta_tecnica_venosa: COLETA_GENERIC_DESIGN,
+    coleta_jejum_preparo: COLETA_GENERIC_DESIGN,
+    coleta_capilar_glicemia: COLETA_GENERIC_DESIGN,
+    coleta_hemocultura: COLETA_GENERIC_DESIGN,
+    coleta_generico: COLETA_GENERIC_DESIGN,
+  },
   'feridas e queimaduras': {
     feridas_grau_profundidade: FERIDAS_GRAU_MOLD,
     feridas_scq_calculo: FERIDAS_SCQ_MOLD,
@@ -1773,8 +1862,8 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
   'classes de palavras': {
     pt_classes_conjuncao: PT_CLASSES_CLASSIFY_MOLD,
     pt_classes_nominais: PT_CLASSES_CLASSIFY_MOLD,
-    pt_classes_adverbio: PT_CLASSES_CLASSIFY_MOLD,
-    pt_classes_preposicao: PT_CLASSES_CLASSIFY_MOLD,
+    pt_classes_adverbio: PT_CLASSES_ADVERB_MOLD,
+    pt_classes_preposicao: PT_CLASSES_PREP_MOLD,
     pt_classes_exceto: PT_CLASSES_EXCETO_MOLD,
     pt_classes_generico: PT_CLASSES_GENERIC_MOLD,
     pt_classes_palavras: PT_CLASSES_GENERIC_MOLD,
@@ -2923,6 +3012,36 @@ function isCurativosExcetoCommand(instruction: string, familyId?: FamilyId): boo
   return familyId === 'certo_errado' && /incorret/i.test(instruction);
 }
 
+function inferColetaBranch(
+  corpus: string,
+  _familyId?: FamilyId,
+  _instruction?: string,
+): PedagogicalBranchId {
+  if (/hemocultura/i.test(corpus)) {
+    return 'coleta_hemocultura';
+  }
+  if (/capilar|glicos[ií]metro|\bamgc\b|\bhgt\b/i.test(corpus)) {
+    return 'coleta_capilar_glicemia';
+  }
+  if (/tubos?|\bedta\b|citrato|ordem de coleta|tampa/i.test(corpus)) {
+    return 'coleta_tubos_ordem';
+  }
+  if (/urina|fezes|escarro|jato m[eé]dio|urocultura/i.test(corpus)) {
+    return 'coleta_nao_sanguinea';
+  }
+  if (/jejum|preparo|triglicer[ií]deos|lip[ií]dios/i.test(corpus)) {
+    return 'coleta_jejum_preparo';
+  }
+  if (
+    /pun[cç][aã]o venosa|garrote|hem[oó]lise|antissepsia.*coleta|coleta.*antissepsia|v[aá]cuo/i.test(
+      corpus,
+    )
+  ) {
+    return 'coleta_tecnica_venosa';
+  }
+  return 'coleta_generico';
+}
+
 function inferCurativosBranch(corpus: string, familyId?: FamilyId, instruction?: string): PedagogicalBranchId {
   if (instruction && isCurativosExcetoCommand(instruction, familyId)) {
     return 'curativos_exceto_incorreta';
@@ -3259,11 +3378,12 @@ function inferClassesPalavrasBranch(corpus: string): PedagogicalBranchId {
   if (/\b(conjun[cç][aã]o|conectivo|adversativ|causal|concessiv|condicional|todavia|entretanto|j[aá]\s+que|contudo|por[eé]m)\b/i.test(corpus)) {
     return 'pt_classes_conjuncao';
   }
-  if (/\b(adv[eé]rbio|locu[cç][aã]o\s+adverbial|adv\s*[×x]\s*adj)\b/i.test(corpus)) {
-    return 'pt_classes_adverbio';
-  }
+  // Prep antes de advérbio: contraste «além» adv. × loc. prep. é comum no ramo.
   if (/\b(preposi[cç][aã]o|locu[cç][aã]o\s+prepositiva)\b/i.test(corpus)) {
     return 'pt_classes_preposicao';
+  }
+  if (/\b(adv[eé]rbio|locu[cç][aã]o\s+adverbial|adv\s*[×x]\s*adj)\b/i.test(corpus)) {
+    return 'pt_classes_adverbio';
   }
   if (/\b(artigo|substantiv|adjektiv|adjetivo|numeral|substantiva[cç][aã]o)\b/i.test(corpus)) {
     return 'pt_classes_nominais';
@@ -3454,6 +3574,9 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('enfermagem do trabalho') || mapKey.includes('saude do trabalhador')) {
     return inferTrabalhoBranch(corpus, familyId, instruction);
+  }
+  if (mapKey.includes('coleta de exames') || mapKey.includes('exames laboratoriais')) {
+    return inferColetaBranch(corpus, familyId, instruction);
   }
   if (
     mapKey.includes('curativos e manejo de feridas') ||

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-06T00:05:21.650Z",
+  "lote": "coleta-de-exames-laboratoriais-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-3",
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-4",
+    "idcap-enfermagem-exames-laboratoriais-1779563559434-7",
+    "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779562780466-6",
+    "iset-enfermagem-coleta-de-exames-laboratoriais-1779562735777-2",
+    "itame-enfermagem-coleta-de-exames-laboratoriais-1779563200105-7",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-1",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-exames-laboratoriais-1779563559434-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779562780466-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-coleta-de-exames-laboratoriais-1779562735777-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-coleta-de-exames-laboratoriais-1779563200105-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+---
+description: >-
+  Ativa o Composer visual (NeuroSlides Agent-first) quando o usuário enviar
+  "Composer visual:" ou anexar docs/PROMPT_COMPOSER_VISUAL.md. Orquestra banco
+  → gesto → crítica atelier → handoff; sem React sem Implementar molde.
+alwaysApply: false
+---
+
+# Composer visual — NeuroSlides Agent-first
+
+> **Cópia versionada** — espelhar em [`.cursor/rules/composer-visual.mdc`](../../.cursor/rules/composer-visual.mdc).  
+> **Prompt canônico:** [`docs/PROMPT_COMPOSER_VISUAL.md`](../PROMPT_COMPOSER_VISUAL.md)  
+> **Banco (8 gestos):** [`artifacts/composer-visual-bank.md`](../../artifacts/composer-visual-bank.md)  
+> **Crítica:** [`docs/PROMPT_ATELIER_VISUAL.md`](../PROMPT_ATELIER_VISUAL.md) · kit [`docs/NEUROSLIDES_ATELIER_KIT.md`](../NEUROSLIDES_ATELIER_KIT.md)  
+> **Skill:** [`docs/skills/avant-neuroslides-visual/SKILL.md`](../skills/avant-neuroslides-visual/SKILL.md)  
+> **Barra / piso:** [`docs/NEUROSLIDES_VISUAL_BAR.md`](../NEUROSLIDES_VISUAL_BAR.md) · [`artifacts/neuroslides-g2-demo.html`](../../artifacts/neuroslides-g2-demo.html)
+
+Quando a mensagem começar com **`Composer visual:`** (ou anexar `docs/PROMPT_COMPOSER_VISUAL.md`), executar **sem pedir modo**.
+
+## Triggers
+
+| Trigger | Ação |
+|---------|------|
+| `Composer visual: <branch_id>` | Pipeline banco → Modo V → crítica → handoff |
+| `Composer visual:` + `Só Modo A` | Após PASS: densificar JSON; sem React |
+| `Crítica atelier:` | Só crítica (delegar formato ao `PROMPT_ATELIER_VISUAL`) |
+| Encadear `Fábrica visual G2:` | Só após `ATELIER_PASS` no pacote |
+
+**Não confundir**
+
+| Trigger | Escopo |
+|---------|--------|
+| `Composer visual:` | Orquestrador NeuroSlides (este) |
+| `Atelier visual:` / `Crítica atelier:` | Crítica / elevação (kit atelier) |
+| `Design visual:` / `Molde visual:` | Skill retenção (Modo V) |
+| `Implementar molde:` | React / variants |
+| `Fábrica visual G2:` | Cobertura por pacote — Composer **precede** se gallery thin/pending/ausente ([`PROMPT_FABRICA` § Pré-passo](../PROMPT_FABRICA_VISUAL_G2.md)) |
+| `Visual:` / `Polish vitrine` | UI app → `avant-ui-visual` (fora) |
+
+## Pipeline obrigatório
+
+1. **Banco + piso** — abrir `artifacts/composer-visual-bank.md` + demo G2 + **1–2** âncoras ouro do mesmo `gesture_id`. Se playbook tiver `visual_gallery` `pilot`/`ready`, abrir `captures_dir`.
+2. **Modo V** — gesto único + mapa 4/4 + anti-padrões + orçamento de clique (formato skill). **Sem React.**
+3. **Auto-crítica atelier** — checklist 8 itens → `ATELIER_PASS` | `ATELIER_FAIL`. FAIL → reescrever Modo V uma vez; não codar.
+4. **Handoff** — reuso + Modo A se board existe; `Implementar molde:` só se gesto novo ou ≥5 slugs sem board (ou pedido explícito).
+5. **Capture** — atualizar `visual_gallery` + no máx. 1 path ouro na linha do banco (≤2 âncoras/gesto). Report: `visual_bar` · `gesto` · `vs_anterior`.
+
+## Invariantes
+
+- Barra G2 / ratchet — nada pior que a âncora ouro do gesto.
+- Compôr **primitives/shells** canônicos (`BoardChrome`, `PolarityPanel`, `Logic*Shell`, …).
+- JSON alimenta tudo — zero hardcode de letra/gabarito no TSX.
+- Só refs do **player** (`artifacts/questao-review/…` ou `/dev/slide-mold-review`).
+- **Banco ≤2 âncoras/gesto** — elevate no máx. 1 path; 3+ → podar; sem feed/Instagram na gallery/banco ([`PROMPT_COMPOSER_VISUAL` § Governança](docs/PROMPT_COMPOSER_VISUAL.md) · kit atelier).
+- **Proibido:** feed/Instagram na gallery; React espontâneo; 5º `type`; re-handcraft em massa só por visual; export ficha/poster.
+
+## Skill
+
+Ler e seguir `avant-neuroslides-visual` no início do Composer. Conteúdo clínico = handcraft / professor — **fora** deste trigger.
+
+Conteúdo operacional completo: [`.cursor/rules/composer-visual.mdc`](../../.cursor/rules/composer-visual.mdc)

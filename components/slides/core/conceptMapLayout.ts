@@ -4,7 +4,12 @@ import {
 } from './layoutRotation';
 
 /** Item mínimo para decidir layout morfológico no concept_map. */
-export type ConceptMapItemLike = { label?: string; title?: string };
+export type ConceptMapItemLike = {
+  label?: string;
+  title?: string;
+  detail?: string;
+  correct?: string;
+};
 
 export type LayoutRotationContext = {
   slug?: string;
@@ -39,6 +44,10 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'adolescent-privacy-curtain',
   'adolescent-care-pillars-deck',
   'adolescent-growth-z-rail',
+  'adolescent-violence-deck',
+  'adolescent-mental-route-list',
+  'adolescent-dev-pair-rail',
+  'adolescent-generic-hub-orbit',
   'nr32-annex-deck',
   'sp-id-verify-deck',
   'sp-fall-risk-rail',
@@ -88,6 +97,11 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'pt-clitic-rail-deck',
   'pt-comma-rail-deck',
   'pt-term-matrix-deck',
+  'pt-classes-function-deck',
+  'pt-classes-adverb-types-grid',
+  'pt-classes-prep-contract-rail',
+  'pt-classes-exceto-rule-pairs',
+  'pt-classes-exceto-value-cards',
   'pt-subject-focus-deck',
 ]);
 
@@ -96,6 +110,21 @@ function countConceptItems(slide?: {
   concepts?: unknown[];
 }): number {
   return slide?.items?.length || slide?.concepts?.length || 0;
+}
+
+/** valor_incorreto (taxonomia causal/advers…) ≠ EXCETO adverbial (TEMPO/MODO). */
+export function slidePrefersExcetoValueCards(slide?: {
+  items?: ConceptMapItemLike[];
+}): boolean {
+  const items = slide?.items ?? [];
+  if (items.length === 0) return false;
+  const labels = items.map((i) => `${i.label || ''} ${i.title || ''}`).join(' ');
+  if (/tempo\s*\/\s*meio|substantivo|locu[cç][aã]o adverbial/i.test(labels)) {
+    return false;
+  }
+  return /causal|advers|explicat|comparat|consecut|concess|cardinal|ordinal|valor/i.test(
+    labels,
+  );
 }
 
 /**
@@ -113,6 +142,15 @@ export function resolveConceptMapLayoutVariant(
 
   if (explicitVariant) {
     return explicitVariant;
+  }
+
+  if (
+    fallbackVariant === 'pt-classes-exceto-rule-pairs' ||
+    fallbackVariant === 'pt-classes-exceto-value-cards'
+  ) {
+    return slidePrefersExcetoValueCards(slide)
+      ? 'pt-classes-exceto-value-cards'
+      : 'pt-classes-exceto-rule-pairs';
   }
 
   if (fallbackVariant && CONCEPT_MAP_MOLD_OVERRIDES.has(fallbackVariant)) {

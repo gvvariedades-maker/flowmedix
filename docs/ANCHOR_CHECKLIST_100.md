@@ -59,17 +59,22 @@ npm run audit:anchor-100 -- --file=… --sign-human=PC --write-meta
 
 ## Fluxo Agent (Âncoras 100%)
 
+Ordem do pacote (não pular): **0a playbook/gestos → 0b inventário →** só então por âncora:
+
 ```text
-1. Writer eleva a âncora (golden-anchor-handcraft)
-2. npm run audit:anchor-100 -- --file=…          → gates
-3. (opcional) Revisor B: --reviewer-file=…       → teach_once / gesture
-4. Preview visual se ramo L3 (--require-visual quando fechar 100%)
-5. Se agent_may_sign: --sign-agent [--write-meta]
+1. Writer eleva a âncora (golden-anchor-handcraft) — NÃO escrever “aprovado” no chat
+2. npm run audit:anchor-100 -- --file=…          → gates_pass + artifacts/anchor-checklist/<slug>.json
+3. Preview: /dev/slide-mold-review?branch=…      → calibrar com NEUROSLIDES_ATELIER_KIT se visual falhar
+4. npm run audit:anchor-100 -- --file=… --require-visual
+5. (opcional) Revisor B: --reviewer-file=…       → teach_once / gesture
+6. Se agent_may_sign: --sign-agent --write-meta
    Se human_required: PARAR → humano --sign-human=… --write-meta
-6. Próximo ramo só com approval.status=pass (artefato ou meta)
+7. Próximo ramo só com approval.status=pass (artefato ou meta)
 ```
 
-**Proibido:** Writer declarar “aprovado” no chat sem artefato `pass`.
+Runbook: [`PROMPT_ANCORAS_100.md`](PROMPT_ANCORAS_100.md) · Atelier: [`NEUROSLIDES_ATELIER_KIT.md`](NEUROSLIDES_ATELIER_KIT.md)
+
+**Proibido:** Writer declarar “aprovado” / “100%” no chat sem `approval.status=pass`.
 
 ---
 

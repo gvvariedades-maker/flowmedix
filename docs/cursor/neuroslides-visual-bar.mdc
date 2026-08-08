@@ -1,8 +1,8 @@
 ---
 description: >-
   Barra visual mínima dos NeuroSlides (best-in-market) + ratchet: cada molde
-  só melhora. Ativa em Design visual / Implementar molde / Fábrica nota-10 /
-  variants de slides.
+  só melhora. Ativa em Design visual / Atelier visual / Implementar molde /
+  Fábrica nota-10 / variants de slides.
 globs: components/slides/**/*
 alwaysApply: false
 ---
@@ -11,7 +11,8 @@ alwaysApply: false
 
 **Canônico:** [`docs/NEUROSLIDES_VISUAL_BAR.md`](../../NEUROSLIDES_VISUAL_BAR.md)  
 **Piso vivo:** [`artifacts/neuroslides-g2-demo.html`](../../artifacts/neuroslides-g2-demo.html)  
-**ADR:** [`docs/DECISAO_NEUROSLIDES_GERACAO_2.md`](../../DECISAO_NEUROSLIDES_GERACAO_2.md)
+**ADR:** [`docs/DECISAO_NEUROSLIDES_GERACAO_2.md`](../../DECISAO_NEUROSLIDES_GERACAO_2.md)  
+**Atelier (8 gestos ouro + crítica):** [`docs/NEUROSLIDES_ATELIER_KIT.md`](../../NEUROSLIDES_ATELIER_KIT.md) · [`docs/PROMPT_ATELIER_VISUAL.md`](../../PROMPT_ATELIER_VISUAL.md)
 
 ## Piso (obrigatório em molde novo / redesign)
 

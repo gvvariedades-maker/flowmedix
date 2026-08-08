@@ -1,0 +1,39 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g05",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-08-05",
+  "applied_at": "2026-08-05",
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "cluster": "Não-sanguínea — urina/fezes/escarro (P0 cont.)",
+  "pedagogical_branch_target": "coleta_nao_sanguinea",
+  "priority": "P0 — coleta_nao_sanguinea g05",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+  "golden_reference": "examples/questao-premium-ameosc-coleta-nao-sanguinea-urina.json",
+  "guideline": "lib/guidelines/coletaExames.ts (COLETA_EXAMES_SBPC)",
+  "slugs": [
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563288910-0",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+    "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+    "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563225798-9",
+    "univali-enfermagem-coleta-de-exames-laboratoriais-1779563165114-9",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-4",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-5"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=coleta-de-exames-laboratoriais-g05 --strict",
+  "workflow": [
+    "copy from coleta-de-exames-laboratoriais-completo/questions",
+    "npx tsx scripts/handcraft-coleta-de-exames-laboratoriais-g05.ts",
+    "npm run audit:questao-readiness -- --lote=coleta-de-exames-laboratoriais-g05 --strict-v2-pedagogy",
+    "npm run catalog:apply-lote -- --lote=coleta-de-exames-laboratoriais-g05 --apply"
+  ],
+  "gates": {
+    "validate_goldens": "PASS 8/8",
+    "questao_readiness": "READY 8/8",
+    "preflight": "PASS 8/8",
+    "apply": "ok=8 failed=0"
+  }
+}

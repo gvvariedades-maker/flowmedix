@@ -4,6 +4,7 @@
 
 import { z, ZodError } from 'zod';
 import * as LucideIcons from 'lucide-react';
+import { PACK_MAX_SIZE } from '@/lib/cadernos/packs';
 import { EmailTemplateContentSchema } from '@/lib/email/templateContent';
 import { ONBOARDING_BANCAS, ONBOARDING_TOPIC_AREAS } from '@/lib/onboarding/constants';
 import { normalizeQuestaoSlideArrays } from './reverseStudySlidesNormalize';
@@ -966,6 +967,19 @@ export const EstudarQuestaoQuerySchema = z
     disciplina: z.enum(['enfermagem', 'portugues']).optional(),
   })
   .transform(mergeBancaAssuntoFields);
+
+/** Body de `POST /api/notebooks/from-pack` — clone de Caderno Pronto. */
+export const NotebookFromPackItemSchema = z.object({
+  modulo_slug: z.string().min(1),
+  titulo_aula: z.string().nullable().optional(),
+  topico: z.string().nullable().optional(),
+});
+
+export const NotebookFromPackSchema = z.object({
+  pack_id: z.string().trim().min(1).max(64),
+  items: z.array(NotebookFromPackItemSchema).min(1).max(PACK_MAX_SIZE),
+  title: z.string().trim().min(1).max(120),
+});
 
 /** Query params de `GET /api/vitrine/questao` (atalho por número/código no card). */
 export const VitrineResolveQuestaoQuerySchema = z

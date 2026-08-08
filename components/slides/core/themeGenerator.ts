@@ -445,7 +445,7 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // ============================================================
 
   // ---- Classes de palavras (Glance — grid colorido + classify-board 0 taps) ----
-  'classes de palavras': { template: 'amber', conceptMap: 'grid', goldenRule: 'reference_table', logicFlow: 'pt-classes-classify-board', dangerZone: 'compare' },
+  'classes de palavras': { template: 'amber', conceptMap: 'pt-classes-function-deck', goldenRule: 'pt-classes-family-table', logicFlow: 'pt-classes-classify-board', dangerZone: 'pt-classes-swap-arena' },
 
   // ---- Crase (golden: pt-crase-funnel-deck · pt-crase-funnel-board · pt-crase-funnel-tap-flow · pt-crase-trap-arena) ----
   'crase': { template: 'amber', conceptMap: 'pt-crase-funnel-deck', goldenRule: 'pt-crase-funnel-board', logicFlow: 'pt-crase-funnel-tap-flow', dangerZone: 'pt-crase-trap-arena' },

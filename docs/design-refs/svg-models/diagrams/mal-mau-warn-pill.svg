@@ -1,0 +1,9 @@
+<!-- AVANT gold  alerta N�O ERRE MAIS (tri�ngulo + pill).
+     viewBox 0 0 48 24 � stroke 2.
+     Refs: lucide/triangle-alert.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 24" fill="none" role="img" aria-label="Alerta">
+  <title>Alerta</title>
+  <path d="M8 20 L14 6 L20 20 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M14 11v4M14 17.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <rect x="24" y="6" width="22" height="12" rx="6" stroke="currentColor" stroke-width="2"/>
+</svg>

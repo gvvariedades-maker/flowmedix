@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-08-06T01:40:02.364Z",
+  "lote": "coleta-de-exames-laboratoriais-g07",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2986
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3006
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 4413
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-coleta-de-exames-laboratoriais-1779562768558-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 2962
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-coleta-de-exames-laboratoriais-1779563165114-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 2987
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779562780466-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2967
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3009
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-laboratoriais-1779563646977-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3284
+    }
+  ]
+}
