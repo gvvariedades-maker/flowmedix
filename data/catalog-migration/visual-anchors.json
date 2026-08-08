@@ -1242,9 +1242,10 @@
         "polished_at": "2026-08-08",
         "approval_status": "pass",
         "visual_bar": "pass",
-        "preview": "http://localhost:3001/dev/slide-mold-review?branch=pt_classes_exceto__valor_incorreto",
+        "preview": "http://localhost:3002/dev/slide-mold-review?branch=pt_classes_exceto__valor_incorreto",
         "captures_dir": "artifacts/questao-review/questao-premium-aocp-portugues-classes-valor-incorreto-como",
-        "json_path": "examples/questao-premium-aocp-portugues-classes-valor-incorreto-como.json"
+        "json_path": "examples/questao-premium-aocp-portugues-classes-valor-incorreto-como.json",
+        "gallery_saved_at": "2026-08-08"
       }
     },
     "pt_classes_generico__formacao_siglas": {

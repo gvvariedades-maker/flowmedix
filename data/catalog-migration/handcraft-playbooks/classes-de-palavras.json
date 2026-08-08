@@ -342,9 +342,9 @@
           "pt-classes-exceto-tip-board"
         ],
         "captures_dir": "artifacts/questao-review/questao-premium-aocp-portugues-classes-valor-incorreto-como",
-        "note": "READY 2026-08-08 — âncora 02 value-cards (numerais) + 01 rule-pairs no mesmo ramo",
+        "note": "ATELIER_PASS 2026-08-08 — tip valor-aware (sem leak substantivo/locução) · gallery 03–06 PNGs",
         "visual_bar": "pass",
-        "preview": "http://localhost:3001/dev/slide-mold-review?branch=pt_classes_exceto__valor_incorreto"
+        "preview": "http://localhost:3002/dev/slide-mold-review?branch=pt_classes_exceto__valor_incorreto"
       }
     },
     {
