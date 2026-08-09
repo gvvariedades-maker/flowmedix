@@ -254,6 +254,16 @@ const Dyn_pt_classes_exceto_tip_board = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pt_classes_vf_claim_arena = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/DangerZonePtClassesVfClaimArena') as Promise<Record<string, unknown>>,
+      'DangerZonePtClassesVfClaimArena',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pt_subject_trap_arena = dynamic(
   () => loadNamedVariant(() => import('../variants/DangerZonePtTermTrapArena') as Promise<Record<string, unknown>>, 'DangerZonePtTermTrapArena'),
   { ssr: true, loading: () => null },
@@ -498,6 +508,7 @@ export const DANGER_ZONE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'pt-classes-swap-arena': { Component: Dyn_pt_classes_swap_arena, requiresItems: true },
   'pt-classes-adverb-compare': { Component: Dyn_pt_classes_adverb_compare, requiresItems: true },
   'pt-classes-exceto-tip-board': { Component: Dyn_pt_classes_exceto_tip_board, requiresItems: true },
+  'pt-classes-vf-claim-arena': { Component: Dyn_pt_classes_vf_claim_arena, requiresItems: true },
   'pt-subject-trap-arena': { Component: Dyn_pt_subject_trap_arena, requiresItems: true },
   'cam-high-risk-trap-arena': { Component: Dyn_cam_high_risk_trap_arena, requiresItems: true },
   'cam-exceto-trap-arena': { Component: Dyn_cam_exceto_trap_arena, requiresItems: true },

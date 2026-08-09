@@ -239,6 +239,16 @@ const Dyn_pt_classes_family_table = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pt_classes_vf_claim_fix = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/GoldenRulePtClassesVfClaimBoard') as Promise<Record<string, unknown>>,
+      'GoldenRulePtClassesVfClaimBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pt_classes_adverb_arrow_cards = dynamic(
   () =>
     loadNamedVariant(
@@ -465,6 +475,7 @@ export const GOLDEN_RULE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'pt-comma-rail-board': { Component: Dyn_pt_comma_rail_board, requiresRows: true },
   'pt-term-matrix-board': { Component: Dyn_pt_term_matrix_board, requiresRows: true },
   'pt-classes-family-table': { Component: Dyn_pt_classes_family_table, requiresRows: true },
+  'pt-classes-vf-claim-fix': { Component: Dyn_pt_classes_vf_claim_fix, requiresRows: true },
   'pt-classes-adverb-arrow-cards': {
     Component: Dyn_pt_classes_adverb_arrow_cards,
     requiresRows: true,

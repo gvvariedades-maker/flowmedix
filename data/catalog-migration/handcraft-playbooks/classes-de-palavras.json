@@ -351,13 +351,14 @@
       "id": "pt_classes_generico",
       "when": "VF / I–II–III multi-classe; dupla classe da mesma forma; formação/siglas residual neste card; classificação mesclada sem fit nos ramos acima; umbrella legado `pt_classes_palavras`",
       "gesture": "VF / CLASSIFICAR (fallback)",
-      "mold": "morphological · reference_table · tap · compare",
+      "mold": "pt-classes-vf-claim-strip · vf-claim-board · vf-claim-fix · vf-claim-arena",
       "l3_decision": "cauda_longa",
       "ok_generico_3_3": "Cauda + formação/siglas; piso G2 demo — sem forçar conjunção/nominal",
-      "mold_gap": "wrap_polish_g2 — legado siglas below_bar; 2ª âncora = VF multi-classe (tirinha)",
+      "mold_gap": "closed_2026-08-08 — 4/4 vf-claim family âncora 01 ATELIER_PASS; âncora 02 siglas still below_bar",
       "legacy_umbrella": "pt_classes_palavras",
       "anchors_target": 2,
-      "ancoras_100_status": "inventoried_0b",
+      "ancoras_100_status": "in_progress_1_2",
+      "preview": "http://localhost:3003/dev/slide-mold-review?branch=pt_classes_generico",
       "anchors": [
         "examples/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse.json",
         "examples/questao-formacao-palavras-siglas.json"
@@ -365,13 +366,15 @@
       "anchor_styles": {
         "vf_multiclasse": {
           "golden_reference": "examples/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse.json",
-          "status": "bootstrapped_pending_polish",
+          "status": "approved_agent",
           "catalog_slug_candidates": [
             "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
             "avancasp-ace-classes-leia-a-tirinha-a-seguir-para-respond-3353960",
             "cpcon-uepb-a-classes-leia-o-texto-i-para-responder-a-ques-3836456"
           ],
-          "note": "Âncora 01 — VF / multi-classe (tirinha ou lista de peças) · bootstrap 0b 2026-08-05 — polish Fase 1",
+          "note": "Âncora 01 — approval.status=pass 2026-08-08 · CM+LF+GR+DZ vf-claim 4/4",
+          "gate": "audit:anchor-100 approval.status=pass",
+          "approved_at": "2026-08-08",
           "anchor_slug": "questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse",
           "catalog_slug": "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957"
         },
@@ -381,6 +384,20 @@
           "status": "below_bar",
           "note": "Âncora 02 — formação/siglas LEGADO (drift_ramo + below_bar); elevar ou substituir na Fase 1 — não aprovar no estado atual"
         }
+      },
+      "visual_gallery": {
+        "status": "ready",
+        "anchor_slug": "questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse",
+        "layouts": [
+          "pt-classes-vf-claim-strip",
+          "pt-classes-vf-claim-board",
+          "pt-classes-vf-claim-fix",
+          "pt-classes-vf-claim-arena"
+        ],
+        "captures_dir": "artifacts/questao-review/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse",
+        "note": "READY 2026-08-08 — 4/4 vf-claim family ATELIER_PASS âncora 01 (DZ indigo/sky/fuchsia/lime)",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3003/dev/slide-mold-review?branch=pt_classes_generico"
       }
     }
   ],

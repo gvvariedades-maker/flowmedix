@@ -357,6 +357,16 @@ const Dyn_pt_classes_classify_board = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pt_classes_vf_claim_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/LogicFlowPtClassesVfClaimBoard') as Promise<Record<string, unknown>>,
+      'LogicFlowPtClassesVfClaimBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pt_classes_adverb_mnemonic_rail = dynamic(
   () =>
     loadNamedVariant(
@@ -537,6 +547,7 @@ export const LOGIC_FLOW_REGISTRY: Record<string, BespokeVariantEntry> = {
   'adolescent-exceto-isolate-tap': { Component: Dyn_adolescent_exceto_isolate_tap },
   'adolescent-exceto-isolate-board': { Component: Dyn_adolescent_exceto_isolate_board },
   'pt-classes-classify-board': { Component: Dyn_pt_classes_classify_board },
+  'pt-classes-vf-claim-board': { Component: Dyn_pt_classes_vf_claim_board },
   'pt-classes-adverb-mnemonic-rail': { Component: Dyn_pt_classes_adverb_mnemonic_rail },
   'pt-classes-prep-category-stack': { Component: Dyn_pt_classes_prep_category_stack },
   'pt-classes-exceto-isolate-board': { Component: Dyn_pt_classes_exceto_isolate_board },

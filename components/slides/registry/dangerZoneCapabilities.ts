@@ -69,6 +69,8 @@ export const DANGER_ZONE_VARIANT_CAPABILITIES: Record<string, DangerZoneVariantC
   'pt-crase-trap-arena': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },
   'pt-classes-swap-arena': { dangerTapReveal: false, defaultBulletStyle: 'x_icon' },
   'pt-classes-adverb-compare': { dangerTapReveal: false, defaultBulletStyle: 'x_icon' },
+  'pt-classes-vf-claim-arena': { dangerTapReveal: false, defaultBulletStyle: 'x_icon' },
+  'pt-classes-exceto-tip-board': { dangerTapReveal: false, defaultBulletStyle: 'x_icon' },
   'pt-subject-trap-arena': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },
   'pt-term-trap-arena': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },
   'respiratorio-spo2-trap-arena': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },

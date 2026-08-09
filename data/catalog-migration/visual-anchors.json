@@ -1186,7 +1186,18 @@
       "lote": "classes-de-palavras-anchors",
       "json_path": "examples/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse.json",
       "anchor_style": "vf_multiclasse",
-      "note": "Âncoras 100% Fase 0b bootstrap — polish Fase 1"
+      "note": "visual_gallery ready 2026-08-08 — vf-claim-strip · approval.status=pass",
+      "ancora_100": {
+        "status": "ready",
+        "gate": "READY",
+        "polished_at": "2026-08-08",
+        "approval_status": "pass",
+        "visual_bar": "pass",
+        "preview": "http://localhost:3003/dev/slide-mold-review?branch=pt_classes_generico",
+        "captures_dir": "artifacts/questao-review/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse",
+        "json_path": "examples/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse.json",
+        "gallery_saved_at": "2026-08-08"
+      }
     },
     "pt_classes_conjuncao__adversativa": {
       "pedagogical_branch": "pt_classes_conjuncao",

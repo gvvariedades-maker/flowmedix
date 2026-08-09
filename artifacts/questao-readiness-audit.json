@@ -5,7 +5,7 @@
   "scanned": 1,
   "results": [
     {
-      "slug": "questao-premium-aocp-portugues-classes-valor-incorreto-como",
+      "slug": "questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse",
       "subtopico": "Classes de palavras",
       "ready_100": true,
       "tier_pass": {
@@ -26,13 +26,13 @@
         {
           "tier": "A2",
           "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: C).",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
           "severity": "warn"
         },
         {
           "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
+          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
           "severity": "warn"
         },
         {
@@ -44,22 +44,20 @@
         {
           "tier": "A4",
           "code": "risk_tier",
-          "message": "Risco medio → auto_conditional [numeric_claim_soft, subtopic_immature] — Claim numérico suave (%, tempo, escore) — amostragem elevada.",
+          "message": "Risco medio → auto_conditional [subtopic_immature] — Pacote ainda não está production_ready — confiança limitada.",
           "severity": "info"
         }
       ],
       "family": "text_fragment",
-      "pedagogical_branch": "pt_classes_exceto",
-      "inferred_branch": "pt_classes_exceto",
+      "pedagogical_branch": "pt_classes_generico",
+      "inferred_branch": "pt_classes_generico",
       "risk": {
         "risk_tier": "medio",
         "approval_mode": "auto_conditional",
         "risk_factors": [
-          "numeric_claim_soft",
           "subtopic_immature"
         ],
         "reasons": [
-          "Claim numérico suave (%, tempo, escore) — amostragem elevada.",
           "Pacote ainda não está production_ready — confiança limitada."
         ]
       }

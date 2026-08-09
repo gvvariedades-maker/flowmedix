@@ -102,6 +102,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'pt-classes-prep-contract-rail',
   'pt-classes-exceto-rule-pairs',
   'pt-classes-exceto-value-cards',
+  'pt-classes-vf-claim-strip',
   'pt-subject-focus-deck',
 ]);
 

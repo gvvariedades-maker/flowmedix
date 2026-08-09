@@ -1219,10 +1219,10 @@ const PT_CLASSES_EXCETO_MOLD: SubtopicDesign = {
 
 const PT_CLASSES_GENERIC_MOLD: SubtopicDesign = {
   template: 'amber',
-  conceptMap: 'grid',
-  goldenRule: 'reference_table',
-  logicFlow: 'pt-classes-classify-board',
-  dangerZone: 'compare',
+  conceptMap: 'pt-classes-vf-claim-strip',
+  goldenRule: 'pt-classes-vf-claim-fix',
+  logicFlow: 'pt-classes-vf-claim-board',
+  dangerZone: 'pt-classes-vf-claim-arena',
 };
 
 const PT_CRASE_MOLD: SubtopicDesign = {
@@ -3375,6 +3375,23 @@ function inferClassesPalavrasBranch(corpus: string): PedagogicalBranchId {
   if (/\b(exceto|incorret[oa]|valor\s+sem[aâ]ntico\s+incorreto)\b/i.test(corpus)) {
     return 'pt_classes_exceto';
   }
+
+  // VF / multi-classe: ≥3 famílias no corpus (ou ≥2 + comando VF) → genérico, não um ramo só.
+  const classFamilyHits = [
+    /\b(conjun[cç][aã]o|conectivo|adversativ|causal|concessiv|condicional)\b/i,
+    /\b(preposi[cç][aã]o|locu[cç][aã]o\s+prepositiva)\b/i,
+    /\b(adv[eé]rbio|locu[cç][aã]o\s+adverbial|nega[cç][aã]o)\b/i,
+    /\b(pronome|possessivo|substantiv|adjetiv|numeral|substantiva[cç][aã]o|artigo)\b/i,
+    /\b(pret[eé]rito|verbo|indicativo|conjug)\b/i,
+  ].filter((p) => p.test(corpus)).length;
+  const vfCommand =
+    /\b(verdadeiro|falso|afirmativas?|classifique-as|sequ[eê]ncia\s+v|v\s*[–\-]\s*v\s*[–\-]\s*f)\b/i.test(
+      corpus,
+    ) || /\(\s*\)\s*«/.test(corpus);
+  if (classFamilyHits >= 3 || (vfCommand && classFamilyHits >= 2)) {
+    return 'pt_classes_generico';
+  }
+
   if (/\b(conjun[cç][aã]o|conectivo|adversativ|causal|concessiv|condicional|todavia|entretanto|j[aá]\s+que|contudo|por[eé]m)\b/i.test(corpus)) {
     return 'pt_classes_conjuncao';
   }

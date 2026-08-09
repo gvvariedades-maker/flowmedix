@@ -162,7 +162,7 @@ describe('moldAffinity', () => {
       ).toBe(false);
     });
 
-    it('aceita adolescent-care-pillars-deck para puberdade no ramo desenvolvimento (Onda 2)', () => {
+    it('puberdade no ramo desenvolvimento usa o pacote dev, não o glanceable de ética', () => {
       const slide = {
         items: [
           { label: 'Puberdade', detail: 'Marcos Tanner e metamorfose física', icon: 'User' },
@@ -171,6 +171,13 @@ describe('moldAffinity', () => {
       };
       expect(
         bespokeMoldHasContentAffinity('adolescent-care-pillars-deck', slide, {
+          familyId: 'certo_errado',
+          subtopico,
+          pedagogicalBranch: 'adolescente_desenvolvimento',
+        }),
+      ).toBe(false);
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-dev-pair-rail', slide, {
           familyId: 'certo_errado',
           subtopico,
           pedagogicalBranch: 'adolescente_desenvolvimento',

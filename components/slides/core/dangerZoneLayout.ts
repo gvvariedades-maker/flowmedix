@@ -89,6 +89,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'pt-classes-swap-arena',
   'pt-classes-adverb-compare',
   'pt-classes-exceto-tip-board',
+  'pt-classes-vf-claim-arena',
   'pt-subject-trap-arena',
 ]);
 
@@ -173,6 +174,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'pt-classes-swap-arena') return 'pt-classes-swap-arena';
   if (explicitVariant === 'pt-classes-adverb-compare') return 'pt-classes-adverb-compare';
   if (explicitVariant === 'pt-classes-exceto-tip-board') return 'pt-classes-exceto-tip-board';
+  if (explicitVariant === 'pt-classes-vf-claim-arena') return 'pt-classes-vf-claim-arena';
   if (explicitVariant === 'pt-subject-trap-arena') return 'pt-subject-trap-arena';
 
   if (hasCompareItems) {
@@ -406,6 +408,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'pt-classes-exceto-tip-board') {
       return 'pt-classes-exceto-tip-board';
+    }
+    if (!explicitVariant && fallbackVariant === 'pt-classes-vf-claim-arena') {
+      return 'pt-classes-vf-claim-arena';
     }
     return 'compare';
   }

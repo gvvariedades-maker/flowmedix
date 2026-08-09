@@ -92,7 +92,7 @@ export function SlideMoldReviewPanels({ questao, branch }: SlideMoldReviewProps)
             data-testid={`mold-slide-${idx + 1}`}
             data-slide-label={label}
             className="overflow-y-auto rounded-2xl border border-slate-200 bg-[#010409] shadow-sm"
-            style={{ minHeight: 420, maxHeight: 720 }}
+            style={{ minHeight: 420, maxHeight: 'none' }}
           >
             <div className="border-b border-white/10 px-4 py-2 text-xs text-slate-400">{label}</div>
             <NeuroSlide

@@ -167,7 +167,7 @@ const ADOLESCENT_VARIANTS = new Set([
   'adolescent-exceto-compare',
 ]);
 
-/** Pacote glanceable v2 — reutilizado na Onda 2 (violência / mental / desenvolvimento / genérico). */
+/** Pacote glanceable v2 — só ética/sigilo; demais ramos têm pacote bespoke próprio. */
 const ADOLESCENT_GLANCEABLE_VARIANTS = new Set([
   'adolescent-care-pillars-deck',
   'adolescent-speak-barrier-board',
@@ -417,6 +417,10 @@ export const PT_TERM_MATRIX_VARIANTS = new Set([
 
 export const PT_CLASSES_CLASSIFY_VARIANTS = new Set([
   'pt-classes-function-deck',
+  'pt-classes-vf-claim-strip',
+  'pt-classes-vf-claim-board',
+  'pt-classes-vf-claim-fix',
+  'pt-classes-vf-claim-arena',
   'pt-classes-family-table',
   'pt-classes-classify-board',
   'pt-classes-swap-arena',
@@ -2291,6 +2295,42 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     ],
     minPositive: 1,
   },
+  'pt-classes-vf-claim-strip': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /afirm|pe[cç]a|tirinha|classe|pret[eé]rito|possessivo|nega[cç]/i,
+      /leu|mas|minhas|modo|adversativa|preposi[cç]/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-vf-claim-board': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /gabarito|sequ[eê]ncia|pret[eé]rito|possessivo|nega[cç]|adversativa/i,
+      /leu|mas|minhas|similares|afirmativa/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-vf-claim-fix': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /pret[eé]rito|possessivo|nega[cç]|adversativa|roteiro|modo/i,
+      /leu|mas|minhas|preposi[cç]|indicativo/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-vf-claim-arena': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /pegadinha|parece|classe vizinha|tudo v|tudo f|distrator|letra/i,
+      /leu|mas|minhas|n[aã]o|nem|possessivo|modo|preposi[cç]/i,
+    ],
+    minPositive: 1,
+  },
   'pt-classes-family-table': {
     homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
     blockFamilies: ['calc'],
@@ -2304,8 +2344,8 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
     blockFamilies: ['calc'],
     positivePatterns: [
-      /gabarito|eliminar|motivo|causal|valor|similares/i,
-      /j[aá] que|contanto|contudo|conquanto/i,
+      /gabarito|eliminar|motivo|causal|valor|similares|afirmativa|sequ[eê]ncia/i,
+      /j[aá] que|contanto|contudo|conquanto|pret[eé]rito|possessivo|nega[cç]/i,
     ],
     minPositive: 1,
   },

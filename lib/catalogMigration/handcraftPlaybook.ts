@@ -151,18 +151,23 @@ export function parseHandcraftTrigger(message: string): {
   return { subtopico, slug };
 }
 
+/** Playbooks e registry são editados por scripts/PowerShell — BOM quebraria JSON.parse. */
+function readJsonFile<T>(path: string): T {
+  return JSON.parse(readFileSync(path, 'utf8').replace(/^\uFEFF/, '')) as T;
+}
+
 export function loadHandcraftRegistry(): {
   pacotes: Record<string, HandcraftRegistryPackage>;
   subtopicos_canonicos: string[];
   legacy_builder_subtopicos?: string[];
   fallback_novo_pacote?: unknown;
 } {
-  const raw = JSON.parse(readFileSync(REGISTRY_PATH, 'utf8')) as {
+  const raw = readJsonFile<{
     pacotes?: Record<string, HandcraftRegistryPackage>;
     subtopicos_canonicos?: string[];
     legacy_builder_subtopicos?: string[];
     fallback_novo_pacote?: unknown;
-  };
+  }>(REGISTRY_PATH);
   return {
     pacotes: raw.pacotes ?? {},
     subtopicos_canonicos: raw.subtopicos_canonicos ?? [],
@@ -210,27 +215,27 @@ export function loadHandcraftPlaybook(
   if (!resolved) {
     const defaultPath = join(PLAYBOOKS_DIR, '_default.json');
     if (existsSync(defaultPath)) {
-      return JSON.parse(readFileSync(defaultPath, 'utf8')) as HandcraftPlaybook;
+      return readJsonFile<HandcraftPlaybook>(defaultPath);
     }
     return null;
   }
 
   const explicit = resolved.handcraft_playbook?.trim();
   if (explicit && existsSync(resolve(process.cwd(), explicit))) {
-    return JSON.parse(readFileSync(resolve(process.cwd(), explicit), 'utf8')) as HandcraftPlaybook;
+    return readJsonFile<HandcraftPlaybook>(resolve(process.cwd(), explicit));
   }
 
   const prefix = resolved.pacote_prefix;
   if (prefix) {
     const byPrefix = playbookPathForPrefix(prefix);
     if (existsSync(byPrefix)) {
-      return JSON.parse(readFileSync(byPrefix, 'utf8')) as HandcraftPlaybook;
+      return readJsonFile<HandcraftPlaybook>(byPrefix);
     }
   }
 
   const defaultPath = join(PLAYBOOKS_DIR, '_default.json');
   if (existsSync(defaultPath)) {
-    return JSON.parse(readFileSync(defaultPath, 'utf8')) as HandcraftPlaybook;
+    return readJsonFile<HandcraftPlaybook>(defaultPath);
   }
 
   return null;

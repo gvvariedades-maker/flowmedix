@@ -86,6 +86,7 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'pt-classes-family-table',
   'pt-classes-adverb-arrow-cards',
   'pt-classes-exceto-fix-board',
+  'pt-classes-vf-claim-fix',
   'pt-subject-focus-board',
 ]);
 
@@ -170,6 +171,10 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'pt-comma-rail-board') return 'pt-comma-rail-board';
   if (explicitVariant === 'pt-term-matrix-board') return 'pt-term-matrix-board';
   if (explicitVariant === 'pt-subject-focus-board') return 'pt-subject-focus-board';
+  if (explicitVariant === 'pt-classes-family-table') return 'pt-classes-family-table';
+  if (explicitVariant === 'pt-classes-adverb-arrow-cards') return 'pt-classes-adverb-arrow-cards';
+  if (explicitVariant === 'pt-classes-exceto-fix-board') return 'pt-classes-exceto-fix-board';
+  if (explicitVariant === 'pt-classes-vf-claim-fix') return 'pt-classes-vf-claim-fix';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

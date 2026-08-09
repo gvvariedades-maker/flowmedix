@@ -159,6 +159,16 @@ const Dyn_pt_classes_function_deck = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pt_classes_vf_claim_strip = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/ConceptMapPtClassesVfClaimStrip') as Promise<Record<string, unknown>>,
+      'ConceptMapPtClassesVfClaimStrip',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pt_classes_adverb_types_grid = dynamic(
   () =>
     loadNamedVariant(
@@ -532,6 +542,7 @@ export const CONCEPT_MAP_REGISTRY: Record<string, BespokeVariantEntry> = {
   'pt-comma-rail-deck': { Component: Dyn_pt_comma_rail_deck },
   'pt-term-matrix-deck': { Component: Dyn_pt_term_matrix_deck },
   'pt-classes-function-deck': { Component: Dyn_pt_classes_function_deck },
+  'pt-classes-vf-claim-strip': { Component: Dyn_pt_classes_vf_claim_strip },
   'pt-classes-adverb-types-grid': { Component: Dyn_pt_classes_adverb_types_grid },
   'pt-classes-prep-contract-rail': { Component: Dyn_pt_classes_prep_contract_rail },
   'pt-classes-exceto-rule-pairs': { Component: Dyn_pt_classes_exceto_rule_pairs },
