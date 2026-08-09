@@ -111,7 +111,7 @@ export function AvantLogoEmail() {
                               &nbsp;
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                              {/* Mesmo lockup "AVANT enf" do emblema cobre/verde (sem gradiente — clientes de e-mail nao suportam background-clip:text de forma confiavel). */}
+                              {/* Editorial tipográfico: AVANT claro no shell escuro + enf print. */}
                               <Text
                                 style={{
                                   margin: 0,
@@ -126,7 +126,7 @@ export function AvantLogoEmail() {
                                 }}
                               >
                                 AVANT{' '}
-                                <span style={{ color: AVANT_LOGO_COLORS.wordmarkEnfGreen }}>
+                                <span style={{ color: AVANT_LOGO_COLORS.wordmarkEnf }}>
                                   {subtitleLabel}
                                 </span>
                               </Text>

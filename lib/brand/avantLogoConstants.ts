@@ -1,19 +1,15 @@
 /**
- * AVANT enf logo — identidade oficial "Brushed Copper" + acento print `#F26522`.
+ * AVANT enf logo — identidade editorial print `#F26522` + monograma cobre.
  *
  * Direção de marca (rebrand editorial 2026-08):
  * - Ícone: card squircle (`iconCardBrand` = print laranja) + monograma "A"
- *   fragmentado em metal cobre/laranja escovado (`brandBlue*`) — ver
- *   `public/brand/avant-logo-shield.png` (PNG ainda pode estar verde até
- *   fechar o checklist em `docs/REBRAND_LOGO_ASSETS_CHECKLIST.md`).
- * - Wordmark "AVANT": mesmo metal cobre escovado do monograma (raster,
- *   `avant-logo-wordmark-raster.png`).
- * - Sufixo "enf": verde glass (`wordmarkEnfGreen*`) — mantido até decisão
- *   de asset; não confundir com CTA/anel de marca.
- * - Anéis, hairlines, glows e shell do lockup cyber → família `EDITORIAL_BRAND`
- *   (`#F26522`), não lima legado `#8fe020` / `#0cc93a`.
- * - `brandBlue*` é metal do wordmark/monograma (não sobrescrever com o print
- *   de CTA). Nome legado mantido por compatibilidade.
+ *   fragmentado em metal cobre (`brandBlue*`) — PNG pode ainda estar verde
+ *   até fechar `docs/REBRAND_LOGO_ASSETS_CHECKLIST.md`.
+ * - Wordmark app (tipográfico): "AVANT" preto no editorial (`wordmarkEditorial`);
+ *   branco no cyber (`wordmarkCyber`); sufixo "enf" = `EDITORIAL_BRAND` laranja.
+ * - Raster legado `avant-logo-wordmark-raster.png` (cobre+verde) — não usar no
+ *   lockup do app; SVGs externos podem ainda referenciar até reexport.
+ * - Anéis / hairlines / glows / shell cyber → `EDITORIAL_BRAND`.
  * - Tracking aéreo no wordmark; "enf" em minúsculas sem bullet.
  */
 
@@ -63,7 +59,7 @@ const BRAND_RING = {
 export const AVANT_LOGO_COLORS = {
   /**
    * Forest legado do selo e-mail / monograma CSS — manter até recolor de PNG
-   * e decisão sobre "enf" (não é o acento de CTA).
+   * do squircle (não é o acento de CTA; "enf" já é print).
    */
   iconForest: '#166534',
   iconForestDeep: '#14532d',
@@ -110,24 +106,29 @@ export const AVANT_LOGO_COLORS = {
   hairlineEditorial: BRAND_RING.hairline,
   hairlineCyber: BRAND_RING.cyberHairline,
   wordmarkGlow: BRAND_RING.glow,
-  /** "AVANT" metal cobre escovado (mesmo modelo do emblema) — tom sólido para e-mail. */
-  wordmarkBrandBlueSolid: '#e08f2f',
-  /** "enf" em verde vivo, tom sólido para e-mail (sem gradiente) — asset pending. */
-  wordmarkEnfGreen: '#0b7a53',
-  wordmarkEnfGreenDeep: '#054a33',
+  /**
+   * "AVANT" sólido — e-mail em fundo escuro (não preto; contraste no shell).
+   * No app editorial o tipográfico usa `wordmarkEditorial` (#0f172a).
+   */
+  wordmarkBrandBlueSolid: '#f8fafc',
+  /** Sufixo "enf" — print laranja (CTA / marca). */
+  wordmarkEnf: EDITORIAL_BRAND.hex,
+  /** @deprecated Preferir `wordmarkEnf` (mesmo valor). */
+  wordmarkEnfGreen: EDITORIAL_BRAND.hex,
+  wordmarkEnfGreenDeep: EDITORIAL_BRAND.hover,
 } as const;
 
 export const AVANT_LOGO_GRADIENTS = {
   icon: AVANT_LOGO_COLORS.iconForestGradient,
-  /** Fallback CSS do wordmark (lockup raster é a fonte de verdade no app). */
+  /** Fallback CSS do wordmark (lockup tipográfico é a fonte de verdade no app). */
   wordmark: `linear-gradient(130deg, ${EDITORIAL_BRAND.washBg} 0%, ${EDITORIAL_BRAND.textOnDark} 45%, ${EDITORIAL_BRAND.hex} 100%)`,
   wordmarkStops: [EDITORIAL_BRAND.washBg, EDITORIAL_BRAND.textOnDark, EDITORIAL_BRAND.hex] as const,
   shellBorder: `linear-gradient(160deg, rgba(255,255,255,0.14) 0%, ${BRAND_RING.shellMid} 50%, ${BRAND_RING.shellDeep} 100%)`,
-  /** Texto "AVANT" metalizado — mesmo metal cobre escovado do emblema (foil gradient). */
+  /** Texto "AVANT" metalizado — monograma / usos foil (não o tipográfico editorial). */
   wordmarkBrandGradient:
     'linear-gradient(135deg, #fbdfbf 0%, #fcbd7d 22%, #e08f2f 45%, #63340b 62%, #f2ad46 80%, #e08f2f 100%)',
-  /** Verde esmeralda de "enf" — combina com o fundo do brasao legado até recolor. */
-  wordmarkEnfGreen: 'linear-gradient(160deg, #109466 0%, #0b7a53 55%, #054a33 100%)',
+  /** "enf" — família print (gradiente para e-mail/legado). */
+  wordmarkEnfGreen: `linear-gradient(160deg, ${EDITORIAL_BRAND.textOnDark} 0%, ${EDITORIAL_BRAND.hex} 55%, ${EDITORIAL_BRAND.hover} 100%)`,
 } as const;
 
 export const AVANT_LOGO_DIMENSIONS = {

@@ -22,11 +22,14 @@ describe('AvantBrandMark', () => {
     expect(source).toContain("tone={variant === 'editorial' ? 'brand' : 'default'}");
   });
 
-  it('AvantLogo usa brasao + wordmark raster "AVANT enf" (mesmo modelo do emblema)', () => {
+  it('AvantLogo usa brasao + wordmark tipográfico "AVANT enf" (preto/claro + laranja)', () => {
     const logo = readFileSync(logoPath, 'utf8');
     expect(logo).toContain('/brand/avant-logo-shield.png');
-    expect(logo).toContain('/brand/avant-logo-wordmark-raster.png');
+    expect(logo).toContain('AvantLogoWordmarkStack');
+    expect(logo).toContain('wordmarkEditorial');
+    expect(logo).toContain('wordmarkEnf');
     expect(logo).toContain('AVANT enf - inicio');
+    expect(logo).not.toContain('avant-logo-wordmark-raster.png');
     expect(logo).not.toContain('<Zap');
     expect(logo).not.toContain('⚡');
   });
@@ -60,25 +63,28 @@ describe('AvantBrandMark', () => {
     expect(logo).toContain('function AvantLogoWordmarkStack');
   });
 
-  it('AvantLogoEmail usa AE no selo forest + wordmark "AVANT enf"', () => {
+  it('AvantLogoEmail usa AE no selo + wordmark "AVANT enf" (claro + print)', () => {
     const email = readFileSync(emailLogoPath, 'utf8');
     expect(email).not.toContain('AVANT_LOGO_BOLT');
     expect(email).toMatch(/>\s*AE\s*<\/Text>/);
     expect(email).toContain('borderRadius: \'50%\'');
     expect(email).toContain('subtitleLabel');
     expect(email).toContain('wordmarkBrandBlueSolid');
-    expect(email).toContain('wordmarkEnfGreen');
+    expect(email).toContain('wordmarkEnf');
   });
 
   it('rings/glows do logo usam print editorial #F26522 (não lima legado)', () => {
     expect(AVANT_LOGO_COLORS.iconCyberRing).toBe(EDITORIAL_BRAND.hex);
     expect(AVANT_LOGO_COLORS.iconCardBrand).toBe(EDITORIAL_BRAND.hex);
     expect(AVANT_LOGO_COLORS.iconCardGreen).toBe(EDITORIAL_BRAND.hex);
+    expect(AVANT_LOGO_COLORS.wordmarkEnf).toBe(EDITORIAL_BRAND.hex);
+    expect(AVANT_LOGO_COLORS.wordmarkEnfGreen).toBe(EDITORIAL_BRAND.hex);
+    expect(AVANT_LOGO_COLORS.wordmarkEditorial).toBe('#0f172a');
     expect(AVANT_LOGO_COLORS.hairlineCyber).toContain('242, 101, 34');
     expect(AVANT_LOGO_COLORS.wordmarkGlow).toContain('242, 101, 34');
     expect(AVANT_LOGO_SHELL_SHADOW.rest).toContain('242, 101, 34');
     expect(AVANT_LOGO_SHELL_SHADOW.peak).toContain('242, 101, 34');
-    // Metal cobre ≠ CTA print
+    // Metal cobre ≠ CTA print (monograma)
     expect(AVANT_LOGO_COLORS.brandBlue).toBe('#e08f2f');
     expect(AVANT_LOGO_COLORS.brandBlue).not.toBe(EDITORIAL_BRAND.hex);
 

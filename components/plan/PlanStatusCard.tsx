@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import { AvantBrandMark } from '@/components/brand/AvantBrandMark';
 import { Button } from '@/components/ui/button';
+import { EDITORIAL_BRAND } from '@/lib/brand/avantBrandPalette';
 import { cn } from '@/lib/utils';
 import type { ProSource } from '@/lib/freemium/constants';
 
@@ -60,22 +61,40 @@ function ProStatusStrip({
   return (
     <div
       role="status"
-      className="rounded-xl border border-[rgba(34,197,94,0.35)] bg-[rgba(34,197,94,0.08)] px-3 py-2.5"
+      className="rounded-xl border px-3 py-2.5"
+      style={{
+        borderColor: 'rgba(242, 101, 34, 0.35)',
+        backgroundColor: EDITORIAL_BRAND.dim,
+      }}
     >
       <div className="flex items-center gap-2">
         <span className="relative flex h-2 w-2 shrink-0">
           {!reducedMotion ? (
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-60" />
+            <span
+              className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-60"
+              style={{ backgroundColor: EDITORIAL_BRAND.hex }}
+            />
           ) : null}
           <span
-            className="relative inline-flex h-2 w-2 rounded-full bg-[#22c55e]"
+            className="relative inline-flex h-2 w-2 rounded-full"
+            style={{ backgroundColor: EDITORIAL_BRAND.hex }}
             aria-label="Assinatura ativa"
           />
         </span>
-        <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#166534]">
+        <span
+          className="text-[11px] font-bold uppercase tracking-[0.1em]"
+          style={{ color: EDITORIAL_BRAND.textOnLight }}
+        >
           PRO Ativo
         </span>
-        <span className="ml-auto rounded-full bg-[rgba(34,197,94,0.12)] px-2 py-0.5 text-[10px] font-semibold text-[#166534] ring-1 ring-[rgba(34,197,94,0.25)]">
+        <span
+          className="ml-auto rounded-full px-2 py-0.5 text-[10px] font-semibold"
+          style={{
+            backgroundColor: 'rgba(242, 101, 34, 0.12)',
+            color: EDITORIAL_BRAND.textOnLight,
+            boxShadow: '0 0 0 1px rgba(242, 101, 34, 0.25)',
+          }}
+        >
           Acesso completo
         </span>
       </div>
