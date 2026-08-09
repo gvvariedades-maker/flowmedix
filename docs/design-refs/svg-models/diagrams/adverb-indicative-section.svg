@@ -1,0 +1,14 @@
+<!-- AVANT gold  gesto faixas laterais + painel (estilo MODO INDICATIVO).
+     viewBox 0 0 160 48 � stroke 2 � Lucide grammar.
+     Refs: lucide/target.svg � diagrams/decision-rail.svg � nao-erre-row-rail.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="none" role="img" aria-label="Se��o lateral e painel">
+  <title>Faixa + painel</title>
+  <rect x="2" y="4" width="36" height="40" rx="6" stroke="currentColor" stroke-width="2"/>
+  <path d="M10 14h20M14 22h12M14 30h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+  <!-- chevron into panel -->
+  <path d="M38 14 L48 24 L38 34" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
+  <rect x="48" y="4" width="110" height="40" rx="6" stroke="currentColor" stroke-width="2"/>
+  <circle cx="66" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+  <circle cx="66" cy="24" r="3" stroke="currentColor" stroke-width="2"/>
+  <path d="M80 18h68M80 28h48" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+</svg>

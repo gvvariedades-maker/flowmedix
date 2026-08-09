@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "Cont (FUSAM)",
+    "orgao": "FUSAM",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_adverbio",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-08",
+      "reviewer": "handcraft:ancoras-100-adverbio-polish-gallery",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — adjetivo com função adverbial · modifica verbo",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — morfologia e função na oração",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "adjetivo com função de advérbio",
+          "advérbio de modo tempo lugar intensidade",
+          "locução adverbial",
+          "pergunta-teste M02/M03",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3460253",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "«alto» adjetivo como advérbio — AVANÇASP Cont FUSAM 2025 tec 3460253",
+        "year": 2025,
+        "covers": ["enunciado", "alternativas", "gabarito", "matriz pt_classes_adverbio"]
+      }
+    ],
+    "anchor_style": "adv_x_adj",
+    "anchor_role": "golden_anchor"
+  },
+  "question_data": {
+    "instruction": "Um adjetivo funciona como advérbio apenas em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "O amarelo da bandeira remete à riqueza do país.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "De repente, a mídia, coagida, deixou de tocar no assunto.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A música na casa do vizinho tocou alto por trinta minutos.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "A caligrafia no bilhete era charmosa, com traços finos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A polícia seguiu o carro até a nova ponte da cidade.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "ADVÉRBIO",
+      "chip_label": "INDICA CIRCUNSTÂNCIA",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "Intensidade",
+          "detail": "Grau no verbo (adj. → valor adverbial) · A música «tocou alto».",
+          "correct": "QUANTO · ALTO",
+          "icon": "Flame"
+        },
+        {
+          "label": "Modo",
+          "detail": "Como a ação acontece · O solista cantou «bem».",
+          "correct": "COMO · BEM",
+          "icon": "Target"
+        },
+        {
+          "label": "Tempo",
+          "detail": "Quando a ação acontece · A mídia mudou o tom «hoje».",
+          "correct": "QUANDO · HOJE",
+          "icon": "Clock"
+        },
+        {
+          "label": "Lugar",
+          "detail": "Onde a ação acontece · O carro ficou «longe» da ponte.",
+          "correct": "ONDE · LONGE",
+          "icon": "MapPin"
+        }
+      ],
+      "footer_rule": "Circunstância no verbo = função adverbial."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "P · Pergunta — forma de adj. modificando **verbo** (não nome)?",
+        "F · Função — «tocou alto» = intensidade do som (adverbial)",
+        "C · Classe — adjetivo com **função de advérbio**",
+        "E · Eliminar — A subst. · B loc. adv. · D/E adj. do nome",
+        "G · Gabarito — C «tocou alto»",
+        "T · Transferência — falar alto · cantar belo · correr rápido"
+      ],
+      "footer_rule": "C — alto (função adverbial)."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "ADVÉRBIO e ADJETIVO",
+      "rows": [
+        {
+          "label": "TOCOU ALTO",
+          "value": "É o contrário de «QUALIDADE DO NOME» · (função adverbial) · A música «tocou alto» · (= intensidade do som)"
+        },
+        {
+          "label": "CHARMOSA",
+          "value": "É o contrário de «CIRCUNSTÂNCIA DO VERBO» · (função adjetiva) · Caligrafia «charmosa» · (= qualifica o nome)"
+        },
+        {
+          "label": "Dica",
+          "value": "Se puder trocar por BEM / MUITO → valor adverbial."
+        },
+        {
+          "label": "Dica",
+          "value": "Se puder trocar por BOM / BONITO → função adjetiva."
+        }
+      ],
+      "footer_rule": "Verbo + alto/belo/rápido = função adverbial."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Adjetivo × Advérbio",
+      "items": [
+        {
+          "label": "A — amarelo",
+          "detail": "«O amarelo» parece qualidade",
+          "correct": "É substantivo (cor como nome) — não adj→adv"
+        },
+        {
+          "label": "B — de repente",
+          "detail": "Já parece advérbio",
+          "correct": "Locução adverbial pronta — não é conversão adj→adv"
+        },
+        {
+          "label": "D — charmosa",
+          "detail": "«Caligrafia charmosa»",
+          "correct": "Qualifica substantivo — função adjetiva"
+        },
+        {
+          "label": "E — nova",
+          "detail": "«Nova ponte»",
+          "correct": "Adjetivo do nome — não modifica verbo"
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam por «falou baixo» / «correu rápido»",
+          "correct": "Mesmo teste: adj. modificando verbo = valor adverbial"
+        }
+      ],
+      "footer_rule": "Só C — adj. como adv."
+    }
+  ]
+}

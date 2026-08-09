@@ -1,25 +1,28 @@
 'use client';
 
-import type { LucideIcon } from 'lucide-react';
-import type { ReactNode } from 'react';
+import type { ComponentType, ReactNode, SVGProps } from 'react';
 import { cn } from '@/lib/utils';
 import { boardTone, type BoardTone } from './boardTokens';
+
+type RowIcon = ComponentType<SVGProps<SVGSVGElement> & { className?: string }>;
 
 export interface LabelBodyRowProps {
   chip: string;
   body: ReactNode;
   tone?: BoardTone;
-  icon?: LucideIcon;
+  icon?: RowIcon;
   iconClassName?: string;
   hint?: ReactNode;
   className?: string;
   /** Body em bold rose (barreira). */
   bodyStrong?: boolean;
   /**
-   * `rail` = chip em coluna sólida (Falar × Barreira G2).
+   * `rail` = chip em coluna sólida (Falar × Barreira G2 / timeline label×corpo).
    * `default` = chip no topo do card.
    */
   layout?: 'default' | 'rail';
+  /** Destaque herói (ring) — pegadinha / prioridade. */
+  emphasized?: boolean;
 }
 
 /**
@@ -36,6 +39,7 @@ export function LabelBodyRow({
   className,
   bodyStrong = false,
   layout = 'default',
+  emphasized = false,
 }: LabelBodyRowProps) {
   const t = boardTone(tone);
 
@@ -43,25 +47,38 @@ export function LabelBodyRow({
     return (
       <div
         className={cn(
-          'grid min-h-[4.5rem] grid-cols-[6.5rem_1fr] overflow-hidden rounded-2xl border-2 shadow-md',
+          'grid min-h-[4.5rem] grid-cols-[5.75rem_1fr] overflow-hidden rounded-2xl border-2 shadow-md sm:grid-cols-[6.75rem_1fr]',
           t.border,
+          emphasized && t.heroRing,
           className,
         )}
       >
         <div
           className={cn(
-            'flex items-center justify-center px-2 text-center font-mono text-[11px] font-bold uppercase tracking-wide',
+            'flex flex-col items-center justify-center gap-1 px-1.5 py-2.5 text-center',
             t.badge,
             t.badgeText,
           )}
         >
-          {chip}
+          {Icon ? (
+            <Icon
+              className={cn('h-5 w-5 shrink-0 opacity-95', iconClassName)}
+              aria-hidden
+            />
+          ) : null}
+          <span className="font-mono text-[10px] font-bold uppercase leading-tight tracking-wide sm:text-[11px]">
+            {chip}
+          </span>
         </div>
         <div
           className={cn(
-            'flex flex-col justify-center bg-gradient-to-r from-white/90 to-white px-3 py-3',
-            tone === 'barrier' || tone === 'exception' ? 'from-rose-50/80' : null,
-            tone === 'ok' || tone === 'keep' ? 'from-emerald-50/80' : null,
+            'flex flex-col justify-center bg-gradient-to-r from-white/95 to-white px-3 py-3',
+            tone === 'barrier' || tone === 'exception' ? 'from-rose-50/90' : null,
+            tone === 'ok' || tone === 'keep' ? 'from-emerald-50/85' : null,
+            tone === 'command' ? 'from-sky-50/85' : null,
+            tone === 'rights' ? 'from-indigo-50/85' : null,
+            tone === 'teal' ? 'from-teal-50/85' : null,
+            tone === 'warn' || tone === 'transfer' ? 'from-amber-50/85' : null,
           )}
         >
           <div
@@ -74,7 +91,7 @@ export function LabelBodyRow({
             {body}
           </div>
           {hint ? (
-            <div className="mt-1.5 font-body text-xs text-slate-600">{hint}</div>
+            <div className="mt-1.5 font-body text-xs leading-relaxed text-slate-600">{hint}</div>
           ) : null}
         </div>
       </div>

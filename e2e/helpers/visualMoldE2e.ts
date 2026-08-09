@@ -401,6 +401,20 @@ export const EPI_BRANCHES = [
 /** Epidemiologia — bespoke React ainda pending (lista-trap / formula-rail). */
 export const EPI_BESPOKE_BRANCHES = [] as const;
 
+/** Ramos Coleta de Exames Laboratoriais — regressão L3 (7 ramos; COLETA_GENERIC_DESIGN). */
+export const COLETA_BRANCHES = [
+  'coleta_nao_sanguinea',
+  'coleta_tubos_ordem',
+  'coleta_tecnica_venosa',
+  'coleta_jejum_preparo',
+  'coleta_capilar_glicemia',
+  'coleta_hemocultura',
+  'coleta_generico',
+] as const;
+
+/** Coleta — bespoke React ainda pending. */
+export const COLETA_BESPOKE_BRANCHES = [] as const;
+
 /** Ramos História com concept_map bridge (marcos / ética COFEN). */
 export const HISTORIA_BESPOKE_BRANCHES = [
   'historia_nightingale',

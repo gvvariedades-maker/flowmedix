@@ -1,0 +1,27 @@
+﻿{
+    "exported_at":  "2026-08-05T23:49:25.8470910Z",
+    "slugs":  [
+                  "decorp-enfermagem-exames-laboratoriais-1779563553840-3",
+                  "fau-unicentro-enfermagem-exames-laboratoriais-1779563553840-1",
+                  "fau-unicentro-enfermagem-exames-laboratoriais-1779563553840-4",
+                  "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-8",
+                  "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-6",
+                  "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-1",
+                  "ibfc-enfermagem-coleta-de-exames-laboratoriais-1779563200105-2",
+                  "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563140631-5"
+              ],
+    "lote":  "coleta-de-exames-laboratoriais-g03",
+    "source":  "coleta-de-exames-laboratoriais-completo",
+    "filters":  {
+                    "slugs":  [
+                                  "decorp-enfermagem-exames-laboratoriais-1779563553840-3",
+                                  "fau-unicentro-enfermagem-exames-laboratoriais-1779563553840-1",
+                                  "fau-unicentro-enfermagem-exames-laboratoriais-1779563553840-4",
+                                  "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-8",
+                                  "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-6",
+                                  "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-1",
+                                  "ibfc-enfermagem-coleta-de-exames-laboratoriais-1779563200105-2",
+                                  "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563140631-5"
+                              ]
+                }
+}

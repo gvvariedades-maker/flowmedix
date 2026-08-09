@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "banca": "INSTITUTO AOCP",
+    "prova": "TEnf",
+    "orgao": "UNIRIO",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Farmacodinâmica e Farmacocinética",
+    "pedagogical_branch": "farmaco_generico",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-07",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "Nitratos — farmacodinâmica na angina estável (vasodilatação / demanda miocárdica)",
+      "exam_vs_current": "none",
+      "catalog_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2"
+    },
+    "sources": [
+      {
+        "id": "farmaco-adme-anvisa",
+        "tier": "A",
+        "issuer": "Anvisa / Ministério da Saúde",
+        "title": "Farmacodinâmica e farmacocinética — protocolo de segurança de medicamentos",
+        "year": 2026,
+        "covers": [
+          "farmacodinâmica",
+          "efeito terapêutico",
+          "classes farmacológicas"
+        ]
+      },
+      {
+        "id": "nitrato-angina",
+        "tier": "B",
+        "issuer": "Literatura farmacológica cardiovascular",
+        "title": "Isossorbida e nitratos — vasodilatação e demanda miocárdica",
+        "year": 2019,
+        "covers": [
+          "isossorbida",
+          "angina estável",
+          "vasodilatação",
+          "consumo de O2"
+        ]
+      }
+    ],
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-08",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/questao-premium-aocp-farmacodinamica-isossorbida-angina.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
+  },
+  "question_data": {
+    "instruction": "O fármaco que tem como objetivo melhorar a perfusão miocárdica e/ou reduzir a sua demanda metabólica, podendo ser utilizado nos quadros de angina estável, é",
+    "options": [
+      {
+        "id": "A",
+        "text": "a procainamida.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "a lamotrigina.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "o propranolol.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "a isossorbida.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "a amiodarona.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Angina estável — terreno farmacológico",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "items": [
+        {
+          "label": "Objetivo terapêutico",
+          "detail": "Melhorar perfusão miocárdica e/ou reduzir demanda de O₂ na angina estável.",
+          "icon": "Heart"
+        },
+        {
+          "label": "Nitratos",
+          "detail": "Vasodilatação (↓ pré-carga) → ↓ consumo miocárdico de oxigênio.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Antiarrítmicos",
+          "detail": "Procainamida e amiodarona — foco em ritmo, não no enunciado de angina.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Outras classes",
+          "detail": "Lamotrigina (neurológica) e β-bloqueador (também age na demanda) — casar com o verbo do enunciado.",
+          "icon": "Shuffle"
+        }
+      ],
+      "footer_rule": "Leia o objetivo (perfusão/demanda) antes de escolher a classe"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Funil por objetivo farmacodinâmico",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "steps": [
+        "Comando: fármaco para perfusão miocárdica e/ou ↓ demanda na angina estável.",
+        "A/E: antiarrítmicos → fora do núcleo do enunciado.",
+        "B: anticonvulsivante → classe neurológica, elimina.",
+        "C: β-bloqueador reduz demanda, mas a alternativa canônica da banca é o nitrato.",
+        "D: isossorbida (nitrato) — encaixa direto no objetivo farmacodinâmico.",
+        "Marcar letra D.",
+        "Em similares: case o objetivo do enunciado com a classe — nitrato ≠ antiarrítmico."
+      ],
+      "footer_rule": "Objetivo farmacodinâmico primeiro; classe depois — evita pegadinha de nome conhecido"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Nitratos na angina",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "content": "NITRATOS × ANGINA ESTÁVEL",
+      "rows": [
+        {
+          "label": "Isossorbida",
+          "value": "Nitrato — vasodilatação → ↓ pré-carga e demanda miocárdica",
+          "badge": "hot"
+        },
+        {
+          "label": "Alvo da prova",
+          "value": "Perfusão ↑ e/ou demanda metabólica ↓ na angina estável",
+          "badge": "ok"
+        },
+        {
+          "label": "Antiarrítmicos",
+          "value": "Procainamida / amiodarona — ritmo, não antianginoso típico",
+          "badge": "warn"
+        },
+        {
+          "label": "β-bloqueador",
+          "value": "Pode reduzir demanda — distrator plausível, não o nitrato pedido",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Angina estável clássica na prova TE = nitrato vasodilatador (isossorbida)"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Pegadinhas — classes trocadas",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "content": "PEGADINHAS — ANGINA / CLASSES",
+      "items": [
+        {
+          "label": "Letra A — procainamida",
+          "detail": "Antiarrítmico classe IA — controle de ritmo.",
+          "correct": "Não responde ao objetivo de perfusão/demanda na angina estável."
+        },
+        {
+          "label": "Letra B — lamotrigina",
+          "detail": "Anticonvulsivante — estabiliza membrana neuronal.",
+          "correct": "Classe neurológica — sem papel no enunciado de angina."
+        },
+        {
+          "label": "Letra C — propranolol",
+          "detail": "β-bloqueador que pode reduzir demanda miocárdica.",
+          "correct": "Plausível clinicamente; nesta prova a âncora canônica é isossorbida."
+        },
+        {
+          "label": "Letra E — amiodarona",
+          "detail": "Antiarrítmico classe III — arritmias.",
+          "correct": "Foco em ritmo — não é o antianginoso do enunciado."
+        },
+        {
+          "label": "Transferência — objetivo → classe",
+          "detail": "Outra banca lista 5 nomes e só um casa com o verbo do enunciado.",
+          "correct": "Em similares: traduza o objetivo farmacodinâmico antes de marcar a droga."
+        }
+      ],
+      "footer_rule": "Não troque antiarrítmico famoso por antianginoso nitrato"
+    }
+  ]
+}

@@ -158,8 +158,9 @@
       "manifest": "data/catalog-migration/saude-adolescente-completo/manifest.json",
       "handcraft_meta": "data/catalog-migration/saude-adolescente-completo/handcraft-meta.json",
       "readme": "data/catalog-migration/saude-adolescente-completo/README.md",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/saude-adolescente.json",
       "cluster_command": null,
-      "cluster_report": null,
+      "cluster_report": "artifacts/saude-adolescente-topic-cluster-report.json",
       "lote_pattern": "saude-adolescente-g{NN}",
       "lote_size": 8,
       "status": "applied",
@@ -205,8 +206,16 @@
           "health_streak_days": 4,
           "last_blocked_at": null,
           "last_blocked_reason": null
+        },
+        "ancoras_100": {
+          "status": "approved",
+          "closed_at": "2026-08-07",
+          "report": "artifacts/saude-adolescente-ancoras-100-report.md",
+          "branches_pass": 6,
+          "require_visual": true
         }
-      }
+      },
+      "updated_note": "âncoras 100% + galeria 6/6 ready 2026-08-07"
     },
     "História da Enfermagem": {
       "pacote_prefix": "historia-enfermagem",
@@ -329,7 +338,7 @@
       "status": "applied",
       "total_slugs": 13,
       "handcraft_applied": 13,
-      "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json,examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+      "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json,examples/questao-premium-idecan-omeprazol-ev-ulcera.json,examples/questao-premium-aocp-farmacodinamica-isossorbida-angina.json",
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/farmacodinamica-e-farmacocinetica.json",
       "golden_anchors_registry": "data/catalog-migration/farmacodinamica-golden-anchors.json",
       "guideline": "lib/guidelines/farmacodinamica.ts",
@@ -1478,24 +1487,34 @@
       "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
       "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
       "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
-      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_classes_palavras.md",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-index.md",
+      "mapa_gestos": "artifacts/glance-os-classes-de-palavras-MAPA-8-GESTOS.md",
       "lote_pattern": "classes-de-palavras-g{NN}",
       "lote_size": 8,
       "status": "applied",
       "total_slugs": 93,
       "handcraft_applied": 93,
       "anchor_glob": "examples/questao-premium-*-portugues-classes-*.json,examples/questao-formacao-palavras-siglas.json",
-      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/classes-de-palavras.json",
       "disciplina": "Conhecimentos Básicos",
       "modulo_nome": "Língua Portuguesa",
       "titulo_aula_card": "Classes de palavras",
       "pedagogical_branch": "pt_classes_palavras",
+      "pedagogical_branches_split": [
+        "pt_classes_conjuncao",
+        "pt_classes_nominais",
+        "pt_classes_adverbio",
+        "pt_classes_preposicao",
+        "pt_classes_exceto",
+        "pt_classes_generico"
+      ],
       "taxonomy": {
         "status": "closed",
         "closed_at": "2026-07-20",
         "source": "cluster:lingua-portuguesa"
       },
-      "note": "Card Classes de palavras — 93 slugs PDF cluster B—Morfologia. Âncora formação/siglas (pt_classes_palavras). Fase 0 pipeline 2026-07-20.",
+      "anchors_per_branch": 2,
+      "note": "Card Classes de palavras — 93 slugs B—Morfologia. Split L3 Âncoras 100% Fase 0a (2026-08-05): 6 ramos × 2 âncoras (=12). Umbrella legado pt_classes_palavras nos g01–g12 applied. Playbook dedicado classes-de-palavras.json.",
       "production_status": "production_ready",
       "quality": {
         "layers": {
@@ -1968,6 +1987,66 @@
       },
       "notes": "Onda1-epi 2026-08-03: taxonomy closed; BRANCH wired; 4 âncoras READY; briefs+EPI_GENERIC; g01 handcraft ready dry-run (sem apply). | Apply g01-g28 concluído 2026-08-03 (218/218). L6 agent record-pass. Aguarda Fase 2 qualidade/--promote.",
       "updated_at": "2026-08-04"
+    },
+    "Coleta de Exames Laboratoriais": {
+      "pacote_prefix": "coleta-de-exames-laboratoriais",
+      "manifest": "data/catalog-migration/coleta-de-exames-laboratoriais-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/coleta-de-exames-laboratoriais-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/coleta-de-exames-laboratoriais-completo/README.md",
+      "cluster_command": "npm run cluster:coleta",
+      "cluster_report": "artifacts/coleta-de-exames-laboratoriais-topic-cluster-report.json",
+      "lote_pattern": "coleta-de-exames-laboratoriais-g{NN}",
+      "lote_size": 8,
+      "status": "source_only",
+      "total_slugs": 171,
+      "handcraft_applied": 40,
+      "anchor_glob": "examples/questao-premium-*-coleta-*.json,examples/questao-premium-*-coleta-de-exames-laboratoriais-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/coleta-de-exames-laboratoriais.json",
+      "l3_brief_index": "artifacts/l3-brief-coleta-de-exames-laboratoriais-INDEX.md",
+      "guideline": null,
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-08-05",
+        "closed_artifact": "artifacts/taxonomy-closed-coleta-de-exames-laboratoriais.json",
+        "audit_artifact": "artifacts/taxonomy-gate-coleta-de-exames-laboratoriais.json",
+        "mismatch_count_at_close": 0,
+        "notes": "Inventário mismatch=0 (171). Aceitar drift de URL legada (exames-complementares/exames-laboratoriais/infeccoes) se meta.subtopico canônico. Fechado bootstrap paridade 2026-08-05."
+      },
+      "production_status": "none",
+      "auto_approval": {
+        "enabled": false,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": null
+      },
+      "quality": {
+        "technical_ready_at": null,
+        "production_ready_at": null,
+        "monitoring_until": null,
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": false,
+          "L4": false,
+          "L5": false,
+          "L6": false
+        },
+        "continuous": {
+          "enabled": false,
+          "last_audit_at": null,
+          "last_audit_pass": null,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      },
+      "notes": "Paridade Adolescente 2026-08-05: export 171; BRANCH 7 ramos COLETA_GENERIC; taxonomy closed mismatch=0. g01+g03+g04+g05 applied (32/171).",
+      "updated_at": "2026-08-05"
     }
   },
   "subtopicos_canonicos": [

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "banca": "Ameosc",
+    "prova": "TEnf",
+    "orgao": "Pref S M do Oeste",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Coleta de Exames Laboratoriais",
+    "pedagogical_branch": "coleta_jejum_preparo",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-05",
+      "reviewer": "agent:golden-anchor",
+      "guideline_snapshot": "SBPC/MS — preparo para glicemia de jejum: 8–12 h; água permitida; proibir café e exercício",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "sbpc-preparo-glicemia",
+        "tier": "A",
+        "issuer": "Sociedade Brasileira de Patologia Clínica",
+        "title": "Recomendações para preparo do paciente — glicemia de jejum",
+        "year": 2023,
+        "covers": [
+          "jejum 8 a 12 horas",
+          "ingestão de água permitida",
+          "suspender exercício e álcool"
+        ]
+      },
+      {
+        "id": "ms-atencao-basica-exames",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Atenção Básica — orientações para exames laboratoriais",
+        "year": 2022,
+        "url": "https://www.gov.br/saude/",
+        "covers": [
+          "preparo pré-coleta",
+          "glicemia de jejum"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O preparo do paciente para exames laboratoriais é essencial e varia conforme o tipo de exame, mas geralmente inclui seguir as instruções específicas do laboratório ou médico. Um técnico em enfermagem irá preparar um paciente para coleta de glicemia de jejum. Na orientação, o profissional deve informar corretamente que:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deve realizar atividade física leve para estimular o metabolismo da glicose.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "O paciente deve evitar a ingestão de água para não diluir a amostra sanguínea.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "É permitido o consumo de água em pequena quantidade antes do exame.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "O paciente pode ingerir café adoçado até duas horas antes da coleta.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Glicemia de jejum — preparo do paciente",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "items": [
+        {
+          "label": "Jejum alimentar",
+          "detail": "Glicemia de jejum exige 8 a 12 horas sem alimentos — orientação central do TEnf.",
+          "icon": "Clock"
+        },
+        {
+          "label": "Água permitida",
+          "detail": "Pequena quantidade de água não invalida o jejum nem “dilui” a amostra de forma relevante.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Sem exercício prévio",
+          "detail": "Atividade física altera glicemia — suspender antes da coleta, não estimular.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Sem calorias líquidas",
+          "detail": "Café adoçado traz açúcar — proibido no período de jejum.",
+          "icon": "Coffee"
+        },
+        {
+          "label": "Pegadinha da água",
+          "detail": "A banca induz a crer que água deve ser cortada — na prática, pequena ingestão é aceita.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Jejum = sem comida; água em pequena quantidade pode"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "steps": [
+        "Comando: orientação correta para glicemia de jejum.",
+        "Eliminar A — exercício leve estimula glicose; contraindicado antes do exame.",
+        "Eliminar B — proibir água é mito; pequena quantidade é permitida.",
+        "Eliminar D — café adoçado quebra o jejum por conter açúcar.",
+        "Resta C — água em pequena quantidade antes da coleta.",
+        "Marcar C.",
+        "Em similares: jejum alimentar ≠ jejum hídrico total — água costuma ser liberada."
+      ],
+      "footer_rule": "Três eliminações rápidas: exercício, água zero, café adoçado"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Preparo — glicemia de jejum",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "ORIENTAÇÕES PARA GLICEMIA DE JEJUM",
+      "rows": [
+        {
+          "label": "Tempo de jejum",
+          "value": "8 a 12 horas sem alimentos",
+          "badge": "hot"
+        },
+        {
+          "label": "Ingestão de água",
+          "value": "Permitida em pequena quantidade",
+          "badge": "ok"
+        },
+        {
+          "label": "Atividade física",
+          "value": "Suspender 24 h antes",
+          "badge": "warn"
+        },
+        {
+          "label": "Bebidas calóricas",
+          "value": "Café adoçado, suco e álcool — proibidos no jejum",
+          "badge": "warn"
+        },
+        {
+          "label": "Álcool",
+          "value": "Evitar 72 h antes quando orientado pelo laboratório",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Decore: 8–12 h · água ok · sem exercício · sem açúcar líquido"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "PEGADINHAS — JEJUM Ameosc",
+      "items": [
+        {
+          "label": "Letra A — exercício leve",
+          "detail": "Sugere estimular metabolismo da glicose antes do exame.",
+          "correct": "Exercício altera glicemia — suspender, não estimular, na véspera/coleta."
+        },
+        {
+          "label": "Letra B — evitar água",
+          "detail": "Alega diluição da amostra sanguínea.",
+          "correct": "Pequena quantidade de água é permitida e não invalida glicemia de jejum."
+        },
+        {
+          "label": "Letra D — café adoçado",
+          "detail": "Permite ingestão calórica até 2 h antes.",
+          "correct": "Açúcar no café quebra o jejum — proibido no preparo para glicemia."
+        },
+        {
+          "label": "Jejum hídrico total",
+          "detail": "Confundir jejum alimentar com proibição absoluta de líquidos.",
+          "correct": "SBPC/rotina laboratorial: água em pequena quantidade é aceita."
+        }
+      ],
+      "footer_rule": "Banca adora trocar jejum alimentar por jejum hídrico rigoroso"
+    }
+  ]
+}

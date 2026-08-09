@@ -1,21 +1,27 @@
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
- * Pré-natal de baixo risco — Caderno AB nº 32 / Linha de Cuidado MS.
- * Fonte: https://bvsms.saude.gov.br/bvs/publicacoes/cadernos_atencao_basica_32_prenatal.pdf
+ * Pré-natal de baixo risco + rastreios da mulher.
+ * Pré-natal: Caderneta Brasileira da Gestante (MS 2026) — mínimo 7 consultas;
+ * periodicidade e exames ainda ancorados no Caderno AB nº 32 quando não conflitantes.
+ * Colo: Diretrizes INCA/MS 2025 (DNA-HPV oncogênico como método principal no SUS).
+ * @see https://bvsms.saude.gov.br/bvs/publicacoes/caderneta_brasileira_gestante.pdf
+ * @see https://www.gov.br/inca/pt-br/assuntos/cancer/tipos/colo-do-utero
  */
 export const SAUDE_MULHER_PRENATAL: GuidelineTable = {
   id: 'sm-prenatal-baixo-risco-ms',
-  snapshot: 'Caderno AB 32 — Pré-natal baixo risco',
-  issuer: 'Ministério da Saúde',
-  title: 'Atenção ao pré-natal de baixo risco',
-  year: 2012,
-  url: 'https://bvsms.saude.gov.br/bvs/publicacoes/cadernos_atencao_basica_32_prenatal.pdf',
+  snapshot: 'Caderneta Gestante MS 2026 (7 consultas) + INCA colo 2025',
+  issuer: 'Ministério da Saúde / INCA',
+  title: 'Atenção ao pré-natal de baixo risco e rastreios da mulher',
+  year: 2026,
+  url: 'https://bvsms.saude.gov.br/bvs/publicacoes/caderneta_brasileira_gestante.pdf',
   entries: [
     {
       id: 'prenatal-consultas-min',
       label: 'Número mínimo de consultas',
-      value: 'Mínimo de 6 consultas de pré-natal',
+      value: 'Mínimo de 7 consultas de pré-natal + 1 odontologia',
+      detail:
+        'Caderneta Brasileira da Gestante (MS 2026): ≥7 intercaladas médico/enfermeiro e ≥1 consulta odontológica. Caderno AB 32 citava 6 — exam_vs_current em provas antigas.',
       sourceId: 'sm-prenatal-baixo-risco-ms',
     },
     {
@@ -163,16 +169,26 @@ export const SAUDE_MULHER_PRENATAL: GuidelineTable = {
     },
     {
       id: 'papanicolau-inicio',
-      label: 'Rastreio câncer de colo (Papanicolau)',
-      value: 'Iniciar aos 25 anos após início da vida sexual',
-      detail: 'INCA/MS: citologia oncótica até 64 anos na ausência de lesão de alto grau.',
+      label: 'Rastreio câncer de colo — início',
+      value: 'Iniciar aos 25 anos (população com colo do útero / vida sexual)',
+      detail:
+        'INCA/MS 2025: método preferencial no SUS = teste DNA-HPV oncogênico (25–64 anos). Citologia (Papanicolau) permanece onde o DNA-HPV ainda não está disponível. Provas antigas podem cobrar só citologia — exam_vs_current.',
       sourceId: 'sm-prenatal-baixo-risco-ms',
     },
     {
       id: 'papanicolau-periodicidade',
-      label: 'Papanicolau — periodicidade',
-      value: 'A cada 3 anos se exames anteriores normais',
-      detail: 'Dois exames anuais normais podem espaçar para trienal; seguir protocolo local vigente.',
+      label: 'Rastreio colo — periodicidade',
+      value: 'DNA-HPV negativo: repetir a cada 5 anos; citologia: a cada 3 anos após 2 anuais normais',
+      detail:
+        'Diretrizes INCA 2025 (DNA-HPV). Citologia: dois primeiros anuais normais → trienal até 64 anos. Encerrar após 60–64 anos com teste negativo conforme protocolo.',
+      sourceId: 'sm-prenatal-baixo-risco-ms',
+    },
+    {
+      id: 'rastreio-colo-dna-hpv-2025',
+      label: 'DNA-HPV oncogênico (SUS 2025)',
+      value: 'Método principal de rastreamento organizado — intervalo de 5 anos se negativo',
+      detail:
+        'Portaria/Diretrizes MS-INCA 2025 (CONITEC). Não rastrear com DNA-HPV antes dos 25 anos. Priorizar 30–49 anos com atraso de rastreio.',
       sourceId: 'sm-prenatal-baixo-risco-ms',
     },
     {
@@ -311,8 +327,24 @@ export const SAUDE_MULHER_PRENATAL: GuidelineTable = {
     {
       id: 'pegadinha-prenatal-consultas-4',
       label: 'Pegadinha — número de consultas',
-      value: 'Mínimo 6 consultas, não 4',
-      detail: 'Programa de humanização e Caderno AB 32: 6+ consultas; prova antiga citava 4 — desatualizado.',
+      value: 'Mínimo vigente = 7 consultas (não 4 nem só 6)',
+      detail:
+        'Caderneta Gestante MS 2026: ≥7. Provas antigas podem cobrar 6 (AB 32) ou 4 (PHPN antigo) — ensinar vigente + exam_vs_current.',
+      sourceId: 'sm-prenatal-baixo-risco-ms',
+    },
+    {
+      id: 'prenatal-inicio-12-semanas',
+      label: 'Início do pré-natal',
+      value: 'Preferencialmente até a 12ª semana de gestação',
+      detail: 'Caderneta Gestante MS: começar o quanto antes nos primeiros 3 meses.',
+      sourceId: 'sm-prenatal-baixo-risco-ms',
+    },
+    {
+      id: 'prenatal-sem-alta',
+      label: 'Alta do pré-natal',
+      value: 'não existe alta do pré-natal antes do puerpério',
+      detail:
+        'Caderneta MS: acompanhamento até o parto e puerpério. 1ª consulta puerperal até 7 dias; 2ª até 30 dias após o parto.',
       sourceId: 'sm-prenatal-baixo-risco-ms',
     },
     {

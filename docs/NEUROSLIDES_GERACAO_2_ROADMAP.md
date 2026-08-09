@@ -91,16 +91,18 @@ Alinha à **Camada 7** de [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_
 Ordem canônica Fábrica:  
 **Mulher → Processo → Curativos → Imunização → Vias → Punção → Peri → CME → Mental → Trabalho.**
 
-Prompt operacional: [`PROMPT_FABRICA_VISUAL_G2.md`](PROMPT_FABRICA_VISUAL_G2.md) (Fábrica + P1 shells).
+Prompt operacional: [`PROMPT_FABRICA_VISUAL_G2.md`](PROMPT_FABRICA_VISUAL_G2.md) (Fábrica + P1 shells).  
+**Pré-passo:** [`PROMPT_COMPOSER_VISUAL.md`](PROMPT_COMPOSER_VISUAL.md) — se `visual_gallery` = `pending`/`thin`/ausente, `Composer visual:` + `ATELIER_PASS` **antes** de variant nova / `Implementar molde:`.
 
 | Situação | Ação |
 |----------|------|
-| Gesto já mapeado + molde existe | Reusar + Design visual / Modo A |
+| Gallery pending/thin/ausente | Composer (PASS) → só então Fábrica |
+| Gesto já mapeado + molde existe | Reusar + Design visual / Modo A (sem React novo) |
 | Só densidade / captura | Polish + captures; sem React |
-| Gesto novo **ou** ≥5 questões sem board | Brief → Design visual → `Implementar molde:` |
+| Gesto novo **ou** ≥5 questões sem board | Composer → Brief → Design visual → `Implementar molde:` |
 | Cauda textual | `ok_generico` premium |
 
-**1 pacote por conversa** — checklist PASS da Camada 7.
+**1 pacote por conversa** — checklist PASS da Camada 7 (+ gate Composer). Hook validado: [`artifacts/composer-fabrica-hook-processo-de-enfermagem.md`](../artifacts/composer-fabrica-hook-processo-de-enfermagem.md).
 
 ---
 

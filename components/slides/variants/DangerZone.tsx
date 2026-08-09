@@ -37,6 +37,8 @@ interface DangerZoneProps {
   compareRevealMode?: LogicFlowRevealMode;
   /** Polaridade por item derivada do enunciado (comando negativo × gabarito). */
   itemPolarities?: DangerZoneItemPolarity[];
+  /** Face verde do compare (PT → «Resposta certa»; TE → «Conduta certa na prova»). */
+  compareBackFaceDefault?: string;
 }
 
 function TrapBullet({
@@ -99,6 +101,7 @@ function CompareItemPanel({
   isTapMode,
   isRevealed,
   onReveal,
+  compareBackFaceDefault,
 }: {
   index: number;
   label: string;
@@ -109,8 +112,9 @@ function CompareItemPanel({
   isTapMode: boolean;
   isRevealed: boolean;
   onReveal: () => void;
+  compareBackFaceDefault?: string;
 }) {
-  const backFaceLabel = getCompareBackFaceLabel(label, correctText);
+  const backFaceLabel = getCompareBackFaceLabel(label, correctText, compareBackFaceDefault);
   const showCorrect = !isTapMode || isRevealed;
 
   return (
@@ -159,6 +163,7 @@ function DangerZoneCompare({
   footerRule,
   bulletStyle,
   compareRevealMode = 'auto',
+  compareBackFaceDefault,
 }: {
   content: string;
   theme: ThemeColors;
@@ -166,6 +171,7 @@ function DangerZoneCompare({
   footerRule?: string;
   bulletStyle: DangerZoneBulletStyle;
   compareRevealMode?: LogicFlowRevealMode;
+  compareBackFaceDefault?: string;
 }) {
   const { revealItem, isTapMode } = useDangerZoneCompareReveal(items.length, compareRevealMode);
   const [revealedIndices, setRevealedIndices] = useState<Set<number>>(() => new Set());
@@ -226,6 +232,7 @@ function DangerZoneCompare({
                 isTapMode={isTapMode}
                 isRevealed={isRevealed}
                 onReveal={() => handleReveal(index)}
+                compareBackFaceDefault={compareBackFaceDefault}
               />
             </motion.div>
           );
@@ -309,6 +316,7 @@ export const DangerZone = ({
   bulletStyle = 'numbered',
   compareRevealMode = 'auto',
   itemPolarities,
+  compareBackFaceDefault,
 }: DangerZoneProps) => {
   const explicitVariant = layoutVariant || 'list';
 
@@ -342,6 +350,7 @@ export const DangerZone = ({
         footerRule={footerRule}
         bulletStyle={bulletStyle}
         compareRevealMode={compareRevealMode}
+        compareBackFaceDefault={compareBackFaceDefault}
       />
     );
   }

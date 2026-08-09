@@ -1,0 +1,27 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g09",
+  "exported_at": "2026-08-06T01:43:04.432Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-2",
+      "igeduc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-7",
+      "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-6",
+      "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779562768558-8",
+      "selecon-enfermagem-coleta-de-exames-laboratoriais-1779563272300-0",
+      "unifil-enfermagem-coleta-de-exames-laboratoriais-1779563288910-8",
+      "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-0",
+      "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-7"
+    ]
+  },
+  "slugs": [
+    "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-2",
+    "igeduc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-7",
+    "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-6",
+    "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779562768558-8",
+    "selecon-enfermagem-coleta-de-exames-laboratoriais-1779563272300-0",
+    "unifil-enfermagem-coleta-de-exames-laboratoriais-1779563288910-8",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-0",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-7"
+  ]
+}

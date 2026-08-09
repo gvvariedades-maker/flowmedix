@@ -2,15 +2,15 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Terminologia anatômica padronizada — posição anatômica.
- * Referência: nomenclatura anatômica internacional (conceitual).
+ * Referência: Terminologia Anatômica (FCAT/IFAA) — conceitos estáveis; sem doses clínicas.
  */
 export const ANATOMIA_TERMINOLOGIA: GuidelineTable = {
   id: 'anatomia-terminologia',
-  snapshot: 'Pares de sinônimos anatômicos',
-  issuer: 'Referência acadêmica',
+  snapshot: 'Terminologia Anatômica — planos, eixos e sinônimos',
+  issuer: 'Terminologia Anatômica (IFAA/FCAT)',
   title: 'Noções de Anatomia',
-  year: 2020,
-  url: 'https://www.gov.br/saude/',
+  year: 1998,
+  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z',
   entries: [
     {
       id: 'anterior-ventral',

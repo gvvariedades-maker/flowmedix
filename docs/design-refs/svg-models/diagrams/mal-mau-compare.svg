@@ -1,0 +1,16 @@
+<!-- AVANT gold  gesto compare A � B (estilo MAL/MAU).
+     viewBox 0 0 120 64 � stroke 2 � Lucide grammar.
+     Refs: lucide/check.svg � diagrams/compare-x-check.svg � adverb-compare-adj-adv.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 64" fill="none" role="img" aria-label="Compare duas formas">
+  <title>Compare A � B</title>
+  <rect x="4" y="8" width="50" height="48" rx="8" stroke="currentColor" stroke-width="2"/>
+  <rect x="10" y="12" width="38" height="10" rx="3" stroke="currentColor" stroke-width="2"/>
+  <path d="M14 32h30M14 40h22" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <circle cx="20" cy="48" r="4" stroke="currentColor" stroke-width="2"/>
+  <path d="M18 48l1.5 1.5 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="66" y="8" width="50" height="48" rx="8" stroke="currentColor" stroke-width="2" opacity="0.85"/>
+  <rect x="72" y="12" width="38" height="10" rx="3" stroke="currentColor" stroke-width="2"/>
+  <path d="M76 32h30M76 40h22" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <circle cx="82" cy="48" r="4" stroke="currentColor" stroke-width="2"/>
+  <path d="M80 48l1.5 1.5 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

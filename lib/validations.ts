@@ -4,6 +4,7 @@
 
 import { z, ZodError } from 'zod';
 import * as LucideIcons from 'lucide-react';
+import { PACK_MAX_SIZE } from '@/lib/cadernos/packs';
 import { EmailTemplateContentSchema } from '@/lib/email/templateContent';
 import { ONBOARDING_BANCAS, ONBOARDING_TOPIC_AREAS } from '@/lib/onboarding/constants';
 import { normalizeQuestaoSlideArrays } from './reverseStudySlidesNormalize';
@@ -156,6 +157,23 @@ export const EfficacyContractSchema = z.object({
   retrieval_first: z.boolean().optional(),
 });
 
+/**
+ * Assinatura do checklist Âncoras 100% (gates + risco).
+ * @see docs/ANCHOR_CHECKLIST_100.md · `npm run audit:anchor-100`
+ */
+export const Anchor100ApprovalSchema = z.object({
+  status: z.enum(['pending', 'pass', 'fail', 'human_required']),
+  reviewed_at: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, 'reviewed_at deve ser AAAA-MM-DD')
+    .optional(),
+  reviewer: z.string().max(LIMITS.REVIEWER_MAX).optional(),
+  method: z.enum(['agent', 'human', 'both']).optional(),
+  artifact: z.string().max(300).optional(),
+  risk_tier: z.enum(['baixo', 'medio', 'alto']).optional(),
+  checklist_version: z.string().max(40).optional(),
+});
+
 export const QuestaoMetaSchema = z.object({
   ano: z.string().max(40, 'Ano deve ter no máximo 40 caracteres').optional(),
   banca: z.string().min(1, 'Banca é obrigatória').max(LIMITS.BANCA_MAX, `Banca deve ter no máximo ${LIMITS.BANCA_MAX} caracteres`),
@@ -179,6 +197,8 @@ export const QuestaoMetaSchema = z.object({
   pedagogical_branch: z.string().trim().max(80).optional(),
   /** Contrato de eficácia / auto-aprovação por risco (opcional). */
   efficacy_contract: EfficacyContractSchema.optional(),
+  /** Checklist Âncoras 100% — assinatura agent/humano após `audit:anchor-100`. */
+  anchor_100_approval: Anchor100ApprovalSchema.optional(),
 });
 
 export const QuestaoOptionSchema = z.object({
@@ -947,6 +967,19 @@ export const EstudarQuestaoQuerySchema = z
     disciplina: z.enum(['enfermagem', 'portugues']).optional(),
   })
   .transform(mergeBancaAssuntoFields);
+
+/** Body de `POST /api/notebooks/from-pack` — clone de Caderno Pronto. */
+export const NotebookFromPackItemSchema = z.object({
+  modulo_slug: z.string().min(1),
+  titulo_aula: z.string().nullable().optional(),
+  topico: z.string().nullable().optional(),
+});
+
+export const NotebookFromPackSchema = z.object({
+  pack_id: z.string().trim().min(1).max(64),
+  items: z.array(NotebookFromPackItemSchema).min(1).max(PACK_MAX_SIZE),
+  title: z.string().trim().min(1).max(120),
+});
 
 /** Query params de `GET /api/vitrine/questao` (atalho por número/código no card). */
 export const VitrineResolveQuestaoQuerySchema = z

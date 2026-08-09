@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-08-06T01:43:04.432Z",
+  "lote": "coleta-de-exames-laboratoriais-g09",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3014
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4079
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 3035
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779562768558-8",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "REIS E REIS",
+      "avant_codigo": 2964
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-coleta-de-exames-laboratoriais-1779563272300-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3021
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-coleta-de-exames-laboratoriais-1779563288910-8",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3037
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2948
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2990
+    }
+  ]
+}

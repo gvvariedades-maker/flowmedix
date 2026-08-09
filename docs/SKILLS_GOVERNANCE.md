@@ -43,6 +43,7 @@ Validação rápida antes do handcraft: `npm run classify:family -- --file=<path
 | avant-json-template | sim | — |
 | avant-ui-visual | sim | — |
 | avant-neuroslides-visual | sim | — |
+| svg-quality | sim | — |
 | brief-enfermagem | sim | — |
 | brief-lingua-portuguesa | sim | — |
 | professor-lingua-portuguesa-concurso | sim | — |

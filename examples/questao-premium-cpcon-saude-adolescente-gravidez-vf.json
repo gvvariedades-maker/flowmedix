@@ -10,9 +10,9 @@
     "content_standard": "golden-v1",
     "family": "vf",
     "content_review": {
-      "reviewed_at": "2026-06-23",
-      "reviewer": "handcraft-pilot",
-      "guideline_snapshot": "MS — Saúde do Adolescente (escuta, sigilo, gravidez)",
+      "reviewed_at": "2026-08-07",
+      "reviewer": "anchor-100-writer",
+      "guideline_snapshot": "Adolescente: escuta/privacidade + gravidez alto risco/pré-natal precoce; sigilo com limites legais (não absoluto).",
       "exam_vs_current": "none"
     },
     "sources": [
@@ -30,7 +30,17 @@
           "pré-natal precoce"
         ]
       }
-    ]
+    ],
+    "pedagogical_branch": "adolescente_generico",
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-08",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/questao-premium-cpcon-saude-adolescente-gravidez-vf.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
   },
   "question_data": {
     "instruction": "Sobre saúde do adolescente e gravidez na adolescência, analise as afirmativas.\n\nI - A consulta de enfermagem com adolescente deve garantir privacidade e escuta qualificada, respeitando autonomia progressiva.\nII - Gravidez na adolescência aumenta riscos de complicações materno-fetais e exige acompanhamento pré-natal precoce.\nIII - O sigilo profissional pode ser absolutamente quebrado sem critério em qualquer tema, inclusive contracepção, sem necessidade de avaliar risco e legislação.\n\nÉ CORRETO o que se afirma em:",
@@ -65,7 +75,7 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "Adolescente — cuidado",
+      "slide_title": "Adolescente — núcleo do cuidado",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Saúde do Adolescente"
@@ -74,53 +84,25 @@
         {
           "label": "Escuta qualificada",
           "detail": "Espaço privado, linguagem acessível, vínculo sem julgamento.",
-          "icon": "MessageCircle"
+          "icon": "MessagesSquare"
         },
         {
           "label": "Pré-natal precoce",
           "detail": "Gravidez adolescente = alto risco — vincular cedo ao cuidado.",
-          "icon": "Calendar"
+          "icon": "CalendarPlus"
         },
         {
-          "label": "Sigilo",
-          "detail": "Protegido com limites legais — quebra quando há risco grave.",
-          "icon": "Lock"
+          "label": "Sigilo com limites",
+          "detail": "Protegido por lei — quebra só com risco grave e critério ético-legal.",
+          "icon": "LockKeyhole"
         },
         {
           "label": "Contracepção",
-          "detail": "Orientação sexual e reprodutiva faz parte do cuidado.",
-          "icon": "Heart"
+          "detail": "Orientação sexual e reprodutiva integra o cuidado integral.",
+          "icon": "HeartPulse"
         }
       ],
       "footer_rule": "Adolescente: privacidade + pré-natal + sigilo com critério"
-    },
-    {
-      "type": "golden_rule",
-      "slide_title": "Adolescente — regras",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Saúde do Adolescente"
-      },
-      "content": "ESCUTA",
-      "rows": [
-        {
-          "label": "Privacidade",
-          "value": "Consulta com escuta — I correta",
-          "badge": "ok"
-        },
-        {
-          "label": "Gravidez",
-          "value": "Alto risco + pré-natal precoce — II correta",
-          "badge": "ok"
-        },
-        {
-          "label": "Sigilo absoluto zero",
-          "value": "Há critérios legais",
-          "emphasis": "alert",
-          "badge": "warn"
-        }
-      ],
-      "footer_rule": "III generaliza quebra de sigilo — pegadinha ética"
     },
     {
       "type": "logic_flow",
@@ -130,13 +112,45 @@
         "subtopico": "Saúde do Adolescente"
       },
       "steps": [
-        "I: privacidade e escuta → verdadeira.",
-        "II: gravidez adolescente e pré-natal → verdadeira.",
-        "III: quebrar sigilo sem critério → falsa.",
+        "I: privacidade e escuta qualificada na consulta → verdadeira.",
+        "II: gravidez adolescente exige pré-natal precoce → verdadeira.",
+        "III: quebrar sigilo sem critério em qualquer tema → falsa.",
         "Letra B.",
         "Fixação: sigilo não é absoluto nem inexistente — há limites legais."
       ],
-      "footer_rule": "Ética adolescente: acolher + proteger + saber limites do sigilo"
+      "footer_rule": "I verdadeira · II verdadeira · III falsa → letra B"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore VF",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde do Adolescente"
+      },
+      "content": "O cuidado ao adolescente exige:",
+      "rows": [
+        {
+          "label": "Privacidade",
+          "value": "Consulta com escuta — afirmativa I correta",
+          "badge": "ok"
+        },
+        {
+          "label": "Gravidez",
+          "value": "Alto risco + pré-natal precoce — II correta",
+          "badge": "ok"
+        },
+        {
+          "label": "Sigilo absoluto zero",
+          "value": "Há critérios legais — III falsa",
+          "badge": "warn"
+        },
+        {
+          "label": "Autonomia progressiva",
+          "value": "Respeitar capacidade em evolução no vínculo",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "III generaliza a quebra de sigilo — pegadinha ética clássica"
     },
     {
       "type": "danger_zone",
@@ -145,7 +159,7 @@
         "topico": "Enfermagem",
         "subtopico": "Saúde do Adolescente"
       },
-      "content": "PEGADINHAS — ADOLESCENTE",
+      "content": "Armadilhas do item VF (I–II–III)",
       "items": [
         {
           "label": "Quebrar sigilo sempre",
@@ -153,17 +167,22 @@
           "correct": "Sigilo com limites — avaliar risco e legislação."
         },
         {
-          "label": "Consulta com responsável obrigatório",
-          "detail": "I fala em privacidade adequada na consulta.",
+          "label": "Responsável obrigatório na consulta",
+          "detail": "Anula a privacidade descrita em I.",
           "correct": "Garantir escuta qualificada respeitando autonomia progressiva."
         },
         {
-          "label": "Adiar pré-natal",
-          "detail": "II reforça acompanhamento precoce.",
+          "label": "Adiar o pré-natal",
+          "detail": "Contraria o reforço de acompanhamento precoce em II.",
           "correct": "Vincular gestante adolescente cedo ao pré-natal."
+        },
+        {
+          "label": "Marcar I+II+III",
+          "detail": "Letra D inclui a afirmativa falsa sobre sigilo absoluto.",
+          "correct": "Gabarito B — apenas I e II."
         }
       ],
-      "footer_rule": "Adolescente: acolhimento sem julgamento + sigilo ponderado"
+      "footer_rule": "Adolescente: acolher sem julgamento + sigilo ponderado"
     }
   ]
 }

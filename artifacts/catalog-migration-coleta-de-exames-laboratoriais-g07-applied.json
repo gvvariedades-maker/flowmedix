@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-06T02:05:10.786Z",
+  "lote": "coleta-de-exames-laboratoriais-g07",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-3",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+    "educa-pb-enfermagem-coleta-de-exames-laboratoriais-1779562768558-6",
+    "fafipa-enfermagem-coleta-de-exames-laboratoriais-1779563165114-4",
+    "fgv-enfermagem-coleta-de-exames-laboratoriais-1779562780466-2",
+    "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-7",
+    "fgv-enfermagem-exames-laboratoriais-1779563646977-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-coleta-de-exames-laboratoriais-1779562768558-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-coleta-de-exames-laboratoriais-1779563165114-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779562780466-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-laboratoriais-1779563646977-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

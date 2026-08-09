@@ -1,0 +1,252 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "ACS (Pref Jundiaí)",
+    "orgao": "Pref Jundiaí",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_conjuncao",
+    "content_standard": "golden-v1",
+    "family": "text_fragment",
+    "anchor_style": "causal",
+    "anchor_role": "golden_anchor",
+    "content_review": {
+      "reviewed_at": "2026-08-07",
+      "reviewer": "ancoras-100:classes-de-palavras/conjuncao-causal-4modelos-visuais",
+      "guideline_snapshot": "M02 Elias — valor do conectivo · 4 gestos: arena OU · trilho 1-2-3 · cards funções · tabela coordenativas. Pegadinha: «fazia tempo» sugere adversativa; âncora «por ser beneficente» = causal (gab. C).",
+      "exam_vs_current": "none",
+      "catalog_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+      "visual_models": [
+        "arena OU forma×forma (EQUIVALE A + exemplos + regra de troca)",
+        "camadas 1-2-3 (regência-style)",
+        "grade cards numerados (funções/valores do conectivo)",
+        "tabela prática coordenativas (Classificação × Conjunções × Exemplo)"
+      ]
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — conjunção e valor semântico",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "conjunção subordinativa causal",
+          "já que / pois / visto que / uma vez que",
+          "conjunção adversativa",
+          "conjunção condicional e concessiva",
+          "pergunta-teste M02",
+          "classificação morfológica do conectivo"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3776325",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Conjunção «já que» causal — VUNESP ACS Pref Jundiaí 2026 tec 3776325",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito",
+          "matriz pt_classes_conjuncao"
+        ]
+      }
+    ],
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-07",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/questao-premium-vunesp-portugues-classes-conjuncao-causal.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
+  },
+  "question_data": {
+    "instruction": "Leia o texto a seguir para responder à questão.\n\nNo trecho «Fazia bastante tempo eu tinha ido a um show dele, __________ eu resolvi ir neste final de semana por ser beneficente», a lacuna deve ser preenchida por:",
+    "options": [
+      {
+        "id": "A",
+        "text": "contanto que.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "contudo.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "já que.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "conquanto.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "porém.",
+        "is_correct": false
+      }
+    ],
+    "text_fragment": "<p>Um vídeo do reencontro entre o cantor João Gomes e a sua ex-professora de Petrolina viralizou nas redes. «Professora minha ali no canto, que eu sei que sente orgulho, porque foi com vocês que aprendi a ser um rapaz direito», disse o cantor em show beneficente. Verlandia Fernandes, 48 anos, deu aulas para João Gomes por quatro anos no ensino fundamental. A disciplina preferida dele era literatura — base para a carreira de compositor.</p><p>«Fazia bastante tempo eu tinha ido a um show dele, <strong>__________</strong> eu resolvi ir neste final de semana por ser beneficente», contou a professora.</p>"
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Causal OU adversativa",
+      "chip_label": "Arena OU · troca",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "CAUSAL",
+          "detail": "pois · já que · visto que · porque",
+          "correct": "Se puder trocar por «pois» / «já que» → é CAUSAL.",
+          "icon": "Link"
+        },
+        {
+          "label": "ADVERSATIVA",
+          "detail": "mas · porém · contudo · todavia",
+          "correct": "Se puder trocar por «mas» (oposição) → é ADVERSATIVA.",
+          "icon": "GitBranch"
+        },
+        {
+          "label": "L · Ex.1",
+          "detail": "…, «já que» eu resolvi ir neste final de semana por ser beneficente.",
+          "icon": "Check"
+        },
+        {
+          "label": "R · Ex.1",
+          "detail": "Queria ir ao show, «contudo» o ingresso estava caro.",
+          "icon": "Check"
+        },
+        {
+          "label": "L · Ex.2",
+          "detail": "Âncora: «por ser beneficente» = MOTIVO (não contraste de tempo).",
+          "icon": "Check"
+        },
+        {
+          "label": "R · Ex.2",
+          "detail": "Estudei muito, «porém» ainda fiquei nervoso na prova.",
+          "icon": "Check"
+        }
+      ],
+      "footer_rule": "Motivo no trecho → peça da família causal."
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Trilho do valor",
+      "chip_label": "Camadas 1 · 2 · 3",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "1 · Valor — «por ser beneficente» = MOTIVO da ida; a lacuna pede peça causal.",
+        "2 · Eliminar — condição («contanto que») · oposição («contudo/porém» — armadilha do «fazia tempo») · concessão («conquanto»).",
+        "Gabarito C — «já que» fecha a lacuna (pois / visto que) com o motivo beneficente.",
+        "Em similares: 2ª oração explica motivo → teste troca por pois / já que / visto que."
+      ],
+      "footer_rule": "C — já que (causa)."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Funções do conectivo",
+      "chip_label": "Cards · valor",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Principais valores do conectivo",
+      "rows": [
+        {
+          "label": "1. Causais",
+          "value": "Troca por «pois» / «já que» / «visto que» = MOTIVO. · …, «já que» eu resolvi ir… por ser beneficente. · Estudei, «pois» a prova era amanhã.",
+          "emphasis": "success"
+        },
+        {
+          "label": "2. Adversativas",
+          "value": "Troca por «mas» = OPOSIÇÃO entre orações. · Queria ir, «contudo» o ingresso estava caro. · Estudei, «porém» não entendi.",
+          "emphasis": "alert"
+        },
+        {
+          "label": "3. Condicionais (SE)",
+          "value": "«Se» condicional → troca por «caso» (hipótese). · «Se» estudar, passará. · «Caso» estude, passará.",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "4. Concessivas",
+          "value": "Troca por «embora» = concessão (obstáculo que não impede). · «Conquanto» chova, sairei. · «Embora» chova, sairei.",
+          "emphasis": "default"
+        },
+        {
+          "label": "5. Pois — pegadinha",
+          "value": "«Pois» causal/explicativo ≠ «pois» conclusivo (logo/portanto). · Estude, «pois» a prova será difícil (explica). · Estudou; «pois», passou (conclui — raríssimo na oralidade).",
+          "emphasis": "alert"
+        },
+        {
+          "label": "6. Nesta prova",
+          "value": "«por ser beneficente» = MOTIVO → peça causal. · Fecha com «já que» (não «contudo/contanto que/conquanto»). · Teste: se «pois/já que» fecha a lacuna, é causal.",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Motivo no trecho → conjunção causal («já que»)."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Coordenativas — tabela",
+      "chip_label": "Tabela prática",
+      "reveal_mode": "auto",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Conjunções coordenativas",
+      "items": [
+        {
+          "label": "Aditivas",
+          "detail": "e, nem, mas também, como também",
+          "correct": "Estudei matemática «e» português."
+        },
+        {
+          "label": "Adversativas",
+          "detail": "mas, porém, contudo, todavia, no entanto",
+          "correct": "Estudei muito, «mas» não entendi a matéria."
+        },
+        {
+          "label": "Alternativas",
+          "detail": "ou, ou… ou, ora… ora, quer… quer",
+          "correct": "«Ou» você estuda, «ou» vai reprovar."
+        },
+        {
+          "label": "Conclusivas",
+          "detail": "logo, portanto, por isso, assim, pois (conclusivo)",
+          "correct": "Estudei bastante; «logo», tirei uma boa nota."
+        },
+        {
+          "label": "Explicativas",
+          "detail": "que, porque, porquanto, pois (explicativo)",
+          "correct": "Estude, «pois» a prova será difícil."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Nesta VUNESP o trecho pede motivo (beneficente) — não oposição.",
+          "correct": "Adversativa («mas/contudo») só fecha se houver contraste; aqui o teste é causal («já que/pois»)."
+        }
+      ],
+      "footer_rule": "Decore a família · no trecho, teste a troca pelo valor."
+    }
+  ]
+}

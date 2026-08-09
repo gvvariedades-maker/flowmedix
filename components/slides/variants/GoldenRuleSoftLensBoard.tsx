@@ -29,11 +29,13 @@ const BADGE_LABEL: Record<GoldenRuleRowBadge, string> = {
 export function softLensEmphasisToTone(emphasis?: GoldenRuleRowEmphasis): BoardTone {
   switch (emphasis) {
     case 'alert':
-      return 'barrier';
+      return 'exception';
     case 'success':
-      return 'teal';
+      return 'keep';
     case 'highlight':
-      return 'rights';
+      return 'command';
+    case 'default':
+      return 'warn';
     default:
       return 'neutral';
   }

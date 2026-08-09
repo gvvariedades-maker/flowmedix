@@ -1,15 +1,12 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { GoldenRuleRow } from './GoldenRule';
-import {
-  inferZBandId,
-  zBandRailPosition,
-  Z_RAIL_MARKERS,
-} from '@/lib/slides/adolescentAntropometriaSlideUtils';
+import { inferZBandId, type ZBandId } from '@/lib/slides/adolescentAntropometriaSlideUtils';
+import { BoardChrome } from '../primitives';
+import { cn } from '@/lib/utils';
 
 interface GoldenRuleAdolescentZBandBoardProps {
   content?: string;
@@ -18,19 +15,125 @@ interface GoldenRuleAdolescentZBandBoardProps {
   footerRule?: string;
 }
 
-function badgeClass(badge?: string): string {
-  switch (badge) {
-    case 'hot':
-      return 'bg-sky-200 text-sky-900';
-    case 'warn':
-      return 'bg-amber-200 text-amber-900';
-    case 'ok':
-      return 'bg-emerald-200 text-emerald-900';
-    default:
-      return 'bg-slate-200 text-slate-700';
-  }
+type PillTone = {
+  header: string;
+  value: string;
+  ring?: string;
+};
+
+const PILL_TONES: Record<string, PillTone> = {
+  violet: {
+    header: 'bg-violet-600 text-white',
+    value: 'text-violet-700',
+  },
+  sky: {
+    header: 'bg-sky-500 text-white',
+    value: 'text-sky-700',
+  },
+  orange: {
+    header: 'bg-orange-500 text-white',
+    value: 'text-orange-700',
+  },
+  emerald: {
+    header: 'bg-emerald-600 text-white',
+    value: 'text-emerald-700',
+  },
+  blue: {
+    header: 'bg-blue-600 text-white',
+    value: 'text-blue-700',
+  },
+  amber: {
+    header: 'bg-amber-500 text-amber-950',
+    value: 'text-amber-800',
+  },
+  rose: {
+    header: 'bg-rose-600 text-white',
+    value: 'text-rose-700',
+  },
+};
+
+const BAND_PILL: Record<ZBandId, keyof typeof PILL_TONES> = {
+  magreza_acentuada: 'violet',
+  magreza: 'sky',
+  eutrofia: 'emerald',
+  sobrepeso: 'orange',
+  obesidade: 'blue',
+  obesidade_grave: 'amber',
+  estatura_baixa: 'rose',
+  general: 'sky',
+};
+
+/** Pares adjacentes que a banca troca (±1 DP) — gesto ≠ do print. */
+const CONFUSION_PAIRS: ReadonlyArray<readonly [ZBandId, ZBandId]> = [
+  ['magreza_acentuada', 'magreza'],
+  ['eutrofia', 'sobrepeso'],
+  ['obesidade', 'obesidade_grave'],
+];
+
+type EnrichedRow = {
+  row: GoldenRuleRow;
+  band: ZBandId;
+  highlighted: boolean;
+};
+
+function BandPill({
+  label,
+  value,
+  toneKey,
+  emphasized,
+}: {
+  label: string;
+  value: string;
+  toneKey: keyof typeof PILL_TONES;
+  emphasized?: boolean;
+}) {
+  const tone = PILL_TONES[toneKey];
+  return (
+    <div
+      className={cn(
+        'flex min-w-0 flex-1 flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-slate-900/10',
+        emphasized && 'ring-2 ring-orange-400/70 ring-offset-2 ring-offset-white',
+      )}
+    >
+      <div className={cn('px-3 py-2.5 text-center', tone.header)}>
+        <p className="font-display text-[11px] font-black uppercase leading-tight tracking-wide md:text-xs">
+          {label}
+        </p>
+      </div>
+      <div className="border border-t-0 border-slate-200/80 px-3 py-2 text-center">
+        <p className={cn('font-mono text-xs font-bold tabular-nums md:text-sm', tone.value)}>
+          {value}
+        </p>
+      </div>
+    </div>
+  );
 }
 
+function TitleWithAccent({ text }: { text: string }) {
+  const parts = text.split(
+    /(ESCORE Z|SIMILARES|DIFERENTES|FAIXAS|CADERNETA|SENTIDOS|IMC|\+1|\+2)/i,
+  );
+  return (
+    <span>
+      {parts.map((part, i) =>
+        /^(ESCORE Z|SIMILARES|DIFERENTES|FAIXAS|CADERNETA|SENTIDOS|IMC|\+1|\+2)$/i.test(
+          part,
+        ) ? (
+          <span key={i} className="font-black text-rose-600">
+            {part}
+          </span>
+        ) : (
+          <span key={i}>{part}</span>
+        ),
+      )}
+    </span>
+  );
+}
+
+/**
+ * Faixas Z — pares ≠ (faixas vizinhas que a banca troca).
+ * Estilo resumo premium: pill cor + definição; sem cliques.
+ */
 export function GoldenRuleAdolescentZBandBoard({
   content,
   rows,
@@ -38,121 +141,111 @@ export function GoldenRuleAdolescentZBandBoard({
   footerRule,
 }: GoldenRuleAdolescentZBandBoardProps) {
   const reduceMotion = useReducedMotion();
-  const [activeIndex, setActiveIndex] = useState<number | null>(() => {
-    const highlightIdx = rows.findIndex((row) => row.emphasis === 'highlight');
-    return highlightIdx >= 0 ? highlightIdx : null;
-  });
 
-  const enriched = useMemo(
-    () =>
-      rows.map((row, index) => ({
-        row,
-        index,
-        band: inferZBandId(row.label ?? '', row.value ?? ''),
-        position: zBandRailPosition(inferZBandId(row.label ?? '', row.value ?? '')),
-      })),
-    [rows],
-  );
+  const { pairs, leftovers, title } = useMemo(() => {
+    const enriched: EnrichedRow[] = rows.map((row) => ({
+      row,
+      band: inferZBandId(row.label ?? '', row.value ?? ''),
+      highlighted: row.emphasis === 'highlight',
+    }));
 
-  const activePosition = activeIndex != null ? enriched[activeIndex]?.position : null;
+    const byBand = new Map<ZBandId, EnrichedRow>();
+    for (const item of enriched) {
+      if (!byBand.has(item.band) || item.highlighted) {
+        byBand.set(item.band, item);
+      }
+    }
 
-  const toggle = useCallback((index: number) => {
-    setActiveIndex((current) => (current === index ? null : index));
-  }, []);
+    const used = new Set<ZBandId>();
+    const pairs: { left: EnrichedRow; right: EnrichedRow; hero: boolean }[] = [];
+
+    for (const [leftId, rightId] of CONFUSION_PAIRS) {
+      const left = byBand.get(leftId);
+      const right = byBand.get(rightId);
+      if (!left || !right) continue;
+      pairs.push({
+        left,
+        right,
+        hero: left.highlighted || right.highlighted,
+      });
+      used.add(leftId);
+      used.add(rightId);
+    }
+
+    const leftovers = enriched.filter((e) => !used.has(e.band));
+
+    const title =
+      content?.trim() ||
+      'Faixas similares no trilho Z, mas com sentidos diferentes';
+
+    return { pairs, leftovers, title };
+  }, [rows, content]);
 
   if (rows.length === 0) return null;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-5">
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-30`} />
-
-      <div className="relative z-10 mx-auto flex w-full max-w-xl flex-col gap-4">
-        {content ? (
-          <h2 className="text-center font-display text-base font-black uppercase tracking-wide text-slate-900 md:text-lg">
-            {content}
-          </h2>
-        ) : null}
-
-        <div
-          role="status"
-          className="flex flex-col items-center gap-1.5 rounded-xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-center"
-        >
-          <p className="flex items-center justify-center gap-2 font-body text-sm font-semibold text-amber-950">
-            <Hand className="h-4 w-4 shrink-0 text-amber-700" aria-hidden />
-            Toque em cada faixa da tabela
-          </p>
-          <p className="font-body text-xs leading-relaxed text-amber-900/85">
-            O trilho Z acende no desvio-padrão da linha — role para ver sobrepeso, obesidade e magreza acentuada.
-          </p>
-        </div>
-
-        <p className="text-center font-mono text-[10px] font-bold uppercase tracking-widest text-sky-700/80">
-          Qual limiar a banca cobra na Caderneta?
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.22}
+      maxWidth="lg"
+      footerLabel="Decore"
+      footerRule={footerRule}
+    >
+      <div className="rounded-2xl border border-slate-200/90 bg-white px-4 py-3 text-center shadow-md shadow-slate-900/5">
+        <p className="font-body text-sm font-bold uppercase leading-snug tracking-wide text-slate-800 md:text-[15px]">
+          <TitleWithAccent text={title} />
         </p>
-
-        <div className="overflow-x-auto rounded-2xl border border-sky-200/80 bg-white/90 p-3 shadow-sm">
-          <div className="min-w-[280px]">
-            <div className="relative mb-3 flex h-10 items-center justify-between px-1">
-              <div className="absolute left-0 right-0 top-1/2 h-0.5 -translate-y-1/2 bg-sky-200" />
-              {Z_RAIL_MARKERS.map((marker) => {
-                const lit =
-                  activePosition != null && Math.abs(activePosition - marker) < 1.2;
-                return (
-                  <div
-                    key={marker}
-                    className={`relative z-10 h-3 w-3 rounded-full transition-all ${
-                      lit ? 'scale-150 bg-sky-500 ring-2 ring-sky-300' : 'bg-slate-300'
-                    }`}
-                  />
-                );
-              })}
-            </div>
-
-            <div className="flex flex-col gap-2">
-              {enriched.map(({ row, index }) => {
-                const active = activeIndex === index;
-                const highlighted = row.emphasis === 'highlight';
-
-                return (
-                  <motion.button
-                    key={index}
-                    type="button"
-                    initial={reduceMotion ? false : { opacity: 0, x: -6 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: reduceMotion ? 0 : index * 0.04 }}
-                    onClick={() => toggle(index)}
-                    className={`flex min-h-[44px] w-full items-center justify-between gap-2 rounded-xl border px-3 py-2 text-left transition-all ${
-                      active || highlighted
-                        ? 'border-sky-400 bg-sky-50 ring-2 ring-sky-300/50'
-                        : 'border-slate-200/80 bg-slate-50/80 hover:bg-white'
-                    }`}
-                  >
-                    <div className="min-w-0">
-                      <p className="font-display text-sm font-bold text-slate-900">{row.label}</p>
-                      <p className="font-mono text-xs font-semibold tabular-nums text-slate-700">{row.value}</p>
-                    </div>
-                    {row.badge ? (
-                      <span
-                        className={`shrink-0 rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase ${badgeClass(row.badge)}`}
-                      >
-                        {row.badge}
-                      </span>
-                    ) : (
-                      <span className="shrink-0 font-mono text-[9px] font-bold uppercase tracking-wider text-sky-600/80">
-                        {active ? 'No trilho' : 'Toque'}
-                      </span>
-                    )}
-                  </motion.button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {footerRule ? (
-          <p className="text-center font-body text-xs font-semibold text-sky-900">{footerRule}</p>
-        ) : null}
+        <p className="mt-1 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
+          Caderneta · IMC 5–19 anos · pares que a banca desloca
+        </p>
       </div>
-    </div>
+
+      <div className="flex flex-col gap-4">
+        {pairs.map(({ left, right, hero }, index) => (
+          <motion.div
+            key={`${left.band}-${right.band}`}
+            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: reduceMotion ? 0 : index * 0.05 }}
+            className="flex items-stretch gap-2 sm:gap-3"
+          >
+            <BandPill
+              label={left.row.label ?? left.band}
+              value={left.row.value ?? ''}
+              toneKey={BAND_PILL[left.band]}
+              emphasized={hero && left.highlighted}
+            />
+            <div className="flex shrink-0 items-center justify-center px-0.5">
+              <span
+                className="font-display text-2xl font-black text-slate-400 md:text-3xl"
+                aria-label="diferente de"
+              >
+                ≠
+              </span>
+            </div>
+            <BandPill
+              label={right.row.label ?? right.band}
+              value={right.row.value ?? ''}
+              toneKey={BAND_PILL[right.band]}
+              emphasized={hero && right.highlighted}
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      {leftovers.length > 0 ? (
+        <div className="flex flex-col gap-2 sm:flex-row">
+          {leftovers.map((item) => (
+            <BandPill
+              key={item.band}
+              label={item.row.label ?? item.band}
+              value={item.row.value ?? ''}
+              toneKey={BAND_PILL[item.band]}
+              emphasized={item.highlighted}
+            />
+          ))}
+        </div>
+      ) : null}
+    </BoardChrome>
   );
 }

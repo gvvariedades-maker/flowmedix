@@ -1,111 +1,121 @@
 'use client';
 
-import { useMemo, type ReactNode } from 'react';
+import { useMemo } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { CheckCircle2, Hand, Target, XCircle } from 'lucide-react';
+import {
+  CheckCircle2,
+  ClipboardCheck,
+  ShieldCheck,
+  Target,
+  XCircle,
+  ArrowRightLeft,
+  type LucideIcon,
+} from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import { parseAdolescentExcetoStep } from '@/lib/slides/adolescentSlideUtils';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import {
-  AlertCallout,
-  BoardChrome,
-  PolarityPanel,
-  TwoColumnBoard,
-  boardEmptyPlaceholder,
-  showBoardAuthoringHints,
-  type BoardTone,
-} from '../primitives';
+import { BoardChrome, boardTone, type BoardTone } from '../primitives';
+import { cn } from '@/lib/utils';
 
 interface LogicFlowAdolescentExcetoIsolateBoardProps {
   steps: string[] | Array<{ id?: string; text: string }>;
   theme: ThemeColors;
-  /** Ignorado — board é glanceable (0 taps). Aceito para contrato do player. */
+  /** Ignorado — board glanceable (0 taps). */
   revealMode?: LogicFlowRevealMode;
   footerRule?: string;
 }
 
 type ParsedStep = ReturnType<typeof parseAdolescentExcetoStep> & { key: string };
 
-function kindTone(kind: ParsedStep['kind']): BoardTone {
+type RowSkin = {
+  tone: BoardTone;
+  leftLabel: string;
+  Icon: LucideIcon;
+  rowBg: string;
+  iconWrap: string;
+};
+
+function kindSkin(kind: ParsedStep['kind']): RowSkin {
   switch (kind) {
     case 'command':
-      return 'command';
+      return {
+        tone: 'command',
+        leftLabel: 'Comando',
+        Icon: Target,
+        rowBg: 'bg-sky-50',
+        iconWrap: 'bg-sky-500 text-white',
+      };
     case 'keep':
-      return 'keep';
+      return {
+        tone: 'keep',
+        leftLabel: 'Manter',
+        Icon: CheckCircle2,
+        rowBg: 'bg-emerald-50',
+        iconWrap: 'bg-emerald-500 text-white',
+      };
     case 'exception':
-      return 'exception';
+      return {
+        tone: 'exception',
+        leftLabel: 'Exceção',
+        Icon: XCircle,
+        rowBg: 'bg-rose-50',
+        iconWrap: 'bg-rose-600 text-white',
+      };
     case 'mark':
-      return 'command';
+      return {
+        tone: 'command',
+        leftLabel: 'Gabarito',
+        Icon: CheckCircle2,
+        rowBg: 'bg-sky-50',
+        iconWrap: 'bg-sky-600 text-white',
+      };
     case 'transfer':
-      return 'transfer';
+      return {
+        tone: 'transfer',
+        leftLabel: 'Similares',
+        Icon: ArrowRightLeft,
+        rowBg: 'bg-amber-50',
+        iconWrap: 'bg-amber-500 text-white',
+      };
     default:
-      return 'neutral';
+      return {
+        tone: 'neutral',
+        leftLabel: 'Passo',
+        Icon: ClipboardCheck,
+        rowBg: 'bg-violet-50',
+        iconWrap: 'bg-violet-500 text-white',
+      };
   }
 }
 
-function StepBody({ step }: { step: ParsedStep }): ReactNode {
-  if (step.kind === 'exception') {
-    return (
-      <span className="inline-flex items-start gap-2">
-        <XCircle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden />
-        <span>{step.text}</span>
-      </span>
-    );
-  }
-  if (step.kind === 'keep' || step.kind === 'mark') {
-    return (
-      <span className="inline-flex items-start gap-2">
-        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" aria-hidden />
-        <span>{step.text}</span>
-      </span>
-    );
-  }
-  if (step.kind === 'command') {
-    return (
-      <span className="inline-flex items-start gap-2">
-        <Target className="mt-0.5 h-5 w-5 shrink-0" aria-hidden />
-        <span>{step.text}</span>
-      </span>
-    );
-  }
-  return step.text;
-}
+/** Coluna direita limpa — sem “Letra B — B.” */
+function decisionText(step: ParsedStep): string {
+  let t = step.text.trim();
+  t = t
+    .replace(/^comando\s*[:—–-]?\s*/i, '')
+    .replace(/^(manter|acolher)\s*[:—–-]?\s*/i, '')
+    .replace(/^exce[cç][aã]o\s*[:—–-]?\s*/i, '')
+    .replace(/^em similares\s*[:—–-]?\s*/i, '')
+    .replace(/^marcar\s+letra\s*[a-e]\s*\.?\s*/i, '')
+    .replace(/^gabarito\s*[:—–-]?\s*/i, '')
+    .replace(/^letra\s*([a-e])\s*\.?\s*/i, '')
+    .replace(/^[.\s—–-]+/, '')
+    .trim();
 
-function StepCard({
-  step,
-  reduceMotion,
-  delayIndex,
-}: {
-  step: ParsedStep;
-  reduceMotion: boolean | null;
-  delayIndex: number;
-}) {
-  return (
-    <motion.div
-      initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: reduceMotion ? 0 : Math.min(delayIndex * 0.04, 0.2) }}
-    >
-      <PolarityPanel
-        tone={kindTone(step.kind)}
-        emphasized={step.kind === 'exception'}
-      >
-        <p className="font-mono text-[10px] font-bold uppercase tracking-widest opacity-80">
-          {step.title}
-          {step.letter ? ` · ${step.letter}` : ''}
-        </p>
-        <p className="mt-1.5 font-body text-sm font-semibold leading-snug md:text-base">
-          <StepBody step={step} />
-        </p>
-      </PolarityPanel>
-    </motion.div>
-  );
+  if (step.kind === 'mark' && step.letter) {
+    const letter = step.letter.toUpperCase();
+    if (!t || t.toUpperCase() === letter || t.toUpperCase() === `${letter}.`) {
+      return `Letra ${letter}`;
+    }
+    return `Letra ${letter} — ${t}`;
+  }
+
+  return t || step.text;
 }
 
 /**
- * Isola a EXCETO/INCORRETA em uma tela — manter × exceção, sem taps.
- * JSON continua com `steps[]`; o molde só deixa de serializar a revelação.
+ * Slide 2 ética — tabela PASSO × DECISÃO (células soltas, gap branco).
  */
 export function LogicFlowAdolescentExcetoIsolateBoard({
   steps,
@@ -123,15 +133,6 @@ export function LogicFlowAdolescentExcetoIsolateBoard({
     [normalized],
   );
 
-  const command = parsed.filter((p) => p.kind === 'command');
-  const keep = parsed.filter((p) => p.kind === 'keep');
-  const exception = parsed.filter((p) => p.kind === 'exception');
-  const mark = parsed.filter((p) => p.kind === 'mark');
-  const transfer = parsed.filter((p) => p.kind === 'transfer');
-  const rest = parsed.filter(
-    (p) => !['command', 'keep', 'exception', 'mark', 'transfer'].includes(p.kind),
-  );
-
   if (normalized.length === 0) {
     return (
       <div className="flex min-h-full items-center justify-center p-6">
@@ -140,69 +141,135 @@ export function LogicFlowAdolescentExcetoIsolateBoard({
     );
   }
 
-  let delay = 0;
-  const nextDelay = () => delay++;
+  const headerTone = boardTone('command');
+  const transferTone = boardTone('transfer');
 
   return (
-    <BoardChrome theme={theme} footerLabel="Fixação" footerRule={footerRule}>
-      <AlertCallout tone="warn" icon={Hand}>
-        Isolar a única conduta que afasta o adolescente
-      </AlertCallout>
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.28}
+      eyebrow="Funil — isolar a conduta que afasta"
+      footerLabel="Fixação"
+      footerRule={footerRule}
+      maxWidth="2xl"
+      className="gap-2"
+    >
+      <div className="flex flex-col gap-1.5">
+        {/* Header azul — barra solta */}
+        <div
+          className={cn(
+            'flex items-center gap-2 rounded-xl px-3 py-2.5 shadow-sm',
+            headerTone.badge,
+            headerTone.badgeText,
+          )}
+        >
+          <ShieldCheck className="h-5 w-5 shrink-0" strokeWidth={2.5} aria-hidden />
+          <p className="font-body text-sm font-bold leading-snug">
+            Isolar a única conduta que afasta o adolescente
+          </p>
+        </div>
 
-      {command.map((step) => (
-        <StepCard key={step.key} step={step} reduceMotion={reduceMotion} delayIndex={nextDelay()} />
-      ))}
+        {/* Subheader âmbar */}
+        <div
+          className={cn(
+            'flex items-center gap-2 rounded-xl px-3 py-2 shadow-sm',
+            transferTone.badge,
+            transferTone.badgeText,
+          )}
+        >
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/95 text-amber-700 shadow-sm">
+            <ClipboardCheck className="h-4 w-4" aria-hidden />
+          </span>
+          <p className="font-mono text-[11px] font-black uppercase tracking-wider">
+            Esquema de decisão
+          </p>
+        </div>
 
-      <TwoColumnBoard
-        leftTitle="Manter (condutas certas)"
-        rightTitle="Exceção (afasta)"
-        leftTone="keep"
-        rightTone="exception"
-        left={
-          keep.length > 0 ? (
-            keep.map((step) => (
-              <StepCard
-                key={step.key}
-                step={step}
-                reduceMotion={reduceMotion}
-                delayIndex={nextDelay()}
-              />
-            ))
-          ) : showBoardAuthoringHints() ? (
-            <p className={boardEmptyPlaceholder('keep')}>
-              Descarte as letras que acolhem / protegem.
+        {/* Cabeçalhos de coluna */}
+        <div className="grid grid-cols-[6.25rem_1fr] gap-1.5 sm:grid-cols-[7rem_1fr]">
+          <div className="rounded-xl bg-sky-700 px-2 py-1.5 text-center shadow-sm">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-white">
+              Passo
             </p>
-          ) : null
-        }
-        right={
-          exception.length > 0 ? (
-            exception.map((step) => (
-              <StepCard
-                key={step.key}
-                step={step}
-                reduceMotion={reduceMotion}
-                delayIndex={nextDelay()}
-              />
-            ))
-          ) : showBoardAuthoringHints() ? (
-            <p className={boardEmptyPlaceholder('exception')}>
-              A letra que afasta o adolescente fica aqui.
+          </div>
+          <div className="rounded-xl bg-sky-700 px-2 py-1.5 text-center shadow-sm">
+            <p className="font-mono text-[10px] font-black uppercase tracking-wider text-white">
+              Decisão
             </p>
-          ) : null
-        }
-      />
+          </div>
+        </div>
 
-      {rest.map((step) => (
-        <StepCard key={step.key} step={step} reduceMotion={reduceMotion} delayIndex={nextDelay()} />
-      ))}
+        {/* Linhas — células soltas, gap branco */}
+        {parsed.map((step, index) => {
+          const skin = kindSkin(step.kind);
+          const t = boardTone(skin.tone);
+          const Icon = skin.Icon;
+          const emphasized = step.kind === 'exception';
+          const passoChip =
+            step.kind === 'mark' && step.letter
+              ? step.letter.toUpperCase()
+              : skin.leftLabel;
 
-      {mark.map((step) => (
-        <StepCard key={step.key} step={step} reduceMotion={reduceMotion} delayIndex={nextDelay()} />
-      ))}
+          return (
+            <motion.div
+              key={step.key}
+              initial={reduceMotion ? false : { opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: reduceMotion ? 0 : Math.min(index * 0.03, 0.18) }}
+              className={cn(
+                'grid grid-cols-[6.25rem_1fr] gap-1.5 sm:grid-cols-[7rem_1fr]',
+                emphasized && 'relative z-[1]',
+              )}
+            >
+              {/* Passo: ícone + chip curto (1 linha) */}
+              <div
+                className={cn(
+                  'flex min-h-[3rem] items-center justify-center gap-1.5 rounded-xl border px-1.5 py-2 shadow-sm',
+                  skin.rowBg,
+                  t.border,
+                  emphasized && 'ring-2 ring-rose-400/80',
+                )}
+              >
+                <span
+                  className={cn(
+                    'flex h-6 w-6 shrink-0 items-center justify-center rounded-full',
+                    skin.iconWrap,
+                  )}
+                >
+                  <Icon className="h-3.5 w-3.5" aria-hidden />
+                </span>
+                <span
+                  className={cn(
+                    'truncate font-mono text-[10px] font-black uppercase tracking-wide',
+                    t.text,
+                  )}
+                >
+                  {passoChip}
+                </span>
+              </div>
 
-      {transfer.map((step) => (
-        <StepCard key={step.key} step={step} reduceMotion={reduceMotion} delayIndex={nextDelay()} />
-      ))}
+              <div
+                className={cn(
+                  'flex min-h-[3rem] items-center rounded-xl border px-3 py-2 shadow-sm',
+                  skin.rowBg,
+                  t.border,
+                  emphasized && 'ring-2 ring-rose-400/80',
+                )}
+              >
+                <p
+                  className={cn(
+                    'font-body text-[13px] font-semibold leading-snug md:text-sm',
+                    t.text,
+                    emphasized && 'font-bold',
+                  )}
+                >
+                  {decisionText(step)}
+                </p>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
     </BoardChrome>
   );
 }

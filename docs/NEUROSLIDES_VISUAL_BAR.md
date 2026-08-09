@@ -76,5 +76,7 @@ Registrar no brief ou no `artifacts/<pacote>-nota10-report.md` uma linha:
 | [`components/slides/primitives/`](../components/slides/primitives/) | **Implementação da barra no player** (BoardChrome, PolarityPanel, …) |
 | [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) | Primitives + ondas |
 | Skill `avant-neuroslides-visual` | Lei de retenção + Modo V |
+| [`NEUROSLIDES_ATELIER_KIT.md`](NEUROSLIDES_ATELIER_KIT.md) | 8 gestos ouro + atelier especialista |
+| [`PROMPT_ATELIER_VISUAL.md`](PROMPT_ATELIER_VISUAL.md) | Crítica glanceable / elevação |
 | [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) | Engenharia React |
 | [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](NEUROSLIDES_GERACAO_2_ROADMAP.md) | Rollout |

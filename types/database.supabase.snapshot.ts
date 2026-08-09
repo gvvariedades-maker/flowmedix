@@ -339,6 +339,62 @@ export type Database = {
           },
         ]
       }
+      guideline_source_candidates: {
+        Row: {
+          created_at: string
+          extracted_at: string | null
+          extraction_status: Database["public"]["Enums"]["guideline_extraction_status"]
+          id: string
+          issuer: string
+          notes: string | null
+          priority: number
+          registry_id: string
+          source_id: string
+          tier: Database["public"]["Enums"]["guideline_source_tier"]
+          title: string
+          url: string | null
+          year: number | null
+        }
+        Insert: {
+          created_at?: string
+          extracted_at?: string | null
+          extraction_status?: Database["public"]["Enums"]["guideline_extraction_status"]
+          id?: string
+          issuer: string
+          notes?: string | null
+          priority?: number
+          registry_id: string
+          source_id: string
+          tier: Database["public"]["Enums"]["guideline_source_tier"]
+          title: string
+          url?: string | null
+          year?: number | null
+        }
+        Update: {
+          created_at?: string
+          extracted_at?: string | null
+          extraction_status?: Database["public"]["Enums"]["guideline_extraction_status"]
+          id?: string
+          issuer?: string
+          notes?: string | null
+          priority?: number
+          registry_id?: string
+          source_id?: string
+          tier?: Database["public"]["Enums"]["guideline_source_tier"]
+          title?: string
+          url?: string | null
+          year?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "guideline_source_candidates_registry_id_fkey"
+            columns: ["registry_id"]
+            isOneToOne: false
+            referencedRelation: "subtopico_guideline_registry"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       historico_questoes: {
         Row: {
           acertou: boolean
@@ -830,6 +886,33 @@ export type Database = {
         }
         Relationships: []
       }
+      stripe_webhook_events: {
+        Row: {
+          created_at: string
+          event_id: string
+          payload_hash: string | null
+          processed_at: string | null
+          status: string
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          event_id: string
+          payload_hash?: string | null
+          processed_at?: string | null
+          status?: string
+          type: string
+        }
+        Update: {
+          created_at?: string
+          event_id?: string
+          payload_hash?: string | null
+          processed_at?: string | null
+          status?: string
+          type?: string
+        }
+        Relationships: []
+      }
       study_notebook_items: {
         Row: {
           added_at: string | null
@@ -873,6 +956,7 @@ export type Database = {
           created_at: string | null
           description: string | null
           id: string
+          source_pack_id: string | null
           title: string
           updated_at: string | null
           user_id: string
@@ -881,6 +965,7 @@ export type Database = {
           created_at?: string | null
           description?: string | null
           id?: string
+          source_pack_id?: string | null
           title: string
           updated_at?: string | null
           user_id: string
@@ -889,8 +974,102 @@ export type Database = {
           created_at?: string | null
           description?: string | null
           id?: string
+          source_pack_id?: string | null
           title?: string
           updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      subtopico_guideline_registry: {
+        Row: {
+          created_at: string
+          extraction_notes: string | null
+          extraction_status: Database["public"]["Enums"]["guideline_extraction_status"]
+          guideline_table_id: string | null
+          has_bespoke_molde: boolean
+          has_guideline_codified: boolean
+          has_premium_builder: boolean
+          id: string
+          needs_official_data: boolean
+          primary_issuer: string | null
+          question_count: number
+          rollout_priority: number | null
+          subtopico: string
+          subtopico_ordem: number
+          topico: string
+          topico_ordem: number
+          updated_at: string
+          urgency: Database["public"]["Enums"]["guideline_urgency"]
+        }
+        Insert: {
+          created_at?: string
+          extraction_notes?: string | null
+          extraction_status?: Database["public"]["Enums"]["guideline_extraction_status"]
+          guideline_table_id?: string | null
+          has_bespoke_molde?: boolean
+          has_guideline_codified?: boolean
+          has_premium_builder?: boolean
+          id?: string
+          needs_official_data?: boolean
+          primary_issuer?: string | null
+          question_count?: number
+          rollout_priority?: number | null
+          subtopico: string
+          subtopico_ordem: number
+          topico: string
+          topico_ordem: number
+          updated_at?: string
+          urgency?: Database["public"]["Enums"]["guideline_urgency"]
+        }
+        Update: {
+          created_at?: string
+          extraction_notes?: string | null
+          extraction_status?: Database["public"]["Enums"]["guideline_extraction_status"]
+          guideline_table_id?: string | null
+          has_bespoke_molde?: boolean
+          has_guideline_codified?: boolean
+          has_premium_builder?: boolean
+          id?: string
+          needs_official_data?: boolean
+          primary_issuer?: string | null
+          question_count?: number
+          rollout_priority?: number | null
+          subtopico?: string
+          subtopico_ordem?: number
+          topico?: string
+          topico_ordem?: number
+          updated_at?: string
+          urgency?: Database["public"]["Enums"]["guideline_urgency"]
+        }
+        Relationships: []
+      }
+      user_preferences_onboarding: {
+        Row: {
+          bancas_foco: string[]
+          carga_horaria_semanal: number | null
+          created_at: string
+          topicos_afinidade: string[]
+          topicos_dificuldade: string[]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          bancas_foco?: string[]
+          carga_horaria_semanal?: number | null
+          created_at?: string
+          topicos_afinidade?: string[]
+          topicos_dificuldade?: string[]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          bancas_foco?: string[]
+          carga_horaria_semanal?: number | null
+          created_at?: string
+          topicos_afinidade?: string[]
+          topicos_dificuldade?: string[]
+          updated_at?: string
           user_id?: string
         }
         Relationships: []
@@ -948,6 +1127,7 @@ export type Database = {
           p_assuntos?: string[]
           p_banca?: string
           p_bancas?: string[]
+          p_disciplina?: string
           p_page?: number
           p_q?: string
           p_user_id: string
@@ -962,6 +1142,7 @@ export type Database = {
         Args: { p_session_id: string }
         Returns: undefined
       }
+      refresh_subtopico_guideline_counts: { Args: never; Returns: undefined }
       show_limit: { Args: never; Returns: number }
       show_trgm: { Args: { "": string }; Returns: string[] }
       simulado_run_retention: {
@@ -986,6 +1167,14 @@ export type Database = {
       concurso_status: "rascunho" | "ativo" | "arquivado"
       concurso_tipo: "geral" | "edital"
       email_template_kind: "transactional" | "marketing"
+      guideline_extraction_status:
+        | "pending"
+        | "in_progress"
+        | "extracted"
+        | "codified"
+        | "not_applicable"
+      guideline_source_tier: "A" | "B"
+      guideline_urgency: "critical" | "high" | "medium" | "low" | "none"
       lp_page_status: "rascunho" | "ativo" | "arquivado"
     }
     CompositeTypes: {
@@ -1131,6 +1320,15 @@ export const Constants = {
       concurso_status: ["rascunho", "ativo", "arquivado"],
       concurso_tipo: ["geral", "edital"],
       email_template_kind: ["transactional", "marketing"],
+      guideline_extraction_status: [
+        "pending",
+        "in_progress",
+        "extracted",
+        "codified",
+        "not_applicable",
+      ],
+      guideline_source_tier: ["A", "B"],
+      guideline_urgency: ["critical", "high", "medium", "low", "none"],
       lp_page_status: ["rascunho", "ativo", "arquivado"],
     },
   },

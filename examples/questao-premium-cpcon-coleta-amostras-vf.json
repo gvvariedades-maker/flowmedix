@@ -6,7 +6,53 @@
     "ano": "2026",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Coleta de Exames Laboratoriais"
+    "subtopico": "Coleta de Exames Laboratoriais",
+    "pedagogical_branch": "coleta_tecnica_venosa",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-08-05",
+      "reviewer": "agent:golden-anchor",
+      "guideline_snapshot": "CLSI GP41 / MS Manual Amostras / Anvisa RDC 222/2018 — venopunção, transporte refrigerado 2–8 °C, segregação de perfurocortantes",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "clsi-gp41-venipuncture",
+        "tier": "A",
+        "issuer": "CLSI",
+        "title": "GP41 — Collection of Diagnostic Venous Blood Specimens",
+        "year": 2017,
+        "covers": [
+          "veia mediana cubital preferida",
+          "identificação pré-coleta",
+          "transporte de amostras"
+        ]
+      },
+      {
+        "id": "ms-manual-amostras-biologicas",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Coleta de Amostras Biológicas para Exames Laboratoriais",
+        "year": 2020,
+        "url": "https://www.gov.br/saude/",
+        "covers": [
+          "coleta venosa",
+          "acondicionamento e transporte 2–8 °C"
+        ]
+      },
+      {
+        "id": "anvisa-rdc-222-residuos",
+        "tier": "A",
+        "issuer": "Anvisa",
+        "title": "RDC 222/2018 — Gerenciamento de resíduos de serviços de saúde",
+        "year": 2018,
+        "covers": [
+          "segregação de perfurocortantes",
+          "descarte de resíduos infectantes"
+        ]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Considerando a coleta, o acondicionamento e o transporte de amostras biológicas, analise as afirmativas a seguir:\nI- Na coleta de sangue venoso, a veia mediana cubital costuma ser preferida à cefálica.\nII- Amostras que necessitam de refrigeração devem ser transportadas, em regra, entre 2°C e 8°C.\nIII- Luvas e gazes podem ser descartadas no mesmo recipiente de perfurocortantes e resíduos infectantes, desde que o volume seja pequeno.\nÉ CORRETO o que se afirma em:",
@@ -50,7 +96,7 @@
         {
           "label": "Mediana cubital",
           "detail": "Veia de escolha frequente para punção venosa periférica por calibre, estabilidade e facilidade técnica.",
-          "icon": "PackageCheck"
+          "icon": "Syringe"
         },
         {
           "label": "Refrigeração",
@@ -64,7 +110,7 @@
         },
         {
           "label": "Fase pré-analítica",
-          "detail": "A maior parte dos erros laboratoriais acontece antes da análise propriamente dita: coleta, identificação, acondicionamento e transporte.",
+          "detail": "Erros de coleta, identificação, acondicionamento e transporte ocorrem antes da análise no laboratório.",
           "icon": "ClipboardList"
         },
         {
@@ -73,16 +119,35 @@
           "icon": "AlertTriangle"
         }
       ],
-      "footer_rule": "Coleta correta = escolha do sítio + temperatura adequada + segregação de resíduos"
+      "footer_rule": "Coleta correta = sítio venoso + temperatura + segregação de resíduos"
     },
     {
-      "type": "golden_rule",
-      "slide_title": "Regra de ouro — pré-analítica",
+      "type": "logic_flow",
+      "reveal_mode": "tap",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Coleta de Exames Laboratoriais"
       },
-      "content": "COLETA E TRANSPORTE - O QUE A BANCA COBRA",
+      "steps": [
+        "Formato: três afirmativas V/F + combinação nas letras.",
+        "Julgar I: mediana cubital preferida à cefálica na venopunção? → verdadeira.",
+        "Julgar II: transporte refrigerado entre 2°C e 8°C quando exigido? → verdadeira.",
+        "Julgar III: luvas/gazes no mesmo recipiente de perfurocortantes? → falsa — segregação obrigatória.",
+        "Conjunto verdadeiro: I e II apenas.",
+        "Eliminar A, B, C e E por incluírem III ou excluírem I/II.",
+        "Marcar D.",
+        "Em similares: pré-analítica = punção + temperatura + descarte — III costuma ser a armadilha de biossegurança."
+      ],
+      "footer_rule": "Roteiro: I → II → III → conjunto → letra"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — pré-analítica venosa",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "COLETA E TRANSPORTE — O QUE A BANCA COBRA",
       "rows": [
         {
           "label": "I — acesso venoso",
@@ -96,42 +161,16 @@
         },
         {
           "label": "III — descarte",
-          "value": "Perfurocortante exige segregação e recipiente próprio",
-          "emphasis": "alert",
+          "value": "Perfurocortante exige recipiente rígido e segregado",
           "badge": "warn"
         },
         {
-          "label": "Ponto de atenção",
-          "value": "A fase pré-analítica exige identificação, acondicionamento e envio corretos",
+          "label": "Pré-analítica",
+          "value": "Identificar, coletar, acondicionar e transportar antes da análise",
           "badge": "info"
-        },
-        {
-          "label": "Resposta final",
-          "value": "I e II apenas",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
-      "footer_rule": "Na pré-analítica, a banca adora inverter venopunção, temperatura e descarte"
-    },
-    {
-      "type": "logic_flow",
-      "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Coleta de Exames Laboratoriais"
-      },
-      "steps": [
-        "Ler a questão como combinação V/F de três afirmativas.",
-        "Julgar I: mediana cubital é via preferida? → verdadeiro.",
-        "Julgar II: transporte refrigerado entre 2°C e 8°C? → verdadeiro.",
-        "Julgar III: luvas e gazes no mesmo recipiente dos perfurocortantes? → falso.",
-        "Montar o conjunto correto: I e II apenas.",
-        "Eliminar alternativas que incluam III.",
-        "Marcar D.",
-        "Fixação: se a frase fala em descarte de perfurocortante, pense em recipiente próprio e segregação."
-      ],
-      "footer_rule": "Raciocínio seguro: punção adequada + temperatura + segregação = acerto"
+      "footer_rule": "Decore: mediana · 2–8 °C · perfurocortante isolado"
     },
     {
       "type": "danger_zone",
@@ -143,27 +182,32 @@
       "content": "PEGADINHAS CPCON — COLETA E TRANSPORTE",
       "items": [
         {
-          "label": "Substituir mediana cubital por cefálica sem critério",
-          "detail": "A cefálica pode ser usada, mas a banca quer a veia mais favorecida na prática.",
-          "correct": "A mediana cubital costuma ser preferida na coleta venosa periférica."
+          "label": "Letra A — I e III",
+          "detail": "Aceita I correta mas inclui III falsa sobre descarte misto.",
+          "correct": "III erra: luvas e gazes não vão com perfurocortantes no mesmo recipiente."
         },
         {
-          "label": "Ignorar a faixa de 2°C a 8°C",
-          "detail": "Quando o exame pede refrigeração, não basta dizer “manter frio” de modo genérico.",
-          "correct": "O transporte refrigerado costuma seguir 2°C a 8°C, conforme protocolo."
+          "label": "Letra B — II e III",
+          "detail": "Acerta temperatura mas valida descarte incorreto e exclui I verdadeira.",
+          "correct": "Falta I (mediana cubital) e inclui III falsa."
         },
         {
-          "label": "Juntar resíduos incompatíveis",
-          "detail": "Misturar luvas, gazes e perfurocortantes parece prático, mas é erro de biossegurança.",
-          "correct": "Perfurocortantes vão para recipiente próprio, com segregação correta."
+          "label": "Letra C — I, II e III",
+          "detail": "Marca tudo verdadeiro por decorar dois itens certos.",
+          "correct": "III é falsa — perfurocortante sempre segregado, volume pequeno não autoriza mistura."
         },
         {
-          "label": "Trocar a fase pré-analítica pela analítica",
-          "detail": "A questão cobra coleta e envio, não leitura do equipamento.",
-          "correct": "O foco é pré-analítico: punção, acondicionamento e transporte."
+          "label": "Letra E — III apenas",
+          "detail": "Isola só a afirmativa errada como única correta.",
+          "correct": "III descreve conduta proibida de biossegurança — não pode ser gabarito."
+        },
+        {
+          "label": "Confundir cefálica com mediana",
+          "detail": "Ambas são veias periféricas usáveis, mas a banca cobra a preferência técnica.",
+          "correct": "Mediana cubital costuma ser primeira escolha na venopunção de rotina."
         }
       ],
-      "footer_rule": "Banca costuma errar na pegadinha da III: descarte nunca é “mistura geral”"
+      "footer_rule": "Na III, volume pequeno não salva mistura de resíduos"
     }
   ]
 }

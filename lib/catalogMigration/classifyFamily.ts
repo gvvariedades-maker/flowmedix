@@ -87,8 +87,9 @@ export function isLegisFamily(instruction: string): boolean {
 /** #6 — pedido explícito de conta / equivalência / infusão calculada. */
 export function isCalcFamily(instruction: string): boolean {
   const blob = instruction.toLowerCase();
+  // Evita falso positivo: "IMC calculado", "valor calculado" (adjetivo) ≠ pedido de conta.
   return (
-    /calcul|gts|gotas|comprimido|equival[eê]ncia|dilui|regra de três|microgotas|quantos?\s+ml|quantas?\s+gotas/i.test(
+    /\bcalcule\b|\bcalcular\b|\bc[aá]lculo\b|\bc[aá]lculos\b|gts|gotas|comprimido|equival[eê]ncia|dilui|regra de tr[eê]s|microgotas|quantos?\s+ml|quantas?\s+gotas/i.test(
       blob,
     ) ||
     (/infus/i.test(blob) &&

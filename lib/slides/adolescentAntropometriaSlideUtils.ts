@@ -42,10 +42,19 @@ export const ADOLESCENT_Z_SCORE_POSITIVE: RegExp[] = [
 ];
 
 export function inferZRailSlot(title: string, description: string): ZRailSlot {
+  const titleL = title.toLowerCase();
   const text = `${title} ${description}`.toLowerCase();
+
+  // Título manda — evita "Conduta … Caderneta" cair em tool
+  if (/^(pegadinha|armadilha)\b/.test(titleL)) return 'pegadinha';
+  if (/^conduta\b/.test(titleL)) return 'action';
+  if (/^sobrepeso\b/.test(titleL) || /\+1.*\+2|\+1 a \+2/.test(titleL)) return 'band_overweight';
+  if (/escore\s*z|o que [eé] o z|^z\b/.test(titleL)) return 'metric';
+  if (/caderneta|curvas?\s*oms|ferramenta/.test(titleL)) return 'tool';
+
+  if (/sobrepeso|\+1.*\+2|\+1 a \+2/.test(text)) return 'band_overweight';
   if (/caderneta|curvas?\s*oms|gráfico|grafico/.test(text)) return 'tool';
   if (/escore\s*z|score\s*z|desvio[\s-]?padr[aã]o|mediana/.test(text)) return 'metric';
-  if (/sobrepeso|\+1.*\+2|\+1 a \+2/.test(text)) return 'band_overweight';
   if (/alimenta[cç][aã]o|atividade\s+f[ií]sica|conduta|orientar|estilo\s+de\s+vida/.test(text)) {
     return 'action';
   }
@@ -53,7 +62,7 @@ export function inferZRailSlot(title: string, description: string): ZRailSlot {
     return 'band_severe_low';
   }
   if (/obesidade\s+grave|>\s*\+3|z\s*>\s*\+3/.test(text)) return 'band_severe_high';
-  if (/deslocar|desvio-padr[aã]o|faixa\s+intermedi[aá]ria|pegadinha|±1/.test(text)) return 'pegadinha';
+  if (/deslocar|faixa\s+intermedi[aá]ria|pegadinha|±1/.test(text)) return 'pegadinha';
   return 'general';
 }
 
@@ -117,11 +126,63 @@ export function extractZRange(text: string): { low?: number; high?: number } | n
   if (between) {
     return { low: Number(between[1]), high: Number(between[2]) };
   }
-  const lt = normalized.match(/<\s*([+-]?\d+)/);
-  if (lt) return { high: Number(lt[1]) - 0.01 };
-  const gt = normalized.match(/>\s*([+-]?\d+)/);
-  if (gt) return { low: Number(gt[1]) + 0.01 };
+  // Caderneta: "-3 <= Z < -2", "-2 <= Z <= +1", "+1 < Z <= +2"
+  const zClosed = normalized.match(
+    /([+-]?\d+(?:\.\d+)?)\s*<?=\s*z\s*<?=?\s*([+-]?\d+(?:\.\d+)?)/i,
+  );
+  if (zClosed) {
+    return { low: Number(zClosed[1]), high: Number(zClosed[2]) };
+  }
+  const zOpenLow = normalized.match(
+    /([+-]?\d+(?:\.\d+)?)\s*<\s*z\s*<?=?\s*([+-]?\d+(?:\.\d+)?)/i,
+  );
+  if (zOpenLow) {
+    return { low: Number(zOpenLow[1]), high: Number(zOpenLow[2]) };
+  }
+  const lt = normalized.match(/z\s*<\s*([+-]?\d+)/i) ?? normalized.match(/<\s*([+-]?\d+)/);
+  if (lt) return { high: Number(lt[1]) - 0.01, low: -4 };
+  const gt = normalized.match(/z\s*>\s*([+-]?\d+)/i) ?? normalized.match(/>\s*([+-]?\d+)/);
+  if (gt) return { low: Number(gt[1]) + 0.01, high: 4 };
   return null;
+}
+
+/** Marcadores do trilho (-3…+3) que pertencem à faixa da Caderneta. */
+export function zBandHighlightedMarkers(
+  band: ZBandId,
+  valueText: string,
+): ReadonlySet<number> {
+  const fromValue = extractZRange(valueText);
+  if (fromValue?.low != null && fromValue?.high != null) {
+    const out = new Set<number>();
+    for (const marker of Z_RAIL_MARKERS) {
+      const lo = Math.min(fromValue.low, fromValue.high);
+      const hi = Math.max(fromValue.low, fromValue.high);
+      // Inclui extremos visíveis do intervalo (ex.: eutrofia -2…+1)
+      if (marker >= Math.ceil(lo - 0.01) && marker <= Math.floor(hi + 0.01)) {
+        out.add(marker);
+      }
+    }
+    if (out.size > 0) return out;
+  }
+
+  switch (band) {
+    case 'magreza_acentuada':
+      return new Set([-3]);
+    case 'magreza':
+      return new Set([-3, -2]);
+    case 'eutrofia':
+      return new Set([-2, -1, 0, 1]);
+    case 'sobrepeso':
+      return new Set([1, 2]);
+    case 'obesidade':
+      return new Set([2, 3]);
+    case 'obesidade_grave':
+      return new Set([3]);
+    case 'estatura_baixa':
+      return new Set([-3, -2]);
+    default:
+      return new Set([0]);
+  }
 }
 
 export function parseAdolescentZStep(

@@ -348,6 +348,59 @@ const Dyn_adolescent_exceto_isolate_board = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pt_classes_classify_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/LogicFlowPtClassesClassifyBoard') as Promise<Record<string, unknown>>,
+      'LogicFlowPtClassesClassifyBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_vf_claim_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/LogicFlowPtClassesVfClaimBoard') as Promise<Record<string, unknown>>,
+      'LogicFlowPtClassesVfClaimBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_adverb_mnemonic_rail = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/LogicFlowPtClassesAdverbMnemonicRail') as Promise<Record<string, unknown>>,
+      'LogicFlowPtClassesAdverbMnemonicRail',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_prep_category_stack = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/LogicFlowPtClassesPrepCategoryStack') as Promise<
+          Record<string, unknown>
+        >,
+      'LogicFlowPtClassesPrepCategoryStack',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_exceto_isolate_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/LogicFlowPtClassesExcetoIsolateTap') as Promise<
+          Record<string, unknown>
+        >,
+      'LogicFlowPtClassesExcetoIsolateTap',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pni_exceto_isolate_board = dynamic(
   () =>
     loadNamedVariant(
@@ -368,6 +421,42 @@ const Dyn_pni_via_isolate_board = dynamic(
 
 const Dyn_adolescent_z_classify_tap = dynamic(
   () => loadNamedVariant(() => import('../variants/LogicFlowAdolescentZClassifyTap') as Promise<Record<string, unknown>>, 'LogicFlowAdolescentZClassifyTap'),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_violence_timeline = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/LogicFlowAdolescentViolenceTimeline') as Promise<Record<string, unknown>>,
+      'LogicFlowAdolescentViolenceTimeline',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_mental_protocol_rail = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/LogicFlowAdolescentMentalProtocolRail') as Promise<Record<string, unknown>>,
+      'LogicFlowAdolescentMentalProtocolRail',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_dev_objective_flow = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/LogicFlowAdolescentDevObjectiveFlow') as Promise<Record<string, unknown>>,
+      'LogicFlowAdolescentDevObjectiveFlow',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_generic_care_levels = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/LogicFlowAdolescentGenericLevels') as Promise<Record<string, unknown>>,
+      'LogicFlowAdolescentGenericLevels',
+    ),
   { ssr: true, loading: () => null },
 );
 
@@ -457,9 +546,18 @@ export const LOGIC_FLOW_REGISTRY: Record<string, BespokeVariantEntry> = {
   'adolescent-vf-weave-tap': { Component: Dyn_adolescent_vf_weave_tap },
   'adolescent-exceto-isolate-tap': { Component: Dyn_adolescent_exceto_isolate_tap },
   'adolescent-exceto-isolate-board': { Component: Dyn_adolescent_exceto_isolate_board },
+  'pt-classes-classify-board': { Component: Dyn_pt_classes_classify_board },
+  'pt-classes-vf-claim-board': { Component: Dyn_pt_classes_vf_claim_board },
+  'pt-classes-adverb-mnemonic-rail': { Component: Dyn_pt_classes_adverb_mnemonic_rail },
+  'pt-classes-prep-category-stack': { Component: Dyn_pt_classes_prep_category_stack },
+  'pt-classes-exceto-isolate-board': { Component: Dyn_pt_classes_exceto_isolate_board },
   'pni-exceto-isolate-board': { Component: Dyn_pni_exceto_isolate_board },
   'pni-via-isolate-board': { Component: Dyn_pni_via_isolate_board },
   'adolescent-z-classify-tap': { Component: Dyn_adolescent_z_classify_tap },
+  'adolescent-violence-timeline': { Component: Dyn_adolescent_violence_timeline },
+  'adolescent-mental-protocol-rail': { Component: Dyn_adolescent_mental_protocol_rail },
+  'adolescent-dev-objective-flow': { Component: Dyn_adolescent_dev_objective_flow },
+  'adolescent-generic-care-levels': { Component: Dyn_adolescent_generic_care_levels },
   'dose-calc-tap': { Component: Dyn_dose_calc_tap },
   'sae-decision-tap': { Component: Dyn_sae_decision_tap },
   'sonda-decision-tap': { Component: Dyn_sonda_decision_tap },

@@ -33,6 +33,9 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'adolescent-sigilo-spectrum',
   'adolescent-speak-barrier-board',
   'adolescent-z-band-board',
+  'adolescent-mental-hub-board',
+  'adolescent-dev-vigilance-board',
+  'adolescent-generic-finance-checklist',
   'burn-rule-nine-board',
   'trabalho-nr32-reference-board',
   'sp-nsp-reference-board',
@@ -80,6 +83,10 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'pt-clitic-rail-board',
   'pt-comma-rail-board',
   'pt-term-matrix-board',
+  'pt-classes-family-table',
+  'pt-classes-adverb-arrow-cards',
+  'pt-classes-exceto-fix-board',
+  'pt-classes-vf-claim-fix',
   'pt-subject-focus-board',
 ]);
 
@@ -126,6 +133,9 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'adolescent-sigilo-spectrum') return 'adolescent-sigilo-spectrum';
   if (explicitVariant === 'adolescent-speak-barrier-board') return 'adolescent-speak-barrier-board';
   if (explicitVariant === 'adolescent-z-band-board') return 'adolescent-z-band-board';
+  if (explicitVariant === 'adolescent-mental-hub-board') return 'adolescent-mental-hub-board';
+  if (explicitVariant === 'adolescent-dev-vigilance-board') return 'adolescent-dev-vigilance-board';
+  if (explicitVariant === 'adolescent-generic-finance-checklist') return 'adolescent-generic-finance-checklist';
   if (explicitVariant === 'burn-rule-nine-board') return 'burn-rule-nine-board';
   if (explicitVariant === 'trabalho-nr32-reference-board') return 'trabalho-nr32-reference-board';
   if (explicitVariant === 'sp-nsp-reference-board') return 'sp-nsp-reference-board';
@@ -161,6 +171,10 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'pt-comma-rail-board') return 'pt-comma-rail-board';
   if (explicitVariant === 'pt-term-matrix-board') return 'pt-term-matrix-board';
   if (explicitVariant === 'pt-subject-focus-board') return 'pt-subject-focus-board';
+  if (explicitVariant === 'pt-classes-family-table') return 'pt-classes-family-table';
+  if (explicitVariant === 'pt-classes-adverb-arrow-cards') return 'pt-classes-adverb-arrow-cards';
+  if (explicitVariant === 'pt-classes-exceto-fix-board') return 'pt-classes-exceto-fix-board';
+  if (explicitVariant === 'pt-classes-vf-claim-fix') return 'pt-classes-vf-claim-fix';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

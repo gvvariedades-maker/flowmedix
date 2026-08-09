@@ -76,7 +76,7 @@ Bordas cyber: `border-white/10`. Editorial: `border-slate-200`.
 | Vitrine | `VitrineClient`, `VitrinePageHeader`, `VitrineToolbar`, `VitrineQuickFilters`, `VitrineSubjectCard`, `VitrineResumeCard`, `VitrineProgressRing`, `VitrineQuestaoList`, `VitrinePaginationBar`, `VitrineSubjectSheet`, `VitrineCatalogStatsStrip` / `Skeleton` |
 | Player | `AvantLessonPlayer` — shell editorial → reverso cyber |
 
-Ícones: **Lucide** via `lucide-react` (não SVG inventado).
+Ícones: **Lucide** via `lucide-react` (não SVG inventado). Gap real / diagrama custom → skill [`svg-quality`](../svg-quality/SKILL.md) + refs [`docs/design-refs/svg-models/`](../../design-refs/svg-models/README.md) · trigger `SVG:`.
 
 ## Hierarquia de decisão (da VEGA — válida)
 

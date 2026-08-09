@@ -1,0 +1,283 @@
+#!/usr/bin/env tsx
+/** Handcraft golden-v1 — coleta-de-exames-laboratoriais-g08 */
+import { mcqPack, runHandcraftLote } from './lib/coleta-handcraft-base';
+
+const LOTE = 'coleta-de-exames-laboratoriais-g08';
+const REVIEWER = 'coleta-g08';
+
+const SPECS = {
+  'furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-3': mcqPack({
+    family: 'certo_errado',
+    guideline: 'CLSI — I: EDTA hemograma/HbA1c/eletroforese parcial; II: vermelho ativador não citrato; III: verde heparina plasma — só I correta',
+    title: 'Tubos EDTA/vermelho/verde — Furb',
+    conceptItems: [
+      { label: 'Coleta de materiais', detail: 'Transporte, armazenamento e método de coleta exigem cuidados.', icon: 'Package' },
+      { label: 'Item I — EDTA', detail: 'Hemograma, HbA1c, eletroforese de hemoglobina — correto.', icon: 'Droplet' },
+      { label: 'Item II — vermelho', detail: 'Ativador de coágulo — não citrato de sódio — incorreto.', icon: 'XCircle' },
+      { label: 'Item III — verde', detail: 'Plasma heparinizado — afirmativa parcialmente distorcida.', icon: 'TestTube' },
+      { label: 'Gabarito', detail: 'E — I apenas.', icon: 'Check' },
+    ],
+    conceptFooter: 'Só afirmativa I correta nesta Furb',
+    steps: [
+      'Comando: analise I, II e III sobre tubos de coleta.',
+      'I EDTA para hemograma/HbA1c/eletroforese — correto.',
+      'II confunde vermelho (ativador) com citrato — incorreto.',
+      'III verde/heparina — formulado incorretamente no item.',
+      'Marcar E — I apenas.',
+      'Em similares: vermelho = ativador gel/soro — azul = citrato.',
+    ],
+    logicFooter: 'E = I apenas (Furb)',
+    goldenTitle: 'Referência — tubos Furb',
+    goldenContent: 'ITENS I–III',
+    rows: [
+      { label: 'EDTA roxo', value: 'Hemograma, HbA1c, eletroforese', badge: 'ok' },
+      { label: 'Vermelho', value: 'Ativador coágulo — soro/sorologia', badge: 'hot' },
+      { label: 'Verde', value: 'Heparina — plasma', badge: 'ok' },
+    ],
+    goldenFooter: 'Item II troca citrato por ativador no vermelho',
+    dangerTitle: 'PEGADINHAS — FURB I–III',
+    dangerItems: [
+      { label: 'Letra A — só II', detail: 'Ignora I correta.', correct: 'I válida — marcar E.' },
+      { label: 'Letra B — II e III', detail: 'Inclui itens falsos.', correct: 'Só I correta.' },
+      { label: 'Letra C — todos', detail: 'Superdimensiona.', correct: 'II e III falham.' },
+      { label: 'Letra D — só III', detail: 'Corta I.', correct: 'E = I apenas.' },
+    ],
+    dangerFooter: 'Validar cada item antes da combinação',
+  }),
+
+  'furb-enfermagem-coleta-de-exames-laboratoriais-1779563200105-6': mcqPack({
+    family: 'certo_errado',
+    guideline: 'CLSI vácuo — rosquear agulha, garrote/antisepsia alcoólica, introduzir tubo: I II III corretas; IV falsa',
+    title: 'Vácuo — afirmativas I–IV Furb',
+    conceptItems: [
+      { label: 'Sistema a vácuo', detail: 'Procedimentos para coleta de sangue com vácuo.', icon: 'TestTube' },
+      { label: 'I — rosquear agulha', detail: 'Fixar no adaptador sem remover capa prematuramente — V.', icon: 'Wrench' },
+      { label: 'II — garrote e antisepsia', detail: 'Algodão com antissepsia alcoólica ou iodada — V.', icon: 'Sparkles' },
+      { label: 'III — introduzir tubo', detail: 'Técnica de enchimento conforme afirmativa — V.', icon: 'Syringe' },
+      { label: 'IV', detail: 'Afirmativa falsa — excluída do gabarito.', icon: 'XCircle' },
+    ],
+    conceptFooter: 'E = I, II e III apenas',
+    steps: [
+      'Comando: afirmativas sobre coleta a vácuo — I a IV.',
+      'I rosquear agulha no adaptador — correta.',
+      'II garrote, veia, antissepsia alcoólica ou iodada — correta.',
+      'III introdução do tubo — correta.',
+      'IV incorreta — excluir.',
+      'Marcar E — I, II e III apenas.',
+      'Em similares: vácuo Furb — validar IV antes de incluir.',
+    ],
+    logicFooter: 'E = I + II + III',
+    goldenTitle: 'Referência — vácuo',
+    goldenContent: 'SISTEMA VÁCUO',
+    rows: [
+      { label: 'Agulha', value: 'Rosqueada no holder', badge: 'ok' },
+      { label: 'Ordem', value: 'CLSI — citrato primeiro', badge: 'hot' },
+      { label: 'Homogeneizar', value: 'Inversão suave pós-coleta', badge: 'ok' },
+    ],
+    goldenFooter: 'IV é pegadinha clássica',
+    dangerTitle: 'PEGADINHAS — VÁCUO FURB',
+    dangerItems: [
+      { label: 'Letra A — todas IV', detail: 'Inclui IV falsa.', correct: 'IV errada — E exclui.' },
+      { label: 'Letra B — só IV', detail: 'Inverte.', correct: 'I–III corretas.' },
+      { label: 'Letra C — só I', detail: 'Corta II/III.', correct: 'Três primeiras corretas.' },
+      { label: 'Letra D — II III IV', detail: 'Mistura IV.', correct: 'E = I II III.' },
+    ],
+    dangerFooter: 'Validar cada afirmativa',
+  }),
+
+  'furb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-6': mcqPack({
+    guideline: 'ISO 6710 — heparina = tampa verde',
+    title: 'Heparina — cor verde',
+    conceptItems: [
+      { label: 'Comando', detail: 'Cor do tubo com heparina.', icon: 'Droplet' },
+      { label: 'Verde (E)', detail: 'Heparina sódica/lithium — plasma verde.', icon: 'Palette' },
+      { label: 'Azul', detail: 'Citrato.', icon: 'TestTube' },
+      { label: 'Roxo', detail: 'EDTA.', icon: 'Droplet' },
+    ],
+    conceptFooter: 'Heparina = verde',
+    steps: [
+      'Comando: cor relacionada ao tubo com heparina.',
+      'Padronização: tampa verde.',
+      'Eliminar vermelha, azul, amarela, cinza.',
+      'Marcar E — verde.',
+    ],
+    logicFooter: 'E = verde heparina',
+    goldenTitle: 'Referência — heparina',
+    goldenContent: 'HEPARINA — COR',
+    rows: [{ label: 'Heparina', value: 'Verde', badge: 'hot' }],
+    goldenFooter: 'Verde = plasma heparinizado',
+    dangerTitle: 'PEGADINHAS — HEPARINA',
+    dangerItems: [
+      { label: 'Letra A — vermelha', detail: 'Soro.', correct: 'Sem heparina.' },
+      { label: 'Letra B — azul', detail: 'Citrato.', correct: 'Coagulação.' },
+      { label: 'Letra C — amarela', detail: 'Gel/soro.', correct: 'Não heparina.' },
+      { label: 'Letra D — cinza', detail: 'Fluoreto.', correct: 'Glicose.' },
+    ],
+    dangerFooter: 'Decorar verde = heparina',
+  }),
+
+  'ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-2': mcqPack({
+    guideline: 'CLSI — plasma/heparina: tubo verde contém heparina como anticoagulante',
+    title: 'Tubos — aditivo heparina Ibade',
+    conceptItems: [
+      { label: 'Tubos de armazenagem', detail: 'Amostras sanguíneas com substâncias conforme exame.', icon: 'FlaskConical' },
+      { label: 'Comando', detail: 'Qual tubo contém heparina (Ibade).', icon: 'FlaskConical' },
+      { label: 'Verde (E)', detail: 'Anticoagulante heparina — plasma.', icon: 'Droplet' },
+      { label: 'Citrato/EDTA/fluoreto', detail: 'Azul/roxo/cinza — outros aditivos.', icon: 'TestTube' },
+    ],
+    conceptFooter: 'Heparina = E',
+    steps: [
+      'Comando: substância/tubo com heparina.',
+      'Eliminar citrato, EDTA, fluoreto, ativador.',
+      'Marcar E — heparina (tubo verde).',
+    ],
+    logicFooter: 'E = heparina',
+    goldenTitle: 'Referência — aditivos',
+    goldenContent: 'MAPa ADITIVOS',
+    rows: [
+      { label: 'Heparina', value: 'Verde', badge: 'hot' },
+      { label: 'EDTA', value: 'Roxo', badge: 'ok' },
+      { label: 'Citrato', value: 'Azul', badge: 'ok' },
+    ],
+    goldenFooter: 'Verde = heparina',
+    dangerTitle: 'PEGADINHAS — IBADE HEPARINA',
+    dangerItems: [
+      { label: 'Letra A — citrato', detail: 'Azul.', correct: 'TAP/coagulação.' },
+      { label: 'Letra B — EDTA', detail: 'Roxo.', correct: 'Hemograma.' },
+      { label: 'Letra C — fluoreto', detail: 'Cinza.', correct: 'Glicose.' },
+      { label: 'Letra D — ativador', detail: 'Vermelho/amarelo.', correct: 'Soro — não heparina.' },
+    ],
+    dangerFooter: 'Associar verde à heparina',
+  }),
+
+  'ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-3': mcqPack({
+    family: 'certo_errado',
+    branch: 'coleta_tecnica_venosa',
+    guideline: 'CLSI — aguardar secagem do antisséptico antes da punção; soltar garrote ao fluxo sanguíneo',
+    title: 'Pré-coleta — orientação INCORRETA',
+    conceptItems: [
+      { label: 'Comando INCORRETA', detail: 'Qual orientação está errada — gabarito A Ibade.', icon: 'AlertTriangle' },
+      { label: 'Secagem antisséptico', detail: 'Não puncionar área molhada — conduta CORRETA (não é INCORRETA).', icon: 'Timer' },
+      { label: 'Pegadinha', detail: 'Banca marca A — revisar enunciado completo no PDF.', icon: 'Search' },
+    ],
+    conceptFooter: 'Gabarito Ibade = A',
+    exam_vs_current: 'Gabarito A pode conflitar com MS (secar antisséptico) — ensinar gabarito A.',
+    steps: [
+      'Comando: orientação INCORRETA antes da coleta.',
+      'Ler cada alternativa buscando conduta falsa.',
+      'Gabarito oficial Ibade: A.',
+      'Marcar A conforme prova.',
+      'Em similares: secagem do antisséptico é conduta MS — se banca divergir, registrar exam_vs_current.',
+    ],
+    logicFooter: 'A = gabarito Ibade INCORRETA',
+    goldenTitle: 'Referência — pré-coleta MS',
+    goldenContent: 'ANTISSEPSIA — SECAGEM',
+    rows: [
+      { label: 'MS/CLSI', value: 'Aguardar secagem do antisséptico', badge: 'hot' },
+      { label: 'Garrote', value: 'Soltar ao fluxo sanguíneo', badge: 'ok' },
+    ],
+    goldenFooter: 'Prova × guideline: ver exam_vs_current',
+    dangerTitle: 'PEGADINHAS — IBADE INCORRETA',
+    dangerItems: [
+      { label: 'Letra B — soltar garrote', detail: 'Ao fluxo sanguíneo.', correct: 'Conduta correta — não é orientação INCORRETA.' },
+      { label: 'Letra C — pressão algodão', detail: 'Pós-punção.', correct: 'Técnica adequada — eliminar.' },
+      { label: 'Letra D — evitar exercício', detail: 'Pré-coleta.', correct: 'Conduta correta — eliminar.' },
+      { label: 'Letra E — tubo anticoagulante soro', detail: 'Confunde tubos.', correct: 'Erro real — mas gabarito Ibade marca A.' },
+      { label: 'Letra A — secagem antisséptico', detail: 'Gabarito INCORRETA Ibade.', correct: 'MS exige secar — registrar exam_vs_current se divergir.' },
+    ],
+    dangerFooter: 'Registrar divergência se MS ≠ banca',
+  }),
+
+  'idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-2': mcqPack({
+    guideline: 'CLSI — fluoreto/oxalato: tampa cinza para glicose',
+    title: 'Tampa cinza — glicemia',
+    conceptItems: [
+      { label: 'Comando', detail: 'Cor CORRETA do tubo para glicemia (Idcap).', icon: 'FlaskConical' },
+      { label: 'Cinza (C)', detail: 'Fluoreto de sódio.', icon: 'Droplet' },
+      { label: 'Verde/Amarela/Vermelha', detail: 'Outros aditivos.', icon: 'TestTube' },
+    ],
+    conceptFooter: 'Glicemia = cinza',
+    steps: [
+      'Comando: cor da tampa para glicemia.',
+      'Marcar C — cinza.',
+      'Eliminar vermelha, amarela, verde.',
+    ],
+    logicFooter: 'C = tampa cinza para glicemia',
+    goldenTitle: 'Referência — glicemia',
+    goldenContent: 'GLICOSE — CINZA',
+    rows: [{ label: 'Glicemia', value: 'Tampa cinza — fluoreto', badge: 'hot' }],
+    goldenFooter: 'Tampa cinza com fluoreto anti-glicólise',
+    dangerTitle: 'PEGADINHAS — IDCAP GLICOSE',
+    dangerItems: [
+      { label: 'Letra A — vermelha', detail: 'Soro.', correct: 'Glicólise altera resultado.' },
+      { label: 'Letra B — amarela', detail: 'Gel.', correct: 'Não padrão glicemia.' },
+      { label: 'Letra D — verde', detail: 'Heparina.', correct: 'Plasma — não glicose rotina.' },
+    ],
+    dangerFooter: 'Cinza preserva glicose',
+  }),
+
+  'idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7': mcqPack({
+    family: 'certo_errado',
+    guideline: 'CLSI — tampa VERDE = heparina; citrato = AZUL — assertiva “verde=citrato” é Errada',
+    title: 'C/E — verde × citrato IDECAN',
+    conceptItems: [
+      { label: 'Tubos coloridos', detail: 'Cores indicam função de análise diferente.', icon: 'Palette' },
+      { label: 'Ordem de coleta', detail: 'Escolha errada compromete resultado do exame de sangue.', icon: 'ListOrdered' },
+      { label: 'Assertiva', detail: '“Tampa verde: citrato de sódio para coagulação”.', icon: 'XCircle' },
+      { label: 'Correção', detail: 'Verde = heparina; azul = citrato — afirmativa falsa.', icon: 'AlertTriangle' },
+    ],
+    conceptFooter: 'B = Errado — verde não é citrato',
+    steps: [
+      'Comando: julgar assertiva sobre tampa verde e citrato.',
+      'Verde contém heparina — citrato é tampa azul.',
+      'Afirmativa inverte cores — Errada.',
+      'Marcar B — Errado.',
+      'Em similares: verde=heparina · azul=citrato — não trocar.',
+    ],
+    logicFooter: 'B = Errado (verde ≠ citrato)',
+    goldenTitle: 'Referência — cores IDECAN',
+    goldenContent: 'VERDE × AZUL',
+    rows: [
+      { label: 'Verde', value: 'Heparina — plasma', badge: 'hot' },
+      { label: 'Azul', value: 'Citrato — coagulação', badge: 'hot' },
+    ],
+    goldenFooter: 'Pegadinha clássica: trocar verde e azul',
+    dangerTitle: 'PEGADINHAS — IDECAN C/E 7',
+    dangerItems: [
+      { label: 'Letra A — Certo', detail: 'Aceita verde=citrato.', correct: 'Falso — heparina é verde; citrato é azul.' },
+      { label: 'Letra B — Errado', detail: 'Nega assertiva falsa.', correct: 'Gabarito — marcar Errado.' },
+    ],
+    dangerFooter: 'C/E exige assertiva literal sobre cores',
+  }),
+
+  'idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8': mcqPack({
+    family: 'certo_errado',
+    guideline: 'MS — tubo cinza: fluoreto de sódio para glicemia — Certo (A)',
+    title: 'C/E — tubo cinza glicemia',
+    conceptItems: [
+      { label: 'Tubos para coleta', detail: 'Cores diferentes por função analítica.', icon: 'TestTube' },
+      { label: 'Tampa cinza', detail: 'Fluoreto de sódio — inibe glicólise.', icon: 'Droplet' },
+      { label: 'Glicemia', detail: 'Dosagem requer preservação da glicose in vivo.', icon: 'FlaskConical' },
+      { label: 'Assertiva', detail: 'Cinza com fluoreto para análise de glicemia — verdadeira.', icon: 'Check' },
+    ],
+    conceptFooter: 'A = Certo — cinza/fluoreto/glicemia',
+    steps: [
+      'Comando: tubo cinza com fluoreto para glicemia.',
+      'Afirmativa alinhada MS/CLSI.',
+      'Marcar A — Certo.',
+      'Em similares: glicose → tampa cinza fluoreto.',
+    ],
+    logicFooter: 'A = Certo — cinza/fluoreto',
+    goldenTitle: 'Referência — cinza glicemia',
+    goldenContent: 'TUBO CINZA MS',
+    rows: [{ label: 'Glicemia', value: 'Fluoreto de sódio — tampa cinza', badge: 'hot' }],
+    goldenFooter: 'Fluoreto preserva glicose pós-coleta',
+    dangerTitle: 'PEGADINHAS — IDECAN C/E 8',
+    dangerItems: [
+      { label: 'Letra B — Errado', detail: 'Nega fluoreto.', correct: 'Afirmativa correta — marcar A Certo.' },
+    ],
+    dangerFooter: 'Cinza e glicemia andam juntos',
+  }),
+};
+
+runHandcraftLote(LOTE, REVIEWER, SPECS);

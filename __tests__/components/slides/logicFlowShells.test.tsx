@@ -194,7 +194,7 @@ describe('P1 lote 2 — Mulher letter rail + VF hub G2', () => {
     expect(screen.getByText(/transferência/i)).toBeInTheDocument();
   });
 
-  it('PniVfJuggleTap uses BoardChrome G2 + keep judgement UX', async () => {
+  it('PniVfJuggleTap uses BoardChrome G2 + hero letter + tiles V/F', async () => {
     const { LogicFlowPniVfJuggleTap } = await import(
       '@/components/slides/variants/LogicFlowPniVfJuggleTap'
     );
@@ -202,6 +202,7 @@ describe('P1 lote 2 — Mulher letter rail + VF hub G2', () => {
       <LogicFlowPniVfJuggleTap
         steps={[
           'Julgar afirmativa I: vacina X → VERDADEIRO',
+          'Julgar afirmativa II: intervalo mínimo → FALSO',
           'Localizar alternativa letra C e marcar',
         ]}
         theme={theme}
@@ -209,8 +210,10 @@ describe('P1 lote 2 — Mulher letter rail + VF hub G2', () => {
         footerRule="Combine V/F antes da letra."
       />,
     );
-    expect(screen.getByText(/juggle v\/f/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /julgar/i })).toBeInTheDocument();
+    expect(screen.getByText(/board v\/f vias/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/gabarito letra c/i)).toBeInTheDocument();
+    expect(screen.getByText('V')).toBeInTheDocument();
+    expect(screen.getByText('F')).toBeInTheDocument();
   });
 });
 
@@ -236,7 +239,7 @@ describe('P1 lote 4 — Adolescente VF/Z + Vitals', () => {
     expect(screen.getByRole('button', { name: /próximo/i })).toBeInTheDocument();
   });
 
-  it('AdolescentZClassifyTap uses FocusShell + trilho Z + letter rail', async () => {
+  it('AdolescentZClassifyTap uses BoardChrome + gesto MANTÉM × ELIMINA', async () => {
     const { LogicFlowAdolescentZClassifyTap } = await import(
       '@/components/slides/variants/LogicFlowAdolescentZClassifyTap'
     );
@@ -252,9 +255,11 @@ describe('P1 lote 4 — Adolescente VF/Z + Vitals', () => {
       />,
     );
     expect(screen.getByText(/escore z/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/trilho escore z/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/alternativas/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /próximo passo/i })).toBeInTheDocument();
+    expect(screen.getByText(/faixa que a caderneta confirma/i)).toBeInTheDocument();
+    expect(screen.getByText(/banca desloca/i)).toBeInTheDocument();
+    expect(screen.getByText('A')).toBeInTheDocument();
+    expect(screen.getAllByText('B').length).toBeGreaterThan(0);
+    expect(screen.getByText(/classifique no trilho z/i)).toBeInTheDocument();
   });
 
   it('VitalsTranslateTap uses BoardChrome + Traduzir', async () => {

@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "pacote_prefix": "coleta-de-exames-laboratoriais",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-coleta-*.json,examples/questao-premium-*-coleta-de-exames-laboratoriais-*.json",
+  "guideline": null,
+  "l3_brief_index": "artifacts/l3-brief-coleta-de-exames-laboratoriais-INDEX.md",
+  "cluster_report": "artifacts/coleta-de-exames-laboratoriais-topic-cluster-report.json",
+  "slug_selection": "P0 coleta_nao_sanguinea → g01; depois tubos_ordem, tecnica_venosa, hemocultura, jejum, capilar, generico por cluster",
+  "clusters": [
+    "Não-sanguínea — urina/fezes/escarro (40 · 23,4% — coleta_nao_sanguinea · g01)",
+    "Tubos / ordem de coleta / aditivos (34 · 19,9% — coleta_tubos_ordem)",
+    "Técnica venosa + erros pré-analíticos (12 · 7% — coleta_tecnica_venosa)",
+    "Hemocultura (11 · 6,4% — coleta_hemocultura)",
+    "Jejum / preparo (11 · 6,4% — coleta_jejum_preparo)",
+    "Capilar / glicemia (9 · 5,3% — coleta_capilar_glicemia)",
+    "Cauda genérica / exames mistos (54 · 31,6% — coleta_generico)"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "coleta_nao_sanguinea",
+      "when": "Urina (EAS/urocultura/24h), fezes, escarro, swabs/secreções",
+      "l3_decision": "molde_redesign",
+      "mold": "morphological · reference_table · tap · compare (COLETA_GENERIC até Implementar molde)",
+      "anchors": ["examples/questao-premium-ameosc-coleta-nao-sanguinea-urina.json"]
+    },
+    {
+      "id": "coleta_tubos_ordem",
+      "when": "Tubos, aditivos (EDTA/citrato/heparina), ordem de coleta, cores ISO/CLSI",
+      "l3_decision": "molde_redesign",
+      "mold": "morphological · reference_table · tap · compare (COLETA_GENERIC até Implementar molde)",
+      "anchors": ["examples/questao-premium-admtec-coleta-tubos-ordem.json"]
+    },
+    {
+      "id": "coleta_tecnica_venosa",
+      "when": "Punção venosa, vácuo, garrote, hemólise, identificação/biossegurança na coleta",
+      "l3_decision": "molde_redesign",
+      "mold": "morphological · reference_table · tap · compare (COLETA_GENERIC até Implementar molde)",
+      "anchors": ["examples/questao-premium-cpcon-coleta-amostras-vf.json"]
+    },
+    {
+      "id": "coleta_hemocultura",
+      "when": "Hemocultura, antissepsia, frascos, contaminação",
+      "l3_decision": "molde_redesign",
+      "mold": "morphological · reference_table · tap · compare (COLETA_GENERIC até Implementar molde)",
+      "anchors": ["examples/questao-premium-avancasp-coleta-hemocultura.json"]
+    },
+    {
+      "id": "coleta_jejum_preparo",
+      "when": "Jejum, preparo do paciente, lipídios/glicemia de jejum",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": ["examples/questao-premium-ameosc-coleta-jejum-glicemia.json"]
+    },
+    {
+      "id": "coleta_capilar_glicemia",
+      "when": "Punção capilar, glicosímetro, AMGC/HGT",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": ["examples/questao-premium-avancasp-coleta-capilar-glicemia.json"]
+    },
+    {
+      "id": "coleta_generico",
+      "when": "Exames específicos residuais, gasometria, cauda, mistos",
+      "l3_decision": "cauda_longa",
+      "mold": "genérico premium (COLETA_GENERIC_DESIGN teal)",
+      "anchors": ["examples/questao-premium-fau-coleta-generico.json"]
+    }
+  ],
+  "visual_gallery": {
+    "coleta_nao_sanguinea": {
+      "status": "brief_pending_react",
+      "note": "Modo padrão Paridade Adolescente: COLETA_GENERIC_DESIGN até Implementar molde. Erro espacial = protocolo por matriz."
+    },
+    "coleta_tubos_ordem": {
+      "status": "brief_pending_react",
+      "note": "Erro espacial = trilho de cores/sequência — genérico premium até bespoke."
+    },
+    "coleta_tecnica_venosa": {
+      "status": "brief_ok_generico",
+      "note": "Âncora candidata CPCON coleta-amostras-vf."
+    },
+    "coleta_hemocultura": {
+      "status": "brief_pending_react",
+      "note": "Sequência asséptica — genérico até bespoke."
+    },
+    "coleta_jejum_preparo": {
+      "status": "brief_ok_generico",
+      "note": "Tabela de horas — ok_generico."
+    },
+    "coleta_capilar_glicemia": {
+      "status": "brief_ok_generico",
+      "note": "ok_generico."
+    },
+    "coleta_generico": {
+      "status": "cauda_longa",
+      "note": "Cauda — genérico premium."
+    }
+  },
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>"
+  },
+  "first_lote": "coleta-de-exames-laboratoriais-g01",
+  "modes": {
+    "subtopico_handcraft": {
+      "label": "Handcraft golden-v1 — 171 slugs em lotes coleta-de-exames-laboratoriais-gNN",
+      "first_lote": "coleta-de-exames-laboratoriais-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run validate:goldens -- --lote=<lote> --strict",
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run audit:slug-alignment -- --lote=<lote> --strict",
+        "npm run audit:numeric-factcheck -- --lote=<lote>",
+        "npm run catalog:patch-pedagogical-branch -- --lote=<lote> --reconcile-branch --apply",
+        "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+        "npm run catalog:apply-lote -- --lote=<lote> --dry-run",
+        "npm run catalog:apply-lote -- --lote=<lote> --apply"
+      ]
+    }
+  },
+  "after_handcraft": [
+    "reconcile:handcraft-manifest",
+    "catalog:preflight em todos g*",
+    "audit:subtopico-quality -- --subtopico=\"Coleta de Exames Laboratoriais\" --promote"
+  ]
+}

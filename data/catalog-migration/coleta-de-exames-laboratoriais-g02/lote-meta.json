@@ -1,0 +1,40 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-08-05",
+  "applied_at": "2026-08-05",
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "cluster": "Não-sanguínea — continuação P0 (g02)",
+  "pedagogical_branch_target": "coleta_nao_sanguinea",
+  "priority": "P0 — coleta_nao_sanguinea g02",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-4",
+  "golden_reference": "examples/questao-premium-ameosc-coleta-nao-sanguinea-urina.json",
+  "guideline": "lib/guidelines/coletaExames.ts (COLETA_EXAMES_SBPC)",
+  "slugs": [
+    "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-1",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-7",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-8",
+    "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-6",
+    "cpcon-uepb-enfermagem-exames-laboratoriais-1779563646977-2",
+    "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-5",
+    "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-4"
+  ],
+  "slug_note": "Plano coleta-g02-slugs.json — 8× coleta_nao_sanguinea (incl. cetrede TB escarro com meta canônico)",
+  "validate_command": "npm run validate:goldens -- --lote=coleta-de-exames-laboratoriais-g02 --strict",
+  "workflow": [
+    "npx tsx scripts/handcraft-coleta-de-exames-laboratoriais-g02.ts",
+    "npm run audit:questao-readiness -- --lote=coleta-de-exames-laboratoriais-g02 --strict-v2-pedagogy",
+    "npm run catalog:preflight -- --lote=coleta-de-exames-laboratoriais-g02 --strict-v2-pedagogy",
+    "npm run catalog:apply-lote -- --lote=coleta-de-exames-laboratoriais-g02 --apply"
+  ],
+  "gates": {
+    "validate_goldens": "PASS 8/8",
+    "questao_readiness": "READY 8/8",
+    "preflight": "PASS 8/8",
+    "apply": "ok=8 failed=0"
+  }
+}

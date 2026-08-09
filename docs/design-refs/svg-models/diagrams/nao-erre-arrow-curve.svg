@@ -1,0 +1,19 @@
+<!-- AVANT gold � seta curva N�O ERRE MAIS (pe�a destacada ? r�tulo).
+     viewBox 0 0 96 56 � stroke 2.25 � Lucide caps/joins.
+     Refs: lucide/arrow-right.svg � diagrams/decision-rail.svg � nao-erre-row-rail.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 56" fill="none" role="img" aria-label="Seta curva para o valor">
+  <title>Seta curva</title>
+  <path
+    d="M10 12 C36 8, 58 18, 72 40"
+    stroke="currentColor"
+    stroke-width="2.25"
+    stroke-linecap="round"
+  />
+  <path
+    d="M62 36 L76 42 L66 48"
+    stroke="currentColor"
+    stroke-width="2.25"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

@@ -74,6 +74,8 @@ import {
   PROMOCAO_BESPOKE_BRANCHES,
   EPI_BRANCHES,
   EPI_BESPOKE_BRANCHES,
+  COLETA_BRANCHES,
+  COLETA_BESPOKE_BRANCHES,
   BIOSSEG_BRANCHES,
   BIOSSEG_BESPOKE_BRANCHES,
   BACTERIANAS_BRANCHES,
@@ -2131,5 +2133,52 @@ test.describe('Epidemiologia e Vigilância Epidemiológica — moldes L3', () =>
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('epidemiologia-e-vigilancia-epidemiologica');
+  });
+});
+
+test.describe('Coleta de Exames Laboratoriais — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression Coleta — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  for (const branch of COLETA_BRANCHES) {
+    test(`Coleta ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`Coleta ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Coleta — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'coleta-de-exames-laboratoriais',
+      branches: COLETA_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 Coleta — ${COLETA_BRANCHES.length} branches (COLETA_GENERIC_DESIGN; desktop + mobile-375); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('coleta-de-exames-laboratoriais');
   });
 });

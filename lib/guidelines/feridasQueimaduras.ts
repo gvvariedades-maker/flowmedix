@@ -1,16 +1,16 @@
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
- * Queimaduras — classificação por profundidade.
- * Fonte: MS — protocolo de atendimento a queimaduras / ABQUEIMAD.
+ * Queimaduras — classificação por profundidade e SCQ.
+ * Fonte: MS — Cartilha para tratamento de emergência das queimaduras (2012, BVS vigente).
  */
 export const FERIDAS_QUEIMADURAS_MS: GuidelineTable = {
   id: 'feridas-queimaduras-ms',
-  snapshot: 'Queimaduras — graus e sinais clínicos',
-  issuer: 'Ministério da Saúde',
+  snapshot: 'Queimaduras — cartilha MS 2012 (BVS) + regra dos 9',
+  issuer: 'Ministério da Saúde / CFM (Câmara Técnica)',
   title: 'Feridas e queimaduras',
-  year: 2021,
-  url: 'https://www.gov.br/saude/',
+  year: 2012,
+  url: 'https://bvsms.saude.gov.br/bvs/publicacoes/cartilha_tratamento_emergencia_queimaduras.pdf',
   entries: [
     {
       id: 'queimadura-1grau',
@@ -140,9 +140,25 @@ export const FERIDAS_QUEIMADURAS_MS: GuidelineTable = {
     },
     {
       id: 'grande-queimado-26',
-      label: 'Grande queimado adulto',
-      value: '2º grau com SCQ maior que 26%',
-      detail: 'Critério de gravidade / encaminhamento — cartilha MS e bancas.',
+      label: 'Queimadura grave / grande extensão — adulto',
+      value: '2º grau com SCQ > 20% (adulto)',
+      detail:
+        'Cartilha MS 2012: gravidade e critério de encaminhamento a unidade de queimados — 2º grau >20% SCQ adulto; >10% criança; 3º grau qualquer extensão. exam_vs_current: algumas provas usam “>26%” como limiar de gabarito.',
+      sourceId: 'feridas-queimaduras-ms',
+    },
+    {
+      id: 'scq-palma-1pct',
+      label: 'SCQ — palma da mão',
+      value: 'superfície palmar do paciente (com dedos) ≈ 1% da SCQ',
+      detail: 'Cartilha MS 2012 — útil para áreas pequenas ou parciais de segmentos.',
+      sourceId: 'feridas-queimaduras-ms',
+    },
+    {
+      id: 'queimadura-grave-criterios-ms',
+      label: 'Critérios de gravidade (MS)',
+      value: '>20% SCQ adulto; >10% criança; idade <3 ou >65; inalação; áreas nobres; química/elétrica',
+      detail:
+        'Cartilha MS 2012 item Gravidade — também politrauma, doenças prévias, violência/maus-tratos.',
       sourceId: 'feridas-queimaduras-ms',
     },
     {

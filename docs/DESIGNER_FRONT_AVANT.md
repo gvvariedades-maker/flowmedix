@@ -45,16 +45,21 @@ Rule: [`.cursor/rules/avant-ui-visual.mdc`](../.cursor/rules/avant-ui-visual.mdc
 
 1. [`DECISAO_NEUROSLIDES_GERACAO_2.md`](DECISAO_NEUROSLIDES_GERACAO_2.md) — ADR: 4 tipos imutáveis + Visual OS  
 2. [`NEUROSLIDES_VISUAL_BAR.md`](NEUROSLIDES_VISUAL_BAR.md) — **piso best-in-market + ratchet** (cada molde só melhora)  
-3. [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](NEUROSLIDES_GERACAO_2_ROADMAP.md) — fases flagship → Fábrica → cauda  
-4. [`PROMPT_FABRICA_VISUAL_G2.md`](PROMPT_FABRICA_VISUAL_G2.md) — prompt reutilizável (1 pacote / P1 shells)  
-5. [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) — brief 4/4 (designer instrucional)  
-6. [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](../.cursor/skills/avant-neuroslides-visual/SKILL.md) — gesto = decisão; anti-cópia  
-7. [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) — primitives + glanceable + ondas  
-8. [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) — layouts genéricos dos 4 slides  
-9. [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) — L3 = experiência visual bespoke  
-10. Só ao **implementar React:** [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md)
+3. [`PROMPT_COMPOSER_VISUAL.md`](PROMPT_COMPOSER_VISUAL.md) — **Composer** (orquestrador Agent-first: banco → Modo V → crítica → handoff)  
+4. [`artifacts/composer-visual-bank.md`](../artifacts/composer-visual-bank.md) — banco curado 8 gestos (≤2 âncoras ouro/gesto)  
+5. [`NEUROSLIDES_ATELIER_KIT.md`](NEUROSLIDES_ATELIER_KIT.md) — **Atelier** = crítica glanceable + 8 gestos ouro  
+6. [`PROMPT_ATELIER_VISUAL.md`](PROMPT_ATELIER_VISUAL.md) — formato da crítica (`ATELIER_PASS` / `FAIL`)  
+7. [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](NEUROSLIDES_GERACAO_2_ROADMAP.md) — fases flagship → Fábrica → cauda  
+8. [`PROMPT_FABRICA_VISUAL_G2.md`](PROMPT_FABRICA_VISUAL_G2.md) — prompt reutilizável (1 pacote / P1 shells); Composer **precede** se gallery pending/thin ([§ Pré-passo](PROMPT_FABRICA_VISUAL_G2.md#pré-passo-composer--obrigatório-quando-gallery-pendingthin); validação Processo: [`composer-fabrica-hook-processo-de-enfermagem.md`](../artifacts/composer-fabrica-hook-processo-de-enfermagem.md))  
+9. [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) — brief 4/4 (designer instrucional)  
+10. [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](../.cursor/skills/avant-neuroslides-visual/SKILL.md) — gesto = decisão; anti-cópia  
+11. [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) — primitives + glanceable + ondas  
+12. [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) — layouts genéricos dos 4 slides  
+13. [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) — L3 = experiência visual bespoke  
+14. Só ao **implementar React:** [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md)
 
-**No Cursor:** `Design visual:` · `Molde visual:` · `Fábrica visual G2:` · `P1 NeuroSlides G2:` · brief via `Brief TE:` / `Brief PT:`  
+**No Cursor:** `Composer visual:` (preferido) · `Atelier visual:` / `Crítica atelier:` · `Design visual:` · `Molde visual:` · `Fábrica visual G2:` · `P1 NeuroSlides G2:` · brief via `Brief TE:` / `Brief PT:`  
+**Papéis:** Composer = orquestrador · Atelier = crítica · skill = Modo V/A.  
 **Não** use `Visual:` / `Polish vitrine` para moldes de slide.
 
 ---
@@ -83,14 +88,17 @@ Rule: [`.cursor/rules/lp-conversa.mdc`](../.cursor/rules/lp-conversa.mdc) · có
 | Direção / paleta | `AVANT-VISUAL-DIRECTION-v3.md` | O que é AVANT visualmente |
 | Escopo editorial | `D2-avant-editorial-v2.md` | Telas, WCAG, screenshots |
 | Craft app | `avant-ui-visual` + `reference-microsaas-craft` | Como polishar vitrine/player |
+| SVG custom / diagramas | `svg-quality` + `docs/design-refs/svg-models/` | Ícone/diagrama vetorial (não Lucide/Health Icons) |
 | Landing / LP (CRO) | `LP_CONVERSA.md` | Copy + anatomia + ship de `/` e `/lp/*` |
 | Pesquisa LP | `LP_RESEARCH_CAPABILITY_MAP.md` | Por que C1–C16 |
 | Geração 2 (produto) | `DECISAO_NEUROSLIDES_GERACAO_2.md` | Cérebro 4 tipos × corpo Visual OS |
 | Barra visual + ratchet | `NEUROSLIDES_VISUAL_BAR.md` | Piso demo G2; cada molde só melhora |
 | Roadmap G2 | `NEUROSLIDES_GERACAO_2_ROADMAP.md` | Flagships → Fábrica → cauda |
 | Prompt Fábrica / P1 | `PROMPT_FABRICA_VISUAL_G2.md` | 1 conversa = 1 pacote (ou lote shells) |
+| Composer visual | `PROMPT_COMPOSER_VISUAL.md` + `composer-visual-bank.md` | Orquestra gesto → 4/4 (precede Fábrica se gallery thin) |
+| Atelier (crítica) | `NEUROSLIDES_ATELIER_KIT` + `PROMPT_ATELIER_VISUAL` | Glanceable PASS/FAIL — não substitui Composer |
 | Brief slides | `PROMPT_VARIANTES_NEUROSLIDES.md` | Metáfora 4/4 antes do React |
-| Retenção visual | `avant-neuroslides-visual` | Gesto ≠ decoração |
+| Retenção visual | `avant-neuroslides-visual` | Gesto ≠ decoração (entrada preferida: Composer) |
 | Strategy visual | `NEUROSLIDES_VISUAL_STRATEGY.md` | Primitives + ondas |
 | Implementação molde | `VARIANT_MOLDS.md` | Wiring React (pedido explícito) |
 | Tokens no código | `app/globals.css` | **Última palavra** — não inventar paleta paralela |
@@ -127,7 +135,7 @@ Detalhe: Visual Direction v3 + skill `avant-ui-visual`.
 |---------|---------|
 | Designer de produto (vitrine/player) | Este hub → Visual Direction → `reference-microsaas-craft` → screenshots |
 | Designer / growth de LP | Este hub → Trilho C → `LP_CONVERSA.md` |
-| Designer de slides | Este hub → `PROMPT_VARIANTES` → `avant-neuroslides-visual` |
+| Designer de slides | Este hub → `PROMPT_COMPOSER_VISUAL` + banco → `PROMPT_VARIANTES` → `avant-neuroslides-visual` |
 | Dev implementando polish | Este hub → skill + `Visual:` → componente adjacente |
 
 ---

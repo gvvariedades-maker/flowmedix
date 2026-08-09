@@ -230,6 +230,45 @@ const Dyn_pt_term_matrix_board = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pt_classes_family_table = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/GoldenRulePtClassesFamilyTable') as Promise<Record<string, unknown>>,
+      'GoldenRulePtClassesFamilyTable',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_vf_claim_fix = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/GoldenRulePtClassesVfClaimBoard') as Promise<Record<string, unknown>>,
+      'GoldenRulePtClassesVfClaimBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_adverb_arrow_cards = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/GoldenRulePtClassesAdverbArrowCards') as Promise<Record<string, unknown>>,
+      'GoldenRulePtClassesAdverbArrowCards',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_exceto_fix_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/GoldenRulePtClassesExcetoFixBoard') as Promise<Record<string, unknown>>,
+      'GoldenRulePtClassesExcetoFixBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pt_subject_focus_board = dynamic(
   () => loadNamedVariant(() => import('../variants/GoldenRulePtTermMatrixBoard') as Promise<Record<string, unknown>>, 'GoldenRulePtTermMatrixBoard'),
   { ssr: true, loading: () => null },
@@ -354,6 +393,33 @@ const Dyn_adolescent_speak_barrier_board = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_adolescent_mental_hub_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/GoldenRuleAdolescentMentalHubBoard') as Promise<Record<string, unknown>>,
+      'GoldenRuleAdolescentMentalHubBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_dev_vigilance_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/GoldenRuleAdolescentDevVigilanceBoard') as Promise<Record<string, unknown>>,
+      'GoldenRuleAdolescentDevVigilanceBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_generic_finance_checklist = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/GoldenRuleAdolescentGenericFinanceBoard') as Promise<Record<string, unknown>>,
+      'GoldenRuleAdolescentGenericFinanceBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_adolescent_z_band_board = dynamic(
   () => loadNamedVariant(() => import('../variants/GoldenRuleAdolescentZBandBoard') as Promise<Record<string, unknown>>, 'GoldenRuleAdolescentZBandBoard'),
   { ssr: true, loading: () => null },
@@ -408,6 +474,16 @@ export const GOLDEN_RULE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'pt-clitic-rail-board': { Component: Dyn_pt_clitic_rail_board, requiresRows: true },
   'pt-comma-rail-board': { Component: Dyn_pt_comma_rail_board, requiresRows: true },
   'pt-term-matrix-board': { Component: Dyn_pt_term_matrix_board, requiresRows: true },
+  'pt-classes-family-table': { Component: Dyn_pt_classes_family_table, requiresRows: true },
+  'pt-classes-vf-claim-fix': { Component: Dyn_pt_classes_vf_claim_fix, requiresRows: true },
+  'pt-classes-adverb-arrow-cards': {
+    Component: Dyn_pt_classes_adverb_arrow_cards,
+    requiresRows: true,
+  },
+  'pt-classes-exceto-fix-board': {
+    Component: Dyn_pt_classes_exceto_fix_board,
+    requiresRows: true,
+  },
   'pt-subject-focus-board': { Component: Dyn_pt_subject_focus_board, requiresRows: true },
   'trabalho-nr32-reference-board': { Component: Dyn_trabalho_nr32_reference_board, requiresRows: true },
   'sp-nsp-reference-board': { Component: Dyn_sp_nsp_reference_board, requiresRows: true },
@@ -433,6 +509,12 @@ export const GOLDEN_RULE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'adolescent-sigilo-spectrum': { Component: Dyn_adolescent_sigilo_spectrum, requiresRows: true },
   'adolescent-speak-barrier-board': { Component: Dyn_adolescent_speak_barrier_board, requiresRows: true },
   'adolescent-z-band-board': { Component: Dyn_adolescent_z_band_board, requiresRows: true },
+  'adolescent-mental-hub-board': { Component: Dyn_adolescent_mental_hub_board, requiresRows: true },
+  'adolescent-dev-vigilance-board': { Component: Dyn_adolescent_dev_vigilance_board, requiresRows: true },
+  'adolescent-generic-finance-checklist': {
+    Component: Dyn_adolescent_generic_finance_checklist,
+    requiresRows: true,
+  },
   'soft-lens-board': { Component: Dyn_soft_lens_board, requiresRows: true },
 };
 

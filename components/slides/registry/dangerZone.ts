@@ -225,6 +225,45 @@ const Dyn_pt_term_trap_arena = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pt_classes_swap_arena = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/DangerZonePtClassesSwapArena') as Promise<Record<string, unknown>>,
+      'DangerZonePtClassesSwapArena',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_adverb_compare = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/DangerZonePtClassesAdverbCompare') as Promise<Record<string, unknown>>,
+      'DangerZonePtClassesAdverbCompare',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_exceto_tip_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/DangerZonePtClassesExcetoTipBoard') as Promise<Record<string, unknown>>,
+      'DangerZonePtClassesExcetoTipBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_vf_claim_arena = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/DangerZonePtClassesVfClaimArena') as Promise<Record<string, unknown>>,
+      'DangerZonePtClassesVfClaimArena',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pt_subject_trap_arena = dynamic(
   () => loadNamedVariant(() => import('../variants/DangerZonePtTermTrapArena') as Promise<Record<string, unknown>>, 'DangerZonePtTermTrapArena'),
   { ssr: true, loading: () => null },
@@ -337,6 +376,42 @@ const Dyn_adolescent_z_threshold_trap = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_adolescent_violence_calendar = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/DangerZoneAdolescentViolenceCalendar') as Promise<Record<string, unknown>>,
+      'DangerZoneAdolescentViolenceCalendar',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_dev_budget_checklist = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/DangerZoneAdolescentDevBudgetChecklist') as Promise<Record<string, unknown>>,
+      'DangerZoneAdolescentDevBudgetChecklist',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_generic_versus_blocks = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/DangerZoneAdolescentGenericVersusBlocks') as Promise<Record<string, unknown>>,
+      'DangerZoneAdolescentGenericVersusBlocks',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_mental_step_trap = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/DangerZoneAdolescentMentalStepTrap') as Promise<Record<string, unknown>>,
+      'DangerZoneAdolescentMentalStepTrap',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_vitals_classify_arena = dynamic(
   () => loadNamedVariant(() => import('../variants/DangerZoneVitalsClassifyArena') as Promise<Record<string, unknown>>, 'DangerZoneVitalsClassifyArena'),
   { ssr: true, loading: () => null },
@@ -430,6 +505,10 @@ export const DANGER_ZONE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'pt-clitic-trap-arena': { Component: Dyn_pt_clitic_trap_arena, requiresItems: true },
   'pt-comma-trap-arena': { Component: Dyn_pt_comma_trap_arena, requiresItems: true },
   'pt-term-trap-arena': { Component: Dyn_pt_term_trap_arena, requiresItems: true },
+  'pt-classes-swap-arena': { Component: Dyn_pt_classes_swap_arena, requiresItems: true },
+  'pt-classes-adverb-compare': { Component: Dyn_pt_classes_adverb_compare, requiresItems: true },
+  'pt-classes-exceto-tip-board': { Component: Dyn_pt_classes_exceto_tip_board, requiresItems: true },
+  'pt-classes-vf-claim-arena': { Component: Dyn_pt_classes_vf_claim_arena, requiresItems: true },
   'pt-subject-trap-arena': { Component: Dyn_pt_subject_trap_arena, requiresItems: true },
   'cam-high-risk-trap-arena': { Component: Dyn_cam_high_risk_trap_arena, requiresItems: true },
   'cam-exceto-trap-arena': { Component: Dyn_cam_exceto_trap_arena, requiresItems: true },
@@ -450,6 +529,10 @@ export const DANGER_ZONE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'pni-exceto-compare': { Component: Dyn_pni_exceto_compare, requiresItems: true },
   'pni-via-trap-arena': { Component: Dyn_pni_via_trap_arena, requiresItems: true },
   'adolescent-z-threshold-trap': { Component: Dyn_adolescent_z_threshold_trap, requiresItems: true },
+  'adolescent-violence-calendar': { Component: Dyn_adolescent_violence_calendar, requiresItems: true },
+  'adolescent-mental-step-trap': { Component: Dyn_adolescent_mental_step_trap, requiresItems: true },
+  'adolescent-dev-budget-checklist': { Component: Dyn_adolescent_dev_budget_checklist, requiresItems: true },
+  'adolescent-generic-versus-blocks': { Component: Dyn_adolescent_generic_versus_blocks, requiresItems: true },
   'vitals-classify-arena': { Component: Dyn_vitals_classify_arena, requiresItems: true },
   'trap-reveal': { Component: Dyn_trap_reveal, requiresItems: true },
   'calendar-mismatch': { Component: Dyn_calendar_mismatch, requiresItems: true },

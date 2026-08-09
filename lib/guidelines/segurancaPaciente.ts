@@ -2,28 +2,32 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Segurança do Paciente — PNSP, identificação, quedas, eventos adversos, metas OMS.
- * Fontes: MS/PNSP Portaria 529/2013, OMS metas internacionais, ANVISA.
+ * Fontes: Portaria MS 529/2013 (PNSP); Protocolos básicos MS/Anvisa (identificação, quedas, etc.);
+ * Avaliação Nacional das Práticas 2025 (Anvisa) — protocolos ainda vigentes.
+ * @see https://www.gov.br/saude/pt-br/composicao/saes/seguranca-do-paciente
  */
 export const SEGURANCA_PACIENTE_PNSP: GuidelineTable = {
   id: 'seguranca-paciente-pnsp',
-  snapshot: 'PNSP — identificação, quedas, eventos adversos',
-  issuer: 'Ministério da Saúde / OMS',
+  snapshot: 'PNSP + Protocolos Anvisa (identificação/quedas) — revisão 2025',
+  issuer: 'Ministério da Saúde / Anvisa',
   title: 'Segurança do Paciente',
-  year: 2024,
-  url: 'https://www.gov.br/saude/pt-br/composicao/sctie/nsp',
+  year: 2025,
+  url: 'https://www.gov.br/saude/pt-br/composicao/saes/seguranca-do-paciente',
   entries: [
     {
       id: 'sp-dois-identificadores',
       label: 'Identificação segura',
       value: 'mínimo dois identificadores independentes antes de medicação e procedimento',
-      detail: 'Nome + data de nascimento ou prontuário — pulseira recomendada.',
+      detail:
+        'Protocolo MS/Anvisa: nome completo, nome da mãe, data de nascimento ou prontuário — nunca leito/quarto como identificador.',
       sourceId: 'seguranca-paciente-pnsp',
     },
     {
       id: 'sp-pulseira-identificacao',
       label: 'Pulseira de identificação',
-      value: 'nome completo e data de nascimento na admissão',
-      detail: 'Reduz erro de paciente errado — conferir antes de cada intervenção.',
+      value: 'pulseira branca padronizada na admissão — conferir antes de cada cuidado',
+      detail:
+        'Protocolo Identificação do Paciente: aplicar a internados, hospital-dia, emergência e ambulatório. RN: nome da mãe + prontuário do RN.',
       sourceId: 'seguranca-paciente-pnsp',
     },
     {
@@ -93,6 +97,28 @@ export const SEGURANCA_PACIENTE_PNSP: GuidelineTable = {
       id: 'sp-higienizacao-maos',
       label: 'Higienização das mãos',
       value: 'meta internacional — momento da higiene das mãos',
+      sourceId: 'seguranca-paciente-pnsp',
+    },
+    {
+      id: 'sp-protocolos-basicos-pnsp',
+      label: 'Protocolos básicos PNSP (MS/Anvisa)',
+      value: 'cirurgia segura · identificação · LPP · HH · quedas · medicamentos',
+      detail:
+        'Seis protocolos nacionais do PNSP — base da Avaliação Nacional das Práticas de Segurança do Paciente (Anvisa 2025).',
+      sourceId: 'seguranca-paciente-pnsp',
+    },
+    {
+      id: 'sp-confirmar-antes-cuidado',
+      label: 'Confirmar ID antes do cuidado',
+      value: 'medicação, sangue, coleta, dieta e procedimento invasivo',
+      detail: 'Protocolo Identificação: confirmar mesmo conhecendo o paciente — a cada intervenção.',
+      sourceId: 'seguranca-paciente-pnsp',
+    },
+    {
+      id: 'sp-rdc-36-nsp',
+      label: 'NSP (RDC Anvisa 36/2013)',
+      value: 'Núcleo de Segurança do Paciente + Plano de Segurança do Paciente',
+      detail: 'Serviços de saúde devem implementar NSP e PSP com protocolos de gestão de risco.',
       sourceId: 'seguranca-paciente-pnsp',
     },
   ],

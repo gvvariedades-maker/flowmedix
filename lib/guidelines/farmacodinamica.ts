@@ -2,15 +2,17 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Conceitos fundamentais de farmacodinâmica e farmacocinética.
- * Referência: Anvisa (bulário/RDC) + literatura técnica de enfermagem.
+ * Referência: Protocolo MS/Anvisa Segurança na prescrição, uso e administração (ainda vigente)
+ * + bulário Anvisa / literatura técnica de enfermagem.
+ * @see https://www.gov.br/saude/pt-br/composicao/saes/seguranca-do-paciente/protocolos-de-seguranca-do-paciente/protocolo-seguraca-na-prescricao-uso-e-administracao-de-medicamentos.pdf
  */
 export const FARMACO_ADME_BR: GuidelineTable = {
   id: 'farmaco-adme-anvisa',
-  snapshot: 'ADME e farmacodinâmica — conceitos-base',
-  issuer: 'Anvisa / referência técnica',
+  snapshot: 'ADME + alta vigilância (Protocolo MS/Anvisa medicamentos)',
+  issuer: 'Anvisa / Ministério da Saúde',
   title: 'Farmacodinâmica e farmacocinética',
-  year: 2022,
-  url: 'https://www.gov.br/anvisa/',
+  year: 2026,
+  url: 'https://www.gov.br/saude/pt-br/composicao/saes/seguranca-do-paciente/protocolos-de-seguranca-do-paciente/protocolo-seguraca-na-prescricao-uso-e-administracao-de-medicamentos.pdf',
   entries: [
     {
       id: 'adme-absorcao',
@@ -48,8 +50,9 @@ export const FARMACO_ADME_BR: GuidelineTable = {
     {
       id: 'meia-vida',
       label: 'Meia-vida (t½)',
-      value: 'tempo para reduzir concentração plasmática pela metade',
-      detail: 'Define intervalo de doses e tempo até estado de equilíbrio.',
+      value: 'tempo para reduzir a concentração plasmática em 50% (pela metade)',
+      detail:
+        'Não é eliminar 100% da dose. Define intervalo de doses e tempo até estado de equilíbrio.',
       sourceId: 'farmaco-adme-anvisa',
     },
     {
@@ -225,6 +228,21 @@ export const FARMACO_ADME_BR: GuidelineTable = {
       label: 'Antagonista inverso',
       value: 'reduz atividade basal do receptor abaixo do repouso',
       detail: 'Diferente do antagonista neutro (bloqueia sem alterar basal) e do agonista inverso.',
+      sourceId: 'farmaco-adme-anvisa',
+    },
+    {
+      id: 'alta-vigilancia-ms-anvisa',
+      label: 'Medicamentos de alta vigilância',
+      value: 'maior potencial de dano grave se erro — lista institucional obrigatória',
+      detail:
+        'Protocolo MS/Anvisa: destacar anticoagulantes, opioides, insulina e eletrólitos concentrados (ex.: KCl injetável); limitar apresentações e usar dupla checagem.',
+      sourceId: 'farmaco-adme-anvisa',
+    },
+    {
+      id: 'biodisponibilidade-def',
+      label: 'Biodisponibilidade',
+      value: 'fração da dose que alcança a circulação sistêmica inalterada',
+      detail: 'EV = 100%; VO reduzida por absorção incompleta e primeira passagem hepática.',
       sourceId: 'farmaco-adme-anvisa',
     },
   ],

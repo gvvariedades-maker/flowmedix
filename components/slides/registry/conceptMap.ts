@@ -150,6 +150,64 @@ const Dyn_pt_term_matrix_deck = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_pt_classes_function_deck = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/ConceptMapPtClassesFunctionDeck') as Promise<Record<string, unknown>>,
+      'ConceptMapPtClassesFunctionDeck',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_vf_claim_strip = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/ConceptMapPtClassesVfClaimStrip') as Promise<Record<string, unknown>>,
+      'ConceptMapPtClassesVfClaimStrip',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_adverb_types_grid = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/ConceptMapPtClassesAdverbTypesGrid') as Promise<Record<string, unknown>>,
+      'ConceptMapPtClassesAdverbTypesGrid',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_prep_contract_rail = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/ConceptMapPtClassesPrepContractRail') as Promise<Record<string, unknown>>,
+      'ConceptMapPtClassesPrepContractRail',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_exceto_rule_pairs = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/ConceptMapPtClassesExcetoRulePairs') as Promise<Record<string, unknown>>,
+      'ConceptMapPtClassesExcetoRulePairs',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_pt_classes_exceto_value_cards = dynamic(
+  () =>
+    loadNamedVariant(
+      () =>
+        import('../variants/ConceptMapPtClassesExcetoValueCards') as Promise<Record<string, unknown>>,
+      'ConceptMapPtClassesExcetoValueCards',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_pt_subject_focus_deck = dynamic(
   () => loadNamedVariant(() => import('../variants/PtTermMatrixDeckConceptMap') as Promise<Record<string, unknown>>, 'PtTermMatrixDeckConceptMap'),
   { ssr: true, loading: () => null },
@@ -291,6 +349,42 @@ const Dyn_adolescent_care_pillars_deck = dynamic(
 
 const Dyn_adolescent_growth_z_rail = dynamic(
   () => loadNamedVariant(() => import('../variants/AdolescentGrowthZRailConceptMap') as Promise<Record<string, unknown>>, 'AdolescentGrowthZRailConceptMap'),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_violence_deck = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/ConceptMapAdolescentViolenceDeck') as Promise<Record<string, unknown>>,
+      'ConceptMapAdolescentViolenceDeck',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_mental_route_list = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/ConceptMapAdolescentMentalRouteList') as Promise<Record<string, unknown>>,
+      'ConceptMapAdolescentMentalRouteList',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_dev_pair_rail = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/ConceptMapAdolescentDevPairRail') as Promise<Record<string, unknown>>,
+      'ConceptMapAdolescentDevPairRail',
+    ),
+  { ssr: true, loading: () => null },
+);
+
+const Dyn_adolescent_generic_hub_orbit = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/ConceptMapAdolescentGenericHub') as Promise<Record<string, unknown>>,
+      'ConceptMapAdolescentGenericHub',
+    ),
   { ssr: true, loading: () => null },
 );
 
@@ -447,6 +541,12 @@ export const CONCEPT_MAP_REGISTRY: Record<string, BespokeVariantEntry> = {
   'pt-clitic-rail-deck': { Component: Dyn_pt_clitic_rail_deck },
   'pt-comma-rail-deck': { Component: Dyn_pt_comma_rail_deck },
   'pt-term-matrix-deck': { Component: Dyn_pt_term_matrix_deck },
+  'pt-classes-function-deck': { Component: Dyn_pt_classes_function_deck },
+  'pt-classes-vf-claim-strip': { Component: Dyn_pt_classes_vf_claim_strip },
+  'pt-classes-adverb-types-grid': { Component: Dyn_pt_classes_adverb_types_grid },
+  'pt-classes-prep-contract-rail': { Component: Dyn_pt_classes_prep_contract_rail },
+  'pt-classes-exceto-rule-pairs': { Component: Dyn_pt_classes_exceto_rule_pairs },
+  'pt-classes-exceto-value-cards': { Component: Dyn_pt_classes_exceto_value_cards },
   'pt-subject-focus-deck': { Component: Dyn_pt_subject_focus_deck },
   'cam-high-risk-duo-deck': { Component: Dyn_cam_high_risk_duo_deck },
   'cam-exceto-rail': { Component: Dyn_cam_exceto_rail },
@@ -475,6 +575,10 @@ export const CONCEPT_MAP_REGISTRY: Record<string, BespokeVariantEntry> = {
   'adolescent-privacy-curtain': { Component: Dyn_adolescent_privacy_curtain },
   'adolescent-care-pillars-deck': { Component: Dyn_adolescent_care_pillars_deck },
   'adolescent-growth-z-rail': { Component: Dyn_adolescent_growth_z_rail },
+  'adolescent-violence-deck': { Component: Dyn_adolescent_violence_deck },
+  'adolescent-mental-route-list': { Component: Dyn_adolescent_mental_route_list },
+  'adolescent-dev-pair-rail': { Component: Dyn_adolescent_dev_pair_rail },
+  'adolescent-generic-hub-orbit': { Component: Dyn_adolescent_generic_hub_orbit },
   'nr32-annex-deck': { Component: Dyn_nr32_annex_deck },
   'sp-id-verify-deck': { Component: Dyn_sp_id_verify_deck },
   'sp-fall-risk-rail': { Component: Dyn_sp_fall_risk_rail },

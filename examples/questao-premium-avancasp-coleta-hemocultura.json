@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "Aux (Pref Caconde)",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Coleta de Exames Laboratoriais",
+    "pedagogical_branch": "coleta_hemocultura",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-08-05",
+      "reviewer": "agent:golden-anchor",
+      "guideline_snapshot": "CLSI M47 / MS — hemocultura: palpação antes da antissepsia; desinfecção da tampa do frasco",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "clsi-m47-blood-culture",
+        "tier": "A",
+        "issuer": "CLSI",
+        "title": "Principles and Procedures for Blood Cultures",
+        "year": 2022,
+        "covers": [
+          "sequência palpação → antissepsia",
+          "desinfecção da tampa do frasco",
+          "identificação do frasco"
+        ]
+      },
+      {
+        "id": "ms-manual-coleta-laboratorial",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Coleta de Amostras Biológicas",
+        "year": 2020,
+        "url": "https://www.gov.br/saude/",
+        "covers": [
+          "hemocultura",
+          "antissepsia da pele",
+          "orientação ao paciente"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Hemocultura é a coleta de sangue com técnica própria para verificação de presença de infecção, determinando seus microrganismos causadores. Sobre os procedimentos empregados para a coleta da hemocultura, assinale a alternativa que possui um aspecto incorreto.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Orientar o paciente quanto ao procedimento.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Conferir o pedido do exame.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Identificar o frasco com o nome do paciente, hora, número do registro e data.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Fazer a antissepsia da pele (antes da palpação).",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Desinfectar a boca do frasco de hemograma (HMC) com PVPI ou álcool a 70%.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Hemocultura — terreno da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "items": [
+        {
+          "label": "Comando incorreto",
+          "detail": "Marque a única alternativa falsa — as demais descrevem conduta adequada na hemocultura.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Pré-analítica segura",
+          "detail": "Orientar paciente, conferir pedido e identificar frasco são passos corretos do fluxo.",
+          "icon": "ClipboardCheck"
+        },
+        {
+          "label": "Palpação × antissepsia",
+          "detail": "Localize e palpe a veia antes de desinfetar — antissepsia vem depois da palpação final.",
+          "icon": "Hand"
+        },
+        {
+          "label": "Tampa do frasco",
+          "detail": "Desinfetar a boca do frasco com antisséptico antes da coleta reduz contaminação.",
+          "icon": "FlaskConical"
+        },
+        {
+          "label": "Pegadinha da sequência",
+          "detail": "A banca inverte palpação e antissepsia para testar se você conhece a ordem asséptica.",
+          "icon": "Shuffle"
+        }
+      ],
+      "footer_rule": "Palpar → antissepsia — nunca desinfetar antes de localizar a veia"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "steps": [
+        "Comando: hemocultura — assinale o aspecto incorreto (uma alternativa falsa).",
+        "A — orientar paciente: conduta correta, eliminar.",
+        "B — conferir pedido: conduta correta, eliminar.",
+        "C — identificar frasco (nome, hora, registro, data): conduta correta, eliminar.",
+        "E — desinfetar tampa do frasco com antisséptico: conduta correta, eliminar.",
+        "D — antissepsia antes da palpação: sequência invertida — é a incorreta.",
+        "Marcar D.",
+        "Em similares: na punção, palpação final precede sempre a antissepsia da pele."
+      ],
+      "footer_rule": "EXCETO hemocultura: só a letra D inverte palpação e antissepsia"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Sequência asséptica — hemocultura",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "ORDEM DOS PROCEDIMENTOS NA HEMOCULTURA",
+      "rows": [
+        {
+          "label": "Palpação",
+          "value": "Localizar a veia antes da antissepsia",
+          "badge": "ok"
+        },
+        {
+          "label": "Antissepsia da pele",
+          "value": "Realizar após a palpação final; aguardar secar",
+          "badge": "hot"
+        },
+        {
+          "label": "Tampa do frasco",
+          "value": "Desinfetar a boca do frasco com antisséptico antes da coleta",
+          "badge": "ok"
+        },
+        {
+          "label": "Identificação",
+          "value": "Nome, hora, registro e data no frasco",
+          "badge": "ok"
+        },
+        {
+          "label": "Pré-coleta",
+          "value": "Orientar paciente e conferir pedido médico",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Decore: palpar → desinfetar pele → desinfetar tampa → coletar"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "PEGADINHAS — HEMOCULTURA AVANÇASP",
+      "items": [
+        {
+          "label": "Letra A — orientar o paciente",
+          "detail": "Parece genérico, mas é etapa correta do cuidado pré-coleta.",
+          "correct": "Orientação reduz ansiedade e favorece adesão — não é o aspecto incorreto."
+        },
+        {
+          "label": "Letra B — conferir pedido",
+          "detail": "Checagem do pedido evita coleta indevida.",
+          "correct": "Conferir prescrição é conduta correta na fase pré-analítica."
+        },
+        {
+          "label": "Letra C — identificar frasco",
+          "detail": "Rotulagem completa previne troca de amostra.",
+          "correct": "Identificar com nome, hora, registro e data é obrigatório — alternativa correta."
+        },
+        {
+          "label": "Letra D — antissepsia antes da palpação",
+          "detail": "Inverte a sequência asséptica — parece cuidado, mas é o aspecto incorreto.",
+          "correct": "Palpar primeiro para localizar a veia; antissepsia da pele só após a palpação final."
+        },
+        {
+          "label": "Letra E — desinfetar tampa do frasco",
+          "detail": "Desinfecção da boca do frasco parece detalhe, mas é técnica correta.",
+          "correct": "Desinfetar a tampa com antisséptico reduz contaminação — não marque como incorreto."
+        },
+        {
+          "label": "Em similares — palpação × antissepsia",
+          "detail": "Vale para hemocultura e punção venosa periférica.",
+          "correct": "Sempre palpar → antissepsia → punção; nunca desinfetar antes de localizar a veia."
+        }
+      ],
+      "footer_rule": "Quem palpa sobre pele já desinfetada recontamina o campo"
+    }
+  ]
+}

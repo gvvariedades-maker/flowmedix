@@ -1,0 +1,12 @@
+<!-- AVANT gold  gesto compare ( vs ). Grid 120�64, stroke 2, Lucide grammar. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 64" fill="none" role="img" aria-label="Compare errado versus certo">
+  <title>Compare  / </title>
+  <!-- left card: wrong -->
+  <rect x="4" y="8" width="48" height="48" rx="8" stroke="currentColor" stroke-width="2" opacity="0.35"/>
+  <path d="M20 24 L36 40 M36 24 L20 40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <!-- rail -->
+  <path d="M60 16 V48" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+  <!-- right card: right -->
+  <rect x="68" y="8" width="48" height="48" rx="8" stroke="currentColor" stroke-width="2"/>
+  <path d="M82 34 L90 42 L104 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

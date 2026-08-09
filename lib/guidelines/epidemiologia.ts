@@ -2,15 +2,17 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Epidemiologia e vigilância epidemiológica.
- * Fonte: Guia de Vigilância em Saúde (MS) + Portaria de notificação compulsória.
+ * Fonte: Lista Nacional de Notificação Compulsória (Portarias GM/MS 10.175/2026 e 11.211/2026)
+ * + Guia de Vigilância em Saúde (conceitos estáveis).
+ * @see https://www.gov.br/saude/pt-br/composicao/svsa/notificacao-compulsoria
  */
 export const EPIDEMIOLOGIA_MS: GuidelineTable = {
   id: 'epidemiologia-ms',
-  snapshot: 'Vigilância, indicadores e notificação',
+  snapshot: 'Notificação compulsória Lista Nacional 2026 + indicadores',
   issuer: 'Ministério da Saúde',
   title: 'Epidemiologia e vigilância epidemiológica',
-  year: 2019,
-  url: 'https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_3ed.pdf',
+  year: 2026,
+  url: 'https://www.gov.br/saude/pt-br/composicao/svsa/notificacao-compulsoria',
   entries: [
     {
       id: 'incidencia',
@@ -33,8 +35,17 @@ export const EPIDEMIOLOGIA_MS: GuidelineTable = {
     {
       id: 'notificacao-compulsoria',
       label: 'Notificação compulsória',
-      value: 'obrigatória para agravos da lista nacional',
-      detail: 'Imediata ou semanal conforme agravo.',
+      value: 'obrigatória para agravos da Lista Nacional (SINAN)',
+      detail:
+        'Lista atualizada por Portarias GM/MS (ex.: 10.175/2026 e 11.211/2026). Imediata (≤24h) ou semanal conforme agravo.',
+      sourceId: 'epidemiologia-ms',
+    },
+    {
+      id: 'lista-nc-2026-novos',
+      label: 'Lista NC 2026 — inclusões recentes',
+      value: 'anomalias congênitas; caxumba (parotidite); febre do Oropouche',
+      detail:
+        'Portarias GM/MS 10.175/2026 e 11.211/2026. Covid-19 sai como item isolado e permanece sob síndrome gripal/SRAG confirmada — checar lista vigente na prova.',
       sourceId: 'epidemiologia-ms',
     },
     {
@@ -129,14 +140,16 @@ export const EPIDEMIOLOGIA_MS: GuidelineTable = {
       id: 'notificacao-imediata-24h',
       label: 'Notificação imediata',
       value: 'comunicar à autoridade de saúde em até 24 horas',
-      detail: 'Portaria de notificação compulsória — sarampo, meningite, raiva, violência, etc.',
+      detail:
+        'Lista Nacional vigente — ex.: sarampo/doenças exantemáticas, meningite, raiva, violência, PFA, botulismo. Confirmar coluna MS/SES/SMS na portaria.',
       sourceId: 'epidemiologia-ms',
     },
     {
       id: 'notificacao-semanal-7dias',
       label: 'Notificação semanal',
       value: 'comunicar à autoridade de saúde em até 7 dias',
-      detail: 'Portaria de notificação compulsória — agravos de rotina (ex.: dengue sem sinal de alarme, esquistossomose em área endêmica, hepatites virais).',
+      detail:
+        'Agravos de rotina na Lista Nacional (ex.: dengue casos, esquistossomose, hepatites conforme periodicidade da portaria vigente).',
       sourceId: 'epidemiologia-ms',
     },
   ],

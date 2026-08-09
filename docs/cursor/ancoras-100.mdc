@@ -1,57 +1,89 @@
 ---
-description: Ativa elevação de âncoras 100% premium quando o usuário enviar "Âncoras 100%:" / "Âncoras 100% premium:", ou anexar docs/PROMPT_ANCORAS_100.md
+description: >-
+  Ativa elevação de âncoras 100% premium quando o usuário enviar
+  "Âncoras 100%:" / "Âncoras 100% premium:", ou anexar docs/PROMPT_ANCORAS_100.md
 alwaysApply: false
 ---
 
 # Âncoras 100% premium — base do catálogo
 
-Quando a mensagem começar com **`Âncoras 100%:`** / **`Âncoras 100% premium:`** (ou anexar [`docs/PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md)), executar **sem pedir modo**:
+Quando a mensagem começar com **`Âncoras 100%:`** / **`Âncoras 100% premium:`** (ou anexar [`docs/PROMPT_ANCORAS_100.md`](../PROMPT_ANCORAS_100.md)), executar **sem pedir confirmação de modo**, nesta ordem:
 
-## 0. Escopo
+## Ordem de execução (não pular)
+
+```text
+Fase 0a — Playbook + mapa de gestos / L3 (+ banco Composer)  ★ ANTES de editar âncora
+Fase 0b — Inventário 1 âncora / ramo (tabela no chat)
+Fase 1  — Por âncora: polish → audit:anchor-100
+          → [se visual thin/FAIL] Composer visual: <branch>
+          → preview → --require-visual → assinar → próximo
+Fase 2  — Report artifacts/<pacote>-ancoras-100-report.md
+```
+
+**Começar na Fase 0a.** Proibido editar JSON de âncora antes das tabelas 0a e 0b no chat.
+
+Runbook canônico: [`docs/PROMPT_ANCORAS_100.md`](../PROMPT_ANCORAS_100.md)  
+Contrato: [`docs/ANCHOR_CHECKLIST_100.md`](../ANCHOR_CHECKLIST_100.md)  
+Composer (orquestrador visual Fase 1C′): [`docs/PROMPT_COMPOSER_VISUAL.md`](../PROMPT_COMPOSER_VISUAL.md) · banco [`artifacts/composer-visual-bank.md`](../../artifacts/composer-visual-bank.md)  
+Atelier (crítica isolada): [`docs/NEUROSLIDES_ATELIER_KIT.md`](../NEUROSLIDES_ATELIER_KIT.md)
+
+## Escopo
 
 - **1 subtópico = 1 conversa**
 - Objetivo: todas as âncoras de todos os ramos L3 em premium máximo (golden-v1 + Glance OS / barra G2)
-- **Aprovação humana âncora a âncora** (preview)
+- Fechamento **só** via `npm run audit:anchor-100` com `approval.status=pass`
+- **Não** declarar “aprovado” / “100%” só no chat
 - Pré-venda: **não** handcraft em massa / `gNN` / apply / `--promote` salvo pedido explícito
 
-Runbook: [`docs/PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md)
+## Contrato por âncora (Fase 1)
 
-## 1. Ordem obrigatória
+1. Polish JSON (writer) — **não** escrever “aprovado” no chat  
+2. `npm run audit:anchor-100 -- --file=<path>` → `gates_pass` + `artifacts/anchor-checklist/<slug>.json`  
+3. Preview: `/dev/slide-mold-review?branch=<branch_id>`  
+   - Se abaixo do piso G2 **ou** `visual_gallery` `pending`/`thin`/ausente → **`Composer visual: <branch_id>`** → `ATELIER_PASS` → Modo A / `Implementar molde:` só se gesto novo ou ≥5 sem board  
+   - Se gallery `ready` e preview PASS → **não** abrir Composer  
+   - Só crítica pontual → `Crítica atelier:`  
+4. `npm run audit:anchor-100 -- --file=<path> --require-visual` ao fechar visual  
+5. Assinatura:
+   - risco baixo/médio + `agent_may_sign` → `--sign-agent --write-meta`
+   - risco alto / `human_required` → **PARAR** → humano `--sign-human=<Nome> --write-meta`
+6. Avançar ramo **só** com `approval.status=pass`  
+7. Se elevou ouro do gesto → `visual_gallery` + no máx. 1 path no banco Composer (≤2 âncoras/gesto)
 
-```text
-Fase 0a — Playbook + mapa de gestos / L3  ★ ANTES de editar âncora
-Fase 0b — Inventário 1 âncora / ramo
-Fase 1  — Polish sequencial + gates + preview + “Aprovar?”
-Fase 2  — Report 100% do subtópico
-```
+## Invariantes de conteúdo
 
-**Proibido:** editar JSON de âncora antes da tabela de ramos (0a) e do inventário (0b) estarem no chat.
-
-## 2. Invariantes de conteúdo (cada âncora)
-
-- `concept_map` / `golden_rule`: **sem** spoiler de letra / “Gabarito letra X”
+- `concept_map` / `golden_rule`: sem spoiler de letra / “Gabarito letra X”
 - `logic_flow`: eliminação + gabarito + fixação portátil
 - `danger_zone`: `correct` único + transferência
-- `audit:questao-readiness --strict-v2-pedagogy` → `[READY]`
-- Preview: `/dev/slide-mold-review?branch=<branch_id>`
-- Barra: [`docs/NEUROSLIDES_VISUAL_BAR.md`](docs/NEUROSLIDES_VISUAL_BAR.md)
+- Barra: [`docs/NEUROSLIDES_VISUAL_BAR.md`](../NEUROSLIDES_VISUAL_BAR.md)
+- Sem PNG de feed na `visual_gallery` / banco Composer
 
-## 3. Skills
+## Skills
 
 - `avant-golden-anchor-bootstrap` — âncora **faltando**
-- `avant-golden-anchor-handcraft` + `avant-json-template` + `professor-para-concurso` — elevar âncora
-- `brief-enfermagem` / `avant-neuroslides-visual` — gesto + visual do ramo
+- `avant-golden-anchor-handcraft` + `avant-json-template` + `professor-para-concurso` — elevar
+- `brief-enfermagem` / `avant-neuroslides-visual` — gesto + visual (Composer orquestra)
 - `avant-classify-family` — `meta.family`
 
-## 4. Não confundir
+## Não confundir
 
 | Trigger | Papel |
 |---------|--------|
 | `Criar âncoras:` | Só bootstrap faltantes |
-| `Âncoras 100%:` | Playbook/mapa + elevar **todas** ao 100% + humano |
+| `Âncoras 100%:` | Playbook/mapa + elevar **todas** + gate de assinatura |
+| `Composer visual:` | Orquestrador visual (banco → Modo V → crítica → handoff) — Fase 1C′ |
+| `Atelier visual:` / `Crítica atelier:` | Crítica/elevação isolada (Composer já inclui a crítica) |
 | `Handcraft:` / Pipeline | Lotes — **depois** das âncoras aprovadas |
-| `Fábrica visual G2:` | Moldes do pacote — após ou se molde bloquear preview da âncora |
+| `Fábrica visual G2:` | Moldes do pacote — após ou se molde bloquear preview; Composer precede se gallery thin |
 
-## 5. Começar
+## Proibido
 
-Ler playbook do pacote + `visual-anchors.json` → **Fase 0a** (tabela de ramos + gestos) → só então 0b/1.
+- Editar âncora antes da tabela 0a/0b  
+- Writer auto-assinar no mesmo turno sem `--sign-agent` / artefato  
+- Pular humano quando `verdict=human_required`  
+- `ai:generate` / `catalog:upgrade-premium` / commit sem pedido  
+- Indexar feed/Instagram no banco ou na gallery  
+
+## Começar agora
+
+Ler registry + playbook + `visual-anchors.json` + banco Composer → **publicar tabela Fase 0a** → só então 0b → Fase 1.

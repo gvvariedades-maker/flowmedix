@@ -75,7 +75,7 @@ describe('moldAffinity', () => {
       ).toBe(false);
     });
 
-    it('aceita adolescent-care-pillars-deck para violência/proteção (Onda 2)', () => {
+    it('aceita adolescent-violence-deck para violência/proteção', () => {
       const slide = {
         items: [
           { label: 'Acolher', detail: 'Acolhimento sem revitimização', icon: 'Heart' },
@@ -84,7 +84,7 @@ describe('moldAffinity', () => {
         ],
       };
       expect(
-        bespokeMoldHasContentAffinity('adolescent-care-pillars-deck', slide, {
+        bespokeMoldHasContentAffinity('adolescent-violence-deck', slide, {
           familyId: 'protocolo',
           subtopico,
           pedagogicalBranch: 'adolescente_violencia_protecao',
@@ -92,19 +92,38 @@ describe('moldAffinity', () => {
       ).toBe(true);
     });
 
-    it('aceita adolescent-exceto-compare para saúde mental (Onda 2)', () => {
+    it('aceita adolescent-violence-timeline para eliminação de alternativas', () => {
+      const slide = {
+        type: 'logic_flow',
+        steps: [
+          'Comando: afirmativa correta sobre violência sexual',
+          'A: nega notificação compulsória → elimina',
+          'C: residência como principal espaço → mantém',
+          'Marcar C.',
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-violence-timeline', slide, {
+          familyId: 'conceito',
+          subtopico,
+          pedagogicalBranch: 'adolescente_violencia_protecao',
+        }),
+      ).toBe(true);
+    });
+
+    it('aceita adolescent-mental-step-trap para saúde mental', () => {
       const slide = {
         content: 'Pegadinhas — transtorno alimentar',
         items: [
           {
-            label: 'A',
-            detail: 'Restringir dieta punitiva',
-            correct: 'Gabarito letra B — acolhimento e vínculo, sem punição.',
+            label: 'A — I falsa',
+            detail: 'Nega anorexia apesar de IMC baixo.',
+            correct: 'I é verdadeira: restrição + peso baixo + distorção.',
           },
         ],
       };
       expect(
-        bespokeMoldHasContentAffinity('adolescent-exceto-compare', slide, {
+        bespokeMoldHasContentAffinity('adolescent-mental-step-trap', slide, {
           familyId: 'conceito',
           subtopico,
           pedagogicalBranch: 'adolescente_saude_mental',
@@ -143,7 +162,7 @@ describe('moldAffinity', () => {
       ).toBe(false);
     });
 
-    it('aceita adolescent-care-pillars-deck para puberdade no ramo desenvolvimento (Onda 2)', () => {
+    it('puberdade no ramo desenvolvimento usa o pacote dev, não o glanceable de ética', () => {
       const slide = {
         items: [
           { label: 'Puberdade', detail: 'Marcos Tanner e metamorfose física', icon: 'User' },
@@ -152,6 +171,13 @@ describe('moldAffinity', () => {
       };
       expect(
         bespokeMoldHasContentAffinity('adolescent-care-pillars-deck', slide, {
+          familyId: 'certo_errado',
+          subtopico,
+          pedagogicalBranch: 'adolescente_desenvolvimento',
+        }),
+      ).toBe(false);
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-dev-pair-rail', slide, {
           familyId: 'certo_errado',
           subtopico,
           pedagogicalBranch: 'adolescente_desenvolvimento',

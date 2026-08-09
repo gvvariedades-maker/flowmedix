@@ -2,15 +2,18 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Saúde mental na atenção básica e RAPS.
- * Fonte: MS — Rede de Atenção Psicossocial (RAPS) e cadernos APS.
+ * Fonte: Portaria 3.088/2011 (RAPS); MS prevenção do suicídio + parceria CVV 188;
+ * cartilha MS prevenção (2024) reforça CVV e pontos da rede.
+ * Fontes: Portaria 3.088/2011 (RAPS); Lei 10.216/2001; portal DESMAD/MS; prevenção suicídio + CVV 188.
+ * @see https://www.gov.br/saude/pt-br/composicao/saes/desmad/raps
  */
 export const SAUDE_MENTAL_MS: GuidelineTable = {
   id: 'saude-mental-ms',
-  snapshot: 'Saúde mental — acolhimento e risco suicida',
+  snapshot: 'RAPS (Port. 3.088) + Lei 10.216 + CVV 188 — revisão 2025/2026',
   issuer: 'Ministério da Saúde',
   title: 'Saúde mental',
-  year: 2021,
-  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-mental',
+  year: 2025,
+  url: 'https://www.gov.br/saude/pt-br/composicao/saes/desmad/raps',
   entries: [
     {
       id: 'sm-estigma',
@@ -66,7 +69,16 @@ export const SAUDE_MENTAL_MS: GuidelineTable = {
       id: 'sm-cvv-188',
       label: 'CVV 188',
       value: 'atendimento 24h — apoio emocional e prevenção do suicídio',
-      detail: 'Ligação gratuita e sigilosa; acionar em ideação ou risco iminente.',
+      detail:
+        'MS: ligação gratuita (fixo/celular) em parceria com o SUS; chat/e-mail em cvv.org.br. Complementa CAPS/UBS/SAMU — não substitui urgência.',
+      sourceId: 'saude-mental-ms',
+    },
+    {
+      id: 'sm-raps-portaria',
+      label: 'RAPS (Portaria 3.088/2011)',
+      value: 'rede desde APS/UBS até CAPS, urgência e hospital',
+      detail:
+        'Cuidado em liberdade; CAPS coordena casos complexos; acesso espontâneo ao CAPS é possível (MS).',
       sourceId: 'saude-mental-ms',
     },
     {
@@ -156,8 +168,17 @@ export const SAUDE_MENTAL_MS: GuidelineTable = {
     {
       id: 'sm-internacao-involuntaria',
       label: 'Internação involuntária (Brasil)',
-      value: 'Lei 10.216/2001 — indicação médica + avaliação posterior do MP em até 72h',
-      detail: 'Três modalidades: voluntária, involuntária e compulsória; direitos do paciente preservados.',
+      value: 'Lei 10.216/2001 — laudo médico + comunicação ao MP em até 72h',
+      detail:
+        'Modalidades: voluntária (consentimento), involuntária (terceiro + médico; MP em 72 h), compulsória (ordem judicial). Internação só se recursos extra-hospitalares insuficientes (art. 4º).',
+      sourceId: 'saude-mental-ms',
+    },
+    {
+      id: 'sm-lei-10216-principios',
+      label: 'Lei 10.216/2001 — modelo',
+      value: 'cuidado em liberdade; internação como último recurso',
+      detail:
+        'Redireciona o modelo assistencial; direitos sem discriminação; alta planejada e reabilitação psicossocial na dependência institucional prolongada.',
       sourceId: 'saude-mental-ms',
     },
     {

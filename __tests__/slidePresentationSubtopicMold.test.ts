@@ -625,7 +625,8 @@ describe('slidePresentation — molde por subtópico', () => {
     );
     expect(result.layoutVariant).toBe('pni-trap-chips');
     expect(result.bulletStyle).toBe('x_icon');
-    expect(result.dangerRevealMode).toBe('tap');
+    // Molde de calendário/glossário é estático (dangerTapReveal: false no registry).
+    expect(result.dangerRevealMode).toBe('auto');
   });
 
   it('Imunização calendário: pacote 4/4 no ramo imunizacao_calendario', () => {
@@ -1204,7 +1205,8 @@ describe('slidePresentation — molde por subtópico', () => {
     );
     expect(danger.layoutVariant).toBe('temperature-mismatch');
     expect(danger.bulletStyle).toBe('x_icon');
-    expect(danger.dangerRevealMode).toBe('tap');
+    // Cadeia de frio é leitura de faixa — molde estático (dangerTapReveal: false).
+    expect(danger.dangerRevealMode).toBe('auto');
   });
 
   it('Processo de Enfermagem: concept_map sae-responsibility-matrix no molde', () => {
@@ -3015,7 +3017,7 @@ describe('slidePresentation — molde por subtópico', () => {
       expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
     });
 
-    it('puberdade → morphological genérico (≠ pacote ética)', () => {
+    it('puberdade → pacote dev bespoke (≠ pacote ética)', () => {
       const instruction =
         'Julgue o item subsequente. O período da adolescência é marcado por intensa metamorfose física e psicossocial, sendo comuns as disfunções hormonais nos adolescentes. Por exemplo, considera-se atraso na puberdade em meninas quando não se observa nenhum desenvolvimento das mamas dos 12 aos 13 anos e, nos meninos, quando nenhuma hipertrofia dos testículos é observada até os 13-14 anos de idade.';
 
@@ -3039,7 +3041,7 @@ describe('slidePresentation — molde por subtópico', () => {
       );
       expect(result.layoutVariant).not.toBe('adolescent-privacy-curtain');
       expect(result.layoutVariant).not.toBe('adolescent-care-pillars-deck');
-      expect(result.layoutVariant).toBe('morphological');
+      expect(result.layoutVariant).toBe('adolescent-dev-pair-rail');
     });
 
     it('violência/proteção → reference_table genérico (≠ speak-barrier ética)', () => {
@@ -3063,27 +3065,61 @@ describe('slidePresentation — molde por subtópico', () => {
       expect(result.layoutVariant).toBe('reference_table');
     });
 
-    it('saúde mental → vertical genérico (≠ isolate ética)', () => {
+    it('violência/proteção → danger_zone calendário estático (≠ compare clicável)', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico },
+          content: 'VIOLÊNCIA SEXUAL — REDE DE PROTEÇÃO',
+          items: [
+            {
+              label: 'A — Negar notificação',
+              detail: 'Diz que não é agravo compulsório.',
+              correct: 'É agravo de notificação compulsória — suspeita ou confirmação.',
+            },
+            {
+              label: 'Transferência',
+              detail: 'Exige boletim antes de acolher.',
+              correct: 'Acolher e proteger não dependem de BO.',
+            },
+          ],
+          bullet_style: 'x_icon',
+        },
+        {
+          questionSlug: 'funcern-violencia-protecao-1',
+          slideIndex: 3,
+          familyId: 'conceito',
+          pedagogicalBranch: 'adolescente_violencia_protecao',
+        },
+      );
+      expect(result.layoutVariant).toBe('adolescent-violence-calendar');
+      expect(result.moldFallback).toBeFalsy();
+    });
+
+    it('saúde mental → protocol-rail bespoke (≠ isolate ética / ≠ vertical)', () => {
       const result = resolveSlidePresentation(
         {
           type: 'logic_flow',
           meta: { subtopico },
           steps: [
-            'Comando: EXCETO conduta punitiva em anorexia',
-            'Manter: acolhimento e vínculo',
-            'Exceção: restrição alimentar como punição',
-            'Gabarito letra B',
+            'Comando: julgue as asserções sobre anorexia e bulimia.',
+            'Julgar I: restrição e IMC baixo → anorexia → verdadeira.',
+            'Julgar II: bulimia = hiperfagia + purga → verdadeira.',
+            'Relação: II não justifica I.',
+            'Marcar D.',
+            'Em similares: peso e padrão alimentar decidem.',
           ],
           reveal_mode: 'tap',
         },
         {
-          questionSlug: 'fau-saude-mental-1',
+          questionSlug: 'cpcon-saude-mental-1',
           slideIndex: 1,
           familyId: 'conceito',
           pedagogicalBranch: 'adolescente_saude_mental',
         },
       );
-      expect(result.layoutVariant).toBe('vertical');
+      expect(result.layoutVariant).toBe('adolescent-mental-protocol-rail');
+      expect(result.moldFallback).toBeFalsy();
     });
   });
 

@@ -103,6 +103,25 @@ describe('pniSlideUtils', () => {
   it('parseia step de combinação e localização', () => {
     expect(parsePniVfStep('Montar conjunto verdadeiro: II, III, IV', 3).kind).toBe('combine');
     expect(parsePniVfStep('Localizar alternativa letra C e marcar', 4).kind).toBe('locate');
+    expect(parsePniVfStep('Verdadeiras: só I e II.', 3).kind).toBe('combine');
+  });
+
+  it('parseia julgamento V/F com prefixo romano + dois-pontos (FUNCAMP/farmaco)', () => {
+    const i = parsePniVfStep(
+      'I: ADME = organismo processa o fármaco → verdadeira.',
+      0,
+    );
+    expect(i.kind).toBe('judgement');
+    expect(i.roman).toBe('I');
+    expect(i.judgement).toBe('true');
+
+    const iii = parsePniVfStep(
+      'III: meia-vida = eliminar 100% da dose → falsa (é queda de 50%).',
+      2,
+    );
+    expect(iii.kind).toBe('judgement');
+    expect(iii.roman).toBe('III');
+    expect(iii.judgement).toBe('false');
   });
 
   it('extrai meses do calendário', () => {

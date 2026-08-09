@@ -1,0 +1,38 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-08-05",
+  "applied_at": "2026-08-05",
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "cluster": "Não-sanguínea — continuação P0 (g03)",
+  "pedagogical_branch_target": "coleta_nao_sanguinea",
+  "priority": "P0 — coleta_nao_sanguinea g03",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-8",
+  "golden_reference": "examples/questao-premium-ameosc-coleta-nao-sanguinea-urina.json",
+  "guideline": "lib/guidelines/coletaExames.ts (COLETA_EXAMES_SBPC)",
+  "slugs": [
+    "decorp-enfermagem-exames-laboratoriais-1779563553840-3",
+    "fau-unicentro-enfermagem-exames-laboratoriais-1779563553840-1",
+    "fau-unicentro-enfermagem-exames-laboratoriais-1779563553840-4",
+    "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-8",
+    "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-6",
+    "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-1",
+    "ibfc-enfermagem-coleta-de-exames-laboratoriais-1779563200105-2",
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563140631-5"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=coleta-de-exames-laboratoriais-g03 --strict",
+  "workflow": [
+    "npx tsx scripts/handcraft-coleta-de-exames-laboratoriais-g03.ts",
+    "npm run audit:questao-readiness -- --lote=coleta-de-exames-laboratoriais-g03 --strict-v2-pedagogy",
+    "npm run catalog:apply-lote -- --lote=coleta-de-exames-laboratoriais-g03 --apply"
+  ],
+  "gates": {
+    "validate_goldens": "PASS 8/8",
+    "questao_readiness": "READY 8/8",
+    "preflight": "PASS 8/8",
+    "apply": "ok=8 failed=0"
+  }
+}

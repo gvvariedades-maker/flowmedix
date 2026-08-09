@@ -65,6 +65,7 @@
     "pipeline:sdk-check": "tsx scripts/pipeline-sdk-check.ts",
     "anchor:brief": "tsx scripts/anchor-brief.ts",
     "audit:golden-anchor-gate": "tsx scripts/audit-golden-anchor-gate-cli.ts",
+    "audit:anchor-100": "tsx scripts/audit-anchor-100.ts",
     "catalog:program-status": "tsx scripts/catalog-program-status.ts",
     "classify:l3-matrix": "tsx scripts/classify-l3-priority-matrix.ts",
     "audit:l3-mold-gap": "tsx scripts/audit-l3-mold-gap.ts",
@@ -278,6 +279,7 @@
     "cluster:atencao-basica": "tsx scripts/cluster-atencao-basica-saude-da-familia-topics.ts",
     "plan:atencao-basica-batches": "tsx scripts/plan-atencao-basica-saude-da-familia-batches.ts",
     "cluster:epidemiologia": "tsx scripts/cluster-epidemiologia-e-vigilancia-epidemiologica-topics.ts",
+    "cluster:coleta": "tsx scripts/cluster-coleta-de-exames-laboratoriais-topics.ts",
     "cluster:anatomia": "tsx scripts/cluster-nocoes-de-anatomia-topics.ts",
     "plan:anatomia-batches": "tsx scripts/plan-nocoes-de-anatomia-batches.ts",
     "cluster:lingua-portuguesa": "python scripts/cluster-lingua-portuguesa-topics.py",
@@ -599,14 +601,21 @@
   },
   "overrides": {
     "sharp": "^0.35.3",
+    "fast-uri": "3.1.5",
     "next": {
-      "postcss": "8.5.18"
+      "postcss": "8.5.26"
+    },
+    "postcss": {
+      "nanoid": "3.3.18"
+    },
+    "gray-matter": {
+      "js-yaml": "3.15.1"
     },
     "minimatch@3": {
       "brace-expansion": "1.1.12"
     },
     "minimatch@>=9": {
-      "brace-expansion": "5.0.8"
+      "brace-expansion": "5.0.9"
     }
   }
 }

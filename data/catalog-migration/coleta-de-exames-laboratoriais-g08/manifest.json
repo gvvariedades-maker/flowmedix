@@ -1,0 +1,27 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g08",
+  "exported_at": "2026-08-06T01:42:14.755Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-3",
+      "furb-enfermagem-coleta-de-exames-laboratoriais-1779563200105-6",
+      "furb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-6",
+      "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-2",
+      "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-3",
+      "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-2",
+      "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+      "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8"
+    ]
+  },
+  "slugs": [
+    "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-3",
+    "furb-enfermagem-coleta-de-exames-laboratoriais-1779563200105-6",
+    "furb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-6",
+    "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-2",
+    "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-3",
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-2",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8"
+  ]
+}

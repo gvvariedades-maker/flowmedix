@@ -1,0 +1,27 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g07",
+  "exported_at": "2026-08-06T01:40:02.364Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-3",
+      "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-4",
+      "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+      "educa-pb-enfermagem-coleta-de-exames-laboratoriais-1779562768558-6",
+      "fafipa-enfermagem-coleta-de-exames-laboratoriais-1779563165114-4",
+      "fgv-enfermagem-coleta-de-exames-laboratoriais-1779562780466-2",
+      "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-7",
+      "fgv-enfermagem-exames-laboratoriais-1779563646977-3"
+    ]
+  },
+  "slugs": [
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-3",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+    "educa-pb-enfermagem-coleta-de-exames-laboratoriais-1779562768558-6",
+    "fafipa-enfermagem-coleta-de-exames-laboratoriais-1779563165114-4",
+    "fgv-enfermagem-coleta-de-exames-laboratoriais-1779562780466-2",
+    "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-7",
+    "fgv-enfermagem-exames-laboratoriais-1779563646977-3"
+  ]
+}

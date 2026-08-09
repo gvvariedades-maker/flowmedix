@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "banca": "ÁPICE",
+    "prova": "AP EI (Pref SJ Cordeiros)",
+    "orgao": "Pref SJ Cordeiros",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_preposicao",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-08",
+      "reviewer": "handcraft:prep-100-polish",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — locução prepositiva × conjuntiva / advérbio",
+      "exam_vs_current": "none",
+      "catalog_slug": "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — morfologia e função na oração",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "locução prepositiva",
+          "preposição e valor semântico",
+          "pergunta-teste M02/M03",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-4037406",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "«além da» locução prepositiva IA Unifor — Ápice AP EI Pref SJ Cordeiros 2026 tec 4037406",
+        "year": 2026,
+        "covers": ["enunciado", "alternativas", "gabarito", "matriz pt_classes_preposicao"]
+      }
+    ],
+    "anchor_style": "locucao_prepositiva",
+    "anchor_role": "golden_anchor"
+  },
+  "question_data": {
+    "instruction": "Inteligência artificial e a transformação das profissões do futuro. Por Unifor — 15/07/2025.\n\nA inteligência artificial (IA) já deixou de ser um conceito do futuro e passou a fazer parte da realidade de diversas profissões. Para o professor Marcos Blaque, entender como a IA transforma a lógica das carreiras é um passo fundamental para quem está planejando o próprio futuro profissional.\n\nDe acordo com Blaque, o avanço da IA não significa o fim de todas as profissões, mas sim uma profunda transformação. Com as mudanças constantes, a flexibilidade se torna competência indispensável.\n\nFonte: Inteligência artificial e a transformação das profissões do futuro | G1. Acesso em 06 mar. 2026.\n\nConsiderando o trecho: «O profissional deve estar pronto para desenvolver habilidades além da sua área de atuação.» A expressão em destaque é classificada como:",
+    "options": [
+      {
+        "id": "A",
+        "text": "substantivo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "adjetivo.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "advérbio.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "locução prepositiva.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "locução conjuntiva.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "LOCUÇÃO PREPOSITIVA",
+      "chip_label": "PREPOSIÇÃO",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "ALÉM + DA",
+          "detail": "É · LOCUÇÃO PREPOSITIVA",
+          "correct": "habilidades além da área — Unifor · Marcos Blaque · IA · realidade",
+          "icon": "ArrowRight"
+        },
+        {
+          "label": "ÁREA DE ATUAÇÃO",
+          "detail": "É · COMPLEMENTO",
+          "correct": "regido pela locução · profissões · carreiras",
+          "icon": "Target"
+        },
+        {
+          "label": "× CONJUNTIVA",
+          "detail": "Seria · ALÉM DE QUE",
+          "correct": "liga orações — não é o destaque",
+          "icon": "XCircle"
+        }
+      ],
+      "footer_rule": "ESTAS EXPRESSÕES SÃO · LOCUÇÕES PREPOSITIVAS · «ALÉM DA» = VALOR DE PREPOSIÇÃO"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "chip_label": "CLASSIFICA A",
+      "slide_title": "EXPRESSÃO",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "DESTAQUE · habilidades além da área de atuação",
+        "LOCUÇÃO PREPOSITIVA · além da, além de, apesar de",
+        "ELIMINAR · substantivo, adjetivo, advérbio, conjuntiva",
+        "GABARITO · letra D — locução prepositiva (Unifor · Blaque)",
+        "Em similares: apesar de, junto com — locução prepositiva (IA · profissões · flexibilidade · competência · transformação)"
+      ],
+      "footer_rule": "D — locução prepositiva."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "ALÉM DE / DA",
+      "rows": [
+        {
+          "label": "1. TESTE",
+          "value": "Grupo com valor de preposição? · pergunta-teste"
+        },
+        {
+          "label": "2. LOCUÇÃO",
+          "value": "Além da / além de · habilidades além da área"
+        },
+        {
+          "label": "3. COMPLEMENTO",
+          "value": "Além de + substantivo · área de atuação · profissões"
+        },
+        {
+          "label": "4. × CONJUNTIVA",
+          "value": "Não liga orações · não é «além de que»"
+        }
+      ],
+      "footer_rule": "Além da = locução prepositiva."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Classe isolada × Locução",
+      "items": [
+        {
+          "label": "A — substantivo",
+          "detail": "«Além» parece nome.",
+          "correct": "Grupo «além da» = locução prepositiva"
+        },
+        {
+          "label": "B — adjetivo",
+          "detail": "Qualificaria «habilidades».",
+          "correct": "Não qualifica — introduz complemento"
+        },
+        {
+          "label": "C — advérbio",
+          "detail": "«Além» isolado = advérbio de lugar.",
+          "correct": "Com «da» vira locução prepositiva"
+        },
+        {
+          "label": "E — conjuntiva",
+          "detail": "Sugere adição de ideias.",
+          "correct": "Não liga orações — regência nominal"
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam por «apesar de» / «junto com».",
+          "correct": "Mesma classe: locução prepositiva"
+        }
+      ],
+      "footer_rule": "Só D — loc. prep."
+    }
+  ]
+}

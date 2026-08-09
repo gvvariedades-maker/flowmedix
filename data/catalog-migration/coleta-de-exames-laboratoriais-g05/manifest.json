@@ -1,0 +1,28 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g05",
+  "exported_at": "2026-08-05T23:55:00.000Z",
+  "source": "from-completo",
+  "parent": "coleta-de-exames-laboratoriais-completo",
+  "filters": {
+    "slugs": [
+      "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+      "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563288910-0",
+      "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+      "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+      "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563225798-9",
+      "univali-enfermagem-coleta-de-exames-laboratoriais-1779563165114-9",
+      "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-4",
+      "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-5"
+    ]
+  },
+  "slugs": [
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563288910-0",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+    "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+    "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563225798-9",
+    "univali-enfermagem-coleta-de-exames-laboratoriais-1779563165114-9",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-4",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-5"
+  ]
+}

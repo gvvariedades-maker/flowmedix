@@ -13,6 +13,11 @@ export { ProtocolRailRow, type ProtocolRailRowProps } from './ProtocolRailRow';
 export { AlertCallout, type AlertCalloutProps } from './AlertCallout';
 export { CriticalNumber, type CriticalNumberProps } from './CriticalNumber';
 export {
+  SoftRealIcon,
+  type SoftRealIconProps,
+  type SoftRealIconTone,
+} from './SoftRealIcon';
+export {
   boardTone,
   boardEmptyPlaceholder,
   BOARD_EYEBROW,

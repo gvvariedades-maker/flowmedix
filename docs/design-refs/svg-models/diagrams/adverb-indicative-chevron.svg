@@ -1,0 +1,7 @@
+<!-- AVANT gold  chevron do painel (aponta para a faixa).
+     viewBox 0 0 16 40 � fill currentColor.
+     Refs: diagrams/adverb-indicative-section.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 40" fill="currentColor" role="img" aria-label="Chevron">
+  <title>Chevron</title>
+  <path d="M16 0 L0 20 L16 40 Z" />
+</svg>

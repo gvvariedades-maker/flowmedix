@@ -2,26 +2,29 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Atenção Básica / Saúde da Família.
- * Fonte: PNAB 2017 (MS) + Cadernos de Atenção Básica.
+ * Fonte: PNAB — Portaria GM/MS nº 2.436/2017 (ainda vigente na consolidação MS).
+ * @see https://bvs.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html
  */
 export const ATENCAO_BASICA_PNAB: GuidelineTable = {
   id: 'atencao-basica-pnab',
-  snapshot: 'PNAB — princípios e atributos da APS',
+  snapshot: 'PNAB Portaria 2.436/2017 — ESF prioritária, UBS, RAS',
   issuer: 'Ministério da Saúde',
   title: 'Atenção Básica / Saúde da Família',
   year: 2017,
-  url: 'https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_atencao_basica.pdf',
+  url: 'https://bvs.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html',
   entries: [
     {
       id: 'aps-porta-entrada',
       label: 'Porta de entrada',
-      value: 'Atenção Básica é porta de entrada preferencial do SUS',
+      value: 'Atenção Básica é primeiro ponto e porta de entrada preferencial do SUS',
+      detail: 'PNAB 2.436/2017: ordena fluxos na Rede de Atenção à Saúde (RAS).',
       sourceId: 'atencao-basica-pnab',
     },
     {
       id: 'aps-esf',
       label: 'Estratégia Saúde da Família',
-      value: 'equipe multiprofissional com médico, enfermeiro, técnico e ACS',
+      value: 'estratégia prioritária de expansão e consolidação da AB',
+      detail: 'Equipe multiprofissional (médico, enfermeiro, técnico/ACS conforme composição vigente).',
       sourceId: 'atencao-basica-pnab',
     },
     {
