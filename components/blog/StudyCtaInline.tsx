@@ -9,7 +9,7 @@ export function StudyCtaInline() {
       </p>
       <Link
         href="/register"
-        className="inline-flex items-center gap-2 rounded-2xl bg-[#BEF264] px-6 py-3 text-sm font-black tracking-wide text-slate-950 uppercase shadow-lg shadow-lime-400/20 transition-all hover:bg-[#d4f879] hover:scale-[1.02]"
+        className="inline-flex items-center gap-2 rounded-2xl bg-[#F26522] px-6 py-3 text-sm font-black tracking-wide text-slate-950 uppercase shadow-lg shadow-[rgba(242,101,34,0.2)] transition-all hover:bg-[#E05518] hover:scale-[1.02]"
       >
         Estudar no AVANT enf
         <ArrowRight size={16} />

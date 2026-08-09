@@ -24,7 +24,7 @@ export default function CampinaGrandeSimuladosHubPage() {
               <p className="text-xs font-bold uppercase tracking-wide text-cyan-400">{cg01.banca}</p>
               <p className="mt-1 text-lg font-black text-white">{cg01.titulo}</p>
               <p className="mt-1 text-sm text-slate-400">{cg01.descricao}</p>
-              <p className="mt-3 text-xs font-semibold text-[#BEF264]">
+              <p className="mt-3 text-xs font-semibold text-[#F26522]">
                 {cg01.quantidade} questões · Prova {cg01.dataProvaFormatada}
               </p>
             </Link>

@@ -31,7 +31,7 @@ export function LandingHero() {
   return (
     <section className="relative overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-16">
       <motion.div
-        className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-[#8fe020]/15 blur-3xl"
+        className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-[#F26522]/15 blur-3xl"
         animate={landingBlobPulse.animate}
         transition={landingBlobPulse.transition}
       />
@@ -43,7 +43,7 @@ export function LandingHero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <motion.div initial="hidden" animate="visible" variants={landingFadeUp} custom={0}>
-          <p className="mb-4 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-[#3d6b0f]/20 bg-[#3d6b0f]/10 px-4 py-1.5 text-sm font-semibold text-[#3d6b0f]">
+          <p className="mb-4 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-[#9A3412]/20 bg-[#9A3412]/10 px-4 py-1.5 text-sm font-semibold text-[#9A3412]">
             <Shield size={14} aria-hidden />
             {LANDING_HERO.badge}
           </p>
@@ -54,7 +54,7 @@ export function LandingHero() {
                 {line.includes(LANDING_HERO.h1AccentWord) ? (
                   <>
                     para{' '}
-                    <span className="text-[#3d6b0f]">{LANDING_HERO.h1AccentWord}</span>.
+                    <span className="text-[#9A3412]">{LANDING_HERO.h1AccentWord}</span>.
                   </>
                 ) : (
                   line

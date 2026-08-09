@@ -1997,7 +1997,7 @@ export default function AvantLessonPlayer({
                               aria-hidden
                             >
                               {isCurrent && (
-                                <span className="text-[10px] font-black leading-none text-[#1a2e05]">
+                                <span className="text-[10px] font-black leading-none text-[#0F172A]">
                                   {posicaoLista}
                                 </span>
                               )}
@@ -2125,7 +2125,7 @@ export default function AvantLessonPlayer({
               <div className="shrink-0 px-4 pb-2 pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:px-6 md:px-8 sm:pt-[max(1.5rem,env(safe-area-inset-top,0px))] flex justify-between items-center gap-2 min-w-0">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="btn-editorial-primary shrink-0 rounded-lg p-2">
-                    <Lightbulb size={20} className="text-[#1a2e05]" aria-hidden />
+                    <Lightbulb size={20} className="text-[#0F172A]" aria-hidden />
                   </div>
                   <span className="hidden sm:inline truncate max-w-[120px] text-xs font-bold uppercase tracking-widest text-slate-500 md:max-w-none">
                     Avant Neuro-Learning

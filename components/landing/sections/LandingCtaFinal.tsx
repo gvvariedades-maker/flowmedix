@@ -9,11 +9,11 @@ type LandingCtaFinalProps = {
 
 export function LandingCtaFinal({ onPricingClick }: LandingCtaFinalProps) {
   return (
-    <section className="bg-[#8fe020]/15 px-4 py-16 sm:px-6 sm:py-20">
+    <section className="bg-[#F26522]/15 px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-2xl font-[1000] tracking-tight text-[#0f172a] sm:text-4xl">
           {LANDING_CTA_FINAL.h2Prefix}{' '}
-          <span className="text-[#3d6b0f]">{LANDING_CTA_FINAL.h2Accent}</span>
+          <span className="text-[#9A3412]">{LANDING_CTA_FINAL.h2Accent}</span>
         </h2>
         <div className="mx-auto mt-4 max-w-xl text-lg text-slate-600">
           {LANDING_CTA_FINAL.subLines.map((line) => (

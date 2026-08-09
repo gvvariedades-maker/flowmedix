@@ -207,7 +207,7 @@ export function WeeklyMissionHubClient({ initialData }: WeeklyMissionHubClientPr
                       total={item.total_questoes}
                       concluidaEm={item.concluida_em}
                     />
-                    <span className="text-xs font-semibold text-[#166534] sm:shrink-0">
+                    <span className="text-xs font-semibold text-[#9A3412] sm:shrink-0">
                       Ver resumo →
                     </span>
                   </Link>

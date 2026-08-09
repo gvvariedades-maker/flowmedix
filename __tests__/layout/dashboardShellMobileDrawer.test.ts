@@ -86,7 +86,7 @@ describe('DashboardShell mobile drawer', () => {
     const shell = readFileSync(shellPath, 'utf8');
     expect(card).toContain('brandHref?: string');
     expect(card).toContain('aria-label="Ir para vitrine de aulas"');
-    expect(card).toContain('focus-visible:ring-[#22c55e]/50');
+    expect(card).toContain('focus-visible:ring-[#F26522]/50');
     expect(shell).toContain("brandHref={createQueryString('/estudar')}");
   });
 

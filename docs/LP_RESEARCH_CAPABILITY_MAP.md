@@ -77,7 +77,7 @@ Prioridade para o AVANT (SaaS edtech, freemium → Pro, LP de edital `/lp/*` + h
 | **Papel** | Detalhe que move dial (headline, bullets, CTA) |
 | **Obra-chave** | Framework flexível de LP copy (Unbounce); testes de headline/CTA |
 | **Capacidades a absorver** | Headline com **benefício claro** (em geral > pergunta/criativo); CTA = design (onde clicar) + copy (por que clicar); “Get/Start my…” vs “Order…”; squint test |
-| **Slot AVANT** | Microcopy CTA (`Testar grátis` / `Assinar Pro`); bullets de benefício; contraste `#8fe020` |
+| **Slot AVANT** | Microcopy CTA (`Testar grátis` / `Assinar Pro`); bullets de benefício; contraste `#F26522` |
 
 ### 7. Tim Ash — Landing Page Optimization (clássico)
 

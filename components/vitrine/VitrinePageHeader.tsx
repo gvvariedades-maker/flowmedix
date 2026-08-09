@@ -38,7 +38,10 @@ export default function VitrinePageHeader({
             ref={titleRef}
             id="vitrine-page-title"
             tabIndex={-1}
-            className="text-editorial-title text-2xl font-bold outline-none focus-visible:ring-2 focus-visible:ring-[#0cc93a]/40 focus-visible:ring-offset-2 sm:text-3xl"
+            className={cn(
+              'text-editorial-title text-2xl font-bold outline-none sm:text-3xl',
+              vitrineBrand.focusRingOffset,
+            )}
           >
             {title}
           </h1>

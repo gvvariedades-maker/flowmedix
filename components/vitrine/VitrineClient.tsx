@@ -785,8 +785,9 @@ export default function VitrineClient({
   return (
     <div
       className={cn(
-        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground selection:text-[#1a2e05] md:min-h-screen md:pb-8',
+        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground md:min-h-screen md:pb-8',
         vitrineBrand.selection,
+        vitrineBrand.selectionText,
       )}
     >
       {!hubMode ? (

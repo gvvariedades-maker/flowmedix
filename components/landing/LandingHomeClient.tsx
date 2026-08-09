@@ -27,7 +27,7 @@ export default function LandingHomeClient() {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#f1f5f9] text-slate-900 selection:bg-[#8fe020]/30">
+    <div className="min-h-screen overflow-x-hidden bg-[#f1f5f9] text-slate-900 selection:bg-[#F26522]/30">
       <LandingHeader onPlansClick={scrollToPricing} />
 
       <main>

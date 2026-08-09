@@ -18,7 +18,7 @@ export type QuestaoFilterChipsProps = {
   onClearAssuntos: () => void;
   onClearAll: () => void;
   className?: string;
-  /** Verde do squircle do ícone AVANT — só na vitrine. */
+  /** Acento de marca; `default` e `vitrine` usam `EDITORIAL_BRAND` (`#F26522`). */
   accent?: 'default' | 'vitrine';
 };
 
@@ -35,21 +35,14 @@ export function QuestaoFilterChips({
   onClearAssuntos,
   onClearAll,
   className,
-  accent = 'default',
+  accent: _accent = 'default',
 }: QuestaoFilterChipsProps) {
   const hasActiveFilters =
     bancasSelected.length > 0 || assuntosSelected.length > 0 || searchTerm.trim().length > 0;
 
-  const activeChipClass =
-    accent === 'vitrine'
-      ? vitrineBrand.filterChipActive
-      : 'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)] text-xs font-medium text-[#166534] md:min-h-9';
-
-  const activeDotClass =
-    accent === 'vitrine' ? vitrineBrand.filterChipDot : 'bg-[#22c55e]';
-
-  const clearHoverClass =
-    accent === 'vitrine' ? vitrineBrand.filterChipClearHover : 'hover:bg-[rgba(34, 197, 94,0.2)]';
+  const activeChipClass = vitrineBrand.filterChipActive;
+  const activeDotClass = vitrineBrand.filterChipDot;
+  const clearHoverClass = vitrineBrand.filterChipClearHover;
 
   const inactiveChipClass =
     'inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50 md:min-h-9 md:px-3 md:py-1';

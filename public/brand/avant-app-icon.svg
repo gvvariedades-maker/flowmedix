@@ -1,5 +1,5 @@
-<!-- AVANT enf v4 — ícone app/PWA: verde full-bleed + monograma na safe zone maskable -->
+<!-- AVANT enf — ícone app/PWA: print #F26522 full-bleed + monograma na safe zone maskable -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" fill="none" aria-label="AVANT enf">
-  <rect width="512" height="512" fill="#0cc93a"/>
+  <rect width="512" height="512" fill="#F26522"/>
   <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" x="51" y="51" width="410" height="410" preserveAspectRatio="xMidYMid meet"/>
 </svg>

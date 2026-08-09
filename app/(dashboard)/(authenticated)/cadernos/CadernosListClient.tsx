@@ -203,8 +203,8 @@ export default function CadernosListClient({
                           {c.itemCount > 0 ? (
                             <ProgressRingCaderno studied={c.studiedCount} total={c.itemCount} />
                           ) : (
-                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(34, 197, 94,0.25)] bg-[rgba(34, 197, 94,0.10)]">
-                              <BookMarked size={22} className="text-[#166534]" aria-hidden />
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(242, 101, 34,0.25)] bg-[rgba(242, 101, 34,0.10)]">
+                              <BookMarked size={22} className="text-[#9A3412]" aria-hidden />
                             </div>
                           )}
                           <div className="min-w-0 flex-1">
@@ -220,7 +220,7 @@ export default function CadernosListClient({
                               <p className="mt-0.5 truncate text-sm font-medium text-slate-500">{c.description}</p>
                             )}
                             {c.studyEntryTitle && c.itemCount > 0 && (
-                              <p className="mt-1 truncate text-xs font-semibold text-[#166534]">
+                              <p className="mt-1 truncate text-xs font-semibold text-[#9A3412]">
                                 Próxima
                                 {c.studyEntryPosition != null ? ` (${c.studyEntryPosition}/${c.itemCount})` : ''}:{' '}
                                 {c.studyEntryTitle}
@@ -261,7 +261,7 @@ export default function CadernosListClient({
                             variant="outline"
                             asChild
                             size="sm"
-                            className="rounded-xl border-slate-200 text-xs font-semibold text-slate-700 shadow-none hover:border-[rgba(34, 197, 94,0.35)] hover:bg-[rgba(34, 197, 94,0.06)] hover:text-[#166534]"
+                            className="rounded-xl border-slate-200 text-xs font-semibold text-slate-700 shadow-none hover:border-[rgba(242, 101, 34,0.35)] hover:bg-[rgba(242, 101, 34,0.06)] hover:text-[#9A3412]"
                           >
                             <Link href={`/cadernos/${c.id}`} className="inline-flex items-center gap-1.5">
                               <Pencil className="h-3.5 w-3.5" aria-hidden />

@@ -395,8 +395,9 @@
           "pt-classes-vf-claim-arena"
         ],
         "captures_dir": "artifacts/questao-review/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse",
-        "note": "READY 2026-08-08 — 4/4 vf-claim family ATELIER_PASS âncora 01 (DZ indigo/sky/fuchsia/lime)",
+        "note": "READY 2026-08-08 — 4/4 vf-claim family ATELIER_PASS âncora 01; gallery recapture pós-polish tipografia DZ",
         "visual_bar": "pass",
+        "captured_at": "2026-08-08",
         "preview": "http://localhost:3003/dev/slide-mold-review?branch=pt_classes_generico"
       }
     }

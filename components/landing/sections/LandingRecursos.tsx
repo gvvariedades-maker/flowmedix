@@ -31,8 +31,8 @@ export function LandingRecursos() {
                 variants={landingFadeUp}
                 custom={i}
               >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-[#8fe020]/25 bg-[#8fe020]/10">
-                  <Icon className={accent ? 'text-[#3d6b0f]' : 'text-slate-600'} size={22} aria-hidden />
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-[#F26522]/25 bg-[#F26522]/10">
+                  <Icon className={accent ? 'text-[#9A3412]' : 'text-slate-600'} size={22} aria-hidden />
                 </div>
                 <h3 className="font-black text-slate-900">{f.title}</h3>
                 <p className="mt-2 text-sm text-slate-600">{f.text}</p>

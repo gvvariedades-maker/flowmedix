@@ -147,7 +147,7 @@ function BrandCta({
   href?: string;
 }) {
   const base =
-    'inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-[#8fe020] px-6 py-3.5 text-sm font-black tracking-wide text-[#1a2e05] shadow-[0_8px_24px_rgba(143,224,32,0.35)] transition-all hover:bg-[#9ef028] hover:shadow-[0_12px_32px_rgba(143,224,32,0.4)] disabled:cursor-not-allowed disabled:opacity-60';
+    'inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-[#F26522] px-6 py-3.5 text-sm font-black tracking-wide text-[#0F172A] shadow-[0_8px_24px_rgba(242,101,34,0.35)] transition-all hover:bg-[#E05518] hover:shadow-[0_12px_32px_rgba(242,101,34,0.4)] disabled:cursor-not-allowed disabled:opacity-60';
 
   if (href) {
     return (
@@ -229,13 +229,13 @@ function CountdownPill({ dias, className }: { dias: number; className?: string }
   return (
     <div
       className={cn(
-        'inline-flex items-center gap-3 rounded-2xl border-2 border-[#8fe020]/40 bg-[#8fe020]/10 px-4 py-3',
+        'inline-flex items-center gap-3 rounded-2xl border-2 border-[#F26522]/40 bg-[#F26522]/10 px-4 py-3',
         className,
       )}
       role="status"
       aria-live="polite"
     >
-      <span className="text-3xl font-[1000] leading-none text-[#3d6b0f]">{dias}</span>
+      <span className="text-3xl font-[1000] leading-none text-[#9A3412]">{dias}</span>
       <div className="text-left">
         <p className="text-xs font-black uppercase tracking-wider text-slate-900">dias para a prova</p>
         <p className="text-xs font-semibold text-slate-600">{DATA_PROVA_FMT} · IDECAN</p>
@@ -271,7 +271,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#8fe020]/30 bg-[#8fe020]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#3d6b0f]">
+    <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#F26522]/30 bg-[#F26522]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#9A3412]">
       <Sparkles size={12} aria-hidden />
       {children}
     </p>
@@ -287,7 +287,7 @@ export function LPCampinaV2() {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#f1f5f9] text-slate-900 selection:bg-[#8fe020]/30">
+    <div className="min-h-screen overflow-x-hidden bg-[#f1f5f9] text-slate-900 selection:bg-[#F26522]/30">
       {/* Navbar */}
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f1f5f9]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
@@ -314,19 +314,19 @@ export function LPCampinaV2() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-16">
-          <div className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-[#8fe020]/15 blur-3xl" />
+          <div className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-[#F26522]/15 blur-3xl" />
           <div className="pointer-events-none absolute -left-16 bottom-0 h-64 w-64 rounded-full bg-slate-300/40 blur-3xl" />
 
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
               <p className="mb-4 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-slate-600 shadow-sm sm:text-xs">
-                <MapPin size={12} className="text-[#3d6b0f]" aria-hidden />
+                <MapPin size={12} className="text-[#9A3412]" aria-hidden />
                 IDECAN · Campina Grande PB · Técnico de Enfermagem
               </p>
 
               <h1 className="text-3xl font-[1000] leading-[1.08] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.25rem]">
                 Você sabe o que a{' '}
-                <span className="text-[#3d6b0f]">IDECAN cobra</span> — ou acha que sabe?
+                <span className="text-[#9A3412]">IDECAN cobra</span> — ou acha que sabe?
               </h1>
 
               <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
@@ -495,12 +495,12 @@ export function LPCampinaV2() {
                 >
                   <div className="grid sm:grid-cols-[1fr_140px]">
                     <div className="p-6">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#8fe020] text-sm font-black text-[#3d6b0f]">
+                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#F26522] text-sm font-black text-[#9A3412]">
                         {step.n}
                       </span>
                       <h3 className="mt-4 text-lg font-black text-slate-900">{step.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.text}</p>
-                      <step.icon className="mt-4 text-[#3d6b0f]" size={20} aria-hidden />
+                      <step.icon className="mt-4 text-[#9A3412]" size={20} aria-hidden />
                     </div>
                     <div className="relative hidden min-h-[140px] bg-slate-100 sm:block">
                       <Image src={step.image} alt="" fill className="object-cover" sizes="140px" />
@@ -567,7 +567,7 @@ export function LPCampinaV2() {
           <div className="mx-auto max-w-4xl">
             <div className="overflow-hidden rounded-[2rem] bg-[#0f172a] p-6 shadow-2xl sm:p-10">
               <div className="text-center">
-                <span className="inline-flex rounded-full bg-[#8fe020]/15 px-3 py-1 text-xs font-black uppercase tracking-wider text-[#8fe020]">
+                <span className="inline-flex rounded-full bg-[#F26522]/15 px-3 py-1 text-xs font-black uppercase tracking-wider text-[#F26522]">
                   AVANT enf Pro
                 </span>
                 <h2 className="mt-4 text-2xl font-[1000] tracking-tight text-white sm:text-3xl">
@@ -584,12 +584,12 @@ export function LPCampinaV2() {
                   R$ {PRECO_PRO}
                   <span className="text-2xl font-bold text-slate-400">/mês</span>
                 </p>
-                <p className="mt-2 text-center text-sm font-semibold text-[#8fe020]">Cancela quando quiser</p>
+                <p className="mt-2 text-center text-sm font-semibold text-[#F26522]">Cancela quando quiser</p>
 
                 <ul className="mt-6 space-y-3">
                   {BENEFICIOS_PRO.map((b) => (
                     <li key={b} className="flex gap-3 text-sm text-slate-200">
-                      <CheckCircle2 className="mt-0.5 shrink-0 text-[#8fe020]" size={18} aria-hidden />
+                      <CheckCircle2 className="mt-0.5 shrink-0 text-[#F26522]" size={18} aria-hidden />
                       {b}
                     </li>
                   ))}
@@ -604,7 +604,7 @@ export function LPCampinaV2() {
               </div>
 
               <div className="mt-8 flex justify-center">
-                <CountdownPill dias={diasRestantes} className="border-white/15 bg-white/5 [&_p]:text-white [&_span]:text-[#8fe020]" />
+                <CountdownPill dias={diasRestantes} className="border-white/15 bg-white/5 [&_p]:text-white [&_span]:text-[#F26522]" />
               </div>
             </div>
           </div>
@@ -625,12 +625,12 @@ export function LPCampinaV2() {
         </section>
 
         {/* CTA final */}
-        <section className="bg-[#8fe020]/15 px-4 py-16 sm:px-6 sm:py-20">
+        <section className="bg-[#F26522]/15 px-4 py-16 sm:px-6 sm:py-20">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-2xl font-[1000] tracking-tight text-slate-900 sm:text-4xl">
               {diasRestantes > 0 ? (
                 <>
-                  Faltam <span className="text-[#3d6b0f]">{diasRestantes} dias</span>. Cada dia conta.
+                  Faltam <span className="text-[#9A3412]">{diasRestantes} dias</span>. Cada dia conta.
                 </>
               ) : (
                 'A prova está chegando. Estude com método.'
@@ -655,11 +655,11 @@ export function LPCampinaV2() {
             Enfermagem para Técnico via assinatura AVANT enf Pro.
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-slate-600">
-            <Link className="hover:text-[#3d6b0f]" href="/politica-de-privacidade">
+            <Link className="hover:text-[#9A3412]" href="/politica-de-privacidade">
               Privacidade
             </Link>
             <span aria-hidden>·</span>
-            <Link className="hover:text-[#3d6b0f]" href="/termos-de-uso">
+            <Link className="hover:text-[#9A3412]" href="/termos-de-uso">
               Termos
             </Link>
           </div>

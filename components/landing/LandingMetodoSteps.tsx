@@ -133,7 +133,7 @@ export function LandingMetodoSteps() {
             {LANDING_METODO.h2}
           </h2>
           <p className="mt-3 max-w-2xl text-base text-slate-600">{LANDING_METODO.sub}</p>
-          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#8fe020]/40 bg-[#8fe020]/10 px-4 py-2 text-xs font-bold text-[#3d6b0f]">
+          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#F26522]/40 bg-[#F26522]/10 px-4 py-2 text-xs font-bold text-[#9A3412]">
             <ArrowRight size={14} aria-hidden />
             Do enunciado ao diagnóstico — {LANDING_DEMO_JOURNEY_LABEL}
           </p>
@@ -153,13 +153,13 @@ export function LandingMetodoSteps() {
               <StepPreview step={step} />
               <div className="border-t border-slate-100 p-5 sm:p-6">
                 <div className="flex items-start gap-3">
-                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#8fe020] bg-[#8fe020]/10 text-xs font-black text-[#3d6b0f]">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#F26522] bg-[#F26522]/10 text-xs font-black text-[#9A3412]">
                     {step.n}
                   </span>
                   <div className="min-w-0">
                     <h3 className="text-base font-black text-slate-900 sm:text-lg">{step.title}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{step.text}</p>
-                    <step.icon className="mt-2.5 text-[#3d6b0f]" size={16} aria-hidden />
+                    <step.icon className="mt-2.5 text-[#9A3412]" size={16} aria-hidden />
                   </div>
                 </div>
               </div>

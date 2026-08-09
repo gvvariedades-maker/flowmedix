@@ -38,7 +38,7 @@ export function DemoInterativa({ embedded = false, showCta = true }: DemoInterat
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Link
             href="/register"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#8fe020] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-[#8fe020]/20 transition-all hover:scale-[1.02] hover:bg-[#a8f53c]"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#F26522] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-[#F26522]/20 transition-all hover:scale-[1.02] hover:bg-[#E05518]"
           >
             Testar grátis agora
             <ArrowRight size={18} />

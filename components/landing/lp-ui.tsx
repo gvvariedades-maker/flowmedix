@@ -33,7 +33,7 @@ export function BrandCta({
   size?: keyof typeof brandCtaSizes;
 } & Omit<ComponentPropsWithoutRef<'button'>, 'onClick' | 'disabled' | 'children' | 'className'>) {
   const base = cn(
-    'inline-flex items-center justify-center gap-2 rounded-full bg-[#8fe020] font-black tracking-wide text-[#1a2e05] shadow-[0_8px_24px_rgba(143,224,32,0.35)] transition-all hover:bg-[#9ef028] hover:shadow-[0_12px_32px_rgba(143,224,32,0.4)] disabled:cursor-not-allowed disabled:opacity-60',
+    'inline-flex items-center justify-center gap-2 rounded-full bg-[#F26522] font-black tracking-wide text-[#0F172A] shadow-[0_8px_24px_rgba(242,101,34,0.35)] transition-all hover:bg-[#E05518] hover:shadow-[0_12px_32px_rgba(242,101,34,0.4)] disabled:cursor-not-allowed disabled:opacity-60',
     brandCtaSizes[size],
   );
 
@@ -95,7 +95,7 @@ export function OutlineCta({
 
 export function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#8fe020]/30 bg-[#8fe020]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#3d6b0f]">
+    <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#F26522]/30 bg-[#F26522]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#9A3412]">
       <Sparkles size={12} aria-hidden />
       {children}
     </p>

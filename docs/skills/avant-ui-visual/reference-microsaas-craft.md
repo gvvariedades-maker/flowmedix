@@ -56,7 +56,7 @@ O usuário do AVANT é **Técnico em Enfermagem estudando para concurso**, não 
 | Densidade | Card: título + meta + progresso + **1** CTA (`Iniciar` / `Continuar` / `Revisar`) |
 | Grid | `1` / `md:2` / `xl:3` colunas — nunca 4 se truncar título |
 | Progresso | Sempre legível sem expandir (ring ou barra ≥4px) |
-| Acento | Verde `--color-brand` `#8fe020` só em CTA/foco/ativo; slate no resto |
+| Acento | Laranja `--color-brand` `#F26522` só em CTA/foco/ativo; slate no resto |
 | Filtros | Chip ativo óbvio; hit target ≥44×44px |
 | Stats | Compactos no topo; não empurrar o catálogo com KPI hero |
 | Motion | Entrada leve nos cards; sem loop decorativo na lista |
@@ -125,7 +125,7 @@ O usuário do AVANT é **Técnico em Enfermagem estudando para concurso**, não 
 - [ ] Focus ring visível no teclado  
 - [ ] Feedback acerto/erro com fundo/borda  
 - [ ] Um CTA primário por estado (`pergunta` / `gabarito` / entrada no estudo)  
-- [ ] Reverso permanece cyber (cyan/neon, sem `#8fe020` nos slides)  
+- [ ] Reverso permanece cyber (cyan/neon, sem `#F26522` / brand editorial nos slides)  
 - [ ] Reduced motion não quebra fluxo  
 - [ ] Sem overflow no mobile com zoom de leitura  
 
@@ -136,7 +136,7 @@ O usuário do AVANT é **Técnico em Enfermagem estudando para concurso**, não 
 | Princípio | Fazer | Evitar |
 |-----------|-------|--------|
 | Headline clara | Título de assunto / instrução sem adjetivo vazio | “Reimaginado”, badges decorativos em massa |
-| Um acento | Verde editorial ou cyan cyber | Gradientes multi-cor no card |
+| Um acento | Laranja editorial (`#F26522`) ou cyan cyber | Gradientes multi-cor no card |
 | Prova no produto | Progresso real, status da questão, preview NeuroSlide | Ilustração stock |
 | Microestados | hover / focus / disabled / skeleton | Só estado “default” |
 | Whitespace | Respiro entre header, toolbar e grid | Empilhar 5 blocos acima do catálogo |

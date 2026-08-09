@@ -121,9 +121,9 @@ function displayNameFromUser(displayName: string | null, email: string | null): 
   return displayNameFromEmail(email);
 }
 
-/** Avatar — alinhado à cor brand editorial (#22c55e). */
+/** Avatar — alinhado à cor brand editorial (#F26522). */
 const USER_AVATAR_CLASSES =
-  'bg-gradient-to-br from-[#22c55e] to-[#16a34a] text-white shadow-sm ring-2 ring-[#22c55e]/25';
+  'bg-gradient-to-br from-[#F26522] to-[#E05518] text-white shadow-sm ring-2 ring-[#F26522]/25';
 
 type MatriculatedConcursoSummary = {
   slug: string;

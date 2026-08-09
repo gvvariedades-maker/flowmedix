@@ -68,7 +68,7 @@ function renderRich(text: string, accent: string): ReactNode {
       return (
         <span
           key={i}
-          className="mx-0.5 inline-flex h-5 min-w-5 items-center justify-center rounded-md bg-fuchsia-700 px-1 font-display text-xs font-black text-white"
+          className="mx-0.5 inline-flex h-6 min-w-6 items-center justify-center rounded-md bg-fuchsia-700 px-1.5 font-display text-sm font-black text-white"
         >
           ≠
         </span>
@@ -150,20 +150,20 @@ export function DangerZonePtClassesVfClaimArena({
         </header>
         <div className="grid grid-cols-1 sm:grid-cols-2">
           <div className="flex items-center gap-2.5 border-b border-indigo-200 px-3 py-3 sm:border-b-0 sm:border-r">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-fuchsia-600 text-white shadow-sm">
-              <X className="h-4 w-4" strokeWidth={3} aria-hidden />
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-fuchsia-600 text-white shadow-sm">
+              <X className="h-5 w-5" strokeWidth={3} aria-hidden />
             </span>
-            <p className="font-body text-sm font-bold leading-snug text-slate-900 md:text-base">
-              Chute pela <span className="rounded bg-fuchsia-200 px-1 text-fuchsia-950">forma</span>{' '}
+            <p className="font-body text-base font-bold leading-snug text-slate-900 md:text-lg">
+              Chute pela <span className="rounded bg-fuchsia-200 px-1.5 text-fuchsia-950">forma</span>{' '}
               ou sequência «tudo V/F»
             </p>
           </div>
           <div className="flex items-center gap-2.5 px-3 py-3">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-600 text-white shadow-sm">
-              <Check className="h-4 w-4" strokeWidth={3} aria-hidden />
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sky-600 text-white shadow-sm">
+              <Check className="h-5 w-5" strokeWidth={3} aria-hidden />
             </span>
-            <p className="font-body text-sm font-bold leading-snug text-slate-900 md:text-base">
-              Teste a <span className="rounded bg-sky-200 px-1 text-sky-950">classe</span> de cada
+            <p className="font-body text-base font-bold leading-snug text-slate-900 md:text-lg">
+              Teste a <span className="rounded bg-sky-200 px-1.5 text-sky-950">classe</span> de cada
               peão antes do V/F
             </p>
           </div>
@@ -181,28 +181,28 @@ export function DangerZonePtClassesVfClaimArena({
               transition={{ delay: reduceMotion ? 0 : Math.min(index * 0.04, 0.16) }}
               className={`overflow-hidden rounded-2xl bg-white shadow-md ring-1 ${skin.ring}`}
             >
-              <div className="grid grid-cols-1 items-stretch sm:grid-cols-[3.25rem_1fr_auto_1fr]">
+              <div className="grid grid-cols-1 items-stretch sm:grid-cols-[3.5rem_1fr_auto_1fr]">
                 <div
-                  className={`flex items-center justify-center px-2 py-3 font-display text-xl font-black text-white ${skin.badge}`}
+                  className={`flex items-center justify-center px-2 py-3.5 font-display text-2xl font-black text-white ${skin.badge}`}
                 >
                   {row.letter}
                 </div>
-                <div className={`px-3 py-3 ${skin.wash}`}>
-                  <p className="font-mono text-[10px] font-black uppercase tracking-wider text-fuchsia-800">
+                <div className={`px-3 py-3.5 ${skin.wash}`}>
+                  <p className="font-mono text-xs font-black uppercase tracking-wider text-fuchsia-800">
                     Parece
                   </p>
-                  <p className="mt-1 font-body text-sm font-bold leading-snug text-slate-800 md:text-[15px]">
+                  <p className="mt-1.5 font-body text-base font-bold leading-snug text-slate-900 md:text-lg">
                     {renderRich(row.trap, 'text-fuchsia-700')}
                   </p>
                 </div>
                 <div className="hidden items-center justify-center sm:flex" aria-hidden>
                   <ArrowLeftRight className="h-5 w-5 text-slate-400" />
                 </div>
-                <div className="border-t border-slate-100 px-3 py-3 sm:border-t-0 sm:border-l sm:border-slate-100">
-                  <p className="font-mono text-[10px] font-black uppercase tracking-wider text-sky-800">
+                <div className="border-t border-slate-100 px-3 py-3.5 sm:border-t-0 sm:border-l sm:border-slate-100">
+                  <p className="font-mono text-xs font-black uppercase tracking-wider text-sky-800">
                     É
                   </p>
-                  <p className="mt-1 font-body text-sm font-bold leading-snug text-slate-800 md:text-[15px]">
+                  <p className="mt-1.5 font-body text-base font-bold leading-snug text-slate-900 md:text-lg">
                     {renderRich(row.fix, 'text-sky-700')}
                   </p>
                 </div>
@@ -215,20 +215,30 @@ export function DangerZonePtClassesVfClaimArena({
       {transfers.map((row) => (
         <section
           key={row.key}
-          className="overflow-hidden rounded-2xl border-2 border-slate-800 bg-slate-900 shadow-md"
+          className="overflow-hidden rounded-2xl border-2 border-cyan-500 bg-slate-950 shadow-md ring-1 ring-cyan-400/40"
         >
-          <header className="flex items-center gap-2 bg-slate-950 px-3 py-2">
-            <ArrowLeftRight className="h-4 w-4 text-cyan-300" aria-hidden />
-            <p className="font-display text-sm font-black uppercase tracking-wide text-cyan-100">
+          <header className="flex items-center gap-2 bg-indigo-800 px-3 py-2.5">
+            <ArrowLeftRight className="h-5 w-5 text-lime-300" aria-hidden />
+            <p className="font-display text-base font-black uppercase tracking-wide text-white md:text-lg">
               {row.label.replace(/…+$/, '')}
             </p>
           </header>
-          <div className="space-y-2 px-3 py-3">
+          <div className="space-y-3 px-3 py-4">
             {row.trap ? (
-              <p className="font-body text-sm font-bold leading-snug text-slate-200">{row.trap}</p>
+              <p
+                className="rounded-xl border-2 border-fuchsia-400/70 bg-fuchsia-950/50 px-3 py-2.5 font-body text-base font-black leading-snug text-white md:text-lg"
+                style={{ color: '#ffffff' }}
+              >
+                {row.trap}
+              </p>
             ) : null}
             {row.fix ? (
-              <p className="font-body text-sm font-black leading-snug text-lime-300">{row.fix}</p>
+              <p
+                className="rounded-xl border-2 border-lime-400 bg-lime-400 px-3 py-2.5 font-body text-base font-black leading-snug md:text-lg"
+                style={{ color: '#0f172a' }}
+              >
+                {row.fix}
+              </p>
             ) : null}
           </div>
         </section>

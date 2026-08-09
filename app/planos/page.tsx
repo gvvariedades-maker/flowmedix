@@ -80,7 +80,7 @@ function LpCatalogCard({ item }: { item: LpCatalogItem }) {
           </p>
           <p className="mt-1 text-sm font-semibold text-slate-200">{item.statusInscricoes}</p>
         </div>
-        <span className="inline-flex items-center gap-1.5 text-sm font-black uppercase tracking-wider text-[#BEF264]">
+        <span className="inline-flex items-center gap-1.5 text-sm font-black uppercase tracking-wider text-[#F26522]">
           Ver página
           <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" aria-hidden />
         </span>
@@ -140,7 +140,7 @@ export default async function PlanosPage() {
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <Link
                   href="/assinar-pro"
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#BEF264] px-5 py-3 text-xs font-black uppercase tracking-wider text-slate-950"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#F26522] px-5 py-3 text-xs font-black uppercase tracking-wider text-slate-950"
                 >
                   Assinar AVANT enf Pro
                   <ArrowRight size={16} aria-hidden />
@@ -170,7 +170,7 @@ export default async function PlanosPage() {
               </p>
               <Link
                 href="/assinar-pro"
-                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#BEF264] px-6 py-3 text-xs font-black uppercase tracking-wider text-slate-950 transition-transform hover:scale-[1.02]"
+                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#F26522] px-6 py-3 text-xs font-black uppercase tracking-wider text-slate-950 transition-transform hover:scale-[1.02]"
               >
                 Assinar AVANT enf Pro
                 <ArrowRight size={16} aria-hidden />

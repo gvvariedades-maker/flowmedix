@@ -112,7 +112,7 @@ Este hub **aponta**; não copia tabelas de tokens.
 **Always**
 
 - Editorial na área logada / enunciado; Cyber **só** no reverso (e admin escuro quando já for o caso)
-- Monocromático + **1** acento (Editorial: slate + `#8fe020`; Cyber: preto + cyan)
+- Monocromático + **1** acento (Editorial: slate + `#F26522`; Cyber: preto + cyan)
 - Estender componente adjacente; reutilizar classes (`.card-elevated`, `.glass-panel`, `.btn-editorial-*`, …)
 - Microestados: hover, `focus-visible`, loading, empty, disabled
 - Alvos ≥44px no mobile; contraste AA

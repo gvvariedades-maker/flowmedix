@@ -32,7 +32,7 @@ const fadeUp = {
 const categoryStyles: Record<BlogCategoryLabel, string> = {
   EBSERH: 'border-indigo-400/25 bg-indigo-500/10 text-indigo-200',
   Método: 'border-cyan-400/25 bg-cyan-400/10 text-cyan-200',
-  Matérias: 'border-[#BEF264]/25 bg-[#BEF264]/10 text-[#BEF264]',
+  Matérias: 'border-[#F26522]/25 bg-[#F26522]/10 text-[#F26522]',
 };
 
 function getPostCategory(post: BlogIndexPost): { label: BlogCategoryLabel; className: string } {
@@ -53,7 +53,7 @@ export function BlogIndexClient({ posts }: BlogIndexClientProps) {
     <div className="min-h-screen overflow-x-hidden bg-[#010409] text-slate-100 selection:bg-cyan-400/25 selection:text-white">
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-[-22%] left-1/2 h-[520px] w-[min(140%,980px)] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[130px]" />
-        <div className="absolute right-[-10%] bottom-[-12%] h-[500px] w-[500px] rounded-full bg-[#BEF264]/10 blur-[110px]" />
+        <div className="absolute right-[-10%] bottom-[-12%] h-[500px] w-[500px] rounded-full bg-[#F26522]/10 blur-[110px]" />
         <div className="absolute top-1/2 left-[-15%] h-[420px] w-[420px] rounded-full bg-indigo-600/20 blur-[110px]" />
         <div
           className="absolute inset-0 opacity-[0.055]"
@@ -91,7 +91,7 @@ export function BlogIndexClient({ posts }: BlogIndexClientProps) {
               animate="visible"
               className="mb-6 text-4xl leading-[1.08] font-[1000] tracking-tight text-white sm:text-5xl md:text-6xl"
             >
-              <span className="bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-[#F26522] bg-clip-text text-transparent">
                 Tudo que você precisa saber para ser aprovado
               </span>
             </motion.h1>
@@ -177,7 +177,7 @@ export function BlogIndexClient({ posts }: BlogIndexClientProps) {
           >
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-400/20 via-transparent to-transparent" />
             <div className="relative z-10">
-              <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#BEF264]/25 bg-[#BEF264]/10 text-[#BEF264]">
+              <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#F26522]/25 bg-[#F26522]/10 text-[#F26522]">
                 <Sparkles size={22} />
               </div>
               <h2 className="mb-4 text-2xl font-[1000] tracking-tight text-white sm:text-3xl md:text-4xl">
@@ -189,7 +189,7 @@ export function BlogIndexClient({ posts }: BlogIndexClientProps) {
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
                   href="/register"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-10 py-4 text-sm font-black tracking-widest text-slate-950 uppercase shadow-lg shadow-lime-400/25 transition-all hover:bg-[#d4f879] sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#F26522] px-10 py-4 text-sm font-black tracking-widest text-slate-950 uppercase shadow-lg shadow-[rgba(242,101,34,0.25)] transition-all hover:bg-[#E05518] sm:w-auto"
                 >
                   Criar conta gratuita
                   <ArrowRight size={18} />

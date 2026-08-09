@@ -87,7 +87,7 @@ export function LandingQuestionPreview({ className }: { className?: string }) {
       </div>
 
       <div className="border-t border-slate-200 px-3 py-2">
-        <div className="mx-auto flex h-8 max-w-[200px] items-center justify-center rounded-full bg-[#22c55e] text-[10px] font-bold text-slate-900">
+        <div className="mx-auto flex h-8 max-w-[200px] items-center justify-center rounded-full bg-[#F26522] text-[10px] font-bold text-slate-900">
           Confirmar Resposta
         </div>
       </div>

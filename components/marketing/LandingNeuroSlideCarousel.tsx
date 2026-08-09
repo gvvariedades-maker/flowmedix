@@ -71,7 +71,7 @@ export function LandingNeuroSlideCarousel({ className }: { className?: string })
                 key={slideIndex}
                 className={cn(
                   'h-1.5 rounded-full transition-all',
-                  slideIndex === index ? 'w-4 bg-[#8fe020]' : 'w-1.5 bg-white/25',
+                  slideIndex === index ? 'w-4 bg-[#F26522]' : 'w-1.5 bg-white/25',
                 )}
               />
             ))}
