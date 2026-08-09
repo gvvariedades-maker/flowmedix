@@ -6,12 +6,13 @@ import {
   AVANT_LOGO_ANIMATION,
   AVANT_LOGO_COLORS,
   AVANT_LOGO_DIMENSIONS,
+  AVANT_LOGO_FONT_FAMILY,
   AVANT_LOGO_GRADIENTS,
   AVANT_LOGO_ICON_FLAT_BELOW,
   AVANT_LOGO_ICON_INSET_SCALE,
   AVANT_LOGO_SHELL_SHADOW,
   getAvantLogoLockupPadding,
-  getAvantLogoWordmarkRasterSize,
+  getAvantLogoWordmarkLetterSpacing,
   scaleAvantLogoPx,
   type AvantLogoSizeToken,
 } from '@/lib/brand/avantLogoConstants';
@@ -70,33 +71,70 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
 }
 
 /**
- * Wordmark "AVANT enf" — AVANT cobre metal 3D + enf verde glass (Canva v4).
+ * Wordmark tipográfico "AVANT enf":
+ * - Editorial (`light`/`brand`): AVANT preto + enf laranja print
+ * - Cyber (`default`): AVANT claro + enf laranja print
  */
 function AvantLogoWordmarkStack({
   size,
   wordmarkScale = 1,
+  tone,
 }: {
   size: AvantLogoSizeToken;
   wordmarkScale?: number;
+  tone: AvantLogoTone;
 }) {
-  const raster = getAvantLogoWordmarkRasterSize(size);
-  const widthPx = Math.round(raster.width * wordmarkScale);
-  const heightPx = Math.round(raster.height * wordmarkScale);
+  const isLight = tone === 'light' || tone === 'brand';
+  const fontSize = Math.round(
+    scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.wordmark.fontSize, size) * wordmarkScale,
+  );
+  const enfSize = Math.max(
+    10,
+    Math.round(scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.subtitle.fontSize, size) * wordmarkScale * 1.35),
+  );
+  const letterSpacing = getAvantLogoWordmarkLetterSpacing(size) * wordmarkScale;
+  const enfTracking = Math.round(
+    scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.subtitle.letterSpacingPx, size) * wordmarkScale * 10,
+  ) / 10;
+  const avantColor = isLight
+    ? AVANT_LOGO_COLORS.wordmarkEditorial
+    : AVANT_LOGO_COLORS.wordmarkCyber;
+  const enfColor = AVANT_LOGO_COLORS.wordmarkEnf;
 
   return (
     <span
-      className="inline-flex min-w-0 shrink items-center overflow-visible"
-      style={{ height: heightPx, width: widthPx, maxWidth: '100%' }}
+      className="inline-flex min-w-0 shrink items-baseline overflow-visible"
+      style={{
+        fontFamily: AVANT_LOGO_FONT_FAMILY,
+        gap: Math.max(4, Math.round(6 * wordmarkScale)),
+        maxWidth: '100%',
+      }}
+      aria-hidden
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/brand/avant-logo-wordmark-raster.png"
-        alt="AVANT enf"
-        width={widthPx}
-        height={heightPx}
-        className="h-full w-full select-none object-contain"
-        draggable={false}
-      />
+      <span
+        style={{
+          fontSize,
+          fontWeight: 800,
+          letterSpacing: `${letterSpacing}px`,
+          lineHeight: AVANT_LOGO_DIMENSIONS.wordmark.lineHeight,
+          color: avantColor,
+          whiteSpace: 'nowrap',
+        }}
+      >
+        AVANT
+      </span>
+      <span
+        style={{
+          fontSize: enfSize,
+          fontWeight: AVANT_LOGO_DIMENSIONS.subtitle.fontWeight,
+          letterSpacing: `${enfTracking}px`,
+          lineHeight: AVANT_LOGO_DIMENSIONS.subtitle.lineHeight,
+          color: enfColor,
+          whiteSpace: 'nowrap',
+        }}
+      >
+        {AVANT_LOGO_DIMENSIONS.subtitle.label}
+      </span>
     </span>
   );
 }
@@ -128,7 +166,7 @@ export function AvantLogo({
       }}
     >
       <AvantLogoIcon size={size} />
-      <AvantLogoWordmarkStack size={size} wordmarkScale={wordmarkScale} />
+      <AvantLogoWordmarkStack size={size} wordmarkScale={wordmarkScale} tone={tone} />
     </div>
   );
 
@@ -165,7 +203,7 @@ export function AvantLogo({
           aria-hidden
         />
         <AvantLogoIcon size={size} />
-        <AvantLogoWordmarkStack size={size} wordmarkScale={wordmarkScale} />
+        <AvantLogoWordmarkStack size={size} wordmarkScale={wordmarkScale} tone={tone} />
       </div>
     </div>
   );

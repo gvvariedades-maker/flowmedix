@@ -16,7 +16,9 @@ Trabalho de **design/assets** da Onda 4 do rebrand editorial. Constantes UI
 | Squircle / card de marca / fundo app icon | `#F26522` |
 | Hover / pressão (se houver variante) | `#E05518` |
 | Metal wordmark / monograma "A" | manter cobre (`#e08f2f` e gradiente foil) |
-| Sufixo "enf" (até decisão) | manter verde glass **ou** alinhar ao print na mesma entrega de PNG |
+| Sufixo "enf" | **`#F26522`** (tipográfico no app + e-mail) |
+| Wordmark "AVANT" (editorial) | **`#0f172a`** (preto slate — tipográfico, não raster cobre) |
+| Wordmark "AVANT" (cyber / e-mail shell escuro) | **`#f8fafc`** |
 
 ---
 
@@ -26,7 +28,7 @@ Trabalho de **design/assets** da Onda 4 do rebrand editorial. Constantes UI
 - [ ] `avant-logo-ae-flat.png` — mesma família (nav / tamanho pequeno)
 - [ ] `avant-logo-ae-monogram.png` — se ainda usado em exports
 - [ ] `avant-logo-cover.png` — OG/social (layout.tsx)
-- [ ] `avant-logo-wordmark-raster.png` — opcional: só se "enf" mudar de verde → print
+- [ ] `avant-logo-wordmark-raster.png` — legado cobre+verde; app usa tipográfico (pode arquivar/reexport se ainda referenciado em SVG)
 - [ ] `avant-pwa-icon.png` (512) — fundo/card print
 - [ ] `avant-pwa-icon-maskable.png` (512) — safe zone + fundo print
 
