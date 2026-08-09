@@ -22,7 +22,7 @@ export function LandingMissaoSemanal() {
           custom={0}
           className="min-w-0"
         >
-          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#3d6b0f]">
+          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#9A3412]">
             {LANDING_MISSAO_SEMANAL.label}
           </p>
           <h2 className="mt-3 text-2xl font-[1000] tracking-tight text-slate-900 sm:text-4xl">
@@ -36,7 +36,7 @@ export function LandingMissaoSemanal() {
             {LANDING_MISSAO_SEMANAL.bullets.map((item) => (
               <li key={item.title} className="flex gap-3">
                 <CheckCircle2
-                  className="mt-0.5 shrink-0 text-[#3d6b0f]"
+                  className="mt-0.5 shrink-0 text-[#9A3412]"
                   size={20}
                   aria-hidden
                 />

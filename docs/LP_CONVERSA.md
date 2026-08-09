@@ -45,7 +45,7 @@ ou anexe este arquivo (`@docs/LP_CONVERSA.md`) — equivalente a escrever `LP:` 
 
 ### Proibido
 
-- Inventar paleta fora dos tokens AVANT (Editorial `#8fe020` + slate; Cyber `#010409` + cyan)
+- Inventar paleta fora dos tokens AVANT (Editorial `#F26522` + slate; Cyber `#010409` + cyan)
 - Copy de **enfermeiro / nível superior** como se fosse para TE
 - Escassez falsa (“últimas vagas” sem base); urgência só com **data de prova / status de inscrição reais**
 - Mais de **um CTA primário** competindo no mesmo viewport
@@ -172,7 +172,7 @@ CTA: design = **onde** clicar; copy = **por que** (`Começar meu…` / `Assinar�
 
 | Regra | Home | LP concurso |
 |-------|------|-------------|
-| Skin | Editorial (`#f1f5f9`, CTA `#8fe020`) | Cyber (`#010409`, cyan) |
+| Skin | Editorial (`#f1f5f9`, CTA `#F26522`) | Cyber (`#010409`, cyan) |
 | 1 CTA primário / viewport | Sim | Sim |
 | Sticky CTA mobile | `LandingStickyCta` | Nav / checkout sticky do template |
 | Demo / preview | Bloco cyber do produto | `NeuroSlideCarousel` no hero |

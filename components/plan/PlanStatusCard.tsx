@@ -102,7 +102,7 @@ function FreePlanPromo({ cidadeExibicao }: { cidadeExibicao: string }) {
       {showSeuPlano ? (
         <p className="mt-1 text-sm font-bold text-slate-900">
           Plano{' '}
-          <span className="text-[#166534]">gratuito</span>
+          <span className="text-[#9A3412]">gratuito</span>
         </p>
       ) : (
         <p
@@ -122,7 +122,7 @@ function FreePlanPromo({ cidadeExibicao }: { cidadeExibicao: string }) {
       </div>
       <Button
         asChild
-        className="mt-3 h-9 w-full rounded-xl bg-[#22c55e] font-mono text-[10px] font-bold uppercase tracking-wider text-[#1a2e05] shadow-sm hover:bg-[#16a34a]"
+        className="mt-3 h-9 w-full rounded-xl bg-[#F26522] font-mono text-[10px] font-bold uppercase tracking-wider text-[#0F172A] shadow-sm hover:bg-[#E05518]"
       >
         <Link href="/assinar-pro" className="gap-1.5">
           <Zap size={12} fill="currentColor" aria-hidden />
@@ -153,7 +153,7 @@ export function PlanStatusCard({
           aria-label="Ir para vitrine de aulas"
           className={cn(
             'inline-flex rounded-lg outline-none transition-shadow',
-            'focus-visible:ring-2 focus-visible:ring-[#22c55e]/50',
+            'focus-visible:ring-2 focus-visible:ring-[#F26522]/50',
           )}
         >
           {brandMark}

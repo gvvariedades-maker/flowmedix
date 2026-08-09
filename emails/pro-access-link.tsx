@@ -32,8 +32,8 @@ export function ProAccessLinkEmail({ accessLink }: ProAccessLinkEmailProps) {
       <Button
         href={accessLink}
         style={{
-          backgroundColor: '#BEF264',
-          color: '#010409',
+          backgroundColor: '#F26522',
+          color: '#0F172A',
           fontWeight: 700,
           borderRadius: '12px',
           padding: '14px 24px',

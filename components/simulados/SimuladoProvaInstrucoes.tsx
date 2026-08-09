@@ -82,7 +82,7 @@ export function SimuladoProvaInstrucoes({
           </h2>
           <p className="text-sm text-slate-700">
             Meta de tempo sugerida:{' '}
-            <span className="font-mono font-medium text-[#166534]">
+            <span className="font-mono font-medium text-[#9A3412]">
               {metaTotalHms ?? 'Sem meta'}
             </span>
             {metaTotalHms ? (
@@ -107,7 +107,7 @@ export function SimuladoProvaInstrucoes({
             id={checkboxId}
             checked={instrucoesLidas}
             onCheckedChange={(checked) => setInstrucoesLidas(checked === true)}
-            className="mt-0.5 border-slate-300 data-[state=checked]:border-[#22c55e] data-[state=checked]:bg-[#22c55e]"
+            className="mt-0.5 border-slate-300 data-[state=checked]:border-[#F26522] data-[state=checked]:bg-[#F26522]"
             aria-describedby={`${checkboxId}-hint`}
           />
           <label htmlFor={checkboxId} className="cursor-pointer text-sm text-slate-800">

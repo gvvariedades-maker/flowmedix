@@ -48,11 +48,12 @@ export function VitrineDisciplineCard({
       className={cn(
         'group flex w-full flex-col text-left transition-all',
         'rounded-2xl border bg-white shadow-sm',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0cc93a]/40 focus-visible:ring-offset-2',
+        'focus-visible:outline-none',
+        vitrineBrand.focusRingOffset,
         'disabled:cursor-not-allowed disabled:opacity-50',
         prominent ? 'min-h-[148px] gap-4 px-5 py-5 sm:min-h-[160px] sm:px-6 sm:py-6' : 'gap-3 px-4 py-3.5',
         selected
-          ? cn(vitrineBrand.tintBorder, vitrineBrand.tintBg, 'border-[rgba(12,201,58,0.35)]')
+          ? cn(vitrineBrand.tintBorder, vitrineBrand.tintBg, vitrineBrand.selectedBorder)
           : cn(
               'border-slate-200 hover:border-slate-300 hover:shadow-md',
               prominent && 'hover:-translate-y-0.5',
@@ -67,8 +68,12 @@ export function VitrineDisciplineCard({
                 'flex shrink-0 items-center justify-center rounded-full border',
                 prominent ? 'h-12 w-12' : 'h-9 w-9',
                 selected
-                  ? 'border-[rgba(12,201,58,0.35)] bg-[rgba(12,201,58,0.1)] text-[#0cc93a]'
-                  : 'border-slate-200 bg-slate-50 text-slate-500 group-hover:border-[rgba(12,201,58,0.25)] group-hover:text-[#0cc93a]',
+                  ? vitrineBrand.selectedIcon
+                  : cn(
+                      'border-slate-200 bg-slate-50 text-slate-500',
+                      vitrineBrand.groupHoverIconBorder,
+                      vitrineBrand.groupHoverText,
+                    ),
               )}
               aria-hidden
             >
@@ -110,7 +115,11 @@ export function VitrineDisciplineCard({
             'inline-flex min-h-[44px] shrink-0 items-center justify-center gap-1.5 self-center rounded-xl px-4 text-xs font-black uppercase tracking-wide',
             selected || prominent
               ? vitrineBrand.buttonPrimary
-              : 'border border-slate-200 bg-white text-slate-700 group-hover:border-[rgba(12,201,58,0.35)] group-hover:text-[#0cc93a]',
+              : cn(
+                  'border border-slate-200 bg-white text-slate-700',
+                  vitrineBrand.groupHoverBorder,
+                  vitrineBrand.groupHoverText,
+                ),
           )}
         >
           {ctaLabel}

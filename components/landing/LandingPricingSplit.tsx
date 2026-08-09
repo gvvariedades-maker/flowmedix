@@ -31,7 +31,7 @@ export function LandingPricingSplit({ precoPro }: LandingPricingSplitProps) {
           <SectionLabel>{LANDING_PRICING.label}</SectionLabel>
           <h2 className="mt-3 text-2xl font-[1000] tracking-tight text-slate-900 sm:text-4xl">
             {LANDING_PRICING.h2Prefix}{' '}
-            <span className="text-[#3d6b0f]">{LANDING_PRICING.h2Accent}</span>
+            <span className="text-[#9A3412]">{LANDING_PRICING.h2Accent}</span>
           </h2>
           <p className="mt-3 text-slate-600">{LANDING_PRICING.sub}</p>
         </div>
@@ -44,7 +44,7 @@ export function LandingPricingSplit({ precoPro }: LandingPricingSplitProps) {
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {LANDING_PRICING.proBenefits.map((item) => (
                 <li key={item} className="flex gap-2.5 text-sm text-slate-700">
-                  <CheckCircle2 className="mt-0.5 shrink-0 text-[#3d6b0f]" size={18} aria-hidden />
+                  <CheckCircle2 className="mt-0.5 shrink-0 text-[#9A3412]" size={18} aria-hidden />
                   <span>{item}</span>
                 </li>
               ))}
@@ -55,11 +55,11 @@ export function LandingPricingSplit({ precoPro }: LandingPricingSplitProps) {
           </div>
 
           <div className="flex flex-col gap-5">
-            <div className="card-elevated-lg flex flex-1 flex-col rounded-[2rem] border-[#8fe020]/40 p-8 ring-2 ring-[#8fe020]/20">
-              <span className="inline-flex w-fit rounded-full bg-[#8fe020] px-3 py-1 text-xs font-bold text-[#1a2e05]">
+            <div className="card-elevated-lg flex flex-1 flex-col rounded-[2rem] border-[#F26522]/40 p-8 ring-2 ring-[#F26522]/20">
+              <span className="inline-flex w-fit rounded-full bg-[#F26522] px-3 py-1 text-xs font-bold text-[#0F172A]">
                 Mais popular
               </span>
-              <p className="mt-6 text-sm font-bold uppercase tracking-wider text-[#3d6b0f]">Pro</p>
+              <p className="mt-6 text-sm font-bold uppercase tracking-wider text-[#9A3412]">Pro</p>
               <p className="mt-2 text-4xl font-[1000] text-slate-900">
                 R$ {precoPro}
                 <span className="text-xl font-bold text-slate-500">/mês · cancela quando quiser</span>
@@ -76,7 +76,7 @@ export function LandingPricingSplit({ precoPro }: LandingPricingSplitProps) {
               <ul className="mt-4 space-y-2">
                 {FREE_ITEMS.map((item) => (
                   <li key={item} className="flex gap-2 text-xs text-slate-600">
-                    <CheckCircle2 size={14} className="shrink-0 text-[#3d6b0f]" aria-hidden />
+                    <CheckCircle2 size={14} className="shrink-0 text-[#9A3412]" aria-hidden />
                     {item}
                   </li>
                 ))}

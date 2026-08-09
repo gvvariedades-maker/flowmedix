@@ -66,7 +66,7 @@ export default function AdminLandingsPage() {
           </div>
           <Link
             href="/admin/landings/nova"
-            className="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-xs font-black uppercase italic text-[#BEF264]"
+            className="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-3 text-xs font-black uppercase italic text-[#F26522]"
           >
             <Plus className="h-4 w-4" />
             Nova LP

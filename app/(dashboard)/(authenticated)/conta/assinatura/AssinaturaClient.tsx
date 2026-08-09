@@ -45,7 +45,7 @@ export function AssinaturaClient({
   return (
     <div className={cn('mx-auto max-w-2xl bg-background px-4 py-8 sm:px-6 sm:py-12', pageBottomPadding)}>
       <div className="mb-8">
-        <p className="mb-2 text-[10px] font-black uppercase tracking-[0.35em] text-[#166534]">
+        <p className="mb-2 text-[10px] font-black uppercase tracking-[0.35em] text-[#9A3412]">
           Minha conta
         </p>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
@@ -62,7 +62,7 @@ export function AssinaturaClient({
           <div>
             <div
               className={`mb-3 inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 ring-1 ${
-                isPro ? 'bg-[rgba(34, 197, 94,0.12)] ring-[rgba(34, 197, 94,0.35)]' : 'bg-slate-100 ring-slate-200'
+                isPro ? 'bg-[rgba(34,197,94,0.12)] ring-[rgba(34,197,94,0.35)]' : 'bg-slate-100 ring-slate-200'
               }`}
             >
               {isPro ? (

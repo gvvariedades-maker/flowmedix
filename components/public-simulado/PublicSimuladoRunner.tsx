@@ -168,7 +168,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
         <div className="border-t border-white/10 bg-[#010409] p-4 pb-safe">
           <Link
             href={ctaHref}
-            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-6 py-4 text-sm font-black uppercase tracking-widest text-slate-950"
+            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#F26522] px-6 py-4 text-sm font-black uppercase tracking-widest text-slate-950"
           >
             Garantir acesso AVANT enf · Campina Grande
             <ChevronRight className="h-4 w-4" />
@@ -378,7 +378,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
           <div className="mt-8 flex flex-col gap-3">
             <Link
               href={ctaHref}
-              className="flex w-full items-center justify-center rounded-2xl bg-[#BEF264] py-4 text-sm font-black uppercase tracking-widest text-slate-950"
+              className="flex w-full items-center justify-center rounded-2xl bg-[#F26522] py-4 text-sm font-black uppercase tracking-widest text-slate-950"
             >
               Garantir acesso · R$ 37
             </Link>
@@ -471,7 +471,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
           <div className="mt-8 flex flex-col gap-3">
             <Link
               href={ctaHref}
-              className="flex w-full items-center justify-center rounded-2xl bg-[#BEF264] py-4 text-sm font-black uppercase tracking-widest text-slate-950"
+              className="flex w-full items-center justify-center rounded-2xl bg-[#F26522] py-4 text-sm font-black uppercase tracking-widest text-slate-950"
             >
               Garantir acesso AVANT enf
             </Link>
@@ -495,7 +495,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
             </div>
             <span className="text-sm font-black text-white">AVANT enf</span>
           </div>
-          <Link href={ctaHref} className="rounded-full bg-[#BEF264] px-4 py-1.5 text-xs font-black text-slate-950">
+          <Link href={ctaHref} className="rounded-full bg-[#F26522] px-4 py-1.5 text-xs font-black text-slate-950">
             Campina Grande →
           </Link>
         </div>

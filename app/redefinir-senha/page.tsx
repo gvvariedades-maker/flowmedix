@@ -81,7 +81,7 @@ export default function RedefinirSenhaPage() {
 
       {/* Background Decorativo */}
       <div className="pointer-events-none absolute top-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-indigo-300/20 blur-[100px]" />
-      <div className="pointer-events-none absolute bottom-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-[#BEF264]/10 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-[#F26522]/10 blur-[100px]" />
 
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center p-6">
         <div className="relative z-10 w-full max-w-md">

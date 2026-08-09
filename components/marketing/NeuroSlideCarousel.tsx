@@ -95,7 +95,7 @@ export function NeuroSlideCarousel({ className, interactive = false }: NeuroSlid
                 aria-label={`Slide ${i + 1}: ${dotMeta.label}`}
                 onClick={() => setActive(i)}
                 className={`rounded-full transition-all duration-300 ${
-                  i === active ? 'h-2 w-6 bg-[#8fe020]' : 'h-2 w-2 bg-white/20'
+                  i === active ? 'h-2 w-6 bg-[#F26522]' : 'h-2 w-2 bg-white/20'
                 }`}
               />
             );

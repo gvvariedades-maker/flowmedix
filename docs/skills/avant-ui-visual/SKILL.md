@@ -26,7 +26,7 @@ Detalhe operacional: [`reference-microsaas-craft.md`](reference-microsaas-craft.
 
 1. Ler o componente adjacente e **estender** — não redesenhar do zero.
 2. Identificar o tema da rota:
-   - **Editorial v2** — dashboard/vitrine/player enunciado (`useEditorialTheme`, `html[data-theme='editorial']`): fundo claro, verde `#8fe020`, `.card-elevated`, `.btn-editorial-*`.
+   - **Editorial v2** — dashboard/vitrine/player enunciado (`useEditorialTheme`, `html[data-theme='editorial']`): fundo claro, laranja `#F26522`, `.card-elevated`, `.btn-editorial-*`.
    - **Cyber Clinical** — NeuroSlides fullscreen, preview reverso, admin escuro: fundo `#010409`, cyan neon, `.glass-panel`, `.text-neon-gradient`.
 3. Consultar capturas em `docs/auditoria-visual-v2/screenshots/avant-editorial-v2/` e backlog em `docs/auditoria-visual-v2/*-BACKLOG.md`.
 4. Se a tarefa for **vitrine ou player**, seguir a seção [Vitrine + Player](#vitrine--player-prioridade-craft) e o checklist do reference.
@@ -37,7 +37,7 @@ Referência de **disciplina**: Stripe / Linear / Vercel — clareza, um acento, 
 
 | Princípio | No AVANT |
 |-----------|----------|
-| Monocromático + 1 acento | Editorial: slate + `#8fe020` só em CTA/foco. Cyber: preto + cyan só em ação. Sem terceira cor decorativa. |
+| Monocromático + 1 acento | Editorial: slate + `#F26522` só em CTA/foco. Cyber: preto + cyan só em ação. Sem terceira cor decorativa. |
 | Produto no centro | Questão, progresso, NeuroSlide real — não ilustração genérica. |
 | Menos chrome | Um CTA primário por viewport; secundário como texto/ghost. |
 | Microestados | hover, `focus-visible`, active, disabled, loading, empty, skeleton. |
@@ -46,13 +46,13 @@ Referência de **disciplina**: Stripe / Linear / Vercel — clareza, um acento, 
 
 ## Tokens (fonte: `app/globals.css`)
 
-**Nunca inventar paleta paralela.** Fonte canônica: `app/globals.css` (editorial `#8fe020`). Usar CSS vars ou classes utilitárias existentes.
+**Nunca inventar paleta paralela.** Fonte canônica: `app/globals.css` + `lib/brand/avantBrandPalette.ts` (`EDITORIAL_BRAND` `#F26522`). Usar CSS vars ou classes utilitárias existentes.
 
 | Semântica | Cyber (`:root`) | Editorial (`data-theme='editorial'`) |
 |-----------|-----------------|--------------------------------------|
 | Fundo base | `--color-surface-0` `#010409` | `#f1f5f9` (v2.1 soft slate) |
 | Superfície card | `.glass-panel` / `slate-900/80` | `.card-elevated` + `--shadow-editorial-sm/md` |
-| Marca / foco | `--color-brand` `#00f2ff` | `#8fe020` (`--color-brand-text` `#3d6b0f`) |
+| Marca / foco | `--color-brand` `#00f2ff` | `#F26522` (`--color-brand-text` `#9A3412`; texto no CTA `#0F172A`) |
 | Sucesso | `--color-success` `#00ff88` | `#16a34a` |
 | Erro | `--color-danger` `#ff0055` | `#dc2626` |
 | Aviso | `--color-warning` `#ffb800` | tokens editoriais em globals |
@@ -98,7 +98,7 @@ Componentes: `components/vitrine/*`.
 - Card (`VitrineSubjectCard`): título, progresso (`VitrineProgressRing` / barra ≥4px), **um** CTA — labels canônicos `Iniciar` / `Continuar` / `Revisar`.
 - Toolbar sticky: `VitrineToolbar` + `VitrineQuickFilters`; chip ativo óbvio; alvo ≥44px.
 - Estados obrigatórios: skeleton (`VitrineCatalogStatsSkeleton`), empty, zero resultados de filtro.
-- Acento só no CTA/foco verde; sem terceira cor decorativa no grid.
+- Acento só no CTA/foco laranja; sem terceira cor decorativa no grid.
 
 ### Player `AvantLessonPlayer` (shell editorial → reverso cyber)
 
@@ -117,8 +117,8 @@ Componentes: `components/vitrine/*`.
 
 ### Landing `/` (ponte visual — não CRO)
 
-- Tokens: corpo claro + CTA `#8fe020`; único bloco escuro = preview reverso
-- **Não** roxo/teal `#6735BC` / `#00CDA0`; drift `#BEF264` → `--color-brand`
+- Tokens: corpo claro + CTA `#F26522`; único bloco escuro = preview reverso
+- **Não** roxo/teal `#6735BC` / `#00CDA0`; drift legado verde (`#8fe020` / `#BEF264`) → `--color-brand` laranja
 - Copy/CRO da LP: ver [`docs/LP_CONVERSA.md`](../../LP_CONVERSA.md) (runbook) · pesquisa [`docs/LP_RESEARCH_CAPABILITY_MAP.md`](../../LP_RESEARCH_CAPABILITY_MAP.md) · brief histórico `docs/auditoria-visual-v2/LANDING-AVANT-v3.md` · copy em `lib/marketing/landingCopy.ts` (fora desta skill)
 
 ## Benchmark (por que AVANT pode ganhar)
@@ -168,8 +168,8 @@ Ao propor mudança, nomeie **o que supera** (ex.: “stats compactos como Estude
 
 **Fonte canônica:** [`docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](../../docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md)
 
-- Marca editorial: `--color-brand` `#8fe020` — **não** substituir por `#00a86b` (skill light HTML).
-- Acerto: `--color-success` `#16a34a` — separado da marca.
+- Marca editorial: `--color-brand` `#F26522` — **não** substituir por verde legado (`#8fe020` / `#00a86b`).
+- Acerto: `--color-success` `#16a34a` — separado da marca (nunca usar brand laranja em badge de risco).
 - NeuroSlides: sempre cyber; não light mode.
 
 Se outra skill trouxer tokens `--bg`, `--brand`, `--t1`: mapear com a tabela em Visual Direction v3.

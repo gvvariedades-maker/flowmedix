@@ -120,10 +120,10 @@ export function EstudoReversoWelcomeModal({
         aria-describedby="estudo-reverso-welcome-description"
         className="card-elevated-lg relative w-full max-w-2xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl outline-none"
       >
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-br from-[rgba(34, 197, 94,0.14)] via-white to-slate-50" aria-hidden />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-br from-[rgba(242,101,34,0.14)] via-white to-slate-50" aria-hidden />
         <div className="relative p-5 md:p-7">
           <div className="flex items-start justify-between gap-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)] px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#166534]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(242,101,34,0.35)] bg-[rgba(242,101,34,0.12)] px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#9A3412]">
               <Sparkles className="h-3.5 w-3.5" aria-hidden />
               Boas-vindas ao método
             </div>
@@ -138,12 +138,12 @@ export function EstudoReversoWelcomeModal({
           </div>
 
           <div className="mt-6 grid gap-5 md:grid-cols-[0.78fr_1.22fr] md:items-center">
-            <div className="rounded-3xl border border-[rgba(34, 197, 94,0.35)] bg-gradient-to-br from-[#166534] to-[#2d5010] p-5 text-white shadow-md">
-              <BrainCircuit className="h-9 w-9 text-[#22c55e]" aria-hidden />
-              <p className="mt-8 text-xs font-black uppercase tracking-widest text-[#22c55e]/90">{slide.eyebrow}</p>
+            <div className="rounded-3xl border border-[rgba(242,101,34,0.35)] bg-gradient-to-br from-[#9A3412] to-[#7C2D12] p-5 text-white shadow-md">
+              <BrainCircuit className="h-9 w-9 text-[#FDBA74]" aria-hidden />
+              <p className="mt-8 text-xs font-black uppercase tracking-widest text-[#FDBA74]/90">{slide.eyebrow}</p>
               <div className="mt-3 h-2 rounded-full bg-white/20">
                 <div
-                  className="h-2 rounded-full bg-[#22c55e] transition-all"
+                  className="h-2 rounded-full bg-[#F26522] transition-all"
                   style={{ width: `${((activeIndex + 1) / SLIDES.length) * 100}%` }}
                   aria-hidden
                 />
@@ -168,7 +168,7 @@ export function EstudoReversoWelcomeModal({
                     type="button"
                     onClick={() => setActiveIndex(index)}
                     className={`h-2.5 rounded-full transition-all ${
-                      index === activeIndex ? 'w-8 bg-[#22c55e]' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
+                      index === activeIndex ? 'w-8 bg-[#F26522]' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
                     }`}
                     aria-label={`Ir para o slide ${index + 1}`}
                     aria-current={index === activeIndex ? 'step' : undefined}

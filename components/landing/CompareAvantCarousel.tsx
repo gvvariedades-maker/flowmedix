@@ -67,7 +67,7 @@ export function CompareAvantCarousel() {
             onClick={() => setActive(i)}
             className={cn(
               'rounded-full transition-all duration-300',
-              i === active ? 'h-2 w-6 bg-[#8fe020]' : 'h-2 w-2 bg-slate-300',
+              i === active ? 'h-2 w-6 bg-[#F26522]' : 'h-2 w-2 bg-slate-300',
             )}
           />
         ))}

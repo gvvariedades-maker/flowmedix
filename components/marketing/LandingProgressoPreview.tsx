@@ -19,10 +19,10 @@ export function LandingProgressoPreview({ className }: { className?: string }) {
       <div className="flex-1 p-4">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <TrendingUp className="text-[#3d6b0f]" size={16} aria-hidden />
+          <TrendingUp className="text-[#9A3412]" size={16} aria-hidden />
           <p className="text-xs font-black text-slate-900">Seu progresso</p>
         </div>
-        <span className="rounded-full bg-[#8fe020]/15 px-2 py-0.5 text-[9px] font-bold text-[#3d6b0f]">
+        <span className="rounded-full bg-[#F26522]/15 px-2 py-0.5 text-[9px] font-bold text-[#9A3412]">
           {DONE_COUNT}/{TOTAL_COUNT} feito
         </span>
       </div>

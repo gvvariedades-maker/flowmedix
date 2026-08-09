@@ -22,12 +22,12 @@ export default async function CheckoutSucessoPage() {
     <div className="min-h-screen bg-[#010409] px-4 py-16 text-slate-100 sm:px-6 sm:py-24">
       <div className="pointer-events-none fixed inset-0">
         <div className="absolute top-[-22%] left-1/2 h-[520px] w-[min(140%,980px)] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[130px]" />
-        <div className="absolute right-[-10%] bottom-[-12%] h-[400px] w-[400px] rounded-full bg-[#BEF264]/8 blur-[110px]" />
+        <div className="absolute right-[-10%] bottom-[-12%] h-[400px] w-[400px] rounded-full bg-[#F26522]/8 blur-[110px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-lg rounded-3xl border border-white/10 bg-slate-950/80 p-8 text-center shadow-2xl backdrop-blur-sm sm:p-10">
         <div className="flex justify-center">
-          <CheckCircle2 className="h-14 w-14 text-[#BEF264]" aria-hidden />
+          <CheckCircle2 className="h-14 w-14 text-[#F26522]" aria-hidden />
         </div>
         <h1 className="mt-6 text-2xl font-[1000] tracking-tight text-white sm:text-3xl">
           Acesso liberado.

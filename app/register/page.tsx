@@ -157,9 +157,9 @@ function RegisterForm() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="rounded-xl border border-[#22c55e]/30 bg-[#22c55e]/10 p-4"
+              className="rounded-xl border border-[#F26522]/30 bg-[#F26522]/10 p-4"
             >
-              <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wide text-[#166534]">
+              <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wide text-[#9A3412]">
                 <MapPin size={12} /> Turma confirmada
               </p>
               <p className="text-lg font-bold leading-tight text-slate-900">{cidade}</p>
@@ -169,7 +169,7 @@ function RegisterForm() {
           <h1 className="text-2xl font-bold tracking-tight text-slate-900">Crie seu acesso</h1>
 
           {inviteToken ? (
-            <p className="text-xs font-semibold text-[#166534]">
+            <p className="text-xs font-semibold text-[#9A3412]">
               Convite AVANT enf Pro — após criar a conta, o Pro temporário será ativado automaticamente.
             </p>
           ) : null}
@@ -282,7 +282,7 @@ function RegisterForm() {
                   <div className="flex flex-wrap gap-2 pl-6">
                     <Link
                       href={loginHref}
-                      className="text-xs font-semibold text-[#166534] underline-offset-2 hover:underline"
+                      className="text-xs font-semibold text-[#9A3412] underline-offset-2 hover:underline"
                     >
                       Entrar agora
                     </Link>

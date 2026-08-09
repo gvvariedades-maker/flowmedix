@@ -9,7 +9,7 @@ const navLinkClass =
   'rounded-lg px-3 py-2 text-sm font-bold text-slate-600 transition-colors hover:text-slate-900';
 
 const ctaButtonClass =
-  'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#BEF264] px-2.5 py-2 text-xs font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879] min-[380px]:gap-2 min-[380px]:px-3 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm';
+  'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#F26522] px-2.5 py-2 text-xs font-black uppercase tracking-wider text-[#0F172A] shadow-lg shadow-[#F26522]/20 transition-all hover:scale-[1.02] hover:bg-[#E05518] min-[380px]:gap-2 min-[380px]:px-3 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm';
 
 export type PublicLightAuthHeaderVariant = 'login' | 'register' | 'auth-other';
 

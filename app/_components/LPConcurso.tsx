@@ -143,7 +143,7 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
                   <span>Prova em {concurso.dataProvaFormatada}</span>
                 </p>
 
-                <h1 className="max-w-full break-words bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-3xl leading-[1.08] font-[1000] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
+                <h1 className="max-w-full break-words bg-gradient-to-r from-white via-cyan-200 to-[#F26522] bg-clip-text text-3xl leading-[1.08] font-[1000] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
                   {copy.headlinePrincipal}
                 </h1>
 

@@ -24,7 +24,7 @@ export default function AssinarProPage() {
       </div>
       {loading && !error ? (
         <>
-          <Loader2 size={32} className="animate-spin text-[#BEF264]" aria-hidden />
+          <Loader2 size={32} className="animate-spin text-[#F26522]" aria-hidden />
           <p className="mt-4 text-sm font-medium text-slate-400">Abrindo pagamento seguro…</p>
         </>
       ) : null}
@@ -40,7 +40,7 @@ export default function AssinarProPage() {
               void handleCheckout();
             }}
             disabled={loading}
-            className="rounded-2xl bg-[#BEF264] px-6 py-3 text-sm font-black uppercase tracking-wider text-slate-950 disabled:opacity-60"
+            className="rounded-2xl bg-[#F26522] px-6 py-3 text-sm font-black uppercase tracking-wider text-slate-950 disabled:opacity-60"
           >
             Tentar novamente
           </button>

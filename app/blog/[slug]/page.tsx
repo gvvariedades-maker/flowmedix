@@ -81,7 +81,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     <div className="min-h-screen overflow-x-hidden bg-[#010409] text-slate-100 selection:bg-cyan-400/25 selection:text-white">
       <div className="pointer-events-none fixed inset-0">
         <div className="absolute top-[-22%] left-1/2 h-[520px] w-[min(140%,980px)] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[130px]" />
-        <div className="absolute right-[-10%] bottom-[-12%] h-[500px] w-[500px] rounded-full bg-[#BEF264]/10 blur-[110px]" />
+        <div className="absolute right-[-10%] bottom-[-12%] h-[500px] w-[500px] rounded-full bg-[#F26522]/10 blur-[110px]" />
         <div className="absolute top-1/2 left-[-15%] h-[420px] w-[420px] rounded-full bg-indigo-600/20 blur-[110px]" />
         <div
           className="absolute inset-0 opacity-[0.055]"
@@ -116,7 +116,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
 
           <h1 className="mt-6 text-4xl leading-[1.08] font-[1000] tracking-tight text-white sm:text-5xl">
-            <span className="bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-cyan-200 to-[#F26522] bg-clip-text text-transparent">
               {post.meta.title}
             </span>
           </h1>

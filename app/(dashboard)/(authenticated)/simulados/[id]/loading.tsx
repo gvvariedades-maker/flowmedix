@@ -15,7 +15,7 @@ export default function SimuladoSessionLoading() {
         </div>
 
         <div className="h-1.5 overflow-hidden rounded-full bg-slate-200">
-          <div className="h-full w-1/3 rounded-full bg-[#22c55e]/50" />
+          <div className="h-full w-1/3 rounded-full bg-[#F26522]/50" />
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">

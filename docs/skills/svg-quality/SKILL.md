@@ -126,7 +126,7 @@ Fonte: [Lucide Icon Design Guide](https://lucide.dev/contribute/icon-design-guid
 | Skin | Stroke/fill |
 |------|-------------|
 | Cyber | `currentColor` sobre `#010409`; acento só `#00f2ff` / success / danger se pedido |
-| Editorial | `currentColor` slate; acento `#8fe020` só se CTA/foco |
+| Editorial | `currentColor` slate; acento `#F26522` só se CTA/foco |
 | Mono | só `currentColor` |
 
 ## Encadeamento

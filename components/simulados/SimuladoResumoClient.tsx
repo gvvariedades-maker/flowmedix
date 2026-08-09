@@ -417,7 +417,7 @@ export function SimuladoResumoClient({
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="card-elevated-lg space-y-3 p-6">
               <div className="flex items-center gap-2 text-slate-500">
-                <Clock className="h-4 w-4 shrink-0 text-[#166534]" aria-hidden />
+                <Clock className="h-4 w-4 shrink-0 text-[#9A3412]" aria-hidden />
                 <h2 className="text-xs font-semibold uppercase tracking-wider">Tempo</h2>
               </div>
               <p className="text-2xl font-bold text-slate-900">{provaTempo.tempoLabel}</p>
@@ -519,11 +519,11 @@ export function SimuladoResumoClient({
                 <p className="text-xs uppercase tracking-wider text-slate-500">Respondidas</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-[#166534]">{tempoTotalMin}m</p>
+                <p className="text-2xl font-bold text-[#9A3412]">{tempoTotalMin}m</p>
                 <p className="text-xs uppercase tracking-wider text-slate-500">Tempo total</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-[#166534]">{tempoMedioSeg}s</p>
+                <p className="text-2xl font-bold text-[#9A3412]">{tempoMedioSeg}s</p>
                 <p className="text-xs uppercase tracking-wider text-slate-500">Média/questão</p>
               </div>
               {resumo.pendentes > 0 && (
@@ -549,7 +549,7 @@ export function SimuladoResumoClient({
             className="card-elevated-lg space-y-4 p-6"
           >
             <div className="flex items-center gap-2">
-              <TrendingUp className="h-4 w-4 shrink-0 text-[#166534]" aria-hidden />
+              <TrendingUp className="h-4 w-4 shrink-0 text-[#9A3412]" aria-hidden />
               <h2
                 id="simulado-evolucao-titulo"
                 className="text-sm font-semibold uppercase tracking-wider text-slate-400"
@@ -576,7 +576,7 @@ export function SimuladoResumoClient({
                       className={cn(
                         'flex flex-wrap items-center justify-between gap-2 rounded-xl border px-4 py-3 text-sm',
                         isCurrent
-                          ? 'border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.08)]'
+                          ? 'border-[rgba(242, 101, 34,0.35)] bg-[rgba(242, 101, 34,0.08)]'
                           : 'border-slate-200 bg-white',
                       )}
                     >
@@ -584,7 +584,7 @@ export function SimuladoResumoClient({
                         <p className="truncate font-medium text-slate-800">
                           {item.titulo || tituloExibicao}
                           {isCurrent ? (
-                            <span className="ml-2 text-xs font-normal text-[#166534]">
+                            <span className="ml-2 text-xs font-normal text-[#9A3412]">
                               (esta prova)
                             </span>
                           ) : null}
@@ -653,7 +653,7 @@ export function SimuladoResumoClient({
                 className={cn(
                   'rounded-lg border px-3 py-1.5 text-xs font-semibold',
                   filtro === item.id
-                    ? 'border-[rgba(34, 197, 94,0.45)] bg-[rgba(34, 197, 94,0.12)] text-[#166534]'
+                    ? 'border-[rgba(242, 101, 34,0.45)] bg-[rgba(242, 101, 34,0.12)] text-[#9A3412]'
                     : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300',
                 )}
               >

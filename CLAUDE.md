@@ -232,7 +232,7 @@ O AVANT opera com **duas skins** (mesmos tokens semânticos, valores diferentes)
 
 | Skin | Onde | Estética |
 |------|------|----------|
-| **Editorial v2.1** | Login, dashboard, vitrine, player (enunciado), modais | Slate `#f1f5f9`, verde `#8fe020`, cards brancos com sombra |
+| **Editorial v2.1** | Login, dashboard, vitrine, player (enunciado), modais | Slate `#f1f5f9`, laranja `#F26522`, cards brancos com sombra |
 | **Cyber Clinical** | NeuroSlides/reverso fullscreen, landing, admin | Escuro `#010409`, cyan neon `#00f2ff`, glassmorphism |
 
 Ativação editorial: `useEditorialTheme()` → `html[data-theme='editorial']` em [`app/globals.css`](app/globals.css).  
@@ -277,9 +277,9 @@ Polish de UI no app: skill [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/s
 | Classe | Efeito |
 |--------|--------|
 | `.card-elevated` / `.card-elevated-lg` | Card branco, borda `slate-200`, sombra sutil |
-| `.btn-editorial-primary` | CTA verde `#8fe020`, label escuro |
+| `.btn-editorial-primary` | CTA laranja `#F26522`, label `#0F172A` |
 | `.btn-editorial-outline` | Secundário branco/slate |
-| `.btn-option-editorial` | Alternativa no player (hover verde suave) |
+| `.btn-option-editorial` | Alternativa no player (hover laranja suave) |
 | `.card-success-editorial` | Feedback de acerto no fluxo editorial |
 
 ### Padrão Tailwind recorrente (slides/player)

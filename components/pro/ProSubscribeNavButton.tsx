@@ -13,7 +13,7 @@ export function ProSubscribeNavButton() {
         onClick={handleCheckout}
         disabled={loading}
         title={error ?? undefined}
-        className="inline-flex shrink-0 items-center justify-center rounded-2xl border border-[#8fe020]/40 bg-transparent px-2.5 py-1.5 text-[10px] font-black uppercase tracking-wider text-[#8fe020] transition-all hover:bg-[#8fe020]/10 disabled:cursor-not-allowed disabled:opacity-60 min-[400px]:px-4 min-[400px]:py-2 min-[400px]:text-xs sm:px-5 sm:text-sm sm:tracking-widest"
+        className="inline-flex shrink-0 items-center justify-center rounded-2xl border border-[#F26522]/40 bg-transparent px-2.5 py-1.5 text-[10px] font-black uppercase tracking-wider text-[#F26522] transition-all hover:bg-[#F26522]/10 disabled:cursor-not-allowed disabled:opacity-60 min-[400px]:px-4 min-[400px]:py-2 min-[400px]:text-xs sm:px-5 sm:text-sm sm:tracking-widest"
       >
         {loading ? (
           <Loader2 size={16} className="animate-spin" aria-hidden />

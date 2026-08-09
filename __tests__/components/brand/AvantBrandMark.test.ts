@@ -1,11 +1,17 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import {
+  AVANT_LOGO_COLORS,
+  AVANT_LOGO_SHELL_SHADOW,
+} from '@/lib/brand/avantLogoConstants';
+import { EDITORIAL_BRAND } from '@/lib/brand/avantBrandPalette';
 
 const brandPath = join(process.cwd(), 'components', 'brand', 'AvantBrandMark.tsx');
 const logoPath = join(process.cwd(), 'components', 'brand', 'AvantLogo.tsx');
 const constantsPath = join(process.cwd(), 'lib', 'brand', 'avantLogoConstants.ts');
 const brandAssetsDir = join(process.cwd(), 'public', 'brand');
 const emailLogoPath = join(process.cwd(), 'emails', 'AvantLogoEmail.tsx');
+const globalsCssPath = join(process.cwd(), 'app', 'globals.css');
 
 describe('AvantBrandMark', () => {
   it('delega a AvantLogo com escala sm→md e md→lg', () => {
@@ -62,5 +68,30 @@ describe('AvantBrandMark', () => {
     expect(email).toContain('subtitleLabel');
     expect(email).toContain('wordmarkBrandBlueSolid');
     expect(email).toContain('wordmarkEnfGreen');
+  });
+
+  it('rings/glows do logo usam print editorial #F26522 (não lima legado)', () => {
+    expect(AVANT_LOGO_COLORS.iconCyberRing).toBe(EDITORIAL_BRAND.hex);
+    expect(AVANT_LOGO_COLORS.iconCardBrand).toBe(EDITORIAL_BRAND.hex);
+    expect(AVANT_LOGO_COLORS.iconCardGreen).toBe(EDITORIAL_BRAND.hex);
+    expect(AVANT_LOGO_COLORS.hairlineCyber).toContain('242, 101, 34');
+    expect(AVANT_LOGO_COLORS.wordmarkGlow).toContain('242, 101, 34');
+    expect(AVANT_LOGO_SHELL_SHADOW.rest).toContain('242, 101, 34');
+    expect(AVANT_LOGO_SHELL_SHADOW.peak).toContain('242, 101, 34');
+    // Metal cobre ≠ CTA print
+    expect(AVANT_LOGO_COLORS.brandBlue).toBe('#e08f2f');
+    expect(AVANT_LOGO_COLORS.brandBlue).not.toBe(EDITORIAL_BRAND.hex);
+
+    const constantsSrc = readFileSync(constantsPath, 'utf8');
+    expect(constantsSrc).not.toMatch(/iconCyberRing:\s*'#8fe020'/);
+    expect(constantsSrc).toContain('EDITORIAL_BRAND');
+
+    const globals = readFileSync(globalsCssPath, 'utf8');
+    expect(globals).toContain('rgba(242, 101, 34, 0.20)');
+    expect(globals).not.toMatch(/avantLogoPulse[\s\S]*rgba\(143, 224, 32/);
+
+    const appIcon = readFileSync(join(brandAssetsDir, 'avant-app-icon.svg'), 'utf8');
+    expect(appIcon).toContain('fill="#F26522"');
+    expect(appIcon).not.toContain('fill="#0cc93a"');
   });
 });

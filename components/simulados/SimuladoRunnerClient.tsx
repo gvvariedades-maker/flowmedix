@@ -31,7 +31,7 @@ const SimuladoResumoClient = dynamic(
   {
     loading: () => (
       <div className={cn('bg-background', DASHBOARD_PAGE_CENTER)}>
-        <Loader2 className="h-10 w-10 animate-spin text-[#166534]" aria-label="Carregando resumo" />
+        <Loader2 className="h-10 w-10 animate-spin text-[#9A3412]" aria-label="Carregando resumo" />
       </div>
     ),
   },
@@ -540,7 +540,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           pageBottomPadding,
         )}
       >
-        <Loader2 className="h-10 w-10 animate-spin text-[#166534]" aria-label="Carregando simulado" />
+        <Loader2 className="h-10 w-10 animate-spin text-[#9A3412]" aria-label="Carregando simulado" />
       </div>
     );
   }
@@ -710,7 +710,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           aria-label="Progresso do simulado"
         >
           <div
-            className="h-full rounded-full bg-[#22c55e] transition-all duration-300"
+            className="h-full rounded-full bg-[#F26522] transition-all duration-300"
             style={{ width: `${progressPct}%` }}
           />
         </div>
@@ -743,7 +743,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           />
         ) : loadingQuestion && !questionData ? (
           <div className="flex justify-center py-16">
-            <Loader2 className="h-8 w-8 animate-spin text-[#166534]" aria-label="Carregando questão" />
+            <Loader2 className="h-8 w-8 animate-spin text-[#9A3412]" aria-label="Carregando questão" />
           </div>
         ) : questionError ? (
           <div className="card-elevated-lg border border-rose-200 p-6 text-center">

@@ -62,7 +62,7 @@ export function LandingHeroFloatingCards({ className }: { className?: string }) 
       {/* Entre tablet e phone */}
       <FloatingCard
         className="absolute bottom-[14%] left-[28%] z-40 w-[175px]"
-        icon={<Layers size={18} className="text-[#3d6b0f]" aria-hidden />}
+        icon={<Layers size={18} className="text-[#9A3412]" aria-hidden />}
         title="4 NeuroSlides"
         subtitle="por questão"
       />

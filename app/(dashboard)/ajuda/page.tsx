@@ -185,7 +185,7 @@ export default function AjudaPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-8 pb-6 md:px-6">
       <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-slate-600">
-        <Sparkles className="h-3.5 w-3.5 text-[#166534]" aria-hidden />
+        <Sparkles className="h-3.5 w-3.5 text-[#9A3412]" aria-hidden />
         Guia do aluno — início rápido
       </div>
       <h1 className="text-balance text-2xl font-black tracking-tight text-slate-900 md:text-4xl">Como usar o AVANT enf</h1>
@@ -223,7 +223,7 @@ export default function AjudaPage() {
         <ol className="mt-4 grid gap-3 text-sm text-slate-800 md:grid-cols-5">
           {QUICK_START.map((item, index) => (
             <li key={item} className="card-elevated p-3">
-              <span className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#166534] text-xs font-black text-white">
+              <span className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#9A3412] text-xs font-black text-white">
                 {index + 1}
               </span>
               <span className="font-semibold leading-snug">{item}</span>
@@ -243,14 +243,14 @@ export default function AjudaPage() {
           >
             <div className="grid gap-5 lg:grid-cols-[0.95fr_1.35fr] lg:items-start">
               <div>
-                <p className="text-[11px] font-black uppercase tracking-widest text-[#166534]">Passo {s.n}</p>
+                <p className="text-[11px] font-black uppercase tracking-widest text-[#9A3412]">Passo {s.n}</p>
                 <h2 className="mt-1 text-xl font-black tracking-tight text-slate-900 md:text-2xl">{s.title}</h2>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-600 md:text-base">
                   <p>
                     <strong className="text-slate-900">Objetivo:</strong> {s.objetivo}
                   </p>
                   <div className={`border-2 p-4 ${ONDE_CLICAR}`}>
-                    <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-[#166534]">
+                    <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-[#9A3412]">
                       <MousePointerClick className="h-4 w-4" aria-hidden />
                       Onde clicar
                     </p>

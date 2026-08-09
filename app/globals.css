@@ -114,13 +114,14 @@
     --color-border-subtle: #e2e8f0;
     --color-border-default: #cbd5e1;
     --color-border-strong: #94a3b8;
-    --color-brand: #8fe020;
-    --color-brand-dim: rgba(143, 224, 32, 0.12);
-    --color-brand-glow: rgba(143, 224, 32, 0.2);
-    --color-brand-text: #3d6b0f;
-    --color-nav-active-bg: rgba(143, 224, 32, 0.1);
-    --color-nav-active-bar: #8fe020;
-    --color-nav-active-txt: #3d6b0f;
+    /* EDITORIAL_BRAND — lib/brand/avantBrandPalette.ts (#F26522 print) */
+    --color-brand: #F26522;
+    --color-brand-dim: rgba(242, 101, 34, 0.12);
+    --color-brand-glow: rgba(242, 101, 34, 0.22);
+    --color-brand-text: #9A3412;
+    --color-nav-active-bg: rgba(242, 101, 34, 0.1);
+    --color-nav-active-bar: #F26522;
+    --color-nav-active-txt: #9A3412;
     --color-success: #16a34a;
     --color-success-dim: rgba(22, 163, 74, 0.1);
     --color-success-glow: transparent;
@@ -151,7 +152,7 @@
     --secondary-foreground: 222 47% 11%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 84 76% 53%;
+    --ring: 18 88% 54%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
   }
@@ -168,10 +169,11 @@
     --color-border-subtle: rgba(255, 255, 255, 0.08);
     --color-border-default: rgba(255, 255, 255, 0.14);
     --color-border-strong: rgba(255, 255, 255, 0.22);
-    --color-brand: #8fe020;
-    --color-brand-dim: rgba(143, 224, 32, 0.14);
-    --color-brand-glow: rgba(143, 224, 32, 0.22);
-    --color-brand-text: #a8f53c;
+    /* EDITORIAL_BRAND — acento laranja (não cyber cyan) */
+    --color-brand: #F26522;
+    --color-brand-dim: rgba(242, 101, 34, 0.14);
+    --color-brand-glow: rgba(242, 101, 34, 0.22);
+    --color-brand-text: #FDBA74;
     --color-success: #4ade80;
     --color-success-dim: rgba(74, 222, 128, 0.12);
     --color-danger: #f87171;
@@ -280,7 +282,7 @@
     --secondary-foreground: 222 47% 11%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 84 76% 53%;
+    --ring: 18 88% 54%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
     color: hsl(var(--foreground));
@@ -382,7 +384,7 @@
     box-shadow:
       0 1px 2px rgba(15, 23, 42, 0.04),
       0 8px 24px rgba(15, 23, 42, 0.1),
-      0 0 0 1px rgba(143, 224, 32, 0.08);
+      0 0 0 1px rgba(242, 101, 34, 0.08);
   }
 
   .login-auth-heading {
@@ -390,11 +392,11 @@
   }
 
   .btn-editorial-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-brand)] px-4 py-3.5 text-sm font-bold text-[#1a2e05] shadow-sm transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-brand)] px-4 py-3.5 text-sm font-bold text-[#0F172A] shadow-sm transition-colors;
   }
 
   .btn-editorial-primary:hover:not(:disabled) {
-    background-color: #7acc10;
+    background-color: #E05518;
   }
 
   .btn-editorial-primary:disabled {
@@ -770,19 +772,19 @@ html[data-theme='editorial'] input.input-editorial:-internal-autofill-selected {
   animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* AVANT Enf logo lockup — sombras alinhadas com lib/brand/avantLogoConstants.ts (AVANT_LOGO_SHELL_SHADOW) */
+/* AVANT Enf logo lockup — sombras alinhadas com lib/brand/avantLogoConstants.ts (AVANT_LOGO_SHELL_SHADOW / print #F26522) */
 @keyframes avantLogoPulse {
   0%,
   100% {
     box-shadow:
-      0 0 0 1px rgba(143, 224, 32, 0.20),
+      0 0 0 1px rgba(242, 101, 34, 0.20),
       0 4px 20px rgba(0, 0, 0, 0.35);
   }
   20%,
   45% {
     box-shadow:
-      0 0 0 1px rgba(143, 224, 32, 0.40),
-      0 4px 28px rgba(143, 224, 32, 0.12);
+      0 0 0 1px rgba(242, 101, 34, 0.40),
+      0 4px 28px rgba(242, 101, 34, 0.12);
   }
 }
 
