@@ -7,9 +7,11 @@ import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { cn } from '@/lib/utils';
 import type { VitrineGrupoSubtopico } from '@/lib/vitrine/types';
 import { getTopicIcon } from '@/lib/vitrine/vitrineTopicIcon';
-import { getTopicAccent } from '@/lib/vitrine/vitrineTopicAccent';
+import {
+  getTopicAccent,
+  TOPIC_ACCENT_NEUTRAL,
+} from '@/lib/vitrine/vitrineTopicAccent';
 import { labelQuestoes } from '@/lib/labelQuestoes';
-import { Button } from '@/components/ui/button';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { VitrineQuestaoLink } from '@/components/vitrine/VitrineQuestaoLink';
 import { VitrineProgressRing } from '@/components/vitrine/VitrineProgressRing';
@@ -44,6 +46,33 @@ function resolveCtaLabel(grupo: VitrineGrupoSubtopico): string {
   return 'Continuar';
 }
 
+/** Label de progresso fechado: 0% → Não iniciado; 1–99% → %; 100% → Concluído. */
+function resolveProgressDisplay(progressoPct: number): {
+  label: string;
+  ariaLabel: string;
+  tone: 'muted' | 'brand' | 'success';
+} {
+  if (progressoPct <= 0) {
+    return {
+      label: 'Não iniciado',
+      ariaLabel: '0% concluído',
+      tone: 'muted',
+    };
+  }
+  if (progressoPct >= 100) {
+    return {
+      label: 'Concluído',
+      ariaLabel: '100% concluído',
+      tone: 'success',
+    };
+  }
+  return {
+    label: `${progressoPct}%`,
+    ariaLabel: `${progressoPct}% concluído`,
+    tone: 'brand',
+  };
+}
+
 export function VitrineSubjectCard({
   grupo,
   estudarQuery,
@@ -69,9 +98,13 @@ export function VitrineSubjectCard({
   const mostrarNovo = totalResolvidas === 0 && !todas && hasQuestions;
   const mostrarCheckConclusao = todas && hasQuestions;
   const progressoPct = hasQuestions ? Math.round((trabalhadas / totalQuestoes) * 100) : 0;
+  const progressDisplay = resolveProgressDisplay(progressoPct);
+  const showProgressBar = hasQuestions && progressoPct >= 1 && progressoPct < 100;
   const panelId = `assunto-panel-${firstSlug}`;
   const topicIcon = getTopicIcon(titulo_aula, modulo_nome);
   const topicAccent = getTopicAccent(titulo_aula, modulo_nome);
+  /** Cor do tópico só no expandido; fechado = chip neutro. */
+  const chipAccent = assuntoExpandido ? topicAccent : TOPIC_ACCENT_NEUTRAL;
   const ctaSlug = resolveCtaSlug(grupo);
   const ctaLabel = resolveCtaLabel(grupo);
   const isDesktop = useDashboardDesktop();
@@ -87,39 +120,30 @@ export function VitrineSubjectCard({
       variants={index < 8 ? vitrineItemVariants : vitrineItemGroupVariants}
       {...{ [VITRINE_PREFETCH_DATA_ATTR]: `${firstSlug}${estudarQuery}` }}
       className={cn(
-        'relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 hover:shadow-md',
-        compact && 'rounded-xl shadow-none hover:shadow-sm',
-        todas && 'border-green-200 hover:border-green-300',
+        'relative flex flex-col overflow-hidden',
+        vitrineBrand.cardSurface,
+        compact && 'rounded-xl shadow-sm hover:shadow-md',
+        /* Ativo (expandido): assinatura laranja — concluído usa success. */
+        assuntoExpandido &&
+          !todas &&
+          'border-[var(--color-card-border-hover)] shadow-[var(--shadow-editorial-md)]',
+        todas &&
+          '!border-[var(--color-success)] hover:!border-[var(--color-success-text)] focus-within:!border-[var(--color-success-text)]',
       )}
     >
-      {mostrarNovo && !compact ? (
-        <span
-          className="pointer-events-none absolute right-3 top-3 z-10 rounded-md border border-green-200 bg-green-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-green-700 sm:text-[11px]"
-          aria-label="Assunto novo"
-        >
-          Novo
-        </span>
-      ) : null}
-
-      <div
-        className={cn(
-          'flex items-center gap-3',
-          compact ? 'p-3' : 'items-start p-4',
-          mostrarNovo && !compact && 'pt-9 sm:pt-10',
-        )}
-      >
+      <div className={cn('flex items-center gap-3', compact ? 'p-3' : 'p-4')}>
         <span
           className={cn(
             'flex shrink-0 items-center justify-center rounded-xl border',
             compact ? 'size-8' : 'size-9',
-            topicAccent.chip,
+            chipAccent.chip,
           )}
           aria-hidden
         >
           {createElement(topicIcon, {
             size: compact ? 16 : 18,
             strokeWidth: 2,
-            className: topicAccent.icon,
+            className: chipAccent.icon,
           })}
         </span>
 
@@ -129,27 +153,39 @@ export function VitrineSubjectCard({
           aria-controls={useSheet ? undefined : panelId}
           aria-haspopup={useSheet ? 'dialog' : undefined}
           onClick={toggleAssunto}
-          className="min-w-0 flex-1 overflow-hidden text-left"
+          className={cn(
+            'min-w-0 flex-1 overflow-hidden rounded-lg text-left outline-none',
+            vitrineBrand.focusRing,
+          )}
         >
-          <div className="flex min-w-0 items-start gap-2">
+          <div className="flex min-w-0 items-center gap-2">
             <span
-              className={cn(
-                'min-w-0 flex-1 font-semibold text-slate-900',
-                compact ? 'line-clamp-1 text-sm' : 'text-sm',
-                !compact && (assuntoExpandido ? 'break-words' : 'line-clamp-2'),
-              )}
+              className="min-w-0 flex-1 truncate text-sm font-semibold text-slate-900"
               title={titulo_aula}
             >
               {titulo_aula}
             </span>
-            {hasQuestions && !compact ? (
+            {mostrarNovo && !compact ? (
+              <span
+                className="shrink-0 rounded-md border border-[var(--color-success)] bg-[var(--color-success-dim)] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--color-success-text)]"
+                aria-label="Assunto novo"
+              >
+                Novo
+              </span>
+            ) : null}
+            {hasQuestions ? (
               <span
                 className={cn(
-                  'shrink-0 text-sm font-bold tabular-nums',
-                  trabalhadas > 0 ? vitrineBrand.text : 'text-slate-300',
+                  'shrink-0 font-bold',
+                  compact ? 'text-xs' : 'text-sm',
+                  progressDisplay.tone === 'brand' && cn('tabular-nums', vitrineBrand.text),
+                  progressDisplay.tone === 'muted' && 'text-slate-500',
+                  progressDisplay.tone === 'success' &&
+                    'text-[var(--color-success-text)]',
                 )}
+                aria-label={progressDisplay.ariaLabel}
               >
-                {progressoPct}%
+                {progressDisplay.label}
               </span>
             ) : null}
           </div>
@@ -161,21 +197,7 @@ export function VitrineSubjectCard({
                 </span>{' '}
                 {labelQuestoes(totalQuestoes)}
               </span>
-              {pendentes > 0 && !todas ? (
-                <>
-                  <span className="text-slate-300" aria-hidden>
-                    ·
-                  </span>
-                  <span
-                    className={cn(
-                      'font-medium tabular-nums',
-                      progressoPct > 0 ? 'text-amber-700' : 'text-slate-500',
-                    )}
-                  >
-                    {pendentes} para estudar
-                  </span>
-                </>
-              ) : null}
+              {/* Pendência só no expandido (badge) — fechado: label + barra (1–99%). */}
               {!assuntoExpandido ? (
                 <>
                   <span className="text-slate-300" aria-hidden>
@@ -193,32 +215,24 @@ export function VitrineSubjectCard({
           ) : (
             <p className="mt-0.5 truncate text-[11px] text-slate-500">
               {totalQuestoes.toLocaleString('pt-BR')} {labelQuestoes(totalQuestoes)}
-              {pendentes > 0 && !todas
-                ? ` · ${pendentes} para estudar`
-                : ''}
+              {pendentes > 0 && !todas ? (
+                <>
+                  {' · '}
+                  <span className="font-medium tabular-nums text-slate-600">
+                    {pendentes} para estudar
+                  </span>
+                </>
+              ) : null}
             </p>
           )}
         </button>
 
         {mostrarCheckConclusao ? (
-          <CheckCircle2 size={compact ? 16 : 18} className={cn('shrink-0', vitrineBrand.icon)} aria-hidden />
-        ) : null}
-
-        {hasQuestions && !compact ? (
-          <Button
-            variant="ghost"
-            size="sm"
-            asChild
-            className={cn('hidden shrink-0 text-xs font-medium sm:inline-flex', vitrineBrand.text, vitrineBrand.hoverBg, vitrineBrand.hoverText)}
-          >
-            <VitrineQuestaoLink
-              slug={ctaSlug}
-              estudarQuery={estudarQuery}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {ctaLabel}
-            </VitrineQuestaoLink>
-          </Button>
+          <CheckCircle2
+            size={compact ? 16 : 18}
+            className="shrink-0 text-[var(--color-success)]"
+            aria-hidden
+          />
         ) : null}
 
         <button
@@ -228,7 +242,11 @@ export function VitrineSubjectCard({
           aria-controls={useSheet ? undefined : panelId}
           aria-haspopup={useSheet ? 'dialog' : undefined}
           aria-label={assuntoExpandido ? 'Recolher assunto' : 'Expandir assunto'}
-          className="flex size-8 shrink-0 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700"
+          className={cn(
+            /* size-11 = 44px alvo de toque; glyph permanece 18. */
+            'flex size-11 shrink-0 items-center justify-center rounded-lg text-slate-500 outline-none transition-colors hover:bg-slate-100 hover:text-slate-700',
+            vitrineBrand.focusRing,
+          )}
         >
           {assuntoExpandido ? (
             <ChevronUp size={18} aria-hidden />
@@ -239,12 +257,14 @@ export function VitrineSubjectCard({
       </div>
 
       {hasQuestions && !compact ? (
-        <div className="px-4 pb-3 sm:hidden">
-          <Button variant="ghost" size="sm" asChild className={cn('w-full', vitrineBrand.text)}>
-            <VitrineQuestaoLink slug={ctaSlug} estudarQuery={estudarQuery}>
-              {ctaLabel}
-            </VitrineQuestaoLink>
-          </Button>
+        <div className="px-4 pb-3">
+          <VitrineQuestaoLink
+            slug={ctaSlug}
+            estudarQuery={estudarQuery}
+            className={cn(vitrineBrand.buttonSecondary, 'w-full')}
+          >
+            {ctaLabel}
+          </VitrineQuestaoLink>
         </div>
       ) : null}
 
@@ -253,7 +273,7 @@ export function VitrineSubjectCard({
           className={cn(
             'w-full shrink-0',
             compact ? 'h-0.5 min-h-[2px]' : 'h-1 min-h-[4px]',
-            trabalhadas > 0 ? 'bg-slate-100' : 'bg-slate-100/70',
+            showProgressBar || progressoPct >= 100 ? 'bg-slate-100' : 'bg-slate-100/70',
           )}
           role="progressbar"
           aria-valuenow={progressoPct}
@@ -261,11 +281,13 @@ export function VitrineSubjectCard({
           aria-valuemax={100}
           aria-label="Progresso do estudo reverso neste assunto"
         >
-          {trabalhadas > 0 ? (
+          {showProgressBar || progressoPct >= 100 ? (
             <div
               className={cn(
                 'h-full transition-[width] duration-300 ease-out',
-                vitrineBrand.bar,
+                progressoPct >= 100
+                  ? 'bg-[var(--color-success)]'
+                  : vitrineBrand.bar,
               )}
               style={{ width: `${progressoPct}%` }}
             />
@@ -288,29 +310,24 @@ export function VitrineSubjectCard({
                 {todas ? (
                   <NeonBadge variant="success">Completo</NeonBadge>
                 ) : pendentes > 0 ? (
-                  <NeonBadge variant={progressoPct > 0 ? 'warning' : 'neutral'}>
-                    {pendentes} para estudar
-                  </NeonBadge>
+                  <NeonBadge variant="neutral">{pendentes} para estudar</NeonBadge>
                 ) : totalResolvidas === 0 ? (
                   <NeonBadge variant="neutral">Não iniciado</NeonBadge>
                 ) : null}
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className={cn('ml-auto rounded-xl border-slate-200 text-slate-700', vitrineBrand.hoverBorderLight, vitrineBrand.hoverBgLight, vitrineBrand.hoverText)}
+                <VitrineQuestaoLink
+                  slug={firstSlug}
+                  estudarQuery={estudarQuery}
+                  className={cn(vitrineBrand.buttonSecondary, 'ml-auto')}
                 >
-                  <VitrineQuestaoLink slug={firstSlug} estudarQuery={estudarQuery}>
-                    Entrar no assunto
-                  </VitrineQuestaoLink>
-                </Button>
+                  Entrar no assunto
+                </VitrineQuestaoLink>
               </div>
 
               <div className="flex justify-center">
                 <VitrineProgressRing trabalhadas={trabalhadas} total={totalQuestoes} size={88} />
               </div>
 
-              <p className="-mt-1 text-center text-[10px] font-medium uppercase tracking-wide text-slate-500">
+              <p className="-mt-1 text-center text-[11px] font-medium uppercase tracking-wide text-slate-500">
                 Questões trabalhadas
               </p>
 
@@ -322,7 +339,7 @@ export function VitrineSubjectCard({
                 estudarQuery={estudarQuery}
               />
 
-              <p className="border-t border-slate-100 pt-2 text-[10px] font-medium uppercase tracking-wide text-slate-500">
+              <p className="border-t border-slate-100 pt-2 text-[11px] font-medium uppercase tracking-wide text-slate-500">
                 {totalQuestoes} {labelQuestoes(totalQuestoes)} no assunto
                 {todas ? ' · Concluído' : trabalhadas > 0 ? ' · Em progresso' : ''}
               </p>

@@ -22,23 +22,29 @@ export default function VitrineCatalogStatsStrip({
       data-testid="vitrine-catalog-stats"
       data-vitrine-stats-ready={ready ? 'true' : 'false'}
       data-vitrine-stats-animating={animating ? 'true' : 'false'}
-      className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-sm"
+      className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-slate-500"
       aria-label="Totais do catálogo"
       aria-busy={animating || undefined}
     >
-      <div className="flex items-baseline gap-2">
-        <strong className={cn('text-2xl font-black tabular-nums leading-none', vitrineBrand.text)}>
-          {formatCatalogCount(displayQuestions)}
-        </strong>
-        <span className="text-xs text-slate-500">questões com estudo reverso</span>
-      </div>
-      <div className="hidden h-6 w-px shrink-0 bg-slate-200 sm:block" aria-hidden />
-      <div className="flex items-baseline gap-2">
-        <strong className={cn('text-2xl font-black tabular-nums leading-none', vitrineBrand.text)}>
+      <span className="inline-flex items-baseline gap-1.5">
+        <strong
+          className={cn('font-display text-sm font-bold tabular-nums leading-none', vitrineBrand.text)}
+        >
           {formatCatalogCount(displaySlides)}
         </strong>
-        <span className="text-xs text-slate-500">NeuroSlides</span>
-      </div>
+        <span>NeuroSlides</span>
+      </span>
+      <span className="text-slate-300" aria-hidden>
+        ·
+      </span>
+      <span className="inline-flex items-baseline gap-1.5">
+        <strong
+          className={cn('font-display text-sm font-bold tabular-nums leading-none', vitrineBrand.text)}
+        >
+          {formatCatalogCount(displayQuestions)}
+        </strong>
+        <span>questões com estudo reverso</span>
+      </span>
     </div>
   );
 }

@@ -1,5 +1,10 @@
-<!-- AVANT enf: lockup editorial — brasao + wordmark raster "AVANT enf" dourado/esmeralda. -->
+<!-- AVANT enf: lockup editorial — card preto + A mark + wordmark raster. -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 232 56" fill="none" aria-label="AVANT enf">
-  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" x="0" y="0" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>
+  <g transform="translate(0 0)" fill="none">
+    <rect width="56" height="56" rx="14" fill="#0a0a0a"/>
+    <path d="M28 10 L13 46" stroke="#E8E8E8" stroke-width="10" stroke-linecap="round"/>
+    <path d="M28 10 L43 46" stroke="#E8E8E8" stroke-width="10" stroke-linecap="round"/>
+    <path d="M17 25 L28 38 L39 25" stroke="#F26522" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
   <image href="avant-logo-wordmark-raster.png" xlink:href="avant-logo-wordmark-raster.png" x="66" y="9" width="166" height="37" preserveAspectRatio="xMidYMid meet"/>
 </svg>

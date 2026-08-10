@@ -5,15 +5,26 @@ import { motion } from 'framer-motion';
 import { BarChart3 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ActivitySparkline } from './activity-sparkline';
 import type { DiaEstudo, Periodo } from './types';
 
-/** Escala de intensidade brand green — tema editorial */
+/** Escala de intensidade via tokens --color-success* (funciona em Editorial e Cyber). */
 const INTENSITY_COLORS = [
-  '#e2e8f0',
-  'rgba(34, 197, 94, 0.28)',
-  'rgba(34, 197, 94, 0.48)',
-  'rgba(34, 197, 94, 0.68)',
-  '#22c55e',
+  'var(--color-border-subtle)',
+  'color-mix(in srgb, var(--color-success) 28%, transparent)',
+  'color-mix(in srgb, var(--color-success) 48%, transparent)',
+  'color-mix(in srgb, var(--color-success) 68%, transparent)',
+  'var(--color-success)',
+] as const;
+
+const WEEKDAY_SHORT = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'] as const;
+
+const INTENSITY_LEGEND = [
+  { level: 0, label: 'Sem atividade' },
+  { level: 1, label: '1–3' },
+  { level: 2, label: '4–7' },
+  { level: 3, label: '8–12' },
+  { level: 4, label: '13+' },
 ] as const;
 
 function intensityLevel(count: number): number {
@@ -22,6 +33,10 @@ function intensityLevel(count: number): number {
   if (count <= 7) return 2;
   if (count <= 12) return 3;
   return 4;
+}
+
+function weekdayIndex(isoDate: string): number {
+  return new Date(isoDate + 'T12:00:00').getDay();
 }
 
 function formatDiaMes(isoDate: string): { dia: string; mes: string } {
@@ -38,31 +53,60 @@ function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo 
   const dados = useMemo(() => serie.slice(-periodo), [serie, periodo]);
   const hojeStr = new Date().toISOString().slice(0, 10);
 
+  /** Colunas 0–6 mantêm o mesmo dia da semana porque a série é consecutiva. */
+  const columnWeekdays = useMemo(() => {
+    if (dados.length === 0) return [...WEEKDAY_SHORT];
+    const start = weekdayIndex(dados[0].data);
+    return Array.from({ length: 7 }, (_, i) => WEEKDAY_SHORT[(start + i) % 7]);
+  }, [dados]);
+
   return (
     <div className="w-full overflow-x-auto overscroll-x-contain pb-1 [-webkit-overflow-scrolling:touch]">
-      <div className="grid w-full min-w-[280px] grid-cols-7 gap-x-1.5 gap-y-2 sm:min-w-0 sm:gap-x-2 sm:gap-y-4">
+      <div
+        className="grid w-full min-w-[280px] grid-cols-7 gap-x-1.5 gap-y-2 sm:min-w-0 sm:gap-x-2 sm:gap-y-4"
+        role="grid"
+        aria-label={`Atividade dos últimos ${periodo} dias`}
+      >
+        {columnWeekdays.map((label, i) => (
+          <div
+            key={`wd-${i}-${label}`}
+            role="columnheader"
+            className="text-center text-[10px] font-semibold uppercase tracking-wide text-slate-500 sm:text-[11px]"
+          >
+            {label}
+          </div>
+        ))}
+
         {dados.map((dia, i) => {
           const isToday = dia.data === hojeStr;
           const level = intensityLevel(dia.count);
           const bgColor = INTENSITY_COLORS[level];
           const { dia: diaStr, mes: mesStr } = formatDiaMes(dia.data);
-          const tooltip = `${diaStr} ${mesStr}: ${dia.count} ${dia.count === 1 ? 'questão estudada' : 'questões estudadas'}`;
+          const weekday = WEEKDAY_SHORT[weekdayIndex(dia.data)];
+          const questaoLabel =
+            dia.count === 1 ? '1 questão estudada' : `${dia.count} questões estudadas`;
+          const ariaLabel = `${weekday}, ${diaStr} de ${mesStr}: ${questaoLabel}${
+            isToday ? ' (hoje)' : ''
+          }`;
 
           return (
             <motion.div
               key={dia.data}
+              role="gridcell"
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.15, delay: Math.min(i * 0.012, 0.35) }}
               className="flex min-w-0 flex-col items-center gap-0.5 sm:gap-1"
             >
               <div
-                title={tooltip}
+                title={ariaLabel}
+                aria-label={ariaLabel}
                 style={{ backgroundColor: bgColor }}
                 className={cn(
                   'aspect-square w-full min-h-[1.25rem] max-h-10 cursor-default rounded-[2px] transition-opacity duration-150 sm:min-h-[1.5rem] sm:max-h-14',
                   'hover:opacity-75',
-                  isToday && 'ring-2 ring-[#22c55e] ring-offset-1 ring-offset-background',
+                  isToday &&
+                    'ring-2 ring-[var(--color-success)] ring-offset-1 ring-offset-background',
                 )}
               />
               <div className="w-full text-center">
@@ -96,17 +140,29 @@ type Props = {
   semDados: boolean;
 };
 
-export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeriodo, semDados }: Props) {
+export function ContributionHeatmap({
+  serie,
+  periodo,
+  onPeriodoChange,
+  totalPeriodo,
+  semDados,
+}: Props) {
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-wrap items-center gap-2">
-          <BarChart3 className="h-4 w-4 shrink-0 text-[#166534]" aria-hidden />
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="flex min-w-0 flex-wrap items-center gap-2">
+          <BarChart3
+            className="h-4 w-4 shrink-0 text-[var(--color-success-text)]"
+            aria-hidden
+          />
           <span className="text-sm font-semibold text-slate-900">Atividade</span>
           <span className="text-xs text-slate-500">
             {totalPeriodo} questões nos últimos {periodo} dias
           </span>
         </div>
+        {!semDados ? (
+          <ActivitySparkline serie={serie} periodo={periodo} className="ml-auto" />
+        ) : null}
       </div>
 
       <Tabs
@@ -121,21 +177,27 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
         </TabsList>
         <TabsContent value="7" className="mt-4">
           {semDados ? (
-            <p className="py-8 text-center text-sm text-slate-500">Nenhuma questão estudada ainda.</p>
+            <p className="py-8 text-center text-sm text-slate-500">
+              Nenhuma questão estudada ainda.
+            </p>
           ) : (
             <HeatmapGrid serie={serie} periodo={7} />
           )}
         </TabsContent>
         <TabsContent value="15" className="mt-4">
           {semDados ? (
-            <p className="py-8 text-center text-sm text-slate-500">Nenhuma questão estudada ainda.</p>
+            <p className="py-8 text-center text-sm text-slate-500">
+              Nenhuma questão estudada ainda.
+            </p>
           ) : (
             <HeatmapGrid serie={serie} periodo={15} />
           )}
         </TabsContent>
         <TabsContent value="30" className="mt-4">
           {semDados ? (
-            <p className="py-8 text-center text-sm text-slate-500">Nenhuma questão estudada ainda.</p>
+            <p className="py-8 text-center text-sm text-slate-500">
+              Nenhuma questão estudada ainda.
+            </p>
           ) : (
             <HeatmapGrid serie={serie} periodo={30} />
           )}
@@ -144,32 +206,25 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
 
       {!semDados && (
         <div className="space-y-2 border-t border-slate-200 pt-4">
-          <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500">Legenda</p>
+          <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500">
+            Legenda de intensidade
+          </p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-medium text-slate-600">
-            <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[0] }} />
-              <span>Sem atividade</span>
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[1] }} />
-              <span>1–3</span>
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[2] }} />
-              <span>4–7</span>
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[3] }} />
-              <span>8–12</span>
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[4] }} />
-              <span>13+</span>
-            </span>
+            {INTENSITY_LEGEND.map(({ level, label }) => (
+              <span key={label} className="flex items-center gap-2">
+                <span
+                  className="h-3.5 w-3.5 shrink-0 rounded-[2px]"
+                  style={{ backgroundColor: INTENSITY_COLORS[level] }}
+                  aria-hidden
+                />
+                <span>{label}</span>
+              </span>
+            ))}
             <span className="flex items-center gap-2">
               <span
-                className="inline-flex h-3.5 w-3.5 shrink-0 rounded-[2px]"
-                style={{ outline: '2px solid #22c55e', outlineOffset: '1px', backgroundColor: INTENSITY_COLORS[0] }}
+                className="inline-flex h-3.5 w-3.5 shrink-0 rounded-[2px] ring-2 ring-[var(--color-success)] ring-offset-1"
+                style={{ backgroundColor: INTENSITY_COLORS[0] }}
+                aria-hidden
               />
               <span>Hoje</span>
             </span>

@@ -86,8 +86,28 @@ describe('DashboardShell mobile drawer', () => {
     const shell = readFileSync(shellPath, 'utf8');
     expect(card).toContain('brandHref?: string');
     expect(card).toContain('aria-label="Ir para vitrine de aulas"');
-    expect(card).toContain('focus-visible:ring-[#F26522]/50');
+    expect(card).toContain('focus-visible:ring-[var(--color-brand)]/50');
     expect(shell).toContain("brandHref={createQueryString('/estudar')}");
+  });
+
+  it('PlanStatusCard — strip PRO com tokens (sem ping / hex / style)', () => {
+    const card = readFileSync(planCardPath, 'utf8');
+    expect(card).toContain('Plano PRO · Ativo');
+    expect(card).toContain('bg-[var(--color-brand-dim)]');
+    expect(card).toContain('text-[var(--color-brand-text)]');
+    expect(card).toContain('border-[var(--color-border-default)]');
+    expect(card).not.toContain('animate-ping');
+    expect(card).not.toContain('style={{');
+    expect(card).not.toContain('EDITORIAL_BRAND');
+  });
+
+  it('sidebar e toolbar — largura 15.5rem; avatar sem ring; toolbar sólida', () => {
+    const shell = readFileSync(shellPath, 'utf8');
+    expect(shell).toContain('w-[15.5rem]');
+    expect(shell).toContain("bg-[var(--color-brand)] text-white shadow-sm");
+    expect(shell).not.toContain('ring-2 ring-');
+    expect(shell).toContain('bg-[var(--color-surface-2)] shadow-[var(--shadow-editorial-sm)]');
+    expect(shell).not.toContain('backdrop-blur-xl');
   });
 
   it('sidebar renderiza por seções sem label global MENU', () => {
@@ -100,7 +120,7 @@ describe('DashboardShell mobile drawer', () => {
 
   it('seção Suporte isolada com WhatsApp acessível', () => {
     const shell = readFileSync(shellPath, 'utf8');
-    expect(shell).toContain('border-t border-slate-100');
+    expect(shell).toContain('border-t border-[var(--color-border-default)]');
     expect(shell).toMatch(/>\s*Suporte\s*</);
     expect(shell).toContain('title="Tirar dúvidas pelo WhatsApp"');
     expect(shell).toMatch(/>\s*WhatsApp\s*</);
@@ -125,7 +145,9 @@ describe('DashboardShell mobile drawer', () => {
 
   it('DashboardSidebarPanels — topo sticky com logo e plano', () => {
     const shell = readFileSync(shellPath, 'utf8');
-    expect(shell).toContain('sticky top-0 z-10 shrink-0 border-b border-slate-100 bg-white pb-2');
+    expect(shell).toContain(
+      'sticky top-0 z-10 shrink-0 border-b border-[var(--color-border-default)] bg-[var(--color-surface-0)] pb-2',
+    );
   });
 
   it('UserAccountFooter — assinatura com MenuNavIconChip slate', () => {

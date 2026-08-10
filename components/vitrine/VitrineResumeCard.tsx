@@ -40,10 +40,7 @@ export function VitrineResumeCard({ resume, estudarQuery = '' }: VitrineResumeCa
       <VitrineQuestaoLink
         slug={resume.questaoSlug}
         estudarQuery={estudarQuery}
-        className={cn(
-          vitrineBrand.buttonPrimary,
-          'inline-flex min-h-[44px] shrink-0 items-center justify-center gap-2 self-start rounded-xl px-4 py-2.5 text-sm font-black uppercase tracking-wide sm:self-auto',
-        )}
+        className={cn(vitrineBrand.buttonPrimarySolid, 'shrink-0 self-start sm:self-auto')}
       >
         Retomar estudo
         <ArrowRight size={16} aria-hidden />

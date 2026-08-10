@@ -47,17 +47,14 @@ export function VitrineDisciplineCard({
       onFocus={warmCache}
       className={cn(
         'group flex w-full flex-col text-left transition-all',
-        'rounded-2xl border bg-white shadow-sm',
+        vitrineBrand.cardSurface,
         'focus-visible:outline-none',
         vitrineBrand.focusRingOffset,
         'disabled:cursor-not-allowed disabled:opacity-50',
         prominent ? 'min-h-[148px] gap-4 px-5 py-5 sm:min-h-[160px] sm:px-6 sm:py-6' : 'gap-3 px-4 py-3.5',
         selected
           ? cn(vitrineBrand.tintBorder, vitrineBrand.tintBg, vitrineBrand.selectedBorder)
-          : cn(
-              'border-slate-200 hover:border-slate-300 hover:shadow-md',
-              prominent && 'hover:-translate-y-0.5',
-            ),
+          : cn(prominent && 'hover:-translate-y-0.5'),
       )}
     >
       <div className="flex flex-1 items-start justify-between gap-4">
@@ -112,14 +109,11 @@ export function VitrineDisciplineCard({
 
         <span
           className={cn(
-            'inline-flex min-h-[44px] shrink-0 items-center justify-center gap-1.5 self-center rounded-xl px-4 text-xs font-black uppercase tracking-wide',
+            vitrineBrand.buttonSecondary,
+            'shrink-0 gap-1.5 self-center px-4 text-xs',
             selected || prominent
-              ? vitrineBrand.buttonPrimary
-              : cn(
-                  'border border-slate-200 bg-white text-slate-700',
-                  vitrineBrand.groupHoverBorder,
-                  vitrineBrand.groupHoverText,
-                ),
+              ? 'border-[var(--color-card-border-hover)] bg-[var(--color-brand-wash)]'
+              : null,
           )}
         >
           {ctaLabel}

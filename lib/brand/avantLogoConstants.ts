@@ -159,10 +159,12 @@ export const AVANT_LOGO_DIMENSIONS = {
   },
   subtitle: {
     fontSize: 9,
-    fontWeight: 600,
+    fontWeight: 700,
     letterSpacingPx: 3.2,
     lineHeight: 1,
     gapFromWordmark: 7,
+    /** Altura tipográfica "enf" relativa ao fontSize do AVANT (~0.8× cartaz). */
+    scaleOfWordmark: 0.8,
     /** Minúsculo — mesmo lockup "AVANT enf" do emblema dourado/esmeralda. */
     label: 'enf',
     hairlineWidth: 18,
@@ -175,6 +177,30 @@ export const AVANT_LOGO_WORDMARK_RASTER = {
   /** Altura relativa ao fontSize base (legível no header mobile e sidebar). */
   scale: 1.62,
   aspect: 3750 / 640,
+} as const;
+
+/**
+ * PNGs oficiais de marca (fonte do usuário — fundo preto removido).
+ * - aMark: card laranja + A partido branco
+ * - avantWord: AVANT tipográfico (escuro = editorial; light = cyber)
+ * - enf: serif print
+ */
+export const AVANT_LOGO_PNG = {
+  aMark: '/brand/avant-logo-a-mark.png',
+  avantWord: '/brand/avant-logo-avant-word.png',
+  /** AVANT claro para fundo escuro (cyber). */
+  avantWordOnDark: '/brand/avant-logo-avant-word-light.png',
+  enf: '/brand/avant-logo-enf.png',
+  /** Proporções pós-trim. */
+  aMarkAspect: 391 / 390,
+  avantWordAspect: 861 / 226,
+  enfAspect: 645 / 330,
+  /** Altura do PNG AVANT relativa ao fontSize tipográfico do lockup. */
+  avantWordHeightScale: 1.35,
+  /** Altura do PNG enf relativa a fontSize × scaleOfWordmark. */
+  enfHeightScale: 1.25,
+  /** Gap horizontal AVANT–enf relativo ao gap tipográfico. */
+  subtitleGapScale: 1.5,
 } as const;
 
 /** Monograma squircle — quase full-bleed no slot do ícone. */

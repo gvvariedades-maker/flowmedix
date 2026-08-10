@@ -19,7 +19,10 @@ export function TopAssuntosRanking({ assuntos }: { assuntos: AssuntoTop[] }) {
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
-        <TrendingUp className="h-4 w-4 text-primary" aria-hidden />
+        <TrendingUp
+          className="h-4 w-4 text-[var(--color-success-text)]"
+          aria-hidden
+        />
         <span className="text-sm font-semibold text-foreground">Assuntos mais estudados</span>
         <span className="text-xs text-muted-foreground">últimos 30 dias</span>
       </div>
@@ -37,14 +40,16 @@ export function TopAssuntosRanking({ assuntos }: { assuntos: AssuntoTop[] }) {
                   <Icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden />
                   <span className="truncate text-sm font-medium text-foreground">{a.nome}</span>
                 </div>
-                <span className="shrink-0 text-sm font-semibold tabular-nums text-primary">{a.count}</span>
+                <span className="shrink-0 text-sm font-semibold tabular-nums text-[var(--color-success-text)]">
+                  {a.count}
+                </span>
               </div>
               <div className="ml-8 h-1.5 overflow-hidden rounded-full bg-muted">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${pct}%` }}
                   transition={{ duration: 0.2, delay: 0.05 + i * 0.04, ease: 'easeOut' }}
-                  className="h-full rounded-full bg-primary/70"
+                  className="h-full rounded-full bg-[var(--color-success)]"
                 />
               </div>
             </li>

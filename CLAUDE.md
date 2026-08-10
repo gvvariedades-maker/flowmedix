@@ -232,7 +232,7 @@ O AVANT opera com **duas skins** (mesmos tokens semânticos, valores diferentes)
 
 | Skin | Onde | Estética |
 |------|------|----------|
-| **Editorial v2.1** | Login, dashboard, vitrine, player (enunciado), modais | Slate `#f1f5f9`, laranja `#F26522`, cards brancos com sombra |
+| **Editorial v2.1** | Login, dashboard, vitrine, player (enunciado), modais | Papel `#FFF1E0`, laranja `#F26522`, cards brancos com sombra |
 | **Cyber Clinical** | NeuroSlides/reverso fullscreen, landing, admin | Escuro `#010409`, cyan neon `#00f2ff`, glassmorphism |
 
 Ativação editorial: `useEditorialTheme()` → `html[data-theme='editorial']` em [`app/globals.css`](app/globals.css).  

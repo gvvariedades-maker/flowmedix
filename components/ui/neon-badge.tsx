@@ -3,7 +3,7 @@
 type BadgeVariant = 'brand' | 'success' | 'warning' | 'danger' | 'violet' | 'neutral';
 
 const variants: Record<BadgeVariant, string> = {
-  brand: 'border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)] text-[#166534]',
+  brand: 'border-[rgba(34,197,94,0.35)] bg-[rgba(34,197,94,0.12)] text-[#166534]',
   success: 'border-green-200 bg-green-50 text-green-700',
   warning: 'border-amber-200 bg-amber-50 text-amber-700',
   danger: 'border-red-200 bg-red-50 text-red-700',

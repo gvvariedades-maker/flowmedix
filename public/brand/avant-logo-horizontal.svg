@@ -1,15 +1,20 @@
-<!-- AVANT enf: lockup cyber — brasao + wordmark raster "AVANT enf" dourado/esmeralda. -->
+<!-- AVANT enf: lockup cyber — card preto + A mark + wordmark raster. -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 260 68" fill="none" aria-label="AVANT enf">
   <defs>
     <linearGradient id="avant-h-shell" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="rgba(255,255,255,0.14)"/>
-      <stop offset="50%" stop-color="rgba(143,224,32,0.35)"/>
-      <stop offset="100%" stop-color="rgba(22,101,52,0.45)"/>
+      <stop offset="50%" stop-color="rgba(242,101,34,0.35)"/>
+      <stop offset="100%" stop-color="rgba(154,52,18,0.45)"/>
     </linearGradient>
   </defs>
   <rect width="260" height="68" rx="16" fill="url(#avant-h-shell)"/>
   <rect x="1" y="1" width="258" height="66" rx="15" fill="#0d0d18"/>
-  <rect x="12" y="16" width="2" height="36" rx="1" fill="#8fe020"/>
-  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" x="22" y="12" width="44" height="44" preserveAspectRatio="xMidYMid meet"/>
+  <rect x="12" y="16" width="2" height="36" rx="1" fill="#38bdf8"/>
+  <g transform="translate(22 12) scale(0.78571429)" fill="none">
+    <rect width="56" height="56" rx="14" fill="#0a0a0a"/>
+    <path d="M28 10 L13 46" stroke="#E8E8E8" stroke-width="10" stroke-linecap="round"/>
+    <path d="M28 10 L43 46" stroke="#E8E8E8" stroke-width="10" stroke-linecap="round"/>
+    <path d="M17 25 L28 38 L39 25" stroke="#F26522" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
   <image href="avant-logo-wordmark-raster.png" xlink:href="avant-logo-wordmark-raster.png" x="76" y="19" width="172" height="38.4" preserveAspectRatio="xMidYMid meet"/>
 </svg>

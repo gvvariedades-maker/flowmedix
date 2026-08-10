@@ -102,7 +102,7 @@ export function WeeklyMissionFreemiumPanel({
           ) : isUpgrade ? (
             <Link
               href="/assinatura"
-              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-[#F26522] px-5 py-2.5 text-sm font-black uppercase tracking-wide text-[#0F172A] transition hover:brightness-105"
+              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FF8A3D] via-[#F26522] to-[#D45212] px-5 py-2.5 text-sm font-black uppercase tracking-wide text-white shadow-[0_2px_8px_rgba(212,82,18,0.35)] transition hover:brightness-95"
             >
               Assinar Pro
             </Link>

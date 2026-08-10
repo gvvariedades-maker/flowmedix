@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Inter, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Sans, Inter, JetBrains_Mono, Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
 import { JsonLd, type JsonLdObject } from "@/components/seo/JsonLd";
@@ -42,6 +42,13 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-source-serif",
   display: "swap",
 });
 
@@ -146,7 +153,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${inter.className} ${plusJakartaSans.variable} ${jetbrainsMono.variable} ${dmSans.variable}`}
+        className={`${inter.className} ${plusJakartaSans.variable} ${jetbrainsMono.variable} ${dmSans.variable} ${sourceSerif.variable}`}
         suppressHydrationWarning
       >
         <JsonLd data={siteStructuredData} />

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { ClipboardList } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { KPI_VALUE_CLASS } from '@/components/ui/score-card';
 import { cn } from '@/lib/utils';
 import { getSimuladoAnalytics, SimuladoApiError } from '@/lib/simulado/client';
 import { createRequestTimer, trackSimuladoAnalyticsEvent } from '@/lib/simulado/analyticsTelemetry';
@@ -92,11 +93,11 @@ function getTrendLabel(values: Array<number | null>): {
   return { label: 'Estável', detail: 'Seu desempenho está consistente nas últimas sessões.' };
 }
 
-type KpiValueTone = 'brand' | 'emerald' | 'muted' | 'default';
+type KpiValueTone = 'brand' | 'success' | 'muted' | 'default';
 
 const KPI_VALUE_TONE_CLASSES: Record<KpiValueTone, string> = {
-  brand: 'text-[#9A3412]',
-  emerald: 'text-emerald-600',
+  brand: 'text-[var(--color-brand-text)]',
+  success: 'text-[var(--color-success-text)]',
   muted: 'text-slate-400',
   default: 'text-slate-900',
 };
@@ -119,7 +120,7 @@ function ResumoMetric({
   return (
     <div>
       <p className="text-[10px] uppercase tracking-widest text-slate-500">{label}</p>
-      <p className={cn('mt-1 text-lg font-semibold', valueClassName)}>{value}</p>
+      <p className={cn('mt-1', KPI_VALUE_CLASS, valueClassName)}>{value}</p>
     </div>
   );
 }
@@ -138,14 +139,15 @@ function KpiMetricCard({
   return (
     <div
       className={cn(
-        'card-elevated p-4',
-        highlight && 'border-[rgba(242, 101, 34,0.35)] bg-[rgba(242, 101, 34,0.06)]',
+        'metric-card p-4',
+        highlight && 'bg-[var(--color-success-dim)]',
       )}
     >
       <p className="text-[10px] uppercase tracking-widest text-slate-500">{label}</p>
       <p
         className={cn(
-          'mt-1 text-[26px] font-bold tracking-tight',
+          'mt-1',
+          KPI_VALUE_CLASS,
           KPI_VALUE_TONE_CLASSES[valueTone],
         )}
       >
@@ -156,7 +158,7 @@ function KpiMetricCard({
 }
 
 const FILTER_PILL_ACTIVE =
-  'border-[rgba(242, 101, 34,0.45)] bg-[rgba(242, 101, 34,0.12)] text-[#9A3412]';
+  'border-[var(--color-brand-ring)] bg-[var(--color-brand-dim)] text-[var(--color-brand-text)]';
 const FILTER_PILL_INACTIVE =
   'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50';
 
@@ -331,7 +333,7 @@ export function SimuladosAnalyticsDashboard({
 
   return (
     <div className="mx-auto grid max-w-4xl gap-4 px-4 py-6 md:px-8 md:pt-8">
-      <div className="card-elevated p-4">
+      <div className="metric-card p-4">
         <p className="text-[11px] text-slate-600">
           Escolha período e modo para uma leitura rápida do seu desempenho.
         </p>
@@ -387,7 +389,7 @@ export function SimuladosAnalyticsDashboard({
             label="Média de acerto"
             value={loadingAnalytics ? '...' : formatPercent(kpis?.media_acerto)}
             highlight
-            valueTone="emerald"
+            valueTone="success"
           />
           <KpiMetricCard
             label="Questões respondidas"
@@ -412,13 +414,13 @@ export function SimuladosAnalyticsDashboard({
           Mesmo formato do resultado final do simulado: período atual e geral.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
-          <div className="card-elevated p-4">
+          <div className="metric-card p-4">
             <p className="text-sm font-semibold text-slate-800">No período</p>
             <div className="mt-3 grid grid-cols-2 gap-3">
               <ResumoMetric
                 label="% de acerto"
                 value={loadingAnalytics ? '...' : formatPercent(resumoPeriodo.percentual)}
-                valueClassName="text-[#9A3412]"
+                valueClassName="text-[var(--color-brand-text)]"
               />
               <ResumoMetric
                 label="Acertos"
@@ -427,7 +429,7 @@ export function SimuladosAnalyticsDashboard({
               <ResumoMetric
                 label="Erros"
                 value={loadingAnalytics ? '...' : resumoPeriodo.erros}
-                valueClassName="text-rose-600"
+                valueClassName="text-[var(--color-danger-text)]"
               />
               <ResumoMetric
                 label="Questões respondidas"
@@ -440,13 +442,13 @@ export function SimuladosAnalyticsDashboard({
             {deltaMensagem}
           </p>
 
-          <div className="card-elevated p-4">
+          <div className="metric-card p-4">
             <p className="text-sm font-semibold text-slate-800">Geral (histórico)</p>
             <div className="mt-3 grid grid-cols-2 gap-3">
               <ResumoMetric
                 label="% de acerto"
                 value={loadingGeral ? '...' : formatPercent(resumoGeral.percentual)}
-                valueClassName="text-[#9A3412]"
+                valueClassName="text-[var(--color-brand-text)]"
               />
               <ResumoMetric
                 label="Acertos"
@@ -455,7 +457,7 @@ export function SimuladosAnalyticsDashboard({
               <ResumoMetric
                 label="Erros"
                 value={loadingGeral ? '...' : resumoGeral.erros}
-                valueClassName="text-rose-600"
+                valueClassName="text-[var(--color-danger-text)]"
               />
               <ResumoMetric
                 label="Questões respondidas"
@@ -471,9 +473,12 @@ export function SimuladosAnalyticsDashboard({
         <p className="mb-3 text-[11px] text-slate-600">
           Priorize os assuntos com menor acerto para ganhar pontos mais rápido.
         </p>
-        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+        <div className="metric-card bg-[var(--color-success-dim)] p-4">
           <p className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-            <span className="h-2 w-2 shrink-0 animate-pulse rounded-full bg-emerald-500" aria-hidden />
+            <span
+              className="h-2 w-2 shrink-0 animate-pulse rounded-full bg-[var(--color-success)]"
+              aria-hidden
+            />
             Onde focar agora
           </p>
           <div className="mt-3 space-y-3">
@@ -522,18 +527,23 @@ export function SimuladosAnalyticsDashboard({
         <p className="mb-3 text-[11px] text-slate-600">
           Leitura rápida para entender se você está melhorando.
         </p>
-        <div className="card-elevated p-4">
+        <div className="metric-card p-4">
           <p className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-            <span className="h-2 w-2 shrink-0 rounded-full bg-[#F26522]" aria-hidden />
+            <span
+              className="h-2 w-2 shrink-0 rounded-full bg-[var(--color-brand)]"
+              aria-hidden
+            />
             Sua tendência na semana
           </p>
           <div className="mt-3">
             {error ? (
-              <p className="text-sm text-rose-600">{error}</p>
+              <p className="text-sm text-[var(--color-danger-text)]">{error}</p>
             ) : (
               <>
-                <div className="inline-flex flex-col gap-1 rounded-lg border border-[rgba(242, 101, 34,0.35)] bg-[rgba(242, 101, 34,0.08)] px-4 py-2">
-                  <span className="text-[15px] font-bold text-[#9A3412]">{trend.label}</span>
+                <div className="inline-flex flex-col gap-1 rounded-lg border border-[var(--color-brand-ring)] bg-[var(--color-brand-wash)] px-4 py-2">
+                  <span className="text-[15px] font-bold text-[var(--color-brand-text)]">
+                    {trend.label}
+                  </span>
                   <span className="text-[11px] text-slate-600">{trend.detail}</span>
                 </div>
                 {evolucao.length > 0 ? (

@@ -19,7 +19,11 @@ export function AvantLogoEmail() {
   const gap = AVANT_LOGO_DIMENSIONS.lockupInner.gap;
   const barW = AVANT_LOGO_DIMENSIONS.lockupInner.accentBarWidth;
   const wordmarkSize = AVANT_LOGO_DIMENSIONS.wordmark.fontSize;
+  const enfSize = Math.round(
+    wordmarkSize * AVANT_LOGO_DIMENSIONS.subtitle.scaleOfWordmark,
+  );
   const letterSpacing = AVANT_LOGO_DIMENSIONS.wordmark.letterSpacingPx;
+  const enfTracking = AVANT_LOGO_DIMENSIONS.subtitle.letterSpacingPx;
   const subtitleLabel = AVANT_LOGO_DIMENSIONS.subtitle.label;
 
   return (
@@ -84,7 +88,7 @@ export function AvantLogoEmail() {
                                 width: `${ICON}px`,
                                 height: `${ICON}px`,
                                 borderRadius: '50%',
-                                background: AVANT_LOGO_COLORS.iconForestGradient,
+                                background: AVANT_LOGO_COLORS.iconCardBrand,
                                 verticalAlign: 'middle',
                                 textAlign: 'center',
                               }}
@@ -111,7 +115,7 @@ export function AvantLogoEmail() {
                               &nbsp;
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                              {/* Editorial tipográfico: AVANT claro no shell escuro + enf print. */}
+                              {/* Editorial tipográfico: AVANT claro no shell escuro + enf print (~0.8×). */}
                               <Text
                                 style={{
                                   margin: 0,
@@ -119,14 +123,21 @@ export function AvantLogoEmail() {
                                   fontFamily:
                                     '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                                   fontSize: `${wordmarkSize}px`,
-                                  fontWeight: 800,
+                                  fontWeight: AVANT_LOGO_DIMENSIONS.wordmark.fontWeight,
                                   lineHeight: '1.05',
                                   letterSpacing: `${letterSpacing}px`,
                                   color: AVANT_LOGO_COLORS.wordmarkBrandBlueSolid,
                                 }}
                               >
                                 AVANT{' '}
-                                <span style={{ color: AVANT_LOGO_COLORS.wordmarkEnf }}>
+                                <span
+                                  style={{
+                                    color: AVANT_LOGO_COLORS.wordmarkEnf,
+                                    fontSize: `${enfSize}px`,
+                                    fontWeight: AVANT_LOGO_DIMENSIONS.subtitle.fontWeight,
+                                    letterSpacing: `${enfTracking}px`,
+                                  }}
+                                >
                                   {subtitleLabel}
                                 </span>
                               </Text>

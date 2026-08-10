@@ -75,4 +75,21 @@ describe('BottomNav', () => {
     const source = readFileSync(bottomNavPath, 'utf8');
     expect(source).toContain('isBottomNavMaisActive');
   });
+
+  it('editorial: um acento brand + chip só no ativo (sem rainbow por aba)', () => {
+    const source = readFileSync(bottomNavPath, 'utf8');
+    expect(source).not.toContain("accent: 'rose'");
+    expect(source).not.toContain("accent: 'emerald'");
+    expect(source).not.toContain("accent: 'indigo'");
+    expect(source).toContain('accent="brand"');
+    expect(source).toContain('MENU_ACCENT_STYLES.brand.labelActive');
+    expect(source).toContain('border-[rgba(242,101,34,0.14)]');
+
+    const chip = readFileSync(
+      join(process.cwd(), 'components', 'layout', 'MenuNavIconChip.tsx'),
+      'utf8',
+    );
+    expect(chip).toContain('showChip = isBottom && active');
+    expect(chip).toContain('MENU_ACCENT_STYLES.brand.chipActive');
+  });
 });

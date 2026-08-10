@@ -64,7 +64,7 @@ export function MobileDashboardDrawer({
             aria-modal="true"
             aria-label="Menu de navegação"
             className={cn(
-              'fixed left-0 top-0 flex h-full w-[16rem] shrink-0 flex-col overflow-hidden border-r border-slate-200 bg-white outline-none md:hidden',
+              'fixed left-0 top-0 flex h-full w-[15.5rem] shrink-0 flex-col overflow-hidden border-r border-[var(--color-border-default)] bg-[var(--color-surface-0)] outline-none md:hidden',
               drawerAboveOverlays
                 ? MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z
                 : MOBILE_DRAWER_PANEL_Z,

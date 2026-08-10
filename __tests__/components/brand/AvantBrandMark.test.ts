@@ -22,19 +22,24 @@ describe('AvantBrandMark', () => {
     expect(source).toContain("tone={variant === 'editorial' ? 'brand' : 'default'}");
   });
 
-  it('AvantLogo usa brasao + wordmark tipográfico "AVANT enf" (preto/claro + laranja)', () => {
+  it('AvantLogo usa PNGs oficiais A + AVANT + enf (lockup editorial/cyber)', () => {
     const logo = readFileSync(logoPath, 'utf8');
-    expect(logo).toContain('/brand/avant-logo-shield.png');
+    expect(logo).toContain('AVANT_LOGO_PNG');
+    expect(logo).toContain('AVANT_LOGO_PNG.aMark');
     expect(logo).toContain('AvantLogoWordmarkStack');
-    expect(logo).toContain('wordmarkEditorial');
-    expect(logo).toContain('wordmarkEnf');
     expect(logo).toContain('AVANT enf - inicio');
+    expect(logo).not.toContain('avant-logo-shield.png');
     expect(logo).not.toContain('avant-logo-wordmark-raster.png');
     expect(logo).not.toContain('<Zap');
     expect(logo).not.toContain('⚡');
+
+    const constants = readFileSync(constantsPath, 'utf8');
+    expect(constants).toContain("aMark: '/brand/avant-logo-a-mark.png'");
+    expect(constants).toContain("avantWord: '/brand/avant-logo-avant-word.png'");
+    expect(constants).toContain("enf: '/brand/avant-logo-enf.png'");
   });
 
-  it('SVGs de marca usam brasao dourado/esmeralda e wordmark "AVANT enf"', () => {
+  it('SVGs de marca usam símbolo A + print #F26522 (sem roxo legado)', () => {
     const svgs = readdirSync(brandAssetsDir).filter((f) => f.endsWith('.svg'));
     expect(svgs.length).toBeGreaterThan(0);
 
@@ -46,7 +51,7 @@ describe('AvantBrandMark', () => {
     }
 
     const symbol = readFileSync(join(brandAssetsDir, 'avant-logo-symbol.svg'), 'utf8');
-    expect(symbol).toContain('avant-logo-shield.png');
+    expect(symbol).toContain('#F26522');
     expect(symbol).toContain('AVANT enf');
 
     const wordmarkLight = readFileSync(
@@ -97,7 +102,7 @@ describe('AvantBrandMark', () => {
     expect(globals).not.toMatch(/avantLogoPulse[\s\S]*rgba\(143, 224, 32/);
 
     const appIcon = readFileSync(join(brandAssetsDir, 'avant-app-icon.svg'), 'utf8');
-    expect(appIcon).toContain('fill="#F26522"');
+    expect(appIcon).toContain('#F26522');
     expect(appIcon).not.toContain('fill="#0cc93a"');
   });
 });

@@ -80,7 +80,7 @@ export function CadernoOnboardingBanner({
         <div className="flex shrink-0 items-center gap-2 self-end sm:self-center">
           <Link
             href={ctaHref}
-            className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-[#F26522] px-4 text-sm font-bold text-[#0F172A] transition-colors hover:bg-[#E05518]"
+            className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-gradient-to-b from-[#FF8A3D] via-[#F26522] to-[#D45212] px-4 text-sm font-bold text-white shadow-[0_2px_8px_rgba(212,82,18,0.35)] transition-colors hover:brightness-95"
           >
             {ctaLabel}
           </Link>

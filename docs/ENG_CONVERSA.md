@@ -173,6 +173,9 @@ Quem dispara a promoção: agente (ao notar a 2ª ocorrência na mesma linha de 
 | baseline | Sem `.auth.getUser()` em RSC além de allowlist | `no-getuser-in-rsc` |
 | baseline | Env novo só via Zod em `lib/env.ts` | `no-new-env-without-zod` |
 | 2026-07-31 | `concept_map` / `golden_rule` não entregam o gabarito antes do raciocínio | `L2c` em [`audit:subtopico-quality`](../scripts/audit-subtopico-quality.ts) ([`lib/catalogMigration/pedagogyGate.ts`](../lib/catalogMigration/pedagogyGate.ts)) |
+| 2026-08-09 | Sem espaço em `rgba()` dentro de valor arbitrário Tailwind | `no-tailwind-arbitrary-rgba-space` |
+| 2026-08-09 | Hex de marca (`#F26522` / `#166534` / `#22c55e`) só em `lib/brand/` (+ debt allowlist) | `no-brand-hex-outside-palette` |
+| 2026-08-10 | Walk do gate ignora `test-results/` / `playwright-report/` e stat órfão (Windows) | `check-architecture-patterns` walk |
 
 Rodar: `npm run check:architecture` · agregador de Done: `npm run check:ship`.
 

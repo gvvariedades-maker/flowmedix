@@ -210,7 +210,7 @@ export function FontesLista({ itens }: { itens: readonly string[] }) {
 
 export function CtaFinal({ titulo, subtitulo, primary, secondary }: { titulo: string; subtitulo: string; primary: Cta; secondary: Cta }) {
   return (
-    <section className="rounded-3xl border border-[rgba(242, 101, 34,0.35)] bg-gradient-to-br from-[rgba(242, 101, 34,0.12)] to-white p-5 shadow-sm md:p-7">
+    <section className="rounded-3xl border border-[rgba(242,101,34,0.35)] bg-gradient-to-br from-[rgba(242,101,34,0.12)] to-white p-5 shadow-sm md:p-7">
       <h2 className="text-2xl font-black tracking-tight text-slate-900 md:text-3xl">{titulo}</h2>
       <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 md:text-base">{subtitulo}</p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">

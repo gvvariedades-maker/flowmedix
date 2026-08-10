@@ -1,12 +1,12 @@
 import {
   BarChart3,
   BookMarked,
-  BrainCircuit,
-  HelpCircle,
-  LayoutDashboard,
+  Library,
   ListChecks,
-  Sparkles,
+  RefreshCw,
+  Target,
   TrendingUp,
+  HelpCircle,
   type LucideIcon,
 } from 'lucide-react';
 import type { MenuAccentKey } from '@/components/layout/MenuNavIconChip';
@@ -38,6 +38,24 @@ export type DashboardNavSection = {
   items: DashboardNavItem[];
 };
 
+/** Ajuda / onboarding — renderizados na seção Suporte (peso secundário). */
+export const HELP_NAV_ITEM_DEFS: DashboardNavItemDef[] = [
+  {
+    label: 'Tutorial',
+    title: `Como usar o ${BRAND_NAME}`,
+    href: '/ajuda',
+    icon: HelpCircle,
+    accent: 'sky',
+  },
+  {
+    label: 'Método reverso',
+    title: 'Estudo reverso — o método',
+    href: '/ajuda/estudo-reverso',
+    icon: RefreshCw,
+    accent: 'violet',
+  },
+];
+
 export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
   {
     id: 'estudar',
@@ -47,22 +65,8 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
         label: 'Vitrine',
         title: 'Vitrine de aulas e assuntos',
         href: '/estudar',
-        icon: LayoutDashboard,
+        icon: Library,
         accent: 'brand',
-      },
-      {
-        label: 'Tutorial',
-        title: `Como usar o ${BRAND_NAME}`,
-        href: '/ajuda',
-        icon: HelpCircle,
-        accent: 'sky',
-      },
-      {
-        label: 'Método reverso',
-        title: 'Estudo reverso — o método',
-        href: '/ajuda/estudo-reverso',
-        icon: BrainCircuit,
-        accent: 'violet',
       },
     ],
   },
@@ -88,7 +92,7 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
         label: 'Missão da semana',
         title: 'Avaliação semanal personalizada',
         href: '/missao-semanal',
-        icon: Sparkles,
+        icon: Target,
         accent: 'sky',
       },
     ],
@@ -135,5 +139,12 @@ export function buildMenuSections(isPathActive: IsPathActiveFn): DashboardNavSec
       ...item,
       active: resolveItemActive(item.href, isPathActive),
     })),
+  }));
+}
+
+export function buildHelpNavItems(isPathActive: IsPathActiveFn): DashboardNavItem[] {
+  return HELP_NAV_ITEM_DEFS.map((item) => ({
+    ...item,
+    active: resolveItemActive(item.href, isPathActive),
   }));
 }

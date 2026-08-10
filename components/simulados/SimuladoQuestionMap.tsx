@@ -48,7 +48,7 @@ export const SimuladoMapCell = memo(function SimuladoMapCell({
       className={cn(
         'h-11 min-w-11 shrink-0 rounded-lg border px-2 text-sm font-semibold transition-colors',
         isActive
-          ? 'border-[rgba(242, 101, 34,0.45)] bg-[rgba(242, 101, 34,0.12)] text-[#9A3412]'
+          ? 'border-[rgba(242,101,34,0.45)] bg-[rgba(242,101,34,0.12)] text-[#9A3412]'
           : answeredNeutral
             ? 'border-slate-300 bg-slate-100 text-slate-700'
             : item.respondida

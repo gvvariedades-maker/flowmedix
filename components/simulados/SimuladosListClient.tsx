@@ -93,11 +93,11 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="rounded-2xl border border-[rgba(242, 101, 34,0.35)] bg-gradient-to-b from-[rgba(242, 101, 34,0.08)] to-white p-5 shadow-sm"
+                  className="rounded-2xl border border-[rgba(242,101,34,0.35)] bg-gradient-to-b from-[rgba(242,101,34,0.08)] to-white p-5 shadow-sm"
                 >
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex min-w-0 items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(242, 101, 34,0.35)] bg-[rgba(242, 101, 34,0.12)]">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(242,101,34,0.35)] bg-[rgba(242,101,34,0.12)]">
                         <Play className="h-5 w-5 text-[#9A3412]" aria-hidden />
                       </div>
                       <div className="min-w-0">

@@ -465,9 +465,9 @@ export function SimuladosSetupClient() {
               Verificando sessão em andamento...
             </div>
           ) : openSession ? (
-            <div className="space-y-4 rounded-2xl border border-[rgba(242, 101, 34,0.35)] bg-gradient-to-b from-[rgba(242, 101, 34,0.08)] to-white p-5">
+            <div className="space-y-4 rounded-2xl border border-[rgba(242,101,34,0.35)] bg-gradient-to-b from-[rgba(242,101,34,0.08)] to-white p-5">
               <div className="space-y-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[rgba(242, 101, 34,0.35)] bg-[rgba(242, 101, 34,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[#9A3412]">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[rgba(242,101,34,0.35)] bg-[rgba(242,101,34,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[#9A3412]">
                   <span className="relative flex h-1.5 w-1.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F26522] opacity-75" />
                     <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#F26522]" />
@@ -524,7 +524,7 @@ export function SimuladosSetupClient() {
                 className={cn(
                   'rounded-xl p-4 text-left',
                   modo === 'treino'
-                    ? 'border-2 border-[rgba(242, 101, 34,0.45)] bg-[rgba(242, 101, 34,0.08)]'
+                    ? 'border-2 border-[rgba(242,101,34,0.45)] bg-[rgba(242,101,34,0.08)]'
                     : 'border border-slate-200 bg-white hover:border-slate-300',
                 )}
               >
@@ -553,7 +553,7 @@ export function SimuladosSetupClient() {
                 className={cn(
                   'rounded-xl p-4 text-left',
                   modo === 'prova'
-                    ? 'border-2 border-[rgba(242, 101, 34,0.45)] bg-[rgba(242, 101, 34,0.08)]'
+                    ? 'border-2 border-[rgba(242,101,34,0.45)] bg-[rgba(242,101,34,0.08)]'
                     : 'border border-slate-200 bg-white hover:border-slate-300',
                 )}
               >
