@@ -257,7 +257,7 @@ export const LogicFlow = ({
                   <LogicFlowTapBadge
                     visible={canTap && index < normalizedSteps.length - 1}
                   />
-                  <span className="btn-editorial-primary flex h-8 w-8 shrink-0 items-center justify-center rounded-lg p-0 text-sm font-bold text-[#1a2e05]">
+                  <span className="btn-editorial-primary flex h-8 w-8 shrink-0 items-center justify-center rounded-lg p-0 text-sm font-bold text-white">
                     {revealed ? <CheckCircle2 size={18} /> : index + 1}
                   </span>
                   <p

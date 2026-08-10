@@ -15,7 +15,6 @@ import {
   SimuladoApiError,
 } from '@/lib/simulado/client';
 import { usePassiveAttemptTracker } from '@/lib/evidence/usePassiveAttemptTracker';
-import { ConvictionSelector, type ConvictionChoice } from '@/components/evidence/ConvictionSelector';
 import type { SimuladoSessionDetailResponse } from '@/lib/simulado/types';
 import { sessionDisplayTitulo } from '@/lib/simulado/provaMeta';
 import type { LessonData } from '@/types/lesson';
@@ -129,22 +128,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     [noteSelectionChange],
   );
 
-  // EE-C01 (Lote 8): coorte técnica de convicção — resolvida no servidor.
-  const [convictionUiEnabled, setConvictionUiEnabled] = useState(false);
-  useEffect(() => {
-    let active = true;
-    fetchWithAuth('/api/aluno/evidence-cohort')
-      .then((res) => (res.ok ? (res.json() as Promise<{ conviction_ui?: boolean }>) : null))
-      .then((data) => {
-        if (active && data?.conviction_ui === true) setConvictionUiEnabled(true);
-      })
-      .catch(() => {
-        // Falha de rede: sem UI de convicção; conviction permanece 'unknown' (§1.5).
-      });
-    return () => {
-      active = false;
-    };
-  }, []);
+  // EE: UI de convicção desligada — confirm usa conviction=unknown.
   const [feedback, setFeedback] = useState<FeedbackState>(null);
   const [finalFeedbackPending, setFinalFeedbackPending] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -275,7 +259,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     [questionData?.question_data?.options],
   );
 
-  const handleConfirmAnswer = useCallback(async (conviction?: ConvictionChoice) => {
+  const handleConfirmAnswer = useCallback(async () => {
     if (!activeItem || !activeSlug || !selectedOption || submitting || feedback) return;
 
     const needsNewAnswerSlot = !activeItem.respondida;
@@ -288,9 +272,8 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     setSubmitError(null);
 
     try {
-      // answered_at é calculado aqui — após a escolha de convicção quando a
-      // UI da coorte técnica estiver habilitada (spec §1.5/§1.6).
-      const evidenceFields = beginEvidenceConfirm(conviction ? { conviction } : undefined);
+      // EE: conviction=unknown (UI de convicção desligada no produto).
+      const evidenceFields = beginEvidenceConfirm();
       const result = await answerSimuladoQuestion({
         session_id: sessionId,
         modulo_slug: activeSlug,
@@ -452,7 +435,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         }
       }
 
-      if (event.key === 'Enter' && selectedOption && !feedback && !convictionUiEnabled) {
+      if (event.key === 'Enter' && selectedOption && !feedback) {
         event.preventDefault();
         void handleConfirmAnswer();
       }
@@ -469,7 +452,6 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     feedback,
     handleConfirmAnswer,
     selectOption,
-    convictionUiEnabled,
   ]);
 
   useLayoutEffect(() => {
@@ -869,31 +851,24 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                 ref={confirmarRespostaRef}
                 className="flex scroll-mt-4 flex-col items-center gap-2 pt-2"
               >
-                {convictionUiEnabled && !submitting ? (
-                  <ConvictionSelector
-                    onSelect={(conviction) => void handleConfirmAnswer(conviction)}
-                    disabled={!canConfirm}
-                  />
-                ) : (
-                  <Button
-                    type="button"
-                    disabled={!canConfirm}
-                    onClick={() => void handleConfirmAnswer()}
-                    className="btn-editorial-primary h-12 rounded-full px-8 text-sm font-bold uppercase tracking-wider disabled:opacity-50"
-                  >
-                    {submitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                        Confirmando…
-                      </>
-                    ) : (
-                      <>
-                        {confirmLabel}
-                        <ChevronRight className="ml-2 h-4 w-4" aria-hidden />
-                      </>
-                    )}
-                  </Button>
-                )}
+                <Button
+                  type="button"
+                  disabled={!canConfirm}
+                  onClick={() => void handleConfirmAnswer()}
+                  className="btn-editorial-primary h-12 rounded-full px-8 text-sm font-bold uppercase tracking-wider disabled:opacity-50"
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                      Confirmando…
+                    </>
+                  ) : (
+                    <>
+                      {confirmLabel}
+                      <ChevronRight className="ml-2 h-4 w-4" aria-hidden />
+                    </>
+                  )}
+                </Button>
               </div>
             ) : null}
 

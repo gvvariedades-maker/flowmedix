@@ -81,7 +81,7 @@ function ItemCaderno({
           ? 'border-amber-200 bg-amber-50 opacity-90'
           : item.estudada
             ? 'border-green-200 bg-green-50'
-            : 'border-slate-200 bg-white hover:border-[rgba(242, 101, 34,0.3)]',
+            : 'border-slate-200 bg-white hover:border-[rgba(242,101,34,0.3)]',
       )}
     >
       {/* Número */}
@@ -122,7 +122,7 @@ function ItemCaderno({
         {item.acessivel ? (
           <Link
             href={`/estudar/${item.modulo_slug}?from=caderno&caderno_id=${notebookId}`}
-            className="flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(242, 101, 34,0.35)] bg-[rgba(242, 101, 34,0.10)] transition-colors hover:bg-[rgba(242, 101, 34,0.16)]"
+            className="flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(242,101,34,0.35)] bg-[rgba(242,101,34,0.10)] transition-colors hover:bg-[rgba(242,101,34,0.16)]"
             title="Estudar questão"
           >
             <Play size={13} className="text-[#9A3412]" />
@@ -361,7 +361,7 @@ function BuilderPanel({
                 </div>
                 <p className="truncate text-xs font-bold text-slate-700">{m.titulo_aula || m.modulo_slug}</p>
               </div>
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 transition-colors group-hover:bg-[rgba(242, 101, 34,0.12)]">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 transition-colors group-hover:bg-[rgba(242,101,34,0.12)]">
                 {adding === m.modulo_slug ? (
                   <Loader2 size={12} className="animate-spin text-[#9A3412]" aria-hidden />
                 ) : (
@@ -589,7 +589,7 @@ export default function CadernoDetailClient({
                           router.push(`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`);
                         }
                       }}
-                      className="inline-flex items-center gap-1 rounded-full border border-[rgba(242, 101, 34,0.35)] bg-[rgba(242, 101, 34,0.10)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#9A3412] transition-colors hover:bg-[rgba(242, 101, 34,0.14)]"
+                      className="inline-flex items-center gap-1 rounded-full border border-[rgba(242,101,34,0.35)] bg-[rgba(242,101,34,0.10)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#9A3412] transition-colors hover:bg-[rgba(242,101,34,0.14)]"
                     >
                       <Zap size={10} aria-hidden />
                       Próximo passo: estudar
@@ -661,7 +661,7 @@ export default function CadernoDetailClient({
 
             {items.length === 0 ? (
               <div className="flex flex-1 flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-14 text-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(242, 101, 34,0.25)] bg-[rgba(242, 101, 34,0.10)]">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(242,101,34,0.25)] bg-[rgba(242,101,34,0.10)]">
                   <BookOpen size={28} className="text-[#9A3412]" aria-hidden />
                 </div>
                 <div className="space-y-1">

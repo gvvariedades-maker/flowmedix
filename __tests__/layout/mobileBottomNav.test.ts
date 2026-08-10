@@ -46,7 +46,7 @@ describe('mobileBottomNav tokens', () => {
   });
 
   it('estudo reverso no desktop cobre o viewport inteiro', () => {
-    expect(DASHBOARD_SIDEBAR_WIDTH).toBe('16rem');
+    expect(DASHBOARD_SIDEBAR_WIDTH).toBe('15.5rem');
     expect(ESTUDO_REVERSO_DESKTOP_INSET).toBe('md:inset-0');
   });
 

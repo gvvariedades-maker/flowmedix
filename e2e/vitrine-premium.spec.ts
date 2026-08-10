@@ -68,4 +68,22 @@ test.describe('Vitrine premium — PR5', () => {
     );
     expect(seen).toBe('1');
   });
+
+  test('V4 — CTA primary solid resolve #C2410C (token editorial)', async ({ page }) => {
+    await gotoVitrineE2e(page, '');
+
+    const bg = await page.evaluate(() => {
+      const el = document.createElement('a');
+      el.className = 'btn-editorial-primary-solid';
+      el.href = '#';
+      el.textContent = 'Retomar estudo';
+      document.body.appendChild(el);
+      const computed = getComputedStyle(el).backgroundColor;
+      el.remove();
+      return computed;
+    });
+
+    // --color-brand-cta-solid: #C2410C → rgb(194, 65, 12)
+    expect(bg.replace(/\s+/g, '')).toBe('rgb(194,65,12)');
+  });
 });

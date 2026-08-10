@@ -1,11 +1,10 @@
 /**
  * Gate puro da UI de convicção — Evidence Engine Fase 1 (Lote 8).
- * Spec §1.5, §1.13: convicção só é visível na coorte técnica/interna,
- * e só quando a instrumentação está ligada.
+ * Spec §1.5, §1.13: convicção só seria visível na coorte técnica/interna.
  *
- * Sem I/O — o caller (rota `evidence-cohort`) resolve `instrumentationEnabled`
- * via `isEvidenceV1InstrumentationEnabled()` e `internalEmails` via
- * `getEvidenceV1InternalEmails()` (lib/env.ts).
+ * Produto (2026-08): UI desligada para todos. O EE continua registrando
+ * `conviction: 'unknown'` no confirm. A assinatura do gate permanece para
+ * a rota `evidence-cohort` e testes de contrato.
  */
 
 export type ShouldShowConvictionUiInput = {
@@ -17,14 +16,9 @@ export type ShouldShowConvictionUiInput = {
 };
 
 /**
- * Verdadeiro somente quando a instrumentação está ligada **e** o e-mail do
- * usuário está na allowlist da coorte interna. Fail closed em qualquer
- * ambiguidade (sem e-mail, flag off, allowlist vazia).
+ * Sempre `false` — seletor Chutei / Entre duas / Tenho certeza retirado do player.
+ * Fail closed; parâmetros mantidos só para compatibilidade da rota.
  */
-export function shouldShowConvictionUi(input: ShouldShowConvictionUiInput): boolean {
-  if (!input.instrumentationEnabled) return false;
-  const email = input.email?.trim().toLowerCase();
-  if (!email) return false;
-  if (input.internalEmails.length === 0) return false;
-  return input.internalEmails.some((allowed) => allowed.trim().toLowerCase() === email);
+export function shouldShowConvictionUi(_input: ShouldShowConvictionUiInput): boolean {
+  return false;
 }

@@ -37,6 +37,7 @@ import {
   MenuNavIconChip,
 } from '@/components/layout/MenuNavIconChip';
 import {
+  buildHelpNavItems,
   buildMenuSections,
   type DashboardNavItem,
   type DashboardNavSection,
@@ -121,9 +122,9 @@ function displayNameFromUser(displayName: string | null, email: string | null): 
   return displayNameFromEmail(email);
 }
 
-/** Avatar — alinhado à cor brand editorial (#F26522). */
+/** Avatar — fill de marca; sem anel/borda laranja decorativa. */
 const USER_AVATAR_CLASSES =
-  'bg-gradient-to-br from-[#F26522] to-[#E05518] text-white shadow-sm ring-2 ring-[#F26522]/25';
+  'bg-[var(--color-brand)] text-white shadow-sm';
 
 type MatriculatedConcursoSummary = {
   slug: string;
@@ -180,12 +181,14 @@ function DashboardNavLink({
 
 function DashboardNav({
   menuSections,
+  helpItems,
   createQueryString,
   isAdminUser,
   isAdminActive,
   onNavAction,
 }: {
   menuSections: DashboardNavSection[];
+  helpItems: DashboardNavItem[];
   createQueryString: (path: string) => string;
   isAdminUser: boolean;
   isAdminActive: boolean;
@@ -193,33 +196,53 @@ function DashboardNav({
 }) {
   return (
     <nav className="space-y-0.5 px-1.5 pb-2" aria-label="Navegação principal">
-      {menuSections.map((section, sectionIndex) => (
-        <div key={section.id} className="pb-1">
-          <p
-            className={cn(
-              'px-3 pb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500',
-              sectionIndex === 0 ? 'pt-0' : 'border-t border-slate-100 pt-2',
+      {menuSections.map((section, sectionIndex) => {
+        const showHeading = section.items.length > 1;
+        return (
+          <div key={section.id} className="pb-1">
+            {showHeading ? (
+              <p
+                className={cn(
+                  'px-3 pb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600',
+                  sectionIndex === 0 ? 'pt-0' : 'border-t border-[var(--color-border-default)] pt-2',
+                )}
+              >
+                {section.label}
+              </p>
+            ) : (
+              <span className="sr-only">{section.label}</span>
             )}
-          >
-            {section.label}
-          </p>
-          <div className="space-y-0.5">
-            {section.items.map((item) => (
-              <DashboardNavLink
-                key={item.href}
-                item={item}
-                createQueryString={createQueryString}
-                onNavAction={onNavAction}
-              />
-            ))}
+            <div
+              className={cn(
+                'space-y-0.5',
+                !showHeading && sectionIndex > 0 && 'border-t border-[var(--color-border-default)] pt-2',
+              )}
+            >
+              {section.items.map((item) => (
+                <DashboardNavLink
+                  key={item.href}
+                  item={item}
+                  createQueryString={createQueryString}
+                  onNavAction={onNavAction}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
-      <div className="mt-2 border-t border-slate-100 pt-2">
-        <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+        );
+      })}
+      <div className="mt-2 border-t border-[var(--color-border-default)] pt-2">
+        <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-600">
           Suporte
         </p>
         <div className="space-y-0.5">
+          {helpItems.map((item) => (
+            <DashboardNavLink
+              key={item.href}
+              item={item}
+              createQueryString={createQueryString}
+              onNavAction={onNavAction}
+            />
+          ))}
           <button
             type="button"
             title="Tirar dúvidas pelo WhatsApp"
@@ -232,7 +255,7 @@ function DashboardNav({
               'text-slate-600 hover:bg-[#25D366]/12 hover:text-[#128C7E]',
             )}
           >
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200/90 bg-slate-100 transition-all duration-200 group-hover:border-[#25D366]/30 group-hover:bg-[#25D366]/10">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-transparent bg-transparent transition-all duration-200 group-hover:border-[#25D366]/30 group-hover:bg-[#25D366]/10">
               <WhatsAppIcon
                 size={18}
                 className="text-slate-500 transition-colors group-hover:text-[#25D366]"
@@ -248,7 +271,7 @@ function DashboardNav({
           <Link
             href="/admin"
             aria-current={isAdminActive ? 'page' : undefined}
-            className="flex items-center gap-2.5 rounded-xl py-2 pl-2.5 pr-2 text-xs font-semibold text-slate-500 transition-colors hover:bg-slate-200/70 hover:text-slate-800"
+            className="flex items-center gap-2.5 rounded-xl py-2 pl-2.5 pr-2 text-xs font-semibold text-slate-500 transition-colors hover:bg-white/70 hover:text-slate-800"
           >
             <ShieldCheck size={18} strokeWidth={MENU_ICON_STROKE} className="shrink-0 text-slate-600" aria-hidden />
             Painel do Gestor
@@ -285,7 +308,7 @@ function UserAccountFooter({
 
   return (
     <div className="px-1.5 pb-safe pt-2">
-      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+      <div className="overflow-hidden rounded-xl border border-[var(--color-border-default)] bg-white">
         <div className="flex items-start gap-2 p-2.5">
           <div
             className={cn(
@@ -310,7 +333,7 @@ function UserAccountFooter({
             onClick={onLogout}
             title="Sair da conta"
             aria-label="Sair da conta"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-200/70 hover:text-slate-800"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-[var(--color-brand-dim)] hover:text-slate-800"
           >
             <LogOut size={17} strokeWidth={MENU_ICON_STROKE} aria-hidden />
           </button>
@@ -321,7 +344,7 @@ function UserAccountFooter({
             onClick={onNavAction}
             aria-current={isAssinaturaActive ? 'page' : undefined}
             className={cn(
-              'flex w-full items-center gap-2.5 border-t border-slate-100 py-2 pl-2.5 pr-2 text-sm font-semibold transition-colors',
+              'flex w-full items-center gap-2.5 border-t border-[var(--color-border-default)] py-2 pl-2.5 pr-2 text-sm font-semibold transition-colors',
               isAssinaturaActive
                 ? cn(MENU_NAV_ACTIVE.row, MENU_NAV_ACTIVE.label)
                 : MENU_NAV_ROW_IDLE,
@@ -343,6 +366,7 @@ function DashboardSidebarPanels({
   proSource,
   proExpiresAt,
   menuSections,
+  helpItems,
   createQueryString,
   isAdminUser,
   isAdminActive,
@@ -359,6 +383,7 @@ function DashboardSidebarPanels({
   proSource: ProSource;
   proExpiresAt: string | null;
   menuSections: DashboardNavSection[];
+  helpItems: DashboardNavItem[];
   createQueryString: (path: string) => string;
   isAdminUser: boolean;
   isAdminActive: boolean;
@@ -373,7 +398,7 @@ function DashboardSidebarPanels({
     <>
       <div
         className={cn(
-          'sticky top-0 z-10 shrink-0 border-b border-slate-100 bg-white pb-2',
+          'sticky top-0 z-10 shrink-0 border-b border-[var(--color-border-default)] bg-[var(--color-surface-0)] pb-2',
           identityClassName,
         )}
       >
@@ -389,6 +414,7 @@ function DashboardSidebarPanels({
       <div className="no-scrollbar min-h-0 flex-1 overflow-y-auto pt-2">
         <DashboardNav
           menuSections={menuSections}
+          helpItems={helpItems}
           createQueryString={createQueryString}
           isAdminUser={isAdminUser}
           isAdminActive={isAdminActive}
@@ -396,7 +422,7 @@ function DashboardSidebarPanels({
         />
       </div>
 
-      <div className="shrink-0 border-t border-slate-200 bg-white pt-2">
+      <div className="shrink-0 border-t border-[var(--color-border-default)] bg-[var(--color-surface-0)] pt-2">
         <UserAccountFooter
           userEmail={userEmail}
           userDisplayName={userDisplayName}
@@ -668,6 +694,7 @@ function DashboardContent({
   const showBackToVitrine = shouldShowBackToVitrine(pathname);
 
   const menuSections = buildMenuSections(isPathActive);
+  const helpItems = buildHelpNavItems(isPathActive);
   const isAdminActive = pathname?.startsWith('/admin') ?? false;
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -681,13 +708,14 @@ function DashboardContent({
     >
     <div className="dashboard-surface flex h-[100svh] max-h-[100svh] min-h-0 bg-background font-sans text-foreground md:h-[100dvh] md:max-h-[100dvh]">
       {/* --- SIDEBAR FIXA --- */}
-      <aside className="relative z-20 hidden h-full min-h-0 w-[16rem] shrink-0 flex-col overflow-hidden border-r border-slate-200 bg-white md:flex">
+      <aside className="relative z-20 hidden h-full min-h-0 w-[15.5rem] shrink-0 flex-col overflow-hidden border-r border-[var(--color-border-default)] bg-[var(--color-surface-0)] md:flex">
         <DashboardSidebarPanels
           cidadeExibicao={cidadeExibicao}
           isPro={isPro}
           proSource={proSource}
           proExpiresAt={proExpiresAt}
           menuSections={menuSections}
+          helpItems={helpItems}
           createQueryString={createQueryString}
           isAdminUser={isAdminUser}
           isAdminActive={isAdminActive}
@@ -714,6 +742,7 @@ function DashboardContent({
           proSource={proSource}
           proExpiresAt={proExpiresAt}
           menuSections={menuSections}
+          helpItems={helpItems}
           createQueryString={createQueryString}
           isAdminUser={isAdminUser}
           isAdminActive={isAdminActive}
@@ -734,8 +763,8 @@ function DashboardContent({
           aria-hidden={hideMainFromAssistiveTech ? true : undefined}
         >
         {!estudarQuestaoImmersive ? (
-          <div className="sticky top-0 z-30 shrink-0 border-b border-slate-200 bg-white/95 backdrop-blur-xl md:hidden">
-            <header className="flex items-center justify-between px-4 py-3 pt-safe">
+          <div className="sticky top-0 z-30 shrink-0 border-b border-[var(--color-border-default)] bg-[var(--color-surface-2)] shadow-[var(--shadow-editorial-sm)] md:hidden">
+            <header className="flex h-16 min-h-16 items-center justify-between px-4 pt-safe">
               <AvantBrandMark size="sm" variant="editorial" />
 
               <div className="flex items-center gap-2">
@@ -743,7 +772,7 @@ function DashboardContent({
                   type="button"
                   onClick={() => window.dispatchEvent(new CustomEvent('avant:open-search'))}
                   aria-label="Abrir busca"
-                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900"
+                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-[var(--color-border-default)] bg-white text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900"
                 >
                   <Search size={15} aria-hidden />
                 </button>

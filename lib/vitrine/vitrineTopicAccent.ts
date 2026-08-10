@@ -1,5 +1,13 @@
+export type TopicAccentClasses = { chip: string; icon: string };
+
+/** Chip monocromático — card fechado / grid em repouso (sem arco-íris). */
+export const TOPIC_ACCENT_NEUTRAL: TopicAccentClasses = {
+  chip: 'bg-slate-50 border-slate-200',
+  icon: 'text-slate-500',
+};
+
 /** Tailwind classes pré-definidas por accent — necessário para o purge não cortar. */
-const ACCENT: Record<string, { chip: string; icon: string }> = {
+const ACCENT: Record<string, TopicAccentClasses> = {
   rose:    { chip: 'bg-rose-50 border-rose-200',     icon: 'text-rose-600' },
   pink:    { chip: 'bg-pink-50 border-pink-200',     icon: 'text-pink-600' },
   violet:  { chip: 'bg-violet-50 border-violet-200', icon: 'text-violet-600' },
@@ -19,11 +27,14 @@ const ACCENT: Record<string, { chip: string; icon: string }> = {
 
 const DEFAULT = ACCENT.indigo;
 
-/** Retorna as classes Tailwind do chip e ícone para um assunto da vitrine. */
+/**
+ * Matiz do tópico — usar no card **expandido** e no header do sheet.
+ * No card fechado, preferir `TOPIC_ACCENT_NEUTRAL`.
+ */
 export function getTopicAccent(
   titulo_aula?: string | null,
   modulo_nome?: string | null,
-): { chip: string; icon: string } {
+): TopicAccentClasses {
   const src = `${titulo_aula ?? ''} ${modulo_nome ?? ''}`.toLowerCase();
 
   if (/urg[eê]n|emerg|rcp/.test(src))            return ACCENT.rose;

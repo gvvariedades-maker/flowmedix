@@ -6,13 +6,11 @@ import {
   AVANT_LOGO_ANIMATION,
   AVANT_LOGO_COLORS,
   AVANT_LOGO_DIMENSIONS,
-  AVANT_LOGO_FONT_FAMILY,
   AVANT_LOGO_GRADIENTS,
-  AVANT_LOGO_ICON_FLAT_BELOW,
   AVANT_LOGO_ICON_INSET_SCALE,
+  AVANT_LOGO_PNG,
   AVANT_LOGO_SHELL_SHADOW,
   getAvantLogoLockupPadding,
-  getAvantLogoWordmarkLetterSpacing,
   scaleAvantLogoPx,
   type AvantLogoSizeToken,
 } from '@/lib/brand/avantLogoConstants';
@@ -22,8 +20,8 @@ export type { AvantLogoSizeToken } from '@/lib/brand/avantLogoConstants';
 export type AvantLogoVariant = 'lockup' | 'icon';
 
 /**
- * - `default` — cyber (shell + monograma cobre 3D + wordmark raster)
- * - `light` / `brand` — editorial (monograma + wordmark raster, sem shell)
+ * - `default` — cyber (shell + PNGs de marca)
+ * - `light` / `brand` — editorial (PNGs de marca, sem shell)
  */
 export type AvantLogoTone = 'default' | 'light' | 'brand';
 
@@ -43,13 +41,10 @@ export type AvantLogoProps = {
   wordmarkScale?: number;
 };
 
-/**
- * Abaixo de `AVANT_LOGO_ICON_FLAT_BELOW` (ex.: nav), usa flat para nitidez em tamanho pequeno.
- */
+/** Card laranja + A partido branco — PNG oficial. */
 function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
   const iconPx = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.icon.size, size);
   const insetPx = Math.round(iconPx * AVANT_LOGO_ICON_INSET_SCALE);
-  const useFlat = size === AVANT_LOGO_ICON_FLAT_BELOW;
 
   return (
     <div
@@ -57,9 +52,9 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
       style={{ width: iconPx, height: iconPx }}
       aria-hidden
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {/* eslint-disable-next-line @next/next/no-img-element -- brand PNG lockup */}
       <img
-        src={useFlat ? '/brand/avant-logo-ae-flat.png' : '/brand/avant-logo-shield.png'}
+        src={AVANT_LOGO_PNG.aMark}
         alt=""
         width={insetPx}
         height={insetPx}
@@ -71,9 +66,8 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
 }
 
 /**
- * Wordmark tipográfico "AVANT enf":
- * - Editorial (`light`/`brand`): AVANT preto + enf laranja print
- * - Cyber (`default`): AVANT claro + enf laranja print
+ * Wordmark PNG "AVANT" + "enf" oficiais.
+ * Editorial: AVANT escuro; cyber: AVANT claro.
  */
 function AvantLogoWordmarkStack({
   size,
@@ -88,53 +82,58 @@ function AvantLogoWordmarkStack({
   const fontSize = Math.round(
     scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.wordmark.fontSize, size) * wordmarkScale,
   );
-  const enfSize = Math.max(
-    10,
-    Math.round(scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.subtitle.fontSize, size) * wordmarkScale * 1.35),
+  const avantH = Math.max(
+    14,
+    Math.round(fontSize * AVANT_LOGO_PNG.avantWordHeightScale),
   );
-  const letterSpacing = getAvantLogoWordmarkLetterSpacing(size) * wordmarkScale;
-  const enfTracking = Math.round(
-    scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.subtitle.letterSpacingPx, size) * wordmarkScale * 10,
-  ) / 10;
-  const avantColor = isLight
-    ? AVANT_LOGO_COLORS.wordmarkEditorial
-    : AVANT_LOGO_COLORS.wordmarkCyber;
-  const enfColor = AVANT_LOGO_COLORS.wordmarkEnf;
+  const avantW = Math.round(avantH * AVANT_LOGO_PNG.avantWordAspect);
+  const enfH = Math.max(
+    11,
+    Math.round(
+      fontSize *
+        AVANT_LOGO_DIMENSIONS.subtitle.scaleOfWordmark *
+        AVANT_LOGO_PNG.enfHeightScale,
+    ),
+  );
+  const enfW = Math.round(enfH * AVANT_LOGO_PNG.enfAspect);
+  const avantSrc = isLight ? AVANT_LOGO_PNG.avantWord : AVANT_LOGO_PNG.avantWordOnDark;
 
   return (
     <span
-      className="inline-flex min-w-0 shrink items-baseline overflow-visible"
+      className="inline-flex min-w-0 shrink items-center overflow-visible"
       style={{
-        fontFamily: AVANT_LOGO_FONT_FAMILY,
-        gap: Math.max(4, Math.round(6 * wordmarkScale)),
+        gap: Math.max(
+          3,
+          Math.round(
+            AVANT_LOGO_DIMENSIONS.subtitle.gapFromWordmark *
+              wordmarkScale *
+              AVANT_LOGO_PNG.subtitleGapScale,
+          ),
+        ),
         maxWidth: '100%',
       }}
       aria-hidden
     >
-      <span
-        style={{
-          fontSize,
-          fontWeight: 800,
-          letterSpacing: `${letterSpacing}px`,
-          lineHeight: AVANT_LOGO_DIMENSIONS.wordmark.lineHeight,
-          color: avantColor,
-          whiteSpace: 'nowrap',
-        }}
-      >
-        AVANT
-      </span>
-      <span
-        style={{
-          fontSize: enfSize,
-          fontWeight: AVANT_LOGO_DIMENSIONS.subtitle.fontWeight,
-          letterSpacing: `${enfTracking}px`,
-          lineHeight: AVANT_LOGO_DIMENSIONS.subtitle.lineHeight,
-          color: enfColor,
-          whiteSpace: 'nowrap',
-        }}
-      >
-        {AVANT_LOGO_DIMENSIONS.subtitle.label}
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element -- brand PNG lockup */}
+      <img
+        src={avantSrc}
+        alt=""
+        width={avantW}
+        height={avantH}
+        className="select-none object-contain object-left"
+        style={{ height: avantH, width: 'auto', maxWidth: avantW }}
+        draggable={false}
+      />
+      {/* eslint-disable-next-line @next/next/no-img-element -- brand PNG lockup */}
+      <img
+        src={AVANT_LOGO_PNG.enf}
+        alt=""
+        width={enfW}
+        height={enfH}
+        className="select-none object-contain object-left"
+        style={{ height: enfH, width: 'auto', maxWidth: enfW }}
+        draggable={false}
+      />
     </span>
   );
 }

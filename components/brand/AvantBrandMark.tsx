@@ -14,9 +14,9 @@ const BRAND_MARK_SIZE: Record<NonNullable<AvantBrandMarkProps['size']>, AvantLog
 };
 
 /**
- * `md` = sidebar fixa (16rem/256px, `PlanStatusCard`) — sem essa redução o
+ * `md` = sidebar fixa (15.5rem/248px, `PlanStatusCard`) — sem essa redução o
  * wordmark "AVANT enf" em `lg` (~287px com ícone+gap) não cabe no espaço
- * disponível (~240px) e é cortado.
+ * disponível (~232px) e é cortado.
  */
 const BRAND_MARK_WORDMARK_SCALE: Record<NonNullable<AvantBrandMarkProps['size']>, number> = {
   sm: 1,

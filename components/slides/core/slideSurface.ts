@@ -3,10 +3,10 @@
 export const SLIDE_PAGE_BG = 'bg-slate-50';
 
 export const SLIDE_CARD =
-  'rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300';
+  'rounded-2xl border border-[rgba(242,101,34,0.28)] bg-white shadow-sm transition-all duration-300';
 
 export const SLIDE_CARD_LG =
-  'rounded-2xl md:rounded-3xl border border-slate-200 bg-white shadow-sm';
+  'rounded-2xl md:rounded-3xl border border-[rgba(242,101,34,0.28)] bg-white shadow-sm';
 
 /** Shell imersivo — gradiente full-bleed, sem card branco por cima. */
 export const SLIDE_SHELL_CARD =

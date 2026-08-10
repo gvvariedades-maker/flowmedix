@@ -181,7 +181,7 @@ export function PaywallModal({
         </button>
 
         <div className="flex justify-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)] text-[#166534]">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(34,197,94,0.35)] bg-[rgba(34,197,94,0.12)] text-[#166534]">
             <LockKeyhole size={28} aria-hidden />
           </div>
         </div>

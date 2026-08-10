@@ -4,6 +4,8 @@ import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const MENU_ICON_STROKE = 2 as const;
+/** Stroke do ícone ativo (filled) — um pouco mais fino para o fill não “borrar” o glifo. */
+export const MENU_ICON_STROKE_ACTIVE = 1.75 as const;
 
 export const MENU_NAV_ACTIVE = {
   row: 'bg-[var(--color-brand)]/10',
@@ -11,15 +13,17 @@ export const MENU_NAV_ACTIVE = {
   label: 'text-[var(--color-brand-text)]',
 } as const;
 
-/** Linha de nav inativa — hover mais legível que slate-100 sobre branco. */
+/** Linha de nav inativa — wash suave sobre papel creme editorial. */
 export const MENU_NAV_ROW_IDLE =
-  'text-slate-600 hover:bg-slate-200/70 hover:text-slate-900';
+  'text-slate-600 hover:bg-white/70 hover:text-slate-900';
 
-/** Chip/ícone inativo — monocromático; cor do accent só no item ativo. */
-const MENU_CHIP_IDLE = {
-  chip: 'bg-slate-100',
-  icon: 'text-slate-500',
-} as const;
+/**
+ * Ícone idle — slate-600 no creme `#FFF1E0` (~4.6:1, AA).
+ * Sidebar: sem chip (ativo = row + barra + tint filled).
+ * Bottom nav: chip só no ativo (idle = ícone + label; alvo = Link 48px).
+ * Padrão mercado (Material/Fluent): outline idle · filled ativo.
+ */
+export const MENU_ICON_IDLE = 'text-slate-600' as const;
 
 export type MenuAccentKey =
   | 'brand'
@@ -50,7 +54,8 @@ export const MENU_ACCENT_STYLES: Record<
     chip: 'bg-slate-100',
     chipActive: 'bg-[var(--color-brand)]/18',
     icon: 'text-slate-500',
-    iconActive: 'text-[var(--color-brand-text)]',
+    /** Ativo saturado — `#F26522`, não brand-text `#9A3412`. */
+    iconActive: 'text-[var(--color-brand)]',
     glow: 'shadow-sm',
     rowActive: 'bg-[var(--color-brand)]/10',
     bar: 'bg-[var(--color-brand)]',
@@ -157,34 +162,36 @@ type MenuNavIconChipProps = {
 
 export function MenuNavIconChip({
   icon: Icon,
-  accent,
+  accent: _accent,
   active,
   size = 'sidebar',
 }: MenuNavIconChipProps) {
-  const styles = MENU_ACCENT_STYLES[accent];
   const isBottom = size === 'bottom';
+  /** Bottom: chip só no ativo. Sidebar: nunca chip — ativo = tint na row. */
+  const showChip = isBottom && active;
 
   return (
     <span
       className={cn(
-        'flex shrink-0 items-center justify-center border transition-all duration-200',
-        isBottom ? 'h-8 w-8 rounded-xl' : 'h-9 w-9 rounded-xl',
-        active
+        'flex shrink-0 items-center justify-center transition-all duration-200',
+        isBottom ? 'h-8 w-8 rounded-xl' : 'h-9 w-9',
+        showChip
           ? cn(
-              styles.chipActive,
-              styles.glow,
-              accent === 'brand' ? 'border-[var(--color-brand)]/40' : 'border-slate-300',
+              'rounded-xl border border-[var(--color-brand)]/40 shadow-sm',
+              MENU_ACCENT_STYLES.brand.chipActive,
             )
-          : cn(MENU_CHIP_IDLE.chip, 'border-slate-200/90'),
+          : null,
       )}
       aria-hidden
     >
       <Icon
-        size={isBottom ? 16 : 18}
-        strokeWidth={MENU_ICON_STROKE}
+        size={18}
+        strokeWidth={active ? MENU_ICON_STROKE_ACTIVE : MENU_ICON_STROKE}
+        fill={active ? 'currentColor' : 'none'}
         className={cn(
-          'transition-colors',
-          active ? styles.iconActive : MENU_CHIP_IDLE.icon,
+          'transition-[color,fill] duration-200',
+          // Editorial: um acento (#F26522) — sidebar e bottom.
+          active ? 'text-[var(--color-brand)]' : MENU_ICON_IDLE,
         )}
       />
     </span>

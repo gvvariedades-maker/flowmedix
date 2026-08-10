@@ -26,7 +26,7 @@ Detalhe operacional: [`reference-microsaas-craft.md`](reference-microsaas-craft.
 
 1. Ler o componente adjacente e **estender** — não redesenhar do zero.
 2. Identificar o tema da rota:
-   - **Editorial v2** — dashboard/vitrine/player enunciado (`useEditorialTheme`, `html[data-theme='editorial']`): fundo claro, laranja `#F26522`, `.card-elevated`, `.btn-editorial-*`.
+   - **Editorial v2** — dashboard/vitrine/player enunciado (`useEditorialTheme`, `html[data-theme='editorial']`): papel print `#FFF1E0` + laranja `#F26522` + AVANT preto / enf print (Jakarta cartaz); `.card-elevated`, `.btn-editorial-*`.
    - **Cyber Clinical** — NeuroSlides fullscreen, preview reverso, admin escuro: fundo `#010409`, cyan neon, `.glass-panel`, `.text-neon-gradient`.
 3. Consultar capturas em `docs/auditoria-visual-v2/screenshots/avant-editorial-v2/` e backlog em `docs/auditoria-visual-v2/*-BACKLOG.md`.
 4. Se a tarefa for **vitrine ou player**, seguir a seção [Vitrine + Player](#vitrine--player-prioridade-craft) e o checklist do reference.
@@ -50,9 +50,9 @@ Referência de **disciplina**: Stripe / Linear / Vercel — clareza, um acento, 
 
 | Semântica | Cyber (`:root`) | Editorial (`data-theme='editorial'`) |
 |-----------|-----------------|--------------------------------------|
-| Fundo base | `--color-surface-0` `#010409` | `#f1f5f9` (v2.1 soft slate) |
+| Fundo base | `--color-surface-0` `#010409` | `#FFF1E0` (papel print SERINGA; cards `#ffffff`) |
 | Superfície card | `.glass-panel` / `slate-900/80` | `.card-elevated` + `--shadow-editorial-sm/md` |
-| Marca / foco | `--color-brand` `#00f2ff` | `#F26522` (`--color-brand-text` `#9A3412`; texto no CTA `#0F172A`) |
+| Marca / foco | `--color-brand` `#00f2ff` | `#F26522` (`--color-brand-text` `#9A3412`; CTA = gradiente `#FF8A3D→#D45212` + texto branco) |
 | Sucesso | `--color-success` `#00ff88` | `#16a34a` |
 | Erro | `--color-danger` `#ff0055` | `#dc2626` |
 | Aviso | `--color-warning` `#ffb800` | tokens editoriais em globals |

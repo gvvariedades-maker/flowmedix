@@ -576,7 +576,7 @@ export function SimuladoResumoClient({
                       className={cn(
                         'flex flex-wrap items-center justify-between gap-2 rounded-xl border px-4 py-3 text-sm',
                         isCurrent
-                          ? 'border-[rgba(242, 101, 34,0.35)] bg-[rgba(242, 101, 34,0.08)]'
+                          ? 'border-[rgba(242,101,34,0.35)] bg-[rgba(242,101,34,0.08)]'
                           : 'border-slate-200 bg-white',
                       )}
                     >
@@ -653,7 +653,7 @@ export function SimuladoResumoClient({
                 className={cn(
                   'rounded-lg border px-3 py-1.5 text-xs font-semibold',
                   filtro === item.id
-                    ? 'border-[rgba(242, 101, 34,0.45)] bg-[rgba(242, 101, 34,0.12)] text-[#9A3412]'
+                    ? 'border-[rgba(242,101,34,0.45)] bg-[rgba(242,101,34,0.12)] text-[#9A3412]'
                     : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300',
                 )}
               >

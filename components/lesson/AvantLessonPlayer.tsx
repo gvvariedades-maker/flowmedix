@@ -63,7 +63,6 @@ import { isCertoErradoQuestion } from '@/lib/questionKind';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { usePassiveAttemptTracker } from '@/lib/evidence/usePassiveAttemptTracker';
-import { ConvictionSelector, type ConvictionChoice } from '@/components/evidence/ConvictionSelector';
 import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
 import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 import { ESTUDAR_STALE_RECOVERY_MS } from '@/components/lesson/useEstudarStaleRecovery';
@@ -415,25 +414,6 @@ export default function AvantLessonPlayer({
     },
     [noteSelectionChange],
   );
-
-  // EE-C01 (Lote 8): coorte técnica de convicção — resolvida no servidor,
-  // nunca inferida no cliente. Flag off / fora da coorte → sem UI (unknown).
-  const [convictionUiEnabled, setConvictionUiEnabled] = useState(false);
-  useEffect(() => {
-    if (mode !== 'live') return;
-    let active = true;
-    fetchWithAuth('/api/aluno/evidence-cohort')
-      .then((res) => (res.ok ? (res.json() as Promise<{ conviction_ui?: boolean }>) : null))
-      .then((data) => {
-        if (active && data?.conviction_ui === true) setConvictionUiEnabled(true);
-      })
-      .catch(() => {
-        // Falha de rede: sem UI de convicção; conviction permanece 'unknown' (§1.5).
-      });
-    return () => {
-      active = false;
-    };
-  }, [mode]);
 
   useEffect(() => {
     setDadosComSlides(null);
@@ -850,10 +830,7 @@ export default function AvantLessonPlayer({
     };
   };
 
-  const registrarTentativa = async (
-    opcaoId: string,
-    conviction?: ConvictionChoice,
-  ): Promise<RegistrarTentativaResult> => {
+  const registrarTentativa = async (opcaoId: string): Promise<RegistrarTentativaResult> => {
     if (mode === 'preview') {
       return { status: 'ok', gabarito: buildPreviewGabarito(opcaoId) };
     }
@@ -869,10 +846,8 @@ export default function AvantLessonPlayer({
     }
     const attemptId = confirmAttemptIdRef.current;
 
-    // answered_at é calculado aqui — após a escolha de convicção quando a UI
-    // da coorte técnica estiver habilitada (spec §1.5/§1.6).
-    // EE continua dono dos próprios campos; attempt_id do wire é o independente acima.
-    const evidenceFields = beginEvidenceConfirm(conviction ? { conviction } : undefined);
+    // EE: conviction permanece 'unknown' (UI de convicção desligada no produto).
+    const evidenceFields = beginEvidenceConfirm();
     const evidencePayload = evidenceFields
       ? {
           started_at: evidenceFields.started_at,
@@ -970,7 +945,7 @@ export default function AvantLessonPlayer({
     }
   };
 
-  const handleConfirmarResposta = async (conviction?: ConvictionChoice) => {
+  const handleConfirmarResposta = async () => {
     if (!selecionada || confirmandoResposta) return;
 
     if (freemiumLimiteAtingido) {
@@ -982,7 +957,7 @@ export default function AvantLessonPlayer({
     setTentativaErro(null);
     setTentativaAccessDenied(false);
     try {
-      const result = await registrarTentativa(selecionada, conviction);
+      const result = await registrarTentativa(selecionada);
       if (result.status !== 'ok') {
         if (result.status === 'unauthorized') {
           setTentativaErro('Sessão expirada. Faça login novamente para registrar sua resposta.');
@@ -1703,24 +1678,17 @@ export default function AvantLessonPlayer({
                 ) : null}
               </div>
             ) : null}
-            {convictionUiEnabled && !confirmandoResposta ? (
-              <ConvictionSelector
-                onSelect={(conviction) => void handleConfirmarResposta(conviction)}
-                disabled={confirmandoResposta}
-              />
-            ) : (
-              <button
-                type="button"
-                onClick={() => void handleConfirmarResposta()}
-                disabled={confirmandoResposta}
-                className="btn-editorial-primary group flex min-h-[48px] items-center gap-2.5 rounded-full px-6 py-3 text-sm font-bold transition-all hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
-              >
-                {confirmandoResposta ? 'Registrando…' : 'Confirmar Resposta'}
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition-colors group-hover:bg-white/30">
-                  <ChevronRight size={16} />
-                </span>
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={() => void handleConfirmarResposta()}
+              disabled={confirmandoResposta}
+              className="btn-editorial-primary group flex min-h-[48px] items-center gap-2.5 rounded-full px-6 py-3 text-sm font-bold transition-all hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              {confirmandoResposta ? 'Registrando…' : 'Confirmar Resposta'}
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition-colors group-hover:bg-white/30">
+                <ChevronRight size={16} />
+              </span>
+            </button>
           </motion.div>
         )}
       </>

@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, CalendarClock, Loader2, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import type { WeeklySimuladoMission } from '@/lib/simulado/types';
 import { generateWeeklySimulado } from '@/lib/simulado/client';
 import { weeklySimuladoAlunoTitulo } from '@/lib/simulado/weeklyDisplayTitle';
@@ -42,13 +43,13 @@ function statusLabel(status: WeeklySimuladoMission['status']): string {
 function statusBadgeClass(status: WeeklySimuladoMission['status']): string {
   switch (status) {
     case 'pendente':
-      return 'border-cyan-500/30 bg-cyan-500/10 text-cyan-100';
+      return 'border-[var(--color-border-default)] bg-[var(--color-brand-wash)] text-[var(--color-brand-text)]';
     case 'em_andamento':
-      return 'border-amber-400/30 bg-amber-400/10 text-amber-100';
+      return 'border-[var(--color-warning)]/30 bg-[var(--color-warning-dim)] text-[var(--color-warning-text)]';
     case 'concluido':
-      return 'border-emerald-400/30 bg-emerald-400/10 text-emerald-100';
+      return 'border-[var(--color-success)]/35 bg-[var(--color-success-dim)] text-[var(--color-success-text)]';
     default:
-      return 'border-white/10 bg-white/5 text-slate-300';
+      return 'border-slate-200 bg-slate-50 text-slate-500';
   }
 }
 
@@ -97,22 +98,30 @@ export function WeeklySimuladoMissionCard({
     <section
       data-testid="weekly-simulado-mission-card"
       aria-labelledby="weekly-simulado-mission-title"
-      className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-4 shadow-[0_20px_60px_-30px_rgba(0,242,255,0.45)] sm:p-5"
+      className={cn(
+        'relative overflow-hidden rounded-r-2xl border px-4 py-4 [border-left-width:4px] sm:px-5',
+        vitrineBrand.tintBorder,
+        vitrineBrand.borderL,
+        vitrineBrand.tintBg,
+      )}
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl"
-      />
       <div className="relative flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="min-w-0 space-y-2">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-cyan-200">
+            <span
+              className={cn(
+                'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold tracking-wide',
+                vitrineBrand.tintBorder,
+                vitrineBrand.tintBg,
+                vitrineBrand.text,
+              )}
+            >
               <Sparkles size={12} aria-hidden />
               Missão da semana
             </span>
             <span
               className={cn(
-                'inline-flex rounded-full border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide',
+                'inline-flex rounded-full border px-2.5 py-1 text-[11px] font-semibold tracking-wide',
                 statusBadgeClass(mission.status),
               )}
             >
@@ -122,20 +131,20 @@ export function WeeklySimuladoMissionCard({
 
           <h2
             id="weekly-simulado-mission-title"
-            className="text-lg font-black leading-tight text-white sm:text-xl"
+            className="text-lg font-bold leading-tight text-slate-900 sm:text-xl"
           >
             {isReady ? `${tituloAluno} está pronto!` : tituloAluno}
           </h2>
 
-          <p className="text-sm text-slate-300">
+          <p className="text-sm text-slate-600">
             Avaliação personalizada com base no seu perfil e desempenho.{' '}
             {formatWeekDeadline(mission.week_ends_at)}.
           </p>
 
-          <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
             {progressLabel ? (
               <span className="inline-flex items-center gap-1.5">
-                <CalendarClock size={14} className="text-cyan-300" aria-hidden />
+                <CalendarClock size={14} className={vitrineBrand.icon} aria-hidden />
                 {progressLabel}
                 {isCompleted && mission.percentual_acerto != null
                   ? ` · ${Math.round(mission.percentual_acerto)}% de acerto`
@@ -145,7 +154,7 @@ export function WeeklySimuladoMissionCard({
           </div>
 
           {error ? (
-            <p role="alert" className="text-sm text-rose-300">
+            <p role="alert" className="text-sm text-rose-600">
               {error}
             </p>
           ) : null}
@@ -153,11 +162,12 @@ export function WeeklySimuladoMissionCard({
 
         <div className="flex shrink-0 flex-col gap-2 sm:flex-row lg:flex-col xl:flex-row">
           {isReady && ctaHref ? (
-            <Link
-              href={ctaHref}
-              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-black uppercase tracking-wide text-slate-950 transition hover:bg-cyan-300"
-            >
-              {isCompleted ? 'Ver resultado' : mission.status === 'em_andamento' ? 'Continuar' : 'Iniciar simulado'}
+            <Link href={ctaHref} className={cn(vitrineBrand.buttonPrimarySolid, 'shrink-0')}>
+              {isCompleted
+                ? 'Ver resultado'
+                : mission.status === 'em_andamento'
+                  ? 'Continuar'
+                  : 'Iniciar simulado'}
               <ArrowRight size={16} aria-hidden />
             </Link>
           ) : (
@@ -165,8 +175,8 @@ export function WeeklySimuladoMissionCard({
               type="button"
               onClick={() => void handleGenerate()}
               disabled={loading || generateBlocked}
-              title={generateBlocked ? blockMessage ?? undefined : undefined}
-              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-black uppercase tracking-wide text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-70"
+              title={generateBlocked ? (blockMessage ?? undefined) : undefined}
+              className={cn(vitrineBrand.buttonPrimarySolid, 'shrink-0')}
             >
               {loading ? (
                 <>

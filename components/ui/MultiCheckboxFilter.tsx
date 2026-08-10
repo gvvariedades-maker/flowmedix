@@ -277,14 +277,14 @@ export function MultiCheckboxFilter({
         <ul className="flex flex-wrap gap-1.5" aria-label="Selecionados">
           {value.map((item) => (
             <li key={item}>
-              <span className="inline-flex max-w-full items-center gap-1 rounded-md border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)] py-0.5 pl-2 pr-1 text-xs text-[#166534]">
+              <span className="inline-flex max-w-full items-center gap-1 rounded-md border border-[rgba(34,197,94,0.35)] bg-[rgba(34,197,94,0.12)] py-0.5 pl-2 pr-1 text-xs text-[#166534]">
                 <span className="truncate">{item}</span>
                 <button
                   type="button"
                   onClick={() => removeOption(item)}
                   disabled={disabled}
                   aria-label={`Remover ${item}`}
-                  className="flex h-5 w-5 shrink-0 items-center justify-center rounded text-[#166534]/80 transition-colors hover:bg-[rgba(34, 197, 94,0.2)] hover:text-[#166534] disabled:opacity-50"
+                  className="flex h-5 w-5 shrink-0 items-center justify-center rounded text-[#166534]/80 transition-colors hover:bg-[rgba(34,197,94,0.2)] hover:text-[#166534] disabled:opacity-50"
                 >
                   <X className="h-3 w-3" aria-hidden />
                 </button>
@@ -308,7 +308,7 @@ export function MultiCheckboxFilter({
             onClick={() => {
               if (!disabled) setSheetOpen(true);
             }}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-600 transition-colors hover:border-[rgba(34, 197, 94,0.35)] hover:bg-[rgba(34, 197, 94,0.06)] hover:text-[#166534] disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-600 transition-colors hover:border-[rgba(34,197,94,0.35)] hover:bg-[rgba(34,197,94,0.06)] hover:text-[#166534] disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Plus className="h-3.5 w-3.5 shrink-0" aria-hidden />
             {addLabel}
@@ -331,7 +331,7 @@ export function MultiCheckboxFilter({
                 aria-haspopup="listbox"
                 aria-expanded={desktopOpen}
                 disabled={disabled || optionsDisponiveis.length === 0}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-600 transition-colors hover:border-[rgba(34, 197, 94,0.35)] hover:bg-[rgba(34, 197, 94,0.06)] hover:text-[#166534] disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-600 transition-colors hover:border-[rgba(34,197,94,0.35)] hover:bg-[rgba(34,197,94,0.06)] hover:text-[#166534] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <Plus className="h-3.5 w-3.5 shrink-0" aria-hidden />
                 {addLabel}

@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, ClipboardCheck, Loader2 } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import type { DiagnosticoSimuladoCardState } from '@/lib/simulado/types';
 import { createDiagnosticoSimulado, SimuladoApiError } from '@/lib/simulado/client';
 import {
@@ -50,17 +52,27 @@ export function SimuladoDiagnosticoCard({ state }: SimuladoDiagnosticoCardProps)
   return (
     <div
       data-testid="simulado-diagnostico-card"
-      className="flex flex-col gap-3 rounded-r-2xl border border-cyan-200 border-l-[#00b8d4] bg-gradient-to-r from-cyan-50 via-sky-50 to-white px-4 py-4 [border-left-width:4px] sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+      className={cn(
+        'flex flex-col gap-3 rounded-r-2xl border px-4 py-4 [border-left-width:4px] sm:flex-row sm:items-center sm:justify-between sm:gap-4',
+        vitrineBrand.tintBorder,
+        vitrineBrand.borderL,
+        vitrineBrand.tintBg,
+      )}
     >
       <div className="min-w-0">
         <div className="flex items-center gap-2">
           <div
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-cyan-200 bg-cyan-100/80 text-cyan-700"
+            className={cn(
+              'flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border',
+              vitrineBrand.tintBorder,
+              vitrineBrand.tintBg,
+              vitrineBrand.icon,
+            )}
             aria-hidden
           >
             <ClipboardCheck size={16} />
           </div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-cyan-800">
+          <p className={cn('text-xs font-semibold uppercase tracking-wide', vitrineBrand.text)}>
             {isResume ? 'Simulado em andamento' : 'Boas-vindas ao AVANT enf'}
           </p>
         </div>
@@ -85,7 +97,7 @@ export function SimuladoDiagnosticoCard({ state }: SimuladoDiagnosticoCardProps)
         type="button"
         onClick={handleStart}
         disabled={loading}
-        className="inline-flex min-h-[44px] shrink-0 items-center justify-center gap-2 self-start rounded-xl bg-[#00b8d4] px-4 py-2.5 text-sm font-black uppercase tracking-wide text-white transition-colors hover:bg-cyan-600 disabled:cursor-not-allowed disabled:opacity-70 sm:self-auto"
+        className={cn(vitrineBrand.buttonPrimarySolid, 'shrink-0 self-start sm:self-auto')}
       >
         {loading ? (
           <>

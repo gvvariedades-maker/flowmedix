@@ -10,7 +10,7 @@ const TUTORIAL_DIR = join(process.cwd(), 'public', 'tutorial');
 export const AJUDA_SURFACE = 'card-elevated-lg';
 export const AJUDA_SURFACE_SM = 'card-elevated';
 export const ONDE_CLICAR =
-  'rounded-2xl border border-[rgba(242, 101, 34,0.28)] bg-[rgba(242, 101, 34,0.06)]';
+  'rounded-2xl border border-[rgba(242,101,34,0.28)] bg-[rgba(242,101,34,0.06)]';
 export const TEXT_MAIN = 'text-slate-900';
 export const TEXT_MUTED = 'text-slate-600';
 

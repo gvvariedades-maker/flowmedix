@@ -13,7 +13,6 @@ import {
   Trophy,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { ScoreCard } from '@/components/ui/score-card';
 import { PageHeader } from '@/components/ui/page-header';
 import { EmptyState } from '@/components/ui/empty-state';
@@ -155,17 +154,15 @@ export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.18, delay: 0.12 }}
         >
-          <Card>
-            <CardContent className="p-5 pt-6">
-              <ContributionHeatmap
-                serie={serie30dias}
-                periodo={periodo}
-                onPeriodoChange={setPeriodo}
-                totalPeriodo={totalPeriodo}
-                semDados={semDados}
-              />
-            </CardContent>
-          </Card>
+          <div className="metric-card p-5 pt-6">
+            <ContributionHeatmap
+              serie={serie30dias}
+              periodo={periodo}
+              onPeriodoChange={setPeriodo}
+              totalPeriodo={totalPeriodo}
+              semDados={semDados}
+            />
+          </div>
         </motion.div>
 
         {topAssuntos.length > 0 && (
@@ -174,11 +171,9 @@ export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.18, delay: 0.14 }}
           >
-            <Card>
-              <CardContent className="p-5 pt-6">
-                <TopAssuntosRanking assuntos={topAssuntos} />
-              </CardContent>
-            </Card>
+            <div className="metric-card p-5 pt-6">
+              <TopAssuntosRanking assuntos={topAssuntos} />
+            </div>
           </motion.div>
         )}
 
@@ -188,15 +183,13 @@ export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.18, delay: 0.16 }}
           >
-            <Card>
-              <CardContent className="p-0">
-                <EmptyState
-                  icon={BookOpen}
-                  title="Nenhuma atividade ainda"
-                  description="Responda sua primeira questão para ver seu progresso aqui. Use “Voltar para a Vitrine” no topo da página."
-                />
-              </CardContent>
-            </Card>
+            <div className="metric-card">
+              <EmptyState
+                icon={BookOpen}
+                title="Nenhuma atividade ainda"
+                description="Responda sua primeira questão para ver seu progresso aqui. Use “Voltar para a Vitrine” no topo da página."
+              />
+            </div>
           </motion.div>
         ) : null}
 

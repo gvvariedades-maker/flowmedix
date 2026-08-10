@@ -94,6 +94,30 @@
 
     /* BottomNav mobile (DashboardShell) */
     --bottom-nav-height: 5rem;
+
+    /* Cards / elevação (Cyber) — editorial sobrescreve */
+    --color-card-border: rgba(0, 242, 255, 0.22);
+    --color-card-border-hover: rgba(0, 242, 255, 0.4);
+    --shadow-editorial-sm: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
+    --shadow-editorial-md: 0 4px 14px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-editorial-lg: 0 8px 24px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.3);
+
+    /* Raios — fonte única (vitrine / controles / pills) */
+    --radius-card: 1rem;
+    --radius-control: 0.75rem;
+    --radius-pill: 9999px;
+
+    /* Brand auxiliares (tint / ring / CTA) — editorial sobrescreve */
+    --color-brand-wash: rgba(0, 242, 255, 0.06);
+    --color-brand-ring: rgba(0, 242, 255, 0.4);
+    --color-brand-cta-top: #67e8f9;
+    --color-brand-cta-mid: #00f2ff;
+    --color-brand-cta-bottom: #0891b2;
+    --color-brand-cta-hover-top: #00f2ff;
+    --color-brand-cta-hover-mid: #22d3ee;
+    --color-brand-cta-hover-bottom: #0e7490;
+    --shadow-brand-cta: 0 2px 8px rgba(0, 242, 255, 0.35);
+    --shadow-brand-cta-hover: 0 3px 10px rgba(0, 242, 255, 0.4);
   }
 
   /**
@@ -103,22 +127,38 @@
    */
   html[data-theme='editorial'] {
     color-scheme: light;
-    /* v2.1 soft slate — fundo não-branco; cards brancos com sombra (profundidade) */
-    --color-surface-0: #f1f5f9;
-    --color-surface-1: #e8edf4;
+    /* Print SERINGA — papel creme (EDITORIAL_BRAND.surface0); sem ondas/dots */
+    --color-surface-0: #FFF1E0;
+    --color-surface-1: #FFE8D4;
     --color-surface-2: #ffffff;
-    --color-surface-3: #e2e8f0;
-    --shadow-editorial-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
-    --shadow-editorial-md: 0 4px 14px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(15, 23, 42, 0.05);
-    --shadow-editorial-lg: 0 8px 24px rgba(15, 23, 42, 0.12), 0 4px 8px rgba(15, 23, 42, 0.05);
-    --color-border-subtle: #e2e8f0;
-    --color-border-default: #cbd5e1;
-    --color-border-strong: #94a3b8;
-    /* EDITORIAL_BRAND — lib/brand/avantBrandPalette.ts (#F26522 print) */
+    --color-surface-3: #F0DCC8;
+    --shadow-editorial-sm: 0 1px 3px rgba(154, 52, 18, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --shadow-editorial-md: 0 4px 14px rgba(154, 52, 18, 0.08), 0 2px 4px rgba(15, 23, 42, 0.05);
+    --shadow-editorial-lg: 0 8px 24px rgba(154, 52, 18, 0.1), 0 4px 8px rgba(15, 23, 42, 0.05);
+    --color-border-subtle: #F0D9C4;
+    --color-border-default: #E5C9B0;
+    --color-border-strong: #D4B396;
+    /* Cards — repouso neutro; laranja só em hover/foco/ativo */
+    --color-card-border: #E5C9B0;
+    --color-card-border-hover: rgba(242, 101, 34, 0.48);
+    /* EDITORIAL_BRAND — lib/brand/avantBrandPalette.ts (print) */
     --color-brand: #F26522;
     --color-brand-dim: rgba(242, 101, 34, 0.12);
     --color-brand-glow: rgba(242, 101, 34, 0.22);
     --color-brand-text: #9A3412;
+    --color-brand-wash: rgba(242, 101, 34, 0.06);
+    --color-brand-ring: rgba(242, 101, 34, 0.4);
+    --color-brand-cta-top: #FF8A3D;
+    --color-brand-cta-mid: #F26522;
+    --color-brand-cta-bottom: #D45212;
+    --color-brand-cta-hover-top: #F26522;
+    --color-brand-cta-hover-mid: #E05518;
+    --color-brand-cta-hover-bottom: #C04810;
+    /* CTA sólido editorial — hierarquia (máx. 1 preenchido acima da dobra) */
+    --color-brand-cta-solid: #C2410C;
+    --color-brand-cta-solid-hover: #9A3412;
+    --shadow-brand-cta: 0 2px 8px rgba(212, 82, 18, 0.35);
+    --shadow-brand-cta-hover: 0 3px 10px rgba(192, 72, 16, 0.4);
     --color-nav-active-bg: rgba(242, 101, 34, 0.1);
     --color-nav-active-bar: #F26522;
     --color-nav-active-txt: #9A3412;
@@ -134,24 +174,25 @@
     --color-warning-dim: rgba(217, 119, 6, 0.1);
     --color-warning-text: #b45309;
     --color-text-primary: #0f172a;
-    /* Um tom mais escuro que slate-500 — AA em surface-0 #f1f5f9 */
+    /* AA em surface-0 #FFF1E0 */
     --color-text-secondary: #475569;
     --color-text-tertiary: #94a3b8;
 
-    --background: 210 40% 96%;
+    /* HSL ≈ #FFF1E0 — `bg-background` / dashboard-surface */
+    --background: 33 100% 94%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --muted: 214 32% 93%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 214 32% 93%;
+    --muted: 28 80% 92%;
+    --muted-foreground: 215 16% 40%;
+    --accent: 28 80% 92%;
     --accent-foreground: 222 47% 11%;
-    --secondary: 214 32% 93%;
+    --secondary: 28 80% 92%;
     --secondary-foreground: 222 47% 11%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 28 35% 82%;
+    --input: 28 35% 82%;
     --ring: 18 88% 54%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
@@ -169,11 +210,27 @@
     --color-border-subtle: rgba(255, 255, 255, 0.08);
     --color-border-default: rgba(255, 255, 255, 0.14);
     --color-border-strong: rgba(255, 255, 255, 0.22);
+    /* Repouso neutro; marca só em hover (paridade editorial) */
+    --color-card-border: rgba(255, 255, 255, 0.14);
+    --color-card-border-hover: rgba(242, 101, 34, 0.48);
+    --shadow-editorial-sm: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
+    --shadow-editorial-md: 0 4px 14px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-editorial-lg: 0 8px 24px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.3);
     /* EDITORIAL_BRAND — acento laranja (não cyber cyan) */
     --color-brand: #F26522;
     --color-brand-dim: rgba(242, 101, 34, 0.14);
     --color-brand-glow: rgba(242, 101, 34, 0.22);
     --color-brand-text: #FDBA74;
+    --color-brand-wash: rgba(242, 101, 34, 0.08);
+    --color-brand-ring: rgba(242, 101, 34, 0.4);
+    --color-brand-cta-top: #FF8A3D;
+    --color-brand-cta-mid: #F26522;
+    --color-brand-cta-bottom: #D45212;
+    --color-brand-cta-hover-top: #F26522;
+    --color-brand-cta-hover-mid: #E05518;
+    --color-brand-cta-hover-bottom: #C04810;
+    --shadow-brand-cta: 0 2px 8px rgba(212, 82, 18, 0.35);
+    --shadow-brand-cta-hover: 0 3px 10px rgba(192, 72, 16, 0.4);
     --color-success: #4ade80;
     --color-success-dim: rgba(74, 222, 128, 0.12);
     --color-danger: #f87171;
@@ -268,20 +325,21 @@
   }
 
   html[data-theme='editorial'] .dashboard-surface {
-    --background: 210 40% 96%;
+    /* Espelha papel print — não voltar ao slate frio #f1f5f9 */
+    --background: 33 100% 94%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --muted: 214 32% 93%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
+    --muted: 28 80% 92%;
+    --muted-foreground: 215 16% 40%;
+    --accent: 28 80% 92%;
     --accent-foreground: 222 47% 11%;
-    --secondary: 210 40% 96%;
+    --secondary: 28 80% 92%;
     --secondary-foreground: 222 47% 11%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 28 35% 82%;
+    --input: 28 35% 82%;
     --ring: 18 88% 54%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
@@ -326,32 +384,55 @@
     background: radial-gradient(circle, #00f2ff 0%, #7000ff 50%, transparent 100%);
   }
 
-  /* Editorial v2 — card e CTA (spike login) */
+  /* Cards elevados — tokens em :root / editorial (fonte única) */
   .card-elevated {
-    @apply rounded-2xl border border-slate-200 bg-white;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-card-border);
+    background-color: var(--color-surface-2);
+    box-shadow: var(--shadow-editorial-sm);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
   }
 
   .card-elevated-lg {
-    @apply rounded-2xl border border-slate-200 bg-white;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(15, 23, 42, 0.05);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-card-border);
+    background-color: var(--color-surface-2);
+    box-shadow: var(--shadow-editorial-md);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
   }
 
-  /* Editorial v2.1 — cards flutuam sobre surface-0 cinza (profundidade, sem glow teal) */
-  html[data-theme='editorial'] .card-elevated {
+  .card-elevated:hover,
+  .card-elevated:focus-within {
+    border-color: var(--color-card-border-hover);
+    box-shadow: var(--shadow-editorial-md);
+  }
+
+  .card-elevated-lg:hover,
+  .card-elevated-lg:focus-within {
+    border-color: var(--color-card-border-hover);
+    box-shadow: var(--shadow-editorial-lg);
+  }
+
+  /**
+   * Cards de métrica (/progresso, /desempenho/simulados) —
+   * sombra neutra; sem borda/glow laranja no hover.
+   */
+  .metric-card {
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-card-border);
     background-color: var(--color-surface-2);
-    border-color: var(--color-border-subtle);
     box-shadow: var(--shadow-editorial-sm);
+    transition: box-shadow 150ms ease;
   }
 
-  html[data-theme='editorial'] .card-elevated-lg {
-    background-color: var(--color-surface-2);
-    border-color: var(--color-border-subtle);
+  .metric-card:hover,
+  .metric-card:focus-within {
+    border-color: var(--color-card-border);
     box-shadow: var(--shadow-editorial-md);
   }
 
   .text-editorial-title {
-    @apply font-bold text-slate-900;
+    @apply font-display font-bold text-slate-900;
   }
 
   .text-editorial-title span {
@@ -359,12 +440,13 @@
   }
 
   .btn-option-editorial {
-    @apply relative w-full rounded-xl border border-slate-200 bg-white p-4 text-left transition-colors duration-200;
+    @apply relative w-full rounded-xl border bg-white p-4 text-left transition-colors duration-200;
+    border-color: rgba(242, 101, 34, 0.28);
   }
 
   .btn-option-editorial:hover:not(:disabled) {
-    border-color: rgb(203 213 225);
-    background-color: rgb(248 250 252);
+    border-color: rgba(242, 101, 34, 0.48);
+    background-color: rgba(242, 101, 34, 0.04);
   }
 
   .btn-option-editorial:disabled {
@@ -380,10 +462,11 @@
   }
 
   .login-auth-card {
-    @apply rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-8;
+    @apply rounded-2xl border bg-white p-6 sm:p-8;
+    border-color: rgba(242, 101, 34, 0.32);
     box-shadow:
-      0 1px 2px rgba(15, 23, 42, 0.04),
-      0 8px 24px rgba(15, 23, 42, 0.1),
+      0 1px 2px rgba(154, 52, 18, 0.05),
+      0 8px 24px rgba(154, 52, 18, 0.1),
       0 0 0 1px rgba(242, 101, 34, 0.08);
   }
 
@@ -392,14 +475,57 @@
   }
 
   .btn-editorial-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-brand)] px-4 py-3.5 text-sm font-bold text-[#0F172A] shadow-sm transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3.5 text-sm font-bold text-white transition-[filter,box-shadow];
+    background: linear-gradient(180deg, #ff8a3d 0%, #f26522 48%, #d45212 100%);
+    box-shadow: 0 2px 8px rgba(212, 82, 18, 0.35);
   }
 
   .btn-editorial-primary:hover:not(:disabled) {
-    background-color: #E05518;
+    background: linear-gradient(180deg, #f26522 0%, #e05518 48%, #c04810 100%);
+    box-shadow: 0 3px 10px rgba(192, 72, 16, 0.4);
   }
 
   .btn-editorial-primary:disabled {
+    @apply cursor-not-allowed opacity-70;
+  }
+
+  /**
+   * CTA primário sólido (editorial / dashboard) — sem gradiente, sem uppercase.
+   * Tokens `--color-brand-cta-solid*` só em `html[data-theme='editorial']`.
+   */
+  .btn-editorial-primary-solid {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,box-shadow,filter];
+    background-color: var(--color-brand-cta-solid, #c2410c);
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12), 0 1px 2px rgba(15, 23, 42, 0.06);
+  }
+
+  .btn-editorial-primary-solid:hover:not(:disabled) {
+    background-color: var(--color-brand-cta-solid-hover, #9a3412);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.14), 0 1px 2px rgba(15, 23, 42, 0.08);
+  }
+
+  .btn-editorial-primary-solid:disabled {
+    @apply cursor-not-allowed opacity-70;
+  }
+
+  /**
+   * CTA secundário editorial — cards de assunto / sheet / disciplina.
+   * Wash + borda neutra; texto brand; sem retângulo laranja preenchido.
+   */
+  .btn-editorial-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-semibold transition-colors;
+    border-color: var(--color-border-default, #e5c9b0);
+    background-color: var(--color-surface-2, #ffffff);
+    color: var(--color-brand-text, #9a3412);
+  }
+
+  .btn-editorial-secondary:hover:not(:disabled) {
+    border-color: var(--color-card-border-hover, rgba(242, 101, 34, 0.48));
+    background-color: var(--color-brand-wash, rgba(242, 101, 34, 0.06));
+    color: var(--color-brand-text, #9a3412);
+  }
+
+  .btn-editorial-secondary:disabled {
     @apply cursor-not-allowed opacity-70;
   }
 
