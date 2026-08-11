@@ -140,6 +140,8 @@ describe('POST /api/concluir-estudo-reverso', () => {
         user_id: USER_ID,
         modulo_slug: SLUG,
         estudo_reverso_concluido: true,
+        respondida: false,
+        acertou: false,
       }),
     );
   });

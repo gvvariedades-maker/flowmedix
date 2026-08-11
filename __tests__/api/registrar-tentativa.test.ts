@@ -230,6 +230,7 @@ describe('POST /api/registrar-tentativa', () => {
           user_id: USER_ID,
           modulo_slug: SLUG,
           acertou: true,
+          respondida: true,
         }),
       );
     });
@@ -272,6 +273,7 @@ describe('POST /api/registrar-tentativa', () => {
       expect(update).toHaveBeenCalledWith(
         expect.objectContaining({
           acertou: false,
+          respondida: true,
           banca: 'FGV',
           created_at: expect.any(String),
         }),

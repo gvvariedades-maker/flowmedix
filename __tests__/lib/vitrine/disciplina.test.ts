@@ -27,9 +27,27 @@ describe('disciplina vitrine', () => {
 
   it('agrega resumos e esconde picker com uma disciplina', () => {
     const summaries = buildDisciplinaSummaries([
-      { modulo_nome: 'Procedimentos', totalQuestoes: 10, trabalhadas: 2 },
-      { modulo_nome: 'Língua Portuguesa', totalQuestoes: 5, trabalhadas: 0 },
-      { modulo_nome: 'Língua Portuguesa', totalQuestoes: 3, trabalhadas: 1 },
+      {
+        modulo_nome: 'Procedimentos',
+        totalQuestoes: 10,
+        trabalhadas: 2,
+        acertos: 1,
+        totalResolvidas: 2,
+      },
+      {
+        modulo_nome: 'Língua Portuguesa',
+        totalQuestoes: 5,
+        trabalhadas: 0,
+        acertos: 0,
+        totalResolvidas: 0,
+      },
+      {
+        modulo_nome: 'Língua Portuguesa',
+        totalQuestoes: 3,
+        trabalhadas: 1,
+        acertos: 1,
+        totalResolvidas: 1,
+      },
     ]);
     expect(summaries).toEqual([
       expect.objectContaining({
@@ -37,6 +55,9 @@ describe('disciplina vitrine', () => {
         totalAssuntos: 1,
         totalQuestoes: 10,
         trabalhadas: 2,
+        totalResolvidas: 2,
+        acertos: 1,
+        percentual: 50,
         progressoPct: 20,
       }),
       expect.objectContaining({
@@ -44,6 +65,9 @@ describe('disciplina vitrine', () => {
         totalAssuntos: 2,
         totalQuestoes: 8,
         trabalhadas: 1,
+        totalResolvidas: 1,
+        acertos: 1,
+        percentual: 100,
         progressoPct: 13,
       }),
     ]);
@@ -54,6 +78,17 @@ describe('disciplina vitrine', () => {
         summaries[1],
       ]),
     ).toHaveLength(1);
+  });
+
+  it('sem respondidas mantém cobertura por trabalhadas (RPC legada)', () => {
+    const summaries = buildDisciplinaSummaries([
+      { modulo_nome: 'Procedimentos', totalQuestoes: 10, trabalhadas: 2 },
+    ]);
+    expect(summaries[0]).toMatchObject({
+      progressoPct: 20,
+      totalResolvidas: 0,
+      percentual: 0,
+    });
   });
 
   it('hub mode só sem seleção e com ≥2 disciplinas', () => {

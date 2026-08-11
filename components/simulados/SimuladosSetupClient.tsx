@@ -49,7 +49,8 @@ export function SimuladosSetupClient() {
   const [bancasSelecionadas, setBancasSelecionadas] = useState<string[]>([]);
   const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>([]);
   const [q, setQ] = useState('');
-  const [modo, setModo] = useState<SimuladoModo>('treino');
+  /** UI esconde Treino: setup sempre cria sessão `prova` (API ainda aceita treino legado). */
+  const modo: SimuladoModo = 'prova';
   const [titulo, setTitulo] = useState('');
   const [ritmoMeta, setRitmoMeta] = useState<RitmoMetaOption>('3min');
   const [loading, setLoading] = useState(false);
@@ -245,7 +246,6 @@ export function SimuladosSetupClient() {
   };
 
   const applyTemplateToForm = (template: SimuladoTemplateSummary) => {
-    setModo(template.modo);
     setQuantidade(String(template.quantidade));
     setTitulo(template.titulo);
     setRitmoMeta(template.ritmo_meta);
@@ -270,14 +270,13 @@ export function SimuladosSetupClient() {
     setTemplateMessage(null);
     setSavingTemplate(true);
 
-    const tituloSalvar =
-      (modo === 'prova' ? titulo.trim() : '') || tituloAutoPreview;
+    const tituloSalvar = titulo.trim() || tituloAutoPreview;
 
     const parsed = SimuladoTemplateCreateSchema.safeParse({
       titulo: tituloSalvar,
       modo,
       quantidade: qNum,
-      ...(modo === 'prova' ? { ritmo_meta: ritmoMeta } : {}),
+      ritmo_meta: ritmoMeta,
       ...(bancasSelecionadas.length ? { bancas: bancasSelecionadas } : {}),
       ...(assuntosSelecionados.length ? { assuntos: assuntosSelecionados } : {}),
       ...(q.trim() ? { q: q.trim() } : {}),
@@ -362,8 +361,8 @@ export function SimuladosSetupClient() {
     const parsed = SimuladoCreateSessionSchema.safeParse({
       quantidade,
       modo,
-      ...(modo === 'prova' && titulo.trim() ? { titulo: titulo.trim() } : {}),
-      ...(modo === 'prova' ? { ritmo_meta: ritmoMeta } : {}),
+      ritmo_meta: ritmoMeta,
+      ...(titulo.trim() ? { titulo: titulo.trim() } : {}),
       ...(bancasSelecionadas.length ? { bancas: bancasSelecionadas } : {}),
       ...(assuntosSelecionados.length ? { assuntos: assuntosSelecionados } : {}),
       ...(q.trim() ? { q: q.trim() } : {}),
@@ -507,113 +506,45 @@ export function SimuladosSetupClient() {
             </p>
           </div>
 
-          <div className="space-y-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p id="simulado-modo-label" className="text-sm font-medium text-slate-800">
-              Modo do simulado
+          <div className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <p className="text-xs leading-relaxed text-slate-500">
+              Gabarito liberado apenas no resumo final. Para treinar com feedback imediato, use o
+              catálogo em Estudar.
             </p>
-            <div
-              role="radiogroup"
-              aria-labelledby="simulado-modo-label"
-              className="grid gap-3 sm:grid-cols-2"
-            >
-              <button
-                type="button"
-                role="radio"
-                aria-checked={modo === 'treino'}
-                onClick={() => setModo('treino')}
-                className={cn(
-                  'rounded-xl p-4 text-left',
-                  modo === 'treino'
-                    ? 'border-2 border-[rgba(242,101,34,0.45)] bg-[rgba(242,101,34,0.08)]'
-                    : 'border border-slate-200 bg-white hover:border-slate-300',
-                )}
+            <div className="space-y-2">
+              <label htmlFor="simulado-titulo" className="text-sm font-medium text-slate-800">
+                Nome do simulado
+              </label>
+              <Input
+                id="simulado-titulo"
+                value={titulo}
+                onChange={(e) => setTitulo(e.target.value)}
+                disabled={loading}
+                maxLength={120}
+                placeholder={tituloAutoPreview}
+                className="input-editorial h-11"
+              />
+              <p className="text-xs text-slate-500">
+                Deixe em branco para usar: <span className="text-slate-400">{tituloAutoPreview}</span>
+              </p>
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="simulado-ritmo" className="text-sm font-medium text-slate-800">
+                Ritmo sugerido
+              </label>
+              <select
+                id="simulado-ritmo"
+                value={ritmoMeta}
+                onChange={(e) => setRitmoMeta(e.target.value as RitmoMetaOption)}
+                disabled={loading}
+                className="input-editorial h-11 w-full px-3 text-sm"
               >
-                <span
-                  className={cn(
-                    'block text-sm',
-                    modo === 'treino' ? 'font-bold text-[#9A3412]' : 'font-semibold text-slate-700',
-                  )}
-                >
-                  Treino
-                </span>
-                <span
-                  className={cn(
-                    'mt-1 block text-xs',
-                    modo === 'treino' ? 'text-slate-700' : 'text-slate-500',
-                  )}
-                >
-                  Feedback imediato com gabarito por questão.
-                </span>
-              </button>
-              <button
-                type="button"
-                role="radio"
-                aria-checked={modo === 'prova'}
-                onClick={() => setModo('prova')}
-                className={cn(
-                  'rounded-xl p-4 text-left',
-                  modo === 'prova'
-                    ? 'border-2 border-[rgba(242,101,34,0.45)] bg-[rgba(242,101,34,0.08)]'
-                    : 'border border-slate-200 bg-white hover:border-slate-300',
-                )}
-              >
-                <span
-                  className={cn(
-                    'block text-sm',
-                    modo === 'prova' ? 'font-bold text-[#9A3412]' : 'font-semibold text-slate-700',
-                  )}
-                >
-                  Prova
-                </span>
-                <span
-                  className={cn(
-                    'mt-1 block text-xs',
-                    modo === 'prova' ? 'text-slate-700' : 'text-slate-500',
-                  )}
-                >
-                  Gabarito liberado apenas no resumo final.
-                </span>
-              </button>
+                <option value="3min">3 min/questão (padrão)</option>
+                <option value="2min">2 min/questão</option>
+                <option value="none">Sem meta</option>
+              </select>
             </div>
           </div>
-
-          {modo === 'prova' ? (
-            <div className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-              <div className="space-y-2">
-                <label htmlFor="simulado-titulo" className="text-sm font-medium text-slate-800">
-                  Nome do simulado
-                </label>
-                <Input
-                  id="simulado-titulo"
-                  value={titulo}
-                  onChange={(e) => setTitulo(e.target.value)}
-                  disabled={loading}
-                  maxLength={120}
-                  placeholder={tituloAutoPreview}
-                  className="input-editorial h-11"
-                />
-                <p className="text-xs text-slate-500">
-                  Deixe em branco para usar: <span className="text-slate-400">{tituloAutoPreview}</span>
-                </p>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="simulado-ritmo" className="text-sm font-medium text-slate-800">
-                  Ritmo sugerido
-                </label>
-                <select
-                  id="simulado-ritmo"
-                  value={ritmoMeta}
-                  onChange={(e) => setRitmoMeta(e.target.value as RitmoMetaOption)}
-                  disabled={loading}
-                  className="input-editorial h-11 w-full px-3 text-sm"
-                >
-                  <option value="3min">3 min/questão (padrão)</option>
-                  <option value="2min">2 min/questão</option>
-                  <option value="none">Sem meta</option>
-                </select>
-              </div>
-            </div>
-          ) : null}
 
           <div className="space-y-2">
             <span id="simulado-quantidade-label" className="text-sm font-medium text-slate-700">

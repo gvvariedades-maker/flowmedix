@@ -10,6 +10,7 @@ import {
 } from '@/lib/simulado/analyticsSummary';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { DesempenhoTabs } from '@/components/dashboard/desempenho/DesempenhoTabs';
 
 type SearchParamsShape = {
   periodo?: string | string[];
@@ -72,7 +73,7 @@ export default async function DesempenhoSimuladosPage({
       className="dashboard-surface min-h-0 flex-1 bg-background text-foreground"
     >
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-        <div className="mx-auto max-w-4xl px-4 py-5 md:px-8">
+        <div className="mx-auto max-w-4xl space-y-4 px-4 py-5 md:px-8">
           <PageHeader
             title="Meu desempenho"
             breadcrumb={[
@@ -89,6 +90,7 @@ export default async function DesempenhoSimuladosPage({
               </Button>
             }
           />
+          <DesempenhoTabs />
         </div>
       </div>
       <SimuladosAnalyticsDashboard

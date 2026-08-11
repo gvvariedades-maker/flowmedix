@@ -182,6 +182,8 @@ export async function POST(request: NextRequest) {
 
     const historicoPayload = {
       acertou,
+      /** Tentativa real (escolheu alternativa); promove placeholder de estudo reverso. */
+      respondida: true,
       banca: canonical.banca !== 'DESCONHECIDA' ? canonical.banca : banca || 'DESCONHECIDA',
       topico: canonical.topico !== 'Geral' ? canonical.topico : topico || 'Geral',
       subtopico:

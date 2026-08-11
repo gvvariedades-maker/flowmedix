@@ -37,8 +37,10 @@ function buildSupabaseMock(simuladoQuestoesHoje: number) {
       return {
         select: () => ({
           eq: () => ({
-            gte: () => ({
-              lt: async () => ({ count: 0, error: null }),
+            eq: () => ({
+              gte: () => ({
+                lt: async () => ({ count: 0, error: null }),
+              }),
             }),
           }),
         }),

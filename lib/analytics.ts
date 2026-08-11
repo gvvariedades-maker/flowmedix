@@ -23,6 +23,9 @@ export interface HistoricoQuestao {
   subtopico: string | null;
   banca: string | null;
   acertou: boolean;
+  /** false = placeholder sem alternativa; omitido/`true` = tentativa real. */
+  respondida?: boolean | null;
+  estudo_reverso_concluido?: boolean | null;
   created_at: string;
 }
 

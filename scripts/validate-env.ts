@@ -78,11 +78,11 @@ if (isEvidenceV1InstrumentationEnabled()) {
   const cohortSize = getEvidenceV1InternalEmails().length;
   console.warn(
     `⚠️  EE_V1_INSTRUMENTATION=true neste ambiente (coorte allowlist: ${cohortSize} e-mail(s)). ` +
-      'Ingestão/UI só ativam quando lotes posteriores wirem rotas/player — docs/SPEC_EVIDENCE_ENGINE_FASE_1_EVENT_STREAM.md §1.13',
+      'Ingestão em registrar-tentativa + série P4 em /desempenho ativas — docs/SPEC_EVIDENCE_ENGINE_FASE_1_EVENT_STREAM.md §1.13',
   );
 } else {
   console.log(
-    'ℹ️  EE_V1_INSTRUMENTATION off (default) — Evidence Engine sem instrumentação ativa neste ambiente',
+    'ℹ️  EE_V1_INSTRUMENTATION off (default) — Evidence Engine sem instrumentação; /desempenho usa só histórico P0',
   );
 }
 

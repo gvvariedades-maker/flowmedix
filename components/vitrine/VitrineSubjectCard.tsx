@@ -23,6 +23,7 @@ import {
 } from '@/components/vitrine/vitrineMotion';
 import { VITRINE_PREFETCH_DATA_ATTR } from '@/hooks/useVitrineVisiblePrefetch';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
+import { resolveAcertoDisplay } from '@/lib/vitrine/resolveAcertoDisplay';
 
 export type VitrineSubjectCardProps = {
   grupo: VitrineGrupoSubtopico;
@@ -46,33 +47,6 @@ function resolveCtaLabel(grupo: VitrineGrupoSubtopico): string {
   return 'Continuar';
 }
 
-/** Label de progresso fechado: 0% → Não iniciado; 1–99% → %; 100% → Concluído. */
-function resolveProgressDisplay(progressoPct: number): {
-  label: string;
-  ariaLabel: string;
-  tone: 'muted' | 'brand' | 'success';
-} {
-  if (progressoPct <= 0) {
-    return {
-      label: 'Não iniciado',
-      ariaLabel: '0% concluído',
-      tone: 'muted',
-    };
-  }
-  if (progressoPct >= 100) {
-    return {
-      label: 'Concluído',
-      ariaLabel: '100% concluído',
-      tone: 'success',
-    };
-  }
-  return {
-    label: `${progressoPct}%`,
-    ariaLabel: `${progressoPct}% concluído`,
-    tone: 'brand',
-  };
-}
-
 export function VitrineSubjectCard({
   grupo,
   estudarQuery,
@@ -88,6 +62,8 @@ export function VitrineSubjectCard({
     totalQuestoes,
     totalNeuroSlides,
     trabalhadas,
+    acertos,
+    percentual,
     questoes,
     firstSlug,
   } = grupo;
@@ -97,9 +73,14 @@ export function VitrineSubjectCard({
   const hasQuestions = totalQuestoes > 0;
   const mostrarNovo = totalResolvidas === 0 && !todas && hasQuestions;
   const mostrarCheckConclusao = todas && hasQuestions;
-  const progressoPct = hasQuestions ? Math.round((trabalhadas / totalQuestoes) * 100) : 0;
-  const progressDisplay = resolveProgressDisplay(progressoPct);
-  const showProgressBar = hasQuestions && progressoPct >= 1 && progressoPct < 100;
+  const acertoDisplay = resolveAcertoDisplay({
+    acertos,
+    totalResolvidas,
+    totalQuestoes,
+    percentual,
+  });
+  const coberturaPct = acertoDisplay.coberturaPct;
+  const showProgressBar = hasQuestions && coberturaPct >= 1 && coberturaPct < 100;
   const panelId = `assunto-panel-${firstSlug}`;
   const topicIcon = getTopicIcon(titulo_aula, modulo_nome);
   const topicAccent = getTopicAccent(titulo_aula, modulo_nome);
@@ -178,26 +159,30 @@ export function VitrineSubjectCard({
                 className={cn(
                   'shrink-0 font-bold',
                   compact ? 'text-xs' : 'text-sm',
-                  progressDisplay.tone === 'brand' && cn('tabular-nums', vitrineBrand.text),
-                  progressDisplay.tone === 'muted' && 'text-slate-500',
-                  progressDisplay.tone === 'success' &&
+                  acertoDisplay.tone === 'brand' && cn('tabular-nums', vitrineBrand.text),
+                  acertoDisplay.tone === 'muted' && 'text-slate-500',
+                  acertoDisplay.tone === 'success' &&
                     'text-[var(--color-success-text)]',
                 )}
-                aria-label={progressDisplay.ariaLabel}
+                aria-label={acertoDisplay.ariaLabel}
               >
-                {progressDisplay.label}
+                {acertoDisplay.label}
               </span>
             ) : null}
           </div>
           {!compact ? (
             <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] leading-snug">
-              <span>
+              <span className="text-slate-500">
+                <span className="font-medium tabular-nums text-slate-700">
+                  {totalResolvidas.toLocaleString('pt-BR')}
+                </span>
+                /
                 <span className="font-medium tabular-nums text-slate-700">
                   {totalQuestoes.toLocaleString('pt-BR')}
                 </span>{' '}
-                {labelQuestoes(totalQuestoes)}
+                respondidas
               </span>
-              {/* Pendência só no expandido (badge) — fechado: label + barra (1–99%). */}
+              {/* Pendência só no expandido (badge) — fechado: cobertura + NeuroSlides. */}
               {!assuntoExpandido ? (
                 <>
                   <span className="text-slate-300" aria-hidden>
@@ -214,7 +199,7 @@ export function VitrineSubjectCard({
             </p>
           ) : (
             <p className="mt-0.5 truncate text-[11px] text-slate-500">
-              {totalQuestoes.toLocaleString('pt-BR')} {labelQuestoes(totalQuestoes)}
+              {totalResolvidas}/{totalQuestoes} respondidas
               {pendentes > 0 && !todas ? (
                 <>
                   {' · '}
@@ -273,23 +258,23 @@ export function VitrineSubjectCard({
           className={cn(
             'w-full shrink-0',
             compact ? 'h-0.5 min-h-[2px]' : 'h-1 min-h-[4px]',
-            showProgressBar || progressoPct >= 100 ? 'bg-slate-100' : 'bg-slate-100/70',
+            showProgressBar || coberturaPct >= 100 ? 'bg-slate-100' : 'bg-slate-100/70',
           )}
           role="progressbar"
-          aria-valuenow={progressoPct}
+          aria-valuenow={coberturaPct}
           aria-valuemin={0}
           aria-valuemax={100}
-          aria-label="Progresso do estudo reverso neste assunto"
+          aria-label={`Cobertura do assunto: ${acertoDisplay.coberturaLabel}`}
         >
-          {showProgressBar || progressoPct >= 100 ? (
+          {showProgressBar || coberturaPct >= 100 ? (
             <div
               className={cn(
                 'h-full transition-[width] duration-300 ease-out',
-                progressoPct >= 100
+                coberturaPct >= 100
                   ? 'bg-[var(--color-success)]'
                   : vitrineBrand.bar,
               )}
-              style={{ width: `${progressoPct}%` }}
+              style={{ width: `${coberturaPct}%` }}
             />
           ) : null}
         </div>
@@ -324,11 +309,20 @@ export function VitrineSubjectCard({
               </div>
 
               <div className="flex justify-center">
-                <VitrineProgressRing trabalhadas={trabalhadas} total={totalQuestoes} size={88} />
+                <VitrineProgressRing
+                  acertos={acertos}
+                  respondidas={totalResolvidas}
+                  total={totalQuestoes}
+                  percentual={percentual}
+                  size={88}
+                />
               </div>
 
               <p className="-mt-1 text-center text-[11px] font-medium uppercase tracking-wide text-slate-500">
-                Questões trabalhadas
+                Taxa de acerto
+              </p>
+              <p className="-mt-2 text-center text-[11px] text-slate-500">
+                {acertoDisplay.coberturaLabel}
               </p>
 
               <VitrineQuestaoList

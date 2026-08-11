@@ -53,8 +53,33 @@ function buildGrupo(overrides: Partial<VitrineGrupoSubtopico> = {}): VitrineGrup
   };
 }
 
+/** Amostra ≥ 5 para liberar % de acerto no hero. */
+function buildGrupoComAmostra(
+  overrides: Partial<VitrineGrupoSubtopico> = {},
+): VitrineGrupoSubtopico {
+  const questoes = Array.from({ length: 10 }, (_, i) => ({
+    slug: `q-${String(i + 1).padStart(3, '0')}`,
+    numero: i + 1,
+    status: (i < 8 ? 'estudada' : 'nao_estudada') as 'estudada' | 'nao_estudada',
+    avant_codigo: 40 + i,
+    created_at: `2024-01-${String(i + 1).padStart(2, '0')}T00:00:00Z`,
+  }));
+  return buildGrupo({
+    questoes,
+    acertos: 4,
+    erros: 4,
+    totalResolvidas: 8,
+    totalQuestoes: 10,
+    trabalhadas: 8,
+    percentual: 50,
+    totalNeuroSlides: 40,
+    firstSlug: 'q-001',
+    ...overrides,
+  });
+}
+
 describe('VitrineSubjectCard', () => {
-  it('renderiza barra de progresso quando trabalhadas > 0', () => {
+  it('renderiza barra de cobertura quando há respondidas', () => {
     render(
       <VitrineSubjectCard
         grupo={buildGrupo()}
@@ -66,6 +91,10 @@ describe('VitrineSubjectCard', () => {
     );
 
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
+    expect(screen.getByRole('progressbar')).toHaveAttribute(
+      'aria-label',
+      'Cobertura do assunto: 1/2 respondidas',
+    );
   });
 
   it('expõe title no título do assunto', () => {
@@ -106,6 +135,8 @@ describe('VitrineSubjectCard', () => {
         grupo={buildGrupo({
           totalResolvidas: 0,
           trabalhadas: 0,
+          acertos: 0,
+          percentual: 0,
           questoes: [
             {
               slug: 'q-001',
@@ -126,15 +157,19 @@ describe('VitrineSubjectCard', () => {
     expect(screen.getAllByRole('link', { name: 'Iniciar' })).toHaveLength(1);
     const progressbar = screen.getByRole('progressbar');
     expect(progressbar).toHaveAttribute('aria-valuenow', '0');
-    expect(screen.getByLabelText('0% concluído')).toHaveTextContent('Não iniciado');
+    expect(screen.getByLabelText('Nenhuma questão respondida')).toHaveTextContent(
+      'Não iniciado',
+    );
   });
 
-  it('mostra CTA Revisar e label Concluído quando assunto está completo', () => {
+  it('mostra CTA Revisar quando estudo reverso está completo', () => {
     render(
       <VitrineSubjectCard
         grupo={buildGrupo({
           totalResolvidas: 2,
           trabalhadas: 2,
+          acertos: 2,
+          percentual: 100,
           questoes: [
             {
               slug: 'q-001',
@@ -160,12 +195,10 @@ describe('VitrineSubjectCard', () => {
     );
 
     expect(screen.getAllByRole('link', { name: 'Revisar' })).toHaveLength(1);
-    const concluido = screen.getByLabelText('100% concluído');
-    expect(concluido).toHaveTextContent('Concluído');
-    expect(concluido.className).toContain('text-[var(--color-success-text)]');
+    expect(screen.getByLabelText('2 de 2 acertos')).toHaveTextContent('2/2 acertos');
   });
 
-  it('não repete pendência no subtítulo fechado (só % + barra)', () => {
+  it('não repete pendência no subtítulo fechado (cobertura + NeuroSlides)', () => {
     render(
       <VitrineSubjectCard
         grupo={buildGrupo()}
@@ -179,9 +212,26 @@ describe('VitrineSubjectCard', () => {
     const titleButton = screen.getByTitle('Verificação de Sinais Vitais').closest('button');
     expect(titleButton).not.toBeNull();
     expect(titleButton).not.toHaveTextContent(/para estudar/i);
+    expect(titleButton).toHaveTextContent(/respondidas/i);
     expect(titleButton).toHaveTextContent(/NeuroSlides/i);
-    expect(screen.getByText('50%')).toBeInTheDocument();
+    expect(screen.getByLabelText('1 de 1 acertos')).toHaveTextContent('1/1 acertos');
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
+  });
+
+  it('mostra % de acerto no hero quando amostra ≥ 5', () => {
+    render(
+      <VitrineSubjectCard
+        grupo={buildGrupoComAmostra()}
+        estudarQuery=""
+        index={0}
+        assuntoExpandido={false}
+        onAssuntoExpandedChange={jest.fn()}
+      />,
+    );
+
+    expect(screen.getByLabelText('50% de acerto')).toHaveTextContent('50%');
+    expect(screen.getByText(/8\/10 respondidas/)).toBeInTheDocument();
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '80');
   });
 
   it('mostra pendência no painel expandido com badge neutro', () => {
@@ -198,7 +248,7 @@ describe('VitrineSubjectCard', () => {
     expect(screen.getByText(/1 para estudar/i)).toBeInTheDocument();
   });
 
-  it('em modo compact mantém % e barra de progresso', () => {
+  it('em modo compact mantém hero de acerto e barra de cobertura', () => {
     render(
       <VitrineSubjectCard
         grupo={buildGrupo()}
@@ -210,14 +260,14 @@ describe('VitrineSubjectCard', () => {
       />,
     );
 
-    expect(screen.getByText('50%')).toBeInTheDocument();
+    expect(screen.getByLabelText('1 de 1 acertos')).toHaveTextContent('1/1 acertos');
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
   });
 
-  it('mostra Não iniciado com aria-label 0% e focus-visible no título e chevron', () => {
+  it('mostra Não iniciado com aria de respondidas e focus-visible no título e chevron', () => {
     render(
       <VitrineSubjectCard
-        grupo={buildGrupo({ trabalhadas: 0, totalResolvidas: 0 })}
+        grupo={buildGrupo({ trabalhadas: 0, totalResolvidas: 0, acertos: 0, percentual: 0 })}
         estudarQuery=""
         index={0}
         assuntoExpandido={false}
@@ -225,7 +275,7 @@ describe('VitrineSubjectCard', () => {
       />,
     );
 
-    const zeroLabel = screen.getByLabelText('0% concluído');
+    const zeroLabel = screen.getByLabelText('Nenhuma questão respondida');
     expect(zeroLabel).toHaveTextContent('Não iniciado');
     expect(zeroLabel.className).toContain('text-slate-500');
     expect(zeroLabel.className).not.toContain('text-slate-300');
@@ -244,6 +294,8 @@ describe('VitrineSubjectCard', () => {
         grupo={buildGrupo({
           totalResolvidas: 0,
           trabalhadas: 0,
+          acertos: 0,
+          percentual: 0,
           questoes: [
             {
               slug: 'q-001',
@@ -295,10 +347,10 @@ describe('VitrineSubjectCard', () => {
     expect(openChip?.className).not.toContain('bg-slate-50');
   });
 
-  it('usa brand-text no % com progresso e piso 11px nos rótulos uppercase do card', () => {
+  it('usa brand-text no % com amostra e rótulos de taxa de acerto', () => {
     render(
       <VitrineSubjectCard
-        grupo={buildGrupo()}
+        grupo={buildGrupoComAmostra()}
         estudarQuery=""
         index={0}
         assuntoExpandido
@@ -306,12 +358,12 @@ describe('VitrineSubjectCard', () => {
       />,
     );
 
-    const pct = screen.getByText('50%');
+    const pct = screen.getByLabelText('50% de acerto');
     expect(pct.className).toContain('text-[var(--color-brand-text)]');
 
-    const trabalhadasLabel = screen.getByText('Questões trabalhadas');
-    expect(trabalhadasLabel.className).toContain('text-[11px]');
-    expect(trabalhadasLabel.className).not.toContain('text-[10px]');
+    const acertoLabel = screen.getByText('Taxa de acerto');
+    expect(acertoLabel.className).toContain('text-[11px]');
+    expect(acertoLabel.className).not.toContain('text-[10px]');
 
     const assuntoLabel = screen.getByText(/questões no assunto/i);
     expect(assuntoLabel.className).toContain('text-[11px]');

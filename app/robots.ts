@@ -11,6 +11,7 @@ export default function robots(): MetadataRoute.Robots {
           '/admin',
           '/analytics',
           '/cadernos',
+          '/desempenho',
           '/estudar',
           '/redefinir-senha',
           '/esqueci-senha',

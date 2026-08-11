@@ -19,19 +19,11 @@ const PERIODOS = [
   { value: '12m', label: '12 meses' },
 ] as const satisfies ReadonlyArray<{ value: SimuladoAnalyticsPeriod; label: string }>;
 
-const MODOS = [
-  { value: 'todos', label: 'Todos os modos' },
-  { value: 'treino', label: 'Treino' },
-  { value: 'prova', label: 'Prova' },
-] as const satisfies ReadonlyArray<{ value: SimuladoAnalyticsMode; label: string }>;
-
-function buildFilterHref(
-  periodo: SimuladoAnalyticsPeriod,
-  modo: SimuladoAnalyticsMode,
-): string {
+function buildFilterHref(periodo: SimuladoAnalyticsPeriod): string {
   const params = new URLSearchParams();
   params.set('periodo', periodo);
-  params.set('modo', modo);
+  // Modo Treino escondido na UI — analytics agrega todos (inclui sessões legado).
+  params.set('modo', 'todos');
   return `/desempenho/simulados?${params.toString()}`;
 }
 
@@ -335,7 +327,7 @@ export function SimuladosAnalyticsDashboard({
     <div className="mx-auto grid max-w-4xl gap-4 px-4 py-6 md:px-8 md:pt-8">
       <div className="metric-card p-4">
         <p className="text-[11px] text-slate-600">
-          Escolha período e modo para uma leitura rápida do seu desempenho.
+          Escolha o período para uma leitura rápida do seu desempenho.
         </p>
         <div className="mt-4 space-y-4">
           <div>
@@ -344,31 +336,13 @@ export function SimuladosAnalyticsDashboard({
               {PERIODOS.map((periodo) => (
                 <Link
                   key={periodo.value}
-                  href={buildFilterHref(periodo.value, modoAtual)}
+                  href={buildFilterHref(periodo.value)}
                   className={cn(
                     'inline-flex items-center rounded-lg border px-3 py-1.5 text-sm transition-colors',
                     periodoAtual === periodo.value ? FILTER_PILL_ACTIVE : FILTER_PILL_INACTIVE,
                   )}
                 >
                   {periodo.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="mb-1 text-[10px] uppercase tracking-widest text-slate-500">Modo</p>
-            <div className="flex flex-wrap gap-2">
-              {MODOS.map((modo) => (
-                <Link
-                  key={modo.value}
-                  href={buildFilterHref(periodoAtual, modo.value)}
-                  className={cn(
-                    'inline-flex items-center rounded-lg border px-3 py-1.5 text-sm transition-colors',
-                    modoAtual === modo.value ? FILTER_PILL_ACTIVE : FILTER_PILL_INACTIVE,
-                  )}
-                >
-                  {modo.label}
                 </Link>
               ))}
             </div>

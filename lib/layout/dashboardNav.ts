@@ -75,14 +75,14 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
     label: 'Métricas',
     items: [
       {
-        label: 'Progresso',
-        title: 'Progresso de estudo',
-        href: '/progresso',
+        label: 'Desempenho',
+        title: 'Desempenho de estudo e prática',
+        href: '/desempenho',
         icon: BarChart3,
         accent: 'emerald',
       },
       {
-        label: 'Desempenho',
+        label: 'Simulados',
         title: 'Desempenho em simulados',
         href: '/desempenho/simulados',
         icon: TrendingUp,
@@ -124,8 +124,16 @@ function resolveItemActive(href: string, isPathActive: IsPathActiveFn): boolean 
     case '/ajuda':
     case '/ajuda/estudo-reverso':
       return isPathActive(href, true);
-    case '/progresso':
-      return isPathActive('/progresso') || isPathActive('/analytics');
+    case '/desempenho':
+      // Hub Estudo/Atividade (+ redirects legados); não compete com /desempenho/simulados.
+      return (
+        isPathActive('/desempenho', true) ||
+        isPathActive('/desempenho/atividade') ||
+        isPathActive('/progresso') ||
+        isPathActive('/analytics')
+      );
+    case '/desempenho/simulados':
+      return isPathActive('/desempenho/simulados');
     default:
       return isPathActive(href);
   }

@@ -64,6 +64,8 @@ export type HistoricoQuestaoRow = {
   modulo_slug: string;
   acertou: boolean;
   estudo_reverso_concluido: boolean;
+  /** false = placeholder sem alternativa; omitido/`true` = tentativa real. */
+  respondida?: boolean;
 };
 
 export type ModuloComStats = ModuloEstudoRow & {
@@ -86,13 +88,15 @@ export function attachHistoricoStats(
 
   return modulos.map((modulo) => {
     const tentativas = historicoMap.get(modulo.modulo_slug) || [];
-    const acertos = tentativas.filter((t) => t.acertou).length;
-    const total = tentativas.length;
+    const respondidas = tentativas.filter((t) => t.respondida !== false);
+    const acertos = respondidas.filter((t) => t.acertou).length;
+    const total = respondidas.length;
     const percentual = total > 0 ? Math.round((acertos / total) * 100) : 0;
     const estudoReversoConcluido = tentativas.some((t) => t.estudo_reverso_concluido === true);
 
     let priorityScore = 0;
     if (!estudoReversoConcluido) priorityScore = 50;
+    else if (total === 0) priorityScore = 30;
     else if (percentual < 70) priorityScore = 100 + (70 - percentual);
     else if (percentual >= 90) priorityScore = 10;
     else priorityScore = 30;

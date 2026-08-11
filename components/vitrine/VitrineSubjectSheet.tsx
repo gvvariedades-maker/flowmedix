@@ -8,7 +8,6 @@ import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 import type { VitrineGrupoSubtopico } from '@/lib/vitrine/types';
-import { labelQuestoes } from '@/lib/labelQuestoes';
 import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { getTopicIcon } from '@/lib/vitrine/vitrineTopicIcon';
 import { getTopicAccent } from '@/lib/vitrine/vitrineTopicAccent';
@@ -74,6 +73,8 @@ export function VitrineSubjectSheet({
     totalQuestoes,
     totalResolvidas,
     trabalhadas,
+    acertos,
+    percentual,
     questoes,
     firstSlug,
   } = grupo;
@@ -161,7 +162,8 @@ export function VitrineSubjectSheet({
               <div className="min-w-0 flex-1">
                 <p className="text-base font-semibold leading-snug text-slate-900">{titulo_aula}</p>
                 <p className="mt-0.5 text-xs text-slate-500">
-                  {totalQuestoes.toLocaleString('pt-BR')} {labelQuestoes(totalQuestoes)}
+                  {totalResolvidas.toLocaleString('pt-BR')}/
+                  {totalQuestoes.toLocaleString('pt-BR')} respondidas
                   {todas ? ' · Concluído' : totalResolvidas > 0 ? ' · Em progresso' : ''}
                 </p>
               </div>
@@ -188,14 +190,16 @@ export function VitrineSubjectSheet({
                 <>
                   <div className="flex justify-center">
                     <VitrineProgressRing
-                      trabalhadas={trabalhadas}
+                      acertos={acertos}
+                      respondidas={totalResolvidas}
                       total={totalQuestoes}
+                      percentual={percentual}
                       size={96}
                       strokeWidth={12}
                     />
                   </div>
                   <p className="-mt-2 text-center text-[11px] font-medium uppercase tracking-wide text-slate-500">
-                    Questões trabalhadas
+                    Taxa de acerto
                   </p>
 
                   <VitrineQuestaoList

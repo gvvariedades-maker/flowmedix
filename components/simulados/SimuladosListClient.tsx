@@ -34,8 +34,14 @@ function formatPercent(value: number | null): string {
   return `${Math.round(value)}%`;
 }
 
-function modoLabel(modo: 'treino' | 'prova'): string {
-  return modo === 'prova' ? 'Prova' : 'Treino';
+/** Badge de modo só para sessões livres legadas em Treino (prova é o padrão atual). */
+function modoBadgeIfLegacyTreino(modo: 'treino' | 'prova', className?: string) {
+  if (modo !== 'treino') return null;
+  return (
+    <NeonBadge variant="brand" className={className}>
+      Treino
+    </NeonBadge>
+  );
 }
 
 function sessionKindBadge(sessionKind: SimuladoSessionKind) {
@@ -106,9 +112,9 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                         </p>
                         <div className="mt-2 flex flex-wrap items-center gap-2">
                           {sessionKindBadge(openSession.session_kind)}
-                          {openSession.session_kind === 'livre' ? (
-                            <NeonBadge variant="brand">{modoLabel(openSession.modo)}</NeonBadge>
-                          ) : null}
+                          {openSession.session_kind === 'livre'
+                            ? modoBadgeIfLegacyTreino(openSession.modo)
+                            : null}
                           <span className="flex items-center gap-1 text-sm font-semibold text-slate-500">
                             <Layers className="h-3.5 w-3.5" aria-hidden />
                             {openSession.total_questoes}{' '}
@@ -141,7 +147,7 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                     Concluídos recentemente
                   </h2>
                   <Link
-                    href="/desempenho/simulados"
+                    href="/desempenho"
                     className="link-editorial-secondary inline-flex items-center gap-1 text-xs font-semibold"
                   >
                     <BarChart3 className="h-3.5 w-3.5" aria-hidden />
@@ -174,11 +180,9 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                             </p>
                             <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-slate-500">
                               {sessionKindBadge(session.session_kind)}
-                              {session.session_kind === 'livre' ? (
-                                <NeonBadge variant="brand" className="text-[10px]">
-                                  {modoLabel(session.modo)}
-                                </NeonBadge>
-                              ) : null}
+                              {session.session_kind === 'livre'
+                                ? modoBadgeIfLegacyTreino(session.modo, 'text-[10px]')
+                                : null}
                               <span>{formatPercent(session.percentual_acerto)} acerto</span>
                               <span>
                                 {session.total_questoes ?? '—'}{' '}
