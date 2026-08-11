@@ -31,7 +31,7 @@ Skill de **inteligência visual por ramo**: eleva o *como se vê* a decisão da 
 
 **Complementa:** brief + âncora JSON → Composer/esta skill calibra gesto/retenção → React sob pedido.
 
-Refs: [`reference-retencao.md`](reference-retencao.md) (§ Banco Composer) · **banco 8 gestos** [`artifacts/composer-visual-bank.md`](../../../artifacts/composer-visual-bank.md) · Composer [`docs/PROMPT_COMPOSER_VISUAL.md`](../../PROMPT_COMPOSER_VISUAL.md) · ADR G2 [`docs/DECISAO_NEUROSLIDES_GERACAO_2.md`](../../DECISAO_NEUROSLIDES_GERACAO_2.md) · **barra + ratchet** [`docs/NEUROSLIDES_VISUAL_BAR.md`](../../NEUROSLIDES_VISUAL_BAR.md) · piso [`artifacts/neuroslides-g2-demo.html`](../../../artifacts/neuroslides-g2-demo.html) · roadmap [`docs/NEUROSLIDES_GERACAO_2_ROADMAP.md`](../../NEUROSLIDES_GERACAO_2_ROADMAP.md) · estratégia [`docs/NEUROSLIDES_VISUAL_STRATEGY.md`](../../NEUROSLIDES_VISUAL_STRATEGY.md) · kit primitives [`components/slides/primitives/`](../../../components/slides/primitives/) · catálogo Fábrica [`artifacts/pre-onda3-print-to-primitives-catalog.md`](../../../artifacts/pre-onda3-print-to-primitives-catalog.md) · **atelier (crítica)** [`docs/NEUROSLIDES_ATELIER_KIT.md`](../../NEUROSLIDES_ATELIER_KIT.md) · [`docs/PROMPT_ATELIER_VISUAL.md`](../../PROMPT_ATELIER_VISUAL.md)
+Refs: [`reference-retencao.md`](reference-retencao.md) (§ Banco Composer) · **banco 8 gestos** [`artifacts/composer-visual-bank.md`](../../../artifacts/composer-visual-bank.md) · Composer [`docs/PROMPT_COMPOSER_VISUAL.md`](../../PROMPT_COMPOSER_VISUAL.md) · ADR G2 [`docs/DECISAO_NEUROSLIDES_GERACAO_2.md`](../../DECISAO_NEUROSLIDES_GERACAO_2.md) · **pele vigente** [`docs/design-system/NEUROSLIDES-VISUAL-SPEC-v2.md`](../../design-system/NEUROSLIDES-VISUAL-SPEC-v2.md) · Direction [`AVANT-VISUAL-DIRECTION-v4.md`](../../design-system/AVANT-VISUAL-DIRECTION-v4.md) · **barra + ratchet** [`docs/NEUROSLIDES_VISUAL_BAR.md`](../../NEUROSLIDES_VISUAL_BAR.md) · piso [`artifacts/neuroslides-g2-demo.html`](../../../artifacts/neuroslides-g2-demo.html) · roadmap [`docs/NEUROSLIDES_GERACAO_2_ROADMAP.md`](../../NEUROSLIDES_GERACAO_2_ROADMAP.md) · estratégia [`docs/NEUROSLIDES_VISUAL_STRATEGY.md`](../../NEUROSLIDES_VISUAL_STRATEGY.md) · kit primitives [`components/slides/primitives/`](../../../components/slides/primitives/) · catálogo Fábrica [`artifacts/pre-onda3-print-to-primitives-catalog.md`](../../../artifacts/pre-onda3-print-to-primitives-catalog.md) · **atelier (crítica)** [`docs/NEUROSLIDES_ATELIER_KIT.md`](../../NEUROSLIDES_ATELIER_KIT.md) · [`docs/PROMPT_ATELIER_VISUAL.md`](../../PROMPT_ATELIER_VISUAL.md)
 
 **Piso visual (2026-08-04):** todo molde novo/redesign ≥ demo G2; cada modelo **só melhora** (`visual_bar: pass` + ratchet). Rule: `.cursor/rules/neuroslides-visual-bar.mdc`.
 
@@ -68,8 +68,8 @@ Refs: [`reference-retencao.md`](reference-retencao.md) (§ Banco Composer) · **
 | 6 | `VARIANT_MOLDS` | React (pedido explícito `Implementar molde:`) |
 | 7 | Fábrica (`Fábrica visual G2:`) | Cobertura por pacote — Composer **precede** se gallery `pending`/`thin`/ausente ([`PROMPT_FABRICA` § Pré-passo](../../PROMPT_FABRICA_VISUAL_G2.md)) |
 
-Sem brief em ramo `molde_redesign`: pedir brief **antes** de propor bespoke — arquivo em `artifacts/l3-brief-<pacote>-<branch_id>.md` (`@docs/PROMPT_VARIANTES_NEUROSLIDES.md`).  
-Sem JSON âncora: pedir âncora **antes** de inventar slots React.  
+Sem brief em ramo `molde_redesign`: pedir brief **antes** de propor bespoke — arquivo em `artifacts/l3-brief-<pacote>-<branch_id>.md` (`@docs/PROMPT_VARIANTES_NEUROSLIDES.md`).
+Sem JSON âncora: pedir âncora **antes** de inventar slots React.
 **Wiring:** brief nomeia `layout_variant`; JSON de catálogo **omite** — não sugerir colar variant no handcraft.
 
 ---
@@ -101,7 +101,7 @@ Referências tipo mapa mental, compare ✗/✓, calendário por faixa, macete vi
 | Fluxo / seta / trilho / timeline / chip+corpo | Marca de concorrente / watermark |
 | 1 regra + exemplos curtos; grade partida em slides | Apostila inteira numa tela; conteúdo clínico errado “bonito” |
 
-Skin obrigatória NeuroSlides: **Cyber Clinical** (`#010409`, cards claros sobre shell escuro, tokens semânticos). Não forçar pastel Instagram no player.
+Skin obrigatória NeuroSlides no player: **editorial clara** (desfecho A) — ver [`NEUROSLIDES-VISUAL-SPEC-v2.md`](../../design-system/NEUROSLIDES-VISUAL-SPEC-v2.md) (`bg-slate-100`, `toEditorialTheme`, pastéis por tipo). **Não** restaurar shell Cyber `#010409`. Evitar pastel Instagram genérico / feed chrome.
 
 ---
 
