@@ -142,6 +142,7 @@ export async function countQuestoesHojeForUser(userId: string): Promise<number> 
     .from('historico_questoes')
     .select('*', { count: 'exact', head: true })
     .eq('user_id', userId)
+    .eq('respondida', true)
     .gte('created_at', start.toISOString())
     .lt('created_at', end.toISOString());
 

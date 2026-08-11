@@ -52,12 +52,38 @@ describe('buildMenuSections', () => {
     expect(estudar?.items[0]?.label).toBe('Vitrine');
   });
 
-  it('marca /progresso ativo em /analytics', () => {
+  it('marca /desempenho ativo em /analytics (redirect legado)', () => {
     const sections = buildMenuSections(isPathActive);
-    const progresso = sections
+    const desempenho = sections
       .find((s) => s.id === 'metricas')
-      ?.items.find((i) => i.href === '/progresso');
-    expect(progresso?.active).toBe(true);
+      ?.items.find((i) => i.href === '/desempenho');
+    expect(desempenho?.active).toBe(true);
+  });
+
+  it('marca /desempenho/simulados ativo só no analytics de simulados', () => {
+    const isSimuladosDesempenho = (path: string, exact = false) => {
+      const pathname = '/desempenho/simulados';
+      if (exact) return pathname === path;
+      return pathname === path || pathname.startsWith(`${path}/`);
+    };
+    const sections = buildMenuSections(isSimuladosDesempenho);
+    const metricas = sections.find((s) => s.id === 'metricas')?.items;
+    expect(metricas?.find((i) => i.href === '/desempenho')?.active).toBe(false);
+    expect(metricas?.find((i) => i.href === '/desempenho/simulados')?.active).toBe(true);
+  });
+
+  it('seção Métricas tem Desempenho, Simulados e Missão', () => {
+    const metricas = NAV_SECTION_DEFS.find((s) => s.id === 'metricas');
+    expect(metricas?.items.map((i) => i.label)).toEqual([
+      'Desempenho',
+      'Simulados',
+      'Missão da semana',
+    ]);
+    expect(metricas?.items.map((i) => i.href)).toEqual([
+      '/desempenho',
+      '/desempenho/simulados',
+      '/missao-semanal',
+    ]);
   });
 
   it('não marca /ajuda ativo em subrota estudo-reverso', () => {

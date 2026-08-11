@@ -42,6 +42,10 @@ const VitrineDisciplinaSummaryRpcSchema = z.object({
   totalQuestoes: z.number(),
   trabalhadas: z.number(),
   progressoPct: z.number(),
+  /** Opcionais — JS fallback / RPC futura com % de acerto. */
+  acertos: z.number().optional(),
+  totalResolvidas: z.number().optional(),
+  percentual: z.number().optional(),
 });
 
 const VitrinePageRpcSchema = z.object({

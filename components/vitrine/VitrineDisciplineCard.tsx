@@ -10,6 +10,7 @@ import {
   type VitrineDisciplinaId,
   type VitrineDisciplinaSummary,
 } from '@/lib/vitrine/disciplina';
+import { resolveAcertoDisplay } from '@/lib/vitrine/resolveAcertoDisplay';
 
 export type VitrineDisciplineCardProps = {
   summary: VitrineDisciplinaSummary;
@@ -21,6 +22,31 @@ export type VitrineDisciplineCardProps = {
   onPrefetch?: (id: VitrineDisciplinaId) => void;
 };
 
+function resolveDisciplineSubtitle(summary: VitrineDisciplinaSummary): string {
+  const assuntosLabel = `${summary.totalAssuntos} ${
+    summary.totalAssuntos === 1 ? 'assunto' : 'assuntos'
+  }`;
+
+  if (summary.totalAssuntos === 0) return 'Em breve';
+
+  const respondidas = summary.totalResolvidas ?? 0;
+  if (respondidas > 0 && summary.acertos != null && summary.percentual != null) {
+    const acerto = resolveAcertoDisplay({
+      acertos: summary.acertos,
+      totalResolvidas: respondidas,
+      totalQuestoes: summary.totalQuestoes,
+      percentual: summary.percentual,
+    });
+    return `${assuntosLabel} · ${acerto.label}`;
+  }
+
+  if (summary.trabalhadas > 0 || summary.progressoPct > 0) {
+    return `${assuntosLabel} · ${summary.progressoPct}% cobertos`;
+  }
+
+  return `${assuntosLabel} · ${summary.totalQuestoes} questões`;
+}
+
 export function VitrineDisciplineCard({
   summary,
   selected,
@@ -30,6 +56,12 @@ export function VitrineDisciplineCard({
 }: VitrineDisciplineCardProps) {
   const meta = getVitrineDisciplinaMeta(summary.id);
   const ctaLabel = resolveDisciplinaCtaLabel(summary);
+  const subtitle = resolveDisciplineSubtitle(summary);
+  const coberturaPct = summary.progressoPct;
+  const coberturaLabel =
+    summary.totalResolvidas != null
+      ? `${summary.totalResolvidas}/${summary.totalQuestoes} respondidas`
+      : `${summary.trabalhadas}/${summary.totalQuestoes} cobertos`;
 
   const warmCache = () => {
     if (summary.totalAssuntos === 0) return;
@@ -99,11 +131,7 @@ export function VitrineDisciplineCard({
             </div>
           </div>
           <p className={cn('text-slate-500', prominent ? 'mt-3 text-sm' : 'mt-2 text-xs')}>
-            {summary.totalAssuntos === 0
-              ? 'Em breve'
-              : summary.trabalhadas > 0 || summary.progressoPct > 0
-                ? `${summary.totalAssuntos} ${summary.totalAssuntos === 1 ? 'assunto' : 'assuntos'} · ${summary.progressoPct}%`
-                : `${summary.totalAssuntos} ${summary.totalAssuntos === 1 ? 'assunto' : 'assuntos'} · ${summary.totalQuestoes} questões`}
+            {subtitle}
           </p>
         </div>
 
@@ -128,14 +156,14 @@ export function VitrineDisciplineCard({
             prominent ? 'h-1.5' : 'h-1',
           )}
           role="progressbar"
-          aria-valuenow={summary.progressoPct}
+          aria-valuenow={coberturaPct}
           aria-valuemin={0}
           aria-valuemax={100}
-          aria-label={`Progresso em ${summary.label}`}
+          aria-label={`Cobertura em ${summary.label}: ${coberturaLabel}`}
         >
           <div
             className={cn('h-full rounded-full transition-[width]', vitrineBrand.bar)}
-            style={{ width: `${Math.min(100, Math.max(0, summary.progressoPct))}%` }}
+            style={{ width: `${Math.min(100, Math.max(0, coberturaPct))}%` }}
           />
         </div>
       ) : null}

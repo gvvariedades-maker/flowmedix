@@ -24,6 +24,9 @@ export const E2E_ESTUDAR_TITULO_AULA = 'Urgências e Emergências E2E';
 /** 13º assunto do seed paginado — único card na vitrine `page=2` (12/página). */
 export const E2E_ESTUDAR_TITULO_AULA_PAGE2 = 'Assunto E2E paginação 13';
 
+/** Hub `/desempenho` — assunto fraco do seed E2E (mapa + CTA Praticar). */
+export const E2E_DESEMPENHO_TITULO_AULA = 'Vias de Administração';
+
 export const E2E_ESTUDAR_SLUGS = [E2E_ESTUDAR_SLUG_1, E2E_ESTUDAR_SLUG_2] as const;
 
 export function isE2eEstudarSlug(slug: string): boolean {

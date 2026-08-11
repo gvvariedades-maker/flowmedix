@@ -9,14 +9,26 @@ export type VitrineDisciplinaSummary = {
   label: string;
   totalAssuntos: number;
   totalQuestoes: number;
+  /** Questões com estudo reverso concluído (CTA Iniciar/Continuar/Revisar). */
   trabalhadas: number;
+  /**
+   * Cobertura % (respondidas ÷ questões quando disponível; senão trabalhadas ÷ questões — RPC legada).
+   */
   progressoPct: number;
+  /** Soma de acertos no histórico (JS / RPC enriquecida). */
+  acertos?: number;
+  /** Questões distintas respondidas. */
+  totalResolvidas?: number;
+  /** % de acerto (acertos ÷ respondidas). */
+  percentual?: number;
 };
 
 type DisciplinaGroupInput = {
   modulo_nome: string;
   totalQuestoes: number;
   trabalhadas: number;
+  acertos?: number;
+  totalResolvidas?: number;
 };
 
 export const VITRINE_DISCIPLINA_IDS: readonly VitrineDisciplinaId[] = [
@@ -69,11 +81,23 @@ export function buildDisciplinaSummaries(
 ): VitrineDisciplinaSummary[] {
   const buckets = new Map<
     VitrineDisciplinaId,
-    { assuntos: number; questoes: number; trabalhadas: number }
+    {
+      assuntos: number;
+      questoes: number;
+      trabalhadas: number;
+      acertos: number;
+      totalResolvidas: number;
+    }
   >();
 
   for (const id of VITRINE_DISCIPLINA_IDS) {
-    buckets.set(id, { assuntos: 0, questoes: 0, trabalhadas: 0 });
+    buckets.set(id, {
+      assuntos: 0,
+      questoes: 0,
+      trabalhadas: 0,
+      acertos: 0,
+      totalResolvidas: 0,
+    });
   }
 
   for (const group of groups) {
@@ -82,12 +106,20 @@ export function buildDisciplinaSummaries(
     bucket.assuntos += 1;
     bucket.questoes += group.totalQuestoes;
     bucket.trabalhadas += group.trabalhadas;
+    bucket.acertos += group.acertos ?? 0;
+    bucket.totalResolvidas += group.totalResolvidas ?? 0;
   }
 
   return VITRINE_DISCIPLINA_IDS.map((id) => {
     const bucket = buckets.get(id)!;
+    const hasRespondidas = bucket.totalResolvidas > 0;
+    const coberturaBase = hasRespondidas ? bucket.totalResolvidas : bucket.trabalhadas;
     const progressoPct =
-      bucket.questoes > 0 ? Math.round((bucket.trabalhadas / bucket.questoes) * 100) : 0;
+      bucket.questoes > 0 ? Math.round((coberturaBase / bucket.questoes) * 100) : 0;
+    const percentual =
+      bucket.totalResolvidas > 0
+        ? Math.round((bucket.acertos / bucket.totalResolvidas) * 100)
+        : 0;
     return {
       id,
       label: DISCIPLINA_META[id].label,
@@ -95,6 +127,9 @@ export function buildDisciplinaSummaries(
       totalQuestoes: bucket.questoes,
       trabalhadas: bucket.trabalhadas,
       progressoPct,
+      acertos: bucket.acertos,
+      totalResolvidas: bucket.totalResolvidas,
+      percentual,
     };
   });
 }

@@ -54,10 +54,12 @@ function buildFreemiumSupabaseMock(opts: {
       return {
         select: () => ({
           eq: () => ({
-            gte: () => ({
-              lt: async () => ({
-                count: opts.questoesHoje ?? 0,
-                error: null,
+            eq: () => ({
+              gte: () => ({
+                lt: async () => ({
+                  count: opts.questoesHoje ?? 0,
+                  error: null,
+                }),
               }),
             }),
           }),

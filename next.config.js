@@ -23,6 +23,9 @@ const nextConfig = {
     return [
       { source: '/campina-grande', destination: '/lp/campina-grande', permanent: true },
       { source: '/simulados/campina', destination: '/simulados/campina-grande', permanent: false },
+      // Hub Desempenho: bookmarks legados (HTTP 307 antes do RSC).
+      { source: '/progresso', destination: '/desempenho', permanent: false },
+      { source: '/analytics', destination: '/desempenho', permanent: false },
     ];
   },
   images: {

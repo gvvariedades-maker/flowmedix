@@ -25,7 +25,7 @@ import {
 const NAV_ITEMS = [
   { label: 'Estudar', href: '/estudar', icon: Library },
   { label: 'Simulados', href: '/simulados', icon: ListChecks },
-  { label: 'Progresso', href: '/progresso', icon: BarChart3 },
+  { label: 'Desempenho', href: '/desempenho', icon: BarChart3 },
   { label: 'Cadernos', href: '/cadernos', icon: BookMarked },
 ] satisfies { label: string; href: string; icon: LucideIcon }[];
 

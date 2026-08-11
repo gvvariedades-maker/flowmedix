@@ -113,6 +113,7 @@ const EnvSchema = z.object({
   /**
    * Evidence Engine Fase 1 — flag de instrumentação (Lote 3).
    * Omitido / ausente = off. Valores aceitos: true|false|1|0.
+   * Quando true: ingestão em registrar-tentativa + série P4 em `/desempenho`.
    * Não habilita T1, domínio, measurement_pool nem convicção global.
    * @see docs/SPEC_EVIDENCE_ENGINE_FASE_1_EVENT_STREAM.md §1.13
    */
@@ -524,7 +525,8 @@ export function parseEvidenceV1InternalEmails(
 
 /**
  * Evidence Engine Fase 1 — instrumentação ligada?
- * Default false quando a var está omitida. Não ativa rotas/player por si só.
+ * Default false quando a var está omitida.
+ * Quando true: ingestão + série P4 no hub `/desempenho`.
  */
 export function isEvidenceV1InstrumentationEnabled(): boolean {
   return parseEvidenceV1InstrumentationFlag(getEnv().EE_V1_INSTRUMENTATION);

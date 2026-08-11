@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import type { LucideIcon } from 'lucide-react';
 
@@ -5,7 +6,8 @@ interface EmptyStateProps {
   icon: LucideIcon;
   title: string;
   description: string;
-  action?: { label: string; onClick: () => void };
+  /** `href` para RSC/Link; `onClick` para client components. */
+  action?: { label: string; onClick?: () => void; href?: string };
   className?: string;
 }
 
@@ -17,11 +19,15 @@ export function EmptyState({ icon: Icon, title, description, action, className }
       </div>
       <h3 className="mb-2 text-base font-semibold text-slate-900">{title}</h3>
       <p className="mb-6 max-w-xs text-sm leading-relaxed text-slate-500">{description}</p>
-      {action && (
+      {action?.href ? (
+        <Link href={action.href} className="btn-editorial-primary">
+          {action.label}
+        </Link>
+      ) : action?.onClick ? (
         <button type="button" onClick={action.onClick} className="btn-editorial-primary">
           {action.label}
         </button>
-      )}
+      ) : null}
     </div>
   );
 }

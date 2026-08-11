@@ -267,10 +267,12 @@ export function SimuladoResumoClient({
     try {
       const response = await createSimuladoSession({
         quantidade: Math.max(1, resumo.erros),
-        modo: 'treino',
+        modo: 'prova',
         from_session_id: session.id,
         only_errors: true,
         forcar_novo: true,
+        titulo: retryTituloSugerido,
+        ritmo_meta: secondsPerQuestionToRitmo(session.ritmo_meta_segundos_por_questao),
       });
       router.push(`/simulados/${response.session.id}`);
     } catch (error) {
@@ -357,6 +359,28 @@ export function SimuladoResumoClient({
         <ClipboardList className="mr-2 h-4 w-4" aria-hidden />
         {retryingErrors ? 'Criando...' : 'Refazer só erros'}
       </Button>
+      {resumo.erros > 0 ? (
+        <Button
+          asChild
+          variant="outline"
+          className="btn-editorial-outline h-12 w-full sm:w-auto"
+        >
+          <Link href="/estudar">
+            <Target className="mr-2 h-4 w-4" aria-hidden />
+            Treinar estes erros
+          </Link>
+        </Button>
+      ) : (
+        <Button
+          type="button"
+          variant="outline"
+          disabled
+          className="btn-editorial-outline h-12 w-full disabled:opacity-50 sm:w-auto"
+        >
+          <Target className="mr-2 h-4 w-4" aria-hidden />
+          Treinar estes erros
+        </Button>
+      )}
       <Button
         asChild
         variant="outline"

@@ -226,5 +226,37 @@ describe('SimuladoResumoClient — sessões adaptativas', () => {
       screen.getByRole('button', { name: 'Novo simulado com mesmos filtros' }),
     ).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Refazer só erros' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Treinar estes erros' })).toHaveAttribute(
+      'href',
+      '/estudar',
+    );
+  });
+
+  it('refazer só erros cria sessão prova', async () => {
+    mockCreateSimuladoSession.mockResolvedValue({
+      session: { id: '66666666-6666-6666-6666-666666666666' },
+    });
+
+    render(
+      <SimuladoResumoClient
+        session={baseSession}
+        resumo={baseResumo}
+        questoes={questoesComErro}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Refazer só erros' }));
+
+    await waitFor(() =>
+      expect(mockCreateSimuladoSession).toHaveBeenCalledWith(
+        expect.objectContaining({
+          modo: 'prova',
+          only_errors: true,
+          from_session_id: baseSession.id,
+          titulo: 'Prova Urgências — tentativa 2',
+          ritmo_meta: '3min',
+        }),
+      ),
+    );
   });
 });

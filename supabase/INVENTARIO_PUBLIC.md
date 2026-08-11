@@ -1,6 +1,6 @@
 # Inventário — schema `public` (AVANT)
 
-Última atualização: **2026-07-23** (ledger Stripe `stripe_webhook_events`; baseline em [`docs/SUPABASE_MAINTENANCE.md`](../docs/SUPABASE_MAINTENANCE.md)).
+Última atualização: **2026-08-11** (coluna `historico_questoes.respondida`; baseline anterior Stripe em [`docs/SUPABASE_MAINTENANCE.md`](../docs/SUPABASE_MAINTENANCE.md)).
 
 Projeto Supabase: **`ozgouenqrofnvgrlgfwd`**.
 
@@ -9,7 +9,7 @@ Projeto Supabase: **`ozgouenqrofnvgrlgfwd`**.
 | Tabela | Uso |
 |--------|-----|
 | `modulos_estudo` | Catálogo de questões, laboratório, cache, estudo |
-| `historico_questoes` | Tentativas, desempenho, plano de revisão |
+| `historico_questoes` | Tentativas, desempenho, plano de revisão (`respondida` distingue placeholder de estudo reverso) |
 | `study_notebooks` / `study_notebook_items` | Cadernos do aluno |
 | `concursos` / `concurso_modulos` / `concurso_matriculas` | Catálogo, vínculos, entitlements |
 | `concurso_purchases` | Checkout Stripe + webhook |

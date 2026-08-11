@@ -339,6 +339,93 @@ export type Database = {
           },
         ]
       }
+      evidence_attempt_events: {
+        Row: {
+          answer_change_count: number
+          answered_at: string | null
+          arm_assignment_id: string | null
+          attempt_id: string
+          context: string
+          conviction: string
+          correct: boolean
+          created_at: string
+          event_type: string
+          experiment_id: string | null
+          holdout_assignment_id: string | null
+          id: string
+          is_internal: boolean
+          measurement_window: string | null
+          measurement_window_assignment_id: string | null
+          primary_skill_id: string | null
+          question_id: string
+          question_version: string
+          response_time_invalid_reason: string | null
+          response_time_ms: number | null
+          response_time_status: string
+          selected_alternative: string
+          session_id: string | null
+          source: string
+          started_at: string | null
+          user_id: string
+        }
+        Insert: {
+          answer_change_count?: number
+          answered_at?: string | null
+          arm_assignment_id?: string | null
+          attempt_id: string
+          context: string
+          conviction: string
+          correct: boolean
+          created_at?: string
+          event_type?: string
+          experiment_id?: string | null
+          holdout_assignment_id?: string | null
+          id?: string
+          is_internal?: boolean
+          measurement_window?: string | null
+          measurement_window_assignment_id?: string | null
+          primary_skill_id?: string | null
+          question_id: string
+          question_version: string
+          response_time_invalid_reason?: string | null
+          response_time_ms?: number | null
+          response_time_status: string
+          selected_alternative: string
+          session_id?: string | null
+          source: string
+          started_at?: string | null
+          user_id: string
+        }
+        Update: {
+          answer_change_count?: number
+          answered_at?: string | null
+          arm_assignment_id?: string | null
+          attempt_id?: string
+          context?: string
+          conviction?: string
+          correct?: boolean
+          created_at?: string
+          event_type?: string
+          experiment_id?: string | null
+          holdout_assignment_id?: string | null
+          id?: string
+          is_internal?: boolean
+          measurement_window?: string | null
+          measurement_window_assignment_id?: string | null
+          primary_skill_id?: string | null
+          question_id?: string
+          question_version?: string
+          response_time_invalid_reason?: string | null
+          response_time_ms?: number | null
+          response_time_status?: string
+          selected_alternative?: string
+          session_id?: string | null
+          source?: string
+          started_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       guideline_source_candidates: {
         Row: {
           created_at: string
@@ -403,6 +490,7 @@ export type Database = {
           estudo_reverso_concluido: boolean | null
           id: string
           modulo_slug: string
+          respondida: boolean
           subtopico: string | null
           topico: string | null
           user_id: string
@@ -414,6 +502,7 @@ export type Database = {
           estudo_reverso_concluido?: boolean | null
           id?: string
           modulo_slug: string
+          respondida?: boolean
           subtopico?: string | null
           topico?: string | null
           user_id: string
@@ -425,6 +514,7 @@ export type Database = {
           estudo_reverso_concluido?: boolean | null
           id?: string
           modulo_slug?: string
+          respondida?: boolean
           subtopico?: string | null
           topico?: string | null
           user_id?: string
