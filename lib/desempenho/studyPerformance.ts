@@ -15,6 +15,7 @@ import {
   DESEMPENHO_META_DIA_DEFAULT,
   DESEMPENHO_MIN_SAMPLE,
   DESEMPENHO_NEXT_PRACTICE_LIMIT,
+  DESEMPENHO_PERIODOS,
   type AreaPerformance,
   type AssuntoPerformance,
   type CatalogDesempenhoRow,
@@ -31,8 +32,16 @@ import {
   resolveVitrineDisciplinaId,
   type VitrineDisciplinaId,
 } from '@/lib/vitrine/disciplina';
+import { desempenhoConfidenceId } from '@/lib/desempenho/confidence';
+import {
+  getDesempenhoPeriodRange,
+  isWithinDesempenhoPeriod,
+  toDesempenhoDayKey,
+  type DesempenhoPeriodRange,
+} from '@/lib/desempenho/periodo';
+import { toFreemiumTimezoneYmd } from '@/lib/freemium/constants';
 
-export const DESEMPENHO_PERIODOS = ['7d', '30d', '90d', '12m', 'all'] as const satisfies ReadonlyArray<DesempenhoPeriodo>;
+export { DESEMPENHO_PERIODOS };
 
 /**
  * Importa só tipos de analytics — runtime de `getHistoricoCompleto` /
@@ -58,23 +67,6 @@ function pctOrNull(acertos: number, respondidas: number): number | null {
 function coberturaPct(respondidas: number, totalDisponivel: number): number {
   if (totalDisponivel <= 0) return 0;
   return Math.min(100, Math.round((respondidas / totalDisponivel) * 100));
-}
-
-function startOfLocalDay(now: Date): Date {
-  return new Date(now.getFullYear(), now.getMonth(), now.getDate());
-}
-
-export function getDesempenhoPeriodStart(
-  periodo: DesempenhoPeriodo,
-  now: Date = new Date(),
-): Date | null {
-  if (periodo === 'all') return null;
-  const base = new Date(now);
-  if (periodo === '7d') base.setDate(now.getDate() - 7);
-  else if (periodo === '30d') base.setDate(now.getDate() - 30);
-  else if (periodo === '90d') base.setDate(now.getDate() - 90);
-  else if (periodo === '12m') base.setMonth(now.getMonth() - 12);
-  return base;
 }
 
 function normalizeFilters(
@@ -195,14 +187,12 @@ function countCatalogByTitulo(
   return byTitulo;
 }
 
+/** Atividade dentro do recorte civil de Brasília `[start, endExclusive)`. */
 function filterHistoricoByActivity(
   historico: readonly HistoricoDesempenhoRow[],
-  filters: DesempenhoEstudoFilters,
-  now: Date,
+  range: DesempenhoPeriodRange,
 ): HistoricoDesempenhoRow[] {
-  const periodStart = getDesempenhoPeriodStart(filters.periodo, now);
-  if (!periodStart) return [...historico];
-  return historico.filter((h) => new Date(h.created_at) >= periodStart);
+  return historico.filter((h) => isWithinDesempenhoPeriod(h.created_at, range));
 }
 
 function compareAssuntosWorstFirst(a: AssuntoPerformance, b: AssuntoPerformance): number {
@@ -215,70 +205,96 @@ function compareAssuntosWorstFirst(a: AssuntoPerformance, b: AssuntoPerformance)
   return a.tituloAula.localeCompare(b.tituloAula, 'pt-BR');
 }
 
-function buildNextPractice(
-  assuntos: AssuntoPerformance[],
-  historicoJoined: Array<HistoricoDesempenhoRow & { tituloAula: string }>,
-): PracticeFocus[] {
+/** Prática mais antiga primeiro; sem data confiável vai para o fim. */
+function compareUltimaPraticaAsc(a: AssuntoPerformance, b: AssuntoPerformance): number {
+  if (a.ultimaPratica && b.ultimaPratica) return a.ultimaPratica.localeCompare(b.ultimaPratica);
+  if (a.ultimaPratica) return -1;
+  if (b.ultimaPratica) return 1;
+  return 0;
+}
+
+function compareAlfabetico(a: AssuntoPerformance, b: AssuntoPerformance): number {
+  return a.tituloAula.localeCompare(b.tituloAula, 'pt-BR');
+}
+
+/** Cobertura mínima disponível para sugerir "praticar mais deste assunto". */
+const LOW_COVERAGE_MIN_DISPONIVEL = 3;
+const LOW_COVERAGE_MAX_PCT = 40;
+const WEAK_ACCURACY_MAX_PCT = 70;
+
+/**
+ * Fila de prioridade **determinística e explicável** (docs/PROMPT_DESEMPENHO_TEC_ADAPTADO §6.3):
+ *
+ * 1. erros atuais sem estudo reverso concluído, por quantidade de erros;
+ * 2. menor taxa de acerto com amostra ≥ 5 (desempate: maior amostra);
+ * 3. menor cobertura com ao menos 3 questões disponíveis;
+ * 4. prática mais antiga;
+ * 5. ordem alfabética estável.
+ *
+ * Sem "importância em prova" / "alta incidência": não há fonte auditável de frequência.
+ */
+function buildNextPractice(assuntos: AssuntoPerformance[]): PracticeFocus[] {
   const foci: PracticeFocus[] = [];
   const seen = new Set<string>();
 
-  const push = (focus: PracticeFocus) => {
-    if (seen.has(focus.tituloAula) || foci.length >= DESEMPENHO_NEXT_PRACTICE_LIMIT) return;
-    seen.add(focus.tituloAula);
-    foci.push(focus);
+  const push = (assunto: AssuntoPerformance, reason: PracticeFocus['reason']) => {
+    if (seen.has(assunto.tituloAula) || foci.length >= DESEMPENHO_NEXT_PRACTICE_LIMIT) return;
+    seen.add(assunto.tituloAula);
+    foci.push({
+      tituloAula: assunto.tituloAula,
+      reason,
+      percentual: assunto.percentual,
+      respondidas: assunto.respondidas,
+      acertos: assunto.acertos,
+      erros: assunto.erros,
+      errosSemReverso: assunto.errosSemReverso,
+      coberturaPct: assunto.coberturaPct,
+      totalDisponivel: assunto.totalDisponivel,
+      confidenceId: assunto.confidenceId,
+      deepLinkAssunto: assunto.tituloAula,
+    });
   };
 
-  for (const a of assuntos) {
-    if (!a.amostraSuficiente || a.percentual == null) continue;
-    if (a.percentual >= 70) continue;
-    push({
-      tituloAula: a.tituloAula,
-      reason: 'weak_accuracy',
-      percentual: a.percentual,
-      respondidas: a.respondidas,
-      erros: a.erros,
-      deepLinkAssunto: a.tituloAula,
-    });
-  }
+  // 1. Evento concreto: errou e ainda não fez o estudo reverso (não exige amostra mínima).
+  [...assuntos]
+    .filter((a) => a.errosSemReverso > 0)
+    .sort(
+      (a, b) =>
+        b.errosSemReverso - a.errosSemReverso ||
+        compareUltimaPraticaAsc(a, b) ||
+        compareAlfabetico(a, b),
+    )
+    .forEach((a) => push(a, 'wrong_unreviewed'));
 
-  const unreviewedByTitulo = new Map<string, { erros: number; respondidas: number }>();
-  for (const h of historicoJoined) {
-    if (h.acertou) continue;
-    if (h.estudo_reverso_concluido === true) continue;
-    const cur = unreviewedByTitulo.get(h.tituloAula) ?? { erros: 0, respondidas: 0 };
-    cur.erros += 1;
-    cur.respondidas += 1;
-    unreviewedByTitulo.set(h.tituloAula, cur);
-  }
+  // 2. Baixo acerto com amostra suficiente (diagnóstico estatístico).
+  [...assuntos]
+    .filter(
+      (a) => a.amostraSuficiente && a.percentual != null && a.percentual < WEAK_ACCURACY_MAX_PCT,
+    )
+    .sort(
+      (a, b) =>
+        (a.percentual ?? 100) - (b.percentual ?? 100) ||
+        b.respondidas - a.respondidas ||
+        compareUltimaPraticaAsc(a, b) ||
+        compareAlfabetico(a, b),
+    )
+    .forEach((a) => push(a, 'weak_accuracy'));
 
-  const unreviewedSorted = [...unreviewedByTitulo.entries()].sort(
-    (a, b) => b[1].erros - a[1].erros || a[0].localeCompare(b[0], 'pt-BR'),
-  );
-  for (const [titulo, stats] of unreviewedSorted) {
-    const assunto = assuntos.find((a) => a.tituloAula === titulo);
-    push({
-      tituloAula: titulo,
-      reason: 'wrong_unreviewed',
-      percentual: assunto?.percentual ?? null,
-      respondidas: assunto?.respondidas ?? stats.respondidas,
-      erros: stats.erros,
-      deepLinkAssunto: titulo,
-    });
-  }
-
-  for (const a of assuntos) {
-    if (a.totalDisponivel <= 0) continue;
-    if (a.coberturaPct >= 40) continue;
-    if (a.respondidas === 0 && a.totalDisponivel < 3) continue;
-    push({
-      tituloAula: a.tituloAula,
-      reason: 'low_coverage',
-      percentual: a.percentual,
-      respondidas: a.respondidas,
-      erros: a.erros,
-      deepLinkAssunto: a.tituloAula,
-    });
-  }
+  // 3. Cobertura baixa com material disponível suficiente.
+  [...assuntos]
+    .filter(
+      (a) =>
+        a.totalDisponivel >= LOW_COVERAGE_MIN_DISPONIVEL &&
+        a.coberturaPct < LOW_COVERAGE_MAX_PCT,
+    )
+    .sort(
+      (a, b) =>
+        a.coberturaPct - b.coberturaPct ||
+        b.totalDisponivel - a.totalDisponivel ||
+        compareUltimaPraticaAsc(a, b) ||
+        compareAlfabetico(a, b),
+    )
+    .forEach((a) => push(a, 'low_coverage'));
 
   return foci;
 }
@@ -313,6 +329,7 @@ function rollupAreas(assuntos: AssuntoPerformance[]): AreaPerformance[] {
       coberturaPct: coberturaPct(respondidas, totalDisponivel),
       totalDisponivel,
       amostraSuficiente: respondidas >= DESEMPENHO_MIN_SAMPLE,
+      confidenceId: desempenhoConfidenceId(respondidas),
       assuntos: [...list].sort(compareAssuntosWorstFirst),
     });
   }
@@ -352,6 +369,7 @@ function rollupRiskBands(assuntos: AssuntoPerformance[]): RiskBandPerformance[] 
       coberturaPct: coberturaPct(respondidas, totalDisponivel),
       totalDisponivel,
       amostraSuficiente: respondidas >= DESEMPENHO_MIN_SAMPLE,
+      confidenceId: desempenhoConfidenceId(respondidas),
     });
   }
 
@@ -375,6 +393,7 @@ export function aggregateStudyPerformance(
   catalogInput: readonly (ModuloEstudoListRow | CatalogDesempenhoRow)[],
   filtersInput?: Partial<DesempenhoEstudoFilters> | null,
   now: Date = new Date(),
+  loadState: DesempenhoEstudoData['loadState'] = 'ok',
 ): DesempenhoEstudoData {
   const filters = normalizeFilters(filtersInput);
   const catalog = toCatalogRows(catalogInput);
@@ -382,12 +401,14 @@ export function aggregateStudyPerformance(
   const slugIndex = buildSlugIndex(catalog);
   const catalogByTitulo = countCatalogByTitulo(catalog, filters);
 
-  const historicoPeriod = filterHistoricoByActivity(historicoAll, filters, now);
+  const range = getDesempenhoPeriodRange(filters.periodo, now);
+  const historicoPeriod = filterHistoricoByActivity(historicoAll, range);
 
   type Acc = {
     respondidas: number;
     acertos: number;
     erros: number;
+    errosSemReverso: number;
     ultimaPratica: string | null;
     bancas: Set<string>;
     disciplina: VitrineDisciplinaId;
@@ -418,11 +439,14 @@ export function aggregateStudyPerformance(
 
     historicoJoined.push({ ...h, tituloAula });
 
+    const erroSemReverso = !h.acertou && h.estudo_reverso_concluido !== true ? 1 : 0;
+
     const existing = accByTitulo.get(tituloAula);
     if (existing) {
       existing.respondidas += 1;
       if (h.acertou) existing.acertos += 1;
       else existing.erros += 1;
+      existing.errosSemReverso += erroSemReverso;
       if (!existing.ultimaPratica || h.created_at > existing.ultimaPratica) {
         existing.ultimaPratica = h.created_at;
       }
@@ -432,6 +456,7 @@ export function aggregateStudyPerformance(
         respondidas: 1,
         acertos: h.acertou ? 1 : 0,
         erros: h.acertou ? 0 : 1,
+        errosSemReverso: erroSemReverso,
         ultimaPratica: h.created_at,
         bancas: new Set(bancaCatalog ? [bancaCatalog] : []),
         disciplina,
@@ -473,6 +498,8 @@ export function aggregateStudyPerformance(
       totalDisponivel,
       ultimaPratica: acc?.ultimaPratica ?? null,
       amostraSuficiente: respondidas >= DESEMPENHO_MIN_SAMPLE,
+      confidenceId: desempenhoConfidenceId(respondidas),
+      errosSemReverso: acc?.errosSemReverso ?? 0,
       bancas,
     });
   }
@@ -486,7 +513,8 @@ export function aggregateStudyPerformance(
   const placarAcertos = historicoJoined.filter((h) => h.acertou).length;
   const placarErros = placarRespondidas - placarAcertos;
 
-  const dayStart = startOfLocalDay(now);
+  // Meta do dia = data civil de hoje em Brasília (não o fuso do runtime).
+  const todayYmd = toFreemiumTimezoneYmd(now);
   const respondidasHoje = historicoAll.filter((h) => {
     if (!isRespondida(h)) return false;
     const slug = h.modulo_slug?.trim();
@@ -499,7 +527,7 @@ export function aggregateStudyPerformance(
       const bancaCatalog = info?.banca ?? h.banca ?? null;
       if (bancaCatalog !== filters.banca && h.banca !== filters.banca) return false;
     }
-    return new Date(h.created_at) >= dayStart;
+    return toDesempenhoDayKey(h.created_at, now) === todayYmd;
   }).length;
 
   const weakAreas = assuntos
@@ -529,14 +557,22 @@ export function aggregateStudyPerformance(
         meta: DESEMPENHO_META_DIA_DEFAULT,
       },
       coachUnlocked: placarRespondidas >= DESEMPENHO_COACH_UNLOCK,
+      confidenceId: desempenhoConfidenceId(placarRespondidas),
     },
     assuntos,
     areas,
     riskBands,
     weakAreas,
-    nextPractice: buildNextPractice(assuntos, historicoJoined),
+    nextPractice: buildNextPractice(assuntos),
     recentAttempts,
     filtersApplied: filters,
+    periodoResumo: {
+      periodo: range.periodo,
+      startYmd: range.startYmd,
+      endYmdInclusive: range.endYmdInclusive,
+      civilDays: range.civilDays,
+    },
+    loadState,
     /** Agregação pura (sem ledger) — orquestração preenche em `getDesempenhoEstudoData`. */
     attemptSeries: {
       available: false,
@@ -549,6 +585,8 @@ export function aggregateStudyPerformance(
       distinctQuestions: 0,
       dadosDesde: null,
       coberturaParcial: false,
+      truncated: false,
+      limiteRegistros: null,
     },
   };
 }

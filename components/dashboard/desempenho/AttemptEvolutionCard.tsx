@@ -69,10 +69,10 @@ export function AttemptEvolutionCard({ series, className }: Props) {
         aria-label="Evolução de tentativas"
         className={cn('metric-card space-y-2 p-5', className)}
       >
-        <h2 className="text-sm font-semibold text-slate-900">Evolução (ledger)</h2>
+        <h2 className="text-sm font-semibold text-slate-900">Evolução do desempenho</h2>
         <p className="text-xs text-muted-foreground">
-          Ainda não há tentativas instrumentadas neste período. Continue praticando — a série
-          aparece conforme as respostas forem gravadas no Evidence Engine.
+          Ainda não há respostas registradas neste período. Continue praticando — a curva aparece
+          conforme você responde.
         </p>
       </section>
     );
@@ -86,18 +86,26 @@ export function AttemptEvolutionCard({ series, className }: Props) {
       <div className="metric-card space-y-3 p-5">
         <div className="flex flex-wrap items-start justify-between gap-2">
           <div>
-            <h2 className="text-sm font-semibold text-slate-900">Evolução do % de acerto</h2>
+            <h2 className="text-sm font-semibold text-slate-900">Evolução do desempenho</h2>
             <p className="text-xs text-muted-foreground">
-              Série diária a partir do ledger de tentativas (prática regular).
+              Acerto por dia nas questões que você praticou (horário de Brasília).
             </p>
           </div>
-          {series.coberturaParcial && series.dadosDesde ? (
+          {series.truncated ? (
             <p
               className="rounded-md bg-[var(--color-warning-dim)] px-2 py-1 text-[11px] font-medium text-slate-700"
               role="status"
             >
-              Dados a partir de {formatDesempenhoDate(series.dadosDesde)} — cobertura parcial
-              do histórico antigo.
+              Série parcial: mostramos as {series.limiteRegistros?.toLocaleString('pt-BR')} respostas
+              mais recentes.
+            </p>
+          ) : series.coberturaParcial && series.dadosDesde ? (
+            <p
+              className="rounded-md bg-[var(--color-warning-dim)] px-2 py-1 text-[11px] font-medium text-slate-700"
+              role="status"
+            >
+              Dados a partir de {formatDesempenhoDate(series.dadosDesde)} — parte do histórico antigo
+              não entra nesta curva.
             </p>
           ) : series.dadosDesde ? (
             <p className="text-[11px] text-muted-foreground">
@@ -156,13 +164,15 @@ export function AttemptEvolutionCard({ series, className }: Props) {
           variant="brand"
         />
         <ScoreCard
-          label="Acerto na 1ª tentativa"
+          label="Acerto na primeira tentativa do período"
           value={formatDesempenhoPct(series.firstAttemptAccuracyPct)}
           icon={Crosshair}
           variant={
-            series.firstAttemptAccuracyPct != null && series.firstAttemptAccuracyPct >= 70
-              ? 'success'
-              : 'warning'
+            series.firstAttemptAccuracyPct == null
+              ? 'brand'
+              : series.firstAttemptAccuracyPct >= 70
+                ? 'success'
+                : 'warning'
           }
         />
         <ScoreCard

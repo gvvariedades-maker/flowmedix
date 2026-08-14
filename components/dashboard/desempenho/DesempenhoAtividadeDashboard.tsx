@@ -58,7 +58,10 @@ export function DesempenhoAtividadeDashboard({ dados }: Props) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 pb-8 md:px-8 md:pt-8">
+    <div
+      className="mx-auto max-w-3xl space-y-6 px-4 py-6 pb-8 md:px-8 md:pt-8"
+      data-desempenho-hub="atividade"
+    >
       <ZerarDesempenhoDialog
         open={dialogZerar}
         zerando={zerando}
@@ -142,7 +145,8 @@ export function DesempenhoAtividadeDashboard({ dados }: Props) {
               <div>
                 <p className="text-xs font-medium text-foreground">Privacidade e dados</p>
                 <p className="text-xs text-muted-foreground">
-                  Remover todo o histórico de questões. Ação irreversível.
+                  Remove o histórico de questões da área Estudo. Simulados permanecem. Ação
+                  irreversível.
                 </p>
               </div>
             </div>
@@ -153,7 +157,7 @@ export function DesempenhoAtividadeDashboard({ dados }: Props) {
               className="shrink-0 text-destructive hover:bg-destructive/10 hover:text-destructive"
               onClick={() => setDialogZerar(true)}
             >
-              Zerar histórico
+              Zerar desempenho de estudo
             </Button>
           </div>
         </footer>

@@ -2,10 +2,8 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { PageHeader } from '@/components/ui/page-header';
-import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { DesempenhoEstudoDashboard } from '@/components/dashboard/desempenho/DesempenhoEstudoDashboard';
-import { DesempenhoTabs } from '@/components/dashboard/desempenho/DesempenhoTabs';
+import { DesempenhoHubShell } from '@/components/dashboard/desempenho/DesempenhoHubShell';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import {
   aggregateStudyPerformance,
@@ -54,7 +52,8 @@ export default async function DesempenhoEstudoPage({
       data = await getDesempenhoEstudoData(session.user.id, filters);
     } catch (error) {
       logger.error('Failed to load desempenho estudo', error, { userId: session.user.id });
-      data = aggregateStudyPerformance([], [], filters);
+      // `loadState: 'error'` — o painel mostra estado de erro com retry, nunca KPI zerado.
+      data = aggregateStudyPerformance([], [], filters, new Date(), 'error');
     }
   }
 
@@ -66,32 +65,21 @@ export default async function DesempenhoEstudoPage({
   ].join('-');
 
   return (
-    <DashboardMobilePage
-      variant="default"
-      className="dashboard-surface min-h-0 flex-1 bg-background text-foreground"
+    <DesempenhoHubShell
+      description="Onde você está errando, o quanto isso é confiável e qual é a próxima questão para testar."
+      action={
+        <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
+          <Link
+            href="/estudar"
+            className="inline-flex w-full items-center justify-center sm:w-auto"
+          >
+            <BookOpen className="h-4 w-4" aria-hidden />
+            Praticar na vitrine
+          </Link>
+        </Button>
+      }
     >
-      <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-        <div className="mx-auto max-w-4xl space-y-4 px-4 py-5 md:px-8">
-          <PageHeader
-            title="Meu desempenho"
-            breadcrumb={[
-              { label: 'Área do aluno', href: '/estudar' },
-              { label: 'Meu desempenho' },
-            ]}
-            description="Mapa de prática por assunto — acerto, cobertura e próximos focos."
-            action={
-              <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
-                <Link href="/estudar" className="inline-flex w-full items-center justify-center sm:w-auto">
-                  <BookOpen className="h-4 w-4" aria-hidden />
-                  Praticar na vitrine
-                </Link>
-              </Button>
-            }
-          />
-          <DesempenhoTabs />
-        </div>
-      </div>
       <DesempenhoEstudoDashboard key={filterKey} data={data} />
-    </DashboardMobilePage>
+    </DesempenhoHubShell>
   );
 }

@@ -11,13 +11,15 @@ type QueryResult = { data: unknown[] };
 function createSupabaseMock(dataByTable: Record<string, unknown[]>) {
   return {
     from(table: string) {
-      const chain = {
-        select: jest.fn().mockReturnThis(),
-        eq: jest.fn().mockReturnThis(),
-        gte: jest.fn().mockReturnThis(),
-        order: jest.fn().mockReturnThis(),
-        limit: jest.fn().mockResolvedValue({ data: (dataByTable[table] ?? []) as QueryResult['data'] }),
+      const data = (dataByTable[table] ?? []) as QueryResult['data'];
+      // Encadeamento thenable: cobre tanto queries que terminam em `.limit()`
+      // quanto as que terminam em `.not()` (fallback de evolução por respostas).
+      const chain: Record<string, unknown> = {
+        then: (resolve: (value: { data: unknown[] }) => unknown) => resolve({ data }),
       };
+      for (const method of ['select', 'eq', 'gte', 'lt', 'in', 'not', 'order', 'limit']) {
+        chain[method] = jest.fn(() => chain);
+      }
       return chain;
     },
   } as any;
@@ -239,6 +241,163 @@ describe('lib/simulado/analyticsSummary', () => {
     });
     expect(summary.errorPatterns.length).toBeGreaterThan(0);
     expect(summary.goals.progresso_meta_mensal).toBeGreaterThan(0);
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('pondera a média por questões, não por sessão', async () => {
+    const now = new Date('2026-06-01T12:00:00.000Z');
+    jest.useFakeTimers();
+    jest.setSystemTime(now);
+    try {
+      const supabase = createSupabaseMock({
+        // 100% em 2 questões + 50% em 60 questões.
+        // Média de médias = 75%; ponderada = 32/62 ≈ 51,61%.
+        simulado_sessions: [
+          {
+            id: 'curta',
+            status: 'concluido',
+            modo: 'treino',
+            total_questoes: 2,
+            acertos: 2,
+            percentual_acerto: 100,
+            tempo_total_ms: 20_000,
+            created_at: '2026-06-01T10:00:00.000Z',
+            concluida_em: '2026-06-01T10:05:00.000Z',
+          },
+          {
+            id: 'longa',
+            status: 'concluido',
+            modo: 'treino',
+            total_questoes: 60,
+            acertos: 30,
+            percentual_acerto: 50,
+            tempo_total_ms: 1_200_000,
+            created_at: '2026-06-01T11:00:00.000Z',
+            concluida_em: '2026-06-01T11:40:00.000Z',
+          },
+        ],
+        simulado_analytics_daily: [],
+        simulado_analytics_session_dims: [],
+      });
+
+      const summary = await loadSimuladoAnalyticsSummary(supabase, 'user-1', {
+        periodo: '30d',
+        modo: 'todos',
+        banca: null,
+        topico: null,
+        subtopico: null,
+      });
+
+      expect(summary.questoesConcluidas).toBe(62);
+      expect(summary.acertosConcluidos).toBe(32);
+      expect(summary.mediaAcerto).toBeCloseTo(51.61, 1);
+      expect(summary.mediaAcerto).not.toBe(75);
+      // Tempo por questão também ponderado: 1.220.000 / 62 ≈ 19.677 ms.
+      expect(summary.tempoMedioMs).toBe(19_677);
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('usa tempo médio legado × questões quando falta tempo total', async () => {
+    const now = new Date('2026-06-01T12:00:00.000Z');
+    jest.useFakeTimers();
+    jest.setSystemTime(now);
+    try {
+      const supabase = createSupabaseMock({
+        simulado_sessions: [
+          {
+            id: 'legado',
+            status: 'concluido',
+            modo: 'treino',
+            total_questoes: 10,
+            acertos: 7,
+            percentual_acerto: 70,
+            tempo_medio_ms: 30_000,
+            created_at: '2026-06-01T10:00:00.000Z',
+            concluida_em: '2026-06-01T10:30:00.000Z',
+          },
+        ],
+        simulado_analytics_daily: [],
+        simulado_analytics_session_dims: [],
+      });
+
+      const summary = await loadSimuladoAnalyticsSummary(supabase, 'user-1', {
+        periodo: '30d',
+        modo: 'todos',
+        banca: null,
+        topico: null,
+        subtopico: null,
+      });
+
+      expect(summary.mediaAcerto).toBe(70);
+      expect(summary.tempoMedioMs).toBe(30_000);
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('não trata recorte com menos de 5 questões como padrão de erro', async () => {
+    const now = new Date('2026-06-01T12:00:00.000Z');
+    jest.useFakeTimers();
+    jest.setSystemTime(now);
+    try {
+      const supabase = createSupabaseMock({
+        simulado_sessions: [
+          {
+            id: 's1',
+            status: 'concluido',
+            modo: 'treino',
+            total_questoes: 8,
+            acertos: 4,
+            percentual_acerto: 50,
+            tempo_total_ms: 80_000,
+            created_at: '2026-06-01T10:00:00.000Z',
+            concluida_em: '2026-06-01T10:20:00.000Z',
+          },
+        ],
+        simulado_analytics_daily: [],
+        simulado_analytics_session_dims: [
+          {
+            session_id: 's1',
+            data_ref: '2026-06-01',
+            modo: 'treino',
+            banca: 'FGV',
+            topico: 'Urgências',
+            subtopico: 'Amostra baixa',
+            total_questoes: 4,
+            acertos: 0,
+            erros: 4,
+            tempo_total_ms: 40_000,
+          },
+          {
+            session_id: 's1',
+            data_ref: '2026-06-01',
+            modo: 'treino',
+            banca: 'FGV',
+            topico: 'Urgências',
+            subtopico: 'Amostra suficiente',
+            total_questoes: 5,
+            acertos: 1,
+            erros: 4,
+            tempo_total_ms: 50_000,
+          },
+        ],
+      });
+
+      const summary = await loadSimuladoAnalyticsSummary(supabase, 'user-1', {
+        periodo: '30d',
+        modo: 'todos',
+        banca: null,
+        topico: null,
+        subtopico: null,
+      });
+
+      const subtopicos = summary.errorPatterns.map((p) => p.subtopico);
+      expect(subtopicos).toContain('Amostra suficiente');
+      expect(subtopicos).not.toContain('Amostra baixa');
     } finally {
       jest.useRealTimers();
     }

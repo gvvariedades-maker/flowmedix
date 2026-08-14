@@ -189,14 +189,16 @@ test.describe('Meu desempenho (simulados)', () => {
     const hasResumoComparativo = await page.getByText('Resumo comparativo').isVisible().catch(() => false);
     if (hasResumoComparativo) {
       await expect(page.getByText('No período', { exact: true })).toBeVisible();
-      await expect(page.getByText('Geral (histórico)', { exact: true })).toBeVisible();
+      // Comparação é com os últimos 12 meses — não com "todo o histórico".
+      await expect(page.getByText('Últimos 12 meses', { exact: true })).toBeVisible();
+      await expect(page.getByText('Geral (histórico)', { exact: true })).toHaveCount(0);
       await expect(page.getByText('% de acerto', { exact: true }).first()).toBeVisible();
       await expect(page.getByText('Acertos', { exact: true }).first()).toBeVisible();
       await expect(page.getByText('Erros', { exact: true }).first()).toBeVisible();
       await expect(page.getByText('Questões respondidas', { exact: true }).first()).toBeVisible();
     }
     await expect(page.getByText('Onde focar agora').first()).toBeVisible();
-    await expect(page.getByText('Sua tendência na semana').first()).toBeVisible();
+    await expect(page.getByText('Sua tendência').first()).toBeVisible();
     await expect(page.getByRole('link', { name: 'Treinar agora' })).toBeVisible();
   });
 });

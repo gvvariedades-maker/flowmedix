@@ -1,5 +1,6 @@
 import type { VitrineDisciplinaId } from '@/lib/vitrine/disciplina';
 import type { GrandeAreaId, RiskBandId } from '@/lib/desempenho/taxonomiaEnfermagem';
+import type { ConfidenceLevelId } from '@/lib/desempenho/confidence';
 
 /** Amostra mínima para colorir/ranquear % de acerto (plano Hub Desempenho). */
 export const DESEMPENHO_MIN_SAMPLE = 5;
@@ -14,6 +15,19 @@ export const DESEMPENHO_NEXT_PRACTICE_LIMIT = 5;
 export const DESEMPENHO_META_DIA_DEFAULT = 10;
 
 export type DesempenhoPeriodo = '7d' | '30d' | '90d' | '12m' | 'all';
+
+/**
+ * Ordem canônica dos períodos na UI e na normalização de `searchParams`.
+ * Fica em `types` (sem dependência de servidor) para poder ser importada por
+ * componentes client — `studyPerformance` puxa `lib/cache`, que é server-only.
+ */
+export const DESEMPENHO_PERIODOS = [
+  '7d',
+  '30d',
+  '90d',
+  '12m',
+  'all',
+] as const satisfies ReadonlyArray<DesempenhoPeriodo>;
 
 export type DesempenhoEstudoFilters = {
   periodo: DesempenhoPeriodo;
@@ -61,6 +75,10 @@ export type AssuntoPerformance = {
   totalDisponivel: number;
   ultimaPratica: string | null;
   amostraSuficiente: boolean;
+  /** Nível de confiança pela amostra (`lib/desempenho/confidence.ts`). */
+  confidenceId: ConfidenceLevelId;
+  /** Erros ainda sem estudo reverso concluído — evento concreto, não estatística. */
+  errosSemReverso: number;
   bancas: string[];
 };
 
@@ -75,6 +93,7 @@ export type AreaPerformance = {
   coberturaPct: number;
   totalDisponivel: number;
   amostraSuficiente: boolean;
+  confidenceId: ConfidenceLevelId;
   assuntos: AssuntoPerformance[];
 };
 
@@ -88,6 +107,7 @@ export type RiskBandPerformance = {
   coberturaPct: number;
   totalDisponivel: number;
   amostraSuficiente: boolean;
+  confidenceId: ConfidenceLevelId;
 };
 
 export type PracticeFocusReason = 'weak_accuracy' | 'wrong_unreviewed' | 'low_coverage';
@@ -98,6 +118,12 @@ export type PracticeFocus = {
   percentual: number | null;
   respondidas: number;
   erros: number;
+  acertos: number;
+  /** Erros sem estudo reverso concluído (motivo `wrong_unreviewed`). */
+  errosSemReverso: number;
+  coberturaPct: number;
+  totalDisponivel: number;
+  confidenceId: ConfidenceLevelId;
   /** Valor exato para `/estudar?assunto=…` (match vitrine). */
   deepLinkAssunto: string;
 };
@@ -121,7 +147,25 @@ export type DesempenhoEstudoPlacar = {
     meta: number;
   };
   coachUnlocked: boolean;
+  confidenceId: ConfidenceLevelId;
 };
+
+/** Recorte temporal aplicado — exibido no resumo ("amostra analisada"). */
+export type DesempenhoPeriodoResumo = {
+  periodo: DesempenhoPeriodo;
+  /** YYYY-MM-DD inclusivo (null em `all`). */
+  startYmd: string | null;
+  /** YYYY-MM-DD do último dia coberto (hoje em Brasília). */
+  endYmdInclusive: string;
+  /** Datas civis cobertas (null em `all`). */
+  civilDays: number | null;
+};
+
+/**
+ * Estado de carregamento do painel.
+ * `error` nunca deve ser exibido como zero/vazio (contrato §9 do mestre).
+ */
+export type DesempenhoLoadState = 'ok' | 'error';
 
 /** Linha mínima do ledger EE para série P4 (`regular_practice`). */
 export type AttemptSeriesEventRow = {
@@ -163,6 +207,13 @@ export type AttemptSeriesData = {
   dadosDesde: string | null;
   /** Histórico P0 mais antigo que o ledger (ou gap de contagem). */
   coberturaParcial: boolean;
+  /**
+   * Leitura atingiu o teto de registros (`SCALE_LIMITS.HISTORICO_ANALYTICS_READ`).
+   * Nenhum limite pode ser silencioso: a UI avisa que a série é parcial.
+   */
+  truncated: boolean;
+  /** Teto aplicado na leitura (null quando não houve leitura). */
+  limiteRegistros: number | null;
 };
 
 export type DesempenhoEstudoData = {
@@ -174,6 +225,10 @@ export type DesempenhoEstudoData = {
   nextPractice: PracticeFocus[];
   recentAttempts: RecentAttempt[];
   filtersApplied: DesempenhoEstudoFilters;
+  /** Recorte civil aplicado (Brasília, semiaberto). */
+  periodoResumo: DesempenhoPeriodoResumo;
+  /** `error` = falha de leitura; a UI mostra estado de erro, não zeros. */
+  loadState: DesempenhoLoadState;
   /** P4 — null só em agregação pura sem orquestração; runtime preenche. */
   attemptSeries: AttemptSeriesData;
 };

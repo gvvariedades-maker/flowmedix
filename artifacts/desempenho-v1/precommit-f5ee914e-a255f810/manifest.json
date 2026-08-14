@@ -1,0 +1,21 @@
+﻿{
+    "id":  "precommit-f5ee914e-a255f810",
+    "base_ref":  "HEAD",
+    "base_sha":  "f5ee914eacfd2de66553e87de45676314290b2d5",
+    "head_sha":  "f5ee914eacfd2de66553e87de45676314290b2d5",
+    "delta_digest_sha256_8":  "a255f810",
+    "delta_digest_input":  "HEAD + git diff --name-status HEAD + lista untracked + git diff HEAD + conteudo dos untracked (exclui artifacts/, test-results/, .next/)",
+    "working_tree_dirty":  true,
+    "timestamp_iso":  "2026-08-14T03:08:09.304Z",
+    "capture_command":  "DESEMPENHO_CAPTURE_SHA=precommit-f5ee914e-a255f810 npm run capture:desempenho-hub",
+    "capture_result":  "PASS - 8/8 chromium (inclui atividade-dialogo-reset-mobile.png)",
+    "overflow_check":  "PASS - e2e/desempenho.spec.ts chromium + Mobile Chrome 34/34",
+    "gates":  {
+                  "check:ship":  "PASS - 381 suites / 3442 tests / 3 skipped",
+                  "build":  "PASS",
+                  "e2e:hub":  "PASS - 34/34 chromium + Mobile Chrome",
+                  "e2e:simulados-prova":  "FAIL preexistente - simulados.spec.ts:35 checkbox de instrucoes (fora do hub)",
+                  "smoke:rls":  "NAO_EXECUTADO - sem secrets"
+              },
+    "note":  "Remediacao residual da auditoria diferencial: filtro status fantasma em /desempenho/simulados e CTA destrutivo do dialogo de reset. Digest sensivel ao conteudo do delta uncommitted."
+}

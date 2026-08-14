@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react';
 import Link from 'next/link';
 import {
+  AlertTriangle,
   BookOpen,
   CheckCircle2,
   Map,
@@ -10,43 +10,29 @@ import {
 import { ScoreCard } from '@/components/ui/score-card';
 import { EmptyState } from '@/components/ui/empty-state';
 import { AttemptEvolutionCard } from '@/components/dashboard/desempenho/AttemptEvolutionCard';
-import { DomainMapTable } from '@/components/dashboard/desempenho/DomainMapTable';
-import { RiskRadar } from '@/components/dashboard/desempenho/RiskRadar';
+import { AreaHierarchy } from '@/components/dashboard/desempenho/AreaHierarchy';
+import { DesempenhoFiltros } from '@/components/dashboard/desempenho/DesempenhoFiltros';
 import { NextPracticeCard } from '@/components/dashboard/desempenho/NextPracticeCard';
 import { RecentAttemptsList } from '@/components/dashboard/desempenho/RecentAttemptsList';
-import { formatDesempenhoPct } from '@/components/dashboard/desempenho/formatDesempenho';
+import { RiskRadar } from '@/components/dashboard/desempenho/RiskRadar';
+import {
+  formatDesempenhoConfianca,
+  formatDesempenhoPct,
+} from '@/components/dashboard/desempenho/formatDesempenho';
 import { cn } from '@/lib/utils';
 import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
-import { DESEMPENHO_PERIODOS } from '@/lib/desempenho/studyPerformance';
 import { DESEMPENHO_COACH_UNLOCK, type DesempenhoEstudoData } from '@/lib/desempenho/types';
-import { GRANDE_AREAS } from '@/lib/desempenho/taxonomiaEnfermagem';
-import { VITRINE_DISCIPLINA_IDS, getVitrineDisciplinaMeta } from '@/lib/vitrine/disciplina';
-
-const PERIODO_LABELS: Record<(typeof DESEMPENHO_PERIODOS)[number], string> = {
-  '7d': '7 dias',
-  '30d': '30 dias',
-  '90d': '90 dias',
-  '12m': '12 meses',
-  all: 'Tudo',
-};
-
-function buildDesempenhoHref(filters: DesempenhoEstudoData['filtersApplied']): string {
-  const params = new URLSearchParams();
-  if (filters.periodo !== 'all') params.set('periodo', filters.periodo);
-  if (filters.banca) params.set('banca', filters.banca);
-  if (filters.areaId) params.set('area', filters.areaId);
-  if (filters.disciplina) params.set('disciplina', filters.disciplina);
-  const qs = params.toString();
-  return qs ? `/desempenho?${qs}` : '/desempenho';
-}
 
 type Props = {
   data: DesempenhoEstudoData;
 };
 
 /**
- * Aba Estudo do hub `/desempenho` — placar, mapa, radar, próximos focos e recentes.
- * Filtros vêm do RSC via searchParams (já aplicados em `data.filtersApplied`).
+ * Aba Estudo do hub `/desempenho`.
+ *
+ * Ordem obrigatória: filtros → resumo do período → próxima ação → hierarquia
+ * área/assunto → evolução → questões recentes. O aluno decide antes de
+ * percorrer a taxonomia inteira.
  */
 export function DesempenhoEstudoDashboard({ data }: Props) {
   const {
@@ -56,110 +42,102 @@ export function DesempenhoEstudoDashboard({ data }: Props) {
     nextPractice,
     recentAttempts,
     filtersApplied,
+    periodoResumo,
     attemptSeries,
+    loadState,
   } = data;
-  const filters = filtersApplied;
 
-  const periodoLinks = DESEMPENHO_PERIODOS.map((periodo) => ({
-    periodo,
-    href: buildDesempenhoHref({ ...filters, periodo }),
-    active: filters.periodo === periodo,
-  }));
+  const rootClass = cn('mx-auto max-w-4xl space-y-8 px-4 py-6 md:px-8', DASHBOARD_PAGE_ROOT);
 
-  const disciplinaLinks = [
-    {
-      id: null as null,
-      label: 'Todas',
-      href: buildDesempenhoHref({ ...filters, disciplina: null }),
-      active: !filters.disciplina,
-    },
-    ...VITRINE_DISCIPLINA_IDS.map((id) => ({
-      id,
-      label: getVitrineDisciplinaMeta(id).shortLabel,
-      href: buildDesempenhoHref({ ...filters, disciplina: id }),
-      active: filters.disciplina === id,
-    })),
-  ];
+  // Erro de leitura nunca é exibido como desempenho zerado.
+  if (loadState === 'error') {
+    return (
+      <div className={rootClass} data-desempenho-hub="estudo">
+        <section
+          aria-label="Erro ao carregar desempenho"
+          role="alert"
+          className="metric-card flex flex-col gap-3 p-5"
+        >
+          <p className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+            <AlertTriangle className="h-4 w-4 text-[var(--color-danger-text)]" aria-hidden />
+            Não conseguimos carregar seu desempenho
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Os números não foram lidos agora — isto não significa que você tenha zero acertos.
+            Tente novamente em instantes.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href="/desempenho"
+              className="btn-editorial-primary inline-flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-semibold"
+            >
+              Tentar novamente
+            </Link>
+            <Link
+              href="/estudar"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-4 text-sm font-medium text-foreground"
+            >
+              Ir para a vitrine
+            </Link>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
-  const areaLinks = [
-    {
-      id: null as null,
-      label: 'Todas as áreas',
-      href: buildDesempenhoHref({ ...filters, areaId: null }),
-      active: !filters.areaId,
-    },
-    ...GRANDE_AREAS.filter((a) => a.id !== 'outros').map((a) => ({
-      id: a.id,
-      label: a.label,
-      href: buildDesempenhoHref({ ...filters, areaId: a.id }),
-      active: filters.areaId === a.id,
-    })),
-  ];
+  const semAtividade = placar.respondidas === 0;
 
   return (
-    <div className={cn('mx-auto max-w-4xl space-y-8 px-4 py-6 md:px-8', DASHBOARD_PAGE_ROOT)}>
-      <section aria-label="Filtros de atividade" className="space-y-3">
+    <div className={rootClass} data-desempenho-hub="estudo">
+      <DesempenhoFiltros filters={filtersApplied} periodoResumo={periodoResumo} />
+
+      <section aria-label="Placar de estudo" className="space-y-2">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          <ScoreCard
+            label="Respondidas"
+            value={placar.respondidas}
+            icon={BookOpen}
+            variant="brand"
+          />
+          <ScoreCard label="Acertos" value={placar.acertos} icon={CheckCircle2} variant="success" />
+          <ScoreCard label="Erros" value={placar.erros} icon={XCircle} variant="danger" />
+          <ScoreCard
+            label="% acerto"
+            value={formatDesempenhoPct(placar.percentual)}
+            icon={Target}
+            variant="brand"
+          />
+          <ScoreCard
+            label="Meta do dia"
+            value={`${placar.metaDoDia.respondidasHoje}/${placar.metaDoDia.meta}`}
+            icon={Map}
+            variant={
+              placar.metaDoDia.respondidasHoje >= placar.metaDoDia.meta ? 'success' : 'warning'
+            }
+          />
+        </div>
         <p className="text-xs text-muted-foreground">
-          Período = atividade na última prática (não média de tentativas).
+          {placar.respondidas > 0 ? (
+            <>
+              Amostra: {placar.acertos}/{placar.respondidas} questões ·{' '}
+              {formatDesempenhoConfianca(placar.confidenceId)}
+            </>
+          ) : (
+            'Sem questões respondidas neste recorte.'
+          )}
         </p>
-        <div className="flex flex-wrap gap-2">
-          {periodoLinks.map((item) => (
-            <FilterChip key={item.periodo} href={item.href} active={item.active}>
-              {PERIODO_LABELS[item.periodo]}
-            </FilterChip>
-          ))}
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {disciplinaLinks.map((item) => (
-            <FilterChip key={item.id ?? 'all'} href={item.href} active={item.active}>
-              {item.label}
-            </FilterChip>
-          ))}
-        </div>
-        <div className="flex max-w-full gap-2 overflow-x-auto pb-1">
-          {areaLinks.map((item) => (
-            <FilterChip
-              key={item.id ?? 'all-areas'}
-              href={item.href}
-              active={item.active}
-              className="shrink-0"
-            >
-              {item.label}
-            </FilterChip>
-          ))}
-        </div>
-        {filters.banca ? (
-          <p className="text-xs text-muted-foreground">
-            Banca: <span className="font-medium text-foreground">{filters.banca}</span>
-            {' · '}
-            <Link href={buildDesempenhoHref({ ...filters, banca: null })} className="underline">
-              limpar
-            </Link>
-          </p>
-        ) : null}
       </section>
 
-      <section aria-label="Placar de estudo" className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-        <ScoreCard label="Respondidas" value={placar.respondidas} icon={BookOpen} variant="brand" />
-        <ScoreCard label="Acertos" value={placar.acertos} icon={CheckCircle2} variant="success" />
-        <ScoreCard label="Erros" value={placar.erros} icon={XCircle} variant="danger" />
-        <ScoreCard
-          label="% acerto"
-          value={formatDesempenhoPct(placar.percentual)}
-          icon={Target}
-          variant="brand"
-        />
-        <ScoreCard
-          label="Meta do dia"
-          value={`${placar.metaDoDia.respondidasHoje}/${placar.metaDoDia.meta}`}
-          icon={Map}
-          variant={placar.metaDoDia.respondidasHoje >= placar.metaDoDia.meta ? 'success' : 'warning'}
-        />
-      </section>
-
-      <AttemptEvolutionCard series={attemptSeries} />
-
-      {!placar.coachUnlocked ? (
+      {semAtividade ? (
+        <div className="metric-card">
+          <EmptyState
+            icon={BookOpen}
+            title="Nenhuma questão neste recorte"
+            description="Ajuste os filtros ou pratique na vitrine — o mapa por assunto aparece conforme você responde."
+            action={{ label: 'Ir para a vitrine', href: '/estudar' }}
+          />
+        </div>
+      ) : !placar.coachUnlocked ? (
         <div className="metric-card">
           <EmptyState
             icon={Map}
@@ -170,61 +148,38 @@ export function DesempenhoEstudoDashboard({ data }: Props) {
         </div>
       ) : (
         <>
+          <NextPracticeCard foci={nextPractice} />
+
           <section aria-labelledby="mapa-dominio-title" className="space-y-3">
             <div>
               <h2 id="mapa-dominio-title" className="text-base font-semibold text-slate-900">
-                Mapa por assunto
+                Panorama por áreas
               </h2>
               <p className="text-xs text-muted-foreground">
-                Árvore área → assunto, ordenada pelo pior % (amostra ≥ 5). Abaixo disso mostramos só a
-                contagem.
+                Cada área mostra acerto com a fração e a confiança da amostra. Abra para ver os
+                assuntos.
               </p>
             </div>
-            <DomainMapTable areas={areas} />
+            <AreaHierarchy areas={areas} />
           </section>
 
-          <section aria-labelledby="radar-risco-title" className="space-y-3">
+          <section aria-labelledby="panorama-conteudo-title" className="space-y-3">
             <div>
-              <h2 id="radar-risco-title" className="text-base font-semibold text-slate-900">
-                Radar de prova
+              <h2 id="panorama-conteudo-title" className="text-base font-semibold text-slate-900">
+                Panorama por tipo de conteúdo
               </h2>
-              <p className="text-xs text-muted-foreground">Faixas de incidência típicas para TE.</p>
+              <p className="text-xs text-muted-foreground">
+                Agrupamento por natureza do conteúdo — sem estimativa de frequência em prova.
+              </p>
             </div>
             <RiskRadar riskBands={riskBands} />
           </section>
-
-          <NextPracticeCard foci={nextPractice} />
         </>
       )}
 
+      <AttemptEvolutionCard series={attemptSeries} />
+
       <RecentAttemptsList attempts={recentAttempts} />
     </div>
-  );
-}
-
-function FilterChip({
-  href,
-  active,
-  children,
-  className,
-}: {
-  href: string;
-  active: boolean;
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className={cn(
-        'rounded-full border px-3 py-1.5 text-xs font-medium transition-colors',
-        active
-          ? 'border-[var(--color-brand)] bg-[var(--color-brand-dim)] text-slate-900'
-          : 'border-border bg-background text-muted-foreground hover:text-foreground',
-        className,
-      )}
-    >
-      {children}
-    </Link>
   );
 }
