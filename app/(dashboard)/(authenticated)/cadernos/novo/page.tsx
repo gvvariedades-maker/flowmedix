@@ -8,13 +8,14 @@ import { getServerSession } from '@/lib/supabase/server-auth';
 export default async function NovoCadernoPage({
   searchParams,
 }: {
-  searchParams: Promise<{ wizard?: string }>;
+  searchParams: Promise<{ wizard?: string; origem?: string }>;
 }) {
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
-  const { wizard: wizardParam } = await searchParams;
+  const { wizard: wizardParam, origem: origemParam } = await searchParams;
   const wizard = wizardParam === '1';
+  const origem = origemParam === 'desempenho' ? 'desempenho' : 'edital';
   const isAdmin = isAdminSessionEmail(session.user.email ?? null);
 
   const [matriculatedConcursos, modulos] = await Promise.all([
@@ -26,6 +27,7 @@ export default async function NovoCadernoPage({
 
   const context: NovoCadernoContext = {
     wizard,
+    origem,
     edital: editalRow
       ? {
           nome: editalRow.nome,

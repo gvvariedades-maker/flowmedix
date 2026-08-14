@@ -8,17 +8,18 @@ type Props = {
 };
 
 /**
- * Últimas questões do histórico (estado atual / upsert) com badge Reverso.
+ * Últimas questões praticadas — uma linha por questão (estado atual do histórico).
+ * A UI não expõe o mecanismo de upsert; fala em "resultado atual".
  */
 export function RecentAttemptsList({ attempts }: Props) {
   return (
     <section aria-labelledby="recentes-title" className="space-y-3">
       <div>
         <h2 id="recentes-title" className="text-base font-semibold text-slate-900">
-          Tentativas recentes
+          Questões praticadas recentemente
         </h2>
         <p className="text-xs text-muted-foreground">
-          Estado atual por questão (upsert do histórico).
+          Mostra o resultado atual de cada questão — se você refizer, o resultado é atualizado.
         </p>
       </div>
       {attempts.length === 0 ? (

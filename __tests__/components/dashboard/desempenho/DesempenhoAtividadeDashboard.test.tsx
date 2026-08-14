@@ -1,7 +1,7 @@
-/**
+﻿/**
  * @jest-environment jsdom
  */
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { DesempenhoAtividadeDashboard } from '@/components/dashboard/desempenho/DesempenhoAtividadeDashboard';
 import type { DesempenhoData } from '@/components/dashboard/performance/types';
 
@@ -45,7 +45,7 @@ describe('DesempenhoAtividadeDashboard', () => {
     expect(screen.getByText(/métricas secundárias/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /aba Estudo/i })).toHaveAttribute('href', '/desempenho');
     expect(screen.getByLabelText(/Heatmap de atividade/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Zerar histórico/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Zerar desempenho de estudo/i })).toBeInTheDocument();
 
     // Não reintroduz o placar hero do dashboard antigo
     expect(screen.queryByText('Questões (30 dias)')).not.toBeInTheDocument();
@@ -53,25 +53,30 @@ describe('DesempenhoAtividadeDashboard', () => {
     expect(screen.queryByText('Dia seguido')).not.toBeInTheDocument();
   });
 
-  it('omite Zerar histórico quando não há dados no histórico', () => {
+  it('omite Zerar desempenho de estudo quando não há dados no histórico', () => {
     render(
       <DesempenhoAtividadeDashboard
         dados={buildDados({ totalTodosTempos: 0, totalGeral: 0, topAssuntos: [] })}
       />,
     );
-    expect(screen.queryByRole('button', { name: /Zerar histórico/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Zerar desempenho de estudo/i })).not.toBeInTheDocument();
     expect(screen.getByText(/Nenhuma atividade ainda/i)).toBeInTheDocument();
   });
 
-  it('chama API ao confirmar zerar histórico', async () => {
+  it('chama API ao confirmar Zerar desempenho de estudo', async () => {
     mockFetchWithAuth.mockResolvedValue({
       ok: true,
       json: async () => ({ ok: true }),
     });
 
     render(<DesempenhoAtividadeDashboard dados={buildDados()} />);
-    fireEvent.click(screen.getByRole('button', { name: /Zerar histórico/i }));
-    fireEvent.click(screen.getByRole('button', { name: 'Sim, zerar' }));
+    fireEvent.click(screen.getByRole('button', { name: /Zerar desempenho de estudo/i }));
+    // O CTA destrutivo repete o rótulo do gatilho: escopar no diálogo evita ambiguidade.
+    fireEvent.click(
+      within(screen.getByRole('dialog')).getByRole('button', {
+        name: 'Zerar desempenho de estudo',
+      }),
+    );
 
     await waitFor(() => {
       expect(mockFetchWithAuth).toHaveBeenCalledWith('/api/zerar-desempenho', { method: 'POST' });

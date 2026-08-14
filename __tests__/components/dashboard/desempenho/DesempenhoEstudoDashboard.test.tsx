@@ -1,6 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { DesempenhoEstudoDashboard } from '@/components/dashboard/desempenho/DesempenhoEstudoDashboard';
 import type { DesempenhoEstudoData } from '@/lib/desempenho/types';
+
+const mockPush = jest.fn();
+
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({ push: mockPush }),
+}));
 
 function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEstudoData {
   return {
@@ -11,6 +17,7 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
       percentual: 58,
       metaDoDia: { respondidasHoje: 3, meta: 10 },
       coachUnlocked: true,
+      confidenceId: 'diagnostico_confiavel',
     },
     assuntos: [],
     areas: [
@@ -25,6 +32,7 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
         coberturaPct: 40,
         totalDisponivel: 15,
         amostraSuficiente: true,
+        confidenceId: 'evidencia_moderada',
         assuntos: [
           {
             tituloAula: 'Vias de Administração',
@@ -41,6 +49,8 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
             totalDisponivel: 15,
             ultimaPratica: '2026-08-10T12:00:00.000Z',
             amostraSuficiente: true,
+            confidenceId: 'evidencia_moderada',
+            errosSemReverso: 3,
             bancas: ['CPCON'],
           },
         ],
@@ -49,7 +59,7 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
     riskBands: [
       {
         riskBandId: 'alta_incidencia_protocolo',
-        label: 'Alta incidência / protocolo',
+        label: 'Protocolo e rotina assistencial',
         respondidas: 6,
         acertos: 2,
         erros: 4,
@@ -57,6 +67,7 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
         coberturaPct: 40,
         totalDisponivel: 15,
         amostraSuficiente: true,
+        confidenceId: 'evidencia_moderada',
       },
     ],
     weakAreas: [],
@@ -66,7 +77,12 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
         reason: 'weak_accuracy',
         percentual: 33,
         respondidas: 6,
+        acertos: 2,
         erros: 4,
+        errosSemReverso: 3,
+        coberturaPct: 40,
+        totalDisponivel: 15,
+        confidenceId: 'evidencia_moderada',
         deepLinkAssunto: 'Vias de Administração',
       },
     ],
@@ -86,6 +102,13 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
       areaId: null,
       disciplina: null,
     },
+    periodoResumo: {
+      periodo: 'all',
+      startYmd: null,
+      endYmdInclusive: '2026-08-11',
+      civilDays: null,
+    },
+    loadState: 'ok',
     attemptSeries: {
       available: false,
       unavailableReason: 'flag_off',
@@ -97,33 +120,98 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
       distinctQuestions: 0,
       dadosDesde: null,
       coberturaParcial: false,
+      truncated: false,
+      limiteRegistros: null,
     },
     ...overrides,
   };
 }
 
 describe('DesempenhoEstudoDashboard', () => {
-  it('mostra placar, mapa, radar, focos e recentes quando o coach está liberado', () => {
+  it('mostra placar, ação, panoramas e recentes quando o coach está liberado', () => {
     render(<DesempenhoEstudoDashboard data={buildData()} />);
 
+    expect(screen.getByLabelText('Filtros de desempenho')).toBeInTheDocument();
     expect(screen.getByLabelText('Placar de estudo')).toBeInTheDocument();
     expect(screen.getAllByText('Respondidas').length).toBeGreaterThanOrEqual(1);
-    expect(screen.getByRole('heading', { name: 'Mapa por assunto' })).toBeInTheDocument();
-    expect(screen.getAllByText('Farmacologia e Medicamentos').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Vias de Administração').length).toBeGreaterThan(0);
-    expect(screen.getByRole('heading', { name: 'Radar de prova' })).toBeInTheDocument();
-    expect(screen.getByText('Alta incidência / protocolo')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Próximos focos' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Panorama por áreas' })).toBeInTheDocument();
+    expect(screen.getAllByText('Farmacologia e Medicamentos').length).toBeGreaterThan(0);
+    expect(screen.getByText('Protocolo e rotina assistencial')).toBeInTheDocument();
     expect(
-      screen.getByRole('link', { name: /Praticar agora: Vias de Administração/ }),
-    ).toHaveAttribute('href', '/estudar?assunto=Vias%20de%20Administra%C3%A7%C3%A3o&status=pending');
-    expect(screen.getByRole('heading', { name: 'Tentativas recentes' })).toBeInTheDocument();
-    expect(screen.getByText('Reverso')).toBeInTheDocument();
-    expect(screen.getByText('Erro')).toBeInTheDocument();
+      screen.getByRole('heading', { name: 'Questões praticadas recentemente' }),
+    ).toBeInTheDocument();
     expect(screen.queryByLabelText('Evolução de tentativas')).not.toBeInTheDocument();
   });
 
-  it('mostra evolução P4 quando o ledger está disponível', () => {
+  it('decide antes de detalhar: ação vem antes da taxonomia', () => {
+    render(<DesempenhoEstudoDashboard data={buildData()} />);
+
+    const titulos = screen
+      .getAllByRole('heading', { level: 2 })
+      .map((h) => h.textContent?.trim() ?? '');
+
+    expect(titulos).toEqual([
+      'Próximos focos',
+      'Panorama por áreas',
+      'Panorama por tipo de conteúdo',
+      'Questões praticadas recentemente',
+    ]);
+  });
+
+  it('usa CTA curto com nome do assunto fora do rótulo visível', () => {
+    render(<DesempenhoEstudoDashboard data={buildData()} />);
+
+    const cta = screen.getByRole('link', {
+      name: 'Testar em outra questão de Vias de Administração',
+    });
+    expect(cta).toHaveTextContent('Testar em outra questão');
+    expect(cta).toHaveAttribute(
+      'href',
+      '/estudar?assunto=Vias%20de%20Administra%C3%A7%C3%A3o&status=pending',
+    );
+    expect(screen.queryByRole('link', { name: /Praticar agora/ })).not.toBeInTheDocument();
+  });
+
+  it('expande a área por controle nativo focável, com aria-expanded e painel oculto', () => {
+    render(<DesempenhoEstudoDashboard data={buildData()} />);
+
+    const toggle = screen.getByRole('button', { name: /Farmacologia e Medicamentos/ });
+    // `<button>` real: Enter/Espaço e Tab funcionam sem handler de teclado próprio.
+    expect(toggle.tagName).toBe('BUTTON');
+    expect(toggle).not.toHaveAttribute('tabindex', '-1');
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+
+    const painel = document.getElementById(toggle.getAttribute('aria-controls')!);
+    expect(painel).not.toBeNull();
+    expect(painel).toHaveAttribute('hidden');
+
+    toggle.focus();
+    expect(toggle).toHaveFocus();
+    fireEvent.click(toggle);
+
+    expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    expect(painel).not.toHaveAttribute('hidden');
+    expect(within(painel as HTMLElement).getByText(/cobertura 40%/)).toBeInTheDocument();
+
+    fireEvent.click(toggle);
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    expect(painel).toHaveAttribute('hidden');
+  });
+
+  it('abre o mapa completo em um toque', () => {
+    render(<DesempenhoEstudoDashboard data={buildData()} />);
+
+    fireEvent.click(screen.getByRole('button', { name: 'Ver mapa completo' }));
+
+    expect(screen.getByRole('button', { name: /Farmacologia e Medicamentos/ })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
+    expect(screen.getByRole('button', { name: 'Recolher mapa' })).toBeInTheDocument();
+  });
+
+  it('mostra evolução P4 quando a série está disponível', () => {
     render(
       <DesempenhoEstudoDashboard
         data={buildData({
@@ -141,6 +229,8 @@ describe('DesempenhoEstudoDashboard', () => {
             distinctQuestions: 4,
             dadosDesde: '2026-08-10T10:00:00.000Z',
             coberturaParcial: true,
+            truncated: false,
+            limiteRegistros: null,
           },
         })}
       />,
@@ -149,7 +239,8 @@ describe('DesempenhoEstudoDashboard', () => {
     expect(screen.getByLabelText('Evolução de tentativas')).toBeInTheDocument();
     expect(screen.getByText(/Dados a partir de/)).toBeInTheDocument();
     expect(screen.getByText('Tempo médio')).toBeInTheDocument();
-    expect(screen.getByText('Acerto na 1ª tentativa')).toBeInTheDocument();
+    expect(screen.getByText('Acerto na primeira tentativa do período')).toBeInTheDocument();
+    expect(screen.queryByText(/Evidence Engine|ledger|upsert/i)).not.toBeInTheDocument();
   });
 
   it('mostra empty state de coach abaixo de 10 respondidas', () => {
@@ -163,6 +254,7 @@ describe('DesempenhoEstudoDashboard', () => {
             percentual: null,
             metaDoDia: { respondidasHoje: 1, meta: 10 },
             coachUnlocked: false,
+            confidenceId: 'tendencia_inicial',
           },
           areas: [],
           riskBands: [],
@@ -178,6 +270,63 @@ describe('DesempenhoEstudoDashboard', () => {
       'href',
       '/estudar',
     );
-    expect(screen.queryByRole('heading', { name: 'Mapa por assunto' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Panorama por áreas' })).not.toBeInTheDocument();
+  });
+
+  it('mostra empty state honesto quando não há atividade no recorte', () => {
+    render(
+      <DesempenhoEstudoDashboard
+        data={buildData({
+          placar: {
+            respondidas: 0,
+            acertos: 0,
+            erros: 0,
+            percentual: null,
+            metaDoDia: { respondidasHoje: 0, meta: 10 },
+            coachUnlocked: false,
+            confidenceId: 'sem_dados',
+          },
+          areas: [],
+          riskBands: [],
+          nextPractice: [],
+          recentAttempts: [],
+        })}
+      />,
+    );
+
+    expect(
+      screen.getByRole('heading', { name: 'Nenhuma questão neste recorte' }),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Sem questões respondidas neste recorte.')).toBeInTheDocument();
+  });
+
+  it('erro de leitura não aparece como desempenho zerado', () => {
+    render(
+      <DesempenhoEstudoDashboard
+        data={buildData({
+          loadState: 'error',
+          placar: {
+            respondidas: 0,
+            acertos: 0,
+            erros: 0,
+            percentual: null,
+            metaDoDia: { respondidasHoje: 0, meta: 10 },
+            coachUnlocked: false,
+            confidenceId: 'sem_dados',
+          },
+          areas: [],
+          riskBands: [],
+          nextPractice: [],
+          recentAttempts: [],
+        })}
+      />,
+    );
+
+    expect(screen.getByRole('alert')).toHaveTextContent(
+      /Não conseguimos carregar seu desempenho/,
+    );
+    expect(screen.getByRole('link', { name: 'Tentar novamente' })).toBeInTheDocument();
+    expect(screen.queryByLabelText('Placar de estudo')).not.toBeInTheDocument();
+    expect(screen.queryByText('0%')).not.toBeInTheDocument();
   });
 });

@@ -1,10 +1,11 @@
 ﻿'use client';
 
 import { useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { BarChart3 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { toFreemiumTimezoneYmd } from '@/lib/freemium/constants';
 import { ActivitySparkline } from './activity-sparkline';
 import type { DiaEstudo, Periodo } from './types';
 
@@ -51,7 +52,10 @@ function formatDiaMes(isoDate: string): { dia: string; mes: string } {
 
 function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo }) {
   const dados = useMemo(() => serie.slice(-periodo), [serie, periodo]);
-  const hojeStr = new Date().toISOString().slice(0, 10);
+  const reduzirMovimento = useReducedMotion();
+  // Mesmo dia civil usado para montar a série (Brasília), não a data UTC:
+  // depois das 21h em Brasília, `toISOString()` já marcaria o dia seguinte.
+  const hojeStr = toFreemiumTimezoneYmd();
 
   /** Colunas 0–6 mantêm o mesmo dia da semana porque a série é consecutiva. */
   const columnWeekdays = useMemo(() => {
@@ -93,18 +97,24 @@ function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo 
             <motion.div
               key={dia.data}
               role="gridcell"
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.15, delay: Math.min(i * 0.012, 0.35) }}
+              aria-label={ariaLabel}
+              title={ariaLabel}
+              initial={reduzirMovimento ? false : { opacity: 0, scale: 0.92 }}
+              animate={reduzirMovimento ? undefined : { opacity: 1, scale: 1 }}
+              transition={
+                reduzirMovimento
+                  ? { duration: 0 }
+                  : { duration: 0.15, delay: Math.min(i * 0.012, 0.35) }
+              }
               className="flex min-w-0 flex-col items-center gap-0.5 sm:gap-1"
             >
+              {/* Célula é informativa: sem hover/cursor de clique para não parecer botão.
+                  A contagem aparece em texto abaixo — cor não é o único canal. */}
               <div
-                title={ariaLabel}
-                aria-label={ariaLabel}
+                aria-hidden
                 style={{ backgroundColor: bgColor }}
                 className={cn(
-                  'aspect-square w-full min-h-[1.25rem] max-h-10 cursor-default rounded-[2px] transition-opacity duration-150 sm:min-h-[1.5rem] sm:max-h-14',
-                  'hover:opacity-75',
+                  'aspect-square w-full min-h-[1.25rem] max-h-10 rounded-[2px] sm:min-h-[1.5rem] sm:max-h-14',
                   isToday &&
                     'ring-2 ring-[var(--color-success)] ring-offset-1 ring-offset-background',
                 )}

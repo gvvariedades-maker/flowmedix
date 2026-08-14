@@ -20,6 +20,7 @@
     "test:e2e:vitrine-pagination:staging": "tsx scripts/run-e2e-vitrine-pagination.ts --target=staging",
     "test:e2e:vitrine-premium": "tsx scripts/run-e2e-vitrine-premium.ts",
     "capture:t3-vitrine": "tsx scripts/capture-t3-vitrine.ts",
+    "capture:desempenho-hub": "tsx scripts/capture-desempenho-hub.ts",
     "test:e2e:estudar-nav": "tsx scripts/run-e2e-estudar-nav.ts",
     "test:e2e:estudar-nav:staging": "tsx scripts/run-e2e-estudar-nav.ts --target=staging",
     "test:e2e:revisoes-hoje": "playwright test e2e/revisoes-hoje.spec.ts --project=chromium --workers=1",

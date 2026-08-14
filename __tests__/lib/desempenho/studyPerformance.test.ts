@@ -153,7 +153,7 @@ describe('aggregateStudyPerformance', () => {
     expect(data.placar.respondidas).toBe(1);
   });
 
-  it('monta fila nextPractice com weak + errou sem reverso', () => {
+  it('prioriza erro sem estudo reverso antes de baixo acerto', () => {
     const catalog: CatalogDesempenhoRow[] = [];
     const historico: HistoricoDesempenhoRow[] = [];
     for (let i = 0; i < 5; i++) {
@@ -173,10 +173,125 @@ describe('aggregateStudyPerformance', () => {
     expect(data.nextPractice.length).toBeGreaterThan(0);
     expect(data.nextPractice[0]).toMatchObject({
       tituloAula: 'Saúde Mental',
-      reason: 'weak_accuracy',
+      reason: 'wrong_unreviewed',
       deepLinkAssunto: 'Saúde Mental',
+      errosSemReverso: 4,
     });
     expect(data.recentAttempts.some((r) => r.estudoReversoConcluido)).toBe(true);
+  });
+
+  it('ordena os tiers de prioridade: sem reverso → baixo acerto → cobertura baixa', () => {
+    const catalog: CatalogDesempenhoRow[] = [];
+    const historico: HistoricoDesempenhoRow[] = [];
+
+    // A) erro sem reverso (amostra 5, 2 erros abertos)
+    for (let i = 0; i < 5; i++) {
+      catalog.push(cat(`rev-${i}`, 'Saúde Mental'));
+      historico.push(
+        hist({
+          id: `rev-${i}`,
+          modulo_slug: `rev-${i}`,
+          acertou: i > 1,
+          estudo_reverso_concluido: false,
+          created_at: '2026-08-10T10:00:00.000Z',
+        }),
+      );
+    }
+
+    // B) baixo acerto com todos os erros já revisados
+    for (let i = 0; i < 6; i++) {
+      catalog.push(cat(`fraco-${i}`, 'Urgências e Emergências'));
+      historico.push(
+        hist({
+          id: `fraco-${i}`,
+          modulo_slug: `fraco-${i}`,
+          acertou: i === 0,
+          estudo_reverso_concluido: true,
+          created_at: '2026-08-10T11:00:00.000Z',
+        }),
+      );
+    }
+
+    // C) cobertura baixa: muito material, 1 questão praticada e acertada
+    for (let i = 0; i < 20; i++) catalog.push(cat(`cob-${i}`, 'Imunização'));
+    historico.push(
+      hist({
+        id: 'cob-0',
+        modulo_slug: 'cob-0',
+        acertou: true,
+        estudo_reverso_concluido: true,
+        created_at: '2026-08-10T12:00:00.000Z',
+      }),
+    );
+
+    const data = aggregateStudyPerformance(historico, catalog, null, NOW);
+    const reasons = data.nextPractice.map((f) => [f.tituloAula, f.reason]);
+
+    expect(reasons[0]).toEqual(['Saúde Mental', 'wrong_unreviewed']);
+    expect(reasons[1]).toEqual(['Urgências e Emergências', 'weak_accuracy']);
+    expect(reasons).toContainEqual(['Imunização', 'low_coverage']);
+    expect(data.nextPractice.every((f) => f.deepLinkAssunto === f.tituloAula)).toBe(true);
+  });
+
+  it('não recomenda cobertura baixa quando há menos de 3 questões disponíveis', () => {
+    const catalog = [cat('mini-1', 'Imunização'), cat('mini-2', 'Imunização')];
+    const historico: HistoricoDesempenhoRow[] = [];
+
+    const data = aggregateStudyPerformance(historico, catalog, null, NOW);
+    expect(data.nextPractice).toHaveLength(0);
+  });
+
+  it('conta meta do dia e período pelo dia civil de Brasília', () => {
+    const catalog = [cat('tz-1', 'Imunização'), cat('tz-2', 'Imunização')];
+    const historico = [
+      // 2026-08-11 22:00 em Brasília → ainda é "hoje" para NOW (11/08 12:00 BRT)
+      hist({ id: 'hoje', modulo_slug: 'tz-1', acertou: true, created_at: '2026-08-12T01:00:00.000Z' }),
+      // 2026-08-04 23:30 em Brasília → fora da janela de 7 datas civis (05→11)
+      hist({ id: 'fora', modulo_slug: 'tz-2', acertou: false, created_at: '2026-08-05T02:30:00.000Z' }),
+    ];
+
+    const data = aggregateStudyPerformance(historico, catalog, { periodo: '7d' }, NOW);
+
+    expect(data.placar.metaDoDia.respondidasHoje).toBe(1);
+    expect(data.placar.respondidas).toBe(1);
+    expect(data.periodoResumo).toEqual({
+      periodo: '7d',
+      startYmd: '2026-08-05',
+      endYmdInclusive: '2026-08-11',
+      civilDays: 7,
+    });
+  });
+
+  it('marca loadState de erro sem fingir zeros como dado válido', () => {
+    const ok = aggregateStudyPerformance([], [], null, NOW);
+    const falha = aggregateStudyPerformance([], [], null, NOW, 'error');
+
+    expect(ok.loadState).toBe('ok');
+    expect(falha.loadState).toBe('error');
+    expect(falha.placar.percentual).toBeNull();
+    expect(falha.placar.confidenceId).toBe('sem_dados');
+  });
+
+  it('classifica confiança pela amostra em assunto, área e placar', () => {
+    const catalog: CatalogDesempenhoRow[] = [];
+    const historico: HistoricoDesempenhoRow[] = [];
+    for (let i = 0; i < 12; i++) {
+      catalog.push(cat(`c-${i}`, 'Imunização'));
+      historico.push(hist({ id: `c-${i}`, modulo_slug: `c-${i}`, acertou: true }));
+    }
+    catalog.push(cat('baixo-1', 'Saúde Mental'));
+    historico.push(hist({ id: 'baixo-1', modulo_slug: 'baixo-1', acertou: false }));
+
+    const data = aggregateStudyPerformance(historico, catalog, null, NOW);
+    const imuno = data.assuntos.find((a) => a.tituloAula === 'Imunização')!;
+    const mental = data.assuntos.find((a) => a.tituloAula === 'Saúde Mental')!;
+
+    expect(imuno.confidenceId).toBe('diagnostico_confiavel');
+    expect(mental.confidenceId).toBe('dados_iniciais');
+    expect(data.placar.confidenceId).toBe('diagnostico_confiavel');
+    expect(data.areas.find((a) => a.areaId === 'saude_publica')?.confidenceId).toBe(
+      'diagnostico_confiavel',
+    );
   });
 
   it('libera coach a partir do limiar de respondidas', () => {

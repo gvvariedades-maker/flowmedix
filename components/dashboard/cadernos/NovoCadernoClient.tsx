@@ -1,15 +1,28 @@
 ﻿'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, BookMarked, CheckCircle2, Loader2, Sparkles } from 'lucide-react';
+import {
+  AlertTriangle,
+  ArrowLeft,
+  ArrowRight,
+  BookMarked,
+  CheckCircle2,
+  Loader2,
+  Sparkles,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { requestNotebookActivationRefresh } from '@/lib/cadernos/notebookActivationBridge';
 import {
+  clearDesempenhoSelecao,
+  readDesempenhoSelecao,
+} from '@/lib/cadernos/desempenhoSelecao';
+import {
+  buildDesempenhoPreset,
   buildNotebookTitleSuggestions,
   buildQuickAddPreset,
   persistWizardPreset,
@@ -24,6 +37,8 @@ import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 
 export type NovoCadernoContext = {
   wizard: boolean;
+  /** `desempenho` = assuntos escolhidos no hub; lote estrito. */
+  origem?: 'edital' | 'desempenho';
   edital: NotebookEditalContext;
   modulos: ModuloTemplateRow[];
 };
@@ -159,14 +174,35 @@ function LegacyNovoCadernoForm() {
 function WizardNovoCadernoForm({
   edital,
   modulos,
+  origem = 'edital',
 }: {
   edital: NotebookEditalContext;
   modulos: ModuloTemplateRow[];
+  origem?: 'edital' | 'desempenho';
 }) {
   const router = useRouter();
   const titleSuggestions = useMemo(() => buildNotebookTitleSuggestions(edital), [edital]);
-  const preset = useMemo(() => buildQuickAddPreset(edital, modulos), [edital, modulos]);
+
+  // Seleção do hub vive em sessionStorage; lida uma vez, no cliente.
+  const [selecaoDesempenho, setSelecaoDesempenho] = useState<string[] | null>(null);
+  useEffect(() => {
+    if (origem !== 'desempenho') return;
+    setSelecaoDesempenho(readDesempenhoSelecao());
+  }, [origem]);
+
+  const modoDesempenho = origem === 'desempenho';
+  const preset = useMemo(() => {
+    if (modoDesempenho) {
+      return buildDesempenhoPreset(selecaoDesempenho ?? [], modulos);
+    }
+    return buildQuickAddPreset(edital, modulos);
+  }, [edital, modoDesempenho, modulos, selecaoDesempenho]);
   const batchPreview = useMemo(() => pickWizardBatchModulos(modulos, preset), [modulos, preset]);
+
+  // Seleção perdida (storage limpo, aba nova) ≠ seleção vazia proposital.
+  const selecaoPerdida = modoDesempenho && selecaoDesempenho !== null && selecaoDesempenho.length === 0;
+  const semQuestoesNaSelecao =
+    modoDesempenho && !selecaoPerdida && (selecaoDesempenho?.length ?? 0) > 0 && batchPreview.length === 0;
 
   const [step, setStep] = useState<1 | 2>(1);
   const [title, setTitle] = useState('');
@@ -179,6 +215,21 @@ function WizardNovoCadernoForm({
       setStep(1);
       return;
     }
+    // Defesa em profundidade: disabled no CTA não basta — o handler também recusa.
+    if (modoDesempenho && selecaoDesempenho === null) {
+      setError('Ainda estamos lendo os assuntos marcados. Aguarde um instante.');
+      return;
+    }
+    if (selecaoPerdida) {
+      setError('Não encontramos os assuntos selecionados. Volte ao seu desempenho e marque de novo.');
+      return;
+    }
+    if (semQuestoesNaSelecao) {
+      // Nunca completar o lote com assunto que o aluno não escolheu.
+      setError('Nenhuma questão liberada nos assuntos escolhidos. Escolha outro assunto no hub.');
+      return;
+    }
+
     setLoading(true);
     setError('');
     persistWizardPreset(preset);
@@ -212,6 +263,7 @@ function WizardNovoCadernoForm({
 
         if (itemsRes.ok) {
           requestNotebookActivationRefresh();
+          if (modoDesempenho) clearDesempenhoSelecao();
           router.push(`/cadernos/${notebookId}?setup=done`);
           return;
         }
@@ -245,7 +297,9 @@ function WizardNovoCadernoForm({
             <div className="min-w-0 flex-1">
               <h2 className="text-xl font-bold text-slate-900">Monte seu caderno</h2>
               <p className="mt-1 text-sm text-slate-500">
-                Em 2 passos você nomeia e já recebe questões sugeridas do seu edital.
+                {modoDesempenho
+                  ? 'Em 2 passos você nomeia e recebe só questões dos assuntos que marcou no seu desempenho.'
+                  : 'Em 2 passos você nomeia e já recebe questões sugeridas do seu edital.'}
               </p>
             </div>
           </div>
@@ -324,7 +378,15 @@ function WizardNovoCadernoForm({
               transition={{ duration: 0.2 }}
               className="space-y-5"
             >
-              <PresetPreview preset={preset} batchCount={batchPreview.length} />
+              {selecaoPerdida ? (
+                <SelecaoPerdidaAviso />
+              ) : (
+                <PresetPreview
+                  preset={preset}
+                  batchCount={batchPreview.length}
+                  carregandoSelecao={modoDesempenho && selecaoDesempenho === null}
+                />
+              )}
 
               {error ? (
                 <p className="text-sm font-medium text-red-600" role="alert">
@@ -345,7 +407,12 @@ function WizardNovoCadernoForm({
                 </Button>
                 <button
                   type="button"
-                  disabled={loading}
+                  disabled={
+                    loading ||
+                    (modoDesempenho && selecaoDesempenho === null) ||
+                    selecaoPerdida ||
+                    semQuestoesNaSelecao
+                  }
                   onClick={() => void handleCreateWithBatch()}
                   className={ctaPrimary}
                 >
@@ -370,10 +437,57 @@ function WizardNovoCadernoForm({
   );
 }
 
-function PresetPreview({ preset, batchCount }: { preset: QuickAddPreset; batchCount: number }) {
+/** Seleção do hub não chegou (aba nova, storage limpo): não inventar lote. */
+function SelecaoPerdidaAviso() {
+  return (
+    <div
+      role="alert"
+      className="space-y-3 rounded-2xl border border-[var(--color-warning)]/40 bg-[var(--color-warning-dim)] p-4"
+    >
+      <p className="flex items-center gap-2 text-sm font-bold text-slate-900">
+        <AlertTriangle className="h-4 w-4 text-[var(--color-warning-text)]" aria-hidden />
+        Não encontramos os assuntos selecionados
+      </p>
+      <p className="text-sm text-slate-600">
+        A seleção vale só na aba onde você marcou os assuntos. Volte ao seu desempenho e marque
+        novamente — assim o caderno recebe exatamente o que você escolheu.
+      </p>
+      <Link
+        href="/desempenho"
+        className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-900"
+      >
+        Voltar ao meu desempenho
+      </Link>
+    </div>
+  );
+}
+
+function PresetPreview({
+  preset,
+  batchCount,
+  carregandoSelecao = false,
+}: {
+  preset: QuickAddPreset;
+  batchCount: number;
+  carregandoSelecao?: boolean;
+}) {
+  const estrito = preset.strict === true;
+
+  if (carregandoSelecao) {
+    return (
+      <p className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-500">
+        Lendo os assuntos que você marcou…
+      </p>
+    );
+  }
+
   return (
     <div className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-      {preset.banca ? (
+      {estrito ? (
+        <p className="text-sm font-bold text-slate-900">
+          Assuntos escolhidos no seu desempenho
+        </p>
+      ) : preset.banca ? (
         <p className="text-sm font-bold text-slate-900">
           Sua banca: <span className="text-[var(--color-success-text)]">{preset.banca}</span>
         </p>
@@ -398,9 +512,13 @@ function PresetPreview({ preset, batchCount }: { preset: QuickAddPreset; batchCo
       )}
 
       <p className="text-xs text-slate-500">
-        {batchCount > 0
-          ? `Vamos adicionar até ${Math.min(batchCount, preset.suggestedBatchSize)} questões com foco nesses assuntos.`
-          : 'O caderno será criado vazio; adicione questões na próxima tela.'}
+        {estrito
+          ? batchCount > 0
+            ? `Vamos adicionar ${batchCount} ${batchCount === 1 ? 'questão' : 'questões'} — só desses assuntos, sem completar com outros.`
+            : 'Nenhuma questão liberada nesses assuntos. Escolha outro assunto no seu desempenho.'
+          : batchCount > 0
+            ? `Vamos adicionar até ${Math.min(batchCount, preset.suggestedBatchSize)} questões com foco nesses assuntos.`
+            : 'O caderno será criado vazio; adicione questões na próxima tela.'}
       </p>
     </div>
   );
@@ -435,7 +553,11 @@ export default function NovoCadernoClient({ context }: { context: NovoCadernoCon
 
       <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 md:px-10 md:pt-8">
         {context.wizard ? (
-          <WizardNovoCadernoForm edital={context.edital} modulos={context.modulos} />
+          <WizardNovoCadernoForm
+            edital={context.edital}
+            modulos={context.modulos}
+            origem={context.origem}
+          />
         ) : (
           <LegacyNovoCadernoForm />
         )}

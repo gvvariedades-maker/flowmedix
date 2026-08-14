@@ -62,6 +62,10 @@ supabase/.temp/
 # Pacotes de backup local (env + dados Supabase — upload manual no Drive)
 /backups/
 
+# Captura do hub vinculada só ao SHA de HEAD (sem digest do dirty tree).
+# Foi sobrescrita na auditoria residual — não entra em commit/staging.
+/artifacts/desempenho-v1/f5ee914e/
+
 # Onda 1 — evidência regenerável / peso morto (não runtime do app)
 # Screenshots E2E soltos na raiz (não confundir com public/ ou app/icon.png)
 /*.png

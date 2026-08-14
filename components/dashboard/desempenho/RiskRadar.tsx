@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 import type { RiskBandPerformance } from '@/lib/desempenho/types';
 import {
   desempenhoPctTone,
+  formatDesempenhoConfianca,
   formatDesempenhoPct,
 } from '@/components/dashboard/desempenho/formatDesempenho';
 
@@ -24,7 +25,10 @@ const PCT_TONE_CLASS = {
 } as const;
 
 /**
- * Faixas de incidência típicas de prova TE (alta incidência/protocolo, clínico crítico, etc.).
+ * Panorama por tipo de conteúdo (protocolo/rotina, clínico crítico…).
+ *
+ * Agrupa os assuntos por natureza do conteúdo — não afirma incidência em prova,
+ * porque não há fonte de frequência por banca no dado atual.
  */
 export function RiskRadar({ riskBands }: Props) {
   const bands = riskBands.filter(
@@ -53,7 +57,8 @@ export function RiskRadar({ riskBands }: Props) {
               <div className="min-w-0">
                 <p className="text-sm font-medium text-slate-900">{band.label}</p>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  {band.respondidas} respondidas · cobertura {band.coberturaPct}%
+                  {band.respondidas} respondidas · cobertura {band.coberturaPct}% ·{' '}
+                  {formatDesempenhoConfianca(band.confidenceId)}
                 </p>
               </div>
               <p

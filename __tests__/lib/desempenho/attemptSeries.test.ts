@@ -104,6 +104,77 @@ describe('aggregateAttemptSeries', () => {
     expect(series.coberturaParcial).toBe(true);
   });
 
+  it('usa dia civil de Brasília na série (não UTC)', () => {
+    const events = [
+      // 11/08 22:00 em Brasília
+      evt({
+        attempt_id: 'a1',
+        question_id: 'q1',
+        correct: true,
+        created_at: '2026-08-12T01:00:00.000Z',
+      }),
+    ];
+
+    const series = aggregateAttemptSeries(events, { periodo: '7d', now });
+    const ativos = series.daily.filter((d) => d.attempts > 0);
+
+    expect(series.daily).toHaveLength(7);
+    expect(ativos).toHaveLength(1);
+    expect(ativos[0]!.date).toBe('2026-08-11');
+  });
+
+  it('exclui evento futuro (intervalo semiaberto)', () => {
+    const series = aggregateAttemptSeries(
+      [
+        evt({
+          attempt_id: 'a1',
+          question_id: 'q1',
+          correct: true,
+          created_at: '2026-08-13T12:00:00.000Z',
+        }),
+      ],
+      { periodo: '7d', now },
+    );
+
+    expect(series.unavailableReason).toBe('empty');
+    expect(series.totalEvents).toBe(0);
+  });
+
+  it('propaga truncamento como cobertura parcial e limite explícito', () => {
+    const events = [
+      evt({
+        attempt_id: 'a1',
+        question_id: 'q1',
+        correct: true,
+        created_at: '2026-08-10T10:00:00.000Z',
+      }),
+    ];
+
+    const series = aggregateAttemptSeries(events, {
+      periodo: '7d',
+      now,
+      truncated: true,
+      limiteRegistros: 5000,
+    });
+
+    expect(series.truncated).toBe(true);
+    expect(series.limiteRegistros).toBe(5000);
+    expect(series.coberturaParcial).toBe(true);
+  });
+
+  it('mantém truncamento visível mesmo sem eventos no período', () => {
+    const series = aggregateAttemptSeries([], {
+      periodo: '7d',
+      now,
+      truncated: true,
+      limiteRegistros: 5000,
+    });
+
+    expect(series.unavailableReason).toBe('empty');
+    expect(series.truncated).toBe(true);
+    expect(series.limiteRegistros).toBe(5000);
+  });
+
   it('retorna available com empty quando não há eventos no período', () => {
     const series = aggregateAttemptSeries(
       [

@@ -1,64 +1,69 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { BookOpen } from 'lucide-react';
+import { AlertTriangle, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { PageHeader } from '@/components/ui/page-header';
-import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { DesempenhoAtividadeDashboard } from '@/components/dashboard/desempenho/DesempenhoAtividadeDashboard';
-import { DesempenhoTabs } from '@/components/dashboard/desempenho/DesempenhoTabs';
+import { DesempenhoHubShell } from '@/components/dashboard/desempenho/DesempenhoHubShell';
 import type { AssuntoTop, DesempenhoData, DiaEstudo } from '@/components/dashboard/performance/types';
-import { DASHBOARD_PAGE_CENTER } from '@/lib/layout/mobileBottomNav';
 import { toFreemiumTimezoneYmd } from '@/lib/freemium/constants';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { logger } from '@/lib/logger';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
-import { cn } from '@/lib/utils';
 
 export type { AssuntoTop, DesempenhoData, DiaEstudo } from '@/components/dashboard/performance/types';
 
 const META_DIARIA = 10;
 
-const EMPTY_ATIVIDADE: DesempenhoData = {
-  hoje: 0,
-  metaDiaria: META_DIARIA,
-  streak: 0,
-  totalGeral: 0,
-  totalTodosTempos: 0,
-  serie30dias: [],
-  topAssuntos: [],
-};
+/**
+ * Seed E2E (`E2E_DASHBOARD_BYPASS`): 30 dias civis de Brasília com atividade
+ * determinística, para o Playwright validar a grade do heatmap, a legenda e o
+ * diálogo de reset sem depender do Supabase.
+ */
+function buildE2eAtividade(): DesempenhoData {
+  const contagens = [0, 2, 5, 9, 14, 1, 3];
+  const serie30dias: DiaEstudo[] = [];
+  for (let i = 29; i >= 0; i--) {
+    const anchor = new Date();
+    anchor.setDate(anchor.getDate() - i);
+    serie30dias.push({
+      data: toFreemiumTimezoneYmd(anchor),
+      count: contagens[(29 - i) % contagens.length]!,
+    });
+  }
+
+  const total = serie30dias.reduce((soma, dia) => soma + dia.count, 0);
+  return {
+    hoje: serie30dias[serie30dias.length - 1]!.count,
+    metaDiaria: META_DIARIA,
+    streak: 3,
+    totalGeral: total,
+    totalTodosTempos: total,
+    serie30dias,
+    topAssuntos: [{ nome: 'Vias de Administração', count: 8 }],
+  };
+}
+
+const SHELL_DESCRIPTION =
+  'Hábitos, sequência e privacidade — métricas secundárias ao mapa de Estudo.';
+
+function ShellAction() {
+  return (
+    <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
+      <Link href="/estudar" className="inline-flex w-full items-center justify-center sm:w-auto">
+        <BookOpen className="h-4 w-4" aria-hidden />
+        Praticar na vitrine
+      </Link>
+    </Button>
+  );
+}
 
 export default async function DesempenhoAtividadePage() {
   const e2eBypass = isE2eBypassEnabled('E2E_DASHBOARD_BYPASS');
   if (e2eBypass) {
     return (
-      <DashboardMobilePage
-        variant="default"
-        className="dashboard-surface min-h-0 flex-1 bg-background text-foreground"
-      >
-        <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-          <div className="mx-auto max-w-4xl space-y-4 px-4 py-5 md:px-8">
-            <PageHeader
-              title="Meu desempenho"
-              breadcrumb={[
-                { label: 'Área do aluno', href: '/estudar' },
-                { label: 'Meu desempenho' },
-              ]}
-              description="Hábitos, sequência e privacidade — métricas secundárias ao mapa de Estudo."
-              action={
-                <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
-                  <Link href="/estudar" className="inline-flex w-full items-center justify-center sm:w-auto">
-                    <BookOpen className="h-4 w-4" aria-hidden />
-                    Praticar na vitrine
-                  </Link>
-                </Button>
-              }
-            />
-            <DesempenhoTabs />
-          </div>
-        </div>
-        <DesempenhoAtividadeDashboard dados={EMPTY_ATIVIDADE} />
-      </DashboardMobilePage>
+      <DesempenhoHubShell description={SHELL_DESCRIPTION} action={<ShellAction />}>
+        <DesempenhoAtividadeDashboard dados={buildE2eAtividade()} />
+      </DesempenhoHubShell>
     );
   }
 
@@ -181,47 +186,45 @@ export default async function DesempenhoAtividadePage() {
     };
 
     return (
-      <DashboardMobilePage
-        variant="default"
-        className="dashboard-surface min-h-0 flex-1 bg-background text-foreground"
-      >
-        <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-          <div className="mx-auto max-w-4xl space-y-4 px-4 py-5 md:px-8">
-            <PageHeader
-              title="Meu desempenho"
-              breadcrumb={[
-                { label: 'Área do aluno', href: '/estudar' },
-                { label: 'Meu desempenho' },
-              ]}
-              description="Hábitos, sequência e privacidade — métricas secundárias ao mapa de Estudo."
-              action={
-                <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
-                  <Link href="/estudar" className="inline-flex w-full items-center justify-center sm:w-auto">
-                    <BookOpen className="h-4 w-4" aria-hidden />
-                    Praticar na vitrine
-                  </Link>
-                </Button>
-              }
-            />
-            <DesempenhoTabs />
-          </div>
-        </div>
+      <DesempenhoHubShell description={SHELL_DESCRIPTION} action={<ShellAction />}>
         <DesempenhoAtividadeDashboard dados={desempenho} />
-      </DashboardMobilePage>
+      </DesempenhoHubShell>
     );
   } catch (error) {
     logger.error('Failed to load desempenho-atividade', error, { userId });
+    // Erro de leitura não vira "zero dias estudados": estado explícito com retry.
     return (
-      <DashboardMobilePage
-        variant="default"
-        className={cn('dashboard-surface bg-background p-6 text-foreground', DASHBOARD_PAGE_CENTER)}
-      >
-        <div className="max-w-md space-y-4 text-center">
-          <p className="text-sm text-muted-foreground">
-            Erro ao carregar dados. Tente novamente ou use “Voltar para a Vitrine” no topo da página.
-          </p>
+      <DesempenhoHubShell description={SHELL_DESCRIPTION} action={<ShellAction />}>
+        <div className="mx-auto max-w-4xl px-4 py-6 md:px-8">
+          <section
+            aria-label="Erro ao carregar atividade"
+            role="alert"
+            className="metric-card flex flex-col gap-3 p-5"
+          >
+            <p className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+              <AlertTriangle className="h-4 w-4 text-[var(--color-danger-text)]" aria-hidden />
+              Não conseguimos carregar sua atividade
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Sua sequência e seu histórico continuam salvos — apenas a leitura falhou agora.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href="/desempenho/atividade"
+                className="btn-editorial-primary inline-flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-semibold"
+              >
+                Tentar novamente
+              </Link>
+              <Link
+                href="/estudar"
+                className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-4 text-sm font-medium text-foreground"
+              >
+                Ir para a vitrine
+              </Link>
+            </div>
+          </section>
         </div>
-      </DashboardMobilePage>
+      </DesempenhoHubShell>
     );
   }
 }

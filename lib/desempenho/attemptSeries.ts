@@ -9,6 +9,12 @@ import type {
   AttemptSeriesEventRow,
   DesempenhoPeriodo,
 } from '@/lib/desempenho/types';
+import {
+  eachDesempenhoDayKey,
+  getDesempenhoPeriodRange,
+  isWithinDesempenhoPeriod,
+  toDesempenhoDayKey,
+} from '@/lib/desempenho/periodo';
 
 export type AggregateAttemptSeriesOptions = {
   periodo: DesempenhoPeriodo;
@@ -17,47 +23,11 @@ export type AggregateAttemptSeriesOptions = {
   historicoOldestAt?: string | null;
   /** Respondidas distintas no histórico (P0) — comparação de cobertura. */
   historicoRespondidas?: number | null;
+  /** Leitura bateu no teto de registros — série parcial, avisada na UI. */
+  truncated?: boolean;
+  /** Teto aplicado na leitura. */
+  limiteRegistros?: number | null;
 };
-
-/** Espelho de `getDesempenhoPeriodStart` — evita import circular com studyPerformance. */
-function periodStart(periodo: DesempenhoPeriodo, now: Date): Date | null {
-  if (periodo === 'all') return null;
-  const base = new Date(now);
-  if (periodo === '7d') base.setDate(now.getDate() - 7);
-  else if (periodo === '30d') base.setDate(now.getDate() - 30);
-  else if (periodo === '90d') base.setDate(now.getDate() - 90);
-  else if (periodo === '12m') base.setMonth(now.getMonth() - 12);
-  return base;
-}
-
-function toLocalDayKey(iso: string, now: Date = new Date()): string {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) {
-    return toLocalDayKey(now.toISOString(), now);
-  }
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
-}
-
-function startOfLocalDay(d: Date): Date {
-  return new Date(d.getFullYear(), d.getMonth(), d.getDate());
-}
-
-function eachLocalDayKeys(from: Date, to: Date): string[] {
-  const keys: string[] = [];
-  const cursor = startOfLocalDay(from);
-  const end = startOfLocalDay(to);
-  while (cursor <= end) {
-    const y = cursor.getFullYear();
-    const m = String(cursor.getMonth() + 1).padStart(2, '0');
-    const day = String(cursor.getDate()).padStart(2, '0');
-    keys.push(`${y}-${m}-${day}`);
-    cursor.setDate(cursor.getDate() + 1);
-  }
-  return keys;
-}
 
 /** Fallback estável quando a flag está off ou a leitura falha. */
 export function emptyAttemptSeries(
@@ -74,6 +44,8 @@ export function emptyAttemptSeries(
     distinctQuestions: 0,
     dadosDesde: null,
     coberturaParcial: false,
+    truncated: false,
+    limiteRegistros: null,
   };
 }
 
@@ -86,12 +58,13 @@ export function aggregateAttemptSeries(
   options: AggregateAttemptSeriesOptions,
 ): AttemptSeriesData {
   const now = options.now ?? new Date();
-  const from = periodStart(options.periodo, now);
+  const range = getDesempenhoPeriodRange(options.periodo, now);
+  const truncated = options.truncated ?? false;
+  const limiteRegistros = options.limiteRegistros ?? null;
 
   const filtered = events.filter((e) => {
     if (e.context !== 'regular_practice') return false;
-    if (from && new Date(e.created_at) < from) return false;
-    return true;
+    return isWithinDesempenhoPeriod(e.created_at, range);
   });
 
   if (filtered.length === 0) {
@@ -99,6 +72,8 @@ export function aggregateAttemptSeries(
       ...emptyAttemptSeries('empty'),
       available: true,
       unavailableReason: 'empty',
+      truncated,
+      limiteRegistros,
     };
   }
 
@@ -107,17 +82,14 @@ export function aggregateAttemptSeries(
 
   const byDay = new Map<string, { attempts: number; acertos: number }>();
   for (const e of sorted) {
-    const key = toLocalDayKey(e.created_at, now);
+    const key = toDesempenhoDayKey(e.created_at, now);
     const cur = byDay.get(key) ?? { attempts: 0, acertos: 0 };
     cur.attempts += 1;
     if (e.correct) cur.acertos += 1;
     byDay.set(key, cur);
   }
 
-  const rangeStart = from
-    ? startOfLocalDay(from)
-    : startOfLocalDay(new Date(dadosDesde));
-  const dayKeys = eachLocalDayKeys(rangeStart, now);
+  const dayKeys = eachDesempenhoDayKey(range, toDesempenhoDayKey(dadosDesde, now));
   const daily: AttemptSeriesDay[] = dayKeys.map((date) => {
     const stats = byDay.get(date);
     if (!stats || stats.attempts === 0) {
@@ -186,21 +158,36 @@ export function aggregateAttemptSeries(
     totalEvents: sorted.length,
     distinctQuestions,
     dadosDesde,
-    coberturaParcial: historicoPredatesLedger || Boolean(countGap),
+    coberturaParcial: historicoPredatesLedger || Boolean(countGap) || truncated,
+    truncated,
+    limiteRegistros,
   };
 }
 
 const EVENT_SELECT =
   'attempt_id, question_id, correct, response_time_ms, response_time_status, created_at, context';
 
-async function fetchRegularPracticeEvents(
-  userId: string,
-): Promise<AttemptSeriesEventRow[]> {
+type LedgerReadResult = {
+  events: AttemptSeriesEventRow[];
+  /** Bateu no teto: existem eventos mais antigos fora da série. */
+  truncated: boolean;
+  limite: number;
+};
+
+/**
+ * Lê o ledger do **mais recente para o mais antigo** e reordena em memória.
+ *
+ * Ordenar ascendente antes do `limit` descartaria justamente os eventos recentes
+ * quando o usuário passa do teto (`SCALE_LIMITS.HISTORICO_ANALYTICS_READ`).
+ */
+async function fetchRegularPracticeEvents(userId: string): Promise<LedgerReadResult> {
   const { createServerSupabase } = await import('@/lib/supabase/server');
   const { withPostgrestReadRetry } = await import('@/lib/supabaseReadRetry');
   const { SCALE_LIMITS } = await import('@/lib/scale/constants');
   const { logger } = await import('@/lib/logger');
   const { DataServiceUnavailableError } = await import('@/lib/dataServiceError');
+
+  const limite = SCALE_LIMITS.HISTORICO_ANALYTICS_READ;
 
   try {
     const supabase = await createServerSupabase();
@@ -213,11 +200,25 @@ async function fetchRegularPracticeEvents(
           .eq('user_id', userId)
           .eq('context', 'regular_practice')
           .eq('event_type', 'attempt')
-          .order('created_at', { ascending: true })
-          .limit(SCALE_LIMITS.HISTORICO_ANALYTICS_READ),
+          .order('created_at', { ascending: false })
+          .limit(limite),
     );
 
-    return (data ?? []) as AttemptSeriesEventRow[];
+    const rows = (data ?? []) as AttemptSeriesEventRow[];
+    const truncated = rows.length >= limite;
+    if (truncated) {
+      logger.warn('Ledger de desempenho truncado no teto de leitura', {
+        userId,
+        limite,
+      });
+    }
+
+    return {
+      // Reordena cronologicamente para a agregação diária.
+      events: [...rows].sort((a, b) => a.created_at.localeCompare(b.created_at)),
+      truncated,
+      limite,
+    };
   } catch (error) {
     logger.error('Failed to fetch evidence_attempt_events for desempenho', error, {
       userId,
@@ -226,9 +227,7 @@ async function fetchRegularPracticeEvents(
   }
 }
 
-async function getCachedRegularPracticeEvents(
-  userId: string,
-): Promise<AttemptSeriesEventRow[]> {
+async function getCachedRegularPracticeEvents(userId: string): Promise<LedgerReadResult> {
   const { unstable_cache } = await import('next/cache');
   const { CACHE_CONFIG } = await import('@/lib/cache');
   const cacheKey = `desempenho-attempt-series-${userId}`;
@@ -269,12 +268,14 @@ export async function getAttemptSeriesData(
   }
 
   try {
-    const events = await getCachedRegularPracticeEvents(params.userId);
+    const { events, truncated, limite } = await getCachedRegularPracticeEvents(params.userId);
     return aggregateAttemptSeries(events, {
       periodo: params.periodo,
       now: params.now,
       historicoOldestAt: params.historicoOldestAt,
       historicoRespondidas: params.historicoRespondidas,
+      truncated,
+      limiteRegistros: limite,
     });
   } catch {
     return emptyAttemptSeries('error');

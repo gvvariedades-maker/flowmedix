@@ -46,7 +46,11 @@ export type RiskBandMeta = {
 export const RISK_BANDS: readonly RiskBandMeta[] = [
   {
     id: 'alta_incidencia_protocolo',
-    label: 'Alta incidência / protocolo',
+    /**
+     * Rótulo descreve o agrupamento, não frequência de prova: não há fonte
+     * auditável de incidência por banca (docs/DESEMPENHO_METRICAS.md § Limitações).
+     */
+    label: 'Protocolo e rotina assistencial',
     shortLabel: 'Protocolo',
     order: 1,
   },
