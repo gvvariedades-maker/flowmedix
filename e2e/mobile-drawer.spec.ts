@@ -175,7 +175,7 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
 
     const mais = bottomNav(page).getByRole('button', { name: 'Abrir menu' });
     await expect(mais).toHaveAttribute('aria-current', 'page');
-    await expect(mais.locator('span', { hasText: 'Mais' })).toHaveClass(/text-slate-800/);
+    await expect(mais.locator('span', { hasText: 'Mais' })).toHaveClass(/color-brand-text/);
   });
 
   test('D11 — seção Suporte e WhatsApp acessíveis no drawer', async ({ page }) => {
