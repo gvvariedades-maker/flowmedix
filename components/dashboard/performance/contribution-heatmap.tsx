@@ -8,6 +8,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toFreemiumTimezoneYmd } from '@/lib/freemium/constants';
 import { ActivitySparkline } from './activity-sparkline';
 import type { DiaEstudo, Periodo } from './types';
+import {
+  formatHeatmapCellQuestoes,
+  formatHeatmapEmpty,
+  formatHeatmapTotal,
+} from '@/components/dashboard/desempenho/desempenhoCopy';
 
 /** Escala de intensidade via tokens --color-success* (funciona em Editorial e Cyber). */
 const INTENSITY_COLORS = [
@@ -69,7 +74,7 @@ function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo 
       <div
         className="grid w-full min-w-[280px] grid-cols-7 gap-x-1.5 gap-y-2 sm:min-w-0 sm:gap-x-2 sm:gap-y-4"
         role="grid"
-        aria-label={`Atividade dos últimos ${periodo} dias`}
+        aria-label={`Hábitos dos últimos ${periodo} dias`}
       >
         {columnWeekdays.map((label, i) => (
           <div
@@ -87,8 +92,7 @@ function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo 
           const bgColor = INTENSITY_COLORS[level];
           const { dia: diaStr, mes: mesStr } = formatDiaMes(dia.data);
           const weekday = WEEKDAY_SHORT[weekdayIndex(dia.data)];
-          const questaoLabel =
-            dia.count === 1 ? '1 questão estudada' : `${dia.count} questões estudadas`;
+          const questaoLabel = formatHeatmapCellQuestoes(dia.count);
           const ariaLabel = `${weekday}, ${diaStr} de ${mesStr}: ${questaoLabel}${
             isToday ? ' (hoje)' : ''
           }`;
@@ -165,9 +169,9 @@ export function ContributionHeatmap({
             className="h-4 w-4 shrink-0 text-[var(--color-success-text)]"
             aria-hidden
           />
-          <span className="text-sm font-semibold text-slate-900">Atividade</span>
+          <span className="text-sm font-semibold text-slate-900">Hábitos</span>
           <span className="text-xs text-slate-500">
-            {totalPeriodo} questões nos últimos {periodo} dias
+            {formatHeatmapTotal(totalPeriodo, periodo)}
           </span>
         </div>
         {!semDados ? (
@@ -188,7 +192,7 @@ export function ContributionHeatmap({
         <TabsContent value="7" className="mt-4">
           {semDados ? (
             <p className="py-8 text-center text-sm text-slate-500">
-              Nenhuma questão estudada ainda.
+              {formatHeatmapEmpty()}
             </p>
           ) : (
             <HeatmapGrid serie={serie} periodo={7} />
@@ -197,7 +201,7 @@ export function ContributionHeatmap({
         <TabsContent value="15" className="mt-4">
           {semDados ? (
             <p className="py-8 text-center text-sm text-slate-500">
-              Nenhuma questão estudada ainda.
+              {formatHeatmapEmpty()}
             </p>
           ) : (
             <HeatmapGrid serie={serie} periodo={15} />
@@ -206,7 +210,7 @@ export function ContributionHeatmap({
         <TabsContent value="30" className="mt-4">
           {semDados ? (
             <p className="py-8 text-center text-sm text-slate-500">
-              Nenhuma questão estudada ainda.
+              {formatHeatmapEmpty()}
             </p>
           ) : (
             <HeatmapGrid serie={serie} periodo={30} />

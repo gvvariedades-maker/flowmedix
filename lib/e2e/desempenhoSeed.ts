@@ -5,13 +5,17 @@ import type {
   DesempenhoEstudoFilters,
   HistoricoDesempenhoRow,
 } from '@/lib/desempenho/types';
-import { E2E_DESEMPENHO_TITULO_AULA } from '@/lib/e2e/constants';
+import {
+  E2E_DESEMPENHO_TITULO_AULA,
+  E2E_DESEMPENHO_TITULO_LONGO,
+} from '@/lib/e2e/constants';
 
 const E2E_NOW = new Date('2026-08-11T15:00:00.000Z');
 
 /**
  * Seed in-memory para `/desempenho` com `E2E_DASHBOARD_BYPASS`.
  * Libera o mapa (≥10 respondidas) e um assunto fraco com CTA "Praticar".
+ * Inclui 1 IST recente (Erro+Reverso) para overflow/captura — não rouba `nextPractice[0]`.
  */
 export function getE2eDesempenhoEstudoData(
   filters: DesempenhoEstudoFilters,
@@ -57,5 +61,52 @@ export function getE2eDesempenhoEstudoData(
     });
   }
 
+  catalog.push({
+    modulo_slug: 'e2e-desempenho-ist-longo',
+    titulo_aula: E2E_DESEMPENHO_TITULO_LONGO,
+    modulo_nome: 'Enfermagem',
+    banca: 'FGV',
+  });
+  historico.push({
+    id: 'e2e-h-ist-longo',
+    modulo_slug: 'e2e-desempenho-ist-longo',
+    acertou: false,
+    created_at: '2026-08-11T14:30:00.000Z',
+    banca: 'FGV',
+    estudo_reverso_concluido: true,
+    respondida: true,
+  });
+
   return aggregateStudyPerformance(historico, catalog, filters, E2E_NOW);
+}
+
+/**
+ * Captura/E2E: placar zerado (pós-reset 1A) com série EE visível.
+ * Só usado com `E2E_DASHBOARD_BYPASS` + `?captura=placar-zerado`.
+ */
+export function getE2eDesempenhoEstudoPlacarZeradoComSerie(
+  filters: DesempenhoEstudoFilters,
+): DesempenhoEstudoData {
+  const empty = aggregateStudyPerformance([], [], filters, E2E_NOW);
+  return {
+    ...empty,
+    attemptSeries: {
+      available: true,
+      unavailableReason: null,
+      daily: [
+        { date: '2026-08-08', attempts: 4, acertos: 2, percentual: 50 },
+        { date: '2026-08-09', attempts: 3, acertos: 1, percentual: 33 },
+        { date: '2026-08-10', attempts: 5, acertos: 3, percentual: 60 },
+      ],
+      tempoMedioMs: 4200,
+      firstAttemptAccuracyPct: 55,
+      attemptsPerQuestionAvg: 1.5,
+      totalEvents: 12,
+      distinctQuestions: 8,
+      dadosDesde: '2026-08-08T12:00:00.000Z',
+      coberturaParcial: false,
+      truncated: false,
+      limiteRegistros: null,
+    },
+  };
 }

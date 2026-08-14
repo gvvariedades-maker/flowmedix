@@ -46,6 +46,7 @@ describe('ContributionHeatmap', () => {
   it('marca "hoje" pelo dia civil de Brasília, não pela data UTC', () => {
     renderHeatmap();
 
+    expect(screen.getByText('34 questões com estudo reverso nos últimos 7 dias')).toBeInTheDocument();
     expect(screen.getByRole('gridcell', { name: /11 de ago.*\(hoje\)/ })).toBeInTheDocument();
     expect(mockToFreemiumTimezoneYmd).toHaveBeenCalled();
   });
@@ -81,7 +82,9 @@ describe('ContributionHeatmap', () => {
     renderHeatmap({ semDados: true, totalPeriodo: 0 });
 
     expect(screen.queryByRole('grid')).not.toBeInTheDocument();
-    expect(screen.getAllByText('Nenhuma questão estudada ainda.').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Nenhuma questão com estudo reverso ainda.').length).toBeGreaterThan(
+      0,
+    );
     expect(screen.queryByText('Legenda de intensidade')).not.toBeInTheDocument();
   });
 });

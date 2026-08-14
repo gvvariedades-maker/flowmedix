@@ -19,6 +19,10 @@ import {
   formatDesempenhoConfianca,
   formatDesempenhoPct,
 } from '@/components/dashboard/desempenho/formatDesempenho';
+import {
+  DESEMPENHO_COPY,
+  formatEstudoAmostra,
+} from '@/components/dashboard/desempenho/desempenhoCopy';
 import { cn } from '@/lib/utils';
 import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { DESEMPENHO_COACH_UNLOCK, type DesempenhoEstudoData } from '@/lib/desempenho/types';
@@ -94,7 +98,7 @@ export function DesempenhoEstudoDashboard({ data }: Props) {
       <section aria-label="Placar de estudo" className="space-y-2">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           <ScoreCard
-            label="Respondidas"
+            label={DESEMPENHO_COPY.estudoRespondidasLabel}
             value={placar.respondidas}
             icon={BookOpen}
             variant="brand"
@@ -108,7 +112,7 @@ export function DesempenhoEstudoDashboard({ data }: Props) {
             variant="brand"
           />
           <ScoreCard
-            label="Meta do dia"
+            label={DESEMPENHO_COPY.estudoMetaLabel}
             value={`${placar.metaDoDia.respondidasHoje}/${placar.metaDoDia.meta}`}
             icon={Map}
             variant={
@@ -116,14 +120,16 @@ export function DesempenhoEstudoDashboard({ data }: Props) {
             }
           />
         </div>
+        <p className="text-xs text-muted-foreground">{DESEMPENHO_COPY.estudoUniversoHint}</p>
         <p className="text-xs text-muted-foreground">
           {placar.respondidas > 0 ? (
-            <>
-              Amostra: {placar.acertos}/{placar.respondidas} questões ·{' '}
-              {formatDesempenhoConfianca(placar.confidenceId)}
-            </>
+            formatEstudoAmostra(
+              placar.acertos,
+              placar.respondidas,
+              formatDesempenhoConfianca(placar.confidenceId),
+            )
           ) : (
-            'Sem questões respondidas neste recorte.'
+            DESEMPENHO_COPY.estudoPlacarEmpty
           )}
         </p>
       </section>
@@ -132,7 +138,7 @@ export function DesempenhoEstudoDashboard({ data }: Props) {
         <div className="metric-card">
           <EmptyState
             icon={BookOpen}
-            title="Nenhuma questão neste recorte"
+            title="Nenhuma questão neste período"
             description="Ajuste os filtros ou pratique na vitrine — o mapa por assunto aparece conforme você responde."
             action={{ label: 'Ir para a vitrine', href: '/estudar' }}
           />
@@ -177,7 +183,7 @@ export function DesempenhoEstudoDashboard({ data }: Props) {
         </>
       )}
 
-      <AttemptEvolutionCard series={attemptSeries} />
+      <AttemptEvolutionCard series={attemptSeries} placarZerado={semAtividade} />
 
       <RecentAttemptsList attempts={recentAttempts} />
     </div>
