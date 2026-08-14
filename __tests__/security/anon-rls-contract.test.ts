@@ -4,7 +4,9 @@
  * Scorecard #6 — contratos anon alinhados a smoke:rls (modulos / histórico / matrículas).
  */
 import {
+  evaluateAnonDeniedRpc,
   evaluateAnonProtectedTableCount,
+  RLS_ANON_DENIED_RPC_CHECK_NAMES,
   RLS_ANON_PROTECTED_CHECK_NAMES,
 } from '@/lib/security/rlsAnonExpectations';
 import { readFileSync } from 'node:fs';
@@ -43,6 +45,23 @@ describe('evaluateAnonProtectedTableCount (contrato smoke:rls)', () => {
     expect(check.detail).toContain('3 linha(s) expostas a anon');
   });
 
+  it('FAIL quando RPC interna executa sem erro', () => {
+    const check = evaluateAnonDeniedRpc({
+      name: 'anon_cannot_rpc_cache_webhook',
+    });
+    expect(check.ok).toBe(false);
+    expect(check.detail).toContain('RPC executou');
+  });
+
+  it('PASS quando anon não executa a webhook de cache', () => {
+    const check = evaluateAnonDeniedRpc({
+      name: 'anon_cannot_rpc_cache_webhook',
+      errorMessage: 'permission denied for function invalidate_cache_via_webhook',
+    });
+    expect(check.ok).toBe(true);
+    expect(check.detail).toContain('RPC negada');
+  });
+
   it('lista canônica cobre checks de tabela protegida (Stripe)', () => {
     expect(RLS_ANON_PROTECTED_CHECK_NAMES).toEqual([
       'anon_modulos_estudo_vazio',
@@ -64,5 +83,10 @@ describe('smoke:rls script — alinhamento com contratos', () => {
     for (const name of RLS_ANON_PROTECTED_CHECK_NAMES) {
       expect(source).toContain(`'${name}'`);
     }
+    for (const name of RLS_ANON_DENIED_RPC_CHECK_NAMES) {
+      expect(source).toContain(`'${name}'`);
+    }
+    expect(source).toContain('evaluateAnonDeniedRpc');
+    expect(source).toContain('invalidate_cache_via_webhook');
   });
 });

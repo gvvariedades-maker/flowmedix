@@ -53,7 +53,7 @@ Padrão: `SECURITY DEFINER`, `REVOKE` de `PUBLIC`/`anon`/`authenticated`, `GRANT
 | `admin_get_auth_user_id_by_email(text)` | Admin: resolver usuário por e-mail |
 | `expire_concurso_matriculas()` | Cron: expirar matrículas |
 | `fulfill_concurso_purchase(uuid)` | Webhook Stripe: liberar concurso |
-| `invalidate_cache_via_webhook(text, text)` | Trigger → `POST /api/cache/revalidate`; config `private.cache_webhook_config` ou GUCs `app.webhook_*` (`20260604130000`, `20260604140000`) |
+| `invalidate_cache_via_webhook(text, text)` | Trigger → `POST /api/cache/revalidate`; config `private.cache_webhook_config` ou GUCs `app.webhook_*` (`20260604185803`, `20260604185921`) |
 | `get_vitrine_page(uuid, int, text, text, text, text[], text[])` | Vitrine paginada (`lib/vitrine/rpc.ts`) |
 | `get_vitrine_facets(uuid, text, text[])` | Facets banca/assunto |
 | `get_simulado_question_pool(uuid, integer, text, text, text, text[], text[])` | Pool do simulado |
@@ -70,6 +70,8 @@ Assinaturas com `p_bancas` / `p_assuntos` (`text[]`): migration `20260529143147_
 | Função | Notas |
 |--------|--------|
 | `on_simulado_session_finalize_refresh_analytics()` | Wrapper do trigger em `simulado_sessions`; EXECUTE revogado de `anon`/`authenticated` (`20260604150000`) — não invocar via PostgREST |
+| `trigger_invalidate_cache_historico_insert()` / `_update()` | AFTER ROW em `historico_questoes`; `SECURITY DEFINER`; EXECUTE revogado (`20260814120000`) |
+| `trigger_invalidate_cache_historico_delete()` | AFTER DELETE **STATEMENT** (um webhook por reset); `SECURITY DEFINER`; EXECUTE revogado (`20260814120000`) |
 
 ## O que não apagar
 
@@ -86,8 +88,9 @@ Assinaturas com `p_bancas` / `p_assuntos` (`text[]`): migration `20260529143147_
 | `20260524120000` / `20260524130000` | `get_vitrine_page`, `get_vitrine_facets` |
 | `20260527163000` / `20260528040027` | Simulado sessions + pool + count |
 | `20260528175704` | `refresh_simulado_session_analytics` + trigger |
-| `20260604130000` | Harden `invalidate_cache_via_webhook` (sem fallback localhost) |
-| `20260604140000` | `private.cache_webhook_config` (Supabase Cloud) |
+| `20260604185803` | Harden `invalidate_cache_via_webhook` (sem fallback localhost; timestamp git ≠ `20260604130000` citado em docs antigos) |
+| `20260604185921` | `private.cache_webhook_config` (Supabase Cloud; timestamp git ≠ `20260604140000`) |
+| `20260814120000` | Wrappers cache `historico_questoes` SECURITY DEFINER; DELETE STATEMENT; REVOKE EXECUTE de anon/authenticated |
 | `20260604120000` | `simulado_run_retention` (retenção híbrida) |
 | `20260604150000` | Revoke trigger wrapper simulado + RLS service_role em `email_templates` / `invite_*` |
 | `20260529143147` | Multi banca/assunto nas RPCs vitrine/simulado |

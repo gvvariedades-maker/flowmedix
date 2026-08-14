@@ -45,6 +45,25 @@ export function evaluateAnonProtectedTableCount(params: {
   };
 }
 
+/**
+ * Anon não deve conseguir executar RPC interna (erro de permissão/404 = PASS).
+ * Sucesso sem erro = FAIL (EXECUTE vazou para anon).
+ */
+export function evaluateAnonDeniedRpc(params: {
+  name: string;
+  errorMessage?: string | null;
+}): RlsAnonCountCheck {
+  const { name, errorMessage } = params;
+  if (errorMessage) {
+    return { name, ok: true, detail: `RPC negada (${errorMessage})` };
+  }
+  return {
+    name,
+    ok: false,
+    detail: 'RPC executou — EXECUTE não deveria estar em anon',
+  };
+}
+
 /** Nomes canônicos dos checks de tabela protegida no smoke:rls. */
 export const RLS_ANON_PROTECTED_CHECK_NAMES = [
   'anon_modulos_estudo_vazio',
@@ -52,5 +71,7 @@ export const RLS_ANON_PROTECTED_CHECK_NAMES = [
   'anon_matriculas_vazio',
   'anon_stripe_webhook_events_vazio',
 ] as const;
+
+export const RLS_ANON_DENIED_RPC_CHECK_NAMES = ['anon_cannot_rpc_cache_webhook'] as const;
 
 export type RlsAnonProtectedCheckName = (typeof RLS_ANON_PROTECTED_CHECK_NAMES)[number];
