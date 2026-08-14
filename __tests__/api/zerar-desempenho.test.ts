@@ -4,6 +4,8 @@
 import { NextRequest } from 'next/server';
 
 import { POST } from '@/app/api/zerar-desempenho/route';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 jest.mock('@/lib/logger', () => ({
   logger: { debug: jest.fn(), info: jest.fn(), warn: jest.fn(), error: jest.fn() },
@@ -116,5 +118,11 @@ describe('POST /api/zerar-desempenho', () => {
     expect(response.status).toBe(500);
     expect(body.error).toMatch(/desempenho de estudo/i);
     expect(mockRevalidateTag).not.toHaveBeenCalled();
+  });
+
+  it('mantém JWT + RLS — não troca o delete para service role', () => {
+    const source = readFileSync(join(process.cwd(), 'app/api/zerar-desempenho/route.ts'), 'utf8');
+    expect(source).toContain('getUserAndClientFromBearer');
+    expect(source).not.toMatch(/createServerSupabase/);
   });
 });

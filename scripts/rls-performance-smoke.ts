@@ -7,6 +7,7 @@
  *
  * Requer NEXT_PUBLIC_SUPABASE_URL + NEXT_PUBLIC_SUPABASE_ANON_KEY (+ service role para comparação).
  * SQL estático (policies/índices): supabase/scripts/rls_performance_smoke.sql no SQL Editor.
+ * Triggers de cache do histórico: supabase/scripts/historico_cache_trigger_inspect.sql
  *
  * Contratos anon (modulos / historico / matrículas): lib/security/rlsAnonExpectations.ts
  * (espelhados em __tests__/security/).
@@ -15,7 +16,10 @@
 import { loadEnvConfig } from '@next/env';
 import { createClient } from '@supabase/supabase-js';
 import { createServerSupabase } from '../lib/supabase/server';
-import { evaluateAnonProtectedTableCount } from '../lib/security/rlsAnonExpectations';
+import {
+  evaluateAnonDeniedRpc,
+  evaluateAnonProtectedTableCount,
+} from '../lib/security/rlsAnonExpectations';
 
 loadEnvConfig(process.cwd());
 
@@ -118,6 +122,18 @@ async function main() {
     }),
   );
 
+  // Anon: webhook de cache não é RPC (EXECUTE só service_role / owner)
+  const { error: webhookRpcErr } = await anon.rpc('invalidate_cache_via_webhook', {
+    table_name: 'historico_questoes',
+    event_type: 'DELETE',
+  });
+  checks.push(
+    evaluateAnonDeniedRpc({
+      name: 'anon_cannot_rpc_cache_webhook',
+      errorMessage: webhookRpcErr?.message,
+    }),
+  );
+
   // Service role: contagem vendável ≥ anon (sanidade)
   try {
     const admin = await createServerSupabase();
@@ -166,7 +182,7 @@ async function main() {
   console.log('\n--- smoke:rls (API/RLS comportamental) ---\n');
   logChecks(checks);
   console.log(
-    '\n--- smoke SQL (schema/policies) ---\nExecute: supabase/scripts/rls_performance_smoke.sql no SQL Editor\n',
+    '\n--- smoke SQL (schema/policies) ---\nExecute: supabase/scripts/rls_performance_smoke.sql no SQL Editor\nApós 20260814120000: supabase/scripts/historico_cache_trigger_inspect.sql\n',
   );
   console.log(
     '--- smoke manual (JWT aluno) ---\n1) Login matriculado → /estudar com pacote do edital\n2) Responder questão → progresso/histórico atualiza\n',
