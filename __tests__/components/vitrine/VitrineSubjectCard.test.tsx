@@ -93,7 +93,7 @@ describe('VitrineSubjectCard', () => {
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
     expect(screen.getByRole('progressbar')).toHaveAttribute(
       'aria-label',
-      'Cobertura do assunto: 1/2 respondidas',
+      'Cobertura do assunto: 1 de 2 respondidas',
     );
   });
 
@@ -195,10 +195,12 @@ describe('VitrineSubjectCard', () => {
     );
 
     expect(screen.getAllByRole('link', { name: 'Revisar' })).toHaveLength(1);
-    expect(screen.getByLabelText('2 de 2 acertos')).toHaveTextContent('2/2 acertos');
+    const pct = screen.getByLabelText('100% de acerto');
+    expect(pct).toHaveTextContent('100%');
+    expect(pct.className).toContain('text-[var(--color-success-text)]');
   });
 
-  it('não repete pendência no subtítulo fechado (cobertura + NeuroSlides)', () => {
+  it('não repete pendência nem NeuroSlides no subtítulo fechado', () => {
     render(
       <VitrineSubjectCard
         grupo={buildGrupo()}
@@ -212,9 +214,9 @@ describe('VitrineSubjectCard', () => {
     const titleButton = screen.getByTitle('Verificação de Sinais Vitais').closest('button');
     expect(titleButton).not.toBeNull();
     expect(titleButton).not.toHaveTextContent(/para estudar/i);
-    expect(titleButton).toHaveTextContent(/respondidas/i);
-    expect(titleButton).toHaveTextContent(/NeuroSlides/i);
-    expect(screen.getByLabelText('1 de 1 acertos')).toHaveTextContent('1/1 acertos');
+    expect(titleButton).not.toHaveTextContent(/NeuroSlides/i);
+    expect(titleButton).toHaveTextContent(/1 de 2 respondidas/i);
+    expect(screen.getByLabelText('100% de acerto')).toHaveTextContent('100%');
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
   });
 
@@ -229,8 +231,13 @@ describe('VitrineSubjectCard', () => {
       />,
     );
 
-    expect(screen.getByLabelText('50% de acerto')).toHaveTextContent('50%');
-    expect(screen.getByText(/8\/10 respondidas/)).toBeInTheDocument();
+    const pct = screen.getByLabelText('50% de acerto');
+    expect(pct).toHaveTextContent('50%');
+    expect(pct.className).toContain('text-[var(--color-success-text)]');
+    expect(screen.getByRole('progressbar')).toHaveAttribute(
+      'aria-label',
+      'Cobertura do assunto: 8 de 10 respondidas',
+    );
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '80');
   });
 
@@ -260,7 +267,7 @@ describe('VitrineSubjectCard', () => {
       />,
     );
 
-    expect(screen.getByLabelText('1 de 1 acertos')).toHaveTextContent('1/1 acertos');
+    expect(screen.getByLabelText('100% de acerto')).toHaveTextContent('100%');
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
   });
 
@@ -347,7 +354,7 @@ describe('VitrineSubjectCard', () => {
     expect(openChip?.className).not.toContain('bg-slate-50');
   });
 
-  it('usa brand-text no % com amostra e rótulos de taxa de acerto', () => {
+  it('no expandido separa donut de acerto da cobertura laranja', () => {
     render(
       <VitrineSubjectCard
         grupo={buildGrupoComAmostra()}
@@ -358,15 +365,47 @@ describe('VitrineSubjectCard', () => {
       />,
     );
 
-    const pct = screen.getByLabelText('50% de acerto');
-    expect(pct.className).toContain('text-[var(--color-brand-text)]');
+    const hero = screen.getByLabelText('50% de acerto');
+    expect(hero.className).toContain('text-[var(--color-success-text)]');
 
-    const acertoLabel = screen.getByText('Taxa de acerto');
-    expect(acertoLabel.className).toContain('text-[11px]');
-    expect(acertoLabel.className).not.toContain('text-[10px]');
+    expect(screen.getByText('Seu desempenho')).toBeInTheDocument();
+    expect(screen.getByText('4 acertos — 50%')).toBeInTheDocument();
+    expect(screen.getByText('4 erros — 50%')).toBeInTheDocument();
+    expect(screen.getByText('Progresso no assunto')).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('Taxa de acerto: 50%. 4 acertos e 4 erros entre 8 respondidas.'),
+    ).toBeInTheDocument();
+
+    const bars = screen.getAllByRole('progressbar');
+    expect(bars.some((bar) => bar.getAttribute('aria-valuenow') === '80')).toBe(true);
+    expect(screen.queryByText('Taxa de acerto')).not.toBeInTheDocument();
 
     const assuntoLabel = screen.getByText(/questões no assunto/i);
     expect(assuntoLabel.className).toContain('text-[11px]');
     expect(assuntoLabel.className).not.toContain('text-[10px]');
+  });
+
+  it('barra de cobertura permanece laranja mesmo em 100%', () => {
+    render(
+      <VitrineSubjectCard
+        grupo={buildGrupo({
+          acertos: 2,
+          erros: 0,
+          totalResolvidas: 2,
+          totalQuestoes: 2,
+          trabalhadas: 2,
+          percentual: 100,
+        })}
+        estudarQuery=""
+        index={0}
+        assuntoExpandido={false}
+        onAssuntoExpandedChange={jest.fn()}
+      />,
+    );
+
+    const bar = screen.getByRole('progressbar');
+    expect(bar).toHaveAttribute('aria-valuenow', '100');
+    expect(bar.firstElementChild?.className ?? '').toContain('bg-[var(--color-brand)]');
+    expect(bar.firstElementChild?.className ?? '').not.toContain('color-success');
   });
 });

@@ -12,7 +12,7 @@ import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { getTopicIcon } from '@/lib/vitrine/vitrineTopicIcon';
 import { getTopicAccent } from '@/lib/vitrine/vitrineTopicAccent';
 import { cn } from '@/lib/utils';
-import { VitrineProgressRing } from '@/components/vitrine/VitrineProgressRing';
+import { VitrineAssuntoDesempenho } from '@/components/vitrine/VitrineAssuntoDesempenho';
 import { VitrineQuestaoList } from '@/components/vitrine/VitrineQuestaoList';
 import { VitrineQuestaoLink } from '@/components/vitrine/VitrineQuestaoLink';
 
@@ -74,6 +74,7 @@ export function VitrineSubjectSheet({
     totalResolvidas,
     trabalhadas,
     acertos,
+    erros,
     percentual,
     questoes,
     firstSlug,
@@ -162,7 +163,7 @@ export function VitrineSubjectSheet({
               <div className="min-w-0 flex-1">
                 <p className="text-base font-semibold leading-snug text-slate-900">{titulo_aula}</p>
                 <p className="mt-0.5 text-xs text-slate-500">
-                  {totalResolvidas.toLocaleString('pt-BR')}/
+                  {totalResolvidas.toLocaleString('pt-BR')} de{' '}
                   {totalQuestoes.toLocaleString('pt-BR')} respondidas
                   {todas ? ' · Concluído' : totalResolvidas > 0 ? ' · Em progresso' : ''}
                 </p>
@@ -188,19 +189,13 @@ export function VitrineSubjectSheet({
             >
               {hasQuestions ? (
                 <>
-                  <div className="flex justify-center">
-                    <VitrineProgressRing
-                      acertos={acertos}
-                      respondidas={totalResolvidas}
-                      total={totalQuestoes}
-                      percentual={percentual}
-                      size={96}
-                      strokeWidth={12}
-                    />
-                  </div>
-                  <p className="-mt-2 text-center text-[11px] font-medium uppercase tracking-wide text-slate-500">
-                    Taxa de acerto
-                  </p>
+                  <VitrineAssuntoDesempenho
+                    acertos={acertos}
+                    erros={erros}
+                    respondidas={totalResolvidas}
+                    totalQuestoes={totalQuestoes}
+                    percentual={percentual}
+                  />
 
                   <VitrineQuestaoList
                     tituloAula={titulo_aula}
@@ -215,7 +210,7 @@ export function VitrineSubjectSheet({
                     estudarQuery={estudarQuery}
                     className={cn(vitrineBrand.buttonSecondary, 'min-h-12 w-full')}
                   >
-                    Entrar no assunto
+                    {totalResolvidas === 0 ? 'Começar este assunto' : 'Entrar no assunto'}
                   </VitrineQuestaoLink>
                 </>
               ) : (

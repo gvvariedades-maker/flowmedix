@@ -1,10 +1,68 @@
 import {
+  formatAcertoErroAria,
   resolveAcertoDisplay,
-  VITRINE_ACERTO_MIN_SAMPLE,
+  splitAcertoErroPct,
 } from '@/lib/vitrine/resolveAcertoDisplay';
 
+describe('splitAcertoErroPct', () => {
+  it('1/13 arredonda acerto e o resto vai para erro', () => {
+    expect(splitAcertoErroPct(1, 13)).toEqual({ acertoPct: 8, erroPct: 92 });
+  });
+
+  it('0/13 vira donut 100% erro', () => {
+    expect(splitAcertoErroPct(0, 13)).toEqual({ acertoPct: 0, erroPct: 100 });
+  });
+
+  it('13/13 vira donut 100% acerto', () => {
+    expect(splitAcertoErroPct(13, 13)).toEqual({ acertoPct: 100, erroPct: 0 });
+  });
+
+  it('sem respondidas não inventa fatias', () => {
+    expect(splitAcertoErroPct(0, 0)).toEqual({ acertoPct: 0, erroPct: 0 });
+  });
+
+  it('1/3 e 2/3 arredondam para fatias que somam 100', () => {
+    expect(splitAcertoErroPct(1, 3)).toEqual({ acertoPct: 33, erroPct: 67 });
+    expect(splitAcertoErroPct(2, 3)).toEqual({ acertoPct: 67, erroPct: 33 });
+  });
+
+  it('percentuais de fatia sempre somam 100 quando há respondidas', () => {
+    const samples: Array<[number, number]> = [
+      [1, 3],
+      [2, 3],
+      [1, 13],
+      [7, 13],
+      [1, 7],
+      [5, 8],
+    ];
+    for (const [acertos, respondidas] of samples) {
+      const split = splitAcertoErroPct(acertos, respondidas);
+      expect(split.acertoPct + split.erroPct).toBe(100);
+      expect(split.acertoPct).toBeGreaterThanOrEqual(0);
+      expect(split.erroPct).toBeGreaterThanOrEqual(0);
+      expect(split.acertoPct).toBeLessThanOrEqual(100);
+      expect(split.erroPct).toBeLessThanOrEqual(100);
+    }
+  });
+
+  it('valores inconsistentes não geram % negativo nem acima de 100', () => {
+    expect(splitAcertoErroPct(20, 13)).toEqual({ acertoPct: 100, erroPct: 0 });
+    expect(splitAcertoErroPct(-4, 13)).toEqual({ acertoPct: 0, erroPct: 100 });
+    expect(splitAcertoErroPct(-1, 0)).toEqual({ acertoPct: 0, erroPct: 0 });
+    expect(splitAcertoErroPct(3, -2)).toEqual({ acertoPct: 0, erroPct: 0 });
+  });
+});
+
+describe('formatAcertoErroAria', () => {
+  it('descreve acerto e erro em números absolutos', () => {
+    expect(formatAcertoErroAria(1, 12, 13, 8)).toBe(
+      'Taxa de acerto: 8%. 1 acerto e 12 erros entre 13 respondidas.',
+    );
+  });
+});
+
 describe('resolveAcertoDisplay', () => {
-  it('mostra Não iniciado sem tentativas', () => {
+  it('mostra Não iniciado sem tentativas e sem 0%', () => {
     expect(
       resolveAcertoDisplay({
         acertos: 0,
@@ -14,16 +72,15 @@ describe('resolveAcertoDisplay', () => {
       }),
     ).toMatchObject({
       label: 'Não iniciado',
+      ariaLabel: 'Nenhuma questão respondida',
       tone: 'muted',
-      amostraSuficiente: false,
-      ringValue: 0,
-      coberturaLabel: '0/40 respondidas',
+      acertoPct: null,
+      coberturaLabel: '0 de 40 respondidas',
       coberturaPct: 0,
     });
   });
 
-  it('abaixo do piso de amostra mostra contagem, não %', () => {
-    expect(VITRINE_ACERTO_MIN_SAMPLE).toBe(5);
+  it('abaixo de 5 respondidas ainda mostra % de acerto', () => {
     const display = resolveAcertoDisplay({
       acertos: 3,
       totalResolvidas: 4,
@@ -31,17 +88,33 @@ describe('resolveAcertoDisplay', () => {
       percentual: 75,
     });
     expect(display).toMatchObject({
-      label: '3/4 acertos',
-      ariaLabel: '3 de 4 acertos',
-      tone: 'brand',
-      amostraSuficiente: false,
+      label: '75%',
+      ariaLabel: '75% de acerto',
+      tone: 'success',
+      acertoPct: 75,
       coberturaPct: 10,
-      coberturaLabel: '4/40 respondidas',
-      ringValue: 10,
+      coberturaLabel: '4 de 40 respondidas',
     });
   });
 
-  it('com amostra suficiente exibe % de acerto', () => {
+  it('0% de acerto usa tom success (categoria acerto)', () => {
+    expect(
+      resolveAcertoDisplay({
+        acertos: 0,
+        totalResolvidas: 13,
+        totalQuestoes: 171,
+        percentual: 0,
+      }),
+    ).toMatchObject({
+      label: '0%',
+      ariaLabel: '0% de acerto',
+      tone: 'success',
+      acertoPct: 0,
+      coberturaPct: 8,
+    });
+  });
+
+  it('com respondidas exibe % de acerto, não cobertura no hero', () => {
     const display = resolveAcertoDisplay({
       acertos: 4,
       totalResolvidas: 8,
@@ -51,15 +124,14 @@ describe('resolveAcertoDisplay', () => {
     expect(display).toMatchObject({
       label: '50%',
       ariaLabel: '50% de acerto',
-      tone: 'brand',
-      amostraSuficiente: true,
-      ringValue: 50,
+      tone: 'success',
+      acertoPct: 50,
       coberturaPct: 20,
-      coberturaLabel: '8/40 respondidas',
+      coberturaLabel: '8 de 40 respondidas',
     });
   });
 
-  it('100% de acerto com amostra usa tom success', () => {
+  it('100% de acerto mantém tom success', () => {
     expect(
       resolveAcertoDisplay({
         acertos: 10,
@@ -71,6 +143,7 @@ describe('resolveAcertoDisplay', () => {
       label: '100%',
       ariaLabel: '100% de acerto',
       tone: 'success',
+      acertoPct: 100,
       coberturaPct: 100,
     });
   });
