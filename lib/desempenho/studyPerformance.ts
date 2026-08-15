@@ -10,8 +10,10 @@ import {
   type GrandeAreaId,
   type RiskBandId,
 } from '@/lib/desempenho/taxonomiaEnfermagem';
+import { SCALE_LIMITS } from '@/lib/scale/constants';
 import {
   DESEMPENHO_COACH_UNLOCK,
+  DESEMPENHO_HOME_RECENT_LIMIT,
   DESEMPENHO_META_DIA_DEFAULT,
   DESEMPENHO_MIN_SAMPLE,
   DESEMPENHO_NEXT_PRACTICE_LIMIT,
@@ -72,23 +74,27 @@ function coberturaPct(respondidas: number, totalDisponivel: number): number {
 function normalizeFilters(
   filters?: Partial<DesempenhoEstudoFilters> | null,
 ): DesempenhoEstudoFilters {
+  const areaId = filters?.areaId ?? null;
+  const assunto = areaId ? filters?.assunto?.trim() || null : null;
   return {
     periodo: filters?.periodo ?? 'all',
     banca: filters?.banca?.trim() || null,
-    areaId: filters?.areaId ?? null,
+    areaId,
     disciplina: filters?.disciplina ?? null,
+    assunto,
   };
 }
 
 /**
- * Normaliza `searchParams` da página `/desempenho` (periodo, banca, area, disciplina).
- * Valores inválidos caem no default sem filtrar.
+ * Normaliza `searchParams` da página `/desempenho` (periodo, banca, area, disciplina, assunto).
+ * Valores inválidos caem no default sem filtrar. Assunto sem área é descartado.
  */
 export function normalizeDesempenhoEstudoFilters(input: {
   periodoRaw?: string | null;
   bancaRaw?: string | null;
   areaRaw?: string | null;
   disciplinaRaw?: string | null;
+  assuntoRaw?: string | null;
 }): DesempenhoEstudoFilters {
   const periodo = DESEMPENHO_PERIODOS.includes(input.periodoRaw as DesempenhoPeriodo)
     ? (input.periodoRaw as DesempenhoPeriodo)
@@ -99,6 +105,7 @@ export function normalizeDesempenhoEstudoFilters(input: {
     banca: input.bancaRaw,
     areaId: parseGrandeAreaId(input.areaRaw),
     disciplina: parseVitrineDisciplina(input.disciplinaRaw),
+    assunto: input.assuntoRaw,
   });
 }
 
@@ -169,6 +176,7 @@ function countCatalogByTitulo(
 
     const tax = resolveTaxonomiaAssunto(titulo === TITULO_ORFAO ? null : titulo);
     if (filters.areaId && tax.areaId !== filters.areaId) continue;
+    if (filters.assunto && titulo !== filters.assunto) continue;
 
     const existing = byTitulo.get(titulo);
     if (existing) {
@@ -185,6 +193,51 @@ function countCatalogByTitulo(
   }
 
   return byTitulo;
+}
+
+function listAssuntoOpcoes(
+  catalog: readonly CatalogDesempenhoRow[],
+  filters: DesempenhoEstudoFilters,
+): string[] {
+  const semAssunto: DesempenhoEstudoFilters = { ...filters, assunto: null };
+  const byTitulo = countCatalogByTitulo(catalog, semAssunto);
+  return [...byTitulo.keys()]
+    .filter((titulo) => titulo !== TITULO_ORFAO)
+    .sort((a, b) => a.localeCompare(b, 'pt-BR'));
+}
+
+function historicoPassaCatalogo(
+  h: HistoricoDesempenhoRow,
+  slugIndex: Map<string, SlugCatalogInfo>,
+  recorte: Pick<DesempenhoEstudoFilters, 'disciplina' | 'banca'>,
+): { tituloAula: string; disciplina: VitrineDisciplinaId; bancaCatalog: string | null } | null {
+  const slug = h.modulo_slug?.trim();
+  if (!slug) return null;
+  const info = slugIndex.get(slug);
+  const tituloAula = info?.tituloAula ?? TITULO_ORFAO;
+  const disciplina = info?.disciplina ?? 'enfermagem';
+  const bancaCatalog = info?.banca ?? h.banca ?? null;
+
+  if (recorte.disciplina && disciplina !== recorte.disciplina) return null;
+  if (recorte.banca) {
+    const bancaMatch = bancaCatalog === recorte.banca || h.banca === recorte.banca;
+    if (!bancaMatch) return null;
+  }
+  return { tituloAula, disciplina, bancaCatalog };
+}
+
+function countUniversoRespondidas(
+  historicoAll: readonly HistoricoDesempenhoRow[],
+  slugIndex: Map<string, SlugCatalogInfo>,
+  filters: DesempenhoEstudoFilters,
+): number {
+  let total = 0;
+  for (const h of historicoAll) {
+    if (!isRespondida(h)) continue;
+    if (!historicoPassaCatalogo(h, slugIndex, filters)) continue;
+    total += 1;
+  }
+  return total;
 }
 
 /** Atividade dentro do recorte civil de Brasília `[start, endExclusive)`. */
@@ -394,12 +447,14 @@ export function aggregateStudyPerformance(
   filtersInput?: Partial<DesempenhoEstudoFilters> | null,
   now: Date = new Date(),
   loadState: DesempenhoEstudoData['loadState'] = 'ok',
+  recentLimit: number = DESEMPENHO_HOME_RECENT_LIMIT * 4,
 ): DesempenhoEstudoData {
   const filters = normalizeFilters(filtersInput);
   const catalog = toCatalogRows(catalogInput);
   const historicoAll = toHistoricoRows(historicoInput);
   const slugIndex = buildSlugIndex(catalog);
   const catalogByTitulo = countCatalogByTitulo(catalog, filters);
+  const assuntoOpcoes = listAssuntoOpcoes(catalog, filters);
 
   const range = getDesempenhoPeriodRange(filters.periodo, now);
   const historicoPeriod = filterHistoricoByActivity(historicoAll, range);
@@ -418,21 +473,13 @@ export function aggregateStudyPerformance(
   const historicoJoined: Array<HistoricoDesempenhoRow & { tituloAula: string }> = [];
 
   for (const h of historicoPeriod) {
-    const slug = h.modulo_slug?.trim();
-    if (!slug) continue;
-    const info = slugIndex.get(slug);
-    const tituloAula = info?.tituloAula ?? TITULO_ORFAO;
-    const disciplina = info?.disciplina ?? 'enfermagem';
-    const bancaCatalog = info?.banca ?? h.banca ?? null;
-
-    if (filters.disciplina && disciplina !== filters.disciplina) continue;
-    if (filters.banca) {
-      const bancaMatch = bancaCatalog === filters.banca || h.banca === filters.banca;
-      if (!bancaMatch) continue;
-    }
+    const joined = historicoPassaCatalogo(h, slugIndex, filters);
+    if (!joined) continue;
+    const { tituloAula, disciplina, bancaCatalog } = joined;
 
     const tax = resolveTaxonomiaAssunto(tituloAula === TITULO_ORFAO ? null : tituloAula);
     if (filters.areaId && tax.areaId !== filters.areaId) continue;
+    if (filters.assunto && tituloAula !== filters.assunto) continue;
 
     // Placeholders (marcar estudado sem alternativa) não entram no placar/%/recentes.
     if (!isRespondida(h)) continue;
@@ -535,8 +582,8 @@ export function aggregateStudyPerformance(
     .sort(compareAssuntosWorstFirst);
 
   const recentAttempts: RecentAttempt[] = [...historicoJoined]
-    .sort((a, b) => b.created_at.localeCompare(a.created_at))
-    .slice(0, 20)
+    .sort((a, b) => b.created_at.localeCompare(a.created_at) || b.id.localeCompare(a.id))
+    .slice(0, recentLimit)
     .map((h) => ({
       id: h.id,
       moduloSlug: h.modulo_slug,
@@ -566,6 +613,9 @@ export function aggregateStudyPerformance(
     nextPractice: buildNextPractice(assuntos),
     recentAttempts,
     filtersApplied: filters,
+    universoRespondidas: countUniversoRespondidas(historicoAll, slugIndex, filters),
+    assuntoOpcoes,
+    leituraTruncada: historicoAll.length >= SCALE_LIMITS.HISTORICO_ANALYTICS_READ,
     periodoResumo: {
       periodo: range.periodo,
       startYmd: range.startYmd,
@@ -600,6 +650,7 @@ export async function getDesempenhoEstudoData(
   userId: string,
   filters?: Partial<DesempenhoEstudoFilters> | null,
   now: Date = new Date(),
+  options?: { recentLimit?: number },
 ): Promise<DesempenhoEstudoData> {
   const [
     { getHistoricoCompleto },
@@ -620,7 +671,14 @@ export async function getDesempenhoEstudoData(
     HistoricoQuestao & { estudo_reverso_concluido?: boolean | null }
   >;
 
-  const data = aggregateStudyPerformance(historicoComReverso, catalog, filters, now);
+  const data = aggregateStudyPerformance(
+    historicoComReverso,
+    catalog,
+    filters,
+    now,
+    'ok',
+    options?.recentLimit,
+  );
 
   const respondidasRows = historicoComReverso.filter(
     (h) => h.respondida !== false && Boolean(h.modulo_slug?.trim()),
