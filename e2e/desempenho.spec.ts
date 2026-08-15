@@ -10,6 +10,13 @@ import { E2E_DESEMPENHO_TITULO_AULA } from '../lib/e2e/constants';
 const ASSUNTO_ENCODED = encodeURIComponent(E2E_DESEMPENHO_TITULO_AULA);
 const DEEP_LINK_PRATICA = `/estudar?assunto=${ASSUNTO_ENCODED}&status=pending`;
 
+const VIEWPORTS = [
+  { width: 320, height: 800 },
+  { width: 360, height: 800 },
+  { width: 390, height: 844 },
+  { width: 412, height: 800 },
+] as const;
+
 /**
  * Clica até o estado esperado aparecer.
  *
@@ -72,6 +79,28 @@ async function abrirFiltros(page: Page) {
     await expect(botao).toHaveAttribute('aria-expanded', 'true');
     await expect(page.getByRole('group', { name: 'Período' })).toBeVisible();
   }).toPass({ timeout: 45_000 });
+}
+
+/** Conteúdo do hub não pode ficar atrás do BottomNav (flex shell, não overlay). */
+async function assertConteudoAcimaDoNav(page: Page) {
+  const nav = page.getByRole('navigation', { name: 'Navegação rápida' });
+  await expect(nav).toBeVisible();
+  await page.evaluate(() => {
+    const main = document.querySelector('main');
+    if (main) main.scrollTop = main.scrollHeight;
+  });
+  const sobrepoe = await page.evaluate(() => {
+    const navEl = document.querySelector<HTMLElement>('nav[aria-label="Navegação rápida"]');
+    const hub = document.querySelector<HTMLElement>('[data-desempenho-hub]');
+    if (!navEl || !hub) return true;
+    const navBox = navEl.getBoundingClientRect();
+    return [...hub.querySelectorAll<HTMLElement>('a, button, h2')].some((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.height < 2 || r.width < 2) return false;
+      return r.bottom > navBox.top + 1 && r.top < navBox.bottom - 1;
+    });
+  });
+  expect(sobrepoe).toBe(false);
 }
 
 test.describe('Hub Desempenho (estudo)', () => {
@@ -408,13 +437,6 @@ test.describe('Hub Desempenho (estudo)', () => {
     expect(overflow.scrollWidth).toBe(overflow.clientWidth);
   });
 
-  const VIEWPORTS = [
-    { width: 320, height: 800 },
-    { width: 360, height: 800 },
-    { width: 390, height: 844 },
-    { width: 412, height: 800 },
-  ] as const;
-
   for (const { width, height } of VIEWPORTS) {
     test(`sem rolagem horizontal em ${width}×${height}`, async ({ page }) => {
       test.setTimeout(180_000);
@@ -580,12 +602,7 @@ test.describe('Hub Desempenho (atividade)', () => {
 
   test('sem rolagem horizontal em 320–412 e 390×844', async ({ page }) => {
     test.setTimeout(180_000);
-    for (const { width, height } of [
-      { width: 320, height: 800 },
-      { width: 360, height: 800 },
-      { width: 390, height: 844 },
-      { width: 412, height: 800 },
-    ]) {
+    for (const { width, height } of VIEWPORTS) {
       await page.setViewportSize({ width, height });
       await page.goto('/desempenho/atividade', { waitUntil: 'domcontentloaded' });
       await expect(page.getByRole('grid').first()).toBeVisible({ timeout: 60_000 });
@@ -597,3 +614,94 @@ test.describe('Hub Desempenho (atividade)', () => {
     }
   });
 });
+
+test.describe('Hub Desempenho (mapa)', () => {
+  test('sem rolagem horizontal em 320–412 e 390×844', async ({ page }) => {
+    test.setTimeout(180_000);
+    for (const { width, height } of VIEWPORTS) {
+      await page.setViewportSize({ width, height });
+      await page.goto('/desempenho/mapa', { waitUntil: 'domcontentloaded' });
+      await expect(page.getByRole('heading', { name: 'Mapa por áreas' })).toBeVisible({
+        timeout: 60_000,
+      });
+      await abrirFiltros(page);
+      await page.getByRole('button', { name: /Ver assuntos/ }).first().click();
+
+      const overflow = await medirOverflow(page, 'mapa');
+      expect(overflow.hubEncontrado).toBe(true);
+      expect(overflow.culpados).toEqual([]);
+      expect(overflow.hubScrollWidth).toBeLessThanOrEqual(overflow.clientWidth);
+      expect(overflow.scrollWidth).toBe(overflow.clientWidth);
+    }
+  });
+
+  test('em 390×844 o mapa não cobre a navegação', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/desempenho/mapa', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('heading', { name: 'Mapa por áreas' })).toBeVisible({
+      timeout: 60_000,
+    });
+    await assertConteudoAcimaDoNav(page);
+  });
+});
+
+test.describe('Hub Desempenho (histórico)', () => {
+  test('sem rolagem horizontal em 320–412 e 390×844', async ({ page }) => {
+    test.setTimeout(180_000);
+    for (const { width, height } of VIEWPORTS) {
+      await page.setViewportSize({ width, height });
+      await page.goto('/desempenho/historico', { waitUntil: 'domcontentloaded' });
+      await expect(page.getByRole('heading', { name: 'Histórico de questões' })).toBeVisible({
+        timeout: 60_000,
+      });
+      await abrirFiltros(page);
+
+      const overflow = await medirOverflow(page, 'historico');
+      expect(overflow.hubEncontrado).toBe(true);
+      expect(overflow.culpados).toEqual([]);
+      expect(overflow.hubScrollWidth).toBeLessThanOrEqual(overflow.clientWidth);
+      expect(overflow.scrollWidth).toBe(overflow.clientWidth);
+    }
+  });
+
+  test('título da tentativa não invade a etiqueta em 390×844', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/desempenho/historico', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('heading', { name: 'Histórico de questões' })).toBeVisible({
+      timeout: 60_000,
+    });
+
+    const titulo = page.getByTestId('recent-attempt-title').first();
+    const badges = page.getByTestId('recent-attempt-badges').first();
+    await expect(titulo).toBeVisible();
+    await expect(badges).toBeVisible();
+
+    const tituloBox = await titulo.boundingBox();
+    const badgesBox = await badges.boundingBox();
+    expect(tituloBox).toBeTruthy();
+    expect(badgesBox).toBeTruthy();
+
+    const a = tituloBox!;
+    const b = badgesBox!;
+    const intersectam = !(
+      a.x + a.width <= b.x ||
+      b.x + b.width <= a.x ||
+      a.y + a.height <= b.y ||
+      b.y + b.height <= a.y
+    );
+    expect(intersectam).toBe(false);
+  });
+
+  test('em 390×844 o histórico não cobre a navegação', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/desempenho/historico', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('heading', { name: 'Histórico de questões' })).toBeVisible({
+      timeout: 60_000,
+    });
+    await assertConteudoAcimaDoNav(page);
+  });
+});
+
