@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { DesempenhoEstudoDashboard } from '@/components/dashboard/desempenho/DesempenhoEstudoDashboard';
 import { DesempenhoHubShell } from '@/components/dashboard/desempenho/DesempenhoHubShell';
+import { DesempenhoMapaDashboard } from '@/components/dashboard/desempenho/DesempenhoMapaDashboard';
 import { loadEstudoDashboard } from '@/lib/desempenho/estudoPageLoad';
 import {
   filtersFromEstudoSearchParams,
@@ -10,7 +10,7 @@ import {
   type DesempenhoEstudoSearchParams,
 } from '@/lib/desempenho/estudoSearchParams';
 
-export default async function DesempenhoEstudoPage({
+export default async function DesempenhoMapaPage({
   searchParams,
 }: {
   searchParams: Promise<DesempenhoEstudoSearchParams>;
@@ -22,6 +22,7 @@ export default async function DesempenhoEstudoPage({
   });
 
   const filterKey = [
+    'mapa',
     filters.periodo,
     filters.banca ?? '',
     filters.areaId ?? '',
@@ -31,7 +32,7 @@ export default async function DesempenhoEstudoPage({
 
   return (
     <DesempenhoHubShell
-      description="Onde você está errando, o quanto isso é confiável e qual é a próxima questão para testar."
+      description="Todas as áreas praticadas e o panorama por tipo de conteúdo."
       action={
         <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
           <Link
@@ -44,7 +45,7 @@ export default async function DesempenhoEstudoPage({
         </Button>
       }
     >
-      <DesempenhoEstudoDashboard key={filterKey} data={data} />
+      <DesempenhoMapaDashboard key={filterKey} data={data} />
     </DesempenhoHubShell>
   );
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 /**
- * Capturas do hub `/desempenho` (Estudo, Simulados, Atividade) em 390×844 e
+ * Capturas do hub `/desempenho` (Estudo, Simulados, Hábitos) em 390×844 e
  * 1440×900, gravadas em `artifacts/desempenho-v1/<sha>/`.
  *
  * Uso: `npm run capture:desempenho-hub`

@@ -10,6 +10,7 @@ const LIMPO: DesempenhoEstudoFilters = {
   banca: null,
   areaId: null,
   disciplina: null,
+  assunto: null,
 };
 
 const RESUMO_ALL: DesempenhoPeriodoResumo = {
@@ -27,8 +28,28 @@ const RESUMO_7D: DesempenhoPeriodoResumo = {
 };
 
 describe('DesempenhoFiltros', () => {
+  function abrirPainel() {
+    fireEvent.click(screen.getByRole('button', { name: /Filtrar/ }));
+  }
+
+  it('começa fechado em qualquer viewport, com Filtrar visível e aria-expanded', () => {
+    render(<DesempenhoFiltros filters={LIMPO} periodoResumo={RESUMO_ALL} />);
+
+    const botao = screen.getByRole('button', { name: /Filtrar/ });
+    expect(botao).toHaveAttribute('aria-expanded', 'false');
+    expect(botao.className).not.toContain('sm:hidden');
+
+    const painel = document.getElementById(botao.getAttribute('aria-controls')!);
+    expect(painel).not.toBeNull();
+    expect(painel).toHaveAttribute('hidden');
+    expect(painel?.className).toContain('hidden');
+    expect(painel?.className).not.toContain('sm:block');
+    expect(screen.queryByRole('group', { name: 'Período' })).not.toBeInTheDocument();
+  });
+
   it('a URL é a fonte de verdade: cada opção é um link com query', () => {
     render(<DesempenhoFiltros filters={LIMPO} periodoResumo={RESUMO_ALL} />);
+    abrirPainel();
 
     const periodo = screen.getByRole('group', { name: 'Período' });
     expect(within(periodo).getByRole('link', { name: '7 dias' })).toHaveAttribute(
@@ -48,6 +69,7 @@ describe('DesempenhoFiltros', () => {
         periodoResumo={RESUMO_7D}
       />,
     );
+    abrirPainel();
 
     const periodo = screen.getByRole('group', { name: 'Período' });
     expect(within(periodo).getByRole('link', { name: '7 dias' })).toHaveAttribute(
@@ -67,7 +89,30 @@ describe('DesempenhoFiltros', () => {
     expect(screen.getByText(/horário de Brasília/)).toBeInTheDocument();
   });
 
-  it('no mobile o painel abre por disclosure com contador de filtros ativos', () => {
+  it('mostra chips dos filtros ativos com o painel fechado', () => {
+    render(
+      <DesempenhoFiltros
+        filters={{ ...LIMPO, periodo: '7d', areaId: 'farmacologia' }}
+        periodoResumo={RESUMO_7D}
+      />,
+    );
+
+    const chips = screen.getByRole('list', { name: 'Filtros ativos' });
+    expect(within(chips).getByRole('link', { name: /Remover filtro de período/ })).toHaveAttribute(
+      'href',
+      '/desempenho?area=farmacologia',
+    );
+    expect(within(chips).getByRole('link', { name: /Remover filtro de área/ })).toHaveAttribute(
+      'href',
+      '/desempenho?periodo=7d',
+    );
+    expect(screen.getByRole('button', { name: /Filtrar/ })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
+  });
+
+  it('o painel abre por disclosure com contador de filtros ativos', () => {
     render(
       <DesempenhoFiltros
         filters={{ ...LIMPO, periodo: '7d', banca: 'CPCON' }}
@@ -85,6 +130,7 @@ describe('DesempenhoFiltros', () => {
 
     fireEvent.click(botao);
     expect(botao).toHaveAttribute('aria-expanded', 'true');
+    expect(painel).not.toHaveAttribute('hidden');
     expect(painel?.className).not.toContain('hidden');
   });
 
@@ -96,6 +142,7 @@ describe('DesempenhoFiltros', () => {
     unmount();
 
     render(<DesempenhoFiltros filters={{ ...LIMPO, periodo: '30d' }} periodoResumo={RESUMO_7D} />);
+    abrirPainel();
     expect(screen.getByRole('link', { name: 'Limpar filtros' })).toHaveAttribute(
       'href',
       '/desempenho',
@@ -112,6 +159,11 @@ describe('DesempenhoFiltros', () => {
     render(
       <DesempenhoFiltros filters={{ ...LIMPO, banca: 'CPCON' }} periodoResumo={RESUMO_ALL} />,
     );
+    expect(screen.getByRole('link', { name: /Remover filtro de banca/ })).toHaveAttribute(
+      'href',
+      '/desempenho',
+    );
+    abrirPainel();
     const banca = screen.getByRole('group', { name: 'Banca' });
     expect(within(banca).getByRole('link', { name: /Remover filtro de banca/ })).toHaveAttribute(
       'href',
@@ -119,10 +171,55 @@ describe('DesempenhoFiltros', () => {
     );
   });
 
+  it('assunto fica desabilitado sem área e limpa ao trocar a área', () => {
+    const { unmount } = render(
+      <DesempenhoFiltros
+        filters={LIMPO}
+        periodoResumo={RESUMO_ALL}
+        assuntoOpcoes={['Vias de Administração', 'Imunização']}
+      />,
+    );
+    abrirPainel();
+    expect(screen.getByText('Selecione uma área para filtrar por assunto.')).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Vias de Administração' })).not.toBeInTheDocument();
+    unmount();
+
+    render(
+      <DesempenhoFiltros
+        filters={{
+          ...LIMPO,
+          areaId: 'farmacologia',
+          assunto: 'Vias de Administração',
+        }}
+        periodoResumo={RESUMO_ALL}
+        assuntoOpcoes={['Vias de Administração', 'Cuidados na Administração de Medicamentos']}
+      />,
+    );
+    expect(screen.getByRole('link', { name: /Remover filtro de assunto/ })).toHaveAttribute(
+      'href',
+      '/desempenho?area=farmacologia',
+    );
+    abrirPainel();
+    const area = screen.getByRole('group', { name: 'Área' });
+    expect(within(area).getByRole('link', { name: 'Saúde Pública e Epidemiologia' })).toHaveAttribute(
+      'href',
+      '/desempenho?area=saude_publica',
+    );
+    expect(
+      within(screen.getByRole('group', { name: 'Assunto' })).getByRole('link', {
+        name: 'Vias de Administração',
+      }),
+    ).toHaveAttribute(
+      'href',
+      '/desempenho?area=farmacologia&assunto=Vias+de+Administra%C3%A7%C3%A3o',
+    );
+  });
+
   it('todos os alvos de toque têm altura mínima de 44px', () => {
     render(
       <DesempenhoFiltros filters={{ ...LIMPO, banca: 'CPCON' }} periodoResumo={RESUMO_ALL} />,
     );
+    abrirPainel();
 
     const alvos = [...screen.getAllByRole('link'), ...screen.getAllByRole('button')];
     expect(alvos.length).toBeGreaterThan(5);

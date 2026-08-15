@@ -31,7 +31,7 @@ describe('DesempenhoNav', () => {
       'href',
       '/desempenho/simulados',
     );
-    expect(screen.getByRole('link', { name: 'Atividade' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Hábitos' })).toHaveAttribute(
       'href',
       '/desempenho/atividade',
     );
@@ -39,15 +39,17 @@ describe('DesempenhoNav', () => {
 
   it.each([
     ['/desempenho', 'Estudo'],
+    ['/desempenho/mapa', 'Estudo'],
+    ['/desempenho/historico', 'Estudo'],
     ['/desempenho/simulados', 'Simulados'],
-    ['/desempenho/atividade', 'Atividade'],
+    ['/desempenho/atividade', 'Hábitos'],
   ])('marca aria-current="page" em %s', (pathname, ativo) => {
     mockPathname.mockReturnValue(pathname);
     render(<DesempenhoNav />);
 
     expect(screen.getByRole('link', { name: ativo })).toHaveAttribute('aria-current', 'page');
 
-    const outros = ['Estudo', 'Simulados', 'Atividade'].filter((label) => label !== ativo);
+    const outros = ['Estudo', 'Simulados', 'Hábitos'].filter((label) => label !== ativo);
     for (const label of outros) {
       expect(screen.getByRole('link', { name: label })).not.toHaveAttribute('aria-current');
     }

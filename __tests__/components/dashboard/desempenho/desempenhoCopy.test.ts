@@ -1,11 +1,15 @@
 import {
   DESEMPENHO_COPY,
+  formatAreasResumo,
   formatAtividadeHistorico,
   formatAtividadeMeta,
   formatHeatmapEmpty,
   formatHeatmapTotal,
+  formatMenorDesempenhoFaixa,
   formatRankingItemLabel,
   formatSimuladoAcertoContexto,
+  formatVerTodosFocos,
+  formatExibindoQuestoes,
 } from '@/components/dashboard/desempenho/desempenhoCopy';
 
 describe('desempenhoCopy', () => {
@@ -41,5 +45,25 @@ describe('desempenhoCopy', () => {
     );
     expect(formatSimuladoAcertoContexto(0, 0, 0)).toBeNull();
     expect(formatHeatmapEmpty()).toBe('Nenhuma questão com estudo reverso ainda.');
+  });
+
+  it('resume o mapa da home curta e os atalhos de expansão', () => {
+    expect(formatAreasResumo(8, 3)).toBe('8 áreas · 3 com diagnóstico confiável');
+    expect(formatAreasResumo(1, 1)).toBe('1 área · 1 com diagnóstico confiável');
+    expect(formatMenorDesempenhoFaixa('Clínico crítico')).toBe(
+      'Menor desempenho: Clínico crítico',
+    );
+    expect(formatVerTodosFocos(5)).toBe('Ver todos os focos (5)');
+    expect(DESEMPENHO_COPY.verHistorico).toBe('Ver histórico');
+    expect(DESEMPENHO_COPY.verDetalhes).toBe('Ver detalhes');
+    expect(DESEMPENHO_COPY.verMapaCompleto).toBe('Ver mapa completo');
+    expect(formatExibindoQuestoes(12, 18)).toBe('Exibindo 12 de 18 questões');
+    expect(formatExibindoQuestoes(18, 18)).toBe('Exibindo 18 de 18 questões');
+    expect(formatExibindoQuestoes(18, 18, true)).toBe(
+      '18 questões correspondem aos filtros na amostra das 5.000 mais recentes.',
+    );
+    expect(formatExibindoQuestoes(1, 18, true)).toBe(
+      '1 questão corresponde aos filtros na amostra das 5.000 mais recentes.',
+    );
   });
 });

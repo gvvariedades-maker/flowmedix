@@ -1,4 +1,4 @@
-import { aggregateStudyPerformance } from '@/lib/desempenho/studyPerformance';
+import { aggregateStudyPerformance, normalizeDesempenhoEstudoFilters } from '@/lib/desempenho/studyPerformance';
 import {
   DESEMPENHO_COACH_UNLOCK,
   DESEMPENHO_MIN_SAMPLE,
@@ -347,5 +347,59 @@ describe('aggregateStudyPerformance', () => {
     expect(data.placar.acertos).toBe(1);
     expect(data.recentAttempts).toHaveLength(1);
     expect(data.recentAttempts[0]?.moduloSlug).toBe('v-1');
+  });
+
+  it('filtra por assunto (titulo_aula) antes de agregar e calcula Exibindo X de Y', () => {
+    const catalog = [
+      cat('vias-1', 'Vias de Administração'),
+      cat('vias-2', 'Vias de Administração'),
+      cat('imuno-1', 'Imunização'),
+    ];
+    const historico = [
+      hist({ id: '1', modulo_slug: 'vias-1', acertou: true }),
+      hist({ id: '2', modulo_slug: 'vias-2', acertou: false }),
+      hist({ id: '3', modulo_slug: 'imuno-1', acertou: true }),
+    ];
+
+    const recorte = aggregateStudyPerformance(
+      historico,
+      catalog,
+      { periodo: 'all', areaId: 'farmacologia', assunto: 'Vias de Administração' },
+      NOW,
+    );
+    expect(recorte.placar.respondidas).toBe(2);
+    expect(recorte.universoRespondidas).toBe(3);
+    expect(recorte.assuntos.map((a) => a.tituloAula)).toEqual(['Vias de Administração']);
+    expect(recorte.assuntoOpcoes).toEqual(['Vias de Administração']);
+    expect(recorte.filtersApplied.assunto).toBe('Vias de Administração');
+
+    const semAssunto = aggregateStudyPerformance(
+      historico,
+      catalog,
+      { periodo: 'all', assunto: 'Vias de Administração' },
+      NOW,
+    );
+    expect(semAssunto.filtersApplied.assunto).toBeNull();
+    expect(semAssunto.placar.respondidas).toBe(3);
+    expect(semAssunto.universoRespondidas).toBe(3);
+  });
+});
+
+describe('normalizeDesempenhoEstudoFilters', () => {
+  it('descarta assunto sem área e aceita assunto com área', () => {
+    expect(
+      normalizeDesempenhoEstudoFilters({
+        assuntoRaw: 'Vias de Administração',
+      }).assunto,
+    ).toBeNull();
+    expect(
+      normalizeDesempenhoEstudoFilters({
+        areaRaw: 'farmacologia',
+        assuntoRaw: 'Vias de Administração',
+      }),
+    ).toMatchObject({
+      areaId: 'farmacologia',
+      assunto: 'Vias de Administração',
+    });
   });
 });

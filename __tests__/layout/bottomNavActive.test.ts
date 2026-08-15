@@ -33,6 +33,8 @@ describe('isBottomNavItemActive', () => {
       expect(isBottomNavItemActive('/desempenho', BOTTOM_NAV_HREFS.desempenho)).toBe(true);
       expect(isBottomNavItemActive('/desempenho/simulados', BOTTOM_NAV_HREFS.desempenho)).toBe(true);
       expect(isBottomNavItemActive('/desempenho/atividade', BOTTOM_NAV_HREFS.desempenho)).toBe(true);
+      expect(isBottomNavItemActive('/desempenho/mapa', BOTTOM_NAV_HREFS.desempenho)).toBe(true);
+      expect(isBottomNavItemActive('/desempenho/historico', BOTTOM_NAV_HREFS.desempenho)).toBe(true);
     });
 
     it('ativa redirects legados /progresso e /analytics (exact)', () => {

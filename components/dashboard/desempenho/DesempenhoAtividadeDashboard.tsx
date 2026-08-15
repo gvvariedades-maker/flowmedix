@@ -23,7 +23,7 @@ type Props = {
 };
 
 /**
- * Aba Atividade do hub `/desempenho`.
+ * Aba Hábitos do hub `/desempenho` (URL `/desempenho/atividade`).
  * Heatmap, streak e zerar histórico — rebaixados (hábitos/privacidade), não placar hero.
  * O analítico de acerto/cobertura fica na aba Estudo.
  */

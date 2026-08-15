@@ -52,6 +52,10 @@ Notas:
 - `respondida = false` é placeholder de "marcar como estudado" sem alternativa: **fora** de %, placar e recentes; permanece no catálogo. Depende da migration `20260811120000_historico_questoes_respondida.sql`.
 - o filtro de período recorta **atividade** (última prática), não recalcula o total disponível do catálogo;
 - `totalDisponivel` respeita os filtros de disciplina/banca/área aplicados ao catálogo.
+- filtro **`assunto`** (`titulo_aula` exato) só vale com área selecionada; trocar a área limpa o assunto. Não vaza para Hábitos nem Simulados.
+- **Dívida técnica (identidade):** `?assunto=` usa `titulo_aula`, a mesma chave da vitrine. Não há UUID de assunto; `canonicalSubtopico` ainda é rótulo. Renomear o título quebra URLs salvas. Follow-up: valor estável (id/slug canônico) sem quebrar paridade com `/estudar?assunto=`.
+- linha **Exibindo X de Y questões**: X = `placar.respondidas` no recorte (período + área + assunto); Y = respondidas **sem** período/área/assunto. Disciplina e banca, quando ativas, permanecem no Y (recorte de catálogo). Se a leitura bater `SCALE_LIMITS.HISTORICO_ANALYTICS_READ` (5.000), a linha **substitui** X de Y — *“N questões correspondem aos filtros na amostra das 5.000 mais recentes.”* — **não** inventar Y = 50 mil.
+- acerto/erro/reverso **não** recortam o placar; existem só em `/desempenho/historico`.
 
 ### Prioridade de estudo (`nextPractice`)
 

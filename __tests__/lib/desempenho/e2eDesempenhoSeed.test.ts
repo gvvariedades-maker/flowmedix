@@ -1,6 +1,9 @@
 import {
   getE2eDesempenhoEstudoData,
   getE2eDesempenhoEstudoPlacarZeradoComSerie,
+  getE2eDesempenhoHistoricoCursor,
+  getE2eDesempenhoLeituraTruncada,
+  getE2eDesempenhoLoadError,
 } from '@/lib/e2e/desempenhoSeed';
 import {
   E2E_DESEMPENHO_TITULO_AULA,
@@ -25,6 +28,37 @@ describe('getE2eDesempenhoEstudoData', () => {
     expect(data.recentAttempts[0]?.tituloAula).toBe(E2E_DESEMPENHO_TITULO_LONGO);
     expect(data.recentAttempts[0]?.acertou).toBe(false);
     expect(data.recentAttempts[0]?.estudoReversoConcluido).toBe(true);
+    expect(data.areas.some((area) => area.areaLabel === 'Doenças Transmissíveis')).toBe(
+      true,
+    );
+  });
+});
+
+describe('capturas E2E de desempenho', () => {
+  const limpo = {
+    periodo: 'all' as const,
+    banca: null,
+    areaId: null,
+    disciplina: null,
+    assunto: null,
+  };
+
+  it('historico-cursor gera mais itens que uma página', () => {
+    const data = getE2eDesempenhoHistoricoCursor(limpo, 5000);
+    expect(data.recentAttempts).toHaveLength(25);
+    const slugs = new Set(data.recentAttempts.map((a) => a.moduloSlug));
+    expect(slugs.size).toBe(25);
+  });
+
+  it('leitura-truncada substitui o universo completo', () => {
+    const data = getE2eDesempenhoLeituraTruncada(limpo);
+    expect(data.leituraTruncada).toBe(true);
+    expect(data.placar.respondidas).toBeGreaterThan(0);
+  });
+
+  it('erro não zera o placar como se fosse vazio', () => {
+    const data = getE2eDesempenhoLoadError(limpo);
+    expect(data.loadState).toBe('error');
   });
 });
 

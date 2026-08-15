@@ -8,8 +8,23 @@ export const DESEMPENHO_MIN_SAMPLE = 5;
 /** Respondidas para liberar o mapa (empty state de coach). */
 export const DESEMPENHO_COACH_UNLOCK = 10;
 
-/** Focos sugeridos na dobra NextPractice. */
+/** Focos sugeridos na dobra NextPractice (contrato do agregador). */
 export const DESEMPENHO_NEXT_PRACTICE_LIMIT = 5;
+
+/** Home curta: áreas prioritárias visíveis antes de “Ver mapa completo”. */
+export const DESEMPENHO_HOME_AREA_LIMIT = 3;
+
+/** Home curta: focos compactos abaixo do destaque (além do 1º completo). */
+export const DESEMPENHO_HOME_FOCI_COMPACT = 2;
+
+/** Home curta: tentativas recentes visíveis antes de “Ver histórico”. */
+export const DESEMPENHO_HOME_RECENT_LIMIT = 5;
+
+/** Página de histórico: itens por cursor (sem infinite scroll). */
+export const DESEMPENHO_HISTORICO_PAGE_SIZE = 20;
+
+/** Busca no filtro de assunto quando a lista passa deste tamanho. */
+export const DESEMPENHO_ASSUNTO_BUSCA_MIN = 8;
 
 /** Meta diária padrão (questões com última prática “hoje”). */
 export const DESEMPENHO_META_DIA_DEFAULT = 10;
@@ -34,7 +49,12 @@ export type DesempenhoEstudoFilters = {
   banca?: string | null;
   areaId?: GrandeAreaId | null;
   disciplina?: VitrineDisciplinaId | null;
+  /** `titulo_aula` exato; só vale com `areaId` (assunto depende da área). */
+  assunto?: string | null;
 };
+
+/** Filtro de resultado — só na lista de `/desempenho/historico`, nunca no placar. */
+export type HistoricoResultadoFilter = 'todos' | 'acerto' | 'erro' | 'reverso';
 
 /** Linha mínima de histórico para agregação (1 por questão; upsert sobrescreve created_at). */
 export type HistoricoDesempenhoRow = {
@@ -227,6 +247,15 @@ export type DesempenhoEstudoData = {
   filtersApplied: DesempenhoEstudoFilters;
   /** Recorte civil aplicado (Brasília, semiaberto). */
   periodoResumo: DesempenhoPeriodoResumo;
+  /**
+   * Respondidas sem período/área/assunto (disciplina e banca permanecem).
+   * Numerador da linha “Exibindo X de Y” é `placar.respondidas`.
+   */
+  universoRespondidas: number;
+  /** Títulos do catálogo no recorte de área/disciplina/banca — opções do filtro assunto. */
+  assuntoOpcoes: string[];
+  /** Leitura bateu `SCALE_LIMITS.HISTORICO_ANALYTICS_READ` — Y não é o total vitalício. */
+  leituraTruncada: boolean;
   /** `error` = falha de leitura; a UI mostra estado de erro, não zeros. */
   loadState: DesempenhoLoadState;
   /** P4 — null só em agregação pura sem orquestração; runtime preenche. */

@@ -1,11 +1,22 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import type { PracticeFocus, PracticeFocusReason } from '@/lib/desempenho/types';
+import {
+  DESEMPENHO_HOME_FOCI_COMPACT,
+  type PracticeFocus,
+  type PracticeFocusReason,
+} from '@/lib/desempenho/types';
 import {
   formatDesempenhoConfianca,
   formatDesempenhoPctComAmostra,
 } from '@/components/dashboard/desempenho/formatDesempenho';
+import {
+  DESEMPENHO_COPY,
+  formatVerTodosFocos,
+} from '@/components/dashboard/desempenho/desempenhoCopy';
 
 const PRACTICE_REASON_LABEL: Record<PracticeFocusReason, string> = {
   weak_accuracy: 'Acerto baixo',
@@ -34,10 +45,12 @@ type Props = {
 };
 
 /**
- * Próxima melhor ação: um foco em destaque com CTA curto + fila explicável.
- * O nome longo do assunto fica no conteúdo, nunca dentro do botão.
+ * Próxima melhor ação: um foco em destaque + até 2 compactos.
+ * O restante abre na mesma seção (“Ver todos os focos”).
  */
 export function NextPracticeCard({ foci }: Props) {
+  const [todosAbertos, setTodosAbertos] = useState(false);
+
   if (foci.length === 0) {
     return (
       <section aria-labelledby="proximos-focos-title" className="space-y-3">
@@ -51,6 +64,9 @@ export function NextPracticeCard({ foci }: Props) {
   }
 
   const [primary, ...restantes] = foci;
+  const compactos = restantes.slice(0, DESEMPENHO_HOME_FOCI_COMPACT);
+  const ocultos = restantes.slice(DESEMPENHO_HOME_FOCI_COMPACT);
+  const fila = todosAbertos ? restantes : compactos;
   const primaryHref = `/estudar?assunto=${encodeURIComponent(primary!.deepLinkAssunto)}&status=pending`;
 
   return (
@@ -73,13 +89,13 @@ export function NextPracticeCard({ foci }: Props) {
           </Link>
         </Button>
 
-        {restantes.length > 0 ? (
+        {fila.length > 0 ? (
           <div className="border-t border-border/70 pt-3">
             <p className="mb-2 text-[0.6875rem] font-medium uppercase tracking-wider text-slate-500">
               Depois deste
             </p>
             <ul className="space-y-2">
-              {restantes.map((focus) => (
+              {fila.map((focus) => (
                 <li key={`${focus.tituloAula}-${focus.reason}`} className="min-w-0">
                   <Link
                     href={`/estudar?assunto=${encodeURIComponent(focus.deepLinkAssunto)}&status=pending`}
@@ -96,6 +112,18 @@ export function NextPracticeCard({ foci }: Props) {
               ))}
             </ul>
           </div>
+        ) : null}
+
+        {ocultos.length > 0 ? (
+          <button
+            type="button"
+            onClick={() => setTodosAbertos((v) => !v)}
+            className="inline-flex min-h-11 items-center text-sm font-medium text-[var(--color-brand-text)] underline-offset-2 hover:underline"
+          >
+            {todosAbertos
+              ? DESEMPENHO_COPY.recolherFocos
+              : formatVerTodosFocos(foci.length)}
+          </button>
         ) : null}
       </div>
     </section>

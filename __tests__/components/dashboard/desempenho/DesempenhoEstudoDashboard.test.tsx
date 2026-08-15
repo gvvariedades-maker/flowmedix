@@ -1,6 +1,13 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { DesempenhoEstudoDashboard } from '@/components/dashboard/desempenho/DesempenhoEstudoDashboard';
-import type { DesempenhoEstudoData } from '@/lib/desempenho/types';
+import type {
+  AreaPerformance,
+  AssuntoPerformance,
+  DesempenhoEstudoData,
+  PracticeFocus,
+  RecentAttempt,
+} from '@/lib/desempenho/types';
+import type { GrandeAreaId } from '@/lib/desempenho/taxonomiaEnfermagem';
 
 const mockPush = jest.fn();
 
@@ -101,6 +108,7 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
       banca: null,
       areaId: null,
       disciplina: null,
+      assunto: null,
     },
     periodoResumo: {
       periodo: 'all',
@@ -108,6 +116,9 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
       endYmdInclusive: '2026-08-11',
       civilDays: null,
     },
+    universoRespondidas: 12,
+    assuntoOpcoes: ['Vias de Administração'],
+    leituraTruncada: false,
     loadState: 'ok',
     attemptSeries: {
       available: false,
@@ -127,11 +138,136 @@ function buildData(overrides: Partial<DesempenhoEstudoData> = {}): DesempenhoEst
   };
 }
 
+function buildAssunto(
+  tituloAula: string,
+  areaId: GrandeAreaId,
+  areaLabel: string,
+  overrides: Partial<AssuntoPerformance> = {},
+): AssuntoPerformance {
+  return {
+    tituloAula,
+    canonicalSubtopico: tituloAula,
+    areaId,
+    areaLabel,
+    riskBandId: 'alta_incidencia_protocolo',
+    disciplina: 'enfermagem',
+    respondidas: 6,
+    acertos: 2,
+    erros: 4,
+    percentual: 33,
+    coberturaPct: 40,
+    totalDisponivel: 15,
+    ultimaPratica: '2026-08-10T12:00:00.000Z',
+    amostraSuficiente: true,
+    confidenceId: 'evidencia_moderada',
+    errosSemReverso: 3,
+    bancas: ['CPCON'],
+    ...overrides,
+  };
+}
+
+function buildArea(
+  areaId: GrandeAreaId,
+  areaLabel: string,
+  overrides: Partial<AreaPerformance> = {},
+): AreaPerformance {
+  const respondidas = overrides.respondidas ?? 6;
+  const acertos = overrides.acertos ?? 2;
+  const amostraSuficiente = overrides.amostraSuficiente ?? respondidas >= 5;
+  const percentual =
+    overrides.percentual !== undefined
+      ? overrides.percentual
+      : amostraSuficiente
+        ? Math.round((acertos / respondidas) * 100)
+        : null;
+  return {
+    areaId,
+    areaLabel,
+    riskBandId: 'alta_incidencia_protocolo',
+    respondidas,
+    acertos,
+    erros: respondidas - acertos,
+    percentual,
+    coberturaPct: 40,
+    totalDisponivel: 15,
+    amostraSuficiente,
+    confidenceId: amostraSuficiente ? 'evidencia_moderada' : 'tendencia_inicial',
+    assuntos: [
+      buildAssunto(areaLabel, areaId, areaLabel, {
+        respondidas,
+        acertos,
+        erros: respondidas - acertos,
+        percentual,
+        amostraSuficiente,
+      }),
+    ],
+    ...overrides,
+  };
+}
+
+function buildFocus(tituloAula: string, overrides: Partial<PracticeFocus> = {}): PracticeFocus {
+  return {
+    tituloAula,
+    reason: 'weak_accuracy',
+    percentual: 33,
+    respondidas: 6,
+    acertos: 2,
+    erros: 4,
+    errosSemReverso: 3,
+    coberturaPct: 40,
+    totalDisponivel: 15,
+    confidenceId: 'evidencia_moderada',
+    deepLinkAssunto: tituloAula,
+    ...overrides,
+  };
+}
+
+function buildAttempt(id: string, tituloAula: string): RecentAttempt {
+  return {
+    id,
+    moduloSlug: id,
+    tituloAula,
+    acertou: false,
+    estudoReversoConcluido: false,
+    createdAt: '2026-08-10T12:00:00.000Z',
+  };
+}
+
+const AREAS_HOME = [
+  buildArea('farmacologia', 'Farmacologia e Medicamentos', {
+    respondidas: 8,
+    acertos: 2,
+    percentual: 25,
+  }),
+  buildArea('biosseguranca', 'Biossegurança e Controle de Infecção', {
+    respondidas: 7,
+    acertos: 2,
+    percentual: 29,
+  }),
+  buildArea('procedimentos', 'Procedimentos de Enfermagem', {
+    respondidas: 6,
+    acertos: 3,
+    percentual: 50,
+  }),
+  buildArea('saude_publica', 'Saúde Pública e Epidemiologia', {
+    respondidas: 12,
+    acertos: 10,
+    percentual: 83,
+  }),
+];
+
 describe('DesempenhoEstudoDashboard', () => {
   it('mostra placar, ação, panoramas e recentes quando o coach está liberado', () => {
     render(<DesempenhoEstudoDashboard data={buildData()} />);
 
     expect(screen.getByLabelText('Filtros de desempenho')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Filtrar/ })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
+    expect(screen.getByTestId('desempenho-universo')).toHaveTextContent(
+      'Exibindo 12 de 12 questões',
+    );
     expect(screen.getByLabelText('Placar de estudo')).toBeInTheDocument();
     expect(screen.getAllByText('Questões analisadas').length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText('Praticadas hoje')).toBeInTheDocument();
@@ -139,13 +275,18 @@ describe('DesempenhoEstudoDashboard', () => {
       screen.getByText(/Considerando o período e os filtros selecionados/),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Hábitos e estudo reverso ficam na aba Atividade/),
+      screen.getByText(/Sequência e estudo reverso ficam na aba Hábitos/),
     ).toBeInTheDocument();
     expect(screen.queryByText(/no histórico/i)).not.toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Próximos focos' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Panorama por áreas' })).toBeInTheDocument();
+    expect(screen.getByText('1 área · 1 com diagnóstico confiável')).toBeInTheDocument();
     expect(screen.getAllByText('Farmacologia e Medicamentos').length).toBeGreaterThan(0);
-    expect(screen.getByText('Protocolo e rotina assistencial')).toBeInTheDocument();
+    expect(screen.getByText(/Menor desempenho: Protocolo e rotina assistencial/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Ver detalhes' })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
     expect(
       screen.getByRole('heading', { name: 'Questões praticadas recentemente' }),
     ).toBeInTheDocument();
@@ -207,16 +348,98 @@ describe('DesempenhoEstudoDashboard', () => {
     expect(painel).toHaveAttribute('hidden');
   });
 
-  it('abre o mapa completo em um toque', () => {
+  it('mostra Exibindo X de Y e aponta Ver mapa completo para a rota dedicada', () => {
+    render(<DesempenhoEstudoDashboard data={buildData({ areas: AREAS_HOME })} />);
+
+    expect(screen.getByTestId('desempenho-universo')).toHaveTextContent(
+      'Exibindo 12 de 12 questões',
+    );
+    expect(screen.getByText('4 áreas · 4 com diagnóstico confiável')).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Farmacologia e Medicamentos/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Biossegurança e Controle de Infecção/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Procedimentos de Enfermagem/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: /Saúde Pública e Epidemiologia/ }),
+    ).not.toBeInTheDocument();
+
+    expect(screen.getByRole('link', { name: 'Ver mapa completo' })).toHaveAttribute(
+      'href',
+      '/desempenho/mapa',
+    );
+  });
+
+  it('mostra 1 foco completo e 2 compactos; o restante abre na seção', () => {
+    render(
+      <DesempenhoEstudoDashboard
+        data={buildData({
+          nextPractice: [
+            buildFocus('Vias de Administração'),
+            buildFocus('Imunização'),
+            buildFocus('Curativos e Manejo de Feridas'),
+            buildFocus('Saúde Mental'),
+            buildFocus('História da Enfermagem'),
+          ],
+        })}
+      />,
+    );
+
+    const focos = screen.getByRole('heading', { name: 'Próximos focos' }).closest('section');
+    expect(focos).not.toBeNull();
+    const secao = focos as HTMLElement;
+
+    expect(within(secao).getByText('Vias de Administração')).toBeInTheDocument();
+    expect(within(secao).getByText('Imunização')).toBeInTheDocument();
+    expect(within(secao).getByText('Curativos e Manejo de Feridas')).toBeInTheDocument();
+    expect(within(secao).queryByText('Saúde Mental')).not.toBeInTheDocument();
+    expect(within(secao).queryByText('História da Enfermagem')).not.toBeInTheDocument();
+
+    fireEvent.click(within(secao).getByRole('button', { name: 'Ver todos os focos (5)' }));
+
+    expect(within(secao).getByText('Saúde Mental')).toBeInTheDocument();
+    expect(within(secao).getByText('História da Enfermagem')).toBeInTheDocument();
+    expect(within(secao).getByRole('button', { name: 'Recolher focos' })).toBeInTheDocument();
+  });
+
+  it('mostra 5 recentes e aponta Ver histórico para a rota dedicada', () => {
+    render(
+      <DesempenhoEstudoDashboard
+        data={buildData({
+          recentAttempts: Array.from({ length: 7 }, (_, i) =>
+            buildAttempt(`h-${i + 1}`, `Questão recente ${i + 1}`),
+          ),
+        })}
+      />,
+    );
+
+    expect(screen.getByText('Questão recente 1')).toBeInTheDocument();
+    expect(screen.getByText('Questão recente 5')).toBeInTheDocument();
+    expect(screen.queryByText('Questão recente 6')).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Ver histórico' })).toHaveAttribute(
+      'href',
+      '/desempenho/historico',
+    );
+    expect(screen.queryByRole('button', { name: 'Ver histórico' })).not.toBeInTheDocument();
+  });
+
+  it('mantém o radar de tipos recolhido até Ver detalhes', () => {
     render(<DesempenhoEstudoDashboard data={buildData()} />);
 
-    fireEvent.click(screen.getByRole('button', { name: 'Ver mapa completo' }));
+    const detalhes = screen.getByRole('button', { name: 'Ver detalhes' });
+    expect(detalhes).toHaveAttribute('aria-expanded', 'false');
+    const painel = document.getElementById(detalhes.getAttribute('aria-controls')!);
+    expect(painel).toHaveAttribute('hidden');
 
-    expect(screen.getByRole('button', { name: /Farmacologia e Medicamentos/ })).toHaveAttribute(
-      'aria-expanded',
-      'true',
-    );
-    expect(screen.getByRole('button', { name: 'Recolher mapa' })).toBeInTheDocument();
+    fireEvent.click(detalhes);
+
+    expect(detalhes).toHaveAttribute('aria-expanded', 'true');
+    expect(painel).not.toHaveAttribute('hidden');
+    expect(screen.getByRole('button', { name: 'Ocultar detalhes' })).toBeInTheDocument();
   });
 
   it('mostra evolução P4 quando a série está disponível', () => {
@@ -382,5 +605,88 @@ describe('DesempenhoEstudoDashboard', () => {
     expect(screen.getByRole('link', { name: 'Tentar novamente' })).toBeInTheDocument();
     expect(screen.queryByLabelText('Placar de estudo')).not.toBeInTheDocument();
     expect(screen.queryByText('0%')).not.toBeInTheDocument();
+  });
+
+  it('colora o placar: total neutro, acertos verde, erros vermelho, % pelo limiar, meta laranja', () => {
+    render(
+      <DesempenhoEstudoDashboard
+        data={buildData({
+          placar: {
+            respondidas: 524,
+            acertos: 132,
+            erros: 392,
+            percentual: 25,
+            metaDoDia: { respondidasHoje: 0, meta: 10 },
+            coachUnlocked: true,
+            confidenceId: 'diagnostico_confiavel',
+          },
+        })}
+      />,
+    );
+
+    const placar = screen.getByLabelText('Placar de estudo');
+    const card = (label: string) => {
+      const node = within(placar).getByText(label).closest('[data-variant]');
+      expect(node).not.toBeNull();
+      return node as HTMLElement;
+    };
+
+    expect(card('Questões analisadas')).toHaveAttribute('data-variant', 'neutral');
+    expect(card('Acertos')).toHaveAttribute('data-variant', 'success');
+    expect(card('Erros')).toHaveAttribute('data-variant', 'danger');
+    expect(card('% acerto')).toHaveAttribute('data-variant', 'danger');
+    expect(card('Praticadas hoje')).toHaveAttribute('data-variant', 'warning');
+    expect(within(card('% acerto')).getByText('25%')).toBeInTheDocument();
+  });
+
+  it('% com amostra pequena não recebe tom conclusivo', () => {
+    render(
+      <DesempenhoEstudoDashboard
+        data={buildData({
+          placar: {
+            respondidas: 3,
+            acertos: 2,
+            erros: 1,
+            percentual: null,
+            metaDoDia: { respondidasHoje: 1, meta: 10 },
+            coachUnlocked: false,
+            confidenceId: 'tendencia_inicial',
+          },
+          areas: [],
+          riskBands: [],
+          nextPractice: [],
+        })}
+      />,
+    );
+
+    const pct = screen.getByText('% acerto').closest('[data-variant]');
+    expect(pct).toHaveAttribute('data-variant', 'neutral');
+  });
+
+  it('meta do dia fica verde ao atingir o alvo', () => {
+    render(
+      <DesempenhoEstudoDashboard
+        data={buildData({
+          placar: {
+            respondidas: 12,
+            acertos: 9,
+            erros: 3,
+            percentual: 75,
+            metaDoDia: { respondidasHoje: 10, meta: 10 },
+            coachUnlocked: true,
+            confidenceId: 'diagnostico_confiavel',
+          },
+        })}
+      />,
+    );
+
+    expect(screen.getByText('Praticadas hoje').closest('[data-variant]')).toHaveAttribute(
+      'data-variant',
+      'success',
+    );
+    expect(screen.getByText('% acerto').closest('[data-variant]')).toHaveAttribute(
+      'data-variant',
+      'success',
+    );
   });
 });

@@ -1,37 +1,55 @@
 import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { DesempenhoEstudoDashboard } from '@/components/dashboard/desempenho/DesempenhoEstudoDashboard';
 import { DesempenhoHubShell } from '@/components/dashboard/desempenho/DesempenhoHubShell';
+import { DesempenhoHistoricoDashboard } from '@/components/dashboard/desempenho/DesempenhoHistoricoDashboard';
 import { loadEstudoDashboard } from '@/lib/desempenho/estudoPageLoad';
 import {
   filtersFromEstudoSearchParams,
   firstSearchParam,
   type DesempenhoEstudoSearchParams,
 } from '@/lib/desempenho/estudoSearchParams';
+import { paginateRecentAttempts, normalizeHistoricoResultado } from '@/lib/desempenho/historicoPagination';
+import { SCALE_LIMITS } from '@/lib/scale/constants';
+import { DESEMPENHO_HISTORICO_PAGE_SIZE } from '@/lib/desempenho/types';
 
-export default async function DesempenhoEstudoPage({
+export default async function DesempenhoHistoricoPage({
   searchParams,
 }: {
   searchParams: Promise<DesempenhoEstudoSearchParams>;
 }) {
   const resolvedSearchParams = await searchParams;
   const filters = filtersFromEstudoSearchParams(resolvedSearchParams);
+  const resultado = normalizeHistoricoResultado(firstSearchParam(resolvedSearchParams.resultado));
+  const cursor = firstSearchParam(resolvedSearchParams.cursor);
+
+  const captura = firstSearchParam(resolvedSearchParams.captura);
+
   const data = await loadEstudoDashboard(filters, {
-    captura: firstSearchParam(resolvedSearchParams.captura),
+    captura,
+    recentLimit: SCALE_LIMITS.HISTORICO_ANALYTICS_READ,
+  });
+
+  const page = paginateRecentAttempts(data.recentAttempts, {
+    cursor,
+    resultado,
+    limit: DESEMPENHO_HISTORICO_PAGE_SIZE,
   });
 
   const filterKey = [
+    'historico',
     filters.periodo,
     filters.banca ?? '',
     filters.areaId ?? '',
     filters.disciplina ?? '',
     filters.assunto ?? '',
+    resultado,
+    cursor ?? '',
   ].join('-');
 
   return (
     <DesempenhoHubShell
-      description="Onde você está errando, o quanto isso é confiável e qual é a próxima questão para testar."
+      description="Lista paginada das questões praticadas. Acerto, erro e reverso filtram só esta lista."
       action={
         <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
           <Link
@@ -44,7 +62,14 @@ export default async function DesempenhoEstudoPage({
         </Button>
       }
     >
-      <DesempenhoEstudoDashboard key={filterKey} data={data} />
+      <DesempenhoHistoricoDashboard
+        key={filterKey}
+        data={{ ...data, recentAttempts: page.items }}
+        resultado={resultado}
+        nextCursor={page.nextCursor}
+        totalFiltrado={page.total}
+        captura={captura}
+      />
     </DesempenhoHubShell>
   );
 }

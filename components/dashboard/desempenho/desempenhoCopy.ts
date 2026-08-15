@@ -7,8 +7,18 @@ export const DESEMPENHO_COPY = {
   estudoRespondidasLabel: 'Questões analisadas',
   estudoMetaLabel: 'Praticadas hoje',
   estudoUniversoHint:
-    'Considerando o período e os filtros selecionados. Hábitos e estudo reverso ficam na aba Atividade.',
+    'Considerando o período e os filtros selecionados. Sequência e estudo reverso ficam na aba Hábitos.',
   estudoPlacarEmpty: 'Sem questões com alternativa marcada neste período.',
+  leituraTruncada:
+    'A leitura atingiu o teto de 5.000 registros — os totais são parciais, não o histórico vitalício.',
+  voltarResumo: 'Voltar ao resumo',
+  verMapaCompleto: 'Ver mapa completo',
+  assuntoSemArea: 'Selecione uma área para filtrar por assunto.',
+  assuntoBuscaPlaceholder: 'Buscar assunto',
+  historicoResultadoTodos: 'Todas',
+  historicoResultadoAcerto: 'Acertos',
+  historicoResultadoErro: 'Erros',
+  historicoResultadoReverso: 'Reverso',
   evolucaoTitle: 'Evolução das tentativas',
   evolucaoHint:
     'Acerto por dia nas tentativas registradas (horário de Brasília). Não é o mesmo conjunto do placar de questões.',
@@ -16,7 +26,44 @@ export const DESEMPENHO_COPY = {
     'O placar de questões acima está zerado. Esta curva conta tentativas registradas no período — outro conjunto, que o reset não apaga.',
   atividadeMetaLabel: 'Estudo reverso hoje',
   rankingPeriodo: 'estudo reverso · últimos 30 dias',
+  verDetalhes: 'Ver detalhes',
+  ocultarDetalhes: 'Ocultar detalhes',
+  verHistorico: 'Ver histórico',
+  recolherHistorico: 'Recolher histórico',
+  recolherFocos: 'Recolher focos',
 } as const;
+
+export function formatAreasResumo(total: number, comDiagnostico: number): string {
+  const areasTxt = total === 1 ? '1 área' : `${total} áreas`;
+  const diagTxt =
+    comDiagnostico === 1
+      ? '1 com diagnóstico confiável'
+      : `${comDiagnostico} com diagnóstico confiável`;
+  return `${areasTxt} · ${diagTxt}`;
+}
+
+export function formatMenorDesempenhoFaixa(faixa: string): string {
+  return `Menor desempenho: ${faixa}`;
+}
+
+export function formatVerTodosFocos(total: number): string {
+  return `Ver todos os focos (${total})`;
+}
+
+export function formatExibindoQuestoes(
+  exibidas: number,
+  universo: number,
+  leituraTruncada = false,
+): string {
+  if (leituraTruncada) {
+    const nucleo =
+      exibidas === 1
+        ? '1 questão corresponde'
+        : `${exibidas} questões correspondem`;
+    return `${nucleo} aos filtros na amostra das 5.000 mais recentes.`;
+  }
+  return `Exibindo ${exibidas} de ${universo} questões`;
+}
 
 export function formatEstudoAmostra(
   acertos: number,
