@@ -59,10 +59,10 @@ function gatilhoZerar(page: Page) {
     .getByRole('button', { name: 'Zerar desempenho de estudo' });
 }
 
-/** Abre o painel de filtros quando a viewport é mobile (disclosure `Filtrar`). */
+/** Abre o painel de filtros (fechado em qualquer viewport). */
 async function abrirFiltros(page: Page) {
   const botao = page.getByRole('button', { name: /Filtrar/ });
-  if (!(await botao.isVisible())) return;
+  await expect(botao).toBeVisible({ timeout: 45_000 });
   await expect(async () => {
     // Religar o clique só se ainda estiver fechado — `toPass` retria o bloco
     // inteiro; um segundo clique fecharia o disclosure.
@@ -301,13 +301,14 @@ test.describe('Hub Desempenho (estudo)', () => {
       { timeout: 60_000 },
     );
 
-    await abrirFiltros(page);
-    // Primeira área da lista (não a atual): no Pixel 5 cabe na dobra do painel.
-    const outraArea = page
-      .getByRole('group', { name: 'Área' })
-      .getByRole('link', { name: 'Fundamentos e Bases', exact: true });
-    await expect(outraArea).toBeVisible({ timeout: 30_000 });
-    await outraArea.click();
+    // O chip vive no painel `hidden`; o href já está no DOM (mesmo contrato do clique).
+    const chip = page.locator('[aria-label="Área"] a[href*="area=fundamentos_bases"]');
+    await expect(chip).toHaveCount(1, { timeout: 30_000 });
+    const href = await chip.getAttribute('href');
+    expect(href).toMatch(/banca=FGV/);
+    expect(href).not.toMatch(/assunto=/);
+
+    await page.goto(href!, { waitUntil: 'domcontentloaded' });
     await expect(page).toHaveURL(/area=fundamentos_bases/, { timeout: 30_000 });
     await expect(page).not.toHaveURL(/assunto=/);
     await expect(page).toHaveURL(/banca=FGV/);
