@@ -63,6 +63,9 @@ export function isMobileViewport(page: Page) {
   return viewport ? viewport.width < 768 : false;
 }
 
+/** CTA do painel/sheet: vazio = "Começar este assunto"; com respostas = "Entrar no assunto". */
+export const VITRINE_ASSUNTO_CTA_NAME = /Começar este assunto|Entrar no assunto/;
+
 /** Sheet mobile do assunto (evita strict mode — um dialog por card). */
 export function vitrineSubjectSheet(page: Page, tituloAssunto: string) {
   return page.getByRole('dialog', { name: new RegExp(tituloAssunto) });
@@ -87,7 +90,7 @@ export async function garantirPainelAssuntoAberto(page: Page, tituloAssunto: str
   }
 
   const assuntoBtn = page.getByRole('button', { name: new RegExp(tituloAssunto) });
-  const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
+  const entrar = page.getByRole('link', { name: VITRINE_ASSUNTO_CTA_NAME }).first();
 
   try {
     await expect(entrar).toBeVisible({ timeout: 2_000 });
@@ -109,15 +112,17 @@ export type AbrirQuestaoVitrineOpts = {
   tituloAssunto: string;
   slugUrlPattern: SlugUrlMatcher;
   questaoText?: RegExp;
-  /** Modal @estudar: no mobile abre sheet e usa "Entrar no assunto" em vez do CTA do card. */
+  /** Modal @estudar: no mobile abre sheet e usa o CTA do painel em vez do CTA do card. */
   usarEntrarNoAssunto?: boolean;
 };
 
 function linkEntrarNoAssunto(page: Page, tituloAssunto: string) {
   if (isMobileViewport(page)) {
-    return vitrineSubjectSheet(page, tituloAssunto).getByRole('link', { name: 'Entrar no assunto' });
+    return vitrineSubjectSheet(page, tituloAssunto).getByRole('link', {
+      name: VITRINE_ASSUNTO_CTA_NAME,
+    });
   }
-  return page.getByRole('link', { name: 'Entrar no assunto' }).first();
+  return page.getByRole('link', { name: VITRINE_ASSUNTO_CTA_NAME }).first();
 }
 
 /** Abre a primeira questão do assunto — CTA mobile ou painel desktop. */

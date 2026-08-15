@@ -7,6 +7,7 @@ import {
 import {
   abrirQuestaoViaVitrine,
   garantirPainelAssuntoAberto,
+  VITRINE_ASSUNTO_CTA_NAME,
   vitrineSubjectSheet,
   waitVitrineListReady,
 } from './helpers/vitrineE2e';
@@ -22,11 +23,11 @@ async function gotoVitrineFiltrada(page: Page) {
 
 function linkEntrarNoAssunto(page: Page) {
   return vitrineSubjectSheet(page, E2E_ESTUDAR_TITULO_AULA)
-    .getByRole('link', { name: 'Entrar no assunto' })
+    .getByRole('link', { name: VITRINE_ASSUNTO_CTA_NAME })
     .or(
       page
         .locator(`a[href*="/estudar/${E2E_ESTUDAR_SLUG_1}"]`)
-        .filter({ hasText: 'Entrar no assunto' }),
+        .filter({ hasText: VITRINE_ASSUNTO_CTA_NAME }),
     )
     .first();
 }
