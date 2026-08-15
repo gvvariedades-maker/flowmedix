@@ -64,8 +64,13 @@ async function abrirFiltros(page: Page) {
   const botao = page.getByRole('button', { name: /Filtrar/ });
   if (!(await botao.isVisible())) return;
   await expect(async () => {
-    await botao.click();
+    // Religar o clique só se ainda estiver fechado — `toPass` retria o bloco
+    // inteiro; um segundo clique fecharia o disclosure.
+    if ((await botao.getAttribute('aria-expanded')) !== 'true') {
+      await botao.click();
+    }
     await expect(botao).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.getByRole('group', { name: 'Período' })).toBeVisible();
   }).toPass({ timeout: 45_000 });
 }
 
@@ -297,11 +302,13 @@ test.describe('Hub Desempenho (estudo)', () => {
     );
 
     await abrirFiltros(page);
-    await page
+    // Primeira área da lista (não a atual): no Pixel 5 cabe na dobra do painel.
+    const outraArea = page
       .getByRole('group', { name: 'Área' })
-      .getByRole('link', { name: 'Saúde Pública e Epidemiologia' })
-      .click();
-    await expect(page).toHaveURL(/area=saude_publica/, { timeout: 30_000 });
+      .getByRole('link', { name: 'Fundamentos e Bases', exact: true });
+    await expect(outraArea).toBeVisible({ timeout: 30_000 });
+    await outraArea.click();
+    await expect(page).toHaveURL(/area=fundamentos_bases/, { timeout: 30_000 });
     await expect(page).not.toHaveURL(/assunto=/);
     await expect(page).toHaveURL(/banca=FGV/);
   });
