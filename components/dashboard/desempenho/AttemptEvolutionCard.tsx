@@ -10,6 +10,7 @@ import {
 } from '@/components/dashboard/desempenho/formatDesempenho';
 import type { AttemptSeriesData } from '@/lib/desempenho/types';
 import { cn } from '@/lib/utils';
+import { DESEMPENHO_COPY } from '@/components/dashboard/desempenho/desempenhoCopy';
 
 const SPARK_W = 220;
 const SPARK_H = 48;
@@ -39,13 +40,15 @@ function buildPctSparkPaths(percentuals: Array<number | null>) {
 type Props = {
   series: AttemptSeriesData;
   className?: string;
+  /** Placar de questões do recorte está vazio (ex.: após reset 1A). */
+  placarZerado?: boolean;
 };
 
 /**
  * Dobra P4 no placar: evolução diária de % + tempo médio + acerto na 1ª tentativa.
  * Esconde-se quando a flag EE está off (fallback P0).
  */
-export function AttemptEvolutionCard({ series, className }: Props) {
+export function AttemptEvolutionCard({ series, className, placarZerado = false }: Props) {
   const gradId = useId().replace(/:/g, '');
 
   const pctSeries = useMemo(
@@ -69,9 +72,9 @@ export function AttemptEvolutionCard({ series, className }: Props) {
         aria-label="Evolução de tentativas"
         className={cn('metric-card space-y-2 p-5', className)}
       >
-        <h2 className="text-sm font-semibold text-slate-900">Evolução do desempenho</h2>
+        <h2 className="text-sm font-semibold text-slate-900">{DESEMPENHO_COPY.evolucaoTitle}</h2>
         <p className="text-xs text-muted-foreground">
-          Ainda não há respostas registradas neste período. Continue praticando — a curva aparece
+          Ainda não há tentativas registradas neste período. Continue praticando — a curva aparece
           conforme você responde.
         </p>
       </section>
@@ -86,10 +89,13 @@ export function AttemptEvolutionCard({ series, className }: Props) {
       <div className="metric-card space-y-3 p-5">
         <div className="flex flex-wrap items-start justify-between gap-2">
           <div>
-            <h2 className="text-sm font-semibold text-slate-900">Evolução do desempenho</h2>
-            <p className="text-xs text-muted-foreground">
-              Acerto por dia nas questões que você praticou (horário de Brasília).
-            </p>
+            <h2 className="text-sm font-semibold text-slate-900">{DESEMPENHO_COPY.evolucaoTitle}</h2>
+            <p className="text-xs text-muted-foreground">{DESEMPENHO_COPY.evolucaoHint}</p>
+            {placarZerado && hasSpark ? (
+              <p className="mt-1 text-xs text-muted-foreground" role="status">
+                {DESEMPENHO_COPY.evolucaoVsPlacarZerado}
+              </p>
+            ) : null}
           </div>
           {series.truncated ? (
             <p

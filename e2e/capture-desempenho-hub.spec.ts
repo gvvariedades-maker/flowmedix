@@ -99,4 +99,46 @@ test.describe('Capturas hub Desempenho V1', () => {
     await expect(page.getByLabel('Placar de estudo')).toBeVisible({ timeout: 60_000 });
     await snap(page, 'estudo-amostra-insuficiente-mobile.png');
   });
+
+  test('estudo-titulo-longo-badges-mobile.png', async ({ page }) => {
+    await page.setViewportSize(VIEWPORTS.mobile);
+    await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByTestId('recent-attempt-title').first()).toBeVisible({
+      timeout: 60_000,
+    });
+    await expect(page.getByTestId('recent-attempt-title').first()).toContainText(
+      'Infecções Sexualmente Transmissíveis',
+    );
+    await snap(page, 'estudo-titulo-longo-badges-mobile.png');
+  });
+
+  test('estudo-placar-zerado-serie-mobile.png', async ({ page }) => {
+    await page.setViewportSize(VIEWPORTS.mobile);
+    await page.goto('/desempenho?captura=placar-zerado', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByLabel('Placar de estudo')).toBeVisible({ timeout: 60_000 });
+    await expect(page.getByLabel('Evolução de tentativas')).toBeVisible();
+    await expect(
+      page.getByText(/O placar de questões acima está zerado/),
+    ).toBeVisible();
+    await snap(page, 'estudo-placar-zerado-serie-mobile.png');
+  });
+
+  test('estudo-placar-zerado-serie-desktop.png', async ({ page }) => {
+    await page.setViewportSize(VIEWPORTS.desktop);
+    await page.goto('/desempenho?captura=placar-zerado', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByLabel('Evolução de tentativas')).toBeVisible({ timeout: 60_000 });
+    await snap(page, 'estudo-placar-zerado-serie-desktop.png');
+  });
+
+  test('atividade-titulo-longo-ranking-mobile.png', async ({ page }) => {
+    await page.setViewportSize(VIEWPORTS.mobile);
+    await page.goto('/desempenho/atividade', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByTestId('ranking-assunto-nome').first()).toBeVisible({
+      timeout: 60_000,
+    });
+    await expect(page.getByTestId('ranking-assunto-nome').first()).toContainText(
+      'Infecções Sexualmente Transmissíveis',
+    );
+    await snap(page, 'atividade-titulo-longo-ranking-mobile.png');
+  });
 });

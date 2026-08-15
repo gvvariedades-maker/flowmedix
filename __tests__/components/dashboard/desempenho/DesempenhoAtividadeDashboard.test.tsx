@@ -42,9 +42,13 @@ describe('DesempenhoAtividadeDashboard', () => {
     render(<DesempenhoAtividadeDashboard dados={buildDados()} />);
 
     expect(screen.getByText(/4 dias seguidos/i)).toBeInTheDocument();
+    expect(screen.getByText('Sequência')).toBeInTheDocument();
+    expect(screen.getByLabelText('Estudo reverso hoje 3/10')).toBeInTheDocument();
+    expect(screen.getByText('40 com estudo reverso · todo o histórico')).toBeInTheDocument();
+    expect(screen.queryByText(/no histórico/i)).not.toBeInTheDocument();
     expect(screen.getByText(/métricas secundárias/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /aba Estudo/i })).toHaveAttribute('href', '/desempenho');
-    expect(screen.getByLabelText(/Heatmap de atividade/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Heatmap de hábitos/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Zerar desempenho de estudo/i })).toBeInTheDocument();
 
     // Não reintroduz o placar hero do dashboard antigo
@@ -60,7 +64,7 @@ describe('DesempenhoAtividadeDashboard', () => {
       />,
     );
     expect(screen.queryByRole('button', { name: /Zerar desempenho de estudo/i })).not.toBeInTheDocument();
-    expect(screen.getByText(/Nenhuma atividade ainda/i)).toBeInTheDocument();
+    expect(screen.getByText(/Nenhum hábito ainda/i)).toBeInTheDocument();
   });
 
   it('chama API ao confirmar Zerar desempenho de estudo', async () => {

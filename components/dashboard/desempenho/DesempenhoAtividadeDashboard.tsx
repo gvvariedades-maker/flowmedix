@@ -10,6 +10,11 @@ import { ContributionHeatmap } from '@/components/dashboard/performance/contribu
 import { TopAssuntosRanking } from '@/components/dashboard/performance/top-assuntos-ranking';
 import { ZerarDesempenhoDialog } from '@/components/dashboard/performance/zerar-desempenho-dialog';
 import type { DesempenhoData, Periodo } from '@/components/dashboard/performance/types';
+import {
+  DESEMPENHO_COPY,
+  formatAtividadeHistorico,
+  formatAtividadeMeta,
+} from '@/components/dashboard/desempenho/desempenhoCopy';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
 
@@ -81,30 +86,48 @@ export function DesempenhoAtividadeDashboard({ dados }: Props) {
           </Link>
           .
         </p>
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm text-slate-600">
-          <span className="inline-flex items-center gap-1.5 font-medium text-slate-800">
-            <Flame className="h-3.5 w-3.5 text-[var(--color-warning-text)]" aria-hidden />
-            <span>
-              {streak} {streakLabel}
-            </span>
-          </span>
-          <span className="text-slate-300" aria-hidden>
-            ·
-          </span>
-          <span>
-            Meta do dia {hoje}/{metaDiaria}
-            <span className="sr-only"> (também no placar da aba Estudo)</span>
-          </span>
-          <span className="text-slate-300" aria-hidden>
-            ·
-          </span>
-          <span>{totalTodosTempos} no histórico</span>
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+          <div className="flex min-h-11 items-center gap-2 rounded-lg border border-border bg-muted/20 px-3 py-2">
+            <Flame className="h-3.5 w-3.5 shrink-0 text-[var(--color-warning-text)]" aria-hidden />
+            <div className="min-w-0">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500">
+                Sequência
+              </p>
+              <p className="text-sm font-medium text-slate-800">
+                {streak} {streakLabel}
+              </p>
+            </div>
+          </div>
+          <div
+            className="flex min-h-11 items-center rounded-lg border border-border bg-muted/20 px-3 py-2"
+            aria-label={formatAtividadeMeta(hoje, metaDiaria)}
+          >
+            <div className="min-w-0">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500">
+                {DESEMPENHO_COPY.atividadeMetaLabel}
+              </p>
+              <p className="text-sm font-medium text-slate-800">
+                {hoje}/{metaDiaria}
+                <span className="sr-only"> (estudo reverso concluído hoje)</span>
+              </p>
+            </div>
+          </div>
+          <div className="flex min-h-11 items-center rounded-lg border border-border bg-muted/20 px-3 py-2">
+            <div className="min-w-0">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500">
+                Histórico
+              </p>
+              <p className="text-sm font-medium text-slate-800">
+                {formatAtividadeHistorico(totalTodosTempos)}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       <section aria-labelledby="atividade-heatmap-title" className="metric-card p-5 pt-6">
         <h2 id="atividade-heatmap-title" className="sr-only">
-          Heatmap de atividade
+          Heatmap de hábitos
         </h2>
         <ContributionHeatmap
           serie={serie30dias}
@@ -125,7 +148,7 @@ export function DesempenhoAtividadeDashboard({ dados }: Props) {
         <div className="metric-card">
           <EmptyState
             icon={BookOpen}
-            title="Nenhuma atividade ainda"
+            title="Nenhum hábito ainda"
             description="Responda questões na vitrine para ver sequência e heatmap aqui."
             action={{ label: 'Ir para a vitrine', href: '/estudar' }}
           />

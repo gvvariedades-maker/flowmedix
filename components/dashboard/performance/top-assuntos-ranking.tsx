@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { BookMarked, Heart, Pill, TrendingUp } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { AssuntoTop } from './types';
+import { DESEMPENHO_COPY, formatRankingItemLabel } from '@/components/dashboard/desempenho/desempenhoCopy';
 
 function iconForAssunto(nome: string): LucideIcon {
   const n = nome.toLowerCase();
@@ -24,21 +25,30 @@ export function TopAssuntosRanking({ assuntos }: { assuntos: AssuntoTop[] }) {
           aria-hidden
         />
         <span className="text-sm font-semibold text-foreground">Assuntos mais estudados</span>
-        <span className="text-xs text-muted-foreground">últimos 30 dias</span>
+        <span className="text-xs text-muted-foreground">{DESEMPENHO_COPY.rankingPeriodo}</span>
       </div>
       <ul className="space-y-3">
         {assuntos.map((a, i) => {
           const Icon = iconForAssunto(a.nome);
           const pct = ref > 0 ? Math.round((a.count / ref) * 100) : 0;
           return (
-            <li key={a.nome} className="space-y-1.5">
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex min-w-0 items-center gap-2">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-muted text-[10px] font-semibold text-muted-foreground">
+            <li
+              key={a.nome}
+              className="space-y-1.5"
+              aria-label={formatRankingItemLabel(a.nome, a.count)}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex min-w-0 items-start gap-2">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-muted text-[10px] font-semibold text-muted-foreground">
                     {i + 1}
                   </span>
-                  <Icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden />
-                  <span className="truncate text-sm font-medium text-foreground">{a.nome}</span>
+                  <Icon className="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden />
+                  <span
+                    data-testid="ranking-assunto-nome"
+                    className="line-clamp-2 text-sm font-medium text-foreground"
+                  >
+                    {a.nome}
+                  </span>
                 </div>
                 <span className="shrink-0 text-sm font-semibold tabular-nums text-[var(--color-success-text)]">
                   {a.count}

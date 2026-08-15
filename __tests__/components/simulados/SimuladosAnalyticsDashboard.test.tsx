@@ -115,8 +115,88 @@ describe('SimuladosAnalyticsDashboard', () => {
     await waitFor(() => {
       expect(screen.getAllByText('52%').length).toBeGreaterThan(0);
     });
-    expect(screen.getByText('32/62 questões')).toBeInTheDocument();
+    expect(
+      screen.getByText('32 acertos em 62 respondidas · Simulado com 62 questões'),
+    ).toBeInTheDocument();
     expect(screen.queryAllByTestId('simulados-skeleton')).toHaveLength(0);
+  });
+
+  it('mostra 0%, 2 respondidas e 10 questões da prova juntas, sem mudar o denominador', async () => {
+    mockGetSimuladoAnalytics.mockResolvedValue(
+      buildResponse({
+        kpis: {
+          total_simulados: 1,
+          media_acerto: 0,
+          melhor_score: 0,
+          tempo_medio_ms: null,
+          questoes_concluidas: 10,
+          acertos_concluidos: 0,
+        },
+        evolucao_temporal: [
+          {
+            data_ref: '2026-08-10',
+            total_questoes: 2,
+            acertos: 0,
+            erros: 2,
+            percentual_acerto: 0,
+            tempo_total_ms: 60_000,
+            tempo_medio_ms: 30_000,
+          },
+        ],
+      }),
+    );
+
+    renderDashboard();
+
+    expect(await screen.findByText('0%')).toBeInTheDocument();
+    expect(
+      screen.getByText(/0 acertos em 2 respondidas · Simulado com 10 questões/),
+    ).toBeInTheDocument();
+    const respondidasCard = screen
+      .getByText(/não é o tamanho da prova/)
+      .closest('.metric-card');
+    expect(respondidasCard).not.toBeNull();
+    expect(within(respondidasCard as HTMLElement).getByText('2')).toBeInTheDocument();
+    expect(screen.queryByText(/em branco/i)).not.toBeInTheDocument();
+  });
+
+  it('mostra 10% quando 1 acerto em 2 respondidas numa prova de 10 (denominador da prova)', async () => {
+    mockGetSimuladoAnalytics.mockResolvedValue(
+      buildResponse({
+        kpis: {
+          total_simulados: 1,
+          media_acerto: 10,
+          melhor_score: 10,
+          tempo_medio_ms: null,
+          questoes_concluidas: 10,
+          acertos_concluidos: 1,
+        },
+        evolucao_temporal: [
+          {
+            data_ref: '2026-08-10',
+            total_questoes: 2,
+            acertos: 1,
+            erros: 1,
+            percentual_acerto: 50,
+            tempo_total_ms: 60_000,
+            tempo_medio_ms: 30_000,
+          },
+        ],
+      }),
+    );
+
+    renderDashboard();
+
+    expect(await screen.findByText('10%')).toBeInTheDocument();
+    const desempenhoCard = screen.getByText('Desempenho no período').closest('.metric-card');
+    expect(desempenhoCard).not.toBeNull();
+    expect(within(desempenhoCard as HTMLElement).getByText('10%')).toBeInTheDocument();
+    expect(
+      screen.getByText(/1 acerto em 2 respondidas · Simulado com 10 questões/),
+    ).toBeInTheDocument();
+    expect(screen.getByText(/Percentual sobre o total das provas/)).toBeInTheDocument();
+    expect(screen.queryByText('50%')).not.toBeInTheDocument();
+    expect(screen.queryByText(/em branco/i)).not.toBeInTheDocument();
   });
 
   it('envia banca, tópico e subtópico na chamada da API', async () => {

@@ -14,6 +14,7 @@ import {
   type SimuladoAnalyticsMode,
   type SimuladoAnalyticsPeriod,
 } from '@/lib/simulado/analyticsSummary';
+import { formatSimuladoAcertoContexto } from '@/components/dashboard/desempenho/desempenhoCopy';
 
 const PERIODOS = [
   { value: '1d', label: 'Hoje' },
@@ -422,6 +423,12 @@ export function SimuladosAnalyticsDashboard({
   }, [deltaPontosPercentuais]);
 
   const mediaAcertoRespondidas = kpis?.questoes_concluidas ?? 0;
+  const questoesRespondidasReais = evolucao.reduce((sum, item) => sum + item.total_questoes, 0);
+  const acertoContexto = formatSimuladoAcertoContexto(
+    kpis?.acertos_concluidos ?? 0,
+    questoesRespondidasReais,
+    mediaAcertoRespondidas,
+  );
   const tempoMedioValor = formatDuration(kpis?.tempo_medio_ms);
 
   const resumoSectionTitle =
@@ -514,25 +521,35 @@ export function SimuladosAnalyticsDashboard({
             valueTone="brand"
           />
           <KpiMetricCard
-            label="Acerto no período"
+            label="Desempenho no período"
             value={
               mediaAcertoRespondidas >= SIMULADO_MIN_SAMPLE
                 ? formatPercent(kpis?.media_acerto)
                 : (formatFracao(kpis?.acertos_concluidos ?? 0, mediaAcertoRespondidas) ?? '--')
             }
             hint={
-              mediaAcertoRespondidas >= SIMULADO_MIN_SAMPLE
-                ? formatFracao(kpis?.acertos_concluidos ?? 0, mediaAcertoRespondidas)
-                : mediaAcertoRespondidas > 0
-                  ? `Amostra pequena — % a partir de ${SIMULADO_MIN_SAMPLE} questões.`
-                  : 'Sem simulado concluído no período.'
+              [
+                acertoContexto,
+                mediaAcertoRespondidas >= SIMULADO_MIN_SAMPLE &&
+                questoesRespondidasReais !== mediaAcertoRespondidas
+                  ? 'Percentual sobre o total das provas, não só as respondidas.'
+                  : null,
+                mediaAcertoRespondidas >= SIMULADO_MIN_SAMPLE
+                  ? null
+                  : mediaAcertoRespondidas > 0
+                    ? `Amostra pequena — % a partir de ${SIMULADO_MIN_SAMPLE} questões.`
+                    : 'Sem simulado concluído no período.',
+              ]
+                .filter(Boolean)
+                .join(' · ')
             }
             loading={loadingAnalytics}
             valueTone={acertoTone(kpis?.media_acerto ?? null, mediaAcertoRespondidas)}
           />
           <KpiMetricCard
             label="Questões respondidas"
-            value={String(evolucao.reduce((sum, item) => sum + item.total_questoes, 0))}
+            value={String(questoesRespondidasReais)}
+            hint="Quantidade efetivamente marcada no período — não é o tamanho da prova."
             loading={loadingAnalytics}
             valueTone="default"
           />

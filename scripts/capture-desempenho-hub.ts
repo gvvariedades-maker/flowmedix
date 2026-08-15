@@ -16,6 +16,8 @@ const result = spawnSync(command, {
     ...process.env,
     E2E_DASHBOARD_BYPASS: 'true',
     NEXT_PUBLIC_E2E_DASHBOARD_BYPASS: 'true',
+    // Não herdar PLAYWRIGHT_TEST_BASE_URL de outro servidor (UI antiga / outra porta).
+    PLAYWRIGHT_TEST_BASE_URL: 'http://localhost:3000',
   },
   shell: true,
   cwd: process.cwd(),

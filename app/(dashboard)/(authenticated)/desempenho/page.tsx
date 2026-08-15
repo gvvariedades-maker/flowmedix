@@ -10,7 +10,10 @@ import {
   getDesempenhoEstudoData,
   normalizeDesempenhoEstudoFilters,
 } from '@/lib/desempenho/studyPerformance';
-import { getE2eDesempenhoEstudoData } from '@/lib/e2e/desempenhoSeed';
+import {
+  getE2eDesempenhoEstudoData,
+  getE2eDesempenhoEstudoPlacarZeradoComSerie,
+} from '@/lib/e2e/desempenhoSeed';
 import { logger } from '@/lib/logger';
 import { getServerSession } from '@/lib/supabase/server-auth';
 
@@ -19,6 +22,8 @@ type SearchParamsShape = {
   banca?: string | string[];
   area?: string | string[];
   disciplina?: string | string[];
+  /** Só honrado com `E2E_DASHBOARD_BYPASS` (capturas/evidência). */
+  captura?: string | string[];
 };
 
 function normalizeSingleValue(value: string | string[] | undefined): string | null {
@@ -43,7 +48,11 @@ export default async function DesempenhoEstudoPage({
 
   let data;
   if (e2eBypass) {
-    data = getE2eDesempenhoEstudoData(filters);
+    const captura = normalizeSingleValue(resolvedSearchParams.captura);
+    data =
+      captura === 'placar-zerado'
+        ? getE2eDesempenhoEstudoPlacarZeradoComSerie(filters)
+        : getE2eDesempenhoEstudoData(filters);
   } else {
     const session = await getServerSession();
     if (!session?.user) redirect('/login');

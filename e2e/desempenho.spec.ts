@@ -81,7 +81,7 @@ test.describe('Hub Desempenho (estudo)', () => {
     });
 
     const nav = page.getByRole('navigation', { name: 'Seções de desempenho' });
-    await expect(nav).toBeVisible();
+    await expect(nav).toBeVisible({ timeout: 60_000 });
     await expect(page.getByRole('tablist')).toHaveCount(0);
     await expect(nav.getByRole('link', { name: 'Estudo' })).toHaveAttribute(
       'aria-current',
@@ -99,8 +99,9 @@ test.describe('Hub Desempenho (estudo)', () => {
 
     const placar = page.getByLabel('Placar de estudo');
     await expect(placar).toBeVisible({ timeout: 60_000 });
-    await expect(placar.getByText('Respondidas')).toBeVisible();
+    await expect(placar.getByText('Questões analisadas')).toBeVisible();
     await expect(placar.getByText('% acerto')).toBeVisible();
+    await expect(placar.getByText('Praticadas hoje')).toBeVisible();
 
     const titulos = await page.locator('main h2, h2').allTextContents();
     const relevantes = titulos.map((t) => t.trim());
@@ -206,10 +207,17 @@ test.describe('Hub Desempenho (estudo)', () => {
     await expect(page.getByText(/7 dias · \d{2}\/\d{2}\/\d{4} a \d{2}\/\d{2}\/\d{4}/)).toBeVisible();
   });
 
-  for (const width of [320, 360, 412]) {
-    test(`sem rolagem horizontal em ${width}px`, async ({ page }) => {
-      test.setTimeout(120_000);
-      await page.setViewportSize({ width, height: 800 });
+  const VIEWPORTS = [
+    { width: 320, height: 800 },
+    { width: 360, height: 800 },
+    { width: 390, height: 844 },
+    { width: 412, height: 800 },
+  ] as const;
+
+  for (const { width, height } of VIEWPORTS) {
+    test(`sem rolagem horizontal em ${width}×${height}`, async ({ page }) => {
+      test.setTimeout(180_000);
+      await page.setViewportSize({ width, height });
       await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
       await expect(page.getByLabel('Placar de estudo')).toBeVisible({ timeout: 60_000 });
 
@@ -227,6 +235,33 @@ test.describe('Hub Desempenho (estudo)', () => {
       expect(overflow.scrollWidth).toBe(overflow.clientWidth);
     });
   }
+
+  test('título da tentativa recente não invade a etiqueta em 390×844', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByLabel('Placar de estudo')).toBeVisible({ timeout: 60_000 });
+
+    const titulo = page.getByTestId('recent-attempt-title').first();
+    const badges = page.getByTestId('recent-attempt-badges').first();
+    await expect(titulo).toBeVisible();
+    await expect(badges).toBeVisible();
+
+    const tituloBox = await titulo.boundingBox();
+    const badgesBox = await badges.boundingBox();
+    expect(tituloBox).toBeTruthy();
+    expect(badgesBox).toBeTruthy();
+
+    const a = tituloBox!;
+    const b = badgesBox!;
+    const intersectam = !(
+      a.x + a.width <= b.x ||
+      b.x + b.width <= a.x ||
+      a.y + a.height <= b.y ||
+      b.y + b.height <= a.y
+    );
+    expect(intersectam).toBe(false);
+  });
 
   test('/progresso e /analytics redirecionam para /desempenho', async ({ page }) => {
     await page.goto('/progresso', { waitUntil: 'domcontentloaded' });
@@ -348,15 +383,22 @@ test.describe('Hub Desempenho (atividade)', () => {
     await expect(dialog).toBeHidden();
   });
 
-  test('sem rolagem horizontal em 320px', async ({ page }) => {
-    test.setTimeout(90_000);
-    await page.setViewportSize({ width: 320, height: 800 });
-    await page.goto('/desempenho/atividade', { waitUntil: 'domcontentloaded' });
-    await expect(page.getByRole('grid').first()).toBeVisible({ timeout: 60_000 });
+  test('sem rolagem horizontal em 320–412 e 390×844', async ({ page }) => {
+    test.setTimeout(180_000);
+    for (const { width, height } of [
+      { width: 320, height: 800 },
+      { width: 360, height: 800 },
+      { width: 390, height: 844 },
+      { width: 412, height: 800 },
+    ]) {
+      await page.setViewportSize({ width, height });
+      await page.goto('/desempenho/atividade', { waitUntil: 'domcontentloaded' });
+      await expect(page.getByRole('grid').first()).toBeVisible({ timeout: 60_000 });
 
-    const overflow = await medirOverflow(page, 'atividade');
-    expect(overflow.hubEncontrado).toBe(true);
-    expect(overflow.culpados).toEqual([]);
-    expect(overflow.scrollWidth).toBe(overflow.clientWidth);
+      const overflow = await medirOverflow(page, 'atividade');
+      expect(overflow.hubEncontrado).toBe(true);
+      expect(overflow.culpados).toEqual([]);
+      expect(overflow.scrollWidth).toBe(overflow.clientWidth);
+    }
   });
 });

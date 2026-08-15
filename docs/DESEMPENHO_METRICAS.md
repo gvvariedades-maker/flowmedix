@@ -38,12 +38,12 @@ Fonte: `historico_questoes` (via `getHistoricoCompleto`) × catálogo liberado (
 
 | Métrica exibida | Definição | Unidade | Fórmula | Amostra mínima | Sem dado |
 |-----------------|-----------|---------|---------|----------------|----------|
-| Respondidas | questões distintas com alternativa marcada no período | questão | `count(historico onde respondida ≠ false)` | — | `0` |
+| Questões analisadas (UI: placar) | questões distintas com alternativa marcada no período | questão | `count(historico onde respondida ≠ false)` | — | `0` |
 | Acertos / Erros | idem, particionado por `acertou` | questão | `count` | — | `0` |
 | % acerto | taxa sobre questões distintas | % | `acertos / respondidas` | **5** | `—` (mostra fração) |
 | % com fração | leitura obrigatória | texto | `71% · 30/42` | 5 para o `%` | `2/4` |
 | Cobertura | fração do material liberado já praticada | % | `respondidas / total_disponivel` | — | `0%` |
-| Meta do dia | questões distintas praticadas **hoje** | questão | `count(dia civil de Brasília == hoje)` | — | `0/10` |
+| Praticadas hoje | questões distintas praticadas **hoje** (alternativa marcada) | questão | `count(dia civil de Brasília == hoje)` | — | `0/10` |
 | Última prática | `max(created_at)` do assunto | data | — | — | `—` |
 | Erros sem reverso | erros cujo estudo reverso não foi concluído | evento | `count(!acertou && estudo_reverso_concluido ≠ true)` | — | `0` |
 
@@ -84,6 +84,8 @@ Limites e estados:
 - flag `EE_V1_INSTRUMENTATION` off → `available: false` (`flag_off`), sem query, e a dobra não aparece;
 - falha de leitura → `unavailableReason: 'error'`, nunca zeros.
 
+A UI distingue a curva de tentativas do placar: reset 1A zera `historico_questoes` (placar), mas não apaga `evidence_attempt_events`. Com placar 0 e série disponível, o card permanece visível — a UI declara essa diferença; não apaga eventos.
+
 **Limitação conhecida:** "Acerto na primeira tentativa" é a primeira tentativa **no recorte selecionado**, não vitalícia. Trocar o rótulo se o cálculo passar a ser vitalício.
 
 ## 3. Aba Simulados
@@ -93,10 +95,16 @@ Fonte: sessões de simulado + `simulado_analytics_daily` + `simulado_analytics_s
 | Métrica exibida | Definição | Unidade | Fórmula |
 |-----------------|-----------|---------|---------|
 | Simulados concluídos | sessões concluídas no período | sessão | `count(sessions)` |
-| Média de acerto | taxa **ponderada por questão** | % | `soma(acertos) / soma(questões)` |
-| Questões respondidas | questões do período | questão | `soma(total_questoes)` |
+| Desempenho no período (KPI) | taxa **ponderada pelo tamanho da prova** das sessões concluídas | % | `soma(session.acertos) / soma(session.total_questoes)` — `total_questoes` é o **tamanho do template**; itens em branco puxam a nota, como numa prova real |
+| Questões respondidas (KPI) | itens com resposta no período | questão | `soma(evolucao_temporal.total_questoes)` |
 | Tempo médio por questão | tempo total ÷ questões | ms/questão | `soma(tempo) / soma(questões)` |
 | Últimos 12 meses | recorte de 12 meses, **não** histórico total | — | período `12m` |
+
+**CONTRATO_DOCUMENTADO — FÓRMULA PRESERVADA:** o KPI “Desempenho no período” usa o denominador do **tamanho da prova**; o card “Questões respondidas” usa **respondidas reais**. Questões não respondidas reduzem a nota. A UI mostra os dois números; **não** derivar “em branco” por `prova − respondidas`.
+
+A copy visível distingue: `N acertos em R respondidas · Simulado com P questões`.
+
+Exemplo: 1 acerto, 2 respondidas, prova de 10 → **10%** (1/10), não 50% (1/2).
 
 Decisões:
 
@@ -108,18 +116,18 @@ Decisões:
 
 **Limitação conhecida:** "Últimos 12 meses" não é histórico vitalício. Só renomear para "Geral" se houver agregação completa e escalável.
 
-## 4. Aba Atividade
+## 4. Aba Hábitos (`/desempenho/atividade`)
 
 Fonte: `historico_questoes` com `estudo_reverso_concluido = true`.
 
 | Métrica | Definição | Unidade | Timezone |
 |---------|-----------|---------|----------|
-| Sequência (streak) | dias civis consecutivos com ao menos 1 questão | dia | Brasília |
-| Meta do dia | questões distintas hoje | questão | Brasília |
-| Atividade de 30 dias | contagem por dia civil | questão/dia | Brasília |
-| No histórico | total all-time com reverso concluído | questão | — |
+| Sequência (streak) | dias civis consecutivos com ao menos 1 questão com reverso | dia | Brasília |
+| Estudo reverso hoje | questões distintas com reverso concluído **hoje** | questão | Brasília |
+| Heatmap (7/15/30) | questões distintas com reverso, por dia civil (dedupe `modulo_slug`) | questão/dia | Brasília |
+| Com estudo reverso · todo o histórico | total all-time com reverso concluído | questão | — |
 
-Notas: a contagem deduplica por `modulo_slug` por dia; o heatmap é informativo (não é botão) e não força overflow do documento no mobile.
+Notas: a contagem deduplica por `modulo_slug` por dia; o heatmap é informativo (não é botão) e não força overflow do documento no mobile. Estes totais **não** coincidem com o placar de Estudo (alternativa marcada no recorte). O reset 1A apaga `historico_questoes`: Estudo **e** Hábitos esvaziam; a curva de tentativas da aba Estudo pode permanecer se vier de `evidence_attempt_events`.
 
 ## 5. Reset
 

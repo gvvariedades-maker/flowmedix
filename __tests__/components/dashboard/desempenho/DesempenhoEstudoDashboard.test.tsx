@@ -133,7 +133,15 @@ describe('DesempenhoEstudoDashboard', () => {
 
     expect(screen.getByLabelText('Filtros de desempenho')).toBeInTheDocument();
     expect(screen.getByLabelText('Placar de estudo')).toBeInTheDocument();
-    expect(screen.getAllByText('Respondidas').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('Questões analisadas').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText('Praticadas hoje')).toBeInTheDocument();
+    expect(
+      screen.getByText(/Considerando o período e os filtros selecionados/),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Hábitos e estudo reverso ficam na aba Atividade/),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/no histórico/i)).not.toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Próximos focos' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Panorama por áreas' })).toBeInTheDocument();
     expect(screen.getAllByText('Farmacologia e Medicamentos').length).toBeGreaterThan(0);
@@ -237,10 +245,54 @@ describe('DesempenhoEstudoDashboard', () => {
     );
 
     expect(screen.getByLabelText('Evolução de tentativas')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Evolução das tentativas' })).toBeInTheDocument();
     expect(screen.getByText(/Dados a partir de/)).toBeInTheDocument();
     expect(screen.getByText('Tempo médio')).toBeInTheDocument();
     expect(screen.getByText('Acerto na primeira tentativa do período')).toBeInTheDocument();
     expect(screen.queryByText(/Evidence Engine|ledger|upsert/i)).not.toBeInTheDocument();
+  });
+
+  it('mantém a série de tentativas visível quando o placar está zerado', () => {
+    render(
+      <DesempenhoEstudoDashboard
+        data={buildData({
+          placar: {
+            respondidas: 0,
+            acertos: 0,
+            erros: 0,
+            percentual: null,
+            metaDoDia: { respondidasHoje: 0, meta: 10 },
+            coachUnlocked: false,
+            confidenceId: 'sem_dados',
+          },
+          areas: [],
+          riskBands: [],
+          nextPractice: [],
+          recentAttempts: [],
+          attemptSeries: {
+            available: true,
+            unavailableReason: null,
+            daily: [{ date: '2026-08-10', attempts: 4, acertos: 2, percentual: 50 }],
+            tempoMedioMs: 4000,
+            firstAttemptAccuracyPct: 50,
+            attemptsPerQuestionAvg: 1.2,
+            totalEvents: 4,
+            distinctQuestions: 3,
+            dadosDesde: '2026-08-10T10:00:00.000Z',
+            coberturaParcial: false,
+            truncated: false,
+            limiteRegistros: null,
+          },
+        })}
+      />,
+    );
+
+    expect(screen.getByLabelText('Placar de estudo')).toBeInTheDocument();
+    expect(screen.getByLabelText('Evolução de tentativas')).toBeInTheDocument();
+    expect(
+      screen.getByText(/Esta curva conta tentativas registradas no período/),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/Evidence Engine|ledger/i)).not.toBeInTheDocument();
   });
 
   it('mostra empty state de coach abaixo de 10 respondidas', () => {
@@ -295,9 +347,11 @@ describe('DesempenhoEstudoDashboard', () => {
     );
 
     expect(
-      screen.getByRole('heading', { name: 'Nenhuma questão neste recorte' }),
+      screen.getByRole('heading', { name: 'Nenhuma questão neste período' }),
     ).toBeInTheDocument();
-    expect(screen.getByText('Sem questões respondidas neste recorte.')).toBeInTheDocument();
+    expect(
+      screen.getByText('Sem questões com alternativa marcada neste período.'),
+    ).toBeInTheDocument();
   });
 
   it('erro de leitura não aparece como desempenho zerado', () => {

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 interface PageHeaderProps {
   title: string;
@@ -8,6 +9,7 @@ interface PageHeaderProps {
   titleClassName?: string;
   /** Substitui as classes padrão da descrição (ex.: dark pages com `text-slate-400`). */
   descriptionClassName?: string;
+  className?: string;
 }
 
 export function PageHeader({
@@ -17,9 +19,15 @@ export function PageHeader({
   description,
   titleClassName,
   descriptionClassName,
+  className,
 }: PageHeaderProps) {
   return (
-    <div className="mb-6 flex flex-col gap-3 sm:mb-8 sm:flex-row sm:items-start sm:justify-between">
+    <div
+      className={cn(
+        'mb-6 flex flex-col gap-3 sm:mb-8 sm:flex-row sm:items-start sm:justify-between',
+        className,
+      )}
+    >
       <div className="min-w-0 flex-1">
         {breadcrumb && (
           <nav className="mb-2 flex items-center gap-1.5" aria-label="Breadcrumb">
