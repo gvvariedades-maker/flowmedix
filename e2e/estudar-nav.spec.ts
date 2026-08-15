@@ -414,7 +414,12 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
 });
 
 function globalMobileHeader(page: Page) {
-  return page.locator('header').filter({ has: page.getByAltText('AVANT enf') }).first();
+  // Lockup editorial: imagens com alt="" + aria-label no mark; o chrome mobile
+  // identifica-se pelo botão de busca (mesmo padrão de e2e/vitrine-pagination.spec.ts).
+  return page
+    .locator('header')
+    .filter({ has: page.getByRole('button', { name: 'Abrir busca' }) })
+    .first();
 }
 
 function bottomNav(page: Page) {
