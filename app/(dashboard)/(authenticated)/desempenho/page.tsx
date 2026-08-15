@@ -1,76 +1,32 @@
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
 import { BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DesempenhoEstudoDashboard } from '@/components/dashboard/desempenho/DesempenhoEstudoDashboard';
 import { DesempenhoHubShell } from '@/components/dashboard/desempenho/DesempenhoHubShell';
-import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { loadEstudoDashboard } from '@/lib/desempenho/estudoPageLoad';
 import {
-  aggregateStudyPerformance,
-  getDesempenhoEstudoData,
-  normalizeDesempenhoEstudoFilters,
-} from '@/lib/desempenho/studyPerformance';
-import {
-  getE2eDesempenhoEstudoData,
-  getE2eDesempenhoEstudoPlacarZeradoComSerie,
-} from '@/lib/e2e/desempenhoSeed';
-import { logger } from '@/lib/logger';
-import { getServerSession } from '@/lib/supabase/server-auth';
-
-type SearchParamsShape = {
-  periodo?: string | string[];
-  banca?: string | string[];
-  area?: string | string[];
-  disciplina?: string | string[];
-  /** Só honrado com `E2E_DASHBOARD_BYPASS` (capturas/evidência). */
-  captura?: string | string[];
-};
-
-function normalizeSingleValue(value: string | string[] | undefined): string | null {
-  if (Array.isArray(value)) return value[0] ?? null;
-  return value ?? null;
-}
+  filtersFromEstudoSearchParams,
+  firstSearchParam,
+  type DesempenhoEstudoSearchParams,
+} from '@/lib/desempenho/estudoSearchParams';
 
 export default async function DesempenhoEstudoPage({
   searchParams,
 }: {
-  searchParams: Promise<SearchParamsShape>;
+  searchParams: Promise<DesempenhoEstudoSearchParams>;
 }) {
-  const e2eBypass = isE2eBypassEnabled('E2E_DASHBOARD_BYPASS');
   const resolvedSearchParams = await searchParams;
-
-  const filters = normalizeDesempenhoEstudoFilters({
-    periodoRaw: normalizeSingleValue(resolvedSearchParams.periodo),
-    bancaRaw: normalizeSingleValue(resolvedSearchParams.banca),
-    areaRaw: normalizeSingleValue(resolvedSearchParams.area),
-    disciplinaRaw: normalizeSingleValue(resolvedSearchParams.disciplina),
+  const filters = filtersFromEstudoSearchParams(resolvedSearchParams);
+  const data = await loadEstudoDashboard(filters, {
+    captura: firstSearchParam(resolvedSearchParams.captura),
   });
-
-  let data;
-  if (e2eBypass) {
-    const captura = normalizeSingleValue(resolvedSearchParams.captura);
-    data =
-      captura === 'placar-zerado'
-        ? getE2eDesempenhoEstudoPlacarZeradoComSerie(filters)
-        : getE2eDesempenhoEstudoData(filters);
-  } else {
-    const session = await getServerSession();
-    if (!session?.user) redirect('/login');
-
-    try {
-      data = await getDesempenhoEstudoData(session.user.id, filters);
-    } catch (error) {
-      logger.error('Failed to load desempenho estudo', error, { userId: session.user.id });
-      // `loadState: 'error'` — o painel mostra estado de erro com retry, nunca KPI zerado.
-      data = aggregateStudyPerformance([], [], filters, new Date(), 'error');
-    }
-  }
 
   const filterKey = [
     filters.periodo,
     filters.banca ?? '',
     filters.areaId ?? '',
     filters.disciplina ?? '',
+    filters.assunto ?? '',
   ].join('-');
 
   return (

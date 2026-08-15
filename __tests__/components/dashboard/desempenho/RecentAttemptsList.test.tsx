@@ -44,4 +44,23 @@ describe('RecentAttemptsList', () => {
       Node.DOCUMENT_POSITION_FOLLOWING,
     );
   });
+
+  it('limita a home a 5 tentativas e aponta Ver histórico para a rota dedicada', () => {
+    const attempts = Array.from({ length: 6 }, (_, i) =>
+      attempt({
+        id: `h${i + 1}`,
+        moduloSlug: `slug-${i + 1}`,
+        tituloAula: `Tentativa ${i + 1}`,
+      }),
+    );
+    render(<RecentAttemptsList attempts={attempts} historicoHref="/desempenho/historico" />);
+
+    expect(screen.getByText('Tentativa 1')).toBeInTheDocument();
+    expect(screen.getByText('Tentativa 5')).toBeInTheDocument();
+    expect(screen.queryByText('Tentativa 6')).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Ver histórico' })).toHaveAttribute(
+      'href',
+      '/desempenho/historico',
+    );
+  });
 });

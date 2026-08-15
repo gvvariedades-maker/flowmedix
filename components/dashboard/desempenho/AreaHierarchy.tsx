@@ -13,6 +13,8 @@ import {
 } from '@/components/dashboard/desempenho/formatDesempenho';
 import { DesempenhoSelecaoBar } from '@/components/dashboard/desempenho/DesempenhoSelecaoBar';
 import { DESEMPENHO_SELECAO_MAX_ASSUNTOS } from '@/lib/cadernos/desempenhoSelecao';
+import { areasComPresencaNoMapa, pickPriorityAreas } from '@/lib/desempenho/homePicks';
+import { DESEMPENHO_COPY } from '@/components/dashboard/desempenho/desempenhoCopy';
 
 const PCT_TONE_CLASS = {
   neutral: 'text-slate-700',
@@ -30,6 +32,8 @@ const BAR_TONE_CLASS = {
 
 type Props = {
   areas: AreaPerformance[];
+  variant?: 'resumo' | 'mapa';
+  mapaHref?: string;
 };
 
 /**
@@ -39,22 +43,16 @@ type Props = {
  * confiança e barra comparável. Um toque abre os assuntos — sem rolagem
  * horizontal em 320–412 px e sem `<table>` de largura mínima.
  */
-export function AreaHierarchy({ areas }: Props) {
-  const areasComPratica = useMemo(
-    () =>
-      areas
-        .map((area) => ({
-          ...area,
-          assuntos: area.assuntos.filter((a) => a.respondidas > 0 || a.totalDisponivel > 0),
-        }))
-        .filter((area) => area.assuntos.length > 0),
-    [areas],
+export function AreaHierarchy({ areas, variant = 'resumo', mapaHref }: Props) {
+  const areasComPratica = useMemo(() => areasComPresencaNoMapa(areas), [areas]);
+  const { priority, rest } = useMemo(
+    () => pickPriorityAreas(areasComPratica),
+    [areasComPratica],
   );
 
   const [abertas, setAbertas] = useState<readonly string[]>([]);
   const [selecionados, setSelecionados] = useState<readonly string[]>([]);
-  const todasAbertas =
-    areasComPratica.length > 0 && abertas.length === areasComPratica.length;
+  const visiveis = variant === 'mapa' ? [...priority, ...rest] : priority;
 
   // Teto explícito: melhor bloquear o 7º assunto do que truncar em silêncio na
   // hora de gravar a seleção para o wizard.
@@ -82,20 +80,19 @@ export function AreaHierarchy({ areas }: Props) {
 
   return (
     <div className="space-y-3">
-      <div className="flex justify-end">
-        <button
-          type="button"
-          onClick={() =>
-            setAbertas(todasAbertas ? [] : areasComPratica.map((area) => area.areaId))
-          }
-          className="inline-flex min-h-11 items-center text-sm font-medium text-[var(--color-brand-text)] underline-offset-2 hover:underline"
-        >
-          {todasAbertas ? 'Recolher mapa' : 'Ver mapa completo'}
-        </button>
-      </div>
+      {variant === 'resumo' && rest.length > 0 && mapaHref ? (
+        <div className="flex justify-end">
+          <Link
+            href={mapaHref}
+            className="inline-flex min-h-11 items-center text-sm font-medium text-[var(--color-brand-text)] underline-offset-2 hover:underline"
+          >
+            {DESEMPENHO_COPY.verMapaCompleto}
+          </Link>
+        </div>
+      ) : null}
 
       <ul className="space-y-2">
-        {areasComPratica.map((area) => (
+        {visiveis.map((area) => (
           <AreaRow
             key={area.areaId}
             area={area}
