@@ -19,6 +19,7 @@ const E2E_NOW = new Date('2026-08-11T15:00:00.000Z');
  */
 export function getE2eDesempenhoEstudoData(
   filters: DesempenhoEstudoFilters,
+  recentLimit?: number,
 ): DesempenhoEstudoData {
   const catalog: CatalogDesempenhoRow[] = [];
   const historico: HistoricoDesempenhoRow[] = [];
@@ -77,7 +78,52 @@ export function getE2eDesempenhoEstudoData(
     respondida: true,
   });
 
-  return aggregateStudyPerformance(historico, catalog, filters, E2E_NOW);
+  return aggregateStudyPerformance(historico, catalog, filters, E2E_NOW, 'ok', recentLimit);
+}
+
+/**
+ * Captura/E2E: lista longa o bastante para cursor (~20/página).
+ * Só com `E2E_DASHBOARD_BYPASS` + `?captura=historico-cursor`.
+ */
+export function getE2eDesempenhoHistoricoCursor(
+  filters: DesempenhoEstudoFilters,
+  recentLimit?: number,
+): DesempenhoEstudoData {
+  const catalog: CatalogDesempenhoRow[] = [];
+  const historico: HistoricoDesempenhoRow[] = [];
+
+  for (let i = 0; i < 25; i++) {
+    const slug = `e2e-desempenho-cursor-${String(i).padStart(2, '0')}`;
+    catalog.push({
+      modulo_slug: slug,
+      titulo_aula: E2E_DESEMPENHO_TITULO_AULA,
+      modulo_nome: 'Enfermagem',
+      banca: 'FGV',
+    });
+    historico.push({
+      id: `e2e-h-cursor-${String(i).padStart(2, '0')}`,
+      modulo_slug: slug,
+      acertou: i % 2 === 0,
+      created_at: new Date(Date.UTC(2026, 7, 11, 15, 0, 25 - i)).toISOString(),
+      banca: 'FGV',
+      estudo_reverso_concluido: i % 5 === 0,
+      respondida: true,
+    });
+  }
+
+  return aggregateStudyPerformance(historico, catalog, filters, E2E_NOW, 'ok', recentLimit);
+}
+
+export function getE2eDesempenhoLeituraTruncada(
+  filters: DesempenhoEstudoFilters,
+): DesempenhoEstudoData {
+  return { ...getE2eDesempenhoEstudoData(filters), leituraTruncada: true };
+}
+
+export function getE2eDesempenhoLoadError(
+  filters: DesempenhoEstudoFilters,
+): DesempenhoEstudoData {
+  return aggregateStudyPerformance([], [], filters, E2E_NOW, 'error');
 }
 
 /**

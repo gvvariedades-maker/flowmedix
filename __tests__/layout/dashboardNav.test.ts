@@ -72,6 +72,18 @@ describe('buildMenuSections', () => {
     expect(metricas?.find((i) => i.href === '/desempenho/simulados')?.active).toBe(true);
   });
 
+  it('marca /desempenho ativo em mapa e histórico, sem competir com simulados', () => {
+    const isMapa = (path: string, exact = false) => {
+      const pathname = '/desempenho/mapa';
+      if (exact) return pathname === path;
+      return pathname === path || pathname.startsWith(`${path}/`);
+    };
+    const sections = buildMenuSections(isMapa);
+    const metricas = sections.find((s) => s.id === 'metricas')?.items;
+    expect(metricas?.find((i) => i.href === '/desempenho')?.active).toBe(true);
+    expect(metricas?.find((i) => i.href === '/desempenho/simulados')?.active).toBe(false);
+  });
+
   it('seção Métricas tem Desempenho, Simulados e Missão', () => {
     const metricas = NAV_SECTION_DEFS.find((s) => s.id === 'metricas');
     expect(metricas?.items.map((i) => i.label)).toEqual([

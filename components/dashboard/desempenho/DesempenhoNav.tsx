@@ -9,7 +9,10 @@ const SECTIONS = [
     id: 'estudo',
     label: 'Estudo',
     href: '/desempenho',
-    isActive: (pathname: string) => pathname === '/desempenho',
+    isActive: (pathname: string) =>
+      pathname === '/desempenho' ||
+      pathname.startsWith('/desempenho/mapa') ||
+      pathname.startsWith('/desempenho/historico'),
   },
   {
     id: 'simulados',
@@ -20,7 +23,7 @@ const SECTIONS = [
   },
   {
     id: 'atividade',
-    label: 'Atividade',
+    label: 'Hábitos',
     href: '/desempenho/atividade',
     isActive: (pathname: string) =>
       pathname === '/desempenho/atividade' || pathname.startsWith('/desempenho/atividade/'),

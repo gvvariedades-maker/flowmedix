@@ -29,7 +29,7 @@ async function clicarAte(page: Page, seletor: string, verificar: () => Promise<v
  * Culpados = elementos que passam da borda direita da viewport. Texto clipado
  * por `truncate` não conta: fica escondido, não rolável.
  */
-async function medirOverflow(page: Page, hubId: 'estudo' | 'simulados' | 'atividade') {
+async function medirOverflow(page: Page, hubId: 'estudo' | 'simulados' | 'atividade' | 'mapa' | 'historico') {
   return page.evaluate((id) => {
     const doc = document.documentElement;
     const hub = document.querySelector<HTMLElement>(`[data-desempenho-hub="${id}"]`);
@@ -70,8 +70,6 @@ async function abrirFiltros(page: Page) {
 }
 
 test.describe('Hub Desempenho (estudo)', () => {
-  test.describe.configure({ mode: 'serial' });
-
   test('navegação é por links com aria-current, não tablist', async ({ page }) => {
     test.setTimeout(120_000);
     await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
@@ -148,9 +146,14 @@ test.describe('Hub Desempenho (estudo)', () => {
     });
     await expect(page.getByText(E2E_DESEMPENHO_TITULO_AULA).first()).toBeVisible();
 
-    await clicarAte(page, 'button:has-text("Ver mapa completo")', async () => {
-      await expect(page.getByRole('button', { name: 'Recolher mapa' })).toBeVisible();
+    await page.getByRole('link', { name: 'Ver mapa completo' }).click();
+    await expect(page).toHaveURL(/\/desempenho\/mapa/, { timeout: 30_000 });
+    await expect(page.getByRole('heading', { name: 'Mapa por áreas' })).toBeVisible({
+      timeout: 30_000,
     });
+    await expect(
+      page.getByRole('button', { name: /Doenças Transmissíveis/ }),
+    ).toBeVisible();
   });
 
   test('marcar assunto abre a barra de caderno acima da bottom nav', async ({ page }) => {
@@ -194,17 +197,207 @@ test.describe('Hub Desempenho (estudo)', () => {
     await expect(page.getByLabel('Filtros de desempenho')).toBeVisible({ timeout: 60_000 });
 
     await abrirFiltros(page);
-    await page.getByRole('link', { name: '7 dias' }).click();
+    const periodo7d = page
+      .getByRole('group', { name: 'Período' })
+      .getByRole('link', { name: '7 dias', exact: true });
+    await periodo7d.click();
     await expect(page).toHaveURL(/periodo=7d/, { timeout: 30_000 });
 
     // Recarregar pela URL mantém o filtro aplicado (RSC lê searchParams).
     await page.goto('/desempenho?periodo=7d', { waitUntil: 'domcontentloaded' });
     await abrirFiltros(page);
-    await expect(page.getByRole('link', { name: '7 dias' })).toHaveAttribute(
+    await expect(periodo7d).toHaveAttribute('aria-current', 'true');
+    await expect(page.getByText(/7 dias · \d{2}\/\d{2}\/\d{4} a \d{2}\/\d{2}\/\d{4}/)).toBeVisible();
+  });
+
+  test('filtro de área e assunto muda o placar (não é fantasma)', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByTestId('desempenho-universo')).toHaveText(
+      'Exibindo 18 de 18 questões',
+      { timeout: 60_000 },
+    );
+
+    const assunto = encodeURIComponent(E2E_DESEMPENHO_TITULO_AULA);
+    await page.goto(
+      `/desempenho?periodo=30d&area=farmacologia&assunto=${assunto}`,
+      { waitUntil: 'domcontentloaded' },
+    );
+    await expect(page.getByTestId('desempenho-universo')).toHaveText(
+      'Exibindo 12 de 18 questões',
+      { timeout: 60_000 },
+    );
+    await expect(page.getByLabel('Placar de estudo').getByText('12', { exact: true })).toBeVisible();
+
+    await page.goto(`/desempenho/atividade?assunto=${assunto}`, {
+      waitUntil: 'domcontentloaded',
+    });
+    await expect(page).toHaveURL(/\/desempenho\/atividade/);
+    await expect(page.getByTestId('desempenho-universo')).toHaveCount(0);
+    await expect(page.getByLabel('Placar de estudo')).toHaveCount(0);
+  });
+
+  test('histórico pagina e filtra acerto/erro/reverso só na lista', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('link', { name: 'Ver histórico' })).toBeVisible({
+      timeout: 60_000,
+    });
+    await page.getByRole('link', { name: 'Ver histórico' }).click();
+    await expect(page).toHaveURL(/\/desempenho\/historico/, { timeout: 30_000 });
+    await expect(page.getByRole('heading', { name: 'Histórico de questões' })).toBeVisible();
+
+    await page.getByRole('link', { name: 'Erros' }).click();
+    await expect(page).toHaveURL(/resultado=erro/, { timeout: 30_000 });
+    await expect(page.getByRole('link', { name: 'Erros' })).toHaveAttribute(
       'aria-current',
       'true',
     );
-    await expect(page.getByText(/7 dias · \d{2}\/\d{2}\/\d{4} a \d{2}\/\d{2}\/\d{4}/)).toBeVisible();
+    await expect(page.getByTestId('desempenho-universo')).toHaveText(
+      'Exibindo 18 de 18 questões',
+    );
+    await expect(page.getByLabel('Placar de estudo')).toHaveCount(0);
+  });
+
+  test('home limita áreas e recentes; filtros começam fechados', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByLabel('Placar de estudo')).toBeVisible({ timeout: 60_000 });
+
+    const areas = page.locator('button[aria-controls^="area-assuntos-"]');
+    expect(await areas.count()).toBeLessThanOrEqual(3);
+    await expect(page.getByTestId('recent-attempt-title')).toHaveCount(5);
+    await expect(page.getByRole('button', { name: /Filtrar/ })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
+  });
+
+  test('assunto sem área não recorta o placar', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto(`/desempenho?assunto=${ASSUNTO_ENCODED}`, {
+      waitUntil: 'domcontentloaded',
+    });
+    await expect(page.getByTestId('desempenho-universo')).toHaveText(
+      'Exibindo 18 de 18 questões',
+      { timeout: 60_000 },
+    );
+    await expect(page.getByRole('list', { name: 'Filtros ativos' })).toHaveCount(0);
+  });
+
+  test('trocar área limpa assunto; banca permanece', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto(
+      `/desempenho?banca=FGV&area=farmacologia&assunto=${ASSUNTO_ENCODED}`,
+      { waitUntil: 'domcontentloaded' },
+    );
+    await expect(page.getByTestId('desempenho-universo')).toHaveText(
+      'Exibindo 12 de 18 questões',
+      { timeout: 60_000 },
+    );
+
+    await abrirFiltros(page);
+    await page
+      .getByRole('group', { name: 'Área' })
+      .getByRole('link', { name: 'Saúde Pública e Epidemiologia' })
+      .click();
+    await expect(page).toHaveURL(/area=saude_publica/, { timeout: 30_000 });
+    await expect(page).not.toHaveURL(/assunto=/);
+    await expect(page).toHaveURL(/banca=FGV/);
+  });
+
+  test('mapa respeita a query e voltar preserva filtros', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto('/desempenho/mapa?periodo=30d&area=farmacologia', {
+      waitUntil: 'domcontentloaded',
+    });
+    await expect(page.getByTestId('desempenho-universo')).toHaveText(
+      'Exibindo 12 de 18 questões',
+      { timeout: 60_000 },
+    );
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await expect(page.getByTestId('desempenho-universo')).toHaveText(
+      'Exibindo 12 de 18 questões',
+      { timeout: 60_000 },
+    );
+
+    await page.getByRole('link', { name: 'Voltar ao resumo' }).click();
+    await expect(page).toHaveURL(/\/desempenho\?/, { timeout: 30_000 });
+    await expect(page).toHaveURL(/periodo=30d/);
+    await expect(page).toHaveURL(/area=farmacologia/);
+  });
+
+  test('histórico pagina por cursor sem repetir nem pular', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto('/desempenho/historico?captura=historico-cursor', {
+      waitUntil: 'domcontentloaded',
+    });
+    await expect(page.getByRole('heading', { name: 'Histórico de questões' })).toBeVisible({
+      timeout: 60_000,
+    });
+
+    const titulos = page.getByTestId('recent-attempt-title');
+    await expect(titulos).toHaveCount(20);
+    const hrefs1 = await titulos.evaluateAll((els) =>
+      els.map((el) => el.getAttribute('href')),
+    );
+
+    await page.getByRole('link', { name: 'Próxima página' }).click();
+    await expect(page).toHaveURL(/cursor=/, { timeout: 30_000 });
+    await expect(titulos).toHaveCount(5);
+    const hrefs2 = await titulos.evaluateAll((els) =>
+      els.map((el) => el.getAttribute('href')),
+    );
+
+    expect(new Set(hrefs1).size).toBe(20);
+    expect(new Set(hrefs2).size).toBe(5);
+    expect(hrefs1.some((href) => hrefs2.includes(href))).toBe(false);
+    await expect(page.getByRole('link', { name: 'Próxima página' })).toHaveCount(0);
+  });
+
+  test('aviso de 5.000 substitui Exibindo X de Y', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto('/desempenho?captura=leitura-truncada', {
+      waitUntil: 'domcontentloaded',
+    });
+    await expect(page.getByTestId('desempenho-universo')).toHaveText(
+      '18 questões correspondem aos filtros na amostra das 5.000 mais recentes.',
+      { timeout: 60_000 },
+    );
+    await expect(page.getByTestId('desempenho-universo')).not.toContainText('Exibindo');
+  });
+
+  test('estado de erro e vazio não fingem zero de desempenho', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.goto('/desempenho?captura=erro', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('alert', { name: 'Erro ao carregar desempenho' })).toBeVisible({
+      timeout: 60_000,
+    });
+    await expect(page.getByText(/Não conseguimos carregar seu desempenho/)).toBeVisible();
+    await expect(page.getByLabel('Placar de estudo')).toHaveCount(0);
+
+    await page.goto('/desempenho?captura=placar-zerado', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByText('Nenhuma questão neste período')).toBeVisible({
+      timeout: 60_000,
+    });
+  });
+
+  test('home curta sem rolagem horizontal em 390×844', async ({ page }) => {
+    test.setTimeout(120_000);
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByLabel('Placar de estudo')).toBeVisible({ timeout: 60_000 });
+
+    await expect(page.getByRole('link', { name: 'Ver mapa completo' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Ver detalhes' })).toBeVisible();
+    await expect(page.getByRole('button', { name: /Filtrar/ })).toBeVisible();
+    await expect(page.getByTestId('desempenho-universo')).toContainText('Exibindo');
+
+    const overflow = await medirOverflow(page, 'estudo');
+    expect(overflow.hubEncontrado).toBe(true);
+    expect(overflow.culpados).toEqual([]);
+    expect(overflow.hubScrollWidth).toBeLessThanOrEqual(overflow.clientWidth);
+    expect(overflow.scrollWidth).toBe(overflow.clientWidth);
   });
 
   const VIEWPORTS = [
@@ -221,10 +414,6 @@ test.describe('Hub Desempenho (estudo)', () => {
       await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
       await expect(page.getByLabel('Placar de estudo')).toBeVisible({ timeout: 60_000 });
 
-      // Expandir tudo: overflow costuma aparecer só com o conteúdo profundo visível.
-      await clicarAte(page, 'button:has-text("Ver mapa completo")', async () => {
-        await expect(page.getByRole('button', { name: 'Recolher mapa' })).toBeVisible();
-      });
       await abrirFiltros(page);
 
       const overflow = await medirOverflow(page, 'estudo');
@@ -271,16 +460,16 @@ test.describe('Hub Desempenho (estudo)', () => {
     await expect(page).toHaveURL(/\/desempenho/, { timeout: 15_000 });
   });
 
-  test('Atividade e Simulados navegam pelo hub', async ({ page }) => {
+  test('Hábitos e Simulados navegam pelo hub', async ({ page }) => {
     test.setTimeout(90_000);
     await page.goto('/desempenho', { waitUntil: 'domcontentloaded' });
 
     const nav = page.getByRole('navigation', { name: 'Seções de desempenho' });
     await expect(nav.getByRole('link', { name: 'Estudo' })).toBeVisible({ timeout: 30_000 });
 
-    await nav.getByRole('link', { name: 'Atividade' }).click();
+    await nav.getByRole('link', { name: 'Hábitos' }).click();
     await expect(page).toHaveURL(/\/desempenho\/atividade/, { timeout: 30_000 });
-    await expect(nav.getByRole('link', { name: 'Atividade' })).toHaveAttribute(
+    await expect(nav.getByRole('link', { name: 'Hábitos' })).toHaveAttribute(
       'aria-current',
       'page',
     );
@@ -295,7 +484,6 @@ test.describe('Hub Desempenho (estudo)', () => {
 });
 
 test.describe('Hub Desempenho (simulados)', () => {
-  test.describe.configure({ mode: 'serial' });
 
   test('período é deep link e preserva a dimensão vinda do resultado', async ({ page }) => {
     test.setTimeout(90_000);
@@ -348,7 +536,6 @@ test.describe('Hub Desempenho (simulados)', () => {
 });
 
 test.describe('Hub Desempenho (atividade)', () => {
-  test.describe.configure({ mode: 'serial' });
 
   test('heatmap é informativo e o reset promete só Estudo', async ({ page }) => {
     test.setTimeout(90_000);

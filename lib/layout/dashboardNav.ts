@@ -129,6 +129,8 @@ function resolveItemActive(href: string, isPathActive: IsPathActiveFn): boolean 
       return (
         isPathActive('/desempenho', true) ||
         isPathActive('/desempenho/atividade') ||
+        isPathActive('/desempenho/mapa') ||
+        isPathActive('/desempenho/historico') ||
         isPathActive('/progresso') ||
         isPathActive('/analytics')
       );
