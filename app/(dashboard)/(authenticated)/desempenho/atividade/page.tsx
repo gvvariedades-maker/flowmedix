@@ -7,6 +7,7 @@ import { DesempenhoHubShell } from '@/components/dashboard/desempenho/Desempenho
 import type { AssuntoTop, DesempenhoData, DiaEstudo } from '@/components/dashboard/performance/types';
 import { toFreemiumTimezoneYmd } from '@/lib/freemium/constants';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { E2E_DESEMPENHO_TITULO_AULA, E2E_DESEMPENHO_TITULO_LONGO } from '@/lib/e2e/constants';
 import { logger } from '@/lib/logger';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 
@@ -39,7 +40,10 @@ function buildE2eAtividade(): DesempenhoData {
     totalGeral: total,
     totalTodosTempos: total,
     serie30dias,
-    topAssuntos: [{ nome: 'Vias de Administração', count: 8 }],
+    topAssuntos: [
+      { nome: E2E_DESEMPENHO_TITULO_LONGO, count: 8 },
+      { nome: E2E_DESEMPENHO_TITULO_AULA, count: 5 },
+    ],
   };
 }
 

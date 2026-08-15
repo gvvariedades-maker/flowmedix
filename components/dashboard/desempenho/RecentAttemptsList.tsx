@@ -10,6 +10,7 @@ type Props = {
 /**
  * Últimas questões praticadas — uma linha por questão (estado atual do histórico).
  * A UI não expõe o mecanismo de upsert; fala em "resultado atual".
+ * Mobile: título quebra; etiquetas ficam abaixo — sem ocupar o mesmo eixo do nome.
  */
 export function RecentAttemptsList({ attempts }: Props) {
   return (
@@ -27,11 +28,12 @@ export function RecentAttemptsList({ attempts }: Props) {
       ) : (
         <ul className="divide-y divide-border rounded-xl border border-border bg-background">
           {attempts.map((attempt) => (
-            <li key={attempt.id} className="flex items-center justify-between gap-3 px-4 py-3">
+            <li key={attempt.id} className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
               <div className="min-w-0">
                 <Link
                   href={`/estudar/${encodeURIComponent(attempt.moduloSlug)}`}
-                  className="truncate text-sm font-medium text-slate-900 underline-offset-2 hover:underline"
+                  data-testid="recent-attempt-title"
+                  className="line-clamp-2 block text-sm font-medium text-slate-900 underline-offset-2 hover:underline [overflow-wrap:anywhere]"
                 >
                   {attempt.tituloAula ?? attempt.moduloSlug}
                 </Link>
@@ -39,7 +41,10 @@ export function RecentAttemptsList({ attempts }: Props) {
                   {formatDesempenhoDateTime(attempt.createdAt)}
                 </p>
               </div>
-              <div className="flex shrink-0 items-center gap-2">
+              <div
+                data-testid="recent-attempt-badges"
+                className="flex flex-wrap items-center gap-2 sm:shrink-0"
+              >
                 {attempt.estudoReversoConcluido ? (
                   <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[0.6875rem] font-medium text-slate-600">
                     Reverso
