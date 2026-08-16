@@ -6,13 +6,19 @@ import {
 
 const prefetchEstudar = jest.fn();
 const navigateEstudar = jest.fn();
+const mockLink = jest.fn();
 
 jest.mock('next/link', () => {
   return function MockLink({
     children,
     href,
+    prefetch,
     ...props
-  }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
+  }: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href: string;
+    prefetch?: boolean;
+  }) {
+    mockLink({ href, prefetch, ...props });
     return (
       <a href={href} {...props}>
         {children}
@@ -95,6 +101,16 @@ describe('VitrineQuestaoLink', () => {
     expect(prefetchEstudar).toHaveBeenCalledWith('questao-b');
   });
 
+  it('prefetch={false} no Link não desliga prefetchEstudar no hover', () => {
+    render(
+      <VitrineQuestaoLink slug="questao-b" prefetch={false}>
+        Questão
+      </VitrineQuestaoLink>,
+    );
+    fireEvent.pointerEnter(screen.getByRole('link', { name: 'Questão' }));
+    expect(prefetchEstudar).toHaveBeenCalledWith('questao-b');
+  });
+
   it('clique simples não chama navigateEstudar (navegação nativa do Link)', () => {
     render(
       <VitrineQuestaoLink slug="questao-c" estudarQuery="?q=rcp">
@@ -129,6 +145,27 @@ describe('VitrineQuestaoLink', () => {
     render(<VitrineQuestaoLink slug="questao-f">Questão</VitrineQuestaoLink>);
     fireEvent.pointerEnter(screen.getByRole('link', { name: 'Questão' }));
     expect(prefetchEstudar).not.toHaveBeenCalled();
+  });
+
+  it('repassa prefetch ao Link sem colocá-lo no <a>', () => {
+    render(
+      <VitrineQuestaoLink slug="questao-g" prefetch={false}>
+        Questão
+      </VitrineQuestaoLink>,
+    );
+
+    expect(mockLink).toHaveBeenCalledWith(
+      expect.objectContaining({ href: '/estudar/questao-g', prefetch: false }),
+    );
+    expect(screen.getByRole('link', { name: 'Questão' })).not.toHaveAttribute('prefetch');
+  });
+
+  it('omite prefetch no Link quando a prop não é passada', () => {
+    render(<VitrineQuestaoLink slug="questao-h">CTA</VitrineQuestaoLink>);
+
+    expect(mockLink).toHaveBeenCalledTimes(1);
+    expect(mockLink.mock.calls[0]?.[0].prefetch).toBeUndefined();
+    expect(screen.getByRole('link', { name: 'CTA' })).not.toHaveAttribute('prefetch');
   });
 
   it('buildVitrineSlugComQuery concatena slug e query', () => {

@@ -91,6 +91,8 @@ export function VitrineSubjectCard({
   const isDesktop = useDashboardDesktop();
   /** Sheet só no mobile; no desktop (incl. lista compacta) expande inline. */
   const useSheet = !isDesktop;
+  /** Painel desktop só monta expandido — recolhido não esconde a lista por CSS. */
+  const painelDesktopMontado = isDesktop && assuntoExpandido;
 
   const toggleAssunto = () => {
     onAssuntoExpandedChange(!assuntoExpandido);
@@ -131,7 +133,7 @@ export function VitrineSubjectCard({
         <button
           type="button"
           aria-expanded={assuntoExpandido}
-          aria-controls={useSheet ? undefined : panelId}
+          aria-controls={painelDesktopMontado ? panelId : undefined}
           aria-haspopup={useSheet ? 'dialog' : undefined}
           onClick={toggleAssunto}
           className={cn(
@@ -224,7 +226,7 @@ export function VitrineSubjectCard({
           type="button"
           onClick={toggleAssunto}
           aria-expanded={assuntoExpandido}
-          aria-controls={useSheet ? undefined : panelId}
+          aria-controls={painelDesktopMontado ? panelId : undefined}
           aria-haspopup={useSheet ? 'dialog' : undefined}
           aria-label={assuntoExpandido ? 'Recolher assunto' : 'Expandir assunto'}
           className={cn(
@@ -280,64 +282,55 @@ export function VitrineSubjectCard({
         </div>
       ) : null}
 
-      {isDesktop ? (
-        <div
-          id={panelId}
-          aria-hidden={!assuntoExpandido}
-          className={cn(
-            'grid transition-[grid-template-rows] duration-200 ease-in-out',
-            assuntoExpandido ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
-          )}
-        >
-          <div className="overflow-hidden">
-            <div className="space-y-3 border-t border-slate-100 px-4 py-3 sm:space-y-4">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                {todas ? (
-                  <NeonBadge variant="success">Completo</NeonBadge>
-                ) : pendentes > 0 ? (
-                  <NeonBadge variant="neutral">{pendentes} para estudar</NeonBadge>
-                ) : totalResolvidas === 0 ? (
-                  <NeonBadge variant="neutral">Não iniciado</NeonBadge>
-                ) : null}
-                <VitrineQuestaoLink
-                  slug={firstSlug}
-                  estudarQuery={estudarQuery}
-                  className={cn(vitrineBrand.buttonSecondary, 'ml-auto')}
-                >
-                  Entrar no assunto
-                </VitrineQuestaoLink>
-              </div>
-
-              <div className="flex justify-center">
-                <VitrineProgressRing
-                  acertos={acertos}
-                  respondidas={totalResolvidas}
-                  total={totalQuestoes}
-                  percentual={percentual}
-                  size={88}
-                />
-              </div>
-
-              <p className="-mt-1 text-center text-[11px] font-medium uppercase tracking-wide text-slate-500">
-                Taxa de acerto
-              </p>
-              <p className="-mt-2 text-center text-[11px] text-slate-500">
-                {acertoDisplay.coberturaLabel}
-              </p>
-
-              <VitrineQuestaoList
-                tituloAula={titulo_aula}
-                firstSlug={firstSlug}
-                totalQuestoes={totalQuestoes}
-                questoes={questoes}
+      {painelDesktopMontado ? (
+        <div id={panelId}>
+          <div className="space-y-3 border-t border-slate-100 px-4 py-3 sm:space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              {todas ? (
+                <NeonBadge variant="success">Completo</NeonBadge>
+              ) : pendentes > 0 ? (
+                <NeonBadge variant="neutral">{pendentes} para estudar</NeonBadge>
+              ) : totalResolvidas === 0 ? (
+                <NeonBadge variant="neutral">Não iniciado</NeonBadge>
+              ) : null}
+              <VitrineQuestaoLink
+                slug={firstSlug}
                 estudarQuery={estudarQuery}
-              />
-
-              <p className="border-t border-slate-100 pt-2 text-[11px] font-medium uppercase tracking-wide text-slate-500">
-                {totalQuestoes} {labelQuestoes(totalQuestoes)} no assunto
-                {todas ? ' · Concluído' : trabalhadas > 0 ? ' · Em progresso' : ''}
-              </p>
+                className={cn(vitrineBrand.buttonSecondary, 'ml-auto')}
+              >
+                Entrar no assunto
+              </VitrineQuestaoLink>
             </div>
+
+            <div className="flex justify-center">
+              <VitrineProgressRing
+                acertos={acertos}
+                respondidas={totalResolvidas}
+                total={totalQuestoes}
+                percentual={percentual}
+                size={88}
+              />
+            </div>
+
+            <p className="-mt-1 text-center text-[11px] font-medium uppercase tracking-wide text-slate-500">
+              Taxa de acerto
+            </p>
+            <p className="-mt-2 text-center text-[11px] text-slate-500">
+              {acertoDisplay.coberturaLabel}
+            </p>
+
+            <VitrineQuestaoList
+              tituloAula={titulo_aula}
+              firstSlug={firstSlug}
+              totalQuestoes={totalQuestoes}
+              questoes={questoes}
+              estudarQuery={estudarQuery}
+            />
+
+            <p className="border-t border-slate-100 pt-2 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+              {totalQuestoes} {labelQuestoes(totalQuestoes)} no assunto
+              {todas ? ' · Concluído' : trabalhadas > 0 ? ' · Em progresso' : ''}
+            </p>
           </div>
         </div>
       ) : null}
