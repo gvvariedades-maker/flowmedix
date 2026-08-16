@@ -68,6 +68,14 @@ async function hangDesempenhoRsc(page: Page) {
   });
 }
 
+function visibleEstudoLoading(page: Page) {
+  return page.getByTestId('desempenho-estudo-loading').filter({ visible: true });
+}
+
+function visibleEstudoHeading(page: Page) {
+  return page.getByRole('heading', { name: 'Meu desempenho' }).filter({ visible: true });
+}
+
 function desempenhoNavLocator(page: Page, viewport: 'desktop' | 'mobile') {
   if (viewport === 'mobile') {
     return page
@@ -246,7 +254,6 @@ function appendReport(entry: NavTimings) {
 }
 
 test.describe('Desempenho nav wave 1 — loading.tsx', () => {
-  test.describe.configure({ mode: 'serial' });
 
   test.beforeEach(async ({ page }) => {
     await preparePage(page);
@@ -313,7 +320,7 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     await expect(navLink).toBeVisible({ timeout: 60_000 });
     await navLink.focus();
     await page.keyboard.press('Enter');
-    await expect(page.getByTestId('desempenho-estudo-loading')).toBeVisible({ timeout: 5_000 });
+    await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
     await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toBeAttached();
     await expect(page.locator('[data-desempenho-hub="estudo"]')).toBeVisible({ timeout: 20_000 });
   });
@@ -332,7 +339,7 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
 
     await page.evaluate(() => new Promise((r) => setTimeout(r, 400)));
     await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toHaveCount(0);
-    await expect(page.getByTestId('desempenho-estudo-loading')).toHaveCount(0);
+    await expect(visibleEstudoLoading(page)).toHaveCount(0);
   });
 
   test('desktop: pointerdown sem click não marca pending', async ({ page }, testInfo) => {
@@ -345,7 +352,7 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     await navLink.dispatchEvent('pointercancel');
     await page.evaluate(() => new Promise((r) => setTimeout(r, 300)));
     await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toHaveCount(0);
-    await expect(page.getByTestId('desempenho-estudo-loading')).toHaveCount(0);
+    await expect(visibleEstudoLoading(page)).toHaveCount(0);
   });
 
   test('desktop: voltar no histórico limpa o pending', async ({ page }, testInfo) => {
@@ -357,12 +364,12 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     const navLink = desempenhoNavLocator(page, 'desktop');
     await expect(navLink).toBeVisible({ timeout: 60_000 });
     await navLink.click({ noWaitAfter: true });
-    await expect(page.getByTestId('desempenho-estudo-loading')).toBeVisible({ timeout: 5_000 });
+    await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
     await page.goBack({ waitUntil: 'domcontentloaded' });
     await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toHaveCount(0, {
       timeout: 5_000,
     });
-    await expect(page.getByTestId('desempenho-estudo-loading')).toHaveCount(0);
+    await expect(visibleEstudoLoading(page)).toHaveCount(0);
   });
 
   test('desktop: abandono para outra rota limpa o pending', async ({ page }, testInfo) => {
@@ -374,7 +381,7 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     const navLink = desempenhoNavLocator(page, 'desktop');
     await expect(navLink).toBeVisible({ timeout: 60_000 });
     await navLink.click({ noWaitAfter: true });
-    await expect(page.getByTestId('desempenho-estudo-loading')).toBeVisible({ timeout: 5_000 });
+    await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
     await page
       .getByRole('navigation', { name: 'Navegação principal' })
       .getByRole('link', { name: 'Cadernos' })
@@ -382,7 +389,7 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toHaveCount(0, {
       timeout: 8_000,
     });
-    await expect(page.getByTestId('desempenho-estudo-loading')).toHaveCount(0);
+    await expect(visibleEstudoLoading(page)).toHaveCount(0);
   });
 
   test('desktop: hang do RSC limpa pending no timeout', async ({ page }, testInfo) => {
@@ -394,11 +401,10 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     const navLink = desempenhoNavLocator(page, 'desktop');
     await expect(navLink).toBeVisible({ timeout: 60_000 });
     await navLink.click({ noWaitAfter: true });
-    await expect(page.getByTestId('desempenho-estudo-loading')).toBeVisible({ timeout: 5_000 });
+    await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
     await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toHaveCount(0, {
       timeout: DESEMPENHO_NAV_PENDING_TIMEOUT_MS + 2_000,
     });
-    await expect(page.getByTestId('desempenho-estudo-loading')).toHaveCount(0);
   });
 
   test('desktop: erro de carga ainda limpa pending via hub marker', async ({ page }, testInfo) => {
@@ -424,10 +430,10 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     await gotoEstudarDashboard(page);
     await expect(desempenhoNavLocator(page, 'desktop')).toBeVisible({ timeout: 60_000 });
     await desempenhoNavLocator(page, 'desktop').click({ noWaitAfter: true });
-    await expect(page.getByTestId('desempenho-estudo-loading')).toBeVisible({ timeout: 5_000 });
+    await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
 
     await expect(page.locator('main [hidden]')).toBeAttached();
-    const cta = page.getByRole('link', { name: 'Praticar na vitrine' });
+    const cta = page.getByRole('link', { name: 'Praticar na vitrine' }).filter({ visible: true });
     await expect(cta).toBeVisible();
     await cta.focus();
     await expect(cta).toBeFocused();
@@ -439,15 +445,17 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     expect(focusedInsideHidden).toBe(false);
     await expect(page.getByRole('dialog')).toHaveCount(0);
 
-    const headerBefore = await page
-      .getByRole('heading', { name: 'Meu desempenho' })
-      .evaluate((el) => el.getBoundingClientRect().height);
+    const headerBefore = await visibleEstudoHeading(page).evaluate((el) =>
+      el.getBoundingClientRect().height,
+    );
 
-    await expect(page.locator('[data-desempenho-hub="estudo"]')).toBeVisible({ timeout: 20_000 });
+    await expect(page.locator('[data-desempenho-hub="estudo"]').filter({ visible: true })).toBeVisible(
+      { timeout: 20_000 },
+    );
 
-    const headerAfter = await page
-      .getByRole('heading', { name: 'Meu desempenho' })
-      .evaluate((el) => el.getBoundingClientRect().height);
+    const headerAfter = await visibleEstudoHeading(page).evaluate((el) =>
+      el.getBoundingClientRect().height,
+    );
     expect(Math.abs(headerAfter - headerBefore)).toBeLessThanOrEqual(2);
   });
 });

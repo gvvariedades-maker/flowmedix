@@ -900,12 +900,18 @@ function DashboardContent({
             />
           ) : null}
           {desempenhoPendingUi ? <DesempenhoEstudoPendingView /> : null}
+          <div
+            hidden={desempenhoPendingUi}
+            className={cn(
+              'flex min-h-0 flex-1 flex-col',
+              estudarQuestaoFillViewport && 'h-full min-h-full',
+            )}
+          >
           <motion.div
             key={pathname?.split('/').slice(0, 2).join('/') ?? pathname}
             variants={pageVariants}
             initial="initial"
             animate="animate"
-            hidden={desempenhoPendingUi}
             className={cn(
               'flex min-h-0 flex-1 flex-col',
               estudarQuestaoFillViewport && 'h-full min-h-full',
@@ -913,6 +919,7 @@ function DashboardContent({
           >
             {children}
           </motion.div>
+          </div>
         </main>
         </div>
 
