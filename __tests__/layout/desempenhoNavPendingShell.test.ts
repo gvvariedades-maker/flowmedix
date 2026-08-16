@@ -15,23 +15,34 @@ describe('DashboardShell — gatilho pending do hub Estudo', () => {
     'utf8',
   );
 
+  const registry = readFileSync(
+    join(process.cwd(), 'lib', 'layout', 'hubNavPending.ts'),
+    'utf8',
+  );
+
   it('marca pending no click capture com flushSync, sem pointerdown', () => {
     expect(shell).toContain("document.addEventListener('click', onClickCapture, true)");
     expect(shell).toContain('flushSync');
-    expect(shell).toContain('shouldMarkDesempenhoNavPending');
+    expect(shell).toContain('resolveHubNavPendingFromClick');
+    expect(shell).not.toContain('shouldMarkDesempenhoNavPending');
+    expect(shell).not.toContain('shouldMarkCadernosNavPending');
     expect(shell).not.toContain('pointerdown');
     expect(shell).not.toContain('onPointerDown');
     expect(bottomNav).not.toContain('pointerdown');
     expect(bottomNav).not.toContain('onPointerDown');
   });
 
-  it('limpa hub pronto, timeout e abandono (popstate/pagehide)', () => {
-    expect(shell).toContain("[data-desempenho-hub=\"estudo\"]");
-    expect(shell).toContain('DESEMPENHO_NAV_PENDING_TIMEOUT_MS');
+  it('transiciona para slow-loading no limiar; só ready/error/abandono limpam', () => {
+    expect(registry).toContain("[data-desempenho-hub=\"estudo\"]");
+    expect(registry).toContain("[data-cadernos-hub=\"lista\"]");
+    expect(shell).toContain('HUB_NAV_REGISTRY[hubNavPending].readySelector');
+    expect(shell).toContain('HUB_NAV_SLOW_LOADING_MS');
+    expect(shell).toContain("setHubNavPendingPhase('slow-loading')");
+    expect(shell).toContain("applyHubNavPendingDom(pendingHub, 'slow-loading')");
+    expect(shell).not.toContain('HUB_PENDING_TIMEOUT_MS');
     expect(shell).toContain("addEventListener('popstate'");
     expect(shell).toContain("addEventListener('pagehide'");
     expect(shell).toContain('observer.disconnect()');
-    expect(shell).toContain('window.clearTimeout(timeoutId)');
     expect(loadError).toContain('data-desempenho-hub={hub}');
   });
 });

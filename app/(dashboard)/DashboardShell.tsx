@@ -52,14 +52,20 @@ import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
 import { openWhatsAppChat } from '@/lib/whatsapp';
 import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
+import { CadernosPendingView } from '@/components/dashboard/cadernos/CadernosPendingView';
 import { DesempenhoEstudoPendingView } from '@/components/dashboard/desempenho/DesempenhoEstudoPendingView';
 import {
-  DESEMPENHO_NAV_PENDING_TIMEOUT_MS,
-  isDesempenhoHubHref,
-  resolveDesempenhoNavAnchor,
-  shouldClearDesempenhoNavPendingOnPath,
-  shouldMarkDesempenhoNavPending,
-} from '@/lib/desempenho/desempenhoPendingMark';
+  applyHubNavPendingDom,
+  clearHubNavPendingDom,
+  HUB_NAV_REGISTRY,
+  HUB_NAV_SLOW_LOADING_MS,
+  isHubNavPrefetchDisabled,
+  resolveHubNavAnchor,
+  resolveHubNavPendingFromClick,
+  shouldClearHubNavPendingOnPath,
+  type HubNavId,
+  type HubNavPendingPhase,
+} from '@/lib/layout/hubNavPending';
 
 const pageVariantsDesktop = {
   initial: { opacity: 0 },
@@ -160,11 +166,11 @@ function DashboardNavLink({
   createQueryString: (path: string) => string;
   onNavAction?: () => void;
 }) {
-  const desempenhoHub = isDesempenhoHubHref(item.href);
+  const skipPrefetch = isHubNavPrefetchDisabled(item.href);
   return (
     <Link
       href={createQueryString(item.href)}
-      prefetch={desempenhoHub ? false : undefined}
+      prefetch={skipPrefetch ? false : undefined}
       onClick={onNavAction}
       title={item.title}
       aria-current={item.active ? 'page' : undefined}
@@ -477,49 +483,51 @@ function DashboardContent({
   useEditorialTheme();
 
   const pathname = usePathname();
-  const [desempenhoNavPending, setDesempenhoNavPending] = useState(false);
-  const desempenhoPendingUi =
-    desempenhoNavPending && !shouldClearDesempenhoNavPendingOnPath(pathname);
-  const clearDesempenhoNavPending = useCallback(() => {
-    document.documentElement.removeAttribute('data-desempenho-nav-pending');
-    setDesempenhoNavPending(false);
+  const [hubNavPending, setHubNavPending] = useState<HubNavId | null>(null);
+  const [hubNavPendingPhase, setHubNavPendingPhase] = useState<HubNavPendingPhase>('loading');
+  const hubPendingUi =
+    hubNavPending != null &&
+    !shouldClearHubNavPendingOnPath(pathname, HUB_NAV_REGISTRY[hubNavPending].path);
+  const clearHubNavPending = useCallback(() => {
+    clearHubNavPendingDom();
+    setHubNavPending(null);
+    setHubNavPendingPhase('loading');
   }, []);
-  const markDesempenhoPending = useCallback(() => {
-    document.documentElement.setAttribute('data-desempenho-nav-pending', 'true');
+  const markHubNavPending = useCallback((hub: HubNavId) => {
+    applyHubNavPendingDom(hub, 'loading');
     flushSync(() => {
-      setDesempenhoNavPending(true);
+      setHubNavPending(hub);
+      setHubNavPendingPhase('loading');
     });
   }, []);
   useEffect(() => {
     const onClickCapture = (event: MouseEvent) => {
-      const anchor = resolveDesempenhoNavAnchor(event.target);
+      const anchor = resolveHubNavAnchor(event.target);
       if (!anchor) return;
-      if (
-        !shouldMarkDesempenhoNavPending(event, anchor, {
-          pathname: window.location.pathname,
-          origin: window.location.origin,
-        })
-      ) {
-        return;
-      }
-      markDesempenhoPending();
+      const hub = resolveHubNavPendingFromClick(event, anchor, {
+        pathname: window.location.pathname,
+        origin: window.location.origin,
+      });
+      if (hub) markHubNavPending(hub);
     };
     document.addEventListener('click', onClickCapture, true);
     return () => document.removeEventListener('click', onClickCapture, true);
-  }, [markDesempenhoPending]);
+  }, [markHubNavPending]);
   useEffect(() => {
-    if (!desempenhoNavPending) return;
-    if (!shouldClearDesempenhoNavPendingOnPath(pathname)) return;
-    document.documentElement.removeAttribute('data-desempenho-nav-pending');
-    const timeoutId = window.setTimeout(clearDesempenhoNavPending, 0);
+    if (!hubNavPending) return;
+    if (!shouldClearHubNavPendingOnPath(pathname, HUB_NAV_REGISTRY[hubNavPending].path)) return;
+    clearHubNavPendingDom();
+    const timeoutId = window.setTimeout(clearHubNavPending, 0);
     return () => window.clearTimeout(timeoutId);
-  }, [pathname, desempenhoNavPending, clearDesempenhoNavPending]);
+  }, [pathname, hubNavPending, clearHubNavPending]);
   useEffect(() => {
-    if (!desempenhoPendingUi) return;
+    if (!hubNavPending || !hubPendingUi) return;
+    const readySelector = HUB_NAV_REGISTRY[hubNavPending].readySelector;
+    const pendingHub = hubNavPending;
 
     const revealHub = () => {
-      if (!document.querySelector('[data-desempenho-hub="estudo"]')) return false;
-      clearDesempenhoNavPending();
+      if (!document.querySelector(readySelector)) return false;
+      clearHubNavPending();
       return true;
     };
 
@@ -527,11 +535,12 @@ function DashboardContent({
       revealHub();
     });
     observer.observe(document.body, { childList: true, subtree: true });
-    const timeoutId = window.setTimeout(() => {
-      clearDesempenhoNavPending();
-    }, DESEMPENHO_NAV_PENDING_TIMEOUT_MS);
+    const slowLoadingId = window.setTimeout(() => {
+      setHubNavPendingPhase('slow-loading');
+      applyHubNavPendingDom(pendingHub, 'slow-loading');
+    }, HUB_NAV_SLOW_LOADING_MS);
     const abandon = () => {
-      clearDesempenhoNavPending();
+      clearHubNavPending();
     };
     window.addEventListener('popstate', abandon);
     window.addEventListener('pagehide', abandon);
@@ -541,12 +550,12 @@ function DashboardContent({
 
     return () => {
       observer.disconnect();
-      window.clearTimeout(timeoutId);
+      window.clearTimeout(slowLoadingId);
       window.clearTimeout(existingHubId);
       window.removeEventListener('popstate', abandon);
       window.removeEventListener('pagehide', abandon);
     };
-  }, [desempenhoPendingUi, clearDesempenhoNavPending]);
+  }, [hubNavPending, hubPendingUi, clearHubNavPending]);
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -899,9 +908,14 @@ function DashboardContent({
               onSnooze={cadernoOnboarding.snooze}
             />
           ) : null}
-          {desempenhoPendingUi ? <DesempenhoEstudoPendingView /> : null}
+          {hubPendingUi && hubNavPending === 'desempenho' ? (
+            <DesempenhoEstudoPendingView phase={hubNavPendingPhase} />
+          ) : null}
+          {hubPendingUi && hubNavPending === 'cadernos' ? (
+            <CadernosPendingView phase={hubNavPendingPhase} />
+          ) : null}
           <div
-            hidden={desempenhoPendingUi}
+            hidden={hubPendingUi}
             className={cn(
               'flex min-h-0 flex-1 flex-col',
               estudarQuestaoFillViewport && 'h-full min-h-full',

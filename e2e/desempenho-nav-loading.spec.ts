@@ -392,7 +392,7 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     await expect(visibleEstudoLoading(page)).toHaveCount(0);
   });
 
-  test('desktop: hang do RSC limpa pending no timeout', async ({ page }, testInfo) => {
+  test('desktop: hang do RSC vira slow-loading e não limpa pending', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'chromium', 'desktop só no Chromium');
     test.setTimeout(180_000);
     await warmupDesempenhoCompile(page);
@@ -402,9 +402,12 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     await expect(navLink).toBeVisible({ timeout: 60_000 });
     await navLink.click({ noWaitAfter: true });
     await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
-    await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toHaveCount(0, {
+    await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toBeAttached();
+    await expect(page.locator('html[data-hub-nav-pending-phase="slow-loading"]')).toBeAttached({
       timeout: DESEMPENHO_NAV_PENDING_TIMEOUT_MS + 2_000,
     });
+    await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toBeAttached();
+    await expect(page.getByRole('status', { name: 'Ainda carregando desempenho' })).toBeVisible();
   });
 
   test('desktop: erro de carga ainda limpa pending via hub marker', async ({ page }, testInfo) => {
