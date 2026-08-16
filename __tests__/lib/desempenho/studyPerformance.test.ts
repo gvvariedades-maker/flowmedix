@@ -1,4 +1,4 @@
-import { aggregateStudyPerformance, normalizeDesempenhoEstudoFilters } from '@/lib/desempenho/studyPerformance';
+import { aggregateStudyPerformance, historicoAttemptSeriesMeta, normalizeDesempenhoEstudoFilters } from '@/lib/desempenho/studyPerformance';
 import {
   DESEMPENHO_COACH_UNLOCK,
   DESEMPENHO_MIN_SAMPLE,
@@ -382,6 +382,37 @@ describe('aggregateStudyPerformance', () => {
     expect(semAssunto.filtersApplied.assunto).toBeNull();
     expect(semAssunto.placar.respondidas).toBe(3);
     expect(semAssunto.universoRespondidas).toBe(3);
+  });
+});
+
+describe('historicoAttemptSeriesMeta', () => {
+  it('conta só respondidas com slug e pega a prática mais antiga', () => {
+    const meta = historicoAttemptSeriesMeta([
+      hist({
+        id: '1',
+        modulo_slug: 'vias-1',
+        created_at: '2026-08-10T12:00:00.000Z',
+      }),
+      hist({
+        id: '2',
+        modulo_slug: 'vias-2',
+        created_at: '2026-08-01T12:00:00.000Z',
+        respondida: false,
+      }),
+      hist({
+        id: '3',
+        modulo_slug: '   ',
+        created_at: '2026-07-01T12:00:00.000Z',
+      }),
+      hist({
+        id: '4',
+        modulo_slug: 'imuno-1',
+        created_at: '2026-08-05T12:00:00.000Z',
+      }),
+    ]);
+
+    expect(meta.historicoRespondidas).toBe(2);
+    expect(meta.historicoOldestAt).toBe('2026-08-05T12:00:00.000Z');
   });
 });
 

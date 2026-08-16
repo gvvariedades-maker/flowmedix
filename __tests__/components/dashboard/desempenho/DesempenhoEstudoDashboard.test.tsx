@@ -518,6 +518,33 @@ describe('DesempenhoEstudoDashboard', () => {
     expect(screen.queryByText(/Evidence Engine|ledger/i)).not.toBeInTheDocument();
   });
 
+  it('renderiza o slot de série no lugar do card síncrono (stream P4)', () => {
+    render(
+      <DesempenhoEstudoDashboard
+        data={buildData({
+          attemptSeries: {
+            available: true,
+            unavailableReason: null,
+            daily: [{ date: '2026-08-10', attempts: 4, acertos: 2, percentual: 50 }],
+            tempoMedioMs: 4500,
+            firstAttemptAccuracyPct: 60,
+            attemptsPerQuestionAvg: 1.4,
+            totalEvents: 4,
+            distinctQuestions: 3,
+            dadosDesde: '2026-08-10T10:00:00.000Z',
+            coberturaParcial: false,
+            truncated: false,
+            limiteRegistros: null,
+          },
+        })}
+        attemptSeriesSlot={<p>Série em stream</p>}
+      />,
+    );
+
+    expect(screen.getByText('Série em stream')).toBeInTheDocument();
+    expect(screen.queryByLabelText('Evolução de tentativas')).not.toBeInTheDocument();
+  });
+
   it('mostra empty state de coach abaixo de 10 respondidas', () => {
     render(
       <DesempenhoEstudoDashboard

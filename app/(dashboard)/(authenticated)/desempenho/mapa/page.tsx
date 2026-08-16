@@ -17,6 +17,7 @@ export default async function DesempenhoMapaPage({
 }) {
   const resolvedSearchParams = await searchParams;
   const filters = filtersFromEstudoSearchParams(resolvedSearchParams);
+  // Sem ledger EE: esta rota não renderiza a curva de tentativas.
   const data = await loadEstudoDashboard(filters, {
     captura: firstSearchParam(resolvedSearchParams.captura),
   });
