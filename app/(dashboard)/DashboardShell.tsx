@@ -1,6 +1,7 @@
 'use client';
 
-import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
@@ -51,6 +52,14 @@ import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
 import { openWhatsAppChat } from '@/lib/whatsapp';
 import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
+import { DesempenhoEstudoPendingView } from '@/components/dashboard/desempenho/DesempenhoEstudoPendingView';
+import {
+  DESEMPENHO_NAV_PENDING_TIMEOUT_MS,
+  isDesempenhoHubHref,
+  resolveDesempenhoNavAnchor,
+  shouldClearDesempenhoNavPendingOnPath,
+  shouldMarkDesempenhoNavPending,
+} from '@/lib/desempenho/desempenhoPendingMark';
 
 const pageVariantsDesktop = {
   initial: { opacity: 0 },
@@ -151,9 +160,11 @@ function DashboardNavLink({
   createQueryString: (path: string) => string;
   onNavAction?: () => void;
 }) {
+  const desempenhoHub = isDesempenhoHubHref(item.href);
   return (
     <Link
       href={createQueryString(item.href)}
+      prefetch={desempenhoHub ? false : undefined}
       onClick={onNavAction}
       title={item.title}
       aria-current={item.active ? 'page' : undefined}
@@ -466,6 +477,76 @@ function DashboardContent({
   useEditorialTheme();
 
   const pathname = usePathname();
+  const [desempenhoNavPending, setDesempenhoNavPending] = useState(false);
+  const desempenhoPendingUi =
+    desempenhoNavPending && !shouldClearDesempenhoNavPendingOnPath(pathname);
+  const clearDesempenhoNavPending = useCallback(() => {
+    document.documentElement.removeAttribute('data-desempenho-nav-pending');
+    setDesempenhoNavPending(false);
+  }, []);
+  const markDesempenhoPending = useCallback(() => {
+    document.documentElement.setAttribute('data-desempenho-nav-pending', 'true');
+    flushSync(() => {
+      setDesempenhoNavPending(true);
+    });
+  }, []);
+  useEffect(() => {
+    const onClickCapture = (event: MouseEvent) => {
+      const anchor = resolveDesempenhoNavAnchor(event.target);
+      if (!anchor) return;
+      if (
+        !shouldMarkDesempenhoNavPending(event, anchor, {
+          pathname: window.location.pathname,
+          origin: window.location.origin,
+        })
+      ) {
+        return;
+      }
+      markDesempenhoPending();
+    };
+    document.addEventListener('click', onClickCapture, true);
+    return () => document.removeEventListener('click', onClickCapture, true);
+  }, [markDesempenhoPending]);
+  useEffect(() => {
+    if (!desempenhoNavPending) return;
+    if (!shouldClearDesempenhoNavPendingOnPath(pathname)) return;
+    document.documentElement.removeAttribute('data-desempenho-nav-pending');
+    const timeoutId = window.setTimeout(clearDesempenhoNavPending, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, [pathname, desempenhoNavPending, clearDesempenhoNavPending]);
+  useEffect(() => {
+    if (!desempenhoPendingUi) return;
+
+    const revealHub = () => {
+      if (!document.querySelector('[data-desempenho-hub="estudo"]')) return false;
+      clearDesempenhoNavPending();
+      return true;
+    };
+
+    const observer = new MutationObserver(() => {
+      revealHub();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    const timeoutId = window.setTimeout(() => {
+      clearDesempenhoNavPending();
+    }, DESEMPENHO_NAV_PENDING_TIMEOUT_MS);
+    const abandon = () => {
+      clearDesempenhoNavPending();
+    };
+    window.addEventListener('popstate', abandon);
+    window.addEventListener('pagehide', abandon);
+    const existingHubId = window.setTimeout(() => {
+      revealHub();
+    }, 0);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timeoutId);
+      window.clearTimeout(existingHubId);
+      window.removeEventListener('popstate', abandon);
+      window.removeEventListener('pagehide', abandon);
+    };
+  }, [desempenhoPendingUi, clearDesempenhoNavPending]);
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -818,11 +899,13 @@ function DashboardContent({
               onSnooze={cadernoOnboarding.snooze}
             />
           ) : null}
+          {desempenhoPendingUi ? <DesempenhoEstudoPendingView /> : null}
           <motion.div
             key={pathname?.split('/').slice(0, 2).join('/') ?? pathname}
             variants={pageVariants}
             initial="initial"
             animate="animate"
+            hidden={desempenhoPendingUi}
             className={cn(
               'flex min-h-0 flex-1 flex-col',
               estudarQuestaoFillViewport && 'h-full min-h-full',
