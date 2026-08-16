@@ -1,3 +1,5 @@
+import { labelQuestoes } from '@/lib/labelQuestoes';
+
 export type VitrineAcertoDisplayTone = 'muted' | 'success';
 
 export type VitrineAcertoDisplay = {
@@ -9,7 +11,7 @@ export type VitrineAcertoDisplay = {
   acertoPct: number | null;
   /** Cobertura = respondidas ÷ total do assunto. */
   coberturaPct: number;
-  /** Ex.: `12 de 40 respondidas`. */
+  /** Ex.: `12 respondidas de 40 questões`. */
   coberturaLabel: string;
 };
 
@@ -44,6 +46,14 @@ function pluralize(count: number, singular: string, plural: string): string {
   return Math.abs(count) === 1 ? singular : plural;
 }
 
+/** Cobertura: “respondidas” cola no numerador, “questões” no total do assunto. */
+export function formatCoberturaLabel(respondidas: number, totalQuestoes: number): string {
+  const n = respondidas.toLocaleString('pt-BR');
+  const m = totalQuestoes.toLocaleString('pt-BR');
+  const respWord = pluralize(respondidas, 'respondida', 'respondidas');
+  return `${n} ${respWord} de ${m} ${labelQuestoes(totalQuestoes)}`;
+}
+
 /**
  * Descrição acessível do donut (não depende só da cor).
  * Ex.: `Taxa de acerto: 8%. 1 acerto e 12 erros entre 13 respondidas.`
@@ -70,7 +80,7 @@ export function resolveAcertoDisplay({
 }: ResolveAcertoDisplayInput): VitrineAcertoDisplay {
   const coberturaPct =
     totalQuestoes > 0 ? Math.round((totalResolvidas / totalQuestoes) * 100) : 0;
-  const coberturaLabel = `${totalResolvidas} de ${totalQuestoes} respondidas`;
+  const coberturaLabel = formatCoberturaLabel(totalResolvidas, totalQuestoes);
 
   if (totalResolvidas <= 0) {
     return {

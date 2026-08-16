@@ -76,15 +76,8 @@ export function VitrineAssuntoDesempenho({
             Progresso no assunto
           </h3>
           <div className="flex items-baseline justify-between gap-3 text-[12px]">
-            <p className="min-w-0 text-slate-600">
-              <span className="font-medium tabular-nums text-slate-800">
-                {respondidas.toLocaleString('pt-BR')}
-              </span>
-              {' de '}
-              <span className="font-medium tabular-nums text-slate-800">
-                {totalQuestoes.toLocaleString('pt-BR')}
-              </span>{' '}
-              respondidas
+            <p className="min-w-0 font-medium tabular-nums text-slate-800">
+              {display.coberturaLabel}
             </p>
             <p
               className={cn('shrink-0 font-semibold tabular-nums', vitrineBrand.text)}

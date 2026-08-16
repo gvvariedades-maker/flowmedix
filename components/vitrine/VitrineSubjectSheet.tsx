@@ -15,6 +15,7 @@ import { cn } from '@/lib/utils';
 import { VitrineAssuntoDesempenho } from '@/components/vitrine/VitrineAssuntoDesempenho';
 import { VitrineQuestaoList } from '@/components/vitrine/VitrineQuestaoList';
 import { VitrineQuestaoLink } from '@/components/vitrine/VitrineQuestaoLink';
+import { resolveAcertoDisplay } from '@/lib/vitrine/resolveAcertoDisplay';
 
 export type VitrineSubjectSheetProps = {
   open: boolean;
@@ -82,6 +83,12 @@ export function VitrineSubjectSheet({
 
   const todas = trabalhadas === totalQuestoes && totalQuestoes > 0;
   const hasQuestions = totalQuestoes > 0;
+  const acertoDisplay = resolveAcertoDisplay({
+    acertos,
+    totalResolvidas,
+    totalQuestoes,
+    percentual,
+  });
   const topicIcon = getTopicIcon(titulo_aula, modulo_nome);
   const topicAccent = getTopicAccent(titulo_aula, modulo_nome);
 
@@ -163,8 +170,7 @@ export function VitrineSubjectSheet({
               <div className="min-w-0 flex-1">
                 <p className="text-base font-semibold leading-snug text-slate-900">{titulo_aula}</p>
                 <p className="mt-0.5 text-xs text-slate-500">
-                  {totalResolvidas.toLocaleString('pt-BR')} de{' '}
-                  {totalQuestoes.toLocaleString('pt-BR')} respondidas
+                  {acertoDisplay.coberturaLabel}
                   {todas ? ' · Concluído' : totalResolvidas > 0 ? ' · Em progresso' : ''}
                 </p>
               </div>

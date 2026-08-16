@@ -93,7 +93,7 @@ describe('VitrineSubjectCard', () => {
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
     expect(screen.getByRole('progressbar')).toHaveAttribute(
       'aria-label',
-      'Cobertura do assunto: 1 de 2 respondidas',
+      'Cobertura do assunto: 1 respondida de 2 questões',
     );
   });
 
@@ -215,7 +215,7 @@ describe('VitrineSubjectCard', () => {
     expect(titleButton).not.toBeNull();
     expect(titleButton).not.toHaveTextContent(/para estudar/i);
     expect(titleButton).not.toHaveTextContent(/NeuroSlides/i);
-    expect(titleButton).toHaveTextContent(/1 de 2 respondidas/i);
+    expect(titleButton).toHaveTextContent(/1 respondida de 2 questões/i);
     expect(screen.getByLabelText('100% de acerto')).toHaveTextContent('100%');
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
   });
@@ -236,7 +236,7 @@ describe('VitrineSubjectCard', () => {
     expect(pct.className).toContain('text-[var(--color-success-text)]');
     expect(screen.getByRole('progressbar')).toHaveAttribute(
       'aria-label',
-      'Cobertura do assunto: 8 de 10 respondidas',
+      'Cobertura do assunto: 8 respondidas de 10 questões',
     );
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '80');
   });
@@ -372,6 +372,7 @@ describe('VitrineSubjectCard', () => {
     expect(screen.getByText('4 acertos — 50%')).toBeInTheDocument();
     expect(screen.getByText('4 erros — 50%')).toBeInTheDocument();
     expect(screen.getByText('Progresso no assunto')).toBeInTheDocument();
+    expect(screen.getAllByText('8 respondidas de 10 questões').length).toBeGreaterThan(0);
     expect(
       screen.getByLabelText('Taxa de acerto: 50%. 4 acertos e 4 erros entre 8 respondidas.'),
     ).toBeInTheDocument();

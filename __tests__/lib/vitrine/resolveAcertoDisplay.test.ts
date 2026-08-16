@@ -1,5 +1,6 @@
 import {
   formatAcertoErroAria,
+  formatCoberturaLabel,
   resolveAcertoDisplay,
   splitAcertoErroPct,
 } from '@/lib/vitrine/resolveAcertoDisplay';
@@ -53,6 +54,15 @@ describe('splitAcertoErroPct', () => {
   });
 });
 
+describe('formatCoberturaLabel', () => {
+  it('cola respondidas no numerador e questões no total', () => {
+    expect(formatCoberturaLabel(35, 342)).toBe('35 respondidas de 342 questões');
+    expect(formatCoberturaLabel(1, 2)).toBe('1 respondida de 2 questões');
+    expect(formatCoberturaLabel(0, 40)).toBe('0 respondidas de 40 questões');
+    expect(formatCoberturaLabel(1, 1)).toBe('1 respondida de 1 questão');
+  });
+});
+
 describe('formatAcertoErroAria', () => {
   it('descreve acerto e erro em números absolutos', () => {
     expect(formatAcertoErroAria(1, 12, 13, 8)).toBe(
@@ -75,7 +85,7 @@ describe('resolveAcertoDisplay', () => {
       ariaLabel: 'Nenhuma questão respondida',
       tone: 'muted',
       acertoPct: null,
-      coberturaLabel: '0 de 40 respondidas',
+      coberturaLabel: '0 respondidas de 40 questões',
       coberturaPct: 0,
     });
   });
@@ -93,7 +103,7 @@ describe('resolveAcertoDisplay', () => {
       tone: 'success',
       acertoPct: 75,
       coberturaPct: 10,
-      coberturaLabel: '4 de 40 respondidas',
+      coberturaLabel: '4 respondidas de 40 questões',
     });
   });
 
@@ -127,7 +137,7 @@ describe('resolveAcertoDisplay', () => {
       tone: 'success',
       acertoPct: 50,
       coberturaPct: 20,
-      coberturaLabel: '8 de 40 respondidas',
+      coberturaLabel: '8 respondidas de 40 questões',
     });
   });
 

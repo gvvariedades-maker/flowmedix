@@ -172,20 +172,11 @@ export function VitrineSubjectCard({
           </div>
           {!compact ? (
             <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] leading-snug">
-              <span className="text-slate-500">
-                <span className="font-medium tabular-nums text-slate-700">
-                  {totalResolvidas.toLocaleString('pt-BR')}
-                </span>
-                {' de '}
-                <span className="font-medium tabular-nums text-slate-700">
-                  {totalQuestoes.toLocaleString('pt-BR')}
-                </span>{' '}
-                respondidas
-              </span>
+              <span className="text-slate-500">{acertoDisplay.coberturaLabel}</span>
             </p>
           ) : (
             <p className="mt-0.5 truncate text-[11px] text-slate-500">
-              {totalResolvidas} de {totalQuestoes} respondidas
+              {acertoDisplay.coberturaLabel}
               {pendentes > 0 && !todas ? (
                 <>
                   {' · '}
