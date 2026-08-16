@@ -1,8 +1,11 @@
-import Link from 'next/link';
-import { BookOpen } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Suspense } from 'react';
 import { DesempenhoEstudoDashboard } from '@/components/dashboard/desempenho/DesempenhoEstudoDashboard';
 import { DesempenhoHubShell } from '@/components/dashboard/desempenho/DesempenhoHubShell';
+import {
+  DESEMPENHO_ESTUDO_HUB_DESCRIPTION,
+  DesempenhoEstudoHubAction,
+} from '@/components/dashboard/desempenho/DesempenhoEstudoHubChrome';
+import { DesempenhoEstudoLoadingSkeleton } from '@/components/dashboard/desempenho/DesempenhoEstudoLoadingSkeleton';
 import { loadEstudoDashboard } from '@/lib/desempenho/estudoPageLoad';
 import {
   filtersFromEstudoSearchParams,
@@ -10,7 +13,24 @@ import {
   type DesempenhoEstudoSearchParams,
 } from '@/lib/desempenho/estudoSearchParams';
 
-export default async function DesempenhoEstudoPage({
+export default function DesempenhoEstudoPage({
+  searchParams,
+}: {
+  searchParams: Promise<DesempenhoEstudoSearchParams>;
+}) {
+  return (
+    <DesempenhoHubShell
+      description={DESEMPENHO_ESTUDO_HUB_DESCRIPTION}
+      action={<DesempenhoEstudoHubAction />}
+    >
+      <Suspense fallback={<DesempenhoEstudoLoadingSkeleton />}>
+        <DesempenhoEstudoBody searchParams={searchParams} />
+      </Suspense>
+    </DesempenhoHubShell>
+  );
+}
+
+async function DesempenhoEstudoBody({
   searchParams,
 }: {
   searchParams: Promise<DesempenhoEstudoSearchParams>;
@@ -29,22 +49,5 @@ export default async function DesempenhoEstudoPage({
     filters.assunto ?? '',
   ].join('-');
 
-  return (
-    <DesempenhoHubShell
-      description="Onde você está errando, o quanto isso é confiável e qual é a próxima questão para testar."
-      action={
-        <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
-          <Link
-            href="/estudar"
-            className="inline-flex w-full items-center justify-center sm:w-auto"
-          >
-            <BookOpen className="h-4 w-4" aria-hidden />
-            Praticar na vitrine
-          </Link>
-        </Button>
-      }
-    >
-      <DesempenhoEstudoDashboard key={filterKey} data={data} />
-    </DesempenhoHubShell>
-  );
+  return <DesempenhoEstudoDashboard key={filterKey} data={data} />;
 }
