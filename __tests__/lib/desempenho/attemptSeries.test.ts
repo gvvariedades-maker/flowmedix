@@ -1,6 +1,7 @@
 import {
   aggregateAttemptSeries,
   emptyAttemptSeries,
+  finishAttemptSeries,
 } from '@/lib/desempenho/attemptSeries';
 import type { AttemptSeriesEventRow } from '@/lib/desempenho/types';
 
@@ -191,5 +192,46 @@ describe('aggregateAttemptSeries', () => {
     expect(series.available).toBe(true);
     expect(series.unavailableReason).toBe('empty');
     expect(series.totalEvents).toBe(0);
+  });
+});
+
+describe('finishAttemptSeries', () => {
+  const now = new Date('2026-08-11T15:00:00.000Z');
+
+  it('propaga flag_off e error sem agregar eventos', () => {
+    expect(finishAttemptSeries({ status: 'flag_off' }, { periodo: '7d', now })).toEqual(
+      emptyAttemptSeries('flag_off'),
+    );
+    expect(finishAttemptSeries({ status: 'error' }, { periodo: '7d', now })).toEqual(
+      emptyAttemptSeries('error'),
+    );
+  });
+
+  it('agrega leitura ok com metadados do histórico', () => {
+    const series = finishAttemptSeries(
+      {
+        status: 'ok',
+        events: [
+          evt({
+            attempt_id: 'a1',
+            question_id: 'q1',
+            correct: true,
+            created_at: '2026-08-10T10:00:00.000Z',
+          }),
+        ],
+        truncated: false,
+        limite: 5000,
+      },
+      {
+        periodo: '7d',
+        now,
+        historicoOldestAt: '2026-08-10T10:00:00.000Z',
+        historicoRespondidas: 1,
+      },
+    );
+
+    expect(series.available).toBe(true);
+    expect(series.totalEvents).toBe(1);
+    expect(series.limiteRegistros).toBe(5000);
   });
 });

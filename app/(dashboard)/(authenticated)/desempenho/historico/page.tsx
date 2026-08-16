@@ -25,6 +25,7 @@ export default async function DesempenhoHistoricoPage({
 
   const captura = firstSearchParam(resolvedSearchParams.captura);
 
+  // Sem ledger EE: a lista de histórico não usa a curva de tentativas.
   const data = await loadEstudoDashboard(filters, {
     captura,
     recentLimit: SCALE_LIMITS.HISTORICO_ANALYTICS_READ,

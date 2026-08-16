@@ -55,3 +55,28 @@ export function DesempenhoEstudoLoadingSkeleton() {
     </div>
   );
 }
+
+/**
+ * Placeholder só da dobra P4 (curva + 3 KPIs) enquanto o ledger EE chega.
+ * Não usa `data-testid="desempenho-estudo-loading"` — esse id é do skeleton
+ * da página inteira (onda 1 / e2e de nav).
+ */
+export function AttemptEvolutionLoadingSkeleton() {
+  return (
+    <section
+      className="space-y-3"
+      role="status"
+      aria-busy="true"
+      aria-live="polite"
+      aria-label="Carregando evolução de tentativas"
+      data-testid="desempenho-attempt-series-loading"
+    >
+      <div className="metric-card h-36 bg-muted/30 animate-pulse" aria-hidden />
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3" aria-hidden>
+        {Array.from({ length: 3 }, (_, index) => (
+          <div key={index} className="metric-card h-24 bg-muted/30 animate-pulse" />
+        ))}
+      </div>
+    </section>
+  );
+}

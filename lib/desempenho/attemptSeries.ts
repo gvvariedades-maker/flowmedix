@@ -252,6 +252,54 @@ export type GetAttemptSeriesParams = {
   instrumentationEnabled?: boolean;
 };
 
+/** Leitura bruta do ledger — a agregação (oldest/cobertura) espera o histórico P0. */
+export type AttemptSeriesRead =
+  | { status: 'flag_off' }
+  | { status: 'error' }
+  | {
+      status: 'ok';
+      events: AttemptSeriesEventRow[];
+      truncated: boolean;
+      limite: number;
+    };
+
+/**
+ * Começa a I/O do ledger sem precisar do histórico (só `userId` + flag).
+ * Flag off → resolve na hora, sem query.
+ */
+export async function beginAttemptSeriesRead(
+  userId: string,
+  instrumentationEnabled?: boolean,
+): Promise<AttemptSeriesRead> {
+  const { isEvidenceV1InstrumentationEnabled } = await import('@/lib/env');
+  const enabled = instrumentationEnabled ?? isEvidenceV1InstrumentationEnabled();
+
+  if (!enabled) {
+    return { status: 'flag_off' };
+  }
+
+  try {
+    const { events, truncated, limite } = await getCachedRegularPracticeEvents(userId);
+    return { status: 'ok', events, truncated, limite };
+  } catch {
+    return { status: 'error' };
+  }
+}
+
+/** Agrega a leitura do ledger com metadados do histórico P0. */
+export function finishAttemptSeries(
+  read: AttemptSeriesRead,
+  options: AggregateAttemptSeriesOptions,
+): AttemptSeriesData {
+  if (read.status === 'flag_off') return emptyAttemptSeries('flag_off');
+  if (read.status === 'error') return emptyAttemptSeries('error');
+  return aggregateAttemptSeries(read.events, {
+    ...options,
+    truncated: read.truncated,
+    limiteRegistros: read.limite,
+  });
+}
+
 /**
  * Orquestra flag + leitura do ledger + agregação.
  * Flag off → `available: false` sem query (P0 intacto).
@@ -259,25 +307,11 @@ export type GetAttemptSeriesParams = {
 export async function getAttemptSeriesData(
   params: GetAttemptSeriesParams,
 ): Promise<AttemptSeriesData> {
-  const { isEvidenceV1InstrumentationEnabled } = await import('@/lib/env');
-  const enabled =
-    params.instrumentationEnabled ?? isEvidenceV1InstrumentationEnabled();
-
-  if (!enabled) {
-    return emptyAttemptSeries('flag_off');
-  }
-
-  try {
-    const { events, truncated, limite } = await getCachedRegularPracticeEvents(params.userId);
-    return aggregateAttemptSeries(events, {
-      periodo: params.periodo,
-      now: params.now,
-      historicoOldestAt: params.historicoOldestAt,
-      historicoRespondidas: params.historicoRespondidas,
-      truncated,
-      limiteRegistros: limite,
-    });
-  } catch {
-    return emptyAttemptSeries('error');
-  }
+  const read = await beginAttemptSeriesRead(params.userId, params.instrumentationEnabled);
+  return finishAttemptSeries(read, {
+    periodo: params.periodo,
+    now: params.now,
+    historicoOldestAt: params.historicoOldestAt,
+    historicoRespondidas: params.historicoRespondidas,
+  });
 }

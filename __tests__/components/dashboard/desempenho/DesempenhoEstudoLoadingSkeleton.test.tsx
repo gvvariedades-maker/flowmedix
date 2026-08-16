@@ -2,7 +2,10 @@
  * @jest-environment jsdom
  */
 import { render, screen } from '@testing-library/react';
-import { DesempenhoEstudoLoadingSkeleton } from '@/components/dashboard/desempenho/DesempenhoEstudoLoadingSkeleton';
+import {
+  AttemptEvolutionLoadingSkeleton,
+  DesempenhoEstudoLoadingSkeleton,
+} from '@/components/dashboard/desempenho/DesempenhoEstudoLoadingSkeleton';
 import DesempenhoLoading from '@/app/(dashboard)/(authenticated)/desempenho/loading';
 
 jest.mock('next/navigation', () => ({
@@ -30,6 +33,18 @@ describe('DesempenhoEstudoLoadingSkeleton', () => {
     expect(grid?.className).toContain('grid-cols-2');
     expect(grid?.className).toContain('sm:grid-cols-3');
     expect(grid?.className).toContain('lg:grid-cols-5');
+  });
+});
+
+describe('AttemptEvolutionLoadingSkeleton', () => {
+  it('não reutiliza o testid do skeleton da página (onda 1)', () => {
+    render(<AttemptEvolutionLoadingSkeleton />);
+
+    expect(screen.getByRole('status', { name: 'Carregando evolução de tentativas' })).toHaveAttribute(
+      'data-testid',
+      'desempenho-attempt-series-loading',
+    );
+    expect(screen.queryByTestId('desempenho-estudo-loading')).not.toBeInTheDocument();
   });
 });
 
