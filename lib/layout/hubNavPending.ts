@@ -12,8 +12,8 @@ export type HubNavLocationLike = {
   origin: string;
 };
 
-/** Hubs que compartilham o pending da nav. Próximo consumidor: Simulados. */
-export type HubNavId = 'desempenho' | 'cadernos';
+/** Hubs que compartilham o pending da nav. */
+export type HubNavId = 'desempenho' | 'cadernos' | 'simulados';
 
 export type HubNavPendingPhase = 'loading' | 'slow-loading';
 
@@ -35,6 +35,11 @@ export const HUB_NAV_REGISTRY: Record<
     path: '/cadernos',
     readySelector: '[data-cadernos-hub="lista"]',
     pendingAttr: 'data-cadernos-nav-pending',
+  },
+  simulados: {
+    path: '/simulados',
+    readySelector: '[data-simulados-hub="lista"]',
+    pendingAttr: 'data-simulados-nav-pending',
   },
 };
 

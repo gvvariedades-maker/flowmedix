@@ -48,7 +48,7 @@ describe('hubNavPending — máquina comum', () => {
     expect(resolveSlowLoadingPhase(9_880)).toBe('slow-loading');
   });
 
-  it('resolveHubNavPendingFromClick distingue cadernos e desempenho', () => {
+  it('resolveHubNavPendingFromClick distingue cadernos, desempenho e simulados', () => {
     const fromEstudar = { pathname: '/estudar', origin };
     expect(
       resolveHubNavPendingFromClick(clickEvent(), makeAnchor('/cadernos'), fromEstudar),
@@ -58,6 +58,9 @@ describe('hubNavPending — máquina comum', () => {
     ).toBe('desempenho');
     expect(
       resolveHubNavPendingFromClick(clickEvent(), makeAnchor('/simulados'), fromEstudar),
+    ).toBe('simulados');
+    expect(
+      resolveHubNavPendingFromClick(clickEvent(), makeAnchor('/desempenho/simulados'), fromEstudar),
     ).toBeNull();
     expect(
       resolveHubNavPendingFromClick(clickEvent({ ctrlKey: true }), makeAnchor('/cadernos'), fromEstudar),
@@ -84,11 +87,15 @@ describe('hubNavPending — máquina comum', () => {
     expect(shouldClearHubNavPendingOnPath('/cadernos', '/cadernos')).toBe(false);
     expect(shouldClearHubNavPendingOnPath('/desempenho', '/cadernos')).toBe(true);
     expect(shouldClearHubNavPendingOnPath('/simulados', '/cadernos')).toBe(true);
+    expect(shouldClearHubNavPendingOnPath('/desempenho/simulados', '/simulados')).toBe(true);
+    expect(shouldClearHubNavPendingOnPath('/simulados', '/simulados')).toBe(false);
+    expect(shouldClearHubNavPendingOnPath('/simulados/novo', '/simulados')).toBe(false);
   });
 
   it('desliga prefetch só nos hubs registrados', () => {
     expect(isHubNavPrefetchDisabled('/cadernos')).toBe(true);
     expect(isHubNavPrefetchDisabled('/desempenho')).toBe(true);
-    expect(isHubNavPrefetchDisabled('/simulados')).toBe(false);
+    expect(isHubNavPrefetchDisabled('/simulados')).toBe(true);
+    expect(isHubNavPrefetchDisabled('/desempenho/simulados')).toBe(false);
   });
 });
