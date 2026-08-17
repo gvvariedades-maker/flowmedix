@@ -26,6 +26,7 @@ describe('DashboardShell — gatilho pending do hub Estudo', () => {
     expect(shell).toContain('resolveHubNavPendingFromClick');
     expect(shell).not.toContain('shouldMarkDesempenhoNavPending');
     expect(shell).not.toContain('shouldMarkCadernosNavPending');
+    expect(shell).not.toContain('shouldMarkSimuladosNavPending');
     expect(shell).not.toContain('pointerdown');
     expect(shell).not.toContain('onPointerDown');
     expect(bottomNav).not.toContain('pointerdown');
@@ -35,6 +36,7 @@ describe('DashboardShell — gatilho pending do hub Estudo', () => {
   it('transiciona para slow-loading no limiar; só ready/error/abandono limpam', () => {
     expect(registry).toContain("[data-desempenho-hub=\"estudo\"]");
     expect(registry).toContain("[data-cadernos-hub=\"lista\"]");
+    expect(registry).toContain("[data-simulados-hub=\"lista\"]");
     expect(shell).toContain('HUB_NAV_REGISTRY[hubNavPending].readySelector');
     expect(shell).toContain('HUB_NAV_SLOW_LOADING_MS');
     expect(shell).toContain("setHubNavPendingPhase('slow-loading')");
@@ -43,6 +45,8 @@ describe('DashboardShell — gatilho pending do hub Estudo', () => {
     expect(shell).toContain("addEventListener('popstate'");
     expect(shell).toContain("addEventListener('pagehide'");
     expect(shell).toContain('observer.disconnect()');
+    expect(shell).toContain('SimuladosPendingView');
+    expect(bottomNav).toContain('isHubNavPrefetchDisabled');
     expect(loadError).toContain('data-desempenho-hub={hub}');
   });
 });

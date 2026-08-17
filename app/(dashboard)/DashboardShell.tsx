@@ -54,6 +54,7 @@ import { openWhatsAppChat } from '@/lib/whatsapp';
 import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
 import { CadernosPendingView } from '@/components/dashboard/cadernos/CadernosPendingView';
 import { DesempenhoEstudoPendingView } from '@/components/dashboard/desempenho/DesempenhoEstudoPendingView';
+import { SimuladosPendingView } from '@/components/simulados/SimuladosPendingView';
 import {
   applyHubNavPendingDom,
   clearHubNavPendingDom,
@@ -913,6 +914,9 @@ function DashboardContent({
           ) : null}
           {hubPendingUi && hubNavPending === 'cadernos' ? (
             <CadernosPendingView phase={hubNavPendingPhase} />
+          ) : null}
+          {hubPendingUi && hubNavPending === 'simulados' ? (
+            <SimuladosPendingView phase={hubNavPendingPhase} />
           ) : null}
           <div
             hidden={hubPendingUi}
