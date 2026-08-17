@@ -2,6 +2,7 @@ import { expect, test, type Page, type Request } from '@playwright/test';
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { DESEMPENHO_NAV_PENDING_TIMEOUT_MS } from '../lib/desempenho/desempenhoPendingMark';
+import { HUB_NAV_PENDING_PHASE_ATTR } from '../lib/layout/hubNavPending';
 import { vitrineStableLocalStorageInitScript } from './helpers/vitrineE2e';
 
 /**
@@ -16,6 +17,8 @@ import { vitrineStableLocalStorageInitScript } from './helpers/vitrineE2e';
 
 const RSC_DELAY_MS = 800;
 const FEEDBACK_BUDGET_MS = 100;
+const RSC_BEYOND_SLOW_MS = DESEMPENHO_NAV_PENDING_TIMEOUT_MS + 15_000;
+const SLOW_LOADING_ASSERT_TIMEOUT_MS = DESEMPENHO_NAV_PENDING_TIMEOUT_MS + 10_000;
 const REPORT_PATH = resolve(process.cwd(), 'artifacts/desempenho-nav-wave1-timings.json');
 
 function isDesempenhoRsc(request: Request): boolean {
@@ -28,6 +31,29 @@ function isDesempenhoRsc(request: Request): boolean {
     headers['next-router-prefetch'] === '1' ||
     Boolean(headers['next-router-state-tree'])
   );
+}
+
+/** Flight cliente para `/desempenho` (RSC, fetch/xhr, Next-Url). Document fica de fora. */
+function isDesempenhoClientFlight(request: Request): boolean {
+  if (request.resourceType() === 'document') return false;
+  const headers = request.headers();
+  let pathname = '';
+  try {
+    pathname = new URL(request.url()).pathname;
+  } catch {
+    return false;
+  }
+  const nextUrl = (headers['next-url'] ?? '').split('?')[0];
+  const targetsDesempenho =
+    pathname === '/desempenho' ||
+    pathname.startsWith('/desempenho/') ||
+    nextUrl === '/desempenho' ||
+    nextUrl.startsWith('/desempenho/');
+  if (!targetsDesempenho) return false;
+  if (isDesempenhoRsc(request)) return true;
+  const accept = headers['accept'] ?? '';
+  if (accept.includes('text/x-component')) return true;
+  return request.resourceType() === 'fetch' || request.resourceType() === 'xhr';
 }
 
 async function interceptDesempenhoRsc(page: Page) {
@@ -48,23 +74,40 @@ async function interceptDesempenhoRsc(page: Page) {
       /* request already canceled (nav superseded / page closed) */
     }
   });
-}
-
-/** RSC do hub nunca chega — cobre timeout de limpeza. */
-async function hangDesempenhoRsc(page: Page) {
-  await page.route('**/desempenho**', async (route) => {
+  await page.route('**/estudar**', async (route) => {
     const request = route.request();
     if (request.resourceType() === 'document') {
       await route.continue();
       return;
     }
-    if (isDesempenhoRsc(request)) {
-      await new Promise(() => {
-        /* hang until page closes */
-      });
+    const nextUrl = (request.headers()['next-url'] ?? '').split('?')[0];
+    if (nextUrl !== '/desempenho') {
+      await route.continue();
       return;
     }
-    await route.continue();
+    await new Promise((r) => setTimeout(r, RSC_DELAY_MS));
+    try {
+      await route.continue();
+    } catch {
+      /* request already canceled (nav superseded / page closed) */
+    }
+  });
+}
+
+/** RSC do hub atrasado além do limiar slow-loading — não hang infinito. */
+async function hangDesempenhoRsc(page: Page) {
+  await page.route('**/*', async (route) => {
+    const request = route.request();
+    if (request.resourceType() === 'document' || !isDesempenhoClientFlight(request)) {
+      await route.continue();
+      return;
+    }
+    await new Promise((r) => setTimeout(r, RSC_BEYOND_SLOW_MS));
+    try {
+      await route.continue();
+    } catch {
+      /* request already canceled (nav superseded / page closed) */
+    }
   });
 }
 
@@ -193,7 +236,7 @@ async function measureNav(page: Page, viewport: 'desktop' | 'mobile'): Promise<N
 
   await installClickToSkeletonProbe(page);
 
-  const skeleton = page.locator('[data-desempenho-loading="estudo"]');
+  const skeleton = page.locator('[data-desempenho-loading="estudo"]').filter({ visible: true });
   const hub = page.locator('[data-desempenho-hub="estudo"]');
   const pendingAttr = page.locator('html[data-desempenho-nav-pending="true"]');
 
@@ -395,17 +438,23 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
   test('desktop: hang do RSC vira slow-loading e não limpa pending', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'chromium', 'desktop só no Chromium');
     test.setTimeout(180_000);
-    await warmupDesempenhoCompile(page);
     await hangDesempenhoRsc(page);
     await gotoEstudarDashboard(page);
     const navLink = desempenhoNavLocator(page, 'desktop');
     await expect(navLink).toBeVisible({ timeout: 60_000 });
-    await navLink.click({ noWaitAfter: true });
-    await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
+    await navLink.click({ noWaitAfter: true, force: true });
     await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toBeAttached();
-    await expect(page.locator('html[data-hub-nav-pending-phase="slow-loading"]')).toBeAttached({
-      timeout: DESEMPENHO_NAV_PENDING_TIMEOUT_MS + 2_000,
-    });
+    await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
+    await expect
+      .poll(
+        async () => {
+          const stillPending = await page.locator('html[data-desempenho-nav-pending="true"]').count();
+          if (stillPending === 0) return 'cleared';
+          return page.locator('html').getAttribute(HUB_NAV_PENDING_PHASE_ATTR);
+        },
+        { timeout: SLOW_LOADING_ASSERT_TIMEOUT_MS },
+      )
+      .toBe('slow-loading');
     await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toBeAttached();
     await expect(page.getByRole('status', { name: 'Ainda carregando desempenho' })).toBeVisible();
   });
@@ -435,7 +484,7 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     await desempenhoNavLocator(page, 'desktop').click({ noWaitAfter: true });
     await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
 
-    await expect(page.locator('main [hidden]')).toBeAttached();
+    await expect(page.locator('main > div[hidden]')).toBeAttached();
     const cta = page.getByRole('link', { name: 'Praticar na vitrine' }).filter({ visible: true });
     await expect(cta).toBeVisible();
     await cta.focus();

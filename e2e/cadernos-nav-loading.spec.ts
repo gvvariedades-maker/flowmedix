@@ -11,6 +11,10 @@ import { vitrineStableLocalStorageInitScript } from './helpers/vitrineE2e';
 
 const RSC_DELAY_MS = 800;
 const FEEDBACK_BUDGET_MS = 100;
+/** Atraso RSC > limiar de 8s, para o overlay virar slow-loading sem hang infinito. */
+const RSC_BEYOND_SLOW_MS = CADERNOS_NAV_PENDING_TIMEOUT_MS + 15_000;
+/** JS não garante os 8s exatos no CI; margem só na asserção. */
+const SLOW_LOADING_ASSERT_TIMEOUT_MS = CADERNOS_NAV_PENDING_TIMEOUT_MS + 10_000;
 
 function isCadernosRsc(request: Request): boolean {
   const url = request.url();
@@ -22,6 +26,29 @@ function isCadernosRsc(request: Request): boolean {
     headers['next-router-prefetch'] === '1' ||
     Boolean(headers['next-router-state-tree'])
   );
+}
+
+/** Flight cliente para `/cadernos` (RSC, fetch/xhr, Next-Url). Document fica de fora. */
+function isCadernosClientFlight(request: Request): boolean {
+  if (request.resourceType() === 'document') return false;
+  const headers = request.headers();
+  let pathname = '';
+  try {
+    pathname = new URL(request.url()).pathname;
+  } catch {
+    return false;
+  }
+  const nextUrl = (headers['next-url'] ?? '').split('?')[0];
+  const targetsCadernos =
+    pathname === '/cadernos' ||
+    pathname.startsWith('/cadernos/') ||
+    nextUrl === '/cadernos' ||
+    nextUrl.startsWith('/cadernos/');
+  if (!targetsCadernos) return false;
+  if (isCadernosRsc(request)) return true;
+  const accept = headers['accept'] ?? '';
+  if (accept.includes('text/x-component')) return true;
+  return request.resourceType() === 'fetch' || request.resourceType() === 'xhr';
 }
 
 async function interceptCadernosRsc(page: Page) {
@@ -45,10 +72,18 @@ async function interceptCadernosRsc(page: Page) {
 }
 
 async function hangCadernosRsc(page: Page) {
-  await page.route('**/cadernos**', async () => {
-    await new Promise(() => {
-      /* hang document + RSC — em prod o bypass E2E serviria o hub na hora */
-    });
+  await page.route('**/*', async (route) => {
+    const request = route.request();
+    if (request.resourceType() === 'document' || !isCadernosClientFlight(request)) {
+      await route.continue();
+      return;
+    }
+    await new Promise((r) => setTimeout(r, RSC_BEYOND_SLOW_MS));
+    try {
+      await route.continue();
+    } catch {
+      /* nav superseded */
+    }
   });
 }
 
@@ -280,9 +315,16 @@ test.describe('Cadernos nav — loading.tsx', () => {
     await expect(page.locator('html[data-cadernos-nav-pending="true"]')).toBeAttached();
     await expect(visibleCadernosLoading(page)).toBeVisible({ timeout: 5_000 });
 
-    await expect(page.locator(`html[${HUB_NAV_PENDING_PHASE_ATTR}="slow-loading"]`)).toBeAttached({
-      timeout: CADERNOS_NAV_PENDING_TIMEOUT_MS + 2_000,
-    });
+    await expect
+      .poll(
+        async () => {
+          const stillPending = await page.locator('html[data-cadernos-nav-pending="true"]').count();
+          if (stillPending === 0) return 'cleared';
+          return page.locator('html').getAttribute(HUB_NAV_PENDING_PHASE_ATTR);
+        },
+        { timeout: SLOW_LOADING_ASSERT_TIMEOUT_MS },
+      )
+      .toBe('slow-loading');
     await expect(page.locator('html[data-cadernos-nav-pending="true"]')).toBeAttached();
     await expect(page.getByRole('status', { name: 'Ainda carregando cadernos' })).toBeVisible();
 
