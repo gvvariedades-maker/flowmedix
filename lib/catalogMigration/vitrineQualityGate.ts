@@ -16,7 +16,7 @@ export type VitrineQualityGateState = {
   sellableKeys: Set<string>;
 };
 
-const CACHE_TTL_MS = 60_000;
+export const CACHE_TTL_MS = 60_000;
 let cachedState: VitrineQualityGateState | null = null;
 let cachedAt = 0;
 
@@ -79,11 +79,10 @@ export function isTituloAulaVisibleInVitrine(
   const title = tituloAula?.trim();
   if (!title) return true;
 
-  const registry = loadHandcraftRegistry();
-  const found = findPacoteBySubtopico(registry, title);
-  if (!found) return true;
-
-  return canSell(found.pacote);
+  const { gatedKeys, sellableKeys } = getVitrineQualityGateState();
+  const key = title.toLowerCase();
+  if (!gatedKeys.has(key)) return true;
+  return sellableKeys.has(key);
 }
 
 export function filterModulosByVitrineQualityGate<T extends { titulo_aula?: string | null }>(
