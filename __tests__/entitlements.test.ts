@@ -14,6 +14,7 @@ import {
   getAccessibleModulosForMatriculatedEditalPacote,
   isActiveMatriculaRow,
   matricularPorSlug,
+  remainingConcursoModulosOffsets,
   userHasModuloAccess,
 } from '@/lib/concursos/entitlements';
 
@@ -76,6 +77,10 @@ function createSupabaseMock(handlers: {
   /** `tipo` por `concursos.id` em mocks de `.in('id', …)`. */
   concursoTipoById?: Record<string, 'geral' | 'edital'>;
   onMatriculaUpsert?: jest.Mock;
+  onRange?: (from: number, to: number) => void;
+  rangeErrorFrom?: number;
+  rangeDelayMs?: number;
+  rangeInflight?: { current: number; max: number };
 }) {
   const matriculaUpsert = handlers.onMatriculaUpsert ?? jest.fn().mockResolvedValue({ error: null });
   const matriculas = (handlers.matriculas ?? []).map((row) => ({
@@ -199,24 +204,44 @@ function createSupabaseMock(handlers: {
               };
             }
 
+            const totalCount = concursoModulosPages
+              ? concursoModulosPages.reduce((sum, page) => sum + page.length, 0)
+              : concursoModulos.length;
+
             return {
               in: (_column: string, ids: string[]) => {
                 const idSet = new Set(ids);
+                const finish = {
+                  in: () => finish,
+                  eq: () => finish,
+                  range: async (from: number, _to: number) => {
+                    handlers.onRange?.(from, _to);
+                    if (handlers.rangeErrorFrom === from) {
+                      return { data: null, error: { message: 'page failed' }, count: null };
+                    }
+                    const inflight = handlers.rangeInflight;
+                    if (inflight) {
+                      inflight.current += 1;
+                      inflight.max = Math.max(inflight.max, inflight.current);
+                    }
+                    if (handlers.rangeDelayMs) {
+                      await new Promise((resolve) => setTimeout(resolve, handlers.rangeDelayMs));
+                    }
+                    if (inflight) inflight.current -= 1;
+                    const raw = concursoModulosPages
+                      ? (concursoModulosPages[Math.floor(from / 1000)] ?? [])
+                      : concursoModulos;
+                    const data = raw
+                      .map((row) => ({
+                        ...row,
+                        concurso_id: row.concurso_id ?? matriculas[0]?.concurso_id ?? 'geral',
+                      }))
+                      .filter((row) => idSet.has(row.concurso_id));
+                    return { data, error: null, count: totalCount };
+                  },
+                };
                 return {
-                  order: () => ({
-                    range: async (_from: number, to: number) => {
-                      const raw = concursoModulosPages
-                        ? concursoModulosPages[Math.floor(to / 1000)] ?? []
-                        : concursoModulos;
-                      const data = raw
-                        .map((row) => ({
-                          ...row,
-                          concurso_id: row.concurso_id ?? matriculas[0]?.concurso_id ?? 'geral',
-                        }))
-                        .filter((row) => idSet.has(row.concurso_id));
-                      return { data, error: null };
-                    },
-                  }),
+                  order: () => finish,
                 };
               },
             };
@@ -429,6 +454,107 @@ describe('entitlements — união de pacotes matriculados', () => {
 
     expect(modulos).toHaveLength(1004);
     expect(modulos.filter((modulo) => modulo.id === duplicate.modulo_id)).toHaveLength(1);
+  });
+
+  it('remainingConcursoModulosOffsets cobre 6 páginas de 1000 sem estourar o range', () => {
+    expect(remainingConcursoModulosOffsets(5647, 1000)).toEqual([1000, 2000, 3000, 4000, 5000]);
+    expect(remainingConcursoModulosOffsets(1000, 1000)).toEqual([]);
+    expect(remainingConcursoModulosOffsets(1001, 1000)).toEqual([1000]);
+  });
+
+  it('paraleliza 6 páginas (>5000 módulos) com o mesmo conjunto e metadados', async () => {
+    const total = 5647;
+    const allLinks = Array.from({ length: total }, (_, index) => {
+      const modulo = makeModuloRow(index);
+      return {
+        concurso_id: 'geral' as const,
+        modulo_id: modulo.id,
+        modulos_estudo: modulo,
+      };
+    });
+    const pages: typeof allLinks[] = [];
+    for (let offset = 0; offset < total; offset += 1000) {
+      pages.push(allLinks.slice(offset, offset + 1000));
+    }
+    expect(pages).toHaveLength(6);
+    expect(pages[5]).toHaveLength(647);
+
+    const ranges: Array<[number, number]> = [];
+    const inflight = { current: 0, max: 0 };
+
+    mockCreateServerSupabase.mockResolvedValue(
+      createSupabaseMock({
+        matriculas: [{ concurso_id: 'geral' }],
+        concursoModulosPages: pages,
+        concursoSlugById: { geral: 'geral' },
+        onRange: (from, to) => ranges.push([from, to]),
+        rangeDelayMs: 15,
+        rangeInflight: inflight,
+      }) as never,
+    );
+
+    const modulos = await getAccessibleModulosForUser('user-1');
+    const expected = [...allLinks]
+      .map((row) => row.modulos_estudo)
+      .sort((a, b) => (b.created_at ?? '').localeCompare(a.created_at ?? ''));
+
+    expect(modulos).toHaveLength(total);
+    expect(modulos.map((modulo) => modulo.id)).toEqual(expected.map((modulo) => modulo.id));
+    expect(modulos.map((modulo) => modulo.modulo_slug)).toEqual(
+      expected.map((modulo) => modulo.modulo_slug),
+    );
+    expect(
+      modulos.map((modulo) => ({
+        id: modulo.id,
+        modulo_slug: modulo.modulo_slug,
+        modulo_nome: modulo.modulo_nome,
+        titulo_aula: modulo.titulo_aula,
+        banca: modulo.banca,
+        created_at: modulo.created_at,
+        avant_codigo: modulo.avant_codigo,
+      })),
+    ).toEqual(
+      expected.map((modulo) => ({
+        id: modulo.id,
+        modulo_slug: modulo.modulo_slug,
+        modulo_nome: modulo.modulo_nome,
+        titulo_aula: modulo.titulo_aula,
+        banca: modulo.banca,
+        created_at: modulo.created_at,
+        avant_codigo: modulo.avant_codigo,
+      })),
+    );
+
+    expect(ranges[0]).toEqual([0, 999]);
+    expect(ranges.slice(1).map(([from]) => from).sort((a, b) => a - b)).toEqual([
+      1000, 2000, 3000, 4000, 5000,
+    ]);
+    expect(ranges.every(([from, to]) => to - from + 1 === 1000)).toBe(true);
+    expect(inflight.max).toBeGreaterThan(1);
+    expect(inflight.max).toBeLessThanOrEqual(4);
+  });
+
+  it('propaga erro de uma página restante sem devolver conjunto parcial', async () => {
+    const pages = Array.from({ length: 3 }, (_, page) =>
+      Array.from({ length: 1000 }, (_, offset) => {
+        const modulo = makeModuloRow(page * 1000 + offset);
+        return {
+          concurso_id: 'geral' as const,
+          modulo_id: modulo.id,
+          modulos_estudo: modulo,
+        };
+      }),
+    );
+
+    mockCreateServerSupabase.mockResolvedValue(
+      createSupabaseMock({
+        matriculas: [{ concurso_id: 'geral' }],
+        concursoModulosPages: pages,
+        rangeErrorFrom: 2000,
+      }) as never,
+    );
+
+    await expect(getAccessibleModulosForUser('user-1')).rejects.toEqual({ message: 'page failed' });
   });
 
   it('usa fallback em lotes quando o embed de modulos_estudo vem vazio', async () => {
