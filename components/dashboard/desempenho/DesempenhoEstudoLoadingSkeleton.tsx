@@ -1,21 +1,33 @@
 import { cn } from '@/lib/utils';
 import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
+import type { HubNavPendingPhase } from '@/lib/layout/hubNavPending';
 
 /**
  * Placeholder do corpo da aba Estudo (`DesempenhoEstudoDashboard`).
  * Header sticky fica no `DesempenhoHubShell` — mesmo chrome da página real, para CLS baixo.
  */
-export function DesempenhoEstudoLoadingSkeleton() {
+export function DesempenhoEstudoLoadingSkeleton({
+  phase = 'loading',
+}: {
+  phase?: HubNavPendingPhase;
+}) {
+  const slow = phase === 'slow-loading';
+  const statusLabel = slow ? 'Ainda carregando desempenho' : 'Carregando desempenho';
+
   return (
     <div
       className={cn('mx-auto max-w-4xl space-y-8 px-4 py-6 md:px-8', DASHBOARD_PAGE_ROOT)}
       role="status"
       aria-busy="true"
       aria-live="polite"
-      aria-label="Carregando desempenho"
+      aria-label={statusLabel}
       data-testid="desempenho-estudo-loading"
       data-desempenho-loading="estudo"
+      data-hub-nav-phase={phase}
     >
+      {slow ? (
+        <p className="text-sm font-medium text-slate-600">{statusLabel}</p>
+      ) : null}
       <section className="space-y-3" aria-hidden>
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="h-4 w-56 max-w-[70%] rounded bg-muted/50 animate-pulse" />

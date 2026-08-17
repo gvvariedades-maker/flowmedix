@@ -146,7 +146,10 @@ export default function CadernosListClient({
   const showEmptyState = !hasCadernos && !hasPacks;
 
   return (
-    <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-background', pageBottomPadding)}>
+    <div
+      className={cn(DASHBOARD_PAGE_ROOT, 'bg-background', pageBottomPadding)}
+      data-cadernos-hub="lista"
+    >
       <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         <CadernosHeader />
       </div>

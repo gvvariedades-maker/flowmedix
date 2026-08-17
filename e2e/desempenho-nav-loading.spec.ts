@@ -1,7 +1,8 @@
-import { expect, test, type Page, type Request } from '@playwright/test';
+import { expect, test, type Page, type Request, type Route } from '@playwright/test';
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { DESEMPENHO_NAV_PENDING_TIMEOUT_MS } from '../lib/desempenho/desempenhoPendingMark';
+import { HUB_NAV_PENDING_PHASE_ATTR } from '../lib/layout/hubNavPending';
 import { vitrineStableLocalStorageInitScript } from './helpers/vitrineE2e';
 
 /**
@@ -16,6 +17,55 @@ import { vitrineStableLocalStorageInitScript } from './helpers/vitrineE2e';
 
 const RSC_DELAY_MS = 800;
 const FEEDBACK_BUDGET_MS = 100;
+const SLOW_LOADING_ASSERT_TIMEOUT_MS = DESEMPENHO_NAV_PENDING_TIMEOUT_MS + 10_000;
+
+type HubHangGate = {
+  hold: Promise<void>;
+  release: () => void;
+  entered: number;
+  held: string[];
+  missed: string[];
+  seen: string[];
+};
+
+function createHubHangGate(): HubHangGate {
+  let settled = false;
+  let resolveHold = () => {};
+  const hold = new Promise<void>((resolve) => {
+    resolveHold = resolve;
+  });
+  return {
+    hold,
+    entered: 0,
+    held: [],
+    missed: [],
+    seen: [],
+    release() {
+      if (settled) return;
+      settled = true;
+      resolveHold();
+    },
+  };
+}
+
+function summarizeFlight(request: Request): string {
+  const headers = request.headers();
+  let pathname = request.url();
+  try {
+    pathname = new URL(request.url()).pathname;
+  } catch {
+    /* keep raw url */
+  }
+  return [
+    request.resourceType(),
+    pathname,
+    `rsc=${headers['rsc'] ?? ''}`,
+    `next-url=${headers['next-url'] ?? ''}`,
+    `prefetch=${headers['next-router-prefetch'] ?? ''}`,
+    `tree=${headers['next-router-state-tree'] ? '1' : ''}`,
+  ].join(' ');
+}
+
 const REPORT_PATH = resolve(process.cwd(), 'artifacts/desempenho-nav-wave1-timings.json');
 
 function isDesempenhoRsc(request: Request): boolean {
@@ -28,6 +78,51 @@ function isDesempenhoRsc(request: Request): boolean {
     headers['next-router-prefetch'] === '1' ||
     Boolean(headers['next-router-state-tree'])
   );
+}
+
+function looksLikeNextFlight(request: Request): boolean {
+  const url = request.url();
+  const headers = request.headers();
+  const accept = headers['accept'] ?? '';
+  const type = request.resourceType();
+  return (
+    url.includes('_rsc') ||
+    headers['rsc'] === '1' ||
+    Boolean(headers['next-router-state-tree']) ||
+    accept.includes('text/x-component') ||
+    type === 'fetch' ||
+    type === 'xhr' ||
+    type === 'other'
+  );
+}
+
+function targetsDesempenhoHub(request: Request): boolean {
+  const headers = request.headers();
+  let pathname = '';
+  try {
+    pathname = new URL(request.url()).pathname;
+  } catch {
+    return false;
+  }
+  const nextUrl = (headers['next-url'] ?? '').split('?')[0];
+  return (
+    pathname === '/desempenho' ||
+    pathname.startsWith('/desempenho/') ||
+    nextUrl === '/desempenho' ||
+    nextUrl.startsWith('/desempenho/')
+  );
+}
+
+/**
+ * Flight cliente para `/desempenho`, inclusive `/estudar?_rsc` com Next-Url.
+ * Prefetch no header não seleciona nem exclui — o clique também o envia.
+ */
+function isDesempenhoClientFlight(request: Request): boolean {
+  if (request.resourceType() === 'document') return false;
+  if (!targetsDesempenhoHub(request)) return false;
+  const nextUrl = (request.headers()['next-url'] ?? '').split('?')[0];
+  if (nextUrl === '/desempenho' || nextUrl.startsWith('/desempenho/')) return true;
+  return looksLikeNextFlight(request) || isDesempenhoRsc(request);
 }
 
 async function interceptDesempenhoRsc(page: Page) {
@@ -48,24 +143,53 @@ async function interceptDesempenhoRsc(page: Page) {
       /* request already canceled (nav superseded / page closed) */
     }
   });
-}
-
-/** RSC do hub nunca chega — cobre timeout de limpeza. */
-async function hangDesempenhoRsc(page: Page) {
-  await page.route('**/desempenho**', async (route) => {
+  await page.route('**/estudar**', async (route) => {
     const request = route.request();
     if (request.resourceType() === 'document') {
       await route.continue();
       return;
     }
-    if (isDesempenhoRsc(request)) {
-      await new Promise(() => {
-        /* hang until page closes */
-      });
+    const nextUrl = (request.headers()['next-url'] ?? '').split('?')[0];
+    if (nextUrl !== '/desempenho') {
+      await route.continue();
       return;
     }
-    await route.continue();
+    await new Promise((r) => setTimeout(r, RSC_DELAY_MS));
+    try {
+      await route.continue();
+    } catch {
+      /* request already canceled (nav superseded / page closed) */
+    }
   });
+}
+
+/** Flights do hub ficam no gate do teste até `release()` — sem timer e sem abort. */
+async function hangDesempenhoRsc(page: Page, gate: HubHangGate) {
+  page.on('request', (request) => {
+    if (looksLikeNextFlight(request) || targetsDesempenhoHub(request)) {
+      gate.seen.push(summarizeFlight(request));
+    }
+  });
+  const handle = async (route: Route) => {
+    const request = route.request();
+    if (request.resourceType() === 'document' || !isDesempenhoClientFlight(request)) {
+      if (request.resourceType() !== 'document' && targetsDesempenhoHub(request)) {
+        gate.missed.push(summarizeFlight(request));
+      }
+      await route.fallback();
+      return;
+    }
+    gate.entered += 1;
+    gate.held.push(summarizeFlight(request));
+    await gate.hold;
+    try {
+      await route.continue();
+    } catch {
+      /* request already canceled (nav superseded / page closed) */
+    }
+  };
+  await page.route('**/desempenho**', handle);
+  await page.route('**/estudar**', handle);
 }
 
 function visibleEstudoLoading(page: Page) {
@@ -193,7 +317,7 @@ async function measureNav(page: Page, viewport: 'desktop' | 'mobile'): Promise<N
 
   await installClickToSkeletonProbe(page);
 
-  const skeleton = page.locator('[data-desempenho-loading="estudo"]');
+  const skeleton = page.locator('[data-desempenho-loading="estudo"]').filter({ visible: true });
   const hub = page.locator('[data-desempenho-hub="estudo"]');
   const pendingAttr = page.locator('html[data-desempenho-nav-pending="true"]');
 
@@ -254,6 +378,7 @@ function appendReport(entry: NavTimings) {
 }
 
 test.describe('Desempenho nav wave 1 — loading.tsx', () => {
+  test.use({ serviceWorkers: 'block' });
 
   test.beforeEach(async ({ page }) => {
     await preparePage(page);
@@ -392,19 +517,40 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     await expect(visibleEstudoLoading(page)).toHaveCount(0);
   });
 
-  test('desktop: hang do RSC limpa pending no timeout', async ({ page }, testInfo) => {
+  test('desktop: hang do RSC vira slow-loading e não limpa pending', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'chromium', 'desktop só no Chromium');
     test.setTimeout(180_000);
-    await warmupDesempenhoCompile(page);
-    await hangDesempenhoRsc(page);
-    await gotoEstudarDashboard(page);
-    const navLink = desempenhoNavLocator(page, 'desktop');
-    await expect(navLink).toBeVisible({ timeout: 60_000 });
-    await navLink.click({ noWaitAfter: true });
-    await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
-    await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toHaveCount(0, {
-      timeout: DESEMPENHO_NAV_PENDING_TIMEOUT_MS + 2_000,
-    });
+    const gate = createHubHangGate();
+    await hangDesempenhoRsc(page, gate);
+    try {
+      await gotoEstudarDashboard(page);
+      const navLink = desempenhoNavLocator(page, 'desktop');
+      await expect(navLink).toBeVisible({ timeout: 60_000 });
+      await navLink.click({ noWaitAfter: true, force: true });
+      await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toBeAttached();
+      await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
+      await expect
+        .poll(() => gate.entered, {
+          timeout: 5_000,
+          message: `handler não reteve flight desempenho; held=${gate.held.join(' | ') || '∅'} missed=${gate.missed.join(' | ') || '∅'} seen=${gate.seen.join(' | ') || '∅'}`,
+        })
+        .toBeGreaterThan(0);
+      await expect
+        .poll(
+          async () => {
+            const stillPending = await page.locator('html[data-desempenho-nav-pending="true"]').count();
+            if (stillPending === 0) return 'cleared';
+            return page.locator('html').getAttribute(HUB_NAV_PENDING_PHASE_ATTR);
+          },
+          { timeout: SLOW_LOADING_ASSERT_TIMEOUT_MS },
+        )
+        .toBe('slow-loading');
+      await expect(page.locator('html[data-desempenho-nav-pending="true"]')).toBeAttached();
+      await expect(page.getByRole('status', { name: 'Ainda carregando desempenho' })).toBeVisible();
+      expect(gate.entered).toBeGreaterThan(0);
+    } finally {
+      gate.release();
+    }
   });
 
   test('desktop: erro de carga ainda limpa pending via hub marker', async ({ page }, testInfo) => {
@@ -432,7 +578,7 @@ test.describe('Desempenho nav wave 1 — loading.tsx', () => {
     await desempenhoNavLocator(page, 'desktop').click({ noWaitAfter: true });
     await expect(visibleEstudoLoading(page)).toBeVisible({ timeout: 5_000 });
 
-    await expect(page.locator('main [hidden]')).toBeAttached();
+    await expect(page.locator('main > div[hidden]')).toBeAttached();
     const cta = page.getByRole('link', { name: 'Praticar na vitrine' }).filter({ visible: true });
     await expect(cta).toBeVisible();
     await cta.focus();
