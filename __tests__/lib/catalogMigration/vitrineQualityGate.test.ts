@@ -2,6 +2,7 @@ import {
   applyVitrineQualityGateToPage,
   buildVitrineQualityGateState,
   filterModulosByVitrineQualityGate,
+  invalidateVitrineQualityGateCache,
   isTituloAulaVisibleInVitrine,
 } from '@/lib/catalogMigration/vitrineQualityGate';
 import {
@@ -61,6 +62,7 @@ describe('buildVitrineQualityGateState', () => {
 describe('isTituloAulaVisibleInVitrine', () => {
   beforeEach(() => {
     process.env.QUALITY_VITRINE_GATE = 'true';
+    invalidateVitrineQualityGateCache();
     loadRegistry.mockReturnValue(
       mockRegistry({
         'Enfermagem em Central de Material e Esterilização (CME)': {
@@ -106,11 +108,31 @@ describe('isTituloAulaVisibleInVitrine', () => {
       isTituloAulaVisibleInVitrine('Enfermagem em Central de Material e Esterilização (CME)'),
     ).toBe(true);
   });
+
+  it('casa o pacote sem diferenciar maiúsculas', () => {
+    expect(
+      isTituloAulaVisibleInVitrine('enfermagem em central de material e esterilização (cme)'),
+    ).toBe(false);
+  });
+
+  it('título vazio permanece visível', () => {
+    expect(isTituloAulaVisibleInVitrine('')).toBe(true);
+    expect(isTituloAulaVisibleInVitrine(null)).toBe(true);
+  });
+
+  it('carrega o registry uma vez para milhares de lookups', () => {
+    const titulo = 'Enfermagem em Central de Material e Esterilização (CME)';
+    for (let i = 0; i < 5476; i += 1) {
+      isTituloAulaVisibleInVitrine(i % 2 === 0 ? titulo : 'Imunização');
+    }
+    expect(loadRegistry).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('filterModulosByVitrineQualityGate', () => {
   beforeEach(() => {
     process.env.QUALITY_VITRINE_GATE = 'true';
+    invalidateVitrineQualityGateCache();
     loadRegistry.mockReturnValue(
       mockRegistry({
         'Gated None': {
@@ -144,6 +166,7 @@ describe('filterModulosByVitrineQualityGate', () => {
 describe('applyVitrineQualityGateToPage', () => {
   beforeEach(() => {
     process.env.QUALITY_VITRINE_GATE = 'true';
+    invalidateVitrineQualityGateCache();
     loadRegistry.mockReturnValue(
       mockRegistry({
         Hidden: {

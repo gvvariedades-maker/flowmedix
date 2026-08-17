@@ -79,11 +79,10 @@ export function isTituloAulaVisibleInVitrine(
   const title = tituloAula?.trim();
   if (!title) return true;
 
-  const registry = loadHandcraftRegistry();
-  const found = findPacoteBySubtopico(registry, title);
-  if (!found) return true;
-
-  return canSell(found.pacote);
+  const { gatedKeys, sellableKeys } = getVitrineQualityGateState();
+  const key = title.toLowerCase();
+  if (!gatedKeys.has(key)) return true;
+  return sellableKeys.has(key);
 }
 
 export function filterModulosByVitrineQualityGate<T extends { titulo_aula?: string | null }>(
