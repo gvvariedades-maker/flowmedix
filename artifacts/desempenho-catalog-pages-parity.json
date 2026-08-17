@@ -1,0 +1,57 @@
+{
+  "measuredAt": "2026-08-17T08:38:53.999Z",
+  "userIdShort": "708ccc37…",
+  "sequential": {
+    "count": 5476,
+    "idsHash": "23c9c434b7e957707ec17f413e78e028cf708ed2dc0f6a4453a9c546f9208968",
+    "slugsHash": "dfca74d9121374f8aca1d72739440ad1c5c675c3fcbf2df6d313a2fe0d6bda68",
+    "orderCreatedAtDesc": true,
+    "metadataHash": "e085b7a7160e4e3ff94be1e765334f45dfc3dedf082a501bb4714bed2a43daec",
+    "first": {
+      "id": "a33108b4-ae85-409d-a04b-24d37cd96af4",
+      "modulo_slug": "vunesp-tenf-sinonimos-leia-a-charge-a-seguir-nani-disponiv-3840788",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "banca": "VUNESP",
+      "created_at": "2026-07-24T06:57:39.604244+00:00",
+      "avant_codigo": 5670
+    },
+    "last": {
+      "id": "2f51cdef-cb1b-478f-8562-435cf2732c71",
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "modulo_nome": "Enfermagem",
+      "titulo_aula": "História da Enfermagem",
+      "banca": "AVANÇASP",
+      "created_at": "2026-04-04T19:41:13.469229+00:00",
+      "avant_codigo": 1
+    },
+    "pages": 6
+  },
+  "parallel": {
+    "count": 5476,
+    "idsHash": "23c9c434b7e957707ec17f413e78e028cf708ed2dc0f6a4453a9c546f9208968",
+    "slugsHash": "dfca74d9121374f8aca1d72739440ad1c5c675c3fcbf2df6d313a2fe0d6bda68",
+    "orderCreatedAtDesc": true,
+    "metadataHash": "e085b7a7160e4e3ff94be1e765334f45dfc3dedf082a501bb4714bed2a43daec",
+    "first": {
+      "id": "a33108b4-ae85-409d-a04b-24d37cd96af4",
+      "modulo_slug": "vunesp-tenf-sinonimos-leia-a-charge-a-seguir-nani-disponiv-3840788",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "banca": "VUNESP",
+      "created_at": "2026-07-24T06:57:39.604244+00:00",
+      "avant_codigo": 5670
+    },
+    "last": {
+      "id": "2f51cdef-cb1b-478f-8562-435cf2732c71",
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "modulo_nome": "Enfermagem",
+      "titulo_aula": "História da Enfermagem",
+      "banca": "AVANÇASP",
+      "created_at": "2026-04-04T19:41:13.469229+00:00",
+      "avant_codigo": 1
+    }
+  },
+  "match": true,
+  "mismatch": null
+}
