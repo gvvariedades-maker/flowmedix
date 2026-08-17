@@ -16,7 +16,7 @@ export type VitrineQualityGateState = {
   sellableKeys: Set<string>;
 };
 
-const CACHE_TTL_MS = 60_000;
+export const CACHE_TTL_MS = 60_000;
 let cachedState: VitrineQualityGateState | null = null;
 let cachedAt = 0;
 
