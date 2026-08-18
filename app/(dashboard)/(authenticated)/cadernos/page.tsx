@@ -1,34 +1,26 @@
+import { Suspense, type ReactNode } from 'react';
 import { redirect } from 'next/navigation';
-import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
-import { getHistoricoQuestoesCached, getMatriculatedConcursosCached } from '@/lib/cache';
-import { isAdminSessionEmail } from '@/lib/constants';
-import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalogWhenEmpty';
+import { CadernosHubShell } from '@/components/dashboard/cadernos/CadernosHubShell';
+import { CadernosListLoadingSkeleton } from '@/components/dashboard/cadernos/CadernosListLoadingSkeleton';
 import {
-  resolvePacks,
-  type ClonedPackNotebook,
-  type PackHistoricoRow,
-  type ResolvedPack,
-} from '@/lib/cadernos/resolvePacks';
+  loadCadernosListCore,
+  loadCadernosListEnrichment,
+  logCadernosLoadError,
+  type CadernosListCore,
+  type CadernosListEnriched,
+} from '@/lib/cadernos/cadernosPageLoad';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
-import { logger } from '@/lib/logger';
+import {
+  E2E_CADERNOS_P0_NOTEBOOK,
+  E2E_CADERNOS_P1_DELAY_MS,
+  E2E_CADERNOS_P1_NOTEBOOK,
+  getE2eCadernosP1Pack,
+} from '@/lib/e2e/cadernosSeed';
+import { getServerSession } from '@/lib/supabase/server-auth';
 import CadernosListClient from './CadernosListClient';
 
-export interface NotebookSummary {
-  id: string;
-  title: string;
-  description: string | null;
-  /** Pack de origem (`CADERNO_PACKS.id`); null = caderno manual. */
-  source_pack_id: string | null;
-  itemCount: number;
-  studiedCount: number;
-  /** Primeira questão a abrir no fluxo do caderno (não concluída na ordem, senão a primeira). */
-  studyEntrySlug: string | null;
-  /** Título da próxima questão (titulo_aula ou topico do item de entrada). */
-  studyEntryTitle: string | null;
-  /** Posição 1-based da próxima questão na ordem do caderno. */
-  studyEntryPosition: number | null;
-  updated_at: string;
-}
+export type { NotebookSummary } from '@/lib/cadernos/notebookSummary';
 
 function firstSearchParam(value: string | string[] | undefined): string | null {
   if (Array.isArray(value)) return value[0] ?? null;
@@ -48,7 +40,32 @@ function CadernosHubError() {
   );
 }
 
-export default async function CadernosPage({
+async function E2eDelayedCadernos({
+  delayMs,
+  children,
+}: {
+  delayMs: number;
+  children: ReactNode;
+}) {
+  await new Promise((resolve) => setTimeout(resolve, delayMs));
+  return children;
+}
+
+export default function CadernosPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ captura?: string | string[] }>;
+}) {
+  return (
+    <CadernosHubShell>
+      <Suspense fallback={<CadernosListLoadingSkeleton />}>
+        <CadernosListBody searchParams={searchParams} />
+      </Suspense>
+    </CadernosHubShell>
+  );
+}
+
+async function CadernosListBody({
   searchParams,
 }: {
   searchParams?: Promise<{ captura?: string | string[] }>;
@@ -59,131 +76,136 @@ export default async function CadernosPage({
 
   if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
     if (captura === 'erro') return <CadernosHubError />;
-    return <CadernosListClient cadernos={[]} editalBanca={null} packs={[]} />;
+    if (captura === 'p0-pending') {
+      return (
+        <CadernosListClient
+          cadernos={[E2E_CADERNOS_P0_NOTEBOOK]}
+          editalBanca={null}
+          packs={[]}
+          packsReady={false}
+          progressPending
+        />
+      );
+    }
+    if (captura === 'vazio-pending') {
+      return <CadernosListClient cadernos={[]} editalBanca={null} packs={[]} packsReady={false} />;
+    }
+    if (captura === 'p1-erro') {
+      return (
+        <CadernosListClient
+          cadernos={[E2E_CADERNOS_P0_NOTEBOOK]}
+          editalBanca={null}
+          packs={[]}
+          packsReady
+          progressPending
+        />
+      );
+    }
+    if (captura === 'p0-then-p1') {
+      return (
+        <Suspense
+          fallback={
+            <CadernosListClient
+              cadernos={[E2E_CADERNOS_P0_NOTEBOOK]}
+              editalBanca={null}
+              packs={[]}
+              packsReady={false}
+              progressPending
+            />
+          }
+        >
+          <E2eDelayedCadernos delayMs={E2E_CADERNOS_P1_DELAY_MS}>
+            <CadernosListClient
+              cadernos={[E2E_CADERNOS_P1_NOTEBOOK]}
+              editalBanca={null}
+              packs={[getE2eCadernosP1Pack()]}
+              packsReady
+            />
+          </E2eDelayedCadernos>
+        </Suspense>
+      );
+    }
+    if (captura === 'vazio-then-empty') {
+      return (
+        <Suspense
+          fallback={
+            <CadernosListClient cadernos={[]} editalBanca={null} packs={[]} packsReady={false} />
+          }
+        >
+          <E2eDelayedCadernos delayMs={E2E_CADERNOS_P1_DELAY_MS}>
+            <CadernosListClient cadernos={[]} editalBanca={null} packs={[]} packsReady />
+          </E2eDelayedCadernos>
+        </Suspense>
+      );
+    }
+    return <CadernosListClient cadernos={[]} editalBanca={null} packs={[]} packsReady />;
   }
 
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
-  const supabase = await createSupabaseServerClient();
+  let core: CadernosListCore | null = null;
+  try {
+    core = await loadCadernosListCore(session.user.id);
+  } catch (error) {
+    logCadernosLoadError(error, session.user.id);
+  }
+
+  if (!core) return <CadernosHubError />;
+
   const isAdmin = isAdminSessionEmail(session.user.email ?? null);
 
+  return (
+    <Suspense
+      fallback={
+        <CadernosListClient
+          cadernos={core.summaries}
+          editalBanca={core.editalBanca}
+          packs={[]}
+          packsReady={false}
+          progressPending
+        />
+      }
+    >
+      <CadernosEnrichedList core={core} userId={session.user.id} isAdmin={isAdmin} />
+    </Suspense>
+  );
+}
+
+async function CadernosEnrichedList({
+  core,
+  userId,
+  isAdmin,
+}: {
+  core: CadernosListCore;
+  userId: string;
+  isAdmin: boolean;
+}) {
+  let enriched: CadernosListEnriched | null = null;
   try {
-    const [{ data: notebooks, error }, historico, matriculatedConcursos, modulos] =
-      await Promise.all([
-        supabase
-          .from('study_notebooks')
-          .select('id, title, description, updated_at, source_pack_id')
-          .eq('user_id', session.user.id)
-          .order('updated_at', { ascending: false }),
-        getHistoricoQuestoesCached(session.user.id),
-        getMatriculatedConcursosCached(session.user.id).catch(() => []),
-        resolveAccessibleModulosWhenEmpty(session.user.id, isAdmin).catch(() => []),
-      ]);
-
-    if (error) throw error;
-
-    const historicoRows = (historico || []) as PackHistoricoRow[];
-
-    const estudadosSet = new Set<string>(
-      historicoRows
-        .filter((h) => h.estudo_reverso_concluido === true)
-        .map((h) => h.modulo_slug),
-    );
-
-    const ids = (notebooks || []).map((n) => n.id);
-    const itemsByNotebook = new Map<
-      string,
-      { modulo_slug: string; position: number; titulo_aula: string | null; topico: string | null }[]
-    >();
-
-    if (ids.length > 0) {
-      const { data: allItems } = await supabase
-        .from('study_notebook_items')
-        .select('notebook_id, modulo_slug, position, titulo_aula, topico')
-        .in('notebook_id', ids);
-
-      for (const row of allItems || []) {
-        const arr = itemsByNotebook.get(row.notebook_id) || [];
-        arr.push({
-          modulo_slug: row.modulo_slug,
-          position: row.position,
-          titulo_aula: row.titulo_aula,
-          topico: row.topico,
-        });
-        itemsByNotebook.set(row.notebook_id, arr);
-      }
-      for (const id of ids) {
-        const arr = itemsByNotebook.get(id) || [];
-        arr.sort((a, b) => a.position - b.position);
-        itemsByNotebook.set(id, arr);
-      }
-    }
-
-    type NotebookItemRow = {
-      modulo_slug: string;
-      titulo_aula: string | null;
-      topico: string | null;
-    };
-
-    const resolveStudyEntry = (items: NotebookItemRow[]) => {
-      if (items.length === 0) {
-        return { slug: null, title: null, position: null };
-      }
-      const pendingIndex = items.findIndex((i) => !estudadosSet.has(i.modulo_slug));
-      const entryIndex = pendingIndex >= 0 ? pendingIndex : 0;
-      const entry = items[entryIndex];
-      return {
-        slug: entry.modulo_slug,
-        title: entry.titulo_aula?.trim() || entry.topico?.trim() || null,
-        position: entryIndex + 1,
-      };
-    };
-
-    const summaries: NotebookSummary[] = (notebooks || []).map((n) => {
-      const items = itemsByNotebook.get(n.id) || [];
-      const studiedCount = items.filter((i) => estudadosSet.has(i.modulo_slug)).length;
-      const studyEntry = resolveStudyEntry(items);
-      return {
-        id: n.id,
-        title: n.title,
-        description: n.description,
-        source_pack_id: n.source_pack_id ?? null,
-        updated_at: n.updated_at ?? new Date(0).toISOString(),
-        itemCount: items.length,
-        studiedCount,
-        studyEntrySlug: studyEntry.slug,
-        studyEntryTitle: studyEntry.title,
-        studyEntryPosition: studyEntry.position,
-      };
-    });
-
-    const editalBanca =
-      matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.banca ?? null;
-
-    const clonedByPackId = new Map<string, ClonedPackNotebook>();
-    for (const s of summaries) {
-      if (!s.source_pack_id) continue;
-      clonedByPackId.set(s.source_pack_id, {
-        id: s.id,
-        studyEntrySlug: s.studyEntrySlug,
-        studiedCount: s.studiedCount,
-        itemCount: s.itemCount,
-      });
-    }
-
-    const packs: ResolvedPack[] = resolvePacks({
-      modulos,
-      historico: historicoRows,
-      editalBanca,
-      clonedByPackId,
-    });
-
-    return (
-      <CadernosListClient cadernos={summaries} editalBanca={editalBanca} packs={packs} />
-    );
+    enriched = await loadCadernosListEnrichment(userId, core, isAdmin);
   } catch (error) {
-    logger.error('Failed to load cadernos', error);
-    return <CadernosHubError />;
+    logCadernosLoadError(error, userId);
   }
+
+  if (!enriched) {
+    return (
+      <CadernosListClient
+        cadernos={core.summaries}
+        editalBanca={core.editalBanca}
+        packs={[]}
+        packsReady
+        progressPending
+      />
+    );
+  }
+
+  return (
+    <CadernosListClient
+      cadernos={enriched.summaries}
+      editalBanca={enriched.editalBanca}
+      packs={enriched.packs}
+      packsReady
+    />
+  );
 }

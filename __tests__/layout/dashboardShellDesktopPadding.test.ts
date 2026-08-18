@@ -89,8 +89,13 @@ describe('DashboardShell mobile scroll shell', () => {
       join(process.cwd(), 'app', '(dashboard)', '(authenticated)', 'cadernos', 'CadernosListClient.tsx'),
       'utf8',
     );
+    const cadernosShell = readFileSync(
+      join(process.cwd(), 'components', 'dashboard', 'cadernos', 'CadernosHubShell.tsx'),
+      'utf8',
+    );
     expect(vitrine).not.toContain('useDashboardBottomInset');
-    expect(cadernos).toContain('useDashboardBottomInset');
+    expect(cadernos).not.toContain('useDashboardBottomInset');
+    expect(cadernosShell).toContain('DashboardMobilePage');
     expect(vitrine).not.toContain('pb-nav-safe');
     expect(vitrine).toContain('flex-1 flex-col');
   });

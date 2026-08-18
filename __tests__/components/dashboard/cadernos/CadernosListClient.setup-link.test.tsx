@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import CadernosListClient from '@/app/(dashboard)/(authenticated)/cadernos/CadernosListClient';
-import type { NotebookSummary } from '@/app/(dashboard)/(authenticated)/cadernos/page';
+import type { NotebookSummary } from '@/lib/cadernos/notebookSummary';
 
 jest.mock('next/navigation', () => ({
   useRouter: () => ({ push: jest.fn(), replace: jest.fn(), prefetch: jest.fn() }),
