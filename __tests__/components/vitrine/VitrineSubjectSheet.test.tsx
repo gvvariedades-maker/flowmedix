@@ -151,6 +151,10 @@ describe('VitrineSubjectSheet', () => {
     );
 
     expect(screen.getByRole('dialog', { name: 'Verificação de Sinais Vitais' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Entrar no assunto' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Começar este assunto' })).toBeInTheDocument();
+    expect(screen.getByLabelText('Ainda sem respostas neste assunto')).toBeInTheDocument();
+    expect(screen.getByText('Ainda sem respostas')).toBeInTheDocument();
+    expect(screen.getByText('Seu desempenho')).toBeInTheDocument();
+    expect(screen.getByText('Progresso no assunto')).toBeInTheDocument();
   });
 });
