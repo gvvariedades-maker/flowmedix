@@ -1,0 +1,112 @@
+{
+  "measuredAt": "2026-08-17T07:20:00.000Z",
+  "env": "next build --webpack + next start, sem E2E_DASHBOARD_BYPASS, sessao Pro autenticada, localhost:3000",
+  "baselineBeforePatch": {
+    "catalogIsolatedColdAvgMs": 16300,
+    "clickToHubColdMs": 15911,
+    "clickToHubWarmMs": 846
+  },
+  "goal": {
+    "catalogIsolatedColdMs": 4000,
+    "clickToHubColdMs": 5000
+  },
+  "goalMet": false,
+  "clickToHub": {
+    "cold": [
+      {
+        "sample": 1,
+        "hubMs": 14732,
+        "rscDurationMs": 14722,
+        "ttfbMs": 533,
+        "pendingMs": 0,
+        "skeletonMs": 0,
+        "note": "1o clique apos build fresco"
+      },
+      {
+        "sample": 2,
+        "hubMs": 15400,
+        "rscDurationMs": 15389,
+        "ttfbMs": 499,
+        "pendingMs": 0,
+        "skeletonMs": 0,
+        "note": "aba nova + wipe .next/cache + restart"
+      },
+      {
+        "sample": 3,
+        "hubMs": 17155,
+        "rscDurationMs": 17136,
+        "ttfbMs": 493,
+        "pendingMs": 0,
+        "skeletonMs": 0,
+        "note": "aba nova + wipe .next/cache + restart"
+      }
+    ],
+    "warm": [
+      {
+        "sample": 1,
+        "hubMs": 1381,
+        "pendingMs": 0,
+        "skeletonMs": 0
+      },
+      {
+        "sample": 2,
+        "hubMs": 472,
+        "pendingMs": 0,
+        "skeletonMs": 0
+      },
+      {
+        "sample": 3,
+        "hubMs": 522,
+        "pendingMs": 0,
+        "skeletonMs": 0
+      }
+    ],
+    "coldAvgMs": 15762,
+    "warmAvgMs": 792
+  },
+  "catalogIsolated": {
+    "file": "artifacts/desempenho-catalog-pages-isolated.json",
+    "count": 5476,
+    "pages": 6,
+    "pageSize": 1000,
+    "coldMs": [
+      16491,
+      14132,
+      14096
+    ],
+    "warmMs": [
+      14743,
+      16257,
+      14413
+    ],
+    "coldAvgMs": 14906,
+    "warmAvgMs": 15138
+  },
+  "breakdown": {
+    "embedPagesFirstMs": 1316,
+    "embedPagesRestParallelMs": 1566,
+    "embedPagesWallApproxMs": 2900,
+    "qualityGateMs": 12517,
+    "getAccessibleModulosForUserMs": 19599,
+    "note": "I/O paralelo das 6 paginas ~3s. O restante e filterModulosByVitrineQualityGate (loadHandcraftRegistry + findPacoteBySubtopico por modulo). Fora do escopo deste patch."
+  },
+  "parity": {
+    "jestSixPages5647": "pass",
+    "liveCount": 5476,
+    "livePages": 6,
+    "sequentialVsParallelMatch": true,
+    "idsSha256": "23c9c434b7e957707ec17f413e78e028cf708ed2dc0f6a4453a9c546f9208968",
+    "slugsSha256": "dfca74d9121374f8aca1d72739440ad1c5c675c3fcbf2df6d313a2fe0d6bda68",
+    "metadataSha256": "e085b7a7160e4e3ff94be1e765334f45dfc3dedf082a501bb4714bed2a43daec",
+    "order": "created_at desc identical",
+    "mismatch": null
+  },
+  "outOfScopeFollowups": [
+    "RPC slim do catalogo (proximo candidato se o gate de qualidade for extraido/cacheado)",
+    "Cache/indice do vitrineQualityGate (loadHandcraftRegistry por modulo)",
+    "P4 retries tabela evidence_attempt_events ausente",
+    "Dedupe auth/matricula (proxy + layout + page; layout + catalog)"
+  ],
+  "nextBottleneck": "isTituloAulaVisibleInVitrine index/cache",
+  "gitDiffCheck": "pass"
+}

@@ -8,6 +8,12 @@ import { runAllEstudarPayloadScenarios } from '@/lib/estudar/perfSmokeScenarios'
 import { runAllSimuladoPayloadScenarios } from '@/lib/simulado/perfSmokeScenarios';
 import { E2E_SIMULADO_SESSION_ID, E2E_SIMULADO_SLUG } from '@/lib/e2e/constants';
 import { mergeWithVercelProtectionHeaders } from '@/lib/perf/vercelProtection';
+import {
+  API_HEALTH_BUDGET_MS,
+  assertApiHealthNotSilentlySkipped,
+  isPerfSkipApiHealthEnabled,
+  selectHttpScenarios,
+} from '@/lib/perf/skipApiHealth';
 
 type HttpScenario = {
   name: string;
@@ -142,6 +148,7 @@ async function main() {
   const budgetBaselinePath = process.env.PERF_BUDGET_BASELINE_FILE;
   const reportOutputPath = process.env.PERF_REPORT_OUTPUT || 'artifacts/perf-smoke-report.json';
   const skipHttp = process.env.PERF_SKIP_HTTP === '1';
+  const skipApiHealth = isPerfSkipApiHealthEnabled();
   const baseline = readBudgetBaseline(budgetBaselinePath);
 
   const simuladoSessionId = E2E_SIMULADO_SESSION_ID;
@@ -169,7 +176,7 @@ async function main() {
       name: 'api_health',
       url: `${baseUrl}/api/health`,
       expectedStatuses: [200, 503],
-      budgetMs: 700,
+      budgetMs: API_HEALTH_BUDGET_MS,
     },
     {
       name: 'api_metrics',
@@ -205,9 +212,10 @@ async function main() {
     },
   ];
 
+  const { scenarios: httpScenarios, skippedScenarios } = selectHttpScenarios(scenarios);
   const results: HttpScenarioResult[] = [];
   if (!skipHttp) {
-    for (const scenario of scenarios) {
+    for (const scenario of httpScenarios) {
       results.push(await runHttpScenario(scenario, durationMs, concurrency));
     }
   }
@@ -245,9 +253,17 @@ async function main() {
     return r.failureCount > 0;
   });
 
+  assertApiHealthNotSilentlySkipped({
+    skipHttp,
+    ranNames: results.map((r) => r.name),
+    skippedScenarios,
+  });
+
   const report = {
     baseUrl,
     skipHttp,
+    skipApiHealth,
+    skippedScenarios,
     vercelProtectionBypass: Boolean(process.env.VERCEL_PROTECTION_BYPASS?.trim()),
     durationMs,
     concurrency,

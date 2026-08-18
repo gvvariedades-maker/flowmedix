@@ -30,8 +30,35 @@ export interface NotebookSummary {
   updated_at: string;
 }
 
-export default async function CadernosPage() {
+function firstSearchParam(value: string | string[] | undefined): string | null {
+  if (Array.isArray(value)) return value[0] ?? null;
+  return value ?? null;
+}
+
+function CadernosHubError() {
+  return (
+    <div
+      className="flex min-h-full items-center justify-center bg-background p-6"
+      data-cadernos-hub="lista"
+      role="alert"
+      aria-label="Erro ao carregar cadernos"
+    >
+      <p className="text-sm text-slate-500">Erro ao carregar cadernos. Tente novamente.</p>
+    </div>
+  );
+}
+
+export default async function CadernosPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ captura?: string | string[] }>;
+}) {
+  const captura = searchParams
+    ? firstSearchParam((await searchParams).captura)
+    : null;
+
   if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
+    if (captura === 'erro') return <CadernosHubError />;
     return <CadernosListClient cadernos={[]} editalBanca={null} packs={[]} />;
   }
 
@@ -157,10 +184,6 @@ export default async function CadernosPage() {
     );
   } catch (error) {
     logger.error('Failed to load cadernos', error);
-    return (
-      <div className="flex min-h-full items-center justify-center bg-background p-6">
-        <p className="text-sm text-slate-500">Erro ao carregar cadernos. Tente novamente.</p>
-      </div>
-    );
+    return <CadernosHubError />;
   }
 }

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import {
   BookOpen,
@@ -41,6 +42,8 @@ import {
 
 type Props = {
   data: DesempenhoEstudoData;
+  /** Stream P4: o hub pinta o placar sem esperar o ledger EE. */
+  attemptSeriesSlot?: ReactNode;
 };
 
 /**
@@ -49,7 +52,7 @@ type Props = {
  * Ordem obrigatória: filtros → Exibindo → placar → próxima ação → 3 áreas → tipos
  * recolhidos → recentes. Mapa e histórico abrem rotas dedicadas.
  */
-export function DesempenhoEstudoDashboard({ data }: Props) {
+export function DesempenhoEstudoDashboard({ data, attemptSeriesSlot }: Props) {
   const {
     placar,
     areas,
@@ -180,7 +183,9 @@ export function DesempenhoEstudoDashboard({ data }: Props) {
         </>
       )}
 
-      <AttemptEvolutionCard series={attemptSeries} placarZerado={semAtividade} />
+      {attemptSeriesSlot ?? (
+        <AttemptEvolutionCard series={attemptSeries} placarZerado={semAtividade} />
+      )}
 
       <RecentAttemptsList
         attempts={recentAttempts}

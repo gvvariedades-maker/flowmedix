@@ -1,6 +1,7 @@
 'use client';
 
-import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
@@ -51,6 +52,21 @@ import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
 import { openWhatsAppChat } from '@/lib/whatsapp';
 import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
+import { CadernosPendingView } from '@/components/dashboard/cadernos/CadernosPendingView';
+import { DesempenhoEstudoPendingView } from '@/components/dashboard/desempenho/DesempenhoEstudoPendingView';
+import { SimuladosPendingView } from '@/components/simulados/SimuladosPendingView';
+import {
+  applyHubNavPendingDom,
+  clearHubNavPendingDom,
+  HUB_NAV_REGISTRY,
+  HUB_NAV_SLOW_LOADING_MS,
+  isHubNavPrefetchDisabled,
+  resolveHubNavAnchor,
+  resolveHubNavPendingFromClick,
+  shouldClearHubNavPendingOnPath,
+  type HubNavId,
+  type HubNavPendingPhase,
+} from '@/lib/layout/hubNavPending';
 
 const pageVariantsDesktop = {
   initial: { opacity: 0 },
@@ -151,9 +167,11 @@ function DashboardNavLink({
   createQueryString: (path: string) => string;
   onNavAction?: () => void;
 }) {
+  const skipPrefetch = isHubNavPrefetchDisabled(item.href);
   return (
     <Link
       href={createQueryString(item.href)}
+      prefetch={skipPrefetch ? false : undefined}
       onClick={onNavAction}
       title={item.title}
       aria-current={item.active ? 'page' : undefined}
@@ -466,6 +484,79 @@ function DashboardContent({
   useEditorialTheme();
 
   const pathname = usePathname();
+  const [hubNavPending, setHubNavPending] = useState<HubNavId | null>(null);
+  const [hubNavPendingPhase, setHubNavPendingPhase] = useState<HubNavPendingPhase>('loading');
+  const hubPendingUi =
+    hubNavPending != null &&
+    !shouldClearHubNavPendingOnPath(pathname, HUB_NAV_REGISTRY[hubNavPending].path);
+  const clearHubNavPending = useCallback(() => {
+    clearHubNavPendingDom();
+    setHubNavPending(null);
+    setHubNavPendingPhase('loading');
+  }, []);
+  const markHubNavPending = useCallback((hub: HubNavId) => {
+    applyHubNavPendingDom(hub, 'loading');
+    flushSync(() => {
+      setHubNavPending(hub);
+      setHubNavPendingPhase('loading');
+    });
+  }, []);
+  useEffect(() => {
+    const onClickCapture = (event: MouseEvent) => {
+      const anchor = resolveHubNavAnchor(event.target);
+      if (!anchor) return;
+      const hub = resolveHubNavPendingFromClick(event, anchor, {
+        pathname: window.location.pathname,
+        origin: window.location.origin,
+      });
+      if (hub) markHubNavPending(hub);
+    };
+    document.addEventListener('click', onClickCapture, true);
+    return () => document.removeEventListener('click', onClickCapture, true);
+  }, [markHubNavPending]);
+  useEffect(() => {
+    if (!hubNavPending) return;
+    if (!shouldClearHubNavPendingOnPath(pathname, HUB_NAV_REGISTRY[hubNavPending].path)) return;
+    clearHubNavPendingDom();
+    const timeoutId = window.setTimeout(clearHubNavPending, 0);
+    return () => window.clearTimeout(timeoutId);
+  }, [pathname, hubNavPending, clearHubNavPending]);
+  useEffect(() => {
+    if (!hubNavPending || !hubPendingUi) return;
+    const readySelector = HUB_NAV_REGISTRY[hubNavPending].readySelector;
+    const pendingHub = hubNavPending;
+
+    const revealHub = () => {
+      if (!document.querySelector(readySelector)) return false;
+      clearHubNavPending();
+      return true;
+    };
+
+    const observer = new MutationObserver(() => {
+      revealHub();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    const slowLoadingId = window.setTimeout(() => {
+      setHubNavPendingPhase('slow-loading');
+      applyHubNavPendingDom(pendingHub, 'slow-loading');
+    }, HUB_NAV_SLOW_LOADING_MS);
+    const abandon = () => {
+      clearHubNavPending();
+    };
+    window.addEventListener('popstate', abandon);
+    window.addEventListener('pagehide', abandon);
+    const existingHubId = window.setTimeout(() => {
+      revealHub();
+    }, 0);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(slowLoadingId);
+      window.clearTimeout(existingHubId);
+      window.removeEventListener('popstate', abandon);
+      window.removeEventListener('pagehide', abandon);
+    };
+  }, [hubNavPending, hubPendingUi, clearHubNavPending]);
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -818,6 +909,22 @@ function DashboardContent({
               onSnooze={cadernoOnboarding.snooze}
             />
           ) : null}
+          {hubPendingUi && hubNavPending === 'desempenho' ? (
+            <DesempenhoEstudoPendingView phase={hubNavPendingPhase} />
+          ) : null}
+          {hubPendingUi && hubNavPending === 'cadernos' ? (
+            <CadernosPendingView phase={hubNavPendingPhase} />
+          ) : null}
+          {hubPendingUi && hubNavPending === 'simulados' ? (
+            <SimuladosPendingView phase={hubNavPendingPhase} />
+          ) : null}
+          <div
+            hidden={hubPendingUi}
+            className={cn(
+              'flex min-h-0 flex-1 flex-col',
+              estudarQuestaoFillViewport && 'h-full min-h-full',
+            )}
+          >
           <motion.div
             key={pathname?.split('/').slice(0, 2).join('/') ?? pathname}
             variants={pageVariants}
@@ -830,6 +937,7 @@ function DashboardContent({
           >
             {children}
           </motion.div>
+          </div>
         </main>
         </div>
 

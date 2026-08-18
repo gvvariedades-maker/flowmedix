@@ -8,8 +8,8 @@ import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
  * Escopo real do reset — a UI promete exatamente isto.
  * Simulados (`simulado_*`) e o ledger do Evidence Engine **não** são apagados.
  */
-export const ZERAR_DESEMPENHO_SCOPE = 'estudo' as const;
-export const ZERAR_DESEMPENHO_TABELAS = ['historico_questoes'] as const;
+const ZERAR_DESEMPENHO_SCOPE = 'estudo' as const;
+const ZERAR_DESEMPENHO_TABELAS = ['historico_questoes'] as const;
 
 /**
  * Remove o histórico de questões da área Estudo do usuário autenticado.

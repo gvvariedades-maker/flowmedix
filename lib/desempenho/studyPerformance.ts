@@ -42,6 +42,10 @@ import {
   type DesempenhoPeriodRange,
 } from '@/lib/desempenho/periodo';
 import { toFreemiumTimezoneYmd } from '@/lib/freemium/constants';
+import type {
+  AggregateAttemptSeriesOptions,
+  AttemptSeriesRead,
+} from '@/lib/desempenho/attemptSeries';
 
 export { DESEMPENHO_PERIODOS };
 
@@ -130,6 +134,23 @@ function toHistoricoRows(
 /** Tentativa com alternativa escolhida (exclui placeholder de estudo reverso). */
 function isRespondida(h: Pick<HistoricoDesempenhoRow, 'respondida'>): boolean {
   return h.respondida !== false;
+}
+
+/** Metadados P0 que a série EE precisa depois do ledger (cobertura / oldest). */
+export function historicoAttemptSeriesMeta(
+  historico: readonly HistoricoDesempenhoRow[],
+): { historicoOldestAt: string | null; historicoRespondidas: number } {
+  const respondidasRows = historico.filter(
+    (h) => isRespondida(h) && Boolean(h.modulo_slug?.trim()),
+  );
+  const historicoOldestAt =
+    respondidasRows.length > 0
+      ? respondidasRows.reduce(
+          (min, h) => (h.created_at < min ? h.created_at : min),
+          respondidasRows[0]!.created_at,
+        )
+      : null;
+  return { historicoOldestAt, historicoRespondidas: respondidasRows.length };
 }
 
 function toCatalogRows(
@@ -641,26 +662,47 @@ export function aggregateStudyPerformance(
   };
 }
 
+export type LoadDesempenhoEstudoCoreOptions = {
+  recentLimit?: number;
+  /** Liga a I/O do ledger EE em paralelo com histórico+catálogo. Default true. */
+  startAttemptSeries?: boolean;
+  /** Override de flag EE (testes). */
+  instrumentationEnabled?: boolean;
+};
+
+export type DesempenhoEstudoCoreLoad = {
+  data: DesempenhoEstudoData;
+  /** Null quando a série não deve ir (mapa/histórico, flag off, ou skip). */
+  seriesReadPromise: Promise<AttemptSeriesRead> | null;
+  seriesOptions: AggregateAttemptSeriesOptions;
+};
+
 /**
- * Orquestra fontes P0: histórico analytics + catálogo com entitlements.
- * P4: ledger EE (`attemptSeries`) quando `EE_V1_INSTRUMENTATION` está on.
- * Não toca em `lib/cache.ts` / proxy — só consome APIs existentes (+ cache USER do analytics).
+ * P0 (histórico + catálogo + agregação) e, se pedido, dispara o ledger EE
+ * no mesmo tick — sem esperar o join JS. Não toca em `lib/cache.ts` / proxy.
  */
-export async function getDesempenhoEstudoData(
+export async function loadDesempenhoEstudoCore(
   userId: string,
   filters?: Partial<DesempenhoEstudoFilters> | null,
   now: Date = new Date(),
-  options?: { recentLimit?: number },
-): Promise<DesempenhoEstudoData> {
-  const [
-    { getHistoricoCompleto },
-    { getModulosEstudoForUserCached },
-    { getAttemptSeriesData },
-  ] = await Promise.all([
-    import('@/lib/analytics'),
-    import('@/lib/cache'),
-    import('@/lib/desempenho/attemptSeries'),
-  ]);
+  options?: LoadDesempenhoEstudoCoreOptions,
+): Promise<DesempenhoEstudoCoreLoad> {
+  const startAttemptSeries = options?.startAttemptSeries ?? true;
+
+  const [{ getHistoricoCompleto }, { getModulosEstudoForUserCached }, attemptSeriesMod, envMod] =
+    await Promise.all([
+      import('@/lib/analytics'),
+      import('@/lib/cache'),
+      import('@/lib/desempenho/attemptSeries'),
+      import('@/lib/env'),
+    ]);
+
+  const instrumentationEnabled =
+    options?.instrumentationEnabled ?? envMod.isEvidenceV1InstrumentationEnabled();
+  const seriesReadPromise =
+    startAttemptSeries && instrumentationEnabled
+      ? attemptSeriesMod.beginAttemptSeriesRead(userId, true)
+      : null;
 
   const [historico, catalog] = await Promise.all([
     getHistoricoCompleto(userId),
@@ -680,24 +722,41 @@ export async function getDesempenhoEstudoData(
     options?.recentLimit,
   );
 
-  const respondidasRows = historicoComReverso.filter(
-    (h) => h.respondida !== false && Boolean(h.modulo_slug?.trim()),
-  );
-  const historicoOldestAt =
-    respondidasRows.length > 0
-      ? respondidasRows.reduce(
-          (min, h) => (h.created_at < min ? h.created_at : min),
-          respondidasRows[0]!.created_at,
-        )
-      : null;
-
-  const attemptSeries = await getAttemptSeriesData({
-    userId,
+  const meta = historicoAttemptSeriesMeta(historicoComReverso);
+  const seriesOptions: AggregateAttemptSeriesOptions = {
     periodo: data.filtersApplied.periodo,
     now,
-    historicoOldestAt,
-    historicoRespondidas: respondidasRows.length,
-  });
+    historicoOldestAt: meta.historicoOldestAt,
+    historicoRespondidas: meta.historicoRespondidas,
+  };
 
-  return { ...data, attemptSeries };
+  return { data, seriesReadPromise, seriesOptions };
+}
+
+export async function resolveAttemptSeriesOnCore(
+  core: DesempenhoEstudoCoreLoad,
+): Promise<DesempenhoEstudoData> {
+  if (!core.seriesReadPromise) {
+    return core.data;
+  }
+  const { finishAttemptSeries } = await import('@/lib/desempenho/attemptSeries');
+  return {
+    ...core.data,
+    attemptSeries: finishAttemptSeries(await core.seriesReadPromise, core.seriesOptions),
+  };
+}
+
+/**
+ * Orquestra fontes P0: histórico analytics + catálogo com entitlements.
+ * P4: ledger EE (`attemptSeries`) quando `EE_V1_INSTRUMENTATION` está on.
+ * Não toca em `lib/cache.ts` / proxy — só consome APIs existentes (+ cache USER do analytics).
+ */
+export async function getDesempenhoEstudoData(
+  userId: string,
+  filters?: Partial<DesempenhoEstudoFilters> | null,
+  now: Date = new Date(),
+  options?: LoadDesempenhoEstudoCoreOptions,
+): Promise<DesempenhoEstudoData> {
+  const core = await loadDesempenhoEstudoCore(userId, filters, now, options);
+  return resolveAttemptSeriesOnCore(core);
 }

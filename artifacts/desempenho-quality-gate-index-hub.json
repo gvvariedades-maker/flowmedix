@@ -1,0 +1,36 @@
+﻿{
+  "measuredAt": "2026-08-17T20:05:00.000Z",
+  "pr": 110,
+  "branch": "perf/vitrine-quality-gate-index",
+  "baseSha": "657335ef87eb9dd7d090aa18955581bdec89be7c",
+  "protocol": {
+    "build": "npx next build --webpack",
+    "serve": "npm run start",
+    "env": "no E2E_*, no CI",
+    "metric": "click a[href=/desempenho] -> [data-desempenho-hub=estudo] hubMs",
+    "prefetch": "Page.addScriptToEvaluateOnNewDocument hangs fetch with next-router-prefetch:1 for /desempenho",
+    "cold": "kill :3000, wipe .next/cache, npm run start, new tab /estudar, then click",
+    "warm": "same tab, back to /estudar, click again",
+    "session": "logged-in Pro on http://localhost:3000"
+  },
+  "discarded": [
+    {
+      "kind": "cold-invalid",
+      "hubMs": 808,
+      "reason": "prefetch of /desempenho completed before hang; rscDurationMs null"
+    }
+  ],
+  "cold": [
+    { "n": 1, "hubMs": 4461, "pendingMs": 0, "skeletonMs": 0, "tab": "20ee0c" },
+    { "n": 2, "hubMs": 4970, "pendingMs": 0, "skeletonMs": 0, "tab": "77a76b" },
+    { "n": 3, "hubMs": 4049, "pendingMs": 0, "skeletonMs": 0, "tab": "ee3362" }
+  ],
+  "warm": [
+    { "n": 1, "hubMs": 848, "tab": "20ee0c" },
+    { "n": 2, "hubMs": 544, "tab": "20ee0c" },
+    { "n": 3, "hubMs": 502, "tab": "20ee0c" }
+  ],
+  "coldAvgMs": 4493,
+  "warmAvgMs": 631,
+  "allColdUnder5s": true
+}

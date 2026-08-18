@@ -64,6 +64,7 @@ jobs:
               - 'components/lesson/EstudarQuestao*'
               - 'components/lesson/useEstudarQuestaoShellState.ts'
               - 'app/**/estudar/**'
+              - 'lib/perf/**'
               - 'scripts/perf-smoke.ts'
               - 'scripts/capture-perf-baseline.ts'
               - 'docs/perf-smoke-baseline*.json'
@@ -332,6 +333,8 @@ jobs:
           PERF_REGRESSION_TOLERANCE: '0.20'
           PERF_REPORT_OUTPUT: artifacts/perf-smoke-report.json
           METRICS_SECRET: ${{ env.METRICS_SECRET }}
+          # Placeholder Supabase: GET /api/health consulta o DB (~7s). Skip só neste step; liveness 200/503 permanece no Wait for app.
+          PERF_SKIP_API_HEALTH: '1'
 
       - name: Upload perf artifacts
         if: always()

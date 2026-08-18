@@ -1,23 +1,51 @@
-import Link from 'next/link';
-import { BookOpen } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Suspense } from 'react';
+import { AttemptEvolutionCard } from '@/components/dashboard/desempenho/AttemptEvolutionCard';
 import { DesempenhoEstudoDashboard } from '@/components/dashboard/desempenho/DesempenhoEstudoDashboard';
 import { DesempenhoHubShell } from '@/components/dashboard/desempenho/DesempenhoHubShell';
-import { loadEstudoDashboard } from '@/lib/desempenho/estudoPageLoad';
+import {
+  DESEMPENHO_ESTUDO_HUB_DESCRIPTION,
+  DesempenhoEstudoHubAction,
+} from '@/components/dashboard/desempenho/DesempenhoEstudoHubChrome';
+import {
+  AttemptEvolutionLoadingSkeleton,
+  DesempenhoEstudoLoadingSkeleton,
+} from '@/components/dashboard/desempenho/DesempenhoEstudoLoadingSkeleton';
+import { finishAttemptSeries } from '@/lib/desempenho/attemptSeries';
+import {
+  loadEstudoDashboardStream,
+  type EstudoDashboardStream,
+} from '@/lib/desempenho/estudoPageLoad';
 import {
   filtersFromEstudoSearchParams,
   firstSearchParam,
   type DesempenhoEstudoSearchParams,
 } from '@/lib/desempenho/estudoSearchParams';
 
-export default async function DesempenhoEstudoPage({
+export default function DesempenhoEstudoPage({
+  searchParams,
+}: {
+  searchParams: Promise<DesempenhoEstudoSearchParams>;
+}) {
+  return (
+    <DesempenhoHubShell
+      description={DESEMPENHO_ESTUDO_HUB_DESCRIPTION}
+      action={<DesempenhoEstudoHubAction />}
+    >
+      <Suspense fallback={<DesempenhoEstudoLoadingSkeleton />}>
+        <DesempenhoEstudoBody searchParams={searchParams} />
+      </Suspense>
+    </DesempenhoHubShell>
+  );
+}
+
+async function DesempenhoEstudoBody({
   searchParams,
 }: {
   searchParams: Promise<DesempenhoEstudoSearchParams>;
 }) {
   const resolvedSearchParams = await searchParams;
   const filters = filtersFromEstudoSearchParams(resolvedSearchParams);
-  const data = await loadEstudoDashboard(filters, {
+  const stream = await loadEstudoDashboardStream(filters, {
     captura: firstSearchParam(resolvedSearchParams.captura),
   });
 
@@ -30,21 +58,36 @@ export default async function DesempenhoEstudoPage({
   ].join('-');
 
   return (
-    <DesempenhoHubShell
-      description="Onde você está errando, o quanto isso é confiável e qual é a próxima questão para testar."
-      action={
-        <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
-          <Link
-            href="/estudar"
-            className="inline-flex w-full items-center justify-center sm:w-auto"
-          >
-            <BookOpen className="h-4 w-4" aria-hidden />
-            Praticar na vitrine
-          </Link>
-        </Button>
-      }
-    >
-      <DesempenhoEstudoDashboard key={filterKey} data={data} />
-    </DesempenhoHubShell>
+    <DesempenhoEstudoDashboard
+      key={filterKey}
+      data={stream.data}
+      attemptSeriesSlot={attemptSeriesSlotFromStream(stream)}
+    />
   );
+}
+
+function attemptSeriesSlotFromStream(stream: EstudoDashboardStream) {
+  if (!stream.seriesReadPromise || !stream.seriesOptions) return undefined;
+  return (
+    <Suspense fallback={<AttemptEvolutionLoadingSkeleton />}>
+      <AttemptSeriesResolved
+        readPromise={stream.seriesReadPromise}
+        options={stream.seriesOptions}
+        placarZerado={stream.data.placar.respondidas === 0}
+      />
+    </Suspense>
+  );
+}
+
+async function AttemptSeriesResolved({
+  readPromise,
+  options,
+  placarZerado,
+}: {
+  readPromise: NonNullable<EstudoDashboardStream['seriesReadPromise']>;
+  options: NonNullable<EstudoDashboardStream['seriesOptions']>;
+  placarZerado: boolean;
+}) {
+  const series = finishAttemptSeries(await readPromise, options);
+  return <AttemptEvolutionCard series={series} placarZerado={placarZerado} />;
 }

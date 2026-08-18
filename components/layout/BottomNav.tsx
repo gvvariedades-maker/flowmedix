@@ -17,6 +17,7 @@ import { MOBILE_BOTTOM_NAV_SHELL, MOBILE_BOTTOM_NAV_Z } from '@/lib/layout/mobil
 import { useBottomNavHeightSync } from '@/lib/layout/useBottomNavHeightSync';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 import { useEstudarQuestaoImmersive } from '@/lib/layout/useEstudarQuestaoImmersive';
+import { isHubNavPrefetchDisabled } from '@/lib/layout/hubNavPending';
 import {
   MENU_ACCENT_STYLES,
   MenuNavIconChip,
@@ -88,6 +89,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
             <Link
               key={href}
               href={href}
+              prefetch={isHubNavPrefetchDisabled(href) ? false : undefined}
               tabIndex={linkTabIndex}
               aria-hidden={mobileOverlayBlocksNav ? true : undefined}
               aria-current={isActive ? 'page' : undefined}

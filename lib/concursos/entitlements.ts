@@ -57,6 +57,11 @@ export interface ModuloEstudoListRow {
 const ACCESSIBLE_MODULOS_LIMIT = SCALE_LIMITS.ACCESSIBLE_MODULOS;
 /** PostgREST: páginas grandes de vínculos evitam resposta monolítica. */
 const CONCURSO_MODULOS_PAGE_SIZE = 1000;
+/**
+ * Páginas 2+ de `concurso_modulos` em paralelo. 4 limita pressão no PostgREST
+ * sem voltar ao waterfall de 6 roundtrips sequenciais.
+ */
+const CONCURSO_MODULOS_PAGE_CONCURRENCY = 4;
 /** Fallback: consultas .in() muito grandes podem falhar. */
 const MODULO_ID_LOOKUP_CHUNK = 80;
 /** PostgREST: lotes de concurso_id em checagens pontuais. */
@@ -74,6 +79,39 @@ function chunkArray<T>(arr: T[], size: number): T[][] {
   const out: T[][] = [];
   for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
   return out;
+}
+
+/** Offsets das páginas 2+ (a página 0 já foi lida). */
+export function remainingConcursoModulosOffsets(
+  total: number,
+  pageSize: number = CONCURSO_MODULOS_PAGE_SIZE,
+): number[] {
+  const offsets: number[] = [];
+  for (let offset = pageSize; offset < total; offset += pageSize) {
+    offsets.push(offset);
+  }
+  return offsets;
+}
+
+async function mapWithConcurrency<T, R>(
+  items: readonly T[],
+  concurrency: number,
+  mapper: (item: T, index: number) => Promise<R>,
+): Promise<R[]> {
+  if (items.length === 0) return [];
+  const results: R[] = new Array(items.length);
+  let cursor = 0;
+  async function worker() {
+    while (true) {
+      const index = cursor;
+      cursor += 1;
+      if (index >= items.length) return;
+      results[index] = await mapper(items[index] as T, index);
+    }
+  }
+  const workerCount = Math.min(Math.max(1, concurrency), items.length);
+  await Promise.all(Array.from({ length: workerCount }, () => worker()));
+  return results;
 }
 
 function pickEmbeddedModulo(row: ConcursoModuloWithModuloRow): ModuloEstudoListRow | null {
@@ -437,7 +475,6 @@ async function collectModulosFromMatriculatedConcursos(
 ): Promise<ModuloEstudoListRow[]> {
   const supabase = await createServerSupabase();
   const collected: ModuloEstudoListRow[] = [];
-  let offset = 0;
 
   const bancaFilter = sqlFilters?.banca?.trim();
   const bancasFilter = sqlFilters?.bancas?.map((b) => b.trim()).filter(Boolean) ?? [];
@@ -468,35 +505,49 @@ async function collectModulosFromMatriculatedConcursos(
     }
   }
 
-  while (true) {
+  const applyModuloFilters = <Q extends {
+    in: (column: string, values: readonly string[]) => Q;
+    eq: (column: string, value: string) => Q;
+  }>(query: Q): Q => {
+    let next = query;
+    if (bancasFilter.length > 1) next = next.in('modulos_estudo.banca', bancasFilter);
+    else if (bancaFilter) next = next.eq('modulos_estudo.banca', bancaFilter);
+    else if (bancasFilter.length === 1) next = next.eq('modulos_estudo.banca', bancasFilter[0]!);
+    if (tituloAulasFilter.length > 1) {
+      next = next.in('modulos_estudo.titulo_aula', tituloAulasFilter);
+    } else if (tituloAulaFilter) {
+      next = next.eq('modulos_estudo.titulo_aula', tituloAulaFilter);
+    } else if (tituloAulasFilter.length === 1) {
+      next = next.eq('modulos_estudo.titulo_aula', tituloAulasFilter[0]!);
+    }
+    return next;
+  };
+
+  const fetchPage = async (offset: number, countExact: boolean) => {
+    const selectOptions = countExact ? { count: 'exact' as const } : undefined;
     let query = supabase
       .from('concurso_modulos')
-      .select(`concurso_id, modulo_id, ${modulosEmbed}`)
+      .select(`concurso_id, modulo_id, ${modulosEmbed}`, selectOptions)
       .in('concurso_id', concursoIds)
-      .order('modulo_id', { ascending: true })
-      .range(offset, offset + CONCURSO_MODULOS_PAGE_SIZE - 1);
-
-    if (bancasFilter.length > 1) query = query.in('modulos_estudo.banca', bancasFilter);
-    else if (bancaFilter) query = query.eq('modulos_estudo.banca', bancaFilter);
-    else if (bancasFilter.length === 1) query = query.eq('modulos_estudo.banca', bancasFilter[0]!);
-    if (tituloAulasFilter.length > 1) {
-      query = query.in('modulos_estudo.titulo_aula', tituloAulasFilter);
-    } else if (tituloAulaFilter) {
-      query = query.eq('modulos_estudo.titulo_aula', tituloAulaFilter);
-    } else if (tituloAulasFilter.length === 1) {
-      query = query.eq('modulos_estudo.titulo_aula', tituloAulasFilter[0]!);
-    }
-
-    const { data, error } = await query;
+      .order('modulo_id', { ascending: true });
+    query = applyModuloFilters(query);
+    const { data, error, count } = await query.range(
+      offset,
+      offset + CONCURSO_MODULOS_PAGE_SIZE - 1,
+    );
 
     if (error) {
       logger.error('Falha ao listar módulos por matrícula', error, { userId });
       throw error;
     }
 
-    const links = (data ?? []) as ConcursoModuloWithModuloRow[];
-    if (!links.length) break;
+    return {
+      links: (data ?? []) as ConcursoModuloWithModuloRow[],
+      count: typeof count === 'number' ? count : null,
+    };
+  };
 
+  const appendLinks = async (links: ConcursoModuloWithModuloRow[]) => {
     const pending: PendingModuloPorConcurso[] = [];
 
     for (const link of links) {
@@ -525,9 +576,40 @@ async function collectModulosFromMatriculatedConcursos(
         }
       }
     }
+  };
 
-    if (links.length < CONCURSO_MODULOS_PAGE_SIZE) break;
-    offset += CONCURSO_MODULOS_PAGE_SIZE;
+  const first = await fetchPage(0, true);
+  await appendLinks(first.links);
+  if (first.links.length < CONCURSO_MODULOS_PAGE_SIZE) {
+    return collected;
+  }
+
+  const fetchRemainingSequential = async (startOffset: number) => {
+    let offset = startOffset;
+    while (true) {
+      const page = await fetchPage(offset, false);
+      if (!page.links.length) break;
+      await appendLinks(page.links);
+      if (page.links.length < CONCURSO_MODULOS_PAGE_SIZE) break;
+      offset += CONCURSO_MODULOS_PAGE_SIZE;
+    }
+  };
+
+  const total = first.count;
+  if (total == null || total <= CONCURSO_MODULOS_PAGE_SIZE) {
+    await fetchRemainingSequential(CONCURSO_MODULOS_PAGE_SIZE);
+    return collected;
+  }
+
+  const restOffsets = remainingConcursoModulosOffsets(total);
+  const restPages = await mapWithConcurrency(
+    restOffsets,
+    CONCURSO_MODULOS_PAGE_CONCURRENCY,
+    (offset) => fetchPage(offset, false),
+  );
+  for (const page of restPages) {
+    if (!page.links.length) continue;
+    await appendLinks(page.links);
   }
 
   return collected;

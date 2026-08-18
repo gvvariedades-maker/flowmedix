@@ -73,7 +73,7 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
   const isEmpty = !openSession && recentSessions.length === 0;
 
   return (
-    <div className="bg-background">
+    <div className="bg-background" data-simulados-hub="lista">
       <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         <SimuladosHeader />
       </div>
