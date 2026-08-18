@@ -600,7 +600,7 @@ describe('VitrineSubjectCard', () => {
       linksEstudar,
     }).toEqual({
       seletor: '[data-testid="vitrine-list"]',
-      nos: 324,
+      nos: 264,
       linksEstudar: 12,
     });
     expect(list).not.toHaveTextContent('Questão 01');
