@@ -66,6 +66,16 @@ npm run audit:slug-alignment -- --subtopico="<nome canônico>" --strict
 npm run audit:numeric-factcheck -- --subtopico="<nome canônico>"
 ```
 
+### 3b. L2c — Nota pedagógica (anti-spoiler)
+
+O detector unificado roda dentro do `audit:subtopico-quality` (nada a chamar à parte). O leitor cego é opcional e entra por artefato:
+
+```bash
+npm run audit:blind-reader -- --catalog   # gera artifacts/blind-reader-gate.json
+```
+
+Gate: nenhum slug com nota `fail` (letra citada, veredito V/F abrindo o texto, polaridade invertida, `fail_leak` do leitor cego). Detalhe por slug no bloco `pedagogy` do artefato de ship. Ver [`QUALITY_LAYERS_MODEL.md`](QUALITY_LAYERS_MODEL.md) § L2c.
+
 ### 4. L6 — Segundo par de olhos na âncora
 
 Para **cada** lote `g*`:
@@ -92,7 +102,7 @@ npm run audit:subtopico-quality -- --subtopico="<nome canônico>" --promote
 
 **Sucesso:** `production_status: production_ready` = **VENDÁVEL**; `continuous.enabled: true`.
 
-**Falha parcial:** reportar `blockers[]` do artefato `artifacts/subtopico-quality/<pacote>.json`; se L1+L2+L2b OK, pode ter gravado `technical_ready_at` sem promover.
+**Falha parcial:** reportar `blockers[]` do artefato `artifacts/subtopico-quality/<pacote>.json`; se L1+L2+L2b OK, pode ter gravado `technical_ready_at` sem promover. `L2c` reprova sem tirar o `technical_ready`: é conteúdo para repair (F3), não defeito estrutural.
 
 ---
 

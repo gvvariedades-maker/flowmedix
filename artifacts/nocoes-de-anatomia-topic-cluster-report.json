@@ -1,0 +1,598 @@
+{
+  "generated_at": "2026-08-03T21:32:00.815Z",
+  "subtopico": "Noções de Anatomia",
+  "lote": "nocoes-de-anatomia-completo",
+  "total": 46,
+  "strong_threshold": 5,
+  "drift_total": 0,
+  "branch_totals": {
+    "anat_terminologia_planos": 15,
+    "anat_esqueleto": 14,
+    "anat_generico": 7,
+    "anat_muscular": 2,
+    "anat_cardiovascular": 7,
+    "anat_cavidades": 1
+  },
+  "strong_branches": [
+    {
+      "branch": "anat_terminologia_planos",
+      "count": 15,
+      "l3": "axis-deck · reference_table · tap · compare (candidato bespoke)",
+      "l3_decision": "molde_inedito"
+    },
+    {
+      "branch": "anat_esqueleto",
+      "count": 14,
+      "l3": "morphological · reference_table · tap · compare (genérico)",
+      "l3_decision": "ok_generico"
+    },
+    {
+      "branch": "anat_generico",
+      "count": 7,
+      "l3": "morphological · reference_table · tap · compare (genérico)",
+      "l3_decision": "ok_generico"
+    },
+    {
+      "branch": "anat_cardiovascular",
+      "count": 7,
+      "l3": "morphological · reference_table · tap · compare (genérico)",
+      "l3_decision": "ok_generico"
+    }
+  ],
+  "inedito_packages_needed": 1,
+  "handcrafts_needed": 46,
+  "cluster_decisions": [
+    {
+      "cluster": "Terminologia e planos anatômicos",
+      "count": 15,
+      "pct": 32.6,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-fepese-anatomia-anterior-ventral.json",
+      "branch_id": "anat_terminologia_planos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "family_counts": {
+        "conceito": 14,
+        "vf": 1
+      },
+      "sample_slugs": [
+        "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+        "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+        "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+        "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "molde_inedito",
+      "l3_package": "axis-deck · reference_table · tap · compare (candidato bespoke)"
+    },
+    {
+      "cluster": "Sistema esquelético / ossos e articulações",
+      "count": 14,
+      "pct": 30.4,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-ameosc-nocoes-de-anatomia-anat_esqueleto.json",
+      "branch_id": "anat_esqueleto",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "family_counts": {
+        "conceito": 14
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+        "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+        "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2",
+        "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-3"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Anatomia — conceito geral",
+      "count": 7,
+      "pct": 15.2,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-avancasp-nocoes-de-anatomia-anat_generico.json",
+      "branch_id": "anat_generico",
+      "pedagogical_branch_proposed": "anat_generico",
+      "family_counts": {
+        "conceito": 6,
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "avancasp-enfermagem-nocoes-de-anatomia-1775331667969-6",
+        "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+        "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-8",
+        "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Sistema cardiovascular",
+      "count": 7,
+      "pct": 15.2,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-cebraspe-nocoes-de-anatomia-anat_cardiovascular.json",
+      "branch_id": "anat_cardiovascular",
+      "pedagogical_branch_proposed": "anat_cardiovascular",
+      "family_counts": {
+        "certo_errado": 3,
+        "conceito": 4
+      },
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-0",
+        "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-1",
+        "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-2",
+        "fauel-enfermagem-nocoes-de-anatomia-1775447834740-7"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Sistema muscular",
+      "count": 2,
+      "pct": 4.3,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "anat_muscular",
+      "pedagogical_branch_proposed": "anat_muscular",
+      "family_counts": {
+        "conceito": 2
+      },
+      "sample_slugs": [
+        "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-5",
+        "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Cavidades e topografia",
+      "count": 1,
+      "pct": 2.2,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "anat_cavidades",
+      "pedagogical_branch_proposed": "anat_cavidades",
+      "family_counts": {
+        "conceito": 1
+      },
+      "sample_slugs": [
+        "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    }
+  ],
+  "rows": [
+    {
+      "slug": "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "Qual pulso pode ser palpado entre a apófise estilóide do rádio e o tendão dos flexores?",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "Para indicar uma terminologia de extremidades, o técnico em enfermagem deverá utilizar o prefixo:",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "O sistema esquelético adulto é constituído por aproximadamente 206 ossos, os quais podem ser classif",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+      "family": "vf",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "Com base no sistema esquelético, registre V, para verdadeiro, ou F, para falso, nos itens abaixo: (_",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775331667969-6",
+      "family": "conceito",
+      "topic": "Anatomia — conceito geral",
+      "pedagogical_cluster": "Anatomia — conceito geral",
+      "pedagogical_branch_proposed": "anat_generico",
+      "instruction_preview": "Para cuidar da higiene, conforto e segurança do paciente, é preciso conhecer a constituição da pele.",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-5",
+      "family": "conceito",
+      "topic": "Sistema muscular",
+      "pedagogical_cluster": "Sistema muscular",
+      "pedagogical_branch_proposed": "anat_muscular",
+      "instruction_preview": "É primariamente responsável pela abdução do ombro e pode ser afetado em lesões do manguito rotador o",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "A articulação do cotovelo é formada pela interação de várias estruturas ósseas. Quais ossos estão di",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "O esqueleto humano possui quantos ossos em sua fase adulta:",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-3",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "O médico ortopedista solicita ao técnico de imobilização ortopédica confeccionar uma tala gessada pa",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "O ligamento colateral lateral do corpo humano, esta relacionado ao grupo de ligamentos:",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-5",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "Pensando em fratura de Hutchinson, claramente estamos associando a parte óssea:",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-0",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "O corpo humano possui aproximadamente 112 músculos divididos em região frontal e dorsal, sinalize o ",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-1",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "O gesso de nomenclatura PTB (Patellar Tendon Bearing) é utilizado para fraturas:",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+      "family": "conceito",
+      "topic": "Anatomia — conceito geral",
+      "pedagogical_cluster": "Anatomia — conceito geral",
+      "pedagogical_branch_proposed": "anat_generico",
+      "instruction_preview": "Assinale a opção em que são citadas as duas principais funções do tecido epitelial.",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-1",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "A respeito das noções de anatomia e fisiologia humana, julgue os itens a seguir. I Proximal é o term",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-0",
+      "family": "certo_errado",
+      "topic": "Sistema cardiovascular",
+      "pedagogical_cluster": "Sistema cardiovascular",
+      "pedagogical_branch_proposed": "anat_cardiovascular",
+      "instruction_preview": "Julgue o item que se segue, relativo a anatomia e fisiologia do sistema cardiovascular. O coração, a",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-1",
+      "family": "certo_errado",
+      "topic": "Sistema cardiovascular",
+      "pedagogical_cluster": "Sistema cardiovascular",
+      "pedagogical_branch_proposed": "anat_cardiovascular",
+      "instruction_preview": "Julgue o item que se segue, relativo a anatomia e fisiologia do sistema cardiovascular. As artérias ",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-2",
+      "family": "certo_errado",
+      "topic": "Sistema cardiovascular",
+      "pedagogical_cluster": "Sistema cardiovascular",
+      "pedagogical_branch_proposed": "anat_cardiovascular",
+      "instruction_preview": "Julgue o item que se segue, relativo a anatomia e fisiologia do sistema cardiovascular. A valva mitr",
+      "drift": false
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-4",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "O cíngulo do membro superior e os ossos da parte livre do membro superior formam o esqueleto apendic",
+      "drift": false
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-5",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "Situado na face radial do carpo, ele representa o assoalho da tabaqueira anatômica. É o maior osso d",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-nocoes-de-anatomia-1775448514037-3",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "Marque a alternativa CORRETA:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-3",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "A pupila está localizada nos:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-8",
+      "family": "conceito",
+      "topic": "Anatomia — conceito geral",
+      "pedagogical_cluster": "Anatomia — conceito geral",
+      "pedagogical_branch_proposed": "anat_generico",
+      "instruction_preview": "Assinale a alternativa que aponta a localização e o sentido relacionado às \"papilas gustativas\":",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0",
+      "family": "conceito",
+      "topic": "Anatomia — conceito geral",
+      "pedagogical_cluster": "Anatomia — conceito geral",
+      "pedagogical_branch_proposed": "anat_generico",
+      "instruction_preview": "O endométrio",
+      "drift": false
+    },
+    {
+      "slug": "fauel-enfermagem-nocoes-de-anatomia-1775447834740-7",
+      "family": "conceito",
+      "topic": "Sistema cardiovascular",
+      "pedagogical_cluster": "Sistema cardiovascular",
+      "pedagogical_branch_proposed": "anat_cardiovascular",
+      "instruction_preview": "As válvulas cardíacas são estruturas responsáveis por assegurar o fluxo sanguíneo, correto e em dire",
+      "drift": false
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+      "family": "conceito",
+      "topic": "Cavidades e topografia",
+      "pedagogical_cluster": "Cavidades e topografia",
+      "pedagogical_branch_proposed": "anat_cavidades",
+      "instruction_preview": "Em situações de trauma abdominal, o conhecimento anatômico permite ao profissional de enfermagem rec",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "Na anatomia, utiliza-se terminologia padronizada para descrever posições e relações entre estruturas",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-nocoes-de-anatomia-1775448491347-7",
+      "family": "conceito",
+      "topic": "Sistema cardiovascular",
+      "pedagogical_cluster": "Sistema cardiovascular",
+      "pedagogical_branch_proposed": "anat_cardiovascular",
+      "instruction_preview": "Acerca da anatomia e fisiologia dos órgãos e sistemas, é correto afirmar:",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-nocoes-de-anatomia-1775448514037-1",
+      "family": "conceito",
+      "topic": "Sistema cardiovascular",
+      "pedagogical_cluster": "Sistema cardiovascular",
+      "pedagogical_branch_proposed": "anat_cardiovascular",
+      "instruction_preview": "O conhecimento básico de anatomia torna-se fundamental para melhor realizar os cuidados em saúde. As",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775447762008-4",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "O osso ímpar, localizado na parte posterior, formando a base do crânio, é denominado",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448475837-7",
+      "family": "conceito",
+      "topic": "Sistema cardiovascular",
+      "pedagogical_cluster": "Sistema cardiovascular",
+      "pedagogical_branch_proposed": "anat_cardiovascular",
+      "instruction_preview": "Na grande circulação, o sangue proveniente de todo o corpo retorna ao coração através da(s)",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-0",
+      "family": "conceito",
+      "topic": "Anatomia — conceito geral",
+      "pedagogical_cluster": "Anatomia — conceito geral",
+      "pedagogical_branch_proposed": "anat_generico",
+      "instruction_preview": "Assinale a opção que indica a veia responsável por trazer sangue venoso do estômago, esôfago, baço e",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-2",
+      "family": "conceito",
+      "topic": "Anatomia — conceito geral",
+      "pedagogical_cluster": "Anatomia — conceito geral",
+      "pedagogical_branch_proposed": "anat_generico",
+      "instruction_preview": "O intestino delgado é um tubo muscular de cerca de 5 a 6 metros responsável pela absorção dos alimen",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-5",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "O gesso antibráquio-manual inclui",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-6",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "A diferença entre o gesso pélvico-podálico e o inguinopodálico é que, o segundo",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-7",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "O segmento da coxa apresenta o(s) seguinte(s) osso(s): I. fíbula. II. fêmur. III. tíbia. Está corret",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448529213-0",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "Por definição, uma fratura é caracterizada pela perda da continuidade de",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-7",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "Durante um trauma, como uma queda com apoio da mão estendida (mecanismo de trauma em extensão), ocor",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-8",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "A cicatrização de fraturas é um processo complexo que envolve diversas estruturas ósseas e membranas",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-0",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "Assinale a alternativa que apresenta apenas ossos longos.",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-1",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "Assinale a alternativa que apresenta a definição correta de \"luxação\".",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-nocoes-de-anatomia-1775448275334-1",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "O plano vertical passando pelo corpo paralelamente à linha média, cortando-o longitudinalmente em la",
+      "drift": false
+    },
+    {
+      "slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0",
+      "family": "conceito",
+      "topic": "Sistema muscular",
+      "pedagogical_cluster": "Sistema muscular",
+      "pedagogical_branch_proposed": "anat_muscular",
+      "instruction_preview": "Assinale a alternativa correta que apresenta os músculos que formam o manguito rotador.",
+      "drift": false
+    },
+    {
+      "slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-1",
+      "family": "conceito",
+      "topic": "Sistema esquelético / ossos e articulações",
+      "pedagogical_cluster": "Sistema esquelético / ossos e articulações",
+      "pedagogical_branch_proposed": "anat_esqueleto",
+      "instruction_preview": "Assinale a alternativa correta sobre o objetivo principal da osteotomia ao redor do joelho.",
+      "drift": false
+    },
+    {
+      "slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-2",
+      "family": "conceito",
+      "topic": "Terminologia e planos anatômicos",
+      "pedagogical_cluster": "Terminologia e planos anatômicos",
+      "pedagogical_branch_proposed": "anat_terminologia_planos",
+      "instruction_preview": "Assinale a alternativa correta sobre exemplos de ossos planos.",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-nocoes-de-anatomia-1778712122855-1",
+      "family": "certo_errado",
+      "topic": "Anatomia — conceito geral",
+      "pedagogical_cluster": "Anatomia — conceito geral",
+      "pedagogical_branch_proposed": "anat_generico",
+      "instruction_preview": "Em se tratando de locais com presença de pulso verificável, o pulso poplíteo fica no dorso do pé.",
+      "drift": false
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-08-01T23:16:10.230Z",
+  "results": [
+    {
+      "lote": "sinais-vitais-completo",
+      "files": 527,
+      "named_letter": 1643,
+      "letter_spoiler": 1652,
+      "vf_verdict": 606,
+      "question_bound": 0,
+      "named_samples": [
+        {
+          "slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+          "evidence": "Letra C — Orientar o paciente sobre técnicas de relaxamento e respiração para reduzir o estresse e a"
+        },
+        {
+          "slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+          "evidence": "Exclua por termo-chave antes de confirmar letra C."
+        },
+        {
+          "slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+          "evidence": "Letra C — A-1, B-3, C-2, D-4."
+        },
+        {
+          "slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+          "evidence": "Letra A"
+        }
+      ],
+      "vf_samples": [
+        {
+          "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-3",
+          "evidence": "Falsa: I, II, III e IV."
+        },
+        {
+          "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-5",
+          "evidence": "Verdadeira: II e III, apenas."
+        },
+        {
+          "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-5",
+          "evidence": "Falsa: I e II, apenas."
+        },
+        {
+          "slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-7",
+          "evidence": "Falsa: Artéria radial."
+        }
+      ]
+    },
+    {
+      "lote": "vias-de-administracao-completo",
+      "files": 235,
+      "named_letter": 0,
+      "letter_spoiler": 0,
+      "vf_verdict": 475,
+      "question_bound": 0,
+      "named_samples": [],
+      "vf_samples": [
+        {
+          "slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+          "evidence": "Falsa: I e III apenas."
+        },
+        {
+          "slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+          "evidence": "Falsa: III apenas."
+        },
+        {
+          "slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+          "evidence": "Falsa: I e II apenas."
+        },
+        {
+          "slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+          "evidence": "Falsa: II e III apenas."
+        }
+      ]
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "files": 188,
+      "named_letter": 0,
+      "letter_spoiler": 0,
+      "vf_verdict": 302,
+      "question_bound": 0,
+      "named_samples": [],
+      "vf_samples": [
+        {
+          "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+          "evidence": "Verdadeira: I e II , apenas."
+        },
+        {
+          "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+          "evidence": "Falsa: III e IV , apenas."
+        },
+        {
+          "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+          "evidence": "Falsa: II e III , apenas."
+        },
+        {
+          "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+          "evidence": "Falsa: II , apenas."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:59:55.851Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g24",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "quadrix-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-0",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009294428-8",
+    "selecon-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-8",
+    "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-7",
+    "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-7",
+    "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-7",
+    "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-8",
+    "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "quadrix-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

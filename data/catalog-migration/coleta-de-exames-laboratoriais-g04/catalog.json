@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-08-05T23:50:45.110Z",
+  "lote": "coleta-de-exames-laboratoriais-g04",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 3024
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 3025
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-exames-laboratoriais-1779563559434-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 3211
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779562780466-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2971
+    },
+    {
+      "modulo_slug": "iset-enfermagem-coleta-de-exames-laboratoriais-1779562735777-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISET",
+      "avant_codigo": 2950
+    },
+    {
+      "modulo_slug": "itame-enfermagem-coleta-de-exames-laboratoriais-1779563200105-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 3000
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2975
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2976
+    }
+  ]
+}

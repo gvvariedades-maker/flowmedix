@@ -1,78 +1,20 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Sparkles, Lightbulb, Zap, Table2 } from 'lucide-react';
+import { Lightbulb, Zap } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { GoldenRuleSoftLensBoard } from './GoldenRuleSoftLensBoard';
-import { GoldenRuleProtocolCarousel } from './GoldenRuleProtocolCarousel';
-import { GoldenRuleMeshReveal } from './GoldenRuleMeshReveal';
-import { GoldenRuleLabPrepLensBoard } from './GoldenRuleLabPrepLensBoard';
-import { GoldenRuleDressingMatchMatrix } from './GoldenRuleDressingMatchMatrix';
-import { GoldenRulePniIntervalMatrix } from './GoldenRulePniIntervalMatrix';
-import { GoldenRuleCamNineRightsBoard } from './GoldenRuleCamNineRightsBoard';
-import { GoldenRuleCamHighRiskProtocolBoard } from './GoldenRuleCamHighRiskProtocolBoard';
-import { GoldenRuleCamExcetoReferenceBoard } from './GoldenRuleCamExcetoReferenceBoard';
-import { GoldenRuleCamDocumentacaoBoard } from './GoldenRuleCamDocumentacaoBoard';
-import { GoldenRulePniCalendarBoard } from './GoldenRulePniCalendarBoard';
-import { GoldenRuleMulherPrenatalBoard } from './GoldenRuleMulherPrenatalBoard';
-import { GoldenRuleMulherPartoHumanizadoBoard } from './GoldenRuleMulherPartoHumanizadoBoard';
-import { GoldenRuleMulherPapanicolauBoard } from './GoldenRuleMulherPapanicolauBoard';
-import { GoldenRuleMulherMamaBoard } from './GoldenRuleMulherMamaBoard';
-import { GoldenRuleMulherPuerperioBoard } from './GoldenRuleMulherPuerperioBoard';
-import { GoldenRuleMulherPlanejamentoBoard } from './GoldenRuleMulherPlanejamentoBoard';
-import {
-  GoldenRuleCriancaFeedingBoard,
-  GoldenRuleCriancaScreeningBoard,
-  GoldenRuleCriancaPediatricBoard,
-  GoldenRuleCriancaDehydrationBoard,
-  GoldenRuleCriancaPuericulturaBoard,
-  GoldenRuleCriancaNeonatalBoard,
-  GoldenRuleCriancaDevBoard,
-} from './criancaVariants';
-import { GoldenRulePniTemperatureRail } from './GoldenRulePniTemperatureRail';
-import { GoldenRuleVitalsReferenceBoard } from './GoldenRuleVitalsReferenceBoard';
-import { GoldenRuleIstReferenceBoard } from './GoldenRuleIstReferenceBoard';
-import { GoldenRuleBiossegReferenceBoard } from './GoldenRuleBiossegReferenceBoard';
-import { GoldenRuleSaeReferenceBoard } from './GoldenRuleSaeReferenceBoard';
-import { GoldenRuleSondaMeasurementBoard } from './GoldenRuleSondaMeasurementBoard';
-import { GoldenRuleViaReferenceBoard } from './GoldenRuleViaReferenceBoard';
-import { GoldenRulePkPdReferenceBoard } from './GoldenRulePkPdReferenceBoard';
-import { GoldenRuleFarmacoClinicoReferenceBoard } from './GoldenRuleFarmacoClinicoReferenceBoard';
-import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
-import { GoldenRulePtCraseFunnelBoard } from './GoldenRulePtCraseFunnelBoard';
-import { GoldenRulePtCliticRailBoard } from './GoldenRulePtCliticRailBoard';
-import { GoldenRulePtCommaRailBoard } from './GoldenRulePtCommaRailBoard';
-import { GoldenRulePtTermMatrixBoard } from './GoldenRulePtTermMatrixBoard';
-import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
-import { GoldenRuleAdolescentZBandBoard } from './GoldenRuleAdolescentZBandBoard';
-import { GoldenRuleTrabalhoNr32ReferenceBoard } from './GoldenRuleTrabalhoNr32ReferenceBoard';
-import { GoldenRuleSpNspReferenceBoard } from './GoldenRuleSpNspReferenceBoard';
-import { GoldenRuleRespiratorioSpo2ReferenceBoard } from './GoldenRuleRespiratorioSpo2ReferenceBoard';
-import { GoldenRuleMentalRapsTierBoard } from './GoldenRuleMentalRapsTierBoard';
-import { GoldenRuleMentalCrisisLadderBoard } from './GoldenRuleMentalCrisisLadderBoard';
-import { GoldenRulePeriPreopPrepBoard } from './GoldenRulePeriPreopPrepBoard';
-import { GoldenRulePeriAldreteBoard } from './GoldenRulePeriAldreteBoard';
-import { GoldenRulePeriProtocolReferenceBoard } from './GoldenRulePeriProtocolReferenceBoard';
-import { GoldenRulePeriVfReferenceBoard } from './GoldenRulePeriVfReferenceBoard';
-import { GoldenRuleUrgenciasRcpParamsBoard } from './GoldenRuleUrgenciasRcpParamsBoard';
-import { GoldenRuleUrgenciasTraumaReferenceBoard } from './GoldenRuleUrgenciasTraumaReferenceBoard';
-import { GoldenRuleUrgenciasCincinnatiBoard } from './GoldenRuleUrgenciasCincinnatiBoard';
-import { GoldenRuleUrgenciasShockReferenceBoard } from './GoldenRuleUrgenciasShockReferenceBoard';
-import { GoldenRuleUrgenciasHeimlichBoard } from './GoldenRuleUrgenciasHeimlichBoard';
-import { GoldenRuleUrgenciasPediatricParamsBoard } from './GoldenRuleUrgenciasPediatricParamsBoard';
-import { GoldenRuleUrgenciasManchesterBoard } from './GoldenRuleUrgenciasManchesterBoard';
-import { GoldenRuleUrgenciasProtocolReferenceBoard } from './GoldenRuleUrgenciasProtocolReferenceBoard';
-import { GoldenRuleUrgenciasExcetoReferenceBoard } from './GoldenRuleUrgenciasExcetoReferenceBoard';
-import { GoldenRuleEtiologyLetterSpectrum } from './GoldenRuleEtiologyLetterSpectrum';
-import { GoldenRuleTbPrecautionBoard } from './GoldenRuleTbPrecautionBoard';
-import { GoldenRuleItuBundleBoard } from './GoldenRuleItuBundleBoard';
-import { GoldenRuleIvDifferentialBoard } from './GoldenRuleIvDifferentialBoard';
-import { GoldenRuleIvDeviceReferenceBoard } from './GoldenRuleIvDeviceReferenceBoard';
-import { GoldenRuleIvExcetoCommandBoard } from './GoldenRuleIvExcetoCommandBoard';
-import { GoldenRuleIvIntervalBoard } from './GoldenRuleIvIntervalBoard';
-import { GoldenRuleIvAntisepsisBoard } from './GoldenRuleIvAntisepsisBoard';
 import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
+import { getGoldenRuleBespoke } from '../registry/goldenRule';
+import {
+  BoardChrome,
+  CategoryStrip,
+  LabelBodyRow,
+  PolarityPanel,
+  type BoardTone,
+} from '../primitives';
+import { softLensEmphasisToTone } from './GoldenRuleSoftLensBoard';
 
 export type GoldenRuleRowEmphasis = 'default' | 'highlight' | 'alert' | 'success';
 export type GoldenRuleRowBadge = 'hot' | 'warn' | 'ok' | 'info';
@@ -95,69 +37,37 @@ interface GoldenRuleProps {
   theme: ThemeColors;
   layoutVariant?: string;
   footerRule?: string;
+  /** Override do eyebrow (ex.: PT → «Decore gramática»). */
+  eyebrow?: string;
 }
 
-const BADGE_STYLES: Record<
-  GoldenRuleRowBadge,
-  { className: string; label: string }
-> = {
-  hot: {
-    className:
-      'bg-red-100 text-red-800 ring-1 ring-red-200',
-    label: 'Alta',
-  },
-  warn: {
-    className:
-      'bg-amber-100 text-amber-800 ring-1 ring-amber-200',
-    label: 'Pegada',
-  },
-  ok: {
-    className:
-      'bg-emerald-100 text-emerald-800 ring-1 ring-emerald-200',
-    label: 'Fixar',
-  },
-  info: {
-    className:
-      'bg-blue-100 text-blue-800 ring-1 ring-blue-200',
-    label: 'Contexto',
-  },
+const BADGE_TONE: Record<GoldenRuleRowBadge, BoardTone> = {
+  hot: 'exception',
+  warn: 'warn',
+  ok: 'keep',
+  info: 'command',
 };
 
-function rowEmphasisClasses(emphasis: GoldenRuleRowEmphasis | undefined): string {
-  switch (emphasis) {
-    case 'highlight':
-      return 'bg-amber-50/80 border-l-[3px] border-l-amber-300 pl-[13px] md:pl-[13px]';
-    case 'alert':
-      return 'bg-rose-50/80 border-l-[3px] border-l-rose-300 pl-[13px] md:pl-[13px]';
-    case 'success':
-      return 'bg-emerald-50/80 border-l-[3px] border-l-emerald-400 pl-[13px] md:pl-[13px]';
-    default:
-      return 'bg-white/60';
-  }
-}
-
-function ReferenceTableBadge({ badge }: { badge: GoldenRuleRowBadge }) {
-  const config = BADGE_STYLES[badge];
-  return (
-    <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-full px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wide md:px-2.5 md:py-1 md:text-[10px] ${config.className}`}
-    >
-      {config.label}
-    </span>
-  );
-}
+const BADGE_LABEL: Record<GoldenRuleRowBadge, string> = {
+  hot: 'Alta',
+  warn: 'Pegada',
+  ok: 'Fixar',
+  info: 'Contexto',
+};
 
 function MnemonicHighlight({ content }: { content: string }) {
   const trimmed = content.trim();
   if (!trimmed || trimmed.length > 28) return null;
 
   return (
-    <div className="mb-4 rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100 p-5 text-center shadow-md md:mb-6">
-      <p className="font-display text-3xl font-black tracking-wide text-blue-800 md:text-4xl">
+    <PolarityPanel tone="command" emphasized>
+      <p className="text-center font-body text-2xl font-black tracking-wide text-sky-900 md:text-3xl">
         {trimmed}
       </p>
-      <p className="mt-2 font-body text-sm text-blue-700/80">Mnemônico para fixar na prova</p>
-    </div>
+      <p className="mt-2 text-center font-mono text-[10px] font-bold uppercase tracking-widest text-sky-700">
+        Mnemônico para fixar na prova
+      </p>
+    </PolarityPanel>
   );
 }
 
@@ -166,124 +76,90 @@ function ReferenceTableLayout({
   rows,
   theme,
   footerRule,
+  eyebrow = 'Decore clínico',
 }: {
   content?: string;
   rows: GoldenRuleRow[];
   theme: ThemeColors;
   footerRule?: string;
+  eyebrow?: string;
 }) {
   const title = content?.trim();
   const reduceMotion = useReducedMotion();
-  const hasBadges = rows.some((row) => row.badge);
   const showMnemonic = Boolean(title && title.length <= 28 && rows.length === 0);
 
   return (
-    <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-4 md:p-8">
-      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
-      <motion.div
-        className={`relative z-10 w-full min-w-0 max-w-4xl rounded-2xl border-2 bg-white/90 shadow-sm backdrop-blur-sm md:rounded-3xl ${theme.borderColor} p-5 md:p-7`}
-        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: 'easeOut' }}
-      >
-        <div className="mb-4 flex items-center gap-3 md:mb-6">
-          <motion.div
-            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${theme.iconBg}`}
-          >
-            <Table2 className={`h-5 w-5 ${theme.iconText}`} />
-          </motion.div>
-          {title && !showMnemonic ? (
-            <h2 className="font-display min-w-0 flex-1 text-base font-extrabold uppercase leading-tight tracking-tight break-words [overflow-wrap:anywhere] md:text-xl lg:text-2xl">
-              <span className={theme.iconText}>
-                {title}
-              </span>
-            </h2>
-          ) : !showMnemonic ? (
-            <span className={`font-mono text-[11px] uppercase tracking-widest ${theme.textSecondary}`}>
-              Referência rápida
-            </span>
-          ) : null}
-        </div>
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.45}
+      eyebrow={eyebrow}
+      title={title && !showMnemonic ? title : undefined}
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'FIXAÇÃO' : undefined}
+      maxWidth="3xl"
+    >
+      {showMnemonic && title ? <MnemonicHighlight content={title} /> : null}
 
-        {showMnemonic && title ? <MnemonicHighlight content={title} /> : null}
+      {!title && !showMnemonic ? (
+        <p className="text-center font-mono text-[11px] uppercase tracking-widest text-slate-500">
+          Referência rápida
+        </p>
+      ) : null}
 
-        <motion.div className={`overflow-hidden rounded-xl border bg-white/80 shadow-sm ${theme.borderColor}`}>
-          <motion.div
-            className={`font-mono hidden gap-0 border-b px-4 py-2.5 text-[10px] uppercase tracking-widest md:grid ${theme.borderColor} ${theme.iconBg} ${
-              hasBadges
-                ? 'grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)_72px]'
-                : 'grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]'
-            } ${theme.textSecondary}`}
-            aria-hidden
-          >
-            <span>Rótulo</span>
-            <span>Valor</span>
-            {hasBadges ? <span className="text-center">Foco</span> : null}
-          </motion.div>
-          <motion.ul className={`divide-y ${theme.borderColor}`}>
-            {rows.map((row, index) => {
-              const emphasis = row.emphasis ?? 'default';
-              const rowClass = rowEmphasisClasses(emphasis);
-              const zebra = index % 2 === 1 && emphasis === 'default' ? 'bg-slate-50/40' : '';
-
-              return (
-                <motion.li
-                  key={`${row.label}-${index}`}
-                  className={`grid grid-cols-1 gap-1.5 px-4 py-3 transition-colors hover:brightness-[0.98] md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)_72px] md:items-center md:gap-4 md:py-3.5 ${
-                    hasBadges ? '' : 'md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]'
-                  } ${rowClass} ${zebra}`}
-                  initial={reduceMotion ? false : { opacity: 0, x: -8 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.28, delay: reduceMotion ? 0 : index * 0.05 }}
-                >
-                  <span
-                    className={`font-mono text-[11px] uppercase tracking-wide break-words [overflow-wrap:anywhere] md:text-sm ${
-                      emphasis === 'highlight'
-                        ? 'text-amber-700'
-                        : emphasis === 'alert'
-                          ? 'text-red-700'
-                          : emphasis === 'success'
-                            ? 'text-emerald-700'
-                            : theme.textSecondary
-                    }`}
-                  >
-                    {row.label}
+      <div className="flex flex-col gap-2.5">
+        {rows.map((row, index) => {
+          const tone = softLensEmphasisToTone(row.emphasis);
+          return (
+            <motion.div
+              key={`${row.label}-${index}`}
+              initial={reduceMotion ? false : { opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.28, delay: reduceMotion ? 0 : index * 0.05 }}
+            >
+              <LabelBodyRow
+                layout="rail"
+                chip={row.label}
+                body={
+                  <span className="flex flex-wrap items-center gap-2">
+                    <span>{row.value}</span>
+                    {row.badge ? (
+                      <CategoryStrip label={BADGE_LABEL[row.badge]} tone={BADGE_TONE[row.badge]} />
+                    ) : null}
                   </span>
-                  <span
-                    className={`font-body text-sm font-semibold leading-snug break-words [overflow-wrap:anywhere] md:text-base ${
-                      emphasis === 'highlight'
-                        ? 'text-amber-800'
-                        : emphasis === 'alert'
-                          ? 'text-rose-800'
-                          : emphasis === 'success'
-                            ? 'text-emerald-800'
-                            : theme.textPrimary
-                    }`}
-                  >
-                    {row.value}
-                  </span>
-                  {row.badge ? (
-                    <div className="flex md:justify-center">
-                      <ReferenceTableBadge badge={row.badge} />
-                    </div>
-                  ) : hasBadges ? (
-                    <span className="hidden md:block" aria-hidden />
-                  ) : null}
-                </motion.li>
-              );
-            })}
-          </motion.ul>
-        </motion.div>
+                }
+                tone={tone}
+                hint={row.exam_hint || row.fixation}
+              />
+            </motion.div>
+          );
+        })}
+      </div>
+    </BoardChrome>
+  );
+}
 
-        {footerRule ? (
-          <p
-            className={`font-body mt-4 rounded-xl border px-4 py-3 text-sm italic leading-relaxed md:mt-6 md:text-base ${theme.borderColor} ${theme.iconBg} ${theme.textSecondary}`}
-          >
-            {footerRule}
-          </p>
-        ) : null}
-      </motion.div>
-    </motion.div>
+function TypographicBoard({
+  theme,
+  footerRule,
+  eyebrow = 'Decore clínico',
+  children,
+}: {
+  theme: ThemeColors;
+  footerRule?: string;
+  eyebrow?: string;
+  children: ReactNode;
+}) {
+  return (
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.45}
+      eyebrow={eyebrow}
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'FIXAÇÃO' : undefined}
+      maxWidth="3xl"
+    >
+      {children}
+    </BoardChrome>
   );
 }
 
@@ -291,8 +167,7 @@ function ReferenceTableLayout({
 // GOLDEN RULE: Tipografia gigante OU tabela reference_table (rows)
 // layout_variant: center | compact | minimal | banner | reference_table
 // Com rows → reference_table automático no player (salvo override tipográfico explícito)
-// rows[].emphasis: default | highlight | alert | success
-// rows[].badge: hot | warn | ok | info
+// Chassis G2: BoardChrome + LabelBodyRow / PolarityPanel
 // ============================================================================
 export const GoldenRule = ({
   content = '',
@@ -300,521 +175,91 @@ export const GoldenRule = ({
   theme,
   layoutVariant = 'center',
   footerRule,
+  eyebrow = 'Decore clínico',
 }: GoldenRuleProps) => {
   const variant = layoutVariant || 'center';
 
-  if (variant === 'oxygen-rule-carousel' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleProtocolCarousel content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'iv-bundle-mesh-reveal' && rows && rows.length > 0) {
-    return <GoldenRuleMeshReveal content={content} rows={rows} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'lab-prep-lens-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleLabPrepLensBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'dressing-match-matrix' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleDressingMatchMatrix content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'pni-interval-matrix' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePniIntervalMatrix content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'cam-nine-rights-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleCamNineRightsBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'cam-high-risk-protocol-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleCamHighRiskProtocolBoard
-        content={content}
-        rows={rows}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'cam-exceto-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleCamExcetoReferenceBoard
-        content={content}
-        rows={rows}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'cam-documentacao-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleCamDocumentacaoBoard
-        content={content}
-        rows={rows}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'iv-differential-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleIvDifferentialBoard
-        content={content}
-        rows={rows}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'iv-device-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleIvDeviceReferenceBoard
-        content={content}
-        rows={rows}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'iv-exceto-command-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleIvExcetoCommandBoard
-        content={content}
-        rows={rows}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'iv-interval-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleIvIntervalBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'iv-antisepsis-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleIvAntisepsisBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'pni-calendar-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePniCalendarBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'mulher-prenatal-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleMulherPrenatalBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'mulher-parto-humanizado-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleMulherPartoHumanizadoBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'mulher-papanicolau-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleMulherPapanicolauBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'mulher-mama-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleMulherMamaBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'mulher-puerperio-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleMulherPuerperioBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'mulher-planejamento-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleMulherPlanejamentoBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'crianca-feeding-board' && rows && rows.length > 0) {
-    return <GoldenRuleCriancaFeedingBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-screening-board' && rows && rows.length > 0) {
-    return <GoldenRuleCriancaScreeningBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-pediatric-board' && rows && rows.length > 0) {
-    return <GoldenRuleCriancaPediatricBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-dehydration-board' && rows && rows.length > 0) {
-    return <GoldenRuleCriancaDehydrationBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-puericultura-board' && rows && rows.length > 0) {
-    return <GoldenRuleCriancaPuericulturaBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-neonatal-board' && rows && rows.length > 0) {
-    return <GoldenRuleCriancaNeonatalBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-dev-board' && rows && rows.length > 0) {
-    return <GoldenRuleCriancaDevBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'pni-temperature-rail' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePniTemperatureRail content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'vitals-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleVitalsReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'ist-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleIstReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'biosseg-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleBiossegReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'sae-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleSaeReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'sonda-measurement-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleSondaMeasurementBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'via-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleViaReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'pk-pd-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePkPdReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'farmaco-clinico-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleFarmacoClinicoReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'burn-rule-nine-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleBurnRuleNineBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'pt-crase-funnel-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePtCraseFunnelBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'pt-clitic-rail-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePtCliticRailBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'pt-comma-rail-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePtCommaRailBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'pt-term-matrix-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePtTermMatrixBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'pt-subject-focus-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePtTermMatrixBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'trabalho-nr32-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleTrabalhoNr32ReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'sp-nsp-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleSpNspReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'respiratorio-spo2-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleRespiratorioSpo2ReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'mental-raps-tier-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleMentalRapsTierBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'mental-crisis-ladder-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleMentalCrisisLadderBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'peri-preop-prep-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePeriPreopPrepBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'peri-aldrete-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePeriAldreteBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'peri-protocol-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePeriProtocolReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'peri-vf-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRulePeriVfReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-rcp-params-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleUrgenciasRcpParamsBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-trauma-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleUrgenciasTraumaReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-cincinnati-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleUrgenciasCincinnatiBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-shock-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleUrgenciasShockReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-heimlich-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleUrgenciasHeimlichBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-pediatric-params-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleUrgenciasPediatricParamsBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-manchester-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleUrgenciasManchesterBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-protocol-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleUrgenciasProtocolReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-exceto-reference-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleUrgenciasExcetoReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'etiology-letter-spectrum' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleEtiologyLetterSpectrum content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'tb-precaution-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleTbPrecautionBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'itu-bundle-letter-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleItuBundleBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'adolescent-sigilo-spectrum' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleAdolescentSigiloSpectrum content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'adolescent-z-band-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleAdolescentZBandBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'soft-lens-board' && rows && rows.length > 0) {
-    return (
-      <GoldenRuleSoftLensBoard content={content} rows={rows} theme={theme} footerRule={footerRule} hintProfile="calc" />
-    );
+  const bespoke = getGoldenRuleBespoke(variant);
+  if (bespoke && (!bespoke.requiresRows || (rows && rows.length > 0))) {
+    const Comp = bespoke.Component;
+    return <Comp content={content} rows={rows} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'reference_table' && rows && rows.length > 0) {
     return (
-      <ReferenceTableLayout content={content} rows={rows} theme={theme} footerRule={footerRule} />
+      <ReferenceTableLayout
+        content={content}
+        rows={rows}
+        theme={theme}
+        footerRule={footerRule}
+        eyebrow={eyebrow}
+      />
     );
   }
 
-  // VARIANTE 1: CENTER (padrão) — Tipografia gigante centralizada
+  // CENTER (padrão) — tipografia hero + footer G2
   if (variant === 'center') {
     return (
-      <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-center justify-center overflow-y-auto p-3 md:p-8">
-        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
-        <GoldenRuleHeroCard content={content} theme={theme} footerRule={footerRule} />
-      </div>
+      <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
+        <GoldenRuleHeroCard content={content} theme={theme} />
+      </TypographicBoard>
     );
   }
 
-  // VARIANTE 2: COMPACT — Ícone no topo, texto abaixo
+  // COMPACT — ícone + texto
   if (variant === 'compact') {
     return (
-      <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-4 md:p-6 lg:p-10">
-        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-40`} />
-        <motion.div
-          className={`relative z-10 w-full min-w-0 max-w-3xl p-5 md:p-7 rounded-2xl border-2 ${theme.borderColor} bg-white shadow-sm`}
-        >
-          <motion.div className={`w-10 h-10 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} mb-3`}>
-            <Lightbulb size={20} />
-          </motion.div>
-          <p className={`font-display min-w-0 text-base font-bold leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto md:text-lg lg:text-xl ${theme.textPrimary}`}>
+      <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
+        <PolarityPanel tone="command">
+          <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-sky-600 text-white">
+            <Lightbulb size={20} aria-hidden />
+          </div>
+          <p className="font-body text-base font-bold leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto text-slate-900 md:text-lg">
             {content}
           </p>
-          {footerRule ? (
-            <p className={`font-body mt-4 text-sm italic leading-relaxed md:mt-5 md:text-base ${theme.textSecondary}`}>
-              {footerRule}
-            </p>
-          ) : null}
-        </motion.div>
-      </motion.div>
+        </PolarityPanel>
+      </TypographicBoard>
     );
   }
 
-  // VARIANTE 3: MINIMAL — Apenas texto com borda sutil
+  // MINIMAL — citação com massa
   if (variant === 'minimal') {
     return (
-      <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-6">
-        <motion.div className={`absolute inset-0 bg-slate-50`} />
-        <motion.div className={`relative z-10 w-full min-w-0 max-w-2xl py-5 px-5 border-l-4 ${theme.borderColor}`}>
-          <p className={`font-body text-base italic leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto md:text-xl ${theme.textPrimary}`}>
+      <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
+        <PolarityPanel tone="neutral">
+          <p className="font-body text-base italic leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto text-slate-900 md:text-xl">
             {content}
           </p>
-          {footerRule ? (
-            <p className={`font-body mt-4 text-sm italic leading-relaxed md:mt-5 md:text-base ${theme.textSecondary}`}>
-              {footerRule}
-            </p>
-          ) : null}
-        </motion.div>
-      </motion.div>
+        </PolarityPanel>
+      </TypographicBoard>
     );
   }
 
-  // VARIANTE 4: BANNER — Ícone no topo + texto abaixo (coluna, evita corte horizontal)
+  // BANNER — âncora tipográfica
   if (variant === 'banner') {
     const titleSize = getGoldenRuleTitleSizeClass(content);
     return (
-      <motion.div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-center justify-center overflow-y-auto p-3 md:p-6">
-        <motion.div className={`absolute inset-0 bg-gradient-to-r ${theme.bgGradient} opacity-50`} />
-        <motion.div
-          className={`relative z-10 flex w-full min-w-0 max-w-5xl flex-col items-center gap-4 rounded-2xl border-2 bg-white p-6 shadow-sm md:p-8 ${theme.borderColor}`}
-        >
-          <div
-            className="pointer-events-none absolute inset-0 rounded-[inherit]"
-            aria-hidden
-            style={{
-              background: `radial-gradient(ellipse 80% 50% at 50% 0%, ${theme.glow} 0%, transparent 70%)`,
-            }}
-          />
-          <motion.div
-            className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl md:h-16 md:w-16 ${theme.iconBg}`}
-          >
-            <Zap className={`h-7 w-7 md:h-8 md:w-8 ${theme.iconText}`} aria-hidden />
-          </motion.div>
+      <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
+        <PolarityPanel tone="warn" emphasized>
+          <div className="mb-4 flex justify-center">
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-600 text-white md:h-16 md:w-16">
+              <Zap className="h-7 w-7 md:h-8 md:w-8" aria-hidden />
+            </span>
+          </div>
           <h2
-            className={`font-display relative w-full min-w-0 text-center font-extrabold uppercase leading-snug tracking-tight break-words [overflow-wrap:anywhere] hyphens-auto text-slate-900 ${titleSize}`}
+            className={`font-body w-full text-center font-extrabold uppercase leading-snug tracking-tight break-words [overflow-wrap:anywhere] hyphens-auto text-amber-950 ${titleSize}`}
           >
             {content}
           </h2>
-          {footerRule ? (
-            <p
-              className={`font-body relative w-full border-t border-slate-100 pt-4 text-center text-sm font-medium leading-relaxed md:text-base ${theme.textSecondary}`}
-            >
-              {footerRule}
-            </p>
-          ) : null}
-        </motion.div>
-      </motion.div>
+        </PolarityPanel>
+      </TypographicBoard>
     );
   }
 
   // Fallback: center
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-center justify-center overflow-y-auto p-3 md:p-8">
-      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
-      <GoldenRuleHeroCard content={content} theme={theme} footerRule={footerRule} rounded="2xl" />
-    </div>
+    <TypographicBoard theme={theme} footerRule={footerRule} eyebrow={eyebrow}>
+      <GoldenRuleHeroCard content={content} theme={theme} rounded="2xl" />
+    </TypographicBoard>
   );
 };

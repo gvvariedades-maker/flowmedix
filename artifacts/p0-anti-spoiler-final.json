@@ -1,0 +1,96 @@
+{
+  "vias": [
+    {
+      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "evidence": "B erra ao indicar irritantes e troca metabolismo gástrico por hepático."
+    },
+    {
+      "slug": "vunesp-enfermagem-vias-de-administracao-1776056338955-3",
+      "evidence": "IV = imediata | IM = rápida | SC = lenta/contínua | VO = variável. A erra ao pedir absorção rápida (perfil de IV/IM)."
+    },
+    {
+      "slug": "vunesp-enfermagem-vias-de-administracao-1776056338955-3",
+      "evidence": "SC admite volumes pequenos (em geral até ~1 mL; alguns textos até 1,5 mL). D erra ao falar em doses grandes + efeito rápido."
+    }
+  ],
+  "imunizacao": [
+    {
+      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+      "evidence": "A vacina hepatite A é apresentada sob a forma liofilizada em frasco monodose."
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+      "evidence": "A vacina hepatite A é apresentada sob a forma liofilizada em frasco monodose."
+    },
+    {
+      "slug": "fepese-enfermagem-imunizacao-1779564109452-3",
+      "evidence": "A vacina contra hepatite B é opcional aos profissionais de saúde, devendo ser aplicada em esquema de 2 duas por via subcutânea."
+    },
+    {
+      "slug": "fepese-enfermagem-imunizacao-1779564119665-1",
+      "evidence": "A vacina que protege contra Hepatite B é indicada aos profissionais da saúde devendo ser aplicada em duas doses, com intervalo de 30 dias."
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-0",
+      "evidence": "Dérmica"
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-0",
+      "evidence": "Dérmica"
+    },
+    {
+      "slug": "funcern-enfermagem-imunizacao-1777103238173-7",
+      "evidence": "Hepatite A é administrada por via subcutânea na dose de 0,5 ml."
+    },
+    {
+      "slug": "fundatec-enfermagem-imunizacao-1779564006577-6",
+      "evidence": "A vacina contra a hepatite B é administrada por via subcutânea."
+    },
+    {
+      "slug": "ibade-enfermagem-imunizacao-1777103230085-4",
+      "evidence": "Células fagocíticas"
+    },
+    {
+      "slug": "ibade-enfermagem-imunizacao-1777103230085-4",
+      "evidence": "Células fagocíticas;"
+    },
+    {
+      "slug": "ibade-enfermagem-imunizacao-1777103230085-4",
+      "evidence": "Células fagocíticas; aos ? meses"
+    },
+    {
+      "slug": "ibade-enfermagem-imunizacao-1777103230085-5",
+      "evidence": "a vacina contra a hepatite B é administrada em duas doses"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-6",
+      "evidence": "A dose da vacina hepatite B é de 0,5 mL para recém-nascidos, lactentes e crianças até 15 anos, e de 1,0 mL a partir dos 16 anos de idade, sendo administrada pr…"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-6",
+      "evidence": "A dose da vacina hepatite B é de 0,5 mL para recém-nascidos, lactentes e crianças até 15 anos, e de 1,0 mL a partir dos 16 anos de idade, sendo administrada pr…"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+      "evidence": "O vírus da hepatite B é altamente infectivo e facilmente transmitido por várias vias, dentre elas a via sexual."
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+      "evidence": "O vírus da hepatite B é altamente infectivo e facilmente transmitido por várias vias, dentre elas a via sexual. aos ? meses"
+    },
+    {
+      "slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+      "evidence": "O esquema vacinal para hepatite B é de três doses, com intervalos de 30 a 60 dias entre as três doses, e a via de administração é intramuscular."
+    },
+    {
+      "slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+      "evidence": "O esquema vacinal para hepatite B é de três doses, com intervalos de 30 a 60 dias entre as três doses, e a via de administração é intramuscular."
+    }
+  ],
+  "summary": {
+    "vias": 3,
+    "imunizacao": 18,
+    "vias_true_erra": 3,
+    "imu_false_article_A": 0
+  }
+}

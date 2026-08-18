@@ -11,14 +11,18 @@
     "content_standard": "golden-v1",
     "family": "certo_errado",
     "content_review": {
-      "reviewed_at": "2026-07-04",
-      "reviewer": "professor-para-concurso",
+      "reviewed_at": "2026-08-04",
+      "reviewer": "ancoras-100",
       "guideline_snapshot": "MS/COFEN — técnica PA: artéria braquial no braço · esfigmomanômetro + estetoscópio · pressão divergente = afastamento sistólico/diastólico",
       "exam_vs_current": "none",
       "catalog_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
       "cluster": "INCORRETA / EXCETO — técnica SV",
       "anchor_role": "incorreta_pa_pressao_divergente",
-      "roi_error": "exceto_coringa_sv"
+      "roi_error": "exceto_coringa_sv",
+      "ancora_100": {
+        "polished_at": "2026-08-04",
+        "policy": "A_conteudo_first_visual_after_fabrica"
+      }
     },
     "sources": [
       {
@@ -77,27 +81,27 @@
       "items": [
         {
           "label": "Comando da prova",
-          "detail": "Destaque o aspecto incorreto — quatro alternativas descrevem PA com precisão; uma inverte o conceito de pressão divergente.",
+          "detail": "Comando INCORRETA: quatro afirmativas certas de PA; uma inverte divergente.",
           "icon": "Target"
         },
         {
           "label": "Definição de PA",
-          "detail": "Força do sangue contra a parede arterial na sístole/diástole — afirmativa A é conceito correto.",
+          "detail": "Força do sangue contra a parede arterial na sístole/diástole.",
           "icon": "HeartPulse"
         },
         {
           "label": "Sítio de aferição",
-          "detail": "Braço: artéria braquial · perna: artéria pediosa — B e D são locais clássicos de prova.",
+          "detail": "Braço: artéria braquial · perna: artéria pediosa.",
           "icon": "Activity"
         },
         {
-          "label": "Pegadinha divergente",
-          "detail": "Pressão divergente = afastamento entre sistólica e diastólica — C erra ao dizer que máxima e mínima se aproximam.",
+          "label": "Pegadinha — divergente",
+          "detail": "Divergente = afastamento sistólica–diastólica; convergente = aproximação.",
           "icon": "GitCompare"
         },
         {
           "label": "Material",
-          "detail": "Esfigmomanômetro calibrado + estetoscópio para auscultar Korotkoff — E é conduta correta.",
+          "detail": "Esfigmomanômetro calibrado + estetoscópio para auscultar Korotkoff.",
           "icon": "Stethoscope"
         }
       ],
@@ -111,15 +115,14 @@
         "subtopico": "Verificação de Sinais Vitais"
       },
       "steps": [
-        "Comando: destaque o aspecto incorreto sobre pressão arterial — quatro afirmativas são verdadeiras.",
-        "Testar A: definição de PA pelo bombeamento cardíaco → afirmativa correta → eliminar.",
-        "Testar B: artéria braquial no braço → local clássico de aferição → eliminar.",
-        "Testar D: artéria pediosa na perna → sítio válido para PA em membro inferior → eliminar.",
-        "Testar E: esfigmomanômetro + estetoscópio → material padrão → eliminar.",
-        "Testar C: pressão divergente com máxima e mínima se aproximando → FALSO — divergente significa afastamento (gap largo).",
-        "Confirmar: só C traz aspecto incorreto.",
-        "Marcar letra C.",
-        "Fixação: divergente = distância grande entre sistólica e diastólica; convergente = aproximação."
+        "Comando: destaque o aspecto incorreto sobre pressão arterial.",
+        "Testar A: definição de PA → conduta/conceito correto → eliminar.",
+        "Testar B: artéria braquial no braço → correto → eliminar.",
+        "Testar D: artéria pediosa na perna → correto → eliminar.",
+        "Testar E: esfigmomanômetro + estetoscópio → correto → eliminar.",
+        "Testar C: divergente com máximas se aproximando → inverte o conceito (divergente = afastamento).",
+        "Gabarito: letra C (aspecto incorreto).",
+        "Em similares: divergente = gap largo; convergente = aproximação sistólica–diastólica."
       ],
       "footer_rule": "Roteiro INCORRETA: testar A → B → D → E → C → marcar a falsa"
     },
@@ -134,29 +137,28 @@
       "rows": [
         {
           "label": "Definição",
-          "value": "Pressão do sangue contra a parede arterial",
-          "sv_kind": "pa",
+          "value": "Pressão do sangue na parede arterial",
+          "sv_kind": "meta",
           "badge": "ok"
         },
         {
           "label": "Braço",
-          "value": "Artéria braquial — esfigmomanômetro + estetoscópio",
-          "sv_kind": "pa",
+          "value": "Braquial + manguito + estetoscópio",
+          "sv_kind": "meta",
           "badge": "ok"
         },
         {
           "label": "Perna",
-          "value": "Artéria pediosa — membro inferior",
-          "sv_kind": "pa",
+          "value": "Artéria pediosa (MI)",
+          "sv_kind": "meta",
           "badge": "ok"
         },
         {
           "label": "Pressão divergente",
-          "value": "Sistólica e diastólica se AFASTAM (gap largo)",
-          "sv_kind": "pa",
+          "value": "Sistólica e diastólica se AFASTAM",
+          "sv_kind": "meta",
           "emphasis": "alert",
-          "badge": "warn",
-          "exam_hint": "C inverte — aproximar é convergente, não divergente."
+          "badge": "warn"
         }
       ],
       "footer_rule": "Divergente ≠ convergente — memorize o afastamento"
@@ -168,40 +170,40 @@
         "topico": "Enfermagem",
         "subtopico": "Verificação de Sinais Vitais"
       },
-      "content": "PEGADINHAS AVANÇASP — PA INCORRETA",
+      "content": "EXCETO/INCORRETA — PA (AVANÇASP)",
       "items": [
         {
           "label": "Letra A — definição de PA",
-          "detail": "Parece definição de livro — é o conceito basal correto.",
-          "correct": "Afirmativa correta: PA é a pressão do sangue contra a parede vascular."
+          "detail": "Parece 'decore' de livro — e é o conceito basal certo.",
+          "correct": "Afirmativa correta: PA = pressão do sangue contra a parede vascular — eliminar."
         },
         {
           "label": "Letra B — braquial",
-          "detail": "Local óbvio, mas verdadeiro para aferição no braço.",
-          "correct": "Afirmativa correta: artéria braquial é o sítio clássico no membro superior."
+          "detail": "Sítio óbvio do braço; a banca coloca para distrair.",
+          "correct": "Afirmativa correta: artéria braquial é o sítio clássico no MS — eliminar."
         },
         {
           "label": "Letra D — pediosa",
-          "detail": "Aluno confunde com pulso — pediosa serve para PA na perna.",
-          "correct": "Afirmativa correta: artéria pediosa na aferição de membro inferior."
+          "detail": "Confusão com pulso pedioso — ainda assim a afirmativa é válida para PA na perna.",
+          "correct": "Afirmativa correta: artéria pediosa na aferição de membro inferior — eliminar."
         },
         {
           "label": "Letra E — material",
-          "detail": "Alternativa “decore” — descreve o par técnico padrão.",
-          "correct": "Afirmativa correta: esfigmomanômetro e estetoscópio."
+          "detail": "Par técnico padrão que o aluno memoriza — verdadeiro.",
+          "correct": "Afirmativa correta: esfigmomanômetro + estetoscópio — eliminar."
         },
         {
           "label": "Letra C — divergente aproxima",
-          "detail": "Troca divergente por convergente — máxima e mínima se afastam na divergente.",
-          "correct": "INCORRETA: na pressão divergente os valores se afastam, não se aproximam."
+          "detail": "Inverte divergente↔convergente: diz que máxima e mínima se aproximam.",
+          "correct": "INCORRETA: na pressão divergente os valores se AFASTAM (gap largo), não se aproximam."
         },
         {
-          "label": "Marcar B por ser “fácil”",
-          "detail": "Em INCORRETA, a banca costuma esconder o erro em conceito fino (C), não no óbvio.",
-          "correct": "B é verdadeira — o gabarito é C pelo erro semântico de divergente."
+          "label": "Em similares / outra banca",
+          "detail": "Prova esconde o erro semântico entre quatro técnicas verdadeiras.",
+          "correct": "Transferência: na INCORRETA, distratores são certas; só o gabarito traz a falha."
         }
       ],
-      "footer_rule": "INCORRETA = C (divergente), não as afirmativas técnicas corretas"
+      "footer_rule": "INCORRETA = C (divergente) — A/B/D/E são condutas certas"
     }
   ]
 }

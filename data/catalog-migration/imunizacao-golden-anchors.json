@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "updated_at": "2026-07-02",
+  "updated_at": "2026-08-05",
   "description": "Âncoras golden-v1 — Imunização (referência de estilo por ramo; não substituem JSON por slug).",
   "readiness_gate": "npm run audit:questao-readiness -- --file=<path>",
   "anchors_readiness": {
-    "validated_at": "2026-07-02",
-    "summary": "6/6 READY",
-    "note": "6/6 READY + âncora EXCETO P2 (imunizacao_exceto)."
+    "validated_at": "2026-08-05",
+    "summary": "7/7 READY · âncoras 100% approved",
+    "note": "Fase 2 Âncoras 100% fechada — report artifacts/imunizacao-ancoras-100-report.md"
   },
   "anchors": {
     "via_scr_subcutanea": {
@@ -20,8 +20,10 @@
       "ano": "2025",
       "gabarito": "A",
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-02",
-      "notes": "SCR aos 12 meses — subcutânea; golden_rule tabela de vias; danger_zone compare por letra; ramo generico (não calendario — evita pni-interval-matrix)."
+      "readiness_validated_at": "2026-08-05",
+      "ancoras_100_status": "approved",
+      "ancoras_100_approved_at": "2026-08-05",
+      "notes": "Âncoras 100% aprovada — pni-via-route-hub + isolate 0 taps + trap arena 0 taps; SCR subcutânea."
     },
     "vf_intervalos_pni": {
       "file": "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json",
@@ -31,8 +33,10 @@
       "family": "vf",
       "command": "É CORRETO o que se afirma em",
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-02",
-      "notes": "Intervalos PNI I–IV — molde pni-rules-deck / pni-interval-matrix."
+      "readiness_validated_at": "2026-08-04",
+      "ancoras_100_status": "approved",
+      "ancoras_100_approved_at": "2026-08-04",
+      "notes": "Âncoras 100% aprovada — Glance OS board V/F; ordem v2; grace→FA→pneumo→oral."
     },
     "calendario_infantil": {
       "file": "examples/questao-premium-fundatec-meningococica-3meses.json",
@@ -45,8 +49,10 @@
       "ano": "2024",
       "gabarito": "B",
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-02",
-      "notes": "Marco calendário × vacina — idade × esquema PNI."
+      "readiness_validated_at": "2026-08-04",
+      "ancoras_100_status": "approved",
+      "ancoras_100_approved_at": "2026-08-04",
+      "notes": "Âncoras 100% aprovada — board calendário 0 taps; ordem v2; Men C @ 3 meses."
     },
     "cadeia_frio_pni": {
       "file": "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
@@ -60,9 +66,11 @@
       "gabarito": "C",
       "avant_codigo": 4611,
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-02",
+      "readiness_validated_at": "2026-08-04",
+      "ancoras_100_status": "approved",
       "anchor_role": "sub_padrao_a_vf_sala",
-      "notes": "Âncora A — BCG, agitar não recupera, pentavalente, papel do técnico."
+      "notes": "Âncoras 100% aprovada — hub Glance OS; board V/F 0 taps; agitar≠recuperar.",
+      "ancoras_100_approved_at": "2026-08-04"
     },
     "cadeia_frio_temperatura": {
       "file": "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
@@ -76,9 +84,11 @@
       "gabarito": "B",
       "avant_codigo": 5039,
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-02",
+      "readiness_validated_at": "2026-08-04",
       "anchor_role": "sub_padrao_b_faixa_2_8",
-      "notes": "Âncora B — decore 2 °C a 8 °C; complementa AMEOSC V/F no ramo imunizacao_cadeia_frio."
+      "notes": "Âncoras 100% aprovada — faixa 2–8; Em similares; armazenamento sem badge 0°C falso.",
+      "ancoras_100_status": "approved",
+      "ancoras_100_approved_at": "2026-08-04"
     },
     "calendario_adolescente_adulto": {
       "file": "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
@@ -92,8 +102,10 @@
       "gabarito": "C",
       "avant_codigo": 3687,
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-02",
-      "notes": "Cartão perdido / sem comprovação — catch-up por faixa etária; não sorologia de rotina."
+      "readiness_validated_at": "2026-08-04",
+      "ancoras_100_status": "approved",
+      "ancoras_100_approved_at": "2026-08-04",
+      "notes": "Âncoras 100% catch-up aprovada — board 0 taps; armadilha lista; transferência fora do grid."
     },
     "exceto_inc_piloto_antibiotico": {
       "file": "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
@@ -106,8 +118,10 @@
       "ano": "2022",
       "gabarito": "C",
       "readiness": "READY",
-      "readiness_validated_at": "2026-07-02",
-      "notes": "P2 — âncora EXCETO/INCORRETA dedicada (imunizacao_exceto); compare semântico por letra; lote imunizacao-exceto-piloto-g01."
+      "readiness_validated_at": "2026-08-04",
+      "notes": "Âncoras 100% aprovada — hub Glance OS; mito antibiotico; isolate board.",
+      "ancoras_100_status": "approved",
+      "ancoras_100_approved_at": "2026-08-04"
     }
   },
   "family_grammar_refs": {
@@ -129,7 +143,10 @@
       "priority": "P2",
       "status": "anchor_ready",
       "pedagogical_branch": "imunizacao_exceto",
-      "clusters": ["INCORRETA / EXCETO", "Certo ou errado"],
+      "clusters": [
+        "INCORRETA / EXCETO",
+        "Certo ou errado"
+      ],
       "slugs_estimate": 70,
       "pilot_anchor": "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
       "pilot_lote": "imunizacao-exceto-piloto-g01",

@@ -14,6 +14,7 @@ import {
   iniciarSimuladoProva,
   SimuladoApiError,
 } from '@/lib/simulado/client';
+import { usePassiveAttemptTracker } from '@/lib/evidence/usePassiveAttemptTracker';
 import type { SimuladoSessionDetailResponse } from '@/lib/simulado/types';
 import { sessionDisplayTitulo } from '@/lib/simulado/provaMeta';
 import type { LessonData } from '@/types/lesson';
@@ -29,7 +30,7 @@ const SimuladoResumoClient = dynamic(
   {
     loading: () => (
       <div className={cn('bg-background', DASHBOARD_PAGE_CENTER)}>
-        <Loader2 className="h-10 w-10 animate-spin text-[#166534]" aria-label="Carregando resumo" />
+        <Loader2 className="h-10 w-10 animate-spin text-[#9A3412]" aria-label="Carregando resumo" />
       </div>
     ),
   },
@@ -110,6 +111,24 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const [questionError, setQuestionError] = useState<string | null>(null);
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const {
+    noteSelectionChange,
+    beginConfirm: beginEvidenceConfirm,
+    clearPendingAfterSuccess: clearEvidencePending,
+  } = usePassiveAttemptTracker({
+    questionKey: activeSlug ?? sessionId,
+    enabled: true,
+  });
+
+  const selectOption = useCallback(
+    (opcaoId: string | null) => {
+      if (opcaoId) noteSelectionChange();
+      setSelectedOption(opcaoId);
+    },
+    [noteSelectionChange],
+  );
+
+  // EE: UI de convicção desligada — confirm usa conviction=unknown.
   const [feedback, setFeedback] = useState<FeedbackState>(null);
   const [finalFeedbackPending, setFinalFeedbackPending] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -253,13 +272,17 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     setSubmitError(null);
 
     try {
+      // EE: conviction=unknown (UI de convicção desligada no produto).
+      const evidenceFields = beginEvidenceConfirm();
       const result = await answerSimuladoQuestion({
         session_id: sessionId,
         modulo_slug: activeSlug,
         opcao_id: selectedOption,
         tempo_ms: Math.max(0, Date.now() - questionStartedAt),
+        ...(evidenceFields ?? {}),
       });
 
+      clearEvidencePending();
       applyAnswerPatchToSession(result);
 
       if (isTreino && result.acertou !== null && result.opcao_correta_id) {
@@ -319,6 +342,8 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     sessionId,
     questionStartedAt,
     applyAnswerPatchToSession,
+    beginEvidenceConfirm,
+    clearEvidencePending,
     isTreino,
     options,
     sessionData,
@@ -405,7 +430,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         const optionExists = options.some((opt) => opt.id.toUpperCase() === key);
         if (optionExists) {
           event.preventDefault();
-          setSelectedOption(key);
+          selectOption(key);
           setLiveMessage(`Alternativa ${key} selecionada.`);
         }
       }
@@ -418,7 +443,16 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [questionData, loadingQuestion, submitting, options, selectedOption, feedback, handleConfirmAnswer]);
+  }, [
+    questionData,
+    loadingQuestion,
+    submitting,
+    options,
+    selectedOption,
+    feedback,
+    handleConfirmAnswer,
+    selectOption,
+  ]);
 
   useLayoutEffect(() => {
     if (!selectedOption || feedback) return;
@@ -452,7 +486,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         : (currentIndex - 1 + options.length) % options.length;
     const nextOption = options[nextIndex];
     if (!nextOption) return;
-    setSelectedOption(nextOption.id);
+    selectOption(nextOption.id);
     setLiveMessage(`Alternativa ${nextOption.id} selecionada.`);
   };
 
@@ -488,7 +522,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           pageBottomPadding,
         )}
       >
-        <Loader2 className="h-10 w-10 animate-spin text-[#166534]" aria-label="Carregando simulado" />
+        <Loader2 className="h-10 w-10 animate-spin text-[#9A3412]" aria-label="Carregando simulado" />
       </div>
     );
   }
@@ -658,7 +692,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           aria-label="Progresso do simulado"
         >
           <div
-            className="h-full rounded-full bg-[#22c55e] transition-all duration-300"
+            className="h-full rounded-full bg-[#F26522] transition-all duration-300"
             style={{ width: `${progressPct}%` }}
           />
         </div>
@@ -691,7 +725,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           />
         ) : loadingQuestion && !questionData ? (
           <div className="flex justify-center py-16">
-            <Loader2 className="h-8 w-8 animate-spin text-[#166534]" aria-label="Carregando questão" />
+            <Loader2 className="h-8 w-8 animate-spin text-[#9A3412]" aria-label="Carregando questão" />
           </div>
         ) : questionError ? (
           <div className="card-elevated-lg border border-rose-200 p-6 text-center">
@@ -745,7 +779,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                       type="button"
                       onClick={() => {
                         if (feedback) return;
-                        setSelectedOption(opt.id);
+                        selectOption(opt.id);
                         setLiveMessage(`Alternativa ${opt.id} selecionada.`);
                       }}
                       className={cn(

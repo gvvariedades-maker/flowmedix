@@ -1,0 +1,168 @@
+[
+  {
+    "file": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4.json",
+    "findings_n": 1,
+    "sample_findings": [
+      {
+        "code": "pedagogy_letter_spoiler",
+        "message": "golden_rule.rows[4].value cita a letra da alternativa — gabarito só no logic_flow.",
+        "path": "golden_rule.rows[4].value",
+        "slide": "golden_rule",
+        "key": "value",
+        "evidence": "Letra C — Identificação rápida de crianças que estão em atraso com suas vacinas e envio de lembretes para seus responsáveis."
+      }
+    ],
+    "rows_before": [
+      {
+        "label": "Alternativa A (Incorreta)",
+        "value": "Monitoramento eficaz da produtividade dos funcionários da unidade de saúde. Embora um SIS possa ter módulos de gestão, não é o benefício mais direto para o acompanhamento da vacinação infantil.",
+        "badge": "warn"
+      },
+      {
+        "label": "Alternativa B (Incorreta)",
+        "value": "Controle rigoroso do acesso dos pacientes aos serviços de saúde. SIS pode auxiliar no agendamento, mas o foco da questão é 'acompanhar a vacinação', não o controle de acesso geral.",
+        "badge": "warn"
+      },
+      {
+        "label": "Alternativa C (Correta)",
+        "value": "Identificação rápida de crianças que estão em atraso com suas vacinas e envio de lembretes para seus responsáveis. Este é o benefício mais direto e impactante para o objetivo de 'acompanhar a vacinação'.",
+        "emphasis": "highlight",
+        "badge": "hot"
+      },
+      {
+        "label": "Alternativa D (Incorreta)",
+        "value": "Gerenciamento exclusivo de informações financeiras relacionadas à compra de vacinas. O SIS pode ter um componente financeiro, mas não é o benefício principal ou 'exclusivo' para o acompanhamento vacinal de crianças.",
+        "badge": "warn"
+      },
+      {
+        "label": "Gabarito da Questão",
+        "value": "Letra C — Identificação rápida de crianças que estão em atraso com suas vacinas e envio de lembretes para seus responsáveis.",
+        "emphasis": "success",
+        "badge": "hot"
+      }
+    ],
+    "gabarito": {
+      "changed": false,
+      "edits": [],
+      "skipped": []
+    },
+    "trunc": {
+      "changed": false,
+      "edits": [],
+      "skipped": []
+    },
+    "letter_after": 1,
+    "rows_after": [
+      {
+        "label": "Alternativa A (Incorreta)",
+        "value": "Monitoramento eficaz da produtividade dos funcionários da unidade de saúde. Embora um SIS possa ter módulos de gestão, não é o benefício mais direto para o acompanhamento da vacinação infantil.",
+        "badge": "warn"
+      },
+      {
+        "label": "Alternativa B (Incorreta)",
+        "value": "Controle rigoroso do acesso dos pacientes aos serviços de saúde. SIS pode auxiliar no agendamento, mas o foco da questão é 'acompanhar a vacinação', não o controle de acesso geral.",
+        "badge": "warn"
+      },
+      {
+        "label": "Alternativa C (Correta)",
+        "value": "Identificação rápida de crianças que estão em atraso com suas vacinas e envio de lembretes para seus responsáveis. Este é o benefício mais direto e impactante para o objetivo de 'acompanhar a vacinação'.",
+        "emphasis": "highlight",
+        "badge": "hot"
+      },
+      {
+        "label": "Alternativa D (Incorreta)",
+        "value": "Gerenciamento exclusivo de informações financeiras relacionadas à compra de vacinas. O SIS pode ter um componente financeiro, mas não é o benefício principal ou 'exclusivo' para o acompanhamento vacinal de crianças.",
+        "badge": "warn"
+      },
+      {
+        "label": "Gabarito da Questão",
+        "value": "Letra C — Identificação rápida de crianças que estão em atraso com suas vacinas e envio de lembretes para seus responsáveis.",
+        "emphasis": "success",
+        "badge": "hot"
+      }
+    ]
+  },
+  {
+    "file": "adm-tec-enfermagem-imunizacao-1777103244679-1.json",
+    "findings_n": 1,
+    "sample_findings": [
+      {
+        "code": "pedagogy_letter_spoiler",
+        "message": "golden_rule.rows[4].value cita a letra da alternativa — gabarito só no logic_flow.",
+        "path": "golden_rule.rows[4].value",
+        "slide": "golden_rule",
+        "key": "value",
+        "evidence": "Letra B — '9 meses.'"
+      }
+    ],
+    "rows_before": [
+      {
+        "label": "Alternativa A (Incorreta)",
+        "value": "6 meses — Esta idade corresponde à 3ª dose de Pentavalente/VIP ou 1ª dose da vacina Influenza (campanha anual), não à 1ª dose da FA.",
+        "badge": "warn"
+      },
+      {
+        "label": "Alternativa B (Correta)",
+        "value": "9 meses — Idade recomendada para a 1ª dose da vacina de febre amarela, tanto pela SBIm quanto pelo PNI.",
+        "emphasis": "highlight",
+        "badge": "hot"
+      },
+      {
+        "label": "Alternativa C (Incorreta)",
+        "value": "12 meses — Idade para reforços (Meningocócica C, Pneumocócica 10) ou 1ª dose de SCR/SRC, não para a 1ª dose da FA.",
+        "badge": "warn"
+      },
+      {
+        "label": "Alternativa D (Incorreta)",
+        "value": "2 anos — Não é o marco padrão para a 1ª dose da vacina de febre amarela no calendário de rotina infantil.",
+        "badge": "warn"
+      },
+      {
+        "label": "Gabarito da Questão",
+        "value": "Letra B — '9 meses.'",
+        "emphasis": "success",
+        "badge": "ok"
+      }
+    ],
+    "gabarito": {
+      "changed": false,
+      "edits": [],
+      "skipped": []
+    },
+    "trunc": {
+      "changed": false,
+      "edits": [],
+      "skipped": []
+    },
+    "letter_after": 1,
+    "rows_after": [
+      {
+        "label": "Alternativa A (Incorreta)",
+        "value": "6 meses — Esta idade corresponde à 3ª dose de Pentavalente/VIP ou 1ª dose da vacina Influenza (campanha anual), não à 1ª dose da FA.",
+        "badge": "warn"
+      },
+      {
+        "label": "Alternativa B (Correta)",
+        "value": "9 meses — Idade recomendada para a 1ª dose da vacina de febre amarela, tanto pela SBIm quanto pelo PNI.",
+        "emphasis": "highlight",
+        "badge": "hot"
+      },
+      {
+        "label": "Alternativa C (Incorreta)",
+        "value": "12 meses — Idade para reforços (Meningocócica C, Pneumocócica 10) ou 1ª dose de SCR/SRC, não para a 1ª dose da FA.",
+        "badge": "warn"
+      },
+      {
+        "label": "Alternativa D (Incorreta)",
+        "value": "2 anos — Não é o marco padrão para a 1ª dose da vacina de febre amarela no calendário de rotina infantil.",
+        "badge": "warn"
+      },
+      {
+        "label": "Gabarito da Questão",
+        "value": "Letra B — '9 meses.'",
+        "emphasis": "success",
+        "badge": "ok"
+      }
+    ]
+  }
+]

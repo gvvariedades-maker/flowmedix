@@ -47,7 +47,7 @@ O usuário é **Técnico de Enfermagem** em concurso — **celular, cansado, mic
 
 ## 4. Tokens (`app/globals.css` + Visual Direction v3)
 
-Editorial: `.card-elevated`, `.btn-editorial-primary`, `#8fe020`.  
+Editorial: `.card-elevated`, `.btn-editorial-primary`, `#F26522`.  
 Cyber: `.glass-panel`, `#010409`, cyan `#00f2ff`.  
 Mobile: `pb-safe`, `pt-safe`. Ícones: Lucide.
 

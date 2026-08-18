@@ -1,9 +1,8 @@
 ﻿'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { ChevronDown, ChevronRight, ChevronUp, CheckCircle2, Circle } from 'lucide-react';
-import { formatAvantCodigo } from '@/lib/avantCodigo';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { cn } from '@/lib/utils';
@@ -16,17 +15,8 @@ import {
 } from '@/lib/estudar/navigation';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import {
-  VitrineQuestaoLink,
-  buildVitrineSlugComQuery,
-} from '@/components/vitrine/VitrineQuestaoLink';
-
-function StatusBadge({ status }: { status: VitrineQuestaoItem['status'] }) {
-  if (status === 'estudada') {
-    return <CheckCircle2 size={15} className={cn('shrink-0', vitrineBrand.icon)} aria-hidden />;
-  }
-  return <Circle size={15} className="shrink-0 text-slate-300" aria-hidden />;
-}
+import { buildVitrineSlugComQuery } from '@/components/vitrine/VitrineQuestaoLink';
+import { VitrineQuestaoItems } from '@/components/vitrine/VitrineQuestaoItems';
 
 export type VitrineQuestaoListProps = {
   tituloAula: string;
@@ -45,14 +35,36 @@ export function VitrineQuestaoList({
 }: VitrineQuestaoListProps) {
   const router = useRouter();
   const [questoesExpandido, setQuestoesExpandido] = useState(false);
+  const [itensMontados, setItensMontados] = useState(false);
   const [jumpAlvo, setJumpAlvo] = useState('');
   const [jumpError, setJumpError] = useState<string | null>(null);
   const [jumpLoading, setJumpLoading] = useState(false);
+  const questoesExpandidoRef = useRef(questoesExpandido);
+  questoesExpandidoRef.current = questoesExpandido;
 
   const questoesExibidas = questoes.length;
   const questoesTruncadas = Math.max(0, totalQuestoes - questoesExibidas);
   const listaFoiTruncada = questoesTruncadas > 0;
   const hasQuestions = totalQuestoes > 0;
+
+  const handleToggleQuestoes = useCallback(() => {
+    if (questoesExpandido) {
+      setQuestoesExpandido(false);
+      setItensMontados(false);
+      return;
+    }
+    setItensMontados(false);
+    setQuestoesExpandido(true);
+  }, [questoesExpandido]);
+
+  useEffect(() => {
+    if (!questoesExpandido) return;
+    const frame = requestAnimationFrame(() => {
+      if (!questoesExpandidoRef.current) return;
+      setItensMontados(true);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [questoesExpandido]);
 
   const handleJumpToQuestao = useCallback(async () => {
     const alvo = jumpAlvo.trim();
@@ -141,7 +153,7 @@ export function VitrineQuestaoList({
 
       <button
         type="button"
-        onClick={() => setQuestoesExpandido((v) => !v)}
+        onClick={handleToggleQuestoes}
         className="flex min-h-[44px] w-full items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
       >
         <span className="text-xs font-medium">
@@ -158,73 +170,18 @@ export function VitrineQuestaoList({
         )}
       </button>
 
-      <div
-        aria-hidden={!questoesExpandido}
-        className={cn(
-          'grid transition-[grid-template-rows] duration-200 ease-in-out',
-          questoesExpandido ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
-        )}
-      >
-        <div className="overflow-hidden">
-          <div className="max-h-[min(50vh,20rem)] space-y-1.5 overflow-y-auto overscroll-contain pt-1 pr-1">
-            {questoes.map((q) => {
-              const estudada = q.status === 'estudada';
-              return (
-                <VitrineQuestaoLink
-                  key={q.slug}
-                  slug={q.slug}
-                  estudarQuery={estudarQuery}
-                  className={cn(
-                    'group flex min-h-[44px] items-center gap-3 rounded-xl border px-3 py-2.5 transition-all',
-                    estudada
-                      ? 'border-green-200 bg-green-50 hover:border-green-300'
-                      : cn('border-slate-200 bg-white', vitrineBrand.hoverBorderLight, vitrineBrand.hoverBgDim),
-                  )}
-                >
-                  <StatusBadge status={q.status} />
-                  <span
-                    className={cn(
-                      'flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0.5 text-xs font-medium',
-                      estudada ? 'text-green-700' : 'text-slate-700',
-                    )}
-                  >
-                    <span>Questão {String(q.numero).padStart(2, '0')}</span>
-                    {formatAvantCodigo(q.avant_codigo) ? (
-                      <span className="rounded-md border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-mono text-[10px] text-slate-600">
-                        {formatAvantCodigo(q.avant_codigo)}
-                      </span>
-                    ) : null}
-                  </span>
-                  {!estudada ? (
-                    <span className="text-[10px] font-medium text-slate-500">Iniciar</span>
-                  ) : (
-                    <span className={cn('text-[10px] font-medium', vitrineBrand.text)}>Revisitar</span>
-                  )}
-                  <ChevronRight
-                    size={12}
-                    className="shrink-0 text-slate-400 opacity-60 transition-opacity group-hover:opacity-100"
-                    aria-hidden
-                  />
-                </VitrineQuestaoLink>
-              );
-            })}
-          </div>
-          {listaFoiTruncada ? (
-            <p className="mt-2 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center text-[11px] font-medium text-amber-700">
-              <span>
-                +{questoesTruncadas} {labelQuestoes(questoesTruncadas)} neste assunto.
-              </span>
-              <VitrineQuestaoLink
-                slug={firstSlug}
-                estudarQuery={estudarQuery}
-                className="inline-flex min-h-[44px] items-center font-semibold text-amber-800 underline-offset-2 hover:text-amber-900 hover:underline"
-              >
-                Próxima pendente
-              </VitrineQuestaoLink>
-            </p>
-          ) : null}
-        </div>
-      </div>
+      {questoesExpandido ? (
+        itensMontados ? (
+          <VitrineQuestaoItems
+            firstSlug={firstSlug}
+            totalQuestoes={totalQuestoes}
+            questoes={questoes}
+            estudarQuery={estudarQuery}
+          />
+        ) : (
+          <div className="max-h-[min(50vh,20rem)] overflow-y-auto overscroll-contain pt-1 pr-1" />
+        )
+      ) : null}
     </>
   );
 }

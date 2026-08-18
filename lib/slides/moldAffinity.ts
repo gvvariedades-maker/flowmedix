@@ -8,6 +8,10 @@
  */
 import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
 import { ADOLESCENT_Z_SCORE_POSITIVE } from '@/lib/slides/adolescentAntropometriaSlideUtils';
+import { ADOLESCENT_VIOLENCE_POSITIVE } from '@/lib/slides/adolescentViolenceSlideUtils';
+import { ADOLESCENT_MENTAL_POSITIVE } from '@/lib/slides/adolescentMentalSlideUtils';
+import { ADOLESCENT_DEV_POSITIVE } from '@/lib/slides/adolescentDevSlideUtils';
+import { ADOLESCENT_GENERIC_POSITIVE } from '@/lib/slides/adolescentGenericSlideUtils';
 
 function normalizeKey(str: string): string {
   return str
@@ -89,7 +93,21 @@ const ADOLESCENT_ETHICS_POSITIVE: RegExp[] = [
   /espa[cç]o do adolescente/i,
 ];
 
-/** Desenvolvimento puberal / fisiologia — não usar moldes de ética adolescente. */
+/**
+ * Corpus positivo do pacote glanceable v2 (ética + Onda 2).
+ * Inclui acolher×afastar (violência/mental), marcos puberais e EXCETO/diretrizes.
+ */
+const ADOLESCENT_GLANCEABLE_POSITIVE: RegExp[] = [
+  ...ADOLESCENT_ETHICS_POSITIVE,
+  /notifica[cç][aã]o compuls[oó]ria|conselho tutelar|rede de prote[cç][aã]o|sinan|creas|\beca\b|pnaisn/i,
+  /viol[eê]ncia|revitimiza|indicadores.*viol/i,
+  /anorexia|bulimia|transtorno alimentar|imagem corporal|depress[aã]o|ansiedade|risco suicida/i,
+  /puberdade|puberal|tanner|menarca|espermarquia|metamorfose f[ií]sica|atraso na puberdade/i,
+  /exceto|incorreta|diretriz|promo[cç][aã]o|sa[uú]de bucal|adolescente/i,
+  /linguagem|jarg[aã]o|rebuscad|acess[ií]vel|comunica|acolher|afastar/i,
+];
+
+/** Desenvolvimento puberal / fisiologia — bloquear moldes legado de sigilo (curtain/weave/consent). */
 const ADOLESCENT_DEVELOPMENT_BLOCK: RegExp[] = [
   /puberdade|puberal|metamorfose f[ií]sica|maturidade sexual/i,
   /horm[oô]nio|disfun[cç][aã]o hormonal|desenvolvimento das mamas|hipertrofia dos test[ií]culo/i,
@@ -97,10 +115,23 @@ const ADOLESCENT_DEVELOPMENT_BLOCK: RegExp[] = [
   /atraso na puberdade|12 aos 13 anos|13-14 anos/i,
 ];
 
+/** Só escore Z / Caderneta — glanceable Onda 2 não compete com trilho antropométrico. */
+const ADOLESCENT_Z_SCORE_ONLY_BLOCK: RegExp[] = [
+  /escore\s*z|score\s*z|\bz\s*[<>≤≥]|desvio[\s-]?padr[aã]o/i,
+  /antropometr|pondero[\s-]?estatur|caderneta do adolescente|curvas?\s*oms/i,
+  /classifica[cç][aã]o nutricional|estatura muito baixa/i,
+];
+
 const ADOLESCENT_ETHICS_BLOCK: RegExp[] = [
   ...NUTRITION_ANTHROPOMETRY_BLOCK,
   ...ADOLESCENT_DEVELOPMENT_BLOCK,
 ];
+
+/** Só ética/sigilo consome o pacote pillars + speak-barrier + isolate + compare. */
+const ADOLESCENT_GLANCEABLE_BRANCHES = new Set(['adolescente_etica_sigilo']);
+
+/** Só sigilo/consulta — moldes v1 (curtain / spectrum / weave / consent-gate). */
+const ADOLESCENT_ETHICS_LEGACY_BRANCHES = new Set(['adolescente_etica_sigilo']);
 
 /** IRAS / ITU / cateter vesical — ramo biosseg_iras_itu_cateter. */
 const BIOSSEG_ITU_POSITIVE: RegExp[] = [
@@ -126,6 +157,28 @@ const BIOSSEG_ITU_VARIANTS = new Set([
 
 const ADOLESCENT_VARIANTS = new Set([
   'adolescent-privacy-curtain',
+  'adolescent-care-pillars-deck',
+  'adolescent-sigilo-spectrum',
+  'adolescent-speak-barrier-board',
+  'adolescent-vf-weave-tap',
+  'adolescent-exceto-isolate-tap',
+  'adolescent-exceto-isolate-board',
+  'adolescent-consent-gate',
+  'adolescent-exceto-compare',
+]);
+
+/** Pacote glanceable v2 — só ética/sigilo; demais ramos têm pacote bespoke próprio. */
+const ADOLESCENT_GLANCEABLE_VARIANTS = new Set([
+  'adolescent-care-pillars-deck',
+  'adolescent-speak-barrier-board',
+  'adolescent-exceto-isolate-tap',
+  'adolescent-exceto-isolate-board',
+  'adolescent-exceto-compare',
+]);
+
+/** Moldes v1 de sigilo — só `adolescente_etica_sigilo`. */
+const ADOLESCENT_ETHICS_LEGACY_VARIANTS = new Set([
+  'adolescent-privacy-curtain',
   'adolescent-sigilo-spectrum',
   'adolescent-vf-weave-tap',
   'adolescent-consent-gate',
@@ -137,6 +190,41 @@ const ADOLESCENT_ANTHROPOMETRY_VARIANTS = new Set([
   'adolescent-z-classify-tap',
   'adolescent-z-threshold-trap',
 ]);
+
+const ADOLESCENT_VIOLENCE_VARIANTS = new Set([
+  'adolescent-violence-deck',
+  'adolescent-violence-timeline',
+  'adolescent-violence-calendar',
+]);
+
+const ADOLESCENT_VIOLENCE_BESPOKE_BRANCHES = new Set(['adolescente_violencia_protecao']);
+
+const ADOLESCENT_MENTAL_VARIANTS = new Set([
+  'adolescent-mental-route-list',
+  'adolescent-mental-protocol-rail',
+  'adolescent-mental-hub-board',
+  'adolescent-mental-step-trap',
+]);
+
+const ADOLESCENT_MENTAL_BESPOKE_BRANCHES = new Set(['adolescente_saude_mental']);
+
+const ADOLESCENT_DEV_VARIANTS = new Set([
+  'adolescent-dev-pair-rail',
+  'adolescent-dev-objective-flow',
+  'adolescent-dev-vigilance-board',
+  'adolescent-dev-budget-checklist',
+]);
+
+const ADOLESCENT_DEV_BESPOKE_BRANCHES = new Set(['adolescente_desenvolvimento']);
+
+const ADOLESCENT_GENERIC_BESPOKE_VARIANTS = new Set([
+  'adolescent-generic-hub-orbit',
+  'adolescent-generic-care-levels',
+  'adolescent-generic-finance-checklist',
+  'adolescent-generic-versus-blocks',
+]);
+
+const ADOLESCENT_GENERIC_BESPOKE_BRANCHES = new Set(['adolescente_generico']);
 
 const MENTAL_SAE_VARIANTS = new Set(['sae-decision-tap', 'norm-reveal']);
 const MENTAL_RAPS_VARIANTS = new Set([
@@ -207,6 +295,8 @@ const FARMACO_CLINICO_VARIANTS = new Set([
   'farmaco-clinico-trap',
 ]);
 
+const FARMACO_GENERIC_VARIANTS = new Set<string>([]);
+
 const PNI_VF_VARIANTS = new Set([
   'pni-rules-deck',
   'pni-interval-matrix',
@@ -221,12 +311,21 @@ const PNI_CALENDARIO_VARIANTS = new Set([
   'calendar-mismatch',
 ]);
 
+const PNI_EXCETO_VARIANTS = new Set([
+  'pni-exceto-command-hub',
+  'pni-exceto-rule-board',
+  'pni-exceto-isolate-board',
+  'pni-exceto-compare',
+]);
+
 const PNI_CADEIA_FRIO_VARIANTS = new Set([
   'cold-chain-hub',
   'pni-temperature-rail',
   'pni-cold-chain-tap',
   'temperature-mismatch',
 ]);
+
+const PNI_GENERIC_VARIANTS = new Set(['pni-via-route-hub', 'pni-via-isolate-board', 'pni-via-trap-arena']);
 
 const MULHER_PRENATAL_VARIANTS = new Set([
   'mulher-gestation-timeline',
@@ -314,6 +413,39 @@ export const PT_TERM_MATRIX_VARIANTS = new Set([
   'pt-term-matrix-board',
   'pt-term-matrix-tap-flow',
   'pt-term-trap-arena',
+]);
+
+export const PT_CLASSES_CLASSIFY_VARIANTS = new Set([
+  'pt-classes-function-deck',
+  'pt-classes-vf-claim-strip',
+  'pt-classes-vf-claim-board',
+  'pt-classes-vf-claim-fix',
+  'pt-classes-vf-claim-arena',
+  'pt-classes-family-table',
+  'pt-classes-classify-board',
+  'pt-classes-swap-arena',
+]);
+
+export const PT_CLASSES_ADVERB_VARIANTS = new Set([
+  'pt-classes-adverb-types-grid',
+  'pt-classes-adverb-arrow-cards',
+  'pt-classes-adverb-mnemonic-rail',
+  'pt-classes-adverb-compare',
+]);
+
+export const PT_CLASSES_PREP_VARIANTS = new Set([
+  'pt-classes-prep-contract-rail',
+  'pt-classes-prep-category-stack',
+  'pt-classes-family-table',
+  'pt-classes-adverb-compare',
+]);
+
+export const PT_CLASSES_EXCETO_VARIANTS = new Set([
+  'pt-classes-exceto-rule-pairs',
+  'pt-classes-exceto-value-cards',
+  'pt-classes-exceto-isolate-board',
+  'pt-classes-exceto-fix-board',
+  'pt-classes-exceto-tip-board',
 ]);
 
 const CAM_CERTOS_VF_VARIANTS = new Set([
@@ -585,18 +717,30 @@ export function collectSlideTextCorpus(slide: MoldAffinitySlide): string {
  * Moldes ausentes → pass (compatibilidade com lotes legados).
  */
 const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
-  // ---- Saúde do Adolescente (ramo ético — bloqueia nutrição/Z) ----
+  // ---- Saúde do Adolescente (glanceable v2 + legado ética) ----
   'adolescent-privacy-curtain': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
   },
+  'adolescent-care-pillars-deck': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
+  },
   'adolescent-sigilo-spectrum': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+  },
+  'adolescent-speak-barrier-board': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
   },
   'adolescent-vf-weave-tap': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
@@ -607,11 +751,29 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
       /afirmativa\s+[IIVX]+|julgar\s+[IIVX]+|\bI\b.*(?:verdadeira|falsa)/i,
     ],
   },
+  'adolescent-exceto-isolate-tap': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
+  },
+  'adolescent-exceto-isolate-board': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
+  },
   'adolescent-consent-gate': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+  },
+  'adolescent-exceto-compare': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
   },
 
   // ---- Saúde do Adolescente — antropometria / escore Z ----
@@ -640,6 +802,129 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockPatterns: [...ADOLESCENT_ETHICS_POSITIVE, /anorexia|bulimia/i],
     positivePatterns: ADOLESCENT_Z_SCORE_POSITIVE,
+    minPositive: 1,
+  },
+
+  // ---- Saúde do Adolescente — violência / rede de proteção ----
+  // Não bloquear "acolhimento" (ética) — aparece no protocolo de violência.
+  'adolescent-violence-deck': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [
+      /sigilo|confidencial|quebra de sigilo/i,
+      ...ADOLESCENT_Z_SCORE_POSITIVE,
+    ],
+    positivePatterns: ADOLESCENT_VIOLENCE_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-violence-timeline': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [
+      /sigilo|confidencial|quebra de sigilo/i,
+      ...ADOLESCENT_Z_SCORE_POSITIVE,
+    ],
+    positivePatterns: ADOLESCENT_VIOLENCE_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-violence-calendar': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [
+      /sigilo|confidencial|quebra de sigilo/i,
+      ...ADOLESCENT_Z_SCORE_POSITIVE,
+    ],
+    positivePatterns: ADOLESCENT_VIOLENCE_POSITIVE,
+    minPositive: 1,
+  },
+
+  // ---- Saúde do Adolescente — saúde mental / transtornos alimentares ----
+  'adolescent-mental-route-list': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /viol[eê]ncia\s+sexual/i],
+    positivePatterns: ADOLESCENT_MENTAL_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-mental-protocol-rail': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /viol[eê]ncia\s+sexual/i],
+    positivePatterns: ADOLESCENT_MENTAL_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-mental-hub-board': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /viol[eê]ncia\s+sexual/i],
+    positivePatterns: ADOLESCENT_MENTAL_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-mental-step-trap': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /viol[eê]ncia\s+sexual/i],
+    positivePatterns: ADOLESCENT_MENTAL_POSITIVE,
+    minPositive: 1,
+  },
+
+  // ---- Saúde do Adolescente — desenvolvimento / puberdade ----
+  'adolescent-dev-pair-rail': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /anorexia|bulimia|viol[eê]ncia\s+sexual/i],
+    positivePatterns: ADOLESCENT_DEV_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-dev-objective-flow': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /anorexia|bulimia|viol[eê]ncia\s+sexual/i],
+    positivePatterns: ADOLESCENT_DEV_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-dev-vigilance-board': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /anorexia|bulimia|viol[eê]ncia\s+sexual/i],
+    positivePatterns: ADOLESCENT_DEV_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-dev-budget-checklist': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /anorexia|bulimia|viol[eê]ncia\s+sexual/i],
+    positivePatterns: ADOLESCENT_DEV_POSITIVE,
+    minPositive: 1,
+  },
+
+  // ---- Saúde do Adolescente — genérico / cauda ----
+  'adolescent-generic-hub-orbit': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /anorexia|bulimia|viol[eê]ncia\s+sexual|tanner|puberdade\s+tardia/i],
+    positivePatterns: ADOLESCENT_GENERIC_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-generic-care-levels': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /anorexia|bulimia|viol[eê]ncia\s+sexual|tanner|puberdade\s+tardia/i],
+    positivePatterns: ADOLESCENT_GENERIC_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-generic-finance-checklist': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /anorexia|bulimia|viol[eê]ncia\s+sexual|tanner|puberdade\s+tardia/i],
+    positivePatterns: ADOLESCENT_GENERIC_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-generic-versus-blocks': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: [...ADOLESCENT_Z_SCORE_POSITIVE, /anorexia|bulimia|viol[eê]ncia\s+sexual|tanner|puberdade\s+tardia/i],
+    positivePatterns: ADOLESCENT_GENERIC_POSITIVE,
     minPositive: 1,
   },
 
@@ -711,6 +996,61 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['imunizacao', 'vacinacao'],
     blockFamilies: ['protocolo', 'calc', 'legis', 'text_fragment'],
     positivePatterns: [/vacina|imuniz|pni|intervalo/i],
+    minPositive: 1,
+  },
+
+  'pni-exceto-isolate-board': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc'],
+    positivePatterns: [/exceto|incorret[oa]|alternativa.*incorreta|vacina|imuniz|pni|calend/i],
+    minPositive: 1,
+  },
+
+  'pni-exceto-command-hub': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc'],
+    positivePatterns: [/exceto|incorret[oa]|antibiótico|antibiotico|vacina|imuniz|pni/i],
+    minPositive: 1,
+  },
+
+  'pni-exceto-rule-board': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc'],
+    positivePatterns: [/exceto|incorret[oa]|antibiótico|antibiotico|vacina|imuniz|pni|calend/i],
+    minPositive: 1,
+  },
+
+  'pni-exceto-compare': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc'],
+    positivePatterns: [/exceto|incorret[oa]|alternativa.*incorreta|vacina|imuniz|pni|calend/i],
+    minPositive: 1,
+  },
+
+  'pni-via-route-hub': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /via de administra|via correta|subcut[aâ]nea|intrad[eé]rmica|intramuscular|tr[ií]plice|scr\b|vacina|imuniz|pni/i,
+    ],
+    minPositive: 1,
+  },
+
+  'pni-via-isolate-board': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /via|subcut|eliminar|marcar [a-e]|scr\b|vacina|imuniz|pni/i,
+    ],
+    minPositive: 1,
+  },
+
+  'pni-via-trap-arena': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /via|subcut|intrad|intramusc|endoven|pegadinha|letra [a-e]|scr\b|vacina|imuniz|pni/i,
+    ],
     minPositive: 1,
   },
 
@@ -1945,6 +2285,166 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     minPositive: 1,
   },
 
+  // ---- Língua Portuguesa — Classes de palavras (pt-classes-classify) ----
+  'pt-classes-function-deck': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /conjun[cç]|conectivo|classe|pergunta-teste|fam[ií]lia/i,
+      /causal|adversativa|motivo|pe[cç]a/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-vf-claim-strip': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /afirm|pe[cç]a|tirinha|classe|pret[eé]rito|possessivo|nega[cç]/i,
+      /leu|mas|minhas|modo|adversativa|preposi[cç]/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-vf-claim-board': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /gabarito|sequ[eê]ncia|pret[eé]rito|possessivo|nega[cç]|adversativa/i,
+      /leu|mas|minhas|similares|afirmativa/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-vf-claim-fix': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /pret[eé]rito|possessivo|nega[cç]|adversativa|roteiro|modo/i,
+      /leu|mas|minhas|preposi[cç]|indicativo/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-vf-claim-arena': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /pegadinha|parece|classe vizinha|tudo v|tudo f|distrator|letra/i,
+      /leu|mas|minhas|n[aã]o|nem|possessivo|modo|preposi[cç]/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-family-table': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /causal|adversativa|condicional|concessiva|j[aá] que|todavia/i,
+      /teste|troca|pois|contanto/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-classify-board': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /gabarito|eliminar|motivo|causal|valor|similares|afirmativa|sequ[eê]ncia/i,
+      /j[aá] que|contanto|contudo|conquanto|pret[eé]rito|possessivo|nega[cç]/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-swap-arena': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /troca|oposição|oposicao|condi[cç]|concess|outra banca/i,
+      /contanto|contudo|por[eé]m|conquanto|causal/i,
+    ],
+    minPositive: 1,
+  },
+
+  // ---- Língua Portuguesa — Preposição (pt-classes-prep) ----
+  'pt-classes-prep-contract-rail': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /preposi[cç]|artigo|contra[cç]|locu[cç][aã]o prepositiva/i,
+      /\ba\b.*artigo|indicar a|de \+ o|al[eé]m da/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-prep-category-stack': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /artigo|preposi[cç]|gabarito|eliminar|locu[cç][aã]o prepositiva/i,
+      /indicar a|al[eé]m da|atleta|habilidades/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-exceto-rule-pairs': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /exceto|locu[cç][aã]o|substantivo|de manhã|circumstancia|circunstan/i,
+      /valor adverbial|nomeia|de trem|de repente/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-exceto-value-cards': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /causal|advers|explicat|comparat|valor|sem[aâ]ntico/i,
+      /motivo|oposi[cç]|semelhan[cç]|afirmativa|incorreto/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-exceto-isolate-board': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /exceto|exce[cç][aã]o|manter|gabarito|incorreto|valor adverbial/i,
+      /de manhã|substantivo|locu[cç][aã]o adverbial|similares/i,
+    ],
+    minPositive: 1,
+  },
+
+  // ---- Língua Portuguesa — Advérbio (pt-classes-adverb) ----
+  'pt-classes-adverb-types-grid': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /adv[eé]rbio|circunst|modo|tempo|lugar|intensidade/i,
+      /-mente|essencialmente|locu[cç][aã]o adverbial/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-adverb-arrow-cards': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /adv[eé]rbio|circunst|modo|tempo|-mente/i,
+      /essencialmente|rapidamente|muito|bem/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-adverb-mnemonic-rail': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /gabarito|pergunt|fun[cç][aã]o|classe|adv[eé]rbio/i,
+      /essencialmente|tocou alto|modifica/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-classes-adverb-compare': {
+    homeSubtopicFragments: ['classes de palavras', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /adjetiv|adverbial|fun[cç][aã]o|tocou alto|charmosa/i,
+      /outra banca|pegar|modifica verbo/i,
+      /artigo|preposi[cç]|locu[cç][aã]o prepositiva|indicar a|al[eé]m da/i,
+    ],
+    minPositive: 1,
+  },
+
   // ---- Língua Portuguesa — Concordância (pt-subject-focus) ----
   'pt-subject-focus-deck': {
     homeSubtopicFragments: ['concordancia', 'lingua portuguesa'],
@@ -2020,7 +2520,15 @@ export function bespokeMoldHasContentAffinity(
   const onHome = rule ? isOnHomeSubtopic(rule, ctx.subtopico) : false;
 
   if (ADOLESCENT_VARIANTS.has(variant)) {
-    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'adolescente_etica_sigilo') {
+    if (ADOLESCENT_ETHICS_LEGACY_VARIANTS.has(variant)) {
+      if (ctx.pedagogicalBranch && !ADOLESCENT_ETHICS_LEGACY_BRANCHES.has(ctx.pedagogicalBranch)) {
+        return false;
+      }
+    } else if (ADOLESCENT_GLANCEABLE_VARIANTS.has(variant)) {
+      if (ctx.pedagogicalBranch && !ADOLESCENT_GLANCEABLE_BRANCHES.has(ctx.pedagogicalBranch)) {
+        return false;
+      }
+    } else if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'adolescente_etica_sigilo') {
       return false;
     }
     if (!rule?.positivePatterns?.length) return false;
@@ -2036,6 +2544,42 @@ export function bespokeMoldHasContentAffinity(
       return false;
     }
     const positives = rule?.positivePatterns ?? ADOLESCENT_Z_SCORE_POSITIVE;
+    const hits = countPatternMatches(corpus, positives);
+    return hits >= (rule?.minPositive ?? 1);
+  }
+
+  if (ADOLESCENT_VIOLENCE_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !ADOLESCENT_VIOLENCE_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+    const positives = rule?.positivePatterns ?? ADOLESCENT_VIOLENCE_POSITIVE;
+    const hits = countPatternMatches(corpus, positives);
+    return hits >= (rule?.minPositive ?? 1);
+  }
+
+  if (ADOLESCENT_MENTAL_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !ADOLESCENT_MENTAL_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+    const positives = rule?.positivePatterns ?? ADOLESCENT_MENTAL_POSITIVE;
+    const hits = countPatternMatches(corpus, positives);
+    return hits >= (rule?.minPositive ?? 1);
+  }
+
+  if (ADOLESCENT_DEV_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !ADOLESCENT_DEV_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+    const positives = rule?.positivePatterns ?? ADOLESCENT_DEV_POSITIVE;
+    const hits = countPatternMatches(corpus, positives);
+    return hits >= (rule?.minPositive ?? 1);
+  }
+
+  if (ADOLESCENT_GENERIC_BESPOKE_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !ADOLESCENT_GENERIC_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+    const positives = rule?.positivePatterns ?? ADOLESCENT_GENERIC_POSITIVE;
     const hits = countPatternMatches(corpus, positives);
     return hits >= (rule?.minPositive ?? 1);
   }
@@ -2125,6 +2669,12 @@ export function bespokeMoldHasContentAffinity(
     }
   }
 
+  if (FARMACO_GENERIC_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'farmaco_generico') {
+      return false;
+    }
+  }
+
   if (PNI_VF_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_vf_intervalos') {
       return false;
@@ -2137,8 +2687,20 @@ export function bespokeMoldHasContentAffinity(
     }
   }
 
+  if (PNI_EXCETO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_exceto') {
+      return false;
+    }
+  }
+
   if (PNI_CADEIA_FRIO_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_cadeia_frio') {
+      return false;
+    }
+  }
+
+  if (PNI_GENERIC_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_generico') {
       return false;
     }
   }

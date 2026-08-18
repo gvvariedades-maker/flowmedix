@@ -1,0 +1,14 @@
+﻿{
+  "gate": "G0.4-manifest-conflict-L1",
+  "recorded_at": "2026-07-27",
+  "case_count": 6,
+  "action": "lane_reconciliation_remove_mis_tag_registry_completo",
+  "baseline_not_updated_in_this_pr": true,
+  "post_apply_metrics": {
+    "unresolved": 339,
+    "clusters": 104,
+    "manifest_conflict_lane": 0,
+    "official_lane": 11
+  },
+  "decisions_summary": "Remover mis-tag registry_completo; alinhar copias ao lote canônico via neurocanvas:g04-manifest-l1"
+}

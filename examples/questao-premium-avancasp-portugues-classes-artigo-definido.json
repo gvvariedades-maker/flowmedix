@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "Ag (Pref SM Arcanjo)",
+    "orgao": "Pref SM Arcanjo",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_nominais",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "anchor_style": "artigo",
+    "anchor_role": "golden_anchor",
+    "content_review": {
+      "reviewed_at": "2026-08-07",
+      "reviewer": "ancoras-100:classes-de-palavras/nominais-artigo-glance",
+      "guideline_snapshot": "M02 Elias — «O que a palavra faz na oração?» · artigo definido (o/a) × indefinido (um/uma) · asserções I/II",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — artigo definido e indefinido",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "artigo definido e indefinido",
+          "um/uma apresenta",
+          "o/a retoma ou especifica",
+          "primeira menção × retomada",
+          "pergunta-teste M02",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3709821",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Artigos Um/O — asserções Rubem Alves — AVANÇASP Ag Pref SM Arcanjo 2025 tec 3709821",
+        "year": 2025,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito",
+          "matriz pt_classes_nominais"
+        ]
+      }
+    ],
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-07",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/questao-premium-avancasp-portugues-classes-artigo-definido.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
+  },
+  "question_data": {
+    "instruction": "Leia o trecho a seguir:\n\n“Um caquizeiro foi plantado na Fazenda Santa Elisa ao lado de dois gigantescos pés de lichia que há mais de cinquenta anos vivem no final de um gramado. (...) O caquizeiro vai crescer em boa companhia, aprendendo da tranquilidade e bondade das árvores já velhas que serão suas mestras.”\n\nALVES, Rubem. Do universo à jabuticaba. 4. ed. São Paulo: Planeta do Brasil, 2025. p. 12.\n\nCom relação às classes de palavras, analise os itens a seguir e assinale a alternativa correta:\n\nI. Os termos “Um” e “O”, destacados no texto acima, são classificados como artigos.\n\nII. O primeiro é o artigo definido “Um”, que generaliza o caquizeiro, e o segundo é o artigo indefinido “O”, que especifica o mesmo caquizeiro.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "As asserções I e II são proposições verdadeiras, e a II é um complemento da I.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é um complemento da I.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Artigo na frente do nome",
+      "chip_label": "Peças · nominais",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "O que a palavra faz na oração — antecede o substantivo?",
+          "icon": "Focus"
+        },
+        {
+          "label": "Caso Rubem Alves",
+          "detail": "Trecho do caquizeiro na Fazenda Santa Elisa — «Um…» e «O…».",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "Classe em disputa",
+          "detail": "Artigo — peça que determina o substantivo (definido × indefinido).",
+          "icon": "Link"
+        },
+        {
+          "label": "Duas asserções",
+          "detail": "I cobra a classe; II cobra o papel definido × indefinido.",
+          "icon": "GitBranch"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Inverter «um»/«o» e generalizar/especificar na mesma frase.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Artigo = antecede substantivo; um × o = papéis distintos."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Julgar I × II",
+      "chip_label": "Classes · artigo",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "Comando: julgar asserções I e II sobre «Um» e «O» no trecho do caquizeiro.",
+        "I: «Um» e «O» antecedem «caquizeiro» — função de artigo → proposição VERDADEIRA.",
+        "II: chama «Um» de definido e «O» de indefinido — INVERTEU os papéis → FALSA.",
+        "Trilho do texto: «Um caquizeiro» (primeira menção) → «O caquizeiro» (retoma).",
+        "Eliminar quem marca I falsa ou II verdadeira.",
+        "Gabarito B — I verdadeira, II falsa.",
+        "Em similares: nomeie a classe (I) e depois teste definido × indefinido (II)."
+      ],
+      "footer_rule": "Um indefinido · O definido — não inverta."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Definido × indefinido",
+      "chip_label": "Tabela de bolso",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "ARTIGO — papéis na oração",
+      "rows": [
+        {
+          "label": "Pergunta-teste",
+          "value": "Antecede substantivo? → artigo.",
+          "emphasis": "default"
+        },
+        {
+          "label": "Indefinido",
+          "value": "Um, uma — apresenta / generaliza a primeira menção.",
+          "emphasis": "success"
+        },
+        {
+          "label": "Definido",
+          "value": "O, a — especifica / retoma o já citado.",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Armadilha II",
+          "value": "Trocar o rótulo (definido↔indefinido) sem mudar a forma.",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Nesta prova",
+          "value": "Caquizeiro: primeira menção com «Um»; retomada com «O».",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Um apresenta · O retoma."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Armadilhas I/II",
+      "chip_label": "Pegadinhas",
+      "reveal_mode": "auto",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Cada letra erra o par classe × papel",
+      "items": [
+        {
+          "label": "A — I falsa",
+          "detail": "Nega que «Um» e «O» sejam artigos.",
+          "correct": "I é verdadeira — ambos antecedem o substantivo caquizeiro."
+        },
+        {
+          "label": "C — II verdadeira",
+          "detail": "Aceita a inversão definido/indefinido da asserção II.",
+          "correct": "II é falsa — «Um» é indefinido; «O» é definido."
+        },
+        {
+          "label": "D — II verdadeira",
+          "detail": "Mesmo erro de C, só muda o vínculo de complemento.",
+          "correct": "II continua falsa pela troca de papéis."
+        },
+        {
+          "label": "E — ambas falsas",
+          "detail": "Nega a classe e o julgamento da II de uma vez.",
+          "correct": "I permanece verdadeira — classe morfológica correta."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Podem trocar por «Uma árvore» / «A árvore».",
+          "correct": "Mesmo trilho: indefinido apresenta, definido retoma."
+        }
+      ],
+      "footer_rule": "Só o par I certa + II errada fecha a questão."
+    }
+  ]
+}

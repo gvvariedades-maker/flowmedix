@@ -6,6 +6,7 @@ import { Check, X } from 'lucide-react';
 import { getCompareBackFaceLabel } from '@/lib/slides/goldenRuleTypography';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { DangerZoneBulletStyle } from '../core/dangerZoneLayout';
+import type { DangerZoneItemPolarity } from '../core/dangerZonePolarity';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
 import type { DangerZoneItem } from './DangerZone';
@@ -22,6 +23,12 @@ const CORRECT_FACE =
 const CORRECT_ICON = 'bg-emerald-100/90 text-emerald-700';
 const CORRECT_BADGE = 'bg-emerald-100/90 text-emerald-800';
 const CORRECT_BODY = 'text-emerald-900';
+
+/** Comando negativo: o distrator descreve conduta válida — chrome sem X vermelho. */
+const VALID_FACE =
+  'border border-emerald-200/70 border-l-[3px] border-l-emerald-300/80 bg-gradient-to-br from-white via-emerald-50/30 to-emerald-50/50 shadow-sm';
+const VALID_ICON = 'bg-emerald-100/80 text-emerald-700';
+const VALID_BADGE = 'bg-emerald-100/80 text-emerald-800';
 
 const CARD_MIN_H = 'min-h-[11rem] sm:min-h-[12.5rem]';
 
@@ -52,6 +59,7 @@ function TrapRevealFlipCard({
   label,
   trapText,
   correctText,
+  polarity,
   isFlipped,
   onFlip,
   prefersReducedMotion,
@@ -60,11 +68,14 @@ function TrapRevealFlipCard({
   label: string;
   trapText: string;
   correctText: string;
+  polarity: DangerZoneItemPolarity;
   isFlipped: boolean;
   onFlip: () => void;
   prefersReducedMotion: boolean | null;
 }) {
   const backFaceLabel = getCompareBackFaceLabel(label, correctText);
+  const isValidConduct = polarity === 'valid_conduct';
+  const frontFace = isValidConduct ? VALID_FACE : TRAP_FACE;
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -75,13 +86,23 @@ function TrapRevealFlipCard({
 
   const trapHeader = (
     <div className="flex items-start justify-between gap-2">
-      <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${TRAP_ICON}`}>
-        <X className="h-5 w-5" strokeWidth={3} aria-hidden />
+      <span
+        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
+          isValidConduct ? VALID_ICON : TRAP_ICON
+        }`}
+      >
+        {isValidConduct ? (
+          <Check className="h-5 w-5" strokeWidth={3} aria-hidden />
+        ) : (
+          <X className="h-5 w-5" strokeWidth={3} aria-hidden />
+        )}
       </span>
       <span
-        className={`rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest ${TRAP_BADGE}`}
+        className={`rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest ${
+          isValidConduct ? VALID_BADGE : TRAP_BADGE
+        }`}
       >
-        ERRO #{index + 1}
+        {isValidConduct ? `CONDUTA CORRETA #${index + 1}` : `ERRO #${index + 1}`}
       </span>
     </div>
   );
@@ -100,7 +121,11 @@ function TrapRevealFlipCard({
   );
 
   const trapFooter = (
-    <span className="block font-mono text-[9px] font-bold uppercase tracking-widest text-rose-500/80">
+    <span
+      className={`block font-mono text-[9px] font-bold uppercase tracking-widest ${
+        isValidConduct ? 'text-emerald-600/80' : 'text-rose-500/80'
+      }`}
+    >
       Toque para virar →
     </span>
   );
@@ -132,7 +157,7 @@ function TrapRevealFlipCard({
         onKeyDown={handleKeyDown}
         aria-pressed={isFlipped}
         className={`w-full text-left transition-transform duration-200 hover:scale-[1.01] ${CARD_MIN_H} ${
-          isFlipped ? CORRECT_FACE : TRAP_FACE
+          isFlipped ? CORRECT_FACE : frontFace
         }`}
       >
         {isFlipped ? (
@@ -152,7 +177,15 @@ function TrapRevealFlipCard({
       role="button"
       tabIndex={0}
       aria-pressed={isFlipped}
-      aria-label={isFlipped ? `Pegadinha ${label} revelada` : `Revelar correção da pegadinha ${label}`}
+      aria-label={
+        isValidConduct
+          ? isFlipped
+            ? `Conduta correta ${label} revelada`
+            : `Revelar confirmação da conduta correta ${label}`
+          : isFlipped
+            ? `Pegadinha ${label} revelada`
+            : `Revelar correção da pegadinha ${label}`
+      }
     >
       <div
         className={`relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] ${CARD_MIN_H} ${
@@ -164,7 +197,7 @@ function TrapRevealFlipCard({
             header={trapHeader}
             body={trapBody}
             footer={trapFooter}
-            className={`h-full ${TRAP_FACE}`}
+            className={`h-full ${frontFace}`}
           />
         </div>
 
@@ -187,6 +220,8 @@ interface DangerZoneTrapRevealProps {
   footerRule?: string;
   bulletStyle?: DangerZoneBulletStyle;
   compareRevealMode?: LogicFlowRevealMode;
+  /** Polaridade por item derivada do enunciado — evita X vermelho em conduta válida. */
+  itemPolarities?: DangerZoneItemPolarity[];
 }
 
 export function DangerZoneTrapReveal({
@@ -195,6 +230,7 @@ export function DangerZoneTrapReveal({
   theme,
   footerRule,
   compareRevealMode = 'auto',
+  itemPolarities,
 }: DangerZoneTrapRevealProps) {
   const prefersReducedMotion = useReducedMotion();
   const { revealItem, isTapMode } = useDangerZoneCompareReveal(
@@ -256,6 +292,7 @@ export function DangerZoneTrapReveal({
             const trapText = item.detail || item.description || '';
             const correctText = typeof item.correct === 'string' ? item.correct.trim() : '';
             const label = item.label || item.title || `Ponto ${index + 1}`;
+            const polarity = itemPolarities?.[index] ?? 'trap';
 
             return (
               <motion.div
@@ -269,6 +306,7 @@ export function DangerZoneTrapReveal({
                   label={label}
                   trapText={trapText}
                   correctText={correctText}
+                  polarity={polarity}
                   isFlipped={flippedIndices.has(index)}
                   onFlip={() => handleFlip(index)}
                   prefersReducedMotion={prefersReducedMotion}
@@ -297,7 +335,11 @@ export function DangerZoneTrapReveal({
             className="mt-4 rounded-xl border border-emerald-200/80 bg-emerald-50/80 px-4 py-3 text-center"
           >
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-800">
-              {isTapMode ? 'Todas as armadilhas mapeadas' : 'Domínio ativado — revise antes da prova'}
+              {isTapMode
+                ? itemPolarities?.some((p) => p === 'valid_conduct')
+                  ? 'Todos os cards revisados'
+                  : 'Todas as armadilhas mapeadas'
+                : 'Domínio ativado — revise antes da prova'}
             </span>
           </motion.div>
         ) : null}

@@ -1,0 +1,58 @@
+﻿\n===== adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1 =====
+BANCA: Adm&Tec | family hint: Os tubos em que o sangue ├® coletado podem conter um ou mais aditivos, dependendo do objetivo da an├ílise. O padr├úo de cores dos tubos ir├í identificar quaisaditivos est├úo presentes. A recomenda├º├úo da se
+  A  Amarelo/vermelho (ativador de co├ígulo), Azul (citrato de s├│dio), Verde (heparina) e Lil├ís/roxo (EDTA), e Cinza (fluoreto de s├│dio/EDTA).
+  B  Azul (citrato de s├│dio), Verde (heparina), Amarelo/vermelho (ativador de co├ígulo), Lil├ís/roxo (EDTA) e Cinza (fluoreto de s├│dio/EDTA).
+  C  Azul (citrato de s├│dio), Amarelo/vermelho (ativador de co├ígulo), Verde (heparina), Lil├ís/roxo (EDTA) e Cinza (fluoreto de s├│dio/EDTA).
+  D CORRECT Azul (citrato de s├│dio), Amarelo/vermelho (ativador de co├ígulo), Verde (heparina), Cinza (fluoreto de s├│dio/EDTA) e Lil├ís/roxo (EDTA).
+\n===== agirh-enfermagem-exames-laboratoriais-1779563631609-4 =====
+BANCA: Agirh | family hint: A coleta de sangue ├® amplamente praticada e continua sendo de inestim├ível valor para o diagn├│stico e tratamento de v├írios processos patol├│gicos.
+Assinale a afirmativa INCORRETA:
+  A  Deve-se evitar puncionar veias sens├¡veis, esclerosadas, com trombose e endurecidas, locais com cicatrizes de queimadura, com terapia endovenosa, membrosnos quais se realizou cateterismo ou qualquer outro procedimento cir├║rgico e ├íreas com hematomas.
+  B  Deve-se penetrar na veia, num ├óngulo de 30┬░, com o bisel voltado para cima pois o bisel para cima diminui a chance de contamina├º├úo pelo fato de o orif├¡cio n├úoser arrastado na pele, possibilitando que a ponta da agulha primeiro perfure a pele, diminuindo o traumatismo.
+  C  O paciente p├│s-mastectomia pode ter drenagem linf├ítica diminu├¡da e risco maior de infec├º├úo decorrente da pun├º├úo.
+  D CORRECT Em compara├º├úo com a coleta em que se utiliza sistema fechado, a coleta em sistema aberto (uso de seringa e agulha) possuir menor risco de acidente comperfurocortante no manuseio da transfer├¬ncia do sangue para o tubo e posterior descarte.
+\n===== amauc-enfermagem-exames-laboratoriais-1779563631609-3 =====
+BANCA: Amauc | family hint: Com base nos tubos utilizado frequentemente na rotina laboratorial, assinale a alternativa
+CORRETA
+que corresponde ao tubo/cor indicado para dosagem deglicose, hemoglobina glicada e lactato.
+  A  Amarelo.
+  B  Verde.
+  C  Vermelho.
+  D  Roxo.
+  E CORRECT Cinza.
+\n===== ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-0 =====
+BANCA: Ameosc | family hint: A coleta de materiais para exames laboratoriais ├® um procedimento crucial na rotina do t├®cnico em enfermagem, exigindo aten├º├úo meticulosa ├ás etapas doprocesso para garantir a qualidade da amostra e a 
+  A  Agulha 40x12 mm.
+  B CORRECT Seringa de 3 mL.
+  C  Tubo de coleta a v├ícuo com EDTA.
+  D  Algod├úo e ├ílcool 70%.
+\n===== avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-3 =====
+BANCA: AVAN├çASP | family hint: A compreens├úo da ordem de coleta de tubos de sangue, associada ├ás cores padronizadas na Norma ISO 6710:1995, ├® vital para t├®cnicos de enfermagem. Essapr├ítica evita contamina├º├úo cruzada, garantindo amo
+  A CORRECT azul.
+  B  vermelho.
+  C  verde.
+  D  roxo/lil├ís.
+  E  cinza.
+\n===== avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-4 =====
+BANCA: AVAN├çASP | family hint: A compreens├úo da ordem de coleta de tubos de sangue, associada ├ás cores padronizadas na Norma ISO 6710:1995, ├® vital para t├®cnicos de enfermagem. Essapr├ítica evita contamina├º├úo cruzada, garantindo amo
+  A  azul.
+  B  vermelho.
+  C  verde.
+  D CORRECT roxo/lil├ís.
+  E  cinza.
+\n===== avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-5 =====
+BANCA: AVAN├çASP | family hint: A compreens├úo da ordem de coleta de tubos de sangue, associada ├ás cores padronizadas na Norma ISO 6710:1995, ├® vital para t├®cnicos de enfermagem. Essapr├ítica evita contamina├º├úo cruzada, garantindo amo
+  A  azul.
+  B  vermelho.
+  C  verde.
+  D  roxo/lil├ís.
+  E CORRECT cinza.
+\n===== avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-2 =====
+BANCA: AVAN├çASP | family hint: Durante a coleta de sangue, ├® necess├írio observar a sequ├¬ncia correta no uso dos tubos de acordo com as recomenda├º├Áes do
+Clinical and Laboratory StandardsInstitute.
+A aus├¬ncia desse procedimento exp├Áe
+  A  Tubo de EDTA
+  B CORRECT Tubo de citrato de s├│dio
+  C  Tubo com ativador de co├ígulo, com ou sem gel para obten├º├úo de plasma
+  D  Tubo de heparina
+  E  Tubo de fluoreto de pot├íssio + EDTA

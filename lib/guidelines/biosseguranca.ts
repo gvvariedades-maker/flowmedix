@@ -2,15 +2,17 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Biossegurança, IRAS e precauções.
- * Fontes: Anvisa (RDC precauções/IRAS), MS, RDC 30 resíduos.
+ * Fontes: Anvisa Protocolo 5 (Precauções e Isolamento) + NT GVIMS 11/2025;
+ * higiene das mãos NT 05/2024; RSS RDC 222/2018.
+ * @see https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/publicacoes/Protocolo5MedidasdePrecauoeIsolamentoFINAL.pdf
  */
 export const BIOSSEGURANCA_ANVISA: GuidelineTable = {
   id: 'biosseguranca-anvisa',
-  snapshot: 'Cadeia de infecção, EPI e precauções',
+  snapshot: 'Anvisa Protocolo precauções/isolamento + NT 11/2025 IRAS',
   issuer: 'Anvisa / Ministério da Saúde',
   title: 'Biossegurança e prevenção de IRAS',
-  year: 2017,
-  url: 'https://www.gov.br/anvisa/pt-br/assuntos/servicosdesaude/servicos',
+  year: 2025,
+  url: 'https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/publicacoes/Protocolo5MedidasdePrecauoeIsolamentoFINAL.pdf',
   entries: [
     {
       id: 'cadeia-infeccao',
@@ -48,42 +50,45 @@ export const BIOSSEGURANCA_ANVISA: GuidelineTable = {
     {
       id: 'precaucoes-padrao',
       label: 'Precauções padrão',
-      value: 'higiene das mãos + EPI conforme risco',
-      detail: 'Aplicáveis a todos os pacientes.',
+      value: 'higiene das mãos + EPI conforme risco — todos os pacientes',
+      detail:
+        'Anvisa Protocolo 5: mínimo obrigatório em todo atendimento, com ou sem infecção suspeita. Precauções por via de transmissão são adicionais e nunca substituem o padrão.',
       sourceId: 'biosseguranca-anvisa',
     },
     {
       id: 'precaucao-contato',
       label: 'Precaução por contato',
       value: 'luvas e avental — MDRO, C. difficile',
+      detail: 'Associar sempre às precauções padrão (Anvisa Protocolo 5).',
       sourceId: 'biosseguranca-anvisa',
     },
     {
       id: 'precaucao-goticulas',
       label: 'Precaução por gotículas',
       value: 'máscara cirúrgica — distância ≤1 m',
-      detail: 'Influenza, meningite meningocócica, coqueluche.',
+      detail: 'Influenza, meningite meningocócica, coqueluche. Gotícula >5 µm (Protocolo 5 Anvisa).',
       sourceId: 'biosseguranca-anvisa',
     },
     {
       id: 'precaucao-aerossol',
       label: 'Precaução por aerossóis',
       value: 'respirador N95/PFF2 + ventilação adequada',
-      detail: 'Tuberculose pulmonar, sarampo, varicela.',
+      detail:
+        'TB pulmonar/laríngea, sarampo, varicela. Paciente em transporte: máscara cirúrgica; profissional: N95/PFF2 no quarto (Protocolo 5).',
       sourceId: 'biosseguranca-anvisa',
     },
     {
       id: 'higiene-maos',
       label: 'Higiene das mãos',
       value: 'momento 1 a 5 da OMS',
-      detail: 'Medida mais eficaz contra IRAS.',
+      detail: 'NT GVIMS/Anvisa 05/2024 — medida mais eficaz contra IRAS.',
       sourceId: 'biosseguranca-anvisa',
     },
     {
       id: 'residuos-perfuro',
       label: 'Resíduos perfurocortantes',
-      value: 'grupo A — recipiente rígido e punctura-resistente',
-      detail: 'RDC 222/2018 / RDC 30/04.',
+      value: 'grupo E — recipiente rígido e punctura-resistente',
+      detail: 'RDC 222/2018 — grupo E (não grupo A).',
       sourceId: 'biosseguranca-anvisa',
     },
     {
@@ -110,15 +115,16 @@ export const BIOSSEGURANCA_ANVISA: GuidelineTable = {
     {
       id: 'residuos-grupo-b-comum',
       label: 'Resíduos grupo B (RDC 222/2018)',
-      value: 'resíduos sem risco biológico — comuns do serviço',
-      detail: 'Papel, embalagens limpas, restos alimentares — descarte como lixo comum quando permitido.',
+      value: 'resíduos químicos — inflamáveis, corrosivos, reativos ou tóxicos',
+      detail:
+        'RDC 222/2018: grupo B = químicos (medicamentos vencidos, solventes, reveladores). Não confundir com comuns (grupo D).',
       sourceId: 'biosseguranca-anvisa',
     },
     {
       id: 'residuos-grupo-e-perfuro',
       label: 'Resíduos grupo E',
       value: 'perfurocortantes — coletor rígido, inquebrável e identificado',
-      detail: 'Agulhas, lâminas, ampolas — nunca recapear nem compactar.',
+      detail: 'Agulhas, lâminas, ampolas — nunca recapear nem compactar. RDC 222/2018.',
       sourceId: 'biosseguranca-anvisa',
     },
     {
@@ -159,22 +165,31 @@ export const BIOSSEGURANCA_ANVISA: GuidelineTable = {
     {
       id: 'residuos-grupo-c-quimico',
       label: 'Resíduos grupo C (RDC 222/2018)',
-      value: 'resíduos químicos — reagentes, medicamentos vencidos, solventes',
-      detail: 'Acondicionamento e descarte conforme ficha de segurança; não misturar com infectantes ou comuns.',
+      value: 'rejeitos radioativos — medicina nuclear / radioterapia (CNEN)',
+      detail: 'RDC 222/2018: grupo C = radioativos. Não confundir com químicos (grupo B).',
       sourceId: 'biosseguranca-anvisa',
     },
     {
       id: 'residuos-grupo-d-radioativo',
       label: 'Resíduos grupo D (RDC 222/2018)',
-      value: 'resíduos radioativos — fontes seladas e rejeitos de medicina nuclear',
-      detail: 'Gestão especializada; segregação obrigatória dos demais grupos A, B, C e E.',
+      value: 'resíduos comuns — sem risco biológico, químico ou radiológico',
+      detail:
+        'Equiparáveis ao lixo domiciliar (papel, embalagens limpas, restos alimentares quando permitido). ID do entry mantido por estabilidade de sourceId.',
       sourceId: 'biosseguranca-anvisa',
     },
     {
       id: 'residuos-classificacao-abcde',
       label: 'Classificação de resíduos A–E',
-      value: 'A infectantes; B comuns; C químicos; D radioativos; E perfurocortantes',
-      detail: 'RDC 222/2018 — segregação na fonte; identificação por cor e recipiente adequado.',
+      value: 'A infectantes; B químicos; C radioativos; D comuns; E perfurocortantes',
+      detail: 'RDC Anvisa 222/2018 — segregação na fonte; identificação por cor e recipiente adequado.',
+      sourceId: 'biosseguranca-anvisa',
+    },
+    {
+      id: 'protocolos-iras-minimos-nt11-2025',
+      label: 'Protocolos IRAS mínimos (NT 11/2025)',
+      value: 'IPCS + ITU-CV + PAV + ISC + precauções/isolamento',
+      detail:
+        'NT GVIMS/Anvisa 11/2025: serviços devem implementar, no mínimo, esses cinco protocolos adaptados ao contexto local.',
       sourceId: 'biosseguranca-anvisa',
     },
     {

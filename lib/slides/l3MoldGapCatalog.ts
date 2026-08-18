@@ -58,8 +58,7 @@ export function packageUsesBespoke(design?: SubtopicDesign): boolean {
   );
 }
 
-const ADOLESCENT_ETHICS = 'adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)';
-const ADOLESCENT_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+const ADOLESCENT_ETHICS = 'adolescent-care-pillars-deck · adolescent-speak-barrier-board · adolescent-exceto-isolate-board · adolescent-exceto-compare (bespoke v2)';
 const HISTORIA_BRIDGE = 'bridge · reference_table · vertical · compare (genérico premium)';
 const HISTORIA_GENERIC = 'morphological · reference_table · vertical · compare (genérico premium)';
 const SP_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
@@ -115,6 +114,21 @@ const MULHER_PLANEJAMENTO_BESPOKE =
 const ADOLESCENT_ANTHROPOMETRY_BESPOKE =
   'adolescent-growth-z-rail · adolescent-z-band-board · adolescent-z-classify-tap · adolescent-z-threshold-trap (bespoke)';
 
+const ADOLESCENT_VIOLENCE_BESPOKE =
+  'adolescent-violence-deck · reference_table · adolescent-violence-timeline · adolescent-violence-calendar (bespoke CM+LF+DZ)';
+
+const ADOLESCENT_MENTAL_BESPOKE =
+  'adolescent-mental-route-list · adolescent-mental-protocol-rail · adolescent-mental-hub-board · adolescent-mental-step-trap (bespoke 0-tap)';
+
+const ADOLESCENT_DEV_BESPOKE =
+  'adolescent-dev-pair-rail · adolescent-dev-objective-flow · adolescent-dev-vigilance-board · adolescent-dev-budget-checklist (bespoke 0-tap)';
+
+const ADOLESCENT_GENERIC_BESPOKE =
+  'adolescent-generic-hub-orbit · adolescent-generic-care-levels · adolescent-generic-finance-checklist · adolescent-generic-versus-blocks (bespoke 0-tap)';
+
+const COLETA_GENERIC =
+  'morphological · reference_table · vertical · compare (genérico teal — COLETA_GENERIC_DESIGN)';
+
 const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
   'saude do adolescente': [
     {
@@ -126,13 +140,13 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Escore Z / Caderneta — trilho de faixas antropométricas (brief l3 antropometria).',
     },
     {
-      pattern: /viol[eê]ncia sexual|indicadores.*viol/i,
+      pattern: /viol[eê]ncia sexual|indicadores.*viol|rede de prote[cç][aã]o|notifica[cç][aã]o compuls/i,
       branch_id: 'adolescente_violencia_protecao',
       branch_implemented: true,
-      ideal_mold_package: ADOLESCENT_GENERIC,
-      base_decision: 'ok_generico',
+      ideal_mold_package: ADOLESCENT_VIOLENCE_BESPOKE,
+      base_decision: 'molde_inedito',
       rationale:
-        'Violência/rede de proteção — layouts genéricos (sem moldes adolescent-* de sigilo em consulta).',
+        'Violência/rede de proteção — calendário (CM) + timeline estática ELIMINA×MANTÉM (LF); GR/DZ genéricos.',
     },
     {
       pattern: /gravidez|pr[eé][\s-]?natal|riscos gestacion/i,
@@ -151,28 +165,39 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'V/F e ética do cuidado — pacote adolescent-*.',
     },
     {
-      pattern: /transtorno alimentar|imagem corporal|anorexia|bulimia/i,
+      pattern: /transtorno alimentar|imagem corporal|anorexia|bulimia|depress[aã]o|ansiedade/i,
       branch_id: 'adolescente_saude_mental',
       branch_implemented: true,
-      ideal_mold_package: ADOLESCENT_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'Saúde mental alimentar — compare + tabela bastam.',
+      ideal_mold_package: ADOLESCENT_MENTAL_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale:
+        'Saúde mental — Vias (CM) + XABCDE (LF) + Hub (GR) + Regra de Três (DZ); todos estáticos.',
+    },
+    {
+      pattern: /puberdade|tanner|menarca|espermarquia|desenvolvimento puberal|metamorfose f[ií]sica/i,
+      branch_id: 'adolescente_desenvolvimento',
+      branch_implemented: true,
+      ideal_mold_package: ADOLESCENT_DEV_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale:
+        'Desenvolvimento/puberdade — pares SUS (CM) + objetivos (LF) + vigilância (GR) + checklist (DZ); 0 taps.',
     },
     {
       pattern: /diretrizes|exceto|ms adolescente/i,
       branch_id: 'adolescente_generico',
       branch_implemented: true,
-      ideal_mold_package: ADOLESCENT_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'EXCETO/diretrizes — layout genérico premium.',
+      ideal_mold_package: ADOLESCENT_GENERIC_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale:
+        'EXCETO/diretrizes — hub CF + níveis + checklist financiamento + versus COFEN; 0 taps.',
     },
     {
       pattern: /sa[uú]de bucal|promo[cç][aã]o/i,
       branch_id: 'adolescente_generico',
       branch_implemented: true,
-      ideal_mold_package: ADOLESCENT_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'Promoção/bucal — sem metáfora espacial fixa.',
+      ideal_mold_package: ADOLESCENT_GENERIC_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Promoção/bucal — mesmo pacote genérico bespoke 0-tap.',
     },
   ],
   cme: [
@@ -399,7 +424,17 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       branch_implemented: true,
       ideal_mold_package: 'vaccine-timeline · pni-calendar-board · pni-calendar-elimination-tap · calendar-mismatch (bespoke)',
       base_decision: 'molde_redesign',
-      rationale: 'Calendário/esquema — pacote pni-calendar wired.',
+      rationale: 'Calendário/esquema — pacote pni-calendar wired; golden usa LabelBodyRow (Onda 3).',
+    },
+    {
+      pattern: /\bexceto\b|incorret[oa]|alternativa\s+incorreta/i,
+      branch_id: 'imunizacao_exceto',
+      branch_implemented: true,
+      ideal_mold_package:
+        'pni-exceto-command-hub · pni-exceto-rule-board · pni-exceto-isolate-board · pni-exceto-compare',
+      base_decision: 'molde_redesign',
+      rationale:
+        'EXCETO/INCORRETA PNI — hub INCORRETA+mito; NÃO ADIA; isolate-board + compare letras (Glance OS).',
     },
   ],
   'vias de administracao': [
@@ -828,6 +863,64 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Cauda longa — slug legado com tema adjacente.',
     },
   ],
+  'coleta de exames laboratoriais': [
+    {
+      pattern: /urina|fezes|escarro|jato m[eé]dio|urocultura/i,
+      branch_id: 'coleta_nao_sanguinea',
+      branch_implemented: true,
+      ideal_mold_package: COLETA_GENERIC,
+      base_decision: 'molde_redesign',
+      rationale: 'Coleta não sanguínea — jato médio / recipiente / preservação; genérico wired até molde bespoke.',
+    },
+    {
+      pattern: /tubos?|\bedta\b|citrato|ordem de coleta|tampa/i,
+      branch_id: 'coleta_tubos_ordem',
+      branch_implemented: true,
+      ideal_mold_package: COLETA_GENERIC,
+      base_decision: 'molde_redesign',
+      rationale: 'Ordem de tubos / aditivos / tampa — trilho sequencial; genérico wired até tubo-rail bespoke.',
+    },
+    {
+      pattern: /pun[cç][aã]o venosa|garrote|hem[oó]lise|v[aá]cuo/i,
+      branch_id: 'coleta_tecnica_venosa',
+      branch_implemented: true,
+      ideal_mold_package: COLETA_GENERIC,
+      base_decision: 'molde_redesign',
+      rationale: 'Técnica venosa / vácuo / hemólise — genérico wired até molde procedure-protocol.',
+    },
+    {
+      pattern: /hemocultura/i,
+      branch_id: 'coleta_hemocultura',
+      branch_implemented: true,
+      ideal_mold_package: COLETA_GENERIC,
+      base_decision: 'molde_redesign',
+      rationale: 'Hemocultura — assepsia máxima / volume / número de amostras; genérico wired.',
+    },
+    {
+      pattern: /jejum|preparo|triglicer[ií]deos|lip[ií]dios/i,
+      branch_id: 'coleta_jejum_preparo',
+      branch_implemented: true,
+      ideal_mold_package: COLETA_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Jejum / preparo — tabela de referência rows + tap no logic_flow.',
+    },
+    {
+      pattern: /capilar|glicos[ií]metro|\bamgc\b|\bhgt\b/i,
+      branch_id: 'coleta_capilar_glicemia',
+      branch_implemented: true,
+      ideal_mold_package: COLETA_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Glicemia capilar / AMGC — reference_table + compare genérico.',
+    },
+    {
+      pattern: /conceito geral|default|coleta/i,
+      branch_id: 'coleta_generico',
+      branch_implemented: true,
+      ideal_mold_package: COLETA_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Cauda longa — morphological + compare até clusterizar.',
+    },
+  ],
 };
 
 function subtopicKey(subtopico: string): string | undefined {
@@ -854,6 +947,9 @@ function subtopicKey(subtopico: string): string | undefined {
   if (key.includes('seguranca do paciente')) return 'seguranca do paciente';
   if (key.includes('saude da mulher')) return 'saude da mulher';
   if (key.includes('urgencias') || key.includes('emergencias')) return 'urgencias';
+  if (key.includes('coleta de exames') || key.includes('exames laboratoriais')) {
+    return 'coleta de exames laboratoriais';
+  }
   return undefined;
 }
 
@@ -943,6 +1039,7 @@ export function implementedBranchIds(): PedagogicalBranchId[] {
     'adolescente_antropometria',
     'adolescente_desenvolvimento',
     'adolescente_saude_mental',
+    'adolescente_violencia_protecao',
     'adolescente_generico',
     'cme_preparo_limpeza',
     'cme_autoclave_metodos',

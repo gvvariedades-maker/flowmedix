@@ -1,14 +1,16 @@
-﻿interface ProgressRingProps {
+﻿import { EDITORIAL_BRAND } from '@/lib/brand/avantBrandPalette';
+
+interface ProgressRingProps {
   value: number;
   size?: number;
   strokeWidth?: number;
   variant?: 'brand' | 'success' | 'warning';
-  /** Sobrescreve a cor do arco (ex.: verde do ícone AVANT na vitrine). */
+  /** Sobrescreve a cor do arco (ex.: acento editorial da vitrine). */
   strokeColor?: string;
 }
 
 const colors = {
-  brand: '#22c55e',
+  brand: EDITORIAL_BRAND.hex,
   success: '#16a34a',
   warning: '#d97706',
 };

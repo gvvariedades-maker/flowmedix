@@ -52,7 +52,7 @@ export const blogMdxComponents: MDXComponents = {
   strong: (props) => <strong className="font-black text-white" {...props} />,
   blockquote: (props) => (
     <blockquote
-      className="my-6 border-l-4 border-[#BEF264] rounded-r-2xl bg-white/5 py-4 pr-4 pl-6 text-slate-300 italic"
+      className="my-6 border-l-4 border-[#F26522] rounded-r-2xl bg-white/5 py-4 pr-4 pl-6 text-slate-300 italic"
       {...props}
     />
   ),

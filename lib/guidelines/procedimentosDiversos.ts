@@ -2,15 +2,15 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Procedimentos diversos — técnica asséptica e higiene das mãos.
- * Fonte: Anvisa/OMS — precauções padrão e assepsia.
+ * Fontes: MS/Anvisa/Fiocruz Protocolo Higiene das Mãos (PNSP) · OMS 5 momentos · RDC 42/2010.
  */
 export const PROCEDIMENTOS_DIVERSOS_ASSEPSIA: GuidelineTable = {
   id: 'procedimentos-diversos-assepsia',
-  snapshot: 'Assepsia, antissepsia e higiene das mãos',
-  issuer: 'Anvisa / OMS',
+  snapshot: 'Assepsia + 5 momentos HM (Protocolo PNSP / Anvisa)',
+  issuer: 'Anvisa / MS / OMS',
   title: 'Procedimentos diversos',
-  year: 2017,
-  url: 'https://www.gov.br/anvisa/',
+  year: 2013,
+  url: 'https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/publicacoes/protocolo-de-higiene-das-maos',
   entries: [
     {
       id: 'tecnica-asseptica',
@@ -34,15 +34,25 @@ export const PROCEDIMENTOS_DIVERSOS_ASSEPSIA: GuidelineTable = {
     },
     {
       id: 'higiene-maos',
-      label: 'Higienização das mãos',
-      value: 'antes e depois do contato — 5 momentos OMS',
-      detail: 'Luva não substitui lavagem nos momentos indicados.',
+      label: 'Higienização das mãos — 5 momentos',
+      value: '1 antes do paciente · 2 antes de procedimento limpo/asséptico · 3 após fluidos · 4 após o paciente · 5 após superfícies próximas',
+      detail:
+        'Protocolo MS/Anvisa/Fiocruz (PNSP) + OMS — luva não substitui HM; fricção alcoólica se mãos visivelmente limpas.',
+      sourceId: 'procedimentos-diversos-assepsia',
+    },
+    {
+      id: 'higiene-maos-agua-vs-alcool',
+      label: 'HM — água e sabão × álcool',
+      value: 'sabão + água se sujas/visíveis; preparação alcoólica se limpas (5 momentos)',
+      detail:
+        'RDC 42/2010 obriga disponibilizar preparação alcoólica nos pontos de assistência; Anvisa NT 05/2024 reforça os 5 momentos.',
       sourceId: 'procedimentos-diversos-assepsia',
     },
     {
       id: 'pegadinha-luva',
       label: 'Pegadinha luva',
-      value: 'lavar só após procedimento com luva é insuficiente',
+      value: 'higienizar antes de calçar e após retirar luvas — luva não substitui HM',
+      detail: 'Protocolo PNSP: após remover luvas, HM é obrigatória (momentos 3/4/5 conforme fluxo).',
       sourceId: 'procedimentos-diversos-assepsia',
     },
     {

@@ -1,0 +1,297 @@
+{
+  "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Adm&Tec",
+      "orgao": "Enfermagem / Sem Especialidade",
+      "prova": "Tec (Pref João Alfredo)",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Uma família residente em área rural enfrenta dificuldade no comparecimento ao posto de saúde. Após visitas domiciliares, o técnico de enfermagem identifica\nproblemas como falta de saneamento básico, abastecimento hídrico irregular e desconhecimento de práticas de higiene. Como abordar esse grupo familiar, alinhando-se\nàs estratégias de visita domiciliar e promoção da saúde?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Verificar a existência de potenciais criadouros de vetores e avaliar práticas de higiene no domicílio, implementando estratégias de controle ambiental associadas ao uso de substâncias saneantes quando necessário e priorizar a eliminação dos riscos físicos e biológicos identificados, sem a necessidade de estratégias educativas formais ou visitas subsequentes para acompanhamento da adesão familiar",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Iniciar apenas um diálogo superficial com as lideranças comunitárias para citar possíveis barreiras no abastecimento de água, sem envolver a própria família ou outras áreas da equipe de saúde na busca de soluções, e contatar exclusivamente a vigilância sanitária para fiscalizar as condições do local, ignorando quaisquer orientações educativas ou acompanhamento continuado.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Orientar práticas de higiene pessoal e do ambiente, destacando a importância de prevenir agravos infecciosos e interromper o acompanhamento se a família não aderir de imediato às recomendações, redirecionando recursos apenas para quem manifeste interesse formal.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Estabelecer um plano de visitas contínuas, envolvendo diferentes setores (educação, assistência social e saneamento) e orientar a família sobre práticas de higiene, potabilidade da água e prevenção de agravos, considerando a realidade sociocultural local.",
+        "is_correct": true
+      }
+    ],
+    "has_slides": 4
+  },
+  "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1": {
+    "meta": {
+      "ano": "2024",
+      "banca": "Adm&Tec",
+      "orgao": "UTI Móvel",
+      "prova": "Moto (Pref BM de Deus)",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Motoristas de UTI Móvel, como integrantes de uma equipe multidisciplinar de saúde, muitas vezes colaboram com Agentes Comunitários de Saúde (ACS) e\nAgentes de Combate a Endemias (ACE) em áreas rurais e urbanas. Analise as seguintes afirmações sobre as funções do Agente Comunitário de Saúde (ACS) e do Agente\nde Combate a Endemias (ACE).\nI. O ACS realiza visitas domiciliares para promover a saúde e prevenir doenças, integrando a equipe de saúde da família.\nII. O ACE tem como uma de suas principais responsabilidades a prescrição de medicamentos para tratar doenças como dengue e malária.\nIII. O ACS deve coletar dados de saúde e sociais dos domicílios, contribuindo para o diagnóstico de saúde da comunidade.\nIV. O ACE é responsável pela educação ambiental e controle de vetores que transmitem doenças como Zika, Dengue e Chikungunya.\nEstão CORRETAS as afirmativas:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, III e IV, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "I, II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II, III e IV, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I e IV, apenas.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2": {
+    "meta": {
+      "ano": "2023",
+      "banca": "Adm&Tec",
+      "orgao": "Pref Timbaúba",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Analise as afirmativas a seguir:\nI. É considerada atividade do Agente Comunitário de Saúde, compartilhadas com os demais membros da equipe, a participação no planejamento e no\nmapeamento institucional, social e demográfico.\nII. É considerada atividade exclusiva do Agente Comunitário de Saúde, a consolidação e a análise de dados obtidos nas visitas domiciliares.\nMarque a alternativa CORRETA:",
+    "options": [
+      {
+        "id": "A",
+        "text": "As duas afirmativas são verdadeiras.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A afirmativa I é verdadeira, e a II é falsa.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "A afirmativa II é verdadeira, e a I é a falsa.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "As duas afirmativas são falsas.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3": {
+    "meta": {
+      "ano": "2023",
+      "banca": "Adm&Tec",
+      "orgao": "Pref Timbaúba",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Analise as afirmativas a seguir:\nI. Todo Agente Comunitário de Saúde deve atuar na medição de glicemia capilar, durante a visita domiciliar, em caráter excepcional, encaminhando o paciente para\na unidade de saúde de referência.\nII. Todo Agente Comunitário de Saúde deverá utilizar instrumentos para diagnósticos demográfico e sociocultural.\nIII. Todo Agente Comunitário de Saúde deverá realizar visitas domiciliares regulares e periódicas para acolhimento e acompanhamento da pessoa com sinais ou\nsintomas de alteração na cavidade bucal.\nMarque a alternativa CORRETA:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Todas as afirmativas estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Nenhuma afirmativa está correta.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Apenas uma afirmativa está correta.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Apenas duas afirmativas estão corretas.",
+        "is_correct": true
+      }
+    ],
+    "has_slides": 4
+  },
+  "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4": {
+    "meta": {
+      "ano": "2023",
+      "banca": "Adm&Tec",
+      "orgao": "Pref Timbaúba",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Analise as afirmativas a seguir:\nI. Agindo de forma independente, o Agente Comunitário de Saúde deverá aferir temperatura axilar, durante a visita domiciliar.\nII. Agindo de forma independente, o Agente Comunitário de Saúde deverá realizar a verificação antropométrica.\nIII. Agindo de forma independente, o Agente Comunitário de Saúde deverá orientar a correta administração de medicação de paciente em situação de\nvulnerabilidade.\nMarque a alternativa CORRETA:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Todas as afirmativas estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Nenhuma afirmativa está correta.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Apenas uma afirmativa está correta.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Apenas duas afirmativas estão corretas.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "amauc-enfermagem-processo-de-enfermagem-1780005128081-0": {
+    "meta": {
+      "ano": "2026",
+      "banca": "Amauc",
+      "orgao": "Pref Irani",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "A catapora (varicela) é uma doença infecciosa altamente transmissível, comum na infância, que exige atenção da Atenção Primária à Saúde para prevenção de surtos. Considerando a atuação da equipe de saúde no território e o papel do Agente Comunitário de Saúde (ACS) nesse contexto, registre V, para as afirmativas verdadeiras, e F, para as falsas.\n(__)A catapora não exige notificação ou acompanhamento pela Atenção Primária.\n(__)A catapora apresenta baixa transmissibilidade, dispensando medidas de vigilância.\n(__)A identificação precoce de casos e a orientação sobre isolamento contribuem para reduzir a disseminação da doença.\nAssinale a alternativa com a sequência CORRETA.",
+    "options": [
+      {
+        "id": "A",
+        "text": "V, V, V.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "V, F, F.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "F, F, F.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "F, V, F.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "F, F, V.",
+        "is_correct": true
+      }
+    ],
+    "has_slides": 4
+  },
+  "amauc-enfermagem-processo-de-enfermagem-1780005128081-5": {
+    "meta": {
+      "ano": "2026",
+      "banca": "Amauc",
+      "orgao": "Pref Irani",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "A saúde bucal é fundamental para o bem-estar geral, pois influencia a mastigação, a digestão, a autoestima e a prevenção de doenças. Nesse contexto, o Agente Comunitário de Saúde atua como elo entre a comunidade e os serviços de saúde, promovendo hábitos adequados de higiene bucal. Com relação as orientações básicas de higiene bucal descritas, analise as afirmativas a seguir.\nI.A utilização do fio dental complementa a escovação ao remover resíduos alimentares e placa bacteriana entre os dentes.\nII.A língua não necessita de higienização, pois não participa do acúmulo de bactérias na cavidade bucal.\nIII.A escovação dos dentes uma vez ao dia é suficiente para prevenir doenças bucais em qualquer faixa etária.\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "II, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "amauc-enfermagem-processo-de-enfermagem-1780006486032-5": {
+    "meta": {
+      "ano": "2026",
+      "banca": "Amauc",
+      "orgao": "Pref Ipumirim",
+      "prova": "Aux Enf",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "O trabalho do Auxiliar de Enfermagem junto com a equipe na atenção básica pressupõe integração de saberes e corresponsabilização. Assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "O trabalho em equipe dispensa planejamento conjunto.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "O cuidado em saúde é responsabilidade exclusiva do enfermeiro na unidade básica.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A atuação multiprofissional é facultativa na atenção básica.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A atuação multiprofissional ocorre apenas em situações de emergência sanitária previamente declarada.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A atuação multiprofissional favorece a integralidade do cuidado por meio da articulação de diferentes competências técnicas.",
+        "is_correct": true
+      }
+    ],
+    "has_slides": 4
+  }
+}

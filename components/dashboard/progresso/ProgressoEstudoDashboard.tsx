@@ -1,8 +1,7 @@
 /**
- * Alias de dominio para o dashboard de progresso de estudo.
- * Mantem compatibilidade com o componente legado de performance.
+ * Alias de domínio: atividade de estudo (heatmap / streak / zerar) no hub Desempenho.
  */
-export { ProgressoEstudoDashboard } from '@/components/dashboard/performance/MeuDesempenhoDashboard';
+export { DesempenhoAtividadeDashboard as ProgressoEstudoDashboard } from '@/components/dashboard/desempenho/DesempenhoAtividadeDashboard';
 export type {
   AssuntoTop,
   DesempenhoData,

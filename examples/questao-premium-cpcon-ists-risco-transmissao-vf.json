@@ -22,7 +22,11 @@
         "issuer": "Ministério da Saúde",
         "title": "Prevenção combinada e vigilância de IST",
         "year": 2022,
-        "covers": ["preservativo", "risco sexual", "via parenteral"]
+        "covers": [
+          "preservativo",
+          "risco sexual",
+          "via parenteral"
+        ]
       }
     ]
   },
@@ -82,17 +86,17 @@
         },
         {
           "label": "Afirmativa I",
-          "detail": "Verdadeira: sexo sem preservativo é fator clássico de risco.",
+          "detail": "Sexo sem preservativo é fator clássico de risco.",
           "icon": "CheckCircle"
         },
         {
           "label": "Afirmativa II",
-          "detail": "Verdadeira: parceiro com relações desprotegidas com terceiros também eleva o risco.",
+          "detail": "Parceiro com relações desprotegidas com terceiros também eleva o risco.",
           "icon": "CheckCircle"
         },
         {
           "label": "Pegadinha da III",
-          "detail": "Falsa: agulha de uso pessoal não configura, por si só, o risco parenteral cobrado em prova.",
+          "detail": "Agulha de uso pessoal não configura, por si só, o risco parenteral cobrado em prova.",
           "icon": "AlertTriangle"
         }
       ],
@@ -109,17 +113,17 @@
       "rows": [
         {
           "label": "I — sexo sem camisinha",
-          "value": "Verdadeira: relação sexual desprotegida aumenta o risco",
+          "value": "Relação sexual desprotegida aumenta o risco",
           "badge": "ok"
         },
         {
           "label": "II — parceiro com outras relações",
-          "value": "Verdadeira: exposição indireta também conta",
+          "value": "Exposição indireta também conta",
           "badge": "ok"
         },
         {
           "label": "III — agulha pessoal",
-          "value": "Falsa: o risco parenteral vem do compartilhamento, não do uso individual",
+          "value": "O risco parenteral vem do compartilhamento, não do uso individual",
           "emphasis": "alert",
           "badge": "warn"
         },

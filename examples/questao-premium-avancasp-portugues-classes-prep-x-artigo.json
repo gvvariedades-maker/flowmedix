@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "AAE (Pref Potim)",
+    "orgao": "Pref Potim",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_preposicao",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-08",
+      "reviewer": "handcraft:prep-100-polish",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · artigo × preposição",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — morfologia e função na oração",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "artigo × preposição",
+          "locução prepositiva",
+          "preposição e valor semântico",
+          "pergunta-teste M02/M03",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3839714",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "«a» preposição × artigo regência — AVANÇASP AAE Pref Potim 2026 tec 3839714",
+        "year": 2026,
+        "covers": ["enunciado", "alternativas", "gabarito", "matriz pt_classes_preposicao"]
+      }
+    ],
+    "anchor_style": "prep_x_artigo",
+    "anchor_role": "golden_anchor"
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa em que o vocábulo «a» em destaque NÃO exerce a função de artigo.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A atleta conquistou uma medalha em cada competição que disputou.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A meta principal do projeto é reduzir o desperdício de água.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Se houver uma solução viável, poderemos evitar a interdição do restaurante.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O grupo venceu a etapa do torneio com facilidade.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "O professor indicou uma leitura obrigatória a alunos e alunas.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "«A» — ARTIGO OU PREP",
+      "chip_label": "PREPOSIÇÃO",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "A + NOME",
+          "detail": "É · ARTIGO",
+          "correct": "a atleta · a meta · a etapa · a interdição",
+          "icon": "Type"
+        },
+        {
+          "label": "VERBO + A",
+          "detail": "É · PREPOSIÇÃO",
+          "correct": "indicar a alunos — liga verbo → complemento",
+          "icon": "Link"
+        },
+        {
+          "label": "TESTE",
+          "detail": "Pergunte · O QUE FAZ?",
+          "correct": "determina o nome × liga o verbo",
+          "icon": "Focus"
+        }
+      ],
+      "footer_rule": "ESTAS FORMAS TÊM · FUNÇÕES DIFERENTES · «A» ARTIGO OU PREP — O QUE FAZ NA ORAÇÃO?"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "chip_label": "CLASSIFICA O",
+      "slide_title": "«A»",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "ARTIGO DEFINIDO · a atleta, a meta, a interdição, a etapa",
+        "PREPOSIÇÃO · indicar a alunos — após leitura obrigatória",
+        "ELIMINAR · A B C D — artigo definido",
+        "GABARITO · letra E — «a» prep (professor · alunos · alunas)",
+        "Em similares: entregar a, falar a, indicar a — preposição"
+      ],
+      "footer_rule": "E — preposição."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "ARTIGO × PREPOSIÇÃO",
+      "rows": [
+        {
+          "label": "1. TESTE",
+          "value": "Determina substantivo ou liga verbo? · pergunta-teste M02"
+        },
+        {
+          "label": "2. ARTIGO",
+          "value": "A/o/as/os + nome · a atleta · a meta · a etapa"
+        },
+        {
+          "label": "3. PREPOSIÇÃO",
+          "value": "Verbo + a + complemento · indicar a alunos"
+        },
+        {
+          "label": "4. REGÊNCIA",
+          "value": "Indicar, entregar, falar, assistir · pedem «a»"
+        }
+      ],
+      "footer_rule": "Indicar a = preposição."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Artigo × Preposição",
+      "items": [
+        {
+          "label": "A — atleta",
+          "detail": "«A» inicia a frase — parece prep.",
+          "correct": "Artigo definido antes de «atleta»"
+        },
+        {
+          "label": "B — meta",
+          "detail": "Mesmo padrão inicial.",
+          "correct": "Artigo — determina «meta» / projeto"
+        },
+        {
+          "label": "C — interdição",
+          "detail": "Após «evitar» parece regência.",
+          "correct": "Ainda artigo: evitar a interdição"
+        },
+        {
+          "label": "D — etapa",
+          "detail": "«Venceu a etapa» — objeto.",
+          "correct": "Artigo definido antes de «etapa»"
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam por «entregou a Maria».",
+          "correct": "«A» preposição de regência — mesmo teste"
+        }
+      ],
+      "footer_rule": "Só E — não é artigo."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "AVANÇASP",
+    "orgao": "Enfermagem / Sem Especialidade",
+    "prova": "Tec (Pref Caieiras)",
+    "cargo_header": "Técnico de enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Noções de Anatomia",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "anat_generico",
+    "content_review": {
+      "reviewed_at": "2026-08-03",
+      "reviewer": "onda1-anatomia",
+      "guideline_snapshot": "Camadas da pele: epiderme (avvascular), derme (tecido conjuntivo), hipoderme/subcutânea (adiposo + vasos/nervos conectando à estrutura profunda)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "anatomia-pele-camadas",
+        "tier": "B",
+        "issuer": "Referência acadêmica de anatomia",
+        "title": "Constituição da pele — epiderme, derme e hipoderme",
+        "year": 2020,
+        "covers": ["epiderme", "derme", "hipoderme", "tecido adiposo"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Para cuidar da higiene, conforto e segurança do paciente, é preciso conhecer a constituição da pele. Nesse sentido, qual camada da pele é composta por tecido\nadiposo e conectivo, conectando a derme às estruturas subjacentes, além de conter vasos sanguíneos, vasos linfáticos e nervos?",
+    "options": [
+      { "id": "A", "text": "Epiderme", "is_correct": false },
+      { "id": "B", "text": "Derme", "is_correct": false },
+      { "id": "C", "text": "Hipoderme", "is_correct": true },
+      { "id": "D", "text": "Tecido muscular", "is_correct": false },
+      { "id": "E", "text": "Camada córnea", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Pele — três camadas, três papéis",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "items": [
+        {
+          "label": "Cenário da prova",
+          "detail": "A banca descreve adiposo + conexão com estruturas profundas e pede o nome da camada.",
+          "icon": "Target"
+        },
+        {
+          "label": "Epiderme × derme",
+          "detail": "Epiderme reveste (mais superficial); derme é conjuntivo rico em anexos — não é o ‘colchão’ adiposo.",
+          "icon": "Layers"
+        },
+        {
+          "label": "Hipoderme",
+          "detail": "Tecido subcutâneo: adiposo/conectivo, vasos e nervos, ancora a derme ao fundo.",
+          "icon": "Link"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "Confundir hipoderme com derme (também vascularizada) ou com camada córnea (parte da epiderme).",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Leia os marcadores: adiposo + conexão profunda = hipoderme"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "steps": [
+        "Isolar os marcadores do enunciado: tecido adiposo/conectivo + liga derme ao fundo + vasos/linfáticos/nervos.",
+        "Eliminar A e E: epiderme/camada córnea são superficiais, sem o papel de ‘colchão’ adiposo descrito.",
+        "Eliminar B: derme é a camada média — não é a que ancora às estruturas subjacentes com adiposo.",
+        "Eliminar D: tecido muscular não é camada da pele.",
+        "Validar C: hipoderme (subcutânea) fecha todos os marcadores.",
+        "Em similares: se falar adiposo subcutâneo ligando ao músculo/osso → hipoderme."
+      ],
+      "footer_rule": "Adiposo + ponte para o fundo = hipoderme"
+    },
+    {
+      "type": "golden_rule",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "content": "CAMADAS DA PELE — MAPA RÁPIDO",
+      "rows": [
+        { "label": "Epiderme", "value": "Mais superficial; inclui a camada córnea" },
+        { "label": "Derme", "value": "Conjuntivo; anexos cutâneos" },
+        { "label": "Hipoderme", "value": "Adiposo/conectivo; vasos, linfáticos, nervos; ancora ao fundo" }
+      ],
+      "footer_rule": "Higiene e conforto do TE começam reconhecendo a hipoderme"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "content": "TROCAS ENTRE CAMADAS",
+      "items": [
+        {
+          "label": "Chamar de epiderme",
+          "detail": "Camada mais externa, sem o adiposo descrito.",
+          "correct": "Epiderme reveste; não é o tecido adiposo de conexão profunda."
+        },
+        {
+          "label": "Chamar de derme",
+          "detail": "Derme tem vasos, mas não é o ‘colchão’ subcutâneo.",
+          "correct": "Derme é a camada média; hipoderme é a subcutânea adiposa."
+        },
+        {
+          "label": "Chamar de camada córnea",
+          "detail": "É parte da epiderme, não camada separada com adiposo.",
+          "correct": "Camada córnea ∈ epiderme — sem o papel de hipoderme."
+        },
+        {
+          "label": "Chamar de tecido muscular",
+          "detail": "Musculatura fica abaixo, não é camada cutânea.",
+          "correct": "Músculo não entra na constituição em camadas da pele."
+        },
+        {
+          "label": "Em similares",
+          "detail": "Injeção subcutânea vs dérmica.",
+          "correct": "Via subcutânea mira a hipoderme — não a epiderme."
+        }
+      ],
+      "footer_rule": "Marque a camada que o enunciado descreveu, não a ‘mais famosa’"
+    }
+  ]
+}

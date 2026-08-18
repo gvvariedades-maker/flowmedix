@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-07-26T08:14:52.847Z",
+  "canonical_slugs": 4975,
+  "blocked_slugs": 676,
+  "total_disk_slugs": 5651,
+  "note": "Os 4.975 canônicos NÃO são catálogo final enquanto 676 blockers existirem.",
+  "resolver_current": {
+    "questions": 4975,
+    "slides": 19900,
+    "bespoke": 12736,
+    "family": 5185,
+    "generic": 1975,
+    "bespoke_pct": 64,
+    "family_pct": 26.1,
+    "generic_pct": 9.9,
+    "mold_fallback": 0,
+    "bespoke_zero_slots": 4,
+    "by_type": {
+      "concept_map": {
+        "bespoke": 3385,
+        "family": 824,
+        "generic": 762
+      },
+      "logic_flow": {
+        "bespoke": 3269,
+        "family": 1706,
+        "generic": 0
+      },
+      "golden_rule": {
+        "bespoke": 3113,
+        "family": 649,
+        "generic": 1213
+      },
+      "danger_zone": {
+        "bespoke": 2969,
+        "family": 2006,
+        "generic": 0
+      }
+    },
+    "top_layout_variants": [
+      {
+        "variant": "compare",
+        "count": 1950,
+        "pct": 9.8
+      },
+      {
+        "variant": "reference_table",
+        "count": 1213,
+        "pct": 6.1
+      },
+      {
+        "variant": "cards",
+        "count": 1079,
+        "pct": 5.4
+      },
+      {
+        "variant": "morphological",
+        "count": 796,
+        "pct": 4
+      },
+      {
+        "variant": "vitals-panel",
+        "count": 502,
+        "pct": 2.5
+      },
+      {
+        "variant": "vitals-translate-tap",
+        "count": 502,
+        "pct": 2.5
+      },
+      {
+        "variant": "vitals-reference-board",
+        "count": 502,
+        "pct": 2.5
+      },
+      {
+        "variant": "vitals-classify-arena",
+        "count": 502,
+        "pct": 2.5
+      },
+      {
+        "variant": "vertical",
+        "count": 495,
+        "pct": 2.5
+      },
+      {
+        "variant": "vaccine-timeline",
+        "count": 440,
+        "pct": 2.2
+      },
+      {
+        "variant": "pni-calendar-elimination-tap",
+        "count": 440,
+        "pct": 2.2
+      },
+      {
+        "variant": "pni-calendar-board",
+        "count": 440,
+        "pct": 2.2
+      },
+      {
+        "variant": "calendar-mismatch",
+        "count": 440,
+        "pct": 2.2
+      },
+      {
+        "variant": "sae-decision-tap",
+        "count": 375,
+        "pct": 1.9
+      },
+      {
+        "variant": "sae-reference-board",
+        "count": 375,
+        "pct": 1.9
+      }
+    ],
+    "readiness": {
+      "A": 17987,
+      "B": 395,
+      "C": 1518
+    },
+    "exceptions": {
+      "danger_no_correct": 57,
+      "logic_not_tap": 57
+    }
+  },
+  "resolver_previous_fs_first": {
+    "source": "relatório consolidado anterior (5.651 slugs, filesystem-first)",
+    "questions": 5651,
+    "slides": 22604,
+    "bespoke": 14121,
+    "family": 5787,
+    "generic": 2197,
+    "bespoke_pct": 62.5,
+    "family_pct": 25.6,
+    "generic_pct": 9.7
+  },
+  "delta_vs_previous": {
+    "questions_abs": -676,
+    "slides_abs": -2704,
+    "bespoke_pct_pts": 1.5,
+    "family_pct_pts": 0.5,
+    "generic_pct_pts": 0.20000000000000107
+  },
+  "pilot_cohort": {
+    "pilot_count": 41,
+    "control_count": 41,
+    "representative": true,
+    "note": "Coorte derivada só de slugs sem divergência de duplicata; não representa os 676 blockers nem o catálogo completo."
+  }
+}

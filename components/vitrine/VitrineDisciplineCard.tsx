@@ -10,6 +10,7 @@ import {
   type VitrineDisciplinaId,
   type VitrineDisciplinaSummary,
 } from '@/lib/vitrine/disciplina';
+import { resolveAcertoDisplay } from '@/lib/vitrine/resolveAcertoDisplay';
 
 export type VitrineDisciplineCardProps = {
   summary: VitrineDisciplinaSummary;
@@ -21,6 +22,31 @@ export type VitrineDisciplineCardProps = {
   onPrefetch?: (id: VitrineDisciplinaId) => void;
 };
 
+function resolveDisciplineSubtitle(summary: VitrineDisciplinaSummary): string {
+  const assuntosLabel = `${summary.totalAssuntos} ${
+    summary.totalAssuntos === 1 ? 'assunto' : 'assuntos'
+  }`;
+
+  if (summary.totalAssuntos === 0) return 'Em breve';
+
+  const respondidas = summary.totalResolvidas ?? 0;
+  if (respondidas > 0 && summary.acertos != null && summary.percentual != null) {
+    const acerto = resolveAcertoDisplay({
+      acertos: summary.acertos,
+      totalResolvidas: respondidas,
+      totalQuestoes: summary.totalQuestoes,
+      percentual: summary.percentual,
+    });
+    return `${assuntosLabel} · ${acerto.label}`;
+  }
+
+  if (summary.trabalhadas > 0 || summary.progressoPct > 0) {
+    return `${assuntosLabel} · ${summary.progressoPct}% cobertos`;
+  }
+
+  return `${assuntosLabel} · ${summary.totalQuestoes} questões`;
+}
+
 export function VitrineDisciplineCard({
   summary,
   selected,
@@ -30,6 +56,12 @@ export function VitrineDisciplineCard({
 }: VitrineDisciplineCardProps) {
   const meta = getVitrineDisciplinaMeta(summary.id);
   const ctaLabel = resolveDisciplinaCtaLabel(summary);
+  const subtitle = resolveDisciplineSubtitle(summary);
+  const coberturaPct = summary.progressoPct;
+  const coberturaLabel =
+    summary.totalResolvidas != null
+      ? `${summary.totalResolvidas}/${summary.totalQuestoes} respondidas`
+      : `${summary.trabalhadas}/${summary.totalQuestoes} cobertos`;
 
   const warmCache = () => {
     if (summary.totalAssuntos === 0) return;
@@ -47,16 +79,14 @@ export function VitrineDisciplineCard({
       onFocus={warmCache}
       className={cn(
         'group flex w-full flex-col text-left transition-all',
-        'rounded-2xl border bg-white shadow-sm',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0cc93a]/40 focus-visible:ring-offset-2',
+        vitrineBrand.cardSurface,
+        'focus-visible:outline-none',
+        vitrineBrand.focusRingOffset,
         'disabled:cursor-not-allowed disabled:opacity-50',
         prominent ? 'min-h-[148px] gap-4 px-5 py-5 sm:min-h-[160px] sm:px-6 sm:py-6' : 'gap-3 px-4 py-3.5',
         selected
-          ? cn(vitrineBrand.tintBorder, vitrineBrand.tintBg, 'border-[rgba(12,201,58,0.35)]')
-          : cn(
-              'border-slate-200 hover:border-slate-300 hover:shadow-md',
-              prominent && 'hover:-translate-y-0.5',
-            ),
+          ? cn(vitrineBrand.tintBorder, vitrineBrand.tintBg, vitrineBrand.selectedBorder)
+          : cn(prominent && 'hover:-translate-y-0.5'),
       )}
     >
       <div className="flex flex-1 items-start justify-between gap-4">
@@ -67,8 +97,12 @@ export function VitrineDisciplineCard({
                 'flex shrink-0 items-center justify-center rounded-full border',
                 prominent ? 'h-12 w-12' : 'h-9 w-9',
                 selected
-                  ? 'border-[rgba(12,201,58,0.35)] bg-[rgba(12,201,58,0.1)] text-[#0cc93a]'
-                  : 'border-slate-200 bg-slate-50 text-slate-500 group-hover:border-[rgba(12,201,58,0.25)] group-hover:text-[#0cc93a]',
+                  ? vitrineBrand.selectedIcon
+                  : cn(
+                      'border-slate-200 bg-slate-50 text-slate-500',
+                      vitrineBrand.groupHoverIconBorder,
+                      vitrineBrand.groupHoverText,
+                    ),
               )}
               aria-hidden
             >
@@ -97,20 +131,17 @@ export function VitrineDisciplineCard({
             </div>
           </div>
           <p className={cn('text-slate-500', prominent ? 'mt-3 text-sm' : 'mt-2 text-xs')}>
-            {summary.totalAssuntos === 0
-              ? 'Em breve'
-              : summary.trabalhadas > 0 || summary.progressoPct > 0
-                ? `${summary.totalAssuntos} ${summary.totalAssuntos === 1 ? 'assunto' : 'assuntos'} · ${summary.progressoPct}%`
-                : `${summary.totalAssuntos} ${summary.totalAssuntos === 1 ? 'assunto' : 'assuntos'} · ${summary.totalQuestoes} questões`}
+            {subtitle}
           </p>
         </div>
 
         <span
           className={cn(
-            'inline-flex min-h-[44px] shrink-0 items-center justify-center gap-1.5 self-center rounded-xl px-4 text-xs font-black uppercase tracking-wide',
+            vitrineBrand.buttonSecondary,
+            'shrink-0 gap-1.5 self-center px-4 text-xs',
             selected || prominent
-              ? vitrineBrand.buttonPrimary
-              : 'border border-slate-200 bg-white text-slate-700 group-hover:border-[rgba(12,201,58,0.35)] group-hover:text-[#0cc93a]',
+              ? 'border-[var(--color-card-border-hover)] bg-[var(--color-brand-wash)]'
+              : null,
           )}
         >
           {ctaLabel}
@@ -125,14 +156,14 @@ export function VitrineDisciplineCard({
             prominent ? 'h-1.5' : 'h-1',
           )}
           role="progressbar"
-          aria-valuenow={summary.progressoPct}
+          aria-valuenow={coberturaPct}
           aria-valuemin={0}
           aria-valuemax={100}
-          aria-label={`Progresso em ${summary.label}`}
+          aria-label={`Cobertura em ${summary.label}: ${coberturaLabel}`}
         >
           <div
             className={cn('h-full rounded-full transition-[width]', vitrineBrand.bar)}
-            style={{ width: `${Math.min(100, Math.max(0, summary.progressoPct))}%` }}
+            style={{ width: `${Math.min(100, Math.max(0, coberturaPct))}%` }}
           />
         </div>
       ) : null}

@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Doenças parasitárias e zoonoses de interesse epidemiológico.
- * Fonte: MS — vigilância de arboviroses e zoonoses.
+ * Fontes: MS Dengue diagnóstico e manejo clínico 6ª ed.; fluxograma profilaxia raiva;
+ * Guia de Vigilância em Saúde (arboviroses/zoonoses).
  */
 export const PARASITARIAS_ZOONOSES_MS: GuidelineTable = {
   id: 'parasitarias-zoonoses-ms',
-  snapshot: 'Dengue e zoonoses — vetor e controle',
+  snapshot: 'Dengue 6ª ed. MS + raiva PEP + zoonoses',
   issuer: 'Ministério da Saúde',
   title: 'Doenças parasitárias e zoonoses',
   year: 2024,
-  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue',
+  url: 'https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/dengue/dengue-diagnostico-e-manejo-clinico-adulto-e-crianca',
   entries: [
     {
       id: 'dengue-vetor',
@@ -101,8 +102,9 @@ export const PARASITARIAS_ZOONOSES_MS: GuidelineTable = {
     {
       id: 'raiva-profilaxia',
       label: 'Raiva — profilaxia',
-      value: 'lavagem abundante do ferimento + vacina e soro conforme categoria',
-      detail: 'MS: esquema pós-exposição obrigatório após mordedura ou escoriação por mamífero suspeito.',
+      value: 'lavagem abundante + vacina e soro conforme exposição leve/grave',
+      detail:
+        'MS fluxograma vigente: silvestre sempre grave; contato indireto (pele íntegra) sem profilaxia. Ver raiva-categoria-exposicao.',
       sourceId: 'parasitarias-zoonoses-ms',
     },
     {
@@ -135,16 +137,55 @@ export const PARASITARIAS_ZOONOSES_MS: GuidelineTable = {
     },
     {
       id: 'raiva-categoria-exposicao',
-      label: 'Raiva — categorias de exposição',
-      value: 'I (contato sem lesão) a III (mordedura/escoriação com sangramento)',
-      detail: 'Cat. I: lavagem; II: lavagem + vacina; III: lavagem + vacina + soro (imunoglobulina anti-rábica).',
+      label: 'Raiva — classificação de exposição (MS)',
+      value: 'leve ou grave (cão/gato); silvestre sempre grave; contato indireto sem profilaxia',
+      detail:
+        'Fluxograma MS: leve = mordedura/arranhadura superficial tronco/membros (exceto mãos/pés) ou lambedura superficial → vacina; grave = cabeça/mãos/pés/mucosa, múltipla/profunda → SAR/IGHAR + vacina. exam_vs_current: provas antigas usam categorias OMS I–III.',
       sourceId: 'parasitarias-zoonoses-ms',
     },
     {
       id: 'raiva-esquema-vacinal-pep',
       label: 'Raiva — esquema vacinal PEP',
-      value: '4 doses intradérmicas ou IM nos dias 0, 3, 7 e 14',
-      detail: 'Esquema MS atualizado; soro apenas na categoria III — aplicar o quanto antes após exposição.',
+      value: '4 doses ID ou IM nos dias 0, 3, 7 e 14',
+      detail:
+        'NT 8/2022-CGZV/MS + fluxograma vigente; SAR 40 UI/kg ou IGHAR 20 UI/kg no D0 (até D7 da 1ª dose). Não aplicar no glúteo.',
+      sourceId: 'parasitarias-zoonoses-ms',
+    },
+    {
+      id: 'dengue-grupo-a',
+      label: 'Dengue — Grupo A',
+      value: 'sem sinais de alarme, sem comorbidade/risco social — acompanhamento ambulatorial',
+      detail: 'MS 6ª ed.: hidratação oral; retorno se sinais de alarme ou na defervescência.',
+      sourceId: 'parasitarias-zoonoses-ms',
+    },
+    {
+      id: 'dengue-grupo-b',
+      label: 'Dengue — Grupo B',
+      value: 'sem sinais de alarme, com condição especial/comorbidade/risco social',
+      detail:
+        'MS 6ª ed.: hemograma obrigatório; observação até exames; lactentes, gestantes, >65 anos, DM, HAS grave etc.',
+      sourceId: 'parasitarias-zoonoses-ms',
+    },
+    {
+      id: 'dengue-grupo-c',
+      label: 'Dengue — Grupo C',
+      value: 'sinais de alarme presentes — hidratação venosa e monitoramento',
+      detail:
+        'Sinais de alarme: dor abdominal intensa, vômitos persistentes, acúmulo de líquido, sangramento de mucosa, letargia/irritabilidade, hepatomegalia, aumento progressivo do Ht.',
+      sourceId: 'parasitarias-zoonoses-ms',
+    },
+    {
+      id: 'dengue-grupo-d',
+      label: 'Dengue — Grupo D',
+      value: 'dengue grave (choque, extravasamento grave, sangramento grave, falência orgânica)',
+      detail: 'MS 6ª ed.: emergência — reposição volêmica imediata (ex. 10 mL/kg SF na 1ª hora) em qualquer nível de atenção.',
+      sourceId: 'parasitarias-zoonoses-ms',
+    },
+    {
+      id: 'dengue-sinais-alarme',
+      label: 'Dengue — sinais de alarme',
+      value: 'costumam surgir na defervescência (fase crítica)',
+      detail: 'MS: retorno imediato na remissão da febre ou no 5º dia se febre persiste — pegadinha clássica de prova.',
       sourceId: 'parasitarias-zoonoses-ms',
     },
     {

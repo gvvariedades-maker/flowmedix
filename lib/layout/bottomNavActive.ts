@@ -6,7 +6,7 @@ function isPathPrefixActive(pathname: string, path: string): boolean {
 export const BOTTOM_NAV_HREFS = {
   estudar: '/estudar',
   simulados: '/simulados',
-  progresso: '/progresso',
+  desempenho: '/desempenho',
   cadernos: '/cadernos',
 } as const;
 
@@ -20,12 +20,13 @@ export function isBottomNavItemActive(pathname: string, href: string): boolean {
     case BOTTOM_NAV_HREFS.estudar:
       return isPathPrefixActive(pathname, BOTTOM_NAV_HREFS.estudar);
     case BOTTOM_NAV_HREFS.simulados:
+      return isPathPrefixActive(pathname, BOTTOM_NAV_HREFS.simulados);
+    case BOTTOM_NAV_HREFS.desempenho:
       return (
-        isPathPrefixActive(pathname, BOTTOM_NAV_HREFS.simulados) ||
-        isPathPrefixActive(pathname, '/desempenho/simulados')
+        isPathPrefixActive(pathname, BOTTOM_NAV_HREFS.desempenho) ||
+        pathname === '/progresso' ||
+        pathname === '/analytics'
       );
-    case BOTTOM_NAV_HREFS.progresso:
-      return pathname === '/progresso' || pathname === '/analytics';
     case BOTTOM_NAV_HREFS.cadernos:
       return isPathPrefixActive(pathname, BOTTOM_NAV_HREFS.cadernos);
     default:
@@ -39,10 +40,9 @@ export function isBottomNavMaisActive(pathname: string): boolean {
 
   if (isBottomNavItemActive(pathname, BOTTOM_NAV_HREFS.estudar)) return false;
   if (isBottomNavItemActive(pathname, BOTTOM_NAV_HREFS.simulados)) return false;
-  if (isBottomNavItemActive(pathname, BOTTOM_NAV_HREFS.progresso)) return false;
+  if (isBottomNavItemActive(pathname, BOTTOM_NAV_HREFS.desempenho)) return false;
   if (isBottomNavItemActive(pathname, BOTTOM_NAV_HREFS.cadernos)) return false;
 
-  if (pathname === '/plano-diario') return true;
   if (pathname === '/ajuda' || pathname.startsWith('/ajuda/')) return true;
   if (isPathPrefixActive(pathname, '/material')) return true;
   if (isPathPrefixActive(pathname, '/conta')) return true;

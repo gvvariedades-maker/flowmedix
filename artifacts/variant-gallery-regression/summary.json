@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-31T16:00:45.062Z",
+  "pass": true,
+  "detail": "Playwright variant gallery — 12 variant(s), desktop + 375px, default+stress",
+  "variants": [
+    "concept_map__absorption-speed-rail",
+    "concept_map__adme-journey-rail",
+    "concept_map__adolescent-growth-z-rail",
+    "concept_map__adolescent-privacy-curtain",
+    "concept_map__biosseg-precaution-deck",
+    "concept_map__bridge",
+    "concept_map__burn-depth-layer-deck",
+    "concept_map__cam-certos-deck",
+    "concept_map__cam-documentacao-deck",
+    "concept_map__cam-exceto-rail",
+    "concept_map__cam-high-risk-duo-deck",
+    "concept_map__cold-chain-hub"
+  ],
+  "count": 12
+}

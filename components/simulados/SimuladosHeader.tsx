@@ -27,7 +27,7 @@ export function SimuladosHeader({ className }: SimuladosHeaderProps) {
               Missão da semana
             </Link>
             <Link
-              href="/desempenho/simulados"
+              href="/desempenho"
               className="btn-editorial-outline inline-flex h-11 w-full items-center justify-center sm:w-auto"
             >
               <BarChart3 className="mr-2 h-4 w-4" aria-hidden />

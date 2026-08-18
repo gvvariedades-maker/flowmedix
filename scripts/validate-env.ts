@@ -3,7 +3,12 @@
  * Carrega .env.local antes de validar (tsx não carrega automaticamente).
  */
 import { loadEnvConfig } from '@next/env';
-import { getStripeServerConfig, validateAllEnv } from '../lib/env';
+import {
+  getEvidenceV1InternalEmails,
+  getStripeServerConfig,
+  isEvidenceV1InstrumentationEnabled,
+  validateAllEnv,
+} from '../lib/env';
 
 // Carregar .env.local, .env.development.local, etc.
 loadEnvConfig(process.cwd());
@@ -67,6 +72,18 @@ if (cursorKey) {
   console.log('✅ CURSOR_API_KEY configurada (pipeline:orchestrate --sdk)');
 } else {
   console.log('ℹ️  CURSOR_API_KEY ausente (opcional; necessária para npm run pipeline:orchestrate -- --sdk) — docs/PIPELINE_SDK_SETUP.md');
+}
+
+if (isEvidenceV1InstrumentationEnabled()) {
+  const cohortSize = getEvidenceV1InternalEmails().length;
+  console.warn(
+    `⚠️  EE_V1_INSTRUMENTATION=true neste ambiente (coorte allowlist: ${cohortSize} e-mail(s)). ` +
+      'Ingestão em registrar-tentativa + série P4 em /desempenho ativas — docs/SPEC_EVIDENCE_ENGINE_FASE_1_EVENT_STREAM.md §1.13',
+  );
+} else {
+  console.log(
+    'ℹ️  EE_V1_INSTRUMENTATION off (default) — Evidence Engine sem instrumentação; /desempenho usa só histórico P0',
+  );
 }
 
 console.log('✅ Variáveis de ambiente OK');

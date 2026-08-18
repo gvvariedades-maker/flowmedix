@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "banca": "Instituto AOCP",
+    "prova": "TAA (SES SC)",
+    "orgao": "SES SC",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_exceto",
+    "content_standard": "golden-v1",
+    "family": "text_fragment",
+    "content_review": {
+      "reviewed_at": "2026-08-08",
+      "reviewer": "ancoras-100:pt_classes_exceto:valor_incorreto",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — valor do conectivo na oração · causal ≠ explicativo · «Como» em pergunta indignada = causa",
+      "exam_vs_current": "none",
+      "catalog_slug": "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — preposição e conjunção (valor semântico)",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "preposição e valor de causa",
+          "conjunção coordenada e subordinada",
+          "conjunção adversativa e explicativa",
+          "conjunção comparativa e consecutiva",
+          "pergunta-teste M02/M03",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3804085",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Valor INCORRETO «Como» causal — Instituto AOCP TAA SES SC 2026 tec 3804085",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito",
+          "matriz pt_classes_palavras"
+        ]
+      }
+    ],
+    "anchor_style": "valor_incorreto",
+    "anchor_role": "golden_anchor",
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-08",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/questao-premium-aocp-portugues-classes-valor-incorreto-como.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
+  },
+  "question_data": {
+    "instruction": "Considere o texto a seguir para responder à questão.\n\nAssinale a alternativa que apresenta, entre parênteses, o valor semântico INCORRETO para o termo destacado.",
+    "options": [
+      {
+        "id": "A",
+        "text": "«É por esse motivo que a órbita terrestre é monitorada 24 horas por dia.» (valor causal).",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "«Mas, quanto menores os fragmentos, mais difícil é encontrá-los.» (valor adversativo).",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "«Como o lixo espacial pode permanecer em órbita por 200 anos e ninguém faz nada a respeito?» (valor explicativo).",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "«Como que por intervenção divina, pouco depois de sua fundação, a nova lei espacial da União Europeia entrou em vigor...» (valor comparativo).",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "«Milhares de toneladas deles orbitam a Terra, como satélites desativados, pedaços de foguetes e detritos.» (valor comparativo).",
+        "is_correct": false
+      }
+    ],
+    "text_fragment": "<p><strong>Ele tem 22 anos e uma missão: varrer o lixo espacial da órbita da Terra</strong></p><p>Leonidas Askianakis monitora detritos na órbita terrestre. Milhares de toneladas orbitam a Terra, como satélites desativados, pedaços de foguetes e detritos. É por esse motivo que a órbita terrestre é monitorada 24 horas por dia. Mas, quanto menores os fragmentos, mais difícil é encontrá-los. «Como o lixo espacial pode permanecer em órbita por 200 anos e ninguém faz nada a respeito?», pergunta o jovem. Como que por intervenção divina, pouco depois de fundar a Project-S, a nova lei espacial da União Europeia entrou em vigor obrigando operadores a remover detritos.</p><p><em>Adaptado de notícia DW, nov. 2025</em></p>"
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "CLASSIFICAÇÃO DOS × VALORES",
+      "chip_label": "INCORRETO",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "CAUSAL",
+          "detail": "POR QUE / MOTIVO",
+          "correct": "por esse motivo · porque · como (pergunta)",
+          "icon": "HelpCircle"
+        },
+        {
+          "label": "ADVERSATIVO",
+          "detail": "OPOSIÇÃO",
+          "correct": "mas · porém · todavia",
+          "icon": "GitBranch"
+        },
+        {
+          "label": "EXPLICATIVO",
+          "detail": "EXPLICA EM AFIRMATIVA",
+          "correct": "pois · porque · já que",
+          "icon": "MessageCircle"
+        },
+        {
+          "label": "COMPARATIVO",
+          "detail": "SEMELHANÇA",
+          "correct": "como satélites · como que",
+          "icon": "Scale"
+        }
+      ],
+      "footer_rule": "Valor semântico no parêntese — confira se bate com o termo destacado."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "chip_label": "ISOLAR",
+      "slide_title": "O PAR ERRADO",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "Identificar o pedido: assinale o valor semântico INCORRETO entre parênteses.",
+        "Manter A — «por esse motivo»: órbita terrestre monitorada — causal.",
+        "Manter B — «Mas»: fragmentos menores — adversativo.",
+        "Manter D — «como que por intervenção divina»: lei espacial — comparativo.",
+        "Manter E — «como satélites»: lixo espacial / detritos — comparativo.",
+        "EXCEÇÃO — «Como o lixo…?»: pergunta de causa — parêntese «explicativo» erra.",
+        "Gabarito: letra C.",
+        "Em similares: Como indignado (causal) × pois / já que (explicativo)"
+      ],
+      "footer_rule": "Causa na pergunta ≠ explicação afirmativa."
+    },
+    {
+      "type": "golden_rule",
+      "chip_label": "FIXAR",
+      "slide_title": "COMO — CAUSA × EXPLICAÇÃO",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "COMO — CAUSA × EXPLICAÇÃO",
+      "rows": [
+        {
+          "label": "1. TESTE",
+          "value": "Troque «Como» por «Por que» na pergunta: se cabe, é causa."
+        },
+        {
+          "label": "2. CAUSAL / COMPARATIVO",
+          "value": "«Como ninguém faz nada?» ≈ por que · «como satélites» = semelhança"
+        },
+        {
+          "label": "3. EXPLICATIVO",
+          "value": "Pois / porque / já que — motivo em frase afirmativa"
+        },
+        {
+          "label": "4. INCORRETO",
+          "value": "Rotular «Como…?» de explicativo — o parêntese não bate"
+        }
+      ],
+      "footer_rule": "Pergunta «como» indignada = causa."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "chip_label": "PEGADINHA",
+      "slide_title": "CADA PAR",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Rótulo do parêntese × Uso na oração",
+      "items": [
+        {
+          "label": "A — causal",
+          "detail": "«Por esse motivo» parece só frase longa.",
+          "correct": "«Por esse motivo» = CAUSAL (manter)."
+        },
+        {
+          "label": "B — adversativo",
+          "detail": "«Mas» parece leve demais.",
+          "correct": "«Mas» = ADVERSATIVO (manter)."
+        },
+        {
+          "label": "C — explicativo",
+          "detail": "«Como…?» parece explicação.",
+          "correct": "Parêntese erra — é CAUSAL = INCORRETO."
+        },
+        {
+          "label": "D — comparativo",
+          "detail": "«Como que» parece ambíguo.",
+          "correct": "«Como que» = COMPARATIVO (manter)."
+        },
+        {
+          "label": "E — como satélites",
+          "detail": "Lista parece só exemplo solto.",
+          "correct": "«Como satélites» = COMPARATIVO (manter)."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam «Como» por «Por que» na pergunta.",
+          "correct": "Mesma função causal — não explicativa."
+        }
+      ],
+      "footer_rule": "Só o parêntese trocado marca o INCORRETO."
+    }
+  ]
+}

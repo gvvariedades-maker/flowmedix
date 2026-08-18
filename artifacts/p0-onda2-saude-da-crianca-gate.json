@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-08-04T00:09:10.691Z",
+  "onda": "2-p0-residual",
+  "pacote": "Saúde da Criança",
+  "lote": "saude-da-crianca-completo",
+  "baseline": {
+    "named": 105,
+    "letter_spoiler": 105,
+    "vf": 0
+  },
+  "after": {
+    "named": 0,
+    "letter": 0,
+    "clauseOnly": 0,
+    "vf": 0,
+    "files": 62
+  },
+  "second_pass": {
+    "gabarito_would_change": 0,
+    "trunc_would_change": 0,
+    "vf_would_change": 0
+  },
+  "dry_run": {
+    "ok": 62,
+    "failed": 0,
+    "skipped": 0,
+    "report": "artifacts/catalog-migration-saude-da-crianca-completo-dry-run.json"
+  },
+  "apply_status": "pending_pode_aplicar",
+  "blockers": [],
+  "fp_classification": [],
+  "apply_cmd": "npm run catalog:apply-lote -- --lote=saude-da-crianca-completo --apply --allow-generic --skip-preflight --skip-risk-approval --skip-anchor-review",
+  "onda2_close": true,
+  "next_wave": "Onda 3 — nota-10 visual"
+}

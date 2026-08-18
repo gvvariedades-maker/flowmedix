@@ -22,7 +22,11 @@
         "issuer": "Ministério da Saúde",
         "title": "Saúde mental na Atenção Básica — cuidado integral e articulação com a RAPS",
         "year": 2021,
-        "covers": ["acolhimento", "atribuições do técnico", "porta de entrada"]
+        "covers": [
+          "acolhimento",
+          "atribuições do técnico",
+          "porta de entrada"
+        ]
       },
       {
         "id": "cofen-resolucao-563-2017",
@@ -30,7 +34,11 @@
         "issuer": "COFEN",
         "title": "Resolução COFEN nº 563/2017 — atribuições do técnico de enfermagem",
         "year": 2017,
-        "covers": ["administração de medicamentos prescritos", "observação", "comunicação à equipe"]
+        "covers": [
+          "administração de medicamentos prescritos",
+          "observação",
+          "comunicação à equipe"
+        ]
       }
     ]
   },
@@ -83,11 +91,6 @@
           "label": "Não pode",
           "detail": "Diagnosticar, prescrever, psicoterapia individual substitutiva ou decidir internação sozinho.",
           "icon": "Ban"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra B — escopo do técnico na ESF para saúde mental.",
-          "icon": "Target"
         }
       ],
       "footer_rule": "Técnico acolhe e observa — médico/enfermeiro prescrevem e definem conduta"
@@ -102,16 +105,27 @@
       },
       "content": "ACOLHER · OBSERVAR · ADMINISTRAR (PRESCRITO) · COMUNICAR",
       "rows": [
-        { "label": "Acolhimento", "value": "Porta de entrada humanizada na AB", "badge": "ok" },
-        { "label": "Observação", "value": "Alterações de comportamento no acompanhamento", "badge": "ok" },
-        { "label": "Medicação", "value": "Administrar o que foi prescrito — não prescrever", "badge": "ok" },
+        {
+          "label": "Acolhimento",
+          "value": "Porta de entrada humanizada na AB",
+          "badge": "ok"
+        },
+        {
+          "label": "Observação",
+          "value": "Alterações de comportamento no acompanhamento",
+          "badge": "ok"
+        },
+        {
+          "label": "Medicação",
+          "value": "Administrar o que foi prescrito — não prescrever",
+          "badge": "ok"
+        },
         {
           "label": "Proibido",
           "value": "Diagnóstico psiquiátrico e prescrição autônoma",
           "emphasis": "alert",
           "badge": "warn"
-        },
-        { "label": "Gabarito", "value": "Letra B", "emphasis": "success", "badge": "hot" }
+        }
       ],
       "footer_rule": "Escopo técnico: cuidado de suporte, não decisão clínica autônoma"
     },

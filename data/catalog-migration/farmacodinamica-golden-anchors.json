@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updated_at": "2026-07-01",
+  "version": 2,
+  "updated_at": "2026-08-08",
   "description": "Âncoras golden-v1 — Farmacodinâmica e Farmacocinética (referência de estilo por ramo; não substituem JSON por slug).",
   "readiness_gate": "npm run audit:questao-readiness -- --file=<path>",
   "anchors": {
@@ -9,7 +9,7 @@
       "slug_catalog": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
       "subtopico": "Farmacodinâmica e Farmacocinética",
       "pedagogical_branch": "farmaco_clinico_protocolo",
-      "family": "protocolo",
+      "family": "conceito",
       "command": "marque a opção adequada",
       "banca": "IDECAN",
       "ano": "2025",
@@ -23,12 +23,25 @@
       "pedagogical_branch": "farmaco_pk_pd_vf",
       "family": "vf",
       "command": "É CORRETO o que se afirma em",
-      "notes": "ADME, meia-vida, 1ª passagem — molde adme-journey-rail."
+      "notes": "ADME, meia-vida 50% — molde adme-journey-rail. Âncoras 100% signed 2026-08-08."
+    },
+    "generico_isossorbida": {
+      "file": "examples/questao-premium-aocp-farmacodinamica-isossorbida-angina.json",
+      "slug_catalog": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "pedagogical_branch": "farmaco_generico",
+      "family": "conceito",
+      "command": "é",
+      "banca": "INSTITUTO AOCP",
+      "ano": "2026",
+      "gabarito": "D",
+      "notes": "Cauda genérica — objetivo farmacodinâmico → classe (nitrato). Não reusar âncora VF."
     }
   },
   "family_grammar_refs": {
     "protocolo_clinico_ev": "examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
-    "vf_pk_pd": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"
+    "vf_pk_pd": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+    "conceito_generico": "examples/questao-premium-aocp-farmacodinamica-isossorbida-angina.json"
   },
   "repair_lotes": {
     "idecan_omeprazol_ev": "data/catalog-migration/farmacodinamica-idecan-omeprazol-repair"

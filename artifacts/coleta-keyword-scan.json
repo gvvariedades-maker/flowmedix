@@ -1,0 +1,70 @@
+﻿{
+    "total":  171,
+    "golden_v1":  1,
+    "multi_tag_note":  "tags overlap - not exclusive",
+    "tags":  {
+                 "identificacao":  {
+                                       "sample":  "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-0",
+                                       "pct":  10.5,
+                                       "count":  18
+                                   },
+                 "capilar":  {
+                                 "sample":  "amauc-enfermagem-exames-laboratoriais-1779563631609-3",
+                                 "pct":  17,
+                                 "count":  29
+                             },
+                 "jejum_preparo":  {
+                                       "sample":  "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+                                       "pct":  14,
+                                       "count":  24
+                                   },
+                 "tubos_ordem_anticoag":  {
+                                              "sample":  "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+                                              "pct":  31,
+                                              "count":  53
+                                          },
+                 "biosseguranca":  {
+                                       "sample":  "agirh-enfermagem-exames-laboratoriais-1779563631609-4",
+                                       "pct":  9.4,
+                                       "count":  16
+                                   },
+                 "tecnica_venosa":  {
+                                        "sample":  "agirh-enfermagem-exames-laboratoriais-1779563631609-4",
+                                        "pct":  14.6,
+                                        "count":  25
+                                    },
+                 "hemolise_erros":  {
+                                        "sample":  "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+                                        "pct":  22.2,
+                                        "count":  38
+                                    },
+                 "hemocultura":  {
+                                     "sample":  "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+                                     "pct":  6.4,
+                                     "count":  11
+                                 },
+                 "exames_especificos":  {
+                                            "sample":  "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-0",
+                                            "pct":  20.5,
+                                            "count":  35
+                                        },
+                 "gasometria":  {
+                                    "sample":  "fau-unicentro-enfermagem-coleta-de-exames-laboratoriais-1779563288910-4",
+                                    "pct":  1.8,
+                                    "count":  3
+                                },
+                 "urina_fezes_escarro":  {
+                                             "sample":  "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+                                             "pct":  35.7,
+                                             "count":  61
+                                         }
+             },
+    "none_count":  30,
+    "none_samples":  [
+                         "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+                         "avancasp-enfermagem-exames-complementares-1779563679414-1",
+                         "avancasp-enfermagem-exames-laboratoriais-1779563553840-0",
+                         "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-8",
+                         "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-8"
+                     ]
+}

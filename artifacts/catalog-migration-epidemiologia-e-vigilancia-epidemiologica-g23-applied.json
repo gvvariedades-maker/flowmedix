@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T01:30:39.658Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g23",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-6",
+    "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-2",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-3",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-4",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-5",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-1",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-8",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

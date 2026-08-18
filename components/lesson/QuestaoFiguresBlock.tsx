@@ -42,7 +42,7 @@ export function QuestaoFiguresBlock({ figures, className }: QuestaoFiguresBlockP
             <button
               type="button"
               onClick={() => openLightbox(figure.url, figure.alt)}
-              className="group relative block w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8fe020] focus-visible:ring-offset-2"
+              className="group relative block w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F26522] focus-visible:ring-offset-2"
               aria-label={`Ampliar figura: ${figure.alt}`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

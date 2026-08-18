@@ -26,5 +26,11 @@ describe('VitrineResumeCard', () => {
       'href',
       '/estudar/questao-1?page=1',
     );
+    expect(screen.getByRole('link', { name: /Retomar estudo/i }).className).toContain(
+      'btn-editorial-primary-solid',
+    );
+    expect(screen.getByRole('link', { name: /Retomar estudo/i }).className).not.toMatch(
+      /uppercase/,
+    );
   });
 });

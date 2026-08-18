@@ -34,6 +34,7 @@ Goldens copiáveis: `examples/eng/api-route-admin.example.ts` · `rsc-page-cache
 | Paridade pedagógica Adolescente | `Paridade Adolescente: <Subtópico>` | [`.cursor/rules/paridade-adolescente.mdc`](.cursor/rules/paridade-adolescente.mdc) · [`docs/PROMPT_PARIDADE_ADOLESCENTE.md`](docs/PROMPT_PARIDADE_ADOLESCENTE.md) |
 | Programa completo (paridade + L3 + SDK) | `Pipeline + paridade Adolescente + L3 bespoke + orquestrador: SUBTÓPICO: …` | [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) · [`docs/PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](docs/PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
 | Continuar 1 unidade (run-state) | `Continuar pipeline: <Subtópico>` + `@artifacts/pipeline-run-state-*.json` | [`.cursor/rules/pipeline-orchestrator.mdc`](.cursor/rules/pipeline-orchestrator.mdc) |
+| Âncoras 100% premium (base do pacote) | `Âncoras 100%: <Subtópico>` / `Âncoras 100% premium: SUBTÓPICO:` | [`.cursor/rules/ancoras-100.mdc`](.cursor/rules/ancoras-100.mdc) · [`docs/PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md) · checklist [`docs/ANCHOR_CHECKLIST_100.md`](docs/ANCHOR_CHECKLIST_100.md) — ordem **0a→0b→1→2**; Fase 1C′ `Composer visual:` se visual thin; fechar só com `audit:anchor-100` `approval.status=pass` |
 | Âncoras faltantes (pré-g01) | `Criar âncoras: <Subtópico>` | skill `avant-golden-anchor-bootstrap` |
 | Progresso por pacote | — | [`data/catalog-migration/handcraft-registry.json`](data/catalog-migration/handcraft-registry.json) |
 
@@ -48,10 +49,14 @@ Goldens copiáveis: `examples/eng/api-route-admin.example.ts` · `rsc-page-cache
 | Tarefa | Trigger | Rule / skill |
 |--------|---------|--------------|
 | Polish vitrine / player / dashboard | `Visual:` · `Polish vitrine` · `Polish player` · `craft UI` | [`.cursor/rules/avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) · [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md) |
-| Design visual de NeuroSlides (molde/retenção) | `Design visual:` · `Molde visual:` | [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](.cursor/skills/avant-neuroslides-visual/SKILL.md) |
+| SVG de alta qualidade (ícone/diagrama custom) | `SVG:` · criar SVG · ícone SVG | [`.cursor/rules/svg-quality.mdc`](.cursor/rules/svg-quality.mdc) · [`.cursor/skills/svg-quality/SKILL.md`](.cursor/skills/svg-quality/SKILL.md) · refs [`docs/design-refs/svg-models/`](docs/design-refs/svg-models/README.md) |
+| Composer visual (NeuroSlides Agent-first) | `Composer visual: <ramo>` | [`docs/PROMPT_COMPOSER_VISUAL.md`](docs/PROMPT_COMPOSER_VISUAL.md) · rule [`.cursor/rules/composer-visual.mdc`](.cursor/rules/composer-visual.mdc) · banco [`artifacts/composer-visual-bank.md`](artifacts/composer-visual-bank.md) · skill [`avant-neuroslides-visual`](.cursor/skills/avant-neuroslides-visual/SKILL.md) — orquestra banco → Modo V → crítica → handoff |
+| Design visual de NeuroSlides (molde/retenção) | `Design visual:` · `Molde visual:` | [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](.cursor/skills/avant-neuroslides-visual/SKILL.md) · barra [`docs/NEUROSLIDES_VISUAL_BAR.md`](docs/NEUROSLIDES_VISUAL_BAR.md) · rule [`.cursor/rules/neuroslides-visual-bar.mdc`](.cursor/rules/neuroslides-visual-bar.mdc) |
+| Atelier visual (crítica glanceable) | `Atelier visual:` · `Crítica atelier:` | [`docs/NEUROSLIDES_ATELIER_KIT.md`](docs/NEUROSLIDES_ATELIER_KIT.md) · [`docs/PROMPT_ATELIER_VISUAL.md`](docs/PROMPT_ATELIER_VISUAL.md) — Composer orquestra; Atelier julga (`ATELIER_PASS`/`FAIL`) |
+| Fábrica visual G2 (1 pacote) / P1 shells | `Fábrica visual G2: SUBTÓPICO: …` · `P1 NeuroSlides G2:` | [`docs/PROMPT_FABRICA_VISUAL_G2.md`](docs/PROMPT_FABRICA_VISUAL_G2.md) § Pré-passo Composer · inventário [`artifacts/neuroslides-g2-primitives-inventory.md`](artifacts/neuroslides-g2-primitives-inventory.md) — Composer **obrigatório** se gallery `pending`/`thin`/ausente · validação próximo pacote [`artifacts/composer-fabrica-hook-processo-de-enfermagem.md`](artifacts/composer-fabrica-hook-processo-de-enfermagem.md) |
 | LP alto impacto (copy + design + conversão) | `LP: home` · `LP: <path>` · `LP: polish visual` | [`.cursor/rules/lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc) · [`docs/LP_CONVERSA.md`](docs/LP_CONVERSA.md) · pesquisa [`docs/LP_RESEARCH_CAPABILITY_MAP.md`](docs/LP_RESEARCH_CAPABILITY_MAP.md) |
 
-Para **feature/bug de app** (comportamento + código), use `Feature:` / `Bug:` — não o trigger de handcraft. Para **só aparência** no design system existente, use `Visual:` / `Polish …`. Para **landing/LP com CRO**, use `LP:` — não `Visual:`.
+Para **feature/bug de app** (comportamento + código), use `Feature:` / `Bug:` — não o trigger de handcraft. Para **só aparência** no design system existente, use `Visual:` / `Polish …`. Para **NeuroSlides (gesto → 4/4)**, use `Composer visual:` — não `Visual:`. Para **landing/LP com CRO**, use `LP:` — não `Visual:`.
 
 ---
 

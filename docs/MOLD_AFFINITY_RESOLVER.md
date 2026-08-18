@@ -46,16 +46,16 @@ Se omitido, o player infere pelo enunciado + slides. **`meta.pedagogical_branch`
 
 | Ramo | Pacote L3 | Status | Brief |
 |------|-----------|--------|-------|
-| `adolescente_etica_sigilo` | `adolescent-privacy-curtain` · `adolescent-sigilo-spectrum` · `adolescent-vf-weave-tap` · `adolescent-consent-gate` | **bespoke** | [`l3-brief-…-etica_sigilo.md`](../artifacts/l3-brief-saude-adolescente-adolescente_etica_sigilo.md) |
+| `adolescente_etica_sigilo` | `adolescent-care-pillars-deck` · `adolescent-speak-barrier-board` · `adolescent-exceto-isolate-board` · `adolescent-exceto-compare` (v2 glanceable; v1 curtain/weave/consent permanece no registry como legado/galeria) | **bespoke** | [`l3-brief-…-etica_sigilo.md`](../artifacts/l3-brief-saude-adolescente-adolescente_etica_sigilo.md) · v2 [`l3-brief-…-etica-sigilo-v2.md`](../artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md) |
 | `adolescente_antropometria` | `adolescent-growth-z-rail` · `adolescent-z-band-board` · `adolescent-z-classify-tap` · `adolescent-z-threshold-trap` | **bespoke** (só corpus escore Z) | [`l3-brief-…-antropometria.md`](../artifacts/l3-brief-saude-adolescente-adolescente_antropometria.md) |
-| `adolescente_desenvolvimento` | `morphological` · `reference_table` · `vertical` · `compare` | genérico premium | [`l3-brief-…-desenvolvimento.md`](../artifacts/l3-brief-saude-adolescente-adolescente_desenvolvimento.md) |
-| `adolescente_saude_mental` | idem | genérico premium | [`l3-brief-…-saude_mental.md`](../artifacts/l3-brief-saude-adolescente-adolescente_saude_mental.md) |
-| `adolescente_violencia_protecao` | idem | genérico premium | [`l3-brief-…-violencia_protecao.md`](../artifacts/l3-brief-saude-adolescente-adolescente_violencia_protecao.md) |
-| `adolescente_generico` | idem | genérico premium | [`l3-brief-…-generico.md`](../artifacts/l3-brief-saude-adolescente-adolescente_generico.md) |
+| `adolescente_violencia_protecao` | mesmo pacote glanceable v2 (`ADOLESCENTE_GLANCEABLE_MOLD`) | **Onda 2** (reuso) | [`l3-brief-…-violencia_protecao.md`](../artifacts/l3-brief-saude-adolescente-adolescente_violencia_protecao.md) |
+| `adolescente_saude_mental` | idem | **Onda 2** (reuso) | [`l3-brief-…-saude_mental.md`](../artifacts/l3-brief-saude-adolescente-adolescente_saude_mental.md) |
+| `adolescente_desenvolvimento` | idem | **Onda 2** (reuso) | [`l3-brief-…-desenvolvimento.md`](../artifacts/l3-brief-saude-adolescente-adolescente_desenvolvimento.md) |
+| `adolescente_generico` | idem | **Onda 2** (reuso) | [`l3-brief-…-generico.md`](../artifacts/l3-brief-saude-adolescente-adolescente_generico.md) |
 
 Índice dos briefs: [`artifacts/l3-brief-saude-adolescente-INDEX.md`](../artifacts/l3-brief-saude-adolescente-INDEX.md)
 
-Guards de ramo em `moldAffinity.ts`: `ADOLESCENT_VARIANTS` · `ADOLESCENT_ANTHROPOMETRY_VARIANTS` — cada set só aplica quando `pedagogical_branch` coincide **e** o corpus passa em `positivePatterns` (Z-score não recebe cortinas de sigilo; puberdade não recebe `adolescent-*`).
+Guards de ramo em `moldAffinity.ts`: `ADOLESCENT_GLANCEABLE_VARIANTS` · `ADOLESCENT_GLANCEABLE_BRANCHES` (ética + Onda 2) · `ADOLESCENT_ETHICS_LEGACY_VARIANTS` (só `adolescente_etica_sigilo`) · `ADOLESCENT_ANTHROPOMETRY_VARIANTS` — Z-score não recebe boards glanceable; curtain/weave/consent não aplica em violência/mental/desenvolvimento/genérico.
 
 **CME** — `cme_preparo_limpeza` · `cme_autoclave_metodos` (tabela) · `cme_processamento_conceito` · `cme_vf_ce` · `cme_generico`
 
@@ -63,7 +63,7 @@ Guards de ramo em `moldAffinity.ts`: `ADOLESCENT_VARIANTS` · `ADOLESCENT_ANTHRO
 
 **Sondas** — `sonda_instalacao_protocolo` · `sonda_medicao_nex` (bespoke) · `sonda_generico`
 
-**Imunização** — `imunizacao_vf_intervalos` (`pni-rules-deck` · `pni-interval-matrix` · `pni-vf-juggle-tap` · `pni-trap-chips`) · `imunizacao_calendario` (`vaccine-timeline` · `pni-calendar-board` · `pni-calendar-elimination-tap` · `calendar-mismatch`) · `imunizacao_cadeia_frio` (`cold-chain-hub` · `pni-temperature-rail` · `pni-cold-chain-tap` · `temperature-mismatch`) · `imunizacao_generico` (genérico)
+**Imunização** — `imunizacao_vf_intervalos` (`pni-rules-deck` · `pni-interval-matrix` · `pni-vf-juggle-tap` · `pni-trap-chips`) · `imunizacao_calendario` (`vaccine-timeline` · `pni-calendar-board` · `pni-calendar-elimination-tap` · `calendar-mismatch`) · `imunizacao_cadeia_frio` (`cold-chain-hub` · `pni-temperature-rail` · `pni-cold-chain-tap` · `temperature-mismatch`) · `imunizacao_exceto` (`morphological` · `reference_table` · `pni-exceto-isolate-board` · `pni-exceto-compare`) · `imunizacao_generico` (genérico)
 
 Guards de ramo em `moldAffinity.ts`: `PNI_VF_VARIANTS` · `PNI_CALENDARIO_VARIANTS` · `PNI_CADEIA_FRIO_VARIANTS` — cada set só aplica quando `pedagogical_branch` coincide.
 

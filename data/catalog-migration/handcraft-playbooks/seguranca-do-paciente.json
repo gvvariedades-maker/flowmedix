@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "subtopico": "Segurança do Paciente",
+  "pacote_prefix": "seguranca-do-paciente",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-seguranca-paciente-*.json,examples/questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json",
+  "guideline": null,
+  "handcraft_meta": "data/catalog-migration/seguranca-do-paciente-completo/handcraft-meta.json",
+  "cluster_report": "artifacts/seguranca-do-paciente-topic-cluster-report.json",
+  "slug_selection": "59 slugs applied/production_ready. Onda2 P0 letter strip 2026-08-03.",
+  "clusters": [
+    "Identificação do paciente",
+    "Metas internacionais / NPS",
+    "Eventos adversos / near miss",
+    "Comunicação efetiva",
+    "Segurança — conceito geral"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "seg_generico",
+      "when": "Metas, identificação, comunicação, eventos — genérico premium",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": [
+        "examples/questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json"
+      ]
+    }
+  ],
+  "modes": {
+    "subtopico_handcraft": {
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run validate:goldens -- --lote=<lote> --strict"
+      ]
+    },
+    "p0_letter_repair": {
+      "label": "Strip letra nomeada no pré-resposta",
+      "steps": [
+        "repair:pedagogy-gabarito-item --lote=seguranca-do-paciente-completo --write",
+        "repair:pedagogy-truncagem --lote=… --write",
+        "2ª passada would_change=0",
+        "catalog:apply-lote --dry-run --allow-generic --skip-preflight --skip-risk-approval --skip-anchor-review"
+      ]
+    }
+  },
+  "skills": [
+    ".cursor/skills/avant-classify-family/SKILL.md",
+    ".cursor/skills/avant-golden-anchor-handcraft/SKILL.md",
+    ".cursor/skills/professor-para-concurso/SKILL.md",
+    ".cursor/skills/avant-json-template/SKILL.md"
+  ],
+  "notes": [
+    "Playbook criado na Onda 2 P0 residual (2026-08-03).",
+    "Pacote já production_ready — foco = letter strip + apply autorizado."
+  ]
+}

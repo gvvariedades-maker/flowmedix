@@ -114,7 +114,7 @@
         },
         {
           "label": "Vantagens reais",
-          "detail": "Não invasiva, fácil de aplicar, absorção rápida, custo operacional geralmente baixo — A, B, D e E são plausíveis.",
+          "detail": "Não invasiva, fácil de aplicar, absorção rápida, custo operacional geralmente baixo.",
           "icon": "CheckCircle"
         },
         {
@@ -150,7 +150,6 @@
         "Testar D: método não invasivo → vantagem real → eliminar.",
         "Testar E: rapidez na absorção → vantagem real (mucosa vascularizada) → eliminar.",
         "Testar C: número elevado de medicamentos disponíveis → FALSO como vantagem — via sublingual tem arsenal farmacológico restrito.",
-        "Confirmar: só C não é vantagem — é limitação da via.",
         "Marcar C.",
         "Fixação: em EXCETO de sublingual, desconfie de afirmativas que exageram a variedade de fármacos."
       ],
@@ -174,28 +173,28 @@
           "label": "Absorção",
           "value": "Rápida — mucosa vascularizada",
           "badge": "hot",
-          "exam_hint": "E é vantagem real — rapidez faz parte do perfil da via.",
+          "exam_hint": "",
           "fixation": "Sublingual = rápida no trilho enteral."
         },
         {
           "label": "Invasividade",
           "value": "Não invasiva — sem punção",
           "badge": "ok",
-          "exam_hint": "D é vantagem real.",
+          "exam_hint": "",
           "fixation": "Sem agulha = não invasiva."
         },
         {
           "label": "Administração",
           "value": "Relativamente fácil — sob a língua, sem engolir de imediato",
           "badge": "ok",
-          "exam_hint": "A é vantagem real.",
+          "exam_hint": "",
           "fixation": "Técnica simples para o paciente cooperativo."
         },
         {
           "label": "Custo",
           "value": "Em geral baixo — sem material de punção",
           "badge": "ok",
-          "exam_hint": "B é vantagem plausível de prova.",
+          "exam_hint": "",
           "fixation": "Comparado a IV, custo operacional menor."
         },
         {
@@ -203,7 +202,7 @@
           "value": "Limitado — poucos fármacos adequados (lipossolúveis, dose pequena)",
           "emphasis": "alert",
           "badge": "warn",
-          "exam_hint": "C erra ao citar número elevado — é limitação, não vantagem.",
+          "exam_hint": "",
           "fixation": "Poucos medicamentos, não muitos — essa é a EXCEÇÃO."
         },
         {

@@ -1,5 +1,12 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { getFreemiumDayBounds } from '@/lib/freemium';
+import { DESEMPENHO_MIN_SAMPLE } from '@/lib/desempenho/types';
+
+/**
+ * Amostra mínima para tratar um recorte como prioridade — mesmo piso do hub de
+ * Estudo (`DESEMPENHO_MIN_SAMPLE`), para não ranquear com 1–2 questões.
+ */
+export const SIMULADO_MIN_SAMPLE = DESEMPENHO_MIN_SAMPLE;
 
 export const SIMULADO_ANALYTICS_PERIODS = ['1d', '7d', '30d', '90d', '12m'] as const;
 export const SIMULADO_ANALYTICS_MODES = ['todos', 'treino', 'prova'] as const;
@@ -105,6 +112,14 @@ export type SimuladoAnalyticsSummary = {
   sessions: Array<SimuladoSessionAnalyticsRow & { modo: 'treino' | 'prova' }>;
   completedSessions: Array<SimuladoSessionAnalyticsRow & { modo: 'treino' | 'prova' }>;
   totalSimulados: number;
+  /** Questões das sessões concluídas — denominador de `mediaAcerto`. */
+  questoesConcluidas: number;
+  /** Acertos das sessões concluídas — numerador de `mediaAcerto`. */
+  acertosConcluidos: number;
+  /**
+   * Acerto **ponderado por questões** (`acertos / questões`), não média de
+   * médias: um simulado de 5 questões não pesa igual a um de 60.
+   */
   mediaAcerto: number | null;
   melhorScore: number | null;
   tempoMedioMs: number | null;
@@ -443,26 +458,45 @@ export async function loadSimuladoAnalyticsSummary(
 
   const completedSessions = sessions.filter((row) => row.status === 'concluido');
   const totalSimulados = completedSessions.length;
-  const mediaAcerto =
-    completedSessions.length > 0
-      ? Number(
-          (
-            completedSessions.reduce((acc, row) => acc + (row.percentual_acerto ?? 0), 0) /
-            completedSessions.length
-          ).toFixed(2),
-        )
-      : null;
+
+  /**
+   * Ponderação por questões: `Σ acertos / Σ questões`. Média de médias distorce
+   * quando as sessões têm tamanhos diferentes (5 questões pesando igual a 60).
+   */
+  const questoesConcluidas = completedSessions.reduce(
+    (acc, row) => acc + Math.max(0, row.total_questoes ?? 0),
+    0,
+  );
+  const acertosConcluidos = completedSessions.reduce(
+    (acc, row) => acc + Math.max(0, row.acertos ?? 0),
+    0,
+  );
+  const mediaAcerto = calculatePercentual(acertosConcluidos, questoesConcluidas);
+
   const melhorScore =
     completedSessions.length > 0
       ? Math.max(...completedSessions.map((row) => row.percentual_acerto ?? 0))
       : null;
+
+  // Tempo por questão também ponderado: usa tempo total quando existe e cai em
+  // `tempo_medio_ms × questões` só para sessões legado sem tempo total.
+  let tempoAcumuladoMs = 0;
+  let questoesComTempo = 0;
+  for (const row of completedSessions) {
+    const questoes = Math.max(0, row.total_questoes ?? 0);
+    if (questoes === 0) continue;
+    const totalMs =
+      typeof row.tempo_total_ms === 'number' && row.tempo_total_ms > 0
+        ? row.tempo_total_ms
+        : typeof row.tempo_medio_ms === 'number' && row.tempo_medio_ms > 0
+          ? row.tempo_medio_ms * questoes
+          : null;
+    if (totalMs === null) continue;
+    tempoAcumuladoMs += totalMs;
+    questoesComTempo += questoes;
+  }
   const tempoMedioMs =
-    completedSessions.length > 0
-      ? Math.round(
-          completedSessions.reduce((acc, row) => acc + (row.tempo_medio_ms ?? 0), 0) /
-            completedSessions.length,
-        )
-      : null;
+    questoesComTempo > 0 ? Math.round(tempoAcumuladoMs / questoesComTempo) : null;
   const ultimasSessoes = sessions.slice(0, 8);
 
   const evolucaoMap = new Map<
@@ -499,19 +533,21 @@ export async function loadSimuladoAnalyticsSummary(
     evolucaoTemporal = await buildEvolucaoFromRespostas(supabase, userId, bounds, filters);
   }
 
+  // Sessões legado sem `total_questoes` gravado: cai na agregação diária, que já
+  // é ponderada por questões (mesma fórmula, outra fonte).
+  const questoesEvolucao = evolucaoTemporal.reduce((acc, row) => acc + row.total_questoes, 0);
+  const acertosEvolucao = evolucaoTemporal.reduce((acc, row) => acc + row.acertos, 0);
+
   let mediaAcertoFinal = mediaAcerto;
   if (mediaAcertoFinal === null && evolucaoTemporal.length > 0) {
-    const totalRespondidas = evolucaoTemporal.reduce((acc, row) => acc + row.total_questoes, 0);
-    const totalAcertos = evolucaoTemporal.reduce((acc, row) => acc + row.acertos, 0);
-    mediaAcertoFinal = calculatePercentual(totalAcertos, totalRespondidas);
+    mediaAcertoFinal = calculatePercentual(acertosEvolucao, questoesEvolucao);
   }
 
   let tempoMedioMsFinal = tempoMedioMs;
   if (tempoMedioMsFinal === null && evolucaoTemporal.length > 0) {
-    const totalRespondidas = evolucaoTemporal.reduce((acc, row) => acc + row.total_questoes, 0);
     const totalTempo = evolucaoTemporal.reduce((acc, row) => acc + row.tempo_total_ms, 0);
-    if (totalRespondidas > 0) {
-      tempoMedioMsFinal = Math.round(totalTempo / totalRespondidas);
+    if (questoesEvolucao > 0) {
+      tempoMedioMsFinal = Math.round(totalTempo / questoesEvolucao);
     }
   }
 
@@ -528,7 +564,8 @@ export async function loadSimuladoAnalyticsSummary(
       erros: row.erros ?? 0,
       taxa_erro: calculatePercentual(row.erros ?? 0, row.total_questoes ?? 0),
     }))
-    .filter((row) => row.total_questoes >= 3)
+    // Mesmo piso de amostra do hub de Estudo: abaixo disso não é prioridade, é ruído.
+    .filter((row) => row.total_questoes >= SIMULADO_MIN_SAMPLE)
     .sort((a, b) => {
       const taxaA = a.taxa_erro ?? -1;
       const taxaB = b.taxa_erro ?? -1;
@@ -565,6 +602,8 @@ export async function loadSimuladoAnalyticsSummary(
     sessions,
     completedSessions,
     totalSimulados,
+    questoesConcluidas: questoesConcluidas > 0 ? questoesConcluidas : questoesEvolucao,
+    acertosConcluidos: questoesConcluidas > 0 ? acertosConcluidos : acertosEvolucao,
     mediaAcerto: mediaAcertoFinal,
     melhorScore,
     tempoMedioMs: tempoMedioMsFinal,

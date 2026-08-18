@@ -23,7 +23,11 @@
         "title": "Calendário Nacional de Vacinação — poliomielite (VIP/VOP)",
         "year": 2025,
         "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
-        "covers": ["poliomielite", "VOP", "vigilância"]
+        "covers": [
+          "poliomielite",
+          "VOP",
+          "vigilância"
+        ]
       }
     ]
   },
@@ -118,10 +122,6 @@
         {
           "label": "Proteção do recém-nascido",
           "value": "Passiva materna, não ausência total de proteção"
-        },
-        {
-          "label": "Gabarito",
-          "value": "I, II e III apenas."
         }
       ],
       "footer_rule": "Memorize 1989, VOP e vigilância da PFA."

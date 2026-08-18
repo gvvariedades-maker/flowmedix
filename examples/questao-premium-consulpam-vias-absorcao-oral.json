@@ -136,7 +136,6 @@
         "Testar C: via retal sempre com biotransformação hepática e sem acesso direto à sistêmica — ERRADA: reto inferior drena para veias hemorroidárias média/inferior → circulação sistêmica com menor 1ª passagem.",
         "Testar D: absorção oral começa na boca e estômago, mas ocorre principalmente no intestino delgado — CORRETA: maior superfície absortiva e pH favorável no delgado.",
         "Eliminar A, B e C por erro de lista, indicação clínica ou fisiologia.",
-        "Confirmar: só D descreve corretamente a farmacocinética da via oral.",
         "Marcar D.",
         "Fixação: monte mentalmente via → sítio de absorção → passa pelo fígado? antes de marcar."
       ],
@@ -178,7 +177,7 @@
           "label": "Via sublingual",
           "value": "Rápida; evita 1ª passagem hepática; não usar com irritantes",
           "badge": "warn",
-          "exam_hint": "B erra ao indicar irritantes e troca metabolismo gástrico por hepático.",
+          "exam_hint": "",
           "fixation": "Sublingual = mucosa oral — irritante lesa a mucosa."
         },
         {

@@ -61,6 +61,7 @@ import {
   lintRedeFrioFactcheck,
   REDE_FRIO_ALWAYS_ERROR_CODES,
 } from '@/lib/catalogMigration/redeFrioFactcheck';
+import { detectUnifiedPedagogy } from '@/lib/catalogMigration/unifiedPedagogyDetector';
 import {
   hasSubtopicBranchDesign,
   inferPedagogicalBranch,
@@ -479,6 +480,14 @@ export function auditQuestaoReadiness(
         push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
       }
     }
+  }
+
+  // Detector unificado — modo report (F2a): severidade `info`, não bloqueia gate nem
+  // entra em residualPedagogyWarn. Vira gate na F4.
+  for (const finding of detectUnifiedPedagogy(payload as never)) {
+    const already = checks.some((c) => c.code === finding.code && c.message === finding.message);
+    if (already) continue;
+    push(checks, 'A2', finding.code, finding.message, 'info');
   }
 
   const redeFrioIssues = lintRedeFrioFactcheck(payload as never);

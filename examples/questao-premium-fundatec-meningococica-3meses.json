@@ -11,8 +11,8 @@
     "content_standard": "golden-v1",
     "family": "conceito",
     "content_review": {
-      "reviewed_at": "2026-06-18",
-      "reviewer": "content-pilot",
+      "reviewed_at": "2026-08-04",
+      "reviewer": "ancoras-100",
       "guideline_snapshot": "PNI 2025 — calendário lactente 3 meses",
       "exam_vs_current": "none"
     },
@@ -61,58 +61,67 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "Calendário PNI — 3 meses",
+      "slide_title": "Calendário PNI — idade × vacina",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
       "items": [
         {
-          "label": "Marco da questão",
-          "detail": "3º mês de vida = 1ª dose da Meningocócica C conjugada no Calendário Nacional de Vacinação (PNI). A banca testa idade × vacina, não conduta de sala.",
+          "label": "Decisão da prova",
+          "detail": "Enunciado traz idade exata → abrir o calendário PNI do lactente → cruzar com o nome técnico da vacina. Não inventar dose por “lógica de 3ª dose”.",
+          "icon": "Target"
+        },
+        {
+          "label": "Marco 3 meses",
+          "detail": "No PNI do lactente, o 3º mês é o ponto da 1ª dose da Meningocócica C conjugada (esquema 3 · 5 · 12 meses).",
           "icon": "Calendar"
         },
         {
-          "label": "Meningocócica C (conjugada)",
-          "detail": "Esquema PNI: 3 meses (1ª dose), 5 meses (2ª dose) e reforço aos 12 meses. Protege contra doença meningocócica invasiva pelo sorogrupo C.",
-          "icon": "Syringe"
-        },
-        {
-          "label": "Marco quase exclusivo",
-          "detail": "Entre as alternativas da prova, só a Meningocócica C tem dose programada exatamente aos 3 meses. Pentavalente 2ª = 4 meses; não confunda meses vizinhos.",
+          "label": "Meses vizinhos",
+          "detail": "2 e 4 meses concentram penta, VIP, Pneumo 10 e Rotavírus. 6 meses = 3ª penta/VIP. Confundir 2×3×4 é a pegadinha clássica.",
           "icon": "Layers"
         },
         {
-          "label": "Via e registro",
-          "detail": "Via intramuscular; registrar lote, via, local e data no cartão — padrão de prova sobre imunização infantil.",
-          "icon": "ClipboardCheck"
-        },
-        {
-          "label": "BCG × Meningo C",
-          "detail": "BCG = ao nascer (não 3 meses). Pegadinha clássica: misturar vacina neonatal com calendário do lactente.",
+          "label": "Ao nascer ≠ lactente",
+          "detail": "BCG (+ Hepatite B 1ª) é neonatal. Não migrar vacina do nascimento para o 3º mês.",
           "icon": "Baby"
         },
         {
-          "label": "Rotavírus × Pneumo 10",
-          "detail": "Rotavírus: 2 e 4 meses. Pneumocócica 10-valente: 2, 4 e 12 meses. Nenhuma delas tem dose exclusiva aos 3 meses como a Men C.",
-          "icon": "Shield"
-        },
-        {
-          "label": "Padrão Fundatec",
-          "detail": "Enunciado curto com idade exata + lista de vacinas por nome comercial/técnico. Gabarito exige decorar marcos do PNI vigente.",
-          "icon": "Target"
+          "label": "Âncora da prova",
+          "detail": "“3” no enunciado = 3 meses de vida, não 3ª dose da pentavalente (essa é aos 6 meses).",
+          "icon": "AlertTriangle"
         }
       ],
-      "footer_rule": "3 MESES = 1ª DOSE MENINGOCÓCICA C (conjugada) — reforço do esquema: 3 · 5 · 12 meses"
+      "footer_rule": "IDADE DO ENUNCIADO → LINHA DO PNI → NOME EXATO DA VACINA"
     },
     {
-      "type": "golden_rule",
-      "slide_title": "Referência de prova — marcos do lactente",
+      "type": "logic_flow",
+      "reveal_mode": "tap",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
-      "content": "PNI — VACINAS COBRADAS POR IDADE (LACTENTE)",
+      "steps": [
+        "Fixar o marco etário: “3º mês de vida” = 3 meses no PNI — não “terceira dose” de outra vacina.",
+        "Recuperar Men C conjugada: 1ª aos 3 meses · 2ª aos 5 · reforço aos 12.",
+        "Testar A — BCG: marco = ao nascer → eliminar.",
+        "Testar C — adsorvida difteria: pentavalente 2-4-6, sem dose isolada aos 3 meses → eliminar.",
+        "Testar D — rotavírus: esquema 2 e 4 meses → eliminar.",
+        "Testar E — pneumocócica 10: esquema 2, 4 e 12 meses → eliminar.",
+        "Marcar B — única alinhada ao 3º mês no PNI.",
+        "Em similares: idade do enunciado → linha do calendário → descartar meses vizinhos (2 · 4 · 6 · 12)."
+      ],
+      "footer_rule": "Estratégia: idade → PNI → eliminar A/C/D/E por mês errado → B"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — marcos do lactente",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "PNI — IDADE × VACINA (LACTENTE)",
       "rows": [
         {
           "label": "Ao nascer",
@@ -121,11 +130,11 @@
         },
         {
           "label": "2 meses",
-          "value": "Pentavalente (1ª) · VIP/VOP · Pneumo 10 (1ª) · Rotavírus (1ª)",
+          "value": "Pentavalente (1ª) · VIP · Pneumo 10 (1ª) · Rotavírus (1ª)",
           "badge": "warn"
         },
         {
-          "label": "3 meses — questão",
+          "label": "3 meses",
           "value": "Meningocócica C conjugada (1ª dose)",
           "emphasis": "highlight",
           "badge": "hot"
@@ -143,37 +152,11 @@
         },
         {
           "label": "6 meses",
-          "value": "Pentavalente (3ª) · VIP · Influenza (1ª — campanha anual)",
+          "value": "Pentavalente (3ª) · VIP · Influenza (campanha)",
           "badge": "info"
-        },
-        {
-          "label": "Men C — nome na prova",
-          "value": "Meningocócica C conjugada (não BCG, rota, penta isolada)",
-          "emphasis": "highlight",
-          "badge": "ok"
         }
       ],
-      "footer_rule": "Em prova: idade do enunciado → linha do calendário → cruzar com o nome exato da alternativa"
-    },
-    {
-      "type": "logic_flow",
-      "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Imunização"
-      },
-      "steps": [
-        "Ler o marco etário: “3º mês de vida” — fixar 3 meses, não “terceira dose” de outra vacina.",
-        "Abrir mentalmente o PNI do lactente: o que tem dose específica aos 3 meses?",
-        "Recuperar: Meningocócica C conjugada — 1ª dose aos 3 meses (2ª aos 5; reforço aos 12).",
-        "Testar A (BCG): vacina ao nascer → eliminar.",
-        "Testar C (Adsorvida difteria): componente da pentavalente; marcos principais 2-4-6 meses, não dose isolada “aos 3 meses” nesta lista → eliminar.",
-        "Testar D (Rotavírus): esquema 2 e 4 meses → eliminar.",
-        "Testar E (Pneumocócica 10): esquema 2, 4 e 12 meses → eliminar.",
-        "Marcar B: única alternativa alinhada ao calendário aos 3 meses.",
-        "Fixação: sempre cruzar idade do enunciado com nome da vacina — Fundatec gosta de trocar vacinas de meses vizinhos (2 × 3 × 4)."
-      ],
-      "footer_rule": "Estratégia: idade → calendário PNI → eliminar A/C/D/E por mês errado → B"
+      "footer_rule": "Em prova: idade → linha do calendário → cruzar com o nome exato da alternativa"
     },
     {
       "type": "danger_zone",
@@ -182,45 +165,40 @@
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
-      "content": "PEGADINHAS FUNDATEC — CALENDÁRIO INFANTIL (3 MESES)",
+      "content": "PEGADINHAS — CALENDÁRIO LACTENTE (3 MESES)",
       "items": [
         {
           "label": "Letra A — BCG aos 3 meses",
-          "detail": "Alternativa coloca BCG no 3º mês de vida — marco errado no PNI.",
-          "correct": "BCG = ao nascer (com Hepatite B). Aos 3 meses a vacina da questão é Men C (1ª dose)."
+          "detail": "Coloca BCG no 3º mês de vida — marco neonatal migrado.",
+          "correct": "BCG = ao nascer (com Hepatite B 1ª). Aos 3 meses o PNI programa Men C (1ª)."
         },
         {
           "label": "Letra C — difteria isolada aos 3 meses",
-          "detail": "“Adsorvida difteria” remete à pentavalente, mas o distractor aponta o 3º mês.",
-          "correct": "Pentavalente/DTP: marcos 2, 4 e 6 meses — não há dose isolada “aos 3 meses” nesta lista."
+          "detail": "“Adsorvida difteria” sugere pentavalente no mês errado.",
+          "correct": "Pentavalente/DTP: marcos 2, 4 e 6 meses — sem dose isolada “aos 3 meses” nesta lista."
         },
         {
           "label": "Letra D — rotavírus no 3º mês",
-          "detail": "Rotavírus humano: 1ª dose aos 2 meses e 2ª aos 4 meses — o calendário pula o 3º mês.",
+          "detail": "Rotavírus humano no slot do 3º mês — calendário pula esse mês.",
           "correct": "Rotavírus = 2 e 4 meses no PNI, nunca 3."
         },
         {
           "label": "Letra E — pneumo 10 no 3º mês",
-          "detail": "Pneumocócica 10-valente usa marcos 2, 4 e 12 meses — 3 meses não entra no esquema.",
+          "detail": "Pneumocócica 10-valente no 3º mês — mês fora do esquema.",
           "correct": "Pneumo 10 = 2 · 4 · 12 meses."
         },
         {
-          "label": "3ª dose = 3 meses de vida",
-          "detail": "Aluno lê “3” e associa ao 3º mês; a 3ª dose da pentavalente é aos 6 meses.",
-          "correct": "3 meses de vida = Men C 1ª dose. 3ª dose pentavalente = 6 meses — não troque ordem por idade."
+          "label": "Transferência — 3ª dose = 3 meses",
+          "detail": "Aluno lê “3” e associa ao 3º mês; a 3ª dose da pentavalente é outra idade.",
+          "correct": "3 meses de vida = Men C 1ª. 3ª dose pentavalente = 6 meses."
         },
         {
-          "label": "Confundir Men C com Men ACWY",
-          "detail": "Transferência: adolescente/adulto usa ACWY; lactente no PNI = sorogrupo C conjugada.",
-          "correct": "Lactente PNI: Meningocócica C (conjugada) — esquema 3-5-12 meses."
-        },
-        {
-          "label": "Atraso = pular dose",
-          "detail": "Banca pode induzir a “esperar o próximo mês” — PNI prevê catch-up, não omitir.",
-          "correct": "Aplicar dose pendente o quanto antes, respeitando intervalos mínimos entre doses."
+          "label": "Transferência — Men C × Men ACWY",
+          "detail": "Troca sorogrupo C do lactente pelo ACWY de adolescente/adulto.",
+          "correct": "Lactente PNI: Meningocócica C conjugada — esquema 3-5-12 meses."
         }
       ],
-      "footer_rule": "Enunciado com idade exata → descarte meses vizinhos (2, 4, 6, 12) → só Men C aos 3 meses"
+      "footer_rule": "Idade exata → descarte meses vizinhos (2, 4, 6, 12) → Men C aos 3 meses"
     }
   ]
 }

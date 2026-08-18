@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Doenças virais de interesse epidemiológico.
- * Fontes: MS/SVS — guias de vigilância (sarampo, influenza, poliomielite).
+ * Fontes: MS/SVSA — vigilância (sarampo/rubéola); Estratégia Influenza 2026; CNV/PNI.
+ * @see https://www.gov.br/saude/pt-br/composicao/svsa/pni/notas-tecnicas/2026
  */
 export const DOENCAS_VIRAIS_MS: GuidelineTable = {
   id: 'doencas-virais-ms',
-  snapshot: 'Vigilância viral — notificação e vacinação',
+  snapshot: 'Vigilância viral MS + Influenza/Sarampo NT 2026',
   issuer: 'Ministério da Saúde',
   title: 'Doenças virais de interesse epidemiológico',
-  year: 2024,
-  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/sarampo',
+  year: 2026,
+  url: 'https://www.gov.br/saude/pt-br/composicao/svsa/pni/notas-tecnicas/2026',
   entries: [
     {
       id: 'sarampo-notificacao',
@@ -34,7 +35,25 @@ export const DOENCAS_VIRAIS_MS: GuidelineTable = {
     {
       id: 'influenza-vacina',
       label: 'Influenza — vacina',
-      value: 'vacina anual para grupos prioritários',
+      value: 'vacina anual trivalente — calendário + estratégia especial',
+      detail:
+        'CNV: rotina 6 m a <6 a, ≥60 a e gestantes. Estratégia 2026 (NE/CO/S/SE): Dia D 28/03/2026 até 30/05/2026; Norte no 2º semestre (sazonalidade). Prioritários adicionais na campanha — ver informe MS vigente.',
+      sourceId: 'doencas-virais-ms',
+    },
+    {
+      id: 'influenza-esquema-crianca',
+      label: 'Influenza — esquema na criança',
+      value: 'já vacinada: 1 dose/ano; primeira vez (6 m–8 a): 2 doses, intervalo ≥4 semanas',
+      detail:
+        'Informe Estratégia Influenza 2026 (MS): aplica-se também a indígenas e crianças com comorbidade até 8 anos sem histórico.',
+      sourceId: 'doencas-virais-ms',
+    },
+    {
+      id: 'sarampo-bloqueio-dose-zero',
+      label: 'Sarampo — dose zero (bloqueio)',
+      value: 'SCR dose zero: 6 a 11 meses e 29 dias em bloqueio/varredura',
+      detail:
+        'NT MS 21/2026: dose zero não conta como rotina; completar esquema SCR aos 12 e 15 meses conforme calendário.',
       sourceId: 'doencas-virais-ms',
     },
     {

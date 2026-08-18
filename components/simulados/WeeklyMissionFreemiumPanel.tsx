@@ -36,7 +36,7 @@ export function WeeklyMissionFreemiumPanel({
       className={cn(
         'relative overflow-hidden rounded-2xl border p-5 sm:p-6',
         isUpgrade
-          ? 'border-[#8fe020]/30 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950'
+          ? 'border-[#F26522]/30 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950'
           : 'border-slate-200 bg-slate-50',
         className,
       )}
@@ -44,7 +44,7 @@ export function WeeklyMissionFreemiumPanel({
       {isUpgrade ? (
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rounded-full bg-[#8fe020]/10 blur-3xl"
+          className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rounded-full bg-[#F26522]/10 blur-3xl"
         />
       ) : null}
 
@@ -102,7 +102,7 @@ export function WeeklyMissionFreemiumPanel({
           ) : isUpgrade ? (
             <Link
               href="/assinatura"
-              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-[#8fe020] px-5 py-2.5 text-sm font-black uppercase tracking-wide text-[#1a2e05] transition hover:brightness-105"
+              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FF8A3D] via-[#F26522] to-[#D45212] px-5 py-2.5 text-sm font-black uppercase tracking-wide text-white shadow-[0_2px_8px_rgba(212,82,18,0.35)] transition hover:brightness-95"
             >
               Assinar Pro
             </Link>

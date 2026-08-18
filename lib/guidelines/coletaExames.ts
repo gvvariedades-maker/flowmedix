@@ -2,13 +2,13 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Coleta venosa e pré-analítica.
- * Fonte principal: SBPC/ML — Recomendações para Coleta de Sangue Venoso (2ª ed.).
- * URL espelho: guia SBPC/ML (Control Lab / Minha Editora, 2010).
+ * Fonte principal: SBPC/ML — Recomendações para Coleta de Sangue Venoso (2ª ed., 2010; ainda referência nacional).
+ * Resíduos: Anvisa RDC 222/2018 (perfurocortantes = grupo E).
  */
 export const COLETA_EXAMES_SBPC: GuidelineTable = {
   id: 'coleta-exames-sbpc-ml',
-  snapshot: 'Coleta venosa — SBPC/ML + MS',
-  issuer: 'SBPC/ML (tier B) / MS',
+  snapshot: 'Coleta venosa — SBPC/ML 2ª ed. + RDC 222',
+  issuer: 'SBPC/ML (tier B) / Anvisa',
   title: 'Coleta de exames laboratoriais',
   year: 2010,
   url: 'https://controllab.com/wp-content/uploads/guia_coleta_sangue.pdf',
@@ -65,7 +65,8 @@ export const COLETA_EXAMES_SBPC: GuidelineTable = {
       id: 'segregacao-perfurocortante',
       label: 'Descarte perfurocortantes',
       value: 'recipiente próprio — não misturar com gaze ou luvas',
-      detail: 'RDC 30/04 — resíduos infectantes segregados.',
+      detail:
+        'Anvisa RDC 222/2018 — grupo E (perfurocortantes); não misturar com resíduos comuns/infectantes sem segregação.',
       sourceId: 'coleta-exames-sbpc-ml',
     },
     {
@@ -255,6 +256,48 @@ export const COLETA_EXAMES_SBPC: GuidelineTable = {
       label: 'Pegadinha ordem de tubos',
       value: 'hemocultura sempre primeiro — EDTA nunca antes de citrato',
       detail: 'Contaminação cruzada falseia coagulação e hemograma.',
+      sourceId: 'coleta-exames-sbpc-ml',
+    },
+    {
+      id: 'fezes-refrigeracao-24h',
+      label: 'Fezes — refrigeração máxima',
+      value: '24 horas',
+      detail: 'MS Manual — refrigerar se atraso na entrega; máximo 24 h após coleta.',
+      sourceId: 'coleta-exames-sbpc-ml',
+    },
+    {
+      id: 'fezes-quantidade-minima',
+      label: 'Fezes — quantidade mínima',
+      value: '10 g',
+      detail: 'Amostra mínima para exames parasitológicos e coprocultura.',
+      sourceId: 'coleta-exames-sbpc-ml',
+    },
+    {
+      id: 'urina-jato-medio',
+      label: 'Urina — técnica de coleta',
+      value: 'jato médio após higiene íntima',
+      detail: 'Desprezar primeiro jato — reduz contaminação uretral.',
+      sourceId: 'coleta-exames-sbpc-ml',
+    },
+    {
+      id: 'coprocultura-refrigeracao',
+      label: 'Coprocultura — refrigeração',
+      value: '4 °C',
+      detail: 'MS — geladeira 4 °C se atraso; máximo 24 h após coleta.',
+      sourceId: 'coleta-exames-sbpc-ml',
+    },
+    {
+      id: 'urocultura-transporte-1h',
+      label: 'Urocultura — transporte',
+      value: '1 hora',
+      detail: 'Encaminhar urina coletada ao laboratório em até 1 hora.',
+      sourceId: 'coleta-exames-sbpc-ml',
+    },
+    {
+      id: 'cateter-urina-seringa',
+      label: 'Urina de cateter — seringa',
+      value: '3 mL',
+      detail: 'Seringa Luer-Lok 3 mL na porta de amostra — técnica asséptica.',
       sourceId: 'coleta-exames-sbpc-ml',
     },
   ],

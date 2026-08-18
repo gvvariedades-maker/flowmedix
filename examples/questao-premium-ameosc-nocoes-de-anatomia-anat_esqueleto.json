@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "Ameosc",
+    "orgao": "Pref Guaraciaba (SC) / ESF",
+    "prova": "Tec Enf (Pref Guaraciaba (SC))",
+    "cargo_header": "Técnico de enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Noções de Anatomia",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "anat_esqueleto",
+    "content_review": {
+      "reviewed_at": "2026-08-03",
+      "reviewer": "onda1-anatomia",
+      "guideline_snapshot": "Classificação morfológica dos ossos: longos (úmero, fêmur), curtos (carpo/tarso — cuboide), planos (escápula), irregulares",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "anatomia-esqueleto-morfo",
+        "tier": "B",
+        "issuer": "Referência acadêmica de anatomia",
+        "title": "Classificação morfológica dos ossos",
+        "year": 2020,
+        "covers": ["osso curto", "osso longo", "osso plano", "cuboide"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O sistema esquelético adulto é constituído por aproximadamente 206 ossos, os quais podem ser classificados morfologicamente. Com base nesse classificação,\nassinale a alternativa CORRETA que corresponde a um dos ossos curtos.",
+    "options": [
+      { "id": "A", "text": "Cuboide.", "is_correct": true },
+      { "id": "B", "text": "Fêmur.", "is_correct": false },
+      { "id": "C", "text": "Escápula.", "is_correct": false },
+      { "id": "D", "text": "Úmero.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Ossos — forma decide a classe",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "items": [
+        {
+          "label": "Cenário da prova",
+          "detail": "A banca pede um exemplo de osso curto na classificação morfológica.",
+          "icon": "Target"
+        },
+        {
+          "label": "Longo × curto × plano",
+          "detail": "Longo tem diáfise e epífises; curto é cuboide/tarsiano; plano é lâmina (escápula).",
+          "icon": "Boxes"
+        },
+        {
+          "label": "Tarso e carpo",
+          "detail": "Cuboide e demais tarsianos/carpais entram na família dos curtos.",
+          "icon": "Footprints"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "A banca mistura osso longo de membro (fêmur/úmero) ou plano (escápula) com curto.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Classifique pela forma, não pelo tamanho aparente na prova"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "steps": [
+        "Ler o comando: apontar um osso curto na classificação morfológica.",
+        "Eliminar B e D: fêmur e úmero são ossos longos dos membros.",
+        "Eliminar C: escápula é osso plano.",
+        "Validar A: cuboide (tarso) é osso curto.",
+        "Em similares: se for carpo/tarso cuboide → curto; se tiver diáfise longa → longo."
+      ],
+      "footer_rule": "Curto = carpo/tarso; longo = membros; plano = lâmina"
+    },
+    {
+      "type": "golden_rule",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "content": "MORFOLOGIA ÓSSEA — DECORE A CLASSE",
+      "rows": [
+        { "label": "Osso curto", "value": "Cuboide, demais tarsianos/carpais" },
+        { "label": "Osso longo", "value": "Fêmur, úmero, tíbia, rádio…" },
+        { "label": "Osso plano", "value": "Escápula, esterno, muitos do crânio" },
+        { "label": "Adulto", "value": "~206 ossos (número clássico de prova)" }
+      ],
+      "footer_rule": "Cuboide = curto — não confundir com ‘osso pequeno de membro’"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Anatomia" },
+      "content": "TROCAS DE CLASSE ÓSSEA",
+      "items": [
+        {
+          "label": "Fêmur como curto",
+          "detail": "É o maior osso longo do corpo.",
+          "correct": "Fêmur é longo — diáfise + epífises."
+        },
+        {
+          "label": "Úmero como curto",
+          "detail": "Osso do braço com forma alongada.",
+          "correct": "Úmero é longo do membro superior."
+        },
+        {
+          "label": "Escápula como curto",
+          "detail": "Parece ‘pequena’, mas é lâmina.",
+          "correct": "Escápula é osso plano."
+        },
+        {
+          "label": "Em similares",
+          "detail": "Patela e sesamoides vs curtos do tarso.",
+          "correct": "Confirme a família (sesamoide ≠ curto tarsiano) antes de marcar."
+        }
+      ],
+      "footer_rule": "Forma da classificação > intuição de ‘osso pequeno’"
+    }
+  ]
+}

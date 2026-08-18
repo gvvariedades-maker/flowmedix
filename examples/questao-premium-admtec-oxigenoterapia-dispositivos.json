@@ -49,18 +49,13 @@
         },
         {
           "label": "Cateter nasal (CNA)",
-          "detail": "Dispositivo de baixo fluxo (≈1–6 L/min). Inserido na narina — mensurar o comprimento para evitar desconforto. Núcleo da letra A.",
+          "detail": "Dispositivo de baixo fluxo (≈1–6 L/min). Inserido na narina — mensurar o comprimento para evitar desconforto.",
           "icon": "Wind"
         },
         {
           "label": "Máscara de Venturi",
           "detail": "Alto fluxo com FiO₂ controlada por diluidores (24%, 28%, 31%…). Não confundir com máscara simples.",
           "icon": "Droplets"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra A — Cateter Nasal: inserido na narina; mensurar corretamente para evitar desconforto.",
-          "icon": "Target"
         },
         {
           "label": "Protocolo cobrado",
@@ -86,7 +81,7 @@
       "rows": [
         {
           "label": "REGRA 1 DE 3",
-          "value": "Cateter nasal é dispositivo de BAIXO fluxo (≈1–6 L/min) — não é alto fluxo como a letra B sugere.",
+          "value": "Cateter nasal é dispositivo de BAIXO fluxo (≈1–6 L/min).",
           "emphasis": "highlight"
         },
         {

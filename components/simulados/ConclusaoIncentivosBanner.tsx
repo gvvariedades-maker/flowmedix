@@ -38,7 +38,7 @@ export function ConclusaoIncentivosBanner({ incentivos }: ConclusaoIncentivosBan
       className="card-elevated-lg space-y-4 overflow-hidden p-6"
     >
       <div className="flex items-center gap-2">
-        <Sparkles className="h-4 w-4 shrink-0 text-[#166534]" aria-hidden />
+        <Sparkles className="h-4 w-4 shrink-0 text-[#9A3412]" aria-hidden />
         <h2
           id="simulado-incentivos-titulo"
           className="text-sm font-semibold uppercase tracking-wider text-slate-500"

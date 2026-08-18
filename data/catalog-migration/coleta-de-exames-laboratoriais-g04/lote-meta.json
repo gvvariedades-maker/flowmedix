@@ -1,0 +1,39 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g04",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-08-05",
+  "applied_at": "2026-08-05",
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "cluster": "Não-sanguínea — urina/fezes/escarro (P0 cont.)",
+  "pedagogical_branch_target": "coleta_nao_sanguinea",
+  "priority": "P0 — coleta_nao_sanguinea g04",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+  "golden_reference": "examples/questao-premium-ameosc-coleta-nao-sanguinea-urina.json",
+  "guideline": "lib/guidelines/coletaExames.ts (COLETA_EXAMES_SBPC)",
+  "slugs": [
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-3",
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-4",
+    "idcap-enfermagem-exames-laboratoriais-1779563559434-7",
+    "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779562780466-6",
+    "iset-enfermagem-coleta-de-exames-laboratoriais-1779562735777-2",
+    "itame-enfermagem-coleta-de-exames-laboratoriais-1779563200105-7",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-1",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-2"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=coleta-de-exames-laboratoriais-g04 --strict",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=coleta-de-exames-laboratoriais-g04 --from-completo",
+    "npx tsx scripts/handcraft-coleta-de-exames-laboratoriais-g04.ts",
+    "npm run audit:questao-readiness -- --lote=coleta-de-exames-laboratoriais-g04 --strict-v2-pedagogy",
+    "npm run catalog:apply-lote -- --lote=coleta-de-exames-laboratoriais-g04 --apply"
+  ],
+  "gates": {
+    "validate_goldens": "PASS 8/8",
+    "questao_readiness": "READY 8/8",
+    "preflight": "PASS 8/8",
+    "apply": "ok=8 failed=0"
+  }
+}

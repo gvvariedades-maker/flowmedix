@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-06T01:12:36.406Z",
+  "lote": "coleta-de-exames-laboratoriais-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-1",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-7",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-8",
+    "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-6",
+    "cpcon-uepb-enfermagem-exames-laboratoriais-1779563646977-2",
+    "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-5",
+    "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563646977-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

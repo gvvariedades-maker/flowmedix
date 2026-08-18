@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-08-03T22:11:56.930Z",
+  "out": [
+    {
+      "id": "Atenção Básica / Saúde da Família",
+      "registry": {
+        "status": "applied",
+        "applied": "171/171",
+        "production": "none"
+      },
+      "disk": {
+        "lotes": 22,
+        "files": 171,
+        "golden": 171,
+        "appliedMeta": 22,
+        "draft": 0,
+        "l6": 22
+      }
+    },
+    {
+      "id": "Epidemiologia e Vigilância Epidemiológica",
+      "registry": {
+        "status": "in_progress",
+        "applied": "0/218",
+        "production": "none"
+      },
+      "disk": {
+        "lotes": 28,
+        "files": 218,
+        "golden": 8,
+        "appliedMeta": 0,
+        "draft": 28,
+        "l6": 0
+      }
+    },
+    {
+      "id": "Noções de Anatomia",
+      "registry": {
+        "status": "in_progress",
+        "applied": "8/46",
+        "production": "none"
+      },
+      "disk": {
+        "lotes": 6,
+        "files": 46,
+        "golden": 16,
+        "appliedMeta": 1,
+        "draft": 5,
+        "l6": 0
+      }
+    }
+  ]
+}

@@ -2,14 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Dispositivos de O₂ — fluxos e FiO₂.
- * Fontes: MS (orientações O₂ COVID-19/CONITEC), POP HU-UFGD oxigenoterapia.
+ * Fontes: Diretrizes CONITEC/MS Cap. 1 O₂ (Portaria SCTIE/MS 33/2021, página atualizada 2024);
+ * parâmetros técnicos estáveis em POPs de HU/EBSERH (revisões 2025).
+ * @see https://www.gov.br/conitec/pt-br/midias/relatorios/diretrizesbrasileiras_tratamentohospitalarpaciente_capi.pdf
  */
 export const OXIGENOTERAPIA_DISPOSITIVOS_MS: GuidelineTable = {
   id: 'oxigenoterapia-dispositivos-ms',
-  snapshot: 'Oxigenoterapia — dispositivos, fluxo e FiO₂',
-  issuer: 'Ministério da Saúde',
+  snapshot: 'Oxigenoterapia — dispositivos/FiO₂ (CONITEC/MS; revisão 2024/2025)',
+  issuer: 'Ministério da Saúde / CONITEC',
   title: 'Oxigenoterapia e cuidados respiratórios',
-  year: 2021,
+  year: 2024,
   url: 'https://www.gov.br/conitec/pt-br/midias/relatorios/diretrizesbrasileiras_tratamentohospitalarpaciente_capi.pdf',
   entries: [
     {

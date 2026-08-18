@@ -35,6 +35,7 @@ describe('CadernosListClient — link setup vazio', () => {
         studyEntrySlug: null,
         studyEntryTitle: null,
         studyEntryPosition: null,
+        source_pack_id: null,
       },
     ];
 

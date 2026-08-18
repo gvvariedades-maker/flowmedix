@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useMemo } from 'react';
 import NeuroSlide from '@/components/slides/core/NeuroSlide';
 import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
+import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
 import type { QuestaoCompleta } from '@/types/lesson';
 
 const AvantLessonPlayer = dynamic(() => import('@/components/lesson/AvantLessonPlayer'), {
@@ -28,6 +29,9 @@ export function SlideMoldReviewPanels({ questao, branch }: SlideMoldReviewProps)
     }),
     [questao.meta, branch],
   );
+  const familyId = (questao.meta?.family as FamilyId | undefined) ?? undefined;
+  const instruction = questao.question_data?.instruction ?? '';
+  const options = questao.question_data?.options;
 
   useEffect(() => {
     document.documentElement.setAttribute('data-slide-mold-review', branch);
@@ -88,10 +92,19 @@ export function SlideMoldReviewPanels({ questao, branch }: SlideMoldReviewProps)
             data-testid={`mold-slide-${idx + 1}`}
             data-slide-label={label}
             className="overflow-y-auto rounded-2xl border border-slate-200 bg-[#010409] shadow-sm"
-            style={{ minHeight: 420, maxHeight: 720 }}
+            style={{ minHeight: 420, maxHeight: 'none' }}
           >
             <div className="border-b border-white/10 px-4 py-2 text-xs text-slate-400">{label}</div>
-            <NeuroSlide data={slide} questionMeta={questionMeta} slideIndex={idx} standalone />
+            <NeuroSlide
+              data={slide}
+              questionMeta={questionMeta}
+              questionFamilyId={familyId}
+              questionInstruction={instruction}
+              questionSlides={slides}
+              questionOptions={options}
+              slideIndex={idx}
+              standalone
+            />
           </section>
         ))}
       </div>

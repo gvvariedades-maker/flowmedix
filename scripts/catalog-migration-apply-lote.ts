@@ -8,6 +8,7 @@
  *   npm run catalog:apply-lote -- --lote=pilot-goldens --apply --allow-insert
  *   npm run catalog:apply-lote -- --lote=imunizacao-lote-02 --apply --only-slugs-file=data/catalog-migration/imunizacao-lote-02/sub01-slugs.json
  *   npm run catalog:apply-lote -- --lote=imunizacao-g07 --apply --skip-patch-branch
+ *   npm run catalog:apply-lote -- --lote=vias-de-administracao-completo --apply --skip-risk-approval
  */
 
 import { loadEnvConfig } from '@next/env';
@@ -28,6 +29,10 @@ import { runLotePreflight } from '@/lib/catalogMigration/preflightLote';
 import { patchLotePedagogicalBranch } from '@/lib/catalogMigration/patchLotePedagogicalBranch';
 import { requireAnchorReviewPass } from '@/lib/catalogMigration/anchorReview';
 import { loadHandcraftRegistry } from '@/lib/catalogMigration/handcraftRegistry';
+import {
+  assertG04SlugMayEnterProduction,
+  isG04SlugProductionBlocked,
+} from '@/lib/neurocanvas/g04ProductionApprovals';
 
 function resolveRiskContextFromLote(lote: string): {
   riskApprovalGate: boolean;
@@ -43,8 +48,9 @@ function resolveRiskContextFromLote(lote: string): {
   const auto = pacote?.auto_approval;
   const productionReady = pacote?.production_status === 'production_ready';
   const autoEnabled = auto?.enabled === true;
+  const skipRiskApproval = hasFlag('skip-risk-approval');
   return {
-    riskApprovalGate: autoEnabled || hasFlag('risk-approval-gate'),
+    riskApprovalGate: !skipRiskApproval && (autoEnabled || hasFlag('risk-approval-gate')),
     riskContext: {
       productionReady,
       autoApprovalEnabled: autoEnabled || hasFlag('risk-approval-gate'),
@@ -134,6 +140,19 @@ async function main() {
       continue;
     }
     items.push({ modulo_slug: slug, payload: validated.data });
+  }
+
+  // Gate G0.4 A4: slugs bloqueados (ex.: EDUCA defeituoso) não podem ir ao Supabase.
+  const blockedInLote = items.filter((it) => isG04SlugProductionBlocked(it.modulo_slug));
+  if (blockedInLote.length > 0) {
+    for (const it of blockedInLote) {
+      console.error(`[catalog:apply-lote] BLOCKED ${it.modulo_slug} — g04 production gate`);
+    }
+    if (apply && !hasFlag('dry-run')) {
+      for (const it of blockedInLote) {
+        assertG04SlugMayEnterProduction(it.modulo_slug);
+      }
+    }
   }
 
   const supabase = await createServerSupabase();

@@ -43,7 +43,7 @@ export function logicFlowStepCardClass(
 
 export function logicFlowStepIconClass(visual: LogicFlowStepVisual): string {
   if (visual.isCurrent) {
-    return 'btn-editorial-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-xl p-0 font-bold text-[#1a2e05] md:h-12 md:w-12';
+    return 'btn-editorial-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-xl p-0 font-bold text-white md:h-12 md:w-12';
   }
   if (visual.isPast) {
     return 'flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white shadow-sm md:h-8 md:w-8';

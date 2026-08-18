@@ -77,12 +77,12 @@
         },
         {
           "label": "Afirmativa I",
-          "detail": "VERDADEIRA — frequência 100–120/min no adulto.",
+          "detail": "Frequência 100–120/min no adulto.",
           "icon": "Activity"
         },
         {
           "label": "Afirmativa II",
-          "detail": "FALSA — relação compressão-ventilação 15:2 é pediátrica; adulto com dois socorristas = 30:2.",
+          "detail": "Relação compressão-ventilação 15:2 é pediátrica; adulto com dois socorristas = 30:2.",
           "icon": "Wind"
         },
         {

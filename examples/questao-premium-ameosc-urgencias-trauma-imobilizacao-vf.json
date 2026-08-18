@@ -77,22 +77,22 @@
         },
         {
           "label": "Afirmativa I",
-          "detail": "VERDADEIRA — colar cervical antes da prancha longa.",
+          "detail": "Colar cervical antes da prancha longa.",
           "icon": "Shield"
         },
         {
           "label": "Afirmativa II",
-          "detail": "FALSA — capacete só sai se via aérea/RCP exigir; não é obrigatório em todos os casos.",
+          "detail": "Capacete só sai se via aérea/RCP exigir; não é obrigatório em todos os casos.",
           "icon": "HardHat"
         },
         {
           "label": "Afirmativa III",
-          "detail": "VERDADEIRA — alinhamento manual em linha neutra precede colar e prancha.",
+          "detail": "Alinhamento manual em linha neutra precede colar e prancha.",
           "icon": "Hand"
         },
         {
           "label": "Afirmativa IV",
-          "detail": "FALSA — prancha é para transporte/imobilização, não “conforto prolongado”.",
+          "detail": "Prancha é para transporte/imobilização, não “conforto prolongado”.",
           "icon": "AlertTriangle"
         }
       ],

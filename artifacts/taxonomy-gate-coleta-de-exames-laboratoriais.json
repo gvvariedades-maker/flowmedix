@@ -1,0 +1,28 @@
+{
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "pacote_prefix": "coleta-de-exames-laboratoriais",
+  "gate": "warn",
+  "is_catch_all_bucket": false,
+  "catch_all_mode": null,
+  "registry_taxonomy_status": "open",
+  "inventory": {
+    "total_scanned": 171,
+    "mismatch_count": 0,
+    "non_canonical_titulo_aula": 0,
+    "non_canonical_meta_subtopico": 0,
+    "missing_titulo_aula": 0,
+    "missing_meta_subtopico": 0
+  },
+  "manifest": null,
+  "reasons": [
+    "Inventário ok, mas taxonomy.status ainda não é closed no registry.",
+    "Handcraft permitido; fechar com npm run audit:taxonomy-gate -- --write-closed após validar."
+  ],
+  "handcraft_allowed": true,
+  "promote_requires_infer": false,
+  "vitrine_groups_by_canonical_titulo": false,
+  "generated_at": "2026-08-05T22:33:44.217Z",
+  "artifact": "artifacts/taxonomy-gate-coleta-de-exames-laboratoriais.json",
+  "closed_artifact": null,
+  "registry_closed_artifact": null
+}

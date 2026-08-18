@@ -1,13 +1,12 @@
 import {
   BarChart3,
   BookMarked,
-  BrainCircuit,
-  CalendarDays,
-  HelpCircle,
-  LayoutDashboard,
+  Library,
   ListChecks,
-  Sparkles,
+  RefreshCw,
+  Target,
   TrendingUp,
+  HelpCircle,
   type LucideIcon,
 } from 'lucide-react';
 import type { MenuAccentKey } from '@/components/layout/MenuNavIconChip';
@@ -39,6 +38,24 @@ export type DashboardNavSection = {
   items: DashboardNavItem[];
 };
 
+/** Ajuda / onboarding — renderizados na seção Suporte (peso secundário). */
+export const HELP_NAV_ITEM_DEFS: DashboardNavItemDef[] = [
+  {
+    label: 'Tutorial',
+    title: `Como usar o ${BRAND_NAME}`,
+    href: '/ajuda',
+    icon: HelpCircle,
+    accent: 'sky',
+  },
+  {
+    label: 'Método reverso',
+    title: 'Estudo reverso — o método',
+    href: '/ajuda/estudo-reverso',
+    icon: RefreshCw,
+    accent: 'violet',
+  },
+];
+
 export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
   {
     id: 'estudar',
@@ -48,22 +65,8 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
         label: 'Vitrine',
         title: 'Vitrine de aulas e assuntos',
         href: '/estudar',
-        icon: LayoutDashboard,
+        icon: Library,
         accent: 'brand',
-      },
-      {
-        label: 'Tutorial',
-        title: `Como usar o ${BRAND_NAME}`,
-        href: '/ajuda',
-        icon: HelpCircle,
-        accent: 'sky',
-      },
-      {
-        label: 'Método reverso',
-        title: 'Estudo reverso — o método',
-        href: '/ajuda/estudo-reverso',
-        icon: BrainCircuit,
-        accent: 'violet',
       },
     ],
   },
@@ -72,14 +75,14 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
     label: 'Métricas',
     items: [
       {
-        label: 'Progresso',
-        title: 'Progresso de estudo',
-        href: '/progresso',
+        label: 'Desempenho',
+        title: 'Desempenho de estudo e prática',
+        href: '/desempenho',
         icon: BarChart3,
         accent: 'emerald',
       },
       {
-        label: 'Desempenho',
+        label: 'Simulados',
         title: 'Desempenho em simulados',
         href: '/desempenho/simulados',
         icon: TrendingUp,
@@ -89,7 +92,7 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
         label: 'Missão da semana',
         title: 'Avaliação semanal personalizada',
         href: '/missao-semanal',
-        icon: Sparkles,
+        icon: Target,
         accent: 'sky',
       },
     ],
@@ -106,13 +109,6 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
         accent: 'rose',
       },
       {
-        label: 'Plano diário',
-        title: 'Plano de estudo diário',
-        href: '/plano-diario',
-        icon: CalendarDays,
-        accent: 'teal',
-      },
-      {
         label: 'Cadernos',
         title: 'Cadernos de estudo',
         href: '/cadernos',
@@ -127,10 +123,19 @@ function resolveItemActive(href: string, isPathActive: IsPathActiveFn): boolean 
   switch (href) {
     case '/ajuda':
     case '/ajuda/estudo-reverso':
-    case '/plano-diario':
       return isPathActive(href, true);
-    case '/progresso':
-      return isPathActive('/progresso') || isPathActive('/analytics');
+    case '/desempenho':
+      // Hub Estudo/Atividade (+ redirects legados); não compete com /desempenho/simulados.
+      return (
+        isPathActive('/desempenho', true) ||
+        isPathActive('/desempenho/atividade') ||
+        isPathActive('/desempenho/mapa') ||
+        isPathActive('/desempenho/historico') ||
+        isPathActive('/progresso') ||
+        isPathActive('/analytics')
+      );
+    case '/desempenho/simulados':
+      return isPathActive('/desempenho/simulados');
     default:
       return isPathActive(href);
   }
@@ -144,5 +149,12 @@ export function buildMenuSections(isPathActive: IsPathActiveFn): DashboardNavSec
       ...item,
       active: resolveItemActive(item.href, isPathActive),
     })),
+  }));
+}
+
+export function buildHelpNavItems(isPathActive: IsPathActiveFn): DashboardNavItem[] {
+  return HELP_NAV_ITEM_DEFS.map((item) => ({
+    ...item,
+    active: resolveItemActive(item.href, isPathActive),
   }));
 }

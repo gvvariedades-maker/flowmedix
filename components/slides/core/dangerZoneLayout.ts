@@ -30,7 +30,14 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'pni-trap-chips',
   'ist-trap-chips',
   'adolescent-consent-gate',
+  'adolescent-exceto-compare',
+  'pni-exceto-compare',
+  'pni-via-trap-arena',
   'adolescent-z-threshold-trap',
+  'adolescent-violence-calendar',
+  'adolescent-mental-step-trap',
+  'adolescent-dev-budget-checklist',
+  'adolescent-generic-versus-blocks',
   'burn-trap-arena',
   'trabalho-pep-trap-arena',
   'sp-safety-trap-arena',
@@ -79,6 +86,10 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'pt-clitic-trap-arena',
   'pt-comma-trap-arena',
   'pt-term-trap-arena',
+  'pt-classes-swap-arena',
+  'pt-classes-adverb-compare',
+  'pt-classes-exceto-tip-board',
+  'pt-classes-vf-claim-arena',
   'pt-subject-trap-arena',
 ]);
 
@@ -122,7 +133,14 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'itu-catheter-trap') return 'itu-catheter-trap';
   if (explicitVariant === 'biosseg-trap-chips') return 'biosseg-trap-chips';
   if (explicitVariant === 'adolescent-consent-gate') return 'adolescent-consent-gate';
+  if (explicitVariant === 'adolescent-exceto-compare') return 'adolescent-exceto-compare';
+  if (explicitVariant === 'pni-exceto-compare') return 'pni-exceto-compare';
+  if (explicitVariant === 'pni-via-trap-arena') return 'pni-via-trap-arena';
   if (explicitVariant === 'adolescent-z-threshold-trap') return 'adolescent-z-threshold-trap';
+  if (explicitVariant === 'adolescent-violence-calendar') return 'adolescent-violence-calendar';
+  if (explicitVariant === 'adolescent-mental-step-trap') return 'adolescent-mental-step-trap';
+  if (explicitVariant === 'adolescent-dev-budget-checklist') return 'adolescent-dev-budget-checklist';
+  if (explicitVariant === 'adolescent-generic-versus-blocks') return 'adolescent-generic-versus-blocks';
   if (explicitVariant === 'burn-trap-arena') return 'burn-trap-arena';
   if (explicitVariant === 'trabalho-pep-trap-arena') return 'trabalho-pep-trap-arena';
   if (explicitVariant === 'respiratorio-spo2-trap-arena') return 'respiratorio-spo2-trap-arena';
@@ -153,6 +171,10 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'pt-clitic-trap-arena') return 'pt-clitic-trap-arena';
   if (explicitVariant === 'pt-comma-trap-arena') return 'pt-comma-trap-arena';
   if (explicitVariant === 'pt-term-trap-arena') return 'pt-term-trap-arena';
+  if (explicitVariant === 'pt-classes-swap-arena') return 'pt-classes-swap-arena';
+  if (explicitVariant === 'pt-classes-adverb-compare') return 'pt-classes-adverb-compare';
+  if (explicitVariant === 'pt-classes-exceto-tip-board') return 'pt-classes-exceto-tip-board';
+  if (explicitVariant === 'pt-classes-vf-claim-arena') return 'pt-classes-vf-claim-arena';
   if (explicitVariant === 'pt-subject-trap-arena') return 'pt-subject-trap-arena';
 
   if (hasCompareItems) {
@@ -222,8 +244,29 @@ export function resolveDangerZoneLayoutVariant(
     if (!explicitVariant && fallbackVariant === 'adolescent-consent-gate') {
       return 'adolescent-consent-gate';
     }
+    if (!explicitVariant && fallbackVariant === 'adolescent-exceto-compare') {
+      return 'adolescent-exceto-compare';
+    }
+    if (!explicitVariant && fallbackVariant === 'pni-exceto-compare') {
+      return 'pni-exceto-compare';
+    }
+    if (!explicitVariant && fallbackVariant === 'pni-via-trap-arena') {
+      return 'pni-via-trap-arena';
+    }
     if (!explicitVariant && fallbackVariant === 'adolescent-z-threshold-trap') {
       return 'adolescent-z-threshold-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'adolescent-violence-calendar') {
+      return 'adolescent-violence-calendar';
+    }
+    if (!explicitVariant && fallbackVariant === 'adolescent-mental-step-trap') {
+      return 'adolescent-mental-step-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'adolescent-dev-budget-checklist') {
+      return 'adolescent-dev-budget-checklist';
+    }
+    if (!explicitVariant && fallbackVariant === 'adolescent-generic-versus-blocks') {
+      return 'adolescent-generic-versus-blocks';
     }
     if (!explicitVariant && fallbackVariant === 'burn-trap-arena') {
       return 'burn-trap-arena';
@@ -356,6 +399,18 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'pt-term-trap-arena') {
       return 'pt-term-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'pt-classes-swap-arena') {
+      return 'pt-classes-swap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'pt-classes-adverb-compare') {
+      return 'pt-classes-adverb-compare';
+    }
+    if (!explicitVariant && fallbackVariant === 'pt-classes-exceto-tip-board') {
+      return 'pt-classes-exceto-tip-board';
+    }
+    if (!explicitVariant && fallbackVariant === 'pt-classes-vf-claim-arena') {
+      return 'pt-classes-vf-claim-arena';
     }
     return 'compare';
   }

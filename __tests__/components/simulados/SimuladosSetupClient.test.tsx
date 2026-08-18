@@ -134,9 +134,9 @@ describe('SimuladosSetupClient', () => {
         id: '33333333-3333-3333-3333-333333333333',
         total_questoes: 20,
         status: 'aberto',
-        modo: 'treino',
+        modo: 'prova',
         titulo: '',
-        ritmo_meta_segundos_por_questao: null,
+        ritmo_meta_segundos_por_questao: 180,
         prova_iniciada_em: null,
         created_at: '2026-05-27T00:00:00.000Z',
       },
@@ -152,7 +152,11 @@ describe('SimuladosSetupClient', () => {
 
     await waitFor(() =>
       expect(mockCreateSimuladoSession).toHaveBeenCalledWith(
-        expect.objectContaining({ quantidade: 15, modo: 'treino' }),
+        expect.objectContaining({
+          quantidade: 15,
+          modo: 'prova',
+          ritmo_meta: '3min',
+        }),
       ),
     );
     expect(mockPush).toHaveBeenCalledWith('/simulados/33333333-3333-3333-3333-333333333333');
@@ -180,9 +184,9 @@ describe('SimuladosSetupClient', () => {
         id: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
         total_questoes: 20,
         status: 'aberto',
-        modo: 'treino',
-        titulo: '',
-        ritmo_meta_segundos_por_questao: null,
+        modo: 'prova',
+        titulo: 'Prova em andamento',
+        ritmo_meta_segundos_por_questao: 180,
         prova_iniciada_em: null,
         created_at: '2026-05-27T00:00:00.000Z',
         filtros: { requested: 20 },
@@ -252,9 +256,9 @@ describe('SimuladosSetupClient', () => {
         id: 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',
         total_questoes: 20,
         status: 'aberto',
-        modo: 'treino',
-        titulo: '',
-        ritmo_meta_segundos_por_questao: null,
+        modo: 'prova',
+        titulo: 'Prova aberta',
+        ritmo_meta_segundos_por_questao: 180,
         prova_iniciada_em: null,
         created_at: '2026-05-27T00:00:00.000Z',
         filtros: {},
@@ -267,9 +271,9 @@ describe('SimuladosSetupClient', () => {
         id: 'cccccccc-cccc-4ccc-8ccc-cccccccccccc',
         total_questoes: 10,
         status: 'aberto',
-        modo: 'treino',
+        modo: 'prova',
         titulo: '',
-        ritmo_meta_segundos_por_questao: null,
+        ritmo_meta_segundos_por_questao: 180,
         prova_iniciada_em: null,
         created_at: '2026-05-27T00:00:00.000Z',
       },
@@ -283,13 +287,13 @@ describe('SimuladosSetupClient', () => {
 
     await waitFor(() =>
       expect(mockCreateSimuladoSession).toHaveBeenCalledWith(
-        expect.objectContaining({ forcar_novo: true }),
+        expect.objectContaining({ forcar_novo: true, modo: 'prova' }),
       ),
     );
     expect(mockPush).toHaveBeenCalledWith('/simulados/cccccccc-cccc-4ccc-8ccc-cccccccccccc');
   });
 
-  it('em modo prova envia titulo e ritmo_meta ao criar sessão', async () => {
+  it('sempre envia modo prova com titulo e ritmo_meta ao criar sessão', async () => {
     mockCreateSimuladoSession.mockResolvedValue({
       success: true,
       session: {
@@ -308,7 +312,9 @@ describe('SimuladosSetupClient', () => {
     render(<SimuladosSetupClient />);
     await waitFor(() => expect(mockFetchWithAuth).toHaveBeenCalled());
 
-    fireEvent.click(screen.getByRole('radio', { name: /Prova/i }));
+    expect(screen.queryByRole('radiogroup')).not.toBeInTheDocument();
+    expect(screen.queryByRole('radio', { name: /Treino/i })).not.toBeInTheDocument();
+
     fireEvent.change(screen.getByLabelText(/Nome do simulado/i), {
       target: { value: 'Prova CESPE' },
     });

@@ -1,21 +1,18 @@
 'use client';
 
-import { useCallback, type KeyboardEvent } from 'react';
+import { useMemo } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { CalendarX, Check, Syringe } from 'lucide-react';
+import { CalendarX, Check, X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import type { DangerZoneBulletStyle } from '../core/dangerZoneLayout';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import { useDangerZoneCompareReveal } from './dangerZoneReveal';
 import type { DangerZoneItem } from './DangerZone';
-
-const PNI_MONTHS = [0, 2, 3, 4, 6, 12] as const;
-
-type MonthSlot = (typeof PNI_MONTHS)[number];
-
-function monthLabel(month: MonthSlot): string {
-  return month === 0 ? '0' : `${month}M`;
-}
+import { BoardChrome, CategoryStrip, PolarityPanel } from '../primitives';
+import { cn } from '@/lib/utils';
+import {
+  isPniCatchUpCorpus,
+  PNI_MONTH_SLOTS,
+  pniMonthLabel,
+} from '@/lib/slides/pniSlideUtils';
 
 function extractMonths(text: string): number[] {
   const lower = text.toLowerCase();
@@ -23,7 +20,7 @@ function extractMonths(text: string): number[] {
   if (/ao nascer|nascimento|neonatal/.test(lower)) found.add(0);
   for (const match of lower.matchAll(/(\d+)\s*(?:º|o)?\s*m[eê]s/g)) {
     const n = Number.parseInt(match[1], 10);
-    if (PNI_MONTHS.includes(n as MonthSlot)) found.add(n);
+    if ((PNI_MONTH_SLOTS as readonly number[]).includes(n)) found.add(n);
   }
   if (/3-5-12|3 · 5 · 12|3, 5 e 12/.test(lower)) {
     found.add(3);
@@ -51,7 +48,7 @@ function inferCalendarSlots(
   const trapText = `${label} ${detail}`.toLowerCase();
   const correctText = correct.toLowerCase();
 
-  if (/acwy|atraso|catch-up|pular dose|esperar próximo/.test(trapText + correctText)) {
+  if (/acwy|atraso|catch-up|pular dose|esperar próximo|transferência|cart[aã]o perdido/.test(trapText + correctText)) {
     return { trapMonths: [], correctMonths: [], hasRail: false };
   }
 
@@ -90,40 +87,35 @@ function inferCalendarSlots(
 function MonthRail({
   trapMonths,
   correctMonths,
-  revealed,
 }: {
   trapMonths: number[];
   correctMonths: number[];
-  revealed: boolean;
 }) {
   return (
     <div
-      className="flex items-center justify-between gap-0.5 rounded-xl border border-lime-200/80 bg-lime-50/50 px-2 py-2"
+      className="flex items-center justify-between gap-0.5 rounded-xl border border-lime-300 bg-lime-50 px-2 py-1.5"
       aria-hidden
     >
-      {PNI_MONTHS.map((month) => {
+      {PNI_MONTH_SLOTS.map((month) => {
         const isTrap = trapMonths.includes(month);
         const isCorrect = correctMonths.includes(month);
-        const showTrap = isTrap && !revealed;
-        const showCorrect = isCorrect && revealed;
-
         return (
           <div
             key={month}
-            className={`flex min-w-0 flex-1 flex-col items-center gap-0.5 rounded-lg px-0.5 py-1 transition-all duration-300 ${
-              showTrap
-                ? 'bg-rose-200/90 ring-2 ring-rose-400/60'
-                : showCorrect
-                  ? 'bg-emerald-200/90 ring-2 ring-emerald-400/60'
-                  : 'bg-white/60 opacity-60'
-            }`}
+            className={cn(
+              'flex min-w-0 flex-1 flex-col items-center rounded-md px-0.5 py-1',
+              isTrap && 'bg-rose-200 ring-1 ring-rose-400',
+              isCorrect && 'bg-emerald-200 ring-1 ring-emerald-500',
+              !isTrap && !isCorrect && 'bg-white/70 opacity-50',
+            )}
           >
             <span
-              className={`font-mono text-[9px] font-black tabular-nums ${
-                showTrap ? 'text-rose-900' : showCorrect ? 'text-emerald-900' : 'text-slate-500'
-              }`}
+              className={cn(
+                'font-mono text-[9px] font-black tabular-nums',
+                isTrap ? 'text-rose-900' : isCorrect ? 'text-emerald-900' : 'text-slate-500',
+              )}
             >
-              {monthLabel(month)}
+              {pniMonthLabel(month)}
             </span>
           </div>
         );
@@ -132,106 +124,117 @@ function MonthRail({
   );
 }
 
-function CalendarMismatchCard({
+function extractLetterFromLabel(label: string): string | null {
+  const match = label.match(/^Letra\s+([A-E])\b/i);
+  return match?.[1]?.toUpperCase() ?? null;
+}
+
+function isTransferItem(label: string): boolean {
+  return /transfer|similares/i.test(label);
+}
+
+function shortTrapTitle(label: string, letter: string | null): string {
+  if (!letter) return label;
+  return label.replace(new RegExp(`^Letra\\s+${letter}\\s*[—–-]\\s*`, 'i'), '').trim() || label;
+}
+
+function TrapRow({
   index,
   item,
-  isRevealed,
-  onReveal,
   prefersReducedMotion,
+  compact,
 }: {
   index: number;
   item: DangerZoneItem;
-  isRevealed: boolean;
-  onReveal: () => void;
   prefersReducedMotion: boolean | null;
+  compact: boolean;
 }) {
   const label = item.label || item.title || `Pegadinha ${index + 1}`;
+  const letter = extractLetterFromLabel(label);
   const trapText = item.detail || item.description || '';
   const correctText = typeof item.correct === 'string' ? item.correct.trim() : '';
   const { trapMonths, correctMonths, hasRail } = inferCalendarSlots(label, trapText, correctText);
-
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      if (!isRevealed) onReveal();
-    }
-  };
+  const title = shortTrapTitle(label, letter);
 
   return (
-    <button
-      type="button"
-      onClick={() => !isRevealed && onReveal()}
-      onKeyDown={handleKeyDown}
-      aria-pressed={isRevealed}
-      className={`w-full text-left transition-transform duration-200 ${
-        !isRevealed ? 'hover:scale-[1.01]' : ''
-      }`}
+    <motion.div
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: prefersReducedMotion ? 0 : index * 0.03 }}
     >
-      <div
-        className={`overflow-hidden rounded-2xl border shadow-sm ${
-          isRevealed
-            ? 'border-emerald-200/80 border-l-[3px] border-l-emerald-400/80 bg-gradient-to-br from-white via-emerald-50/40 to-emerald-50/70'
-            : 'border-rose-200/80 border-l-[3px] border-l-rose-400/80 bg-gradient-to-br from-white via-rose-50/40 to-rose-50/70'
-        }`}
-      >
-        <div className="grid grid-rows-[auto_auto_minmax(0,1fr)_auto] gap-2 p-4">
-          <div className="flex items-start justify-between gap-2">
-            <span
-              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
-                isRevealed ? 'bg-emerald-100/90 text-emerald-700' : 'bg-rose-100/90 text-rose-700'
-              }`}
-            >
-              {isRevealed ? (
-                <Check className="h-5 w-5" strokeWidth={3} aria-hidden />
-              ) : (
-                <CalendarX className="h-5 w-5" strokeWidth={2.5} aria-hidden />
-              )}
+      <PolarityPanel tone="exception" emphasized={!!letter} className="!gap-2">
+        <div className="flex items-center gap-2.5">
+          {letter ? (
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-600 font-body text-lg font-black text-white shadow-sm">
+              {letter}
             </span>
-            <span
-              className={`rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest ${
-                isRevealed ? 'bg-emerald-100/90 text-emerald-800' : 'bg-rose-100/90 text-rose-800'
-              }`}
-            >
-              {isRevealed ? 'PNI corrigido' : `erro #${index + 1}`}
-            </span>
-          </div>
-
-          {hasRail ? (
-            <MonthRail trapMonths={trapMonths} correctMonths={correctMonths} revealed={isRevealed} />
           ) : (
-            <div className="flex items-center gap-2 rounded-xl border border-lime-200/70 bg-lime-50/60 px-3 py-2">
-              <Syringe className="h-4 w-4 shrink-0 text-lime-700" aria-hidden />
-              <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-lime-800">
-                transferência de prova
-              </span>
-            </div>
-          )}
-
-          <div className="min-h-0">
-            <p className="line-clamp-2 font-display text-sm font-extrabold uppercase tracking-wide text-slate-900">
-              {label}
-            </p>
-            <p className="mt-1.5 line-clamp-2 font-body text-sm font-semibold leading-snug text-slate-700">
-              {trapText}
-            </p>
-          </div>
-
-          {isRevealed ? (
-            <motion.p
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="border-t border-emerald-200/60 pt-2 font-body text-sm font-bold leading-snug text-emerald-900"
-            >
-              {correctText || '—'}
-            </motion.p>
-          ) : (
-            <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-rose-500/80">
-              Toque para alinhar no calendário →
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-100 text-rose-700">
+              <CalendarX className="h-4 w-4" strokeWidth={2.5} aria-hidden />
             </span>
           )}
+          <div className="min-w-0 flex-1">
+            <CategoryStrip label={`Erro #${index + 1}`} tone="exception" className="mb-1 self-start" />
+            <p className="font-body text-sm font-bold leading-snug text-slate-900 md:text-[15px]">
+              {title}
+            </p>
+          </div>
         </div>
-      </div>
-    </button>
+
+        {!compact && hasRail ? (
+          <MonthRail trapMonths={trapMonths} correctMonths={correctMonths} />
+        ) : null}
+
+        {trapText ? (
+          <p className="flex items-start gap-1.5 font-body text-sm leading-snug text-rose-800">
+            <X className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={3} aria-hidden />
+            <span>{trapText}</span>
+          </p>
+        ) : null}
+        {correctText ? (
+          <p className="flex items-start gap-1.5 rounded-xl bg-emerald-50 px-3 py-2.5 font-body text-sm font-semibold leading-snug text-emerald-900 ring-1 ring-emerald-200 md:text-[15px]">
+            <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" strokeWidth={3} aria-hidden />
+            <span>{correctText}</span>
+          </p>
+        ) : null}
+      </PolarityPanel>
+    </motion.div>
+  );
+}
+
+function TransferBanner({
+  item,
+  prefersReducedMotion,
+}: {
+  item: DangerZoneItem;
+  prefersReducedMotion: boolean | null;
+}) {
+  const label = item.label || item.title || 'Transferência';
+  const trapText = item.detail || item.description || '';
+  const correctText = typeof item.correct === 'string' ? item.correct.trim() : '';
+  const title = label.replace(/^Transferência\s*[—–-]?\s*/i, '').trim() || label;
+
+  return (
+    <motion.div
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
+      <PolarityPanel tone="transfer" emphasized className="!gap-2">
+        <div className="flex items-center gap-2">
+          <CategoryStrip label="Transferência" tone="transfer" />
+        </div>
+        <p className="font-body text-base font-bold leading-snug text-slate-900">{title}</p>
+        {trapText ? (
+          <p className="font-body text-sm leading-snug text-amber-900">{trapText}</p>
+        ) : null}
+        {correctText ? (
+          <p className="flex items-start gap-1.5 rounded-xl bg-amber-50/80 px-3 py-2.5 font-body text-sm font-semibold leading-snug text-amber-950 ring-1 ring-amber-200 md:text-[15px]">
+            <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" strokeWidth={3} aria-hidden />
+            <span>{correctText}</span>
+          </p>
+        ) : null}
+      </PolarityPanel>
+    </motion.div>
   );
 }
 
@@ -243,101 +246,59 @@ interface DangerZoneCalendarMismatchProps {
   compareRevealMode?: LogicFlowRevealMode;
 }
 
+/** Arena aberta Glance OS — traps em lista; transferência fora do grid. */
 export function DangerZoneCalendarMismatch({
   content,
   items,
   theme,
   footerRule,
-  compareRevealMode = 'auto',
 }: DangerZoneCalendarMismatchProps) {
   const prefersReducedMotion = useReducedMotion();
-  const { revealItem, isItemRevealed, isTapMode } = useDangerZoneCompareReveal(
-    items.length,
-    compareRevealMode,
+  const corpus = useMemo(
+    () =>
+      `${content} ${items.map((i) => `${i.label ?? ''} ${i.detail ?? ''} ${i.correct ?? ''}`).join(' ')}`,
+    [content, items],
   );
+  const catchUpMode = isPniCatchUpCorpus(corpus);
 
-  const handleReveal = useCallback(
-    (index: number) => {
-      if (isTapMode) revealItem(index);
-    },
-    [isTapMode, revealItem],
-  );
-
-  const revealedCount = items.filter((_, i) => isItemRevealed(i)).length;
-  const allRevealed = revealedCount >= items.length;
+  const traps = items.filter((item) => !isTransferItem(item.label || item.title || ''));
+  const transfers = items.filter((item) => isTransferItem(item.label || item.title || ''));
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-4 md:p-6">
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
-
-      <div className="relative z-10 flex flex-col">
-        {content ? (
-          <div className="mb-4 flex justify-center">
-            <div className={`rounded-full border px-5 py-2.5 ${theme.borderColor} ${theme.iconBg}`}>
-              <p
-                className={`font-display text-center text-xs font-extrabold uppercase tracking-[0.12em] md:text-sm ${theme.iconText}`}
-              >
-                {content}
-              </p>
-            </div>
-          </div>
-        ) : null}
-
-        <p className="mb-4 flex justify-center">
-          <span
-            className={`inline-flex items-center gap-2 rounded-full border bg-white/80 px-3 py-1.5 text-xs ${theme.borderColor}`}
-          >
-            <span className={`font-body ${theme.textSecondary}`}>Corrigidos no PNI:</span>
-            <strong className={`font-mono text-sm font-black tabular-nums ${theme.iconText}`}>
-              {revealedCount}
-            </strong>
-            <span className={`font-body ${theme.textSecondary}`}>/ {items.length}</span>
-          </span>
-        </p>
-
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
-          {items.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <CalendarMismatchCard
-                  index={index}
-                  item={item}
-                  isRevealed={isItemRevealed(index)}
-                  onReveal={() => handleReveal(index)}
-                  prefersReducedMotion={prefersReducedMotion}
-                />
-              </motion.div>
-            ))}
-        </div>
-
-        {footerRule ? (
-          <div
-            className={`mt-6 rounded-xl border px-4 py-3 md:px-5 md:py-4 ${theme.borderColor} ${theme.iconBg}`}
-          >
-            <p
-              className={`font-body text-center text-sm font-semibold leading-relaxed md:text-base ${theme.textSecondary}`}
-            >
-              {footerRule}
-            </p>
-          </div>
-        ) : null}
-
-        {allRevealed ? (
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-4 rounded-xl border border-lime-200/80 bg-lime-50/80 px-4 py-3 text-center"
-          >
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-lime-800">
-              {isTapMode ? 'Calendário PNI dominado — revise os marcos 2 · 3 · 4 · 6 · 12' : 'Revise os marcos antes da prova'}
-            </span>
-          </motion.div>
-        ) : null}
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.35}
+      eyebrow={catchUpMode ? 'ARMADILHA — CATCH-UP' : 'ARMADILHA — CALENDÁRIO'}
+      title={content || undefined}
+      titleClassName="text-sm font-bold uppercase tracking-wide text-rose-900 md:text-base"
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+      maxWidth="3xl"
+      className="gap-3"
+    >
+      <div className="flex flex-col gap-2.5">
+        {traps.map((item, index) => (
+          <TrapRow
+            key={`trap-${index}`}
+            index={index}
+            item={item}
+            prefersReducedMotion={prefersReducedMotion}
+            compact={catchUpMode}
+          />
+        ))}
       </div>
-    </div>
+
+      {transfers.length > 0 ? (
+        <div className="flex flex-col gap-2.5 border-t border-amber-200/70 pt-3">
+          {transfers.map((item, index) => (
+            <TransferBanner
+              key={`transfer-${index}`}
+              item={item}
+              prefersReducedMotion={prefersReducedMotion}
+            />
+          ))}
+        </div>
+      ) : null}
+    </BoardChrome>
   );
 }

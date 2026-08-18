@@ -20,7 +20,7 @@ export const LANDING_HERO = {
   ] as const,
   h1AccentWord: 'você',
   subheadline:
-    'Cada questão, slide e revisão pensados exclusivamente para o cargo de Técnico em Enfermagem. Estudo reverso com NeuroSlides — comece grátis, sem cartão.',
+    'Questão real → diagnóstico do erro → NeuroSlides que ensinam exatamente o que você errou. Feito exclusivamente para o cargo de Técnico em Enfermagem — comece grátis, sem cartão.',
   ctaPrimary: 'Testar grátis agora',
   ctaSecondary: 'Ver como funciona',
   microcopySuffix: 'sem compromisso · sem cartão',
@@ -65,14 +65,14 @@ export const LANDING_COMPARATIVO = {
     'Linguagem de nível superior — feita para enfermeiro',
     'Você lê tudo sem saber o que a banca cobra para o seu cargo',
     'Sem feedback real — só acerto ou erro',
-    'Revisão manual — você decide (ou esquece) quando revisar',
+    'Você lê o gabarito e segue sem entender por que errou',
     'Sem diagnóstico longitudinal — não sabe se evoluiu',
   ] as const,
   avantItems: [
     'Questões no formato exato da banca para Técnico em Enfermagem',
     'Você estuda o que a sua banca cobra — filtrado por banca/ano/órgão',
     'Gabarito com diagnóstico: foi conceito, interpretação ou pegadinha?',
-    'Revisão espaçada automática no momento certo — sem planilha',
+    'NeuroSlides ensinam exatamente o que você errou — na hora',
     'Simulado semanal personalizado com evolução por disciplina',
   ] as const,
 } as const;
@@ -80,7 +80,7 @@ export const LANDING_COMPARATIVO = {
 export const LANDING_METODO = {
   label: 'Como funciona',
   h2: 'Simples como 1, 2, 3, 4',
-  sub: 'Questão real, gabarito com diagnóstico, NeuroSlides e revisão no ritmo certo — tudo no mesmo fluxo.',
+  sub: 'Questão real → diagnóstico do erro → NeuroSlides que ensinam exatamente o que você errou.',
   ctaFooter: 'Começar agora — grátis',
 } as const;
 
@@ -164,8 +164,8 @@ export const LANDING_RECURSOS = {
       text: 'Simulado semanal personalizado com evolução por disciplina — seu GPS de progresso.',
     },
     {
-      title: 'Plano diário',
-      text: 'Revise no ritmo certo — revisão espaçada automática, sem planilha manual.',
+      title: 'Estudo por diagnóstico',
+      text: 'Cada erro vira um alvo claro: você sabe exatamente qual NeuroSlide revisar em seguida.',
     },
   ] as const,
   proParagraph:
@@ -191,7 +191,7 @@ export const LANDING_PRICING = {
     'Missão semanal ilimitada + streak',
     'Simulados ilimitados',
     'NeuroSlides após cada questão',
-    'Plano diário automático',
+    'Diagnóstico detalhado de cada erro',
     'Cadernos personalizados',
     'Analytics de desempenho completo',
     'EBSERH, prefeituras e todas as bancas',

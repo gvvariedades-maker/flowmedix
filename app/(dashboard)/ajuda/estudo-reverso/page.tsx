@@ -27,21 +27,21 @@ import {
 export const metadata = {
   title: 'Estudo Reverso: método AVANT enf | Como funciona',
   description:
-    'Entenda o método Estudo Reverso do AVANT enf: ciclo de 4 etapas, fundamentos de neurociência aplicada e passo a passo prático.',
+    'Entenda o método Estudo Reverso do AVANT enf: questão real, diagnóstico do erro e NeuroSlides que ensinam exatamente o que você errou.',
   alternates: {
     canonical: '/ajuda/estudo-reverso',
   },
   openGraph: {
     title: 'Estudo Reverso: método AVANT enf | Como funciona',
     description:
-      'Entenda como o Estudo Reverso transforma questões de concursos em diagnóstico, mapa, regra de ouro e revisão inteligente.',
+      'Entenda como o Estudo Reverso transforma questões de concursos em diagnóstico do erro e NeuroSlides — mapa, regra de ouro, fluxo lógico e zona de perigo.',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Estudo Reverso: método AVANT enf | Como funciona',
     description:
-      'Entenda como o Estudo Reverso transforma questões de concursos em diagnóstico e revisão inteligente.',
+      'Entenda como o Estudo Reverso transforma questões de concursos em diagnóstico do erro e NeuroSlides que ensinam exatamente o que você errou.',
   },
 };
 
@@ -54,7 +54,7 @@ export default function EstudoReversoPage() {
         className={`mt-6 p-5 shadow-sm md:flex md:items-center md:justify-between md:gap-5 ${AJUDA_SURFACE}`}
       >
         <div>
-          <p className="text-[11px] font-black uppercase tracking-widest text-[#166534]">Introdução rápida</p>
+          <p className="text-[11px] font-black uppercase tracking-widest text-[#9A3412]">Introdução rápida</p>
           <h2 className="mt-1 text-xl font-black tracking-tight text-slate-900">Prefere ver em formato de slides?</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             Abra o resumo de boas-vindas com 4 passos curtos para apresentar o método a novos alunos.
@@ -112,7 +112,7 @@ export default function EstudoReversoPage() {
           <ol className="mt-5 grid gap-3 md:grid-cols-5">
             {PASSO_A_PASSO.passos.map((passo, index) => (
               <li key={passo} className="card-elevated p-3 text-sm font-semibold leading-snug text-slate-800">
-                <span className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#166534] text-xs font-black text-white">
+                <span className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#9A3412] text-xs font-black text-white">
                   {index + 1}
                 </span>
                 {passo}

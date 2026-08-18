@@ -39,6 +39,8 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 - **`.cursor/skills/avant-neuroslides-visual/SKILL.md`** — barra de retenção pós-brief (`Design visual:` / Modo A): gesto espacial, Lei 7, DoD visual, handoff `VARIANT_MOLDS` (sem React sem pedido); fonte Git: `docs/skills/avant-neuroslides-visual/SKILL.md` (+ `reference-retencao.md`). Galeria: `pedagogical_branches[].visual_gallery` nos playbooks.
 - **`.cursor/skills/avant-ui-visual/SKILL.md`** — craft UI do app (vitrine, player shell, dashboard); **não** moldes de aula; fonte Git: `docs/skills/avant-ui-visual/SKILL.md`.
 - **`.cursor/rules/avant-ui-visual.mdc`** — trigger `Visual:` / `Polish vitrine` / `Polish player` / `craft UI`; cópia versionada: `docs/cursor/avant-ui-visual.mdc`.
+- **`.cursor/skills/svg-quality/SKILL.md`** — SVG de alta qualidade (ícone/diagrama custom); fonte Git: `docs/skills/svg-quality/SKILL.md`; refs: `docs/design-refs/svg-models/`.
+- **`.cursor/rules/svg-quality.mdc`** — trigger `SVG:` / criar SVG / ícone SVG; cópia versionada: `docs/cursor/svg-quality.mdc`.
 
 ## Migração de catálogo e visual
 

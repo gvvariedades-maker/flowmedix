@@ -35,8 +35,8 @@ export function heroCaptureScreenPx(variant: DeviceFrameVariant): {
 /** Canvas de render do player desktop (sidebar + conteúdo). */
 export const HERO_CAPTURE_LAPTOP_RENDER = { width: 1440, height: 900 } as const;
 
-/** `aside` do `DashboardShell` — `w-[16rem]`. */
-export const HERO_CAPTURE_SIDEBAR_OFFSET_PX = 256;
+/** `aside` do `DashboardShell` — `w-[15.5rem]`. */
+export const HERO_CAPTURE_SIDEBAR_OFFSET_PX = 248;
 
 /** Canvas de render do player mobile. */
 export const HERO_CAPTURE_PHONE_RENDER = { width: 390, height: 844 } as const;

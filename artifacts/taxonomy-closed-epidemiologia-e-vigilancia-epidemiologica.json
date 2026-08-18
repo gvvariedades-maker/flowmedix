@@ -1,0 +1,15 @@
+{
+  "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+  "pacote_prefix": "epidemiologia-e-vigilancia-epidemiologica",
+  "status": "closed",
+  "catch_all_mode": null,
+  "closed_at": "2026-08-03",
+  "inventory_snapshot": "artifacts/subtopico-inventory-audit.json",
+  "mismatch_count": 0,
+  "total_scanned": 218,
+  "manifest_slugs": 218,
+  "reclassified": false,
+  "signed_by": "audit:taxonomy-gate",
+  "notes": "Inventário ok (mismatch=0, 218/218). Registry taxonomy.status=closed (onda1-epi). Slug segment drift AB/processo/auditoria aceito se meta canônico.",
+  "registry_updated": true
+}

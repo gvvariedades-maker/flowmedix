@@ -445,7 +445,7 @@ export function LpPageEditor({ mode, pageId, initial }: LpPageEditorProps) {
           type="button"
           disabled={saving || publishing}
           onClick={() => void handleSave()}
-          className="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-6 py-3 text-xs font-black uppercase italic text-[#BEF264] disabled:opacity-50"
+          className="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-6 py-3 text-xs font-black uppercase italic text-[#F26522] disabled:opacity-50"
         >
           {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
           Salvar rascunho

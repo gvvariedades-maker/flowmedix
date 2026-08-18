@@ -55,6 +55,10 @@ export const GET = withPerformanceTracking(async function GET(request: NextReque
           media_acerto: summary.mediaAcerto,
           melhor_score: summary.melhorScore,
           tempo_medio_ms: summary.tempoMedioMs,
+          // Amostra explícita: a UI mostra `%` com a fração e evita tom conclusivo
+          // quando o denominador é pequeno.
+          questoes_concluidas: summary.questoesConcluidas,
+          acertos_concluidos: summary.acertosConcluidos,
         },
         evolucao_temporal: summary.evolucaoTemporal,
         desempenho: {

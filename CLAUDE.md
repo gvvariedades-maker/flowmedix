@@ -15,6 +15,7 @@ Leitura estimada: **~5 min** (atalho + um perfil) · **~30–40 min** (arquivo i
 | Objetivo | Escreva na conversa |
 |----------|---------------------|
 | Subtópico novo ou continuar lote | `Pipeline completo: <Subtópico canônico>` ou `Handcraft: <Subtópico> gNN` |
+| Âncoras 100% (base do pacote, pré-venda) | `Âncoras 100%: <Subtópico>` / `Âncoras 100% premium: SUBTÓPICO:` — [`PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md) · ordem 0a→0b→1→2 · gate `audit:anchor-100` |
 | Zero → nota-10 no IDE (sem SDK) | `Programa completo IDE: <Subtópico>` — [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](docs/PROMPT_PROGRAMA_COMPLETO_IDE.md) · DoD [`PROGRAMA_COMPLETO_IDE_DOD.md`](docs/PROGRAMA_COMPLETO_IDE_DOD.md) |
 | Paridade + L3 bespoke + SDK (programa completo) | `Pipeline + paridade Adolescente + L3 bespoke + orquestrador: SUBTÓPICO: <Subtópico>` — [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](docs/PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
 | Continuar 1 unidade (run-state) | `Continuar programa: <Subtópico>` ou `Continuar pipeline: <Subtópico>` + `@artifacts/pipeline-run-state-*.json` |
@@ -22,10 +23,11 @@ Leitura estimada: **~5 min** (atalho + um perfil) · **~30–40 min** (arquivo i
 | Moldes antes do 1º lote | `Mapeamento L3: <Subtópico>` |
 | Uma questão quebrada | `Handcraft: <Subtópico>` + linha `Slug: ...` |
 | Polish UI (vitrine, player, dashboard) | `Visual:` · `Polish vitrine` · `Polish player` · `craft UI` |
+| Composer visual NeuroSlides (gesto → 4/4) | `Composer visual: <ramo>` — [`PROMPT_COMPOSER_VISUAL.md`](docs/PROMPT_COMPOSER_VISUAL.md) · banco [`composer-visual-bank.md`](artifacts/composer-visual-bank.md) |
 | Landing / LP (copy + conversão + design) | `LP: home` · `LP: <path>` · `LP: polish visual` — [`LP_CONVERSA.md`](docs/LP_CONVERSA.md) |
 | Feature de UI / bug no app | Descreva a tela + anexe arquivos; **não** use trigger de handcraft |
 
-**Triggers completos:** [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) · [`.cursor/rules/programa-completo-ide.mdc`](.cursor/rules/programa-completo-ide.mdc) · [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) · [`handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) · [`quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) · [`avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) · [`lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc)
+**Triggers completos:** [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) · [`.cursor/rules/ancoras-100.mdc`](.cursor/rules/ancoras-100.mdc) · [`.cursor/rules/programa-completo-ide.mdc`](.cursor/rules/programa-completo-ide.mdc) · [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) · [`handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) · [`quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) · [`avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) · [`composer-visual.mdc`](.cursor/rules/composer-visual.mdc) · [`svg-quality.mdc`](.cursor/rules/svg-quality.mdc) · [`lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc)
 
 ## Comandos rápidos
 
@@ -97,7 +99,7 @@ Ver playbook: [`data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuida
 
 Funcionalidades principais:
 
-- **Aluno:** vitrine `/estudar`, player `AvantLessonPlayer`, cadernos, plano diário, analytics, material NeuroSlides, freemium/Pro.
+- **Aluno:** vitrine `/estudar`, player `AvantLessonPlayer`, cadernos, analytics, material NeuroSlides, freemium/Pro.
 - **Admin:** Laboratório (JSON de questões), concursos, matrículas, convites, landings, e-mails.
 - **Monetização:** Stripe (concursos e assinatura Pro), convites com resgate por token.
 
@@ -230,7 +232,7 @@ O AVANT opera com **duas skins** (mesmos tokens semânticos, valores diferentes)
 
 | Skin | Onde | Estética |
 |------|------|----------|
-| **Editorial v2.1** | Login, dashboard, vitrine, player (enunciado), modais | Slate `#f1f5f9`, verde `#8fe020`, cards brancos com sombra |
+| **Editorial v2.1** | Login, dashboard, vitrine, player (enunciado), modais | Papel `#FFF1E0`, laranja `#F26522`, cards brancos com sombra |
 | **Cyber Clinical** | NeuroSlides/reverso fullscreen, landing, admin | Escuro `#010409`, cyan neon `#00f2ff`, glassmorphism |
 
 Ativação editorial: `useEditorialTheme()` → `html[data-theme='editorial']` em [`app/globals.css`](app/globals.css).  
@@ -275,9 +277,9 @@ Polish de UI no app: skill [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/s
 | Classe | Efeito |
 |--------|--------|
 | `.card-elevated` / `.card-elevated-lg` | Card branco, borda `slate-200`, sombra sutil |
-| `.btn-editorial-primary` | CTA verde `#8fe020`, label escuro |
+| `.btn-editorial-primary` | CTA laranja `#F26522`, label `#0F172A` |
 | `.btn-editorial-outline` | Secundário branco/slate |
-| `.btn-option-editorial` | Alternativa no player (hover verde suave) |
+| `.btn-option-editorial` | Alternativa no player (hover laranja suave) |
 | `.card-success-editorial` | Feedback de acerto no fluxo editorial |
 
 ### Padrão Tailwind recorrente (slides/player)
@@ -786,6 +788,11 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | [`TESTES_QUICK_START.md`](docs/TESTES_QUICK_START.md) | Jest e Playwright |
 | [`ZOOM_MOBILE_POLICY.md`](docs/ZOOM_MOBILE_POLICY.md) | Pinch vs toolbar A+/A− no mobile (Modelos A/B/E) |
 | [`DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) | Hub onboarding designer front — App UI vs NeuroSlides |
+| [`DECISAO_NEUROSLIDES_GERACAO_2.md`](docs/DECISAO_NEUROSLIDES_GERACAO_2.md) | ADR Visual OS — 4 tipos imutáveis; chassis glanceable |
+| [`NEUROSLIDES_VISUAL_BAR.md`](docs/NEUROSLIDES_VISUAL_BAR.md) | Piso best-in-market + ratchet (cada molde só melhora) |
+| [`PROMPT_COMPOSER_VISUAL.md`](docs/PROMPT_COMPOSER_VISUAL.md) | Composer visual Agent-first — banco → Modo V → crítica → handoff |
+| [`PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md) | Âncoras 100% — playbook+mapa → âncoras aprovadas (pré-venda) |
+| [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](docs/NEUROSLIDES_GERACAO_2_ROADMAP.md) | Roadmap G2: flagships → Fábrica → cauda genérica |
 | [`auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md`](docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md) | Rebrand editorial — escopo, telhas T1–T11, WCAG |
 | [`auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) | Direção visual v3 — Clinical Study, paleta híbrida, mapeamento skills |
 | [`auditoria-visual-v2/LANDING-AVANT-v3.md`](docs/auditoria-visual-v2/LANDING-AVANT-v3.md) | Brief histórico landing `/` (síntese Estudei) |
@@ -797,7 +804,8 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | Skill | Quando usar |
 |-------|-------------|
 | [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md) | Melhorar visual de componentes/telas (vitrine, player, dashboard); tokens editorial + cyber |
-| [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](.cursor/skills/avant-neuroslides-visual/SKILL.md) | Design visual dos NeuroSlides para retenção (gesto = decisão); inspiração ≠ cópia de feed; pós-brief / molde |
+| [`.cursor/skills/svg-quality/SKILL.md`](.cursor/skills/svg-quality/SKILL.md) | SVG de alta qualidade (ícone/diagrama custom); refs em `docs/design-refs/svg-models/`; trigger `SVG:` |
+| [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](.cursor/skills/avant-neuroslides-visual/SKILL.md) | Retenção NeuroSlides; entrada preferida `Composer visual:` + banco [`composer-visual-bank.md`](artifacts/composer-visual-bank.md); Modo V/A; Atelier = crítica |
 | [`.cursor/skills/avant-json-template/SKILL.md`](.cursor/skills/avant-json-template/SKILL.md) | Gerar/editar JSON de questões e NeuroSlides |
 | [`.cursor/skills/avant-classify-family/SKILL.md`](.cursor/skills/avant-classify-family/SKILL.md) | Classificar `meta.family` (funil 7 famílias); fonte Git `docs/skills/` + `npm run sync:skills` — funil canônico em `lib/catalogMigration/classifyFamily.ts` |
 | [`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`](.cursor/skills/avant-golden-anchor-handcraft/SKILL.md) | Handcraft L2: após `meta.family` — âncora → slots por slide |
@@ -820,6 +828,8 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 - [`.cursor/rules/paridade-adolescente.mdc`](.cursor/rules/paridade-adolescente.mdc) — trigger `Paridade Adolescente: <subtópico>`
 - [`.cursor/rules/l3-mapeamento.mdc`](.cursor/rules/l3-mapeamento.mdc) — trigger `Mapeamento L3: <subtópico>`
 - [`.cursor/rules/avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) — trigger `Visual:` / `Polish vitrine` / `Polish player` / `craft UI`
+- [`.cursor/rules/composer-visual.mdc`](.cursor/rules/composer-visual.mdc) — trigger `Composer visual:` · [`docs/PROMPT_COMPOSER_VISUAL.md`](docs/PROMPT_COMPOSER_VISUAL.md) · cópia [`docs/cursor/composer-visual.mdc`](docs/cursor/composer-visual.mdc)
+- [`.cursor/rules/svg-quality.mdc`](.cursor/rules/svg-quality.mdc) — trigger `SVG:` / criar SVG / ícone SVG · cópia [`docs/cursor/svg-quality.mdc`](docs/cursor/svg-quality.mdc)
 - [`.cursor/rules/lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc) — trigger `LP:` · [`docs/LP_CONVERSA.md`](docs/LP_CONVERSA.md) · cópia [`docs/cursor/lp-conversa.mdc`](docs/cursor/lp-conversa.mdc)
 - [`docs/cursor/l3-mapeamento.mdc`](docs/cursor/l3-mapeamento.mdc) — cópia versionada do mapeamento L3
 - [`docs/cursor/avant-ui-visual.mdc`](docs/cursor/avant-ui-visual.mdc) — cópia versionada da rule UI visual

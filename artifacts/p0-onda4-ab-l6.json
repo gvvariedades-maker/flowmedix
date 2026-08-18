@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-08-03T22:10:16.537Z",
+  "l6": [
+    {
+      "lote": "atencao-basica-saude-da-familia-g01",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g01.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g01.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g02",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g02.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g02.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g03",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g03.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g03.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g04",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g04.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g04.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g05",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g05.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g05.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g06",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g06.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g06.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g07",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g07.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g07.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g08",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g08.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g08.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g09",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g09.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g09.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g10",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g10.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g10.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g11",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g11.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g11.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g12",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g12.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g12.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g13",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g13.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g13.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g14",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g14.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g14.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g15.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g15.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g16",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g16.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g16.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g17",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g17.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g17.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g18",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g18.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g18.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g19",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g19.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g19.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g20",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g20.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g20.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g21",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g21.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g21.json"
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g22",
+      "status": 0,
+      "note": "[audit:anchor-review] artifact=artifacts/anchor-review/atencao-basica-saude-da-familia-g22.json | [audit:anchor-review] Revisor B: anexar artifact + captures + artifacts/anchor-review/atencao-basica-saude-da-familia-g22.json"
+    }
+  ]
+}

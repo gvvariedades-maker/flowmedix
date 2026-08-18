@@ -23,7 +23,11 @@
         "title": "Protocolo Clínico e Diretrizes Terapêuticas — Asma",
         "year": 2021,
         "url": "https://www.gov.br/saude/",
-        "covers": ["crise asmática", "broncodilatador inalatório", "monitorização"]
+        "covers": [
+          "crise asmática",
+          "broncodilatador inalatório",
+          "monitorização"
+        ]
       }
     ]
   },
@@ -78,14 +82,9 @@
           "icon": "Activity"
         },
         {
-          "label": "Exceção — letra E",
+          "label": "Exceção.",
           "detail": "Restringir água não reduz broncoespasmo — pode desidratar o paciente.",
           "icon": "Ban"
-        },
-        {
-          "label": "GABARITO",
-          "detail": "Letra E é a única conduta incorreta.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "EXCETO: três distratores são corretos — achar o erro"
@@ -99,11 +98,26 @@
       },
       "content": "CRISE ASMÁTICA — ENFERMAGEM",
       "rows": [
-        { "label": "Avaliação", "value": "FR, SpO₂, tiragem, fala entrecortada", "badge": "ok" },
-        { "label": "Posicionamento", "value": "Semi-Fowler + ambiente calmo", "badge": "ok" },
-        { "label": "Medicamento", "value": "Beta-2 inalatório conforme prescrição", "badge": "ok" },
-        { "label": "Oxigênio", "value": "Suplementar se prescrito — monitorar", "badge": "ok" },
-        { "label": "Gabarito EXCETO", "value": "Letra E — não restringir hidratação", "emphasis": "success", "badge": "hot" }
+        {
+          "label": "Avaliação",
+          "value": "FR, SpO₂, tiragem, fala entrecortada",
+          "badge": "ok"
+        },
+        {
+          "label": "Posicionamento",
+          "value": "Semi-Fowler + ambiente calmo",
+          "badge": "ok"
+        },
+        {
+          "label": "Medicamento",
+          "value": "Beta-2 inalatório conforme prescrição",
+          "badge": "ok"
+        },
+        {
+          "label": "Oxigênio",
+          "value": "Suplementar se prescrito — monitorar",
+          "badge": "ok"
+        }
       ],
       "footer_rule": "Crise: broncodilatador inalatório é primeira linha"
     },

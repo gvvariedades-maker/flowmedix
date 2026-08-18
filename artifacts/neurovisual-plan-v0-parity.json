@@ -1,0 +1,16 @@
+{
+  "schema_version": "neurovisual-plan-parity-v0",
+  "questions_processed": 5309,
+  "slides_compared": 21236,
+  "slides_equivalent": 21236,
+  "mismatches": [],
+  "intentional_polarity": {
+    "danger_zone_slides": 5309,
+    "slides_with_valid_conduct": 350,
+    "valid_conduct_items": 1240,
+    "polarity_path_mismatches": 0,
+    "note": "F1: dangerItemPolarities vive fora de presentation — chrome trap×valid_conduct é divergência intencional do histórico “tudo ERRO”; presentation+theme continuam o gate rígido."
+  },
+  "canonical_unresolved_slugs": 342,
+  "limitations": []
+}

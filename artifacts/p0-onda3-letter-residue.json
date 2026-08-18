@@ -1,0 +1,188 @@
+{
+  "imunizacao-completo": {
+    "n": 13,
+    "residue": [
+      {
+        "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+        "path": "concept_map.items[1].detail",
+        "evidence": "A vacina hepatite A é apresentada sob a forma liofilizada em frasco monodose.",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+        "path": "concept_map.items[5].detail",
+        "evidence": "A vacina hepatite A é apresentada sob a forma liofilizada em frasco monodose.",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "fepese-enfermagem-imunizacao-1779564109452-3",
+        "path": "concept_map.items[4].detail",
+        "evidence": "A vacina contra hepatite B é opcional aos profissionais de saúde, devendo ser aplicada em esquema de 2 duas por via subcutânea.",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "fepese-enfermagem-imunizacao-1779564119665-1",
+        "path": "concept_map.items[4].detail",
+        "evidence": "A vacina que protege contra Hepatite B é indicada aos profissionais da saúde devendo ser aplicada em duas doses, com intervalo de 30 dias.",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "funcern-enfermagem-imunizacao-1777103238173-7",
+        "path": "concept_map.items[2].detail",
+        "evidence": "Hepatite A é administrada por via subcutânea na dose de 0,5 ml.",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "fundatec-enfermagem-imunizacao-1779564006577-6",
+        "path": "concept_map.items[2].detail",
+        "evidence": "A vacina contra a hepatite B é administrada por via subcutânea.",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "ibade-enfermagem-imunizacao-1777103230085-5",
+        "path": "concept_map.items[3].detail",
+        "evidence": "a vacina contra a hepatite B é administrada em duas doses",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-6",
+        "path": "concept_map.items[3].detail",
+        "evidence": "A dose da vacina hepatite B é de 0,5 mL para recém-nascidos, lactentes e crianças até 15 anos, e de 1,0 mL a partir dos 16 anos de idade, se",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-6",
+        "path": "golden_rule.rows[3].value",
+        "evidence": "A dose da vacina hepatite B é de 0,5 mL para recém-nascidos, lactentes e crianças até 15 anos, e de 1,0 mL a partir dos 16 anos de idade, se",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+        "path": "concept_map.items[2].detail",
+        "evidence": "O vírus da hepatite B é altamente infectivo e facilmente transmitido por várias vias, dentre elas a via sexual.",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+        "path": "golden_rule.rows[3].value",
+        "evidence": "O vírus da hepatite B é altamente infectivo e facilmente transmitido por várias vias, dentre elas a via sexual. aos ? meses",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+        "path": "concept_map.items[2].detail",
+        "evidence": "O esquema vacinal para hepatite B é de três doses, com intervalos de 30 a 60 dias entre as três doses, e a via de administração é intramuscu",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+        "path": "concept_map.items[5].detail",
+        "evidence": "O esquema vacinal para hepatite B é de três doses, com intervalos de 30 a 60 dias entre as três doses, e a via de administração é intramuscu",
+        "gabarito_changed": false,
+        "gabarito_skip": [],
+        "trunc_changed": false,
+        "trunc_skip": []
+      }
+    ]
+  },
+  "puncao-venosa-e-cuidados-com-cateteres-completo": {
+    "n": 5,
+    "residue": [
+      {
+        "slug": "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
+        "path": "concept_map.footer_rule",
+        "evidence": "Garrote correto + ângulo baixo = letra A.",
+        "gabarito_changed": false,
+        "gabarito_skip": [
+          "remainder_too_short"
+        ],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0",
+        "path": "golden_rule.footer_rule",
+        "evidence": "Letra A lista o quartetto clássico de prova.",
+        "gabarito_changed": false,
+        "gabarito_skip": [
+          "remainder_too_short"
+        ],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+        "path": "concept_map.footer_rule",
+        "evidence": "Antissepsia correta = letra B.",
+        "gabarito_changed": false,
+        "gabarito_skip": [
+          "remainder_too_short"
+        ],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0",
+        "path": "golden_rule.footer_rule",
+        "evidence": "Letra D fecha as três lacunas.",
+        "gabarito_changed": false,
+        "gabarito_skip": [
+          "remainder_too_short"
+        ],
+        "trunc_changed": false,
+        "trunc_skip": []
+      },
+      {
+        "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+        "path": "golden_rule.footer_rule",
+        "evidence": "Gabarito da questão = letra E.",
+        "gabarito_changed": false,
+        "gabarito_skip": [
+          "remainder_too_short"
+        ],
+        "trunc_changed": false,
+        "trunc_skip": []
+      }
+    ]
+  },
+  "saude-mental-completo": {
+    "n": 0,
+    "residue": []
+  }
+}

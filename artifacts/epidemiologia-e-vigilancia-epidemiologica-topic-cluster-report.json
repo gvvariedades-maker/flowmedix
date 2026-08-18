@@ -1,0 +1,2254 @@
+{
+  "generated_at": "2026-08-03T21:08:37.457Z",
+  "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-completo",
+  "total": 218,
+  "strong_threshold": 22,
+  "drift_total": 13,
+  "branch_totals": {
+    "epi_generico": 60,
+    "epi_vigilancia_acoes": 26,
+    "epi_notificacao_compulsoria": 78,
+    "epi_indicadores": 36,
+    "epi_ocorrencia_agravos": 10,
+    "epi_cadeia_transmissao": 8
+  },
+  "strong_branches": [
+    {
+      "branch": "epi_generico",
+      "count": 60,
+      "l3": "genérico premium (SUBTOPIC_DESIGN_MAP lime)",
+      "l3_decision": "ok_generico"
+    },
+    {
+      "branch": "epi_vigilancia_acoes",
+      "count": 26,
+      "l3": "morphological · reference_table · tap · compare (genérico)",
+      "l3_decision": "molde_redesign"
+    },
+    {
+      "branch": "epi_notificacao_compulsoria",
+      "count": 78,
+      "l3": "lista-trap / scope-trap · center · cards · compare (candidato bespoke)",
+      "l3_decision": "molde_inedito"
+    },
+    {
+      "branch": "epi_indicadores",
+      "count": 36,
+      "l3": "formula-rail / dual-compare · reference_table · tap · compare (candidato bespoke)",
+      "l3_decision": "molde_inedito"
+    }
+  ],
+  "inedito_packages_needed": 2,
+  "handcrafts_needed": 218,
+  "cluster_decisions": [
+    {
+      "cluster": "Notificação compulsória / SINAN / lista nacional",
+      "count": 76,
+      "pct": 34.9,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-notificacao-compulsoria-sinan-lista-naci.json",
+      "branch_id": "epi_notificacao_compulsoria",
+      "family_counts": {
+        "conceito": 65,
+        "certo_errado": 9,
+        "protocolo": 1,
+        "vf": 1
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+        "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-7",
+        "amauc-enfermagem-processo-de-enfermagem-1780006486032-6",
+        "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "molde_inedito",
+      "l3_package": "lista-trap / scope-trap · center · cards · compare (candidato bespoke)"
+    },
+    {
+      "cluster": "Epidemiologia — conceito geral",
+      "count": 47,
+      "pct": 21.6,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-epidemiologia-conceito-geral.json",
+      "branch_id": "epi_generico",
+      "family_counts": {
+        "conceito": 46,
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+        "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-0",
+        "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-7",
+        "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "ok_generico",
+      "l3_package": "genérico premium (SUBTOPIC_DESIGN_MAP lime)"
+    },
+    {
+      "cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "count": 34,
+      "pct": 15.6,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-indicadores-incidencia-prevalencia-morta.json",
+      "branch_id": "epi_indicadores",
+      "family_counts": {
+        "calc": 2,
+        "conceito": 30,
+        "vf": 1,
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+        "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5",
+        "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8",
+        "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-9"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "molde_inedito",
+      "l3_package": "formula-rail / dual-compare · reference_table · tap · compare (candidato bespoke)"
+    },
+    {
+      "cluster": "Vigilância epidemiológica — conceito e ações",
+      "count": 26,
+      "pct": 11.9,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-vigilancia-epidemiologica-conceito-e-aco.json",
+      "branch_id": "epi_vigilancia_acoes",
+      "family_counts": {
+        "conceito": 25,
+        "vf": 1
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+        "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6",
+        "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5",
+        "decorp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-6"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "molde_redesign",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Atenção básica (drift?)",
+      "count": 10,
+      "pct": 4.6,
+      "drift_in_cluster": 10,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "epi_generico",
+      "family_counts": {
+        "conceito": 8,
+        "certo_errado": 2
+      },
+      "sample_slugs": [
+        "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-5",
+        "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-5",
+        "gama-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-5",
+        "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-3"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "genérico premium (SUBTOPIC_DESIGN_MAP lime)"
+    },
+    {
+      "cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "count": 10,
+      "pct": 4.6,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "epi_ocorrencia_agravos",
+      "family_counts": {
+        "conceito": 10
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1",
+        "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-6",
+        "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-3",
+        "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-1"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "scale-ladder · morphological · tap · compare (candidato bespoke)"
+    },
+    {
+      "cluster": "Cadeia de transmissão / períodos / histórico natural",
+      "count": 8,
+      "pct": 3.7,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "epi_cadeia_transmissao",
+      "family_counts": {
+        "vf": 1,
+        "conceito": 7
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
+        "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1",
+        "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-6",
+        "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-8"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "V/F — conceitos epidemiológicos",
+      "count": 2,
+      "pct": 0.9,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "epi_indicadores",
+      "family_counts": {
+        "conceito": 1,
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "cotec-fadenor-geral-epidemiologia-e-vigilancia-epidemiologica-1777103452899-2",
+        "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-1"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "formula-rail / dual-compare · reference_table · tap · compare (candidato bespoke)"
+    },
+    {
+      "cluster": "EXCETO / INCORRETA — epidemiologia",
+      "count": 2,
+      "pct": 0.9,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "epi_notificacao_compulsoria",
+      "family_counts": {
+        "certo_errado": 2
+      },
+      "sample_slugs": [
+        "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-1",
+        "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066961947-9"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "lista-trap / scope-trap · center · cards · compare (candidato bespoke)"
+    },
+    {
+      "cluster": "Imunização (drift?)",
+      "count": 2,
+      "pct": 0.9,
+      "drift_in_cluster": 2,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "epi_generico",
+      "family_counts": {
+        "conceito": 2
+      },
+      "sample_slugs": [
+        "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-1",
+        "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-6"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "genérico premium (SUBTOPIC_DESIGN_MAP lime)"
+    },
+    {
+      "cluster": "Doenças transmissíveis clínicas (drift?)",
+      "count": 1,
+      "pct": 0.5,
+      "drift_in_cluster": 1,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "epi_generico",
+      "family_counts": {
+        "conceito": 1
+      },
+      "sample_slugs": [
+        "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "genérico premium (SUBTOPIC_DESIGN_MAP lime)"
+    }
+  ],
+  "rows": [
+    {
+      "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Analise as afirmações a seguir: I . O Sistema de Informações sobre Nascidos Vivos tem o objetivo de ",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Analise as afirmações a seguir: I . Vigilância epidemiológica é um conjunto de ações capaz de elimin",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Qual dos itens abaixo consta na Lista Nacional de Doenças de Notificação Compulsória Imediata?",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+      "family": "calc",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "'\"(..) é uma medida muito utilizada como indicador de saúde; é calculada pela divisão do número de ó",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-5",
+      "family": "conceito",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "É CORRETO afirmar que a elaboração do Plano de Saúde compreende dois momentos, a saber: o da análise",
+      "drift": true
+    },
+    {
+      "slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-7",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A vigilância epidemiológica é essencial para o controle de doenças transmissíveis. Sobre as ações de",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3",
+      "family": "conceito",
+      "topic": "Doenças transmissíveis clínicas (drift?)",
+      "pedagogical_cluster": "Doenças transmissíveis clínicas (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Segundo a Organização Mundial de Saúde (OMS), pandemia é a disseminação mundial de uma doença. Até o",
+      "drift": true
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-6",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "No âmbito do Sistema Único de Saúde (SUS), a vigilância epidemiológica constitui instrumento estraté",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "Durante uma visita domiciliar, um Técnico de Enfermagem compartilha relatos de diarreia em vários mo",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A Vigilância Epidemiológica é um componente essencial da Vigilância em Saúde, responsável por um con",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Com base nas doenças de notificação compulsória, assinale a alternativa CORRETA que corresponde a um",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
+      "family": "vf",
+      "topic": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_cluster": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_branch_proposed": "epi_cadeia_transmissao",
+      "instruction_preview": "Marque Verdadeiro (V) ou Falso (F) nas afirmativas abaixo. ( ) O período de latência é o tempo que t",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1",
+      "family": "conceito",
+      "topic": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_cluster": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_branch_proposed": "epi_cadeia_transmissao",
+      "instruction_preview": "Com base em epidemiologia, marque ( V ) Verdadeiro ou ( F ) Falso nos itens abaixo. ( )A caracteriza",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Em certo município, entre 600 crianças cadastradas na Estratégia Saúde da Família e acompanhadas dur",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-6",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "São doenças e agravos de notificação compulsória no Brasil:",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-7",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "\"A cidade de São Paulo já soma mais de 100 mil casos de dengue neste ano. O município também registr",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "De acordo com o Ministério da Saúde, \"para incorporar um agravo ou doença à lista de notificação com",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A Descrição das condições de saúde da população por meio da construção de indicadores de saúde é uma",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Com base em obras publicadas pelo Ministério da Saúde, assinale a opção correta a respeito da assist",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-6",
+      "family": "certo_errado",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Em relação à imunização e ao programa nacional de imunizações, julgue o item que se segue. São de no",
+      "drift": false
+    },
+    {
+      "slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Leia a afirmativa a seguir. \"Entende-se por um conjunto de ações que proporcionam o conhecimento, a ",
+      "drift": false
+    },
+    {
+      "slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Em relação à notificação de doenças, casos de cólera devem ser notificados",
+      "drift": false
+    },
+    {
+      "slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-4",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Analise a afirmativa a seguir. ______________ são eventos de notificação compulsória e importantes n",
+      "drift": false
+    },
+    {
+      "slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A operacionalização da vigilância epidemiológica compreende um ciclo de funções específicas e interc",
+      "drift": false
+    },
+    {
+      "slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-5",
+      "family": "conceito",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "O uso de produtos químicos pode ser reduzido ou eliminado quando se opta pela remoção dos vetores po",
+      "drift": true
+    },
+    {
+      "slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-6",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "As medidas de proteção à saúde dos agentes de combate a endemias (ACE) também envolvem a substituiçã",
+      "drift": false
+    },
+    {
+      "slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-6",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "Endemia, epidemia e pandemia são termos frequentemente utilizados na prática da epidemiologia de cam",
+      "drift": false
+    },
+    {
+      "slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-7",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "A vigilância entomológica é uma atividade baseada em indicadores para detectar a presença, a distrib",
+      "drift": false
+    },
+    {
+      "slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-8",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "São objetivos da vigilância epidemiológica da hanseníase:",
+      "drift": false
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-2",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação das doenças deve ser realizada por meio do Sistema de Informação, o qual é alimentado ",
+      "drift": false
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-2",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação das doenças deve ser realizada por meio do Sistema de Informação de Agravos de Notific",
+      "drift": false
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-3",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Ainda sobre notificação, marque a alternativa que contém doenças, agravos ou eventos de saúde públic",
+      "drift": false
+    },
+    {
+      "slug": "cotec-fadenor-geral-epidemiologia-e-vigilancia-epidemiologica-1777103452899-2",
+      "family": "conceito",
+      "topic": "V/F — conceitos epidemiológicos",
+      "pedagogical_cluster": "V/F — conceitos epidemiológicos",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Quanto às fases de vida do vetor Aedes Aegypti, leia as assertivas que seguem, classificando-as em v",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-9",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "O que é uma Pandemia?",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-6",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A Síndrome Respiratória Aguda Grave associada a Coronavírus - SARS-CoVb. MERS- CoV - é considerada u",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+      "family": "vf",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A Paralisia Flácida Aguda (PFA), também chamada de Poliomielite ou Paralisia Infantil, apresentou al",
+      "drift": false
+    },
+    {
+      "slug": "decorp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-6",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Na vigilância epidemiológica hospitalar, o conceito de refere-se a _____________ . Assinale a altern",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-1",
+      "family": "certo_errado",
+      "topic": "EXCETO / INCORRETA — epidemiologia",
+      "pedagogical_cluster": "EXCETO / INCORRETA — epidemiologia",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Termos frequentemente utilizados na prática da Epidemiologia de Campo, seja frente às investigações ",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-6",
+      "family": "conceito",
+      "topic": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_cluster": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_branch_proposed": "epi_cadeia_transmissao",
+      "instruction_preview": "Para entender as relações entre os diferentes elementos que levam ao aparecimento de uma doença tran",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-7",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A Vigilância dos Fatores de Risco Não Biológicos é responsável pelos seguintes programas: I . Progra",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-1",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "No âmbito da vigilância epidemiológica, acerca da notificação de doenças, investigação epidemiológic",
+      "drift": false
+    },
+    {
+      "slug": "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Considerando seu papel na assistência ao parto, e da responsabilidade de todo profissional de saúde,",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-3",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Os indicadores epidemiológicos são ferramentas essenciais para o monitoramento da saúde da população",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-4",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Em instituição de longa permanência, técnico de enfermagem identifica residente com febre persistent",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-0",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A definição de prioridades em saúde requer a análise de múltiplos indicadores socioeconômicos, cultu",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-1",
+      "family": "conceito",
+      "topic": "Imunização (drift?)",
+      "pedagogical_cluster": "Imunização (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "No contexto da saúde coletiva, os conceitos de eficácia, eficiência e efetividade são fundamentais p",
+      "drift": true
+    },
+    {
+      "slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-2",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A vigilância epidemiológica é fundamental na saúde coletiva para o monitoramento e controle de doenç",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-0",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Preencha a lacuna com a alternativa correta: A taxa de morbidade é um i indicador de saúde que mede ",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-1",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Preencha a lacuna com a alternativa correta: Muitas doenças são consideradas ______________________,",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-2",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Quando a doença foi totalmente erradicada:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-8",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Considerando a fase latente de uma doença, assinale a alternativa correta .",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-6",
+      "family": "conceito",
+      "topic": "Imunização (drift?)",
+      "pedagogical_cluster": "Imunização (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Refere-se ao primeiro caso detectado ou documentado de uma doença dentro de um grupo, família ou com",
+      "drift": true
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-9",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Sistema de informação em saúde que sentinela alimentação e nutrição:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-3",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "SIAB é um sistema idealizado para agregar e processar as informações sobre a população visitada; as ",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-4",
+      "family": "calc",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Preencha a lacuna com a alternativa correta: A taxa de mortalidade é um indicador que mede o número ",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-8",
+      "family": "conceito",
+      "topic": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_cluster": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_branch_proposed": "epi_cadeia_transmissao",
+      "instruction_preview": "Agente etiológico:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-9",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Epidemiologia pode ser definida como a ciência que estuda o processo saúde-doença em coletividades h",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-0",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "O SINAN é alimentado, principalmente, pela notificação e investigação de casos de doenças e agravos ",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-9",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Assinale a alternativa que complete a frase de forma correta: A ________________ é o documento que é",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-6",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A definição a seguir, diz respeito a qual conceito importante ao trabalho do agente comunitário de s",
+      "drift": false
+    },
+    {
+      "slug": "fauel-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-4",
+      "family": "certo_errado",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "De acordo com Portaria GM/MS No 420/2022 que atualiza a lista nacional de notificação compulsória de",
+      "drift": false
+    },
+    {
+      "slug": "fauel-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-5",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Sobre conceitos relacionados a indicadores de saúde, assinale a alternativa que contenha a CORRETA a",
+      "drift": false
+    },
+    {
+      "slug": "fcm-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A sequência que apresenta corretamente apenas doenças de notificação compulsória está indicada em",
+      "drift": false
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780000630425-4",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A epidemiologia fornece subsídios para a compreensão dos padrões de saúde e doença em coletividades ",
+      "drift": false
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-3",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "Em determinada comunidade, observou-se aumento inesperado de novos casos de uma doença em período cu",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-9",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Assinale a alternativa que contém apenas doenças, agravos ou eventos de saúde pública que são de not",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-2",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação compulsória refere-se à comunicação obrigatória à autoridade de saúde sobre a ocorrênc",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-1",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Acerca da notificação compulsória de doenças, assinale a afirmativa correta.",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-6",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Diante da ocorrência de um caso suspeito ou confirmado de dengue , o profissional responsável deverá",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação compulsória relacionada a acidentes com ferroada de escorpião marrom, deve ser realiza",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-0",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Sobre a notificação compulsória de um caso suspeito de sarampo , assinale a afirmativa correta.",
+      "drift": false
+    },
+    {
+      "slug": "funatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-0",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Doenças de notificação compulsória têm a comunicação obrigatória à autoridade de saúde, sobre a ocor",
+      "drift": false
+    },
+    {
+      "slug": "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-3",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A Vigilância Epidemiológica tem por finalidade promover a detecção e prevenção de doenças e agravos ",
+      "drift": false
+    },
+    {
+      "slug": "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-4",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Assinale a alternativa que apresenta apenas doenças transmissíveis de notificação compulsória.",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-7",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "De acordo com a Portaria no 1.271, de 6 de junho de 2014, que define a Lista Nacional de Notificação",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-1",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "A hanseníase é uma doença infecciosa, crônica, que acomete, principalmente, a pele e os nervos perif",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-2",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A tuberculose é uma doença infectocontagiosa, milenarmente conhecida, mas ainda considerada um probl",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-3",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Uma das atribuições comuns a todos os membros que atuam nas equipes de atenção básica, incluindo o t",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-4",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A hanseníase é uma doença infecciosa, contagiosa, de evolução crônica, causada pela Mycobacterium le",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-7",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "De acordo com o Ministério da Saúde, são doenças que têm notificação compulsória semanal:",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-3",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "A respeito das dermatoses ocupacionais, analise as assertivas abaixo, assinalando V , se verdadeiras",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-0",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Um paciente de 30 anos dá entrada no pronto-socorro com diagnóstico médico confirmado de dengue grav",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-2",
+      "family": "certo_errado",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação compulsória é a comunicação obrigatória à autoridade de saúde, realizada pelos médicos",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-3",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Sobre a rotina do técnico de enfermagem referente à notificação compulsória de doenças, assinale a a",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-4",
+      "family": "certo_errado",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação compulsória de doenças e agravos, realizada por meio do Sistema de Informação de Agrav",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-8",
+      "family": "conceito",
+      "topic": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_cluster": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_branch_proposed": "epi_cadeia_transmissao",
+      "instruction_preview": "Doenças transmissíveis são manifestações clínicas causadas por bioagentes patogênicos, chamadas doen",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-8",
+      "family": "certo_errado",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "São doenças que requerem notificação compulsória, EXCETO :",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-4",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A constitui um processo contínuo e sistemático de coleta, consolidação, análise e disseminação de da",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-0",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação compulsória é a comunicação da ocorrência de determinada doença ou agravo à saúde, fei",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-2",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Sobre as doenças e agravos de notificação compulsória, assinale a alternativa que NÃO apresenta uma ",
+      "drift": false
+    },
+    {
+      "slug": "fundep-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-8",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "O conjunto de ações que proporciona o conhecimento, a detecção ou a prevenção de qualquer mudança no",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-4",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Epidemiologia é a ciência que estuda o processo saúde-doença na sociedade, analisando a distribuição",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-2",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "As ações voltadas ao conhecimento, detecção e prevenção de alterações nos fatores determinantes e co",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-0",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Dentre as opções citadas a seguir, assinale aquela que corresponde à taxa de incidência de febre ama",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-1",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "Analise o conceito a seguir: A é a ciência que estuda o processo saúde-doença na humanidade, bem com",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-7",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A letalidade em epidemiologia, mede a severidade de uma doença e é definida como a proporção de mort",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-8",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "A maioria das doenças é causada ou influenciada por fatores ambientais. O entendimento da maneira pe",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-9",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "O inquérito epidemiológico é um estudo seccional, geralmente do tipo amostral, levado a efeito quand",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Estudos epidemiológicos e sociológicos têm desempenhado um papel importante na identificação de epid",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-1",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A incidência na epidemiologia, indica o número de casos novos ocorridos em um certo período de tempo",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-2",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "Epidemia é quando uma doença apresenta um crescimento abrupto, além do que é esperado, já a pandemia",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-3",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "A relação dose-efeito proporciona valiosas informações para o planejamento de estudos epidemiológico",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-4",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "O potencial de disseminação de uma doença é expresso pela:",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-4",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Os indicadores de saúde são medidas sumarizadas que informam sobre a situação de saúde da população.",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-4",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "O termo __________ refere-se a uma doença habitualmente presente entre os membros de um determinado ",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-5",
+      "family": "conceito",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Para avaliar a eficiência de um programa de saúde, qual das seguintes medidas é mais adequada?",
+      "drift": true
+    },
+    {
+      "slug": "gama-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-3",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Em saúde coletiva, é crucial entender as diferenças entre eficácia, eficiência e efetividade para me",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-4",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "No contexto da saúde pública, o conceito de territorialização refere-se à/ao:",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-5",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Na Vigilância em Saúde, os conceitos e metodologias aplicados têm como objetivo a prevenção, control",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-6",
+      "family": "conceito",
+      "topic": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_cluster": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_branch_proposed": "epi_cadeia_transmissao",
+      "instruction_preview": "Sobre os elementos que compõem o processo saúde-doença, marque a alternativa correta :",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-3",
+      "family": "conceito",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Em relação à coleta de dados demográficos e socioeconômicos para planejamento em saúde, avalie as as",
+      "drift": true
+    },
+    {
+      "slug": "ibade-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-7",
+      "family": "conceito",
+      "topic": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_cluster": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_branch_proposed": "epi_cadeia_transmissao",
+      "instruction_preview": "Pensando na história natural da doença, o período compreendido entre a exposição ao agente causador ",
+      "drift": false
+    },
+    {
+      "slug": "ibfc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-2",
+      "family": "certo_errado",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação compulsória é a comunicação obrigatória à autoridade de saúde, realizada por médicos, ",
+      "drift": false
+    },
+    {
+      "slug": "idcap-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-0",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Quais são os componentes da vigilância em saúde? 4612) 4613) 4614) 4615) 4616)",
+      "drift": false
+    },
+    {
+      "slug": "idcap-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-1",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A vigilância epidemiológica tem como objetivo fornecer orientação técnica contínua aos profissionais",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-0",
+      "family": "certo_errado",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "O uso de larvicidas consiste em medida secundária ao controle mecânico e é indicado somente em locai",
+      "drift": true
+    },
+    {
+      "slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-1",
+      "family": "conceito",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Leia o enunciado e responda: É um conjunto de medidas que visam modificar as características ambient",
+      "drift": true
+    },
+    {
+      "slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968239687-7",
+      "family": "certo_errado",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "O uso de larvicidas consiste em medida secundária ao controle mecânico e é indicado somente em locai",
+      "drift": true
+    },
+    {
+      "slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968263411-0",
+      "family": "conceito",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Leia o enunciado e responda: É um conjunto de medidas que visam modificar as características ambient",
+      "drift": true
+    },
+    {
+      "slug": "idecan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1778712242196-3",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "A gestão do risco de desastres é um processo complexo que envolve o planejamento e a execução de açõ",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-4",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "João é técnico de enfermagem em uma Unidade Básica de Saúde e percebe um aumento significativo no nú",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-5",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Ana é técnica de enfermagem e atua na Vigilância Epidemiológica de seu município. Durante uma reuniã",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-6",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "Marcos é técnico de enfermagem em uma Unidade de Saúde e percebe que vários pacientes atendidos rece",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-8",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Durante a investigação de um surto de intoxicação alimentar em um evento de grande porte, a equipe d",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-9",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "As emergências em saúde pública, como epidemias e desastres naturais, exigem uma resposta coordenada",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "A Epidemiologia é uma ciência fundamental para o entendimento do processo saúde-doença na comunidade",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-1",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A aplicação da Epidemiologia na saúde pública é um dos pilares fundamentais para o desenvolvimento d",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-2",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A Vigilância Epidemiológica é um conjunto de ações que permite o monitoramento contínuo das condiçõe",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-3",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação de doenças e agravos à saúde é um dos principais instrumentos da Vigilância Epidemioló",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-4",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A vigilância epidemiológica é uma ferramenta essencial na prevenção e controle de doenças infecciosa",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-5",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Durante a investigação de surtos, assinale a alternativa que corretamente indica uma abordagem espec",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-6",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Sobre a epidemiologia, história natural e prevenção das doenças, três assuntos que estão intimamente",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-7",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "A Epidemiologia pode ser entendida como a ciência que estuda o processo saúde-doença em coletividade",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-8",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Assinale a afirmativa, a qual descreve o principal objetivo da vigilância sanitária.",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-9",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "O Levantamento Rápido de Índices para o Aedes aegypti — LIRAa consiste em",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066961947-9",
+      "family": "certo_errado",
+      "topic": "EXCETO / INCORRETA — epidemiologia",
+      "pedagogical_cluster": "EXCETO / INCORRETA — epidemiologia",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "O Levantamento de Índice Rápido de Infestação por Aedes aegypti (LIRAa) permite determinar com rapid",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066977710-0",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "As doenças de transmissões hídrica e alimentar, uma importante causa de morbidade e mortalidade em t",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-6",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A vigilância epidemiológica é fundamental para o controle de doenças infecciosas no Sistema Único de",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-4",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "O Programa Nacional de Controle da Dengue – PNCD, procura incorporar as lições das experiências naci",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712325916-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "O Brasil vivencia um processo acelerado de transição epidemiológica, caracterizado pela redução das ",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-8",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "As emergências em saúde pública exigem uma resposta rápida e coordenada para minimizar impactos na p",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778934900821-5",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Considerando as características epidemiológicas de cada situação, assinale o item que contempla corr",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778934900821-6",
+      "family": "certo_errado",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A Vigilância Epidemiológica tem por finalidade promover a detecção e prevenção de doenças e agravos ",
+      "drift": false
+    },
+    {
+      "slug": "ieses-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-3",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A vigilância epidemiológica desempenha um papel fundamental no controle de infecções hospitalares. A",
+      "drift": false
+    },
+    {
+      "slug": "ieses-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-4",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A epidemiologia é de grande importância para a área da saúde. Neste sentido, é importante conhecer a",
+      "drift": false
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-2",
+      "family": "conceito",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Região de Saúde é:",
+      "drift": true
+    },
+    {
+      "slug": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-7",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "Em um cenário de surto de gastroenterite viral em uma comunidade, o Técnico em Enfermagem tem papel ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-6",
+      "family": "certo_errado",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Todo caso suspeito ou confirmado de cólera deverá ser notificado de forma imediata (em até 24 horas)",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-1",
+      "family": "certo_errado",
+      "topic": "V/F — conceitos epidemiológicos",
+      "pedagogical_cluster": "V/F — conceitos epidemiológicos",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Julgue o item a seguir. Entende-se por vigilância sanitária um conjunto de ações que proporcionam o ",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-9",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Quanto aos indicadores de saúde, qual das alternativas abaixo descreve o indicador de Mortalidade?",
+      "drift": false
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Qual das seguintes doenças deve ser notificada às autoridades de saúde dentro do prazo de 24 horas a",
+      "drift": false
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-6",
+      "family": "protocolo",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Mulher de 18 anos compareceu à UPA com queixa de dor intensa no ombro e hematomas recentes no braço.",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-8",
+      "family": "vf",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Entende-se por vigilância epidemiológica um conjunto de ações que proporcionam o conhecimento, a det",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Tendo em vista que a notificação de doenças junto aos serviços de vigilância epidemiológica do munic",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A vigilância epidemiológica é uma das principais estratégias utilizadas na saúde pública para o cont",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-2",
+      "family": "certo_errado",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A Notificação Compulsória Imediata (NCI), uma comunicação oficial da ocorrência de casos confirmados",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-0",
+      "family": "conceito",
+      "topic": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_cluster": "Cadeia de transmissão / períodos / histórico natural",
+      "pedagogical_branch_proposed": "epi_cadeia_transmissao",
+      "instruction_preview": "A identificação dos agentes biológicos mais prováveis em função da localização geográfica e da carac",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-1",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "São consideradas doenças de notificação compulsória:",
+      "drift": false
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-3",
+      "family": "certo_errado",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Em epidemiologia, o termo incidência refere-se ao número total de casos, novos e antigos, de uma det",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-1",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Vigilância em Saúde trata-se de um processo contínuo e sistemático de coleta, consolidação, análise ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-6",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A Política Nacional de Vigilância em Saúde é definida como uma política pública de Estado e função e",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-6",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A ocorrência de uma doença de notificação compulsória imediata, por seu poder de transmissibilidade ",
+      "drift": false
+    },
+    {
+      "slug": "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-3",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "As definições de epidemias estão ligadas a forma com que a doença ou agravo dissemina-se pela popula",
+      "drift": false
+    },
+    {
+      "slug": "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-4",
+      "family": "conceito",
+      "topic": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_cluster": "Ocorrência — endemia, epidemia, pandemia, surto",
+      "pedagogical_branch_proposed": "epi_ocorrencia_agravos",
+      "instruction_preview": "O que confere o estado de Pandemia a uma doença ou agravo, se relaciona a forma com que países fazem",
+      "drift": false
+    },
+    {
+      "slug": "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação de determinadas doenças é uma forma de contabilizar e estrategiar as medidas de contro",
+      "drift": false
+    },
+    {
+      "slug": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Diversos tipos de inseticidas estão em uso para programas de controle de vetores. Em relação ao cont",
+      "drift": false
+    },
+    {
+      "slug": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-1",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Para o controle do Aedes aegypti, os agentes de combate a endemias, devem conhecer as fases evolutiv",
+      "drift": false
+    },
+    {
+      "slug": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-3",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Leia o texto e responda a questão. Os agentes de endemias da cidade X, estão fazendo um programa de ",
+      "drift": false
+    },
+    {
+      "slug": "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-7",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "É a comunicação da ocorrência de determinada doença ou agravo à saúde, feita à autoridade sanitária ",
+      "drift": false
+    },
+    {
+      "slug": "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-0",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Nos termos da Portaria no 204/16, que define a Lista Nacional de Notificação Compulsória de doenças,",
+      "drift": false
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-2",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Modelos assistenciais são a forma como a assistência à saúde é organizada. Esses modelos costumam va",
+      "drift": false
+    },
+    {
+      "slug": "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-4",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Assinale a alternativa que não apresenta uma doença ou agravo de notificação compulsória imediata:",
+      "drift": false
+    },
+    {
+      "slug": "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-5",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "É um estudo seccional, geralmente do tipo amostral, levado a efeito quando as informações existentes",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-5",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "As doenças reemergentes são conhecidas há algum tempo, estavam controladas, mas retornaram causando ",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-7",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Sabe-se que a vigilância em saúde é o processo sistemático de coleta, consolidação e disseminação de",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-8",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "A OPAS - Organização Pan-Americana da Saúde, é o órgão responsável por mensurar dados e incidências ",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-6",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Sobre Notificação Compulsória, assinale a alternativa correta.",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-2",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Os indicadores de saúde são medidas que contêm informações relevantes sobre determinados atributos, ",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-3",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Sobre a notificação compulsória de doenças, analisar os itens abaixo: I . Para fins de notificação c",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-4",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Várias medidas podem ser desenvolvidas para o controle de pragas, as quais tanto podem ser usadas em",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-5",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "De acordo com o Controle de Vetores da Febre Amarela e da Dengue, sobre o combate ao Aedes aegypti, ",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-1",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Em conformidade com a Portaria de Consolidação no 4/2017, são considerados doenças, agravos e evento",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-8",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Considerando-se a Portaria de Consolidação no 4/2017, sobre a notificação compulsória de doenças, ag",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-4",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Assinalar a alternativa que apresenta a medida utilizada para expressar o número de casos novos de u",
+      "drift": false
+    },
+    {
+      "slug": "quadrix-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-0",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação compulsória é a comunicação obrigatória acerca de doença, agravo ou evento de saúde pú",
+      "drift": false
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-8",
+      "family": "certo_errado",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "No âmbito da saúde coletiva, as doenças de notificação compulsória (DNC) representam condições de el",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-8",
+      "family": "conceito",
+      "topic": "Atenção básica (drift?)",
+      "pedagogical_cluster": "Atenção básica (drift?)",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "A Norma Operacional Básica do SUS de 1996 (NOB/SUS 96) trouxe avanços importantes na gestão do Siste",
+      "drift": true
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-7",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Uma técnica de enfermagem em uma Unidade Básica de Saúde (UBS) atende um paciente de 25 anos com feb",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-7",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação compulsória deve ser realizada por meio do Sistema de Informação de Agravos de Notific",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-7",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A notificação compulsória, no contexto da vigilância epidemiológica em saúde, é uma prática essencia",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-8",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Em uma unidade de saúde de uma cidade de médio porte, um enfermeiro está conduzindo um estudo epidem",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "O tempo decorrido entre a infecção e o aparecimento ou a detecção de um marcador da infecção é chama",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-1",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Segundo o Sistema de Informação de Agravos de Notificação (SINAN), os pacientes vítimas de acidentes",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-2",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Os casos de óbito com suspeita de doença pelo vírus da Zika, de acordo com a lista compulsória de do",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-3",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A vigilância que deve ser aplicada para o controle das doenças transmissíveis, através da observação",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-7",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Assinale o conceito epidemiológico que corresponde à medida de eventos existentes em uma população e",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-2",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "\"Comportamento das doenças numa população exposta ao adoecimento, cujos índices permitem conhecer qu",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-1",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Segundo Rouquayrol e Goldbaum (2003), a epidemiologia é definida como a ciência que estuda o process",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778967504475-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Em relação a visita domiciliar e a técnica de pesquisa larvária, marque a alternativa CORRETA:",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-6",
+      "family": "vf",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "A identificação de um caso de tuberculose pulmonar em uma unidade de saúde exige ação imediata. O en",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-9",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Acerca do uso de larvicidas e inseticidas no controle de endemias, bem como das normas de segurança ",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Em relação aos insetos, é CORRETO afirmar que:",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-1",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Marque a alternativa que apresenta uma doença de notificação compulsória imediata:",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-2",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Sobre a vigilância epidemiológica, julgue as alternativas abaixo: I. Em períodos não epidêmicos a vi",
+      "drift": false
+    },
+    {
+      "slug": "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-4",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "A definição \"Conjunto de ações que proporciona o conhecimento, a detecção ou prevenção de qualquer m",
+      "drift": false
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-6",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Sobre a vigilância epidemiológica, analise as assertivas e assinale a alternativa correta. I. A vigi",
+      "drift": false
+    },
+    {
+      "slug": "univali-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-0",
+      "family": "conceito",
+      "topic": "Epidemiologia — conceito geral",
+      "pedagogical_cluster": "Epidemiologia — conceito geral",
+      "pedagogical_branch_proposed": "epi_generico",
+      "instruction_preview": "Com base na subnotificação de doenças profissionais como um problema grave, assinale a alternativa C",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-9",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Em relação às doenças de notificação compulsória, é correto afirmar que",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-0",
+      "family": "conceito",
+      "topic": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "pedagogical_branch_proposed": "epi_indicadores",
+      "instruction_preview": "Durante uma reunião dos profissionais que compõem o Serviço Especializado em Engenharia de Segurança",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "No atendimento da demanda espontânea de uma UBS foi identificado um caso suspeito de tuberculose pul",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-6",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "O auxiliar de enfermagem, Pedro, trabalha em uma unidade de saúde e realiza um teste rápido de covid",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-5",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Em relação às doenças de notificação compulsória, deve-se notificar um caso suspeito de meningite ba",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-4",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Em caso de doença meningocócica, no que diz respeito às ações de vigilância epidemiológica, é corret",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-8",
+      "family": "conceito",
+      "topic": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_cluster": "Vigilância epidemiológica — conceito e ações",
+      "pedagogical_branch_proposed": "epi_vigilancia_acoes",
+      "instruction_preview": "Um dos objetivos da vigilância epidemiológica dos casos de covid-19 é monitorar e descrever o padrão",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-3",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "De acordo com a Portaria no 264 do Ministério da Saúde que se refere a lista nacional de notificação",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-7",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Conforme a Lista Nacional de Notificação Compulsória de Doenças, Agravos e Eventos de Saúde Pública,",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "De acordo com a Lista Nacional de devem ser notificados semanalmente, entre outros itens, os casos s",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-3",
+      "family": "conceito",
+      "topic": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_cluster": "Notificação compulsória / SINAN / lista nacional",
+      "pedagogical_branch_proposed": "epi_notificacao_compulsoria",
+      "instruction_preview": "Notificação compulsória refere-se à comunicação às autoridades sanitárias, visando a investigação e ",
+      "drift": false
+    }
+  ]
+}

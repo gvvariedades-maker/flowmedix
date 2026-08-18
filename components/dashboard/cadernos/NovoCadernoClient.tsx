@@ -1,10 +1,11 @@
 ﻿'use client';
 
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import {
+  AlertTriangle,
   ArrowLeft,
   ArrowRight,
   Check,
@@ -22,6 +23,11 @@ import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { createNotebookWithItemsCompensation } from '@/lib/cadernos/createNotebookWithItems';
 import { requestNotebookActivationRefresh } from '@/lib/cadernos/notebookActivationBridge';
 import {
+  clearDesempenhoSelecao,
+  readDesempenhoSelecao,
+} from '@/lib/cadernos/desempenhoSelecao';
+import {
+  buildDesempenhoPreset,
   buildNotebookTitleSuggestions,
   buildQuickAddPreset,
   persistWizardPreset,
@@ -51,6 +57,8 @@ import { cn } from '@/lib/utils';
 
 export type NovoCadernoContext = {
   wizard: boolean;
+  /** `desempenho` = assuntos escolhidos no hub; lote estrito. */
+  origem?: 'edital' | 'desempenho';
   edital: NotebookEditalContext;
   modulos: ModuloTemplateRow[];
 };
@@ -78,25 +86,31 @@ const wizardStepShellClass =
 const wizardStepScrollClass =
   'max-md:min-h-0 max-md:flex-1 max-md:overflow-y-auto max-md:overscroll-y-contain';
 
-function WizardProgress({ step }: { step: WizardStep }) {
-  const labels: Record<WizardStep, string> = {
+function WizardProgress({ step, total = 3 }: { step: WizardStep; total?: 2 | 3 }) {
+  const labels3: Record<WizardStep, string> = {
     1: 'Dados do caderno',
     2: 'Selecionar questões',
     3: 'Revisar e criar',
   };
-  const width = step === 1 ? '33%' : step === 2 ? '66%' : '100%';
+  const labels2: Record<1 | 2, string> = {
+    1: 'Nome do caderno',
+    2: 'Montar conteúdo',
+  };
+  const width =
+    total === 2 ? (step === 1 ? '50%' : '100%') : step === 1 ? '33%' : step === 2 ? '66%' : '100%';
+  const label = total === 2 ? labels2[step === 3 ? 2 : step] : labels3[step];
 
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-slate-500">
         <span>
-          {step} de 3
+          {total === 2 && step === 3 ? 2 : step} de {total}
         </span>
-        <span>{labels[step]}</span>
+        <span>{label}</span>
       </div>
       <div className="h-1.5 overflow-hidden rounded-full bg-slate-100" aria-hidden>
         <motion.div
-          className="h-full rounded-full bg-[#22c55e]"
+          className="h-full rounded-full bg-[var(--color-success)]"
           initial={false}
           animate={{ width }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
@@ -109,15 +123,35 @@ function WizardProgress({ step }: { step: WizardStep }) {
 function WizardNovoCadernoForm({
   edital,
   modulos,
+  origem = 'edital',
 }: {
   edital: NotebookEditalContext;
   modulos: ModuloTemplateRow[];
+  origem?: 'edital' | 'desempenho';
 }) {
   const router = useRouter();
   const reduceMotion = useReducedMotion();
   const titleSuggestions = useMemo(() => buildNotebookTitleSuggestions(edital), [edital]);
-  const preset = useMemo(() => buildQuickAddPreset(edital, modulos), [edital, modulos]);
+
+  const [selecaoDesempenho, setSelecaoDesempenho] = useState<string[] | null>(null);
+  useEffect(() => {
+    if (origem !== 'desempenho') return;
+    // sessionStorage só existe após o mount; ler no effect evita mismatch de hidratação.
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- leitura única de store externo
+    setSelecaoDesempenho(readDesempenhoSelecao());
+  }, [origem]);
+
+  const modoDesempenho = origem === 'desempenho';
+  const preset = useMemo(() => {
+    if (modoDesempenho) {
+      return buildDesempenhoPreset(selecaoDesempenho ?? [], modulos);
+    }
+    return buildQuickAddPreset(edital, modulos);
+  }, [edital, modoDesempenho, modulos, selecaoDesempenho]);
   const presetBatch = useMemo(() => pickWizardBatchModulos(modulos, preset), [modulos, preset]);
+  const selecaoPerdida = modoDesempenho && selecaoDesempenho !== null && selecaoDesempenho.length === 0;
+  const semQuestoesNaSelecao =
+    modoDesempenho && !selecaoPerdida && (selecaoDesempenho?.length ?? 0) > 0 && presetBatch.length === 0;
   const moduloBySlug = useMemo(() => {
     const map = new Map<string, ModuloTemplateRow>();
     for (const m of modulos) map.set(m.modulo_slug, m);
@@ -225,13 +259,28 @@ function WizardNovoCadernoForm({
       setStep(1);
       return;
     }
+    if (modoDesempenho && selecaoDesempenho === null) {
+      setError('Ainda estamos lendo os assuntos marcados. Aguarde um instante.');
+      return;
+    }
+    if (selecaoPerdida) {
+      setError('Não encontramos os assuntos selecionados. Volte ao seu desempenho e marque de novo.');
+      return;
+    }
+    if (semQuestoesNaSelecao) {
+      setError('Nenhuma questão liberada nos assuntos escolhidos. Escolha outro assunto no hub.');
+      return;
+    }
 
     submittingRef.current = true;
     setSubmitting(true);
     setError('');
     setStatusMessage('Criando caderno…');
 
-    const items = [...selectedSlugs].map((slug) => {
+    const slugsForCreate = modoDesempenho
+      ? presetBatch.map((m) => m.modulo_slug)
+      : [...selectedSlugs];
+    const items = slugsForCreate.map((slug) => {
       const m = moduloBySlug.get(slug);
       return {
         modulo_slug: slug,
@@ -262,6 +311,7 @@ function WizardNovoCadernoForm({
       }
 
       persistWizardPreset(preset);
+      if (modoDesempenho) clearDesempenhoSelecao();
       setStatusMessage('Caderno criado com sucesso.');
       requestNotebookActivationRefresh();
       router.push(
@@ -276,7 +326,19 @@ function WizardNovoCadernoForm({
       submittingRef.current = false;
       setSubmitting(false);
     }
-  }, [description, moduloBySlug, preset, router, selectedSlugs, title]);
+  }, [
+    description,
+    modoDesempenho,
+    moduloBySlug,
+    preset,
+    presetBatch,
+    router,
+    selectedSlugs,
+    selecaoDesempenho,
+    selecaoPerdida,
+    semQuestoesNaSelecao,
+    title,
+  ]);
 
   const stepMotion = reduceMotion
     ? { initial: false as const, animate: { opacity: 1 }, exit: { opacity: 1 } }
@@ -301,11 +363,13 @@ function WizardNovoCadernoForm({
             <div className="min-w-0 flex-1">
               <h2 className="text-xl font-bold text-slate-900">Monte seu caderno</h2>
               <p className="mt-1 text-sm text-slate-500">
-                Em 3 passos: nomeie, escolha as questões e confirme antes de criar.
+                {modoDesempenho
+                  ? 'Em 2 passos você nomeia e recebe só questões dos assuntos que marcou no seu desempenho.'
+                  : 'Em 3 passos: nomeie, escolha as questões e confirme antes de criar.'}
               </p>
             </div>
           </div>
-          <WizardProgress step={step} />
+          <WizardProgress step={step} total={modoDesempenho ? 2 : 3} />
         </div>
 
         <div className="flex min-h-0 flex-1 flex-col max-md:overflow-hidden">
@@ -379,7 +443,9 @@ function WizardNovoCadernoForm({
                 </div>
               </div>
 
-              <PresetHint preset={preset} batchCount={presetBatch.length} />
+              {!modoDesempenho ? (
+                <PresetHint preset={preset} batchCount={presetBatch.length} />
+              ) : null}
 
               {error ? (
                 <p className="text-sm font-medium text-red-600" role="alert">
@@ -400,7 +466,76 @@ function WizardNovoCadernoForm({
             </motion.div>
           ) : null}
 
-          {step === 2 ? (
+          {step === 2 && modoDesempenho ? (
+            <motion.div
+              key="step-2-desempenho"
+              {...(stepMotion ?? {
+                initial: { opacity: 0, x: 12 },
+                animate: { opacity: 1, x: 0 },
+                exit: { opacity: 0, x: -12 },
+                transition: { duration: 0.2 },
+              })}
+              className={cn(wizardStepShellClass, 'space-y-5 max-md:space-y-0')}
+            >
+              <div className={cn(wizardStepScrollClass, 'space-y-5 max-md:pr-0.5')}>
+                {selecaoPerdida ? (
+                  <SelecaoPerdidaAviso />
+                ) : (
+                  <PresetPreview
+                    preset={preset}
+                    batchCount={presetBatch.length}
+                    carregandoSelecao={selecaoDesempenho === null}
+                  />
+                )}
+                {error ? (
+                  <p className="text-sm font-medium text-red-600" role="alert">
+                    {error}
+                  </p>
+                ) : null}
+              </div>
+              <div className={wizardStepFooterClass('between')}>
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={submitting}
+                  onClick={() => {
+                    setError('');
+                    setStep(1);
+                  }}
+                  className={ctaOutline}
+                >
+                  <ArrowLeft className="h-4 w-4" aria-hidden />
+                  Voltar
+                </Button>
+                <button
+                  type="button"
+                  disabled={
+                    submitting ||
+                    selecaoDesempenho === null ||
+                    selecaoPerdida ||
+                    semQuestoesNaSelecao
+                  }
+                  onClick={() => void handleCreate()}
+                  className={ctaPrimary}
+                  aria-busy={submitting}
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="h-4 w-4 shrink-0 animate-spin" aria-hidden />
+                      Montando…
+                    </>
+                  ) : (
+                    <>
+                      <CheckCircle2 className="h-4 w-4" aria-hidden />
+                      Criar e adicionar questões
+                    </>
+                  )}
+                </button>
+              </div>
+            </motion.div>
+          ) : null}
+
+          {step === 2 && !modoDesempenho ? (
             <motion.div
               key="step-2"
               {...(stepMotion ?? {
@@ -575,7 +710,7 @@ function WizardNovoCadernoForm({
             </motion.div>
           ) : null}
 
-          {step === 3 ? (
+          {step === 3 && !modoDesempenho ? (
             <motion.div
               key="step-3"
               {...(stepMotion ?? {
@@ -735,6 +870,93 @@ function PresetHint({ preset, batchCount }: { preset: QuickAddPreset; batchCount
   );
 }
 
+/** Seleção do hub não chegou (aba nova, storage limpo): não inventar lote. */
+function SelecaoPerdidaAviso() {
+  return (
+    <div
+      role="alert"
+      className="space-y-3 rounded-2xl border border-[var(--color-warning)]/40 bg-[var(--color-warning-dim)] p-4"
+    >
+      <p className="flex items-center gap-2 text-sm font-bold text-slate-900">
+        <AlertTriangle className="h-4 w-4 text-[var(--color-warning-text)]" aria-hidden />
+        Não encontramos os assuntos selecionados
+      </p>
+      <p className="text-sm text-slate-600">
+        A seleção vale só na aba onde você marcou os assuntos. Volte ao seu desempenho e marque
+        novamente — assim o caderno recebe exatamente o que você escolheu.
+      </p>
+      <Link
+        href="/desempenho"
+        className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-900"
+      >
+        Voltar ao meu desempenho
+      </Link>
+    </div>
+  );
+}
+
+function PresetPreview({
+  preset,
+  batchCount,
+  carregandoSelecao = false,
+}: {
+  preset: QuickAddPreset;
+  batchCount: number;
+  carregandoSelecao?: boolean;
+}) {
+  const estrito = preset.strict === true;
+
+  if (carregandoSelecao) {
+    return (
+      <p className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-500">
+        Lendo os assuntos que você marcou…
+      </p>
+    );
+  }
+
+  return (
+    <div className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+      {estrito ? (
+        <p className="text-sm font-bold text-slate-900">Assuntos escolhidos no seu desempenho</p>
+      ) : preset.banca ? (
+        <p className="text-sm font-bold text-slate-900">
+          Sua banca: <span className="text-[var(--color-success-text)]">{preset.banca}</span>
+        </p>
+      ) : (
+        <p className="text-sm font-bold text-slate-900">Sugestões do catálogo AVANT enf</p>
+      )}
+
+      {preset.assuntosTop3.length > 0 ? (
+        <ul className="space-y-2">
+          {preset.assuntosTop3.map((assunto) => (
+            <li
+              key={assunto.titulo}
+              className="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3 py-2.5"
+            >
+              <span className="min-w-0 truncate text-sm font-semibold text-slate-700">{assunto.titulo}</span>
+              <span className="shrink-0 text-xs font-bold text-slate-500">{assunto.count} questões</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-sm text-slate-500">
+          Nenhum assunto sugerido no momento — você poderá buscar questões depois.
+        </p>
+      )}
+
+      <p className="text-xs text-slate-500">
+        {estrito
+          ? batchCount > 0
+            ? `Vamos adicionar ${batchCount} ${batchCount === 1 ? 'questão' : 'questões'} — só desses assuntos, sem completar com outros.`
+            : 'Nenhuma questão liberada nesses assuntos. Escolha outro assunto no seu desempenho.'
+          : batchCount > 0
+            ? `Vamos adicionar até ${Math.min(batchCount, preset.suggestedBatchSize)} questões com foco nesses assuntos.`
+            : 'O caderno será criado vazio; adicione questões na próxima tela.'}
+      </p>
+    </div>
+  );
+}
+
 export default function NovoCadernoClient({ context }: { context: NovoCadernoContext }) {
   const { pageBottomPadding } = useDashboardBottomInset('default');
 
@@ -766,7 +988,11 @@ export default function NovoCadernoClient({ context }: { context: NovoCadernoCon
       </div>
 
       <div className="mx-auto flex min-h-0 w-full max-w-4xl flex-1 flex-col px-4 py-6 sm:px-6 md:px-10 md:pt-8 max-md:h-full max-md:max-h-full max-md:overflow-hidden max-md:py-4">
-        <WizardNovoCadernoForm edital={context.edital} modulos={context.modulos} />
+        <WizardNovoCadernoForm
+          edital={context.edital}
+          modulos={context.modulos}
+          origem={context.origem}
+        />
       </div>
     </div>
   );

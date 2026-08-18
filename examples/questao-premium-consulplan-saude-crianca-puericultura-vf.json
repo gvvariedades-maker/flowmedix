@@ -33,22 +33,60 @@
   "question_data": {
     "instruction": "Sobre puericultura na Atenção Básica, analise as afirmativas.\n\nI - A primeira visita domiciliar ao recém-nascido deve ocorrer até o 5º dia de vida.\nII - A caderneta da criança orienta o calendário de consultas e vacinas.\nIII - Sinais de alerta não precisam ser abordados na consulta de rotina.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "meta": { "subtopico": "Saúde da Criança" },
+      "meta": {
+        "subtopico": "Saúde da Criança"
+      },
       "items": [
-        { "label": "5º dia", "detail": "Visita domiciliar ao RN — estratificação de risco.", "icon": "Home" },
-        { "label": "Caderneta", "detail": "Registro de crescimento, vacinas e orientações.", "icon": "BookOpen" },
-        { "label": "Consultas", "detail": "Calendário de puericultura na AB.", "icon": "Calendar" },
-        { "label": "Sinais de alerta", "detail": "Orientar família sobre quando buscar urgência.", "icon": "AlertTriangle" }
+        {
+          "label": "5º dia",
+          "detail": "Visita domiciliar ao RN — estratificação de risco.",
+          "icon": "Home"
+        },
+        {
+          "label": "Caderneta",
+          "detail": "Registro de crescimento, vacinas e orientações.",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "Consultas",
+          "detail": "Calendário de puericultura na AB.",
+          "icon": "Calendar"
+        },
+        {
+          "label": "Sinais de alerta",
+          "detail": "Orientar família sobre quando buscar urgência.",
+          "icon": "AlertTriangle"
+        }
       ],
       "footer_rule": "Visita 5º dia + caderneta"
     },
@@ -56,9 +94,21 @@
       "type": "golden_rule",
       "content": "PUERICULTURA",
       "rows": [
-        { "label": "Visita 5º dia", "value": "Até o 5º dia de vida", "badge": "hot" },
-        { "label": "Caderneta", "value": "Calendário consultas/vacinas", "badge": "ok" },
-        { "label": "Ignorar alertas", "value": "Falso — III incorreta", "badge": "warn" }
+        {
+          "label": "Visita 5º dia",
+          "value": "Até o 5º dia de vida",
+          "badge": "hot"
+        },
+        {
+          "label": "Caderneta",
+          "value": "Calendário consultas/vacinas",
+          "badge": "ok"
+        },
+        {
+          "label": "Ignorar alertas",
+          "value": "III incorreta",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "III nega sinais de alerta"
     },
@@ -78,9 +128,21 @@
       "bullet_style": "x_icon",
       "content": "PEGADINHAS — PUERICULTURA",
       "items": [
-        { "label": "Visita tardia", "detail": "I fixa 5º dia.", "correct": "Visita domiciliar até o 5º dia." },
-        { "label": "Sem caderneta", "detail": "II valoriza registro.", "correct": "Usar caderneta da criança." },
-        { "label": "Rotina sem alertas", "detail": "III é falsa.", "correct": "Abordar sinais de alerta sempre." }
+        {
+          "label": "Visita tardia",
+          "detail": "I fixa 5º dia.",
+          "correct": "Visita domiciliar até o 5º dia."
+        },
+        {
+          "label": "Sem caderneta",
+          "detail": "II valoriza registro.",
+          "correct": "Usar caderneta da criança."
+        },
+        {
+          "label": "Rotina sem alertas",
+          "detail": "III é falsa.",
+          "correct": "Abordar sinais de alerta sempre."
+        }
       ],
       "footer_rule": "AB: visita precoce + educação"
     }

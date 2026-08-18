@@ -1,0 +1,11 @@
+{
+  "measuredAt": "2026-08-17T19:55:12.726Z",
+  "ungatedCount": 5647,
+  "gatedCount": 5476,
+  "visibleByFind": 5476,
+  "hiddenByFind": 171,
+  "mismatch": 0,
+  "firstMismatch": null,
+  "gatedMatchesIndex": true,
+  "gatedIdsHash": "99125dd9f5393ec538e5039daa2434acdd11da42e17947ca1a88ef0b1c14d331"
+}

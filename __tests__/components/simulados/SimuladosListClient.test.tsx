@@ -18,6 +18,15 @@ const openLivre = {
   session_kind: 'livre' as const,
 };
 
+const openTreinoLegado = {
+  id: '33333333-3333-3333-3333-333333333333',
+  total_questoes: 10,
+  modo: 'treino' as const,
+  titulo: '',
+  created_at: '2026-06-18T10:00:00.000Z',
+  session_kind: 'livre' as const,
+};
+
 const recentLivre = {
   id: '22222222-2222-2222-2222-222222222222',
   status: 'concluido',
@@ -30,23 +39,45 @@ const recentLivre = {
   session_kind: 'livre' as const,
 };
 
+const recentTreinoLegado = {
+  id: '44444444-4444-4444-4444-444444444444',
+  status: 'concluido',
+  modo: 'treino' as const,
+  titulo: '',
+  total_questoes: 15,
+  percentual_acerto: 60,
+  created_at: '2026-06-16T10:00:00.000Z',
+  concluida_em: '2026-06-16T11:00:00.000Z',
+  session_kind: 'livre' as const,
+};
+
 describe('SimuladosListClient — simulados livres', () => {
-  it('exibe CTA Continuar simulado para sessão livre em andamento', () => {
+  it('exibe CTA Continuar simulado para sessão livre em andamento sem badge de modo', () => {
     render(<SimuladosListClient openSession={openLivre} recentSessions={[]} />);
 
-    expect(screen.getByText('Prova')).toBeInTheDocument();
+    expect(screen.getByText('Prova Urgências')).toBeInTheDocument();
+    expect(screen.queryByText('Treino')).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Continuar simulado' })).toHaveAttribute(
       'href',
       `/simulados/${openLivre.id}`,
     );
   });
 
-  it('exibe badge Prova na lista recente', () => {
+  it('não exibe badge Treino para sessão prova na lista recente', () => {
     render(<SimuladosListClient openSession={null} recentSessions={[recentLivre]} />);
 
-    expect(screen.getByText('Prova')).toBeInTheDocument();
+    expect(screen.getByText('Prova Farmacologia')).toBeInTheDocument();
+    expect(screen.queryByText('Treino')).not.toBeInTheDocument();
     expect(screen.queryByText('Missão')).not.toBeInTheDocument();
     expect(screen.queryByText('Diagnóstico')).not.toBeInTheDocument();
+  });
+
+  it('exibe badge Treino só para sessão livre legada', () => {
+    render(
+      <SimuladosListClient openSession={openTreinoLegado} recentSessions={[recentTreinoLegado]} />,
+    );
+
+    expect(screen.getAllByText('Treino')).toHaveLength(2);
   });
 
   it('link para missão da semana no header', () => {

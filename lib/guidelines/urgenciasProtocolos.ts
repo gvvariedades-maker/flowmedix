@@ -1,16 +1,16 @@
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
- * Protocolos clínicos de urgência — SBV/SAMU MS + alinhamento AHA/ILCOR 2020.
+ * Protocolos clínicos de urgência — SBV/SAMU MS + alinhamento AHA/ILCOR 2025.
  * Complementa URGENCIAS_RCP_SBV (núcleo RCP/DEA) com trauma, triagem, anafilaxia e pegadinhas de prova.
  * Fonte: https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf
  */
 export const URGENCIAS_PROTOCOLOS_EMERGENCIA: GuidelineTable = {
   id: 'urgencias-protocolos-emergencia-ms',
-  snapshot: 'Protocolos emergência — MS SAMU 192 / AHA 2020',
+  snapshot: 'Protocolos emergência — MS SAMU 192 / AHA 2025',
   issuer: 'Ministério da Saúde',
   title: 'Urgências e emergências — trauma, triagem e condutas específicas',
-  year: 2020,
+  year: 2025,
   url: 'https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf',
   entries: [
     {

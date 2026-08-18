@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:59:33.015Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g22",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-7",
+    "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-0",
+    "lj-assessoria-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-2",
+    "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-4",
+    "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-5",
+    "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-5",
+    "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-7",
+    "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

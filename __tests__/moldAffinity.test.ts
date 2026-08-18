@@ -59,7 +59,7 @@ describe('moldAffinity', () => {
       ).toBe(true);
     });
 
-    it('rejeita adolescent-privacy-curtain para puberdade sem vocabulário de ética', () => {
+    it('rejeita adolescent-privacy-curtain (legado) para puberdade sem vocabulário de ética', () => {
       const slide = {
         items: [
           { label: 'Puberdade', detail: 'Marcos de desenvolvimento das mamas' },
@@ -73,6 +73,116 @@ describe('moldAffinity', () => {
           pedagogicalBranch: 'adolescente_desenvolvimento',
         }),
       ).toBe(false);
+    });
+
+    it('aceita adolescent-violence-deck para violência/proteção', () => {
+      const slide = {
+        items: [
+          { label: 'Acolher', detail: 'Acolhimento sem revitimização', icon: 'Heart' },
+          { label: 'Proteger', detail: 'Rede de proteção e Conselho Tutelar', icon: 'Shield' },
+          { label: 'Notificar', detail: 'Notificação compulsória SINAN', icon: 'Bell' },
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-violence-deck', slide, {
+          familyId: 'protocolo',
+          subtopico,
+          pedagogicalBranch: 'adolescente_violencia_protecao',
+        }),
+      ).toBe(true);
+    });
+
+    it('aceita adolescent-violence-timeline para eliminação de alternativas', () => {
+      const slide = {
+        type: 'logic_flow',
+        steps: [
+          'Comando: afirmativa correta sobre violência sexual',
+          'A: nega notificação compulsória → elimina',
+          'C: residência como principal espaço → mantém',
+          'Marcar C.',
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-violence-timeline', slide, {
+          familyId: 'conceito',
+          subtopico,
+          pedagogicalBranch: 'adolescente_violencia_protecao',
+        }),
+      ).toBe(true);
+    });
+
+    it('aceita adolescent-mental-step-trap para saúde mental', () => {
+      const slide = {
+        content: 'Pegadinhas — transtorno alimentar',
+        items: [
+          {
+            label: 'A — I falsa',
+            detail: 'Nega anorexia apesar de IMC baixo.',
+            correct: 'I é verdadeira: restrição + peso baixo + distorção.',
+          },
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-mental-step-trap', slide, {
+          familyId: 'conceito',
+          subtopico,
+          pedagogicalBranch: 'adolescente_saude_mental',
+        }),
+      ).toBe(true);
+    });
+
+    it('aceita pni-exceto-isolate-board para INCORRETA vacinal (Onda 3)', () => {
+      const slide = {
+        steps: [
+          'Comando: INCORRETA — vigilância da raiva',
+          'Manter: caso confirmado = laboratório',
+          'Exceção: definição estreita demais',
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('pni-exceto-isolate-board', slide, {
+          familyId: 'certo_errado',
+          subtopico: 'Imunização',
+          pedagogicalBranch: 'imunizacao_exceto',
+        }),
+      ).toBe(true);
+    });
+
+    it('rejeita pni-exceto-compare fora do ramo imunizacao_exceto', () => {
+      const slide = {
+        content: 'Pegadinhas',
+        items: [{ label: 'A', detail: 'x', correct: 'Exceção incorreta' }],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('pni-exceto-compare', slide, {
+          familyId: 'certo_errado',
+          subtopico: 'Imunização',
+          pedagogicalBranch: 'imunizacao_calendario',
+        }),
+      ).toBe(false);
+    });
+
+    it('puberdade no ramo desenvolvimento usa o pacote dev, não o glanceable de ética', () => {
+      const slide = {
+        items: [
+          { label: 'Puberdade', detail: 'Marcos Tanner e metamorfose física', icon: 'User' },
+          { label: 'Menarca', detail: 'Evento de desenvolvimento', icon: 'Calendar' },
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-care-pillars-deck', slide, {
+          familyId: 'certo_errado',
+          subtopico,
+          pedagogicalBranch: 'adolescente_desenvolvimento',
+        }),
+      ).toBe(false);
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-dev-pair-rail', slide, {
+          familyId: 'certo_errado',
+          subtopico,
+          pedagogicalBranch: 'adolescente_desenvolvimento',
+        }),
+      ).toBe(true);
     });
 
     it('aceita adolescent-growth-z-rail para escore Z + ramo antropometria', () => {

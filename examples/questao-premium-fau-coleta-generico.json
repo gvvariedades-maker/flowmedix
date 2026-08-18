@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "banca": "FAU Unicentro",
+    "prova": "TEnf (Pref Rebouças)",
+    "orgao": "Pref Rebouças",
+    "ano": "2022",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Coleta de Exames Laboratoriais",
+    "pedagogical_branch": "coleta_generico",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-05",
+      "reviewer": "agent:golden-anchor",
+      "guideline_snapshot": "Potter 11ª ed. / SBPT — gasometria arterial: pH, PaO2, PaCO2, HCO3; punção arterial para gases",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "potter-gasometria-11ed",
+        "tier": "B",
+        "issuer": "Elsevier / Potter & Perry",
+        "title": "Fundamentos de Enfermagem — Gasometria e oxigenação",
+        "year": 2024,
+        "covers": [
+          "gasometria arterial",
+          "parâmetros pH PaO2 PaCO2"
+        ]
+      },
+      {
+        "id": "sbpt-ventilacao",
+        "tier": "B",
+        "issuer": "Sociedade Brasileira de Pneumologia e Tisiologia",
+        "title": "Diretrizes — avaliação gasométrica em urgências respiratórias",
+        "year": 2022,
+        "covers": [
+          "indicação de gasometria",
+          "equilíbrio ácido-base"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Diante de uma possível situação de urgência ou emergência respiratória, em uma Unidade de Pronto Atendimento, vários possíveis exames podem ser solicitados. Assinale a alternativa que aponta o exame sanguíneo arterial, cujo objetivo é analisar os gases presentes no sangue, suas distribuições, pH e o equilíbrio ácido-base:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Oximetria.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Oxigenoterapia.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Plaquetograma.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Gasometria.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Hemoglicosimetria.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Gasometria — exame em urgência respiratória",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "items": [
+        {
+          "label": "Contexto UPA",
+          "detail": "Emergência respiratória pede avaliação rápida de oxigenação e equilíbrio ácido-base.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Amostra arterial",
+          "detail": "Gases e pH refletem melhor a troca pulmonar no sangue arterial — não venoso de rotina.",
+          "icon": "Droplet"
+        },
+        {
+          "label": "Parâmetros lidos",
+          "detail": "pH, PaO2, PaCO2, bicarbonato — diagnóstico de hipoxemia, hipercapnia e distúrbios ácido-base.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Oximetria ≠ gasometria",
+          "detail": "Oximetria mede SpO2 de forma não invasiva — não substitui análise gasométrica completa.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Pegadinha — conduta vs exame",
+          "detail": "Oxigenoterapia é tratamento; hemoglicosimetria e plaquetograma são outros exames.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Arterial + gases + pH = gasometria — não oximetria nem glicemia"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "steps": [
+        "Comando: identificar exame sanguíneo arterial que analisa gases, pH e equilíbrio ácido-base.",
+        "Filtrar por tipo: precisa ser exame laboratorial de sangue arterial, não conduta nem exame venoso simples.",
+        "Eliminar B — oxigenoterapia é intervenção terapêutica, não exame diagnóstico.",
+        "Eliminar A — oximetria é monitorização não invasiva (SpO2), não gasometria arterial completa.",
+        "Eliminar C e E — plaquetograma (hemograma) e hemoglicosimetria não medem gases nem pH.",
+        "Resta D — gasometria arterial avalia PaO2, PaCO2, pH e bicarbonato.",
+        "Marcar D.",
+        "Em similares: gases + pH + arterial = gasometria — oximetria só saturação periférica."
+      ],
+      "footer_rule": "Exame vs conduta: gasometria diagnostica; O2-terapia trata"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — gasometria arterial",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "GASOMETRIA — O QUE DECORAR",
+      "rows": [
+        {
+          "label": "Matriz",
+          "value": "Sangue arterial — não venoso de rotina",
+          "badge": "hot"
+        },
+        {
+          "label": "Mede",
+          "value": "Gases dissolvidos, pH e equilíbrio ácido-base",
+          "badge": "ok"
+        },
+        {
+          "label": "Indicação UPA",
+          "value": "Urgência respiratória — hipoxemia, hipercapnia, acidose",
+          "badge": "warn"
+        },
+        {
+          "label": "≠ oximetria",
+          "value": "SpO2 não invasiva não substitui PaO2/PaCO2 arterial",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Gasometria = arterial + gases + pH — oximetria só saturação"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "PEGADINHAS — GASOMETRIA FAU",
+      "items": [
+        {
+          "label": "Letra A — oximetria",
+          "detail": "Ambas avaliam oxigenação, mas por métodos diferentes.",
+          "correct": "Oximetria = SpO2 não invasiva; gasometria = PaO2/PaCO2/pH no sangue arterial."
+        },
+        {
+          "label": "Letra B — oxigenoterapia",
+          "detail": "Parece ligada à emergência respiratória citada no enunciado.",
+          "correct": "Oxigenoterapia é conduta — o comando pede nome do exame laboratorial."
+        },
+        {
+          "label": "Letra C — plaquetograma",
+          "detail": "Exame de sangue comum em UPA, mas de outra finalidade.",
+          "correct": "Plaquetograma conta plaquetas — não analisa gases nem equilíbrio ácido-base."
+        },
+        {
+          "label": "Letra E — hemoglicosimetria",
+          "detail": "Exame de urgência frequente — confunde com punção arterial.",
+          "correct": "Hemoglicosimetria mede glicose — não pH nem gases dissolvidos."
+        },
+        {
+          "label": "Em outra banca — SpO2 vs gasometria",
+          "detail": "Prova pode pedir só oximetria como monitorização.",
+          "correct": "Comando que cita pH e equilíbrio ácido-base exige gasometria arterial, não SpO2."
+        }
+      ],
+      "footer_rule": "Na UPA respiratória: gasometria arterial, não SpO2 isolada"
+    }
+  ]
+}

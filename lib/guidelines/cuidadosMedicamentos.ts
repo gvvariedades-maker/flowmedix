@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Administração segura de medicamentos — 5 e 9 certos.
- * Fontes: COFEN (Lei 7.498/86, pareceres) + ANVISA (segurança do paciente).
+ * Fontes: COFEN (Lei 7.498/86, Res. 801/2026, pareceres) + ANVISA (segurança do paciente).
+ * TE administra sob supervisão; prescrição é ato do enfermeiro com protocolo (Res. 801/2026).
  */
 export const CUIDADOS_ADMIN_COFEN: GuidelineTable = {
   id: 'cuidados-admin-cofen',
-  snapshot: '5/9 certos — administração segura',
+  snapshot: '5/9 certos + Res. COFEN 801/2026 (prescrição enfermeiro)',
   issuer: 'COFEN / ANVISA',
   title: 'Cuidados na administração de medicamentos',
-  year: 2024,
-  url: 'https://www.cofen.gov.br/wp-content/uploads/2026/03/Parecer-11-2026.pdf',
+  year: 2026,
+  url: 'https://www.cofen.gov.br/resolucao-cofen-no-801-de-14-de-janeiro-de-2026/',
   entries: [
     {
       id: 'certo-paciente',
@@ -136,6 +137,22 @@ export const CUIDADOS_ADMIN_COFEN: GuidelineTable = {
       label: 'Os 9 certos — sequência de verificação',
       value: 'paciente → medicamento → dose → via → hora → registro → ação → forma → resposta',
       detail: 'Checklist antes, durante e após a administração; todos obrigatórios para prática segura.',
+      sourceId: 'cuidados-admin-cofen',
+    },
+    {
+      id: 'prescricao-enfermeiro-res-801-2026',
+      label: 'Prescrição × administração (COFEN 801/2026)',
+      value: 'Prescrição: enfermeiro com protocolo institucional; administração: equipe de enfermagem sob supervisão',
+      detail:
+        'Res. COFEN 801/2026: prescrição na consulta de enfermagem, com protocolos do serviço ou programas de saúde pública. TE administra conforme prescrição e POP — não confunde competências na prova.',
+      sourceId: 'cuidados-admin-cofen',
+    },
+    {
+      id: 'prescricao-801-elementos-minimos',
+      label: 'Prescrição enfermeiro — elementos mínimos (801/2026)',
+      value: 'protocolo + ano; instituição/CNPJ; identificação COREN; data; paciente; DCB + via + posologia',
+      detail:
+        'Art. 3º Res. COFEN 801/2026. Medicamento por denominação genérica (substância ativa). Anexo II é rol exemplificativo — estados/serviços podem ampliar via protocolo.',
       sourceId: 'cuidados-admin-cofen',
     },
     {

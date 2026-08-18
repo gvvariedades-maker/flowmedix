@@ -12,7 +12,7 @@
 | Campo | Valor |
 |-------|-------|
 | pacote_prefix | `imunizacao` |
-| status | in_progress (59/575 slugs) |
+| status | applied (575/575 slugs) |
 | manifest | `data/catalog-migration/imunizacao-completo/manifest.json` |
 | lote_pattern | `imunizacao-g{NN}` |
 | lote_size | 8 |
@@ -65,12 +65,12 @@
 
 | P | Ação | Por quê |
 |---|------|---------|
-| P0 | Handcraft g08+ calendário + patch pedagogical_branch | ~62% do volume Imunização |
-| P0 | audit:slug-alignment --strict em todo lote | Evita reciclagem e compare vazio |
-| P1 | Lote dedicado cadeia frio (68 slugs) âncoras A+B | Molde imunizacao_cadeia_frio pronto |
-| P1 | audit:numeric-factcheck + guideline rede de frio | Temperaturas/doses = pegadinha #1 |
-| P2 | Ramo imunizacao_exceto + lint semântico (Agirh) | 42 slugs compare genérico → gate imunizacao_exceto_semantic |
-| P2 | test:e2e:visual-molds PNI + audit:subtopico-quality --promote | Fecha vendável L3–L6 |
+| P0 | Fase 2 — reconcile:handcraft-manifest + catalog:preflight --strict-v2-pedagogy em g01–g83 | Handcraft applied 575/575; gate L1 antes do promote |
+| P0 | audit:handcraft-dod + slug-alignment --strict + numeric-factcheck (subtópico inteiro) | L2 + L2b vendável |
+| P1 | audit:anchor-review --record-pass em todos g* + L6 checklist | Âncoras P0 fechadas; escalar L6 por lote |
+| P1 | test:e2e:visual-molds --grep="PNI Imunização" | 3 ramos bespoke wired (vf · calendário · cadeia frio) |
+| P2 | Ramo imunizacao_exceto — gate compare semântico (Agirh) | 42 slugs ok_generico; validar danger_zone por letra |
+| P2 | audit:subtopico-quality --promote | Fecha production_ready |
 
 ## Golden anchors
 

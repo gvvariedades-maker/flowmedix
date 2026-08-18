@@ -8,77 +8,15 @@ import type { DangerZoneBulletStyle } from '../core/dangerZoneLayout';
 import { dangerZoneHasCompareItems } from '../core/dangerZoneLayout';
 import { getCompareBackFaceLabel } from '@/lib/slides/goldenRuleTypography';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
+import type { DangerZoneItemPolarity } from '../core/dangerZonePolarity';
+import { getDangerZoneBespoke } from '../registry/dangerZone';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
-import { DangerZoneTrapReveal } from './DangerZoneTrapReveal';
-import { DangerZoneCalendarMismatch } from './DangerZoneCalendarMismatch';
-import { DangerZoneTemperatureMismatch } from './DangerZoneTemperatureMismatch';
-import { DangerZoneNormReveal } from './DangerZoneNormReveal';
-import { DangerZoneScopeTrap } from './DangerZoneScopeTrap';
-import { DangerZoneRouteTrap } from './DangerZoneRouteTrap';
-import { DangerZoneDoseTrap } from './DangerZoneDoseTrap';
-import { DangerZoneFarmacoTrap } from './DangerZoneFarmacoTrap';
-import { DangerZoneFarmacoClinicoTrap } from './DangerZoneFarmacoClinicoTrap';
-import { DangerZoneCatheterArena } from './DangerZoneCatheterArena';
-import { DangerZoneLabPrepTrap } from './DangerZoneLabPrepTrap';
-import { DangerZoneLabSpecimenArena } from './DangerZoneLabSpecimenArena';
-import { DangerZoneDressingChoiceArena } from './DangerZoneDressingChoiceArena';
-import { DangerZoneBurnTrapArena } from './DangerZoneBurnTrapArena';
-import { DangerZoneTrabalhoPepTrapArena } from './DangerZoneTrabalhoPepTrapArena';
-import { DangerZoneSpSafetyTrapArena } from './DangerZoneSpSafetyTrapArena';
-import { DangerZoneRespiratorioSpo2TrapArena } from './DangerZoneRespiratorioSpo2TrapArena';
-import { DangerZoneMentalRapsTrapArena } from './DangerZoneMentalRapsTrapArena';
-import { DangerZoneMentalCrisisCoercionTrap } from './DangerZoneMentalCrisisCoercionTrap';
-import { DangerZonePeriPreopTrapArena } from './DangerZonePeriPreopTrapArena';
-import { DangerZonePeriSrpaTrapArena } from './DangerZonePeriSrpaTrapArena';
-import { DangerZonePeriProtocolTrapArena } from './DangerZonePeriProtocolTrapArena';
-import { DangerZonePeriVfTrapChips } from './DangerZonePeriVfTrapChips';
-import { DangerZoneUrgenciasRcpTrapArena } from './DangerZoneUrgenciasRcpTrapArena';
-import { DangerZoneUrgenciasTraumaTrapArena } from './DangerZoneUrgenciasTraumaTrapArena';
-import { DangerZoneUrgenciasStrokeTrapArena } from './DangerZoneUrgenciasStrokeTrapArena';
-import { DangerZoneUrgenciasShockTrapArena } from './DangerZoneUrgenciasShockTrapArena';
-import { DangerZoneUrgenciasChokingTrapArena } from './DangerZoneUrgenciasChokingTrapArena';
-import { DangerZoneUrgenciasPediatricTrapArena } from './DangerZoneUrgenciasPediatricTrapArena';
-import { DangerZoneUrgenciasManchesterTrap } from './DangerZoneUrgenciasManchesterTrap';
-import { DangerZoneUrgenciasProtocolTrapArena } from './DangerZoneUrgenciasProtocolTrapArena';
-import { DangerZoneUrgenciasExcetoTrapArena } from './DangerZoneUrgenciasExcetoTrapArena';
-import { DangerZonePniTrapChips } from './DangerZonePniTrapChips';
-import { DangerZoneIstTrapChips } from './DangerZoneIstTrapChips';
-import { DangerZoneBiossegTrapChips } from './DangerZoneBiossegTrapChips';
-import { DangerZoneEtiologyIntruderChips } from './DangerZoneEtiologyIntruderChips';
-import { DangerZoneTbTransmissionTrap } from './DangerZoneTbTransmissionTrap';
-import { DangerZoneItuCatheterTrap } from './DangerZoneItuCatheterTrap';
-import { DangerZoneAdolescentConsentGate } from './DangerZoneAdolescentConsentGate';
-import { DangerZoneAdolescentZThresholdTrap } from './DangerZoneAdolescentZThresholdTrap';
-import { DangerZoneMulherPrenatalTrapArena } from './DangerZoneMulherPrenatalTrapArena';
-import { DangerZoneMulherPartoTrapArena } from './DangerZoneMulherPartoTrapArena';
-import { DangerZoneMulherScreeningTrapArena } from './DangerZoneMulherScreeningTrapArena';
-import { DangerZoneMulherMamaTrapArena } from './DangerZoneMulherMamaTrapArena';
-import { DangerZoneMulherPuerperioTrapArena } from './DangerZoneMulherPuerperioTrapArena';
-import { DangerZoneMulherPlanejamentoTrapArena } from './DangerZoneMulherPlanejamentoTrapArena';
 import {
-  DangerZoneCriancaFeedingTrapArena,
-  DangerZoneCriancaScreeningTrapArena,
-  DangerZoneCriancaPediatricTrapArena,
-  DangerZoneCriancaDehydrationTrapArena,
-  DangerZoneCriancaPuericulturaTrapArena,
-  DangerZoneCriancaNeonatalTrapArena,
-  DangerZoneCriancaDevTrapArena,
-} from './criancaVariants';
-import { DangerZoneCamCertosTrapArena } from './DangerZoneCamCertosTrapArena';
-import { DangerZonePtCraseTrapArena } from './DangerZonePtCraseTrapArena';
-import { DangerZonePtCliticTrapArena } from './DangerZonePtCliticTrapArena';
-import { DangerZonePtCommaTrapArena } from './DangerZonePtCommaTrapArena';
-import { DangerZonePtTermTrapArena } from './DangerZonePtTermTrapArena';
-import { DangerZoneCamHighRiskTrapArena } from './DangerZoneCamHighRiskTrapArena';
-import { DangerZoneCamExcetoTrapArena } from './DangerZoneCamExcetoTrapArena';
-import { DangerZoneCamDocumentacaoTrapArena } from './DangerZoneCamDocumentacaoTrapArena';
-import { DangerZoneIvLabelSwapTrap } from './DangerZoneIvLabelSwapTrap';
-import { DangerZoneIvGaugeMismatchTrap } from './DangerZoneIvGaugeMismatchTrap';
-import { DangerZoneIvExcetoIntruderTrap } from './DangerZoneIvExcetoIntruderTrap';
-import { DangerZoneIvIntervalSwapTrap } from './DangerZoneIvIntervalSwapTrap';
-import { DangerZoneIvOrderInvertTrap } from './DangerZoneIvOrderInvertTrap';
-import { DangerZoneIvBundleBreakTrap } from './DangerZoneIvBundleBreakTrap';
-import { DangerZoneVitalsClassifyArena } from './DangerZoneVitalsClassifyArena';
+  AlertCallout,
+  BoardChrome,
+  CategoryStrip,
+  PolarityPanel,
+} from '../primitives';
 
 export interface DangerZoneItem {
   id?: string;
@@ -97,6 +35,10 @@ interface DangerZoneProps {
   layoutVariant?: string;
   bulletStyle?: DangerZoneBulletStyle;
   compareRevealMode?: LogicFlowRevealMode;
+  /** Polaridade por item derivada do enunciado (comando negativo × gabarito). */
+  itemPolarities?: DangerZoneItemPolarity[];
+  /** Face verde do compare (PT → «Resposta certa»; TE → «Conduta certa na prova»). */
+  compareBackFaceDefault?: string;
 }
 
 function TrapBullet({
@@ -110,13 +52,16 @@ function TrapBullet({
 }) {
   if (bulletStyle === 'x_icon') {
     return (
-      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100 ring-2 ring-red-200" aria-hidden>
-        <X className="h-5 w-5 text-red-600" strokeWidth={3} />
+      <span
+        className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-rose-600 text-white shadow-md"
+        aria-hidden
+      >
+        <X className="h-5 w-5" strokeWidth={3} />
       </span>
     );
   }
   return (
-    <span className="shrink-0 font-mono tabular-nums text-sm text-red-600 md:text-lg">
+    <span className="shrink-0 font-mono tabular-nums text-sm font-bold text-rose-700 md:text-lg">
       {itemId || `${index + 1}.`}
     </span>
   );
@@ -132,17 +77,17 @@ function ItemContent({
   bulletStyle: DangerZoneBulletStyle;
 }) {
   return (
-    <motion.div layout className="flex items-start gap-3">
+    <div className="flex items-start gap-3">
       <TrapBullet bulletStyle={bulletStyle} index={index} itemId={item.id} />
       <div className="min-w-0 flex-1">
-        <h4 className="mb-2 font-display text-base font-bold text-red-800 md:text-lg">
+        <h4 className="mb-1.5 font-body text-base font-bold text-rose-950 md:text-lg">
           {item.label || item.title || 'Pegadinha'}
         </h4>
-        <p className="font-body text-base leading-relaxed text-red-900/80">
+        <p className="font-body text-sm leading-relaxed text-rose-900/90 md:text-base">
           {item.detail || item.description || ''}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -156,6 +101,7 @@ function CompareItemPanel({
   isTapMode,
   isRevealed,
   onReveal,
+  compareBackFaceDefault,
 }: {
   index: number;
   label: string;
@@ -166,45 +112,42 @@ function CompareItemPanel({
   isTapMode: boolean;
   isRevealed: boolean;
   onReveal: () => void;
+  compareBackFaceDefault?: string;
 }) {
-  const backFaceLabel = getCompareBackFaceLabel(label, correctText);
+  const backFaceLabel = getCompareBackFaceLabel(label, correctText, compareBackFaceDefault);
   const showCorrect = !isTapMode || isRevealed;
 
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-      <div className="border-l-4 border-l-red-500 bg-gradient-to-br from-red-50 to-white p-4">
+    <div className="flex flex-col gap-2">
+      <PolarityPanel tone="exception" emphasized={!showCorrect}>
         <div className="flex items-start gap-3">
           <TrapBullet bulletStyle={bulletStyle} index={index} itemId={itemId} />
           <div className="min-w-0 flex-1">
-            <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-red-600">
-              {label} — Pegadinha
-            </p>
-            <p className="mt-1.5 font-body text-sm font-semibold leading-relaxed text-slate-900">
+            <CategoryStrip label={`${label} — Pegadinha`} tone="exception" />
+            <p className="mt-2 font-body text-sm font-semibold leading-relaxed text-rose-950">
               {trapText}
             </p>
           </div>
         </div>
-      </div>
+      </PolarityPanel>
 
       {showCorrect ? (
-        <div className="border-t border-slate-100 border-l-4 border-l-emerald-500 bg-gradient-to-br from-emerald-50 to-white p-4">
+        <PolarityPanel tone="keep" emphasized>
           <div className="flex items-start gap-2">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" aria-hidden />
+            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" aria-hidden />
             <div className="min-w-0 flex-1">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-emerald-800">
-                {backFaceLabel}
-              </p>
-              <p className="mt-1 font-body text-sm font-semibold leading-relaxed text-emerald-950">
+              <CategoryStrip label={backFaceLabel} tone="keep" />
+              <p className="mt-2 font-body text-sm font-semibold leading-relaxed text-emerald-950">
                 {correctText || '—'}
               </p>
             </div>
           </div>
-        </div>
+        </PolarityPanel>
       ) : (
         <button
           type="button"
           onClick={onReveal}
-          className="w-full border-t border-red-100 bg-white px-4 py-3 text-center font-body text-sm font-semibold text-red-700 transition-colors hover:bg-red-50 active:bg-red-100"
+          className="min-h-[48px] w-full rounded-2xl border-2 border-rose-300 bg-white px-4 py-3 text-center font-body text-sm font-bold text-rose-800 shadow-sm transition-colors hover:bg-rose-50 active:bg-rose-100"
         >
           Ver resposta correta
         </button>
@@ -215,21 +158,22 @@ function CompareItemPanel({
 
 function DangerZoneCompare({
   content,
+  theme,
   items,
   footerRule,
   bulletStyle,
   compareRevealMode = 'auto',
+  compareBackFaceDefault,
 }: {
   content: string;
+  theme: ThemeColors;
   items: DangerZoneItem[];
   footerRule?: string;
   bulletStyle: DangerZoneBulletStyle;
   compareRevealMode?: LogicFlowRevealMode;
+  compareBackFaceDefault?: string;
 }) {
-  const { revealItem, isTapMode } = useDangerZoneCompareReveal(
-    items.length,
-    compareRevealMode,
-  );
+  const { revealItem, isTapMode } = useDangerZoneCompareReveal(items.length, compareRevealMode);
   const [revealedIndices, setRevealedIndices] = useState<Set<number>>(() => new Set());
 
   const handleReveal = useCallback(
@@ -246,19 +190,22 @@ function DangerZoneCompare({
     [isTapMode, revealItem],
   );
 
-  const revealedCount = isTapMode
-    ? revealedIndices.size
-    : items.length;
+  const revealedCount = isTapMode ? revealedIndices.size : items.length;
   const allRevealed = revealedCount >= items.length;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 pb-6 md:p-6 md:pb-8">
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.35}
+      eyebrow="Arena da pegadinha"
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+      maxWidth="2xl"
+    >
       {content ? (
-        <div className="mb-3 rounded-xl border border-red-300 border-l-4 border-l-red-600 bg-gradient-to-r from-red-100 to-red-50 px-4 py-3 text-center shadow-sm md:mb-4 md:px-5 md:py-3.5">
-          <p className="font-display text-xs font-extrabold uppercase tracking-wide text-red-900 md:text-sm">
-            {content}
-          </p>
-        </div>
+        <AlertCallout tone="warn" icon={AlertTriangle}>
+          {content}
+        </AlertCallout>
       ) : null}
 
       <div className="space-y-3">
@@ -285,39 +232,80 @@ function DangerZoneCompare({
                 isTapMode={isTapMode}
                 isRevealed={isRevealed}
                 onReveal={() => handleReveal(index)}
+                compareBackFaceDefault={compareBackFaceDefault}
               />
             </motion.div>
           );
         })}
       </div>
 
-      {footerRule ? (
-        <div className="mt-6 rounded-xl border border-red-200 bg-red-50 p-4 md:p-5">
-          <p className="font-body text-sm italic text-red-800 md:text-base">💡 {footerRule}</p>
-        </div>
-      ) : null}
-
       {allRevealed ? (
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-4 flex items-center justify-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-center"
+          className="flex items-center justify-center gap-2"
         >
-          <CheckCircle2 className="h-4 w-4 shrink-0 text-green-600" aria-hidden />
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-green-800">
-            {isTapMode ? 'Todas as pegadinhas mapeadas' : 'Domínio ativado — revise antes da prova'}
-          </span>
+          <CategoryStrip
+            label={isTapMode ? 'Todas as pegadinhas mapeadas' : 'Domínio ativado — revise antes da prova'}
+            tone="keep"
+          />
         </motion.div>
       ) : null}
-    </div>
+    </BoardChrome>
+  );
+}
+
+function TrapListBoard({
+  theme,
+  content,
+  items,
+  footerRule,
+  bulletStyle,
+  dense = false,
+}: {
+  theme: ThemeColors;
+  content: string;
+  items?: DangerZoneItem[];
+  footerRule?: string;
+  bulletStyle: DangerZoneBulletStyle;
+  dense?: boolean;
+}) {
+  return (
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.35}
+      eyebrow="Arena da pegadinha"
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+      maxWidth={dense ? '2xl' : '3xl'}
+    >
+      <div className="mb-1 flex items-center gap-2">
+        <AlertTriangle className="h-5 w-5 shrink-0 text-rose-600" aria-hidden />
+        <CategoryStrip label={dense ? 'Cuidado' : 'Cuidado com a pegadinha'} tone="exception" />
+      </div>
+
+      {content ? (
+        <AlertCallout tone="warn" icon={ShieldAlert}>
+          {content}
+        </AlertCallout>
+      ) : null}
+
+      {items && items.length > 0 ? (
+        <div className={dense ? 'space-y-2' : 'space-y-3'}>
+          {items.map((item, index) => (
+            <PolarityPanel key={index} tone="exception">
+              <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
+            </PolarityPanel>
+          ))}
+        </div>
+      ) : null}
+    </BoardChrome>
   );
 }
 
 // ============================================================================
 // DANGER ZONE: Pegadinhas — list | cards | compact | compare (trap × correct)
-// layout_variant compare: automático quando ≥1 item tem `correct` (string)
-// bullet_style: numbered (padrão) | x_icon
-// compare + reveal_mode tap: coluna correta revelada por item
+// Chassis G2: BoardChrome + PolarityPanel (+ AlertCallout)
 // ============================================================================
 export const DangerZone = ({
   content,
@@ -327,809 +315,23 @@ export const DangerZone = ({
   layoutVariant = 'list',
   bulletStyle = 'numbered',
   compareRevealMode = 'auto',
+  itemPolarities,
+  compareBackFaceDefault,
 }: DangerZoneProps) => {
   const explicitVariant = layoutVariant || 'list';
 
-  if (explicitVariant === 'catheter-danger-arena' && items && items.length > 0) {
+  const bespoke = getDangerZoneBespoke(explicitVariant);
+  if (bespoke && (!bespoke.requiresItems || (items && items.length > 0))) {
+    const Comp = bespoke.Component;
     return (
-      <DangerZoneCatheterArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'lab-prep-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneLabPrepTrap
+      <Comp
         content={content}
         items={items}
         theme={theme}
         footerRule={footerRule}
         compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'lab-specimen-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneLabSpecimenArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'dressing-choice-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneDressingChoiceArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'burn-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneBurnTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'trabalho-pep-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneTrabalhoPepTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'sp-safety-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneSpSafetyTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'respiratorio-spo2-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneRespiratorioSpo2TrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'mental-raps-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneMentalRapsTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'mental-crisis-coercion-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneMentalCrisisCoercionTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'peri-preop-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZonePeriPreopTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'peri-srpa-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZonePeriSrpaTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'peri-protocol-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZonePeriProtocolTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'peri-vf-trap-chips' && items && items.length > 0) {
-    return (
-      <DangerZonePeriVfTrapChips
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'urgencias-rcp-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneUrgenciasRcpTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'urgencias-trauma-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneUrgenciasTraumaTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'urgencias-stroke-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneUrgenciasStrokeTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'urgencias-shock-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneUrgenciasShockTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'urgencias-choking-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneUrgenciasChokingTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'urgencias-pediatric-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneUrgenciasPediatricTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'urgencias-manchester-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneUrgenciasManchesterTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'urgencias-protocol-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneUrgenciasProtocolTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'urgencias-exceto-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneUrgenciasExcetoTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'pni-trap-chips' && items && items.length > 0) {
-    return (
-      <DangerZonePniTrapChips
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'mulher-prenatal-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneMulherPrenatalTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'mulher-parto-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneMulherPartoTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'mulher-screening-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneMulherScreeningTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'mulher-mama-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneMulherMamaTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'mulher-puerperio-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneMulherPuerperioTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'mulher-planejamento-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneMulherPlanejamentoTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'crianca-feeding-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCriancaFeedingTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-  if (explicitVariant === 'crianca-screening-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCriancaScreeningTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-  if (explicitVariant === 'crianca-pediatric-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCriancaPediatricTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-  if (explicitVariant === 'crianca-dehydration-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCriancaDehydrationTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-  if (explicitVariant === 'crianca-puericultura-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCriancaPuericulturaTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-  if (explicitVariant === 'crianca-neonatal-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCriancaNeonatalTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-  if (explicitVariant === 'crianca-dev-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCriancaDevTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'cam-certos-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCamCertosTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'pt-crase-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZonePtCraseTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'pt-clitic-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZonePtCliticTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'pt-comma-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZonePtCommaTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'pt-term-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZonePtTermTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'pt-subject-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZonePtTermTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'cam-high-risk-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCamHighRiskTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'cam-exceto-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCamExcetoTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'cam-documentacao-trap-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneCamDocumentacaoTrapArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'iv-label-swap-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneIvLabelSwapTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'iv-gauge-mismatch-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneIvGaugeMismatchTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'iv-exceto-intruder-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneIvExcetoIntruderTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'iv-interval-swap-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneIvIntervalSwapTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'iv-order-invert-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneIvOrderInvertTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'iv-bundle-break-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneIvBundleBreakTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'ist-trap-chips' && items && items.length > 0) {
-    return (
-      <DangerZoneIstTrapChips
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'biosseg-trap-chips' && items && items.length > 0) {
-    return (
-      <DangerZoneBiossegTrapChips
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'etiology-intruder-chips' && items && items.length > 0) {
-    return (
-      <DangerZoneEtiologyIntruderChips
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'tb-transmission-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneTbTransmissionTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'itu-catheter-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneItuCatheterTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
         revealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'adolescent-consent-gate' && items && items.length > 0) {
-    return (
-      <DangerZoneAdolescentConsentGate
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'adolescent-z-threshold-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneAdolescentZThresholdTrap
-        content={content}
-        items={items}
-        theme={theme}
-        revealMode={compareRevealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'vitals-classify-arena' && items && items.length > 0) {
-    return (
-      <DangerZoneVitalsClassifyArena
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (explicitVariant === 'trap-reveal' && items && items.length > 0) {
-    return (
-      <DangerZoneTrapReveal
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        bulletStyle={bulletStyle}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'calendar-mismatch' && items && items.length > 0) {
-    return (
-      <DangerZoneCalendarMismatch
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'temperature-mismatch' && items && items.length > 0) {
-    return (
-      <DangerZoneTemperatureMismatch
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'norm-reveal' && items && items.length > 0) {
-    return (
-      <DangerZoneNormReveal
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'scope-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneScopeTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'route-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneRouteTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'dose-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneDoseTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'farmaco-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneFarmacoTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
-        compareRevealMode={compareRevealMode}
-      />
-    );
-  }
-
-  if (explicitVariant === 'farmaco-clinico-trap' && items && items.length > 0) {
-    return (
-      <DangerZoneFarmacoClinicoTrap
-        content={content}
-        items={items}
-        theme={theme}
-        footerRule={footerRule}
+        itemPolarities={itemPolarities}
       />
     );
   }
@@ -1139,147 +341,74 @@ export const DangerZone = ({
       ? 'compare'
       : explicitVariant;
 
-  // VARIANTE COMPARE — duas colunas: pegadinha × correto
   if (variant === 'compare' && items && items.length > 0) {
     return (
       <DangerZoneCompare
         content={content}
+        theme={theme}
         items={items}
         footerRule={footerRule}
         bulletStyle={bulletStyle}
         compareRevealMode={compareRevealMode}
+        compareBackFaceDefault={compareBackFaceDefault}
       />
     );
   }
 
-  // VARIANTE 1: LIST (padrão) - Lista com borda vermelha
-  if (variant === 'list') {
+  if (variant === 'cards' && items && items.length > 0) {
     return (
-      <motion.div layout className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 pb-8 md:p-6 md:pb-10 lg:p-8 lg:pb-12">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-50/80 via-white to-red-50/50" />
-        <div
-          className="danger-zone-container relative z-10 mt-2 mb-4 w-full rounded-2xl border border-red-200 border-l-4 border-l-red-500 bg-red-50/40 p-5 md:mt-4 md:mb-6 md:rounded-3xl md:border-l-8 md:p-7 lg:p-9"
-          style={{ minHeight: '200px' }}
-        >
-          <div className="danger-zone-alert-icon absolute top-4 right-4 opacity-20">
-            <AlertTriangle size={100} className="text-red-500" />
-          </div>
-          <div className="relative z-10 space-y-4">
-            <h3 className="danger-zone-title flex items-center gap-3 font-mono text-sm font-black text-red-700 md:text-2xl">
-              <AlertTriangle className="h-6 w-6 shrink-0 animate-pulse md:h-7 md:w-7" strokeWidth={2} /> CUIDADO COM A PEGADINHA
-            </h3>
-            {content && (
-              <div className="danger-zone-content rounded-xl border border-red-200 bg-white p-4 md:p-5">
-                <p className="font-body text-base font-semibold leading-relaxed text-slate-900 md:text-2xl">{content}</p>
-              </div>
-            )}
-            {items && items.length > 0 && (
-              <div className="space-y-4">
-                {items.map((item, index) => (
-                  <div key={index} className="danger-zone-item rounded-xl border border-red-200 border-l-4 border-l-red-500 bg-white p-4 shadow-sm">
-                    <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
-                  </div>
-                ))}
-              </div>
-            )}
-            {footerRule && (
-              <div className="danger-zone-footer rounded-xl border border-red-200 bg-red-50 p-4">
-                <p className="font-body text-sm italic text-red-800 md:text-base">💡 {footerRule}</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </motion.div>
-    );
-  }
-
-  // VARIANTE 2: CARDS - Itens em cards separados
-  if (variant === 'cards') {
-    return (
-      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 relative">
-        <motion.div className="absolute inset-0 bg-gradient-to-br from-red-50/80 via-white to-red-50/50" aria-hidden />
-        <div className="relative z-10 w-full max-w-5xl flex flex-col gap-6 py-5">
-          {content && (
-            <div className="rounded-2xl border-2 border-red-200 bg-red-50 p-6">
-              <p className="font-body text-lg font-semibold leading-relaxed text-red-900 md:text-xl">{content}</p>
-            </div>
-          )}
-          {items && items.length > 0 && (
-            <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {items.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="rounded-xl border-2 border-red-200 bg-white p-4 shadow-sm transition-colors hover:border-red-300"
-                >
-                  <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
-                </motion.div>
-              ))}
+      <BoardChrome
+        theme={theme}
+        washOpacity={0.35}
+        eyebrow="Arena da pegadinha"
+        footerRule={footerRule}
+        footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+        maxWidth="5xl"
+      >
+        {content ? (
+          <AlertCallout tone="warn" icon={AlertTriangle}>
+            {content}
+          </AlertCallout>
+        ) : null}
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {items.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <PolarityPanel tone="exception">
+                <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
+              </PolarityPanel>
             </motion.div>
-          )}
-          {footerRule && (
-            <div className="rounded-xl border border-red-200 bg-red-50 p-4">
-              <p className="font-body text-sm italic text-red-800 md:text-sm">💡 {footerRule}</p>
-            </div>
-          )}
+          ))}
         </div>
-      </div>
+      </BoardChrome>
     );
   }
 
-  // VARIANTE 3: COMPACT - Layout condensado
   if (variant === 'compact') {
     return (
-      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
-        <div className="absolute inset-0 bg-slate-50" />
-        <motion.div className="relative z-10 w-full max-w-3xl space-y-4">
-          <div className="flex items-center gap-2 font-mono text-sm text-red-700 md:text-lg">
-            <ShieldAlert size={24} className="shrink-0" /> CUIDADO
-          </div>
-          {content && <p className="font-body text-base text-slate-800 md:text-lg">{content}</p>}
-          {items && items.length > 0 && (
-            <div className="space-y-2">
-              {items.map((item, index) => (
-                <div key={index} className="flex gap-3 border-b border-slate-200 py-2 last:border-0">
-                  {bulletStyle === 'x_icon' ? (
-                    <X className="mt-0.5 h-4 w-4 shrink-0 text-red-600" strokeWidth={3} aria-hidden />
-                  ) : (
-                    <span className="shrink-0 font-mono tabular-nums text-sm text-red-600 md:text-base">
-                      {item.id || `${index + 1}.`}
-                    </span>
-                  )}
-                  <div className="min-w-0 text-slate-700">
-                    <span className="font-display text-base font-bold text-red-800">{item.label || item.title || 'Pegadinha'}: </span>
-                    <span className="font-body text-base md:text-sm">{item.detail || item.description || ''}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-          {footerRule && <p className="pt-2 font-body text-sm italic text-red-800">💡 {footerRule}</p>}
-        </motion.div>
-      </div>
+      <TrapListBoard
+        theme={theme}
+        content={content}
+        items={items}
+        footerRule={footerRule}
+        bulletStyle={bulletStyle}
+        dense
+      />
     );
   }
 
-  // Fallback: list
+  // list + fallback
   return (
-    <div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-start p-4 pb-8">
-      <div className="absolute inset-0 bg-gradient-to-br from-red-50/80 via-white to-red-50/50" />
-      <div className="relative z-10 my-4 w-full max-w-4xl rounded-2xl border border-red-200 border-l-4 border-l-red-500 bg-red-50/40 p-5">
-        <h3 className="mb-4 flex items-center gap-2 font-mono text-sm font-black text-red-700 md:text-2xl">
-          <AlertTriangle size={24} className="shrink-0" /> CUIDADO
-        </h3>
-        {content && <p className="mb-4 font-body text-base font-semibold text-slate-900 md:text-lg">{content}</p>}
-        {items && items.length > 0 && items.map((item, index) => (
-          <motion.div key={index} className="mb-2 rounded-lg border border-red-200 border-l-4 border-l-red-500 bg-white p-4 shadow-sm">
-            <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
-          </motion.div>
-        ))}
-        {footerRule && <p className="mt-4 font-body text-sm italic text-red-800">💡 {footerRule}</p>}
-      </div>
-    </div>
+    <TrapListBoard
+      theme={theme}
+      content={content}
+      items={items}
+      footerRule={footerRule}
+      bulletStyle={bulletStyle}
+    />
   );
 };

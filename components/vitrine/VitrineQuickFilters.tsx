@@ -39,19 +39,23 @@ export function VitrineQuickFilters({
       >
         {STATUS_OPTIONS.map((option) => {
           const count = counts?.[option.value];
+          const selected = status === option.value;
           return (
             <button
               key={option.value}
               type="button"
               role="tab"
-              aria-selected={status === option.value}
+              aria-selected={selected}
               data-testid={`vitrine-status-${option.value}`}
               onClick={() => onStatusChange(option.value)}
               className={cn(
-                'min-h-[36px] flex-1 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors sm:flex-none sm:text-sm',
-                status === option.value
-                  ? cn('bg-white shadow-sm', vitrineBrand.text)
-                  : 'text-slate-600 hover:text-slate-900',
+                'min-h-11 flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition-colors sm:flex-none',
+                selected
+                  ? cn(
+                      'bg-white shadow-sm ring-1 ring-[var(--color-brand-ring)]',
+                      vitrineBrand.text,
+                    )
+                  : 'text-slate-600 hover:bg-white/70 hover:text-slate-900',
               )}
             >
               {option.label}
@@ -75,10 +79,13 @@ export function VitrineQuickFilters({
           title="Grade"
           onClick={() => onViewChange('grid')}
           className={cn(
-            'flex size-9 items-center justify-center rounded-lg transition-colors',
+            'flex size-11 items-center justify-center rounded-lg transition-colors',
             view === 'grid'
-              ? cn('bg-white shadow-sm', vitrineBrand.text)
-              : 'text-slate-400 hover:text-slate-700',
+              ? cn(
+                  'bg-white shadow-sm ring-1 ring-[var(--color-brand-ring)]',
+                  vitrineBrand.text,
+                )
+              : 'text-slate-500 hover:text-slate-700',
           )}
         >
           <LayoutGrid size={18} aria-hidden />
@@ -91,10 +98,13 @@ export function VitrineQuickFilters({
           title="Lista compacta"
           onClick={() => onViewChange('compact')}
           className={cn(
-            'flex size-9 items-center justify-center rounded-lg transition-colors',
+            'flex size-11 items-center justify-center rounded-lg transition-colors',
             view === 'compact'
-              ? cn('bg-white shadow-sm', vitrineBrand.text)
-              : 'text-slate-400 hover:text-slate-700',
+              ? cn(
+                  'bg-white shadow-sm ring-1 ring-[var(--color-brand-ring)]',
+                  vitrineBrand.text,
+                )
+              : 'text-slate-500 hover:text-slate-700',
           )}
         >
           <List size={18} aria-hidden />

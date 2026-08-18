@@ -1,0 +1,7 @@
+<!-- AVANT gold  ponteiro do t�tulo N�O ERRE MAIS.
+     viewBox 0 0 24 12 � fill currentColor (tri�ngulo s�lido intencional).
+     Refs: @docs/design-refs/svg-models/lucide/triangle-alert.svg (forma) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 12" fill="currentColor" role="img" aria-label="Ponteiro do t�tulo">
+  <title>Ponteiro</title>
+  <path d="M12 12 L2 0 H22 Z" />
+</svg>

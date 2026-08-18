@@ -1,0 +1,23 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g06",
+  "slugs": [
+    "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+    "agirh-enfermagem-exames-laboratoriais-1779563631609-4",
+    "amauc-enfermagem-exames-laboratoriais-1779563631609-3",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-0",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-3",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-4",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-5",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-2"
+  ],
+  "branches": [
+    "coleta_tubos_ordem",
+    "coleta_tubos_ordem",
+    "coleta_tubos_ordem",
+    "coleta_tubos_ordem",
+    "coleta_tubos_ordem",
+    "coleta_tubos_ordem",
+    "coleta_tubos_ordem",
+    "coleta_tubos_ordem"
+  ]
+}

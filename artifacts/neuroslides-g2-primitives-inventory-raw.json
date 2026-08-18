@@ -1,0 +1,1622 @@
+﻿[
+    {
+        "path":  "components/slides/variants/AdmeJourneyRailConceptMap.tsx",
+        "file":  "AdmeJourneyRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/ConceptMapAdolescentCarePillarsDeck.tsx",
+        "file":  "ConceptMapAdolescentCarePillarsDeck.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneAdolescentExcetoCompare.tsx",
+        "file":  "DangerZoneAdolescentExcetoCompare.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePniExcetoCompare.tsx",
+        "file":  "DangerZonePniExcetoCompare.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePtCraseTrapArena.tsx",
+        "file":  "DangerZonePtCraseTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleAdolescentSpeakBarrierBoard.tsx",
+        "file":  "GoldenRuleAdolescentSpeakBarrierBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePniCalendarBoard.tsx",
+        "file":  "GoldenRulePniCalendarBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePtCraseFunnelBoard.tsx",
+        "file":  "GoldenRulePtCraseFunnelBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleSoftLensBoard.tsx",
+        "file":  "GoldenRuleSoftLensBoard.tsx",
+        "kind":  "softlens",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowAdolescentExcetoIsolateBoard.tsx",
+        "file":  "LogicFlowAdolescentExcetoIsolateBoard.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPniExcetoIsolateBoard.tsx",
+        "file":  "LogicFlowPniExcetoIsolateBoard.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPtCraseFunnelBoard.tsx",
+        "file":  "LogicFlowPtCraseFunnelBoard.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasXabcdeRailConceptMap.tsx",
+        "file":  "UrgenciasXabcdeRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/logicFlowShells/LogicIsolateShell.tsx",
+        "file":  "LogicIsolateShell.tsx",
+        "kind":  "shell",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/logicFlowShells/LogicRailShell.tsx",
+        "file":  "LogicRailShell.tsx",
+        "kind":  "shell",
+        "tier":  "A_direct_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlow.tsx",
+        "file":  "LogicFlow.tsx",
+        "kind":  "core_generic",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowBurnTriageTapFlow.tsx",
+        "file":  "LogicFlowBurnTriageTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowCamExcetoTapFlow.tsx",
+        "file":  "LogicFlowCamExcetoTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowFarmacoProtocolTapFlow.tsx",
+        "file":  "LogicFlowFarmacoProtocolTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowIvExcetoTapFlow.tsx",
+        "file":  "LogicFlowIvExcetoTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowSpProtocolTapFlow.tsx",
+        "file":  "LogicFlowSpProtocolTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowStepLadder.tsx",
+        "file":  "LogicFlowStepLadder.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowUrgenciasExcetoTapFlow.tsx",
+        "file":  "LogicFlowUrgenciasExcetoTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowUrgenciasProtocolTapFlow.tsx",
+        "file":  "LogicFlowUrgenciasProtocolTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowUrgenciasRcpTapFlow.tsx",
+        "file":  "LogicFlowUrgenciasRcpTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowUrgenciasXabcdeTapFlow.tsx",
+        "file":  "LogicFlowUrgenciasXabcdeTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowWoundPrepTapFlow.tsx",
+        "file":  "LogicFlowWoundPrepTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/logicFlowShells/LogicFocusShell.tsx",
+        "file":  "LogicFocusShell.tsx",
+        "kind":  "shell",
+        "tier":  "B_via_shell"
+    },
+    {
+        "path":  "components/slides/variants/AbsorptionSpeedRailConceptMap.tsx",
+        "file":  "AbsorptionSpeedRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/AdolescentGrowthZRailConceptMap.tsx",
+        "file":  "AdolescentGrowthZRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/AdolescentPrivacyCurtainConceptMap.tsx",
+        "file":  "AdolescentPrivacyCurtainConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/BiossegPrecautionDeckConceptMap.tsx",
+        "file":  "BiossegPrecautionDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/BurnDepthLayerDeckConceptMap.tsx",
+        "file":  "BurnDepthLayerDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/CamCertosDeckConceptMap.tsx",
+        "file":  "CamCertosDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/CamDocumentacaoDeckConceptMap.tsx",
+        "file":  "CamDocumentacaoDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/CamExcetoRailConceptMap.tsx",
+        "file":  "CamExcetoRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/CamHighRiskDuoDeckConceptMap.tsx",
+        "file":  "CamHighRiskDuoDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/ColdChainHubConceptMap.tsx",
+        "file":  "ColdChainHubConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/ConceptMap.tsx",
+        "file":  "ConceptMap.tsx",
+        "kind":  "core_generic",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/CriancaSharedConceptMaps.tsx",
+        "file":  "CriancaSharedConceptMaps.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/CriancaSharedGoldenBoard.tsx",
+        "file":  "CriancaSharedGoldenBoard.tsx",
+        "kind":  "other",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/CriancaSharedTapFlow.tsx",
+        "file":  "CriancaSharedTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/CriancaSharedTrapArena.tsx",
+        "file":  "CriancaSharedTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/criancaVariants.tsx",
+        "file":  "criancaVariants.tsx",
+        "kind":  "other",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZone.tsx",
+        "file":  "DangerZone.tsx",
+        "kind":  "core_generic",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneAdolescentConsentGate.tsx",
+        "file":  "DangerZoneAdolescentConsentGate.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneAdolescentZThresholdTrap.tsx",
+        "file":  "DangerZoneAdolescentZThresholdTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneBiossegTrapChips.tsx",
+        "file":  "DangerZoneBiossegTrapChips.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneBurnTrapArena.tsx",
+        "file":  "DangerZoneBurnTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneCalendarMismatch.tsx",
+        "file":  "DangerZoneCalendarMismatch.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneCamCertosTrapArena.tsx",
+        "file":  "DangerZoneCamCertosTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneCamDocumentacaoTrapArena.tsx",
+        "file":  "DangerZoneCamDocumentacaoTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneCamExcetoTrapArena.tsx",
+        "file":  "DangerZoneCamExcetoTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneCamHighRiskTrapArena.tsx",
+        "file":  "DangerZoneCamHighRiskTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneCatheterArena.tsx",
+        "file":  "DangerZoneCatheterArena.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneDoseTrap.tsx",
+        "file":  "DangerZoneDoseTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneDressingChoiceArena.tsx",
+        "file":  "DangerZoneDressingChoiceArena.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneEtiologyIntruderChips.tsx",
+        "file":  "DangerZoneEtiologyIntruderChips.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneFarmacoClinicoTrap.tsx",
+        "file":  "DangerZoneFarmacoClinicoTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneFarmacoTrap.tsx",
+        "file":  "DangerZoneFarmacoTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneIstTrapChips.tsx",
+        "file":  "DangerZoneIstTrapChips.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneItuCatheterTrap.tsx",
+        "file":  "DangerZoneItuCatheterTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneIvBundleBreakTrap.tsx",
+        "file":  "DangerZoneIvBundleBreakTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneIvExcetoIntruderTrap.tsx",
+        "file":  "DangerZoneIvExcetoIntruderTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneIvGaugeMismatchTrap.tsx",
+        "file":  "DangerZoneIvGaugeMismatchTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneIvIntervalSwapTrap.tsx",
+        "file":  "DangerZoneIvIntervalSwapTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneIvLabelSwapTrap.tsx",
+        "file":  "DangerZoneIvLabelSwapTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneIvOrderInvertTrap.tsx",
+        "file":  "DangerZoneIvOrderInvertTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneLabPrepTrap.tsx",
+        "file":  "DangerZoneLabPrepTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneLabSpecimenArena.tsx",
+        "file":  "DangerZoneLabSpecimenArena.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneMentalCrisisCoercionTrap.tsx",
+        "file":  "DangerZoneMentalCrisisCoercionTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneMentalRapsTrapArena.tsx",
+        "file":  "DangerZoneMentalRapsTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneMulherMamaTrapArena.tsx",
+        "file":  "DangerZoneMulherMamaTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneMulherPartoTrapArena.tsx",
+        "file":  "DangerZoneMulherPartoTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneMulherPlanejamentoTrapArena.tsx",
+        "file":  "DangerZoneMulherPlanejamentoTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneMulherPrenatalTrapArena.tsx",
+        "file":  "DangerZoneMulherPrenatalTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneMulherPuerperioTrapArena.tsx",
+        "file":  "DangerZoneMulherPuerperioTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneMulherScreeningTrapArena.tsx",
+        "file":  "DangerZoneMulherScreeningTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneNormReveal.tsx",
+        "file":  "DangerZoneNormReveal.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePeriPreopTrapArena.tsx",
+        "file":  "DangerZonePeriPreopTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePeriProtocolTrapArena.tsx",
+        "file":  "DangerZonePeriProtocolTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePeriSrpaTrapArena.tsx",
+        "file":  "DangerZonePeriSrpaTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePeriVfTrapChips.tsx",
+        "file":  "DangerZonePeriVfTrapChips.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePniTrapChips.tsx",
+        "file":  "DangerZonePniTrapChips.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePtCliticTrapArena.tsx",
+        "file":  "DangerZonePtCliticTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePtCommaTrapArena.tsx",
+        "file":  "DangerZonePtCommaTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZonePtTermTrapArena.tsx",
+        "file":  "DangerZonePtTermTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneRespiratorioSpo2TrapArena.tsx",
+        "file":  "DangerZoneRespiratorioSpo2TrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneRouteTrap.tsx",
+        "file":  "DangerZoneRouteTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneScopeTrap.tsx",
+        "file":  "DangerZoneScopeTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneSpSafetyTrapArena.tsx",
+        "file":  "DangerZoneSpSafetyTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneTbTransmissionTrap.tsx",
+        "file":  "DangerZoneTbTransmissionTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneTemperatureMismatch.tsx",
+        "file":  "DangerZoneTemperatureMismatch.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneTrabalhoPepTrapArena.tsx",
+        "file":  "DangerZoneTrabalhoPepTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneTrapReveal.tsx",
+        "file":  "DangerZoneTrapReveal.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneUrgenciasChokingTrapArena.tsx",
+        "file":  "DangerZoneUrgenciasChokingTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneUrgenciasExcetoTrapArena.tsx",
+        "file":  "DangerZoneUrgenciasExcetoTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneUrgenciasManchesterTrap.tsx",
+        "file":  "DangerZoneUrgenciasManchesterTrap.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneUrgenciasPediatricTrapArena.tsx",
+        "file":  "DangerZoneUrgenciasPediatricTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneUrgenciasProtocolTrapArena.tsx",
+        "file":  "DangerZoneUrgenciasProtocolTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneUrgenciasRcpTrapArena.tsx",
+        "file":  "DangerZoneUrgenciasRcpTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneUrgenciasShockTrapArena.tsx",
+        "file":  "DangerZoneUrgenciasShockTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneUrgenciasStrokeTrapArena.tsx",
+        "file":  "DangerZoneUrgenciasStrokeTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneUrgenciasTraumaTrapArena.tsx",
+        "file":  "DangerZoneUrgenciasTraumaTrapArena.tsx",
+        "kind":  "danger_arena",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DangerZoneVitalsClassifyArena.tsx",
+        "file":  "DangerZoneVitalsClassifyArena.tsx",
+        "kind":  "danger_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/DoseEquivalenceRailConceptMap.tsx",
+        "file":  "DoseEquivalenceRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/EtiologyKingdomRailConceptMap.tsx",
+        "file":  "EtiologyKingdomRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRule.tsx",
+        "file":  "GoldenRule.tsx",
+        "kind":  "core_generic",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleAdolescentSigiloSpectrum.tsx",
+        "file":  "GoldenRuleAdolescentSigiloSpectrum.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleAdolescentZBandBoard.tsx",
+        "file":  "GoldenRuleAdolescentZBandBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleBiossegReferenceBoard.tsx",
+        "file":  "GoldenRuleBiossegReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleBurnRuleNineBoard.tsx",
+        "file":  "GoldenRuleBurnRuleNineBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleCamDocumentacaoBoard.tsx",
+        "file":  "GoldenRuleCamDocumentacaoBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleCamExcetoReferenceBoard.tsx",
+        "file":  "GoldenRuleCamExcetoReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleCamHighRiskProtocolBoard.tsx",
+        "file":  "GoldenRuleCamHighRiskProtocolBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleCamNineRightsBoard.tsx",
+        "file":  "GoldenRuleCamNineRightsBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleDressingMatchMatrix.tsx",
+        "file":  "GoldenRuleDressingMatchMatrix.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleEtiologyLetterSpectrum.tsx",
+        "file":  "GoldenRuleEtiologyLetterSpectrum.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleFarmacoClinicoReferenceBoard.tsx",
+        "file":  "GoldenRuleFarmacoClinicoReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleIstReferenceBoard.tsx",
+        "file":  "GoldenRuleIstReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleItuBundleBoard.tsx",
+        "file":  "GoldenRuleItuBundleBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleIvAntisepsisBoard.tsx",
+        "file":  "GoldenRuleIvAntisepsisBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleIvDeviceReferenceBoard.tsx",
+        "file":  "GoldenRuleIvDeviceReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleIvDifferentialBoard.tsx",
+        "file":  "GoldenRuleIvDifferentialBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleIvExcetoCommandBoard.tsx",
+        "file":  "GoldenRuleIvExcetoCommandBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleIvIntervalBoard.tsx",
+        "file":  "GoldenRuleIvIntervalBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleLabPrepLensBoard.tsx",
+        "file":  "GoldenRuleLabPrepLensBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleMentalCrisisLadderBoard.tsx",
+        "file":  "GoldenRuleMentalCrisisLadderBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleMentalRapsTierBoard.tsx",
+        "file":  "GoldenRuleMentalRapsTierBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleMeshReveal.tsx",
+        "file":  "GoldenRuleMeshReveal.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleMulherMamaBoard.tsx",
+        "file":  "GoldenRuleMulherMamaBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleMulherPapanicolauBoard.tsx",
+        "file":  "GoldenRuleMulherPapanicolauBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleMulherPartoHumanizadoBoard.tsx",
+        "file":  "GoldenRuleMulherPartoHumanizadoBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleMulherPlanejamentoBoard.tsx",
+        "file":  "GoldenRuleMulherPlanejamentoBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleMulherPrenatalBoard.tsx",
+        "file":  "GoldenRuleMulherPrenatalBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleMulherPuerperioBoard.tsx",
+        "file":  "GoldenRuleMulherPuerperioBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePeriAldreteBoard.tsx",
+        "file":  "GoldenRulePeriAldreteBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePeriPreopPrepBoard.tsx",
+        "file":  "GoldenRulePeriPreopPrepBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePeriProtocolReferenceBoard.tsx",
+        "file":  "GoldenRulePeriProtocolReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePeriVfReferenceBoard.tsx",
+        "file":  "GoldenRulePeriVfReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePkPdReferenceBoard.tsx",
+        "file":  "GoldenRulePkPdReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePniIntervalMatrix.tsx",
+        "file":  "GoldenRulePniIntervalMatrix.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePniTemperatureRail.tsx",
+        "file":  "GoldenRulePniTemperatureRail.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleProtocolCarousel.tsx",
+        "file":  "GoldenRuleProtocolCarousel.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePtCliticRailBoard.tsx",
+        "file":  "GoldenRulePtCliticRailBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePtCommaRailBoard.tsx",
+        "file":  "GoldenRulePtCommaRailBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRulePtTermMatrixBoard.tsx",
+        "file":  "GoldenRulePtTermMatrixBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleRespiratorioSpo2ReferenceBoard.tsx",
+        "file":  "GoldenRuleRespiratorioSpo2ReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleSaeReferenceBoard.tsx",
+        "file":  "GoldenRuleSaeReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleSondaMeasurementBoard.tsx",
+        "file":  "GoldenRuleSondaMeasurementBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleSpNspReferenceBoard.tsx",
+        "file":  "GoldenRuleSpNspReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleTbPrecautionBoard.tsx",
+        "file":  "GoldenRuleTbPrecautionBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleTrabalhoNr32ReferenceBoard.tsx",
+        "file":  "GoldenRuleTrabalhoNr32ReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleUrgenciasCincinnatiBoard.tsx",
+        "file":  "GoldenRuleUrgenciasCincinnatiBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleUrgenciasExcetoReferenceBoard.tsx",
+        "file":  "GoldenRuleUrgenciasExcetoReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleUrgenciasHeimlichBoard.tsx",
+        "file":  "GoldenRuleUrgenciasHeimlichBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleUrgenciasManchesterBoard.tsx",
+        "file":  "GoldenRuleUrgenciasManchesterBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleUrgenciasPediatricParamsBoard.tsx",
+        "file":  "GoldenRuleUrgenciasPediatricParamsBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleUrgenciasProtocolReferenceBoard.tsx",
+        "file":  "GoldenRuleUrgenciasProtocolReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleUrgenciasRcpParamsBoard.tsx",
+        "file":  "GoldenRuleUrgenciasRcpParamsBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleUrgenciasShockReferenceBoard.tsx",
+        "file":  "GoldenRuleUrgenciasShockReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleUrgenciasTraumaReferenceBoard.tsx",
+        "file":  "GoldenRuleUrgenciasTraumaReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleViaReferenceBoard.tsx",
+        "file":  "GoldenRuleViaReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/GoldenRuleVitalsReferenceBoard.tsx",
+        "file":  "GoldenRuleVitalsReferenceBoard.tsx",
+        "kind":  "golden_board",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/InfusaoEvStationDeckConceptMap.tsx",
+        "file":  "InfusaoEvStationDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/IstRiskRoutesDeckConceptMap.tsx",
+        "file":  "IstRiskRoutesDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/ItuClosedSystemRailConceptMap.tsx",
+        "file":  "ItuClosedSystemRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/IvBundleOrbitConceptMap.tsx",
+        "file":  "IvBundleOrbitConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/IvCareOrbitConceptMap.tsx",
+        "file":  "IvCareOrbitConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/IvComplicationTissueLayersConceptMap.tsx",
+        "file":  "IvComplicationTissueLayersConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/IvExcetoSpectrumConceptMap.tsx",
+        "file":  "IvExcetoSpectrumConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/IvGaugeMatrixConceptMap.tsx",
+        "file":  "IvGaugeMatrixConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/IvIntervalTimelineConceptMap.tsx",
+        "file":  "IvIntervalTimelineConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/IvPunctureRailConceptMap.tsx",
+        "file":  "IvPunctureRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LabSpecimenChainConceptMap.tsx",
+        "file":  "LabSpecimenChainConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowAdolescentExcetoIsolateTap.tsx",
+        "file":  "LogicFlowAdolescentExcetoIsolateTap.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowAdolescentVfWeaveTap.tsx",
+        "file":  "LogicFlowAdolescentVfWeaveTap.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowAdolescentZClassifyTap.tsx",
+        "file":  "LogicFlowAdolescentZClassifyTap.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowBiossegVfJuggleTap.tsx",
+        "file":  "LogicFlowBiossegVfJuggleTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowCamAltoRiscoEliminationTap.tsx",
+        "file":  "LogicFlowCamAltoRiscoEliminationTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowCamDocumentacaoVfTap.tsx",
+        "file":  "LogicFlowCamDocumentacaoVfTap.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowCamVfJuggleTap.tsx",
+        "file":  "LogicFlowCamVfJuggleTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowEtiologyEliminationTap.tsx",
+        "file":  "LogicFlowEtiologyEliminationTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowFarmacoVfJuggleTap.tsx",
+        "file":  "LogicFlowFarmacoVfJuggleTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowFooter.tsx",
+        "file":  "LogicFlowFooter.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowItuExcetoTap.tsx",
+        "file":  "LogicFlowItuExcetoTap.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowIvBundleTapFlow.tsx",
+        "file":  "LogicFlowIvBundleTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowIvComplicationTapFlow.tsx",
+        "file":  "LogicFlowIvComplicationTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowIvDeviceTapFlow.tsx",
+        "file":  "LogicFlowIvDeviceTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowIvIntervalTapFlow.tsx",
+        "file":  "LogicFlowIvIntervalTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowIvPunctureTapFlow.tsx",
+        "file":  "LogicFlowIvPunctureTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowLabVfSoftStack.tsx",
+        "file":  "LogicFlowLabVfSoftStack.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowMentalCrisisDecisionTap.tsx",
+        "file":  "LogicFlowMentalCrisisDecisionTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowMentalRapsClassifyTap.tsx",
+        "file":  "LogicFlowMentalRapsClassifyTap.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowMulherLaborTapFlow.tsx",
+        "file":  "LogicFlowMulherLaborTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowMulherMamaTapFlow.tsx",
+        "file":  "LogicFlowMulherMamaTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowMulherPlanejamentoTapFlow.tsx",
+        "file":  "LogicFlowMulherPlanejamentoTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowMulherPrenatalTapFlow.tsx",
+        "file":  "LogicFlowMulherPrenatalTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowMulherPuerperioTapFlow.tsx",
+        "file":  "LogicFlowMulherPuerperioTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowMulherScreeningTapFlow.tsx",
+        "file":  "LogicFlowMulherScreeningTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPeriPreopDecisionTap.tsx",
+        "file":  "LogicFlowPeriPreopDecisionTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPeriProtocolTapFlow.tsx",
+        "file":  "LogicFlowPeriProtocolTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPeriSrpaDecisionTap.tsx",
+        "file":  "LogicFlowPeriSrpaDecisionTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPeriVfJuggleTap.tsx",
+        "file":  "LogicFlowPeriVfJuggleTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPniCalendarEliminationTap.tsx",
+        "file":  "LogicFlowPniCalendarEliminationTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPniColdChainTap.tsx",
+        "file":  "LogicFlowPniColdChainTap.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPniVfJuggleTap.tsx",
+        "file":  "LogicFlowPniVfJuggleTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPtCliticPositionBoard.tsx",
+        "file":  "LogicFlowPtCliticPositionBoard.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPtCliticRailTapFlow.tsx",
+        "file":  "LogicFlowPtCliticRailTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPtCommaRailTapFlow.tsx",
+        "file":  "LogicFlowPtCommaRailTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPtCraseFunnelTapFlow.tsx",
+        "file":  "LogicFlowPtCraseFunnelTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowPtTermMatrixTapFlow.tsx",
+        "file":  "LogicFlowPtTermMatrixTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowRespiratorioVfJuggleTap.tsx",
+        "file":  "LogicFlowRespiratorioVfJuggleTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowSegurancaVfJuggleTap.tsx",
+        "file":  "LogicFlowSegurancaVfJuggleTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowSoftStack.tsx",
+        "file":  "LogicFlowSoftStack.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowSondaChecklistTap.tsx",
+        "file":  "LogicFlowSondaChecklistTap.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowTbVfEliminationTap.tsx",
+        "file":  "LogicFlowTbVfEliminationTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowTrabalhoVfJuggleTap.tsx",
+        "file":  "LogicFlowTrabalhoVfJuggleTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowUrgenciasChokingTapFlow.tsx",
+        "file":  "LogicFlowUrgenciasChokingTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowUrgenciasPediatricTapFlow.tsx",
+        "file":  "LogicFlowUrgenciasPediatricTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowUrgenciasShockTapFlow.tsx",
+        "file":  "LogicFlowUrgenciasShockTapFlow.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowUrgenciasStrokeEliminationTap.tsx",
+        "file":  "LogicFlowUrgenciasStrokeEliminationTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowViaVfJuggleTap.tsx",
+        "file":  "LogicFlowViaVfJuggleTap.tsx",
+        "kind":  "logic_tap",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/LogicFlowVitalsTranslateTap.tsx",
+        "file":  "LogicFlowVitalsTranslateTap.tsx",
+        "kind":  "logic_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MentalCrisisSignalDeckConceptMap.tsx",
+        "file":  "MentalCrisisSignalDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MentalRapsNetworkRailConceptMap.tsx",
+        "file":  "MentalRapsNetworkRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MorphingTimelineConceptMap.tsx",
+        "file":  "MorphingTimelineConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MorphologicalConceptMap.tsx",
+        "file":  "MorphologicalConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MulherContraceptionSpectrumConceptMap.tsx",
+        "file":  "MulherContraceptionSpectrumConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MulherGestationTimelineConceptMap.tsx",
+        "file":  "MulherGestationTimelineConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MulherLaborPhaseDeckConceptMap.tsx",
+        "file":  "MulherLaborPhaseDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MulherMammographySpectrumConceptMap.tsx",
+        "file":  "MulherMammographySpectrumConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MulherPuerperioTimelineConceptMap.tsx",
+        "file":  "MulherPuerperioTimelineConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/MulherScreeningSpectrumConceptMap.tsx",
+        "file":  "MulherScreeningSpectrumConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/Nr32AnnexDeckConceptMap.tsx",
+        "file":  "Nr32AnnexDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/OxygenProtocolDeckConceptMap.tsx",
+        "file":  "OxygenProtocolDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/PeriPreopPhaseDeckConceptMap.tsx",
+        "file":  "PeriPreopPhaseDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/PeriProtocolChecklistDeckConceptMap.tsx",
+        "file":  "PeriProtocolChecklistDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/PeriSrpaMonitorDeckConceptMap.tsx",
+        "file":  "PeriSrpaMonitorDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/PeriVfAssertionsDeckConceptMap.tsx",
+        "file":  "PeriVfAssertionsDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/PniRulesDeckConceptMap.tsx",
+        "file":  "PniRulesDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/ProcedureProtocolConceptMap.tsx",
+        "file":  "ProcedureProtocolConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/PtCliticRailDeckConceptMap.tsx",
+        "file":  "PtCliticRailDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/PtCommaRailDeckConceptMap.tsx",
+        "file":  "PtCommaRailDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/PtCraseFunnelDeckConceptMap.tsx",
+        "file":  "PtCraseFunnelDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/PtTermMatrixDeckConceptMap.tsx",
+        "file":  "PtTermMatrixDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/RespiratorioAsmaDpocDuelDeckConceptMap.tsx",
+        "file":  "RespiratorioAsmaDpocDuelDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/SaeDocumentationConceptMap.tsx",
+        "file":  "SaeDocumentationConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/SaeResponsibilityMatrix.tsx",
+        "file":  "SaeResponsibilityMatrix.tsx",
+        "kind":  "other",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/SpFallRiskRailConceptMap.tsx",
+        "file":  "SpFallRiskRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/SpIdVerifyDeckConceptMap.tsx",
+        "file":  "SpIdVerifyDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/SpIncidentTaxonomyDeckConceptMap.tsx",
+        "file":  "SpIncidentTaxonomyDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/SurvivalChainConceptMap.tsx",
+        "file":  "SurvivalChainConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/SusArt4OrbitConceptMap.tsx",
+        "file":  "SusArt4OrbitConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/SusLegalPillarsConceptMap.tsx",
+        "file":  "SusLegalPillarsConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/SyllableScanner.tsx",
+        "file":  "SyllableScanner.tsx",
+        "kind":  "other",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/TbVigilanceRailConceptMap.tsx",
+        "file":  "TbVigilanceRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasChokingSignalDeckConceptMap.tsx",
+        "file":  "UrgenciasChokingSignalDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasEmergencyHubConceptMap.tsx",
+        "file":  "UrgenciasEmergencyHubConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasExcetoRailConceptMap.tsx",
+        "file":  "UrgenciasExcetoRailConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasManchesterSpectrumConceptMap.tsx",
+        "file":  "UrgenciasManchesterSpectrumConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasPediatricRcpDeckConceptMap.tsx",
+        "file":  "UrgenciasPediatricRcpDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasProtocolRulesDeckConceptMap.tsx",
+        "file":  "UrgenciasProtocolRulesDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasShockTypesDeckConceptMap.tsx",
+        "file":  "UrgenciasShockTypesDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasStrokeSignsDeckConceptMap.tsx",
+        "file":  "UrgenciasStrokeSignsDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/UrgenciasSurvivalChainDeckConceptMap.tsx",
+        "file":  "UrgenciasSurvivalChainDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/VaccineTimelineConceptMap.tsx",
+        "file":  "VaccineTimelineConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/VersusArena.tsx",
+        "file":  "VersusArena.tsx",
+        "kind":  "other",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/VitalsPanelConceptMap.tsx",
+        "file":  "VitalsPanelConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    },
+    {
+        "path":  "components/slides/variants/WoundStageTissueDeckConceptMap.tsx",
+        "file":  "WoundStageTissueDeckConceptMap.tsx",
+        "kind":  "concept_bespoke",
+        "tier":  "C_no_primitives"
+    }
+]

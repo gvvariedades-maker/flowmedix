@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-06T00:34:10.442Z",
+  "lote": "coleta-de-exames-laboratoriais-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563288910-0",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+    "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+    "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563225798-9",
+    "univali-enfermagem-coleta-de-exames-laboratoriais-1779563165114-9",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-4",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563288910-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563225798-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-coleta-de-exames-laboratoriais-1779563165114-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

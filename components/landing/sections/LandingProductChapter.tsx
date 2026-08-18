@@ -45,7 +45,7 @@ export function LandingProductChapter() {
       {/* Intro demo — leitura confortável */}
       <div className="bg-[#f1f5f9] px-4 pb-10 pt-2 text-slate-900 sm:px-6 sm:pb-14">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#3d6b0f]">
+          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#9A3412]">
             {LANDING_DEMO.label}
           </p>
           <h2

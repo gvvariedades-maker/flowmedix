@@ -1,12 +1,21 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import {
   E2E_SIMULADO_SESSION_ID,
   E2E_SIMULADO_SLUG,
 } from '../lib/e2e/constants';
 
+/** Checkbox Radix (button role) — clicar no label associado é mais estável que .check(). */
+async function aceitarInstrucoesProva(page: Page) {
+  const checkbox = page.getByRole('checkbox', { name: /Li as instruções/i });
+  await expect(checkbox).toBeVisible();
+  await page.getByText(/Li as instruções e estou pronto para iniciar a prova/i).click();
+  await expect(checkbox).toHaveAttribute('aria-checked', 'true', { timeout: 10_000 });
+}
+
 /**
  * Fluxo aluno: /simulados → runner → resumo.
  * APIs usam seed in-memory no servidor quando E2E_DASHBOARD_BYPASS=true (playwright.config).
+ * Setup UI sempre cria `prova`; treino permanece só em sessões legadas.
  */
 test.describe('Modo Simulado (aluno)', () => {
   test.describe.configure({ mode: 'serial' });
@@ -44,7 +53,7 @@ test.describe('Modo Simulado (aluno)', () => {
     await expect(iniciarProvaBtn).toBeDisabled();
     await expect(page.getByText(/Meta:/)).not.toBeVisible();
 
-    await page.getByRole('checkbox', { name: /Li as instruções/i }).check();
+    await aceitarInstrucoesProva(page);
     await expect(iniciarProvaBtn).toBeEnabled();
     await iniciarProvaBtn.click();
 
@@ -65,34 +74,42 @@ test.describe('Modo Simulado (aluno)', () => {
   });
 
   test('runner retoma sessão em andamento ao voltar para URL', async ({ page, request }) => {
-    const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
+    const createRes = await request.post('/api/simulado/sessions', {
+      data: { quantidade: 1, modo: 'prova', titulo: 'Prova E2E' },
+    });
     expect(createRes.ok()).toBeTruthy();
     const createPayload = (await createRes.json()) as { session?: { id?: string } };
     const sessionId = createPayload.session?.id ?? E2E_SIMULADO_SESSION_ID;
 
     await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
-    await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
+    await expect(page.getByRole('heading', { name: 'Prova E2E' })).toBeVisible({
       timeout: 30_000,
     });
-    await expect(page.getByText(/0 de 1 respondidas/i)).toBeVisible();
+    await aceitarInstrucoesProva(page);
+    await page.getByRole('button', { name: 'Iniciar prova' }).click();
+    await expect(page.getByText(/0 de 1 respondidas/i)).toBeVisible({ timeout: 15_000 });
 
     await page.goto('/estudar', { waitUntil: 'domcontentloaded' });
     await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
-    await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
+    await expect(page.getByRole('heading', { name: 'Prova E2E' })).toBeVisible({
       timeout: 30_000,
     });
   });
 
-  test('runner mostra feedback final antes do resumo', async ({ page, request }) => {
-    const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
+  test('prova conclui direto no resumo sem feedback intermediário', async ({ page, request }) => {
+    const createRes = await request.post('/api/simulado/sessions', {
+      data: { quantidade: 1, modo: 'prova', titulo: 'Prova E2E' },
+    });
     expect(createRes.ok()).toBeTruthy();
     const createPayload = (await createRes.json()) as { session?: { id?: string } };
     const sessionId = createPayload.session?.id ?? E2E_SIMULADO_SESSION_ID;
 
     await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
-    await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
+    await expect(page.getByRole('heading', { name: 'Prova E2E' })).toBeVisible({
       timeout: 15_000,
     });
+    await aceitarInstrucoesProva(page);
+    await page.getByRole('button', { name: 'Iniciar prova' }).click();
 
     await expect(
       page.getByText('Paciente em parada cardiorrespiratória. Qual a primeira conduta?'),
@@ -101,41 +118,45 @@ test.describe('Modo Simulado (aluno)', () => {
     await page.getByRole('radio', { name: /A\).*compressões torácicas/i }).click();
     await page.getByRole('button', { name: 'Confirmar resposta' }).click();
 
-    await expect(page.getByText('Resposta correta!')).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByRole('button', { name: 'Ver resultado' })).toBeVisible();
-    await expect(page.getByText(/Simulado concluído/)).not.toBeVisible();
-
-    await page.getByRole('button', { name: 'Ver resultado' }).click();
+    await expect(page.getByText('Resposta correta!')).not.toBeVisible({ timeout: 5_000 });
+    await expect(page.getByRole('button', { name: 'Ver resultado' })).not.toBeVisible();
     await expect(page.getByText(/Simulado concluído/)).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByRole('heading', { name: 'Simulado · Treino' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Prova E2E' })).toBeVisible();
     await expect(page.getByText('100%', { exact: true })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Novo simulado' }).first()).toBeVisible();
   });
 
   test('mobile exibe CTA de confirmar após selecionar alternativa', async ({ page, request }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
+    const createRes = await request.post('/api/simulado/sessions', {
+      data: { quantidade: 1, modo: 'prova', titulo: 'Prova E2E' },
+    });
     expect(createRes.ok()).toBeTruthy();
     const createPayload = (await createRes.json()) as { session?: { id?: string } };
     const sessionId = createPayload.session?.id ?? E2E_SIMULADO_SESSION_ID;
 
     await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
-    await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
+    await expect(page.getByRole('heading', { name: 'Prova E2E' })).toBeVisible({
       timeout: 15_000,
     });
+    await aceitarInstrucoesProva(page);
+    await page.getByRole('button', { name: 'Iniciar prova' }).click();
 
     await expect(page.getByRole('button', { name: 'Confirmar resposta' })).not.toBeVisible();
     await page.getByRole('radio', { name: /A\).*compressões torácicas/i }).click();
     await expect(page.getByRole('button', { name: 'Confirmar resposta' })).toBeVisible();
     await page.getByRole('button', { name: 'Confirmar resposta' }).click();
 
-    await expect(page.getByRole('button', { name: 'Ver resultado' })).toBeVisible({
+    await expect(page.getByText(/Simulado concluído/)).toBeVisible({
       timeout: 15_000,
     });
   });
 
   test('retoma sessão concluída pela URL (refresh)', async ({ page, request }) => {
-    await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
+    await request.post('/api/simulado/sessions', {
+      data: { quantidade: 1, modo: 'prova', titulo: 'Prova E2E' },
+    });
+    await request.post(`/api/simulado/sessions/${E2E_SIMULADO_SESSION_ID}/iniciar-prova`);
     await request.post('/api/simulado/responder', {
       data: {
         session_id: E2E_SIMULADO_SESSION_ID,
@@ -149,7 +170,7 @@ test.describe('Modo Simulado (aluno)', () => {
     });
 
     await expect(page.getByText(/Simulado concluído/)).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByRole('heading', { name: 'Simulado · Treino' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Prova E2E' })).toBeVisible();
     await expect(page.getByText('Revisão por questão')).toBeVisible();
     await expect(page.getByText('Acertou')).toBeVisible();
   });
@@ -163,17 +184,21 @@ test.describe('Meu desempenho (simulados)', () => {
       timeout: 20_000,
     });
     await expect(page.getByRole('link', { name: 'Hoje' })).toBeVisible();
+    await expect(page.getByText('Modo', { exact: true })).not.toBeVisible();
+    await expect(page.getByRole('link', { name: 'Todos os modos' })).not.toBeVisible();
     const hasResumoComparativo = await page.getByText('Resumo comparativo').isVisible().catch(() => false);
     if (hasResumoComparativo) {
       await expect(page.getByText('No período', { exact: true })).toBeVisible();
-      await expect(page.getByText('Geral (histórico)', { exact: true })).toBeVisible();
+      // Comparação é com os últimos 12 meses — não com "todo o histórico".
+      await expect(page.getByText('Últimos 12 meses', { exact: true })).toBeVisible();
+      await expect(page.getByText('Geral (histórico)', { exact: true })).toHaveCount(0);
       await expect(page.getByText('% de acerto', { exact: true }).first()).toBeVisible();
       await expect(page.getByText('Acertos', { exact: true }).first()).toBeVisible();
       await expect(page.getByText('Erros', { exact: true }).first()).toBeVisible();
       await expect(page.getByText('Questões respondidas', { exact: true }).first()).toBeVisible();
     }
     await expect(page.getByText('Onde focar agora').first()).toBeVisible();
-    await expect(page.getByText('Sua tendência na semana').first()).toBeVisible();
+    await expect(page.getByText('Sua tendência').first()).toBeVisible();
     await expect(page.getByRole('link', { name: 'Treinar agora' })).toBeVisible();
   });
 });

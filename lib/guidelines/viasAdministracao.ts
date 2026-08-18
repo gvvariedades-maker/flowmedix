@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Vias de administração — absorção, sítios e técnica.
- * Fonte: COFEN / referência técnica de enfermagem (Potter & Perry, provas CPCON).
+ * Conteúdo técnico estável (Potter & Perry / prática de TE); revisão 2026 sem mudança de números-chave.
+ * Competência de prescrição do enfermeiro: Res. COFEN 801/2026 (não altera técnica de via do TE).
  */
 export const VIAS_ADMINISTRACAO_COFEN: GuidelineTable = {
   id: 'vias-administracao-cofen',
-  snapshot: 'Vias IM, SC, EV — absorção e técnica',
-  issuer: 'COFEN',
+  snapshot: 'Vias IM, SC, EV — absorção e técnica (revisão 2026)',
+  issuer: 'COFEN / referência técnica',
   title: 'Vias de administração de medicamentos',
-  year: 2017,
-  url: 'https://www.cofen.gov.br/',
+  year: 2026,
+  url: 'https://www.cofen.gov.br/resolucao-cofen-no-801-de-14-de-janeiro-de-2026/',
   entries: [
     {
       id: 'im-absorcao',

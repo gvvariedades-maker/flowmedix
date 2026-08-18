@@ -43,14 +43,14 @@ export function LandingComparativo() {
             </ul>
           </div>
 
-          <div className="card-elevated-lg overflow-hidden rounded-[2rem] border-[#8fe020]/20">
-            <div className="rounded-t-xl border border-[#8fe020]/30 bg-[#8fe020]/10 px-6 py-4">
+          <div className="card-elevated-lg overflow-hidden rounded-[2rem] border-[#F26522]/20">
+            <div className="rounded-t-xl border border-[#F26522]/30 bg-[#F26522]/10 px-6 py-4">
               <AvantLogo size="md" tone="light" animated={false} />
             </div>
             <ul className="space-y-3 p-6">
               {LANDING_COMPARATIVO.avantItems.map((item) => (
                 <li key={item} className="flex gap-2 text-sm text-slate-700">
-                  <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-[#3d6b0f]" aria-hidden />
+                  <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-[#9A3412]" aria-hidden />
                   {item}
                 </li>
               ))}

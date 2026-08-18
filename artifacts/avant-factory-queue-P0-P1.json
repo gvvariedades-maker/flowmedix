@@ -1,0 +1,842 @@
+{
+  "generated_at": "2026-08-03T19:34:12.060Z",
+  "source": {
+    "registry_updated_at": "2026-08-02",
+    "program_status": "artifacts/catalog-program-status.json",
+    "program_generated_at": "2026-08-03T19:32:20.565Z",
+    "detector_sample": "artifacts/_tmp-factory-queue-sample.json",
+    "detector_generated_at": "2026-08-03T19:33:23.344Z"
+  },
+  "north_star": {
+    "glanceable_4_screens": true,
+    "logic_flow_tap_max_steps": 3,
+    "tap_only_when": "elimination_or_order",
+    "no_neurocanvas": true,
+    "no_ai_generate": true,
+    "execution_mode": "1A_local_ide",
+    "twentieth_package": "Enfermagem do Trabalho",
+    "replaces": "Doenças Bacterianas e Fúngicas"
+  },
+  "already_done": {
+    "p0_letter_spoiler_named_disk": [
+      "vias-de-administracao-completo",
+      "imunizacao-completo",
+      "sinais-vitais-completo",
+      "urgencias-e-emergencias-completo",
+      "processo-de-enfermagem-completo",
+      "curativos-e-manejo-de-feridas-completo",
+      "saude-da-mulher-completo"
+    ],
+    "p0_letter_applied_supabase": [
+      "vias-de-administracao-completo",
+      "imunizacao-completo",
+      "processo-de-enfermagem-completo",
+      "curativos-e-manejo-de-feridas-completo",
+      "saude-da-mulher-completo"
+    ],
+    "p0_letter_apply_pending": [
+      "sinais-vitais-completo",
+      "urgencias-e-emergencias-completo"
+    ],
+    "p0_vf_onda3_disk": {
+      "lotes": [
+        "sinais-vitais-completo",
+        "vias-de-administracao-completo",
+        "curativos-e-manejo-de-feridas-completo"
+      ],
+      "vf_after": {
+        "sinais-vitais-completo": 1,
+        "vias-de-administracao-completo": 0,
+        "curativos-e-manejo-de-feridas-completo": 0
+      },
+      "apply_supabase": "pending"
+    },
+    "note": "Imunização letter residual = FP (ex. hepatite A). Sinais/Urgências letter disk=0; apply ainda pendente."
+  },
+  "scorecard": {
+    "program_41": {
+      "production_ready": 25,
+      "applied_not_vendavel": 1,
+      "in_progress": 3,
+      "no_package": 12,
+      "legacy_builder": 0
+    },
+    "gap_to_all_vendavel": 16,
+    "factory_20": {
+      "total": 20,
+      "production_ready": 17,
+      "applied": 17,
+      "in_progress": 2,
+      "pending": 1,
+      "incomplete_te": [
+        "Atenção Básica / Saúde da Família",
+        "Epidemiologia e Vigilância Epidemiológica",
+        "Noções de Anatomia"
+      ]
+    }
+  },
+  "waves": {
+    "onda_0_p0_apply": {
+      "focus": "P0 apply pendente",
+      "packages": [
+        "Verificação de Sinais Vitais",
+        "Urgências e Emergências",
+        "Curativos e Manejo de Feridas (VF onda3)"
+      ],
+      "gate": "Sinais + Urgências letter no Supabase; VF onda3 applied ou skip reportado"
+    },
+    "onda_1_trilha_a": {
+      "focus": "Trilha A incompletos",
+      "order": [
+        "Atenção Básica / Saúde da Família",
+        "Epidemiologia e Vigilância Epidemiológica",
+        "Noções de Anatomia"
+      ],
+      "gate": "AB applied↑; Epi taxonomy closed + BRANCH_MAP + âncoras; Anatomia lote_size=8 + gNN em curso"
+    },
+    "onda_2_p0_residual": {
+      "focus": "P0 residual letter",
+      "order": [
+        "Cálculo de Administração de Medicamentos e Infusões",
+        "Cuidados na Administração de Medicamentos",
+        "Promoção à Saúde e Prevenção de Agravos",
+        "Segurança do Paciente",
+        "Saúde da Criança"
+      ],
+      "gate": "named letter ≈0 + 2ª passada 0 edits + dry-run"
+    },
+    "onda_3_nota10": {
+      "focus": "Nota-10 visual / L3",
+      "order": [
+        "Saúde da Mulher",
+        "Processo de Enfermagem",
+        "Curativos e Manejo de Feridas",
+        "Imunização",
+        "Vias de Administração",
+        "Punção Venosa e Cuidados com Cateteres",
+        "Assistência Perioperatória (Inclui SRPA)",
+        "Enfermagem em Central de Material e Esterilização (CME)",
+        "Saúde Mental",
+        "Enfermagem do Trabalho"
+      ],
+      "gate": "DoD visual + *-nota10-report.md (sem 2º --promote rotineiro)"
+    },
+    "onda_4_ship_trilha_a": {
+      "focus": "Ship Trilha A",
+      "order": [
+        "Atenção Básica / Saúde da Família",
+        "Epidemiologia e Vigilância Epidemiológica",
+        "Noções de Anatomia"
+      ],
+      "gate": "production_ready + relatório"
+    }
+  },
+  "packages": [
+    {
+      "rank": 1,
+      "subtopico": "Atenção Básica / Saúde da Família",
+      "pacote_prefix": "atencao-basica-saude-da-familia",
+      "lote_completo": "atencao-basica-saude-da-familia-completo",
+      "status": "in_progress",
+      "handcraft_applied": 96,
+      "total_slugs": 171,
+      "production_status": "none",
+      "lote_size": 8,
+      "modo": "continuar",
+      "roi": "max",
+      "onda": "1-trilha-a",
+      "gaps": "75 rem; L1–L6 false; L3 ab_esf_composicao brief sem React; taxonomy closed",
+      "taxonomy_status": "closed",
+      "playbook": "data/catalog-migration/handcraft-playbooks/atencao-basica-saude-da-familia.json",
+      "guideline": "lib/guidelines/atencaoBasica.ts",
+      "quality_layers": {
+        "L1": false,
+        "L2": false,
+        "L2b": false,
+        "L3": false,
+        "L4": false,
+        "L5": false,
+        "L6": false
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 171,
+        "named_letter_pre_answer": 296,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 296,
+        "vf_verdict": 25
+      }
+    },
+    {
+      "rank": 2,
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "pacote_prefix": "epidemiologia-e-vigilancia-epidemiologica",
+      "lote_completo": "epidemiologia-e-vigilancia-epidemiologica-completo",
+      "status": "pending",
+      "handcraft_applied": 0,
+      "total_slugs": 218,
+      "production_status": "none",
+      "lote_size": 8,
+      "modo": "handcraft zero + L3 wire",
+      "roi": "max",
+      "onda": "1-trilha-a",
+      "gaps": "taxonomy open; briefs 3 ramos; sem BRANCH_MAP wire completo; sem gNN",
+      "taxonomy_status": "open",
+      "playbook": "data/catalog-migration/handcraft-playbooks/epidemiologia-e-vigilancia-epidemiologica.json",
+      "guideline": "lib/guidelines/epidemiologia.ts",
+      "quality_layers": {
+        "L1": false,
+        "L2": false,
+        "L2b": false,
+        "L3": false,
+        "L4": false,
+        "L5": false,
+        "L6": false
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 218,
+        "named_letter_pre_answer": 411,
+        "clause_only_pre_answer": 2,
+        "letter_spoiler": 413,
+        "vf_verdict": 0
+      }
+    },
+    {
+      "rank": 3,
+      "subtopico": "Verificação de Sinais Vitais",
+      "pacote_prefix": "sinais-vitais",
+      "lote_completo": "sinais-vitais-completo",
+      "status": "applied",
+      "handcraft_applied": 354,
+      "total_slugs": 354,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "repair P0 → apply",
+      "roi": "alto",
+      "onda": "0-p0-apply",
+      "gaps": "disk letter ~0; apply Supabase pendente; VF onda3 residual 1 + apply",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/sinais-vitais.json",
+      "guideline": "lib/guidelines/sinaisVitais.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 527,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 1
+      }
+    },
+    {
+      "rank": 4,
+      "subtopico": "Urgências e Emergências",
+      "pacote_prefix": "urgencias",
+      "lote_completo": "urgencias-e-emergencias-completo",
+      "status": "applied",
+      "handcraft_applied": 339,
+      "total_slugs": 339,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "repair P0 → apply",
+      "roi": "alto",
+      "onda": "0-p0-apply",
+      "gaps": "disk letter ~0; apply Supabase pendente; VF ainda alto no disco (183)",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/urgencias-e-emergencias.json",
+      "guideline": "lib/guidelines/urgencias.ts + lib/guidelines/urgenciasProtocolos.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 348,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 2,
+        "vf_verdict": 183
+      }
+    },
+    {
+      "rank": 5,
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "pacote_prefix": "calculo-de-administracao-de-medicamentos-e-infusoes",
+      "lote_completo": "calculo-de-administracao-de-medicamentos-e-infusoes-completo",
+      "status": "applied",
+      "handcraft_applied": 85,
+      "total_slugs": 85,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "repair P0",
+      "roi": "alto",
+      "onda": "2-p0-residual",
+      "gaps": "maior residual named letter aberto",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/calculo-de-administracao-de-medicamentos-e-infusoes.json",
+      "guideline": "lib/guidelines/calculoMedicamentos.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 155,
+        "named_letter_pre_answer": 157,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 157,
+        "vf_verdict": 4
+      }
+    },
+    {
+      "rank": 6,
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "pacote_prefix": "cuidados-na-administracao-de-medicamentos",
+      "lote_completo": "cuidados-na-administracao-de-medicamentos-completo",
+      "status": "applied",
+      "handcraft_applied": 123,
+      "total_slugs": 123,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "repair P0",
+      "roi": "alto",
+      "onda": "2-p0-residual",
+      "gaps": "P0 letter applied Supabase (134/0)",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/cuidados-na-administracao-de-medicamentos.json",
+      "guideline": "lib/guidelines/cuidadosMedicamentos.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 134,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 0
+      },
+      "onda2_status": "applied_supabase"
+    },
+    {
+      "rank": 7,
+      "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "pacote_prefix": "promocao-a-saude-e-prevencao-de-agravos",
+      "lote_completo": "promocao-a-saude-e-prevencao-de-agravos-completo",
+      "status": "applied",
+      "handcraft_applied": 100,
+      "total_slugs": 100,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "repair P0",
+      "roi": "médio-alto",
+      "onda": "2-p0-residual",
+      "gaps": "P0 letter applied 109/2; 2 gabarito diverge HUMAN_REVIEW",
+      "taxonomy_status": "closed",
+      "playbook": "data/catalog-migration/handcraft-playbooks/promocao-a-saude-e-prevencao-de-agravos.json",
+      "guideline": "lib/guidelines/promocaoSaude.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 111,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 0
+      },
+      "onda2_status": "applied_supabase_partial"
+    },
+    {
+      "rank": 8,
+      "subtopico": "Noções de Anatomia",
+      "pacote_prefix": "nocoes-de-anatomia",
+      "lote_completo": "nocoes-de-anatomia-completo",
+      "status": "in_progress",
+      "handcraft_applied": 0,
+      "total_slugs": 48,
+      "production_status": "none",
+      "lote_size": 50,
+      "modo": "handcraft zero",
+      "roi": "médio",
+      "onda": "1-trilha-a",
+      "gaps": "sem *-completo; sem playbook/guideline/âncoras; lote_size=50 → corrigir para 8",
+      "taxonomy_status": null,
+      "playbook": null,
+      "guideline": null,
+      "quality_layers": {
+        "L1": false,
+        "L2": false,
+        "L2b": false,
+        "L3": false,
+        "L4": false,
+        "L5": false,
+        "L6": false
+      },
+      "detector": {
+        "missing_lote": true,
+        "files": 0,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 0
+      }
+    },
+    {
+      "rank": 9,
+      "subtopico": "Segurança do Paciente",
+      "pacote_prefix": "seguranca-do-paciente",
+      "lote_completo": "seguranca-do-paciente-completo",
+      "status": "applied",
+      "handcraft_applied": 59,
+      "total_slugs": 59,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "repair P0 + playbook",
+      "roi": "médio",
+      "onda": "2-p0-residual",
+      "gaps": "P0 letter applied Supabase (76/0)",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/seguranca-do-paciente.json",
+      "guideline": null,
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 76,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 0
+      },
+      "onda2_status": "applied_supabase"
+    },
+    {
+      "rank": 10,
+      "subtopico": "Saúde da Criança",
+      "pacote_prefix": "saude-da-crianca",
+      "lote_completo": "saude-da-crianca-completo",
+      "status": "applied",
+      "handcraft_applied": 62,
+      "total_slugs": 62,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "repair P0",
+      "roi": "médio",
+      "onda": "2-p0-residual",
+      "gaps": "disk named=0; dry-run 62/0; apply pendente",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/saude-da-crianca.json",
+      "guideline": "lib/guidelines/saudeCrianca.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 62,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 0
+      },
+      "onda2_status": "disk_ready_apply_pending"
+    },
+    {
+      "rank": 11,
+      "subtopico": "Curativos e Manejo de Feridas",
+      "pacote_prefix": "curativos-e-manejo-de-feridas",
+      "lote_completo": "curativos-e-manejo-de-feridas-completo",
+      "status": "applied",
+      "handcraft_applied": 94,
+      "total_slugs": 94,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "apply VF + visual",
+      "roi": "médio",
+      "onda": "0-p0-apply",
+      "gaps": "VF onda3 disk 0; apply pendente; nota-10 visual",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/curativos-e-manejo-de-feridas.json",
+      "guideline": "lib/guidelines/curativos.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 188,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 0
+      }
+    },
+    {
+      "rank": 12,
+      "subtopico": "Saúde da Mulher",
+      "pacote_prefix": "saude-da-mulher",
+      "lote_completo": "saude-da-mulher-completo",
+      "status": "applied",
+      "handcraft_applied": 246,
+      "total_slugs": 246,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "nota-10 visual",
+      "roi": "médio",
+      "onda": "3-nota10",
+      "gaps": "Onda3: Design+INDEX ok; Playwright slide-mold-review timeout; captures pending",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/saude-da-mulher.json",
+      "guideline": "lib/guidelines/saudeMulher.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 264,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 0
+      },
+      "onda3_status": "design_ok_playwright_blocked"
+    },
+    {
+      "rank": 13,
+      "subtopico": "Processo de Enfermagem",
+      "pacote_prefix": "processo-de-enfermagem",
+      "lote_completo": "processo-de-enfermagem-completo",
+      "status": "applied",
+      "handcraft_applied": 51,
+      "total_slugs": 51,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "nota-10 visual",
+      "roi": "médio",
+      "onda": "3-nota10",
+      "gaps": "P0-2 applied Supabase; polish glanceable",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/processo-de-enfermagem.json",
+      "guideline": "lib/guidelines/saeCofen.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 286,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 42
+      }
+    },
+    {
+      "rank": 14,
+      "subtopico": "Imunização",
+      "pacote_prefix": "imunizacao",
+      "lote_completo": "imunizacao-completo",
+      "status": "applied",
+      "handcraft_applied": 575,
+      "total_slugs": 575,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "nota-10 visual",
+      "roi": "médio",
+      "onda": "3-nota10",
+      "gaps": "letter clean (FP); glanceable/VF density",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/imunizacao.json",
+      "guideline": "lib/guidelines/pniCalendario.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 575,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 13,
+        "letter_spoiler": 13,
+        "vf_verdict": 9
+      }
+    },
+    {
+      "rank": 15,
+      "subtopico": "Vias de Administração",
+      "pacote_prefix": "vias-de-administracao",
+      "lote_completo": "vias-de-administracao-completo",
+      "status": "applied",
+      "handcraft_applied": 208,
+      "total_slugs": 208,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "nota-10 visual",
+      "roi": "médio",
+      "onda": "3-nota10",
+      "gaps": "letter+VF disk clean; polish flagship",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/vias-de-administracao.json",
+      "guideline": "lib/guidelines/viasAdministracao.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 235,
+        "named_letter_pre_answer": 0,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 0,
+        "vf_verdict": 0
+      }
+    },
+    {
+      "rank": 16,
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "pacote_prefix": "puncao-venosa-e-cuidados-com-cateteres",
+      "lote_completo": "puncao-venosa-e-cuidados-com-cateteres-completo",
+      "status": "applied",
+      "handcraft_applied": 110,
+      "total_slugs": 110,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "nota-10 / residual leve",
+      "roi": "médio-baixo",
+      "onda": "3-nota10",
+      "gaps": "named residual leve; A4 registry",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuidados-com-cateteres.json",
+      "guideline": null,
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 108,
+        "named_letter_pre_answer": 21,
+        "clause_only_pre_answer": 2,
+        "letter_spoiler": 23,
+        "vf_verdict": 0
+      }
+    },
+    {
+      "rank": 17,
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "pacote_prefix": "perioperatoria",
+      "lote_completo": "perioperatoria-completo",
+      "status": "applied",
+      "handcraft_applied": 68,
+      "total_slugs": 68,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "L3 bespoke + visual",
+      "roi": "médio-baixo",
+      "onda": "3-nota10",
+      "gaps": "hotspots inédito; named residual",
+      "taxonomy_status": null,
+      "playbook": "data/catalog-migration/handcraft-playbooks/perioperatoria.json",
+      "guideline": null,
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 69,
+        "named_letter_pre_answer": 116,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 116,
+        "vf_verdict": 4
+      }
+    },
+    {
+      "rank": 18,
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "pacote_prefix": "cme",
+      "lote_completo": "cme-completo",
+      "status": "applied",
+      "handcraft_applied": 35,
+      "total_slugs": 35,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "L3 + visual",
+      "roi": "baixo-médio",
+      "onda": "3-nota10",
+      "gaps": "autoclave; A4; named residual leve",
+      "taxonomy_status": null,
+      "playbook": null,
+      "guideline": "lib/guidelines/cme.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 36,
+        "named_letter_pre_answer": 6,
+        "clause_only_pre_answer": 1,
+        "letter_spoiler": 7,
+        "vf_verdict": 0
+      }
+    },
+    {
+      "rank": 19,
+      "subtopico": "Saúde Mental",
+      "pacote_prefix": "saude-mental",
+      "lote_completo": "saude-mental-completo",
+      "status": "applied",
+      "handcraft_applied": 37,
+      "total_slugs": 37,
+      "production_status": "production_ready",
+      "lote_size": 4,
+      "modo": "L3 + visual",
+      "roi": "baixo-médio",
+      "onda": "3-nota10",
+      "gaps": "RAPS inédito; named residual leve",
+      "taxonomy_status": null,
+      "playbook": null,
+      "guideline": "lib/guidelines/saudeMental.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 37,
+        "named_letter_pre_answer": 3,
+        "clause_only_pre_answer": 2,
+        "letter_spoiler": 5,
+        "vf_verdict": 1
+      }
+    },
+    {
+      "rank": 20,
+      "subtopico": "Enfermagem do Trabalho",
+      "pacote_prefix": "enfermagem-do-trabalho",
+      "lote_completo": "enfermagem-do-trabalho-completo",
+      "status": "applied",
+      "handcraft_applied": 33,
+      "total_slugs": 33,
+      "production_status": "production_ready",
+      "lote_size": 8,
+      "modo": "nota-10 visual",
+      "roi": "baixo",
+      "onda": "3-nota10",
+      "gaps": "guideline OK; L1–L6 true; polish glanceable + relatório; named residual no disco",
+      "taxonomy_status": null,
+      "playbook": null,
+      "guideline": "lib/guidelines/enfermagemTrabalho.ts",
+      "quality_layers": {
+        "L1": true,
+        "L2": true,
+        "L2b": true,
+        "L3": true,
+        "L4": true,
+        "L5": true,
+        "L6": true
+      },
+      "detector": {
+        "missing_lote": false,
+        "files": 33,
+        "named_letter_pre_answer": 29,
+        "clause_only_pre_answer": 0,
+        "letter_spoiler": 29,
+        "vf_verdict": 0
+      }
+    }
+  ],
+  "updated_at": "2026-08-04T01:16:20.974Z"
+}

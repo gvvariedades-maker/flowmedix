@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "subtopico": "Noções de Anatomia",
+  "pacote_prefix": "nocoes-de-anatomia",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-anatomia*.json,examples/questao-premium-*-nocoes-de-anatomia*.json",
+  "guideline": "lib/guidelines/anatomiaBasica.ts",
+  "handcraft_meta": "data/catalog-migration/nocoes-de-anatomia-completo/handcraft-meta.json",
+  "l3_brief_index": "artifacts/l3-brief-nocoes-de-anatomia-INDEX.md",
+  "slug_selection": "Authority 46 (lote-01 menos titulo drift Mobilização/Fisiologia)",
+  "clusters": [
+    "Terminologia e planos anatômicos",
+    "Sistema esquelético / ossos e articulações",
+    "Sistema muscular",
+    "Sistema cardiovascular",
+    "Cavidades e topografia",
+    "Anatomia — conceito geral"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "anat_terminologia_planos",
+      "when": "Anterior/ventral, planos sagital/frontal/transverso, medial/lateral, proximal/distal",
+      "l3_decision": "molde_inedito",
+      "bespoke_target": "anat-axis-board",
+      "mold": "axis-deck · reference_table · tap · compare",
+      "anchors": [
+        "examples/questao-premium-fepese-anatomia-anterior-ventral.json"
+      ]
+    },
+    {
+      "id": "anat_esqueleto",
+      "when": "Ossos, coluna, crânio, membros, articulações",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": [
+        "examples/questao-premium-ameosc-nocoes-de-anatomia-anat_esqueleto.json"
+      ]
+    },
+    {
+      "id": "anat_muscular",
+      "when": "Músculos, origem/inserção, diafragma, grupos musculares",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": []
+    },
+    {
+      "id": "anat_cardiovascular",
+      "when": "Coração, átrios/ventrículos, artérias/veias, circulação",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": [
+        "examples/questao-premium-cebraspe-nocoes-de-anatomia-anat_cardiovascular.json"
+      ]
+    },
+    {
+      "id": "anat_cavidades",
+      "when": "Cavidades craniana/torácica/abdominal/pélvica, topografia",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": []
+    },
+    {
+      "id": "anat_generico",
+      "when": "Demais — sem fit claro nos ramos acima",
+      "l3_decision": "cauda_longa",
+      "mold": "genérico premium rose (SUBTOPIC_DESIGN_MAP)",
+      "anchors": [
+        "examples/questao-premium-avancasp-nocoes-de-anatomia-anat_generico.json"
+      ]
+    }
+  ],
+  "visual_gallery": {
+    "anat_terminologia_planos": {
+      "status": "brief_pending_react",
+      "layouts": ["anat-axis-deck", "anat-axis-board", "anat-axis-tap", "anat-axis-trap"],
+      "note": "Brief 4/4; React só com Implementar molde: anat_terminologia_planos. Handcraft usa ANAT_GENERIC_DESIGN (rose)."
+    }
+  },
+  "modes": {
+    "subtopico_handcraft": {
+      "first_lote": "nocoes-de-anatomia-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run validate:goldens -- --lote=<lote> --strict"
+      ]
+    }
+  },
+  "skills": [
+    ".cursor/skills/avant-classify-family/SKILL.md",
+    ".cursor/skills/avant-golden-anchor-handcraft/SKILL.md",
+    ".cursor/skills/professor-para-concurso/SKILL.md",
+    ".cursor/skills/avant-json-template/SKILL.md",
+    ".cursor/skills/brief-enfermagem/SKILL.md"
+  ],
+  "sources_tier_a": [
+    "Nomenclatura anatômica internacional (terminologia de posição)",
+    "lib/guidelines/anatomiaBasica.ts"
+  ],
+  "notes": [
+    "Pacote authority 46 (2026-08-03). lote_size=8.",
+    "Limiar forte ≈5. Terminologia = molde_inedito (eixos do corpo).",
+    "React bespoke só com Implementar molde:."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "comment": "Catálogo rico: slides/figuras/header_line devem ser excluídos na projeção §1.8",
+  "modulo_slug": "cpcon-exemplo-slug",
+  "meta": {
+    "banca": "CPCON",
+    "topico": "Fundamentos",
+    "subtopico": "Processo de Enfermagem",
+    "header_line": "CPCON – TÉCNICO (Órgão) 2024 — NÃO ENTRA NO HASH",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": null
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa correta.",
+    "options": [
+      { "id": "C", "text": "Opção C", "is_correct": false },
+      { "id": "A", "text": "Opção A", "is_correct": true },
+      { "id": "B", "text": "Opção B", "is_correct": false }
+    ],
+    "figures": [
+      {
+        "id": "fig-1",
+        "alt": "Diagrama SAE",
+        "src": "questao-figures/exemplo.webp"
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "items": [{ "label": "SAE", "detail": "Processo de enfermagem" }]
+    },
+    {
+      "type": "logic_flow",
+      "steps": ["Ler enunciado", "Eliminar distratores", "Gabarito A"],
+      "reveal_mode": "tap"
+    },
+    {
+      "type": "golden_rule",
+      "content": "Não inventar conduta"
+    },
+    {
+      "type": "danger_zone",
+      "content": "Pegadinhas",
+      "items": [
+        {
+          "label": "B",
+          "detail": "Distrator",
+          "correct": "Explica por que B parece certo"
+        }
+      ]
+    }
+  ],
+  "variant_with_extra_slides": {
+    "reverse_study_slides": [
+      {
+        "type": "concept_map",
+        "items": [{ "label": "SAE editado", "detail": "Slide mudou" }]
+      },
+      {
+        "type": "logic_flow",
+        "steps": ["Passo diferente"],
+        "reveal_mode": "tap"
+      },
+      {
+        "type": "golden_rule",
+        "content": "Regra editada"
+      },
+      {
+        "type": "danger_zone",
+        "content": "Pegadinhas editadas",
+        "items": []
+      }
+    ],
+    "meta": {
+      "header_line": "HEADER TOTALMENTE DIFERENTE — ainda fora do hash"
+    },
+    "question_data": {
+      "figures": [
+        {
+          "id": "fig-2",
+          "alt": "Outra figura",
+          "src": "questao-figures/outro.webp"
+        }
+      ]
+    }
+  }
+}

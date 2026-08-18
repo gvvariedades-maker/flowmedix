@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "ACS (Pref Taiúva)",
+    "orgao": "Pref Taiúva",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_nominais",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "anchor_style": "substantivacao",
+    "anchor_role": "golden_anchor",
+    "content_review": {
+      "reviewed_at": "2026-08-07",
+      "reviewer": "ancoras-100:classes-de-palavras/nominais-substantivacao-glance",
+      "guideline_snapshot": "M02/M03 Elias — «O que a palavra faz na oração?» · substantivação (artigo + cor/qualidade) × adjetivo de cor",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — substantivação e adjetivo de cor",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "substantivação",
+          "artigo + cor = substantivo",
+          "adjetivo × substantivo",
+          "pergunta-teste M02/M03",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-4003512",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Substantivação «cinza» — AVANÇASP ACS Pref Taiúva 2026 tec 4003512",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito",
+          "matriz pt_classes_nominais"
+        ]
+      }
+    ],
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-07",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/questao-premium-avancasp-portugues-classes-substantivacao-cinza.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa cuja palavra destacada está sendo substantivada, dando nome a uma categoria.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Desde que a vi, o cinza dos seus olhos me encantou.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Nossos bosques são mais verdes, como já dizia o poeta.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Entre vestido vermelho e azul, prefiro a primeira opção.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Dias azuis nem sempre dependem das condições meteorológicas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A pomba branca representa a paz, desde tempos imemoriais.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Cor vira nome",
+      "chip_label": "Peças · nominais",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "A palavra nomeia categoria (cor, ideia) ou só qualifica outro nome?",
+          "icon": "Focus"
+        },
+        {
+          "label": "Classe em disputa",
+          "detail": "Substantivação — adjetivo/cor passa a funcionar como substantivo.",
+          "icon": "Link"
+        },
+        {
+          "label": "Sinal clássico",
+          "detail": "Artigo + cor/qualidade (o/a + …) costuma denunciar o nome da categoria.",
+          "icon": "Search"
+        },
+        {
+          "label": "Função adjetiva",
+          "detail": "Cor ao lado do substantivo — «bosques verdes», «dias azuis», «pomba branca».",
+          "icon": "Paintbrush"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Cor adjetiva parece substantivo — teste se há artigo + núcleo próprio.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Artigo + cor = substantivação; cor no nome = adjetivo."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Achar a substantivação",
+      "chip_label": "Classes · nominais",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "Comando: palavra destacada substantivada (dá nome a categoria).",
+        "Teste: há artigo + cor/qualidade funcionando como núcleo?",
+        "«O cinza dos seus olhos» — artigo + cor = nome da tonalidade → substantivação.",
+        "«Verdes», «vermelho/azul», «azuis», «branca» qualificam outro substantivo — adjetivo — eliminar.",
+        "Gabarito A.",
+        "Em similares: «o verde», «o azul», «um belo» — artigo denuncia substantivo."
+      ],
+      "footer_rule": "O cinza = substantivo (cor como nome)."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Substantivação de bolso",
+      "chip_label": "Tabela de bolso",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "SUBSTANTIVAÇÃO",
+      "rows": [
+        {
+          "label": "Pergunta-teste",
+          "value": "Tem artigo? Nomeia categoria (cor, qualidade)?",
+          "emphasis": "default"
+        },
+        {
+          "label": "Padrão",
+          "value": "O/A + adjetivo ou cor → substantivo (categoria).",
+          "emphasis": "success"
+        },
+        {
+          "label": "Adj. normal",
+          "value": "Cor junto ao nome: «olhos cinzentos», «dias azuis».",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Nesta prova",
+          "value": "Procurar artigo + cor que nomeia a tonalidade (não só qualifica).",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "O cinza ≠ olhos cinzentos."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Cor ainda adjetivo",
+      "chip_label": "Pegadinhas",
+      "reveal_mode": "auto",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Adjetivo de cor × substantivo",
+      "items": [
+        {
+          "label": "B — verdes",
+          "detail": "Qualifica «bosques», não nomeia categoria isolada.",
+          "correct": "Adjetivo — «bosques verdes», sem artigo + núcleo próprio."
+        },
+        {
+          "label": "C — vermelho/azul",
+          "detail": "Especificam cor do vestido.",
+          "correct": "Adjuntos adnominais — não substantivação."
+        },
+        {
+          "label": "D — azuis",
+          "detail": "Qualifica «dias» (mesmo em metáfora).",
+          "correct": "«Dias azuis» — adjetivo, não «o azul»."
+        },
+        {
+          "label": "E — branca",
+          "detail": "Qualifica «pomba».",
+          "correct": "Adjetivo — «pomba branca»."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam por «o verde da esperança».",
+          "correct": "Artigo + cor = substantivo — mesmo trilho da substantivação."
+        }
+      ],
+      "footer_rule": "Só a cor com artigo + núcleo fecha a substantivação."
+    }
+  ]
+}

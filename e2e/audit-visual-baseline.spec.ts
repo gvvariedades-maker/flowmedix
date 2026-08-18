@@ -86,7 +86,6 @@ async function captureStaticPages(page: Page, prefix: 'desktop' | 'mobile') {
   await gotoVitrine(page);
   await snap(page, `T3-vitrine-${prefix}.png`, prefix === 'desktop');
 
-  await gotoAndSnap(page, '/plano-diario', `T7-plano-diario-${prefix}.png`);
   await gotoAndSnap(page, '/conta/assinatura', `T8-conta-${prefix}.png`);
   await gotoAndSnap(page, '/cadernos', `T11-cadernos-${prefix}.png`);
   await gotoAndSnap(page, '/simulados', `T10-simulados-lista-${prefix}.png`);

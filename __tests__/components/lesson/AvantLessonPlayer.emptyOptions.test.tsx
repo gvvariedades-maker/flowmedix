@@ -171,7 +171,6 @@ describe('AvantLessonPlayer empty options', () => {
     });
 
     expect(dismissToVitrine).toHaveBeenCalledWith({
-      fromPlano: false,
       fromCaderno: undefined,
       vitrineQuerySuffix: '?page=2',
     });

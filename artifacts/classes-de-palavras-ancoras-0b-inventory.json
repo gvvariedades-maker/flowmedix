@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "updated_at": "2026-08-05",
+  "anchors_per_branch": 2,
+  "items": [
+    {
+      "branch": "pt_classes_conjuncao",
+      "style": "causal",
+      "slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+      "path": "examples/questao-premium-vunesp-portugues-classes-conjuncao-causal.json",
+      "catalog_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+      "family": "text_fragment",
+      "status": "ready_pending_human",
+      "gate": "READY",
+      "preview": "http://localhost:3000/dev/slide-mold-review?branch=pt_classes_conjuncao"
+    },
+    {
+      "branch": "pt_classes_conjuncao",
+      "style": "adversativa",
+      "slug": "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677",
+      "path": "examples/questao-premium-quadrix-portugues-classes-conjuncao-adversativa.json",
+      "catalog_slug": "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677",
+      "family": "text_fragment",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_nominais",
+      "style": "artigo",
+      "slug": "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821",
+      "path": "examples/questao-premium-avancasp-portugues-classes-artigo-definido.json",
+      "catalog_slug": "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821",
+      "family": "conceito",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_nominais",
+      "style": "substantivacao",
+      "slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+      "path": "examples/questao-premium-avancasp-portugues-classes-substantivacao-cinza.json",
+      "catalog_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+      "family": "conceito",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_adverbio",
+      "style": "modo_intensidade",
+      "slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810",
+      "path": "examples/questao-premium-educa-pb-portugues-classes-adverbio-essencialmente.json",
+      "catalog_slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810",
+      "family": "conceito",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_adverbio",
+      "style": "adv_x_adj",
+      "slug": "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253",
+      "path": "examples/questao-premium-avancasp-portugues-classes-adv-x-adj-alto.json",
+      "catalog_slug": "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253",
+      "family": "conceito",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_preposicao",
+      "style": "prep_x_artigo",
+      "slug": "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714",
+      "path": "examples/questao-premium-avancasp-portugues-classes-prep-x-artigo.json",
+      "catalog_slug": "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714",
+      "family": "conceito",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_preposicao",
+      "style": "locucao_prepositiva",
+      "slug": "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406",
+      "path": "examples/questao-premium-apice-portugues-classes-locucao-prepositiva.json",
+      "catalog_slug": "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406",
+      "family": "conceito",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_exceto",
+      "style": "exceto_classe",
+      "slug": "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
+      "path": "examples/questao-premium-avancasp-portugues-classes-exceto-adverbio.json",
+      "catalog_slug": "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
+      "family": "certo_errado",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_exceto",
+      "style": "valor_incorreto",
+      "slug": "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085",
+      "path": "examples/questao-premium-aocp-portugues-classes-valor-incorreto-como.json",
+      "catalog_slug": "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085",
+      "family": "text_fragment",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_generico",
+      "style": "vf_multiclasse",
+      "slug": "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
+      "path": "examples/questao-premium-avancasp-portugues-classes-vf-tirinha-multiclasse.json",
+      "catalog_slug": "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
+      "family": "text_fragment",
+      "status": "bootstrapped_pending_polish"
+    },
+    {
+      "branch": "pt_classes_generico",
+      "style": "formacao_siglas",
+      "slug": "questao-formacao-palavras-siglas",
+      "path": "examples/questao-formacao-palavras-siglas.json",
+      "catalog_slug": null,
+      "family": null,
+      "status": "below_bar"
+    }
+  ]
+}

@@ -1,16 +1,16 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { resolveLucideIcon } from '../core/lucideIcon';
 import {
   inferZRailSlot,
-  zRailSlotLabel,
+  zBandHighlightedMarkers,
   Z_RAIL_MARKERS,
   type ZRailSlot,
 } from '@/lib/slides/adolescentAntropometriaSlideUtils';
+import { BoardChrome, LabelBodyRow, type BoardTone } from '../primitives';
 
 export interface GrowthZRailConcept {
   icon: string;
@@ -18,75 +18,39 @@ export interface GrowthZRailConcept {
   description: string;
 }
 
-const SLOT_STYLES: Record<
-  ZRailSlot,
-  { marker: string; card: string; ring: string; text: string }
-> = {
-  tool: {
-    marker: 'bg-sky-500',
-    card: 'border-sky-200 bg-sky-50/90',
-    ring: 'ring-sky-400/50',
-    text: 'text-sky-900',
-  },
-  metric: {
-    marker: 'bg-cyan-500',
-    card: 'border-cyan-200 bg-cyan-50/90',
-    ring: 'ring-cyan-400/50',
-    text: 'text-cyan-900',
-  },
-  band_overweight: {
-    marker: 'bg-sky-600',
-    card: 'border-sky-300 bg-sky-100/90',
-    ring: 'ring-sky-500/60',
-    text: 'text-sky-950',
-  },
-  action: {
-    marker: 'bg-teal-500',
-    card: 'border-teal-200 bg-teal-50/90',
-    ring: 'ring-teal-400/50',
-    text: 'text-teal-900',
-  },
-  band_severe_low: {
-    marker: 'bg-amber-500',
-    card: 'border-amber-200 bg-amber-50/90',
-    ring: 'ring-amber-400/50',
-    text: 'text-amber-900',
-  },
-  band_severe_high: {
-    marker: 'bg-rose-500',
-    card: 'border-rose-200 bg-rose-50/90',
-    ring: 'ring-rose-400/50',
-    text: 'text-rose-900',
-  },
-  pegadinha: {
-    marker: 'bg-orange-500',
-    card: 'border-orange-200 bg-orange-50/90',
-    ring: 'ring-orange-400/50',
-    text: 'text-orange-900',
-  },
-  general: {
-    marker: 'bg-slate-400',
-    card: 'border-slate-200 bg-white/90',
-    ring: 'ring-slate-300/50',
-    text: 'text-slate-800',
-  },
+const SLOT_TONE: Record<ZRailSlot, BoardTone> = {
+  tool: 'command',
+  metric: 'teal',
+  band_overweight: 'warn',
+  action: 'ok',
+  band_severe_low: 'warn',
+  band_severe_high: 'exception',
+  pegadinha: 'exception',
+  general: 'neutral',
 };
 
-function markerForSlot(slot: ZRailSlot): number {
-  switch (slot) {
-    case 'band_severe_low':
-      return -3;
-    case 'metric':
-      return 0;
-    case 'band_overweight':
-      return 1.5;
-    case 'band_severe_high':
-      return 3;
-    case 'pegadinha':
-      return 2;
-    default:
-      return 0;
+function isTrapConcept(c: GrowthZRailConcept): boolean {
+  return /^(pegadinha|armadilha)\b/i.test(c.title.trim());
+}
+
+function isHeroBand(slot: ZRailSlot): boolean {
+  return slot === 'band_overweight';
+}
+
+/** Extrai âncora tipográfica da faixa (+1 a +2) sem hardcode de gabarito. */
+function extractBandAnchor(text: string): string | null {
+  const normalized = text.replace(/−/g, '-');
+  const between = normalized.match(/([+-]?\d+)\s*(?:a|e|e\s+|\u2013|\u2014|-)\s*([+-]?\d+)/i);
+  if (between) {
+    const a = Number(between[1]);
+    const b = Number(between[2]);
+    const lo = Math.min(a, b);
+    const hi = Math.max(a, b);
+    const fmt = (n: number) => (n > 0 ? `+${n}` : `${n}`);
+    return `${fmt(lo)} a ${fmt(hi)}`;
   }
+  if (/\+1/.test(normalized) && /\+2/.test(normalized)) return '+1 a +2';
+  return null;
 }
 
 interface AdolescentGrowthZRailConceptMapProps {
@@ -95,143 +59,154 @@ interface AdolescentGrowthZRailConceptMapProps {
   footerRule?: string;
 }
 
+/**
+ * Terreno Z — trilho Caderneta + herói da faixa cobrada + trilho label×corpo.
+ * Sem cliques; pegadinha por último; footer = transferência.
+ */
 export function AdolescentGrowthZRailConceptMap({
   concepts,
   theme,
   footerRule,
 }: AdolescentGrowthZRailConceptMapProps) {
   const reduceMotion = useReducedMotion();
-  const [activeSlots, setActiveSlots] = useState<Set<ZRailSlot>>(() => new Set());
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  const mapped = useMemo(
-    () =>
-      concepts.map((concept) => ({
-        concept,
-        slot: inferZRailSlot(concept.title, concept.description),
-      })),
-    [concepts],
-  );
-
-  const toggleSlot = useCallback((slot: ZRailSlot) => {
-    setActiveSlots((prev) => {
-      const next = new Set(prev);
-      if (next.has(slot)) next.delete(slot);
-      else next.add(slot);
-      return next;
+  const { hero, rows, railMarkers, heroAnchor } = useMemo(() => {
+    const mapped = concepts.map((c, index) => {
+      const slot = inferZRailSlot(c.title, c.description);
+      const trap = isTrapConcept(c) || slot === 'pegadinha';
+      const hero = !trap && isHeroBand(slot);
+      return {
+        key: `${c.title}-${index}`,
+        title: c.title,
+        detail: c.description,
+        slot,
+        trap,
+        hero,
+        tone: (trap ? 'exception' : SLOT_TONE[slot]) as BoardTone,
+        icon: resolveLucideIcon(c.icon) ?? resolveLucideIcon('Activity'),
+        anchor: extractBandAnchor(`${c.title} ${c.description}`),
+      };
     });
-  }, []);
+
+    const heroRow = mapped.find((r) => r.hero) ?? null;
+    const traps = mapped.filter((r) => r.trap);
+    const rest = mapped.filter((r) => !r.hero && !r.trap);
+    const ordered = [...rest, ...traps.slice(0, 1)];
+
+    const markers = heroRow
+      ? zBandHighlightedMarkers('sobrepeso', `${heroRow.title} ${heroRow.detail}`)
+      : new Set<number>([0]);
+
+    return {
+      hero: heroRow,
+      rows: ordered,
+      railMarkers: markers,
+      heroAnchor: heroRow?.anchor ?? extractBandAnchor(footerRule ?? '') ?? null,
+    };
+  }, [concepts, footerRule]);
 
   if (concepts.length === 0) return null;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-4">
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
-
-      <div className="relative z-10 flex flex-col gap-4">
-        <div className="text-center">
-          <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-sky-700">
-            Caderneta — escore Z (5–19 anos)
-          </p>
-        </div>
-
-        <div
-          role="status"
-          className="flex flex-col items-center gap-1.5 rounded-xl border border-amber-200/80 bg-amber-50/90 px-3 py-2.5 text-center"
-        >
-          <p className="flex items-center justify-center gap-2 font-body text-xs font-semibold text-amber-950">
-            <Hand className="h-3.5 w-3.5 shrink-0 text-amber-700" aria-hidden />
-            Toque nos marcos do trilho ou nos cards abaixo
-          </p>
-          <p className="font-body text-[11px] leading-relaxed text-amber-900/85">
-            Cada card liga um conceito (ferramenta, Z, sobrepeso, conduta) ao ponto certo da curva OMS.
-          </p>
-        </div>
-
-        <div className="overflow-x-auto pb-1">
-          <div className="min-w-[320px] px-2">
-            <div className="relative flex h-14 items-center justify-between">
-              <div className="absolute left-2 right-2 top-1/2 h-1 -translate-y-1/2 rounded-full bg-sky-200/80" />
-              {Z_RAIL_MARKERS.map((marker) => {
-                const lit = mapped.some(
-                  ({ slot }) => activeSlots.has(slot) && Math.abs(markerForSlot(slot) - marker) < 1.1,
-                );
-                return (
-                  <button
-                    key={marker}
-                    type="button"
-                    onClick={() => {
-                      const hit = mapped.find(
-                        ({ slot }) => Math.abs(markerForSlot(slot) - marker) < 1.1,
-                      );
-                      if (hit) toggleSlot(hit.slot);
-                    }}
-                    className={`relative z-10 flex h-11 min-w-[44px] flex-col items-center justify-center rounded-xl border-2 transition-all ${
-                      lit
-                        ? 'border-sky-500 bg-sky-100 shadow-md ring-2 ring-sky-300/60'
-                        : 'border-slate-200 bg-white/90'
-                    }`}
-                    aria-label={`Marca Z ${marker}`}
-                  >
-                    <span className="font-mono text-[11px] font-black tabular-nums text-slate-800">
-                      {marker > 0 ? `+${marker}` : marker}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-          {mapped.map(({ concept, slot }, index) => {
-            const styles = SLOT_STYLES[slot];
-            const Icon = resolveLucideIcon(concept.icon);
-            const expanded = expandedIndex === index;
-            const active = activeSlots.has(slot);
-
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.32}
+      eyebrow="Caderneta — escore Z (5–19 anos)"
+      title="Classificar no trilho — faixa certa da prova"
+      footerLabel="Transferência de prova"
+      footerRule={footerRule}
+      maxWidth="lg"
+    >
+      {/* Trilho Z — herói espacial: faixa cobrada acesa */}
+      <div className="rounded-2xl border-2 border-sky-300/90 bg-white/95 px-3 py-3 shadow-md">
+        <p className="mb-2 text-center font-mono text-[10px] font-bold uppercase tracking-widest text-sky-800">
+          Trilho Z · IMC
+        </p>
+        <div className="relative flex items-center justify-between gap-0.5">
+          <div
+            className="pointer-events-none absolute left-1 right-1 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-rose-400 via-amber-300 via-40% to-sky-400"
+            aria-hidden
+          />
+          {Z_RAIL_MARKERS.map((marker) => {
+            const lit = railMarkers.has(marker);
             return (
-              <motion.button
-                key={index}
-                type="button"
-                initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: reduceMotion ? 0 : index * 0.05 }}
-                onClick={() => {
-                  toggleSlot(slot);
-                  setExpandedIndex(expanded ? null : index);
-                }}
-                className={`min-h-[44px] rounded-2xl border p-3 text-left shadow-sm transition-all ${styles.card} ${
-                  active ? `ring-2 ${styles.ring}` : ''
+              <div
+                key={marker}
+                className={`relative z-10 flex h-10 min-w-[2.4rem] flex-col items-center justify-center rounded-xl border-2 bg-white shadow-sm transition-all ${
+                  lit
+                    ? 'scale-105 border-amber-500 ring-2 ring-amber-300/70'
+                    : 'border-slate-200 opacity-70'
                 }`}
               >
-                <div className="flex items-start gap-2">
-                  <span
-                    className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${styles.marker}`}
-                  >
-                    <Icon className="h-4 w-4 text-white" aria-hidden />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <p className={`font-mono text-[9px] font-bold uppercase tracking-widest ${styles.text}`}>
-                      {zRailSlotLabel(slot)}
-                    </p>
-                    <p className={`font-display text-sm font-extrabold ${styles.text}`}>{concept.title}</p>
-                    <p className={`mt-1 font-body text-xs leading-relaxed text-slate-700 ${expanded ? '' : 'line-clamp-2'}`}>
-                      {concept.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.button>
+                <span
+                  className={`font-mono text-[11px] font-black tabular-nums ${
+                    lit ? 'text-amber-950' : 'text-slate-700'
+                  }`}
+                >
+                  {marker > 0 ? `+${marker}` : marker}
+                </span>
+              </div>
             );
           })}
         </div>
-
-        {footerRule ? (
-          <p className="rounded-xl border border-sky-200/80 bg-white/80 px-3 py-2 text-center font-body text-xs font-semibold text-sky-900">
-            {footerRule}
+        {heroAnchor ? (
+          <p className="mt-2 text-center font-mono text-[10px] font-bold uppercase tracking-wide text-amber-800">
+            Faixa cobrada · {heroAnchor}
           </p>
         ) : null}
       </div>
-    </div>
+
+      {/* Herói pedagógico — número outdoor da Caderneta */}
+      {hero ? (
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="overflow-hidden rounded-2xl border-2 border-amber-400 bg-gradient-to-br from-amber-50 to-amber-100/90 p-4 shadow-lg shadow-amber-500/15 ring-2 ring-amber-300/50 ring-offset-2 ring-offset-white"
+        >
+          <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-amber-800">
+            Âncora · {hero.title}
+          </p>
+          {heroAnchor ? (
+            <p className="mt-1 font-display text-3xl font-black tabular-nums tracking-tight text-amber-950 md:text-4xl">
+              {heroAnchor}
+            </p>
+          ) : null}
+          <p className="mt-2 font-body text-sm font-semibold leading-snug text-amber-950">
+            {hero.detail}
+          </p>
+        </motion.div>
+      ) : null}
+
+      <div className="flex flex-col gap-2.5">
+        {rows.map((row, index) => {
+          const Icon = row.icon;
+          return (
+            <motion.div
+              key={row.key}
+              initial={reduceMotion ? false : { opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: reduceMotion ? 0 : index * 0.04 }}
+            >
+              <LabelBodyRow
+                layout="rail"
+                chip={row.title}
+                body={row.detail}
+                tone={row.tone}
+                icon={Icon ?? undefined}
+                bodyStrong={row.trap}
+                emphasized={row.trap}
+                hint={
+                  row.trap ? (
+                    <span className="font-bold uppercase tracking-wide text-rose-700">
+                      Banca testa isto
+                    </span>
+                  ) : undefined
+                }
+              />
+            </motion.div>
+          );
+        })}
+      </div>
+    </BoardChrome>
   );
 }

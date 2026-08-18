@@ -1,16 +1,17 @@
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
- * Calendário e esquemas vacinais — Manual MS / Nota Técnica 23/2025.
- * Fonte: Manual de Normas e Procedimentos para Vacinação (PNI) + NT 23/2025.
+ * Calendário e esquemas vacinais — Manual MS / IN Calendário Nacional 2026.
+ * Id estável `pni-calendario-2025` (sourceIds nos goldens); snapshot aponta à IN 2026.
+ * Fonte: https://www.gov.br/saude/pt-br/composicao/svsa/pni/calendario-tecnico
  */
 export const PNI_CALENDARIO_2025: GuidelineTable = {
   id: 'pni-calendario-2025',
-  snapshot: 'PNI Calendário 2025',
+  snapshot: 'PNI Calendário — IN MS 2026 (base técnica 2025+)',
   issuer: 'Ministério da Saúde',
   title: 'Calendário Nacional de Vacinação — esquemas e idades',
-  year: 2025,
-  url: 'https://www.gov.br/saude/pt-br/vacinacao/calendario',
+  year: 2026,
+  url: 'https://www.gov.br/saude/pt-br/composicao/svsa/pni/calendario-tecnico',
   entries: [
     {
       id: 'penta-esquema',
@@ -39,15 +40,16 @@ export const PNI_CALENDARIO_2025: GuidelineTable = {
     },
     {
       id: 'rota-2025',
-      label: 'Rotavírus (vacina rota) — 2025',
+      label: 'Rotavírus (VRH) — CNV 2026',
       value: 'D1 aos 2 meses (até 11 meses e 29 dias); D2 aos 4 meses (até 23 meses e 29 dias)',
-      detail: 'Intervalo mínimo de 30 dias entre doses.',
+      detail: 'IN CNV 2026: intervalo 60 dias (mín. 30). Perde oportunidade se D1 fora da faixa.',
       sourceId: 'pni-calendario-2025',
     },
     {
       id: 'vip-reforco-2025',
-      label: 'VIP — reforço poliomielite 2025',
-      value: 'Esquema exclusivo VIP; reforço com VIP aos 15 meses',
+      label: 'VIP — reforços poliomielite (CNV 2026)',
+      value: 'Esquema exclusivo VIP; reforços aos 15 meses e aos 4 anos',
+      detail: 'CNV 2026 criança: 1º reforço 15 m; 2º reforço 4 anos — sem VOP na rotina.',
       sourceId: 'pni-calendario-2025',
     },
     {
@@ -77,22 +79,26 @@ export const PNI_CALENDARIO_2025: GuidelineTable = {
     },
     {
       id: 'covid-crianca-6m',
-      label: 'Covid-19 — crianças',
-      value: 'Calendário rotina: a partir de 6 meses a menores de 5 anos',
+      label: 'Covid-19 — crianças (CNV 2026)',
+      value: 'Rotina infantil com 3 doses (RNAm); atraso até 4 a 11 m 29 d',
+      detail:
+        'CNV 2026: intervalos mín. 4 sem (D1–D2) e 8 sem (D2–D3). Imunocomprometidos: doses periódicas 6/6 meses até 4 a 11 m 29 d.',
       sourceId: 'pni-calendario-2025',
     },
     {
       id: 'covid-spikevax-lactente',
-      label: 'Covid-19 — Spikevax (Moderna) lactente',
-      value: 'A partir de 6 meses: 2 doses de 0,25 mL por via intramuscular',
-      detail: 'Volume pediátrico 0,25 mL — não usar 0,5 mL do adulto.',
+      label: 'Covid-19 — volume pediátrico',
+      value: 'Usar apresentação/volume pediátrico conforme bula e IN vigente',
+      detail:
+        'Não usar volume de adulto em lactente. exam_vs_current: provas antigas podem citar só 2 doses Spikevax 0,25 mL — CNV 2026 prevê esquema de 3 doses na rotina.',
       sourceId: 'pni-calendario-2025',
     },
     {
       id: 'vsr-gestante-28sem',
       label: 'VSR — vacina em gestante',
-      value: 'Indicada a partir de 28 semanas de gestação — dose única',
-      detail: 'Proteção passiva do recém-nascido; não confundir com dTpa aos 20 semanas.',
+      value: '1 dose a partir da 28ª semana — a cada gestação (VVSR)',
+      detail:
+        'CNV/Calendário Técnico Gestante 2026: proteção passiva do RN até ~6 meses. Não confundir com dTpa (a partir da 20ª semana).',
       sourceId: 'pni-calendario-2025',
     },
     {
@@ -276,23 +282,26 @@ export const PNI_CALENDARIO_2025: GuidelineTable = {
     },
     {
       id: 'scr-2-dose-scrv',
-      label: 'Tetraviral (SCRV) — 2ª dose',
-      value: 'Aos 15 meses de idade (2ª dose de SCR + varicela)',
-      detail: 'Marco dos 15 meses concentra reforços — não confundir com dose única aos 12 meses.',
+      label: 'Tríplice viral (SCR) — 2ª dose',
+      value: 'Aos 15 meses de idade',
+      detail:
+        'CNV 2026: SCR 2ª aos 15 m (separada da varicela monovalente). Indisponibilidade de varicela mono: tetraviral (SCRV) pode substituir conforme IN. exam_vs_current: provas antigas podem citar SCRV como padrão aos 15 m.',
       sourceId: 'pni-calendario-2025',
     },
     {
       id: 'varicela-calendario',
       label: 'Varicela — calendário infantil',
-      value: 'Integrada à SCRV aos 15 meses (2ª dose do esquema)',
-      detail: 'Esquema de 2 doses de varicela no calendário rotineiro via tetraviral.',
+      value: '1ª dose aos 15 meses; 2ª dose aos 4 anos',
+      detail:
+        'CNV 2026: varicela monovalente (VZ). Se indisponível, tetraviral pode ser usada. Não confundir 2ª dose de SCR (15 m) com 2ª de varicela (4 a).',
       sourceId: 'pni-calendario-2025',
     },
     {
       id: 'hpv-esquema-adolescente',
       label: 'HPV — esquema PNI',
-      value: '9 a 14 anos: 2 doses (0 e 6 meses); ≥15 anos: 3 doses',
-      detail: 'Meninas e meninos; intervalo mínimo de 5 meses entre doses no esquema de 2.',
+      value: '9 a 14 anos, 11 m 29 d: dose única (HPV4); resgate 15–19 conforme estado',
+      detail:
+        'Calendário Nacional 2026 / IN CNV: rotina = 1 dose. Provas antigas podem cobrar 2 doses — registrar exam_vs_current. Grupos especiais: ver IN vigente.',
       sourceId: 'pni-calendario-2025',
     },
     {
@@ -318,23 +327,42 @@ export const PNI_CALENDARIO_2025: GuidelineTable = {
     },
     {
       id: 'pneumo-10-esquema',
-      label: 'Pneumocócica 10-valente (VPC10)',
-      value: '3 doses aos 2, 4 e 12 meses de idade',
-      detail: 'Conjugada; marcos do lactente — não confundir com meningocócica C aos 3 meses.',
+      label: 'Pneumocócica — esquema infantil (transição VPC20/VPC10)',
+      value: '2 m: VPC20 · 4 m: VPC10 · 12 m: reforço VPC20',
+      detail:
+        'IN/Guia Técnico MS 2026: esquema sequencial na rotina (início oficial jun/2026). Provas antigas com 3× VPC10 (2-4-12) → exam_vs_current. ID do entry mantido por estabilidade.',
+      sourceId: 'pni-calendario-2025',
+    },
+    {
+      id: 'vpc20-infantil-rotina-2026',
+      label: 'VPC20 infantil — rotina 2026',
+      value: 'D1 e reforço com VPC20; D2 do básico com VPC10 na transição',
+      detail:
+        'Guia Técnico introdução VPC20 no PNI (2026). Atualizar atraso até 4 a 11 m 29 d conforme IN. Não confundir com dose única VPC20 do idoso prioritário.',
       sourceId: 'pni-calendario-2025',
     },
     {
       id: 'pegadinha-hpv-doses',
       label: 'Pegadinha HPV',
-      value: 'antes dos 15 anos = 2 doses; a partir dos 15 = 3 doses',
-      detail: 'Banca troca idade de corte ou intervalo entre doses.',
+      value: 'rotina atual = dose única 9–14 anos (não 2 ou 3 doses)',
+      detail:
+        'Pegadinha clássica de prova antiga (2 doses <15 / 3 doses ≥15) divergente do CNV 2024–2026 — ensinar gabarito + exam_vs_current.',
       sourceId: 'pni-calendario-2025',
     },
     {
       id: 'vip-esquema-completo',
       label: 'VIP — esquema completo poliomielite',
-      value: '3 doses aos 2, 4 e 6 meses + reforço com VIP aos 15 meses',
-      detail: 'Esquema exclusivo VIP no PNI 2025 — três doses primárias na lactância e reforço no marco dos 15 meses.',
+      value: '3 doses aos 2, 4 e 6 meses + reforços VIP aos 15 meses e aos 4 anos',
+      detail:
+        'Calendário Nacional 2026 (criança): exclusivo VIP; 1º reforço 15 meses e 2º reforço aos 4 anos. VOP fora da rotina.',
+      sourceId: 'pni-calendario-2025',
+    },
+    {
+      id: 'dengue-calendario-2026',
+      label: 'Dengue (DNG4) — calendário',
+      value: '2 doses a partir dos 10 anos (até 14 a 11 m 29 d em atraso)',
+      detail:
+        'CNV 2026 adolescente: DNG4 no marco dos 10 anos; esquema de 2 doses. Usar mesmo laboratório no esquema.',
       sourceId: 'pni-calendario-2025',
     },
     {
@@ -347,22 +375,41 @@ export const PNI_CALENDARIO_2025: GuidelineTable = {
     {
       id: 'vpp23-idoso-60',
       label: 'Pneumocócica 23-valente (VPP23) — idoso',
-      value: '60 anos ou mais: 1 dose da VPP23 conforme indicação do calendário',
-      detail: 'Polissacarídica; não simultânea à VPC13/VPC10 — respeitar intervalos do Manual PNI (VPC primeiro).',
+      value: '60 anos ou mais: indicação conforme calendário; grupos prioritários migram para VPC20 (IN 2026)',
+      detail:
+        'Polissacarídica; não simultânea à VPC conjugada. IN 2026: ≥60 acamados/institucionalizados e indígenas ≥5 anos sem conjugada → VPC20 (dose única) em substituição à VPP23. Demais: Manual/calendário técnico vigente.',
+      sourceId: 'pni-calendario-2025',
+    },
+    {
+      id: 'vpc20-idoso-prioritario-2026',
+      label: 'Pneumocócica 20-valente (VPC20) — grupos prioritários 2026',
+      value: 'Dose única VPC20 nos grupos da IN 2026 (substitui VPP23 nesses públicos)',
+      detail:
+        '≥60 anos acamados e/ou institucionalizados sem vacina prévia; indígenas ≥5 anos sem comprovação de conjugada. Histórico de 2× VPP23 → considerar vacinado.',
+      sourceId: 'pni-calendario-2025',
+    },
+    {
+      id: 'meningo-acwy-12meses',
+      label: 'Meningocócica ACWY — 12 meses',
+      value: '1 dose aos 12 meses (CNV 2026 criança)',
+      detail:
+        'Marco dos 12 m com SCR 1ª e reforço VPC20. Distinta da menACWY do adolescente (11 a) e da menC da infância precoce.',
       sourceId: 'pni-calendario-2025',
     },
     {
       id: 'meningo-acwy-adolescente',
       label: 'Meningocócica ACWY — adolescente',
-      value: '1 dose entre 11 e 14 anos de idade',
-      detail: 'Conjugada ACWY no calendário do adolescente; reforço conforme situação epidemiológica e histórico.',
+      value: '1 dose aos 11 anos (atraso até 14 a 11 m 29 d)',
+      detail:
+        'CNV 2026 adolescente: menACWY conjugada. Não confundir com dose dos 12 meses nem com meningocócica C.',
       sourceId: 'pni-calendario-2025',
     },
     {
       id: 'raiva-pep-conceito',
       label: 'Raiva — profilaxia pós-exposição (PEP)',
-      value: 'Lavar ferimento + vacina + avaliar soro conforme categoria de exposição e status vacinal',
-      detail: 'Categoria I: lavagem; II/III: vacina 0, 3, 7 e 14 dias; soro em exposição grave se não vacinado ou esquema incompleto.',
+      value: 'Lavar ferimento + vacina 0/3/7/14 + soro se exposição grave (ou silvestre)',
+      detail:
+        'Fluxograma MS + NT 8/2022: classificação leve/grave (não OMS I–III). Leve (cão/gato observável): vacina; grave/silvestre: SAR/IGHAR + vacina. exam_vs_current: provas antigas usam categorias OMS.',
       sourceId: 'pni-calendario-2025',
     },
     {

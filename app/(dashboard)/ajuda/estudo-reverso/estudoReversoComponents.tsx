@@ -24,7 +24,7 @@ export function HeroEstudoReverso({
   return (
     <section className={`p-5 shadow-sm md:p-7 ${AJUDA_SURFACE}`}>
       <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-slate-600">
-        <Sparkles className="h-3.5 w-3.5 text-[#166534]" aria-hidden />
+        <Sparkles className="h-3.5 w-3.5 text-[#9A3412]" aria-hidden />
         {eyebrow}
       </div>
       <h1 className="text-balance text-3xl font-black tracking-tight text-slate-900 md:text-5xl">{title}</h1>
@@ -65,7 +65,7 @@ export function FluxoBadges({ itens }: { itens: readonly string[] }) {
             {item}
           </span>
           {index < itens.length - 1 ? (
-            <ChevronRight className="hidden h-4 w-4 text-[#166534] md:block" aria-hidden />
+            <ChevronRight className="hidden h-4 w-4 text-[#9A3412] md:block" aria-hidden />
           ) : null}
         </div>
       ))}
@@ -89,7 +89,7 @@ export function CicloCards({
       <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {etapas.map((etapa) => (
           <article key={etapa.nome} className={`p-4 ${AJUDA_SURFACE_SM}`}>
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#166534] text-sm font-black text-white">{etapa.n}</span>
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#9A3412] text-sm font-black text-white">{etapa.n}</span>
             <h3 className="mt-3 text-lg font-black text-slate-900">{etapa.nome}</h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">{etapa.desc}</p>
             <p className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs font-semibold leading-relaxed text-slate-700">
@@ -134,7 +134,7 @@ function TimelineCard({ rotulo, itens, tone }: { rotulo: string; itens: readonly
       <ol className="mt-4 space-y-3">
         {itens.map((item, index) => (
           <li key={item} className="flex gap-3 text-sm font-semibold leading-relaxed text-slate-700">
-            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#166534] text-xs font-black text-white">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#9A3412] text-xs font-black text-white">
               {index + 1}
             </span>
             <span>{item}</span>
@@ -158,10 +158,10 @@ export function PilaresGrid({
       <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {itens.map((item) => (
           <article key={item.nome} className={`p-4 ${AJUDA_SURFACE_SM}`}>
-            <BookOpenCheck className="h-5 w-5 text-[#166534]" aria-hidden />
+            <BookOpenCheck className="h-5 w-5 text-[#9A3412]" aria-hidden />
             <h3 className="mt-3 text-lg font-black text-slate-900">{item.nome}</h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
-            <p className="mt-3 text-xs font-bold leading-relaxed text-[#166534]">No {BRAND_NAME}: {item.noAvant}</p>
+            <p className="mt-3 text-xs font-bold leading-relaxed text-[#9A3412]">No {BRAND_NAME}: {item.noAvant}</p>
             <p className="mt-2 text-[11px] font-semibold text-slate-500">Referência: {item.fonte}</p>
           </article>
         ))}
@@ -177,7 +177,7 @@ export function FaqLista({ itens }: { itens: readonly { q: string; a: string }[]
       <div className="mt-5 space-y-3">
         {itens.map((item) => (
           <details key={item.q} className="group rounded-2xl border border-slate-200 bg-white p-4">
-            <summary className="cursor-pointer text-sm font-black text-slate-900 [&::-webkit-details-marker]:text-[#166534]">
+            <summary className="cursor-pointer text-sm font-black text-slate-900 [&::-webkit-details-marker]:text-[#9A3412]">
               {item.q}
             </summary>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.a}</p>
@@ -199,7 +199,7 @@ export function FontesLista({ itens }: { itens: readonly string[] }) {
       <ul className="mt-4 space-y-2 text-xs leading-relaxed text-slate-600">
         {itens.map((item) => (
           <li key={item} className="flex gap-2">
-            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#22c55e]" aria-hidden />
+            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-[#F26522]" aria-hidden />
             <span>{item}</span>
           </li>
         ))}
@@ -210,7 +210,7 @@ export function FontesLista({ itens }: { itens: readonly string[] }) {
 
 export function CtaFinal({ titulo, subtitulo, primary, secondary }: { titulo: string; subtitulo: string; primary: Cta; secondary: Cta }) {
   return (
-    <section className="rounded-3xl border border-[rgba(34, 197, 94,0.35)] bg-gradient-to-br from-[rgba(34, 197, 94,0.12)] to-white p-5 shadow-sm md:p-7">
+    <section className="rounded-3xl border border-[rgba(242,101,34,0.35)] bg-gradient-to-br from-[rgba(242,101,34,0.12)] to-white p-5 shadow-sm md:p-7">
       <h2 className="text-2xl font-black tracking-tight text-slate-900 md:text-3xl">{titulo}</h2>
       <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 md:text-base">{subtitulo}</p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">

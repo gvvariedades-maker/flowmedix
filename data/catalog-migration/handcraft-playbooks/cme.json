@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+  "pacote_prefix": "cme",
+  "scope_default": "subtopico_handcraft",
+  "notes": ["Playbook Onda3 2026-08-03. production_ready. Autoclave React só com Implementar molde:."]
+}

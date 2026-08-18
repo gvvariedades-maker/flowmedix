@@ -12,6 +12,8 @@
  * - Sem service role / createServerSupabase em client components
  * - Sem .auth.getUser() em RSC (usar getServerSession / getServerUser via lib/supabase/server-auth)
  * - Novas process.env.* devem passar por lib/env.ts (Zod)
+ * - Sem valor arbitrário Tailwind com espaço em rgba() (parser não gera CSS)
+ * - Hex de marca (#F26522 / #166534 / #22c55e) só em lib/brand/ (+ debt allowlist transitória)
  */
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -75,6 +77,86 @@ const LEGACY_ENV_ALLOWLIST = new Set([
 /** Plataforma / Node — não exigem entrada em lib/env.ts. */
 const PLATFORM_ENV_ALLOWLIST = new Set(['NODE_ENV', 'VERCEL_ENV', 'CI', 'NEXT_RUNTIME']);
 
+/**
+ * Hex de marca ainda em TSX legado — remover entrada ao migrar para tokens CSS.
+ * Permitidos de forma permanente: `lib/brand/**` (e `globals.css`, fora do walk .ts/.tsx).
+ * Fonte: baseline Fase 0 visual vitrine/dashboard (2026-08-09).
+ */
+const BRAND_HEX_DEBT_ALLOWLIST = new Set([
+  'app/(admin)/admin/convites/page.tsx',
+  'app/(admin)/admin/landings/page.tsx',
+  'app/(admin)/admin/page.tsx',
+  'app/(dashboard)/(authenticated)/conta/assinatura/AssinaturaClient.tsx',
+  'app/(dashboard)/(authenticated)/simulados/[id]/loading.tsx',
+  'app/(dashboard)/DashboardShell.tsx',
+  'app/(dashboard)/ajuda/estudo-reverso/estudoReversoComponents.tsx',
+  'app/_components/LPConcurso.client.tsx',
+  'app/_components/LPConcurso.tsx',
+  'app/assinar-pro/page.tsx',
+  'app/blog/[slug]/page.tsx',
+  'app/checkout/sucesso/page.tsx',
+  'app/esqueci-senha/page.tsx',
+  'app/login/page.tsx',
+  'app/planos/page.tsx',
+  'app/redefinir-senha/page.tsx',
+  'app/register/page.tsx',
+  'app/simulados/campina-grande/page.tsx',
+  'components/admin/lp/LpPageEditor.tsx',
+  'components/blog/BlogIndexClient.tsx',
+  'components/blog/BlogPostCtaFinal.tsx',
+  'components/blog/StudyCtaInline.tsx',
+  'components/blog/mdx-components.tsx',
+  'components/dashboard/BackToVitrineLink.tsx',
+  'components/dashboard/cadernos/CadernoReverseStudyBadge.tsx',
+  'components/dashboard/cadernos/CadernosEmptyState.tsx',
+  'components/dashboard/cadernos/NovoCadernoClient.tsx',
+  'components/dashboard/cadernos/SearchPanelToggle.tsx',
+  'components/dashboard/performance/contribution-heatmap.tsx',
+  'components/freemium/PaywallModal.tsx',
+  'components/landing/CompareAvantCarousel.tsx',
+  'components/landing/DemoInterativa.tsx',
+  'components/landing/LandingHomeClient.tsx',
+  'components/landing/LandingMetodoSteps.tsx',
+  'components/landing/LandingPricingSplit.tsx',
+  'components/landing/lp-ui.tsx',
+  'components/landing/sections/LandingAutoridade.tsx',
+  'components/landing/sections/LandingComparativo.tsx',
+  'components/landing/sections/LandingCtaFinal.tsx',
+  'components/landing/sections/LandingHero.tsx',
+  'components/landing/sections/LandingNeuroSlides.tsx',
+  'components/landing/sections/LandingRecursos.tsx',
+  'components/layout/AuthAtmosphericBackdrop.tsx',
+  'components/layout/PublicDarkAuthHeader.tsx',
+  'components/layout/PublicDarkSiteHeader.tsx',
+  'components/layout/PublicLightAuthHeader.tsx',
+  'components/lesson/QuestaoFiguresBlock.tsx',
+  'components/lp/campina/LPCampinaV2.tsx',
+  'components/marketing/LandingNeuroSlideCarousel.tsx',
+  'components/marketing/LandingProgressoPreview.tsx',
+  'components/marketing/LandingQuestionPreview.tsx',
+  'components/marketing/NeuroSlideCarousel.tsx',
+  'components/onboarding/CadernoOnboardingBanner.tsx',
+  'components/onboarding/EstudoReversoWelcomeModal.tsx',
+  'components/pro/ProSubscribeNavButton.tsx',
+  'components/public-simulado/PublicSimuladoRunner.tsx',
+  'components/pwa/PwaInstallPanel.tsx',
+  'components/questao-filter/QuestaoFilterDesktopFacetPopover.tsx',
+  'components/questao-filter/QuestaoMobileFilterSheet.tsx',
+  'components/simulados/SimuladoProvaInstrucoes.tsx',
+  'components/simulados/SimuladoRunnerClient.tsx',
+  'components/simulados/SimuladosAnalyticsDashboard.tsx',
+  'components/simulados/SimuladosSetupClient.tsx',
+  'components/simulados/WeeklyMissionFreemiumPanel.tsx',
+  'components/slides/preview/opcaoB/OpcaoBPreviewClient.tsx',
+  'components/ui/MultiCheckboxFilter.tsx',
+  'components/ui/neon-badge.tsx',
+  'components/ui/score-card.tsx',
+]);
+
+const BRAND_HEX_PATTERN = /#(?:F26522|166534|22c55e)\b/gi;
+/** Tailwind arbitrary: `bg-[rgba(34, 197, 94,0.12)]` — espaço quebra o parser. */
+const TAILWIND_RGBA_SPACE_PATTERN = /-\[(?:[^\]]*rgba\(\s*\d+\s*,\s+)/;
+
 const ENV_KEYS_FROM_SCHEMA = new Set<string>([
   'NEXT_PUBLIC_SUPABASE_URL',
   'NEXT_PUBLIC_SUPABASE_ANON_KEY',
@@ -101,11 +183,14 @@ const ENV_KEYS_FROM_SCHEMA = new Set<string>([
   'SENTRY_DSN',
   'NEXT_PUBLIC_SENTRY_DSN',
   'NEXT_PUBLIC_REVERSE_STUDY_SLIDE_ORDER',
+  'NEXT_PUBLIC_LESSON_PROJECTION',
   'SENTRY_AUTH_TOKEN',
   'SENTRY_ORG',
   'SENTRY_PROJECT',
   'CURSOR_API_KEY',
   'CURSOR_ORCHESTRATOR_MODEL',
+  'EE_V1_INSTRUMENTATION',
+  'EE_V1_INTERNAL_EMAILS',
 ]);
 
 type Violation = { file: string; rule: string; detail: string };
@@ -114,8 +199,23 @@ function walk(dir: string, acc: string[] = []): string[] {
   for (const entry of readdirSync(dir)) {
     const full = join(dir, entry);
     const rel = relative(ROOT, full).replace(/\\/g, '/');
-    if (rel.includes('node_modules') || rel.startsWith('.next/')) continue;
-    const st = statSync(full);
+    if (
+      rel.includes('node_modules') ||
+      rel.startsWith('.next/') ||
+      rel === 'test-results' ||
+      rel.startsWith('test-results/') ||
+      rel === 'playwright-report' ||
+      rel.startsWith('playwright-report/')
+    ) {
+      continue;
+    }
+    let st: ReturnType<typeof statSync>;
+    try {
+      st = statSync(full);
+    } catch {
+      // Junction/symlink órfão (ex.: test-results removido no Windows) — ignorar.
+      continue;
+    }
     if (st.isDirectory()) walk(full, acc);
     else if (/\.(ts|tsx)$/.test(entry)) acc.push(full);
   }
@@ -274,6 +374,57 @@ function isAllowedEnvKey(key: string): boolean {
   return false;
 }
 
+function stripTsComments(src: string): string {
+  return src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[\s;{}])\/\/[^\n]*/g, '$1');
+}
+
+function checkNoTailwindArbitraryRgbaSpace(files: string[]): Violation[] {
+  const violations: Violation[] = [];
+
+  for (const file of files) {
+    const rel = relPath(file);
+    if (!isArchScope(rel)) continue;
+    if (isSkippablePath(rel)) continue;
+
+    const src = readFileSync(file, 'utf8');
+    if (!TAILWIND_RGBA_SPACE_PATTERN.test(src)) continue;
+
+    violations.push({
+      file: rel,
+      rule: 'no-tailwind-arbitrary-rgba-space',
+      detail:
+        'Valor arbitrário Tailwind com espaço em rgba() (ex. bg-[rgba(34, 197, 94,0.12)]) — o parser não gera CSS; use rgba(34,197,94,0.12) ou var(--token)',
+    });
+  }
+
+  return violations;
+}
+
+function checkNoBrandHexOutsidePalette(files: string[]): Violation[] {
+  const violations: Violation[] = [];
+
+  for (const file of files) {
+    const rel = relPath(file);
+    if (!isArchScope(rel)) continue;
+    if (isSkippablePath(rel)) continue;
+    if (rel.startsWith('lib/brand/')) continue;
+    if (BRAND_HEX_DEBT_ALLOWLIST.has(rel)) continue;
+
+    const body = stripTsComments(readFileSync(file, 'utf8'));
+    BRAND_HEX_PATTERN.lastIndex = 0;
+    if (!BRAND_HEX_PATTERN.test(body)) continue;
+
+    violations.push({
+      file: rel,
+      rule: 'no-brand-hex-outside-palette',
+      detail:
+        'Hex de marca (#F26522 / #166534 / #22c55e) fora de lib/brand/ — use tokens CSS (var(--color-brand*), var(--color-success*)) ou EDITORIAL_BRAND; se legado, adicione à BRAND_HEX_DEBT_ALLOWLIST só até migrar',
+    });
+  }
+
+  return violations;
+}
+
 function checkNoNewEnvWithoutZod(files: string[]): Violation[] {
   const violations: Violation[] = [];
   const pattern = /process\.env\.([A-Z][A-Z0-9_]*)/g;
@@ -314,6 +465,8 @@ function main(): void {
     ...checkNoServiceRoleInClient(files),
     ...checkNoGetUserInRsc(files),
     ...checkNoNewEnvWithoutZod(files),
+    ...checkNoTailwindArbitraryRgbaSpace(files),
+    ...checkNoBrandHexOutsidePalette(files),
   ];
 
   if (violations.length === 0) {
@@ -329,4 +482,6 @@ function main(): void {
   process.exit(1);
 }
 
-main();
+if (require.main === module) {
+  main();
+}

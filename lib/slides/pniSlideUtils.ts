@@ -44,7 +44,28 @@ export function inferPniCategory(text: string): PniCategory {
   return 'geral';
 }
 
+/**
+ * Categorias no hub de cadeia de frio — sem vazamento de “CALENDÁRIO”
+ * (BCG/penta aqui são sala de vacina, não faixa etária).
+ */
+export function inferColdChainCardCategory(text: string): PniCategory {
+  const lower = text.toLowerCase();
+  if (/agitar|âncora|pegadinha|rompida|descart|≠\s*recuper/.test(lower)) return 'gabarito';
+  if (/2\s*°|8\s*°|temperatura|faixa|frio|term|conserva/.test(lower)) return 'rede_frio';
+  if (/técnico|prescrev|papel do técnico|calendário oficial/.test(lower)) return 'cuidado';
+  if (/bcg|pentavalente|intradérm|dtp|hepatite|hib|via /.test(lower)) return 'cuidado';
+  const base = inferPniCategory(text);
+  return base === 'calendario' ? 'cuidado' : base;
+}
+
 export function inferPniIconName(text: string): string {
+  const lower = text.toLowerCase();
+  if (/bcg|intradérm|sering/.test(lower)) return 'Syringe';
+  if (/pentavalente|dtp|hib|hepatite b/.test(lower)) return 'Shield';
+  if (/técnico|prescrev|papel do técnico/.test(lower)) return 'UserX';
+  if (/agitar|rompida|≠\s*recuper|descart/.test(lower)) return 'AlertTriangle';
+  if (/armazen|geladeira|porta\b|parte central/.test(lower)) return 'Refrigerator';
+  if (/2\s*°|8\s*°|temperatura|faixa|frio|term|câmara|freezer|diluente/.test(lower)) return 'Thermometer';
   switch (inferPniCategory(text)) {
     case 'calendario':
       return 'Calendar';
@@ -141,8 +162,16 @@ export function inferPniMatrixRowBadge(
 
 export function inferVfJudgement(text: string): VfJudgement {
   const lower = text.toLowerCase();
-  if (/→\s*falso|→\s*f\b|= falso|é falsa|falso —|falsa —|falso\.|falsa\./.test(lower)) return 'false';
-  if (/→\s*verdadeiro|→\s*v\b|= verdadeiro|é verdadeira|verdadeiro —|verdadeira —/.test(lower)) {
+  if (
+    /→\s*falsa\b|→\s*falso\b|→\s*f\b|= falso|é falsa|falso —|falsa —|falso\.|falsa\./.test(lower)
+  ) {
+    return 'false';
+  }
+  if (
+    /→\s*verdadeira\b|→\s*verdadeiro\b|→\s*v\b|= verdadeiro|é verdadeira|verdadeiro —|verdadeira —/.test(
+      lower,
+    )
+  ) {
     return 'true';
   }
   if (/\bfalsa\b|\bfalso\b/.test(lower) && !/verdadeir/.test(lower)) return 'false';
@@ -179,7 +208,13 @@ export function parsePniVfStep(step: string, index: number): ParsedPniVfStep {
   const roman = extractRoman(step);
   const judgement = inferVfJudgement(step);
 
-  if (/^(?:julgar|avaliar)\s/i.test(step) || (/afirmativa\s/i.test(step) && judgement)) {
+  // Aceita "I — …", "I - …" e "I: …" (handcraft FUNCAMP / farmaco VF)
+  const romanLead = /^([IVX]+)\s*[—–\-:]\s*/i.test(step);
+  if (
+    /^(?:julgar|avaliar)\s/i.test(step) ||
+    (/afirmativa\s/i.test(step) && judgement) ||
+    (romanLead && judgement)
+  ) {
     return {
       kind: 'judgement',
       text: step,
@@ -190,7 +225,9 @@ export function parsePniVfStep(step: string, index: number): ParsedPniVfStep {
     };
   }
 
-  if (/montar conjunto|combinação|conjunto verdadeiro/i.test(lower)) {
+  if (
+    /montar conjunto|combinação|conjunto verdadeiro|verdadeiras?\s*:/i.test(lower)
+  ) {
     return { kind: 'combine', text: step, title: 'Montar combinação', roman, judgement };
   }
 
@@ -362,10 +399,7 @@ export function parsePniCalendarStep(step: string, index: number): ParsedPniCale
     return { kind: 'scenario', text: step, title: 'Cenário', letter, months };
   }
 
-  if (/fixar|fixa[cç][aã]o|ler o marco|3º mês|marco et[aá]rio/i.test(lower)) {
-    return { kind: 'anchor_age', text: step, title: 'Marco etário', letter, months };
-  }
-
+  // Gabarito / eliminação antes de âncora — "Marcar B … 3º mês" não pode virar anchor_age.
   if (/eliminar|testar [a-e]|→ eliminar/i.test(lower)) {
     const kind =
       /sorologia|teste de sensibilidade|imunoglobulina|arquivo|ig\b/i.test(lower) &&
@@ -381,12 +415,16 @@ export function parsePniCalendarStep(step: string, index: number): ParsedPniCale
     };
   }
 
-  if (/marcar|localizar alternativa/i.test(lower)) {
+  if (/marcar|localizar alternativa|gabarito/i.test(lower)) {
     return { kind: 'locate', text: step, title: 'Gabarito', letter, months };
   }
 
-  if (/fixação|fundatec|meses vizinhos|estrat[eé]gia/i.test(lower)) {
+  if (/^em similares/i.test(lower) || /fixação|meses vizinhos|estrat[eé]gia:/i.test(lower)) {
     return { kind: 'fixation', text: step, title: 'Fixação', letter, months };
+  }
+
+  if (/fixar|fixa[cç][aã]o|ler o marco|marco et[aá]rio/i.test(lower)) {
+    return { kind: 'anchor_age', text: step, title: 'Marco etário', letter, months };
   }
 
   if (/abrir mentalmente|recuperar:|pn[ií]:/i.test(lower)) {
@@ -405,7 +443,13 @@ export type PniTempMarker = (typeof PNI_TEMP_MARKERS)[number];
 export type ColdChainMode = 'vf' | 'mcq_temp' | 'exceto';
 
 export function detectColdChainMode(text: string): ColdChainMode {
-  if (/\( \)|sequ[eê]ncia|registre\s+v\s*\(|de cima para baixo/i.test(text)) return 'vf';
+  if (
+    /\( \)|sequ[eê]ncia|registre\s+v\s*\(|de cima para baixo|→\s*[vf]\b|combinar sequência/i.test(
+      text,
+    )
+  ) {
+    return 'vf';
+  }
   if (/INCORRETA|EXCETO/i.test(text) && /cadeia|conserva|frio|termo|imunobiol/i.test(text)) {
     return 'exceto';
   }
@@ -429,7 +473,7 @@ export function extractTempMarkers(text: string): number[] {
   const lower = text.toLowerCase();
   const found = new Set<number>();
 
-  if (/2\s*°c.*8\s*°c|2\s*-\s*8|2\s*·\s*8|entre\s*2|decore.*2|faixa da prova|positiva\s*=/.test(lower)) {
+  if (/2\s*°c.*8\s*°c|2\s*[–\-·]\s*8|2\s*·\s*8|entre\s*2|decore.*2|faixa da prova|positiva\s*=|faixa\s*2/.test(lower)) {
     found.add(2);
     found.add(8);
   }
@@ -437,7 +481,13 @@ export function extractTempMarkers(text: string): number[] {
   if (/\b2\s*°c\b|piso.*2/.test(lower)) found.add(2);
   if (/\b8\s*°c\b|teto|acima de 8/.test(lower)) found.add(8);
   if (/12\s*°c|faixa quente|muito acima/.test(lower)) found.add(12);
-  if (/congel|negativ|freezer|gelo/.test(lower) && !/2\s*°c.*8/.test(lower)) found.add(0);
+  // “nunca/nem/não + congelador” = conduta positiva — não marcar 0 °C
+  const deniesFreeze = /nunca\s+(?:na\s+)?(?:porta\s+nem\s+)?congel|nem\s+congel|não\s+congel|evitar\s+congel/.test(
+    lower,
+  );
+  if (/congel|negativ|freezer|gelo/.test(lower) && !/2\s*°c.*8/.test(lower) && !deniesFreeze) {
+    found.add(0);
+  }
 
   return PNI_TEMP_MARKERS.filter((m) => found.has(m));
 }
@@ -556,3 +606,62 @@ export function inferTemperatureSlots(
   const hasRail = trapMarkers.length > 0 || correctMarkers.length > 0;
   return { trapMarkers, correctMarkers, hasRail };
 }
+
+/** ---- EXCETO glanceable (Onda 3) — mesma gramática de steps do board Adolescente ---- */
+
+export type PniExcetoStepKind = 'command' | 'keep' | 'exception' | 'mark' | 'transfer' | 'step';
+
+export function parsePniExcetoStep(
+  step: string,
+  index: number,
+): {
+  kind: PniExcetoStepKind;
+  letter?: string;
+  title: string;
+  text: string;
+} {
+  const lower = step.toLowerCase();
+  if (/comando|incorreta|exceto/.test(lower) && index === 0) {
+    return { kind: 'command', title: 'Comando', text: step };
+  }
+  if (/em similares|fixa[cç][aã]o|transfer/.test(lower)) {
+    return { kind: 'transfer', title: 'Em similares', text: step };
+  }
+  if (/marcar letra\s*([a-e])/i.test(step) || /^marcar\s+([a-e])\b/i.test(step)) {
+    const letter = (step.match(/marcar letra\s*([a-e])/i) ?? step.match(/^marcar\s+([a-e])\b/i))?.[1]?.toUpperCase();
+    return { kind: 'mark', letter, title: 'Gabarito', text: step };
+  }
+  // Manter / eliminar distrator (afirmativa verdadeira)
+  if (
+    /a[–\-–]c|a-c:|a[–\-–]b[–\-–]d|condutas certas|descartar|manter|esquema certo|calend[aá]rio certo|→\s*verdadeira|afirmativa correta|verdadeira\s*→\s*eliminar|conduta pni\s*→\s*eliminar/.test(
+      lower,
+    )
+  ) {
+    const letter = step.match(/^\s*([A-E])\s*[—–-]/)?.[1]?.toUpperCase();
+    return { kind: 'keep', letter, title: letter ? `Manter ${letter}` : 'Manter', text: step };
+  }
+  // Exceção / INCORRETA isolada
+  if (
+    (/exce[cç][aã]o|incorreta|intervalo errad|dose errad|fora do|fora da faixa|congel|mito/.test(lower) &&
+      (/d:|letra [a-e]|→|->|esta é/.test(lower) || index > 0)) ||
+    (/^\s*[A-E]\s*[—–-]/.test(step) && /incorreta|mito|exce[cç][aã]o/.test(lower))
+  ) {
+    const letter = step.match(/^\s*([A-E])\s*[—–-]/)?.[1]?.toUpperCase()
+      ?? step.match(/letra\s+([a-e])/i)?.[1]?.toUpperCase();
+    return { kind: 'exception', letter, title: letter ? `Exceção ${letter}` : 'Exceção', text: step };
+  }
+  if (/letra\s+([a-e])/i.test(step) && /gabarito|marcar/.test(lower)) {
+    const letter = step.match(/letra\s+([a-e])/i)?.[1]?.toUpperCase();
+    return { kind: 'mark', letter, title: 'Gabarito', text: step };
+  }
+  return { kind: 'step', title: `Passo ${index + 1}`, text: step };
+}
+
+/** Marca item da compare como a EXCETO/INCORRETA (PNI). */
+export function isPniExcetoExceptionItem(label: string, correct: string): boolean {
+  const t = `${label} ${correct}`.toLowerCase();
+  return /exce[cç][aã]o|incorreta|intervalo errad|dose errad|fora do calend|fora da faixa|congel|letra [a-e].*(n[aã]o|errado|falsa)/.test(
+    t,
+  );
+}
+

@@ -1,63 +1,59 @@
 'use client';
 
-import { useCallback, type KeyboardEvent } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Check, Syringe, X } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import { useDangerZoneCompareReveal } from './dangerZoneReveal';
 import type { DangerZoneItem } from './DangerZone';
 import {
+  inferIntervalChips,
   inferPniTrapSlots,
   pniMonthLabel,
   PNI_MONTH_SLOTS,
   type PniChipColor,
   type PniIntervalChip,
 } from '@/lib/slides/pniSlideUtils';
+import { BoardChrome, CategoryStrip, PolarityPanel } from '../primitives';
+import { cn } from '@/lib/utils';
 
 const CHIP_STYLES: Record<PniChipColor, string> = {
-  lime: 'bg-lime-200/90 text-lime-900 ring-lime-400/50',
-  sky: 'bg-sky-200/90 text-sky-900 ring-sky-400/50',
-  amber: 'bg-amber-200/90 text-amber-900 ring-amber-400/50',
-  teal: 'bg-teal-200/90 text-teal-900 ring-teal-400/50',
-  emerald: 'bg-emerald-200/90 text-emerald-900 ring-emerald-400/50',
+  lime: 'bg-lime-200 text-lime-950 ring-lime-400/60',
+  sky: 'bg-sky-200 text-sky-950 ring-sky-400/60',
+  amber: 'bg-amber-200 text-amber-950 ring-amber-400/60',
+  teal: 'bg-teal-200 text-teal-950 ring-teal-400/60',
+  emerald: 'bg-emerald-200 text-emerald-950 ring-emerald-400/60',
 };
 
 function MonthRail({
   trapMonths,
   correctMonths,
-  revealed,
 }: {
   trapMonths: number[];
   correctMonths: number[];
-  revealed: boolean;
 }) {
   return (
     <div
-      className="flex items-center justify-between gap-0.5 rounded-xl border border-lime-200/80 bg-lime-50/50 px-2 py-2"
+      className="flex items-center justify-between gap-0.5 rounded-xl border border-lime-300 bg-lime-50 px-2 py-1.5"
       aria-hidden
     >
       {PNI_MONTH_SLOTS.map((month) => {
         const isTrap = trapMonths.includes(month);
         const isCorrect = correctMonths.includes(month);
-        const showTrap = isTrap && !revealed;
-        const showCorrect = isCorrect && revealed;
-
         return (
           <div
             key={month}
-            className={`flex min-w-0 flex-1 flex-col items-center gap-0.5 rounded-lg px-0.5 py-1 transition-all duration-300 ${
-              showTrap
-                ? 'bg-rose-200/90 ring-2 ring-rose-400/60'
-                : showCorrect
-                  ? 'bg-emerald-200/90 ring-2 ring-emerald-400/60'
-                  : 'bg-white/60 opacity-60'
-            }`}
+            className={cn(
+              'flex min-w-0 flex-1 flex-col items-center rounded-md px-0.5 py-1',
+              isTrap && 'bg-rose-200 ring-1 ring-rose-400',
+              isCorrect && 'bg-emerald-200 ring-1 ring-emerald-500',
+              !isTrap && !isCorrect && 'bg-white/70 opacity-50',
+            )}
           >
             <span
-              className={`font-mono text-[9px] font-black tabular-nums ${
-                showTrap ? 'text-rose-900' : showCorrect ? 'text-emerald-900' : 'text-slate-500'
-              }`}
+              className={cn(
+                'font-mono text-[9px] font-black tabular-nums',
+                isTrap ? 'text-rose-900' : isCorrect ? 'text-emerald-900' : 'text-slate-500',
+              )}
             >
               {pniMonthLabel(month)}
             </span>
@@ -68,16 +64,17 @@ function MonthRail({
   );
 }
 
-function IntervalChipsRow({ chips, revealed }: { chips: PniIntervalChip[]; revealed: boolean }) {
+function IntervalChipsRow({ chips }: { chips: PniIntervalChip[] }) {
   if (chips.length === 0) return null;
   return (
-    <div className="flex flex-wrap gap-1.5">
+    <div className="flex flex-wrap gap-1">
       {chips.map((chip) => (
         <span
           key={chip.label}
-          className={`rounded-full px-2.5 py-1 font-mono text-[10px] font-black tabular-nums ring-2 transition-all duration-300 ${
-            revealed ? CHIP_STYLES[chip.color] : 'bg-slate-100/90 text-slate-500 ring-slate-200/60'
-          }`}
+          className={cn(
+            'rounded-md px-2 py-0.5 font-mono text-[10px] font-black tabular-nums ring-1',
+            CHIP_STYLES[chip.color],
+          )}
         >
           {chip.label}
         </span>
@@ -91,129 +88,87 @@ function extractLetterFromLabel(label: string): string | null {
   return match?.[1]?.toUpperCase() ?? null;
 }
 
-function LetterBadge({ letter }: { letter: string }) {
-  return (
-    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-rose-500 to-orange-500 font-display text-lg font-black text-white shadow-sm">
-      {letter}
-    </div>
-  );
+function isTransferItem(label: string): boolean {
+  return /similares|transfer/i.test(label);
 }
 
 function TrapChipCard({
   index,
   item,
-  isRevealed,
-  onReveal,
   prefersReducedMotion,
 }: {
   index: number;
   item: DangerZoneItem;
-  isRevealed: boolean;
-  onReveal: () => void;
   prefersReducedMotion: boolean | null;
 }) {
   const label = item.label || item.title || `Pegadinha ${index + 1}`;
   const letter = extractLetterFromLabel(label);
   const trapText = item.detail || item.description || '';
   const correctText = typeof item.correct === 'string' ? item.correct.trim() : '';
+  const transfer = isTransferItem(label);
   const { trapMonths, correctMonths, chips, hasRail, hasChips } = inferPniTrapSlots(
     label,
     trapText,
     correctText,
   );
-
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      if (!isRevealed) onReveal();
-    }
-  };
+  const fallbackChips =
+    chips.length > 0 ? chips : inferIntervalChips(`${label} ${trapText} ${correctText}`);
 
   return (
-    <button
-      type="button"
-      onClick={() => !isRevealed && onReveal()}
-      onKeyDown={handleKeyDown}
-      aria-pressed={isRevealed}
-      className={`w-full text-left transition-transform duration-200 ${
-        !isRevealed ? 'hover:scale-[1.01]' : ''
-      }`}
+    <motion.div
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: prefersReducedMotion ? 0 : index * 0.04 }}
     >
-      <div
-        className={`overflow-hidden rounded-2xl border shadow-sm ${
-          isRevealed
-            ? 'border-emerald-200/80 border-l-[3px] border-l-emerald-400/80 bg-gradient-to-br from-white via-emerald-50/40 to-emerald-50/70'
-            : 'border-rose-200/80 border-l-[3px] border-l-rose-400/80 bg-gradient-to-br from-white via-rose-50/40 to-rose-50/70'
-        }`}
-      >
-        <div className="grid grid-rows-[auto_auto_minmax(0,1fr)_auto] gap-2 p-4">
-          <div className="flex items-start justify-between gap-2">
+      <PolarityPanel tone={transfer ? 'transfer' : 'exception'} emphasized={!transfer && !!letter}>
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex items-center gap-2">
             {letter ? (
-              <LetterBadge letter={letter} />
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-600 font-body text-lg font-black text-white shadow-sm">
+                {letter}
+              </span>
             ) : (
-              <span
-                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
-                  isRevealed ? 'bg-emerald-100/90 text-emerald-700' : 'bg-rose-100/90 text-rose-700'
-                }`}
-              >
-                {isRevealed ? (
-                  <Check className="h-5 w-5" strokeWidth={3} aria-hidden />
-                ) : (
-                  <X className="h-5 w-5" strokeWidth={2.5} aria-hidden />
-                )}
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500 text-white shadow-sm">
+                <X className="h-4 w-4" strokeWidth={3} aria-hidden />
               </span>
             )}
+            <CategoryStrip
+              label={transfer ? 'Transferência' : `Erro #${index + 1}`}
+              tone={transfer ? 'transfer' : 'exception'}
+            />
+          </div>
+          {fallbackChips[0] ? (
             <span
-              className={`rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest ${
-                isRevealed ? 'bg-emerald-100/90 text-emerald-800' : 'bg-rose-100/90 text-rose-800'
-              }`}
+              className={cn(
+                'rounded-md px-2 py-0.5 font-mono text-[10px] font-black ring-1',
+                CHIP_STYLES[fallbackChips[0].color],
+              )}
             >
-              {isRevealed ? 'PNI corrigido' : `erro #${index + 1}`}
+              {fallbackChips[0].label}
             </span>
-          </div>
-
-          {hasRail ? (
-            <MonthRail trapMonths={trapMonths} correctMonths={correctMonths} revealed={isRevealed} />
-          ) : hasChips ? (
-            <IntervalChipsRow chips={chips} revealed={isRevealed} />
-          ) : (
-            <div className="flex items-center gap-2 rounded-xl border border-lime-200/70 bg-lime-50/60 px-3 py-2">
-              <Syringe className="h-4 w-4 shrink-0 text-lime-700" aria-hidden />
-              <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-lime-800">
-                regra PNI
-              </span>
-            </div>
-          )}
-
-          {hasRail && hasChips ? (
-            <IntervalChipsRow chips={chips} revealed={isRevealed} />
           ) : null}
-
-          <div className="min-h-0">
-            <p className="line-clamp-2 font-display text-sm font-extrabold uppercase tracking-wide text-slate-900">
-              {label}
-            </p>
-            <p className="mt-1.5 line-clamp-2 font-body text-sm font-semibold leading-snug text-slate-700">
-              {trapText}
-            </p>
-          </div>
-
-          {isRevealed ? (
-            <motion.p
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="border-t border-emerald-200/60 pt-2 font-body text-sm font-bold leading-snug text-emerald-900"
-            >
-              {correctText || '—'}
-            </motion.p>
-          ) : (
-            <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-rose-500/80">
-              Toque para revelar a regra correta →
-            </span>
-          )}
         </div>
-      </div>
-    </button>
+
+        {hasRail ? <MonthRail trapMonths={trapMonths} correctMonths={correctMonths} /> : null}
+        {hasChips || fallbackChips.length > 1 ? (
+          <IntervalChipsRow chips={(hasChips ? chips : fallbackChips).slice(0, 3)} />
+        ) : null}
+
+        <p className="font-body text-sm font-bold leading-snug text-slate-900">{label}</p>
+        {trapText ? (
+          <p className="flex items-start gap-1.5 font-body text-xs leading-snug text-rose-800">
+            <X className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={3} aria-hidden />
+            <span>{trapText}</span>
+          </p>
+        ) : null}
+        {correctText ? (
+          <p className="flex items-start gap-1.5 rounded-lg bg-emerald-50 px-2.5 py-2 font-body text-sm font-semibold leading-snug text-emerald-900 ring-1 ring-emerald-200">
+            <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" strokeWidth={3} aria-hidden />
+            <span>{correctText}</span>
+          </p>
+        ) : null}
+      </PolarityPanel>
+    </motion.div>
   );
 }
 
@@ -225,103 +180,36 @@ interface DangerZonePniTrapChipsProps {
   compareRevealMode?: LogicFlowRevealMode;
 }
 
+/** Arena aberta Glance OS — ✗ pegadinha + ✔ regra, punch + chips. */
 export function DangerZonePniTrapChips({
   content,
   items,
   theme,
   footerRule,
-  compareRevealMode = 'auto',
 }: DangerZonePniTrapChipsProps) {
   const prefersReducedMotion = useReducedMotion();
-  const { revealItem, isItemRevealed, isTapMode } = useDangerZoneCompareReveal(
-    items.length,
-    compareRevealMode,
-  );
-
-  const handleReveal = useCallback(
-    (index: number) => {
-      if (isTapMode) revealItem(index);
-    },
-    [isTapMode, revealItem],
-  );
-
-  const revealedCount = items.filter((_, i) => isItemRevealed(i)).length;
-  const allRevealed = revealedCount >= items.length;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-4 md:p-6">
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
-
-      <div className="relative z-10 flex flex-col">
-        {content ? (
-          <div className="mb-4 flex justify-center">
-            <div className={`rounded-full border px-5 py-2.5 ${theme.borderColor} ${theme.iconBg}`}>
-              <p
-                className={`font-display text-center text-xs font-extrabold uppercase tracking-[0.12em] md:text-sm ${theme.iconText}`}
-              >
-                {content}
-              </p>
-            </div>
-          </div>
-        ) : null}
-
-        <p className="mb-4 flex justify-center">
-          <span
-            className={`inline-flex items-center gap-2 rounded-full border bg-white/80 px-3 py-1.5 text-xs ${theme.borderColor}`}
-          >
-            <span className={`font-body ${theme.textSecondary}`}>Regras corrigidas:</span>
-            <strong className={`font-mono text-sm font-black tabular-nums ${theme.iconText}`}>
-              {revealedCount}
-            </strong>
-            <span className={`font-body ${theme.textSecondary}`}>/ {items.length}</span>
-          </span>
-        </p>
-
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
-          {items.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 }}
-            >
-              <TrapChipCard
-                index={index}
-                item={item}
-                isRevealed={isItemRevealed(index)}
-                onReveal={() => handleReveal(index)}
-                prefersReducedMotion={prefersReducedMotion}
-              />
-            </motion.div>
-          ))}
-        </div>
-
-        {footerRule ? (
-          <div
-            className={`mt-6 rounded-xl border px-4 py-3 md:px-5 md:py-4 ${theme.borderColor} ${theme.iconBg}`}
-          >
-            <p
-              className={`font-body text-center text-sm font-semibold leading-relaxed md:text-base ${theme.textSecondary}`}
-            >
-              {footerRule}
-            </p>
-          </div>
-        ) : null}
-
-        {allRevealed ? (
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-4 rounded-xl border border-lime-200/80 bg-lime-50/80 px-4 py-3 text-center"
-          >
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-lime-800">
-              {isTapMode
-                ? 'PNI dominado — grace 4d · FA×SCR 30d · VPC13→VPP23 8sem'
-                : 'Revise intervalos e calendário antes da prova'}
-            </span>
-          </motion.div>
-        ) : null}
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.35}
+      eyebrow="ARMADILHA PNI"
+      title={content || undefined}
+      titleClassName="text-sm font-bold uppercase tracking-wide text-rose-900 md:text-base"
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+      maxWidth="3xl"
+    >
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+        {items.map((item, index) => (
+          <TrapChipCard
+            key={index}
+            index={index}
+            item={item}
+            prefersReducedMotion={prefersReducedMotion}
+          />
+        ))}
       </div>
-    </div>
+    </BoardChrome>
   );
 }

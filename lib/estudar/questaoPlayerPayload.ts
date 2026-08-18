@@ -12,7 +12,6 @@ import {
 } from '@/lib/cache';
 import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { isTituloAulaVisibleInVitrine } from '@/lib/catalogMigration/vitrineQualityGate';
-import { getTodayReviews } from '@/lib/spaced-repetition';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
 import {
@@ -58,6 +57,7 @@ type ModuloAtualRow = {
 export type BuildEstudarQuestaoPlayerPayloadInput = {
   slug: string;
   userId?: string | null;
+  userEmail?: string | null;
   searchParams?: EstudarSearchParams;
   /** `core` omite NeuroSlides (prefetch); `full` inclui slides (RSC / estudo reverso). */
   layers?: EstudarQuestaoLayers;
@@ -114,7 +114,6 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
   } = input;
   const parsedSearch = parseEstudarSearchParams(searchParams);
   const {
-    fromPlano,
     fromCaderno,
     cadernoId,
     vitrineBancas,
@@ -186,21 +185,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     return supabase;
   };
 
-  if (fromPlano && userId) {
-    const revisoes = await getTodayReviews(userId);
-    lista = revisoes.map((r) => ({ id: r.modulo_slug, modulo_slug: r.modulo_slug }));
-
-    const historico = await historicoForSlugsSafe(
-      userId,
-      lista.map((item) => item.modulo_slug),
-    );
-    const estudadosSet = estudadosSetFromHistorico(historico);
-
-    questoesDoAssunto = lista.map((item) => ({
-      slug: item.modulo_slug,
-      estudada: estudadosSet.has(item.modulo_slug),
-    }));
-  } else if (fromCaderno && cadernoId && userId) {
+  if (fromCaderno && cadernoId && userId) {
     const db = await ensureSupabase();
 
     const { data: notebook, error: notebookError } = await db
@@ -321,7 +306,6 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     anteriorSlug: anteriorSlugFinal,
     moduloSlug: slug,
     questoesDoAssunto: questoesDoAssuntoParaCliente,
-    fromPlano,
     fromCaderno: fromCaderno ? cadernoId : undefined,
     listaContexto,
     avantCodigo: avantCodigoAluno,

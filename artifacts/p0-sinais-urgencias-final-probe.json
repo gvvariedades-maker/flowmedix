@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-08-01T23:40:05.475Z",
+  "phase": "final",
+  "results": [
+    {
+      "lote": "sinais-vitais-completo",
+      "missing": false,
+      "files": 527,
+      "counts": {
+        "pedagogy_letter_spoiler": 3,
+        "pedagogy_vf_verdict_spoiler": 31,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 3,
+      "other_fp_pre_answer": 0,
+      "files_with_named": 0,
+      "named_samples": [],
+      "residue": [
+        {
+          "slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-4",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[4].detail",
+          "evidence": "30–35 °C é faixa de hipotermia grave — impossível como normalidade.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-5",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "Um paciente com temperatura axilar de 36,6°C está febril.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-5",
+          "slide": "golden_rule",
+          "key": "value",
+          "path": "golden_rule.rows[0].value",
+          "evidence": "Falsa: Um paciente com temperatura axilar de 36,6°C está febril.",
+          "kind": "clause_only"
+        }
+      ]
+    },
+    {
+      "lote": "urgencias-e-emergencias-completo",
+      "missing": false,
+      "files": 349,
+      "counts": {
+        "pedagogy_letter_spoiler": 2,
+        "pedagogy_vf_verdict_spoiler": 183,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 2,
+        "pedagogy_density": 0
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 0,
+      "other_fp_pre_answer": 2,
+      "files_with_named": 0,
+      "named_samples": [],
+      "residue": [
+        {
+          "slug": "facet-geral-urgencias-e-emergencias-1777103976379-4",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[0].detail",
+          "evidence": "Durante o atendimento inicial ao trauma, o protocolo ABCDE é uma abordagem sistemática usada para identificar e tratar ameaças à vida de forma imediata. A prim…",
+          "kind": "other_fp"
+        },
+        {
+          "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[0].detail",
+          "evidence": "A respeito da atuação da equipe de enfermagem em situações de urgência e emergência, julgue o item a seguir,considerando os princípios, os protocolos e as cond…",
+          "kind": "other_fp"
+        }
+      ]
+    }
+  ]
+}

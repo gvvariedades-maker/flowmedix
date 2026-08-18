@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Promoção à Saúde e princípios do SUS.
- * Fonte: Lei 8.080/1990 (Lei Orgânica da Saúde) + Lei 8.142/1990.
+ * Fontes: Lei 8.080/1990 · Lei 8.142/1990 · PNPS Portaria 2.446/2014
+ * (consolidada na Portaria de Consolidação nº 2/2017, Anexo I).
  */
 export const PROMOCAO_SAUDE_SUS: GuidelineTable = {
   id: 'promocao-saude-sus',
-  snapshot: 'Lei 8.080 — composição e princípios do SUS',
-  issuer: 'Presidência da República',
+  snapshot: 'Lei 8.080/8.142 + PNPS (Portaria 2.446/2014 · PRC 2/2017)',
+  issuer: 'Presidência da República / Ministério da Saúde',
   title: 'Promoção à Saúde e Prevenção de Agravos',
-  year: 1990,
-  url: 'https://www.planalto.gov.br/ccivil_03/leis/l8080.htm',
+  year: 2017,
+  url: 'https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prc0002_03_10_2017.html',
   entries: [
     {
       id: 'lei-8080',
@@ -79,8 +80,17 @@ export const PROMOCAO_SAUDE_SUS: GuidelineTable = {
     {
       id: 'pnps-portaria',
       label: 'PNPS — Política Nacional de Promoção da Saúde',
-      value: 'Portaria GM/MS nº 2.446/2014',
-      detail: 'Eixos: equidade, participação social, autonomia e empowerment.',
+      value: 'Portaria GM/MS nº 2.446/2014 (Anexo I da Portaria de Consolidação nº 2/2017)',
+      detail:
+        'Redefine a PNPS — equidade, participação social, autonomia; vigente via consolidação das políticas nacionais de saúde.',
+      sourceId: 'promocao-saude-sus',
+    },
+    {
+      id: 'pnps-temas-prioritarios',
+      label: 'PNPS — temas prioritários (exemplos)',
+      value: 'alimentação · atividade física · tabaco · álcool · violência · ambiente · cultura da paz',
+      detail:
+        'Art. 10 Portaria 2.446/2014 — agendas transversais de promoção alinhadas ao Plano Nacional de Saúde e pactos interfederativos.',
       sourceId: 'promocao-saude-sus',
     },
     {

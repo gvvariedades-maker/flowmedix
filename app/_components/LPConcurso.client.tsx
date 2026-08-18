@@ -12,7 +12,7 @@ const lpNavLinkClass =
   'rounded-lg px-2 py-2 text-xs font-bold text-slate-300 transition-colors hover:text-white sm:px-3 sm:text-sm';
 
 const lpFreeCtaClass =
-  'inline-flex shrink-0 items-center justify-center rounded-2xl bg-[#BEF264] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:bg-[#d4f879] sm:px-4 sm:py-2.5 sm:text-xs';
+  'inline-flex shrink-0 items-center justify-center rounded-2xl bg-[#F26522] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-[rgba(242,101,34,0.2)] transition-all hover:bg-[#E05518] sm:px-4 sm:py-2.5 sm:text-xs';
 
 const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
 
@@ -154,8 +154,8 @@ export function LPCheckoutButton({
   const { handleCheckout, loading, error } = useProCheckout();
 
   const baseClassName = compact
-    ? 'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-[#BEF264] px-3 py-2 text-[10px] font-black text-slate-950 transition-all hover:bg-[#d4f879] disabled:cursor-not-allowed disabled:opacity-60 sm:px-4 sm:py-2.5 sm:text-xs'
-    : 'inline-flex w-full max-w-full items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-4 py-3.5 text-center text-sm font-black leading-snug text-slate-950 transition-all hover:bg-[#d4f879] disabled:cursor-not-allowed disabled:opacity-60 sm:px-6 sm:py-4 sm:text-base';
+    ? 'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-[#F26522] px-3 py-2 text-[10px] font-black text-slate-950 transition-all hover:bg-[#E05518] disabled:cursor-not-allowed disabled:opacity-60 sm:px-4 sm:py-2.5 sm:text-xs'
+    : 'inline-flex w-full max-w-full items-center justify-center gap-2 rounded-2xl bg-[#F26522] px-4 py-3.5 text-center text-sm font-black leading-snug text-slate-950 transition-all hover:bg-[#E05518] disabled:cursor-not-allowed disabled:opacity-60 sm:px-6 sm:py-4 sm:text-base';
 
   return (
     <div className={compact ? 'relative' : 'space-y-3'}>
@@ -234,7 +234,7 @@ export function LPImpactMetrics({
         >
           {metric.highlight && !isPast && metric.dias !== undefined ? (
             <>
-              <p className="text-4xl font-[1000] tracking-tight text-[#BEF264] sm:text-5xl">{metric.dias}</p>
+              <p className="text-4xl font-[1000] tracking-tight text-[#F26522] sm:text-5xl">{metric.dias}</p>
               <p className="mt-1 text-sm font-black uppercase tracking-wider text-white sm:text-base">
                 {metric.label}
               </p>
@@ -286,7 +286,7 @@ export function LPCountdownDays({
         role="status"
         aria-live="polite"
       >
-        <p className="text-5xl font-[1000] leading-none tracking-tight text-[#BEF264] sm:text-6xl">
+        <p className="text-5xl font-[1000] leading-none tracking-tight text-[#F26522] sm:text-6xl">
           {diasRestantes}
         </p>
         <div className="min-w-0 text-left">
@@ -315,7 +315,7 @@ export function LPCountdownDays({
       role="status"
       aria-live="polite"
     >
-      <p className="text-5xl font-[1000] leading-none tracking-tight text-[#BEF264] sm:text-6xl">
+      <p className="text-5xl font-[1000] leading-none tracking-tight text-[#F26522] sm:text-6xl">
         {diasRestantes}
       </p>
       <p className="mt-2 text-lg font-black text-white">dias restantes</p>

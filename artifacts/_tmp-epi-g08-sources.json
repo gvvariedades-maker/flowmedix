@@ -1,0 +1,296 @@
+[
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-9.json",
+    "correct": "A",
+    "instruction": "Epidemiologia pode ser definida como a ciência que estuda o processo saúde-doença em coletividades humanas, analisando a distribuição e os fatoresdeterminantes das enfermidades, danos à saúde e eventos associados à saúde coletiva, propondo medidas específicas de prevenção, controle ou erradicação de doençase fornecendo indicadores que sirvam de suporte ao planejamento, administração e avaliação das ações e estratégias. Frente aos conceitos relacionados à Epidemiologia,assinale a alternativa que descreve a \"Incidência\":",
+    "options": [
+      {
+        "id": "A",
+        "text": "Indica o número de casos novos ocorridos em um certo período de tempo, em uma população específica.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "É o caso oriundo do mesmo local onde ocorreu a doença.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Caracteriza-se pela ocorrência de uma série de epidemias localizadas em diferentes regiões e que ocorrem em vários países ao mesmo tempo.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Qualquer objeto inanimado ou substância capaz de absorver, reter e transportar organismos contagiantes ou infecciosos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Índice demográfico obtido pela relação entre o número de mortos de uma população e um determinado espaço de tempo, normalmente um ano.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2023",
+      "orgao": "Pref Laranjeiras Sul",
+      "prova": "TEnf (Laranjeiras S)"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-0.json",
+    "correct": "C",
+    "instruction": "O SINAN é alimentado, principalmente, pela notificação e investigação de casos de doenças e agravos que constam da Lista Nacional de Doenças de NotificaçãoCompulsória (Portaria de Consolidação No 4, de 28 de Setembro de 2017); sua utilização efetiva permite a realização do diagnóstico dinâmico da ocorrência de um eventona população, podendo fornecer subsídios para explicações causais dos agravos notificados, além de vir a indicar riscos aos quais as pessoas estão sujeitas, contribuindoassim, para a identificação da realidade epidemiológica de determinada área geográfica; o seu uso sistemático, de forma descentralizada, contribui para a democratizaçãodas informações, permitindo que todos os profissionais de saúde acessem nas e as tornem disponíveis para a comunidade; é, portanto, um instrumento relevante paraauxiliar o planejamento da saúde, definir prioridades, além de permitir que sejam avaliados os impactos das intervenções. Diante desse contexto, assinale a alternativaque caracteriza o termo \"notificação compulsória\":",
+    "options": [
+      {
+        "id": "A",
+        "text": "Notificação voluntária.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Notificação transitória.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Notificação obrigatória.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Notificação tardia.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Notificação pública.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2024",
+      "orgao": "Pref Janiópolis",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-9.json",
+    "correct": "B",
+    "instruction": "Assinale a alternativa que complete a frase de forma correta: A ________________ é o documento que é emitido pelo estabelecimento de saúde onde a criançanasceu. Esse documento deve ser levado ao cartório para ser feito o _________________ e emitida a Certidão de Nascimento. O registro fica no cartório. A certidão ficacom a pessoa que fez o registro. Pai, avô, padrinho ou amigo pode fazê-lo, é feito uma única vez em livro no cartório, é gratuito para todos os brasileiros, assim como aprimeira Certidão de Nascimento fornecida pelo cartório.\"",
+    "options": [
+      {
+        "id": "A",
+        "text": "As palavras que completam de forma correta a frase são: Declaração de Orientação de Nascimento (DOV) e Registro Nacional Nascimento (RNN).",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "As palavras que completam de forma correta a frase são: Declaração de Nascido Vivo (DNV) e Registro Civil de Nascimento (RCN).",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "As palavras que completam de forma correta a frase são: Declaração Hospitalar (DH) e Registro Hospitalar de Nascimento (RHN)",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "As palavras que completam de forma correta a frase são: Declaração da Maternidade (DM ) e Registro Maternal de Nascimento (RMN)",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "As palavras que completam de forma correta a frase são: Declaração Original (DO) e Registro Original de Nascimento (RON)",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2024",
+      "orgao": "Pref Prudentópolis",
+      "prova": "ACS"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-6.json",
+    "correct": "C",
+    "instruction": "A definição a seguir, diz respeito a qual conceito importante ao trabalho do agente comunitário de saúde? \"Conjunto de ações que proporciona o conhecimento, adetecção ou prevenção de qualquer mudança nos fatores determinantes e condicionantes da saúde individual ou coletiva, com a finalidade de recomendar e adotar asmedidas de prevenção e controle das doenças ou agravos\".",
+    "options": [
+      {
+        "id": "A",
+        "text": "Conceito de vigilância alimentar.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Conceito de vigilância domiciliar.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Conceito de vigilância epidemiológica.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Conceito de vigilância econômica.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Conceito de vigilância nutricional.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2022",
+      "orgao": "Agente Comunitário de Saúde",
+      "prova": "Ag (Pref QN)"
+    }
+  },
+  {
+    "file": "fauel-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-4.json",
+    "correct": "D",
+    "instruction": "De acordo com Portaria GM/MS No 420/2022 que atualiza a lista nacional de notificação compulsória de doenças, agravos e eventos de saúde pública, são denotificação compulsória,\nEXCETO\n:",
+    "options": [
+      {
+        "id": "A",
+        "text": "acidente por animal peçonhento.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "síndrome congênita associada à infecção pelo vírus Zika.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "eventos adversos graves ou óbitos pós vacinação.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "gonorreia e clamídia.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "violência sexual e tentativa de suicídio.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fauel",
+      "ano": "2023",
+      "orgao": "Pref Piên",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "fauel-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-5.json",
+    "correct": "E",
+    "instruction": "Sobre conceitos relacionados a indicadores de saúde, assinale a alternativa que contenha a\nCORRETA\nassociação entre as colunas:\nx. Surto\n1. Presença constante de uma doençadentro de uma área geográfica ou grupopopulacional determinado.\ny. Endemia\n2. Ocorrência de casos de doença ououtros eventos de saúde com umaincidência maior que a esperada em áreageográfica e períodos determinados.\nz. Epidemia\n3. Aumento pouco comum no número decasos relacionados epidemiologicamente,de surgimento súbito e disseminaçãolocalizada em espaço específico.",
+    "options": [
+      {
+        "id": "A",
+        "text": "x – 1 / y – 2 / z – 3.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "x – 1 / y – 3 / z – 2.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "x – 2 / y – 1 / z – 3.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "x – 3 / y – 2 / z – 1.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "x – 3 / y – 1 / z – 2.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "Fauel",
+      "ano": "2023",
+      "orgao": "Pref Reserva",
+      "prova": "Enf"
+    }
+  },
+  {
+    "file": "fcm-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-5.json",
+    "correct": "A",
+    "instruction": "A sequência que apresenta\ncorretamente\napenas doenças de notificação compulsória está indicada em",
+    "options": [
+      {
+        "id": "A",
+        "text": "coqueluche / dengue / difteria.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "difteria / dengue / criptococose.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "amebíase / rubéola / coqueluche.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "criptococose / amebíase / rubéola.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fcm",
+      "ano": "2021",
+      "orgao": "Pref B Vista MG / Departamento de Saúde",
+      "prova": "CEFETMINAS - TEnf (BV Minas)"
+    }
+  },
+  {
+    "file": "fenix-instituto-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780000630425-4.json",
+    "correct": "B",
+    "instruction": "A epidemiologia fornece subsídios para a compreensão dos padrões de saúde e doença em coletividades humanas. À luz de seus conceitos fundamentais, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A incidência expressa o total acumulado de casos de uma doença observados em uma população ao longo do tempo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A epidemiologia investiga a distribuição e os fatores determinantes dos agravos à saúde em populações.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "O enfoque epidemiológico concentra-se prioritariamente na abordagem clínica individual dos agravos à saúde.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A prevalência corresponde ao número de novos casos identificados em um período específico de observação.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fênix Instituto",
+      "ano": "2026",
+      "orgao": "Pref N. Horizonte SC",
+      "prova": "Tec Enf"
+    }
+  }
+]

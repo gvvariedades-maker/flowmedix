@@ -4,6 +4,11 @@ import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { resolveE2eEstudarAttempt } from '@/lib/e2e/estudarSeed';
 import { isE2eEstudarSlug } from '@/lib/e2e/constants';
+import {
+  extractEvidenceClientBody,
+  ingestEvidenceRouteHook,
+} from '@/lib/evidence/ingestEvidenceRouteHook';
+import type { EvidenceSupabaseClientLike } from '@/lib/evidence/supabasePersistence';
 import { resolveQuestionAttempt } from '@/lib/estudar/questionPayload';
 import {
   assertCanAnswerQuestion,
@@ -18,6 +23,34 @@ import { moduloAccessOptionsFromEmail } from '@/lib/concursos/studyAccess';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
+
+type CanonicalQuestionMeta = {
+  banca: string;
+  topico: string;
+  /** null quando ausente no JSON. */
+  subtopico: string | null;
+};
+
+function extractCanonicalQuestionMeta(conteudoJson: unknown): CanonicalQuestionMeta {
+  const meta = (
+    conteudoJson as {
+      meta?: { banca?: string; topico?: string; subtopico?: string };
+    } | null
+  )?.meta;
+
+  const topico =
+    typeof meta?.topico === 'string' && meta.topico.trim() ? meta.topico.trim() : 'Geral';
+  const subtopico =
+    typeof meta?.subtopico === 'string' && meta.subtopico.trim()
+      ? meta.subtopico.trim()
+      : null;
+  const banca =
+    typeof meta?.banca === 'string' && meta.banca.trim()
+      ? meta.banca.trim()
+      : 'DESCONHECIDA';
+
+  return { banca, topico, subtopico };
+}
 
 async function denyModuloAccessResponse(
   supabase: Awaited<ReturnType<typeof createServerSupabase>>,
@@ -97,6 +130,25 @@ export async function POST(request: NextRequest) {
 
     const isReplay = historicoExistente != null;
 
+    // Metadados canônicos antes do gate: a classificação FSRS da tentativa exige meta.
+    const { data: modulo, error: moduloError } = await supabase
+      .from('modulos_estudo')
+      .select('conteudo_json')
+      .eq('modulo_slug', modulo_slug)
+      .maybeSingle();
+
+    if (moduloError) {
+      logger.error('Failed to load question for attempt', moduloError, { modulo_slug });
+      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 500 });
+    }
+
+    if (!modulo) {
+      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
+    }
+
+    const canonical = extractCanonicalQuestionMeta(modulo.conteudo_json);
+
+    // Replay não conta na cota do plano gratuito (não gera nova questão).
     if (!isReplay) {
       const gate = await assertCanAnswerQuestion(user.id, user.email);
       if (!gate.allowed) {
@@ -121,21 +173,6 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const { data: modulo, error: moduloError } = await supabase
-      .from('modulos_estudo')
-      .select('conteudo_json')
-      .eq('modulo_slug', modulo_slug)
-      .maybeSingle();
-
-    if (moduloError) {
-      logger.error('Failed to load question for attempt', moduloError, { modulo_slug });
-      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 500 });
-    }
-
-    if (!modulo) {
-      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
-    }
-
     const gabarito = resolveQuestionAttempt(modulo.conteudo_json, opcao_id);
     if (!gabarito) {
       return NextResponse.json({ error: 'Alternativa inválida' }, { status: 400 });
@@ -145,9 +182,14 @@ export async function POST(request: NextRequest) {
 
     const historicoPayload = {
       acertou,
-      banca: banca || 'DESCONHECIDA',
-      topico: topico || 'Geral',
-      subtopico: subtopico || topico || 'Geral',
+      /** Tentativa real (escolheu alternativa); promove placeholder de estudo reverso. */
+      respondida: true,
+      banca: canonical.banca !== 'DESCONHECIDA' ? canonical.banca : banca || 'DESCONHECIDA',
+      topico: canonical.topico !== 'Geral' ? canonical.topico : topico || 'Geral',
+      subtopico:
+        canonical.subtopico && canonical.subtopico !== 'Geral'
+          ? canonical.subtopico
+          : subtopico || topico || 'Geral',
     };
 
     const reviewedAt = new Date().toISOString();
@@ -183,10 +225,25 @@ export async function POST(request: NextRequest) {
     revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
     revalidateTag(`user-${user.id}`, CACHE_REVALIDATE_IMMEDIATE);
 
+    const evidence = await ingestEvidenceRouteHook({
+      supabase: supabase as unknown as EvidenceSupabaseClientLike,
+      route: 'registrar_tentativa',
+      user_id: user.id,
+      user_email: user.email,
+      question_id: modulo_slug,
+      selected_alternative: opcao_id,
+      correct: acertou,
+      conteudo_json: modulo.conteudo_json,
+      client_body: extractEvidenceClientBody(body as Record<string, unknown>),
+      e2e_instrumentation: false,
+      log_route_label: 'registrar-tentativa',
+    });
+
     return NextResponse.json({
       success: true,
       acertou,
       opcao_correta_id: opcaoCorretaId,
+      ...(evidence !== undefined ? { evidence } : {}),
     });
   } catch (error) {
     logger.error('Unexpected error in registrar-tentativa', error);

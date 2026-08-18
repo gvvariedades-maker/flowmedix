@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-07-27T15:12:07.878Z",
+  "sources": {
+    "catalog_migration": true,
+    "examples": false
+  },
+  "selection": {
+    "mode": "canonical",
+    "canonical_blockers": 0,
+    "divergent_slugs": 0,
+    "content_divergent_slugs": 0,
+    "unresolved_slugs": 0,
+    "baseline_materially_affected": false,
+    "dedupe_schema_version": 1
+  },
+  "questions": {
+    "unique_slugs": 0,
+    "duplicate_files_skipped": 0,
+    "with_reverse_study_slides": 0,
+    "slide_count_not_four": 0,
+    "nested_slide_wrappers": 0,
+    "flat_slides": 0
+  },
+  "slides": {
+    "total": 0,
+    "by_type": {},
+    "shape_combos": {},
+    "slot_stats": {
+      "items": {
+        "count": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "steps": {
+        "count": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "rows": {
+        "count": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      }
+    },
+    "explicit_layout_variant": 0,
+    "explicit_template": 0,
+    "explicit_theme_id": 0,
+    "danger_with_correct": 0,
+    "danger_items_without_correct": 0,
+    "logic_flow_tap": 0,
+    "logic_flow_auto": 0
+  },
+  "meta": {
+    "subtopico": 0,
+    "family": 0,
+    "pedagogical_branch": 0,
+    "golden_v1": 0
+  },
+  "limitations": []
+}

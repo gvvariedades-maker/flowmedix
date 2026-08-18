@@ -1,0 +1,28 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g13",
+  "exported_at": "2026-08-06T01:55:44.320Z",
+  "source": "from-completo",
+  "parent": "coleta-de-exames-laboratoriais-completo",
+  "filters": {
+    "slugs": [
+      "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-6",
+      "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779562768558-8",
+      "selecon-enfermagem-coleta-de-exames-laboratoriais-1779563272300-0",
+      "unifil-enfermagem-coleta-de-exames-laboratoriais-1779563288910-8",
+      "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-0",
+      "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-7",
+      "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-4",
+      "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563272300-7"
+    ]
+  },
+  "slugs": [
+    "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-6",
+    "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779562768558-8",
+    "selecon-enfermagem-coleta-de-exames-laboratoriais-1779563272300-0",
+    "unifil-enfermagem-coleta-de-exames-laboratoriais-1779563288910-8",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-0",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-7",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-4",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563272300-7"
+  ]
+}

@@ -16,7 +16,7 @@ Use este arquivo quando alguém perguntar “o que é premium?”. Ele **define 
 |:-----:|------|-----------------|-------------------|
 | **L1** | Estrutural | Toda questão AVANT válida | `QuestaoCompletaSchema` + 4 slides planos |
 | **L2** | Conteúdo premium | Estudo reverso específico da questão | L1 + **zero** `PREMIUM_STUB_MARKERS` |
-| **L3** | Experiência premium | Visual bespoke do subtópico no player | L2 + contrato do molde (`premiumGate`) |
+| **L3** | Experiência premium | Visual bespoke do subtópico no player | L2 + contrato do molde (`premiumGate`) + barra visual G2 ([`NEUROSLIDES_VISUAL_BAR.md`](NEUROSLIDES_VISUAL_BAR.md)) |
 
 **No dia a dia**, “questão premium” = **L2 no mínimo**.
 
@@ -121,7 +121,7 @@ O subtópico canônico (`meta.subtopico`) é **bucket**; o **ramo** define qual 
 
 **Gate na escrita:** `detectMoldL3Mismatch` em [`premiumGate.ts`](../lib/catalogMigration/premiumGate.ts) — warn em `mold_l3_zero_slots` / `mold_l3_runtime_fallback`; erro bloqueante só em zero slots quando o subtópico exige molde.
 
-**Exemplo:** questão de puberdade em Saúde do Adolescente → ramo `adolescente_desenvolvimento` → `morphological` / `compare`, **não** cortinas de sigilo (0/0 pilares).
+**Exemplo:** questão de puberdade em Saúde do Adolescente → ramo `adolescente_desenvolvimento` → pacote glanceable Onda 2 (`adolescent-care-pillars-deck` / isolate-board / compare), **não** cortinas v1 de sigilo.
 
 ---
 

@@ -62,16 +62,30 @@ supabase/.temp/
 # Pacotes de backup local (env + dados Supabase — upload manual no Drive)
 /backups/
 
+# Captura do hub vinculada só ao SHA de HEAD (sem digest do dirty tree).
+# Foi sobrescrita na auditoria residual — não entra em commit/staging.
+/artifacts/desempenho-v1/f5ee914e/
+
 # Onda 1 — evidência regenerável / peso morto (não runtime do app)
 # Screenshots E2E soltos na raiz (não confundir com public/ ou app/icon.png)
 /*.png
 /artifacts/visual-mold-regression/
 /artifacts/questao-review/
+/artifacts/anchor-checklist/
+/artifacts/anchor-reviewer-b-*.json
 /artifacts/reclass/
 /artifacts/brand-maison-ae-v2/
 /artifacts/ai-generation/
 /artifacts/premium-upgrade-lotes/
 /artifacts/*dry-run*
 /artifacts/**/*dry-run*
+
+
+# G0.3A — fila editorial completa (~8 MB); gerar localmente com audit:neurocanvas-editorial-queue
+/artifacts/neurocanvas-editorial-queue.json
+
+# G0.4 — partição por slug (~2 MB); gerar localmente com audit:neurocanvas-blockers
+# A versão compacta versionada é neurocanvas-blocker-clusters.md
+/artifacts/neurocanvas-blocker-clusters.json
 
 .env*

@@ -625,7 +625,8 @@ describe('slidePresentation — molde por subtópico', () => {
     );
     expect(result.layoutVariant).toBe('pni-trap-chips');
     expect(result.bulletStyle).toBe('x_icon');
-    expect(result.dangerRevealMode).toBe('tap');
+    // Molde de calendário/glossário é estático (dangerTapReveal: false no registry).
+    expect(result.dangerRevealMode).toBe('auto');
   });
 
   it('Imunização calendário: pacote 4/4 no ramo imunizacao_calendario', () => {
@@ -693,6 +694,54 @@ describe('slidePresentation — molde por subtópico', () => {
         ctx,
       ).layoutVariant,
     ).toBe('calendar-mismatch');
+  });
+
+  it('Imunização EXCETO: pacote Onda 3 isolate-board + compare', () => {
+    const ctx = {
+      questionSlug: 'idecan-imunizacao-exceto-raiva-1',
+      familyId: 'certo_errado' as const,
+      pedagogicalBranch: 'imunizacao_exceto' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Imunização' },
+          reveal_mode: 'tap',
+          steps: [
+            'Comando: INCORRETA — vigilância da raiva',
+            'Manter: caso confirmado = laboratório positivo',
+            'Exceção: caso suspeito só encefalite — definição estreita',
+            'Marcar letra B',
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('pni-exceto-isolate-board');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Imunização' },
+          content: 'Pegadinhas EXCETO PNI',
+          items: [
+            {
+              label: 'Letra A — critério clínico-epidemiológico',
+              detail: 'Segue o manual',
+              correct: 'Conduta alinhada ao MS — manter',
+            },
+            {
+              label: 'Letra B — exclusividade encefalite',
+              detail: 'Exceção',
+              correct: 'Exceção: definição estreita demais — incorreta',
+            },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('pni-exceto-compare');
   });
 
   it('Saúde da Mulher pré-natal: pacote 4/4 no ramo mulher_prenatal', () => {
@@ -1156,7 +1205,8 @@ describe('slidePresentation — molde por subtópico', () => {
     );
     expect(danger.layoutVariant).toBe('temperature-mismatch');
     expect(danger.bulletStyle).toBe('x_icon');
-    expect(danger.dangerRevealMode).toBe('tap');
+    // Cadeia de frio é leitura de faixa — molde estático (dangerTapReveal: false).
+    expect(danger.dangerRevealMode).toBe('auto');
   });
 
   it('Processo de Enfermagem: concept_map sae-responsibility-matrix no molde', () => {
@@ -1314,7 +1364,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.dangerRevealMode).toBe('tap');
   });
 
-  it('Saúde do Adolescente: concept_map adolescent-privacy-curtain no molde', () => {
+  it('Saúde do Adolescente (sem ramo): concept_map genérico morphological', () => {
     const result = resolveSlidePresentation(
       {
         type: 'concept_map',
@@ -1330,48 +1380,53 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-privacy-curtain');
+    expect(result.layoutVariant).toBe('morphological');
   });
 
-  it('Saúde do Adolescente: golden_rule adolescent-sigilo-spectrum com rows no molde', () => {
+  it('Saúde do Adolescente ética: golden_rule speak-barrier com ok + barreira', () => {
     const result = resolveSlidePresentation(
       {
         type: 'golden_rule',
         meta: { subtopico: 'Saúde do Adolescente' },
         content: 'ESCUTA',
         rows: [
-          { label: 'Privacidade', value: 'Consulta com escuta — I correta' },
-          { label: 'Gabarito', value: 'I e II, apenas', emphasis: 'success' },
+          { label: 'Como falar', value: 'Linguagem clara e acessível' },
+          { label: 'Barreira', value: 'Não falar com jargão rebuscado' },
         ],
       },
       {
         questionSlug: 'cpcon-adolescente-1',
         slideIndex: 1,
         familyId: 'vf',
+        pedagogicalBranch: 'adolescente_etica_sigilo',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-sigilo-spectrum');
+    expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
   });
 
-  it('Saúde do Adolescente: logic_flow adolescent-vf-weave-tap no molde', () => {
+  it('Saúde do Adolescente ética: logic_flow isolate-board com keep + exception', () => {
     const result = resolveSlidePresentation(
       {
         type: 'logic_flow',
         meta: { subtopico: 'Saúde do Adolescente' },
-        steps: ['I: privacidade → verdadeira.', 'III: sigilo sem critério → falsa.', 'Letra B.'],
+        steps: [
+          'Manter: privacidade e acolhimento',
+          'Exceção: conduta que afasta o adolescente',
+          'Gabarito letra B',
+        ],
         reveal_mode: 'tap',
       },
       {
         questionSlug: 'cpcon-adolescente-1',
         slideIndex: 2,
         familyId: 'vf',
+        pedagogicalBranch: 'adolescente_etica_sigilo',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-vf-weave-tap');
-    expect(result.revealMode).toBe('tap');
+    expect(result.layoutVariant).toBe('adolescent-exceto-isolate-board');
   });
 
-  it('Saúde do Adolescente: danger_zone adolescent-consent-gate com correct no molde', () => {
+  it('Saúde do Adolescente ética: danger_zone adolescent-exceto-compare com correct no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'danger_zone',
@@ -1388,11 +1443,11 @@ describe('slidePresentation — molde por subtópico', () => {
       {
         questionSlug: 'cpcon-adolescente-1',
         familyId: 'vf',
+        pedagogicalBranch: 'adolescente_etica_sigilo',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-consent-gate');
+    expect(result.layoutVariant).toBe('adolescent-exceto-compare');
     expect(result.bulletStyle).toBe('x_icon');
-    expect(result.dangerRevealMode).toBe('tap');
   });
 
   it('Promoção à Saúde: concept_map sus-art4-orbit no molde', () => {
@@ -2941,7 +2996,7 @@ describe('slidePresentation — molde por subtópico', () => {
       expect(result.layoutVariant).not.toBe('adolescent-consent-gate');
     });
 
-    it('questão de sigilo mantém moldes adolescente', () => {
+    it('questão de sigilo com ok + barreira mantém speak-barrier', () => {
       const result = resolveSlidePresentation(
         {
           type: 'golden_rule',
@@ -2949,7 +3004,7 @@ describe('slidePresentation — molde por subtópico', () => {
           content: 'SIGILO NA ADOLESCÊNCIA',
           rows: [
             { label: 'Privacidade', value: 'Consulta com escuta qualificada — protegido por sigilo' },
-            { label: 'Gabarito', value: 'Letra B', emphasis: 'success' },
+            { label: 'Barreira', value: 'Não falar com jargão rebuscado na consulta' },
           ],
         },
         {
@@ -2959,10 +3014,10 @@ describe('slidePresentation — molde por subtópico', () => {
           pedagogicalBranch: 'adolescente_etica_sigilo',
         },
       );
-      expect(result.layoutVariant).toBe('adolescent-sigilo-spectrum');
+      expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
     });
 
-    it('puberdade (IGEDUC) → concept_map genérico, não privacy-curtain', () => {
+    it('puberdade → pacote dev bespoke (≠ pacote ética)', () => {
       const instruction =
         'Julgue o item subsequente. O período da adolescência é marcado por intensa metamorfose física e psicossocial, sendo comuns as disfunções hormonais nos adolescentes. Por exemplo, considera-se atraso na puberdade em meninas quando não se observa nenhum desenvolvimento das mamas dos 12 aos 13 anos e, nos meninos, quando nenhuma hipertrofia dos testículos é observada até os 13-14 anos de idade.';
 
@@ -2985,7 +3040,86 @@ describe('slidePresentation — molde por subtópico', () => {
         },
       );
       expect(result.layoutVariant).not.toBe('adolescent-privacy-curtain');
-      expect(['bridge', 'grid', 'molecular', 'morphological', 'stack']).toContain(result.layoutVariant);
+      expect(result.layoutVariant).not.toBe('adolescent-care-pillars-deck');
+      expect(result.layoutVariant).toBe('adolescent-dev-pair-rail');
+    });
+
+    it('violência/proteção → reference_table genérico (≠ speak-barrier ética)', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico },
+          content: 'REDE DE PROTEÇÃO',
+          rows: [
+            { label: 'Acolher', value: 'Acolhimento sem revitimização' },
+            { label: 'Notificar', value: 'Notificação compulsória — SINAN / Conselho Tutelar' },
+          ],
+        },
+        {
+          questionSlug: 'funcern-violencia-protecao-1',
+          slideIndex: 2,
+          familyId: 'protocolo',
+          pedagogicalBranch: 'adolescente_violencia_protecao',
+        },
+      );
+      expect(result.layoutVariant).toBe('reference_table');
+    });
+
+    it('violência/proteção → danger_zone calendário estático (≠ compare clicável)', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico },
+          content: 'VIOLÊNCIA SEXUAL — REDE DE PROTEÇÃO',
+          items: [
+            {
+              label: 'A — Negar notificação',
+              detail: 'Diz que não é agravo compulsório.',
+              correct: 'É agravo de notificação compulsória — suspeita ou confirmação.',
+            },
+            {
+              label: 'Transferência',
+              detail: 'Exige boletim antes de acolher.',
+              correct: 'Acolher e proteger não dependem de BO.',
+            },
+          ],
+          bullet_style: 'x_icon',
+        },
+        {
+          questionSlug: 'funcern-violencia-protecao-1',
+          slideIndex: 3,
+          familyId: 'conceito',
+          pedagogicalBranch: 'adolescente_violencia_protecao',
+        },
+      );
+      expect(result.layoutVariant).toBe('adolescent-violence-calendar');
+      expect(result.moldFallback).toBeFalsy();
+    });
+
+    it('saúde mental → protocol-rail bespoke (≠ isolate ética / ≠ vertical)', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico },
+          steps: [
+            'Comando: julgue as asserções sobre anorexia e bulimia.',
+            'Julgar I: restrição e IMC baixo → anorexia → verdadeira.',
+            'Julgar II: bulimia = hiperfagia + purga → verdadeira.',
+            'Relação: II não justifica I.',
+            'Marcar D.',
+            'Em similares: peso e padrão alimentar decidem.',
+          ],
+          reveal_mode: 'tap',
+        },
+        {
+          questionSlug: 'cpcon-saude-mental-1',
+          slideIndex: 1,
+          familyId: 'conceito',
+          pedagogicalBranch: 'adolescente_saude_mental',
+        },
+      );
+      expect(result.layoutVariant).toBe('adolescent-mental-protocol-rail');
+      expect(result.moldFallback).toBeFalsy();
     });
   });
 

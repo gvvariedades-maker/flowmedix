@@ -30,4 +30,15 @@ Usar com `audit:questao-readiness --strict-v2-pedagogy`. Contrato normativo: `do
 `[READY]` em handcraft novo **exige** `--strict-v2-pedagogy`.  
 Passar só em `lintGoldenContent` sem strict = barra incompleta.
 
+## Âncoras 100% (base / examples)
+
+Checklist executável + assinatura por risco (Writer ≠ aprovador):
+
+```bash
+npm run audit:anchor-100 -- --file=examples/questao-premium-….json
+npm run audit:anchor-100 -- --file=… --sign-agent --write-meta   # risco baixo/médio
+```
+
+Contrato: [`docs/ANCHOR_CHECKLIST_100.md`](../../ANCHOR_CHECKLIST_100.md) · runbook [`PROMPT_ANCORAS_100.md`](../../PROMPT_ANCORAS_100.md).
+
 Voltar ao fluxo: [`SKILL.md`](SKILL.md).

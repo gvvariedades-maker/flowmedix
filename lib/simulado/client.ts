@@ -130,7 +130,7 @@ export async function finalizeSimuladoSession(
 }
 
 export async function answerSimuladoQuestion(
-  body: SimuladoAnswerInput,
+  body: SimuladoAnswerInput & Record<string, unknown>,
 ): Promise<SimuladoAnswerResponse> {
   const res = await fetchWithAuth('/api/simulado/responder', {
     method: 'POST',

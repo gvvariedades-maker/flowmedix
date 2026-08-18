@@ -10,7 +10,7 @@ const TUTORIAL_DIR = join(process.cwd(), 'public', 'tutorial');
 export const AJUDA_SURFACE = 'card-elevated-lg';
 export const AJUDA_SURFACE_SM = 'card-elevated';
 export const ONDE_CLICAR =
-  'rounded-2xl border border-[rgba(34, 197, 94,0.28)] bg-[rgba(34, 197, 94,0.06)]';
+  'rounded-2xl border border-[rgba(242,101,34,0.28)] bg-[rgba(242,101,34,0.06)]';
 export const TEXT_MAIN = 'text-slate-900';
 export const TEXT_MUTED = 'text-slate-600';
 
@@ -67,14 +67,14 @@ export function TutorialVideo({
 export function ClickLegend({ items }: { items: { alvo: string; acao: string }[] }) {
   return (
     <div className={`not-prose my-4 p-4 shadow-sm ${ONDE_CLICAR}`}>
-      <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#166534]">
+      <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#9A3412]">
         Legenda — onde clicar
       </p>
       <ol className={`mt-3 list-none space-y-2.5 text-sm ${TEXT_MAIN}`}>
         {items.map((it, i) => (
           <li key={i} className="flex gap-3">
             <span
-              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#166534] text-[11px] font-black text-white"
+              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#9A3412] text-[11px] font-black text-white"
               aria-hidden
             >
               {i + 1}
@@ -131,13 +131,13 @@ export function Toc({ items }: { items: { id: string; label: string }[] }) {
               href={`#${it.id}`}
               className={`group flex items-start gap-2 rounded-lg py-1 ${TEXT_MAIN} transition-colors hover:bg-slate-50`}
             >
-              <span className="font-mono text-xs tabular-nums text-[#166534]">
+              <span className="font-mono text-xs tabular-nums text-[#9A3412]">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <span className={`font-medium group-hover:underline ${TEXT_MAIN}`}>
                 {it.label}{' '}
                 <ChevronRight
-                  className="ml-0.5 inline h-3.5 w-3.5 text-slate-400 opacity-0 transition-opacity group-hover:text-[#166534] group-hover:opacity-100"
+                  className="ml-0.5 inline h-3.5 w-3.5 text-slate-400 opacity-0 transition-opacity group-hover:text-[#9A3412] group-hover:opacity-100"
                   aria-hidden
                 />
               </span>

@@ -110,11 +110,6 @@
           "label": "Calibre (G)",
           "detail": "Quanto maior o número G, menor o diâmetro — escolha pelo vaso e tipo de infusão (não inverta scalp × jelco).",
           "icon": "Ruler"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra C — scalp curto/coleta (21–23G); jelco infusão prolongada (14–24G).",
-          "icon": "Target"
         }
       ],
       "footer_rule": "Scalp = curto/coleta; jelco = infusão prolongada — calibre segue o vaso e a terapia."
@@ -158,12 +153,6 @@
           "value": "Jelco não é exclusivo de neonato; scalp não é padrão para contraste radiológico.",
           "emphasis": "alert",
           "badge": "warn"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra C",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Memorize indicação + faixa de calibre — a banca troca os papéis de scalp e jelco."

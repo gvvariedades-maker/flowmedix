@@ -1,0 +1,301 @@
+[
+  {
+    "file": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-1.json",
+    "correct": "C",
+    "instruction": "No âmbito da vigilância epidemiológica, acerca da notificação de doenças, investigação epidemiológica e medidas de controle, assinale a opção CORRETA:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A notificação de doenças de interesse em saúde pública deve ser realizada exclusivamente após a confirmação diagnóstica, sendo a investigação epidemiológica iniciada apenas após esse processo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A investigação epidemiológica tem como finalidade principal confirmar o diagnóstico clínico individual, não estando diretamente relacionada à adoção de medidas de controle coletivo.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A notificação compulsória pode ser realizada diante de casos suspeitos, devendo a investigação epidemiológica subsidiar a implementação oportuna de medidas de controle.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "As medidas de controle em vigilância epidemiológica são aplicadas apenas após a conclusão da investigação epidemiológica, a fim de evitar intervenções desnecessárias.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Educa Pb",
+      "ano": "2026",
+      "orgao": "Pref Cajazeiras",
+      "prova": "Tec Enf"
+    }
+  },
+  {
+    "file": "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5.json",
+    "correct": "A",
+    "instruction": "Considerando seu papel na assistência ao parto, e da responsabilidade de todo profissional de saúde, na notificação compulsória de doenças, assinale a alternativa\nCORRETA\n, de acordo com o guia de vigilância epidemiológica, 6a edição revisada em 2024.",
+    "options": [
+      {
+        "id": "A",
+        "text": "O tétano neonatal pode ocorrer durante a manipulação do cordão umbilical, ou por meio de substâncias, artefatos ou instrumentos não esterilizados.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "No tratamento da gestante com sífilis não é necessário o tratamento das parcerias sexuais.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A gestante portadora de HIV ou HTLV, não deve amamentar, contudo o bebê não tem direito a receber leite em pó gratuitamente pelo SUS.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Na sala de parto, ao realizar o teste rápido para sífilis no bebê e der reagente se considera caso de sífilis, mesmo se a mãe tiver tido sífilis e foi tratada.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "O RN ou lactente menor de 6 meses, cuja mãe era suspeita, provável ou confirmada, para toxoplasmose na gestação, não deve ser notificado como casosuspeito.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Facape",
+      "ano": "2025",
+      "orgao": "Enfermagem / Maternidade",
+      "prova": "Tec (Pref Afrânio)"
+    }
+  },
+  {
+    "file": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-3.json",
+    "correct": "D",
+    "instruction": "Os indicadores epidemiológicos são ferramentas essenciais para o monitoramento da saúde da população e para orientar as ações do Agente Comunitário de\nSaúde (ACS). Com base nesses indicadores e sua aplicação prática, analise as seguintes afirmações:\nI. A taxa de incidência é um indicador que mede a ocorrência de novos casos de uma doença em uma população específica durante um determinado período,\nsendo um dado fundamental para que o ACS possa identificar possíveis surtos e planejar ações imediatas de prevenção e controle.\nII. A taxa de prevalência, que mensura o número total de casos de uma doença em uma população durante um período definido, é particularmente útil para o ACS\navaliar a carga de doenças crônicas, como hipertensão e diabetes, e para direcionar as estratégias de intervenção e acompanhamento dessas condições.\nIII. A taxa de mortalidade infantil reflete as condições de saneamento básico e o acesso a serviços de saúde em uma comunidade, sendo um importante indicador\nque o ACS deve monitorar para identificar áreas de risco e possíveis falhas nos cuidados prestados pela atenção primária à saúde.\nAssinale a alternativa correta:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Apenas a afirmativa I está correta.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Apenas as afirmativas I e III estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Apenas as afirmativas II e III estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Todas as afirmativas estão corretas.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Nenhuma das afirmativas está correta.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Facet",
+      "ano": "2025",
+      "orgao": "Pref Pedro Velho",
+      "prova": "ACS"
+    }
+  },
+  {
+    "file": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-4.json",
+    "correct": "A",
+    "instruction": "Em instituição de longa permanência, técnico de enfermagem identifica residente com febre persistente, tosse produtiva, sudorese noturna e perda ponderalsignificativa. Considerando protocolos de vigilância epidemiológica, qual conduta é adequada?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Isolar o residente em quarto individual, comunicar equipe de saúde e registrar suspeita de tuberculose conforme diretrizes ministeriais.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Prescrever exame de baciloscopia direta de escarro, avaliando resultados laboratoriais e indicando tratamento específico imediato.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Administrar antibiótico empírico de amplo espectro por via parenteral, prevenindo agravamento de infecção bacteriana respiratória aguda.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Realizar radiografia de tórax e interpretar achados clínicos, estabelecendo diagnóstico definitivo antes da comunicação institucional.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Reunir familiares e discutir diagnóstico provável, antecipando início de tratamento domiciliar de forma independente e não protocolar.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Facet",
+      "ano": "2025",
+      "orgao": "Pref Congo",
+      "prova": "Tec Enf"
+    }
+  },
+  {
+    "file": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-0.json",
+    "correct": "B",
+    "instruction": "A definição de prioridades em saúde requer a análise de múltiplos indicadores socioeconômicos, culturais e epidemiológicos. Com base nos critérios operacionaispara a definição dessas prioridades, analise as seguintes afirmações:\nI\n. A renda per capita e o nível de escolaridade de uma comunidade são indicadores socioeconômicos importantes que o ACS deve levar em consideração aoidentificar as áreas mais vulneráveis que necessitam de maior atenção para a implementação de ações de promoção e prevenção de saúde.\nII\n. Indicadores culturais, como práticas de medicina tradicional e crenças relacionadas à vacinação, devem ser desconsiderados ao definir prioridades, pois podemcomprometer a padronização das ações de saúde planejadas pela equipe, gerando desafios para a implementação uniforme das políticas de saúde.\nIII\n. A análise de indicadores epidemiológicos, como a alta prevalência de tuberculose em áreas específicas, é crucial para que o ACS direcione ações de vigilânciaativa e promova medidas de controle da transmissão da doença, com o objetivo de reduzir a disseminação e prevenir novos casos.\nAssinale a alternativa\ncorreta\n:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Apenas as afirmativas I e II estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Apenas as afirmativas I e III estão corretas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Apenas as afirmativas II e III estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Todas as afirmativas estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Apenas a afirmativa III está correta.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Facet",
+      "ano": "2025",
+      "orgao": "Pref Pedro Velho",
+      "prova": "ACS"
+    }
+  },
+  {
+    "file": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-1.json",
+    "correct": "D",
+    "instruction": "No contexto da saúde coletiva, os conceitos de eficácia, eficiência e efetividade são fundamentais para avaliar a qualidade e o impacto das intervenções em saúde.Com base nesses conceitos, analise as seguintes afirmações:\n4553)\n4554)\n4555)\nI\n. A eficácia de uma intervenção em saúde refere-se à sua capacidade de atingir os resultados desejados em condições ideais e controladas, como em ensaiosclínicos, sem considerar as limitações de recursos ou variáveis externas.\nII\n. A eficiência de uma ação de saúde está relacionada à sua capacidade de alcançar os resultados esperados utilizando o menor número de recursos possível,incluindo tempo, pessoal e dinheiro, sendo um conceito crucial para a otimização de campanhas como as de vacinação em massa.\nIII\n. A efetividade mede o impacto real de uma intervenção em situações práticas e cotidianas, ou seja, em condições de vida reais, sendo o critério maisadequado para avaliar o sucesso das ações do ACS na comunidade.\nAssinale a alternativa\ncorreta\n:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Apenas as afirmativas I e II estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Apenas as afirmativas II e III estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Apenas as afirmativas I e III estão corretas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Todas as afirmativas estão corretas.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Apenas a afirmativa II está correta.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Facet",
+      "ano": "2025",
+      "orgao": "Pref Pedro Velho",
+      "prova": "ACS"
+    }
+  },
+  {
+    "file": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-2.json",
+    "correct": "B",
+    "instruction": "A vigilância epidemiológica é fundamental na saúde coletiva para o monitoramento e controle de doenças transmissíveis. No âmbito do Sistema Único de Saúde(SUS), a notificação compulsória de certas doenças permite a implementação de medidas de controle. Com base nas diretrizes mais recentes da vigilância epidemiológica,qual é o objetivo principal da notificação compulsória de doenças?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assegurar que todas as populações de risco sejam automaticamente vacinadas, com base nos dados coletados em notificações de surtos epidêmicos.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Acompanhar a ocorrência de doenças, permitindo a análise da tendência epidemiológica, o planejamento de intervenções preventivas e a contenção rápida desurtos e epidemias, reduzindo o impacto na saúde pública.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Coletar dados estatísticos para subsidiar a criação de políticas públicas, sem que haja necessariamente intervenção no controle das doenças notificadas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Fornecer informações às agências regulatórias e à indústria farmacêutica para a produção e distribuição mais eficaz de medicamentos, conforme os padrõesepidemiológicos emergentes.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Monitorar o uso racional de antimicrobianos para pacientes com doenças infecciosas, a fim de evitar a resistência bacteriana e melhorar a eficácia dostratamentos.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Facet",
+      "ano": "2025",
+      "orgao": "Enfermagem / Plantonista",
+      "prova": "Tec (Pref Pedro Velho)"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-0.json",
+    "correct": "B",
+    "instruction": "Preencha a lacuna com a alternativa correta:\nA taxa de morbidade é um i indicador de saúde que mede a frequência de casos de ___________ em uma população.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Morte.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Doença.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Nascimento.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Partos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Cura.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2025",
+      "orgao": "Pref Toledo (PR)",
+      "prova": "TEnf (Pref Toledo (PR))"
+    }
+  }
+]

@@ -1,4 +1,5 @@
 import {
+  buildDesempenhoPreset,
   buildNotebookTitleSuggestions,
   buildQuickAddPreset,
   moduloMatchesBanca,
@@ -57,5 +58,46 @@ describe('lib/cadernos/templates', () => {
     expect(batch.length).toBe(3);
     expect(batch.every((m) => m.banca === 'CESPE')).toBe(true);
     expect(batch[0]?.titulo_aula).toBe('Urgências e Emergências');
+  });
+});
+
+describe('preset do hub /desempenho (modo estrito)', () => {
+  it('declara origem, strict e conta as questões de cada assunto marcado', () => {
+    const preset = buildDesempenhoPreset(['Urgências e Emergências', ' '], modulos);
+
+    expect(preset.origem).toBe('desempenho');
+    expect(preset.strict).toBe(true);
+    expect(preset.assuntosTop3).toEqual([{ titulo: 'Urgências e Emergências', count: 2 }]);
+  });
+
+  it('não completa o lote com assuntos fora da seleção', () => {
+    const preset = buildDesempenhoPreset(['Urgências e Emergências'], modulos);
+    const batch = pickWizardBatchModulos(modulos, preset);
+
+    expect(batch).toHaveLength(2);
+    expect(batch.every((m) => m.titulo_aula === 'Urgências e Emergências')).toBe(true);
+  });
+
+  it('lote vazio quando o assunto escolhido não tem questão liberada', () => {
+    const preset = buildDesempenhoPreset(['Saúde do Adolescente'], modulos);
+    expect(preset.assuntosTop3[0]?.count).toBe(0);
+    expect(pickWizardBatchModulos(modulos, preset)).toEqual([]);
+  });
+
+  it('deduplica assuntos e respeita o teto do lote', () => {
+    const preset = buildDesempenhoPreset(
+      ['Urgências e Emergências', 'Urgências e Emergências'],
+      modulos,
+    );
+    expect(preset.assuntosTop3).toHaveLength(1);
+    expect(preset.suggestedBatchSize).toBe(10);
+  });
+
+  it('estrito com banca sem match não volta ao catálogo inteiro', () => {
+    const preset = {
+      ...buildDesempenhoPreset(['Urgências e Emergências'], modulos),
+      banca: 'VUNESP',
+    };
+    expect(pickWizardBatchModulos(modulos, preset)).toEqual([]);
   });
 });

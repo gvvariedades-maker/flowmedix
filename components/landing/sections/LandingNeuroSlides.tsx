@@ -17,7 +17,7 @@ const ICON_MAP: Record<(typeof LANDING_NEUROSLIDES.cards)[number]['icon'], Lucid
 
 const ICON_COLOR: Record<(typeof LANDING_NEUROSLIDES.cards)[number]['icon'], string> = {
   network: 'text-cyan-400 drop-shadow-[0_0_8px_rgba(0,242,255,0.35)]',
-  lightbulb: 'text-[#8fe020]',
+  lightbulb: 'text-[#F26522]',
   'git-branch': 'text-cyan-400 drop-shadow-[0_0_8px_rgba(0,242,255,0.35)]',
   'shield-alert': 'text-rose-400',
 };

@@ -116,17 +116,15 @@ function resolveChipPresentation(
   theme?: Pick<ThemeColors, 'iconBg' | 'iconText' | 'borderColor' | 'glow'>,
 ): { badge: string; iconClass: string; border: string } {
   const fallback = getChipConfig(slideType);
-  if (!theme || slideType === 'danger_zone') {
-    return {
-      badge: fallback.badge,
-      iconClass: fallback.iconClass,
-      border: getHeaderBorderClass(slideType),
-    };
-  }
+  // Sempre tokens do tipo (texto escuro). theme.iconText costuma ser branco/neon
+  // e fica ilegível em chip pastel (EXCETO/REGRA/ISOLAR/PEGADINHA).
   return {
-    badge: `${theme.iconBg} ${theme.iconText} ring-1 ring-slate-200`,
-    iconClass: theme.iconText,
-    border: `border-b ${theme.borderColor}`,
+    badge: fallback.badge,
+    iconClass: fallback.iconClass,
+    border:
+      theme && slideType !== 'danger_zone'
+        ? `border-b ${theme.borderColor}`
+        : getHeaderBorderClass(slideType),
   };
 }
 

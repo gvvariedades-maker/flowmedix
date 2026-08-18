@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, type RefObject } from 'react';
+import { createElement, useCallback, useEffect, useRef, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
@@ -8,8 +8,9 @@ import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 import type { VitrineGrupoSubtopico } from '@/lib/vitrine/types';
-import { labelQuestoes } from '@/lib/labelQuestoes';
 import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
+import { getTopicIcon } from '@/lib/vitrine/vitrineTopicIcon';
+import { getTopicAccent } from '@/lib/vitrine/vitrineTopicAccent';
 import { cn } from '@/lib/utils';
 import { VitrineProgressRing } from '@/components/vitrine/VitrineProgressRing';
 import { VitrineQuestaoList } from '@/components/vitrine/VitrineQuestaoList';
@@ -68,15 +69,20 @@ export function VitrineSubjectSheet({
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const {
     titulo_aula,
+    modulo_nome,
     totalQuestoes,
     totalResolvidas,
     trabalhadas,
+    acertos,
+    percentual,
     questoes,
     firstSlug,
   } = grupo;
 
   const todas = trabalhadas === totalQuestoes && totalQuestoes > 0;
   const hasQuestions = totalQuestoes > 0;
+  const topicIcon = getTopicIcon(titulo_aula, modulo_nome);
+  const topicAccent = getTopicAccent(titulo_aula, modulo_nome);
 
   const closeSheet = useCallback(() => {
     onClose();
@@ -140,10 +146,24 @@ export function VitrineSubjectSheet({
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-start gap-3 border-b border-slate-200 px-4 py-3">
+              <span
+                className={cn(
+                  'mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-xl border',
+                  topicAccent.chip,
+                )}
+                aria-hidden
+              >
+                {createElement(topicIcon, {
+                  size: 20,
+                  strokeWidth: 2,
+                  className: topicAccent.icon,
+                })}
+              </span>
               <div className="min-w-0 flex-1">
                 <p className="text-base font-semibold leading-snug text-slate-900">{titulo_aula}</p>
                 <p className="mt-0.5 text-xs text-slate-500">
-                  {totalQuestoes.toLocaleString('pt-BR')} {labelQuestoes(totalQuestoes)}
+                  {totalResolvidas.toLocaleString('pt-BR')}/
+                  {totalQuestoes.toLocaleString('pt-BR')} respondidas
                   {todas ? ' · Concluído' : totalResolvidas > 0 ? ' · Em progresso' : ''}
                 </p>
               </div>
@@ -170,14 +190,16 @@ export function VitrineSubjectSheet({
                 <>
                   <div className="flex justify-center">
                     <VitrineProgressRing
-                      trabalhadas={trabalhadas}
+                      acertos={acertos}
+                      respondidas={totalResolvidas}
                       total={totalQuestoes}
+                      percentual={percentual}
                       size={96}
                       strokeWidth={12}
                     />
                   </div>
-                  <p className="-mt-2 text-center text-[10px] font-medium uppercase tracking-wide text-slate-500">
-                    Questões trabalhadas
+                  <p className="-mt-2 text-center text-[11px] font-medium uppercase tracking-wide text-slate-500">
+                    Taxa de acerto
                   </p>
 
                   <VitrineQuestaoList
@@ -191,10 +213,7 @@ export function VitrineSubjectSheet({
                   <VitrineQuestaoLink
                     slug={firstSlug}
                     estudarQuery={estudarQuery}
-                    className={cn(
-                      vitrineBrand.buttonPrimary,
-                      'flex min-h-[48px] w-full items-center justify-center rounded-xl px-4 py-3 text-sm font-black uppercase tracking-wider',
-                    )}
+                    className={cn(vitrineBrand.buttonSecondary, 'min-h-12 w-full')}
                   >
                     Entrar no assunto
                   </VitrineQuestaoLink>

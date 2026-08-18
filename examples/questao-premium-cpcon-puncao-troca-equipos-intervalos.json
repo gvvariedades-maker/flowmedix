@@ -104,7 +104,7 @@
         },
         {
           "label": "Infusão contínua",
-          "detail": "Não trocar equipos em intervalo inferior a 96 horas (gabarito E) — salvo contaminação ou comprometimento.",
+          "detail": "Não trocar equipos em intervalo inferior a 96 horas — salvo contaminação ou comprometimento.",
           "icon": "Clock"
         },
         {
@@ -116,11 +116,6 @@
           "label": "Hemocomponente",
           "detail": "Troca em janela curta (6–12 h) — não confundir com infusão contínua de 96 h.",
           "icon": "Droplets"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra E — infusão contínua: mínimo 96 h entre trocas de equipo.",
-          "icon": "Target"
         }
       ],
       "footer_rule": "Memorize o par tipo de infusão × intervalo — a banca inverte horas entre alternativas."
@@ -158,12 +153,6 @@
           "value": "Nutrição parenteral e hemocomponente — janelas curtas (ex.: 6–12 h).",
           "emphasis": "alert",
           "badge": "warn"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra E",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Contínua = 96 h mínimo; intermitente e hemocomponente têm intervalos menores e específicos."

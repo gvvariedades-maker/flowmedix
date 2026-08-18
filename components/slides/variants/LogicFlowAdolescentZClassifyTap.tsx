@@ -1,193 +1,250 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, CheckCircle2, Hand, XCircle } from 'lucide-react';
+import { useMemo, type ComponentType, type SVGProps } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import {
+  AlertTriangle,
+  ArrowRight,
+  CheckCircle2,
+  ClipboardList,
+  Lightbulb,
+  Target,
+  XCircle,
+} from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import {
   parseAdolescentZStep,
-  Z_RAIL_MARKERS,
+  type AdolescentZStepKind,
 } from '@/lib/slides/adolescentAntropometriaSlideUtils';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
+import { BoardChrome } from '../primitives';
+import { cn } from '@/lib/utils';
 
 interface LogicFlowAdolescentZClassifyTapProps {
   steps: string[] | Array<{ id?: string; text: string }>;
   theme: ThemeColors;
+  /** Mantido no contrato; molde é estático (sem serializar passos). */
   revealMode?: LogicFlowRevealMode;
   footerRule?: string;
 }
 
-function stepTone(kind: ReturnType<typeof parseAdolescentZStep>['kind']): string {
+type RowIcon = ComponentType<SVGProps<SVGSVGElement> & { className?: string }>;
+
+type ParsedRow = {
+  kind: AdolescentZStepKind;
+  letter?: string;
+  raw: string;
+  index: number;
+  body: string;
+};
+
+function cleanStepBody(raw: string): string {
+  return raw
+    .replace(/^comando:\s*/i, '')
+    .replace(/^em similares:\s*/i, '')
+    .replace(/^([A-E]):\s*/i, '')
+    .replace(/\s*[→\-–—]\s*(mantém|mantem|elimina)\.?\s*$/i, '')
+    .replace(/\s*→\s*/g, ' · ')
+    .trim();
+}
+
+function iconForKind(kind: AdolescentZStepKind): RowIcon {
   switch (kind) {
     case 'classify_ok':
-      return 'border-emerald-300 bg-emerald-50 text-emerald-950';
+      return CheckCircle2;
     case 'eliminate':
     case 'threshold':
-      return 'border-rose-300 bg-rose-50 text-rose-950';
+      return XCircle;
     case 'mark':
-      return 'border-sky-400 bg-sky-100 text-sky-950';
+      return Target;
     case 'fixacao':
-      return 'border-amber-300 bg-amber-50 text-amber-950';
+      return Lightbulb;
+    case 'context':
+      return ClipboardList;
     default:
-      return 'border-slate-200 bg-white text-slate-900';
+      return AlertTriangle;
   }
 }
 
+function NoteRow({
+  letter,
+  body,
+  kind,
+  delay,
+  reduceMotion,
+}: {
+  letter?: string;
+  body: string;
+  kind: AdolescentZStepKind;
+  delay: number;
+  reduceMotion: boolean | null;
+}) {
+  const Icon = iconForKind(kind);
+  const keep = kind === 'classify_ok' || kind === 'mark';
+
+  return (
+    <motion.div
+      initial={reduceMotion ? false : { opacity: 0, x: -6 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: reduceMotion ? 0 : delay }}
+      className="border-b border-dashed border-orange-300/80 py-2.5 last:border-b-0"
+    >
+      <div className="flex items-center gap-2.5">
+        <span
+          className={cn(
+            'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-2 shadow-sm',
+            keep
+              ? 'border-emerald-400 bg-emerald-50 text-emerald-700'
+              : 'border-orange-400 bg-orange-50 text-orange-700',
+          )}
+        >
+          <Icon className="h-5 w-5" aria-hidden />
+        </span>
+        <ArrowRight className="h-4 w-4 shrink-0 text-orange-500" aria-hidden />
+        {letter ? (
+          <span
+            className={cn(
+              'flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-mono text-sm font-black',
+              keep ? 'bg-emerald-600 text-white' : 'bg-orange-600 text-white',
+            )}
+          >
+            {letter}
+          </span>
+        ) : null}
+        <p className="min-w-0 flex-1 font-body text-sm font-semibold leading-snug text-slate-900">
+          {body}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
+function StudySection({
+  badge,
+  subtitle,
+  rows,
+  reduceMotion,
+  delayBase,
+}: {
+  badge: string;
+  subtitle: string;
+  rows: ParsedRow[];
+  reduceMotion: boolean | null;
+  delayBase: number;
+}) {
+  if (rows.length === 0) return null;
+
+  return (
+    <section className="overflow-hidden rounded-2xl border-2 border-orange-400/90 bg-gradient-to-b from-orange-50/95 to-amber-50/80 shadow-md shadow-orange-900/10">
+      <header className="flex flex-wrap items-stretch gap-2 border-b border-orange-200/90 bg-white/70 p-3">
+        <div className="flex items-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 px-4 py-2 shadow-sm">
+          <span className="font-display text-lg font-black tracking-wide text-white md:text-xl">
+            {badge}
+          </span>
+        </div>
+        <div className="flex min-w-0 flex-1 items-center rounded-xl border border-orange-200 bg-white px-3 py-2">
+          <p className="font-mono text-[10px] font-bold uppercase leading-tight tracking-wider text-slate-800 md:text-[11px]">
+            {subtitle}
+          </p>
+        </div>
+      </header>
+      <div className="px-3 pb-1 pt-0.5">
+        {rows.map((row, i) => (
+          <NoteRow
+            key={`${row.kind}-${row.index}`}
+            letter={row.letter}
+            body={row.body}
+            kind={row.kind}
+            delay={delayBase + i * 0.04}
+            reduceMotion={reduceMotion}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Escore Z — raciocínio estático no gesto MANTÉM × ELIMINA
+ * (inspiração resumo COFEN×COREN: chip+seta+texto; sem tap).
+ */
 export function LogicFlowAdolescentZClassifyTap({
   steps,
   theme,
-  revealMode = 'tap',
   footerRule,
 }: LogicFlowAdolescentZClassifyTapProps) {
   const reduceMotion = useReducedMotion();
-  const normalized = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
-  const parsed = useMemo(
-    () => normalized.map((step, index) => parseAdolescentZStep(step, index)),
-    [normalized],
-  );
 
-  const [index, setIndex] = useState(0);
-  const [revealed, setRevealed] = useState<Set<number>>(() => new Set([0]));
-
-  const total = parsed.length;
-  const current = parsed[index];
-  const isTap = revealMode === 'tap';
-
-  const go = useCallback(
-    (dir: -1 | 1) => {
-      setIndex((i) => {
-        const next = Math.max(0, Math.min(total - 1, i + dir));
-        if (dir === 1) {
-          setRevealed((prev) => new Set(prev).add(next));
-        }
-        return next;
-      });
-    },
-    [total],
-  );
-
-  const revealNext = useCallback(() => {
-    setRevealed((prev) => {
-      const next = new Set(prev);
-      next.add(index);
-      return next;
+  const { comando, keepRows, dropRows, transfer } = useMemo(() => {
+    const normalized = normalizeLogicFlowSteps(steps);
+    const parsed: ParsedRow[] = normalized.map((step, index) => {
+      const p = parseAdolescentZStep(step, index);
+      return { ...p, body: cleanStepBody(p.raw) };
     });
-    if (index < total - 1) setIndex((i) => i + 1);
-  }, [index, total]);
 
-  if (normalized.length === 0) {
-    return (
-      <div className="flex min-h-full items-center justify-center p-6">
-        <p className="font-body text-slate-400">Nenhum passo definido</p>
-      </div>
-    );
-  }
+    const comando = parsed.find((p) => p.kind === 'context')?.body;
+    const transfer = parsed.find((p) => p.kind === 'fixacao')?.body;
+    const keepRows = parsed.filter((p) => p.kind === 'classify_ok' || p.kind === 'mark');
+    const dropRows = parsed.filter((p) => p.kind === 'eliminate' || p.kind === 'threshold');
+
+    return { comando, keepRows, dropRows, transfer };
+  }, [steps]);
+
+  const resolvedFooter = footerRule ?? transfer;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-4 md:p-6">
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
-
-      <div className="relative z-10 mx-auto flex w-full max-w-lg flex-col gap-4">
-        {isTap ? (
-          <div
-            role="status"
-            className="flex flex-col items-center gap-1 rounded-xl border border-amber-200/80 bg-amber-50/90 px-3 py-2.5 text-center"
-          >
-            <p className="flex items-center justify-center gap-2 font-body text-xs font-semibold text-amber-950">
-              <Hand className="h-3.5 w-3.5 shrink-0 text-amber-700" aria-hidden />
-              Toque em <span className="font-bold">Próximo</span> a cada passo
-            </p>
-            <p className="font-body text-[11px] leading-relaxed text-amber-900/85">
-              Classifique letra por letra no trilho Z antes de marcar o gabarito.
-            </p>
-          </div>
-        ) : null}
-
-        <div className="flex items-center justify-center gap-1">
-          {parsed.map((_, i) => (
-            <span
-              key={i}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                revealed.has(i) ? 'bg-sky-500' : 'bg-slate-300'
-              }`}
-            />
-          ))}
-        </div>
-
-        <div className="overflow-x-auto rounded-xl border border-sky-200/80 bg-sky-50/60 px-2 py-3">
-          <div className="flex min-w-[260px] items-center justify-between">
-            {Z_RAIL_MARKERS.map((marker) => (
-              <span
-                key={marker}
-                className="font-mono text-[10px] font-bold tabular-nums text-slate-600"
-              >
-                {marker > 0 ? `+${marker}` : marker}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
-            className={`rounded-2xl border-2 p-4 shadow-sm ${stepTone(current.kind)}`}
-          >
-            <div className="mb-2 flex items-center gap-2">
-              {current.kind === 'classify_ok' || current.kind === 'mark' ? (
-                <CheckCircle2 className="h-5 w-5 shrink-0" aria-hidden />
-              ) : current.kind === 'eliminate' || current.kind === 'threshold' ? (
-                <XCircle className="h-5 w-5 shrink-0" aria-hidden />
-              ) : null}
-              {current.letter ? (
-                <span className="rounded-md bg-white/80 px-2 py-0.5 font-mono text-xs font-black">
-                  {current.letter}
-                </span>
-              ) : null}
-            </div>
-            <p className="font-body text-sm leading-relaxed md:text-base">{current.raw}</p>
-          </motion.div>
-        </AnimatePresence>
-
-        {isTap ? (
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <button
-              type="button"
-              onClick={() => go(-1)}
-              disabled={index === 0}
-              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-200 bg-white px-3 disabled:opacity-40"
-              aria-label="Passo anterior"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            {index < total - 1 ? (
-              <button
-                type="button"
-                onClick={revealNext}
-                className="min-h-[44px] rounded-xl bg-sky-500 px-5 font-display text-sm font-bold text-white"
-              >
-                Próximo
-              </button>
-            ) : null}
-            <button
-              type="button"
-              onClick={() => go(1)}
-              disabled={index >= total - 1}
-              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-200 bg-white px-3 disabled:opacity-40"
-              aria-label="Próximo passo"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-        ) : null}
-
-        {footerRule ? (
-          <p className="text-center font-body text-xs font-semibold text-sky-900">{footerRule}</p>
-        ) : null}
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.28}
+      maxWidth="lg"
+      footerLabel="Transferência de prova"
+      footerRule={resolvedFooter}
+    >
+      <div className="text-center">
+        <h2 className="font-display text-2xl font-black tracking-tight md:text-3xl">
+          <span className="bg-gradient-to-b from-orange-500 to-orange-700 bg-clip-text text-transparent drop-shadow-sm">
+            MANTÉM
+          </span>
+          <span className="mx-2 text-slate-800">×</span>
+          <span className="bg-gradient-to-b from-orange-500 to-orange-700 bg-clip-text text-transparent drop-shadow-sm">
+            ELIMINA
+          </span>
+        </h2>
+        <p className="mt-1 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-orange-800/80">
+          Escore Z · Caderneta do Adolescente
+        </p>
       </div>
-    </div>
+
+      {comando ? (
+        <div className="flex items-start gap-2.5 rounded-2xl border-2 border-orange-300 bg-white/95 px-3 py-3 shadow-sm">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-orange-500 text-white">
+            <ClipboardList className="h-4 w-4" aria-hidden />
+          </span>
+          <div className="min-w-0">
+            <p className="font-mono text-[9px] font-bold uppercase tracking-widest text-orange-700">
+              Comando
+            </p>
+            <p className="font-body text-sm font-semibold leading-snug text-slate-900">{comando}</p>
+          </div>
+        </div>
+      ) : null}
+
+      <StudySection
+        badge="MANTÉM"
+        subtitle="Faixa que a Caderneta confirma — orientar estilo de vida"
+        rows={keepRows}
+        reduceMotion={reduceMotion}
+        delayBase={0.05}
+      />
+
+      <StudySection
+        badge="ELIMINA"
+        subtitle="Banca desloca ±1 DP — limiar errado nas categorias vizinhas"
+        rows={dropRows}
+        reduceMotion={reduceMotion}
+        delayBase={0.12}
+      />
+    </BoardChrome>
   );
 }

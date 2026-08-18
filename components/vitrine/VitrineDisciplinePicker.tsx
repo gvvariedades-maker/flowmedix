@@ -76,7 +76,8 @@ export function VitrineDisciplinePicker({
           className={cn(
             'inline-flex min-h-[44px] items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 text-sm font-medium text-slate-700 shadow-sm',
             'hover:border-slate-300 hover:text-slate-900',
-            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0cc93a]/40',
+            'focus-visible:outline-none',
+            vitrineBrand.focusRing,
             vitrineBrand.hoverBorder,
           )}
         >
@@ -100,7 +101,10 @@ export function VitrineDisciplinePicker({
       <h2
         ref={hubHeadingRef}
         tabIndex={-1}
-        className="text-sm font-bold tracking-tight text-slate-900 outline-none focus-visible:ring-2 focus-visible:ring-[#0cc93a]/40 focus-visible:ring-offset-2"
+        className={cn(
+          'text-sm font-bold tracking-tight text-slate-900 outline-none',
+          vitrineBrand.focusRingOffset,
+        )}
       >
         Disciplinas
       </h2>

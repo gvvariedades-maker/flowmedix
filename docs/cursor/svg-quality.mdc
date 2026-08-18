@@ -1,0 +1,61 @@
+---
+description: >-
+  Ativa produção de SVG de altíssima qualidade quando o usuário enviar SVG:,
+  criar SVG, ícone SVG, diagrama SVG, ou pedir qualidade visual de SVG.
+  Skill: .cursor/skills/svg-quality. Refs: docs/design-refs/svg-models/.
+alwaysApply: false
+---
+
+# AVANT — SVG Quality (rule operacional)
+
+> **Skill canônica:** [`.cursor/skills/svg-quality/SKILL.md`](../../.cursor/skills/svg-quality/SKILL.md)  
+> **Modelos baixados:** [`docs/design-refs/svg-models/README.md`](../design-refs/svg-models/README.md)  
+> **Cópia operacional:** [`.cursor/rules/svg-quality.mdc`](../../.cursor/rules/svg-quality.mdc)
+
+Quando a mensagem contiver **`SVG:`**, **criar SVG**, **ícone SVG**, **diagrama SVG**, **ilustração flat/vetorial**, ou pedido explícito de qualidade de SVG, executar **sem pedir modo**:
+
+## 1. Resolver escopo
+
+| Pedido | Ação |
+|--------|------|
+| Ícone UI já coberto por Lucide | Usar `lucide-react` — **não** inventar SVG |
+| Ícone clínico no Health Icons | Usar `public/icons/healthicons/` — **não** reinventar |
+| Gap real / diagrama / gesto | Seguir skill `svg-quality` + refs locais |
+| Molde NeuroSlides React | `avant-neuroslides-visual` (+ SVG só se asset) |
+| Polish UI de tela | `avant-ui-visual` — fora desta rule |
+
+## 2. Ordem obrigatória
+
+1. Ler skill `svg-quality` (se ainda não carregada).
+2. Escolher família (default **Lucide**).
+3. **Abrir 1–3 arquivos** em `docs/design-refs/svg-models/<família>/` (anexar/ler).
+4. Preencher spec (viewBox, stroke, metáfora, limite de shapes).
+5. Desenhar por composição geométrica + `currentColor`.
+6. Passar [`.cursor/skills/svg-quality/reference-checklist.md`](../../.cursor/skills/svg-quality/reference-checklist.md).
+7. Entregar SVG limpo + citar refs usadas.
+
+## 3. Invariantes (bloquear se violar)
+
+- viewBox canônico do set (ícone: `0 0 24 24`)
+- Uma gramática de stroke por arquivo
+- Sem path orgânico denso sem referência
+- Sem filters/glow/gradiente decorativo em ícone UI
+- Sem misturar Lucide stroke-2 com Hero stroke-1.5 no mesmo glifo
+- Preview mental/checklist PASS antes de “pronto”
+
+## 4. Prompt mínimo do usuário (aceitar e completar)
+
+```text
+SVG: <metáfora> — família lucide — icon24 — uso <chip|diagrama|pictogram>
+```
+
+Se faltar família/viewBox, assumir Lucide 24 e declarar no handoff.
+
+## 5. Ship
+
+- [ ] Checklist PASS
+- [ ] Refs citadas (`@docs/design-refs/svg-models/...`)
+- [ ] Justificativa se custom (gap Lucide/Health Icons)
+- [ ] Path de arquivo ou JSX conforme pedido
+
+**Não** commit/apply sem pedido explícito.

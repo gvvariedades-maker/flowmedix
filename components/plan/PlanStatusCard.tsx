@@ -1,7 +1,7 @@
 ﻿'use client';
 
 import Link from 'next/link';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import { AvantBrandMark } from '@/components/brand/AvantBrandMark';
 import { Button } from '@/components/ui/button';
@@ -50,37 +50,18 @@ function resolvePlanTitle(cidadeExibicao: string): {
   return { dynamicName, showSeuPlano: !dynamicName };
 }
 
-function ProStatusStrip({
-  inviteExpiry,
-  reducedMotion,
-}: {
-  inviteExpiry: string | null;
-  reducedMotion: boolean | null;
-}) {
+/** Bloco compacto — texto explícito, sem ping e sem badge isolado. */
+function ProStatusStrip({ inviteExpiry }: { inviteExpiry: string | null }) {
   return (
     <div
       role="status"
-      className="rounded-xl border border-[rgba(34,197,94,0.35)] bg-[rgba(34,197,94,0.08)] px-3 py-2.5"
+      className="rounded-xl border border-[var(--color-border-default)] bg-[var(--color-brand-dim)] px-3 py-2.5"
     >
-      <div className="flex items-center gap-2">
-        <span className="relative flex h-2 w-2 shrink-0">
-          {!reducedMotion ? (
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-60" />
-          ) : null}
-          <span
-            className="relative inline-flex h-2 w-2 rounded-full bg-[#22c55e]"
-            aria-label="Assinatura ativa"
-          />
-        </span>
-        <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#166534]">
-          PRO Ativo
-        </span>
-        <span className="ml-auto rounded-full bg-[rgba(34,197,94,0.12)] px-2 py-0.5 text-[10px] font-semibold text-[#166534] ring-1 ring-[rgba(34,197,94,0.25)]">
-          Acesso completo
-        </span>
-      </div>
+      <p className="text-xs font-semibold leading-snug text-[var(--color-brand-text)]">
+        Plano PRO · Ativo
+      </p>
       {inviteExpiry ? (
-        <p className="mt-1.5 text-[10px] text-slate-500">
+        <p className="mt-1 text-[10px] text-slate-500">
           Convite válido até {inviteExpiry}
         </p>
       ) : null}
@@ -96,19 +77,16 @@ function FreePlanPromo({ cidadeExibicao }: { cidadeExibicao: string }) {
       initial="hidden"
       animate="visible"
       variants={cardEnter}
-      className="overflow-hidden rounded-xl border border-slate-200 bg-white p-3 shadow-sm"
+      className="overflow-hidden rounded-xl border border-[var(--color-border-default)] bg-white p-3 shadow-sm"
     >
       <p className="font-mono text-[9px] uppercase tracking-[0.12em] text-slate-500">Assinatura</p>
       {showSeuPlano ? (
         <p className="mt-1 text-sm font-bold text-slate-900">
           Plano{' '}
-          <span className="text-[#166534]">gratuito</span>
+          <span className="text-[var(--color-brand-text)]">gratuito</span>
         </p>
       ) : (
-        <p
-          className="mt-1 text-sm font-bold leading-snug text-slate-900"
-          style={{ fontFamily: 'var(--font-plus-jakarta-sans)' }}
-        >
+        <p className="mt-1 text-sm font-bold leading-snug text-slate-900">
           {dynamicName}
         </p>
       )}
@@ -122,7 +100,7 @@ function FreePlanPromo({ cidadeExibicao }: { cidadeExibicao: string }) {
       </div>
       <Button
         asChild
-        className="mt-3 h-9 w-full rounded-xl bg-[#22c55e] font-mono text-[10px] font-bold uppercase tracking-wider text-[#1a2e05] shadow-sm hover:bg-[#16a34a]"
+        className="mt-3 h-9 w-full rounded-xl bg-[var(--color-brand)] font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--color-text-primary)] shadow-sm hover:brightness-[0.95]"
       >
         <Link href="/assinar-pro" className="gap-1.5">
           <Zap size={12} fill="currentColor" aria-hidden />
@@ -140,7 +118,6 @@ export function PlanStatusCard({
   proExpiresAt,
   brandHref,
 }: PlanStatusCardProps) {
-  const reducedMotion = useReducedMotion();
   const inviteExpiry = proSource === 'invite' ? formatProExpiryShort(proExpiresAt) : null;
 
   const brandMark = <AvantBrandMark className="overflow-visible" />;
@@ -153,7 +130,7 @@ export function PlanStatusCard({
           aria-label="Ir para vitrine de aulas"
           className={cn(
             'inline-flex rounded-lg outline-none transition-shadow',
-            'focus-visible:ring-2 focus-visible:ring-[#22c55e]/50',
+            'focus-visible:ring-2 focus-visible:ring-[var(--color-brand)]/50',
           )}
         >
           {brandMark}
@@ -162,7 +139,7 @@ export function PlanStatusCard({
         brandMark
       )}
       {isPro ? (
-        <ProStatusStrip inviteExpiry={inviteExpiry} reducedMotion={reducedMotion} />
+        <ProStatusStrip inviteExpiry={inviteExpiry} />
       ) : (
         <FreePlanPromo cidadeExibicao={cidadeExibicao} />
       )}

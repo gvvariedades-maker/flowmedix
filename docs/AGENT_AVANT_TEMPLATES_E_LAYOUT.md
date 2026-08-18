@@ -94,6 +94,7 @@ O fallback da linha **Imunização** na §6.5 é genérico; com `pedagogical_bra
 | `imunizacao_vf_intervalos` | `pni-rules-deck` | `pni-interval-matrix` | `pni-vf-juggle-tap` | `pni-trap-chips` |
 | `imunizacao_calendario` | `vaccine-timeline` | `pni-calendar-board` | `pni-calendar-elimination-tap` | `calendar-mismatch` |
 | `imunizacao_cadeia_frio` | `cold-chain-hub` | `pni-temperature-rail` | `pni-cold-chain-tap` | `temperature-mismatch` |
+| `imunizacao_exceto` | `morphological` | `reference_table` | `pni-exceto-isolate-board` | `pni-exceto-compare` |
 | `imunizacao_generico` | `morphological` | `reference_table` | `vertical` / tap | `compare` |
 
 Detalhe visual e goldens: [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) · briefs em `artifacts/l3-brief-imunizacao-*.md`.
@@ -218,7 +219,7 @@ O subtópico canônico é amplo; o player resolve o pacote por **ramo pedagógic
 
 | Ramo | concept_map | golden_rule | logic_flow | danger_zone |
 |------|-------------|-------------|------------|-------------|
-| `adolescente_etica_sigilo` | `adolescent-privacy-curtain` | `adolescent-sigilo-spectrum` | `adolescent-vf-weave-tap` | `adolescent-consent-gate` |
+| `adolescente_etica_sigilo` | `adolescent-care-pillars-deck` | `adolescent-speak-barrier-board` | `adolescent-exceto-isolate-board` | `adolescent-exceto-compare` |
 | `adolescente_antropometria` (escore Z) | `adolescent-growth-z-rail` | `adolescent-z-band-board` | `adolescent-z-classify-tap` | `adolescent-z-threshold-trap` |
 | demais ramos | `morphological` | `reference_table` | `vertical` + `reveal_mode: tap` | `compare` + `items[].correct` |
 

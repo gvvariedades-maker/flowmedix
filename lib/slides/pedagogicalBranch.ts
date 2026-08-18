@@ -126,6 +126,14 @@ export type PedagogicalBranchId =
   | 'curativos_dreno'
   | 'curativos_termoterapia'
   | 'curativos_generico'
+  // Coleta de Exames Laboratoriais
+  | 'coleta_nao_sanguinea'
+  | 'coleta_tubos_ordem'
+  | 'coleta_tecnica_venosa'
+  | 'coleta_jejum_preparo'
+  | 'coleta_capilar_glicemia'
+  | 'coleta_hemocultura'
+  | 'coleta_generico'
   // Saúde da Mulher
   | 'mulher_prenatal'
   | 'mulher_parto'
@@ -153,6 +161,27 @@ export type PedagogicalBranchId =
   | 'sae_etapas'
   | 'sae_exceto'
   | 'sae_generico'
+  // Atenção Básica / Saúde da Família
+  | 'ab_acs_territorio'
+  | 'ab_esf_composicao'
+  | 'ab_pnab_principios'
+  | 'ab_te_aps'
+  | 'ab_vigilancia_ads'
+  | 'ab_generico'
+  // Epidemiologia e Vigilância Epidemiológica
+  | 'epi_notificacao_compulsoria'
+  | 'epi_indicadores'
+  | 'epi_ocorrencia_agravos'
+  | 'epi_vigilancia_acoes'
+  | 'epi_cadeia_transmissao'
+  | 'epi_generico'
+  // Noções de Anatomia
+  | 'anat_terminologia_planos'
+  | 'anat_esqueleto'
+  | 'anat_muscular'
+  | 'anat_cardiovascular'
+  | 'anat_cavidades'
+  | 'anat_generico'
   // História da Enfermagem
   | 'historia_nightingale'
   | 'historia_humanizacao'
@@ -168,17 +197,35 @@ export type PedagogicalBranchId =
   | 'pt_termos_oracao'
   | 'pt_termos_oracao_generico'
   | 'pt_concordancia'
-  | 'pt_concordancia_generico';
+  | 'pt_concordancia_generico'
+  // Língua Portuguesa — Classes de palavras (split L3)
+  | 'pt_classes_conjuncao'
+  | 'pt_classes_nominais'
+  | 'pt_classes_adverbio'
+  | 'pt_classes_preposicao'
+  | 'pt_classes_exceto'
+  | 'pt_classes_generico'
+  | 'pt_classes_palavras'
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
-  conceptMap: 'adolescent-privacy-curtain',
-  goldenRule: 'adolescent-sigilo-spectrum',
-  logicFlow: 'adolescent-vf-weave-tap',
-  dangerZone: 'adolescent-consent-gate',
+  conceptMap: 'adolescent-care-pillars-deck',
+  goldenRule: 'adolescent-speak-barrier-board',
+  logicFlow: 'adolescent-exceto-isolate-board',
+  dangerZone: 'adolescent-exceto-compare',
 };
 
-/** Layout genérico dentro do tema adolescente (sem moldes ética/sigilo). */
+/**
+ * Alias histórico do pacote ética (pillars + speak-barrier + isolate + compare).
+ * Só use em `adolescente_etica_sigilo` — genérico ≠ ética (conteúdo sem barreira/EXCETO
+ * quebrava slots e vazava placeholders no aluno).
+ */
+export const ADOLESCENTE_GLANCEABLE_MOLD: SubtopicDesign = ADOLESCENTE_ETHICS_MOLD;
+
+/**
+ * Layout padrão dos ramos Adolescente não-éticos / não-antropométricos / não-violência.
+ * Genérico, desenvolvimento, saúde mental → morphological / reference_table.
+ */
 export const ADOLESCENTE_GENERIC_DESIGN: SubtopicDesign = {
   template: 'sky',
   conceptMap: 'morphological',
@@ -194,6 +241,42 @@ const ADOLESCENTE_ANTHROPOMETRY_MOLD: SubtopicDesign = {
   goldenRule: 'adolescent-z-band-board',
   logicFlow: 'adolescent-z-classify-tap',
   dangerZone: 'adolescent-z-threshold-trap',
+};
+
+/** Violência / rede de proteção — calendário (CM+DZ) + timeline estática (LF). */
+const ADOLESCENTE_VIOLENCE_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'adolescent-violence-deck',
+  goldenRule: 'reference_table',
+  logicFlow: 'adolescent-violence-timeline',
+  dangerZone: 'adolescent-violence-calendar',
+};
+
+/** Saúde mental — Vias (CM) + XABCDE (LF) + Hub SUS (GR) + Regra de Três (DZ); 0 taps. */
+const ADOLESCENTE_MENTAL_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'adolescent-mental-route-list',
+  goldenRule: 'adolescent-mental-hub-board',
+  logicFlow: 'adolescent-mental-protocol-rail',
+  dangerZone: 'adolescent-mental-step-trap',
+};
+
+/** Desenvolvimento / puberdade — pares SUS + objetivos + vigilância + checklist; 0 taps. */
+const ADOLESCENTE_DEV_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'adolescent-dev-pair-rail',
+  goldenRule: 'adolescent-dev-vigilance-board',
+  logicFlow: 'adolescent-dev-objective-flow',
+  dangerZone: 'adolescent-dev-budget-checklist',
+};
+
+/** Genérico / cauda — hub CF + níveis + checklist financiamento + versus COFEN; 0 taps. */
+const ADOLESCENTE_GENERIC_BESPOKE_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'adolescent-generic-hub-orbit',
+  goldenRule: 'adolescent-generic-finance-checklist',
+  logicFlow: 'adolescent-generic-care-levels',
+  dangerZone: 'adolescent-generic-versus-blocks',
 };
 
 const CME_DEFAULT: SubtopicDesign = {
@@ -247,6 +330,42 @@ const SAE_BESPOKE: SubtopicDesign = {
   dangerZone: 'norm-reveal',
 };
 
+/** Atenção Básica — genérico emerald (bespoke eSF orbit só após Implementar molde). */
+const AB_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'emerald',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Epidemiologia — genérico lime (bespoke lista-trap / formula-rail só após Implementar molde). */
+const EPI_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'lime',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Coleta de Exames Laboratoriais — genérico teal (bespoke tubos/hemocultura só após Implementar molde). */
+const COLETA_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'teal',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Anatomia — genérico rose (bespoke eixos só após Implementar molde). */
+const ANAT_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'rose',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /** Documentação / anotação / prontuário — concept_map sae-documentation. */
 const SAE_DOC_BESPOKE: SubtopicDesign = {
   template: 'violet',
@@ -272,7 +391,7 @@ const SONDA_GENERIC: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
-/** Pacote VF PK/PD — trilho adme-journey-rail (âncora FUNCAMP). */
+/** Pacote VF PK/PD — Glance OS 0 taps (âncora FUNCAMP). */
 const FARMACO_VF_MOLD: SubtopicDesign = {
   template: 'purple',
   conceptMap: 'adme-journey-rail',
@@ -325,18 +444,18 @@ const IMUNIZACAO_CADEIA_FRIO_MOLD: SubtopicDesign = {
 /** EXCETO / INCORRETA — compare semântico por letra (distratores corretos × exceção). */
 const IMUNIZACAO_EXCETO_MOLD: SubtopicDesign = {
   template: 'lime',
-  conceptMap: 'morphological',
-  goldenRule: 'reference_table',
-  logicFlow: 'vertical',
-  dangerZone: 'compare',
+  conceptMap: 'pni-exceto-command-hub',
+  goldenRule: 'pni-exceto-rule-board',
+  logicFlow: 'pni-exceto-isolate-board',
+  dangerZone: 'pni-exceto-compare',
 };
 
 const IMUNIZACAO_GENERIC_MOLD: SubtopicDesign = {
   template: 'lime',
-  conceptMap: 'morphological',
+  conceptMap: 'pni-via-route-hub',
   goldenRule: 'reference_table',
-  logicFlow: 'vertical',
-  dangerZone: 'compare',
+  logicFlow: 'pni-via-isolate-board',
+  dangerZone: 'pni-via-trap-arena',
 };
 
 const VIA_VF_MOLD: SubtopicDesign = {
@@ -1059,6 +1178,53 @@ const URGENCIAS_EMERGENCY_GENERIC_MOLD: SubtopicDesign = {
 };
 
 // ---- Língua Portuguesa — Crase (pacote bespoke pt-crase-funnel) ----
+/**
+ * Classes de palavras — CLASSIFICAR (Glance OS).
+ * logicFlow `pt-classes-classify-board` = 0 taps (JSON mantém reveal_mode tap para gate).
+ */
+const PT_CLASSES_CLASSIFY_MOLD: SubtopicDesign = {
+  template: 'amber',
+  /** Deck numerado · tabela famílias · camadas 1·2·3 · arena troca (Glance OS). */
+  conceptMap: 'pt-classes-function-deck',
+  goldenRule: 'pt-classes-family-table',
+  logicFlow: 'pt-classes-classify-board',
+  dangerZone: 'pt-classes-swap-arena',
+};
+
+/** Advérbio — grade tipos · trilho mnemônico · seta circunstância · compare adj×adv. */
+const PT_CLASSES_ADVERB_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'pt-classes-adverb-types-grid',
+  goldenRule: 'pt-classes-adverb-arrow-cards',
+  logicFlow: 'pt-classes-adverb-mnemonic-rail',
+  dangerZone: 'pt-classes-adverb-compare',
+};
+
+/** Preposição — contrato · categorias (0 taps) · tabela famílias · compare ✗/✓. */
+const PT_CLASSES_PREP_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'pt-classes-prep-contract-rail',
+  goldenRule: 'pt-classes-family-table',
+  logicFlow: 'pt-classes-prep-category-stack',
+  dangerZone: 'pt-classes-adverb-compare',
+};
+
+const PT_CLASSES_EXCETO_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'pt-classes-exceto-rule-pairs',
+  goldenRule: 'pt-classes-exceto-fix-board',
+  logicFlow: 'pt-classes-exceto-isolate-board',
+  dangerZone: 'pt-classes-exceto-tip-board',
+};
+
+const PT_CLASSES_GENERIC_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'pt-classes-vf-claim-strip',
+  goldenRule: 'pt-classes-vf-claim-fix',
+  logicFlow: 'pt-classes-vf-claim-board',
+  dangerZone: 'pt-classes-vf-claim-arena',
+};
+
 const PT_CRASE_MOLD: SubtopicDesign = {
   template: 'amber',
   conceptMap: 'pt-crase-funnel-deck',
@@ -1151,18 +1317,18 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
   'saude do adolescente': {
     adolescente_etica_sigilo: ADOLESCENTE_ETHICS_MOLD,
     adolescente_antropometria: ADOLESCENTE_ANTHROPOMETRY_MOLD,
-    adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_generico: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_desenvolvimento: ADOLESCENTE_DEV_MOLD,
+    adolescente_saude_mental: ADOLESCENTE_MENTAL_MOLD,
+    adolescente_violencia_protecao: ADOLESCENTE_VIOLENCE_MOLD,
+    adolescente_generico: ADOLESCENTE_GENERIC_BESPOKE_MOLD,
   },
   adolescente: {
     adolescente_etica_sigilo: ADOLESCENTE_ETHICS_MOLD,
     adolescente_antropometria: ADOLESCENTE_ANTHROPOMETRY_MOLD,
-    adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
-    adolescente_generico: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_desenvolvimento: ADOLESCENTE_DEV_MOLD,
+    adolescente_saude_mental: ADOLESCENTE_MENTAL_MOLD,
+    adolescente_violencia_protecao: ADOLESCENTE_VIOLENCE_MOLD,
+    adolescente_generico: ADOLESCENTE_GENERIC_BESPOKE_MOLD,
   },
   'processamento de artigos e produtos de saude': {
     cme_preparo_limpeza: CME_DEFAULT,
@@ -1515,6 +1681,62 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     crianca_desidratacao: CRIANCA_DESIDRATACAO_MOLD,
     crianca_generico: CRIANCA_PEDIATRIC_HUB_MOLD,
   },
+  'atencao basica / saude da familia': {
+    ab_acs_territorio: AB_GENERIC_DESIGN,
+    ab_esf_composicao: AB_GENERIC_DESIGN,
+    ab_pnab_principios: AB_GENERIC_DESIGN,
+    ab_te_aps: AB_GENERIC_DESIGN,
+    ab_vigilancia_ads: AB_GENERIC_DESIGN,
+    ab_generico: AB_GENERIC_DESIGN,
+  },
+  'atencao basica': {
+    ab_acs_territorio: AB_GENERIC_DESIGN,
+    ab_esf_composicao: AB_GENERIC_DESIGN,
+    ab_pnab_principios: AB_GENERIC_DESIGN,
+    ab_te_aps: AB_GENERIC_DESIGN,
+    ab_vigilancia_ads: AB_GENERIC_DESIGN,
+    ab_generico: AB_GENERIC_DESIGN,
+  },
+  'saude da familia': {
+    ab_acs_territorio: AB_GENERIC_DESIGN,
+    ab_esf_composicao: AB_GENERIC_DESIGN,
+    ab_pnab_principios: AB_GENERIC_DESIGN,
+    ab_te_aps: AB_GENERIC_DESIGN,
+    ab_vigilancia_ads: AB_GENERIC_DESIGN,
+    ab_generico: AB_GENERIC_DESIGN,
+  },
+  'epidemiologia e vigilancia epidemiologica': {
+    epi_notificacao_compulsoria: EPI_GENERIC_DESIGN,
+    epi_indicadores: EPI_GENERIC_DESIGN,
+    epi_ocorrencia_agravos: EPI_GENERIC_DESIGN,
+    epi_vigilancia_acoes: EPI_GENERIC_DESIGN,
+    epi_cadeia_transmissao: EPI_GENERIC_DESIGN,
+    epi_generico: EPI_GENERIC_DESIGN,
+  },
+  epidemiologia: {
+    epi_notificacao_compulsoria: EPI_GENERIC_DESIGN,
+    epi_indicadores: EPI_GENERIC_DESIGN,
+    epi_ocorrencia_agravos: EPI_GENERIC_DESIGN,
+    epi_vigilancia_acoes: EPI_GENERIC_DESIGN,
+    epi_cadeia_transmissao: EPI_GENERIC_DESIGN,
+    epi_generico: EPI_GENERIC_DESIGN,
+  },
+  'nocoes de anatomia': {
+    anat_terminologia_planos: ANAT_GENERIC_DESIGN,
+    anat_esqueleto: ANAT_GENERIC_DESIGN,
+    anat_muscular: ANAT_GENERIC_DESIGN,
+    anat_cardiovascular: ANAT_GENERIC_DESIGN,
+    anat_cavidades: ANAT_GENERIC_DESIGN,
+    anat_generico: ANAT_GENERIC_DESIGN,
+  },
+  anatomia: {
+    anat_terminologia_planos: ANAT_GENERIC_DESIGN,
+    anat_esqueleto: ANAT_GENERIC_DESIGN,
+    anat_muscular: ANAT_GENERIC_DESIGN,
+    anat_cardiovascular: ANAT_GENERIC_DESIGN,
+    anat_cavidades: ANAT_GENERIC_DESIGN,
+    anat_generico: ANAT_GENERIC_DESIGN,
+  },
   'historia da enfermagem': {
     historia_nightingale: HISTORIA_NIGHTINGALE_MOLD,
     historia_humanizacao: HISTORIA_HUMANIZACAO_MOLD,
@@ -1572,6 +1794,24 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     curativos_termoterapia: CURATIVOS_REFERENCE_MOLD,
     curativos_generico: CURATIVOS_GENERIC_MOLD,
   },
+  'coleta de exames laboratoriais': {
+    coleta_nao_sanguinea: COLETA_GENERIC_DESIGN,
+    coleta_tubos_ordem: COLETA_GENERIC_DESIGN,
+    coleta_tecnica_venosa: COLETA_GENERIC_DESIGN,
+    coleta_jejum_preparo: COLETA_GENERIC_DESIGN,
+    coleta_capilar_glicemia: COLETA_GENERIC_DESIGN,
+    coleta_hemocultura: COLETA_GENERIC_DESIGN,
+    coleta_generico: COLETA_GENERIC_DESIGN,
+  },
+  coleta: {
+    coleta_nao_sanguinea: COLETA_GENERIC_DESIGN,
+    coleta_tubos_ordem: COLETA_GENERIC_DESIGN,
+    coleta_tecnica_venosa: COLETA_GENERIC_DESIGN,
+    coleta_jejum_preparo: COLETA_GENERIC_DESIGN,
+    coleta_capilar_glicemia: COLETA_GENERIC_DESIGN,
+    coleta_hemocultura: COLETA_GENERIC_DESIGN,
+    coleta_generico: COLETA_GENERIC_DESIGN,
+  },
   'feridas e queimaduras': {
     feridas_grau_profundidade: FERIDAS_GRAU_MOLD,
     feridas_scq_calculo: FERIDAS_SCQ_MOLD,
@@ -1618,6 +1858,15 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     trabalho_nr15_reference: TRABALHO_NR15_MOLD,
     trabalho_ergonomia: TRABALHO_ERGONOMIA_MOLD,
     trabalho_generico: TRABALHO_GENERIC_MOLD,
+  },
+  'classes de palavras': {
+    pt_classes_conjuncao: PT_CLASSES_CLASSIFY_MOLD,
+    pt_classes_nominais: PT_CLASSES_CLASSIFY_MOLD,
+    pt_classes_adverbio: PT_CLASSES_ADVERB_MOLD,
+    pt_classes_preposicao: PT_CLASSES_PREP_MOLD,
+    pt_classes_exceto: PT_CLASSES_EXCETO_MOLD,
+    pt_classes_generico: PT_CLASSES_GENERIC_MOLD,
+    pt_classes_palavras: PT_CLASSES_GENERIC_MOLD,
   },
   crase: {
     pt_crase: PT_CRASE_MOLD,
@@ -2234,6 +2483,116 @@ function inferSaeBranch(
   return 'sae_generico';
 }
 
+function inferAnatBranch(corpus: string): PedagogicalBranchId {
+  if (
+    /anterior|posterior|ventral|dorsal|medial|lateral|proximal|distal|cranial|caudal|plano sagital|plano frontal|plano transverso|plano coronal|plano vertical|linha m[eé]dia|parasagital|posi[cç][aã]o anat|terminologia/.test(
+      corpus,
+    )
+  ) {
+    return 'anat_terminologia_planos';
+  }
+  if (/epiderme|derme|hipoderme|tecido epitelial|papilas gustativas|endomi[eé]trio/.test(corpus)) {
+    return 'anat_generico';
+  }
+  if (
+    /cora[cç][aã]o|valva|v[aá]lvula|art[eé]ria|veia cava|veia porta|circula[cç][aã]o|[aá]trio|ventr[ií]culo|sistema cardiovascular|grande circula/.test(
+      corpus,
+    )
+  ) {
+    return 'anat_cardiovascular';
+  }
+  if (
+    /osso|esqueleto|coluna vertebral|v[eé]rtebr|úmero|f[eê]mur|t[ií]bia|f[ií]bula|cr[aâ]nio|costela|articula[cç][aã]o|fratura|luxa[cç][aã]o|osteotomia|gesso|tala/.test(
+      corpus,
+    )
+  ) {
+    return 'anat_esqueleto';
+  }
+  if (
+    /m[uú]sculo|tend[aã]o|ligamento|origem|inser[cç][aã]o|b[ií]ceps|tr[ií]ceps|diafragma/.test(corpus)
+  ) {
+    return 'anat_muscular';
+  }
+  if (/cavidade|t[oó]rax|abdome|p[eé]lvis|topograf/.test(corpus)) {
+    return 'anat_cavidades';
+  }
+  return 'anat_generico';
+}
+
+function inferEpiBranch(corpus: string): PedagogicalBranchId {
+  if (
+    /notifica[cç][aã]o compuls[oó]ria|lista nacional|sinan|ficha de notifica|notifica[cç][aã]o imediata|notifica[cç][aã]o semanal|doen[cç]as de notifica[cç][aã]o|agravos de notifica[cç][aã]o/i.test(
+      corpus,
+    )
+  ) {
+    return 'epi_notificacao_compulsoria';
+  }
+  if (
+    /incid[eê]ncia|preval[eê]ncia|letalidade|\bmortalidade\b|\bmorbidade\b|taxa de mortalidade|coeficiente de|indicador(es)?(\s|$)|indicador(es)? (de sa[uú]de|epidemiol)/i.test(
+      corpus,
+    )
+  ) {
+    return 'epi_indicadores';
+  }
+  if (/\bendemia\b|\bepidemia\b|\bpandemia\b|\bsurto\b/i.test(corpus)) {
+    return 'epi_ocorrencia_agravos';
+  }
+  if (
+    /cadeia (de )?transmiss|agente etiol[oó]gico|hospedeiro|reservat[oó]rio|porta de entrada|modo de transmiss|per[ií]odo de (incuba[cç][aã]o|lat[eê]ncia|transmissibilidade)|hist[oó]rico natural/i.test(
+      corpus,
+    )
+  ) {
+    return 'epi_cadeia_transmissao';
+  }
+  if (
+    /vigil[aâ]ncia epidemiol[oó]gica|vigil[aâ]ncia em sa[uú]de|a[cç][oõ]es de vigil[aâ]ncia|investiga[cç][aã]o epidemiol|vigil[aâ]ncia sentinela|vigil[aâ]ncia sanit[aá]ria/i.test(
+      corpus,
+    )
+  ) {
+    return 'epi_vigilancia_acoes';
+  }
+  return 'epi_generico';
+}
+
+function inferAbBranch(corpus: string): PedagogicalBranchId {
+  if (
+    /agente comunit[aá]rio|\bacs\b|visita domiciliar|micro[aá]rea|adscri[cç][aã]o|cadastro.*fam[ií]lia|[aá]rea de abrang/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_acs_territorio';
+  }
+  if (
+    /equipe de sa[uú]de da fam[ií]lia|\besf\b|composi[cç][aã]o da equipe|nasf|emulti|ribeirinh|fluvial|4\.?000.*pessoas|carga hor[aá]ria.*equipe/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_esf_composicao';
+  }
+  if (
+    /pnab|portaria.*2\.436|pol[ií]tica nacional de aten[cç][aã]o b[aá]sica|longitudinalidade|coorden[aá][cç][aã]o do cuidado|atributos.*(aps|aten[cç][aã]o)|aten[cç][aã]o prim[aá]ria [àa] sa[uú]de/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_pnab_principios';
+  }
+  if (
+    /agente de combate|\bace\b|endemias|notifica[cç][aã]o|vigil[aâ]ncia.*territ[oó]rio|sinan|controle de vetor/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_vigilancia_ads';
+  }
+  if (
+    /t[eé]cnico de enfermagem.*(aten[cç][aã]o b[aá]sica|ubs|esf)|auxiliar de enfermagem.*(aten[cç][aã]o b[aá]sica|ubs)|atribui[cç][oõ]es.*(t[eé]cnico|auxiliar).*ubs/i.test(
+      corpus,
+    )
+  ) {
+    return 'ab_te_aps';
+  }
+  return 'ab_generico';
+}
+
 function inferSondaBranch(corpus: string): PedagogicalBranchId {
   if (countPatternMatches(corpus, SONDA_MEDICAO) > 0 && countPatternMatches(corpus, SONDA_INSTALACAO) === 0) {
     return 'sonda_medicao_nex';
@@ -2297,6 +2656,16 @@ function inferImunizacaoBranch(
 
   if (cadeiaScore > 0) {
     return 'imunizacao_cadeia_frio';
+  }
+
+  // Via / técnica de sala — mesmo com idade no enunciado (ex.: SCR aos 12m)
+  if (
+    /via de administra[cç][aã]o|apresenta a via|via correta|via de aplica[cç][aã]o/i.test(anchor) ||
+    (/subcut[aâ]nea|intrad[eé]rmica|intramuscular|endovenosa/i.test(anchor) &&
+      /via/i.test(anchor) &&
+      /vacina|tr[ií]plice|scr|bcg|pni/i.test(anchor))
+  ) {
+    return 'imunizacao_generico';
   }
 
   if (countPatternMatches(corpus, IMUNIZACAO_CALENDARIO) > 0) {
@@ -2643,6 +3012,36 @@ function isCurativosExcetoCommand(instruction: string, familyId?: FamilyId): boo
   return familyId === 'certo_errado' && /incorret/i.test(instruction);
 }
 
+function inferColetaBranch(
+  corpus: string,
+  _familyId?: FamilyId,
+  _instruction?: string,
+): PedagogicalBranchId {
+  if (/hemocultura/i.test(corpus)) {
+    return 'coleta_hemocultura';
+  }
+  if (/capilar|glicos[ií]metro|\bamgc\b|\bhgt\b/i.test(corpus)) {
+    return 'coleta_capilar_glicemia';
+  }
+  if (/tubos?|\bedta\b|citrato|ordem de coleta|tampa/i.test(corpus)) {
+    return 'coleta_tubos_ordem';
+  }
+  if (/urina|fezes|escarro|jato m[eé]dio|urocultura/i.test(corpus)) {
+    return 'coleta_nao_sanguinea';
+  }
+  if (/jejum|preparo|triglicer[ií]deos|lip[ií]dios/i.test(corpus)) {
+    return 'coleta_jejum_preparo';
+  }
+  if (
+    /pun[cç][aã]o venosa|garrote|hem[oó]lise|antissepsia.*coleta|coleta.*antissepsia|v[aá]cuo/i.test(
+      corpus,
+    )
+  ) {
+    return 'coleta_tecnica_venosa';
+  }
+  return 'coleta_generico';
+}
+
 function inferCurativosBranch(corpus: string, familyId?: FamilyId, instruction?: string): PedagogicalBranchId {
   if (instruction && isCurativosExcetoCommand(instruction, familyId)) {
     return 'curativos_exceto_incorreta';
@@ -2972,6 +3371,43 @@ function inferHistoriaBranch(corpus: string, familyId?: FamilyId): PedagogicalBr
   return 'historia_generico';
 }
 
+function inferClassesPalavrasBranch(corpus: string): PedagogicalBranchId {
+  if (/\b(exceto|incorret[oa]|valor\s+sem[aâ]ntico\s+incorreto)\b/i.test(corpus)) {
+    return 'pt_classes_exceto';
+  }
+
+  // VF / multi-classe: ≥3 famílias no corpus (ou ≥2 + comando VF) → genérico, não um ramo só.
+  const classFamilyHits = [
+    /\b(conjun[cç][aã]o|conectivo|adversativ|causal|concessiv|condicional)\b/i,
+    /\b(preposi[cç][aã]o|locu[cç][aã]o\s+prepositiva)\b/i,
+    /\b(adv[eé]rbio|locu[cç][aã]o\s+adverbial|nega[cç][aã]o)\b/i,
+    /\b(pronome|possessivo|substantiv|adjetiv|numeral|substantiva[cç][aã]o|artigo)\b/i,
+    /\b(pret[eé]rito|verbo|indicativo|conjug)\b/i,
+  ].filter((p) => p.test(corpus)).length;
+  const vfCommand =
+    /\b(verdadeiro|falso|afirmativas?|classifique-as|sequ[eê]ncia\s+v|v\s*[–\-]\s*v\s*[–\-]\s*f)\b/i.test(
+      corpus,
+    ) || /\(\s*\)\s*«/.test(corpus);
+  if (classFamilyHits >= 3 || (vfCommand && classFamilyHits >= 2)) {
+    return 'pt_classes_generico';
+  }
+
+  if (/\b(conjun[cç][aã]o|conectivo|adversativ|causal|concessiv|condicional|todavia|entretanto|j[aá]\s+que|contudo|por[eé]m)\b/i.test(corpus)) {
+    return 'pt_classes_conjuncao';
+  }
+  // Prep antes de advérbio: contraste «além» adv. × loc. prep. é comum no ramo.
+  if (/\b(preposi[cç][aã]o|locu[cç][aã]o\s+prepositiva)\b/i.test(corpus)) {
+    return 'pt_classes_preposicao';
+  }
+  if (/\b(adv[eé]rbio|locu[cç][aã]o\s+adverbial|adv\s*[×x]\s*adj)\b/i.test(corpus)) {
+    return 'pt_classes_adverbio';
+  }
+  if (/\b(artigo|substantiv|adjektiv|adjetivo|numeral|substantiva[cç][aã]o)\b/i.test(corpus)) {
+    return 'pt_classes_nominais';
+  }
+  return 'pt_classes_generico';
+}
+
 function inferCraseBranch(corpus: string): PedagogicalBranchId {
   if (countPatternMatches(corpus, PT_CRASE_SIGNALS) >= 1) {
     return 'pt_crase';
@@ -3156,6 +3592,9 @@ function inferBranchForBucket(
   if (mapKey.includes('enfermagem do trabalho') || mapKey.includes('saude do trabalhador')) {
     return inferTrabalhoBranch(corpus, familyId, instruction);
   }
+  if (mapKey.includes('coleta de exames') || mapKey.includes('exames laboratoriais')) {
+    return inferColetaBranch(corpus, familyId, instruction);
+  }
   if (
     mapKey.includes('curativos e manejo de feridas') ||
     mapKey.includes('curativos') ||
@@ -3179,6 +3618,22 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('saude da crianca') || mapKey === 'pediatria') {
     return inferCriancaBranch(corpus, familyId);
+  }
+  if (mapKey.includes('atencao basica') || mapKey.includes('saude da familia')) {
+    return inferAbBranch(corpus);
+  }
+  if (
+    mapKey.includes('epidemiologia e vigilancia') ||
+    mapKey.includes('vigilancia epidemiologica') ||
+    mapKey === 'epidemiologia'
+  ) {
+    return inferEpiBranch(corpus);
+  }
+  if (mapKey.includes('nocoes de anatomia') || mapKey === 'anatomia') {
+    return inferAnatBranch(corpus);
+  }
+  if (mapKey.includes('classes de palavras')) {
+    return inferClassesPalavrasBranch(corpus);
   }
   if (
     mapKey.includes('crase') ||

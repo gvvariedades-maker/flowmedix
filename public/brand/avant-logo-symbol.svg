@@ -1,4 +1,7 @@
-<!-- AVANT enf: brasao dourado/esmeralda (emblema). -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 56" fill="none" aria-label="AVANT enf">
-  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>
+<!-- AVANT enf: card preto + símbolo A (pernas claras + V print stroke). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" aria-label="AVANT enf">
+  <rect width="56" height="56" rx="14" fill="#0a0a0a"/>
+  <path d="M28 10 L13 46" stroke="#E8E8E8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M28 10 L43 46" stroke="#E8E8E8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M17 25 L28 38 L39 25" stroke="#F26522" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>

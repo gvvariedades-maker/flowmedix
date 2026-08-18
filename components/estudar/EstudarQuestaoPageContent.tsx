@@ -41,13 +41,15 @@ async function renderEstudarQuestaoPageContent({
 
   const session = await getServerSession();
   const userId = session?.user?.id;
+  const userEmail = session?.user?.email ?? null;
 
   let result: Awaited<ReturnType<typeof getEstudarQuestaoPayloadCached>>;
   try {
     result = await getEstudarQuestaoPayloadCached({
       slug: resolvedParams.slug,
       userId,
-      isAdmin: isAdminSessionEmail(session?.user?.email ?? null),
+      userEmail,
+      isAdmin: isAdminSessionEmail(userEmail),
       searchParams: resolvedSearch,
       layers: 'full',
     });

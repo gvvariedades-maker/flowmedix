@@ -13,6 +13,7 @@ import {
   resolveVitrineDisciplinaId,
   type VitrineDisciplinaId,
 } from '@/lib/vitrine/disciplina';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { cn } from '@/lib/utils';
 
 const EMPTY_MODULOS: {
@@ -139,7 +140,7 @@ export function QuestaoFilterBar({
   };
 
   const highlightRing = highlightActiveFilters
-    ? 'ring-2 ring-[rgba(34, 197, 94,0.35)] ring-offset-0 ring-offset-white'
+    ? 'ring-2 ring-[rgba(242,101,34,0.35)] ring-offset-0 ring-offset-white'
     : undefined;
 
   const disciplinaSegment = showDisciplinaFilter ? (
@@ -159,7 +160,7 @@ export function QuestaoFilterBar({
         className={cn(
           'min-h-[44px] rounded-xl border px-3.5 text-xs font-bold tracking-wide transition-colors',
           disciplinaSelected === null
-            ? 'border-[rgba(143,224,32,0.55)] bg-[rgba(143,224,32,0.14)] text-[#3d6b0f]'
+            ? vitrineBrand.selectedIcon
             : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50',
         )}
       >
@@ -176,7 +177,7 @@ export function QuestaoFilterBar({
             className={cn(
               'min-h-[44px] rounded-xl border px-3.5 text-xs font-bold tracking-wide transition-colors',
               active
-                ? 'border-[rgba(143,224,32,0.55)] bg-[rgba(143,224,32,0.14)] text-[#3d6b0f]'
+                ? vitrineBrand.selectedIcon
                 : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50',
             )}
           >

@@ -1,0 +1,8 @@
+<!-- AVANT gold  seta peça ’ resultado (gesto contrato prep).
+     viewBox 0 0 24 24 · stroke 2.5 · Lucide grammar.
+     Refs: lucide/arrow-right.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" role="img" aria-label="Seta">
+  <title>Seta</title>
+  <path d="M5 12h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

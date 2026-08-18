@@ -22,7 +22,11 @@
         "issuer": "Referência técnica de enfermagem / bancas",
         "title": "Equivalências microgotas e macrogotas (20 gts/mL e 60 gts/mL)",
         "year": 2021,
-        "covers": ["microgotas", "macrogotas", "mL/h"]
+        "covers": [
+          "microgotas",
+          "macrogotas",
+          "mL/h"
+        ]
       }
     ]
   },
@@ -62,7 +66,7 @@
       "items": [
         {
           "label": "1 mL = 20 gotas",
-          "detail": "Constante padrão no Brasil para macrogotas em equipo de venóclise — núcleo da alternativa B e base para gts/min em prova.",
+          "detail": "Constante padrão no Brasil para macrogotas em equipo de venóclise — base para gts/min em prova.",
           "icon": "Droplets"
         },
         {
@@ -72,12 +76,12 @@
         },
         {
           "label": "1 gota = 3 microgotas",
-          "detail": "Relação fixa de conversão. A alternativa C (35) e a D (10) invertem ou inventam valores.",
+          "detail": "Relação fixa de conversão. Distratores inventam valores como 35 ou 10 microgotas por gota.",
           "icon": "ArrowLeftRight"
         },
         {
           "label": "Insulina U-100",
-          "detail": "100 UI em 1 mL — não 10 UI. A letra A troca o dígito da concentração padrão.",
+          "detail": "100 UI em 1 mL — não 10 UI. Distrator clássico troca o dígito da concentração padrão.",
           "icon": "Syringe"
         },
         {
@@ -87,7 +91,7 @@
         },
         {
           "label": "Padrão IDECAN neste tema",
-          "detail": "Banca testa decore de equivalência + distrator de insulina. Gabarito costuma ser a afirmativa com constante correta (B).",
+          "detail": "Banca testa decore 20/60/3 + distrator de insulina U-100.",
           "icon": "Target"
         }
       ],
@@ -125,21 +129,21 @@
           "badge": "warn"
         },
         {
-          "label": "Letra B — gabarito",
+          "label": "Única equivalência correta da questão",
           "value": "Única equivalência correta da questão",
           "emphasis": "success",
           "badge": "hot"
         },
         {
-          "label": "Letra A — erro",
+          "label": "Erro.",
           "value": "10 UI/mL — troca 100 por 10 na U-100"
         },
         {
-          "label": "Letra C — erro",
+          "label": "Erro.",
           "value": "35 microgotas/gota — valor inventado"
         },
         {
-          "label": "Letra D — erro",
+          "label": "Erro.",
           "value": "10 microgotas/macrogota — deveria ser 3"
         },
         {

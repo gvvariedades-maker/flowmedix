@@ -1,0 +1,3453 @@
+{
+  "schema_version": 1,
+  "gate": "G0.4",
+  "measured_at": "2026-07-27",
+  "baseline_id": "G0.4",
+  "total_unresolved": 339,
+  "bucket_counts": {
+    "official_lane": 11,
+    "manifest_conflict": 0,
+    "pedagogical_s2_slide": 84,
+    "s2_non_slide_residual": 170,
+    "metadata_s1": 74
+  },
+  "bucket_sum": 339,
+  "partition_complete": true,
+  "lane_overlap_note": "Lanes de revisão (official/pedagogical/metadata) são sobrepostas; bucket_counts são mutuamente exclusivos.",
+  "reconciliation_lanes": {
+    "total_cases": 339,
+    "unique_slugs": 339,
+    "cluster_count": 104,
+    "all_pending": true,
+    "official_lane_count": 11,
+    "manifest_conflict_lane_count": 0,
+    "pedagogical_lane_count": 90,
+    "metadata_lane_count": 74
+  },
+  "official_by_banca": {
+    "cotec-fadenor": [
+      "nc-g03-25206cad1fed2447"
+    ],
+    "decorp": [
+      "nc-g03-59f857310dc52834"
+    ],
+    "fumarc": [
+      "nc-g03-b42a80adb7d43c51"
+    ],
+    "ieses": [
+      "nc-g03-56ec4b6e318891ed"
+    ],
+    "igeduc": [
+      "nc-g03-7df66747dffa2e92",
+      "nc-g03-9bc30daff9fcfbc0",
+      "nc-g03-d501060585489ef9"
+    ],
+    "instituto-darwin": [
+      "nc-g03-e2f9a0c3be309c2f"
+    ],
+    "instituto-ibed": [
+      "nc-g03-e8ac8186eccc4d3f"
+    ],
+    "vunesp": [
+      "nc-g03-a88a4eb9efa315db",
+      "nc-g03-bad3482bfe781e3d"
+    ]
+  },
+  "entries": [
+    {
+      "case_id": "nc-g03-44c19caa03f144c6",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "amauc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f66ddb42784d8412",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "amauc",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d7c04f2d0208f7e6",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-9",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "amauc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e9bd46bcb150f6f1",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "amauc",
+      "cluster_id": "curativos-lote-01↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-1b1d03c2bf43e03e",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-6",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "amauc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-9d4af41203ebf6ba",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "amauc",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-01+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-be3f37e3db274355",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "amauc",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-cac02f274e2b8aca",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "amauc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-2dbd18db70cbc456",
+      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-55a865a7cf3c68a4",
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+4|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-366f72b853e3ee43",
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7e42721c14df950a",
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-2104245f0b5bbb1e",
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e5703cd3ab41c17f",
+      "slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "biosseg-itu-scan↔doencas-bacterianas-completo+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f6d5a09d25cf0eb8",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-6",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-0e075b5724ad178b",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-6",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ae1b4b5ae5e36872",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-4",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a34ff53539d8a712",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-3",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b3fc84ab1255d43f",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-9374c76f350bb8a1",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a68eaba6b2a6cb42",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-02+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-1d4220a1931c204f",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-7",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "layout-pilot-v2↔processo-de-enfermagem-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d01ceb382249965c",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b941512ef4ccb9bf",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b5c96918246993e4",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-74ab9339ecf1bfca",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "coleta-de-exames-laboratoriais-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-72bdfd80fe7076d7",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d7684a328a259e47",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "curativos-lote-02↔curativos-lote-03+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f9beac243c51fa1f",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-9",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-1aa738359888c9c1",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e5ffcb90c25cb606",
+      "slug": "ameosc-enfermagem-seguranca-do-paciente-1777102936764-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ameosc",
+      "cluster_id": "puncao-titulo-cleanup-20↔seguranca-do-paciente-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ff1ab8d3adbea206",
+      "slug": "ameosc-enfermagem-seguranca-do-paciente-1779563448133-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ameosc",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-3982a61fc244a73a",
+      "slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c078bd5aebfbe89f",
+      "slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-4974a6c6c884de2f",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-0",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-92d8b93fc6e331fa",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-9",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-01+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-94640d1f38a50607",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a5d972ecd074ca30",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-3c90d50b45270fba",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-70407d26a2f8eb87",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-328423c5a91a6fd7",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a458c21244d1d411",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "coleta-de-exames-laboratoriais-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-248ce96746dd3710",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-3541813f6389ad69",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-1",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-01+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ef1d4e331d2ee692",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-04+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-cca24c56383cfc0c",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-6423a6718fb007a9",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-1",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-15a49ac14ddef55b",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-3",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c658afdb68f91a7d",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-04+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-cf5a675e3801d209",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-7",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-0bc5cc11331b817c",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-2",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ad2afd238432f570",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-92be51e4f87c2daa",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-04+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-3f08577a1d8c35a2",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-39f48500962b6af4",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-05+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-825a5ce5a0111ab8",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔processo-de-enfermagem-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-eef34b357063fb70",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5e7d688c496ce660",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-4145237bce455fc4",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-02+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f94c61eef705daa3",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-05+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-029a6306463d5602",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-7",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-99e4df61d0ff119c",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "avancasp",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ff67492b6355f1e4",
+      "slug": "avancasp-enfermagem-seguranca-do-paciente-1777102861438-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "seguranca-do-paciente-completo↔seguranca-do-paciente-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-673757b572d86969",
+      "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "avancasp",
+      "cluster_id": "sinais-builder-lote-02↔sinais-vitais-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-335555998f3183f0",
+      "slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cebraspe-cespe",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-05+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-9d5b25aed680951f",
+      "slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cebraspe-cespe",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-repair-lote-01+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-6f52138681429e4c",
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-7",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cebraspe-cespe",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-01|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-518e9bcb26ae1b77",
+      "slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1776056401060-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "cebraspe-cespe",
+      "cluster_id": "layout-pilot-v2↔vias-de-administracao-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-db335f65b1638ab7",
+      "slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cebraspe-cespe",
+      "cluster_id": "vias-de-administracao-completo↔vias-de-administracao-lote-01+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-2b8ec632630f3b62",
+      "slug": "cetap-enfermagem-curativos-e-manejo-de-feridas-1779344819753-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cetap",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ff0bd675ace4c0d9",
+      "slug": "cetrede-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-1",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cetrede",
+      "cluster_id": "assistencia-perioperatoria-inclui-srpa-lote-01↔biosseg-itu-scan+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f41ac3a4bdce0c90",
+      "slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-0",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cev-urca",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-27d5a5b5ab4e2308",
+      "slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cev-urca",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a61d72cf6d115564",
+      "slug": "cogeps-unioeste-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-7",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cogeps-unioeste",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-01|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-68fb12a5a44beb0f",
+      "slug": "contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "contemax",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-01|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ce0898d523723415",
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "coseac-uff",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-0292a9ccc73e40de",
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-4",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "coseac-uff",
+      "cluster_id": "biosseg-itu-scan↔cuidados-na-administracao-de-medicamentos-completo+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7824d88afbaf8973",
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-1",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cotec-fadenor",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-01+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8d5d9f1ac71c9c30",
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "cotec-fadenor",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-571b81ec11ef462c",
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-8",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cotec-fadenor",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f420b2394be6b72f",
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "cotec-fadenor",
+      "cluster_id": "curativos-lote-04↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-2a7832ff7138a118",
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cotec-fadenor",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-06+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-774381d9e0576a9a",
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cotec-fadenor",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-25206cad1fed2447",
+      "slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104235003-1",
+      "severity": "S3",
+      "bucket": "official_lane",
+      "lanes": [
+        "official"
+      ],
+      "banca_hint": "cotec-fadenor",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔saude-da-mulher-completo+1|S3|ev=none"
+    },
+    {
+      "case_id": "nc-g03-348ddaa3c2d175cc",
+      "slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a9bea5d4a8099f48",
+      "slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-961bb1123ada30e6",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-3",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ef250f1234072fb4",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "curativos-lote-04↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-1a2bcc12a8de98dc",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-9",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-59ad3b1caf1f9b5b",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003709908-0",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f73aca2918eda044",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-12ae442e650b1344",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e2cb6af3ec47bbd2",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-6",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-39fa1139770abfb2",
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-01|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-20cdf6be98cf22f9",
+      "slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1779563443877-1",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔seguranca-do-paciente-completo+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b364c13fb13a7558",
+      "slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "cpcon-uepb",
+      "cluster_id": "sinais-builder-lote-03↔sinais-vitais-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-59f857310dc52834",
+      "slug": "decorp-enfermagem-exames-laboratoriais-1779563553840-3",
+      "severity": "S3",
+      "bucket": "official_lane",
+      "lanes": [
+        "official"
+      ],
+      "banca_hint": "decorp",
+      "cluster_id": "coleta-de-exames-laboratoriais-repair-lote-01↔coleta-lote-01+1|S3|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a3340c3684587349",
+      "slug": "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779344779828-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "educa-pb",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-be0ae7a92822e3c8",
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-7",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "educa-pb",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-98afea62b8c663f6",
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-9",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "educa-pb",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f42c1e157b01923c",
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "educa-pb",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-07+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8a3e62e93963f83b",
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "educa-pb",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d17e1e7f21e584a1",
+      "slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "facet",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-583335f5c372a162",
+      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fafipa",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-95f3f56109752b8c",
+      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fafipa",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-07+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-53e68f250ed6a5c8",
+      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-3",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "fafipa",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-01+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-fb297c73a3b31c05",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-6",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fau-unicentro",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-89e13ffdd67ec8e2",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-3",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fau-unicentro",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-567e5b6e024110fc",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fau-unicentro",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-08+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a75e61cf1830b3b5",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fau-unicentro",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-794e918df576f1c0",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-3",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fau-unicentro",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-94aa39f7279a4a27",
+      "slug": "fau-unicentro-enfermagem-seguranca-do-paciente-1779563436357-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fau-unicentro",
+      "cluster_id": "seguranca-do-paciente-completo↔seguranca-do-paciente-lote-01+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5119fb7fcb50acca",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fcpc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a683fb1e55684cd0",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-6",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fcpc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-4abbb764621b48e5",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-7",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "fcpc",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-01+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7928431d669a986f",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-8",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "fcpc",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f6f83f8e2d823c08",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fcpc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-0211c439c5652b80",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fcpc",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-08+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e70accf52d0a3474",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-4",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fcpc",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-fa222de215bea29f",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-9",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fcpc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-df7671cb1ce1faf4",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fcpc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b4da053366977db1",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fcpc",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-09+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8a1b8ce1255ee317",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fcpc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d603d48fcd880e28",
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fenix-instituto",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-09+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8655fe0d465f9969",
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-7",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fenix-instituto",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-789196add81a10e9",
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-9",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "fenix-instituto",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-06566eed7a150a73",
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "fenix-instituto",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-01+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-3f567ac00ffca7bb",
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "fenix-instituto",
+      "cluster_id": "doencas-bacterianas-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b1ae7e79fe48d3ab",
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002110600-7",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "fepese",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-52644b552ba4acd7",
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780008241722-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fepese",
+      "cluster_id": "coleta-de-exames-laboratoriais-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8459ba806c98d724",
+      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fgv",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5174a1282dbefa27",
+      "slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fgv",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-47912492aa818b06",
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fgv",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b42a80adb7d43c51",
+      "slug": "fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5",
+      "severity": "S2",
+      "bucket": "official_lane",
+      "lanes": [
+        "official",
+        "pedagogical"
+      ],
+      "banca_hint": "fumarc",
+      "cluster_id": "atencao-basica-saude-da-familia-lote-02↔curativos-lote-04|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5e34f2a5cb1e1278",
+      "slug": "funatec-enfermagem-curativos-e-manejo-de-feridas-1779269315587-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "funatec",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c524d224ce041623",
+      "slug": "funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "funcern",
+      "cluster_id": "dtrans-mescladas-g01↔dtrans-mescladas-g02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-35d4d78cc2f3e5c6",
+      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fundatec",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e140a40c3e5dd956",
+      "slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fundatec",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-9e661ea294f4c159",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780001903454-2",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "fundatec",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b9618f64faaa96a8",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fundatec",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-11+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-16ffef73a63d0a0b",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fundatec",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5ceb05f5562a2fe9",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-0",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fundatec",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-3a5d520b8e27adf4",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fundatec",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-11+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-0eeb80762789afaf",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "fundatec",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-45fe58ece2227a8b",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fundatec",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-84fafcd423d955ce",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fundatec",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-04+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-807c4f5e427600b5",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fundatec",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-11+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5287f52d3b30ed5d",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-9",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "fundatec",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-92930494a3b4a0f2",
+      "slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "furb",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-557ace1a75a4cdae",
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "furb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7417effcf6cd9b66",
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "furb",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e6bcc6d78574d6ad",
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-9",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "furb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-fc4e824822ff6dc0",
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-1",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "furb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-6e54bc6b66d5c72b",
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "furb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-69e3ba078e802126",
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-8",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "furb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-712e701cbe472c71",
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "furb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b423ad5bc442d2e2",
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "furb",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-12+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-43f9c94530e1a8c3",
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-8",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "furb",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d94bfa796fc56e53",
+      "slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "furb",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-repair-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7da82ca802295c69",
+      "slug": "fuvest-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "fuvest",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-02+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-783ca083888b14ed",
+      "slug": "gama-enfermagem-curativos-e-manejo-de-feridas-1779269291153-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "gama",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-56751938a8cb1d75",
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-4",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "grupo-talent",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-01+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-87bbf5fed9f5f52b",
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "grupo-talent",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e5d8fed4178e887b",
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "grupo-talent",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c00885f8f9332bdc",
+      "slug": "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779269315587-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "iaupe",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-83ab69a0a6cef855",
+      "slug": "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779344819753-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "iaupe",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-05c5769bc6e92547",
+      "slug": "iaupe-enfermagem-seguranca-do-paciente-1777102861438-7",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "iaupe",
+      "cluster_id": "curativos-lote-05↔seguranca-do-paciente-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d7c09cddcd8cc6df",
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ibade",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c85127008f953fc3",
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ibade",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b16701aa0a0ffdb2",
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ibade",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5d880dd709132924",
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005311822-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ibade",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ef884b0631360b19",
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-6",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "ibade",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-02|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-de664171fbdb67ca",
+      "slug": "ibade-enfermagem-seguranca-do-paciente-1777102802022-3",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ibade",
+      "cluster_id": "puncao-titulo-cleanup-20↔seguranca-do-paciente-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-2a8173f424676d82",
+      "slug": "ibade-enfermagem-seguranca-do-paciente-1779563436357-0",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "ibade",
+      "cluster_id": "puncao-titulo-cleanup-20↔seguranca-do-paciente-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d7ad38bf2263df7d",
+      "slug": "ibam-enfermagem-curativos-e-manejo-de-feridas-1779344779828-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ibam",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c7983ce6869e5cc7",
+      "slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269228428-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ibfc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-50643597ef97cbfb",
+      "slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269228428-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ibfc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-365faf586c4b5af4",
+      "slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ibfc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b96c4d85c144a069",
+      "slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ibfc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-4e754e92e222e348",
+      "slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "idcap",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-02|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d81b7a2defb64b2b",
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "idecan",
+      "cluster_id": "biosseg-itu-scan↔cme-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-93f7963f2b5dd653",
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "idecan",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-repair-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d5578fedf0c5dc15",
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "idecan",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-repair-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-55ffc87475cc9353",
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "idecan",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-repair-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-589a7c8e7befe56b",
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-3",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "idecan",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-02|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b3a29a1c8a6dfe07",
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "idecan",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-02|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-1149e7899f266838",
+      "slug": "idecan-enfermagem-seguranca-do-paciente-1777102802022-7",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "idecan",
+      "cluster_id": "puncao-titulo-cleanup-20↔seguranca-do-paciente-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5753348ab0ff0dba",
+      "slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-6",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "idecan",
+      "cluster_id": "puncao-titulo-cleanup-20↔seguranca-do-paciente-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-748a387b9899112d",
+      "slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "idecan",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-69d3809494d17c26",
+      "slug": "idecan-enfermagem-seguranca-do-paciente-1778712242196-0",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "idecan",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔seguranca-do-paciente-completo+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5e58054311ff1c9f",
+      "slug": "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344759089-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "idesg",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-69f85fba9d9ee779",
+      "slug": "idib-enfermagem-cuidados-na-administracao-de-medicamentos-1778934863952-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "idib",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-02+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-2f49a95537d54871",
+      "slug": "idib-enfermagem-processo-de-enfermagem-1778934863952-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "idib",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-56ec4b6e318891ed",
+      "slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-3",
+      "severity": "S2",
+      "bucket": "official_lane",
+      "lanes": [
+        "official",
+        "pedagogical"
+      ],
+      "banca_hint": "ieses",
+      "cluster_id": "atencao-basica-saude-da-familia-lote-02↔curativos-lote-05|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f5d0c1387810093a",
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004280851-9",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "igecap",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ef6b58e583a2b507",
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-1",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "igecap",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-6b0fa867e3eb22ac",
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-2",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "igecap",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-599c36251082681a",
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-4",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "igecap",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f1bef442b38b747e",
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "igecap",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-13+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a9aca0dcf4114781",
+      "slug": "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "igeduc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-894ff7b704543f5a",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-7",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-56038e03fde55c42",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-59d20c7cad74dcc4",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "igeduc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-05+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8568c60d6f828e3c",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "igeduc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-05+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-fd0d412ac321f0de",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "igeduc",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-13+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-68663dcb6635e3c0",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-90bbdd1414fc93fe",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-621de6e5b14783fd",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7a6b643a74afef08",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-6",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ec47df5651f51182",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-9bc30daff9fcfbc0",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-3",
+      "severity": "S2",
+      "bucket": "official_lane",
+      "lanes": [
+        "official",
+        "pedagogical"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "curativos-e-manejo-de-feridas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-9a5a60e13259a927",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011872350-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "igeduc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-05+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-863227a9dbb36a4a",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011872350-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "igeduc",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-05+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e1eb5124b0b43b0b",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "igeduc",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d5a91b3f526da278",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-2",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-01+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7df66747dffa2e92",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-3",
+      "severity": "S3",
+      "bucket": "official_lane",
+      "lanes": [
+        "official"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-14+2|S3|ev=none"
+    },
+    {
+      "case_id": "nc-g03-6c8e2a948b772ae7",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-4",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "curativos-lote-05↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d501060585489ef9",
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-1",
+      "severity": "S3",
+      "bucket": "official_lane",
+      "lanes": [
+        "official"
+      ],
+      "banca_hint": "igeduc",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔urgencias-e-emergencias-completo+1|S3|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5e6cc946140a6d59",
+      "slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "imparh",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-05+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-04379ed1c394dd73",
+      "slug": "inaz-do-para-enfermagem-curativos-e-manejo-de-feridas-1779269228428-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "inaz-do-para",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-865a8f392416eb8c",
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "inaz-do-para",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-14+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ffe2d879db760cee",
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "inaz-do-para",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7856beb42388390b",
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-6",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "inaz-do-para",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-02|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d25bb8096f72a4d5",
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-access",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-05+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-9ed7083c48e00023",
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-access",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-14+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-112051bac7bd31d9",
+      "slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-3",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-access",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔seguranca-do-paciente-completo+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-1c19f63f04334914",
+      "slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102766050-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-access",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-dfbf2787bdc5c73b",
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-access",
+      "cluster_id": "urgencias-e-emergencias-completo↔urgencias-e-emergencias-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-0fac4c12ca476e55",
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-access",
+      "cluster_id": "urgencias-e-emergencias-completo↔urgencias-e-emergencias-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-6cf6bfbda2e81d44",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-0",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-53594ee6a11170ec",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-02↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-848ee6a7d6a03a83",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-3",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-02+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-50577ae11028564d",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-7",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-96ecf101b7571eaa",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-4",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d20d17c587e36627",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-0",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-02↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-59a623d1a86d2579",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-15+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-23bd4e61b5e1db87",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-02↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8601e9f59a14cef9",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-15+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-1f4251fd1a6ada4d",
+      "slug": "instituto-aocp-enfermagem-saude-da-mulher-1777104323066-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-aocp",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔saude-da-mulher-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-fa1ea146a10b63c3",
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-consulpam",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-15+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-0cf2e00b1bc2fe69",
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-9",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-consulpam",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-02+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-25201b0f59af8be9",
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-consulpam",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-16+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7cba7d575ed7c1b3",
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006480333-9",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-consulpam",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-02↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-9a7ba0be31ac7c15",
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006486032-3",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-consulpam",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-fc2d7318543452de",
+      "slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-consulplan",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-71ddfc9ce517ed78",
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-6",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-consulplan",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔saude-da-mulher-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-482b5e0e29ad8264",
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-4",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-consulplan",
+      "cluster_id": "sinais-vitais-completo↔urgencias-e-emergencias-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e2f9a0c3be309c2f",
+      "slug": "instituto-darwin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-7",
+      "severity": "S3",
+      "bucket": "official_lane",
+      "lanes": [
+        "official"
+      ],
+      "banca_hint": "instituto-darwin",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-02+2|S3|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f7cf0cb2c095583c",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-49028505206d972a",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-9",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-02↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-41b9e81aef2cd084",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001988576-1",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-1e0c87c1f9ed2e49",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-16+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8a2b77b31fa34609",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-05+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e35992ecfd1fe51b",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003637054-0",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f9ed8bb66be478f8",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003637054-1",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-02+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-4e55887a50947365",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-16+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-dcd0393a5694cbc4",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-011160a2f52c9231",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-9a6038ab78e4d29f",
+      "slug": "instituto-iacp-enfermagem-vias-de-administracao-1778968997293-2",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-iacp",
+      "cluster_id": "sinais-vitais-completo↔vias-de-administracao-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-359f1f6c9f726f6f",
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-0",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-ibed",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-6e2a7f8d8d946130",
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-ibed",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-repair-lote-01+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e8ac8186eccc4d3f",
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-8",
+      "severity": "S2",
+      "bucket": "official_lane",
+      "lanes": [
+        "official",
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-ibed",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-861a2b4681f47ad3",
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-4",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-ibed",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d24455b2ddd6d285",
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-ibed",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-17+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-78eb376c6131f226",
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-8",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-ibed",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c8458d76f1a91b34",
+      "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269212740-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-6fb9c0f138af1d3a",
+      "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269212740-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-182c3202d6bb9cc1",
+      "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-bc0e90ccbf5c4b7f",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-3",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-02↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-18ef7e136c761f04",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "biosseg-itu-scan↔curativos-e-manejo-de-feridas-completo+3|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-267b48c7814f7589",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a9a516b90b24c599",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-3",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-4964f419f18f49c1",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d3c480ed559c0160",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-453cd5a0cbc48664",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c3016996e354761a",
+      "slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102802022-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "seguranca-do-paciente-completo↔seguranca-do-paciente-lote-02+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e67f24d37415bb3b",
+      "slug": "instituto-verbena-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "instituto-verbena",
+      "cluster_id": "dtrans-mescladas-g01↔dtrans-mescladas-g02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-034a35e442abdaa6",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "legalle",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-18+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-63686d27abbe51b8",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-7",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "legalle",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-27754663fae07a01",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "legalle",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-18+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-cc4dba653ac5c282",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "legalle",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-acba907f2d930c60",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "legalle",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-18+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-caf8df235e910975",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-7",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "legalle",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8d98abb1ce2064ea",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "legalle",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-18+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-463c6649a2501388",
+      "slug": "metrocapital-enfermagem-seguranca-do-paciente-1777102936764-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "metrocapital",
+      "cluster_id": "coleta-de-exames-laboratoriais-repair-lote-01↔coleta-lote-01+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b78fab5d7f573b9c",
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "ms-sarmento",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-19+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-0259eca884e45374",
+      "slug": "objetiva-concursos-enfermagem-curativos-e-manejo-de-feridas-1779344759089-3",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "objetiva-concursos",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e3042ba15b76b96a",
+      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-0",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "objetiva-concursos",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-7797728c07858fea",
+      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "objetiva-concursos",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-4e107cfd3fe57de1",
+      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-3",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "objetiva-concursos",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-02+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-1fa218bc98f60c73",
+      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "objetiva-concursos",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-19+3|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-55405e577313c491",
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-2",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "quadrix",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a589cc76b145746c",
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-3",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "quadrix",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ea50ffc3c3b5971a",
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-4",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "quadrix",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-33ba6c48b0803a3f",
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-5",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "quadrix",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-fec8f045329632aa",
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-6",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "quadrix",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-f6930759b5857848",
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "quadrix",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-86732018581aa5e8",
+      "slug": "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344813448-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "selecon",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-22b5aa29b3d948db",
+      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-3",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "selecon",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-02↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5eab8e31db5edc5d",
+      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-8",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "selecon",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-bd1d2e022c150414",
+      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "selecon",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-141393839d3a95be",
+      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "selecon",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-75dfa4e4b17ac102",
+      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "selecon",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-20+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-8604cef335971c52",
+      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "selecon",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-42af672fedbf6e08",
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "selecon",
+      "cluster_id": "urgencias-e-emergencias-completo↔urgencias-e-emergencias-lote-04+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e455a8020259a3f0",
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "selecon",
+      "cluster_id": "urgencias-e-emergencias-completo↔urgencias-e-emergencias-lote-04+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c1df1d6e2909263d",
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "selecon",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔urgencias-e-emergencias-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c5cab0aaeb678493",
+      "slug": "selecon-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581030438-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "selecon",
+      "cluster_id": "dtrans-mescladas-g01↔dtrans-mescladas-g02+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-99a58dfd2c2fc64e",
+      "slug": "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "unesc",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-03+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-03f48a4f4e3270c3",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "unifil",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ec23a9e08a8557a7",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "unifil",
+      "cluster_id": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-2acb6ff9dd3ff779",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-4",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "unifil",
+      "cluster_id": "instalacao-e-manejo-de-sondas-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5e2f22783a207176",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003654722-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "unifil",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a8a85b2f83943153",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "unifil",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-31935eead92628a4",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "unifil",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-02↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-db1b8f2d72c977cf",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "unifil",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c14d019a7e4a4422",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "unifil",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-cba2bd600096bb28",
+      "slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "unifil",
+      "cluster_id": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-lote-03+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e3d188698f29f6b4",
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "univali",
+      "cluster_id": "coleta-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-538ca9df42611f2c",
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-6",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "univali",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔cuidados-na-administracao-de-medicamentos-repair-lote-02+2|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-e07c095a73001651",
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "univali",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-21+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-4bcd5aef10df3e6f",
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-5",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "univali",
+      "cluster_id": "cuidados-na-administracao-de-medicamentos-repair-lote-02↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-ef1636743efccf4f",
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-7",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "univali",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-21+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-b545bdff413a0f94",
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-8",
+      "severity": "S1",
+      "bucket": "metadata_s1",
+      "lanes": [
+        "metadata"
+      ],
+      "banca_hint": "univali",
+      "cluster_id": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1|S1|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a93554533dcaf992",
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-5",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "univali",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-21+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d32ecfd28cb1c5a5",
+      "slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269305691-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c4ba08628657f11d",
+      "slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-1",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-58353e7a786d7a35",
+      "slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-2",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c326fe498a608533",
+      "slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-03+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-d5c8053330f51285",
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-0d08b3c9d50304e2",
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-3",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "vunesp",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-89ec9e8e806a903c",
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-22+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-71fb6ed3fdfe407c",
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-9",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-22+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-41292662abedd1c4",
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-2",
+      "severity": "S2",
+      "bucket": "pedagogical_s2_slide",
+      "lanes": [
+        "pedagogical"
+      ],
+      "banca_hint": "vunesp",
+      "cluster_id": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-beca8976e395147d",
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-4",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "curativos-e-manejo-de-feridas-completo↔curativos-lote-06+2|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-c98989bc968fa0c6",
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-8",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "urgencias-e-emergencias-completo↔urgencias-e-emergencias-lote-05+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-5475c46231529940",
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-0",
+      "severity": "S2",
+      "bucket": "s2_non_slide_residual",
+      "lanes": [],
+      "banca_hint": "vunesp",
+      "cluster_id": "urgencias-e-emergencias-completo↔urgencias-e-emergencias-lote-05+1|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-a88a4eb9efa315db",
+      "slug": "vunesp-sjrp-crase-a-qual",
+      "severity": "S2",
+      "bucket": "official_lane",
+      "lanes": [
+        "official",
+        "pedagogical"
+      ],
+      "banca_hint": "vunesp",
+      "cluster_id": "lingua-portuguesa-g01↔lingua-portuguesa-g02|S2|ev=none"
+    },
+    {
+      "case_id": "nc-g03-bad3482bfe781e3d",
+      "slug": "vunesp-sjrp-termos-folhetos-enquanto-3789304",
+      "severity": "S2",
+      "bucket": "official_lane",
+      "lanes": [
+        "official",
+        "pedagogical"
+      ],
+      "banca_hint": "vunesp",
+      "cluster_id": "lingua-portuguesa-termos-anchor↔termos-oracao-g02|S2|ev=none"
+    }
+  ]
+}

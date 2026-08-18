@@ -23,7 +23,7 @@ description: >-
 
 | # | Falha | Correção |
 |---|--------|----------|
-| 1 | Gabarito/letra no `concept_map` ou row "Gabarito letra X" no `golden_rule` | Spoiler só no `logic_flow` + labels da `danger_zone` |
+| 1 | Gabarito/letra no `concept_map` ou row "Gabarito letra X" no `golden_rule` — em **qualquer** superfície (`label`, `detail`, `correct`, `footer_rule`, `exam_hint`) | Spoiler só no `logic_flow` + labels da `danger_zone` |
 | 2 | `logic_flow` parafraseia alternativas (≥8 palavras de uma `option`) | Steps de **decisão**; último = `"Em similares: …"` |
 | 3 | `danger_zone` com letra omitida, `correct` repetido, ou sem transferência | 1 item/letra errada + ≥1 transferência separada |
 | 4 | EXCETO: distrator espelha o texto do gabarito | Distrator = por que é **correto**; só o gabarito = a exceção |
@@ -34,6 +34,19 @@ description: >-
 | 9 | Enunciado cita figura/tirinha/charge sem `figures[]` nem `transcribed` | `figure_policy` + asset ou `text_fragment` — gate `l2_missing_figure` |
 
 **Barra 10/10 ≠ mínimo do lint.** Metade dos distratores no lint base = incompleto. Handcraft novo = cobertura completa + strict-v2.
+
+### Anti-spoiler — agora é gate, não recomendação (F4)
+
+A camada **L2c** (`audit:subtopico-quality`) barra `production_ready` do pacote inteiro quando qualquer slug reprova. Dois leitores independentes:
+
+| Sinal | O que pega |
+|---|---|
+| `detectUnifiedPedagogy` (regex) | letra citada (`"C erra…"`, `"letra C"`), veredito V/F abrindo o texto (`"FALSA."` com **qualquer** pontuação), rótulo `"Afirmativa II —"`, padding `Confirmar:`+`Marcar`, polaridade invertida em EXCETO, `logic_flow` sem gabarito |
+| Portão do leitor cego (LLM) | spoiler **parafraseado**: o leitor recebe só o `concept_map` e, se acerta a letra citando um trecho literal, o slide reprova |
+
+Escrever para o leitor cego: quem lê apenas o `concept_map` deve aprender o terreno e **não conseguir** apontar a alternativa. O lugar da resposta é o `logic_flow`.
+
+O gate lê `detail`, `correct`, `footer_rule` e `exam_hint` — não só `label`. Foi exatamente aí que o defeito passou antes de existir verificação.
 
 ---
 
@@ -198,6 +211,8 @@ npm run audit:questao-readiness -- --file=<caminho> --strict-v2-pedagogy
 
 Ship = `[READY]` + `ready_100: true`.  
 Risco `alto` (dose/conduta/divergência) → A4 humano. `baixo`/`medio` → agente pode fechar.
+
+**Âncoras 100% (base):** após READY, fechar com `npm run audit:anchor-100 -- --file=…` e assinar (`--sign-agent` ou `--sign-human=`). Ver `docs/ANCHOR_CHECKLIST_100.md`.
 
 O que o lint cobre vs o que não: [`reference-gates.md`](reference-gates.md).
 

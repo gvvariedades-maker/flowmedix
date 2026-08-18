@@ -149,7 +149,7 @@ function normalizeLocationSearch(search: string): string {
 interface VitrineClientProps {
   /** Título quando a URL não traz `?cidade=` (ex.: nome do edital matriculado). */
   fallbackTitulo?: string;
-  /** Server Component (ex.: contadores globais do catálogo) — renderizado acima da lista de assuntos. */
+  /** Contadores globais do catálogo — linha de apoio no PageHeader. */
   children?: ReactNode;
   /** Query da URL já resolvida no RSC (alinha hidratação com SSR). */
   initialListQuery?: VitrineListQuery;
@@ -173,7 +173,7 @@ interface VitrineClientProps {
 // ─── Componente Principal ─────────────────────────────────────────────────────
 
 export default function VitrineClient({
-  fallbackTitulo: _fallbackTitulo = 'Estudo Reverso',
+  fallbackTitulo = 'Estudo reverso por assunto',
   children,
   initialListQuery,
   initialPageData = null,
@@ -636,7 +636,10 @@ export default function VitrineClient({
     return () => window.removeEventListener('avant:open-search', handler);
   }, []);
 
-  const disciplinaSummaries = vitrinePageData?.disciplinas ?? [];
+  const disciplinaSummaries = useMemo(
+    () => vitrinePageData?.disciplinas ?? [],
+    [vitrinePageData?.disciplinas]
+  );
   const hubMode = isVitrineDisciplineHubMode(disciplinaSummaries, disciplina);
   const showSubjectCatalog = !hubMode;
   const hubPrefetchKey = useMemo(() => {
@@ -655,11 +658,7 @@ export default function VitrineClient({
       void prefetchVitrineList(buildDisciplinaListQuery(id), retryNonce);
     }
   }, [hubPrefetchKey, buildDisciplinaListQuery, retryNonce]);
-  const pageSectionTitle = hubMode
-    ? 'Vitrine de disciplinas'
-    : disciplina
-      ? 'Assuntos'
-      : 'Vitrine de questões';
+  const pageSectionTitle = hubMode ? 'Vitrine de disciplinas' : fallbackTitulo;
 
   /** Landmark: ao mudar a descrição (hub ↔ assuntos), move o foco para o h1. */
   useEffect(() => {
@@ -779,11 +778,36 @@ export default function VitrineClient({
     setPagina(1);
   }, []);
 
+  const clearAllVitrineFilters = useCallback(() => {
+    setBancasSelecionadas([]);
+    setAssuntosSelecionados([]);
+    setSearchTerm('');
+    handleStatusFilterChange('all');
+    markFilterPaginaReset();
+  }, [handleStatusFilterChange, markFilterPaginaReset]);
+
+  /** Um banner por vez: diagnóstico > resume > missão semanal. */
+  const actionBanner = (() => {
+    if (showDiagnosticoCard && initialDiagnostico) {
+      return <SimuladoDiagnosticoCard state={initialDiagnostico} />;
+    }
+    if (showResumeCard && initialResume) {
+      return <VitrineResumeCard resume={initialResume} estudarQuery={estudarQuery} />;
+    }
+    if (showWeeklyMissionCard && weeklyMission) {
+      return (
+        <WeeklySimuladoMissionCard mission={weeklyMission} onMissionUpdate={setWeeklyMission} />
+      );
+    }
+    return null;
+  })();
+
   return (
     <div
       className={cn(
-        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground selection:text-[#1a2e05] md:min-h-screen md:pb-8',
+        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground md:min-h-screen md:pb-8',
         vitrineBrand.selection,
+        vitrineBrand.selectionText,
       )}
     >
       {!hubMode ? (
@@ -856,12 +880,13 @@ export default function VitrineClient({
           </div>
         )}
         <section className={cn(hubMode ? 'space-y-6 md:space-y-8' : 'space-y-5 md:space-y-8')}>
+          {actionBanner}
           <VitrinePageHeader
             title={pageSectionTitle}
             description={pageSectionDescription || null}
             titleRef={pageTitleRef}
+            stats={children}
           />
-          {children ? <div className={hubMode ? 'mb-0' : 'mb-4 md:mb-6'}>{children}</div> : null}
           {disciplinaSummaries.length > 0 ? (
             <VitrineDisciplinePicker
               summaries={disciplinaSummaries}
@@ -869,38 +894,6 @@ export default function VitrineClient({
               onSelect={handleDisciplinaChange}
               onPrefetch={prefetchDisciplinaList}
             />
-          ) : null}
-          {hubMode && (showDiagnosticoCard || showWeeklyMissionCard || showResumeCard) ? (
-            <div className="space-y-3 border-t border-slate-200/80 pt-6">
-              {showWeeklyMissionCard && !showDiagnosticoCard && weeklyMission ? (
-                <WeeklySimuladoMissionCard
-                  mission={weeklyMission}
-                  onMissionUpdate={setWeeklyMission}
-                />
-              ) : null}
-              {showDiagnosticoCard && initialDiagnostico ? (
-                <SimuladoDiagnosticoCard state={initialDiagnostico} />
-              ) : null}
-              {showResumeCard ? (
-                <VitrineResumeCard resume={initialResume} estudarQuery={estudarQuery} />
-              ) : null}
-            </div>
-          ) : null}
-          {!hubMode ? (
-            <>
-              {showWeeklyMissionCard && !showDiagnosticoCard && weeklyMission ? (
-                <WeeklySimuladoMissionCard
-                  mission={weeklyMission}
-                  onMissionUpdate={setWeeklyMission}
-                />
-              ) : null}
-              {showDiagnosticoCard && initialDiagnostico ? (
-                <SimuladoDiagnosticoCard state={initialDiagnostico} />
-              ) : null}
-              {showResumeCard ? (
-                <VitrineResumeCard resume={initialResume} estudarQuery={estudarQuery} />
-              ) : null}
-            </>
           ) : null}
           {showSubjectCatalog ? (
             <>
@@ -968,6 +961,10 @@ export default function VitrineClient({
                   icon={Search}
                   title={`Nenhum assunto ${statusFilter === 'pending' ? 'pendente' : 'novo'} nesta página`}
                   description="Avance para outra página ou volte para Todos para ver o catálogo completo."
+                  action={{
+                    label: 'Limpar filtros',
+                    onClick: () => handleStatusFilterChange('all'),
+                  }}
                 />
               ) : fetchError ? (
                 <EmptyState
@@ -980,6 +977,10 @@ export default function VitrineClient({
                   icon={Search}
                   title="Nenhum assunto encontrado"
                   description="Tente ajustar os filtros ou limpar a busca para ver todos os assuntos disponíveis."
+                  action={{
+                    label: 'Limpar filtros',
+                    onClick: clearAllVitrineFilters,
+                  }}
                 />
               )}
             </>

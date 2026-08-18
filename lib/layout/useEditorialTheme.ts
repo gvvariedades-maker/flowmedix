@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 
-/** Cor da barra de status / theme-color no PWA editorial (slate-100). */
-export const EDITORIAL_THEME_COLOR = '#f1f5f9';
+/** Cor da barra de status / theme-color no PWA editorial (creme print). */
+export const EDITORIAL_THEME_COLOR = '#FFF7F0';
 
 function setThemeColorMeta(color: string): void {
   document

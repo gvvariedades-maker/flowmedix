@@ -1,9 +1,11 @@
 {
-  "generated_at": "2026-07-24T07:08:01.963Z",
-  "pacote_prefix": "sinonimos-antonimos-e-polissemia",
+  "generated_at": "2026-08-08T06:17:54.701Z",
+  "pacote_prefix": "farmacodinamica-e-farmacocinetica",
   "pass": true,
-  "detail": "Playwright L3 PT Sinônimos — 1 branch ok_generico (vocabulário contexto 4/4); PNGs em artifacts/visual-mold-regression/",
+  "detail": "Playwright L3 Farmacodinâmica — 3 branches (3 bespoke + genérico); PNGs em artifacts/visual-mold-regression/",
   "branches": [
-    "pt_sinonimos_polissemia"
+    "farmaco_clinico_protocolo",
+    "farmaco_pk_pd_vf",
+    "farmaco_generico"
   ]
 }

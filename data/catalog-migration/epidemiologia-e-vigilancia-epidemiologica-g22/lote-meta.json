@@ -1,0 +1,16 @@
+{
+    "lote":  "epidemiologia-e-vigilancia-epidemiologica-g22",
+    "slug_count":  8,
+    "anchor_slug":  "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-7",
+    "applied_at":  "2026-08-04",
+    "subtopico":  "Epidemiologia e Vigilância Epidemiológica",
+    "status":  "applied",
+    "pacote_prefix":  "epidemiologia-e-vigilancia-epidemiologica",
+    "anchor_second_review":  {
+                                 "reviewed_at":  "2026-08-04",
+                                 "reviewer":  "agent",
+                                 "method":  "agent",
+                                 "status":  "pass",
+                                 "artifact":  "artifacts/anchor-review/epidemiologia-e-vigilancia-epidemiologica-g22.json"
+                             }
+}

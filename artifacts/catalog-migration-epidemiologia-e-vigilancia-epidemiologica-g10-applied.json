@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:57:12.316Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g10",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-3",
+    "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-4",
+    "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-7",
+    "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-1",
+    "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-2",
+    "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-3",
+    "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-4",
+    "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

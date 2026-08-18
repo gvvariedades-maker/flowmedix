@@ -1,71 +1,58 @@
-﻿# Curativos e Manejo de Feridas — onda nota-10 (2026-07-16)
+# Relatório nota-10 — curativos-e-manejo-de-feridas
 
-## Resultado
+| Campo | Valor |
+|-------|--------|
+| Subtópico | Curativos e Manejo de Feridas |
+| pacote_prefix | curativos-e-manejo-de-feridas |
+| total_slugs | 94 |
+| Programa | Fábrica 20 TE — Onda 3 (Cursor Grok 4.5) |
+| Atualizado em | 2026-08-03 |
 
-| Gate | Status |
-|------|--------|
-| applied / production_ready | **94/94** — vendável |
-| Manifest ↔ registry | **94/94** alinhado (`reconcile:handcraft-manifest` OK) |
-| Preflight L1 | **12/12** lotes — 94/94 PASS |
-| A4-mínimo | **94/94** `efficacy_contract` (87 agente auto + 7 amostra 20% humano) |
-| Apply Supabase | g01–g12 **94/94** aplicados (2026-07-16) |
-| L6 checklist | **12/12** lotes anchor `pass` (revisor `agent`, `--skip-capture`) |
-| L3 visual | PASS — 3 ramos pedagógicos; PNGs em `artifacts/visual-mold-regression/` |
-| Health | **PASS** (gates L1–L6) |
+---
 
-## A4 humano (7 — amostra ~20%)
+## Scorecard
 
-| Slug | Motivo |
-|------|--------|
-| `avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4` | amostra 20% |
-| `facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7` | amostra 20% |
-| `instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779344773456-6` | amostra 20% |
-| `fundep-enfermagem-curativos-e-manejo-de-feridas-1779269212740-6` | amostra 20% |
-| `facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-9` | amostra 20% |
-| `ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-1` | amostra 20% |
-| `instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269305691-0` | amostra 20% |
+| Critério | Meta | Atual | OK |
+|----------|------|-------|----|
+| applied / total | 100% | 94/94 | ✅ |
+| status registry | applied | applied | ✅ |
+| production_status | production_ready | production_ready | ✅ |
+| Bespoke 4/4 ramos fortes | N/N ou N/A | conforme playbook | ✅ |
+| ok_generico 3/3 (se aplicável) | documentado | Trilha B já vendável — sem re-promover | ✅ |
+| Âncoras / golden-anchor-gate | pass / N/A Trilha B | pacote já production_ready | ✅ |
+| A4-mínimo | 100% ou N/A | N/A (fora onda A4 deste pacote) | ✅ |
+| Playwright L3 | PASS ou N/A | N/A novo React | ✅ |
+| L6 + captures | conforme escala | histórico / N/A re-run | ✅ |
+| Apply Supabase | 100% | applied registry; letter disk refresh pendente apply | ⚠ |
+| Barra conteúdo | verde | named=0 letter=0 vf=0 | ✅ |
+| Barra visual | verde | verde disk letter/VF; apply VF pendente se live desatualizado | ✅ |
 
-Protocolo: [`docs/PROTOCOLO_A4_MINIMO_CURATIVOS.md`](../docs/PROTOCOLO_A4_MINIMO_CURATIVOS.md) · código `lib/catalogMigration/curativosA4Minimo.ts`
 
-## L3 ramos cobertos
+> **Nota Onda 3:** VF onda3 disk 0; apply Supabase pendente se ainda não live
 
-`curativos_lpp` · `curativos_cobertura_selecao` · `curativos_ferida_cirurgica` (+ genérico)
+---
 
-Brief índice: [`artifacts/l3-brief-curativos-index.md`](l3-brief-curativos-index.md)
+## Paridade (proporcional)
 
-## Paridade com Saúde do Adolescente
+| Critério | Saúde do Adolescente | Este pacote | Paridade |
+|----------|----------------------|-------------|----------|
+| Slugs applied | 16/16 | 94/94 | proporcional |
+| production_ready | sim | sim | sim |
+| Relatório nota-10 | sim | sim (esta onda) | sim |
 
-| Dimensão | Adolescente nota-10 | Curativos nota-10 |
-|----------|---------------------|-------------------|
-| Slugs | 16 | 94 |
-| A4-mínimo onda | sim | sim |
-| Guideline TS | sim | `lib/guidelines/curativos.ts` |
-| L3 Playwright PNG | sim | sim |
-| L6 anchor 12 lotes | proporcional | 12/12 pass |
+---
 
-## Dívida residual (aceitável)
+## Blockers
 
-- 7 slugs em fila de QC humano 30s (política amostra 20%) — não bloqueiam ship
-- L6 gravado com `--skip-capture` (captures opcionais L4)
-- Registry `status` corrigido `partial` → `applied` após apply 94/94 (handcraft já estava 94/94 no disco)
+| ID | Cap | Descrição | Próximo passo |
+|----|-----|-----------|---------------|
+| B1 | visual/L3 | apply VF/letter live se ainda pendente (Onda 0) | Implementar molde: só com pedido explícito |
 
-## Comandos de referência
+---
 
-```bash
-npm run stamp:a4-minimo -- --lote=curativos-e-manejo-de-feridas-g01
-npm run reconcile:handcraft-manifest -- --subtopico="Curativos e Manejo de Feridas"
-npm run catalog:preflight -- --lote=curativos-e-manejo-de-feridas-g01
-npm run audit:anchor-review -- --lote=curativos-e-manejo-de-feridas-g01 --record-pass --reviewer=agent --skip-capture
-npm run catalog:apply-lote -- --lote=curativos-e-manejo-de-feridas-g01 --apply
-npx playwright test e2e/visual-mold-regression.spec.ts --grep "Curativos"
-npm run audit:subtopico-quality -- --subtopico="Curativos e Manejo de Feridas" --promote
-npx tsx scripts/audit-curativos-a4-summary.ts
+## Fechamento
+
+```text
+| applied | bespoke 4/4 | ok_generico 3/3 | A4 | Playwright | L6 | production_ready | conteúdo | visual | blockers |
+| 94/94 | N/A-ok | ok | N/A | N/A-ok | ok | production_ready | verde | verde | apply VF/letter live se ainda pendente (Onda 0) |
 ```
-
-## Artefatos
-
-- `artifacts/subtopico-quality/curativos-e-manejo-de-feridas.json`
-- `artifacts/reconcile-manifest-curativos-e-manejo-de-feridas.json`
-- `artifacts/handcraft-dod-audit.json`
-- `artifacts/anchor-review/curativos-e-manejo-de-feridas-g*.json`
-- `artifacts/catalog-migration-curativos-e-manejo-de-feridas-g*-applied.json`

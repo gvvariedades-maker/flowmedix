@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-02T07:46:46.769Z",
+  "lote": "atencao-basica-saude-da-familia-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+    "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+    "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-5",
+    "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-6",
+    "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-7",
+    "avancasp-geral-atencao-basica-saude-da-familia-1778968221218-4",
+    "cebraspe-cespe-enfermagem-atencao-basica-saude-da-familia-1778968144588-6",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-geral-atencao-basica-saude-da-familia-1778968221218-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-atencao-basica-saude-da-familia-1778968144588-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

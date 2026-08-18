@@ -104,6 +104,8 @@ export async function POST(request: NextRequest) {
         user_id: user.id,
         modulo_slug,
         acertou: false,
+        /** Placeholder sem alternativa — não polui % de acerto nem cobertura de “respondidas”. */
+        respondida: false,
         estudo_reverso_concluido: true,
         created_at: concluidoEm,
         banca: 'DESCONHECIDA',

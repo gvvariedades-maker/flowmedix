@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-08-01T23:18:27.641Z",
+  "objective": "named_letter=0",
+  "lotes": {
+    "processo-de-enfermagem-completo": {
+      "files": 286,
+      "baseline_named": 320,
+      "baseline_letter_spoiler": 322,
+      "after_named": 0,
+      "after_letter_spoiler": 2,
+      "after_clause_only": 2,
+      "after_other_fp": 0,
+      "residue": [
+        {
+          "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-4",
+          "slide": "golden_rule",
+          "key": "label",
+          "path": "golden_rule.rows[1].label",
+          "evidence": "Débito Urinário",
+          "kind": "clause_only",
+          "classification": "FALSE_POSITIVE",
+          "note": "detector FP: label/frase sem letra de alternativa (ex. Débito, Via Aérea, Cérvice, Células)"
+        },
+        {
+          "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-0",
+          "slide": "golden_rule",
+          "key": "label",
+          "path": "golden_rule.rows[1].label",
+          "evidence": "Via Aérea",
+          "kind": "clause_only",
+          "classification": "FALSE_POSITIVE",
+          "note": "detector FP: label/frase sem letra de alternativa (ex. Débito, Via Aérea, Cérvice, Células)"
+        }
+      ]
+    },
+    "curativos-e-manejo-de-feridas-completo": {
+      "files": 188,
+      "baseline_named": 955,
+      "baseline_letter_spoiler": 955,
+      "after_named": 0,
+      "after_letter_spoiler": 0,
+      "after_clause_only": 0,
+      "after_other_fp": 0,
+      "residue": []
+    },
+    "saude-da-mulher-completo": {
+      "files": 264,
+      "baseline_named": 494,
+      "baseline_letter_spoiler": 496,
+      "after_named": 0,
+      "after_letter_spoiler": 3,
+      "after_clause_only": 3,
+      "after_other_fp": 0,
+      "residue": [
+        {
+          "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+          "slide": "concept_map",
+          "key": "label",
+          "path": "concept_map.items[0].label",
+          "evidence": "Cérvice",
+          "kind": "clause_only",
+          "classification": "FALSE_POSITIVE",
+          "note": "detector FP: label/frase sem letra de alternativa (ex. Débito, Via Aérea, Cérvice, Células)"
+        },
+        {
+          "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+          "slide": "golden_rule",
+          "key": "footer_rule",
+          "path": "golden_rule.footer_rule",
+          "evidence": "Cérvice = Colo do Útero.",
+          "kind": "clause_only",
+          "classification": "FALSE_POSITIVE",
+          "note": "detector FP: label/frase sem letra de alternativa (ex. Débito, Via Aérea, Cérvice, Células)"
+        },
+        {
+          "slug": "ibade-enfermagem-saude-da-mulher-1777104323066-4",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "Células intermediárias e profundas: citoplasma azul.",
+          "kind": "clause_only",
+          "classification": "FALSE_POSITIVE",
+          "note": "detector FP: label/frase sem letra de alternativa (ex. Débito, Via Aérea, Cérvice, Células)"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "named_letter_total": 0,
+    "clause_fp_total": 5,
+    "done": true
+  }
+}

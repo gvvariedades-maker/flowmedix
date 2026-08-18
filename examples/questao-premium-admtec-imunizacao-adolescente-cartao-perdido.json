@@ -11,13 +11,12 @@
     "content_standard": "golden-v1",
     "family": "conceito",
     "content_review": {
-      "reviewed_at": "2026-07-02",
-      "reviewer": "professor-para-concurso",
+      "reviewed_at": "2026-08-04",
+      "reviewer": "ancoras-100",
       "guideline_snapshot": "PNI 2025 — adolescente/adulto sem comprovação vacinal (catch-up por faixa etária)",
       "exam_vs_current": "none",
       "catalog_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
       "repair_lote": "imunizacao-admtec-adolescente-cartao-repair",
-      "applied_at": "2026-07-02",
       "cluster": "Calendário vacinal — adolescente/adulto/idoso"
     },
     "sources": [
@@ -28,31 +27,36 @@
         "title": "Calendário Nacional de Vacinação — resgate adolescente/adulto",
         "year": 2025,
         "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
-        "covers": ["cartão perdido", "sem comprovação", "SCR catch-up", "registro SI-PNI"]
+        "covers": [
+          "cartão perdido",
+          "sem comprovação",
+          "SCR catch-up",
+          "registro SI-PNI"
+        ]
       }
     ]
   },
   "question_data": {
-    "instruction": "Um adolescente chega à unidade de saúde com histórico incompleto de vacinação. A mãe relata que ele perdeu o cartão vacinal e não possui qualquercomprovação de doses anteriores. Em conformidade com o Programa Nacional de Imunização, o que o técnico de enfermagem, em conjunto com a equipe, deve realizarpara regularizar o esquema vacinal?",
+    "instruction": "Um adolescente chega à unidade de saúde com histórico incompleto de vacinação. A mãe relata que ele perdeu o cartão vacinal e não possui qualquer comprovação de doses anteriores. Em conformidade com o Programa Nacional de Imunização, o que o técnico de enfermagem, em conjunto com a equipe, deve realizar para regularizar o esquema vacinal?",
     "options": [
       {
         "id": "A",
-        "text": "Verificar a presença de anticorpos sorológicos antes de cada aplicação vacinal, adotar protocolo de vacinação apenas se houver suspeita concreta de surtoepidêmico na região e priorizar a atualização contra infecções bacterianas, dispensando as vacinas para vírus de menor prevalência na região.",
+        "text": "Verificar a presença de anticorpos sorológicos antes de cada aplicação vacinal, adotar protocolo de vacinação apenas se houver suspeita concreta de surto epidêmico na região e priorizar a atualização contra infecções bacterianas, dispensando as vacinas para vírus de menor prevalência na região.",
         "is_correct": false
       },
       {
         "id": "B",
-        "text": "Aplicar teste de sensibilidade a antígenos vacinais antes de qualquer dose, evitando reações adversas em todos os cenários e encaminhar o adolescente paraconsulta especializada em imunologia, suspendendo vacinas até laudo definitivo.",
+        "text": "Aplicar teste de sensibilidade a antígenos vacinais antes de qualquer dose, evitando reações adversas em todos os cenários e encaminhar o adolescente para consulta especializada em imunologia, suspendendo vacinas até laudo definitivo.",
         "is_correct": false
       },
       {
         "id": "C",
-        "text": "Reiniciar o esquema vacinal segundo o Calendário Nacional de Vacinação para a faixa etária, anotar as doses em novo cartão substituto e orientar o adolescentee sua família sobre intervalos, potenciais reações adversas e a importância de completar todo o ciclo vacinal, sem aguardar confirmação documental ou sorologiasde rotina.",
+        "text": "Reiniciar o esquema vacinal segundo o Calendário Nacional de Vacinação para a faixa etária, anotar as doses em novo cartão substituto e orientar o adolescente e sua família sobre intervalos, potenciais reações adversas e a importância de completar todo o ciclo vacinal, sem aguardar confirmação documental ou sorologias de rotina.",
         "is_correct": true
       },
       {
         "id": "D",
-        "text": "Recomendar uso de imunoglobulinas passivas para qualquer doença infectocontagiosa suspeita, oferecer apenas reforços das vacinas básicas, confiando norelato oral do adolescente sobre as doses anteriores e postergar a imunização até contato com serviço de arquivo municipal, buscando registros no prontuárioeletrônico.",
+        "text": "Recomendar uso de imunoglobulinas passivas para qualquer doença infectocontagiosa suspeita, oferecer apenas reforços das vacinas básicas, confiando no relato oral do adolescente sobre as doses anteriores e postergar a imunização até contato com serviço de arquivo municipal, buscando registros no prontuário eletrônico.",
         "is_correct": false
       }
     ]
@@ -60,34 +64,52 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "Cartão perdido — PNI",
+      "slide_title": "Cartão perdido — catch-up PNI",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
       "items": [
         {
-          "label": "Comando",
-          "detail": "Adolescente sem cartão e sem comprovação — regularizar esquema no PNI com a equipe.",
+          "label": "Âncora da prova",
+          "detail": "Sem comprovação = vacinar pela idade agora; cartão substituto e orientação à família no mesmo atendimento.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Cenário da prova",
+          "detail": "Adolescente sem cartão e sem comprovação — a banca testa se a sala paralisa ou vacina.",
           "icon": "Target"
         },
         {
-          "label": "Regra central",
-          "detail": "Sem documento confiável: vacinar pela idade atual, conforme Calendário Nacional — não paralisar a sala.",
+          "label": "Regra PNI",
+          "detail": "Sem documento confiável: calendário da faixa etária atual — tratar como esquema incompleto.",
           "icon": "BookOpen"
         },
         {
-          "label": "Papel do técnico",
-          "detail": "Cartão substituto, registro da dose, orientar intervalos e eventos adversos à família.",
-          "icon": "ClipboardCheck"
-        },
-        {
-          "label": "Pegadinha",
-          "detail": "Sorologia, teste de sensibilidade e imunoglobulina não substituem o calendário de rotina.",
+          "label": "Pegadinha — sorologia / Ig",
+          "detail": "Sorologia, teste de sensibilidade e imunoglobulina não substituem o calendário — não adiar por arquivo.",
           "icon": "AlertTriangle"
         }
       ],
-      "footer_rule": "Perdeu o cartão → calendário da idade"
+      "footer_rule": "PERDEU O CARTÃO → CALENDÁRIO DA IDADE → REGISTRAR HOJE"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "steps": [
+        "Cenário: adolescente, cartão perdido, zero comprovação documental.",
+        "PNI: tratar como esquema incompleto → calendário da idade atual — vacinar agora, documentar no dia.",
+        "Testar A — sorologia/surto: não é conduta de rotina → eliminar.",
+        "Testar B — teste de sensibilidade: suspende vacinação sem base → eliminar.",
+        "Testar D — Ig + só reforço + adiar arquivo: bloqueia imunização → eliminar.",
+        "Marcar C — reinicia esquema da faixa etária, cartão substituto, orienta família, sem esperar sorologia.",
+        "Em similares: sem comprovação = calendário da idade; não paralisar a sala por falta de arquivo."
+      ],
+      "footer_rule": "Vacinar agora — documentar depois"
     },
     {
       "type": "golden_rule",
@@ -100,56 +122,38 @@
       "rows": [
         {
           "label": "Cartão perdido",
-          "value": "Emitir substituto e registrar cada dose",
+          "value": "Emitir substituto e registrar cada dose no dia",
+          "emphasis": "highlight",
           "badge": "hot"
         },
         {
           "label": "Esquema incompleto",
-          "value": "Vacinas do calendário da faixa etária",
-          "emphasis": "success",
+          "value": "Vacinas do calendário da faixa etária atual",
+          "emphasis": "highlight",
           "badge": "ok"
         },
         {
           "label": "SCR / viral",
-          "value": "Catch-up conforme idade e histórico",
+          "value": "Catch-up conforme idade e histórico disponível",
           "badge": "info"
         },
         {
-          "label": "Sorologia rotina",
+          "label": "Sorologia de rotina",
           "value": "Não exigir antes de vacinar",
           "badge": "warn"
         },
         {
-          "label": "Registro",
-          "value": "Anotar no cartão + sistema no dia",
-          "badge": "info"
+          "label": "Arquivo / prontuário",
+          "value": "Não adiar dose por busca documental",
+          "badge": "warn"
         },
         {
-          "label": "Conduta desta questão",
-          "value": "Letra C — reiniciar esquema e orientar",
-          "emphasis": "success",
-          "badge": "hot"
+          "label": "Orientação",
+          "value": "Intervalos, reações adversas e completar o ciclo",
+          "badge": "info"
         }
       ],
       "footer_rule": "Não adiar vacina por falta de arquivo"
-    },
-    {
-      "type": "logic_flow",
-      "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Imunização"
-      },
-      "steps": [
-        "Cenário: adolescente, cartão perdido, zero comprovação documental.",
-        "PNI: tratar como esquema incompleto → calendário da idade atual.",
-        "A sorologia/surto → não é conduta de rotina; eliminar.",
-        "B teste de sensibilidade → suspende vacinação indevidamente; eliminar.",
-        "D Ig + só reforço + adiar arquivo → bloqueia imunização; eliminar.",
-        "C reinicia esquema, cartão novo, orienta família, sem esperar sorologia.",
-        "Marcar C."
-      ],
-      "footer_rule": "Vacinar agora — documentar depois"
     },
     {
       "type": "danger_zone",
@@ -158,27 +162,27 @@
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
-      "content": "PEGADINHAS — CARTÃO PERDIDO",
+      "content": "PEGADINHAS — CARTÃO PERDIDO / CATCH-UP",
       "items": [
         {
           "label": "Letra A — sorologia e surto",
-          "detail": "Parece conduta “científica” e seletiva.",
+          "detail": "Parece “científico” e seletivo por prevalência.",
           "correct": "PNI não exige sorologia antes de cada dose nem limita vacina a surto."
         },
         {
           "label": "Letra B — teste de sensibilidade",
           "detail": "Seduz pelo medo de reação adversa.",
-          "correct": "Não há teste pré-vacinal de rotina — suspende o adolescente sem base."
+          "correct": "Sem teste pré-vacinal de rotina — não suspender o adolescente sem base."
         },
         {
           "label": "Letra D — Ig e arquivo municipal",
           "detail": "Parece cautela com registro e imunidade passiva.",
-          "correct": "Imunoglobulina não substitui vacina de rotina; não adiar por falta de prontuário."
+          "correct": "Ig não substitui vacina de rotina; não adiar por falta de prontuário."
         },
         {
-          "label": "Transferência",
-          "detail": "Adulto sem comprovação de dT ou hepatite B.",
-          "correct": "Mesma lógica: esquema do calendário da idade, não esperar documento."
+          "label": "Transferência — adulto sem dT/Hep B",
+          "detail": "Adulto sem comprovação de dT ou hepatite B — mesmo padrão.",
+          "correct": "Calendário da idade — começar sem esperar documento."
         }
       ],
       "footer_rule": "Sem cartão = vacinar pelo PNI da idade"

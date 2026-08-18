@@ -1,0 +1,272 @@
+{
+  "generated_at": "2026-08-01T00:35:10.683Z",
+  "total": 20,
+  "rows": [
+    {
+      "slug": "questao-formacao-palavras-siglas",
+      "expected_bucket": "regex_spoiler",
+      "family": null,
+      "correct_letter": "C",
+      "surfaces_count": 11,
+      "redacted_text": "Sigla (Abreviação)\nPalavra formada pelas iniciais de outras palavras. Ex.: EUA, TDAH, ONU, OMS, INSS.\nProcesso de Formação\nAs letras representam as iniciais de cada palavra da expressão original. Todas as siglas da questão seguem esse mesmo processo.\nExemplos da Questão\nEUA (Estados Unidos da América), TDAH (Transtorno do Déficit de Atenção com Hiperatividade), DDA (Déficit de Atenção), DSM (Diagnostic and Statistical Manual).\nOutros Processos\nDerivação regressiva: verbo → substantivo (ajudar → ajuda). Derivação prefixal: re- + batizar = rebatizar. Derivação sufixal: obeso + -idade = obesidade.\nDiferenciação\nNÃO confundir sigla com: derivação regressiva, derivação imprópria, neologismo ou empréstimo.\nSigla = Iniciais de palavras. Todas as quatro (EUA, TDAH, DDA, DSM) = MESMO processo!",
+      "heuristic_letter_hits": [
+        "D"
+      ],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "ambiguous",
+      "human_notes": "Cita letra(s) D mas não a do gabarito (C)."
+    },
+    {
+      "slug": "questao-premium-admtec-imunizacao-adolescente-cartao-perdido",
+      "expected_bucket": "regex_spoiler",
+      "family": "conceito",
+      "correct_letter": "C",
+      "surfaces_count": 9,
+      "redacted_text": "Comando\nAdolescente sem cartão e sem comprovação — regularizar esquema no PNI com a equipe.\nRegra central\nSem documento confiável: vacinar pela idade atual, conforme Calendário Nacional — não paralisar a sala.\nPapel do técnico\nCartão substituto, registro da dose, orientar intervalos e eventos adversos à família.\nPegadinha\nSorologia, teste de sensibilidade e imunoglobulina não substituem o calendário de rotina.\nPerdeu o cartão → calendário da idade",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-admtec-oxigenoterapia-dispositivos",
+      "expected_bucket": "regex_spoiler",
+      "family": null,
+      "correct_letter": "A",
+      "surfaces_count": 13,
+      "redacted_text": "Parâmetro-chave\nOxigenoterapia é um tema vital em saúde, principalmente no tratamento de pacientes com insuficiência respiratória. Com relação aos dispositivos de oxigenoterapia, assinale a alternativa correta:\nCateter nasal (CNA)\nDispositivo de baixo fluxo (≈1–6 L/min). Inserido na narina — mensurar o comprimento para evitar desconforto. Núcleo da letra A.\nMáscara de Venturi\nAlto fluxo com FiO₂ controlada por diluidores (24%, 28%, 31%…). Não confundir com máscara simples.\nGabarito\nLetra A — Cateter Nasal: inserido na narina; mensurar corretamente para evitar desconforto.\nProtocolo cobrado\nIdentificar dispositivo × fluxo × FiO₂ antes de marcar — banca inverte Venturi e máscara simples.\nPrioridade na prova\nCNA = baixo fluxo · Venturi = FiO₂ fixa · letras B–D trocam essas características.\nDispositivo certo = fluxo + FiO₂ literais — não marque por “parecer” clínico.",
+      "heuristic_letter_hits": [
+        "A"
+      ],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "leak",
+      "human_notes": "Texto cita a letra do gabarito (A) de forma legível sem enunciado."
+    },
+    {
+      "slug": "questao-premium-admtec-puncao-venosa-cateteres",
+      "expected_bucket": "regex_spoiler",
+      "family": null,
+      "correct_letter": "B",
+      "surfaces_count": 13,
+      "redacted_text": "Contexto\nUTI com aumento de infecção de corrente sanguínea relacionada a cateter venoso central (IPCS) — a banca quer a medida mais efetiva de prevenção.\nAntissepsia\nHigienização das mãos e antissepsia cutânea antes da inserção — clorexidina alcoólica na concentração correta (não basta citar 0,5% isolado como na letra A).\nBarreira estéril\nTécnica asséptica rigorosa + barreira estéril máxima na inserção e manutenção do cateter venoso central.\nCurativo\nCurativo semipermeável trocado quando sujo, solto ou úmido — não rotineiramente a cada 72 h “independentemente da integridade”.\nRemoção precoce\nRetirar o CVC assim que não houver mais indicação clínica — permanência desnecessária aumenta risco de IPCS.\nGabarito\nLetra B — técnica asséptica rigorosa, barreira estéril máxima e remoção do cateter quando indicado.\nIPCS no CVC = bundle completo — uma medida isolada (letra A) não substitui o pacote.",
+      "heuristic_letter_hits": [
+        "A",
+        "B"
+      ],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "leak",
+      "human_notes": "Texto cita a letra do gabarito (B) de forma legível sem enunciado."
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-rcp-30-2-aha2020",
+      "expected_bucket": "regex_spoiler",
+      "family": "protocolo",
+      "correct_letter": "D",
+      "surfaces_count": 11,
+      "redacted_text": "Enquadramento\nDiretrizes AHA 2020 para RCP em PCR adulta — assinalar a alternativa correta sobre parâmetros.\nNúcleo 30:2\nSem via aérea avançada: 2 ventilações a cada 30 compressões — eixo central desta prova.\nTriângulo numérico\n100–120/min · 5–6 cm · retorno total do tórax — a banca troca um vértice por letra.\nEquipe\nTrocar quem comprime ~2 min (fadiga) — letra A posterga demais a troca.\nPegadinha\n80–100/min e 4 cm são faixas antigas — adulto exige 100–120 e ≥5 cm.\n30:2 · 100–120 · 5–6 cm",
+      "heuristic_letter_hits": [
+        "A"
+      ],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "ambiguous",
+      "human_notes": "Cita letra(s) A mas não a do gabarito (D)."
+    },
+    {
+      "slug": "questao-premium-amauc-imunizacao-bcg-dose-a4",
+      "expected_bucket": "regex_spoiler",
+      "family": "vf",
+      "correct_letter": "C",
+      "surfaces_count": 15,
+      "redacted_text": "Contexto do enunciado\nBCG ao nascer, dose única, adiar se peso <2 kg. A banca testa técnica (via, dose, local) e mito da revacinação por cicatriz.\nAfirmativa I — cicatriz ausente\nFALSA. Ausência de cicatriz NÃO indica revacinação — BCG é dose única; não revacinar rotineiramente por cicatriz ausente.\nAfirmativa II — dosagem\nVERDADEIRA. Dose padrão da BCG no PNI — volume intradérmico oficial (afirmativa literal da prova).\nAfirmativa III — via IM\nFALSA. BCG é intradérmica (ID), nunca intramuscular — pegadinha clássica de prova.\nAfirmativa IV — local\nVERDADEIRA. Aplicação na inserção inferior do deltóide direito (braço direito).\nAfirmativa V — ao nascer, dose única\nVERDADEIRA. Esquema PNI: uma dose preferencialmente ao nascer, ainda na maternidade.\nConjunto verdadeiro\nI=F, II=V, III=F, IV=V, V=V → combinação II, IV e V.\nBCG: I=F · II–V=V · III=F (via ID, não IM)",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [
+        "FALSA",
+        "VERDADEIRA",
+        "FALSA",
+        "VERDADEIRA",
+        "VERDADEIRA"
+      ],
+      "human_a_priori": "ambiguous",
+      "human_notes": "Veredito V/F no concept_map (spoiler de polaridade); letra da alternativa pode permanecer indeterminável."
+    },
+    {
+      "slug": "questao-premium-ameosc-cme-metodos-incorreta",
+      "expected_bucket": "regex_spoiler",
+      "family": "certo_errado",
+      "correct_letter": "D",
+      "surfaces_count": 11,
+      "redacted_text": "Comando\nINCORRETA — três alternativas descrevem métodos válidos; uma nega a autoclave.\nFísico\nVapor saturado na autoclave — principal método em CME.\nQuímico\nGlutaraldeído e peracético — esterilização química de baixa temperatura.\nPré-requisito\nLimpeza obrigatória antes de qualquer esterilização.\nGabarito\nLetra D — autoclave é método central de esterilização.\nINCORRETA = a que contradiz a prática da CME",
+      "heuristic_letter_hits": [
+        "D"
+      ],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "leak",
+      "human_notes": "Texto cita a letra do gabarito (D) de forma legível sem enunciado."
+    },
+    {
+      "slug": "questao-premium-ameosc-imunizacao-vf-cadeia-frio",
+      "expected_bucket": "regex_spoiler",
+      "family": "vf",
+      "correct_letter": "C",
+      "surfaces_count": 11,
+      "redacted_text": "Afirmativa I — BCG\nVERDADEIRA: intradérmica, preferencialmente no deltoide direito.\nAfirmativa II — cadeia de frio\nFALSA: agitar não recupera vacina fora da temperatura — descartar e notificar.\nAfirmativa III — pentavalente\nVERDADEIRA: difteria, tétano, coqueluche, hepatite B e Hib.\nAfirmativa IV — papel do técnico\nFALSA: técnico aplica no calendário PNI — não prescreve vacina extraoficial.\nPegadinha — agitar cadeia\nErro reproduzível: agitar não recupera imunobiológico fora de 2–8 °C — descartar e notificar.\nSequência: V · F · V · F",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [
+        "VERDADEIRA",
+        "FALSA",
+        "VERDADEIRA",
+        "FALSA"
+      ],
+      "human_a_priori": "ambiguous",
+      "human_notes": "Veredito V/F no concept_map (spoiler de polaridade); letra da alternativa pode permanecer indeterminável."
+    },
+    {
+      "slug": "questao-premium-admtec-saude-mulher-parto-humanizado-vf",
+      "expected_bucket": "regex_clean",
+      "family": "vf",
+      "correct_letter": "B",
+      "surfaces_count": 9,
+      "redacted_text": "Marco da questão\nFase expulsiva — posição vertical/lateral, não supina fixa (III falsa).\nDor não farmacológica\nÁgua morna e movimentação na dilatação — assertiva II.\nAcompanhante\nLivre escolha durante todo o trabalho de parto humanizado.\nClampeamento\nTardio um a três min quando viável — assertiva IV.\nHumanização ≠ protocolo rígido de CTG contínuo",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-ameosc-cuidados-protocolo-ms-vf",
+      "expected_bucket": "regex_clean",
+      "family": "vf",
+      "correct_letter": "A",
+      "surfaces_count": 11,
+      "redacted_text": "I — Comunicação (V)\nComunicação efetiva entre profissionais previne erros de medicação — eixo do protocolo MS.\nII — Só nome verbal (F)\nIdentificação exige dois identificadores independentes — nome sozinho não basta.\nIII — Alto risco (V)\nConferência dupla na administração de medicamentos de alto risco — insulina, heparina, eletrólitos.\nIV — Uso habitual (F)\nPrescrição ilegível nunca autoriza administração — mesmo se colega já administrou.\nPegadinha banca\nII e IV parecem práticas “rápidas” de plantão — violam identificação e segurança na dúvida.\nProtocolo MS = comunicação + identificação dupla + alto risco com dupla checagem",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-ameosc-processo-de-enfermagem-documentacao",
+      "expected_bucket": "regex_clean",
+      "family": "vf",
+      "correct_letter": "D",
+      "surfaces_count": 13,
+      "redacted_text": "Tema\nIntegridade, veracidade e identificação no registro de enfermagem.\nItem 1 — alteração livre\nProntuário não se corrige “livremente” — exige protocolo de retificação.\nItem 2 — objetividade\nAnotação objetiva no momento do cuidado — veracidade.\nItem 3 — comunicação\nRelatórios e boletins integram a comunicação interprofissional.\nItem 4 — identificação\nAutoria deve constar no registro — não basta “a equipe saber”.\nCOFEN 358\nBase normativa para julgar cada afirmativa V ou F.\nJulgue item a item antes de montar a sequência V-F",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-choque-eletrico",
+      "expected_bucket": "regex_clean",
+      "family": "conceito",
+      "correct_letter": "D",
+      "surfaces_count": 11,
+      "redacted_text": "Comando\nPrimeira conduta em choque elétrico — vítima pode ter queimaduras, arritmia e ficar presa à corrente.\nSemântica\nChoque elétrico = acidente com corrente — não confundir com choque hipovolêmico (hipotensão).\nPrioridade zero\nSegurança do socorrista: interromper circuito antes de tocar na vítima.\nDepois da segurança\nChecar consciência/respiração → RCP se necessário → tratar queimaduras → acionar 192.\nPegadinha\nRCP, afrouxar roupa ou enrolar em pano vêm só após a cena estar segura.\nDesligar corrente → depois socorrer",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-convulsao-crise",
+      "expected_bucket": "regex_clean",
+      "family": "conceito",
+      "correct_letter": "B",
+      "surfaces_count": 11,
+      "redacted_text": "Enquadramento\nCrise epiléptica — ações prioritárias no atendimento imediato; assinalar a conduta correta.\nProteger\nAfastar objetos perigosos e amortecer a cabeça — sem imobilizar à força.\nNão fazer\nNão introduzir objetos na boca · não segurar a língua · não prender movimentos.\nDepois da crise\nCronometrar duração · posição lateral de segurança se inconsciente com respiração.\nPegadinha\n“Pano na boca” parece cuidado — mas qualquer objeto na via aérea agrava.\nProteger sim · objeto na boca não",
+      "heuristic_letter_hits": [
+        "A"
+      ],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "ambiguous",
+      "human_notes": "Cita letra(s) A mas não a do gabarito (B)."
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-fratura-exposta-imobilizacao",
+      "expected_bucket": "regex_clean",
+      "family": "conceito",
+      "correct_letter": "A",
+      "surfaces_count": 11,
+      "redacted_text": "Enquadramento\nFratura exposta de extremidade — osso visível na ferida; priorizar imobilização segura no atendimento inicial.\nObjetivo\nEstabilizar o segmento, reduzir movimento e proteger tecidos — sem agravar lesão vascular ou nervosa.\nPosição anatômica\nBuscar alinhamento quando viável — mas não é mandato absoluto em trauma.\nExceção clínica\nDor significativa ou resistência do paciente = sinal para não forçar reposicionamento.\nPegadinha de prova\nAlternativas quase idênticas variam só a cláusula de exceção — leia o qualificador final.\nImobilizar com critério — não forçar alinhamento à custa da dor",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-access-urgencias-rcp-pediatrica-15-2",
+      "expected_bucket": "regex_clean",
+      "family": "protocolo",
+      "correct_letter": "D",
+      "surfaces_count": 11,
+      "redacted_text": "Enquadramento\nPCR em criança/lactente sem via aérea avançada — identificar compressão de alta qualidade.\nProporção pediátrica\nDois socorristas treinados: 15 compressões : 2 ventilações (não 30:2 do adulto).\nProfundidade\nCerca de um terço do diâmetro anteroposterior do tórax — não metade do tórax.\nRitmo e retorno\n100–120/min com retorno total do tórax entre compressões.\nPegadinha\nAlternativas quase idênticas trocam proporção (30:2) e profundidade — leia os dois vértices.\nPediatria: 15:2 + ~⅓ do tórax",
+      "heuristic_letter_hits": [
+        "A"
+      ],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "ambiguous",
+      "human_notes": "Cita letra(s) A mas não a do gabarito (D)."
+    },
+    {
+      "slug": "questao-premium-consulpam-urgencias-pcr-pediatrica-conceito",
+      "expected_bucket": "regex_clean",
+      "family": "protocolo",
+      "correct_letter": "A",
+      "surfaces_count": 11,
+      "redacted_text": "Enquadramento\nPrincípios atuais de SBV em bebês e crianças — assinalar afirmativa correta.\nCausa usual\nNa maioria das vezes: hipóxia/insuficiência respiratória ou choque — não IAM como no adulto.\nTempo\nReconhecer deterioração precoce evita PCR — tempo é tecido cerebral.\nConduta\nRCP de alta qualidade + DEA quando ritmo chocável — sem atrasar por estabilização completa.\nPegadinha\nBanca transfere lógica do adulto (causa cardíaca primária) para pediatria.\nPediatria: respiração/choque → RCP precoce",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im",
+      "expected_bucket": "regex_clean",
+      "family": "protocolo",
+      "correct_letter": "C",
+      "surfaces_count": 11,
+      "redacted_text": "Enquadramento\nCriança de 7 anos: urticária difusa, prurido, angioedema de lábios/pálpebras e dispneia após dipirona.\nConduta imediata\nAdrenalina na anafilaxia = suporte básico de vida; técnico prepara sob supervisão do enfermeiro.\nAsserção I\nVia Intramuscular (IM) imediata na face ântero-lateral da coxa — proposição verdadeira.\nAsserção II\nVia Intravenosa (IV) só em parada cardiorrespiratória ou hipotensão profunda refratária a volume e múltiplas injeções IM.\nFormato CPCON\nAvaliar asserções I e II e se a II é justificativa correta da I (relação PORQUE).\nIM na coxa · IV só no extremo",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-denotacao-tirinha-drogas",
+      "expected_bucket": "regex_clean",
+      "family": "text_fragment",
+      "correct_letter": "D",
+      "surfaces_count": 11,
+      "redacted_text": "1º quadrinho\n«Drogas» parece denotativo — alucinógeno, dependência química.\nÚltimo quadrinho\nContexto vira a chave — atração / paixão / intoxicação do espírito.\nPergunta-teste\nLiteral no 1º? Figurado no último? Qual par de sentidos a banca pede?\nPolissemia\nMesma palavra, duas leituras — humor da tirinha Armandinho.\nPegadinha\nMarcar glossário genérico (elementos, matéria) sem o par drogas.\nNa tirinha: leia o arco 1º → último antes de abrir o dicionário.",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-consoada-descer",
+      "expected_bucket": "regex_clean",
+      "family": "text_fragment",
+      "correct_letter": "C",
+      "surfaces_count": 13,
+      "redacted_text": "Pergunta-teste\nSubstituir «descer» mantém a chegada da noite?\nDescer (noite)\nAnoitecer — a noite se abate sobre o dia.\nPolissemia\n«Descer» também = movimento vertical (literal).\nConsoada\nBandeira — casa pronta; espera a Indesejada (morte).\nIndesejada\nEufemismo para a morte — tom irônico do poema.\nPegadinha\nTrocar por verbo de luz crescente (amanhecer/despontar).\nContexto poético fixa «descer» = anoitecer.",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-iniludivel",
+      "expected_bucket": "regex_clean",
+      "family": "text_fragment",
+      "correct_letter": "B",
+      "surfaces_count": 13,
+      "redacted_text": "Pergunta-teste\nO in- nega «iludível» — o que sobra?\nIniludível\nQue não se pode iludir, evitar ou ignorar.\nIndesejada\nEufemismo bandeiriano para a morte.\nAlô\nSaudação irônica — morte é certa.\nIncontornável\nImpossível contornar — gabarito B.\nPegadinha\nLer in- como se fosse «enganável».\nIn- + iludível = não se escapa.",
+      "heuristic_letter_hits": [],
+      "vf_verdict_prefixes": [],
+      "human_a_priori": "indeterminate",
+      "human_notes": "Sem citação de letra A–E amarrada ao gabarito."
+    }
+  ]
+}

@@ -40,6 +40,17 @@ function slidesOf(q: QuestaoLike): SlideLike[] {
   return Array.isArray(s) ? (s as SlideLike[]) : [];
 }
 
+/** CM do ramo pt_classes_exceto: rule-pairs (EXCETO) ↔ value-cards (valor INCORRETO). */
+const INTERCHANGEABLE_BRANCH_LAYOUTS: ReadonlyArray<ReadonlySet<string>> = [
+  new Set(['pt-classes-exceto-rule-pairs', 'pt-classes-exceto-value-cards']),
+];
+
+function areInterchangeableBranchLayouts(expected: string, resolved: string): boolean {
+  return INTERCHANGEABLE_BRANCH_LAYOUTS.some(
+    (set) => set.has(expected) && set.has(resolved),
+  );
+}
+
 export type DetectMoldL3WriteBlockersOptions = {
   slug?: string;
   /** Fase B: bloqueia unresolved_bespoke em golden-v1 */
@@ -144,7 +155,8 @@ export function detectMoldL3WriteBlockers(
       if (
         expectedFromBranch &&
         resolved.layoutVariant !== expectedFromBranch &&
-        !resolved.moldFallback
+        !resolved.moldFallback &&
+        !areInterchangeableBranchLayouts(expectedFromBranch, resolved.layoutVariant)
       ) {
         issues.push({
           code: 'mold_l3_declared_branch_conflict',

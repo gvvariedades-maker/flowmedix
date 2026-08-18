@@ -2,21 +2,39 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Curativos, LPP e coberturas.
- * Referência: NPUAP/EPUAP (estágios LPP), COFEN, MS.
+ * Referência: Anvisa NT GVIMS 05/2023 (LPP); NPIAP/EPUAP 2019; Protocolo PNSP MS/Anvisa/Fiocruz.
+ * Nomenclatura vigente: lesão por pressão (não “úlcera por pressão”).
+ * @see https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/notas-tecnicas/notas-tecnicas-vigentes/nota-tecnica-gvims-ggtes-anvisa-no-05-2023-praticas-de-seguranca-do-paciente-em-servicos-de-saude-prevencao-de-lesao-por-pressao
  */
 export const CURATIVOS_LPP_NPUAP: GuidelineTable = {
   id: 'curativos-lpp-npuap',
-  snapshot: 'LPP, estágios e coberturas',
-  issuer: 'NPUAP/COFEN',
+  snapshot: 'LPP — Anvisa NT 05/2023 + NPIAP 2019 (estágios/Braden)',
+  issuer: 'Anvisa / NPIAP / MS',
   title: 'Curativos e manejo de feridas',
-  year: 2016,
-  url: 'https://www.cofen.gov.br/',
+  year: 2023,
+  url: 'https://www.gov.br/anvisa/pt-br/centraisdeconteudo/publicacoes/servicosdesaude/notas-tecnicas/notas-tecnicas-vigentes/nota-tecnica-gvims-ggtes-anvisa-no-05-2023-praticas-de-seguranca-do-paciente-em-servicos-de-saude-prevencao-de-lesao-por-pressao',
   entries: [
     {
       id: 'lpp-prevencao-pele',
       label: 'Prevenção LPP — pele',
       value: 'limpa e seca — não úmida',
-      detail: 'Maceração favorece lesão por pressão.',
+      detail:
+        'Anvisa NT 05/2023 + Protocolo PNSP: avaliação de risco na admissão e reavaliação; inspeção diária em risco. Maceração favorece LPP.',
+      sourceId: 'curativos-lpp-npuap',
+    },
+    {
+      id: 'lpp-nomenclatura-npiap',
+      label: 'Nomenclatura — lesão por pressão',
+      value: 'termo vigente = lesão por pressão (LPP), não “úlcera por pressão”',
+      detail:
+        'NT Anvisa 05/2023 atualiza nomenclatura/estágios (NPIAP). Provas antigas podem dizer UPP — exam_vs_current.',
+      sourceId: 'curativos-lpp-npuap',
+    },
+    {
+      id: 'lpp-dispositivo-medico',
+      label: 'LPP relacionada a dispositivo',
+      value: 'inspecionar ≥2×/dia sob tubos, sondas, cateteres e imobilizações',
+      detail: 'Anvisa NT 05/2023 — pressão por dispositivo médico é causa frequente e evitável.',
       sourceId: 'curativos-lpp-npuap',
     },
     {

@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Central de Material e Esterilização (CME).
- * Fonte: Anvisa RDC 15/2012 e normas de processamento.
+ * Fonte principal hospitalar: Anvisa RDC 15/2012 (ainda vigente para CME de serviços de saúde).
+ * Nota 2025: RDC 1002/2025 reforça processamento em assistência odontológica — não substitui a RDC 15 no CME hospitalar.
  */
 export const CME_ANVISA: GuidelineTable = {
   id: 'cme-anvisa-rdc15',
-  snapshot: 'CME — áreas, indicadores e validade',
+  snapshot: 'CME hospitalar — RDC 15/2012 (ainda citada NT 105/2026) + RDC 1002/2025 odonto',
   issuer: 'Anvisa',
   title: 'Central de Material e Esterilização',
   year: 2012,
-  url: 'https://www.gov.br/anvisa/pt-br/assuntos/servicosdesaude/servicos',
+  url: 'https://bvsms.saude.gov.br/bvs/saudelegis/anvisa/2012/rdc0015_15_03_2012.html',
   entries: [
     {
       id: 'cme-area-suja',
@@ -47,7 +48,17 @@ export const CME_ANVISA: GuidelineTable = {
     {
       id: 'cme-indicador-biologico',
       label: 'Indicador biológico',
-      value: 'confirma eficácia microbicida do ciclo',
+      value: 'monitoramento diário em pacote desafio (RDC 15/2012)',
+      detail:
+        'Art. 99: diário no ponto de maior desafio. Químico classes 5 ou 6 em cada carga (Art. 96). Não confundir com fita externa isolada.',
+      sourceId: 'cme-anvisa-rdc15',
+    },
+    {
+      id: 'cme-classe-i-ii',
+      label: 'CME Classe I × Classe II',
+      value: 'Classe II processa produtos críticos de complexidade — rastreabilidade por lote',
+      detail:
+        'RDC 15/2012: classificação do CME define escopo. Empresa processadora só processa produtos não críticos ou conforme autorização.',
       sourceId: 'cme-anvisa-rdc15',
     },
     {
@@ -265,6 +276,14 @@ export const CME_ANVISA: GuidelineTable = {
       label: 'Pegadinha — indicador químico',
       value: 'indicador químico interno não substitui indicador biológico',
       detail: 'Químico confirma exposição ao processo; biológico confirma eficácia microbicida — prova cobra a diferença.',
+      sourceId: 'cme-anvisa-rdc15',
+    },
+    {
+      id: 'cme-rdc15-vs-rdc1002',
+      label: 'RDC 15/2012 × RDC 1002/2025',
+      value: 'CME hospitalar continua sob RDC 15/2012; RDC 1002/2025 reforça processamento em odontologia',
+      detail:
+        'Não tratar RDC 1002 como revogação da RDC 15 no CME de hospital. Fluxo unidirecional e monitoramento (químico/biológico) seguem a RDC 15 na prova de TE.',
       sourceId: 'cme-anvisa-rdc15',
     },
   ],

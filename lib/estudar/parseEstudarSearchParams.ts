@@ -5,7 +5,6 @@ import { parseVitrineDisciplina, type VitrineDisciplinaId } from '@/lib/vitrine/
 export type EstudarSearchParams = Record<string, string | string[] | undefined>;
 
 export type ParsedEstudarSearchParams = {
-  fromPlano: boolean;
   fromCaderno: boolean;
   cadernoId: string | undefined;
   vitrineBancas: string[];
@@ -20,7 +19,6 @@ export function parseEstudarSearchParams(
   searchParams: EstudarSearchParams,
 ): ParsedEstudarSearchParams {
   const from = searchParams.from as string | undefined;
-  const fromPlano = from === 'plano';
   const fromCaderno = from === 'caderno';
   const cadernoId = fromCaderno
     ? typeof searchParams.caderno_id === 'string'
@@ -46,7 +44,6 @@ export function parseEstudarSearchParams(
   );
 
   return {
-    fromPlano,
     fromCaderno,
     cadernoId,
     vitrineBancas,
@@ -64,7 +61,6 @@ export function parseEstudarSearchParams(
 export function buildEstudarContextQuerySuffix(
   parsed: ParsedEstudarSearchParams,
 ): string {
-  if (parsed.fromPlano) return '?from=plano';
   if (parsed.fromCaderno && parsed.cadernoId) {
     return `?from=caderno&caderno_id=${encodeURIComponent(parsed.cadernoId)}`;
   }

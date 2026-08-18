@@ -79,13 +79,7 @@ describe('questaoLayers', () => {
     });
   });
 
-  it('buildEstudarSlugComQueryFromPlayerProps monta contexto vitrine/plano/caderno', () => {
-    expect(
-      buildEstudarSlugComQueryFromPlayerProps({
-        moduloSlug: 'q-1',
-        fromPlano: true,
-      }),
-    ).toBe('q-1?from=plano');
+  it('buildEstudarSlugComQueryFromPlayerProps monta contexto caderno/vitrine', () => {
     expect(
       buildEstudarSlugComQueryFromPlayerProps({
         moduloSlug: 'q-2',

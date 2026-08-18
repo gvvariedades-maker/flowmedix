@@ -1,0 +1,51 @@
+﻿{
+  "schema_version": 1,
+  "decision_date": "2026-07-27",
+  "branch": "content/neurocanvas-idecan-provenance",
+  "status": "official_provenance_confirmed_materialized",
+  "idecan_status_after": "official_provenance_confirmed",
+  "cases": [
+    {
+      "case_id": "nc-g03-2a5a44fc12f93928",
+      "slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+      "decision": "create_corrected_candidate",
+      "authority_manifest": "data/catalog-migration/coleta-lote-01/manifest.json",
+      "official_exam": {
+        "cargo": "5008 Tecnico em Enfermagem",
+        "tipo": "A",
+        "question_number": 78,
+        "answer_key": "F (Errado / B)",
+        "prova_url": "https://concursos.ufba.br/sites/concursos.ufba.br/files/tecnicos/5008_-_tecnico_em_enfermagem_-_tipo_a.pdf"
+      },
+      "gabarito": {
+        "label": "Gabarito preliminar Edital 05/2022 Tipo A",
+        "q78": "F",
+        "url": "https://concursos.ufba.br/sites/concursos.ufba.br/files/tecnicos/gabarito_preliminar_edital_5_-_tipo_a.pdf",
+        "definitivo_note": "Sem PDF gabarito definitivo no portal; sem retificacao Q78; homologacao Portaria 524/2023"
+      },
+      "expected_semantic_sha256": "35836e819c3e25ff4f7800d81ac9fbcf94b72d15b75e91027568ce7966669aa2"
+    },
+    {
+      "case_id": "nc-g03-6190f08e3ab3ead6",
+      "slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8",
+      "decision": "create_corrected_candidate",
+      "authority_manifest": "data/catalog-migration/coleta-lote-01/manifest.json",
+      "official_exam": {
+        "cargo": "5008 Tecnico em Enfermagem",
+        "tipo": "A",
+        "question_number": 79,
+        "answer_key": "V (Certo / A)",
+        "prova_url": "https://concursos.ufba.br/sites/concursos.ufba.br/files/tecnicos/5008_-_tecnico_em_enfermagem_-_tipo_a.pdf"
+      },
+      "gabarito": {
+        "label": "Gabarito preliminar Edital 05/2022 Tipo A",
+        "q79": "V",
+        "url": "https://concursos.ufba.br/sites/concursos.ufba.br/files/tecnicos/gabarito_preliminar_edital_5_-_tipo_a.pdf",
+        "definitivo_note": "Sem PDF gabarito definitivo no portal; sem retificacao Q79; homologacao Portaria 524/2023"
+      },
+      "expected_semantic_sha256": "187944001ea50dd6c32573e9d30517ae9bb7c4ffd3bd27b865da7447bbcdd122"
+    }
+  ],
+  "live_catalog_authority": "not_used",
+  "baseline_update": "deferred_separate_round"
+}

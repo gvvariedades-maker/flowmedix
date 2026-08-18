@@ -138,7 +138,8 @@ export default async function VitrinePage({
   const initialPayloadError = initialPayloadResult.error;
 
   const vitrineFallbackTitulo =
-    matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.nome ?? 'Estudo Reverso';
+    matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.nome ??
+    'Estudo reverso por assunto';
 
   const initialWeeklyMission: WeeklySimuladoMission | null =
     initialDiagnostico.diagnostico_completed || !initialDiagnostico.onboarding_completed

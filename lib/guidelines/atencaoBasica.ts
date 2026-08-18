@@ -2,26 +2,29 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Atenção Básica / Saúde da Família.
- * Fonte: PNAB 2017 (MS) + Cadernos de Atenção Básica.
+ * Fonte: PNAB — Portaria GM/MS nº 2.436/2017 (ainda vigente na consolidação MS).
+ * @see https://bvs.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html
  */
 export const ATENCAO_BASICA_PNAB: GuidelineTable = {
   id: 'atencao-basica-pnab',
-  snapshot: 'PNAB — princípios e atributos da APS',
+  snapshot: 'PNAB Portaria 2.436/2017 — ESF prioritária, UBS, RAS',
   issuer: 'Ministério da Saúde',
   title: 'Atenção Básica / Saúde da Família',
   year: 2017,
-  url: 'https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_atencao_basica.pdf',
+  url: 'https://bvs.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html',
   entries: [
     {
       id: 'aps-porta-entrada',
       label: 'Porta de entrada',
-      value: 'Atenção Básica é porta de entrada preferencial do SUS',
+      value: 'Atenção Básica é primeiro ponto e porta de entrada preferencial do SUS',
+      detail: 'PNAB 2.436/2017: ordena fluxos na Rede de Atenção à Saúde (RAS).',
       sourceId: 'atencao-basica-pnab',
     },
     {
       id: 'aps-esf',
       label: 'Estratégia Saúde da Família',
-      value: 'equipe multiprofissional com médico, enfermeiro, técnico e ACS',
+      value: 'estratégia prioritária de expansão e consolidação da AB',
+      detail: 'Equipe multiprofissional (médico, enfermeiro, técnico/ACS conforme composição vigente).',
       sourceId: 'atencao-basica-pnab',
     },
     {
@@ -72,6 +75,64 @@ export const ATENCAO_BASICA_PNAB: GuidelineTable = {
       label: 'ESF — composição mínima',
       value: 'médico, enfermeiro, técnico/auxiliar de enfermagem e ACS',
       detail: 'PNAB 2017 — equipe multiprofissional com atribuições definidas por categoria.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'esf-carga-scnes',
+      label: 'eSF — carga e vínculo SCNES',
+      value: '40 horas semanais; profissional vinculado a 1 (uma) eSF no SCNES',
+      detail: 'PNAB — carga de 40 h para membros da eSF; cadastro SCNES com vínculo a uma equipe.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'acs-procedimentos-domicilio',
+      label: 'ACS — procedimentos no domicílio',
+      value:
+        'PA, temperatura axilar, glicemia capilar e curativos limpos — se treinado e assistido por nível superior',
+      detail:
+        'PNAB — procedimentos comumente da enfermagem podem ser feitos por outra categoria da eSF (ACS) com treino e supervisão.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'esf-teto-populacional',
+      label: 'eSF — teto populacional',
+      value: 'máximo 4.000 pessoas por equipe (média recomendada 3.000)',
+      detail: 'PNAB — cada eSF responsável por população adscrita com limite e média definidos.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'esf-media-recomendada',
+      label: 'eSF — média recomendada',
+      value: '3.000 pessoas por equipe',
+      detail: 'PNAB — média recomendada abaixo do teto de 4.000.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'acs-lactante-meses',
+      label: 'ACS — acompanhamento da lactante',
+      value: 'visitas regulares nos 6 meses seguintes ao parto (área de atuação)',
+      detail: 'Acompanhamento da puérpera/lactante no território — PNAB / atribuições ACS.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'esus-pec',
+      label: 'e-SUS AB — PEC',
+      value: 'Prontuário Eletrônico do Cidadão — registro de atendimentos e procedimentos da APS',
+      detail: 'Software gratuito do MS para Atenção Primária — multiprofissional.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'esfr-atendimento-dias',
+      label: 'eSF Ribeirinha — atendimento',
+      value: 'mínimo 14 dias mensais (carga equivalente a 8h/dia)',
+      detail: 'PNAB — atendimento à população ribeirinha/fluvial.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'esfr-gestao-dias',
+      label: 'eSF Ribeirinha — educação permanente / gestão',
+      value: '2 dias mensais para educação permanente, registro da produção e planejamento',
+      detail: 'Bloco distinto do atendimento à população.',
       sourceId: 'atencao-basica-pnab',
     },
     {
@@ -180,10 +241,31 @@ export const ATENCAO_BASICA_PNAB: GuidelineTable = {
       sourceId: 'atencao-basica-pnab',
     },
     {
+      id: 'esf-microarea-pessoas',
+      label: 'Microárea — pessoas (parâmetro clássico de prova)',
+      value: 'até 750 pessoas por Agente Comunitário de Saúde',
+      detail: 'Parâmetro cobrado em bancas para o espaço geográfico de um ACS — distinto do teto da eSF (4.000).',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
       id: 'acs-visita-domiciliar',
       label: 'ACS — visita domiciliar',
       value: 'prioridade para gestantes, crianças, idosos e pessoas com vulnerabilidade',
       detail: 'Cadastro e acompanhamento longitudinal — não é visita apenas administrativa.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'acs-visita-frequencia',
+      label: 'ACS — frequência da visita',
+      value: 'média de 1 visita por família/mês; maior frequência se maior necessidade',
+      detail: 'Visita domiciliar é atividade central do ACS — programação conjunta com a equipe.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'acs-visita-gestante-risco-habitual',
+      label: 'ACS — visita à gestante de risco habitual',
+      value: '1 visita mensal até a 36 semana (planejada com o enfermeiro)',
+      detail: 'Cadernos/MS — periodicidade conforme vulnerabilidade clínica e social; risco habitual = mensal até 36 semanas.',
       sourceId: 'atencao-basica-pnab',
     },
     {
@@ -247,6 +329,27 @@ export const ATENCAO_BASICA_PNAB: GuidelineTable = {
       label: 'Adscrição — cadastro',
       value: 'vincular família à equipe de referência da UBS',
       detail: 'Usuário identifica sua equipe — responsabilização sanitária.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'has-rastreamento-otima',
+      label: 'HAS — rastreamento PA ótima',
+      value: 'PA menor que 120/80 mmHg: reavaliar em até 2 anos',
+      detail: 'Caderno de Atenção Básica nº 37 — rastreamento e diagnóstico da HAS na Atenção Básica.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'has-rastreamento-limitrofe',
+      label: 'HAS — rastreamento PA limítrofe',
+      value: 'PA entre 120/80 e 139/89 mmHg: reavaliar em até 1 ano',
+      detail: 'Caderno de Atenção Básica nº 37 — intervalo intermediário de reavaliação.',
+      sourceId: 'atencao-basica-pnab',
+    },
+    {
+      id: 'has-rastreamento-suspeita',
+      label: 'HAS — rastreamento PA suspeita/alterada',
+      value: 'PA maior ou igual a 140/90 mmHg: reavaliar em 1 a 2 semanas',
+      detail: 'Caderno de Atenção Básica nº 37 — confirmação diagnóstica em intervalo curto.',
       sourceId: 'atencao-basica-pnab',
     },
   ],

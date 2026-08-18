@@ -26,6 +26,10 @@ export function inferSvKind(text: string): SvKind {
     return 'temp';
   }
 
+  // Antes de FC: "oximetria de pulso" não pode virar FC por causa de "pulso"
+  // NÃO usar "oxim" solto — casa dentro de "aproximam"/"aproximação"
+  if (/spo2|satura[cç][aã]o|oximetr/.test(lower)) return 'spo2';
+
   if (
     /fc\b|frequ[eê]ncia card|batimentos?\s+por\s+min|\bbpm\b|card[ií]ac|pulso radial|\bpulso\b/.test(
       lower,
@@ -35,7 +39,6 @@ export function inferSvKind(text: string): SvKind {
   }
 
   if (/fr\b|frequ[eê]ncia resp|mpm|irpm|respirat/.test(lower)) return 'fr';
-  if (/spo2|saturação|saturacao|oxim/.test(lower)) return 'spo2';
   return 'other';
 }
 
@@ -78,6 +81,15 @@ export function isSvRowMoldCompatible(row: {
 }
 
 export function inferSvIconName(text: string, explicitKind?: SvKind): string {
+  const lower = text.toLowerCase();
+  if (/ocular|abertura ocular|\bolhos?\b/.test(lower)) return 'Eye';
+  if (/verbal|resposta verbal/.test(lower)) return 'MessageCircle';
+  if (/motor|resposta motora/.test(lower)) return 'Hand';
+  if (/\bpupilas?\b/.test(lower)) return 'ScanEye';
+  if (/este caso|soma glasgow|pontua/.test(lower)) return 'Calculator';
+  if (/classifica|grave|moderado/.test(lower) && /leve|glasgow|faixa/.test(lower)) return 'Layers';
+  if (/classifica/.test(lower)) return 'Layers';
+
   const kind = explicitKind ?? inferSvKind(text);
   switch (kind) {
     case 'pa':
@@ -98,6 +110,13 @@ export function inferSvIconName(text: string, explicitKind?: SvKind): string {
 }
 
 export function inferSvShortLabel(text: string, explicitKind?: SvKind): string {
+  const lower = text.toLowerCase();
+  if (/em similares|transfer[eê]ncia|outra banca|\bmcq\b/.test(lower)) {
+    return 'Transferência';
+  }
+  if (/glasgow|escore|abertura ocular|resposta verbal|resposta motora|\bpupilas?\b/.test(lower)) {
+    return 'Glasgow';
+  }
   const kind = explicitKind ?? inferSvKind(text);
   switch (kind) {
     case 'pa':
@@ -117,6 +136,20 @@ export function inferSvShortLabel(text: string, explicitKind?: SvKind): string {
   }
 }
 
+/**
+ * Faixa normativa só quando o card traz valor aferido (mmHg/bpm/…).
+ * Técnica (manguito, posição, repouso) não deve colar "< 120×80".
+ */
+export function shouldShowSvReferenceRange(
+  label: string,
+  value: string,
+  explicitKind?: SvKind,
+): boolean {
+  const kind = explicitKind ?? inferSvKind(`${label} ${value}`);
+  if (kind === 'meta' || kind === 'other') return false;
+  return rowHasMeasuredVital(label, value);
+}
+
 export function inferSvReferenceRange(text: string, explicitKind?: SvKind): string {
   const kind = explicitKind ?? inferSvKind(text);
   if (kind === 'meta' || kind === 'other') return '';
@@ -124,7 +157,7 @@ export function inferSvReferenceRange(text: string, explicitKind?: SvKind): stri
     case 'pa':
       return '< 120×80 mmHg';
     case 'temp':
-      return '36,0–37,4°C axilar';
+      return '36–37,5°C axilar';
     case 'fc':
       return '60–100 bpm';
     case 'fr':
@@ -159,6 +192,38 @@ export function isConclusionRow(label: string, value: string): boolean {
   return /conclus|gabarito|alternativa|letra [a-e]|marcar|\bcerto\b|\berrado\b/.test(text);
 }
 
+/** Normaliza texto de faixa/valor para detectar duplicata visual (60 a 100 ≈ 60–100). */
+export function normalizeSvDisplayText(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[×x]/g, 'x')
+    .replace(/[–—−-]/g, ' ')
+    .replace(/\ba\b/g, ' ')
+    .replace(/[^a-z0-9.]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function svDisplayTextsNearDuplicate(a: string, b: string): boolean {
+  const left = normalizeSvDisplayText(a);
+  const right = normalizeSvDisplayText(b);
+  if (!left || !right) return false;
+  if (left === right) return true;
+  return left.includes(right) || right.includes(left);
+}
+
+/** Faixa normativa (60 a 100 bpm) ≠ valor aferido de um paciente (110 bpm). */
+export function isSvNormativeRangeText(text: string): boolean {
+  const t = text.toLowerCase();
+  return (
+    /\d+\s*(?:a|–|-|ate|até)\s*\d+/.test(t) ||
+    /\d+\s*[–-]\s*\d+/.test(t) ||
+    /<\s*\d+|≥\s*\d+|>=\s*\d+/.test(t)
+  );
+}
+
 export type ParsedTranslationStep =
   | {
       kind: 'translation';
@@ -174,12 +239,61 @@ export type ParsedTranslationStep =
       title: string;
     };
 
+/**
+ * Classifica NORMAL/ALTERADO a partir do valor aferido (sem termo clínico).
+ * Usado no vitals-panel quando o concept_map omite `correct` (anti-spoiler).
+ */
+export function inferMeasuredVitalStatus(
+  text: string,
+): 'normal' | 'altered' | null {
+  const blob = text.replace(/\s+/g, ' ').trim();
+  if (!rowHasMeasuredVital(blob, '')) return null;
+
+  const pa = blob.match(/(\d+)\s*[×x]\s*(\d+)\s*mmhg/i);
+  if (pa) {
+    const sys = Number(pa[1]);
+    const dia = Number(pa[2]);
+    if (!Number.isFinite(sys) || !Number.isFinite(dia)) return null;
+    return sys < 120 && dia < 80 ? 'normal' : 'altered';
+  }
+
+  const temp = blob.match(/(\d+[,.]?\d*)\s*°\s*c/i);
+  if (temp) {
+    const c = Number(temp[1].replace(',', '.'));
+    if (!Number.isFinite(c)) return null;
+    return c >= 36 && c <= 37.5 ? 'normal' : 'altered';
+  }
+
+  const fc = blob.match(/(\d+)\s*bpm/i);
+  if (fc) {
+    const bpm = Number(fc[1]);
+    if (!Number.isFinite(bpm)) return null;
+    return bpm >= 60 && bpm <= 100 ? 'normal' : 'altered';
+  }
+
+  const fr = blob.match(/(\d+)\s*(?:mpm|irpm)/i);
+  if (fr) {
+    const rate = Number(fr[1]);
+    if (!Number.isFinite(rate)) return null;
+    return rate >= 12 && rate <= 20 ? 'normal' : 'altered';
+  }
+
+  const spo2 = blob.match(/(\d+)\s*%/);
+  if (spo2 && /spo2|saturação|saturacao|oxim/i.test(blob)) {
+    const pct = Number(spo2[1]);
+    if (!Number.isFinite(pct)) return null;
+    return pct >= 95 ? 'normal' : 'altered';
+  }
+
+  return null;
+}
+
 export function parseTranslationStep(step: string, index: number): ParsedTranslationStep {
-  const match = step.match(/interpretar\s+(?:a\s+)?(.+?):\s*(.+?)\s*=\s*(.+?)\.?$/i);
-  if (match) {
-    const svName = match[1].trim();
-    const rawValue = match[2].trim();
-    const clinicalTerm = match[3].trim();
+  const interpret = step.match(/interpretar\s+(?:a\s+)?(.+?):\s*(.+?)\s*=\s*(.+?)\.?$/i);
+  if (interpret) {
+    const svName = interpret[1].trim();
+    const rawValue = interpret[2].trim();
+    const clinicalTerm = interpret[3].trim();
     const iconSource = `${svName} ${rawValue}`;
     return {
       kind: 'translation',
@@ -191,10 +305,40 @@ export function parseTranslationStep(step: string, index: number): ParsedTransla
     };
   }
 
+  // Forma compacta das âncoras: "PA 110×75 mmHg → normotenso (…)."
+  // Não confundir com eliminação MCQ: "B: febril → eliminar." / "A — 30 a 60 irpm → candidata."
+  const arrow = step.match(/^(.+?)\s*(?:→|->)\s*(.+?)\.?$/);
+  if (arrow) {
+    const left = arrow[1].trim();
+    const right = arrow[2].trim();
+    const rightLower = right.toLowerCase();
+    const leftIsMcqLetter = /^[a-e]\b/i.test(left) || /^letra\s+[a-e]\b/i.test(left);
+    if (
+      !leftIsMcqLetter &&
+      !/eliminar|elimine|gabarito|candidat|em similares|marcar|excluir/.test(rightLower) &&
+      rowHasMeasuredVital(left, '') &&
+      !/^[a-e]\s*:/i.test(left)
+    ) {
+      const clinicalTerm = right.replace(/\s*\([^)]*\)\s*$/, '').trim();
+      const rawValue = extractMeasuredValue(left);
+      const svName = inferSvShortLabel(left);
+      const iconSource = `${left} ${rawValue}`;
+      return {
+        kind: 'translation',
+        svName,
+        rawValue,
+        clinicalTerm,
+        referenceRange: inferSvReferenceRange(iconSource),
+        iconName: inferSvIconName(iconSource),
+      };
+    }
+  }
+
   const lower = step.toLowerCase();
   let title = `Passo ${index + 1}`;
-  if (/combinar|marcar|gabarito|alternativa/.test(lower)) title = 'Conclusão';
+  if (/combinar|marcar|gabarito|alternativa|em similares/.test(lower)) title = 'Conclusão';
   if (/ler o caso|identificar os valores/.test(lower)) title = 'Leitura inicial';
+  if (/^[a-e]\s*[:—-]/.test(step) || /eliminar|candidat/.test(lower)) title = 'Eliminação';
 
   return { kind: 'plain', text: step, title };
 }

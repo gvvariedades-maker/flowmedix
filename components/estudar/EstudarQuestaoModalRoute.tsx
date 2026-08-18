@@ -57,7 +57,6 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
 
   const close = useCallback(() => {
     dismissToVitrine({
-      fromPlano: displayPayload?.fromPlano,
       fromCaderno: displayPayload?.fromCaderno,
       vitrineQuerySuffix: displayPayload?.vitrineQuerySuffix,
     });

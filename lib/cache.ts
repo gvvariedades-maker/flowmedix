@@ -358,6 +358,7 @@ function estudarPayloadSearchContextKeyFromParams(searchParams: EstudarSearchPar
 export type GetEstudarQuestaoPayloadCachedInput = {
   slug: string;
   userId?: string | null;
+  userEmail?: string | null;
   isAdmin?: boolean;
   searchParams?: EstudarSearchParams;
   layers?: EstudarQuestaoLayers;
@@ -398,6 +399,7 @@ export async function getEstudarQuestaoPayloadCached(
       return buildEstudarQuestaoPlayerPayload({
         slug: input.slug,
         userId: input.userId,
+        userEmail: input.userEmail,
         isAdmin: input.isAdmin,
         searchParams: input.searchParams,
         layers,
@@ -512,6 +514,8 @@ export type HistoricoQuestaoCachedRow = {
   modulo_slug: string;
   acertou: boolean;
   estudo_reverso_concluido: boolean;
+  /** false = placeholder sem alternativa; omitido/`true` = tentativa real. */
+  respondida?: boolean;
 };
 
 /** PostgREST: lotes de `modulo_slug` em `.in()` (mesmo padrão de `lib/spaced-repetition.ts`). */
@@ -618,7 +622,7 @@ export async function getHistoricoQuestoesForSlugsCached(
             async () =>
               supabase
                 .from('historico_questoes')
-                .select('modulo_slug, acertou, estudo_reverso_concluido')
+                .select('modulo_slug, acertou, estudo_reverso_concluido, respondida')
                 .eq('user_id', userId)
                 .in('modulo_slug', part),
           ),
@@ -665,7 +669,7 @@ export async function getHistoricoQuestoesCached(userId?: string) {
         async () =>
           supabase
             .from('historico_questoes')
-            .select('modulo_slug, acertou, estudo_reverso_concluido')
+            .select('modulo_slug, acertou, estudo_reverso_concluido, respondida')
             .eq('user_id', userId)
             .limit(1000),
       );

@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "banca": "Adm&Tec",
+    "prova": "Tec (CIMPAJÉS)",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Coleta de Exames Laboratoriais",
+    "pedagogical_branch": "coleta_tubos_ordem",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-05",
+      "reviewer": "agent:golden-anchor",
+      "guideline_snapshot": "CLSI GP41 / H03-A6 — ordem de coleta por tubos a vácuo e prevenção de contaminação cruzada por aditivos",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "clsi-gp41-tube-order",
+        "tier": "A",
+        "issuer": "CLSI",
+        "title": "Collection of Diagnostic Venous Blood Specimens — ordem de tubos e aditivos",
+        "year": 2017,
+        "covers": [
+          "sequência citrato → soro → heparina → EDTA → fluoreto",
+          "contaminação cruzada de aditivos",
+          "tubos a vácuo por cor"
+        ]
+      },
+      {
+        "id": "potter-fundamentos-coleta-11ed",
+        "tier": "B",
+        "issuer": "Elsevier / Potter & Perry",
+        "title": "Fundamentos de Enfermagem — Coleta de amostras sanguíneas",
+        "year": 2024,
+        "covers": [
+          "ordem de enchimento de tubos",
+          "identificação por tampa/cor"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Os tubos em que o sangue é coletado podem conter um ou mais aditivos, dependendo do objetivo da análise. O padrão de cores dos tubos irá identificar quais aditivos estão presentes. A recomendação da sequência dos tubos deve ser respeitada, para que não ocorra contaminação por aditivos nos tubos subsequentes (contaminação cruzada dos aditivos), quando há necessidade da coleta para diversos analitos de um mesmo paciente. A ordem CORRETA para coleta de sangue por tubos a vácuo é:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Amarelo/vermelho (ativador de coágulo), Azul (citrato de sódio), Verde (heparina) e Lilás/roxo (EDTA), e Cinza (fluoreto de sódio/EDTA).",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Azul (citrato de sódio), Verde (heparina), Amarelo/vermelho (ativador de coágulo), Lilás/roxo (EDTA) e Cinza (fluoreto de sódio/EDTA).",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Azul (citrato de sódio), Amarelo/vermelho (ativador de coágulo), Verde (heparina), Lilás/roxo (EDTA) e Cinza (fluoreto de sódio/EDTA).",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Azul (citrato de sódio), Amarelo/vermelho (ativador de coágulo), Verde (heparina), Cinza (fluoreto de sódio/EDTA) e Lilás/roxo (EDTA).",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Tubos a vácuo — mapa da sequência",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "items": [
+        {
+          "label": "Contaminação cruzada",
+          "detail": "Aditivo de um tubo pode alterar o resultado do próximo se a ordem de coleta for invertida.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Citrato primeiro (azul)",
+          "detail": "Tubos com citrato vêm antes dos demais — evita carry-over de anticoagulante.",
+          "icon": "Droplet"
+        },
+        {
+          "label": "Soro e heparina",
+          "detail": "Amarelo/vermelho (coágulo) e verde (heparina) ficam após o azul, antes dos tubos finais.",
+          "icon": "TestTube"
+        },
+        {
+          "label": "Pegadinha cinza × roxo",
+          "detail": "Fluoreto (cinza) costuma vir antes do EDTA (lilás/roxo) — inverter esses dois é erro clássico.",
+          "icon": "Shuffle"
+        },
+        {
+          "label": "Cores = aditivos",
+          "detail": "A tampa identifica o aditivo; a banca testa a sequência normativa, não só a cor isolada.",
+          "icon": "Palette"
+        }
+      ],
+      "footer_rule": "Azul → soro → heparina → cinza → EDTA — sem trocar os dois últimos"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "steps": [
+        "Comando: ordem correta de tubos a vácuo para evitar contaminação cruzada de aditivos.",
+        "Fixar 1º tubo: citrato (azul) — nunca iniciar por soro ou heparina.",
+        "Depois do azul: amarelo/vermelho (ativador) → verde (heparina).",
+        "Últimos dois: cinza (fluoreto) antes de lilás/roxo (EDTA) — não inverter.",
+        "Sequência completa bate com letra D.",
+        "Eliminar A (soro antes do azul), B (heparina antes do soro) e C (EDTA antes do cinza).",
+        "Marcar D.",
+        "Em similares: memorize o par final cinza → roxo antes de cruzar com as letras."
+      ],
+      "footer_rule": "Trilho: azul → amarelo/vermelho → verde → cinza → lilás/roxo"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Ordem CLSI — tubos a vácuo",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "SEQUÊNCIA DE COLETA — TUBOS A VÁCUO",
+      "rows": [
+        {
+          "label": "1º — citrato",
+          "value": "Azul (citrato de sódio)",
+          "badge": "ok"
+        },
+        {
+          "label": "2º — soro",
+          "value": "Amarelo/vermelho (ativador de coágulo)",
+          "badge": "ok"
+        },
+        {
+          "label": "3º — heparina",
+          "value": "Verde (heparina)",
+          "badge": "ok"
+        },
+        {
+          "label": "4º — fluoreto",
+          "value": "Cinza (fluoreto de sódio/EDTA)",
+          "badge": "hot"
+        },
+        {
+          "label": "5º — EDTA",
+          "value": "Lilás/roxo (EDTA)",
+          "badge": "hot"
+        },
+        {
+          "label": "Regra-mãe",
+          "value": "Respeitar a ordem evita contaminação cruzada entre aditivos",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Decore o trilho de cores — cinza sempre antes do roxo nesta prova"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "PEGADINHAS — ORDEM DE TUBOS Adm&Tec",
+      "items": [
+        {
+          "label": "Letra A — soro antes do citrato",
+          "detail": "Começa por amarelo/vermelho e só depois o azul.",
+          "correct": "Citrato (azul) deve ser o primeiro tubo da sequência."
+        },
+        {
+          "label": "Letra B — heparina antes do soro",
+          "detail": "Verde vem antes do amarelo/vermelho, invertendo soro e heparina.",
+          "correct": "Após o azul, vem o tubo de soro (amarelo/vermelho) e depois o verde."
+        },
+        {
+          "label": "Letra C — EDTA antes do fluoreto",
+          "detail": "Lilás/roxo aparece antes do cinza no final da lista.",
+          "correct": "Fluoreto (cinza) coleta antes do EDTA (lilás/roxo) para evitar erro analítico."
+        },
+        {
+          "label": "Confundir cor com função",
+          "detail": "Decorar só a cor sem a sequência leva a trocar os dois últimos tubos.",
+          "correct": "Sempre fechar com cinza → lilás/roxo quando a prova lista esses cinco aditivos."
+        }
+      ],
+      "footer_rule": "A pegadinha clássica é trocar cinza e roxo no fim da sequência"
+    }
+  ]
+}

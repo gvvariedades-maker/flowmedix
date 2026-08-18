@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T01:00:17.232Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g26",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-9",
+    "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-0",
+    "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-1",
+    "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-2",
+    "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-4",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-6",
+    "univali-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-0",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-9"
+  ],
+  "results": [
+    {
+      "modulo_slug": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

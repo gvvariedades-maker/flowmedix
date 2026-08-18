@@ -1,0 +1,28 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g11",
+  "exported_at": "2026-08-06T01:55:44.271Z",
+  "source": "from-completo",
+  "parent": "coleta-de-exames-laboratoriais-completo",
+  "filters": {
+    "slugs": [
+      "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562716126-3",
+      "instituto-consulpam-enfermagem-exames-complementares-1779563674260-5",
+      "instituto-verbena-enfermagem-coleta-de-exames-laboratoriais-1779563248005-6",
+      "itame-enfermagem-exames-complementares-1779563679414-4",
+      "ivin-enfermagem-exames-laboratoriais-1779563559434-6",
+      "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779562768558-7",
+      "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779562716126-8",
+      "objetiva-concursos-enfermagem-exames-laboratoriais-1779563621885-7"
+    ]
+  },
+  "slugs": [
+    "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562716126-3",
+    "instituto-consulpam-enfermagem-exames-complementares-1779563674260-5",
+    "instituto-verbena-enfermagem-coleta-de-exames-laboratoriais-1779563248005-6",
+    "itame-enfermagem-exames-complementares-1779563679414-4",
+    "ivin-enfermagem-exames-laboratoriais-1779563559434-6",
+    "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779562768558-7",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779562716126-8",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563621885-7"
+  ]
+}

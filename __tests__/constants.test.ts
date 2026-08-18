@@ -35,6 +35,17 @@ describe('isAdminSessionEmail', () => {
     expect(isAdminSessionEmail('terceiro@exemplo.com')).toBe(true);
     expect(isAdminSessionEmail('gvvariedades@gmail.com')).toBe(false);
   });
+
+  it('relê ADMIN_EMAIL em runtime sem reimport (anti Preview→Promote stale)', async () => {
+    delete process.env.ADMIN_EMAIL;
+    delete process.env.ADMIN_EMAILS;
+    const { isAdminSessionEmail } = await import('@/lib/constants');
+
+    expect(isAdminSessionEmail('gvvariedades@gmail.com')).toBe(false);
+
+    process.env.ADMIN_EMAIL = 'gvvariedades@gmail.com';
+    expect(isAdminSessionEmail('gvvariedades@gmail.com')).toBe(true);
+  });
 });
 
 describe('getFreemiumStatusForUser (admin)', () => {

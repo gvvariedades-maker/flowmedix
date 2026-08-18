@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "banca": "Adm&Tec",
+    "prova": "ACS (FMS Ág Belas)",
+    "orgao": "FMS Águas Belas",
+    "ano": "2023",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "epi_vigilancia_acoes",
+    "content_review": {
+      "reviewed_at": "2026-08-03",
+      "reviewer": "pipeline-epi",
+      "guideline_snapshot": "Lei nº 8.080/1990, art. 6º §§1º-2º — definições legais de vigilância epidemiológica x vigilância sanitária; vigilância nutricional/fiscalização de alimentos como atividade do SUS",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "lei-8080-1990",
+        "tier": "A",
+        "issuer": "Presidência da República",
+        "title": "Lei nº 8.080, de 19 de setembro de 1990 — art. 6º, §§1º e 2º",
+        "year": 1990,
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm",
+        "covers": [
+          "definição legal de vigilância epidemiológica",
+          "definição legal de vigilância sanitária",
+          "vigilância nutricional e fiscalização de alimentos como atividade do SUS"
+        ]
+      },
+      {
+        "id": "guia-vigilancia-saude-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Guia de Vigilância em Saúde",
+        "year": 2022,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_5ed_2022.pdf",
+        "covers": ["objeto da vigilância epidemiológica x vigilância sanitária"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Analise as afirmações a seguir:\nI\n. Vigilância epidemiológica é um conjunto de ações capaz de eliminar, diminuir ou prevenir riscos à saúde e de intervir nos problemas de saúde públicadecorrentes do meio ambiente, da produção e circulação de bens e da prestação de serviços de interesse da saúde\nII\n. Vigilância sanitária é um conjunto de ações que proporcionam o conhecimento, a detecção ou prevenção de qualquer mudança nos fatores determinantes econdicionantes de saúde individual ou coletiva, com a finalidade de recomendar e adotar as medidas de prevenção e controle das doenças ou agravos.\nIII\n. Entre as atividades do Sistema Único de Saúde se encontra a vigilância nutricional e a orientação alimentar, além da fiscalização e a inspeção de alimentos,água e bebidas para consumo humano.\nMarque a alternativa CORRETA:",
+    "options": [
+      { "id": "A", "text": "Todas as afirmativas estão corretas.", "is_correct": false },
+      { "id": "B", "text": "Nenhuma afirmativa está correta.", "is_correct": false },
+      { "id": "C", "text": "Apenas uma afirmativa está correta.", "is_correct": true },
+      { "id": "D", "text": "Apenas duas afirmativas estão corretas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Vigilância epidemiológica x sanitária — Lei 8.080/90",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "items": [
+        {
+          "label": "Cenário da prova",
+          "detail": "Três afirmativas atribuem definições legais a vigilância epidemiológica, sanitária e a atividades do SUS.",
+          "icon": "Scale"
+        },
+        {
+          "label": "Eixo de leitura",
+          "detail": "Vigilância epidemiológica foca em doenças e agravos; vigilância sanitária foca em ambiente, bens e serviços.",
+          "icon": "Split"
+        },
+        {
+          "label": "Atividade do SUS",
+          "detail": "Vigilância nutricional, orientação alimentar e fiscalização de alimentos/água integram o rol de ações do sistema.",
+          "icon": "Utensils"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "A banca apresenta a definição certa, mas com o rótulo (nome) trocado entre as duas vigilâncias.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Confira o objeto da definição, não só o texto decorado"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "steps": [
+        "Ler o comando: julgar I, II e III sobre vigilância epidemiológica, sanitária e atividades do SUS.",
+        "Fixar a base legal: a Lei 8.080/90 separa vigilância epidemiológica (foco em doenças/agravos) de vigilância sanitária (foco em ambiente, bens e serviços).",
+        "Testar I: o texto fala em riscos do meio ambiente, bens e serviços sob o rótulo 'vigilância epidemiológica'.",
+        "Esse é o objeto da vigilância sanitária, não da epidemiológica — eliminar I (rótulo trocado).",
+        "Testar II: o texto fala em fatores de saúde individual/coletiva e controle de doenças sob o rótulo 'vigilância sanitária'.",
+        "Esse é o objeto da vigilância epidemiológica, não da sanitária — eliminar II (rótulo trocado).",
+        "Testar III: vigilância nutricional, orientação alimentar e fiscalização de alimentos e água constam entre as atividades do SUS — confirma III.",
+        "Resultado: só a afirmativa III resiste ao teste — apenas uma correta.",
+        "Marcar letra C.",
+        "Em similares: quando a prova troca os nomes de VE/VS, leia o objeto da definição (doença x ambiente/bens) antes de aceitar o rótulo."
+      ],
+      "footer_rule": "Objeto da definição decide, não o rótulo"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — VE x VS (Lei 8.080/90)",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "content": "LEI 8.080/90 — VIGILÂNCIA EPIDEMIOLÓGICA X SANITÁRIA",
+      "rows": [
+        {
+          "label": "Vigilância epidemiológica",
+          "value": "Conhecimento, detecção e prevenção de mudanças em fatores de saúde individual/coletiva — foco em doenças e agravos.",
+          "badge": "ok"
+        },
+        {
+          "label": "Vigilância sanitária",
+          "value": "Elimina, diminui ou previne riscos ligados a ambiente, produção/circulação de bens e serviços — foco fiscalizador.",
+          "badge": "ok"
+        },
+        {
+          "label": "Atividade do SUS",
+          "value": "Vigilância nutricional, orientação alimentar e fiscalização de alimentos/água/bebidas para consumo humano.",
+          "badge": "ok"
+        },
+        {
+          "label": "Armadilha comum",
+          "value": "A banca troca o nome VE↔VS mantendo o texto da definição correta.",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Decore: VE = doença/agravo; VS = ambiente/bens/serviços"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "content": "PEGADINHAS — rótulo trocado entre VE e VS",
+      "items": [
+        {
+          "label": "Afirmativa I — rótulo trocado (VE)",
+          "detail": "O texto fala em ambiente, produção e circulação de bens e serviços sob o rótulo de vigilância epidemiológica.",
+          "correct": "Essa é a definição legal de vigilância sanitária — o objeto é ambiente/bens, não doença."
+        },
+        {
+          "label": "Afirmativa II — rótulo trocado (VS)",
+          "detail": "O texto fala em fatores de saúde individual/coletiva e controle de doenças sob o rótulo de vigilância sanitária.",
+          "correct": "Essa é a definição legal de vigilância epidemiológica — o objeto é doença/agravo, não ambiente."
+        },
+        {
+          "label": "Alternativa D — 'duas corretas'",
+          "detail": "Tenta somar a afirmativa III com I ou II, como se a troca de rótulo não invalidasse a frase.",
+          "correct": "Só III resiste — I e II têm texto certo com rótulo errado, o que as invalida."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Em outra prova: troca 'vigilância ambiental' por 'vigilância epidemiológica' na mesma armadilha de rótulo.",
+          "correct": "Sempre confira se o objeto da definição (doença x ambiente x bens) combina com o nome dado a ela."
+        }
+      ],
+      "footer_rule": "Texto certo com rótulo errado ainda está errado"
+    }
+  ]
+}

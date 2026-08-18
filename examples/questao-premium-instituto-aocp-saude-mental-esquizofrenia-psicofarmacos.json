@@ -22,7 +22,11 @@
         "issuer": "Ministério da Saúde",
         "title": "Cuidado em saúde mental — farmacoterapia e vigilância de efeitos adversos",
         "year": 2021,
-        "covers": ["antipsicóticos", "efeitos extrapiramidais", "cuidados de enfermagem"]
+        "covers": [
+          "antipsicóticos",
+          "efeitos extrapiramidais",
+          "cuidados de enfermagem"
+        ]
       },
       {
         "id": "cofen-admin-medicamentos",
@@ -30,7 +34,11 @@
         "issuer": "COFEN",
         "title": "Código de Ética e legislação — administração de medicamentos",
         "year": 2018,
-        "covers": ["observação clínica", "orientação ao usuário", "segurança"]
+        "covers": [
+          "observação clínica",
+          "orientação ao usuário",
+          "segurança"
+        ]
       }
     ]
   },
@@ -69,7 +77,10 @@
       "type": "concept_map",
       "slide_title": "Psicotrópicos — efeito × cuidado",
       "chip_label": "CASO CLÍNICO",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
       "items": [
         {
           "label": "Caso",
@@ -90,11 +101,6 @@
           "label": "Pareamento errado B",
           "detail": "Xerostomia = boca seca — não se confunde com orientação primária sobre quedas (ataxia).",
           "icon": "Ban"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra C — ataxia pede cuidado com coordenação motora.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Relacione cada efeito adverso ao cuidado específico — não troque os pares"
@@ -103,14 +109,32 @@
       "type": "golden_rule",
       "slide_title": "Efeitos adversos — referência",
       "chip_label": "REGRA DE OURO",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
       "content": "EFEITO ADVERSO → CUIDADO ESPECÍFICO",
       "rows": [
-        { "label": "Ataxia", "value": "Orientar exercícios de coordenação motora", "badge": "hot" },
-        { "label": "Xerostomia", "value": "Higiene oral, hidratação, estimular salivação", "badge": "ok" },
-        { "label": "Discinesia tardia", "value": "Observar movimentos involuntários; comunicar à equipe", "badge": "ok" },
-        { "label": "EPS", "value": "Vigilância motora; medicação conforme prescrição médica", "badge": "ok" },
-        { "label": "Gabarito", "value": "Letra C — ataxia × coordenação", "emphasis": "success", "badge": "hot" }
+        {
+          "label": "Ataxia",
+          "value": "Orientar exercícios de coordenação motora",
+          "badge": "hot"
+        },
+        {
+          "label": "Xerostomia",
+          "value": "Higiene oral, hidratação, estimular salivação",
+          "badge": "ok"
+        },
+        {
+          "label": "Discinesia tardia",
+          "value": "Observar movimentos involuntários; comunicar à equipe",
+          "badge": "ok"
+        },
+        {
+          "label": "EPS",
+          "value": "Vigilância motora; medicação conforme prescrição médica",
+          "badge": "ok"
+        }
       ],
       "footer_rule": "Antipsicótico crônico exige vigilância de EPS e efeitos motores"
     },
@@ -118,7 +142,10 @@
       "type": "logic_flow",
       "slide_title": "Como resolver — efeito × cuidado",
       "chip_label": "PASSO A PASSO",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
       "reveal_mode": "tap",
       "steps": [
         "Listar efeitos do caso: ataxia, discinesia tardia, letargia, xerostomia, EPS.",
@@ -136,7 +163,10 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
       "content": "PEGADINHAS — PSICOFÁRMACOS NA ESQUIZOFRENIA",
       "items": [
         {

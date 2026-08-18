@@ -67,34 +67,85 @@
     {
       "type": "concept_map",
       "slide_title": "Linha do tempo — puerpério",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde da Mulher"
+      },
       "items": [
-        { "label": "Marco da questão", "detail": "Consulta de puerpério até o 42º dia pós-parto (letra A).", "icon": "Calendar" },
-        { "label": "Visita domiciliar", "detail": "Primeira semana após alta do recém-nascido — não após o 42º dia.", "icon": "Home" },
-        { "label": "Aleitamento", "detail": "AM exclusivo até 6 meses — não só 3 meses (D falsa).", "icon": "Baby" },
-        { "label": "Pegadinha 30 dias", "detail": "Puerpério não fecha aos 30 dias — MS usa até 42 dias.", "icon": "AlertTriangle" }
+        {
+          "label": "Marco da questão",
+          "detail": "Consulta de puerpério até o 42º dia pós-parto.",
+          "icon": "Calendar"
+        },
+        {
+          "label": "Visita domiciliar",
+          "detail": "Primeira semana após alta do recém-nascido — não após o 42º dia.",
+          "icon": "Home"
+        },
+        {
+          "label": "Aleitamento",
+          "detail": "AM exclusivo até 6 meses — não só 3 meses (D falsa).",
+          "icon": "Baby"
+        },
+        {
+          "label": "Pegadinha 30 dias",
+          "detail": "Puerpério não fecha aos 30 dias — MS usa até 42 dias.",
+          "icon": "AlertTriangle"
+        }
       ],
       "footer_rule": "42 dias consulta · visita na 1ª semana · AM 6 meses"
     },
     {
       "type": "golden_rule",
       "slide_title": "Puerpério — referência MS",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde da Mulher"
+      },
       "content": "ACOMPANHAMENTO PUERPERAL",
       "rows": [
-        { "label": "Consulta puerpério", "value": "Até o 42º dia após o parto", "badge": "hot", "emphasis": "highlight" },
-        { "label": "Visita domiciliar", "value": "Primeira semana após alta do RN", "badge": "hot" },
-        { "label": "AM exclusivo", "value": "Até 6 meses de vida", "badge": "info" },
-        { "label": "Puerpério imediato", "value": "Primeiras 24 h — vigilância hemorragia e pega", "badge": "info" },
-        { "label": "Direitos sociais", "value": "Orientar Previdência e rede de apoio — cuidado integral", "badge": "info" },
-        { "label": "Pegadinha 30 dias", "value": "Não é limite da consulta puerperal", "badge": "warn", "emphasis": "alert" }
+        {
+          "label": "Consulta puerpério",
+          "value": "Até o 42º dia após o parto",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Visita domiciliar",
+          "value": "Primeira semana após alta do RN",
+          "badge": "hot"
+        },
+        {
+          "label": "AM exclusivo",
+          "value": "Até 6 meses de vida",
+          "badge": "info"
+        },
+        {
+          "label": "Puerpério imediato",
+          "value": "Primeiras 24 h — vigilância hemorragia e pega",
+          "badge": "info"
+        },
+        {
+          "label": "Direitos sociais",
+          "value": "Orientar Previdência e rede de apoio — cuidado integral",
+          "badge": "info"
+        },
+        {
+          "label": "Pegadinha 30 dias",
+          "value": "Não é limite da consulta puerperal",
+          "badge": "warn",
+          "emphasis": "alert"
+        }
       ],
       "footer_rule": "B=30 dias · C=visita tardia · D=AM curto · E=exclui direitos"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde da Mulher"
+      },
       "steps": [
         "B: puerpério encerra aos 30 dias → eliminar (marco errado — MS: até 42 dias).",
         "C: visita só após 42º dia → eliminar (visita na primeira semana).",
@@ -108,7 +159,10 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde da Mulher"
+      },
       "content": "PEGADINHAS — PUERPÉRIO 30 × 42 DIAS",
       "items": [
         {

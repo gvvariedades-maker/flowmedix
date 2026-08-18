@@ -1,0 +1,35 @@
+﻿=== atencao-basica-saude-da-familia-g03 ===
+[catalog:apply-lote] preflight: passed=8/8 failed=0
+[catalog:apply-lote] ok=8 skipped=0 failed=0
+[catalog:apply-lote] report=D:\AVANT\artifacts\catalog-migration-atencao-basica-saude-da-familia-g03-applied.json
+summary ok=8 failed=0 total=8
+=== atencao-basica-saude-da-familia-g05 ===
+[catalog:apply-lote] preflight: passed=8/8 failed=0
+[catalog:apply-lote] ok=8 skipped=0 failed=0
+[catalog:apply-lote] report=D:\AVANT\artifacts\catalog-migration-atencao-basica-saude-da-familia-g05-applied.json
+summary ok=8 failed=0 total=8
+=== atencao-basica-saude-da-familia-g06 ===
+[catalog:apply-lote] preflight: passed=8/8 failed=0
+[catalog:apply-lote] ok=8 skipped=0 failed=0
+[catalog:apply-lote] report=D:\AVANT\artifacts\catalog-migration-atencao-basica-saude-da-familia-g06-applied.json
+summary ok=8 failed=0 total=8
+=== atencao-basica-saude-da-familia-g07 ===
+[catalog:apply-lote] preflight: passed=8/8 failed=0
+[catalog:apply-lote] ok=8 skipped=0 failed=0
+[catalog:apply-lote] report=D:\AVANT\artifacts\catalog-migration-atencao-basica-saude-da-familia-g07-applied.json
+summary ok=8 failed=0 total=8
+=== atencao-basica-saude-da-familia-g13 ===
+[catalog:apply-lote] preflight: passed=8/8 failed=0
+[catalog:apply-lote] ok=8 skipped=0 failed=0
+[catalog:apply-lote] report=D:\AVANT\artifacts\catalog-migration-atencao-basica-saude-da-familia-g13-applied.json
+summary ok=8 failed=0 total=8
+=== atencao-basica-saude-da-familia-g15 ===
+[catalog:apply-lote] preflight: passed=8/8 failed=0
+[catalog:apply-lote] ok=8 skipped=0 failed=0
+[catalog:apply-lote] report=D:\AVANT\artifacts\catalog-migration-atencao-basica-saude-da-familia-g15-applied.json
+summary ok=8 failed=0 total=8
+=== atencao-basica-saude-da-familia-g16 ===
+[catalog:apply-lote] preflight: passed=8/8 failed=0
+[catalog:apply-lote] ok=8 skipped=0 failed=0
+[catalog:apply-lote] report=D:\AVANT\artifacts\catalog-migration-atencao-basica-saude-da-familia-g16-applied.json
+summary ok=8 failed=0 total=8

@@ -30,7 +30,7 @@ export function PwaInstallPanel({
       }
     >
       <div className="flex items-start gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)]">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[rgba(34,197,94,0.35)] bg-[rgba(34,197,94,0.12)]">
           <Smartphone size={20} className="text-[#166534]" aria-hidden />
         </div>
         <div className="min-w-0 flex-1">

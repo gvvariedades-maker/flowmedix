@@ -7,17 +7,19 @@
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
     "subtopico": "Imunização",
-    "pedagogical_branch": "imunizacao_calendario",
+    "pedagogical_branch": "imunizacao_generico",
     "content_standard": "golden-v1",
     "family": "conceito",
     "content_review": {
-      "reviewed_at": "2026-07-01",
-      "reviewer": "professor-para-concurso",
+      "reviewed_at": "2026-08-05",
+      "reviewer": "ancoras-100",
       "guideline_snapshot": "PNI 2025 — SCR 1ª dose aos 12 meses, via subcutânea",
       "exam_vs_current": "none",
       "catalog_slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
       "repair_lote": "imunizacao-decorp-triplice-viral-repair",
-      "applied_at": "2026-07-01"
+      "cluster": "Via / técnica sala — SCR subcutânea",
+      "anchor_role": "piloto_generico_via_scr",
+      "ancoras_100_status": "approved"
     },
     "sources": [
       {
@@ -27,7 +29,11 @@
         "title": "Calendário Nacional de Vacinação — tríplice viral (SCR)",
         "year": 2025,
         "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
-        "covers": ["SCR 12 meses", "via subcutânea", "SCRV 15 meses"]
+        "covers": [
+          "SCR 12 meses",
+          "via subcutânea",
+          "SCRV 15 meses"
+        ]
       }
     ]
   },
@@ -59,38 +65,52 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "SCR — 1 ano de vida",
+      "slide_title": "SCR — via correta aos 12 meses",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
       "items": [
         {
-          "label": "Comando",
-          "detail": "Via correta da tríplice viral (sarampo, caxumba, rubéola) aos 12 meses — PNI.",
+          "label": "Âncora da prova",
+          "detail": "Tríplice viral (sarampo, caxumba, rubéola) aos 12 meses — a banca cobra a via, não só a idade.",
           "icon": "Target"
         },
         {
-          "label": "Esquema",
-          "detail": "1ª dose aos 12 meses; 2ª dose aos 15 meses (SCRV ou SCR).",
-          "icon": "Calendar"
-        },
-        {
           "label": "Via PNI",
-          "detail": "Subcutânea — vacina atenuada, nunca endovenosa.",
+          "detail": "Subcutânea — vacina atenuada. Nunca endovenosa.",
           "icon": "Syringe"
         },
         {
-          "label": "Pegadinha",
-          "detail": "IM é para pentavalente/VIP — SCR não entra nesse grupo.",
+          "label": "Esquema",
+          "detail": "1ª dose aos 12 meses; 2ª aos 15 meses (SCRV ou SCR).",
+          "icon": "Calendar"
+        },
+        {
+          "label": "Pegadinha IM",
+          "detail": "Intramuscular é pentavalente/VIP/hepatite B — SCR não entra nesse grupo.",
           "icon": "AlertTriangle"
         }
       ],
-      "footer_rule": "SCR = 12m · subcutânea"
+      "footer_rule": "SCR = 12m · SUBCUTÂNEA"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "steps": [
+        "Criança de 1 ano · 1ª dose SCR — a banca cobra a via, não só a idade.",
+        "Eliminar: B ID=BCG · C IM=penta/VIP · D EV=nunca vacina.",
+        "Marcar A — subcutânea. Em similares: SCR, SCRV, FA e varicela = SC."
+      ],
+      "footer_rule": "IM ≠ SCR — decore a via por vacina"
     },
     {
       "type": "golden_rule",
-      "slide_title": "Vias no calendário infantil",
+      "slide_title": "Decore — vias no calendário infantil",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
@@ -100,11 +120,16 @@
         {
           "label": "SCR (12 meses)",
           "value": "Subcutânea",
-          "emphasis": "success",
+          "emphasis": "highlight",
           "badge": "hot"
         },
         {
           "label": "SCRV / 2ª dose",
+          "value": "Subcutânea",
+          "badge": "ok"
+        },
+        {
+          "label": "Febre amarela / varicela",
           "value": "Subcutânea",
           "badge": "ok"
         },
@@ -117,38 +142,9 @@
           "label": "BCG",
           "value": "Intradérmica",
           "badge": "warn"
-        },
-        {
-          "label": "Febre amarela",
-          "value": "Subcutânea",
-          "badge": "info"
-        },
-        {
-          "label": "Conduta desta questão",
-          "value": "Letra A — via subcutânea",
-          "emphasis": "success",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Atenuadas SC: SCR, SCRV, FA, varicela"
-    },
-    {
-      "type": "logic_flow",
-      "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Imunização"
-      },
-      "steps": [
-        "Cenário: criança de 1 ano → 1ª dose de tríplice viral no PNI.",
-        "Recuperar regra: SCR = subcutânea.",
-        "B intradérmica → BCG; eliminar.",
-        "C intramuscular → pentavalente/VIP; eliminar.",
-        "D endovenosa → vacina nunca EV; eliminar.",
-        "A subcutânea → correta.",
-        "Marcar A."
-      ],
-      "footer_rule": "IM ≠ SCR — decore a via por vacina"
     },
     {
       "type": "danger_zone",
@@ -161,12 +157,12 @@
       "items": [
         {
           "label": "Letra B — intradérmica",
-          "detail": "Parece técnica de vacinação.",
+          "detail": "Parece técnica de vacinação fina.",
           "correct": "Intradérmica é BCG — não tríplice viral."
         },
         {
           "label": "Letra C — intramuscular",
-          "detail": "Muitas vacinas do calendário são IM.",
+          "detail": "Muitas vacinas do calendário são IM — aluno generaliza.",
           "correct": "SCR é subcutânea — erro clássico de prova."
         },
         {
@@ -175,12 +171,12 @@
           "correct": "Vacina nunca é administrada por via endovenosa."
         },
         {
-          "label": "Transferência",
-          "detail": "Tetra viral aos 15 meses e febre amarela.",
-          "correct": "Também são subcutâneas no PNI."
+          "label": "Transferência — SCRV / FA",
+          "detail": "Tetra viral aos 15 meses e febre amarela na sala.",
+          "correct": "Também são subcutâneas no PNI — mesmo bloco mental da SCR."
         }
       ],
-      "footer_rule": "Na dúvida: SCR/SCRV/FA = subcutânea"
+      "footer_rule": "Na dúvida: SCR / SCRV / FA = subcutânea"
     }
   ]
 }

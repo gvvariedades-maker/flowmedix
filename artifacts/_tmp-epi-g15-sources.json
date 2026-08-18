@@ -1,0 +1,257 @@
+[
+  {
+    "file": "ibfc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-2.json",
+    "instruction": "A notificação compulsória é a comunicação obrigatória à autoridade de saúde, realizada por médicos, profissionais de saúde ou responsáveis pelosestabelecimentos de saúde, públicos ou privados, sobre a ocorrência de suspeita ou confirmação de doença, agravo ou evento de saúde pública. Sobre as doenças denotificação compulsória imediata, assinale a alternativa\nincorreta\n.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Botulismo",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Tularemia",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Poliomielite",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Esquistossomose",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: Esquistossomose"
+    ]
+  },
+  {
+    "file": "idcap-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-0.json",
+    "instruction": "Quais são os componentes da vigilância em saúde?\n4612)\n4613)\n4614)\n4615)\n4616)",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Vigilância das doenças transmissíveis, controle de zoonoses, vigilância da saúde do trabalhador, vigilância epidemiológica e promoção da saúde.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Vigilância e controle de doenças transmissíveis, promoção da saúde, vigilância alimentar, controle de zoonoses e vigilância sanitária.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Vigilância das doenças transmissíveis, controle de endemias, vigilância da saúde mental, vigilância epidemiológica e vigilância ambiental em saúde.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Vigilância e controle de doenças transmissíveis, promoção da saúde, controle de vetores, vigilância sanitária e vigilância epidemiológica.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Vigilância e controle de doenças transmissíveis, vigilância das doenças não-transmissíveis, vigilância da situação de saúde, vigilância ambiental em saúde evigilância sanitária.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "E: Vigilância e controle de doenças transmissíveis, vigilância das doenças não-transmissíveis, vigilância da situação de saúde, vigilância ambiental em saúde evigilância sanitária."
+    ]
+  },
+  {
+    "file": "idcap-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-1.json",
+    "instruction": "A vigilância epidemiológica tem como objetivo fornecer orientação técnica contínua aos profissionais de saúde, capacitando-os a decidir sobre a implementação demedidas de controle de doenças e agravos. Para isso, disponibiliza informações atualizadas sobre a incidência dessas condições e os fatores que as influenciam em áreasgeográficas ou populações específicas. Qual é o papel primordial da adequada coleta e estruturação de dados no contexto da vigilância epidemiológica?",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reduzir o custo operacional dos serviços de saúde.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Subsidiar um processo dinâmico de planejamento e avaliação de ações.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Facilitar o compartilhamento de informações entre países.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Contribuir para a eficácia das intervenções médicas.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Aumentar a conscientização pública sobre questões de saúde.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Subsidiar um processo dinâmico de planejamento e avaliação de ações."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-0.json",
+    "instruction": "O uso de larvicidas consiste em medida secundária ao controle mecânico e é indicado somente em locais onde este apresenta-se inviável: coleções de água, como fontes ornamentais onde não é possível a criação de peixes, por exemplo. No caso de caixas d'água destampadas, pode ser utilizado larvicida como medida transitória, sendo que as providências para o fechamento das mesmas devem ser desencadeadas imediatamente. Sobre a temática apresentada, assinale a alternativa incorreta.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "O controle químico deve, por princípio, ser evitado, principalmente quando existem alternativas que só apresentam benefícios. A diretriz nacional para o controle do Aedes aegypti, orienta que \"é fundamental o uso racional e seguro dos inseticidas nas atividades de controle vetorial, tendo em vista que seu uso indiscriminado determina impactos ambientais, além da possibilidade de desenvolvimento de resistência dos vetores aos produtos\".",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "O uso de larvicidas deve seguir critérios tecnicamente definidos quanto aos locais de aplicação e a quantidade preconizada, respeitando o volume de água existente e tendo em vista a diluição do produto em uso. Além disso, a utilização deve ser adequadamente monitorada a fim de evitar danos ao ambiente e resistência do mosquito ao produto.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "O Ministério da Saúde, recomenda atualmente, o uso do larvicida biológico Pyriproxyfen. A rotatividade de inseticidas é uma medida recomendada para reduzir a pressão seletiva em populações de mosquitos vetores resistentes aos inseticidas.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "O larvicida biológico tem efeito com duração menor e não cumulativo, por isso, não agride o meio ambiente e não deixa resíduos tóxicos – não sendo agressivo a seres humanos, animais domésticos, aves, peixes e plantas.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: O Ministério da Saúde, recomenda atualmente, o uso do larvicida biológico Pyriproxyfen. A rotatividade de inseticidas é uma medida recomendada para reduzir a pressão seletiva em populações de mosquitos vetores resistentes aos inseticidas."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-1.json",
+    "instruction": "Leia o enunciado e responda:\nÉ um conjunto de medidas que visam modificar as características ambientais que favorecem a penetração, instalação e a livre proliferação de roedores: acesso, alimento, abrigo e água. Compreende também ações de educação em saúde, através de informação, orientação e esclarecimento às pessoas ligadas diretamente ao problema, escolares e população em geral. Para serem viáveis, essas medidas precisam de agilidade dos serviços de coleta de lixo, aprimoramento da utilização de aterros sanitários, aperfeiçoamento da legislação sanitária e o envolvimento e participação da comunidade.\nEssa ação é denominada de",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "exterminação.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "extinção.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "desratização.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "anti-ratização.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: anti-ratização."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968239687-7.json",
+    "instruction": "O uso de larvicidas consiste em medida secundária ao controle mecânico e é indicado somente em locais onde este apresenta-se inviável: coleções de água, como\nfontes ornamentais onde não é possível a criação de peixes, por exemplo. No caso de caixas d'água destampadas, pode ser utilizado larvicida como medida transitória,\nsendo que as providências para o fechamento das mesmas devem ser desencadeadas imediatamente. Sobre a temática apresentada, assinale a alternativa incorreta.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "O controle químico deve, por princípio, ser evitado, principalmente quando existem alternativas que só apresentam benefícios. A diretriz nacional para o controle do Aedes aegypti, orienta que \"é fundamental o uso racional e seguro dos inseticidas nas atividades de controle vetorial, tendo em vista que seu uso indiscriminado determina impactos ambientais, além da possibilidade de desenvolvimento de resistência dos vetores aos produtos\".",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "O uso de larvicidas deve seguir critérios tecnicamente definidos quanto aos locais de aplicação e a quantidade preconizada, respeitando o volume de água existente e tendo em vista a diluição do produto em uso. Além disso, a utilização deve ser adequadamente monitorada a fim de evitar danos ao ambiente e resistência do mosquito ao produto.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "O Ministério da Saúde, recomenda atualmente, o uso do larvicida biológico Pyriproxyfen. A rotatividade de inseticidas é uma medida recomendada para reduzir a pressão seletiva em populações de mosquitos vetores resistentes aos inseticidas.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "O larvicida biológico tem efeito com duração menor e não cumulativo, por isso, não agride o meio ambiente e não deixa resíduos tóxicos – não sendo agressivo a seres humanos, animais domésticos, aves, peixes e plantas.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: O Ministério da Saúde, recomenda atualmente, o uso do larvicida biológico Pyriproxyfen. A rotatividade de inseticidas é uma medida recomendada para reduzir a pressão seletiva em populações de mosquitos vetores resistentes aos inseticidas."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968263411-0.json",
+    "instruction": "Leia o enunciado e responda:\nÉ um conjunto de medidas que visam modificar as características ambientais que favorecem a penetração, instalação e a livre proliferação de roedores: acesso, alimento,\nabrigo e água. Compreende também ações de educação em saúde, através de informação, orientação e esclarecimento às pessoas ligadas diretamente ao problema,\nescolares e população em geral. Para serem viáveis, essas medidas precisam de agilidade dos serviços de coleta de lixo, aprimoramento da utilização de aterros\nsanitários, aperfeiçoamento da legislação sanitária e o envolvimento e participação da comunidade.\nEssa ação é denominada de",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "exterminação.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "extinção.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "desratização.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "anti-ratização.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: anti-ratização."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1778712242196-3.json",
+    "instruction": "A gestão do risco de desastres é um processo complexo que envolve o planejamento e a execução de ações que visam identificar, prevenir e mitigar vulnerabilidades em um município. Um dos componentes cruciais deste processo é a formação do Comitê Operativo de Emergência em Saúde (COE Saúde). Em relação à função deste comitê durante a fase de redução de risco, assinale a alternativa que adequadamente descreve sua atuação.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Coordenar a resposta a emergências após a ocorrência de um desastre, assegurando a efetividade das operações de socorro.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Monitorar as condições meteorológicas em tempo real, prevendo eventos que possam levar a desastres naturais.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Elaborar programas de financiamento para a construção de infraestruturas, garantindo a adequação física dos serviços de saúde.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Planejar ações para identificar e reduzir vulnerabilidades no município, promovendo uma cultura de prevenção e resiliência.",
+        "ok": true
+      },
+      {
+        "id": "E",
+        "text": "Realizar campanhas de conscientização sobre doenças endêmicas, visando à promoção da saúde e prevenção de epidemias.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "D: Planejar ações para identificar e reduzir vulnerabilidades no município, promovendo uma cultura de prevenção e resiliência."
+    ]
+  }
+]

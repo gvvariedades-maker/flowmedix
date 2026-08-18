@@ -227,7 +227,6 @@ export interface AvantLessonPlayerProps {
   anteriorSlug?: string | null;
   moduloSlug?: string | null;
   questoesDoAssunto?: QuestaoDoAssunto[]; // Lista de questões do mesmo assunto com status
-  fromPlano?: boolean;       // true quando o aluno veio do Plano de Estudo Diário
   fromCaderno?: string;      // cadernoId quando o aluno veio de um Caderno de Estudo
   /** Query da vitrine (banca/assunto/q) para manter o mesmo conjunto ao trocar de questão pelos dots. */
   vitrineQuerySuffix?: string;

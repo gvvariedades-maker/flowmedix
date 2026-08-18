@@ -1,0 +1,302 @@
+[
+  {
+    "file": "cotec-fadenor-geral-epidemiologia-e-vigilancia-epidemiologica-1777103452899-2.json",
+    "correct": "B",
+    "instruction": "Quanto às fases de vida do vetor Aedes Aegypti, leia as assertivas que seguem, classificando-as em verdadeiras (V) ou falsas (F).\n( ) As doenças causadas pelo Aedes Aegypti, independentemente de contaminação, são transmitidas por todos os mosquitos Aedes Aegypti fêmeas.\n( ) O ovo do Aedes Aegypti demora entre 7 e 10 dias para virar um mosquito adulto.\n( ) As pupas vivem na água e demoram de 5 a 7 dias para se transformarem em mosquitos adultos com capacidade de voar.\n( ) O processo de incubação, que pode durar dias ou meses, ocorre quando os ovos se encontram na água.\nAssinale a alternativa CORRETA, considerando as assertivas de cima para baixo.",
+    "options": [
+      {
+        "id": "A",
+        "text": "V, F, F, V.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "F, V, F, V.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "F, V, V, V.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "V, F, V, F.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "F, V, V, F.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Cotec Fadenor",
+      "ano": "2024",
+      "orgao": "Enfermagem",
+      "prova": "Tec (Pref Virgem da Lapa)"
+    }
+  },
+  {
+    "file": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-9.json",
+    "correct": "B",
+    "instruction": "O que é uma Pandemia?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Incidência de uma doença em uma comunidade humana dentro dos limites considerados \"normais\" para essa comunidade, limitada a uma área geográfica.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Ocorrência epidêmica caracterizada por uma larga distribuição espacial que atinge várias nações.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Intensidade de uma doença endêmica de uma determinada localidade.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Epidemia de desenvolvimento lento, na qual a doença se difunde apenas pelas vias respiratórias.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Doença que precisa de vacina por ser causada por bactérias.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "CPCON UEPB",
+      "ano": "2021",
+      "orgao": "Pref Areial",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-6.json",
+    "correct": "C",
+    "instruction": "A Síndrome Respiratória Aguda Grave associada a Coronavírus - SARS-CoVb. MERS- CoV - é considerada um agravo de notificação compulsória. Quanto aperiodicidade, a notificação deve ser:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Quinzenal.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Semanal.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Imediata.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Mensal.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Anual.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "CPCON UEPB",
+      "ano": "2021",
+      "orgao": "Pref Cacimba Dentro / Comunitário de Saúde",
+      "prova": "Ag (Pref Cacimba D)"
+    }
+  },
+  {
+    "file": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7.json",
+    "correct": "A",
+    "instruction": "A Paralisia Flácida Aguda (PFA), também chamada de Poliomielite ou Paralisia Infantil, apresentou alta incidência no Brasil até o início da década de 1980, deixando sequelas permanentes. No Brasil, o último caso de poliomielite causada pelo poliovírus selvagem ocorreu em 1989. A eliminação da doença no país foi alcançada por meio da administração da vacina oral contra a pólio (VOP) em campanhas de vacinação em massa e na vacinação de rotina das crianças, aliadas à vigilância epidemiológica da PFA.\n(Fonte: Guia de Vigilância em saúde, 2019).\nAnalise as afirmativas sobre esta doença:\nI\n- Um dos objetivos da vigilância em saúde é manter o Brasil livre da circulação de poliovírus selvagem.\nII\n- A vacinação é a principal medida de prevenção da poliomielite.\nIII\n- O Continente Americano foi certificado como região livre da transmissão autóctone do poliovírus selvagem.\nIV\n- O recém-nascido não apresenta proteção nenhum contra a paralisia infantil.\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I , II e III , apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "I , II , III e IV .",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II , III e IV , apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "II e IV , apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III e IV , apenas.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "CPCON UEPB",
+      "ano": "2021",
+      "orgao": "Pref Cacimba Dentro / Comunitário de Saúde",
+      "prova": "Ag (Pref Cacimba D)"
+    }
+  },
+  {
+    "file": "decorp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-6.json",
+    "correct": "A",
+    "instruction": "Na vigilância epidemiológica hospitalar, o conceito de refere-se a _____________ .\nAssinale a alternativa que apresenta o conceito correto de , completando a lacuna acima.",
+    "text_fragment": "<p>\"taxa de incidência\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Frequência com que surgem novos casos de uma doença em um período específico dentro de uma população definida.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Quantidade de pessoas de uma população que apresentam uma doença ou condição em um determinado período de tempo.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Relação entre o número de óbitos em um período de tempo sobre o número de pessoas doentes pelo agravo.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Distribuição espacial de uma enfermidade em um determinado território, considerando sua disseminação entre uma população exposta a um mesmo risco.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Decorp",
+      "ano": "2025",
+      "orgao": "Enfermagem",
+      "prova": "Tec (Pref Porto Walter)"
+    }
+  },
+  {
+    "file": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-1.json",
+    "correct": "C",
+    "instruction": "Termos frequentemente utilizados na prática da Epidemiologia de Campo, seja frente às investigações de surtos, inquéritos epidemiológicos, eventos de massa ousituações de desastres naturais ou intencionais:\nAssinale a alternativa INCORRETA:",
+    "options": [
+      {
+        "id": "A",
+        "text": "AGRAVO: qualquer dano à integridade física, mental e social dos indivíduos provocado por circunstâncias nocivas, como acidentes, intoxicações, abuso de drogase lesões auto ou heteroinfligidas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "CASO: pessoa ou animal infectado ou doente apresentando características clínicas, laboratoriais e/ou epidemiológicas específicas. ¡",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "CASO AUTÓCTONE: caso contraído fora da zona onde se fez o diagnóstico.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "CASO ESPORÁDICO: caso que, segundo informações disponíveis, não se apresenta epidemiologicamente relacionado a outros já conhecidos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "CASO-ÍNDICE: primeiro entre vários casos de natureza similar e epidemiologicamente relacionados. O caso-índice é muitas vezes identificado como fonte decontaminação ou infecção.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Educa Pb",
+      "ano": "2025",
+      "orgao": "Pref SJ Rio do Peixe",
+      "prova": "Tec Enf"
+    }
+  },
+  {
+    "file": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-6.json",
+    "correct": "C",
+    "instruction": "Para entender as relações entre os diferentes elementos que levam ao aparecimento de uma doença transmissível, o esquema tradicional é a denominada cadeiaepidemiológica, também conhecida como cadeia de infecção. O esquema procura organizar os chamados elos que identificam os pontos principais da sequência contínuada interação entre o agente, o hospedeiro e o meio.\nhttps://bvsms.saude.gov.br/bvs/publicacoes/modulo_principios_epidemiologia_2.pdf\nSobre a organização e sequência da Cadeia epidemiológica, assinale a alternativa CORRETA:",
+    "options": [
+      {
+        "id": "A",
+        "text": "1.Porta de Entrada do Novo hospedeiro, 2. Porta de Saída do Agente, 3. Reservatório, 4. Modo de transmissão do Agente, 5. Agente causal, 6. Suscetibilidade doHospedeiro.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "1.Porta de Entrada do Novo hospedeiro, 2. Reservatório, 3. Porta de Saída do Agente, 4. Modo de transmissão do Agente, 5. Suscetibilidade do Hospedeiro, 6.Agente causal",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "1.Agente causal, 2. Reservatório, 3. Porta de Saída do Agente, 4. Modo de transmissão do Agente, 5. Porta de Entrada do Novo hospedeiro, 6. - Suscetibilidadedo Hospedeiro.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "1.Modo de transmissão do Agente, 2. Reservatório, 3. Porta de Saída do Agente, 4. Agente causal, 5. Porta de Entrada do Novo hospedeiro, 6. - Suscetibilidadedo Hospedeiro.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "1.Suscetibilidade do Hospedeiro, 2. Reservatório, 3. Porta de Saída do Agente, 4. Modo de transmissão do Agente, 5. Porta de Entrada do Novo hospedeiro, 6.Agente causal.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Educa Pb",
+      "ano": "2022",
+      "orgao": "Pref Santa Terezinha",
+      "prova": "ACS"
+    }
+  },
+  {
+    "file": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-7.json",
+    "correct": "A",
+    "instruction": "A Vigilância dos Fatores de Risco Não Biológicos é responsável pelos seguintes programas:\nI\n. Programa de Vigilância em Saúde da Água para Consumo Humano (VIGIAGUA).\nII\n. Programa de Vigilância em Saúde das Populações Expostas aos Poluentes Atmosféricos (VIGIAR).\nIII\n. Programa de Vigilância em Saúde Ambiental Relacionada aos riscos decorrentes dos desastres naturais (VIGIDESASTRES).\nIV\n. Programa de Vigilância Ambiental dos Riscos associados aos desastres de origem antropogênica (VIGIAPP).\n4741)\n4742)\n4743)\n4744)\nV\n. Programa de Vigilância em Saúde Ambiental de populações expostas às áreas contaminadas por contaminantes químicos (VIGISOLO).\nVI\n. Vigilância em Saúde Ambiental que integra a Vigilância em Saúde das populações expostas aos agrotóxicos (VSPEA).\nEstão CORRETAS:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I , II , III , IV , V , VI .",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "I , II , III , IV , VI , apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I , II , IV , V , VI , apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I , III , IV , V , VI apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "I , II , III , IV , apenas.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Educa Pb",
+      "ano": "2022",
+      "orgao": "Pref Santa Terezinha",
+      "prova": "ACS"
+    }
+  }
+]

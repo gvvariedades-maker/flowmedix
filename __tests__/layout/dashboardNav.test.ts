@@ -1,4 +1,10 @@
-import { buildMenuSections, NAV_SECTION_DEFS } from '@/lib/layout/dashboardNav';
+import {
+  buildHelpNavItems,
+  buildMenuSections,
+  HELP_NAV_ITEM_DEFS,
+  NAV_SECTION_DEFS,
+} from '@/lib/layout/dashboardNav';
+import { Library, RefreshCw, Target } from 'lucide-react';
 
 describe('buildMenuSections', () => {
   const isPathActive = (path: string, exact = false) => {
@@ -11,16 +17,15 @@ describe('buildMenuSections', () => {
     const sections = buildMenuSections(isPathActive);
     expect(sections).toHaveLength(3);
     expect(sections.map((s) => s.label)).toEqual(['Estudar', 'Métricas', 'Organizar']);
-    expect(sections[0]?.items.map((i) => i.label)).toEqual([
-      'Vitrine',
-      'Tutorial',
-      'Método reverso',
-    ]);
+    expect(sections[0]?.items.map((i) => i.label)).toEqual(['Vitrine']);
   });
 
   it('NAV_SECTION_DEFS expõe title em cada item para tooltip do menu', () => {
-    const items = NAV_SECTION_DEFS.flatMap((s) => s.items);
-    expect(items).toHaveLength(9);
+    const items = [
+      ...NAV_SECTION_DEFS.flatMap((s) => s.items),
+      ...HELP_NAV_ITEM_DEFS,
+    ];
+    expect(items).toHaveLength(8);
     for (const item of items) {
       expect(item.title.trim().length).toBeGreaterThan(0);
     }
@@ -29,30 +34,68 @@ describe('buildMenuSections', () => {
     expect(items.find((i) => i.href === '/simulados')?.title).toBe('Simulados');
   });
 
-  it('seção Organizar contém Simulados, Plano diário e Cadernos', () => {
+  it('seção Organizar contém Simulados e Cadernos', () => {
     const organizar = NAV_SECTION_DEFS.find((s) => s.id === 'organizar');
-    expect(organizar?.items.map((i) => i.label)).toEqual(['Simulados', 'Plano diário', 'Cadernos']);
+    expect(organizar?.items.map((i) => i.label)).toEqual(['Simulados', 'Cadernos']);
   });
 
-  it('marca /progresso ativo em /analytics', () => {
+  it('ajuda (Tutorial / Método reverso) fica em HELP_NAV_ITEM_DEFS', () => {
+    expect(HELP_NAV_ITEM_DEFS.map((i) => i.label)).toEqual(['Tutorial', 'Método reverso']);
+    const help = buildHelpNavItems(isPathActive);
+    expect(help).toHaveLength(2);
+    expect(help.every((i) => i.active === false)).toBe(true);
+  });
+
+  it('seção Estudar tem só Vitrine (heading oculto no shell quando 1 item)', () => {
+    const estudar = NAV_SECTION_DEFS.find((s) => s.id === 'estudar');
+    expect(estudar?.items).toHaveLength(1);
+    expect(estudar?.items[0]?.label).toBe('Vitrine');
+  });
+
+  it('marca /desempenho ativo em /analytics (redirect legado)', () => {
     const sections = buildMenuSections(isPathActive);
-    const progresso = sections
+    const desempenho = sections
       .find((s) => s.id === 'metricas')
-      ?.items.find((i) => i.href === '/progresso');
-    expect(progresso?.active).toBe(true);
+      ?.items.find((i) => i.href === '/desempenho');
+    expect(desempenho?.active).toBe(true);
   });
 
-  it('marca /plano-diario ativo só com match exato', () => {
-    const isPlano = (path: string, exact = false) => {
-      const pathname = '/plano-diario/extra';
+  it('marca /desempenho/simulados ativo só no analytics de simulados', () => {
+    const isSimuladosDesempenho = (path: string, exact = false) => {
+      const pathname = '/desempenho/simulados';
       if (exact) return pathname === path;
       return pathname === path || pathname.startsWith(`${path}/`);
     };
-    const sections = buildMenuSections(isPlano);
-    const plano = sections
-      .find((s) => s.id === 'organizar')
-      ?.items.find((i) => i.href === '/plano-diario');
-    expect(plano?.active).toBe(false);
+    const sections = buildMenuSections(isSimuladosDesempenho);
+    const metricas = sections.find((s) => s.id === 'metricas')?.items;
+    expect(metricas?.find((i) => i.href === '/desempenho')?.active).toBe(false);
+    expect(metricas?.find((i) => i.href === '/desempenho/simulados')?.active).toBe(true);
+  });
+
+  it('marca /desempenho ativo em mapa e histórico, sem competir com simulados', () => {
+    const isMapa = (path: string, exact = false) => {
+      const pathname = '/desempenho/mapa';
+      if (exact) return pathname === path;
+      return pathname === path || pathname.startsWith(`${path}/`);
+    };
+    const sections = buildMenuSections(isMapa);
+    const metricas = sections.find((s) => s.id === 'metricas')?.items;
+    expect(metricas?.find((i) => i.href === '/desempenho')?.active).toBe(true);
+    expect(metricas?.find((i) => i.href === '/desempenho/simulados')?.active).toBe(false);
+  });
+
+  it('seção Métricas tem Desempenho, Simulados e Missão', () => {
+    const metricas = NAV_SECTION_DEFS.find((s) => s.id === 'metricas');
+    expect(metricas?.items.map((i) => i.label)).toEqual([
+      'Desempenho',
+      'Simulados',
+      'Missão da semana',
+    ]);
+    expect(metricas?.items.map((i) => i.href)).toEqual([
+      '/desempenho',
+      '/desempenho/simulados',
+      '/missao-semanal',
+    ]);
   });
 
   it('não marca /ajuda ativo em subrota estudo-reverso', () => {
@@ -61,14 +104,21 @@ describe('buildMenuSections', () => {
       if (exact) return pathname === path;
       return pathname === path || pathname.startsWith(`${path}/`);
     };
-    const sections = buildMenuSections(isAjudaSub);
-    const tutorial = sections
-      .find((s) => s.id === 'estudar')
-      ?.items.find((i) => i.href === '/ajuda');
-    const metodo = sections
-      .find((s) => s.id === 'estudar')
-      ?.items.find((i) => i.href === '/ajuda/estudo-reverso');
+    const help = buildHelpNavItems(isAjudaSub);
+    const tutorial = help.find((i) => i.href === '/ajuda');
+    const metodo = help.find((i) => i.href === '/ajuda/estudo-reverso');
     expect(tutorial?.active).toBe(false);
     expect(metodo?.active).toBe(true);
+  });
+
+  it('metáforas de ícone: Vitrine Library, Missão Target, Método RefreshCw', () => {
+    const estudar = NAV_SECTION_DEFS.find((s) => s.id === 'estudar')?.items[0];
+    const missao = NAV_SECTION_DEFS.find((s) => s.id === 'metricas')?.items.find(
+      (i) => i.href === '/missao-semanal',
+    );
+    const metodo = HELP_NAV_ITEM_DEFS.find((i) => i.href === '/ajuda/estudo-reverso');
+    expect(estudar?.icon).toBe(Library);
+    expect(missao?.icon).toBe(Target);
+    expect(metodo?.icon).toBe(RefreshCw);
   });
 });

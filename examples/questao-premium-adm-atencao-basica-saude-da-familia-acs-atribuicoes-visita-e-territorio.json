@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "banca": "Adm&Tec",
+    "prova": "Tec (Pref João Alfredo)",
+    "orgao": "Pref João Alfredo",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Atenção Básica / Saúde da Família",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "ab_acs_territorio",
+    "content_review": {
+      "reviewed_at": "2026-08-01",
+      "reviewer": "pipeline-ab",
+      "guideline_snapshot": "PNAB (Portaria GM/MS 2.436/2017) — visita domiciliar, território e intersetorialidade na APS",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pnab-2436-2017",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Portaria GM/MS nº 2.436/2017 — Política Nacional de Atenção Básica",
+        "year": 2017,
+        "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html",
+        "covers": [
+          "visita domiciliar na APS",
+          "territorialização",
+          "cuidado intersetorial",
+          "promoção da saúde no território"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Uma família residente em área rural enfrenta dificuldade no comparecimento ao posto de saúde. Após visitas domiciliares, o técnico de enfermagem identifica problemas como falta de saneamento básico, abastecimento hídrico irregular e desconhecimento de práticas de higiene. Como abordar esse grupo familiar, alinhando-se às estratégias de visita domiciliar e promoção da saúde?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Verificar a existência de potenciais criadouros de vetores e avaliar práticas de higiene no domicílio, implementando estratégias de controle ambiental associadas ao uso de substâncias saneantes quando necessário e priorizar a eliminação dos riscos físicos e biológicos identificados, sem a necessidade de estratégias educativas formais ou visitas subsequentes para acompanhamento da adesão familiar",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Iniciar apenas um diálogo superficial com as lideranças comunitárias para citar possíveis barreiras no abastecimento de água, sem envolver a própria família ou outras áreas da equipe de saúde na busca de soluções, e contatar exclusivamente a vigilância sanitária para fiscalizar as condições do local, ignorando quaisquer orientações educativas ou acompanhamento continuado.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Orientar práticas de higiene pessoal e do ambiente, destacando a importância de prevenir agravos infecciosos e interromper o acompanhamento se a família não aderir de imediato às recomendações, redirecionando recursos apenas para quem manifeste interesse formal.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Estabelecer um plano de visitas contínuas, envolvendo diferentes setores (educação, assistência social e saneamento) e orientar a família sobre práticas de higiene, potabilidade da água e prevenção de agravos, considerando a realidade sociocultural local.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Visita domiciliar — território e promoção",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "items": [
+        {
+          "label": "Cenário da prova",
+          "detail": "Família rural com baixa ida ao posto; saneamento precário, água irregular e higiene frágil — o TE já fez visitas.",
+          "icon": "Home"
+        },
+        {
+          "label": "Eixo da conduta",
+          "detail": "Visita contínua + educação em saúde + articulação intersetorial (não só “limpar o risco” uma vez).",
+          "icon": "Users"
+        },
+        {
+          "label": "Determinantes no domicílio",
+          "detail": "Água, esgoto e hábitos de higiene pedem orientação e rede (educação, assistência social, saneamento).",
+          "icon": "Droplets"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "Banca tenta vender controle ambiental pontual ou abandono da família se “não aderir” — isso quebra longitudinalidade.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Território + vínculo contínuo + setores juntos"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "steps": [
+        "Ler o pedido: abordagem alinhada a visita domiciliar e promoção da saúde (não só fiscalização).",
+        "Marcar o que a PNAB valoriza: continuidade, vínculo, educação e trabalho intersetorial no território.",
+        "Eliminar A: controle ambiental sem educação formal nem retorno — corta acompanhamento.",
+        "Eliminar B: diálogo só com liderança + só vigilância, sem família nem equipe.",
+        "Eliminar C: orienta higiene, mas interrompe se não houver adesão imediata — quebra vínculo.",
+        "Restar D: plano de visitas contínuas + setores + orientação adaptada ao contexto local.",
+        "Marcar D.",
+        "Em similares: priorize longitudinalidade e intersetorialidade antes de “ação única no risco”."
+      ],
+      "footer_rule": "Contínuo + intersetorial > pontual"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — visita na APS",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "content": "VISITA DOMICILIAR NA ATENÇÃO BÁSICA",
+      "rows": [
+        {
+          "label": "Continuidade",
+          "value": "Plano de visitas recorrentes — não “uma visita e pronto”.",
+          "badge": "ok"
+        },
+        {
+          "label": "Intersetorialidade",
+          "value": "Educação, assistência social e saneamento entram quando o problema ultrapassa o posto.",
+          "badge": "ok"
+        },
+        {
+          "label": "Educação em saúde",
+          "value": "Higiene, água potável e prevenção de agravos com respeito ao contexto sociocultural.",
+          "badge": "ok"
+        },
+        {
+          "label": "Armadilha",
+          "value": "Controle ambiental isolado ou abandono por “não adesão” — foge da lógica APS.",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Decore: contínuo · intersetorial · educação (gabarito no fluxo)"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "content": "PEGADINHAS — visita rural e promoção",
+      "items": [
+        {
+          "label": "Letra A — só risco ambiental",
+          "detail": "Parece “técnica” (criadouro, saneantes) e seduz quem pensa só em vetor.",
+          "correct": "Falta educação formal e retorno para acompanhar adesão — visita vira ação pontual."
+        },
+        {
+          "label": "Letra B — só liderança + fiscalizar",
+          "detail": "Cita barreira de água, mas tira a família e a equipe do centro da solução.",
+          "correct": "Promoção na APS exige família + equipe + setores, não só vigilância."
+        },
+        {
+          "label": "Letra C — orienta e abandona",
+          "detail": "Começa bem (higiene), mas corta o cuidado se não houver adesão imediata.",
+          "correct": "Vínculo e continuidade são princípio; baixa adesão pede novo plano, não alta."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Em outra prova: “ACS/TE resolveu criadouro e não voltou”.",
+          "correct": "Pergunte: houve plano de retorno e articulação intersetorial?"
+        }
+      ],
+      "footer_rule": "Se a opção corta o retorno, costuma cair"
+    }
+  ]
+}

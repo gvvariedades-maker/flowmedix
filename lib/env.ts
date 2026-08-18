@@ -93,6 +93,11 @@ const EnvSchema = z.object({
    * `legacy` = concept_map → golden_rule → logic_flow → danger_zone (catálogo antigo).
    */
   NEXT_PUBLIC_REVERSE_STUDY_SLIDE_ORDER: z.enum(['legacy', 'v2']).optional(),
+  /**
+   * Projeção de 2 telas (Aula + Prova) — F7. Omitida = off; `1` liga só nos
+   * subtópicos do piloto em `lib/lesson/lessonProjectionConfig.ts`.
+   */
+  NEXT_PUBLIC_LESSON_PROJECTION: z.enum(['0', '1']).optional(),
   /** Token usado só em CI para upload de source maps (withSentryConfig). */
   SENTRY_AUTH_TOKEN: z.string().min(1).optional(),
   SENTRY_ORG: z.string().min(1).optional(),
@@ -105,6 +110,19 @@ const EnvSchema = z.object({
   CURSOR_API_KEY: z.string().min(1).optional(),
   /** Modelo do orquestrador (default composer-2.5 se omitido no CLI). */
   CURSOR_ORCHESTRATOR_MODEL: z.string().min(1).optional(),
+  /**
+   * Evidence Engine Fase 1 — flag de instrumentação (Lote 3).
+   * Omitido / ausente = off. Valores aceitos: true|false|1|0.
+   * Quando true: ingestão em registrar-tentativa + série P4 em `/desempenho`.
+   * Não habilita T1, domínio, measurement_pool nem convicção global.
+   * @see docs/SPEC_EVIDENCE_ENGINE_FASE_1_EVENT_STREAM.md §1.13
+   */
+  EE_V1_INSTRUMENTATION: z.enum(['true', 'false', '1', '0']).optional(),
+  /**
+   * Allowlist de e-mails da coorte interna (vírgula). Opcional.
+   * Usada por lotes posteriores para is_internal / UI de convicção — sem efeito runtime neste lote.
+   */
+  EE_V1_INTERNAL_EMAILS: z.string().min(1).optional(),
 }).superRefine((data, ctx) => {
   /**
    * Na Vercel, Preview/Development também rodam `next build` com NODE_ENV=production.
@@ -184,6 +202,8 @@ const ENV_KEYS = [
   'SENTRY_PROJECT',
   'CURSOR_API_KEY',
   'CURSOR_ORCHESTRATOR_MODEL',
+  'EE_V1_INSTRUMENTATION',
+  'EE_V1_INTERNAL_EMAILS',
 ] as const;
 
 function readTrimmedEnv(key: string): string | undefined {
@@ -473,6 +493,54 @@ export function getSentryServerDsn(): string | null {
 /** Indica se o Sentry está habilitado no servidor (há DSN). */
 export function isSentryServerEnabled(): boolean {
   return getSentryServerDsn() !== null;
+}
+
+/**
+ * Interpreta o wire da flag EE_V1_INSTRUMENTATION.
+ * Ausente / vazio → false (default seguro em todos os ambientes).
+ */
+export function parseEvidenceV1InstrumentationFlag(
+  raw: string | undefined | null,
+): boolean {
+  if (raw == null || raw.trim() === '') return false;
+  const normalized = raw.trim().toLowerCase();
+  return normalized === 'true' || normalized === '1';
+}
+
+/**
+ * Parse da allowlist EE_V1_INTERNAL_EMAILS (vírgula, lowercase, sem duplicatas).
+ * Ausente → lista vazia (coorte vazia; sem efeito até lotes de ingestão/UI).
+ */
+export function parseEvidenceV1InternalEmails(
+  raw: string | undefined | null,
+): string[] {
+  if (raw == null || raw.trim() === '') return [];
+  const emails: string[] = [];
+  for (const part of raw.split(',')) {
+    const trimmed = part.trim().toLowerCase();
+    if (trimmed) emails.push(trimmed);
+  }
+  return [...new Set(emails)];
+}
+
+/**
+ * Evidence Engine Fase 1 — instrumentação ligada?
+ * Default false quando a var está omitida.
+ * Quando true: ingestão + série P4 no hub `/desempenho`.
+ */
+export function isEvidenceV1InstrumentationEnabled(): boolean {
+  return parseEvidenceV1InstrumentationFlag(getEnv().EE_V1_INSTRUMENTATION);
+}
+
+/** Allowlist tipada da coorte interna (e-mails lowercase). */
+export function getEvidenceV1InternalEmails(): readonly string[] {
+  return parseEvidenceV1InternalEmails(getEnv().EE_V1_INTERNAL_EMAILS);
+}
+
+/** Membership na allowlist EE (comparação case-insensitive). */
+export function isEvidenceV1InternalEmail(email: string | null | undefined): boolean {
+  if (!email?.trim()) return false;
+  return getEvidenceV1InternalEmails().includes(email.trim().toLowerCase());
 }
 
 export function validateSentryEnv(): void {

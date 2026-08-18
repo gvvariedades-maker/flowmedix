@@ -17,6 +17,7 @@ import {
   type PtCraseFunnelBoardModel,
   type PtCraseFunnelOption,
 } from '@/lib/slides/ptCraseSlideUtils';
+import { PolarityPanel, type BoardTone } from '../primitives';
 
 const BUCKET_META: Record<
   PtCraseBucket,
@@ -24,6 +25,7 @@ const BUCKET_META: Record<
     title: string;
     hint: string;
     Icon: typeof Ban;
+    tone: BoardTone;
     accent: string;
     pale: string;
     border: string;
@@ -34,6 +36,7 @@ const BUCKET_META: Record<
     title: 'Sem à',
     hint: 'Só a — funil barra',
     Icon: Ban,
+    tone: 'exception',
     accent: 'text-rose-800',
     pale: 'bg-rose-50',
     border: 'border-rose-200',
@@ -43,6 +46,7 @@ const BUCKET_META: Record<
     title: 'Com à',
     hint: 'Tem a + a',
     Icon: CheckCircle2,
+    tone: 'ok',
     accent: 'text-emerald-800',
     pale: 'bg-emerald-50',
     border: 'border-emerald-200',
@@ -77,12 +81,14 @@ function BucketColumn({
   const answered = selectedLetter !== null;
 
   return (
-    <div
-      className={`flex flex-col rounded-2xl border bg-white/95 p-2.5 shadow-sm transition-all sm:p-3 ${
-        highlighted ? `border-amber-500 ring-2 ${meta.ring} shadow-md` : meta.border
+    <PolarityPanel
+      tone={meta.tone}
+      emphasized={highlighted}
+      className={`flex flex-col rounded-2xl p-2.5 transition-all sm:p-3 ${
+        highlighted ? `ring-2 ${meta.ring} shadow-md` : ''
       }`}
     >
-      <div className="flex items-center gap-2 border-b border-slate-100 pb-2">
+      <div className="flex items-center gap-2 border-b border-black/5 pb-2">
         <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl ${meta.pale}`}>
           <Icon className={`h-4 w-4 ${meta.accent}`} aria-hidden />
         </span>
@@ -147,7 +153,7 @@ function BucketColumn({
           </div>
         )}
       </div>
-    </div>
+    </PolarityPanel>
   );
 }
 

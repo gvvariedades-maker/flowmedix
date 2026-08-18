@@ -1,0 +1,298 @@
+[
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-4.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "João é técnico de enfermagem em uma Unidade Básica de Saúde e percebe um aumento significativo no número de pacientes com sintomas de uma mesma doença infecciosa em sua comunidade. Preocupado, ele compartilha a situação com a equipe multiprofissional, que decide notificar o serviço de vigilância epidemiológica. Durante a reunião, o enfermeiro responsável explica a importância da epidemiologia no monitoramento, controle e prevenção de doenças, destacando que essa área da saúde pública estuda a distribuição e os determinantes dos problemas de saúde na população.\nDiante desse cenário, indique a opção que descreve corretamente um dos objetivos da epidemiologia.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Investigar os fatores determinantes da saúde e da doença na população, auxiliando na prevenção e no controle de agravos.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Focar exclusivamente no tratamento individual das doenças, sem considerar fatores sociais e ambientais.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Aplicar seus estudos apenas em grandes surtos, sem impacto na prevenção de doenças crônicas.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Desconsiderar fatores sociais e econômicos na análise das doenças, priorizando apenas os aspectos biológicos.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Atuar somente em hospitais de referência, sem aplicação nas unidades básicas de saúde.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Investigar os fatores determinantes da saúde e da doença na população, auxiliando na prevenção e no controle de agravos."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-5.json",
+    "family": "conceito",
+    "branch": "epi_indicadores",
+    "instruction": "Ana é técnica de enfermagem e atua na Vigilância Epidemiológica de seu município. Durante uma reunião, a equipe recebe um relatório sobre o aumento da mortalidade infantil na região. O coordenador explica que os indicadores epidemiológicos são essenciais para avaliar a situação de saúde da população e orientar políticas públicas eficazes. Ele reforça que, ao analisar dados como incidência, prevalência, mortalidade e letalidade, é possível identificar grupos mais vulneráveis e direcionar ações preventivas.\nA esse respeito, assinale a alternativa que define corretamente a taxa de incidência.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "O número total de casos existentes de uma doença em uma população específica, independentemente do tempo de evolução.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "O número de casos novos de uma determinada doença em uma população específica dentro de um período determinado.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "A proporção de indivíduos doentes que evoluem para óbito em relação ao total de casos confirmados.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "A razão entre o número total de óbitos por qualquer causa em relação à população total em um determinado período.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "O índice que mede a satisfação da população com os serviços de saúde disponíveis no município.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: O número de casos novos de uma determinada doença em uma população específica dentro de um período determinado."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-6.json",
+    "family": "conceito",
+    "branch": "epi_ocorrencia_agravos",
+    "instruction": "Marcos é técnico de enfermagem em uma Unidade de Saúde e percebe que vários pacientes atendidos recentemente apresentam sintomas semelhantes, como febre, diarreia e vômitos. Ele comunica a equipe de vigilância epidemiológica, que inicia uma investigação para determinar a origem do problema. Durante a análise, os profissionais identificam que a maioria dos casos ocorreu entre pessoas que consumiram alimentos de um mesmo restaurante.\nDiante dessa situação, os profissionais seguem os dez passos da investigação de surtos, descritos pelo Ministério da Saúde, para garantir um diagnóstico preciso e adotar medidas de controle. Com base nesse contexto, indique o primeiro passo essencial para investigar um surto.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Confirmar o diagnóstico laboratorial para todos os casos suspeitos antes de qualquer ação de controle.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Aplicar medidas de controle imediatamente, sem necessidade de confirmar a existência de um surto.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Determinar se há, de fato, um aumento no número de casos acima do esperado para a região.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Notificar a imprensa antes de obter dados concretos para que a população fique alerta.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Coletar amostras apenas dos pacientes mais graves, pois os casos leves não influenciam na investigação.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Determinar se há, de fato, um aumento no número de casos acima do esperado para a região."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-8.json",
+    "family": "conceito",
+    "branch": "epi_ocorrencia_agravos",
+    "instruction": "Durante a investigação de um surto de intoxicação alimentar em um evento de grande porte, a equipe de saúde decide utilizar um método que compara a exposição dos doentes a possíveis fatores de risco, analisando as diferenças entre indivíduos afetados e não afetados. O objetivo é identificar a causa provável da contaminação.\nIndique qual dos métodos abaixo é o mais adequado para esse tipo de investigação.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Estudo de caso-controle, que compara indivíduos doentes e não doentes para avaliar fatores de risco.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Estudo transversal, que avalia a prevalência da doença em um único momento sem comparações.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Análise qualitativa, baseada em relatos dos pacientes, sem necessidade de testes estatísticos.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Investigação laboratorial exclusiva, desconsiderando informações epidemiológicas da população.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Estudo ecológico, que avalia a relação entre fatores ambientais e a ocorrência do surto sem análise individual.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Estudo de caso-controle, que compara indivíduos doentes e não doentes para avaliar fatores de risco."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-9.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "As emergências em saúde pública, como epidemias e desastres naturais, exigem uma resposta coordenada e rápida para minimizar impactos na população. Para isso, o Centro de Operações de Emergências em Saúde (COE) atua promovendo a articulação entre diferentes setores do Sistema Único de Saúde (SUS), analisando dados epidemiológicos e definindo estratégias para enfrentamento dessas situações.\nCom base nas funções do COE, assinale a alternativa que representa corretamente uma de suas atribuições.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Monitorar a situação epidemiológica e avaliar riscos à saúde pública.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Desenvolver pesquisas laboratoriais para a criação de vacinas e medicamentos.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Atuar exclusivamente no nível municipal, sem articulação com outras esferas de governo.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Garantir que todas as emergências sejam resolvidas apenas no nível hospitalar, sem medidas preventivas.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Substituir os gestores locais na tomada de decisões sobre emergências em saúde pública.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Monitorar a situação epidemiológica e avaliar riscos à saúde pública."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-0.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "A Epidemiologia é uma ciência fundamental para o entendimento do processo saúde-doença na comunidade e para a formulação de estratégias de intervenção em saúde pública. Assim, assinale qual das alternativas a seguir melhor define a Epidemiologia.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "É a ciência que estuda apenas doenças transmissíveis e seus impactos individuais.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Consiste na aplicação exclusiva de medidas terapêuticas no tratamento de doenças crônicas.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Analisa a distribuição e os determinantes das enfermidades e agravos à saúde coletiva, propondo medidas de prevenção e controle.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Tem como foco principal a cura das doenças e a reabilitação dos pacientes em nível individual.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Se restringe ao monitoramento de surtos epidêmicos sem considerar outros fatores sociais.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Analisa a distribuição e os determinantes das enfermidades e agravos à saúde coletiva, propondo medidas de prevenção e controle."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-1.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "A aplicação da Epidemiologia na saúde pública é um dos pilares fundamentais para o desenvolvimento de políticas e programas voltados à melhoria da qualidade de vida da população. Por meio da análise epidemiológica, é possível identificar os principais problemas de saúde em uma comunidade, investigar os fatores que determinam a sua ocorrência e avaliar o impacto das ações implementadas para modificá-los. Essa abordagem permite a formulação de estratégias baseadas em evidências para a promoção da saúde e a redução de riscos, tornando a Epidemiologia uma ferramenta indispensável para gestores e profissionais da área. Assim, assinale a alternativa que mostra corretamente as principais aplicações dessa ciência.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Descrever as condições de saúde da população, identificar fatores determinantes e avaliar o impacto das ações propostas.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Diagnosticar doenças exclusivamente em indivíduos para orientar tratamentos clínicos.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Investigar surtos infecciosos sem considerar aspectos sociais e ambientais.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Estudar exclusivamente a prevalência de doenças, sem examinar seus determinantes ou impacto social.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Aplicar métodos laboratoriais para desenvolver novos medicamentos.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Descrever as condições de saúde da população, identificar fatores determinantes e avaliar o impacto das ações propostas."
+    ]
+  },
+  {
+    "file": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-2.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "A Vigilância Epidemiológica é um conjunto de ações que permite o monitoramento contínuo das condições de saúde da população, possibilitando a detecção precoce de surtos, a identificação de fatores de risco e a adoção de medidas oportunas de prevenção e controle. No Brasil, o Sistema Nacional de Vigilância Epidemiológica (SNVE) foi instituído para fortalecer essa estratégia, organizando as notificações compulsórias de doenças e outros agravos à saúde. Considerando essa abordagem, identifique abaixo qual das alternativas melhor descreve a função principal da Vigilância Epidemiológica.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Elaborar diagnósticos individuais e encaminhar pacientes para tratamento especializado.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Realizar exclusivamente estudos laboratoriais para identificar novos patógenos.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Desenvolver medicamentos e vacinas para erradicar doenças infecciosas.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Monitorar apenas doenças transmissíveis, sem considerar outros agravos à saúde.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Coletar, analisar e interpretar dados para orientar ações de prevenção e controle de doenças.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "E: Coletar, analisar e interpretar dados para orientar ações de prevenção e controle de doenças."
+    ]
+  }
+]

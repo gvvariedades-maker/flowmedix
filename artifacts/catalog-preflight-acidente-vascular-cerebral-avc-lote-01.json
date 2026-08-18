@@ -1,0 +1,48 @@
+{
+  "lote": "acidente-vascular-cerebral-avc-lote-01",
+  "generated_at": "2026-07-31T17:24:15.571Z",
+  "strict": false,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 1,
+  "passed": 0,
+  "failed": 1,
+  "slugs": [
+    {
+      "slug": "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+      "ok": false,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": false,
+      "issues": [
+        "meta.content_standard deve ser golden-v1",
+        "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+        "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)"
+      ],
+      "pedagogy_findings": [
+        {
+          "code": "pedagogy_letter_spoiler",
+          "message": "concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow.",
+          "path": "concept_map.items[3].detail",
+          "slide": "concept_map",
+          "key": "detail",
+          "evidence": "Letra E — deficits neurológicos leves (sem repercussão funcional significativa), cirurgia de grande porte ou procedimento invasivo nos últimos 14 dias, e punçã…"
+        }
+      ]
+    }
+  ],
+  "pedagogy_report": {
+    "slugs_with_findings": 1,
+    "total_findings": 1,
+    "counts": {
+      "pedagogy_letter_spoiler": 1,
+      "pedagogy_vf_verdict_spoiler": 0,
+      "pedagogy_question_bound_label": 0,
+      "pedagogy_logic_padding": 0,
+      "pedagogy_polarity_risk": 0,
+      "pedagogy_danger_orphan": 0,
+      "pedagogy_logic_missing_gabarito": 0,
+      "pedagogy_density": 0
+    }
+  }
+}

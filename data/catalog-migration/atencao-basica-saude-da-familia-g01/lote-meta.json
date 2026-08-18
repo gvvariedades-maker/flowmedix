@@ -1,0 +1,16 @@
+{
+  "lote": "atencao-basica-saude-da-familia-g01",
+  "status": "applied",
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "slug_count": 8,
+  "applied_at": "2026-08-02T01:46:00.000Z",
+  "applied_report": "artifacts/catalog-migration-atencao-basica-saude-da-familia-g01-applied.json",
+  "anchor_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+  "anchor_second_review": {
+    "reviewed_at": "2026-08-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/atencao-basica-saude-da-familia-g01.json"
+  }
+}

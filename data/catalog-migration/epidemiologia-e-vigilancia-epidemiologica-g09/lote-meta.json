@@ -1,0 +1,16 @@
+{
+    "lote":  "epidemiologia-e-vigilancia-epidemiologica-g09",
+    "slug_count":  8,
+    "anchor_slug":  "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-3",
+    "applied_at":  "2026-08-04",
+    "subtopico":  "Epidemiologia e Vigilância Epidemiológica",
+    "status":  "applied",
+    "pacote_prefix":  "epidemiologia-e-vigilancia-epidemiologica",
+    "anchor_second_review":  {
+                                 "reviewed_at":  "2026-08-04",
+                                 "reviewer":  "agent",
+                                 "method":  "agent",
+                                 "status":  "pass",
+                                 "artifact":  "artifacts/anchor-review/epidemiologia-e-vigilancia-epidemiologica-g09.json"
+                             }
+}

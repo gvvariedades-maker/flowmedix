@@ -1,0 +1,35 @@
+{
+    "lote":  "epidemiologia-e-vigilancia-epidemiologica-g01",
+    "subtopico":  "Epidemiologia e Vigilância Epidemiológica",
+    "anchor_second_review":  {
+                                 "reviewed_at":  "2026-08-04",
+                                 "reviewer":  "agent",
+                                 "method":  "agent",
+                                 "status":  "pass",
+                                 "artifact":  "artifacts/anchor-review/epidemiologia-e-vigilancia-epidemiologica-g01.json"
+                             },
+    "gates":  {
+                  "readiness":  "8/8",
+                  "goldens":  "0 failures",
+                  "preflight":  "8/8",
+                  "dry_run":  "ok=8 failed=0"
+              },
+    "notes":  "Handcraft golden-v1 completo; gates revalidados 2026-08-03; aguarda pode aplicar.",
+    "handcraft_ready":  true,
+    "applied_at":  "2026-08-04",
+    "handcraft_ready_at":  "2026-08-03",
+    "slugs":  [
+                  "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+                  "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+                  "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+                  "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+                  "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-5",
+                  "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-7",
+                  "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3",
+                  "amauc-enfermagem-processo-de-enfermagem-1780006486032-6"
+              ],
+    "anchor_slug":  "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+    "status":  "applied",
+    "pacote_prefix":  "epidemiologia-e-vigilancia-epidemiologica",
+    "slug_count":  8
+}

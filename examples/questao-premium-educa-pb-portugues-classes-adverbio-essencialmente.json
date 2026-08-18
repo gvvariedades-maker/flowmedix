@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "banca": "EDUCA PB",
+    "prova": "Ag Adm (Pref Cajazeiras)",
+    "orgao": "Pref Cajazeiras",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Classes de palavras",
+    "pedagogical_branch": "pt_classes_adverbio",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-08",
+      "reviewer": "handcraft:ancoras-100-adverbio-polish-gallery",
+      "guideline_snapshot": "M02/M03 Elias TE-simples — «O que a palavra faz na oração?» · circunstância · -mente",
+      "exam_vs_current": "none",
+      "catalog_slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810"
+    },
+    "sources": [
+      {
+        "id": "pt-classes-palavras-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Classes de palavras — morfologia e função na oração",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "advérbio e circunstância",
+          "advérbio de modo e intensidade",
+          "sufixo -mente",
+          "pergunta-teste M02/M03",
+          "classificação morfológica"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3913810",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "«essencialmente» advérbio — EDUCA PB Ag Adm Pref Cajazeiras 2026 tec 3913810",
+        "year": 2026,
+        "covers": ["enunciado", "alternativas", "gabarito", "matriz pt_classes_adverbio"]
+      }
+    ],
+    "anchor_style": "modo_intensidade",
+    "anchor_role": "golden_anchor"
+  },
+  "question_data": {
+    "instruction": "Leia o texto a seguir e responda à questão.\n\nTEXTO II — Casamento, uma invenção cristã (Rainer Gonçalves Sousa / Historiadomundo, adaptado)\n\nQuanto à classe gramatical, assinale a opção que apresenta CORRETAMENTE a classificação da palavra sublinhada:",
+    "options": [
+      {
+        "id": "A",
+        "text": "“…Entre 965 e 1008 eram batizados os reis da Dinamarca, Polônia, Hungria, Rússia, Noruega e Suécia…” – substantivo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "“…para os pagãos, fossem eles germânicos, eslavos ou ainda mais recentemente vikings instalados na Normandia desde 911…” – preposição.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "“…Durante o Sacro Império Romano Germânico — que sucedeu ao desaparecido Império Romano —, dirigido por Oto III de 998 a 1002, houve uma fabulosa transformação das sociedades urbanas romanas…” – verbo.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "“…Essas uniões eram essencialmente políticas e sociais, decididas pelos pais…” – advérbio.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "ADVÉRBIO",
+      "chip_label": "INDICA CIRCUNSTÂNCIA",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "items": [
+        {
+          "label": "Modo",
+          "detail": "Circunstância de maneira · As uniões eram «essencialmente» políticas.",
+          "correct": "COMO · -MENTE",
+          "icon": "Target"
+        },
+        {
+          "label": "Tempo",
+          "detail": "Quando a ação acontece · A banca «sempre» cobra a classe.",
+          "correct": "QUANDO · SEMPRE",
+          "icon": "Clock"
+        },
+        {
+          "label": "Lugar",
+          "detail": "Onde a ação acontece · O trecho ficou «aqui» no texto.",
+          "correct": "ONDE · AQUI",
+          "icon": "MapPin"
+        },
+        {
+          "label": "Intensidade",
+          "detail": "Grau / quanto · Houve «bastante» transformação urbana.",
+          "correct": "QUANTO · MUITO",
+          "icon": "Flame"
+        }
+      ],
+      "footer_rule": "Advérbio = circunstância (não nomeia)."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "steps": [
+        "P · Pergunta — «essencialmente» modifica verbo/adj ou nomeia?",
+        "F · Função — modo (−mente) sobre «políticas e sociais»",
+        "C · Classe — **advérbio** (não adjetivo «essencial»)",
+        "E · Eliminar — A subst. · B prep. · C verbo (trechos errados)",
+        "G · Gabarito — D «essencialmente» = advérbio de modo",
+        "T · Transferência — −mente + circunstância = advérbio"
+      ],
+      "footer_rule": "D — advérbio (−mente)."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "-MENTE e ESSENCIAL",
+      "rows": [
+        {
+          "label": "-MENTE",
+          "value": "É o contrário de «ADJETIVO» no teste · (advérbio de modo) · Uniões «essencialmente» políticas · (= modifica «políticas»)"
+        },
+        {
+          "label": "ESSENCIAL",
+          "value": "É o contrário de «ADVÉRBIO» no teste · (adjetivo) · União «essencial» · (= qualifica o substantivo)"
+        },
+        {
+          "label": "Dica",
+          "value": "Se puder trocar por BEM / COMO → use -mente (advérbio)."
+        },
+        {
+          "label": "Dica",
+          "value": "Se puder trocar por BOM / QUAL → use adjetivo (essencial)."
+        }
+      ],
+      "footer_rule": "-mente + circunstância = advérbio."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Classes de palavras"
+      },
+      "content": "Adjetivo × Advérbio",
+      "items": [
+        {
+          "label": "A — reis",
+          "detail": "«Reis» nomeia (substantivo)",
+          "correct": "Peça certa é «essencialmente» = advérbio"
+        },
+        {
+          "label": "B — para",
+          "detail": "«Para» liga (preposição)",
+          "correct": "Não é a peça adverbial do trecho D"
+        },
+        {
+          "label": "C — houve",
+          "detail": "«Houve» é verbo",
+          "correct": "Sublinhado certo: «essencialmente»"
+        },
+        {
+          "label": "Essencial × -mente",
+          "detail": "«União essencial» = adjetivo",
+          "correct": "«Essencialmente políticas» = advérbio de modo"
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam por «principalmente» / «basicamente»",
+          "correct": "Mesmo teste: -mente + circunstância = advérbio"
+        }
+      ],
+      "footer_rule": "Só D classifica certo."
+    }
+  ]
+}

@@ -5,12 +5,13 @@ describe('l3MoldGapCatalog', () => {
   const subtopico = 'Saúde do Adolescente';
   const generic = formatMoldPackage(ADOLESCENTE_GENERIC_DESIGN);
 
-  it('violência sexual → ok_generico com ramo violencia_protecao', () => {
+  it('violência sexual → molde_inedito com pacote calendário + timeline', () => {
     const r = resolveClusterIdeal(subtopico, 'Violência sexual e indicadores', 4, 25, generic);
     expect(r.branch_id).toBe('adolescente_violencia_protecao');
     expect(r.branch_implemented).toBe(true);
-    expect(r.decision).toBe('ok_generico');
-    expect(r.ideal_mold_package).toContain('genérico');
+    expect(r.decision).toBe('molde_inedito');
+    expect(r.ideal_mold_package).toContain('adolescent-violence-deck');
+    expect(r.ideal_mold_package).toContain('adolescent-violence-timeline');
   });
 
   it('gravidez → ok_existente adolescent-*', () => {
@@ -19,9 +20,25 @@ describe('l3MoldGapCatalog', () => {
     expect(r.decision).toBe('ok_existente');
   });
 
-  it('puberdade cluster genérico se rotulado como desenvolvimento', () => {
+  it('EXCETO diretrizes → molde_inedito bespoke no ramo generico', () => {
     const r = resolveClusterIdeal(subtopico, 'Diretrizes MS adolescente (EXCETO)', 2, 12, generic);
-    expect(r.decision).toBe('ok_generico');
+    expect(r.branch_id).toBe('adolescente_generico');
+    expect(r.decision).toBe('molde_inedito');
+    expect(r.ideal_mold_package).toContain('adolescent-generic-hub-orbit');
+  });
+
+  it('puberdade → molde_inedito bespoke SUS no ramo desenvolvimento', () => {
+    const r = resolveClusterIdeal(subtopico, 'Puberdade / Tanner / metamorfose física', 1, 6, generic);
+    expect(r.branch_id).toBe('adolescente_desenvolvimento');
+    expect(r.decision).toBe('molde_inedito');
+    expect(r.ideal_mold_package).toContain('adolescent-dev-pair-rail');
+  });
+
+  it('transtorno alimentar → molde_inedito saude_mental (Vias/XABCDE/Hub/Cálculo)', () => {
+    const r = resolveClusterIdeal(subtopico, 'Transtorno alimentar / anorexia', 3, 18, generic);
+    expect(r.branch_id).toBe('adolescente_saude_mental');
+    expect(r.decision).toBe('molde_inedito');
+    expect(r.ideal_mold_package).toContain('adolescent-mental-route-list');
   });
 
   it('CME autoclave com volume alto pode elevar a molde_inedito', () => {
@@ -245,5 +262,20 @@ describe('l3MoldGapCatalog', () => {
     expect(r.branch_implemented).toBe(true);
     expect(r.decision).toBe('ok_generico');
     expect(r.rationale).toContain('Drift');
+  });
+
+  it('Imunização EXCETO → molde_redesign Onda 3 isolate-board', () => {
+    const r = resolveClusterIdeal(
+      'Imunização',
+      'EXCETO / INCORRETA conduta vacinal',
+      8,
+      12,
+      'morphological · reference_table · vertical · compare',
+    );
+    expect(r.branch_id).toBe('imunizacao_exceto');
+    expect(r.branch_implemented).toBe(true);
+    expect(r.decision).toBe('molde_redesign');
+    expect(r.ideal_mold_package).toContain('pni-exceto-isolate-board');
+    expect(r.ideal_mold_package).toContain('pni-exceto-compare');
   });
 });

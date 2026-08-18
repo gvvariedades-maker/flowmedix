@@ -1,0 +1,16 @@
+{
+  "lote": "atencao-basica-saude-da-familia-g22",
+  "status": "applied",
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "slug_count": 3,
+  "applied_at": "2026-08-03T20:49:10.527Z",
+  "applied_report": "artifacts/catalog-migration-atencao-basica-saude-da-familia-g22-applied.json",
+  "anchor_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-4",
+  "anchor_second_review": {
+    "reviewed_at": "2026-08-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/atencao-basica-saude-da-familia-g22.json"
+  }
+}

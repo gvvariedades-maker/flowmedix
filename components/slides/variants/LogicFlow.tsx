@@ -14,72 +14,6 @@ import {
   type LogicFlowRevealMode,
 } from './logicFlowReveal';
 import { LogicFlowFooter } from './LogicFlowFooter';
-import { LogicFlowStepLadder } from './LogicFlowStepLadder';
-import { LogicFlowSoftStack } from './LogicFlowSoftStack';
-import { LogicFlowLabVfSoftStack } from './LogicFlowLabVfSoftStack';
-import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
-import { LogicFlowBurnTriageTapFlow } from './LogicFlowBurnTriageTapFlow';
-import { LogicFlowPtCraseFunnelTapFlow } from './LogicFlowPtCraseFunnelTapFlow';
-import { LogicFlowPtCliticRailTapFlow } from './LogicFlowPtCliticRailTapFlow';
-import { LogicFlowPtCommaRailTapFlow } from './LogicFlowPtCommaRailTapFlow';
-import { LogicFlowPtTermMatrixTapFlow } from './LogicFlowPtTermMatrixTapFlow';
-import { LogicFlowTrabalhoVfJuggleTap } from './LogicFlowTrabalhoVfJuggleTap';
-import { LogicFlowSegurancaVfJuggleTap } from './LogicFlowSegurancaVfJuggleTap';
-import { LogicFlowSpProtocolTapFlow } from './LogicFlowSpProtocolTapFlow';
-import { LogicFlowBiossegVfJuggleTap } from './LogicFlowBiossegVfJuggleTap';
-import { LogicFlowRespiratorioVfJuggleTap } from './LogicFlowRespiratorioVfJuggleTap';
-import { LogicFlowMentalRapsClassifyTap } from './LogicFlowMentalRapsClassifyTap';
-import { LogicFlowMentalCrisisDecisionTap } from './LogicFlowMentalCrisisDecisionTap';
-import { LogicFlowPeriPreopDecisionTap } from './LogicFlowPeriPreopDecisionTap';
-import { LogicFlowPeriSrpaDecisionTap } from './LogicFlowPeriSrpaDecisionTap';
-import { LogicFlowPeriProtocolTapFlow } from './LogicFlowPeriProtocolTapFlow';
-import { LogicFlowPeriVfJuggleTap } from './LogicFlowPeriVfJuggleTap';
-import { LogicFlowUrgenciasRcpTapFlow } from './LogicFlowUrgenciasRcpTapFlow';
-import { LogicFlowUrgenciasXabcdeTapFlow } from './LogicFlowUrgenciasXabcdeTapFlow';
-import { LogicFlowUrgenciasStrokeEliminationTap } from './LogicFlowUrgenciasStrokeEliminationTap';
-import { LogicFlowUrgenciasShockTapFlow } from './LogicFlowUrgenciasShockTapFlow';
-import { LogicFlowUrgenciasChokingTapFlow } from './LogicFlowUrgenciasChokingTapFlow';
-import { LogicFlowUrgenciasPediatricTapFlow } from './LogicFlowUrgenciasPediatricTapFlow';
-import { LogicFlowUrgenciasProtocolTapFlow } from './LogicFlowUrgenciasProtocolTapFlow';
-import { LogicFlowUrgenciasExcetoTapFlow } from './LogicFlowUrgenciasExcetoTapFlow';
-import { LogicFlowEtiologyEliminationTap } from './LogicFlowEtiologyEliminationTap';
-import { LogicFlowTbVfEliminationTap } from './LogicFlowTbVfEliminationTap';
-import { LogicFlowItuExcetoTap } from './LogicFlowItuExcetoTap';
-import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
-import { LogicFlowCamVfJuggleTap } from './LogicFlowCamVfJuggleTap';
-import { LogicFlowCamAltoRiscoEliminationTap } from './LogicFlowCamAltoRiscoEliminationTap';
-import { LogicFlowCamExcetoTapFlow } from './LogicFlowCamExcetoTapFlow';
-import { LogicFlowCamDocumentacaoVfTap } from './LogicFlowCamDocumentacaoVfTap';
-import { LogicFlowIvComplicationTapFlow } from './LogicFlowIvComplicationTapFlow';
-import { LogicFlowIvDeviceTapFlow } from './LogicFlowIvDeviceTapFlow';
-import { LogicFlowIvExcetoTapFlow } from './LogicFlowIvExcetoTapFlow';
-import { LogicFlowIvIntervalTapFlow } from './LogicFlowIvIntervalTapFlow';
-import { LogicFlowIvPunctureTapFlow } from './LogicFlowIvPunctureTapFlow';
-import { LogicFlowIvBundleTapFlow } from './LogicFlowIvBundleTapFlow';
-import { LogicFlowPniCalendarEliminationTap } from './LogicFlowPniCalendarEliminationTap';
-import { LogicFlowPniColdChainTap } from './LogicFlowPniColdChainTap';
-import { LogicFlowVitalsTranslateTap } from './LogicFlowVitalsTranslateTap';
-import { LogicFlowSondaChecklistTap } from './LogicFlowSondaChecklistTap';
-import { LogicFlowViaVfJuggleTap } from './LogicFlowViaVfJuggleTap';
-import { LogicFlowFarmacoVfJuggleTap } from './LogicFlowFarmacoVfJuggleTap';
-import { LogicFlowFarmacoProtocolTapFlow } from './LogicFlowFarmacoProtocolTapFlow';
-import { LogicFlowAdolescentVfWeaveTap } from './LogicFlowAdolescentVfWeaveTap';
-import { LogicFlowAdolescentZClassifyTap } from './LogicFlowAdolescentZClassifyTap';
-import { LogicFlowMulherPrenatalTapFlow } from './LogicFlowMulherPrenatalTapFlow';
-import { LogicFlowMulherLaborTapFlow } from './LogicFlowMulherLaborTapFlow';
-import { LogicFlowMulherScreeningTapFlow } from './LogicFlowMulherScreeningTapFlow';
-import { LogicFlowMulherMamaTapFlow } from './LogicFlowMulherMamaTapFlow';
-import { LogicFlowMulherPuerperioTapFlow } from './LogicFlowMulherPuerperioTapFlow';
-import { LogicFlowMulherPlanejamentoTapFlow } from './LogicFlowMulherPlanejamentoTapFlow';
-import {
-  LogicFlowCriancaFeedingTapFlow,
-  LogicFlowCriancaScreeningTapFlow,
-  LogicFlowCriancaPediatricTapFlow,
-  LogicFlowCriancaDehydrationTapFlow,
-  LogicFlowCriancaPuericulturaTapFlow,
-  LogicFlowCriancaNeonatalTapFlow,
-  LogicFlowCriancaDevTapFlow,
-} from './criancaVariants';
 import { SLIDE_CARD } from '../core/slideSurface';
 import {
   getLogicFlowStepVisual,
@@ -87,6 +21,8 @@ import {
   logicFlowStepCardClass,
   logicFlowStepIconClass,
 } from '../core/logicFlowStepStyles';
+import { getLogicFlowBespoke } from '../registry/logicFlow';
+import { LogicFocusShell } from '../logicFlowShells';
 
 interface LogicFlowProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -97,6 +33,10 @@ interface LogicFlowProps {
   footerRule?: string;
   /** Override do chip interno (ex.: INSULINA · VIAS no molde via-vf-juggle-tap). */
   chipLabel?: string;
+  /** Título do slide (bespoke glanceable — ex. palavra destaque). */
+  slideTitle?: string;
+  /** Override do eyebrow do FocusShell (PT → «Estratégia de prova»). */
+  focusEyebrow?: string;
 }
 
 /** Destaca a expressão "estudo reverso" (qualquer caixa) no texto do passo. */
@@ -185,6 +125,8 @@ export const LogicFlow = ({
   revealMode = 'auto',
   footerRule,
   chipLabel,
+  slideTitle,
+  focusEyebrow,
 }: LogicFlowProps) => {
   const variant = layoutVariant || 'vertical';
 
@@ -210,6 +152,21 @@ export const LogicFlow = ({
     advanceStep();
   }, [advanceStep]);
 
+  const bespoke = getLogicFlowBespoke(variant);
+  if (bespoke) {
+    const Comp = bespoke.Component;
+    return (
+      <Comp
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+        chipLabel={chipLabel}
+        slideTitle={slideTitle}
+      />
+    );
+  }
+
   if (!normalizedSteps || normalizedSteps.length === 0) {
     return (
       <motion.div className="flex min-h-full w-full min-w-0 items-center justify-center p-6">
@@ -218,428 +175,19 @@ export const LogicFlow = ({
     );
   }
 
-  if (variant === 'oxygen-step-ladder') {
+  // Fase A — genéricos em tap: FocusShell (sem pilha de N cards).
+  if (isTapMode) {
     return (
-      <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} />
-    );
-  }
-
-  if (variant === 'iv-care-soft-stack') {
-    return <LogicFlowSoftStack steps={steps} theme={theme} />;
-  }
-
-  if (variant === 'lab-vf-soft-stack') {
-    return <LogicFlowLabVfSoftStack steps={steps} theme={theme} />;
-  }
-
-  if (variant === 'wound-prep-tap-flow') {
-    return <LogicFlowWoundPrepTapFlow steps={steps} theme={theme} />;
-  }
-
-  if (variant === 'burn-triage-tap-flow') {
-    return <LogicFlowBurnTriageTapFlow steps={steps} theme={theme} />;
-  }
-
-  if (variant === 'pt-crase-funnel-tap-flow') {
-    return <LogicFlowPtCraseFunnelTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'pt-clitic-rail-tap-flow') {
-    return <LogicFlowPtCliticRailTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'pt-comma-rail-tap-flow') {
-    return <LogicFlowPtCommaRailTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'pt-term-matrix-tap-flow') {
-    return <LogicFlowPtTermMatrixTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'pt-subject-focus-tap-flow') {
-    return <LogicFlowPtTermMatrixTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'trabalho-vf-juggle-tap') {
-    return <LogicFlowTrabalhoVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'sp-vf-juggle-tap') {
-    return <LogicFlowSegurancaVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'sp-protocol-tap-flow') {
-    return (
-      <LogicFlowSpProtocolTapFlow
-        steps={steps}
+      <LogicFocusShell
+        steps={normalizedSteps}
         theme={theme}
         revealMode={revealMode}
         footerRule={footerRule}
+        eyebrow={focusEyebrow}
+        accent="clinical"
+        applyTapBudget
       />
     );
-  }
-
-  if (variant === 'biosseg-vf-juggle-tap') {
-    return <LogicFlowBiossegVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'respiratorio-vf-juggle-tap') {
-    return <LogicFlowRespiratorioVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'mental-raps-classify-tap') {
-    return (
-      <LogicFlowMentalRapsClassifyTap
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'mental-crisis-decision-tap') {
-    return (
-      <LogicFlowMentalCrisisDecisionTap
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'peri-preop-decision-tap') {
-    return (
-      <LogicFlowPeriPreopDecisionTap
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'peri-srpa-decision-tap') {
-    return (
-      <LogicFlowPeriSrpaDecisionTap
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'peri-protocol-tap-flow') {
-    return (
-      <LogicFlowPeriProtocolTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'peri-vf-juggle-tap') {
-    return (
-      <LogicFlowPeriVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'urgencias-rcp-tap-flow') {
-    return (
-      <LogicFlowUrgenciasRcpTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'urgencias-xabcde-tap-flow') {
-    return (
-      <LogicFlowUrgenciasXabcdeTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'urgencias-stroke-elimination-tap') {
-    return (
-      <LogicFlowUrgenciasStrokeEliminationTap
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'urgencias-shock-tap-flow') {
-    return (
-      <LogicFlowUrgenciasShockTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'urgencias-choking-tap-flow') {
-    return (
-      <LogicFlowUrgenciasChokingTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'urgencias-pediatric-tap-flow') {
-    return (
-      <LogicFlowUrgenciasPediatricTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'urgencias-protocol-tap-flow') {
-    return (
-      <LogicFlowUrgenciasProtocolTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'urgencias-exceto-tap-flow') {
-    return (
-      <LogicFlowUrgenciasExcetoTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'etiology-elimination-tap') {
-    return <LogicFlowEtiologyEliminationTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'tb-vf-elimination-tap') {
-    return <LogicFlowTbVfEliminationTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'itu-exceto-tap') {
-    return <LogicFlowItuExcetoTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'pni-vf-juggle-tap') {
-    return <LogicFlowPniVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'cam-vf-juggle-tap') {
-    return <LogicFlowCamVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'cam-alto-risco-elimination-tap') {
-    return (
-      <LogicFlowCamAltoRiscoEliminationTap steps={steps} theme={theme} revealMode={revealMode} />
-    );
-  }
-
-  if (variant === 'cam-exceto-tap-flow') {
-    return (
-      <LogicFlowCamExcetoTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'cam-documentacao-vf-tap') {
-    return <LogicFlowCamDocumentacaoVfTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'iv-complication-tap-flow') {
-    return (
-      <LogicFlowIvComplicationTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'iv-device-tap-flow') {
-    return (
-      <LogicFlowIvDeviceTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'iv-exceto-tap-flow') {
-    return (
-      <LogicFlowIvExcetoTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'iv-interval-tap-flow') {
-    return (
-      <LogicFlowIvIntervalTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'iv-puncture-tap-flow') {
-    return (
-      <LogicFlowIvPunctureTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'iv-bundle-tap-flow') {
-    return (
-      <LogicFlowIvBundleTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'pni-calendar-elimination-tap') {
-    return (
-      <LogicFlowPniCalendarEliminationTap steps={steps} theme={theme} footerRule={footerRule} />
-    );
-  }
-
-  if (variant === 'mulher-prenatal-tap-flow') {
-    return <LogicFlowMulherPrenatalTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'mulher-labor-tap-flow') {
-    return <LogicFlowMulherLaborTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'mulher-screening-tap-flow') {
-    return <LogicFlowMulherScreeningTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'mulher-mama-tap-flow') {
-    return <LogicFlowMulherMamaTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'mulher-puerperio-tap-flow') {
-    return <LogicFlowMulherPuerperioTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'mulher-planejamento-tap-flow') {
-    return <LogicFlowMulherPlanejamentoTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'crianca-feeding-tap-flow') {
-    return <LogicFlowCriancaFeedingTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-screening-tap-flow') {
-    return <LogicFlowCriancaScreeningTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-pediatric-tap-flow') {
-    return <LogicFlowCriancaPediatricTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-dehydration-tap-flow') {
-    return <LogicFlowCriancaDehydrationTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-puericultura-tap-flow') {
-    return <LogicFlowCriancaPuericulturaTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-neonatal-tap-flow') {
-    return <LogicFlowCriancaNeonatalTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-  if (variant === 'crianca-dev-tap-flow') {
-    return <LogicFlowCriancaDevTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'pni-cold-chain-tap') {
-    return <LogicFlowPniColdChainTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'ist-vf-juggle-tap') {
-    return (
-      <LogicFlowPniVfJuggleTap
-        steps={steps}
-        theme={theme}
-        footerRule={footerRule}
-        accentVariant="ist"
-      />
-    );
-  }
-
-  if (variant === 'via-vf-juggle-tap') {
-    return (
-      <LogicFlowViaVfJuggleTap
-        steps={steps}
-        theme={theme}
-        footerRule={footerRule}
-        chipLabel={chipLabel}
-      />
-    );
-  }
-
-  if (variant === 'farmaco-vf-juggle-tap') {
-    return <LogicFlowFarmacoVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'farmaco-protocol-tap-flow') {
-    return (
-      <LogicFlowFarmacoProtocolTapFlow
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'adolescent-vf-weave-tap') {
-    return <LogicFlowAdolescentVfWeaveTap steps={steps} theme={theme} footerRule={footerRule} />;
-  }
-
-  if (variant === 'adolescent-z-classify-tap') {
-    return (
-      <LogicFlowAdolescentZClassifyTap
-        steps={steps}
-        theme={theme}
-        revealMode={revealMode}
-        footerRule={footerRule}
-      />
-    );
-  }
-
-  if (variant === 'dose-calc-tap' || variant === 'sae-decision-tap') {
-    return (
-      <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} />
-    );
-  }
-
-  if (variant === 'sonda-decision-tap') {
-    return (
-      <LogicFlowSondaChecklistTap steps={steps} theme={theme} revealMode={revealMode} />
-    );
-  }
-
-  if (variant === 'vitals-translate-tap') {
-    return <LogicFlowVitalsTranslateTap steps={steps} theme={theme} />;
   }
 
   const footer = (
@@ -709,7 +257,7 @@ export const LogicFlow = ({
                   <LogicFlowTapBadge
                     visible={canTap && index < normalizedSteps.length - 1}
                   />
-                  <span className="btn-editorial-primary flex h-8 w-8 shrink-0 items-center justify-center rounded-lg p-0 text-sm font-bold text-[#1a2e05]">
+                  <span className="btn-editorial-primary flex h-8 w-8 shrink-0 items-center justify-center rounded-lg p-0 text-sm font-bold text-white">
                     {revealed ? <CheckCircle2 size={18} /> : index + 1}
                   </span>
                   <p

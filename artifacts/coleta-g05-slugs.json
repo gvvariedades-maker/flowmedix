@@ -1,0 +1,23 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-g05",
+  "slugs": [
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563288910-0",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+    "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+    "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563225798-9",
+    "univali-enfermagem-coleta-de-exames-laboratoriais-1779563165114-9",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-4",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-5"
+  ],
+  "branches": [
+    "coleta_nao_sanguinea",
+    "coleta_nao_sanguinea",
+    "coleta_nao_sanguinea",
+    "coleta_nao_sanguinea",
+    "coleta_nao_sanguinea",
+    "coleta_nao_sanguinea",
+    "coleta_nao_sanguinea",
+    "coleta_nao_sanguinea"
+  ]
+}

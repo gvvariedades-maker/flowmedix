@@ -17,10 +17,6 @@ jest.mock('@/lib/estudar/questaoNav', () => ({
   getQuestaoNavList: jest.fn(),
 }));
 
-jest.mock('@/lib/spaced-repetition', () => ({
-  getTodayReviews: jest.fn(),
-}));
-
 import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import {
   getQuestaoBySlugCached,
@@ -228,6 +224,24 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
         tituloAula: 'Urgências',
       }),
     );
+  });
+
+  it('from=revisoes (surface descontinuada) cai na navegação normal', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    const supabase = mockSupabaseModuloRow();
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: SLUG,
+      userId: USER_ID,
+      supabase: supabase as never,
+      searchParams: { from: 'revisoes' },
+    });
+
+    expect(result.status).toBe('ok');
+    if (result.status !== 'ok') return;
+    expect(result.payload).not.toHaveProperty('fromRevisoes');
+    expect(result.payload).not.toHaveProperty('sameStemFallback');
+    expect(mockGetQuestaoNavList).toHaveBeenCalled();
   });
 
   it('primeira questão da lista não define anteriorSlug', async () => {

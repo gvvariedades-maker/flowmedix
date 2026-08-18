@@ -1,0 +1,306 @@
+[
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-8.json",
+    "correct": "D",
+    "instruction": "A maioria das doenças é causada ou influenciada por fatores ambientais. O entendimento da maneira pela qual um agente do meio ambiente interfere na saúde éimportante para o delineamento de programas de prevenção. A epidemiologia ambiental fornece as bases científicas para o estudo e a interpretação das relações entre oambiente e a saúde nas populações. Os diferentes fatores ambientais que influenciam a saúde e seus respectivos exemplos, são:\nFonte: Bonita, R. Epidemiologia básica / R. Bonita, R. Beaglehole, T. Kjellström; [tradução e revisão científica Juraci A. Cesar]. - 2.ed. - São Paulo, Santos. 2010. 213p. : il.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Acidental: Clima, ruído, radiação e ergonomia.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Físico: Bactérias, vírus, parasitas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Biológico: Tabaco, produtos químicos, poeira, irritantes de pele, aditivos alimentares.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Psicológico: Estresse, desemprego, mudança de turno de trabalho, relações humanas.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Químico: Situações perigosas, velocidade, uso de drogas e bebidas alcoólicas.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2022",
+      "orgao": "Vigilância Sanitária e Saúde Ambiental",
+      "prova": "Tec (Pref Blumenau)"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-9.json",
+    "correct": "B",
+    "instruction": "O inquérito epidemiológico é um estudo seccional, geralmente do tipo amostral, levado a efeito quando as informações existentes são inadequadas ouinsuficientes, em virtude de diversos fatores, entre os quais pode-se destacar:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A baixa necessidade as medidas de controle de um programa e de agravos inusitados.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Notificação imprópria ou deficiente; mudança no comportamento epidemiológico de uma determinada doença.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "A recuperação de séries históricas, para análises de tendências, e a busca inativa de casos.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Facilidade em se avaliar coberturas vacinais ou eficácia de vacinas; necessidade de se avaliar efetividade das medidas de controle de um programa.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Somente a eficiência do sistema de notificação, é um exemplo de inquéritos epidemiológicos.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2022",
+      "orgao": "Vigilância Sanitária e Saúde Ambiental",
+      "prova": "Tec (Pref Blumenau)"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-0.json",
+    "correct": "D",
+    "instruction": "Estudos epidemiológicos e sociológicos têm desempenhado um papel importante na identificação de epidemias, dentre eles e estão:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Determinação do padrão de disseminação, identificação de fatores de investigação e seus determinantes, e avaliação de intervenções visando prevenção,tratamento e controle.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Determinação do padrão de tratamento, identificação de fatores de risco e seus determinantes, e avaliação de intervenções visando prevenção, disseminação econtrole.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Determinação do padrão de prevenção, identificação de fatores de risco e seus determinantes, e avaliação de intervenções visando o risco, tratamento econtrole.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Determinação do padrão de disseminação, identificação de fatores de risco e seus determinantes, e avaliação de intervenções visando prevenção, tratamento econtrole.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Determinação do padrão de disseminação, identificação de fatores de associação e seus determinantes, e avaliação de intervenções visando prevenção,tratamento e controle.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2022",
+      "orgao": "Vigilância Sanitária e Saúde Ambiental",
+      "prova": "Tec (Pref Blumenau)"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-1.json",
+    "correct": "E",
+    "instruction": "A incidência na epidemiologia, indica o número de casos novos ocorridos em um certo período de tempo em uma população específica, enquanto prevalênciarefere-se ao número de casos (novos e velhos) encontrados em uma população definida em um determinado ponto no tempo. Contudo existem diferenças entre medidase taxas de prevalência, podemos então afirmar que:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Medidas de prevalência refere-se à velocidade com que antigos eventos ocorrem em uma determinada população, mas a taxa de prevalência não é uma medidaútil para condições de início insidioso e gradual.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Medidas de prevalência refere-se à velocidade com que novos eventos ocorrem em uma determinada população, já a taxa de prevalência é uma medida útil paracondições cujo início é insidioso, gradual.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Medidas de prevalência refere-se à velocidade com que novos eventos ocorrem em uma determinada população, e a taxa de prevalência leva em conta o períodode tempo em que os indivíduos estão livres da doença, ou seja, em risco de desenvolvê-la.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Medidas de prevalência são, úteis na avaliação de necessidades em saúde (curativas ou preventivas) e no planejamento dos serviços de saúde, já a taxa deprevalência leva em conta o período de tempo em que os indivíduos estão livres da doença, ou seja, em risco de desenvolvê-la.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Medidas de prevalência são, úteis na avaliação de necessidades em saúde (curativas ou preventivas) e no planejamento dos serviços de saúde, já a taxa deprevalência é uma medida útil para condições cujo início é insidioso, gradual.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2022",
+      "orgao": "Vigilância Sanitária e Saúde Ambiental",
+      "prova": "Tec (Pref Blumenau)"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-2.json",
+    "correct": "C",
+    "instruction": "Epidemia é quando uma doença apresenta um crescimento abrupto, além do que é esperado, já a pandemia, é epidemia de âmbito global. Com o avanço davacinação uma pandemia pode vir a se transformar em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Uma pandemia regional.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Uma pandemia sazonal.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Uma endemia sazonal.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Uma epidemia regional.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Uma epidemia sazonal.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2022",
+      "orgao": "Vigilância Sanitária e Saúde Ambiental",
+      "prova": "Tec (Pref Blumenau)"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-3.json",
+    "correct": "D",
+    "instruction": "A relação dose-efeito proporciona valiosas informações para o planejamento de estudos epidemiológicos. Para muitos fatores ambientais, o efeito varia desde umapequena alteração fisiológica ou bioquímica até a doença grave ou morte. Logo:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Comumente, quanto maior a dose, a mesma será observada para todo o grupo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Até mesmo pessoas com doses externas diferentes podem apresentar doses internas sempre iguais.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Raramente, quanto maior a dose, mais grave ou intenso será o desfecho.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Comumente, quanto maior a dose, mais grave ou intenso será o efeito.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "A relação dose-efeito para um indivíduo sempre será a mesma daquela observada para o grupo.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2022",
+      "orgao": "Vigilância Sanitária e Saúde Ambiental",
+      "prova": "Tec (Pref Blumenau)"
+    }
+  },
+  {
+    "file": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-4.json",
+    "correct": "C",
+    "instruction": "O potencial de disseminação de uma doença é expresso pela:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Elevada frequência, que afetam grandes contingentes populacionais que traduzem pela prevalência e sua disseminação.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Atuação concreta e efetiva dos serviços de saúde com relação a indivíduos ou coletividades e transmissibilidade da doença.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Transmissibilidade da doença, possibilidade e sua disseminação por vetores e demais fontes de infecção, colocando sob risco outros indivíduos ou coletividade.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Transmissibilidade da doença, elevada frequência, que afetam grandes contingentes populacionais que traduzem pela incidência e sua disseminação.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Disponibilidade de instrumentos específicos de prevenção e controle possibilidade e sua disseminação por vetores e demais fontes de infecção.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2022",
+      "orgao": "Vigilância Sanitária e Saúde Ambiental",
+      "prova": "Tec (Pref Blumenau)"
+    }
+  },
+  {
+    "file": "furb-enfermagem-processo-de-enfermagem-1780011908736-4.json",
+    "correct": "C",
+    "instruction": "Os indicadores de saúde são medidas sumarizadas que informam sobre a situação de saúde da população. Nesse contexto, analise as asserções a seguir e a relação proposta entre elas:\nI.As medidas de morbidade são fundamentais para a prevenção e o controle dos agravos à saúde, pois permitem compreender a distribuição das doenças em uma população.\nISSO PORQUE\nII.Quando se conhece a totalidade de casos (incidência) e os casos novos (prevalência) de uma doença ou agravo em determinada população, consegue-se descrever a distribuição desses eventos no tempo e no espaço.\nA respeito dessas asserções, assinale a opção correta:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A asserção I é uma proposição falsa e a II é uma proposição verdadeira.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A asserção I é uma proposição verdadeira e a II é uma proposição falsa.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "As asserções I e II são proposições verdadeiras e a II é uma justificativa correta da I.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "As asserções I e II são proposições falsas.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Furb",
+      "ano": "2026",
+      "orgao": "Enfermagem",
+      "prova": "Tec (FURB)"
+    }
+  }
+]

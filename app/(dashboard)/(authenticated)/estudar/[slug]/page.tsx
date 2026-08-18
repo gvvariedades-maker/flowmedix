@@ -128,6 +128,7 @@ async function renderPaginaQuestaoDinamica({
     result = await getEstudarQuestaoPayloadCached({
       slug: resolvedParams.slug,
       userId,
+      userEmail: session?.user?.email ?? null,
       isAdmin,
       searchParams: resolvedSearch,
       layers: 'full',

@@ -1,7 +1,12 @@
 /**
  * Conta slots interativos de moldes bespoke — evita UI 0/0 no player.
  */
-import { inferAdolescentCurtain, type AdolescentCurtain } from '@/lib/slides/adolescentSlideUtils';
+import {
+  inferAdolescentCurtain,
+  inferSpeakBarrierSide,
+  parseAdolescentExcetoStep,
+  type AdolescentCurtain,
+} from '@/lib/slides/adolescentSlideUtils';
 import {
   inferZRailSlot,
   ADOLESCENT_Z_SCORE_POSITIVE,
@@ -12,6 +17,8 @@ import {
   type MoldAffinitySlide,
 } from '@/lib/slides/moldAffinity';
 import { conceptItemsFromSlide, countAdmeJourneyRailPkSlots } from '@/lib/slides/admeJourneyRailUtils';
+import { parsePniExcetoStep } from '@/lib/slides/pniSlideUtils';
+import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 
 const ADOLESCENT_CURTAIN_SLOTS: AdolescentCurtain[] = [
   'escuta',
@@ -77,6 +84,49 @@ function countAdolescentSigiloSpectrumSlots(slide: MoldAffinitySlide): number {
   return rows > 0 ? rows : corpus.length > 20 ? 1 : 0;
 }
 
+/**
+ * Speak-barrier: precisa dos dois pólos (ok/rights × barreira).
+ * Rows só “fatores” sem barreira → 0 (evita coluna vazia + placeholder no aluno).
+ */
+function countSpeakBarrierBoardSlots(slide: MoldAffinitySlide): number {
+  const rows = Array.isArray(slide.rows) ? slide.rows : [];
+  if (rows.length === 0) return 0;
+  let barrier = 0;
+  let other = 0;
+  for (const row of rows) {
+    const r = row as { label?: string; value?: string };
+    const side = inferSpeakBarrierSide(String(r.label ?? ''), String(r.value ?? ''));
+    if (side === 'barrier') barrier += 1;
+    else other += 1;
+  }
+  return barrier > 0 && other > 0 ? rows.length : 0;
+}
+
+type ExcetoStepParser = (
+  step: string,
+  index: number,
+) => { kind: string };
+
+/**
+ * Isolate EXCETO: precisa keep + exception parseáveis.
+ * Steps genéricos (“Passo 2”) sem contraste → 0.
+ */
+function countExcetoIsolateBoardSlots(
+  slide: MoldAffinitySlide,
+  parseStep: ExcetoStepParser,
+): number {
+  const steps = normalizeLogicFlowSteps(slide.steps);
+  if (steps.length === 0) return 0;
+  let keep = 0;
+  let exception = 0;
+  steps.forEach((step, index) => {
+    const kind = parseStep(step, index).kind;
+    if (kind === 'keep') keep += 1;
+    if (kind === 'exception') exception += 1;
+  });
+  return keep > 0 && exception > 0 ? steps.length : 0;
+}
+
 function countGenericInteractiveSlots(slide: MoldAffinitySlide): number {
   switch (slide.type) {
     case 'concept_map':
@@ -104,11 +154,35 @@ export function countMoldInteractiveSlots(variant: string, slide: MoldAffinitySl
   switch (variant) {
     case 'adolescent-privacy-curtain':
       return countAdolescentPrivacyCurtainSlots(slide);
+    case 'adolescent-care-pillars-deck':
+      return Array.isArray(slide.items) || Array.isArray(slide.concepts)
+        ? (slide.items?.length ?? slide.concepts?.length ?? 0)
+        : 0;
     case 'adolescent-sigilo-spectrum':
       return countAdolescentSigiloSpectrumSlots(slide);
+    case 'adolescent-speak-barrier-board':
+      return countSpeakBarrierBoardSlots(slide);
     case 'adolescent-vf-weave-tap':
       return Array.isArray(slide.steps) ? slide.steps.length : 0;
+    case 'adolescent-exceto-isolate-tap':
+    case 'adolescent-exceto-isolate-board':
+      return countExcetoIsolateBoardSlots(slide, parseAdolescentExcetoStep);
+    case 'pni-exceto-isolate-board':
+      return countExcetoIsolateBoardSlots(slide, parsePniExcetoStep);
+    case 'pt-classes-exceto-isolate-board':
+      return Array.isArray(slide.steps) ? slide.steps.filter(Boolean).length : 0;
+    case 'pni-via-isolate-board':
+      return Array.isArray(slide.steps) ? slide.steps.filter(Boolean).length : 0;
+    case 'pni-exceto-command-hub':
+    case 'pni-via-route-hub':
+      return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
+    case 'pni-exceto-rule-board':
+      return Array.isArray(slide.rows) ? slide.rows.filter(Boolean).length : 0;
     case 'adolescent-consent-gate':
+      return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
+    case 'adolescent-exceto-compare':
+    case 'pni-exceto-compare':
+    case 'pni-via-trap-arena':
       return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
     case 'adolescent-growth-z-rail':
       return countAdolescentGrowthZRailSlots(slide);
@@ -118,6 +192,44 @@ export function countMoldInteractiveSlots(variant: string, slide: MoldAffinitySl
       return countAdolescentZClassifyTapSlots(slide);
     case 'adolescent-z-threshold-trap':
       return countAdolescentZThresholdTrapSlots(slide);
+    case 'adolescent-violence-deck':
+      return Array.isArray(slide.items) || Array.isArray(slide.concepts)
+        ? (slide.items?.length ?? slide.concepts?.length ?? 0)
+        : 0;
+    case 'adolescent-violence-timeline':
+      return Array.isArray(slide.steps) ? slide.steps.length : 0;
+    case 'adolescent-violence-calendar':
+      return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
+    case 'adolescent-mental-route-list':
+      return Array.isArray(slide.items) || Array.isArray(slide.concepts)
+        ? (slide.items?.length ?? slide.concepts?.length ?? 0)
+        : 0;
+    case 'adolescent-mental-protocol-rail':
+      return Array.isArray(slide.steps) ? slide.steps.length : 0;
+    case 'adolescent-mental-hub-board':
+      return Array.isArray(slide.rows) ? slide.rows.length : 0;
+    case 'adolescent-mental-step-trap':
+      return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
+    case 'adolescent-dev-pair-rail':
+      return Array.isArray(slide.items) || Array.isArray(slide.concepts)
+        ? (slide.items?.length ?? slide.concepts?.length ?? 0)
+        : 0;
+    case 'adolescent-dev-objective-flow':
+      return Array.isArray(slide.steps) ? slide.steps.length : 0;
+    case 'adolescent-dev-vigilance-board':
+      return Array.isArray(slide.rows) ? slide.rows.length : 0;
+    case 'adolescent-dev-budget-checklist':
+      return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
+    case 'adolescent-generic-hub-orbit':
+      return Array.isArray(slide.items) || Array.isArray(slide.concepts)
+        ? (slide.items?.length ?? slide.concepts?.length ?? 0)
+        : 0;
+    case 'adolescent-generic-care-levels':
+      return Array.isArray(slide.steps) ? slide.steps.length : 0;
+    case 'adolescent-generic-finance-checklist':
+      return Array.isArray(slide.rows) ? slide.rows.length : 0;
+    case 'adolescent-generic-versus-blocks':
+      return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
     case 'adme-journey-rail': {
       const concepts = conceptItemsFromSlide(slide);
       const pkSlots = countAdmeJourneyRailPkSlots(concepts);

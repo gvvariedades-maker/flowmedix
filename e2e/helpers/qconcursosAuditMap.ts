@@ -479,7 +479,7 @@ export function comparativoToMarkdown(capturedAt: string): string {
 | Salvar filtros / Meus filtros | — (caderno/edital) |
 | Itens por página / Ordenar | Paginação API vitrine |
 
-**Visual:** fundo branco, grid de dropdowns, CTA laranja \`Filtrar\` — AVANT: claro + CTA verde \`#8fe020\`.
+**Visual:** fundo branco, grid de dropdowns, CTA laranja \`Filtrar\` — AVANT: claro + CTA laranja \`#F26522\`.
 
 ---
 

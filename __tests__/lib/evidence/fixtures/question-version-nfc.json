@@ -1,0 +1,6 @@
+{
+  "label": "NFC equivalence — NFD vs precomposed café",
+  "nfd_instruction": "Assinale a alternativa correta caf\u0065\u0301.",
+  "nfc_instruction": "Assinale a alternativa correta café.",
+  "base_ref": "question-version-base.json"
+}

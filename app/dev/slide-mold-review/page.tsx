@@ -20,7 +20,7 @@ function loadQuestaoFromPath(jsonPath: string): QuestaoCompleta {
 }
 
 type PageProps = {
-  searchParams: Promise<{ branch?: string }>;
+  searchParams: Promise<{ branch?: string; file?: string }>;
 };
 
 /** Dev-only — regressão visual por molde L3 (Playwright). */
@@ -29,7 +29,7 @@ export default async function SlideMoldReviewPage({ searchParams }: PageProps) {
     notFound();
   }
 
-  const { branch: branchParam } = await searchParams;
+  const { branch: branchParam, file: fileParam } = await searchParams;
   const anchorsPath = resolve(process.cwd(), 'data/catalog-migration/visual-anchors.json');
   const anchorsFile = JSON.parse(readFileSync(anchorsPath, 'utf8')) as VisualAnchorsFile;
 
@@ -39,7 +39,14 @@ export default async function SlideMoldReviewPage({ searchParams }: PageProps) {
     notFound();
   }
 
-  const questao = loadQuestaoFromPath(anchor.json_path);
+  const jsonPath =
+    fileParam &&
+    !fileParam.includes('..') &&
+    (fileParam.startsWith('examples/') || fileParam.startsWith('data/catalog-migration/'))
+      ? fileParam
+      : anchor.json_path;
+
+  const questao = loadQuestaoFromPath(jsonPath);
 
   return <SlideMoldReviewPanels questao={questao} branch={anchor.pedagogical_branch} />;
 }

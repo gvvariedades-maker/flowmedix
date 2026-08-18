@@ -1,8 +1,8 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { ChevronRight, Trash2, Trophy, Calendar } from 'lucide-react';
+import { useMemo } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Check, X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import {
@@ -11,6 +11,14 @@ import {
   pniMonthLabel,
   type ParsedPniCalendarStep,
 } from '@/lib/slides/pniSlideUtils';
+import {
+  AlertCallout,
+  BoardChrome,
+  CategoryStrip,
+  CriticalNumber,
+  PolarityPanel,
+} from '../primitives';
+import { cn } from '@/lib/utils';
 
 interface LogicFlowPniCalendarEliminationTapProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -18,93 +26,124 @@ interface LogicFlowPniCalendarEliminationTapProps {
   footerRule?: string;
 }
 
-const LETTERS = ['A', 'B', 'C', 'D', 'E'] as const;
-
-function MonthChips({ months }: { months: number[] }) {
-  if (months.length === 0) return null;
-  return (
-    <div className="flex flex-wrap justify-center gap-1.5">
-      {months.map((month) => (
-        <span
-          key={month}
-          className="rounded-full bg-sky-100 px-2.5 py-1 font-mono text-[10px] font-black text-sky-900 ring-1 ring-sky-200/80"
-        >
-          {pniMonthLabel(month)}
-        </span>
-      ))}
-    </div>
-  );
+function shortEliminateText(text: string, compact: boolean): string {
+  const cleaned = text
+    .replace(/^Testar\s+[A-E]\s*[—–-]\s*/i, '')
+    .replace(/\s*→\s*eliminar\.?$/i, '')
+    .trim();
+  const max = compact ? 72 : 90;
+  return cleaned.length > max ? `${cleaned.slice(0, max - 1)}…` : cleaned;
 }
 
-function StepBadge({ step }: { step: ParsedPniCalendarStep }) {
-  const styles: Record<ParsedPniCalendarStep['kind'], string> = {
-    anchor_age: 'bg-sky-100 text-sky-900',
-    eliminate: 'bg-rose-100 text-rose-800',
-    catchup_eliminate: 'bg-orange-100 text-orange-900',
-    locate: 'bg-emerald-100 text-emerald-800',
-    fixation: 'bg-lime-100 text-lime-900',
-    scenario: 'bg-violet-100 text-violet-900',
-    step: 'bg-slate-100 text-slate-700',
-  };
+function EliminateTile({
+  step,
+  index,
+  reduceMotion,
+  compact,
+}: {
+  step: ParsedPniCalendarStep;
+  index: number;
+  reduceMotion: boolean;
+  compact: boolean;
+}) {
+  const letter = step.letter?.toUpperCase();
+  const months = step.months ?? [];
+
   return (
-    <span
-      className={`rounded-full px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide ${styles[step.kind]}`}
+    <motion.div
+      initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: reduceMotion ? 0 : index * 0.03 }}
     >
-      {step.title}
-    </span>
+      <PolarityPanel tone="exception" className={cn('h-full', compact && '!gap-1.5 !py-2.5')}>
+        <div className="flex items-center gap-2.5">
+          {letter ? (
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-rose-600 font-body text-lg font-black text-white line-through decoration-2 shadow-sm">
+              {letter}
+            </span>
+          ) : (
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-rose-100 text-rose-700">
+              <X className="h-4 w-4" strokeWidth={3} aria-hidden />
+            </span>
+          )}
+          <p className="min-w-0 flex-1 font-body text-sm font-semibold leading-snug text-rose-900">
+            {shortEliminateText(step.text, compact)}
+          </p>
+          {!compact && months.length > 0 ? (
+            <div className="flex shrink-0 flex-wrap justify-end gap-1">
+              {months.slice(0, 3).map((m) => (
+                <span
+                  key={m}
+                  className="rounded-md bg-sky-100 px-1.5 py-0.5 font-mono text-[9px] font-black text-sky-900 ring-1 ring-sky-200"
+                >
+                  {pniMonthLabel(m)}
+                </span>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      </PolarityPanel>
+    </motion.div>
   );
 }
 
+/**
+ * Calendário PNI Glance OS — board 0 taps: herói (letra + mês) + tiles de eliminação.
+ * Catch-up: âncora fundida no herói; lista vertical compacta.
+ */
 export function LogicFlowPniCalendarEliminationTap({
   steps,
   theme,
   footerRule,
 }: LogicFlowPniCalendarEliminationTapProps) {
   const reduceMotion = useReducedMotion();
-  const normalizedSteps = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
-  const parsedSteps = useMemo(
-    () => normalizedSteps.map((step, index) => parsePniCalendarStep(step, index)),
-    [normalizedSteps],
+  const normalized = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
+  const parsed = useMemo(
+    () => normalized.map((step, index) => parsePniCalendarStep(step, index)),
+    [normalized],
   );
   const catchUpMode = useMemo(
-    () => isPniCatchUpCorpus(normalizedSteps.join(' ')),
-    [normalizedSteps],
+    () => isPniCatchUpCorpus(normalized.join(' ')),
+    [normalized],
   );
 
-  const [revealedCount, setRevealedCount] = useState(
-    reduceMotion ? parsedSteps.length : 1,
+  const anchorStep = parsed.find((s) => s.kind === 'anchor_age');
+  const eliminateSteps = parsed.filter(
+    (s) => s.kind === 'eliminate' || s.kind === 'catchup_eliminate',
+  );
+  const locateStep = parsed.find((s) => s.kind === 'locate');
+  const fixationStep = parsed.find((s) => s.kind === 'fixation' || /em similares/i.test(s.text));
+  const scenarioStep = parsed.find((s) => s.kind === 'scenario');
+  const retrieveStep = parsed.find(
+    (s) =>
+      s.kind === 'step' &&
+      /recuperar|men c|calendário|abrir|tratar como esquema/i.test(s.text) &&
+      s !== anchorStep,
   );
 
-  const advance = useCallback(() => {
-    setRevealedCount((c) => Math.min(c + 1, parsedSteps.length));
-  }, [parsedSteps.length]);
+  const winnerLetter = locateStep?.letter?.toUpperCase() ?? null;
+  const focusMonths =
+    (locateStep?.months && locateStep.months.length > 0
+      ? locateStep.months
+      : anchorStep?.months && anchorStep.months.length > 0
+        ? anchorStep.months
+        : catchUpMode
+          ? []
+          : [3]) ?? [];
+  const focusMonth = focusMonths[0];
 
-  const eliminated = useMemo(() => {
-    const out = new Set<string>();
-    for (let i = 0; i < revealedCount; i++) {
-      const step = parsedSteps[i];
-      if (
-        step.letter &&
-        (step.kind === 'eliminate' || step.kind === 'catchup_eliminate')
-      ) {
-        out.add(step.letter);
-      }
-    }
-    return out;
-  }, [parsedSteps, revealedCount]);
+  const heroBody = catchUpMode
+    ? (locateStep?.text.replace(/^Marcar\s+[A-E]\s*[—–-]?\s*/i, '') ??
+      retrieveStep?.text ??
+      'Vacinar pela faixa etária — cartão substituto no mesmo atendimento.')
+    : locateStep
+      ? locateStep.text.replace(/^Marcar\s+[A-E]\s*[—–-]?\s*/i, '')
+      : (anchorStep?.text ?? 'Cruzar idade do enunciado com a linha do PNI.');
 
-  const winnerLetter = useMemo(() => {
-    for (let i = parsedSteps.length - 1; i >= 0; i--) {
-      const step = parsedSteps[i];
-      if (step.kind === 'locate' && step.letter) return step.letter;
-    }
-    return null;
-  }, [parsedSteps]);
+  const showSeparateAnchor =
+    !catchUpMode && Boolean(scenarioStep || retrieveStep || anchorStep);
 
-  const isComplete = revealedCount >= parsedSteps.length;
-  const current = parsedSteps[revealedCount - 1];
-
-  if (parsedSteps.length === 0) {
+  if (normalized.length === 0) {
     return (
       <div className="flex min-h-full items-center justify-center p-6">
         <p className="font-body text-slate-400">Nenhum passo definido</p>
@@ -113,89 +152,121 @@ export function LogicFlowPniCalendarEliminationTap({
   }
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-4">
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
-
-      <div className="relative z-10 flex min-h-0 flex-1 flex-col gap-3">
-        <div className="flex items-center justify-center gap-2">
-          <span className="rounded-full border border-lime-200/80 bg-lime-50/90 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-lime-900">
-            {catchUpMode ? 'Calendário catch-up' : 'Calendário PNI'}
-          </span>
-          {!catchUpMode ? <Calendar className="h-4 w-4 text-lime-700" aria-hidden /> : null}
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-2">
-          {LETTERS.map((letter) => {
-            const isOut = eliminated.has(letter);
-            const isWinner = isComplete && winnerLetter === letter;
-            return (
-              <div
-                key={letter}
-                className={`flex h-11 w-11 items-center justify-center rounded-xl font-display text-base font-black transition-all duration-300 md:h-12 md:w-12 md:text-lg ${
-                  isWinner
-                    ? 'scale-110 bg-emerald-500 text-white ring-4 ring-emerald-300/50'
-                    : isOut
-                      ? 'bg-rose-200/90 text-rose-400 line-through opacity-60'
-                      : 'bg-white/90 text-lime-900 ring-2 ring-lime-200/60'
-                }`}
-              >
-                {letter}
-              </div>
-            );
-          })}
-        </div>
-
-        <AnimatePresence mode="wait">
-          {current ? (
-            <motion.div
-              key={revealedCount}
-              initial={reduceMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className={`rounded-2xl border bg-white/95 p-4 shadow-md ${
-                current.kind === 'locate'
-                  ? 'border-emerald-300/80 border-l-[4px] border-l-emerald-500'
-                  : current.kind === 'eliminate' || current.kind === 'catchup_eliminate'
-                    ? 'border-rose-200/80 border-l-[4px] border-l-rose-400'
-                    : 'border-lime-200/80 border-l-[4px] border-l-lime-500'
-              }`}
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.35}
+      eyebrow={catchUpMode ? 'BOARD — CATCH-UP PNI' : 'BOARD — CALENDÁRIO PNI'}
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+      maxWidth="3xl"
+      className="gap-2.5"
+    >
+      <PolarityPanel tone="keep" emphasized>
+        <div className="flex items-start gap-3">
+          {winnerLetter ? (
+            <div
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-600 font-body text-3xl font-black text-white shadow-lg ring-2 ring-emerald-300/70"
+              aria-label={`Gabarito letra ${winnerLetter}`}
             >
-              <div className="mb-2 flex flex-wrap items-center gap-2">
-                <span className="font-mono text-[10px] font-bold text-slate-500">
-                  {revealedCount}/{parsedSteps.length}
-                </span>
-                <StepBadge step={current} />
-                {current.kind === 'eliminate' || current.kind === 'catchup_eliminate' ? (
-                  <Trash2 className="h-4 w-4 text-rose-500" aria-hidden />
-                ) : null}
-                {current.kind === 'locate' ? (
-                  <Trophy className="h-4 w-4 text-emerald-600" aria-hidden />
-                ) : null}
-              </div>
-              {current.months && current.months.length > 0 ? (
-                <div className="mb-3">
-                  <MonthChips months={current.months} />
-                </div>
-              ) : null}
-              <p className="font-body text-sm leading-relaxed text-slate-800 md:text-base">{current.text}</p>
-            </motion.div>
+              {winnerLetter}
+            </div>
+          ) : focusMonth != null ? (
+            <CriticalNumber
+              value={String(focusMonth === 0 ? 0 : focusMonth)}
+              unit={focusMonth === 0 ? undefined : 'M'}
+              label="FOCO"
+              emphasis="alert"
+              className="min-w-[4.25rem] shrink-0 px-2.5 py-2"
+            />
           ) : null}
-        </AnimatePresence>
+          <div className="min-w-0 flex-1">
+            <CategoryStrip label={catchUpMode ? 'Conduta catch-up' : 'Marco × vacina'} tone="keep" />
+            <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+              {focusMonth != null ? (
+                <span className="rounded-md bg-lime-500 px-2 py-0.5 font-mono text-xs font-black text-white">
+                  {pniMonthLabel(focusMonth)}
+                </span>
+              ) : catchUpMode ? (
+                <span className="rounded-md bg-lime-500 px-2 py-0.5 font-mono text-[10px] font-black uppercase text-white">
+                  Sem cartão
+                </span>
+              ) : null}
+              {eliminateSteps.map((s) =>
+                s.letter ? (
+                  <span
+                    key={s.letter}
+                    className="rounded-md bg-rose-200 px-2 py-0.5 font-mono text-xs font-black text-rose-800 line-through"
+                  >
+                    {s.letter.toUpperCase()}
+                  </span>
+                ) : null,
+              )}
+            </div>
+            <p className="mt-1.5 font-body text-sm font-semibold leading-snug text-slate-800 md:text-[15px]">
+              {heroBody}
+            </p>
+            {catchUpMode && scenarioStep ? (
+              <p className="mt-1 font-body text-xs leading-snug text-slate-600">
+                {scenarioStep.text.replace(/^Cenário:\s*/i, '')}
+              </p>
+            ) : null}
+          </div>
+          {winnerLetter && focusMonth != null ? (
+            <CriticalNumber
+              value={String(focusMonth === 0 ? 0 : focusMonth)}
+              unit={focusMonth === 0 ? undefined : 'M'}
+              label="PNI"
+              emphasis="alert"
+              className="hidden min-w-[4rem] shrink-0 px-2 py-2 sm:flex"
+            />
+          ) : null}
+        </div>
+      </PolarityPanel>
 
-        {!isComplete ? (
-          <button
-            type="button"
-            onClick={advance}
-            className="mx-auto flex min-h-[44px] items-center gap-2 rounded-xl bg-gradient-to-r from-lime-500 to-emerald-600 px-6 py-3 font-display text-sm font-bold text-white shadow-lg shadow-lime-300/30 transition hover:scale-[1.02]"
-          >
-            Próximo passo
-            <ChevronRight className="h-4 w-4" aria-hidden />
-          </button>
-        ) : null}
+      {showSeparateAnchor ? (
+        <AlertCallout tone="command" className="!py-2">
+          <span className="line-clamp-2 text-left text-xs md:text-sm">
+            <span className="font-mono text-[10px] uppercase tracking-widest opacity-80">
+              Âncora ·{' '}
+            </span>
+            {(scenarioStep ?? retrieveStep ?? anchorStep)!.text}
+          </span>
+        </AlertCallout>
+      ) : null}
 
-        {footerRule ? (
-          <p className="text-center font-body text-xs text-lime-900/75 md:text-sm">{footerRule}</p>
-        ) : null}
-      </div>
-    </div>
+      {eliminateSteps.length > 0 ? (
+        <div className={cn('grid gap-2', catchUpMode ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2')}>
+          {eliminateSteps.map((step, index) => (
+            <EliminateTile
+              key={`${step.letter ?? index}-${index}`}
+              step={step}
+              index={index}
+              reduceMotion={!!reduceMotion}
+              compact={catchUpMode}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="flex flex-col gap-2">
+          {parsed.map((step, i) => (
+            <PolarityPanel key={i} tone="command">
+              <CategoryStrip label={step.title} tone="command" />
+              <p className="mt-2 font-body text-sm font-semibold leading-snug text-slate-800">
+                {step.text}
+              </p>
+            </PolarityPanel>
+          ))}
+        </div>
+      )}
+
+      {fixationStep ? (
+        <AlertCallout tone="transfer" className="!py-2">
+          <span className="flex items-start gap-1.5 text-left text-xs md:text-sm">
+            <Check className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={3} aria-hidden />
+            <span>{fixationStep.text.replace(/^Em similares:\s*/i, '')}</span>
+          </span>
+        </AlertCallout>
+      ) : null}
+    </BoardChrome>
   );
 }

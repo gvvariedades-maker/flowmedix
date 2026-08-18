@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `${BRAND_NAME} — Estudo Reverso`,
     short_name: BRAND_SHORT_NAME,
     description:
-      'Estudo reverso para Técnicos de Enfermagem. Questões reais, NeuroSlides e revisão inteligente.',
+      'Questão real, diagnóstico do erro e NeuroSlides que ensinam exatamente o que você errou. Para Técnicos de Enfermagem.',
     start_url: '/estudar',
     scope: '/',
     display: 'standalone',

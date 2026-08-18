@@ -4,11 +4,28 @@ const nextConfig = {
   experimental: {
     // Tree-shaking agressivo de libs com muitos exports — reduz JS no mobile/4G.
     optimizePackageImports: ['lucide-react', 'framer-motion', '@radix-ui/react-tabs'],
+    // Build Vercel/CI = poucos cores / 8 GB: limita workers de prerender.
+    // Em dev local NÃO forçar 1 — /dev/slide-mold-review demora minutos e quebra Playwright.
+    ...(process.env.VERCEL || process.env.CI ? { cpus: 1 } : {}),
+  },
+  // As ferramentas internas em `app/dev/*` montam caminhos dinamicamente e faziam o
+  // tracing arrastar todo `data/catalog-migration` (65k arquivos) para dentro das
+  // funções, estourando o limite de 250 MB. Em runtime a produção só precisa do
+  // registry, de `content/blog`, `data/simulados` e `public/tutorial`.
+  outputFileTracingIncludes: {
+    '/**': ['./data/catalog-migration/handcraft-registry.json'],
+  },
+  outputFileTracingExcludes: {
+    '/**': ['./data/catalog-migration/*-g*/**', './docs/**', './artifacts/**'],
+    '/dev/**': ['./data/**', './examples/**'],
   },
   async redirects() {
     return [
       { source: '/campina-grande', destination: '/lp/campina-grande', permanent: true },
       { source: '/simulados/campina', destination: '/simulados/campina-grande', permanent: false },
+      // Hub Desempenho: bookmarks legados (HTTP 307 antes do RSC).
+      { source: '/progresso', destination: '/desempenho', permanent: false },
+      { source: '/analytics', destination: '/desempenho', permanent: false },
     ];
   },
   images: {

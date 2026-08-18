@@ -91,7 +91,7 @@ export async function getExampleHistoricoCached(userId?: string) {
 
       const { data, error } = await supabase
         .from('historico_questoes')
-        .select('modulo_slug, acertou, estudo_reverso_concluido')
+        .select('modulo_slug, acertou, estudo_reverso_concluido, respondida')
         .eq('user_id', userId)
         .limit(1000);
 

@@ -172,7 +172,17 @@ Quem dispara a promoção: agente (ao notar a 2ª ocorrência na mesma linha de 
 | baseline | Sem service role / `createServerSupabase` no client | `no-service-role-in-client` |
 | baseline | Sem `.auth.getUser()` em RSC além de allowlist | `no-getuser-in-rsc` |
 | baseline | Env novo só via Zod em `lib/env.ts` | `no-new-env-without-zod` |
+| 2026-07-31 | `concept_map` / `golden_rule` não entregam o gabarito antes do raciocínio | `L2c` em [`audit:subtopico-quality`](../scripts/audit-subtopico-quality.ts) ([`lib/catalogMigration/pedagogyGate.ts`](../lib/catalogMigration/pedagogyGate.ts)) |
+| 2026-08-09 | Sem espaço em `rgba()` dentro de valor arbitrário Tailwind | `no-tailwind-arbitrary-rgba-space` |
+| 2026-08-09 | Hex de marca (`#F26522` / `#166534` / `#22c55e`) só em `lib/brand/` (+ debt allowlist) | `no-brand-hex-outside-palette` |
+| 2026-08-10 | Walk do gate ignora `test-results/` / `playwright-report/` e stat órfão (Windows) | `check-architecture-patterns` walk |
 
 Rodar: `npm run check:architecture` · agregador de Done: `npm run check:ship`.
 
 Novas linhas entram **só** quando um check é adicionado ou renomeado no script — não registrar correções pontuais de código sem gate.
+
+### Gates de conteúdo (mesmo loop, outro executor)
+
+O invariante de conteúdo segue a mesma regra de reincidência, mas o executor não é `check-architecture-patterns.ts` — é o gate do pipeline que decide `production_ready`. Registrar aqui mesmo assim, para o loop ter uma tabela só.
+
+O anti-spoiler é o caso fundador: a proibição existia em [`.cursor/rules/avant-agent-json.mdc`](../.cursor/rules/avant-agent-json.mdc) e nas skills de handcraft, sempre como instrução de **geração**, e foi violada em 3 de 4 goldens de referência — porque nada relia a saída. A correção foi verificação: detector determinístico (`detectUnifiedPedagogy`, cobrindo `detail`, `correct`, `footer_rule` e `exam_hint`, não só `label`) mais o portão do leitor cego (`audit:blind-reader`), agregados na camada `L2c`. Restrição em prompt vira reforço; quem segura é o gate.

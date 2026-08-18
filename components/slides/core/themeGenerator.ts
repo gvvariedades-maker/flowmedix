@@ -407,9 +407,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'saúde da criança': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
   'pediatria': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Saúde do Adolescente (golden: adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate) ----
-  'saúde do adolescente': { template: 'sky', conceptMap: 'adolescent-privacy-curtain', goldenRule: 'adolescent-sigilo-spectrum', logicFlow: 'adolescent-vf-weave-tap', dangerZone: 'adolescent-consent-gate' },
-  'adolescente': { template: 'sky', conceptMap: 'adolescent-privacy-curtain', goldenRule: 'adolescent-sigilo-spectrum', logicFlow: 'adolescent-vf-weave-tap', dangerZone: 'adolescent-consent-gate' },
+  // ---- Saúde do Adolescente (v2 ética: pillars · speak-barrier · exceto-board · compare) ----
+  'saúde do adolescente': { template: 'sky', conceptMap: 'morphological', goldenRule: 'reference_table', logicFlow: 'vertical', dangerZone: 'compare' },
+  'adolescente': { template: 'sky', conceptMap: 'morphological', goldenRule: 'reference_table', logicFlow: 'vertical', dangerZone: 'compare' },
 
   // ---- Saúde da Mulher ----
   'saúde da mulher': { template: 'pink', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
@@ -443,6 +443,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // ============================================================
   // LÍNGUA PORTUGUESA (pacote bespoke pt-crase-funnel + pt-clitic-rail + pt-comma-rail + pt-term-matrix)
   // ============================================================
+
+  // ---- Classes de palavras (Glance — grid colorido + classify-board 0 taps) ----
+  'classes de palavras': { template: 'amber', conceptMap: 'pt-classes-function-deck', goldenRule: 'pt-classes-family-table', logicFlow: 'pt-classes-classify-board', dangerZone: 'pt-classes-swap-arena' },
 
   // ---- Crase (golden: pt-crase-funnel-deck · pt-crase-funnel-board · pt-crase-funnel-tap-flow · pt-crase-trap-arena) ----
   'crase': { template: 'amber', conceptMap: 'pt-crase-funnel-deck', goldenRule: 'pt-crase-funnel-board', logicFlow: 'pt-crase-funnel-tap-flow', dangerZone: 'pt-crase-trap-arena' },

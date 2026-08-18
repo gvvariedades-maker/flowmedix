@@ -198,7 +198,7 @@ function AdminGrupoAssuntoCard({
                       <div className="flex flex-wrap items-center gap-2 mb-1">
                         <span className="text-[10px] font-bold text-slate-500 uppercase">Questão {n}</span>
                         {codigoLabel ? (
-                          <span className="inline-flex items-center gap-1.5 bg-slate-900 text-[#BEF264] text-[10px] font-mono font-black px-3 py-1 rounded-full tracking-wide">
+                          <span className="inline-flex items-center gap-1.5 bg-slate-900 text-[#F26522] text-[10px] font-mono font-black px-3 py-1 rounded-full tracking-wide">
                             {codigoLabel}
                             <button
                               type="button"
@@ -526,7 +526,7 @@ export default function AdminMaster() {
           </div>
           <Link
             href={ADMIN_MATRICULAS_PATH}
-            className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-[#BEF264] font-black uppercase italic text-xs hover:bg-[#4338ca] hover:text-white transition-all"
+            className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-[#F26522] font-black uppercase italic text-xs hover:bg-[#4338ca] hover:text-white transition-all"
           >
             Gerenciar acessos
             <ArrowRight className="w-4 h-4" />
@@ -555,7 +555,7 @@ export default function AdminMaster() {
           <section className="bg-white p-8 rounded-[40px] border-[1.5px] border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)]">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-slate-900 rounded-2xl flex items-center justify-center shrink-0">
-                <Layers className="text-[#BEF264] w-5 h-5" />
+                <Layers className="text-[#F26522] w-5 h-5" />
               </div>
               <h2 className="font-black italic uppercase text-lg text-slate-900">Inserção em Lote</h2>
             </div>
@@ -572,7 +572,7 @@ export default function AdminMaster() {
             </div>
             <Link
               href="/admin/laboratorio"
-              className="w-full bg-slate-900 text-[#BEF264] p-4 rounded-2xl font-black uppercase italic hover:bg-[#4F46E5] hover:text-white transition-all active:scale-95 flex items-center justify-center gap-3 group"
+              className="w-full bg-slate-900 text-[#F26522] p-4 rounded-2xl font-black uppercase italic hover:bg-[#4F46E5] hover:text-white transition-all active:scale-95 flex items-center justify-center gap-3 group"
             >
               <Layers className="w-5 h-5 group-hover:rotate-12 transition-transform" />
               Abrir para Lote
@@ -582,10 +582,10 @@ export default function AdminMaster() {
 
           {/* BLOCO 2: LABORATÓRIO DE INJEÇÃO */}
           <section className="bg-gradient-to-br from-[#4F46E5] to-[#4338ca] p-8 rounded-[40px] border-[1.5px] border-[#4F46E5] shadow-[6px_6px_0px_0px_rgba(79,70,229,0.3)] relative overflow-hidden group">
-            <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#BEF264]/10 rounded-full blur-3xl group-hover:bg-[#BEF264]/20 transition-all duration-700" />
+            <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#F26522]/10 rounded-full blur-3xl group-hover:bg-[#F26522]/20 transition-all duration-700" />
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#BEF264] rounded-2xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#F26522] rounded-2xl flex items-center justify-center">
                   <Zap className="text-slate-900 w-6 h-6" />
                 </div>
                 <h2 className="font-black italic uppercase text-xl text-white">Laboratório de Injeção</h2>
@@ -595,7 +595,7 @@ export default function AdminMaster() {
               </p>
               <Link
                 href="/admin/laboratorio"
-                className="w-full bg-[#BEF264] text-slate-900 p-5 rounded-2xl font-black uppercase italic hover:bg-[#a3d651] transition-all active:scale-95 shadow-xl shadow-[#BEF264]/30 flex items-center justify-center gap-3 group"
+                className="w-full bg-[#F26522] text-slate-900 p-5 rounded-2xl font-black uppercase italic hover:bg-[#E05518] transition-all active:scale-95 shadow-xl shadow-[#F26522]/30 flex items-center justify-center gap-3 group"
               >
                 <Code className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 Abrir Laboratório AVANT
@@ -614,7 +614,7 @@ export default function AdminMaster() {
 
           <div className="space-y-4">
             <h3 className="font-black italic uppercase text-slate-400 text-xs tracking-[0.3em] mb-4 flex items-center gap-2">
-              <Sparkles className="w-3 h-3 text-[#BEF264]" /> Conteúdo Disponível para Edição
+              <Sparkles className="w-3 h-3 text-[#F26522]" /> Conteúdo Disponível para Edição
             </h3>
 
             {modulosEstudo.length > 0 && (

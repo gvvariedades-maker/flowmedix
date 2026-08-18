@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-08-03T23:52:37.603Z",
+  "onda": "2-p0-residual",
+  "pacote": "Cuidados na Administração de Medicamentos",
+  "lote": "cuidados-na-administracao-de-medicamentos-completo",
+  "baseline": {
+    "named": 245,
+    "letter_spoiler": 245,
+    "vf": 20
+  },
+  "after": {
+    "named": 0,
+    "letter": 0,
+    "clauseOnly": 0,
+    "vf": 0,
+    "files": 134
+  },
+  "second_pass": {
+    "gabarito_would_change": 0,
+    "trunc_would_change": 0,
+    "vf_would_change": 0
+  },
+  "dry_run": {
+    "ok": 134,
+    "failed": 0,
+    "skipped": 0,
+    "report": "artifacts/catalog-migration-cuidados-na-administracao-de-medicamentos-completo-dry-run.json"
+  },
+  "apply_status": "applied_supabase",
+  "apply_cmd": "npm run catalog:apply-lote -- --lote=cuidados-na-administracao-de-medicamentos-completo --apply --allow-generic --skip-preflight --skip-risk-approval --skip-anchor-review",
+  "fp_classification": [],
+  "residue": [],
+  "next": [
+    "Promoção à Saúde e Prevenção de Agravos",
+    "Segurança do Paciente",
+    "Saúde da Criança"
+  ],
+  "applied": {
+    "ok": 134,
+    "failed": 0,
+    "skipped": 0,
+    "generated_at": "2026-08-03T23:56:03.792Z",
+    "report": "artifacts/catalog-migration-cuidados-na-administracao-de-medicamentos-completo-applied.json"
+  },
+  "updated_at": "2026-08-03T23:56:25.815Z"
+}

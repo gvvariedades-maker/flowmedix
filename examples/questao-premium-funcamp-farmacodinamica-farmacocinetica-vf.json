@@ -7,102 +7,200 @@
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
     "subtopico": "Farmacodinâmica e Farmacocinética",
+    "pedagogical_branch": "farmaco_pk_pd_vf",
     "content_standard": "golden-v1",
     "family": "vf",
     "content_review": {
-      "reviewed_at": "2026-06-24",
-      "reviewer": "handcraft",
-      "guideline_snapshot": "Farmacologia básica — ADME, dinâmica, meia-vida",
+      "reviewed_at": "2026-08-07",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "ADME + meia-vida 50% (guideline FARMACO_ADME_BR) — cinética × dinâmica",
       "exam_vs_current": "none"
     },
     "sources": [
       {
-        "id": "farmaco-adme",
+        "id": "farmaco-adme-anvisa",
+        "tier": "A",
+        "issuer": "Anvisa / Ministério da Saúde",
+        "title": "Protocolo de segurança na prescrição, uso e administração de medicamentos — conceitos ADME/PK-PD",
+        "year": 2026,
+        "covers": [
+          "ADME",
+          "farmacocinética",
+          "farmacodinâmica",
+          "meia-vida",
+          "50%",
+          "concentração plasmática"
+        ]
+      },
+      {
+        "id": "farmaco-adme-lit",
         "tier": "B",
         "issuer": "Literatura farmacológica / COFEN",
         "title": "Conceitos de farmacocinética (ADME) e farmacodinâmica",
         "year": 2018,
-        "covers": ["ADME", "farmacodinâmica", "meia-vida", "concentração plasmática"]
+        "covers": [
+          "ADME",
+          "farmacodinâmica",
+          "meia-vida",
+          "concentração plasmática"
+        ]
       }
-    ]
+    ],
+    "anchor_100_approval": {
+      "status": "pass",
+      "reviewed_at": "2026-08-08",
+      "reviewer": "agent:anchor-checklist-v1",
+      "method": "agent",
+      "artifact": "artifacts/anchor-checklist/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+      "risk_tier": "medio",
+      "checklist_version": "anchor-checklist-v1"
+    }
   },
   "question_data": {
     "instruction": "Sobre farmacocinética e farmacodinâmica, analise as afirmativas.\n\nI - Farmacocinética estuda o que o organismo faz com o fármaco: absorção, distribuição, metabolismo e excreção.\nII - Farmacodinâmica estuda o que o fármaco faz no organismo: mecanismo de ação e efeito terapêutico ou adverso.\nIII - A meia-vida de um medicamento corresponde ao tempo necessário para o organismo eliminar 100% da dose administrada.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "Farmaco — mapa conceitual",
-      "meta": { "topico": "Enfermagem", "subtopico": "Farmacodinâmica e Farmacocinética" },
+      "slide_title": "Terreno PK/PD — sem spoiler",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
       "items": [
-        { "label": "Farmacocinética", "detail": "ADME: Absorção, Distribuição, Metabolismo, Excreção — o corpo sobre o fármaco.", "icon": "Pill" },
-        { "label": "Farmacodinâmica", "detail": "Ação no receptor/célula — efeito desejado e efeito adverso.", "icon": "Zap" },
-        { "label": "Meia-vida (t½)", "detail": "Tempo para reduzir a concentração plasmática em 50%, não eliminar 100%.", "icon": "Clock" },
-        { "label": "Mnemônico", "detail": "Cinética = corpo processa · Dinâmica = fármaco age.", "icon": "Brain" }
+        {
+          "label": "Farmacocinética",
+          "detail": "ADME: Absorção → Distribuição → Metabolismo → Excreção — o que o corpo faz com o fármaco.",
+          "icon": "Pill"
+        },
+        {
+          "label": "Farmacodinâmica",
+          "detail": "Mecanismo e efeito no organismo — terapêutico ou adverso.",
+          "icon": "Zap"
+        },
+        {
+          "label": "Meia-vida (t½)",
+          "detail": "Tempo para a concentração plasmática cair 50% — marco numérico clássico.",
+          "icon": "Clock"
+        },
+        {
+          "label": "Mnemônico de prova",
+          "detail": "Cinética = corpo processa · Dinâmica = fármaco age.",
+          "icon": "Brain"
+        }
       ],
-      "footer_rule": "Cinética = ADME · Dinâmica = ação · Meia-vida = 50%"
-    },
-    {
-      "type": "golden_rule",
-      "slide_title": "Definições de prova",
-      "meta": { "topico": "Enfermagem", "subtopico": "Farmacodinâmica e Farmacocinética" },
-      "content": "CINÉTICA × DINÂMICA",
-      "rows": [
-        { "label": "Farmacocinética", "value": "O que o organismo faz com o fármaco (ADME)", "badge": "ok" },
-        { "label": "Farmacodinâmica", "value": "O que o fármaco faz no organismo", "badge": "ok" },
-        { "label": "Meia-vida", "value": "Queda de 50% da concentração — não 100%", "emphasis": "alert", "badge": "warn" }
-      ],
-      "footer_rule": "III troca 50% por 100% — pegadinha numérica clássica"
+      "footer_rule": "Antes das letras: separar cinética (ADME) de dinâmica (efeito) e lembrar o marco da meia-vida"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Farmacodinâmica e Farmacocinética" },
+      "slide_title": "Funil I → II → III",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
       "steps": [
-        "I: definição de farmacocinética (ADME) → verdadeira.",
-        "II: definição de farmacodinâmica → verdadeira.",
-        "III: meia-vida = eliminar 100% → falsa.",
-        "Verdadeiras: I e II apenas.",
+        "I: ADME = organismo processa o fármaco → verdadeira.",
+        "II: dinâmica = fármaco age no organismo → verdadeira.",
+        "III: meia-vida = eliminar 100% da dose → falsa (é queda de 50%).",
+        "Verdadeiras: só I e II.",
         "Combinação → letra B.",
-        "Fixação: meia-vida sempre é redução pela metade da concentração."
+        "Em similares: meia-vida = metade da concentração — nunca eliminação total."
       ],
-      "footer_rule": "Separar definições antes de olhar alternativas"
+      "footer_rule": "Julgue cada afirmativa sozinha; a pegadinha numérica costuma estar na meia-vida"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — cinética × dinâmica",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "content": "CINÉTICA × DINÂMICA × t½",
+      "rows": [
+        {
+          "label": "Farmacocinética",
+          "value": "O que o organismo faz com o fármaco (ADME)",
+          "badge": "ok"
+        },
+        {
+          "label": "Farmacodinâmica",
+          "value": "O que o fármaco faz no organismo",
+          "badge": "ok"
+        },
+        {
+          "label": "Meia-vida",
+          "value": "Queda de 50% da concentração plasmática",
+          "emphasis": "alert",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Meia-vida = 50% da concentração — trocar por 100% é a pegadinha clássica"
     },
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Farmacodinâmica e Farmacocinética" },
-      "content": "PEGADINHAS — FARMACOLOGIA",
+      "slide_title": "Pegadinhas — combinações",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "content": "PEGADINHAS — PK/PD V/F",
       "items": [
         {
           "label": "Letra A — I apenas",
-          "detail": "Omite II, que também define corretamente a farmacodinâmica.",
-          "correct": "II é verdadeira — dinâmica = ação no organismo."
+          "detail": "Descarta a definição correta de farmacodinâmica.",
+          "correct": "II também é verdadeira — dinâmica = ação no organismo."
         },
         {
           "label": "Letra C — II e III",
-          "detail": "Inclui III falsa (100%) e exclui I verdadeira.",
-          "correct": "III erra meia-vida; I (ADME) também é verdadeira."
+          "detail": "Aceita meia-vida como eliminação total e omite ADME.",
+          "correct": "III erra o 50%; I (ADME) também é verdadeira."
         },
         {
           "label": "Letra D — I, II e III",
-          "detail": "Aceita a pegadinha numérica da III.",
+          "detail": "Compra a troca 50% → 100% na meia-vida.",
           "correct": "Meia-vida = queda de 50% da concentração plasmática."
         },
         {
           "label": "Letra E — III apenas",
-          "detail": "Só a afirmativa falsa — meia-vida como eliminação total.",
-          "correct": "III troca 50% por 100% — única falsa entre as três."
+          "detail": "Marca só a afirmativa falsa.",
+          "correct": "III inventa eliminação total — única falsa entre as três."
+        },
+        {
+          "label": "Transferência — meia-vida",
+          "detail": "Outra banca troca 'metade' por 'eliminação completa' ou 'efeito zero'.",
+          "correct": "Em similares: t½ = 50% da concentração — nunca 100% da dose."
         }
       ],
-      "footer_rule": "Em farmaco, definição trocada ou 50%→100% são os erros mais frequentes"
+      "footer_rule": "Em PK/PD: definição trocada ou 50%→100% são os erros mais cobrados"
     }
   ]
 }

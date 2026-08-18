@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:54:19.350Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1",
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5",
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-5",
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1",
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-0",
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-6",
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

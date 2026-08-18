@@ -202,7 +202,7 @@ export type SimuladoQuestaoPayloadResponse = {
 
 export type SimuladoAnalyticsResponse = {
   filters: {
-    periodo: '7d' | '30d' | '90d' | '12m';
+    periodo: '1d' | '7d' | '30d' | '90d' | '12m';
     modo: 'todos' | 'treino' | 'prova';
     banca: string | null;
     topico: string | null;
@@ -210,9 +210,13 @@ export type SimuladoAnalyticsResponse = {
   };
   kpis: {
     total_simulados: number;
+    /** Acerto ponderado por questões (não média de médias). */
     media_acerto: number | null;
     melhor_score: number | null;
     tempo_medio_ms: number | null;
+    /** Denominador da média — permite mostrar `58% · 30/52`. */
+    questoes_concluidas: number;
+    acertos_concluidos: number;
   };
   evolucao_temporal: Array<{
     data_ref: string;

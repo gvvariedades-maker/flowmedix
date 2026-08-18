@@ -1,0 +1,232 @@
+{
+  "vias_sample": [
+    {
+      "slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-7",
+      "findings": [
+        {
+          "slide": "golden_rule",
+          "key": "content",
+          "path": "golden_rule.content",
+          "evidence": "GABARITO: Letra A — Certo"
+        }
+      ]
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "findings": [
+        {
+          "slide": "golden_rule",
+          "key": "exam_hint",
+          "path": "golden_rule.rows[1].exam_hint",
+          "evidence": "B erra ao indicar irritantes e troca metabolismo gástrico por hepático."
+        }
+      ]
+    },
+    {
+      "slug": "vunesp-enfermagem-vias-de-administracao-1776056338955-3",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "IV = imediata | IM = rápida | SC = lenta/contínua | VO = variável. A erra ao pedir absorção rápida (perfil de IV/IM)."
+        },
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[3].detail",
+          "evidence": "SC admite volumes pequenos (em geral até ~1 mL; alguns textos até 1,5 mL). D erra ao falar em doses grandes + efeito rápido."
+        }
+      ]
+    }
+  ],
+  "imunizacao_sample": [
+    {
+      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[1].detail",
+          "evidence": "A vacina hepatite A é apresentada sob a forma liofilizada em frasco monodose."
+        },
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[5].detail",
+          "evidence": "A vacina hepatite A é apresentada sob a forma liofilizada em frasco monodose."
+        }
+      ]
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-imunizacao-1779563975447-5",
+      "findings": [
+        {
+          "slide": "golden_rule",
+          "key": "value",
+          "path": "golden_rule.rows[3].value",
+          "evidence": "I → letra A"
+        }
+      ]
+    },
+    {
+      "slug": "fepese-enfermagem-imunizacao-1779564109452-3",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[4].detail",
+          "evidence": "A vacina contra hepatite B é opcional aos profissionais de saúde, devendo ser aplicada em esquema de 2 duas por via subcutânea."
+        }
+      ]
+    },
+    {
+      "slug": "fepese-enfermagem-imunizacao-1779564119665-1",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[4].detail",
+          "evidence": "A vacina que protege contra Hepatite B é indicada aos profissionais da saúde devendo ser aplicada em duas doses, com intervalo de 30 dias."
+        }
+      ]
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-0",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "label",
+          "path": "concept_map.items[2].label",
+          "evidence": "Dérmica"
+        },
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "Dérmica"
+        }
+      ]
+    },
+    {
+      "slug": "funcern-enfermagem-imunizacao-1777103238173-7",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "Hepatite A é administrada por via subcutânea na dose de 0,5 ml."
+        }
+      ]
+    },
+    {
+      "slug": "fundatec-enfermagem-imunizacao-1779564006577-6",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "A vacina contra a hepatite B é administrada por via subcutânea."
+        }
+      ]
+    },
+    {
+      "slug": "ibade-enfermagem-imunizacao-1777103230085-4",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "label",
+          "path": "concept_map.items[2].label",
+          "evidence": "Células fagocíticas"
+        },
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "Células fagocíticas;"
+        },
+        {
+          "slide": "golden_rule",
+          "key": "value",
+          "path": "golden_rule.rows[3].value",
+          "evidence": "Células fagocíticas; aos ? meses"
+        }
+      ]
+    },
+    {
+      "slug": "ibade-enfermagem-imunizacao-1777103230085-5",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[3].detail",
+          "evidence": "a vacina contra a hepatite B é administrada em duas doses"
+        }
+      ]
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-6",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[3].detail",
+          "evidence": "A dose da vacina hepatite B é de 0,5 mL para recém-nascidos, lactentes e crianças até 15 anos, e de 1,0 mL a partir dos 16 anos de idade, sendo administrada pr…"
+        },
+        {
+          "slide": "golden_rule",
+          "key": "value",
+          "path": "golden_rule.rows[3].value",
+          "evidence": "A dose da vacina hepatite B é de 0,5 mL para recém-nascidos, lactentes e crianças até 15 anos, e de 1,0 mL a partir dos 16 anos de idade, sendo administrada pr…"
+        }
+      ]
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "O vírus da hepatite B é altamente infectivo e facilmente transmitido por várias vias, dentre elas a via sexual."
+        },
+        {
+          "slide": "golden_rule",
+          "key": "value",
+          "path": "golden_rule.rows[3].value",
+          "evidence": "O vírus da hepatite B é altamente infectivo e facilmente transmitido por várias vias, dentre elas a via sexual. aos ? meses"
+        }
+      ]
+    },
+    {
+      "slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+      "findings": [
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "O esquema vacinal para hepatite B é de três doses, com intervalos de 30 a 60 dias entre as três doses, e a via de administração é intramuscular."
+        },
+        {
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[5].detail",
+          "evidence": "O esquema vacinal para hepatite B é de três doses, com intervalos de 30 a 60 dias entre as três doses, e a via de administração é intramuscular."
+        }
+      ]
+    },
+    {
+      "slug": "univida-enfermagem-imunizacao-1777103204932-2",
+      "findings": [
+        {
+          "slide": "golden_rule",
+          "key": "value",
+          "path": "golden_rule.rows[3].value",
+          "evidence": "— → letra D"
+        }
+      ]
+    }
+  ],
+  "vias_n": 3,
+  "imu_n": 13
+}

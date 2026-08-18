@@ -14,7 +14,7 @@ export function LandingDemoJourneyChip({ className }: { className?: string }) {
       )}
       aria-hidden
     >
-      <Link2 className="shrink-0 text-[#3d6b0f]" size={12} />
+      <Link2 className="shrink-0 text-[#9A3412]" size={12} />
       <p className="truncate text-[9px] font-bold uppercase tracking-wide text-slate-600">
         Mesma jornada · {LANDING_DEMO_JOURNEY_LABEL}
       </p>

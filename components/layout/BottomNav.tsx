@@ -5,7 +5,7 @@ import { forwardRef, useRef } from 'react';
 import {
   BarChart3,
   BookMarked,
-  LayoutDashboard,
+  Library,
   ListChecks,
   Menu,
   X,
@@ -17,18 +17,18 @@ import { MOBILE_BOTTOM_NAV_SHELL, MOBILE_BOTTOM_NAV_Z } from '@/lib/layout/mobil
 import { useBottomNavHeightSync } from '@/lib/layout/useBottomNavHeightSync';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 import { useEstudarQuestaoImmersive } from '@/lib/layout/useEstudarQuestaoImmersive';
+import { isHubNavPrefetchDisabled } from '@/lib/layout/hubNavPending';
 import {
   MENU_ACCENT_STYLES,
   MenuNavIconChip,
-  type MenuAccentKey,
 } from '@/components/layout/MenuNavIconChip';
 
 const NAV_ITEMS = [
-  { label: 'Estudar', href: '/estudar', icon: LayoutDashboard, accent: 'brand' },
-  { label: 'Simulados', href: '/simulados', icon: ListChecks, accent: 'rose' },
-  { label: 'Progresso', href: '/progresso', icon: BarChart3, accent: 'emerald' },
-  { label: 'Cadernos', href: '/cadernos', icon: BookMarked, accent: 'indigo' },
-] satisfies { label: string; href: string; icon: LucideIcon; accent: MenuAccentKey }[];
+  { label: 'Estudar', href: '/estudar', icon: Library },
+  { label: 'Simulados', href: '/simulados', icon: ListChecks },
+  { label: 'Desempenho', href: '/desempenho', icon: BarChart3 },
+  { label: 'Cadernos', href: '/cadernos', icon: BookMarked },
+] satisfies { label: string; href: string; icon: LucideIcon }[];
 
 export type BottomNavProps = {
   currentPath: string;
@@ -68,38 +68,38 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
   const linkTabIndex = mobileOverlayBlocksNav ? -1 : undefined;
   const maisTabIndex = maisInteractive ? 0 : mobileOverlayBlocksNav || questaoModalOpen ? -1 : undefined;
   const maisActive = !menuOpen && isBottomNavMaisActive(currentPath);
-  const maisAccent = MENU_ACCENT_STYLES.slate;
+  const brandLabel = MENU_ACCENT_STYLES.brand.labelActive;
 
   return (
       <nav
         ref={navRef}
         className={cn(
           MOBILE_BOTTOM_NAV_SHELL,
-          'grid min-h-[5rem] grid-cols-5 border-t border-slate-200 bg-white/95 pb-safe backdrop-blur-xl',
+          'grid min-h-[5rem] grid-cols-5 border-t border-[rgba(242,101,34,0.14)] bg-white/95 pb-safe backdrop-blur-xl',
           MOBILE_BOTTOM_NAV_Z,
           mobileOverlayBlocksNav && 'pointer-events-none',
         )}
         aria-label="Navegação rápida"
         aria-hidden={navAriaHidden === true ? true : undefined}
       >
-        {NAV_ITEMS.map(({ label, href, icon, accent }) => {
+        {NAV_ITEMS.map(({ label, href, icon }) => {
           const isActive = isBottomNavItemActive(currentPath, href);
-          const styles = MENU_ACCENT_STYLES[accent];
 
           return (
             <Link
               key={href}
               href={href}
+              prefetch={isHubNavPrefetchDisabled(href) ? false : undefined}
               tabIndex={linkTabIndex}
               aria-hidden={mobileOverlayBlocksNav ? true : undefined}
               aria-current={isActive ? 'page' : undefined}
               className="flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-1.5"
             >
-              <MenuNavIconChip icon={icon} accent={accent} active={isActive} size="bottom" />
+              <MenuNavIconChip icon={icon} accent="brand" active={isActive} size="bottom" />
               <span
                 className={cn(
                   'text-[11px] font-semibold leading-tight',
-                  isActive ? styles.labelActive : 'text-slate-500',
+                  isActive ? brandLabel : 'text-slate-500',
                 )}
               >
                 {label}
@@ -124,14 +124,14 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
         >
           <MenuNavIconChip
             icon={menuOpen ? X : Menu}
-            accent="slate"
+            accent="brand"
             active={menuOpen || maisActive}
             size="bottom"
           />
           <span
             className={cn(
               'text-[11px] font-semibold leading-tight',
-              menuOpen || maisActive ? maisAccent.labelActive : 'text-slate-500',
+              menuOpen || maisActive ? brandLabel : 'text-slate-500',
             )}
           >
             Mais

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "pacote_prefix": "coleta-de-exames-laboratoriais",
+  "mode": "full",
+  "total_slugs": 171,
+  "handcraft_applied": 8,
+  "production_status": "none",
+  "next_unit": {
+    "type": "handcraft_lote",
+    "id": "coleta-de-exames-laboratoriais-g02",
+    "detail": "Planejar/handcraft próximo lote coleta-de-exames-laboratoriais-g02 (8/171 applied)",
+    "lote": "coleta-de-exames-laboratoriais-g02"
+  },
+  "completed_units": [],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-08-05T23:23:14.183Z",
+  "notes": null
+}

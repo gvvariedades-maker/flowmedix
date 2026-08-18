@@ -1,0 +1,44 @@
+{
+  "subtopico": "Noções de Anatomia",
+  "pacote_prefix": "nocoes-de-anatomia",
+  "gate": "pass",
+  "handcraft_allowed": true,
+  "cluster_report": "artifacts/nocoes-de-anatomia-topic-cluster-report.json",
+  "goldens_needed": 0,
+  "missing": [],
+  "covered": [
+    {
+      "cluster": "Terminologia e planos anatômicos",
+      "golden_file": "questao-premium-fepese-anatomia-anterior-ventral.json",
+      "path": "examples/questao-premium-fepese-anatomia-anterior-ventral.json",
+      "content_standard_ok": true,
+      "issues": []
+    },
+    {
+      "cluster": "Sistema esquelético / ossos e articulações",
+      "golden_file": "questao-premium-ameosc-nocoes-de-anatomia-anat_esqueleto.json",
+      "path": "examples/questao-premium-ameosc-nocoes-de-anatomia-anat_esqueleto.json",
+      "content_standard_ok": true,
+      "issues": []
+    },
+    {
+      "cluster": "Anatomia — conceito geral",
+      "golden_file": "questao-premium-avancasp-nocoes-de-anatomia-anat_generico.json",
+      "path": "examples/questao-premium-avancasp-nocoes-de-anatomia-anat_generico.json",
+      "content_standard_ok": true,
+      "issues": []
+    },
+    {
+      "cluster": "Sistema cardiovascular",
+      "golden_file": "questao-premium-cebraspe-nocoes-de-anatomia-anat_cardiovascular.json",
+      "path": "examples/questao-premium-cebraspe-nocoes-de-anatomia-anat_cardiovascular.json",
+      "content_standard_ok": true,
+      "issues": []
+    }
+  ],
+  "warnings": [],
+  "reasons": [
+    "Todos os ramos novo_ramo/coberto com golden presente em examples/."
+  ],
+  "artifact": "artifacts/golden-anchor-gate-nocoes-de-anatomia.json"
+}

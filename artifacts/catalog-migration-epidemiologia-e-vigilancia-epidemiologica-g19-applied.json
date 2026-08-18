@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:58:55.687Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g19",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ieses-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-4",
+    "igecap-enfermagem-processo-de-enfermagem-1780004452857-2",
+    "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-7",
+    "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-6",
+    "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-1",
+    "inaz-do-para-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-9",
+    "instituto-aocp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ieses-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

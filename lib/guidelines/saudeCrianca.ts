@@ -2,15 +2,16 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Saúde da criança — aleitamento, alimentação complementar.
- * Fonte: Caderneta da Criança MS + Guia Alimentar da Criança Brasileira.
+ * Fonte: Caderneta da Criança MS 6ª ed. (2024) + Caderneta Digital (Meu SUS Digital, 2025) + Guia Alimentar.
+ * @see https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/caderneta
  */
 export const SAUDE_CRIANCA_MS: GuidelineTable = {
   id: 'saude-crianca-ms',
-  snapshot: 'Aleitamento e alimentação — Caderneta MS',
+  snapshot: 'Caderneta da Criança MS 6ª ed. (2024) + digital Meu SUS',
   issuer: 'Ministério da Saúde',
   title: 'Saúde da criança — aleitamento e nutrição',
   year: 2024,
-  url: 'https://bvsms.saude.gov.br/bvs/publicacoes/caderneta_saude_crianca_menino_12ed.pdf',
+  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/caderneta',
   entries: [
     {
       id: 'ame-exclusivo',
@@ -128,8 +129,17 @@ export const SAUDE_CRIANCA_MS: GuidelineTable = {
     {
       id: 'teste-pezinho-coleta',
       label: 'Teste do Pezinho — coleta',
-      value: '3º ao 5º dia de vida',
-      detail: 'Coleta preferencial na primeira semana; punção no calcanhar lateral.',
+      value: '48 h após o nascimento até o 5º dia de vida',
+      detail:
+        'MS/PNTN (FAQ vigente): janela ideal 48 h–5º dia; punção no calcanhar lateral. exam_vs_current: provas antigas fixam “3º ao 5º dia”.',
+      sourceId: 'saude-crianca-ms',
+    },
+    {
+      id: 'caderneta-crianca-escopo',
+      label: 'Caderneta da Criança',
+      value: 'acompanhamento do nascimento aos 9 anos (física + digital Meu SUS)',
+      detail:
+        'MS 6ª ed. (2024): crescimento OMS, vacinas, desenvolvimento; versão digital no Meu SUS Digital (2025) complementar à física.',
       sourceId: 'saude-crianca-ms',
     },
     {
@@ -149,8 +159,9 @@ export const SAUDE_CRIANCA_MS: GuidelineTable = {
     {
       id: 'leite-materno-geladeira',
       label: 'Leite materno ordenhado — geladeira',
-      value: 'até 12 horas',
-      detail: 'Conservação refrigerada; congelar logo após coleta no freezer.',
+      value: 'até 12 horas sob refrigeração',
+      detail:
+        'MS/RBLH e RDC 918/2024 (BLH): LHOC refrigerado ≤12 h (máx. 5 °C); freezer/congelador até 15 dias (domiciliar/BLH cru).',
       sourceId: 'saude-crianca-ms',
     },
     {

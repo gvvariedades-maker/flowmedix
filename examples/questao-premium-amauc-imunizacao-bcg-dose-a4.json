@@ -25,7 +25,13 @@
         "title": "Manual de Normas e Procedimentos para Vacinação — BCG",
         "year": 2025,
         "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
-        "covers": ["BCG dose única", "via intradérmica", "deltóide direito", "cicatriz", "baixo peso ao nascer"]
+        "covers": [
+          "BCG dose única",
+          "via intradérmica",
+          "deltóide direito",
+          "cicatriz",
+          "baixo peso ao nascer"
+        ]
       }
     ]
   },
@@ -74,28 +80,28 @@
           "icon": "Baby"
         },
         {
-          "label": "Afirmativa I — cicatriz ausente",
-          "detail": "FALSA. Ausência de cicatriz NÃO indica revacinação — BCG é dose única; não revacinar rotineiramente por cicatriz ausente.",
+          "label": "Cicatriz ausente",
+          "detail": "Ausência de cicatriz NÃO indica revacinação — BCG é dose única; não revacinar rotineiramente por cicatriz ausente.",
           "icon": "AlertCircle"
         },
         {
-          "label": "Afirmativa II — dosagem",
-          "detail": "VERDADEIRA. Dose padrão da BCG no PNI — volume intradérmico oficial (afirmativa literal da prova).",
+          "label": "Dosagem",
+          "detail": "Dose padrão da BCG no PNI — volume intradérmico oficial (afirmativa literal da prova).",
           "icon": "Syringe"
         },
         {
-          "label": "Afirmativa III — via IM",
-          "detail": "FALSA. BCG é intradérmica (ID), nunca intramuscular — pegadinha clássica de prova.",
+          "label": "Via IM",
+          "detail": "BCG é intradérmica (ID), nunca intramuscular — pegadinha clássica de prova.",
           "icon": "XCircle"
         },
         {
-          "label": "Afirmativa IV — local",
-          "detail": "VERDADEIRA. Aplicação na inserção inferior do deltóide direito (braço direito).",
+          "label": "Local",
+          "detail": "Aplicação na inserção inferior do deltóide direito (braço direito).",
           "icon": "Target"
         },
         {
-          "label": "Afirmativa V — ao nascer, dose única",
-          "detail": "VERDADEIRA. Esquema PNI: uma dose preferencialmente ao nascer, ainda na maternidade.",
+          "label": "Ao nascer, dose única",
+          "detail": "Esquema PNI: uma dose preferencialmente ao nascer, ainda na maternidade.",
           "icon": "Calendar"
         },
         {
@@ -139,27 +145,27 @@
       "rows": [
         {
           "label": "I — revacinar sem cicatriz",
-          "value": "FALSA: ausência de cicatriz ≠ revacinação",
+          "value": "Ausência de cicatriz ≠ revacinação",
           "badge": "warn"
         },
         {
           "label": "II — dosagem",
-          "value": "VERDADEIRA: volume intradérmico padrão do manual",
+          "value": "Volume intradérmico padrão do manual",
           "badge": "ok"
         },
         {
           "label": "III — via IM",
-          "value": "FALSA: via intradérmica (ID)",
+          "value": "Via intradérmica (ID)",
           "badge": "warn"
         },
         {
           "label": "IV — local",
-          "value": "VERDADEIRA: inserção inferior deltóide direito",
+          "value": "Inserção inferior deltóide direito",
           "badge": "ok"
         },
         {
           "label": "V — esquema",
-          "value": "VERDADEIRA: ao nascer, dose única",
+          "value": "Ao nascer, dose única",
           "badge": "ok"
         },
         {

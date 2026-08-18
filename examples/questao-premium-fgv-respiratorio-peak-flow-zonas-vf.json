@@ -23,18 +23,42 @@
         "title": "Protocolo Clínico e Diretrizes Terapêuticas — Asma",
         "year": 2021,
         "url": "https://www.gov.br/saude/",
-        "covers": ["peak flow", "zonas de controle", "plano de ação"]
+        "covers": [
+          "peak flow",
+          "zonas de controle",
+          "plano de ação"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Sobre monitorização domiciliar da asma com peak flow (PFE), analise as afirmativas.\n\nI - O PFE mede o fluxo expiratório máximo e auxilia o acompanhamento do controle asmático em casa.\nII - A zona verde do plano de ação indica manter o tratamento de manutenção e usar broncodilatador de resgate a cada hora, mesmo sem sintomas.\nIII - Queda superior a 20% do melhor valor pessoal de PFE sugere piora do controle e necessidade de reavaliar o plano terapêutico.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "C", "text": "I, II e III.", "is_correct": false },
-      { "id": "D", "text": "II, apenas.", "is_correct": false },
-      { "id": "E", "text": "I e III, apenas.", "is_correct": true }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "II, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "I e III, apenas.",
+        "is_correct": true
+      }
     ]
   },
   "reverse_study_slides": [
@@ -53,18 +77,13 @@
         },
         {
           "label": "NÚCLEO I — PFE",
-          "detail": "VERDADEIRO: PFE mede fluxo expiratório máximo e orienta controle em casa.",
+          "detail": "PFE mede fluxo expiratório máximo e orienta controle em casa.",
           "icon": "Gauge"
         },
         {
           "label": "NÚCLEO II — zona verde",
-          "detail": "FALSO: zona verde = controle adequado; resgate só se sintomas, não de hora em hora.",
+          "detail": "Zona verde = controle adequado; resgate só se sintomas, não de hora em hora.",
           "icon": "CircleCheck"
-        },
-        {
-          "label": "GABARITO — I e III",
-          "detail": "Queda >20% do melhor PFE pessoal sinaliza descompensação → letra E.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Verde = manutenção; amarela/vermelha = intensificar — resgate não é profilaxia"
@@ -78,11 +97,26 @@
       },
       "content": "PEAK FLOW — ZONAS DA ASMA",
       "rows": [
-        { "label": "Zona verde", "value": "≥80% do melhor PFE — manter tratamento", "badge": "ok" },
-        { "label": "Zona amarela", "value": "50–79% — intensificar conforme plano", "badge": "warn" },
-        { "label": "Zona vermelha", "value": "<50% — crise, buscar atendimento", "badge": "warn" },
-        { "label": "Alerta de piora", "value": "Queda >20% do melhor valor pessoal", "badge": "ok" },
-        { "label": "Gabarito", "value": "I e III → letra E", "emphasis": "success", "badge": "hot" }
+        {
+          "label": "Zona verde",
+          "value": "≥80% do melhor PFE — manter tratamento",
+          "badge": "ok"
+        },
+        {
+          "label": "Zona amarela",
+          "value": "50–79% — intensificar conforme plano",
+          "badge": "warn"
+        },
+        {
+          "label": "Zona vermelha",
+          "value": "<50% — crise, buscar atendimento",
+          "badge": "warn"
+        },
+        {
+          "label": "Alerta de piora",
+          "value": "Queda >20% do melhor valor pessoal",
+          "badge": "ok"
+        }
       ],
       "footer_rule": "II inverte a lógica da zona verde — pegadinha clássica"
     },

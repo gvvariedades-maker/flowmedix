@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+  "pacote_prefix": "epidemiologia-e-vigilancia-epidemiologica",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-epidemiologia-*.json",
+  "guideline": "lib/guidelines/epidemiologia.ts",
+  "l3_brief_index": "artifacts/l3-brief-epidemiologia-e-vigilancia-epidemiologica-INDEX.md",
+  "slug_selection": "Supabase: meta.subtopico canônico; slug segment AB/processo/auditoria aceito se meta canônico",
+  "clusters": [
+    "Notificação compulsória / SINAN / lista nacional",
+    "Indicadores — incidência, prevalência, mortalidade, letalidade",
+    "Ocorrência — endemia, epidemia, pandemia, surto",
+    "Vigilância epidemiológica — conceito e ações",
+    "Cadeia de transmissão / períodos / histórico natural",
+    "EXCETO / INCORRETA — epidemiologia",
+    "V/F — conceitos epidemiológicos",
+    "Epidemiologia — conceito geral"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "epi_notificacao_compulsoria",
+      "when": "Lista nacional, notificação imediata/semanal, SINAN, ficha, Portaria MS",
+      "l3_decision": "molde_inedito",
+      "bespoke_target": "epi-lista-trap",
+      "mold": "lista-trap · center · cards · compare",
+      "anchors": [
+        "examples/questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-notificacao-compulsoria-sinan-lista-naci.json"
+      ]
+    },
+    {
+      "id": "epi_indicadores",
+      "when": "Incidência × prevalência × mortalidade × letalidade — fórmulas e denominadores",
+      "l3_decision": "molde_inedito",
+      "bespoke_target": "epi-formula-rail",
+      "mold": "formula-rail · reference_table · tap · compare",
+      "anchors": [
+        "examples/questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-indicadores-incidencia-prevalencia-morta.json"
+      ]
+    },
+    {
+      "id": "epi_ocorrencia_agravos",
+      "when": "Endemia × epidemia × pandemia × surto — escala geográfica/temporal",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare (cauda — 10 < limiar 22)",
+      "anchors": []
+    },
+    {
+      "id": "epi_vigilancia_acoes",
+      "when": "Definição e ações de vigilância epidemiológica (coleta, análise, disseminação)",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": [
+        "examples/questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-vigilancia-epidemiologica-conceito-e-aco.json"
+      ]
+    },
+    {
+      "id": "epi_cadeia_transmissao",
+      "when": "Cadeia de transmissão, períodos (incubação/latência), histórico natural",
+      "l3_decision": "ok_generico",
+      "mold": "morphological · reference_table · tap · compare",
+      "anchors": []
+    },
+    {
+      "id": "epi_generico",
+      "when": "Demais — sem fit claro nos ramos acima",
+      "l3_decision": "cauda_longa",
+      "mold": "genérico premium (SUBTOPIC_DESIGN_MAP lime)",
+      "anchors": [
+        "examples/questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-epidemiologia-conceito-geral.json"
+      ]
+    }
+  ],
+  "visual_gallery": {
+    "epi_notificacao_compulsoria": {
+      "status": "brief_pending_react",
+      "layouts": ["epi-lista-canais", "epi-lista-tap", "epi-lista-board", "epi-lista-trap"],
+      "note": "Brief 4/4 pronto; React só com Implementar molde: epi_notificacao_compulsoria. Handcraft usa EPI_GENERIC_DESIGN (lime) até lá."
+    },
+    "epi_indicadores": {
+      "status": "brief_pending_react",
+      "layouts": ["epi-formula-rail", "epi-formula-board", "epi-formula-tap", "epi-formula-trap"],
+      "note": "Brief 4/4 pronto; React só com Implementar molde: epi_indicadores."
+    },
+    "epi_vigilancia_acoes": {
+      "status": "brief_ok_generico",
+      "layouts": ["morphological", "reference_table", "vertical", "compare"],
+      "note": "Brief 4/4 com metáfora VE×VS; pacote genérico lime wired em BRANCH_DESIGN_MAP."
+    }
+  },
+  "modes": {
+    "subtopico_handcraft": {
+      "first_lote": "epidemiologia-e-vigilancia-epidemiologica-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run validate:goldens -- --lote=<lote> --strict"
+      ]
+    },
+    "single_slug": {
+      "lote_dir": "data/catalog-migration/epidemiologia-e-vigilancia-epidemiologica-g01/questions",
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
+      ]
+    }
+  },
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "lote": "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]"
+  },
+  "proibido": ["ai:generate", "catalog:upgrade-premium"],
+  "notes": [
+    "Cluster: npm run cluster:epidemiologia → artifacts/epidemiologia-e-vigilancia-epidemiologica-topic-cluster-report.json",
+    "Guideline: lib/guidelines/epidemiologia.ts (Guia de Vigilância MS + Portaria notificação)",
+    "Ramos fortes (≥22): notificacao (78), indicadores (36), vigilancia_acoes (26) — briefs 4/4 em artifacts/l3-brief-epidemiologia-*",
+    "Ocorrência e cadeia = cauda (ok_generico). epi_generico ~60 — refinar classificador se necessário antes de escalar gNN."
+  ]
+}

@@ -1,16 +1,27 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { ChevronRight, Snowflake, Thermometer, Trash2, Trophy } from 'lucide-react';
+import { useMemo } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Check, X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import {
   isPniVfColdChainCorpus,
   parsePniColdChainStep,
   pniTempLabel,
-  type ParsedPniColdChainStep,
 } from '@/lib/slides/pniSlideUtils';
+import {
+  LetterEliminationRail,
+  letterEliminationFromSteps,
+} from '../logicFlowShells';
+import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
+import {
+  AlertCallout,
+  BoardChrome,
+  CategoryStrip,
+  CriticalNumber,
+  PolarityPanel,
+} from '../primitives';
 
 interface LogicFlowPniColdChainTapProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -18,88 +29,50 @@ interface LogicFlowPniColdChainTapProps {
   footerRule?: string;
 }
 
-const LETTERS = ['A', 'B', 'C', 'D', 'E'] as const;
-
-function TempChips({ markers }: { markers: number[] }) {
-  if (markers.length === 0) return null;
-  return (
-    <div className="flex flex-wrap justify-center gap-1.5">
-      {markers.map((marker) => (
-        <span
-          key={marker}
-          className="rounded-full bg-teal-100 px-2.5 py-1 font-mono text-[10px] font-black text-teal-900 ring-1 ring-teal-200/80"
-        >
-          {pniTempLabel(marker)}°C
-        </span>
-      ))}
-    </div>
-  );
-}
-
-function StepBadge({ step }: { step: ParsedPniColdChainStep }) {
-  const styles: Record<ParsedPniColdChainStep['kind'], string> = {
-    vf_judge: 'bg-violet-100 text-violet-900',
-    vf_combine: 'bg-sky-100 text-sky-900',
-    temp_anchor: 'bg-teal-100 text-teal-900',
-    eliminate: 'bg-rose-100 text-rose-800',
-    locate: 'bg-emerald-100 text-emerald-800',
-    exceto: 'bg-orange-100 text-orange-900',
-    fixation: 'bg-lime-100 text-lime-900',
-    step: 'bg-slate-100 text-slate-700',
-  };
-  return (
-    <span
-      className={`rounded-full px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide ${styles[step.kind]}`}
-    >
-      {step.title}
-    </span>
-  );
-}
-
+/**
+ * Rede de frio PNI Glance OS:
+ * - V/F → board V/F (0 taps)
+ * - MCQ temperatura → board letra + tiles (0 taps)
+ */
 export function LogicFlowPniColdChainTap({
   steps,
   theme,
   footerRule,
 }: LogicFlowPniColdChainTapProps) {
   const reduceMotion = useReducedMotion();
-  const normalizedSteps = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
-  const parsedSteps = useMemo(
-    () => normalizedSteps.map((step, index) => parsePniColdChainStep(step, index)),
-    [normalizedSteps],
-  );
-  const vfMode = useMemo(() => isPniVfColdChainCorpus(normalizedSteps.join(' ')), [normalizedSteps]);
-
-  const [revealedCount, setRevealedCount] = useState(
-    reduceMotion ? parsedSteps.length : 1,
+  const normalized = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
+  const vfMode = useMemo(() => isPniVfColdChainCorpus(normalized.join(' ')), [normalized]);
+  const parsed = useMemo(
+    () => normalized.map((step, index) => parsePniColdChainStep(step, index)),
+    [normalized],
   );
 
-  const advance = useCallback(() => {
-    setRevealedCount((c) => Math.min(c + 1, parsedSteps.length));
-  }, [parsedSteps.length]);
+  if (vfMode) {
+    return (
+      <LogicFlowPniVfJuggleTap
+        steps={steps}
+        theme={theme}
+        footerRule={footerRule}
+        accentVariant="pni"
+        chipLabel="BOARD V/F — CADEIA DE FRIO"
+      />
+    );
+  }
 
-  const eliminated = useMemo(() => {
-    const out = new Set<string>();
-    for (let i = 0; i < revealedCount; i++) {
-      const step = parsedSteps[i];
-      if (step.letter && step.kind === 'eliminate') {
-        out.add(step.letter);
-      }
-    }
-    return out;
-  }, [parsedSteps, revealedCount]);
+  const eliminateSteps = parsed.filter((s) => s.kind === 'eliminate');
+  const locateStep = parsed.find((s) => s.kind === 'locate');
+  const tempAnchor = parsed.find((s) => s.kind === 'temp_anchor');
+  const fixationStep = parsed.find((s) => s.kind === 'fixation' || /em similares/i.test(s.text));
+  const winnerLetter = locateStep?.letter?.toUpperCase() ?? null;
+  const { eliminated } = letterEliminationFromSteps(parsed, parsed.length, true);
+  const focusMarkers =
+    tempAnchor?.markers?.length
+      ? tempAnchor.markers
+      : locateStep?.markers?.length
+        ? locateStep.markers
+        : [2, 8];
 
-  const winnerLetter = useMemo(() => {
-    for (let i = parsedSteps.length - 1; i >= 0; i--) {
-      const step = parsedSteps[i];
-      if (step.kind === 'locate' && step.letter) return step.letter;
-    }
-    return null;
-  }, [parsedSteps]);
-
-  const isComplete = revealedCount >= parsedSteps.length;
-  const current = parsedSteps[revealedCount - 1];
-
-  if (parsedSteps.length === 0) {
+  if (normalized.length === 0) {
     return (
       <div className="flex min-h-full items-center justify-center p-6">
         <p className="font-body text-slate-400">Nenhum passo definido</p>
@@ -108,97 +81,107 @@ export function LogicFlowPniColdChainTap({
   }
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-4">
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
-
-      <div className="relative z-10 flex min-h-0 flex-1 flex-col gap-3">
-        <div className="flex items-center justify-center gap-2">
-          <span className="rounded-full border border-teal-200/80 bg-teal-50/90 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-teal-900">
-            {vfMode ? 'Cadeia de frio — V/F' : 'Rede de frio PNI'}
-          </span>
-          {vfMode ? (
-            <Thermometer className="h-4 w-4 text-teal-700" aria-hidden />
+    <BoardChrome
+      theme={theme}
+      washOpacity={0.35}
+      eyebrow="BOARD — REDE DE FRIO"
+      footerRule={footerRule}
+      footerLabel={footerRule ? 'TRANSFERÊNCIA' : undefined}
+      maxWidth="3xl"
+      className="gap-2.5"
+    >
+      <PolarityPanel tone="keep" emphasized>
+        <div className="flex items-center gap-3">
+          {winnerLetter ? (
+            <div
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-teal-600 font-body text-3xl font-black text-white shadow-lg ring-2 ring-teal-300/70"
+              aria-label={`Gabarito letra ${winnerLetter}`}
+            >
+              {winnerLetter}
+            </div>
           ) : (
-            <Snowflake className="h-4 w-4 text-teal-700" aria-hidden />
+            <CriticalNumber
+              value="2–8"
+              unit="°C"
+              label="PNI"
+              emphasis="ok"
+              className="min-w-[5rem] px-2.5 py-2"
+            />
           )}
-        </div>
-
-        {!vfMode ? (
-          <div className="flex flex-wrap justify-center gap-2">
-            {LETTERS.map((letter) => {
-              const isOut = eliminated.has(letter);
-              const isWinner = isComplete && winnerLetter === letter;
-              return (
-                <div
+          <div className="min-w-0 flex-1">
+            <CategoryStrip label="Faixa térmica" tone="keep" />
+            <div className="mt-1.5 flex flex-wrap gap-1.5">
+              {focusMarkers.slice(0, 4).map((m) => (
+                <span
+                  key={m}
+                  className="rounded-md bg-teal-500 px-2 py-0.5 font-mono text-xs font-black text-white"
+                >
+                  {pniTempLabel(m)}°C
+                </span>
+              ))}
+              {[...eliminated].map((letter) => (
+                <span
                   key={letter}
-                  className={`flex h-11 w-11 items-center justify-center rounded-xl font-display text-base font-black transition-all duration-300 md:h-12 md:w-12 md:text-lg ${
-                    isWinner
-                      ? 'scale-110 bg-emerald-500 text-white ring-4 ring-emerald-300/50'
-                      : isOut
-                        ? 'bg-rose-200/90 text-rose-400 line-through opacity-60'
-                        : 'bg-white/90 text-teal-900 ring-2 ring-teal-200/60'
-                  }`}
+                  className="rounded-md bg-rose-200 px-2 py-0.5 font-mono text-xs font-black text-rose-800 line-through"
                 >
                   {letter}
-                </div>
-              );
-            })}
-          </div>
-        ) : null}
-
-        <AnimatePresence mode="wait">
-          {current ? (
-            <motion.div
-              key={revealedCount}
-              initial={reduceMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className={`rounded-2xl border bg-white/95 p-4 shadow-md ${
-                current.kind === 'locate'
-                  ? 'border-emerald-300/80 border-l-[4px] border-l-emerald-500'
-                  : current.kind === 'eliminate'
-                    ? 'border-rose-200/80 border-l-[4px] border-l-rose-400'
-                    : current.kind === 'vf_judge'
-                      ? 'border-violet-200/80 border-l-[4px] border-l-violet-400'
-                      : 'border-teal-200/80 border-l-[4px] border-l-teal-500'
-              }`}
-            >
-              <div className="mb-2 flex flex-wrap items-center gap-2">
-                <span className="font-mono text-[10px] font-bold text-slate-500">
-                  {revealedCount}/{parsedSteps.length}
                 </span>
-                <StepBadge step={current} />
-                {current.kind === 'eliminate' ? (
-                  <Trash2 className="h-4 w-4 text-rose-500" aria-hidden />
-                ) : null}
-                {current.kind === 'locate' ? (
-                  <Trophy className="h-4 w-4 text-emerald-600" aria-hidden />
-                ) : null}
-              </div>
-              {current.markers && current.markers.length > 0 ? (
-                <div className="mb-3">
-                  <TempChips markers={current.markers} />
+              ))}
+            </div>
+            <p className="mt-1.5 font-body text-sm font-semibold leading-snug text-slate-800">
+              {locateStep
+                ? locateStep.text.replace(/^Marcar\s+[A-E]\s*[—–:]?\s*/i, '')
+                : (tempAnchor?.text ?? 'Temperatura positiva de conservação: 2 °C a 8 °C.')}
+            </p>
+          </div>
+        </div>
+      </PolarityPanel>
+
+      <LetterEliminationRail
+        eliminated={eliminated}
+        winnerLetter={winnerLetter}
+        isComplete
+        className="justify-center"
+      />
+
+      {eliminateSteps.length > 0 ? (
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {eliminateSteps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: reduceMotion ? 0 : index * 0.03 }}
+            >
+              <PolarityPanel tone="exception" className="!gap-1.5">
+                <div className="flex items-center gap-2">
+                  {step.letter ? (
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-600 font-body text-sm font-black text-white line-through">
+                      {step.letter.toUpperCase()}
+                    </span>
+                  ) : (
+                    <X className="h-4 w-4 text-rose-600" strokeWidth={3} aria-hidden />
+                  )}
+                  <p className="font-body text-sm font-semibold leading-snug text-rose-900">
+                    {step.text
+                      .replace(/^Eliminar\s+[A-E]:\s*/i, '')
+                      .replace(/\s*→\s*eliminar\.?$/i, '')}
+                  </p>
                 </div>
-              ) : null}
-              <p className="font-body text-sm leading-relaxed text-slate-800 md:text-base">{current.text}</p>
+              </PolarityPanel>
             </motion.div>
-          ) : null}
-        </AnimatePresence>
+          ))}
+        </div>
+      ) : null}
 
-        {!isComplete ? (
-          <button
-            type="button"
-            onClick={advance}
-            className="mx-auto flex min-h-[44px] items-center gap-2 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-600 px-6 py-3 font-display text-sm font-bold text-white shadow-lg shadow-teal-300/30 transition hover:scale-[1.02]"
-          >
-            Próximo passo
-            <ChevronRight className="h-4 w-4" aria-hidden />
-          </button>
-        ) : null}
-
-        {footerRule ? (
-          <p className="text-center font-body text-xs text-teal-900/75 md:text-sm">{footerRule}</p>
-        ) : null}
-      </div>
-    </div>
+      {fixationStep ? (
+        <AlertCallout tone="transfer" className="!py-2">
+          <span className="flex items-start gap-1.5 text-left text-xs md:text-sm">
+            <Check className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={3} aria-hidden />
+            <span>{fixationStep.text.replace(/^Em similares:\s*/i, '')}</span>
+          </span>
+        </AlertCallout>
+      ) : null}
+    </BoardChrome>
   );
 }

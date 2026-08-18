@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:webpack": "next dev --webpack",
-    "build": "npm run validate:env && next build --webpack",
+    "build": "npm run validate:env && next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -20,8 +20,10 @@
     "test:e2e:vitrine-pagination:staging": "tsx scripts/run-e2e-vitrine-pagination.ts --target=staging",
     "test:e2e:vitrine-premium": "tsx scripts/run-e2e-vitrine-premium.ts",
     "capture:t3-vitrine": "tsx scripts/capture-t3-vitrine.ts",
+    "capture:desempenho-hub": "tsx scripts/capture-desempenho-hub.ts",
     "test:e2e:estudar-nav": "tsx scripts/run-e2e-estudar-nav.ts",
     "test:e2e:estudar-nav:staging": "tsx scripts/run-e2e-estudar-nav.ts --target=staging",
+    "test:e2e:revisoes-hoje": "playwright test e2e/revisoes-hoje.spec.ts --project=chromium --workers=1",
     "test:e2e:visual-molds": "playwright test e2e/visual-mold-regression.spec.ts --project=chromium",
     "validate:env": "tsx scripts/validate-env.ts",
     "db:push": "supabase db push",
@@ -64,9 +66,41 @@
     "pipeline:sdk-check": "tsx scripts/pipeline-sdk-check.ts",
     "anchor:brief": "tsx scripts/anchor-brief.ts",
     "audit:golden-anchor-gate": "tsx scripts/audit-golden-anchor-gate-cli.ts",
+    "audit:anchor-100": "tsx scripts/audit-anchor-100.ts",
     "catalog:program-status": "tsx scripts/catalog-program-status.ts",
     "classify:l3-matrix": "tsx scripts/classify-l3-priority-matrix.ts",
     "audit:l3-mold-gap": "tsx scripts/audit-l3-mold-gap.ts",
+    "audit:neurocanvas-catalog": "tsx scripts/audit-neurocanvas-catalog.ts",
+    "audit:neurocanvas-duplicates": "tsx scripts/audit-neurocanvas-duplicates.ts",
+    "audit:neurocanvas-blockers": "tsx scripts/audit-neurocanvas-blockers.ts",
+    "audit:neurocanvas-baseline-impact": "tsx scripts/audit-neurocanvas-baseline-impact.ts",
+    "audit:blind-reader": "tsx scripts/audit-blind-reader-gate.ts",
+    "repair:pedagogy-truncagem": "tsx scripts/repair-pedagogy-letter-truncation.ts",
+    "repair:pedagogy-padding": "tsx scripts/repair-pedagogy-logic-padding.ts",
+    "repair:pedagogy-rotulos-vf": "tsx scripts/repair-pedagogy-vf-labels.ts",
+    "repair:pedagogy-gabarito-item": "tsx scripts/repair-pedagogy-gabarito-item.ts",
+    "audit:resolve-slide-presentation": "tsx scripts/audit-resolve-slide-presentation.ts",
+    "audit:variant-usage": "tsx scripts/audit-variant-usage.ts",
+    "audit:variant-click-scorecard": "tsx scripts/audit-variant-click-scorecard.ts",
+    "audit:variant-similarity": "tsx scripts/audit-variant-similarity.ts",
+    "test:e2e:variant-gallery": "playwright test e2e/variant-gallery-regression.spec.ts --project=chromium",
+    "generate:neurocanvas-pilot-cohort": "tsx scripts/generate-neurocanvas-pilot-cohort.ts",
+    "generate:neurocanvas-audit-report-data": "tsx scripts/generate-neurocanvas-audit-report-data.ts",
+    "write:neurocanvas-audit-report": "tsx scripts/write-neurocanvas-audit-report.ts",
+    "write:neurocanvas-baseline-readiness": "tsx scripts/write-neurocanvas-baseline-readiness.ts",
+    "write:neurocanvas-g02-reconciliation": "tsx scripts/write-neurocanvas-g02-reconciliation.ts",
+    "refresh:neurocanvas-g02-artifacts": "tsx scripts/refresh-neurocanvas-g02-artifacts.ts",
+    "audit:neurocanvas-editorial-queue": "tsx scripts/audit-neurocanvas-editorial-queue.ts",
+    "neurocanvas:g04-repro": "tsx scripts/neurocanvas-g04-apply-editorial.ts --verify",
+    "neurocanvas:g04-apply-local": "tsx scripts/neurocanvas-g04-apply-editorial.ts --apply",
+    "neurocanvas:g04-manifest-l1": "tsx scripts/neurocanvas-g04-manifest-conflict-l1-apply.ts --apply",
+    "neurocanvas:g04-manifest-l1-dry": "tsx scripts/neurocanvas-g04-manifest-conflict-l1-apply.ts --dry-run",
+    "neurocanvas:g04-unresolved-partition": "tsx scripts/neurocanvas-g04-unresolved-partition.ts",
+    "write:neurocanvas-g04-baseline": "tsx scripts/write-neurocanvas-g04-baseline.ts",
+    "preflight:neurocanvas-parity": "tsx scripts/preflight-neurocanvas-parity.ts",
+    "audit:neurovisual-plan-v0-parity": "tsx scripts/audit-neurovisual-plan-v0-parity.ts",
+    "neurocanvas:parity-local": "npm run preflight:neurocanvas-parity && npm run audit:neurocanvas-catalog && npm run audit:neurocanvas-duplicates && npm run audit:neurocanvas-blockers && npm run audit:neurocanvas-baseline-impact && npm run audit:resolve-slide-presentation -- --source=catalog && npm run generate:neurocanvas-audit-report-data && npm run write:neurocanvas-audit-report",
+    "test:neurocanvas": "jest __tests__/lib/neurocanvas --runInBand",
     "audit:premium-supabase": "tsx scripts/audit-premium-supabase.ts",
     "seed:guideline-registry": "tsx scripts/seed-subtopico-guideline-registry.ts",
     "refresh:guideline-counts": "tsx scripts/refresh-subtopico-guideline-counts.ts",
@@ -214,6 +248,7 @@
     "audit:handcraft-dod": "tsx scripts/audit-handcraft-dod.ts",
     "catalog:preflight": "tsx scripts/catalog-apply-preflight.ts",
     "reconcile:handcraft-manifest": "tsx scripts/reconcile-handcraft-manifest.ts",
+    "reconcile:evidence-events": "tsx scripts/reconcile-evidence-events.ts",
     "audit:slug-alignment": "tsx scripts/audit-slug-alignment.ts",
     "audit:numeric-factcheck": "tsx scripts/audit-numeric-factcheck.ts",
     "audit:content-health": "tsx scripts/audit-content-health.ts",
@@ -242,6 +277,12 @@
     "cluster:saude-da-crianca": "tsx scripts/cluster-saude-da-crianca-topics.ts",
     "cluster:curativos-e-manejo-de-feridas": "tsx scripts/cluster-curativos-e-manejo-de-feridas-topics.ts",
     "cluster:promocao": "tsx scripts/cluster-promocao-a-saude-e-prevencao-de-agravos-topics.ts",
+    "cluster:atencao-basica": "tsx scripts/cluster-atencao-basica-saude-da-familia-topics.ts",
+    "plan:atencao-basica-batches": "tsx scripts/plan-atencao-basica-saude-da-familia-batches.ts",
+    "cluster:epidemiologia": "tsx scripts/cluster-epidemiologia-e-vigilancia-epidemiologica-topics.ts",
+    "cluster:coleta": "tsx scripts/cluster-coleta-de-exames-laboratoriais-topics.ts",
+    "cluster:anatomia": "tsx scripts/cluster-nocoes-de-anatomia-topics.ts",
+    "plan:anatomia-batches": "tsx scripts/plan-nocoes-de-anatomia-batches.ts",
     "cluster:lingua-portuguesa": "python scripts/cluster-lingua-portuguesa-topics.py",
     "gran:elias-extract-outlines": "python scripts/tools/gran_elias_extract_outlines.py",
     "gran:elias-generate-modules": "python scripts/tools/gran_elias_generate_modules.py",
@@ -498,7 +539,8 @@
     "plan:imunizacao-g14": "tsx scripts/plan-imunizacao-g14.ts",
     "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts",
     "backup:assemble": "powershell -ExecutionPolicy Bypass -File scripts/assemble-avant-backup.ps1",
-    "prepare": "husky"
+    "prepare": "husky",
+    "plan:epidemiologia-batches": "tsx scripts/plan-epidemiologia-e-vigilancia-epidemiologica-batches.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -560,8 +602,21 @@
   },
   "overrides": {
     "sharp": "^0.35.3",
+    "fast-uri": "3.1.5",
     "next": {
-      "postcss": "8.5.18"
+      "postcss": "8.5.26"
+    },
+    "postcss": {
+      "nanoid": "3.3.18"
+    },
+    "gray-matter": {
+      "js-yaml": "3.15.1"
+    },
+    "minimatch@3": {
+      "brace-expansion": "1.1.12"
+    },
+    "minimatch@>=9": {
+      "brace-expansion": "5.0.9"
     }
   }
 }

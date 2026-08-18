@@ -1,0 +1,149 @@
+{
+  "total_anchors": 165,
+  "letter_spoiler": 60,
+  "vf_spoiler": 38,
+  "either_spoiler": 91,
+  "clean": 74,
+  "calibration_sample": [
+    {
+      "slug": "questao-formacao-palavras-siglas",
+      "expected_bucket": "regex_spoiler",
+      "family": null,
+      "correct": "C",
+      "concept_preview": "Sigla (Abreviação) · Palavra formada pelas iniciais de outras palavras. Ex.: EUA, TDAH, ONU, OMS, INSS. · Processo de Formação · As letras representam as iniciais de cada palavra da expressão original. Todas as siglas da questão seguem esse"
+    },
+    {
+      "slug": "questao-premium-admtec-imunizacao-adolescente-cartao-perdido",
+      "expected_bucket": "regex_spoiler",
+      "family": "conceito",
+      "correct": "C",
+      "concept_preview": "Comando · Adolescente sem cartão e sem comprovação — regularizar esquema no PNI com a equipe. · Regra central · Sem documento confiável: vacinar pela idade atual, conforme Calendário Nacional — não paralisar a sala. · Papel do técnico · Car"
+    },
+    {
+      "slug": "questao-premium-admtec-oxigenoterapia-dispositivos",
+      "expected_bucket": "regex_spoiler",
+      "family": null,
+      "correct": "A",
+      "concept_preview": "Parâmetro-chave · Oxigenoterapia é um tema vital em saúde, principalmente no tratamento de pacientes com insuficiência respiratória. Com relação aos dispositivos de oxigenoterapia, assinale a alternativa correta: · Cateter nasal (CNA) · Dis"
+    },
+    {
+      "slug": "questao-premium-admtec-puncao-venosa-cateteres",
+      "expected_bucket": "regex_spoiler",
+      "family": null,
+      "correct": "B",
+      "concept_preview": "Contexto · UTI com aumento de infecção de corrente sanguínea relacionada a cateter venoso central (IPCS) — a banca quer a medida mais efetiva de prevenção. · Antissepsia · Higienização das mãos e antissepsia cutânea antes da inserção — clor"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-rcp-30-2-aha2020",
+      "expected_bucket": "regex_spoiler",
+      "family": "protocolo",
+      "correct": "D",
+      "concept_preview": "Enquadramento · Diretrizes AHA 2020 para RCP em PCR adulta — assinalar a alternativa correta sobre parâmetros. · Núcleo 30:2 · Sem via aérea avançada: 2 ventilações a cada 30 compressões — eixo central desta prova. · Triângulo numérico · 10"
+    },
+    {
+      "slug": "questao-premium-amauc-imunizacao-bcg-dose-a4",
+      "expected_bucket": "regex_spoiler",
+      "family": "vf",
+      "correct": "C",
+      "concept_preview": "Contexto do enunciado · BCG ao nascer, dose única, adiar se peso <2 kg. A banca testa técnica (via, dose, local) e mito da revacinação por cicatriz. · Afirmativa I — cicatriz ausente · FALSA. Ausência de cicatriz NÃO indica revacinação — BC"
+    },
+    {
+      "slug": "questao-premium-ameosc-cme-metodos-incorreta",
+      "expected_bucket": "regex_spoiler",
+      "family": "certo_errado",
+      "correct": "D",
+      "concept_preview": "Comando · INCORRETA — três alternativas descrevem métodos válidos; uma nega a autoclave. · Físico · Vapor saturado na autoclave — principal método em CME. · Químico · Glutaraldeído e peracético — esterilização química de baixa temperatura. "
+    },
+    {
+      "slug": "questao-premium-ameosc-imunizacao-vf-cadeia-frio",
+      "expected_bucket": "regex_spoiler",
+      "family": "vf",
+      "correct": "C",
+      "concept_preview": "Afirmativa I — BCG · VERDADEIRA: intradérmica, preferencialmente no deltoide direito. · Afirmativa II — cadeia de frio · FALSA: agitar não recupera vacina fora da temperatura — descartar e notificar. · Afirmativa III — pentavalente · VERDAD"
+    },
+    {
+      "slug": "questao-premium-admtec-saude-mulher-parto-humanizado-vf",
+      "expected_bucket": "regex_clean",
+      "family": "vf",
+      "correct": "B",
+      "concept_preview": "Marco da questão · Fase expulsiva — posição vertical/lateral, não supina fixa (III falsa). · Dor não farmacológica · Água morna e movimentação na dilatação — assertiva II. · Acompanhante · Livre escolha durante todo o trabalho de parto huma"
+    },
+    {
+      "slug": "questao-premium-ameosc-cuidados-protocolo-ms-vf",
+      "expected_bucket": "regex_clean",
+      "family": "vf",
+      "correct": "A",
+      "concept_preview": "I — Comunicação (V) · Comunicação efetiva entre profissionais previne erros de medicação — eixo do protocolo MS. · II — Só nome verbal (F) · Identificação exige dois identificadores independentes — nome sozinho não basta. · III — Alto risco"
+    },
+    {
+      "slug": "questao-premium-ameosc-processo-de-enfermagem-documentacao",
+      "expected_bucket": "regex_clean",
+      "family": "vf",
+      "correct": "D",
+      "concept_preview": "Tema · Integridade, veracidade e identificação no registro de enfermagem. · Item 1 — alteração livre · Prontuário não se corrige “livremente” — exige protocolo de retificação. · Item 2 — objetividade · Anotação objetiva no momento do cuidad"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-choque-eletrico",
+      "expected_bucket": "regex_clean",
+      "family": "conceito",
+      "correct": "D",
+      "concept_preview": "Comando · Primeira conduta em choque elétrico — vítima pode ter queimaduras, arritmia e ficar presa à corrente. · Semântica · Choque elétrico = acidente com corrente — não confundir com choque hipovolêmico (hipotensão). · Prioridade zero · "
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-convulsao-crise",
+      "expected_bucket": "regex_clean",
+      "family": "conceito",
+      "correct": "B",
+      "concept_preview": "Enquadramento · Crise epiléptica — ações prioritárias no atendimento imediato; assinalar a conduta correta. · Proteger · Afastar objetos perigosos e amortecer a cabeça — sem imobilizar à força. · Não fazer · Não introduzir objetos na boca ·"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-fratura-exposta-imobilizacao",
+      "expected_bucket": "regex_clean",
+      "family": "conceito",
+      "correct": "A",
+      "concept_preview": "Enquadramento · Fratura exposta de extremidade — osso visível na ferida; priorizar imobilização segura no atendimento inicial. · Objetivo · Estabilizar o segmento, reduzir movimento e proteger tecidos — sem agravar lesão vascular ou nervosa"
+    },
+    {
+      "slug": "questao-premium-access-urgencias-rcp-pediatrica-15-2",
+      "expected_bucket": "regex_clean",
+      "family": "protocolo",
+      "correct": "D",
+      "concept_preview": "Enquadramento · PCR em criança/lactente sem via aérea avançada — identificar compressão de alta qualidade. · Proporção pediátrica · Dois socorristas treinados: 15 compressões : 2 ventilações (não 30:2 do adulto). · Profundidade · Cerca de u"
+    },
+    {
+      "slug": "questao-premium-consulpam-urgencias-pcr-pediatrica-conceito",
+      "expected_bucket": "regex_clean",
+      "family": "protocolo",
+      "correct": "A",
+      "concept_preview": "Enquadramento · Princípios atuais de SBV em bebês e crianças — assinalar afirmativa correta. · Causa usual · Na maioria das vezes: hipóxia/insuficiência respiratória ou choque — não IAM como no adulto. · Tempo · Reconhecer deterioração prec"
+    },
+    {
+      "slug": "questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im",
+      "expected_bucket": "regex_clean",
+      "family": "protocolo",
+      "correct": "C",
+      "concept_preview": "Enquadramento · Criança de 7 anos: urticária difusa, prurido, angioedema de lábios/pálpebras e dispneia após dipirona. · Conduta imediata · Adrenalina na anafilaxia = suporte básico de vida; técnico prepara sob supervisão do enfermeiro. · A"
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-denotacao-tirinha-drogas",
+      "expected_bucket": "regex_clean",
+      "family": "text_fragment",
+      "correct": "D",
+      "concept_preview": "1º quadrinho · «Drogas» parece denotativo — alucinógeno, dependência química. · Último quadrinho · Contexto vira a chave — atração / paixão / intoxicação do espírito. · Pergunta-teste · Literal no 1º? Figurado no último? Qual par de sentido"
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-consoada-descer",
+      "expected_bucket": "regex_clean",
+      "family": "text_fragment",
+      "correct": "C",
+      "concept_preview": "Pergunta-teste · Substituir «descer» mantém a chegada da noite? · Descer (noite) · Anoitecer — a noite se abate sobre o dia. · Polissemia · «Descer» também = movimento vertical (literal). · Consoada · Bandeira — casa pronta; espera a Indese"
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-iniludivel",
+      "expected_bucket": "regex_clean",
+      "family": "text_fragment",
+      "correct": "B",
+      "concept_preview": "Pergunta-teste · O in- nega «iludível» — o que sobra? · Iniludível · Que não se pode iludir, evitar ou ignorar. · Indesejada · Eufemismo bandeiriano para a morte. · Alô · Saudação irônica — morte é certa. · Incontornável · Impossível contor"
+    }
+  ]
+}

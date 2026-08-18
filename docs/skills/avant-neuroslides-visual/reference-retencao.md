@@ -6,6 +6,22 @@ Complemento de `avant-neuroslides-visual`. Usar **depois** de nomear o ramo e o 
 
 ---
 
+## Banco Composer
+
+Índice canônico dos **8 gestos ouro** (gesto × âncoras player × primitives × gallery ready):
+
+| Artefato | Uso |
+|----------|-----|
+| [`artifacts/composer-visual-bank.md`](../../../artifacts/composer-visual-bank.md) | Fonte de verdade — máx. 1–2 âncoras ouro por `gesture_id`; status `gold` \| `thin` \| `gap` |
+| [`docs/PROMPT_COMPOSER_VISUAL.md`](../../PROMPT_COMPOSER_VISUAL.md) | Trigger `Composer visual:` — orquestrador (precede Fábrica se gallery `pending`/`thin`) |
+| [`docs/NEUROSLIDES_ATELIER_KIT.md`](../../NEUROSLIDES_ATELIER_KIT.md) | Crítica glanceable (Composer orquestra; Atelier julga) |
+
+**No Modo V / Composer:** abrir o banco → escolher `gesture_id` alinhado ao erro espacial → carregar **só** 1–2 paths ouro da linha (não moodboard). Proibido PNG de feed. Após capture que eleva o ouro: atualizar no máx. 1 path na linha do gesto.
+
+Mapeamento gesto → formato tipico da tabela §1 abaixo continua válido; o banco amarra cada gesto a primitive/shell e pacotes com gallery `ready`.
+
+---
+
 ## 1. Gesto → retenção
 
 | Gesto | Quando o aluno grava | Formatos típicos |
@@ -84,6 +100,41 @@ Análise de prints de estudo (feed). **Salvos = princípios abaixo.** PNG extern
 
 ---
 
+## 2c. Lote TE enfermagem (ago/2026 — Pré-Onda 3 Fábrica)
+
+Catálogo completo: [`artifacts/pre-onda3-print-to-primitives-catalog.md`](../../../artifacts/pre-onda3-print-to-primitives-catalog.md).  
+Runbook: [`docs/NEUROSLIDES_VISUAL_STRATEGY.md`](../../../docs/NEUROSLIDES_VISUAL_STRATEGY.md) Camadas 2b–2c + **7** (DoD Fábrica).
+
+**Glossário:** *Strategy Onda 3* = Imu EXCETO (já entregue). *Fábrica Onda 3* = nota-10 visual dos 10 pacotes TE.
+
+### Manter (traduzir para primitives — não clonar)
+
+| Família de print | Gesto | Primário AVANT | Slide |
+|------------------|-------|----------------|-------|
+| XABCDE / ADPIE / vigilância 1–N | Trilho | `ProtocolRailRow` / `LogicRailShell` | concept / logic ≤3 |
+| Calendário PNI / Pneumo idade×dose | Chip + corpo | `LabelBodyRow` + `CategoryStrip` | golden_rule |
+| Manchester / risco por cor | Cor = categoria | `CategoryStrip` + `PolarityPanel` | concept / danger |
+| Mapa mental / NIC–NOC / pilares / RAPS lista | Deck / núcleo+lista | `PillarDeck` / `concept_map` ≤7 | concept_map |
+| Protocolo empilhado + Atenção + dose / tabela gravidade | Callout + número + rows | `AlertCallout` + `CriticalNumber` + SoftLens/`rows` | golden_rule |
+| Fluxo RN / zigzag | Funil | `LogicFocusShell` ≤3 ou `LogicIsolateShell` | logic_flow |
+| Sinais vitais grade / multi-card patologia | Deck / rows | `PillarDeck` / `LabelBodyRow` | concept + golden |
+| Glossário onda→nome→def / pontuação PT | Chip + corpo | `LabelBodyRow` | golden_rule |
+
+### Reusar vs `Implementar molde:`
+
+| Situação | Ação |
+|----------|------|
+| Gesto na tabela + molde/primitivo já no ramo | Reusar + Modo A/V |
+| Pacote já `production_ready` — polish glanceable | Captures/galeria; sem React novo |
+| Gesto espacial **novo** ou ≥5 questões sem board | Brief → Design visual → `Implementar molde:` |
+| Pegadinha só textual / cauda | `ok_generico` 3/3 |
+
+### Descartar (mesmo lote)
+
+3D/mascote, ranking comercial com chevron de marketing, poster 10–18 cards, pastel no shell Cyber, 1 variant por print.
+
+---
+
 ## 3. Densidade e mobile
 
 | Regra | Valor |
@@ -145,6 +196,16 @@ Não forçar bespoke por estética. Bespoke quando o erro é **espacial/sequenci
 - [ ] 375 px OK
 - [ ] Inspiração = princípio, não clone
 
+### 7b. DoD Onda 3 Fábrica (pacote já vendável)
+
+Espelho da Camada 7 em `NEUROSLIDES_VISUAL_STRATEGY.md`:
+
+- [ ] Gesto por ramo forte **ou** ok_generico
+- [ ] Print → primitivo (tabela §2c)
+- [ ] Playwright **ou** captures âncora
+- [ ] `artifacts/<prefix>-nota10-report.md` barra visual verde
+- [ ] React novo só com `Implementar molde:`
+
 ---
 
 ## 8. Galeria visual (playbook)
@@ -153,8 +214,10 @@ Se o ramo tiver `visual_gallery` no playbook:
 
 | status | Ação |
 |--------|------|
-| `pending` | Não há PNG ainda — usar brief + JSON |
-| `pilot` / `ready` | Abrir `captures_dir` (player AVANT) antes de redesenhar |
+| `pending` / `thin` / ausente | **Pré-passo Fábrica:** `Composer visual: <ramo>` → `ATELIER_PASS` antes de variant nova; brief + JSON + gestos ouro do banco |
+| `pilot` / `ready` | Abrir `captures_dir` (player AVANT) antes de redesenhar; Composer opcional se só polish |
 
 Índice PT: `artifacts/l3-visual-gallery-lingua-portuguesa-index.md`.  
-Preencher após `capture:questao-review` — **nunca** indexar posters externos (lote de inspiração de feed **não** entra na galeria).
+**Banco Composer (gesto × capture ouro):** [`artifacts/composer-visual-bank.md`](../../../artifacts/composer-visual-bank.md).  
+**Composer (orquestrador)** · **Atelier (crítica):** [`PROMPT_COMPOSER_VISUAL`](../../PROMPT_COMPOSER_VISUAL.md) · [`NEUROSLIDES_ATELIER_KIT`](../../NEUROSLIDES_ATELIER_KIT.md) · [`PROMPT_ATELIER_VISUAL`](../../PROMPT_ATELIER_VISUAL.md).  
+Preencher após `capture:questao-review` ou prints do player anexados na conversa — **nunca** indexar posters externos (lote de inspiração de feed **não** entra na galeria). Se elevou o ouro do gesto, atualizar a linha do banco (≤2 âncoras).

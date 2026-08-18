@@ -23,7 +23,11 @@
         "title": "Protocolo Clínico e Diretrizes Terapêuticas — DPOC",
         "year": 2021,
         "url": "https://www.gov.br/saude/",
-        "covers": ["exacerbação", "escarro purulento", "retenção de CO₂"]
+        "covers": [
+          "exacerbação",
+          "escarro purulento",
+          "retenção de CO₂"
+        ]
       },
       {
         "id": "sbpt-dpoc",
@@ -31,18 +35,41 @@
         "issuer": "SBPT",
         "title": "Diretrizes brasileiras em DPOC",
         "year": 2021,
-        "covers": ["descompensação", "padrão respiratório obstrutivo"]
+        "covers": [
+          "descompensação",
+          "padrão respiratório obstrutivo"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Um paciente de 68 anos, tabagista, com DPOC chega com piora da dispneia há três dias. Analise as afirmativas sobre exacerbação e cuidados de enfermagem.\n\nI - Escarro purulento ou aumento de volume com alteração de cor pode indicar exacerbação infecciosa da DPOC.\nII - Tempo expiratório prolongado e uso de musculatura acessória são achados compatíveis com obstrução grave na descompensação.\nIII - Confusão mental e sonolência podem estar associadas à retenção de CO₂ e exigem avaliação urgente.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "C", "text": "I, II e III.", "is_correct": true },
-      { "id": "D", "text": "I e II, apenas.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I, II e III.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "I e II, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
@@ -61,17 +88,17 @@
         },
         {
           "label": "NÚCLEO I — escarro",
-          "detail": "VERDADEIRO: escarro purulento ou alterado sugere exacerbação infecciosa.",
+          "detail": "Escarro purulento ou alterado sugere exacerbação infecciosa.",
           "icon": "Droplets"
         },
         {
           "label": "NÚCLEO II — padrão obstrutivo",
-          "detail": "VERDADEIRO: expiração prolongada e musculatura acessória na obstrução grave.",
+          "detail": "Expiração prolongada e musculatura acessória na obstrução grave.",
           "icon": "Wind"
         },
         {
           "label": "NÚCLEO III — CO₂",
-          "detail": "VERDADEIRO: confusão e sonolência podem indicar retenção de CO₂ — urgência.",
+          "detail": "Confusão e sonolência podem indicar retenção de CO₂ — urgência.",
           "icon": "Brain"
         }
       ],
@@ -86,11 +113,26 @@
       },
       "content": "DPOC — EXACERBAÇÃO",
       "rows": [
-        { "label": "Escarro purulento", "value": "Sinal infeccioso — avaliar antibiótico", "badge": "ok" },
-        { "label": "Expiração prolongada", "value": "Obstrução grave + musculatura acessória", "badge": "ok" },
-        { "label": "Confusão mental", "value": "Suspeitar retenção de CO₂ — urgente", "badge": "warn" },
-        { "label": "Tabagismo", "value": "Principal fator modificável da DPOC", "badge": "ok" },
-        { "label": "Gabarito", "value": "I, II e III → letra C", "emphasis": "success", "badge": "hot" }
+        {
+          "label": "Escarro purulento",
+          "value": "Sinal infeccioso — avaliar antibiótico",
+          "badge": "ok"
+        },
+        {
+          "label": "Expiração prolongada",
+          "value": "Obstrução grave + musculatura acessória",
+          "badge": "ok"
+        },
+        {
+          "label": "Confusão mental",
+          "value": "Suspeitar retenção de CO₂ — urgente",
+          "badge": "warn"
+        },
+        {
+          "label": "Tabagismo",
+          "value": "Principal fator modificável da DPOC",
+          "badge": "ok"
+        }
       ],
       "footer_rule": "Três afirmativas verdadeiras — não eliminar III por ‘parecer rara’"
     },

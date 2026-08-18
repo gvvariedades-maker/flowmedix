@@ -274,15 +274,16 @@ export function buildE2eEstudarQuestaoPayload(
     return { status: 'not_found' };
   }
 
-  const { fromPlano, fromCaderno, cadernoId } = parseEstudarSearchParams(searchParams);
+  const { fromCaderno, cadernoId } = parseEstudarSearchParams(searchParams);
 
   const suffix = buildVitrineQuerySuffix(searchParams);
-  const indexAtual = E2E_ESTUDAR_SLUGS.indexOf(slug as (typeof E2E_ESTUDAR_SLUGS)[number]);
+  const navSlugs: string[] = [...E2E_ESTUDAR_SLUGS];
+  const indexAtual = navSlugs.indexOf(slug);
   const anteriorSlug =
-    indexAtual > 0 ? `${E2E_ESTUDAR_SLUGS[indexAtual - 1]}${suffix}` : null;
+    indexAtual > 0 ? `${navSlugs[indexAtual - 1]}${suffix}` : null;
   const proximaSlug =
-    indexAtual >= 0 && indexAtual < E2E_ESTUDAR_SLUGS.length - 1
-      ? `${E2E_ESTUDAR_SLUGS[indexAtual + 1]}${suffix}`
+    indexAtual >= 0 && indexAtual < navSlugs.length - 1
+      ? `${navSlugs[indexAtual + 1]}${suffix}`
       : null;
 
   let dados = stripQuestionAnswersForClient(E2E_LESSONS[slug as (typeof E2E_ESTUDAR_SLUGS)[number]]);
@@ -296,15 +297,17 @@ export function buildE2eEstudarQuestaoPayload(
     proximaSlug,
     anteriorSlug,
     moduloSlug: slug,
-    questoesDoAssunto: E2E_ESTUDAR_SLUGS.map((navSlug, index) => ({
+    questoesDoAssunto: navSlugs.map((navSlug, index) => ({
       slug: navSlug,
       estudada: isE2eEstudarConcluido(navSlug),
       indice: index + 1,
     })),
-    fromPlano,
     fromCaderno: fromCaderno ? cadernoId : undefined,
-    listaContexto: { atual: indexAtual + 1, total: E2E_ESTUDAR_SLUGS.length },
-    avantCodigo: 900001 + indexAtual,
+    listaContexto: {
+      atual: Math.max(1, indexAtual + 1),
+      total: navSlugs.length,
+    },
+    avantCodigo: 900001 + E2E_ESTUDAR_SLUGS.indexOf(slug as (typeof E2E_ESTUDAR_SLUGS)[number]),
     vitrineQuerySuffix: suffix,
   };
 

@@ -2,16 +2,17 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Faixas de referência — adulto e pediátrico.
- * Fontes: protocolos clássicos de enfermagem + Caderneta da Criança (MS) / SBP.
- * URL: https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/publicacoes/caderneta-de-saude-da-crianca
+ * PA: Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN).
+ * Pediátrico: Caderneta da Criança (MS) / SBP.
+ * @see https://abccardiol.org/article/diretriz-brasileira-de-hipertensao-arterial-2025/
  */
 export const SINAIS_VITAIS_ADULTO: GuidelineTable = {
   id: 'sv-adulto-referencia',
-  snapshot: 'Referência MS/SBP — adulto e pediátrico',
-  issuer: 'Ministério da Saúde / SBP',
+  snapshot: 'MS/SBP + Diretriz Brasileira de HA 2025 (SBC)',
+  issuer: 'Ministério da Saúde / SBC / SBP',
   title: 'Faixas de sinais vitais — repouso',
-  year: 2024,
-  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/publicacoes/caderneta-de-saude-da-crianca',
+  year: 2025,
+  url: 'https://abccardiol.org/article/diretriz-brasileira-de-hipertensao-arterial-2025/',
   entries: [
     {
       id: 'fc-adulto',
@@ -29,9 +30,10 @@ export const SINAIS_VITAIS_ADULTO: GuidelineTable = {
     },
     {
       id: 'pa-adulto',
-      label: 'PA adulto',
-      value: 'Normotenso ~90–140 × 60–90 mmHg',
-      detail: 'Valores variam por fonte; hipertensão estágio 1 ≥140 × 90 mmHg (SBC).',
+      label: 'PA adulto (consultório)',
+      value: 'PA normal <120 e <80 mmHg; diagnóstico de HA ≥140 e/ou ≥90 mmHg',
+      detail:
+        'DBHA 2025 (SBC): pré-hipertensão 120–139 e/ou 80–89; HA estágio 1 = 140–159 e/ou 90–99. Meta terapêutica habitual <130/80 mmHg.',
       sourceId: 'sv-adulto-referencia',
     },
     {
@@ -265,24 +267,38 @@ export const SINAIS_VITAIS_ADULTO: GuidelineTable = {
       sourceId: 'sv-adulto-referencia',
     },
     {
+      id: 'pa-pre-hipertensao-sbc-2025',
+      label: 'Pré-hipertensão (DBHA 2025)',
+      value: 'PAS 120–139 mmHg e/ou PAD 80–89 mmHg',
+      detail: 'Identificar risco e reforçar medidas não medicamentosas; não é diagnóstico de HA.',
+      sourceId: 'sv-adulto-referencia',
+    },
+    {
       id: 'pa-has-estagio-1-sbc',
-      label: 'HAS estágio 1 (SBC)',
-      value: 'PAS ≥140 mmHg e/ou PAD ≥90 mmHg',
-      detail: 'Classificação em repouso, média de ≥2 aferições em dias distintos.',
+      label: 'HAS estágio 1 (DBHA 2025)',
+      value: 'PAS 140–159 mmHg e/ou PAD 90–99 mmHg',
+      detail: 'Diagnóstico de HA: ≥140 e/ou ≥90 em ≥2 ocasiões. Início de tratamento medicamentoso conforme risco.',
       sourceId: 'sv-adulto-referencia',
     },
     {
       id: 'pa-has-estagio-2-sbc',
-      label: 'HAS estágio 2 (SBC)',
-      value: 'PAS ≥160 mmHg e/ou PAD ≥100 mmHg',
-      detail: 'Risco cardiovascular elevado; reforçar mudança de estilo de vida e farmacoterapia.',
+      label: 'HAS estágio 2 (DBHA 2025)',
+      value: 'PAS 160–179 mmHg e/ou PAD 100–109 mmHg',
+      detail: 'Risco cardiovascular elevado; reforçar MNM e farmacoterapia.',
       sourceId: 'sv-adulto-referencia',
     },
     {
       id: 'pa-has-estagio-3-sbc',
-      label: 'HAS estágio 3 (SBC)',
+      label: 'HAS estágio 3 (DBHA 2025)',
       value: 'PAS ≥180 mmHg e/ou PAD ≥110 mmHg',
       detail: 'Emergência hipertensiva se com lesão de órgão-alvo aguda; estágio 3 isolado = urgência.',
+      sourceId: 'sv-adulto-referencia',
+    },
+    {
+      id: 'pa-meta-terapeutica-sbc-2025',
+      label: 'Meta de PA no tratamento (DBHA 2025)',
+      value: '<130/80 mmHg (quando tolerada)',
+      detail: 'Meta para HA em geral; se intolerância, menor valor tolerado. Confirmar fora do consultório (MAPA/MRPA) quando possível.',
       sourceId: 'sv-adulto-referencia',
     },
     {
@@ -545,7 +561,7 @@ export const SINAIS_VITAIS_ADULTO: GuidelineTable = {
       id: 'sv-prova-pas-referencia',
       label: 'PAS — valores discretos em casos de prova',
       value: '90 mmHg · 100 mmHg · 110 mmHg · 120 mmHg · 130 mmHg · 140 mmHg · 160 mmHg · 180 mmHg · 15 mmHg',
-      detail: 'Interpretar com PAD associada; normotensão adulto PAS ~90–140 mmHg.',
+      detail: 'Interpretar com PAD associada; DBHA 2025: PA normal <120/<80; HA ≥140 e/ou ≥90.',
       sourceId: 'sv-adulto-referencia',
     },
     {

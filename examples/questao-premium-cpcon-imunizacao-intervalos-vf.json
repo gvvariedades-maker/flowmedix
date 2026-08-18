@@ -11,10 +11,11 @@
     "content_standard": "golden-v1",
     "family": "vf",
     "content_review": {
-      "reviewed_at": "2026-06-18",
-      "reviewer": "content-pilot",
-      "guideline_snapshot": "PNI / Manual MS 2025 — intervalos",
-      "exam_vs_current": "none"
+      "reviewed_at": "2026-08-04",
+      "reviewer": "ancoras-100",
+      "guideline_snapshot": "PNI / Manual MS — intervalos entre imunobiológicos (grace 4 dias; SCR×FA <2a; VPC13×VPP23; oral×injetável)",
+      "exam_vs_current": "none",
+      "ancoras_100_pass": "approved"
     },
     "sources": [
       {
@@ -24,7 +25,12 @@
         "title": "Manual de Normas e Procedimentos para Vacinação — intervalos entre vacinas",
         "year": 2025,
         "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
-        "covers": ["grace period 4 dias", "SCR×FA menor 2 anos", "VPC13×VPP23", "oral×injetável"]
+        "covers": [
+          "grace period 4 dias",
+          "SCR×FA menor 2 anos",
+          "VPC13×VPP23",
+          "oral×injetável"
+        ]
       }
     ]
   },
@@ -61,155 +67,142 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "Intervalos PNI — mapa V/F da prova",
+      "slide_title": "Intervalos PNI — terreno da prova",
+      "chip_label": "MAPA",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
       "items": [
         {
-          "label": "Afirmativa I — grace period (4 dias)",
-          "detail": "FALSA. Dose aplicada até 4 dias ANTES da idade mínima ou do intervalo mínimo é considerada VÁLIDA no PNI — não registrar erro nem repetir por esse motivo.",
-          "icon": "Clock"
-        },
-        {
-          "label": "Afirmativa II — SCR/SCRV × febre amarela",
-          "detail": "VERDADEIRA. Menor de 2 anos, em rotina: tríplice viral ou tetraviral NÃO simultâneo com FA — intervalo mínimo de 30 dias (exceção clássica de prova).",
-          "icon": "Baby"
-        },
-        {
-          "label": "Afirmativa III — VPC13 e VPP23",
-          "detail": "VERDADEIRA. Não simultâneas; mínimo 8 semanas; VPC13 primeiro. Se VPP23 veio antes, aguardar 1 ano para VPC13 — texto alinhado ao Manual MS.",
-          "icon": "Shield"
-        },
-        {
-          "label": "Afirmativa IV — oral × injetável",
-          "detail": "Rotavírus/VOP podem ser no mesmo dia ou em qualquer intervalo com vacinas injetáveis — regra do manual.",
-          "icon": "Pill"
-        },
-        {
-          "label": "Pegadinha da I",
-          "detail": "A banca usa “erro + repetir” onde o manual fala em validar a dose — quem não decorou o grace period marca A ou B.",
+          "label": "Pegadinha — grace invertido",
+          "detail": "Banca troca dose válida (≤4 dias) por “erro de imunização + repetir”.",
           "icon": "AlertTriangle"
         },
         {
-          "label": "Padrão CPCON neste tema",
-          "detail": "Três afirmativas literais do manual (II, III, IV) + uma invertida sobre antecipação de idade (I).",
+          "label": "Grace ≤4 dias",
+          "detail": "Antecipação até 4 dias da idade/intervalo mínimo = dose válida no PNI.",
+          "icon": "Clock"
+        },
+        {
+          "label": "SCR/SCRV × FA · 30d",
+          "detail": "Menor de 2 anos, rotina: tríplice/tetraviral e febre amarela — mínimo 30 dias.",
+          "icon": "Baby"
+        },
+        {
+          "label": "VPC13 → VPP23 · 8sem",
+          "detail": "Não simultâneas; VPC13 primeiro; se VPP23 veio antes, aguardar 1 ano.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Oral × injetável · livre",
+          "detail": "Rotavírus/VOP no mesmo dia ou em qualquer intervalo com injetável.",
+          "icon": "Pill"
+        },
+        {
+          "label": "Formato da prova",
+          "detail": "V/F I–IV + combinação MCQ — Manual MS, não senso de plantão.",
           "icon": "Target"
         }
       ],
-      "footer_rule": "INTERVALOS: grace 4d na I · decore II–IV no golden · julgamento no logic_flow"
-    },
-    {
-      "type": "golden_rule",
-      "slide_title": "Referência — intervalos na prova",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Imunização"
-      },
-      "content": "DECORE — INTERVALOS PNI (SEM JULGAMENTO V/F)",
-      "rows": [
-        {
-          "label": "I — grace period 4 dias",
-          "value": "≤4 dias antes da idade mínima = dose válida (não repetir por antecipação)",
-          "emphasis": "alert",
-          "badge": "warn"
-        },
-        {
-          "label": "II — SCR/SCRV × FA <2 anos",
-          "value": "Não simultâneo em rotina; intervalo mínimo 30 dias",
-          "badge": "ok"
-        },
-        {
-          "label": "III — VPC13 × VPP23",
-          "value": "8 semanas entre si; VPC13 primeiro; se VPP23 veio antes → 1 ano para VPC13",
-          "badge": "ok"
-        },
-        {
-          "label": "IV — oral × injetável",
-          "value": "Simultâneo ou qualquer intervalo entre rotas",
-          "badge": "ok"
-        },
-        {
-          "label": "Virais vivos injetáveis",
-          "value": "Mesmo dia OU ≥4 semanas entre si (2ª inválida se <4 sem)",
-          "badge": "info"
-        },
-        {
-          "label": "Oral × oral (extra)",
-          "value": "Simultâneo OU ≥15 dias — não confundir com item IV",
-          "badge": "warn"
-        }
-      ],
-      "footer_rule": "Decore: grace 4d · FA×SCR 30d · VPC13→VPP23 8sem · oral×IM livre"
+      "footer_rule": "4d · 30d · 8sem/1a · oral×IM livre"
     },
     {
       "type": "logic_flow",
+      "slide_title": "Julgar I–IV → combinação",
+      "chip_label": "FUNIL",
       "reveal_mode": "tap",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
       "steps": [
-        "Identificar formato: quatro afirmativas (I–IV) sobre intervalos entre vacinas + “É CORRETO o que se afirma em”.",
-        "Julgar I: dose até 4 dias antes da idade mínima = erro e repetir? → FALSO — grace period do PNI considera a dose VÁLIDA.",
-        "Julgar II: menor de 2 anos, tríplice/tetraviral + febre amarela em rotina → não simultâneo? → VERDADEIRO — intervalo 30 dias.",
-        "Julgar III: VPC13 e VPP23 — 8 semanas, VPC13 primeiro, 1 ano se VPP23 veio antes? → VERDADEIRO — regra do manual.",
-        "Julgar IV: vacinas orais atenuadas × injetáveis — qualquer intervalo ou simultâneo? → VERDADEIRO — rotavírus/VOP no PNI.",
-        "Montar conjunto verdadeiro: II + III + IV; I fica de fora.",
-        "Localizar alternativa C = “II, III e IV apenas”.",
-        "Eliminar A (inclui I falsa), B (só I e III), D (I e II), E (só IV).",
-        "Marcar C.",
-        "Fixação: em V/F de intervalos CPCON, sempre testar I (grace period) antes de olhar combinações."
+        "Formato: quatro afirmativas de intervalo + “É CORRETO o que se afirma em”.",
+        "I — até 4 dias antes = erro e repetir? → FALSA (grace: dose válida).",
+        "II — <2 anos, SCR/SCRV e FA sem simultâneo na rotina? → VERDADEIRA (30 dias).",
+        "III — VPC13×VPP23: 8 semanas, VPC13 primeiro, 1 ano se VPP23 veio antes? → VERDADEIRA.",
+        "IV — oral atenuada × injetável: simultâneo ou qualquer intervalo? → VERDADEIRA.",
+        "Conjunto verdadeiro: II + III + IV (I fora).",
+        "Combinação → letra C.",
+        "Eliminar A/B/D (carregam I) e E (só IV).",
+        "Em similares: julgue o grace period antes de montar a combinação."
       ],
-      "footer_rule": "Roteiro V/F: I → II → III → IV → conjunto → eliminar letras com I ou só IV"
+      "footer_rule": "I → II → III → IV → conjunto → eliminar quem inclui I ou só IV"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — intervalos PNI",
+      "chip_label": "TABELA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "DECORE — 4 NÚMEROS DO MANUAL",
+      "rows": [
+        {
+          "label": "Grace period",
+          "value": "≤4 dias antes = dose válida",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "SCR/SCRV × FA (<2 anos)",
+          "value": "Não simultâneo em rotina · mínimo 30 dias"
+        },
+        {
+          "label": "VPC13 × VPP23",
+          "value": "≥8 semanas · VPC13 primeiro · se VPP23 antes → 1 ano para VPC13"
+        },
+        {
+          "label": "Oral atenuada × injetável",
+          "value": "Simultâneo ou qualquer intervalo entre rotas"
+        }
+      ],
+      "footer_rule": "Decore: 4d · 30d · 8sem/1a · oral×IM livre"
     },
     {
       "type": "danger_zone",
+      "slide_title": "Pegadinhas — intervalos CPCON",
+      "chip_label": "ARMADILHA",
       "bullet_style": "x_icon",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
-      "content": "PEGADINHAS CPCON — INTERVALOS (I–IV)",
+      "content": "CADA LETRA ERRADA × O QUE O MANUAL MANDA",
       "items": [
         {
           "label": "Letra A — I, II, III e IV",
-          "detail": "Aceita a afirmativa I (grace period invertido) como verdadeira.",
-          "correct": "I é FALSA: ≤4 dias antes da idade mínima = dose válida, sem repetir por antecipação."
+          "detail": "Aceita a I (grace invertido) como verdadeira.",
+          "correct": "I é falsa: ≤4 dias antes = dose válida, sem repetir por antecipação."
         },
         {
           "label": "Letra B — I e III apenas",
-          "detail": "Mantém I falsa e descarta II e IV, que são verdadeiras no manual.",
-          "correct": "II (FA×SCR <2a) e IV (oral×injetável) são VERDADEIRAS — entram no gabarito."
+          "detail": "Mantém I falsa e descarta II e IV verdadeiras.",
+          "correct": "II (FA×SCR <2a) e IV (oral×injetável) entram no conjunto verdadeiro."
         },
         {
           "label": "Letra D — I e II apenas",
-          "detail": "Inclui I falsa e exclui III e IV literais do manual.",
-          "correct": "III (VPC13/VPP23) e IV (oral) são VERDADEIRAS — gabarito exige II, III e IV."
+          "detail": "Inclui I falsa e deixa III e IV de fora.",
+          "correct": "III (VPC13/VPP23) e IV (oral) são verdadeiras — gabarito = II+III+IV."
         },
         {
           "label": "Letra E — IV apenas",
-          "detail": "Subestima II e III — aluno fixa só em oral×injetável.",
-          "correct": "Três itens corretos: II (viral×FA), III (pneumo), IV (oral) — não só IV."
+          "detail": "Fixa só em oral×injetável e ignora II e III.",
+          "correct": "Três itens corretos: II, III e IV — não só a oral."
         },
         {
-          "label": "Confundir grace period (I)",
-          "detail": "“4 dias” parece margem para repetir — a banca inverte: repetir só se passar de 4 dias ou intervalo curto.",
-          "correct": "Grace period: antecipação ≤4 dias = dose válida; não é erro de imunização."
+          "label": "Transferência — grace",
+          "detail": "“4 dias” parece margem para repetir — a banca inverte o Manual.",
+          "correct": "Antecipação ≤4 dias = válida; erro/repetir só fora do grace."
         },
         {
-          "label": "Vacinar tudo no mesmo dia (II)",
-          "detail": "Simultaneidade é regra geral, mas SCR/SCRV + FA <2 anos é exceção na rotina.",
-          "correct": "Menor de 2 anos: tríplice/tetraviral e FA com intervalo mínimo de 30 dias."
-        },
-        {
-          "label": "Generalizar IV para oral×oral",
-          "detail": "Item IV fala de oral × injetável — não cobre duas vacinas orais vivas.",
-          "correct": "Oral×oral: mesmo dia ou ≥15 dias; oral×injétavel: livre."
+          "label": "Transferência — SCR×FA",
+          "detail": "Simultaneidade geral não vale para SCR/SCRV + FA <2 anos na rotina.",
+          "correct": "Menor de 2 anos: intervalo mínimo de 30 dias entre essas duas."
         }
       ],
-      "footer_rule": "V/F intervalos: julgue I (grace) antes de montar combinação — único item invertido"
+      "footer_rule": "Em similares: julgue o grace (I) antes de montar a combinação de letras"
     }
   ]
 }

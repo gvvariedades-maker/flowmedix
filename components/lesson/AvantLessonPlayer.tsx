@@ -62,6 +62,7 @@ import {
 import { isCertoErradoQuestion } from '@/lib/questionKind';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
+import { usePassiveAttemptTracker } from '@/lib/evidence/usePassiveAttemptTracker';
 import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
 import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 import { ESTUDAR_STALE_RECOVERY_MS } from '@/components/lesson/useEstudarStaleRecovery';
@@ -114,6 +115,23 @@ function resetDashboardMainScroll() {
     document.querySelector('main[class*="overflow-y-auto"]') ??
     document.querySelector('main');
   if (mainEl) mainEl.scrollTop = 0;
+}
+
+/** UUID v4 para attempt_id — seguro em browser e Jest/jsdom (sem crypto.randomUUID). */
+function createConfirmAttemptId(): string {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+  const bytes = new Uint8Array(16);
+  if (typeof crypto !== 'undefined' && typeof crypto.getRandomValues === 'function') {
+    crypto.getRandomValues(bytes);
+  } else {
+    for (let i = 0; i < 16; i++) bytes[i] = Math.floor(Math.random() * 256);
+  }
+  bytes[6] = (bytes[6] & 0x0f) | 0x40;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
 }
 
 type SlideMotionProps = {
@@ -189,7 +207,6 @@ export default function AvantLessonPlayer({
   anteriorSlug,
   moduloSlug,
   questoesDoAssunto,
-  fromPlano = false,
   fromCaderno,
   listaContexto,
   avantCodigo,
@@ -368,9 +385,35 @@ export default function AvantLessonPlayer({
   const slidesLayerFetchRef = useRef(false);
   const slidesPersistFailedRef = useRef(false);
   const tentativaAbortRef = useRef<AbortController | null>(null);
+  /**
+   * attempt_id estável por confirmação — independente do Evidence Engine.
+   * Reutilizado em retry técnico; reciclado só após HTTP 200 com gabarito.
+   */
+  const confirmAttemptIdRef = useRef<string | null>(null);
   const questoesDoAssuntoRef = useRef(questoesDoAssunto);
   questoesDoAssuntoRef.current = questoesDoAssunto;
   const activeDados = dadosComSlides ?? dadosIniciais;
+  const evidenceQuestionKey = moduloSlug || activeDados.modulo_slug || 'questao';
+  const {
+    noteSelectionChange,
+    beginConfirm: beginEvidenceConfirm,
+    clearPendingAfterSuccess: clearEvidencePending,
+  } = usePassiveAttemptTracker({
+    questionKey: evidenceQuestionKey,
+    enabled: mode !== 'preview',
+  });
+
+  useEffect(() => {
+    confirmAttemptIdRef.current = null;
+  }, [evidenceQuestionKey]);
+
+  const selectOption = useCallback(
+    (opcaoId: string | null) => {
+      if (opcaoId) noteSelectionChange();
+      setSelecionada(opcaoId);
+    },
+    [noteSelectionChange],
+  );
 
   useEffect(() => {
     setDadosComSlides(null);
@@ -564,7 +607,6 @@ export default function AvantLessonPlayer({
 
     const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
       moduloSlug,
-      fromPlano,
       fromCaderno,
       vitrineQuerySuffix,
     });
@@ -647,7 +689,6 @@ export default function AvantLessonPlayer({
     etapa,
     mode,
     moduloSlug,
-    fromPlano,
     fromCaderno,
     vitrineQuerySuffix,
     activeDados,
@@ -693,13 +734,14 @@ export default function AvantLessonPlayer({
   let questionUnavailableUi: React.ReactNode = null;
 
   if (!activeDados?.question_data?.options?.length) {
-    const vitrineSuffix = fromPlano
-      ? '?from=plano'
-      : fromCaderno
-        ? `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`
-        : vitrineQuerySuffix || '';
+    const vitrineSuffix = fromCaderno
+      ? `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`
+      : vitrineQuerySuffix || '';
     const handleVoltarVitrine = () => {
-      const ctx = { fromPlano, fromCaderno, vitrineQuerySuffix: vitrineSuffix };
+      const ctx = {
+        fromCaderno,
+        vitrineQuerySuffix: vitrineSuffix,
+      };
       if (questaoNav) {
         questaoNav.dismissToVitrine(ctx);
       } else {
@@ -707,11 +749,7 @@ export default function AvantLessonPlayer({
       }
       resetDashboardMainScroll();
     };
-    const vitrineDestinoLabel = fromPlano
-      ? 'plano diário'
-      : fromCaderno
-        ? 'cadernos'
-        : 'vitrine';
+    const vitrineDestinoLabel = fromCaderno ? 'cadernos' : 'vitrine';
 
     questionUnavailableUi = (
       <div
@@ -801,6 +839,26 @@ export default function AvantLessonPlayer({
     const controller = new AbortController();
     tentativaAbortRef.current = controller;
 
+    // attempt_id independente do EE (FSRS idempotência + EE compartilham o mesmo id no wire).
+    // Fallback UUID: Jest/jsdom nem sempre expõe crypto.randomUUID.
+    if (!confirmAttemptIdRef.current) {
+      confirmAttemptIdRef.current = createConfirmAttemptId();
+    }
+    const attemptId = confirmAttemptIdRef.current;
+
+    // EE: conviction permanece 'unknown' (UI de convicção desligada no produto).
+    const evidenceFields = beginEvidenceConfirm();
+    const evidencePayload = evidenceFields
+      ? {
+          started_at: evidenceFields.started_at,
+          answered_at: evidenceFields.answered_at,
+          conviction: evidenceFields.conviction,
+          answer_change_count: evidenceFields.answer_change_count,
+          response_time_ms: evidenceFields.response_time_ms,
+          tab_backgrounded: evidenceFields.tab_backgrounded,
+        }
+      : {};
+
     try {
       const response = await postWithSessionRetry(
         '/api/registrar-tentativa',
@@ -810,6 +868,8 @@ export default function AvantLessonPlayer({
           banca: activeDados.meta?.banca || 'DESCONHECIDA',
           topico: activeDados.meta?.topico || 'Geral',
           subtopico: activeDados.meta?.subtopico || activeDados.meta?.topico || 'Geral',
+          attempt_id: attemptId,
+          ...evidencePayload,
         },
         controller.signal,
       );
@@ -863,6 +923,8 @@ export default function AvantLessonPlayer({
         return { status: 'error' };
       }
 
+      confirmAttemptIdRef.current = null;
+      clearEvidencePending();
       return {
         status: 'ok',
         gabarito: {
@@ -919,7 +981,6 @@ export default function AvantLessonPlayer({
         if (slug) {
           const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
             moduloSlug: slug,
-            fromPlano,
             fromCaderno,
             vitrineQuerySuffix,
           });
@@ -933,7 +994,6 @@ export default function AvantLessonPlayer({
                   anteriorSlug,
                   moduloSlug: slug,
                   questoesDoAssunto,
-                  fromPlano,
                   fromCaderno,
                   listaContexto,
                   avantCodigo,
@@ -971,7 +1031,6 @@ export default function AvantLessonPlayer({
         if (questaoNav) {
           const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
             moduloSlug: slug,
-            fromPlano,
             fromCaderno,
             vitrineQuerySuffix,
           });
@@ -985,7 +1044,6 @@ export default function AvantLessonPlayer({
                   anteriorSlug,
                   moduloSlug: slug,
                   questoesDoAssunto,
-                  fromPlano,
                   fromCaderno,
                   listaContexto,
                   avantCodigo,
@@ -1021,13 +1079,11 @@ export default function AvantLessonPlayer({
   // NAVEGAÇÃO
   // ============================================================================
   const buildNavegacaoSuffix = () => {
-    if (fromPlano) return '?from=plano';
     if (fromCaderno) return `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`;
     return vitrineQuerySuffix || '';
   };
 
   const vitrineReturnContext = () => ({
-    fromPlano,
     fromCaderno,
     vitrineQuerySuffix: buildNavegacaoSuffix(),
   });
@@ -1290,7 +1346,7 @@ export default function AvantLessonPlayer({
     if (nextIndex === null) return;
     e.preventDefault();
     const nextId = options[nextIndex].id;
-    setSelecionada(nextId);
+    selectOption(nextId);
     requestAnimationFrame(() => {
       document.getElementById(`lesson-option-${nextId}`)?.focus();
     });
@@ -1321,7 +1377,7 @@ export default function AvantLessonPlayer({
       const opt = options[digit - 1];
       if (!eliminadas.has(opt.id)) {
         e.preventDefault();
-        setSelecionada(opt.id);
+        selectOption(opt.id);
         requestAnimationFrame(() => {
           document.getElementById(`lesson-option-${opt.id}`)?.focus();
         });
@@ -1332,7 +1388,7 @@ export default function AvantLessonPlayer({
     const byLetter = options.find((option) => option.id.toLowerCase() === key);
     if (byLetter && !eliminadas.has(byLetter.id)) {
       e.preventDefault();
-      setSelecionada(byLetter.id);
+      selectOption(byLetter.id);
       requestAnimationFrame(() => {
         document.getElementById(`lesson-option-${byLetter.id}`)?.focus();
       });
@@ -1342,7 +1398,7 @@ export default function AvantLessonPlayer({
   const renderQuestionLiveHeader = (withZoom: boolean) => {
     if (mode !== 'live') return null;
 
-    const voltarDestino = fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine';
+    const voltarDestino = fromCaderno ? 'Meus cadernos' : 'Vitrine';
 
     return (
       <div
@@ -1537,7 +1593,7 @@ export default function AvantLessonPlayer({
                     }
                     whileTap={!showResult && !isEliminada ? { scale: 0.98 } : undefined}
                     onClick={() => {
-                      if (!isEliminada) setSelecionada(opt.id);
+                      if (!isEliminada) selectOption(opt.id);
                     }}
                     onKeyDown={(e) =>
                       handleOptionKeyDown(e, opt.id, optionIndex, showResult || isEliminada)
@@ -1624,7 +1680,7 @@ export default function AvantLessonPlayer({
             ) : null}
             <button
               type="button"
-              onClick={handleConfirmarResposta}
+              onClick={() => void handleConfirmarResposta()}
               disabled={confirmandoResposta}
               className="btn-editorial-primary group flex min-h-[48px] items-center gap-2.5 rounded-full px-6 py-3 text-sm font-bold transition-all hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
             >
@@ -1909,7 +1965,7 @@ export default function AvantLessonPlayer({
                               aria-hidden
                             >
                               {isCurrent && (
-                                <span className="text-[10px] font-black leading-none text-[#1a2e05]">
+                                <span className="text-[10px] font-black leading-none text-[#0F172A]">
                                   {posicaoLista}
                                 </span>
                               )}
@@ -1957,13 +2013,13 @@ export default function AvantLessonPlayer({
                 <button
                   type="button"
                   aria-label={
-                    fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'
+                    fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'
                   }
                   onClick={handleConcluir}
                   className="btn-editorial-primary flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl px-3 font-black uppercase text-[10px] tracking-wide transition-all hover:shadow-md active:scale-[0.97] sm:gap-2 sm:px-4 sm:text-xs"
                 >
                   <span className="hidden sm:inline">
-                    {fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
+                    {fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
                   </span>
                   <Flag size={20} className="shrink-0" aria-hidden />
                 </button>
@@ -2037,7 +2093,7 @@ export default function AvantLessonPlayer({
               <div className="shrink-0 px-4 pb-2 pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:px-6 md:px-8 sm:pt-[max(1.5rem,env(safe-area-inset-top,0px))] flex justify-between items-center gap-2 min-w-0">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="btn-editorial-primary shrink-0 rounded-lg p-2">
-                    <Lightbulb size={20} className="text-[#1a2e05]" aria-hidden />
+                    <Lightbulb size={20} className="text-[#0F172A]" aria-hidden />
                   </div>
                   <span className="hidden sm:inline truncate max-w-[120px] text-xs font-bold uppercase tracking-widest text-slate-500 md:max-w-none">
                     Avant Neuro-Learning

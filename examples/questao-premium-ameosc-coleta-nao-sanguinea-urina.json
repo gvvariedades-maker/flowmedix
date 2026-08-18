@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "banca": "AMEOSC",
+    "prova": "TEnf (Pref S M do Oeste)",
+    "orgao": "Pref S M do Oeste",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Coleta de Exames Laboratoriais",
+    "pedagogical_branch": "coleta_nao_sanguinea",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-08-05",
+      "reviewer": "agent:golden-anchor",
+      "guideline_snapshot": "MS / SBPC/ML — EAS: jato médio após higiene íntima; frasco estéril; primeira urina da manhã",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-manual-amostras-biologicas",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Coleta de Amostras Biológicas para Exames Laboratoriais",
+        "year": 2020,
+        "url": "https://www.gov.br/saude/",
+        "covers": [
+          "urina tipo I / EAS",
+          "jato médio",
+          "higiene íntima",
+          "frasco estéril"
+        ]
+      },
+      {
+        "id": "potter-coleta-11ed",
+        "tier": "B",
+        "issuer": "Elsevier / Potter & Perry",
+        "title": "Fundamentos de Enfermagem — Coleta de urina",
+        "year": 2024,
+        "covers": [
+          "técnica de jato médio",
+          "validade da amostra"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A amostra de urina tipo I, também conhecida como Sumário de Urina ou EAS (Elementos Anormais e Sedimento), é um exame laboratorial básico que analisa a aparência, composição química e o conteúdo microscópico da urina para investigar a saúde geral, identificar infecções do trato urinário, problemas renais e alterações metabólicas. Em um posto de saúde, o técnico em enfermagem precisa coletar amostra de urina tipo I, diante disso, assinale a alternativa que corresponde a orientação adequada ao paciente.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Armazenar a urina em frasco comum e entregar no laboratório em 12 horas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Coletar o jato inicial da micção diretamente no frasco estéril.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Coletar toda a urina do dia e misturar antes de encaminhar ao laboratório.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Recolher o jato médio após higiene íntima adequada e desprezar o restante.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "EAS / urina tipo I — terreno",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "items": [
+        {
+          "label": "Urina tipo I / EAS",
+          "detail": "Sumário de Urina — Elementos Anormais e Sedimento: aparência, composição química e sedimento microscópico.",
+          "icon": "FlaskConical"
+        },
+        {
+          "label": "Contexto APS",
+          "detail": "No posto de saúde, o técnico orienta o paciente antes da coleta — infecções do trato urinário e problemas renais entram no escopo.",
+          "icon": "Building2"
+        },
+        {
+          "label": "Jato médio",
+          "detail": "Descartar o primeiro jato (contaminação uretral) e coletar o fluxo intermediário no frasco estéril.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Higiene íntima",
+          "detail": "Lavagem genital antes da micção reduz flora externa — passo obrigatório na orientação.",
+          "icon": "Sparkles"
+        },
+        {
+          "label": "Recipiente",
+          "detail": "Frasco estéril próprio para urina — não frasco comum de uso doméstico.",
+          "icon": "Package"
+        },
+        {
+          "label": "Pegadinha — jato inicial",
+          "detail": "Banca troca jato médio por primeiro jato ou por urina acumulada do dia inteiro.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "EAS = higiene + descartar início + coletar jato médio no estéril"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "steps": [
+        "Comando: orientação correta ao paciente para coleta de urina tipo I (EAS).",
+        "EAS exige amostra limpa — higiene íntima e jato médio, não primeiro jato nem urina do dia inteiro.",
+        "Eliminar A — frasco comum e 12 h invalidam qualidade e esterilidade da amostra.",
+        "Eliminar B — jato inicial concentra secreção uretral e contamina o exame.",
+        "Eliminar C — urina acumulada do dia ou mistura antes de encaminhar é outro tipo de coleta, não EAS simples.",
+        "Resta D — jato médio após higiene, desprezando início e fim da micção.",
+        "Marcar D.",
+        "Em similares: urina tipo I = estéril + jato médio — não confunda com urocultura isolada ou pool diário."
+      ],
+      "footer_rule": "Roteiro: higiene → descartar início → coletar meio → estéril"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — coleta de urina tipo I",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "EAS / URINA TIPO I — ORIENTAÇÃO AO PACIENTE",
+      "rows": [
+        {
+          "label": "Momento ideal",
+          "value": "Primeira urina da manhã (preferencial)",
+          "badge": "ok"
+        },
+        {
+          "label": "Técnica",
+          "value": "Higiene íntima → descartar jato inicial → coletar jato médio",
+          "badge": "hot"
+        },
+        {
+          "label": "Recipiente",
+          "value": "Frasco estéril próprio — identificar imediatamente",
+          "badge": "ok"
+        },
+        {
+          "label": "Transporte",
+          "value": "Entregar ao laboratório o mais rápido possível — refrigerar se protocolo local exigir",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Decore: higiene · jato médio · estéril · não é pool diário"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "PEGADINHAS — EAS / URINA TIPO I AMEOSC",
+      "items": [
+        {
+          "label": "Letra A — frasco comum 12 h",
+          "detail": "Parece praticidade de guardar em casa até levar ao lab.",
+          "correct": "EAS exige frasco estéril e prazo curto — amostra comum degrada o resultado."
+        },
+        {
+          "label": "Letra B — jato inicial no estéril",
+          "detail": "Menciona frasco estéril, mas no fluxo errado da micção.",
+          "correct": "Primeiro jato arrasta flora uretral — coletar só o jato médio."
+        },
+        {
+          "label": "Letra C — urina do dia misturada",
+          "detail": "Confunde EAS com urina acumulada do dia inteiro ou pool diário.",
+          "correct": "Tipo I é amostra isolada da micção, não acumulado de um dia."
+        },
+        {
+          "label": "Confundir EAS com urocultura",
+          "detail": "Ambas usam jato médio, mas prazos e frascos podem diferir no protocolo local.",
+          "correct": "Na prova, jato médio + higiene vale para EAS — siga o enunciado."
+        }
+      ],
+      "footer_rule": "Estéril certo no frasco errado (jato inicial) ainda reprova"
+    }
+  ]
+}

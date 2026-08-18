@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AVANT — NeuroSlides · Best in Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #010409;
+      --cyan: #00f2ff;
+      --ink: #07111f;
+      --paper: #ffffff;
+      --keep: #059669;
+      --keep-ink: #022c22;
+      --rose: #e11d48;
+      --rose-ink: #4c0519;
+      --sky: #0284c7;
+      --sky-ink: #082f49;
+      --indigo: #4f46e5;
+      --amber: #f59e0b;
+      --amber-ink: #451a03;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
+      color: #f8fafc;
+      background:
+        radial-gradient(1000px 480px at 50% -10%, rgba(0,242,255,0.22), transparent 55%),
+        radial-gradient(700px 400px at 110% 40%, rgba(225,29,72,0.12), transparent 50%),
+        radial-gradient(600px 360px at -10% 80%, rgba(5,150,105,0.12), transparent 45%),
+        repeating-linear-gradient(-45deg, transparent 0 13px, rgba(255,255,255,0.02) 13px 14px),
+        var(--bg);
+    }
+    .page { max-width: 1200px; margin: 0 auto; padding: 22px 16px 80px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin: 0 0 12px; padding: 7px 14px; border-radius: 999px;
+      border: 1px solid rgba(0,242,255,0.45); background: rgba(0,242,255,0.12);
+      color: var(--cyan); font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .eyebrow i {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--cyan);
+      box-shadow: 0 0 14px var(--cyan); animation: blink 1.4s ease-in-out infinite; font-style: normal;
+    }
+    @keyframes blink { 50% { opacity: .35; transform: scale(.8); } }
+    h1 {
+      margin: 0 0 8px; font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
+      font-size: clamp(1.85rem, 4.5vw, 2.6rem); font-weight: 800;
+      letter-spacing: -0.02em; line-height: 1.05;
+    }
+    h1 em { font-style: normal; color: var(--cyan); text-shadow: 0 0 28px rgba(0,242,255,0.45); }
+    .lede { margin: 0 0 16px; max-width: 58ch; color: #94a3b8; font-size: 0.98rem; line-height: 1.5; font-weight: 500; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .meta span {
+      padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); color: #cbd5e1;
+    }
+    .meta span b { color: #fff; }
+
+    .tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+    @media (max-width: 780px) { .tabs { grid-template-columns: 1fr 1fr; } }
+    .tab {
+      position: relative; appearance: none; cursor: pointer; text-align: left; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 14px 12px 13px 16px;
+      background: linear-gradient(165deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+      color: #94a3b8; transition: .18s ease;
+    }
+    .tab::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: transparent;
+    }
+    .tab:hover { transform: translateY(-3px); color: #fff; border-color: rgba(0,242,255,0.4); }
+    .tab[aria-selected="true"] {
+      color: #fff; border-color: rgba(0,242,255,0.75);
+      background: linear-gradient(165deg, rgba(0,242,255,0.22), rgba(0,242,255,0.05));
+      box-shadow: 0 0 0 1px rgba(0,242,255,0.25), 0 16px 48px rgba(0,242,255,0.14);
+    }
+    .tab[aria-selected="true"]::before { background: var(--cyan); box-shadow: 0 0 18px var(--cyan); }
+    .tab .n { display: block; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; color: var(--cyan); margin-bottom: 4px; }
+    .tab .t { display: block; font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+    .tab .c { display: block; margin-top: 5px; font: 10px/1 ui-monospace, Consolas, monospace; opacity: .65; }
+
+    .stage {
+      border-radius: 36px; padding: 20px 16px 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background:
+        radial-gradient(520px 240px at 50% -5%, rgba(0,242,255,0.18), transparent 65%),
+        linear-gradient(180deg, #101b2c, #050a12 70%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 40px 100px rgba(0,0,0,0.55);
+    }
+    .phone { width: 100%; max-width: min(100%, 520px); margin: 0 auto; }
+    @media (min-width: 768px) {
+      .phone { max-width: min(100%, 720px); }
+      .board { min-height: 520px; }
+      .board-head h2 { font-size: 1.55rem; }
+      .pillar h3 { font-size: 16px; }
+      .panel .body { font-size: 15px; max-width: 90%; }
+    }
+    @media (min-width: 1100px) {
+      .phone { max-width: min(100%, 920px); }
+      .stage { padding: 28px 28px 22px; }
+      .pillars { gap: 14px; }
+      .duel { gap: 14px; }
+      .board-body { padding: 18px; }
+      .board { min-height: 560px; }
+    }
+    .player-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 12px; padding: 0 4px; font-size: 11px; color: #94a3b8;
+    }
+    .player-bar .brand {
+      font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-weight: 800; letter-spacing: 0.1em; color: var(--cyan);
+      text-shadow: 0 0 22px rgba(0,242,255,0.55);
+    }
+    .dots { display: flex; gap: 6px; }
+    .dots i {
+      width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.2); font-style: normal;
+      transition: .2s;
+    }
+    .dots i.on { background: var(--cyan); transform: scale(1.25); box-shadow: 0 0 14px var(--cyan); }
+
+    .board {
+      position: relative; background: #eef2f7; color: var(--ink);
+      border-radius: 28px; overflow: hidden; min-height: 560px;
+      display: flex; flex-direction: column;
+      box-shadow:
+        0 0 0 1px rgba(0,242,255,0.28),
+        0 0 80px rgba(0,242,255,0.12),
+        0 28px 70px rgba(0,0,0,0.45);
+    }
+    .board::before {
+      content: ""; position: absolute; inset: 0 0 auto; height: 5px; z-index: 2;
+      background: linear-gradient(90deg, var(--cyan), #38bdf8 35%, #34d399 70%, #fb7185);
+    }
+    .board-head {
+      position: relative; padding: 18px 18px 14px; background: var(--paper);
+      border-bottom: 1px solid #dbe3ee;
+    }
+    .moment-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .moment {
+      font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sky);
+    }
+    .moment-badge {
+      font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 10px; border-radius: 999px; background: #020617; color: #67e8f9;
+      box-shadow: 0 0 0 1px rgba(103,232,249,0.35);
+    }
+    .board-head h2 {
+      margin: 0; font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: clamp(1.2rem, 4.2vw, 1.45rem);
+      line-height: 1.15; letter-spacing: -0.015em; font-weight: 800;
+    }
+    .board-head h2 .hl { color: var(--rose); }
+    .board-body {
+      padding: 14px; flex: 1;
+      background:
+        radial-gradient(280px 160px at 80% 0%, rgba(0,242,255,0.06), transparent 60%),
+        #e8eef5;
+    }
+    .board-foot {
+      margin-top: auto; padding: 16px 18px 18px;
+      background: linear-gradient(180deg, #0b1628, #020617);
+      border-top: 3px solid var(--cyan);
+      box-shadow: 0 -12px 40px rgba(0,0,0,0.18);
+    }
+    .board-foot .label {
+      display: block; font-size: 10px; font-weight: 800; letter-spacing: 0.16em;
+      text-transform: uppercase; color: #67e8f9; margin-bottom: 6px;
+    }
+    .board-foot .line {
+      font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: 1.02rem; line-height: 1.25; font-weight: 800;
+      color: #f8fafc; letter-spacing: -0.02em;
+    }
+    .board-foot .line strong { color: var(--cyan); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px) scale(.97); }
+      to { opacity: 1; transform: none; }
+    }
+    .anim { animation: rise .48s cubic-bezier(.2,.8,.2,1) both; }
+    .d1 { animation-delay: .05s; }
+    .d2 { animation-delay: .1s; }
+    .d3 { animation-delay: .15s; }
+    .d4 { animation-delay: .2s; }
+
+    /* ===== MAPA — pillars with MASS ===== */
+    .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .pillar {
+      position: relative; border-radius: 20px; padding: 14px 12px 14px 14px; min-height: 132px;
+      overflow: hidden; border: 2.5px solid; isolation: isolate;
+      box-shadow: 0 14px 32px rgba(7,17,31,0.16), 0 2px 0 rgba(255,255,255,0.55) inset;
+    }
+    .pillar::after {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 8px;
+    }
+    .pillar .num {
+      position: absolute; right: 8px; top: 6px; font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
+      font-size: 42px; font-weight: 800; line-height: 1; opacity: 0.14; letter-spacing: -0.02em;
+      pointer-events: none;
+    }
+    .pillar .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 9px; border-radius: 999px; margin-bottom: 8px; color: #fff;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+    }
+    .pillar h3 {
+      margin: 0 0 5px; font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: 15px;
+      letter-spacing: -0.01em; font-weight: 800; line-height: 1.15;
+    }
+    .pillar p { margin: 0; font-size: 12.5px; line-height: 1.35; font-weight: 600; opacity: 0.88; }
+    .pillar.sky { background: linear-gradient(155deg, #e0f2fe 0%, #bae6fd 55%, #7dd3fc 120%); border-color: #0ea5e9; color: var(--sky-ink); }
+    .pillar.sky::after { background: #0284c7; }
+    .pillar.sky .badge { background: #0284c7; }
+    .pillar.teal { background: linear-gradient(155deg, #ccfbf1 0%, #99f6e4 55%, #5eead4 120%); border-color: #14b8a6; color: #042f2e; }
+    .pillar.teal::after { background: #0d9488; }
+    .pillar.teal .badge { background: #0f766e; }
+    .pillar.indigo { background: linear-gradient(155deg, #e0e7ff 0%, #c7d2fe 55%, #a5b4fc 120%); border-color: #6366f1; color: #1e1b4b; }
+    .pillar.indigo::after { background: #4f46e5; }
+    .pillar.indigo .badge { background: #4338ca; }
+    .pillar.emerald { background: linear-gradient(155deg, #d1fae5 0%, #a7f3d0 55%, #6ee7b7 120%); border-color: #10b981; color: var(--keep-ink); }
+    .pillar.emerald::after { background: #059669; }
+    .pillar.emerald .badge { background: #047857; }
+
+    /* ===== TRILHO — hero EXCEPTION ===== */
+    .stack { display: flex; flex-direction: column; gap: 11px; }
+    .panel {
+      position: relative; border-radius: 20px; padding: 14px 16px 14px 18px;
+      border: 2.5px solid; overflow: hidden; isolation: isolate;
+      box-shadow: 0 12px 28px rgba(7,17,31,0.12);
+    }
+    .panel .mega {
+      position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+      font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: 64px; font-weight: 800; line-height: 1;
+      opacity: 0.18; letter-spacing: -0.02em; pointer-events: none; user-select: none;
+    }
+    .panel .lab {
+      font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px;
+    }
+    .panel .body { position: relative; z-index: 1; font-size: 14px; line-height: 1.35; font-weight: 700; max-width: 88%; }
+    .panel.keep {
+      background: linear-gradient(135deg, #ecfdf5, #a7f3d0); border-color: #10b981; color: var(--keep-ink);
+      opacity: 0.92; transform: scale(0.98);
+    }
+    .panel.keep .lab { color: #047857; }
+    .panel.keep .mega { color: #059669; opacity: 0.16; }
+    .panel.command {
+      background: linear-gradient(135deg, #f0f9ff, #7dd3fc); border-color: #0ea5e9; color: var(--sky-ink);
+      opacity: 0.95; transform: scale(0.98);
+    }
+    .panel.command .lab { color: #0369a1; }
+    .panel.command .mega { color: #0284c7; opacity: 0.16; }
+    .panel.exception {
+      background: linear-gradient(145deg, #fff1f2 0%, #fecdd3 40%, #fda4af 100%);
+      border-color: #e11d48; color: var(--rose-ink);
+      transform: scale(1.035);
+      box-shadow:
+        0 0 0 4px rgba(225,29,72,0.18),
+        0 22px 48px rgba(225,29,72,0.28),
+        0 2px 0 rgba(255,255,255,0.5) inset;
+      z-index: 2;
+    }
+    .panel.exception .lab { color: #be123c; font-size: 12px; }
+    .panel.exception .body { font-size: 15px; font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; letter-spacing: -0.02em; }
+    .panel.exception .mega { opacity: 0.28; color: #e11d48; font-size: 78px; right: 2px; }
+
+    /* ===== DECORE — tinted row cards ===== */
+    .rows { display: flex; flex-direction: column; gap: 11px; }
+    .row {
+      display: grid; grid-template-columns: 108px 1fr; min-height: 72px;
+      border-radius: 18px; overflow: hidden; border: 2.5px solid;
+      box-shadow: 0 12px 28px rgba(7,17,31,0.12);
+    }
+    .row .chip {
+      display: grid; place-items: center; text-align: center; padding: 10px 8px;
+      font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: 13px; font-weight: 800;
+      letter-spacing: 0.04em; text-transform: uppercase; color: #fff;
+    }
+    .row .val {
+      display: flex; align-items: center; padding: 12px 14px 12px 12px;
+      font-size: 13.5px; line-height: 1.35; font-weight: 700;
+    }
+    .row.speak { border-color: #10b981; background: linear-gradient(90deg, #ecfdf5, #fff); }
+    .row.speak .chip { background: linear-gradient(180deg, #10b981, #047857); box-shadow: inset -1px 0 0 rgba(0,0,0,0.1); }
+    .row.speak .val { color: var(--keep-ink); }
+    .row.barrier { border-color: #e11d48; background: linear-gradient(90deg, #fff1f2, #fff); }
+    .row.barrier .chip { background: linear-gradient(180deg, #f43f5e, #be123c); }
+    .row.barrier .val { color: var(--rose-ink); }
+    .anchor {
+      margin-top: 4px; display: grid; grid-template-columns: 68px 1fr; gap: 12px; align-items: center;
+      padding: 14px; border-radius: 20px;
+      background: linear-gradient(135deg, #fffbeb, #fde68a 55%, #fbbf24);
+      border: 3px solid #d97706; color: var(--amber-ink);
+      box-shadow: 0 0 0 4px rgba(245,158,11,0.18), 0 18px 40px rgba(217,119,6,0.28);
+    }
+    .anchor .num {
+      width: 68px; height: 68px; border-radius: 18px;
+      background: #020617; color: #fbbf24;
+      display: grid; place-items: center;
+      font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: 26px; font-weight: 800;
+      box-shadow: 0 0 0 3px rgba(251,191,36,0.45), 0 0 24px rgba(251,191,36,0.35);
+    }
+    .anchor .t { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 4px; }
+    .anchor .b { font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: 15px; font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; }
+
+    /* ===== ARENA — victory weight ===== */
+    .duels { display: flex; flex-direction: column; gap: 14px; }
+    .duel { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 420px) { .duel { grid-template-columns: 1fr; } }
+    .cell {
+      position: relative; border-radius: 18px; padding: 14px 12px 14px; min-height: 156px;
+      border: 3px solid; overflow: hidden; isolation: isolate;
+    }
+    .cell .glyph {
+      position: absolute; right: 2px; top: -2px;
+      font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: 52px; font-weight: 800; line-height: 1;
+      pointer-events: none;
+    }
+    .cell .tag {
+      display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 4px 8px; border-radius: 999px; margin-bottom: 8px; color: #fff;
+    }
+    .cell .letter {
+      position: relative; z-index: 1; font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
+      font-size: 14px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; line-height: 1.2;
+    }
+    .cell p { position: relative; z-index: 1; margin: 0; font-size: 12.5px; line-height: 1.35; font-weight: 700; }
+    .cell.wrong {
+      background: linear-gradient(160deg, #ffe4e6, #fecdd3 70%, #fda4af);
+      border-color: #e11d48; color: var(--rose-ink);
+      box-shadow: 0 12px 28px rgba(225,29,72,0.16);
+      opacity: 0.95;
+    }
+    .cell.wrong .glyph { color: #e11d48; opacity: 0.32; }
+    .cell.wrong .tag { background: #e11d48; }
+    .cell.right {
+      background: linear-gradient(160deg, #d1fae5, #6ee7b7 55%, #34d399);
+      border-color: #059669; color: var(--keep-ink);
+      box-shadow:
+        0 0 0 4px rgba(5,150,105,0.2),
+        0 18px 40px rgba(5,150,105,0.28),
+        0 2px 0 rgba(255,255,255,0.45) inset;
+      transform: scale(1.03);
+      z-index: 1;
+    }
+    .cell.right .glyph { color: #047857; opacity: 0.38; }
+    .cell.right .tag { background: #047857; }
+
+    .slide { display: none; }
+    .slide.active { display: block; }
+
+    .nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 14px; }
+    .nav button {
+      appearance: none; cursor: pointer; border-radius: 999px; padding: 13px 18px;
+      font-size: 13px; font-weight: 800; border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.05); color: #fff; transition: .15s;
+    }
+    .nav button:hover:not(:disabled) { transform: translateY(-2px); border-color: rgba(0,242,255,0.5); }
+    .nav button:disabled { opacity: .32; cursor: default; }
+    .nav #next:not(:disabled) {
+      background: linear-gradient(90deg, #06b6d4, #10b981);
+      border-color: transparent; color: #041016;
+      box-shadow: 0 10px 28px rgba(16,185,129,0.35);
+    }
+
+    .legend {
+      margin-top: 20px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px;
+    }
+    @media (max-width: 780px) { .legend { grid-template-columns: 1fr; } }
+    .legend-card {
+      border-radius: 22px; padding: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    }
+    .legend-card h3 { margin: 0 0 8px; font-family: "DM Sans", "Segoe UI", system-ui, sans-serif; font-size: 14px; }
+    .legend-card ul { margin: 0; padding-left: 16px; color: #94a3b8; font-size: 12.5px; line-height: 1.55; }
+    .legend-card code { color: #67e8f9; font-size: 11px; }
+    .punch {
+      margin-top: 10px; padding: 10px 12px; border-radius: 14px;
+      background: rgba(0,242,255,0.12); border: 1px solid rgba(0,242,255,0.35);
+      color: #a5f3fc; font-size: 12.5px; font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="eyebrow"><i></i> Best in market · retenção &gt; feed</div>
+    <h1>Material que <em>prende</em> e faz acertar</h1>
+    <p class="lede">Um herói por tela. Cards com massa. Gabarito impossível de ignorar. Schema dos 4 tipos intacto — visual de prova, não carrossel.</p>
+    <div class="meta">
+      <span><b>Pacote</b> Adolescente</span>
+      <span><b>Ramo</b> ética / sigilo</span>
+      <span><b>0 taps</b> boards</span>
+      <span><b>Barra</b> outdoor pedagógico</span>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-i="0"><span class="n">01</span><span class="t">Mapa da cobrança</span><span class="c">concept_map</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-i="1"><span class="n">02</span><span class="t">Trilho até a letra</span><span class="c">logic_flow</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-i="2"><span class="n">03</span><span class="t">Decore clínico</span><span class="c">golden_rule</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-i="3"><span class="n">04</span><span class="t">Arena da pegadinha</span><span class="c">danger_zone</span></button>
+    </div>
+
+    <div class="stage">
+      <div class="phone">
+        <div class="player-bar">
+          <span class="brand">AVANT · NEUROSLIDES</span>
+          <div class="dots"><i class="on" id="d0"></i><i id="d1"></i><i id="d2"></i><i id="d3"></i></div>
+        </div>
+
+        <!-- 1 MAPA -->
+        <section class="slide active" data-slide="0">
+          <div class="board">
+            <div class="board-head">
+              <div class="moment-row">
+                <div class="moment">Mapa da cobrança</div>
+                <div class="moment-badge">4 pilares</div>
+              </div>
+              <h2>Terreno do encontro — o que a banca testa <span class="hl">antes</span> da letra</h2>
+            </div>
+            <div class="board-body">
+              <div class="pillars">
+                <article class="pillar sky anim"><span class="num">01</span><div class="badge">Vínculo</div><h3>Escuta sem julgamento</h3><p>Abre o canal; não substitui o dever de proteção.</p></article>
+                <article class="pillar teal anim d1"><span class="num">02</span><div class="badge">Rede</div><h3>Responsáveis + equipe</h3><p>Risco exige rede — não silêncio absoluto.</p></article>
+                <article class="pillar indigo anim d2"><span class="num">03</span><div class="badge">Sigilo</div><h3>Privacidade relativa</h3><p>Confiança × vida: a prova cobra o gatilho.</p></article>
+                <article class="pillar emerald anim d3"><span class="num">04</span><div class="badge">Linguagem</div><h3>Falar × barreira</h3><p>Acolher ≠ omitir violência ou autolesão.</p></article>
+              </div>
+            </div>
+            <div class="board-foot">
+              <span class="label">Transferência de prova</span>
+              <div class="line"><strong>Primeiro classifique o risco</strong> — depois marque sigilo ou quebra.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2 TRILHO -->
+        <section class="slide" data-slide="1">
+          <div class="board">
+            <div class="board-head">
+              <div class="moment-row">
+                <div class="moment">Trilho até a letra · 0 taps</div>
+                <div class="moment-badge">EXCETO</div>
+              </div>
+              <h2>Isole o que <span class="hl">NÃO</span> cabe no sigilo</h2>
+            </div>
+            <div class="board-body">
+              <div class="stack">
+                <div class="panel keep anim"><span class="mega">OK</span><div class="lab">Manter sigilo</div><div class="body">Queixa sexual sem risco iminente, adolescente capaz — privacidade relativa.</div></div>
+                <div class="panel exception anim d1"><span class="mega">!</span><div class="lab">Exceção · gabarito</div><div class="body">Violência / risco à vida → rede de proteção. Silêncio absoluto = pegadinha.</div></div>
+                <div class="panel command anim d2"><span class="mega">→</span><div class="lab">Comando da prova</div><div class="body">Marque a conduta de proteção — o EXCETO ao sigilo “cego”.</div></div>
+              </div>
+            </div>
+            <div class="board-foot">
+              <span class="label">Fixação</span>
+              <div class="line"><strong>EXCETO</strong> = achar proteção correta, não o texto “mais ético” genérico.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3 DECORE -->
+        <section class="slide" data-slide="2">
+          <div class="board">
+            <div class="board-head">
+              <div class="moment-row">
+                <div class="moment">Decore clínico</div>
+                <div class="moment-badge">Falar × barreira</div>
+              </div>
+              <h2>Board de referência — contraste <span class="hl">imediato</span></h2>
+            </div>
+            <div class="board-body">
+              <div class="rows">
+                <div class="row speak anim"><div class="chip">Falar</div><div class="val">Validar sentimento; explicar limites do sigilo com clareza.</div></div>
+                <div class="row barrier anim d1"><div class="chip">Barreira</div><div class="val">Prometer “ninguém vai saber” diante de risco grave.</div></div>
+                <div class="row speak anim d2"><div class="chip">Falar</div><div class="val">Acionar responsável / conselho tutelar se houver violência.</div></div>
+                <div class="row barrier anim d3"><div class="chip">Barreira</div><div class="val">Omitir notificação para “não perder a confiança”.</div></div>
+              </div>
+              <div class="anchor anim d4">
+                <div class="num">!!</div>
+                <div>
+                  <div class="t">Âncora de prova</div>
+                  <div class="b">Risco à vida e violência sexual = gatilho de quebra justificada.</div>
+                </div>
+              </div>
+            </div>
+            <div class="board-foot">
+              <span class="label">Decore</span>
+              <div class="line">Vínculo <strong>sem</strong> barreira falsa · proteção <strong>sem</strong> humilhar.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 ARENA -->
+        <section class="slide" data-slide="3">
+          <div class="board">
+            <div class="board-head">
+              <div class="moment-row">
+                <div class="moment">Arena da pegadinha</div>
+                <div class="moment-badge">Compare</div>
+              </div>
+              <h2>Distrator × certo — arena <span class="hl">aberta</span></h2>
+            </div>
+            <div class="board-body">
+              <div class="duels">
+                <div class="duel">
+                  <div class="cell wrong anim"><span class="glyph">✗</span><span class="tag">Pegadinha</span><div class="letter">A — “sigilo absoluto”</div><p>Soa ética, ignora violência. A banca cobra a exceção.</p></div>
+                  <div class="cell right anim d1"><span class="glyph">✓</span><span class="tag">Certo na prática</span><div class="letter">Por que A falha</div><p>Com risco, comunicar a rede é conduta correta.</p></div>
+                </div>
+                <div class="duel">
+                  <div class="cell wrong anim d2"><span class="glyph">✗</span><span class="tag">Pegadinha</span><div class="letter">B — “não registrar”</div><p>Evitar prontuário para “proteger” o adolescente.</p></div>
+                  <div class="cell right anim d3"><span class="glyph">✓</span><span class="tag">Certo na prática</span><div class="letter">Por que B falha</div><p>Registro objetivo + fluxo de proteção; omissão = falha.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="board-foot">
+              <span class="label">Transferência</span>
+              <div class="line">Se a alternativa <strong>romantiza o silêncio sob risco</strong>, descarte.</div>
+            </div>
+          </div>
+        </section>
+
+        <div class="nav">
+          <button type="button" id="prev" disabled>Anterior</button>
+          <button type="button" id="next">Próximo momento</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-card">
+        <h3>Barra best-in-market aplicada</h3>
+        <ul>
+          <li>1 herói por tela (EXCEÇÃO / ✓ / ÂNCORA)</li>
+          <li>Cards com fill saturado — nunca branco no branco</li>
+          <li>Tipografia legível (DM Sans) em toda a UI</li>
+          <li>Footer escuro = slogan de prova</li>
+        </ul>
+        <div class="punch">Impacto a serviço do acerto — acima do feed, sem virar Instagram</div>
+      </div>
+      <div class="legend-card">
+        <h3>Contrato intacto</h3>
+        <ul>
+          <li><code>concept_map</code> · <code>logic_flow</code> · <code>golden_rule</code> · <code>danger_zone</code></li>
+          <li>Skin Cyber + boards claros</li>
+          <li>No app real: estudo reverso é tela cheia; o conteúdo fica em coluna legível (não estica texto num ultrawide)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tabs = [...document.querySelectorAll('.tab')];
+    const slides = [...document.querySelectorAll('.slide')];
+    const dots = [0,1,2,3].map((i) => document.getElementById('d' + i));
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let i = 0;
+    function replay(root) {
+      root.querySelectorAll('.anim').forEach((el) => {
+        el.style.animation = 'none';
+        void el.offsetWidth;
+        el.style.animation = '';
+      });
+    }
+    function go(n) {
+      i = Math.max(0, Math.min(3, n));
+      tabs.forEach((t, idx) => t.setAttribute('aria-selected', idx === i ? 'true' : 'false'));
+      slides.forEach((s, idx) => {
+        const on = idx === i;
+        s.classList.toggle('active', on);
+        if (on) replay(s);
+      });
+      dots.forEach((d, idx) => d.classList.toggle('on', idx === i));
+      prev.disabled = i === 0;
+      next.disabled = i === 3;
+      next.textContent = i === 3 ? 'Fim da demo' : 'Próximo momento';
+    }
+    tabs.forEach((t) => t.addEventListener('click', () => go(+t.dataset.i)));
+    prev.addEventListener('click', () => go(i - 1));
+    next.addEventListener('click', () => go(i + 1));
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') go(i + 1);
+      if (e.key === 'ArrowLeft') go(i - 1);
+    });
+  </script>
+</body>
+</html>

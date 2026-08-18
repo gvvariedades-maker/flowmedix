@@ -1,0 +1,3151 @@
+{
+  "generated_at": "2026-07-31T02:52:50.510Z",
+  "variants_dir": "D:\\AVANT\\components\\slides\\variants",
+  "files_scanned": 260,
+  "clusters": [
+    {
+      "cluster_id": "c001",
+      "signature": "ReferenceBoard|props:content,footerRule,rows,theme|wrap:GoldenRuleSoftLensBoard|cls:∅",
+      "family": "ReferenceBoard",
+      "size": 15,
+      "fusion_candidate": true,
+      "files": [
+        "GoldenRuleBiossegReferenceBoard.tsx",
+        "GoldenRuleCamExcetoReferenceBoard.tsx",
+        "GoldenRuleFarmacoClinicoReferenceBoard.tsx",
+        "GoldenRuleIstReferenceBoard.tsx",
+        "GoldenRuleIvDeviceReferenceBoard.tsx",
+        "GoldenRulePkPdReferenceBoard.tsx",
+        "GoldenRuleRespiratorioSpo2ReferenceBoard.tsx",
+        "GoldenRuleSaeReferenceBoard.tsx",
+        "GoldenRuleSpNspReferenceBoard.tsx",
+        "GoldenRuleTrabalhoNr32ReferenceBoard.tsx",
+        "GoldenRuleUrgenciasExcetoReferenceBoard.tsx",
+        "GoldenRuleUrgenciasProtocolReferenceBoard.tsx",
+        "GoldenRuleUrgenciasShockReferenceBoard.tsx",
+        "GoldenRuleUrgenciasTraumaReferenceBoard.tsx",
+        "GoldenRuleViaReferenceBoard.tsx"
+      ],
+      "shared_wrappers": [
+        "GoldenRuleSoftLensBoard"
+      ],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": [
+        "Thin SoftLens wrappers - fusao tipicamente 1 prop de hintProfile/accent."
+      ]
+    },
+    {
+      "cluster_id": "c002",
+      "signature": "TapFlow|props:revealMode,steps,text,theme|wrap:LogicFlowStepLadder|cls:∅",
+      "family": "TapFlow",
+      "size": 12,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowCamExcetoTapFlow.tsx",
+        "LogicFlowFarmacoProtocolTapFlow.tsx",
+        "LogicFlowIvComplicationTapFlow.tsx",
+        "LogicFlowIvDeviceTapFlow.tsx",
+        "LogicFlowSpProtocolTapFlow.tsx",
+        "LogicFlowUrgenciasChokingTapFlow.tsx",
+        "LogicFlowUrgenciasExcetoTapFlow.tsx",
+        "LogicFlowUrgenciasPediatricTapFlow.tsx",
+        "LogicFlowUrgenciasProtocolTapFlow.tsx",
+        "LogicFlowUrgenciasRcpTapFlow.tsx",
+        "LogicFlowUrgenciasShockTapFlow.tsx",
+        "LogicFlowUrgenciasXabcdeTapFlow.tsx"
+      ],
+      "shared_wrappers": [
+        "LogicFlowStepLadder"
+      ],
+      "shared_props": [
+        "revealMode",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": [
+        "Thin StepLadder wrappers - fusao tipicamente 1 prop de accent."
+      ]
+    },
+    {
+      "cluster_id": "c003",
+      "signature": "LogicFlow*|props:steps,text|wrap:∅|cls:∅",
+      "family": "LogicFlow*",
+      "size": 7,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowBiossegVfJuggleTap.tsx",
+        "LogicFlowFarmacoVfJuggleTap.tsx",
+        "LogicFlowPeriVfJuggleTap.tsx",
+        "LogicFlowRespiratorioVfJuggleTap.tsx",
+        "LogicFlowSegurancaVfJuggleTap.tsx",
+        "LogicFlowTrabalhoVfJuggleTap.tsx",
+        "LogicFlowViaVfJuggleTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "steps",
+        "text"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c004",
+      "signature": "TapFlow|props:footerRule,steps,text,theme|wrap:∅|cls:flex,items-center,justify-center,gap-2,rounded-full,text-xs",
+      "family": "TapFlow",
+      "size": 6,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowMulherLaborTapFlow.tsx",
+        "LogicFlowMulherMamaTapFlow.tsx",
+        "LogicFlowMulherPlanejamentoTapFlow.tsx",
+        "LogicFlowMulherPrenatalTapFlow.tsx",
+        "LogicFlowMulherPuerperioTapFlow.tsx",
+        "LogicFlowMulherScreeningTapFlow.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c005",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:GoldenRuleSoftLensBoard|cls:∅",
+      "family": "Board",
+      "size": 5,
+      "fusion_candidate": true,
+      "files": [
+        "GoldenRuleIvDifferentialBoard.tsx",
+        "GoldenRuleUrgenciasCincinnatiBoard.tsx",
+        "GoldenRuleUrgenciasHeimlichBoard.tsx",
+        "GoldenRuleUrgenciasPediatricParamsBoard.tsx",
+        "GoldenRuleUrgenciasRcpParamsBoard.tsx"
+      ],
+      "shared_wrappers": [
+        "GoldenRuleSoftLensBoard"
+      ],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": [
+        "Thin SoftLens wrappers - fusao tipicamente 1 prop de hintProfile/accent."
+      ]
+    },
+    {
+      "cluster_id": "c006",
+      "signature": "TrapArena|props:content,footerRule,items,theme|wrap:∅|cls:flex,items-center,text-sm,border,justify-center,py-3",
+      "family": "TrapArena",
+      "size": 5,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneUrgenciasChokingTrapArena.tsx",
+        "DangerZoneUrgenciasProtocolTrapArena.tsx",
+        "DangerZoneUrgenciasShockTrapArena.tsx",
+        "DangerZoneUrgenciasStrokeTrapArena.tsx",
+        "DangerZoneUrgenciasTraumaTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": [
+        "TrapArena sem wrapper compartilhado detectado - revisar manualmente."
+      ]
+    },
+    {
+      "cluster_id": "c007",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,via-white,gap-2,grid,items-center",
+      "family": "ConceptMap",
+      "size": 4,
+      "fusion_candidate": true,
+      "files": [
+        "PtCliticRailDeckConceptMap.tsx",
+        "PtCommaRailDeckConceptMap.tsx",
+        "PtCraseFunnelDeckConceptMap.tsx",
+        "PtTermMatrixDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c008",
+      "signature": "TapFlow|props:revealMode,steps,theme|wrap:LogicFlowStepLadder|cls:∅",
+      "family": "TapFlow",
+      "size": 4,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowIvBundleTapFlow.tsx",
+        "LogicFlowIvExcetoTapFlow.tsx",
+        "LogicFlowIvIntervalTapFlow.tsx",
+        "LogicFlowIvPunctureTapFlow.tsx"
+      ],
+      "shared_wrappers": [
+        "LogicFlowStepLadder"
+      ],
+      "shared_props": [
+        "revealMode",
+        "steps",
+        "theme"
+      ],
+      "notes": [
+        "Thin StepLadder wrappers - fusao tipicamente 1 prop de accent."
+      ]
+    },
+    {
+      "cluster_id": "c009",
+      "signature": "Trap|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,text-sm,grid,items-center,gap-2",
+      "family": "Trap",
+      "size": 4,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneDoseTrap.tsx",
+        "DangerZoneFarmacoTrap.tsx",
+        "DangerZoneRouteTrap.tsx",
+        "DangerZoneScopeTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c010",
+      "signature": "TrapArena|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,items-center,text-sm,shadow-sm,gap-3",
+      "family": "TrapArena",
+      "size": 4,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZonePtCliticTrapArena.tsx",
+        "DangerZonePtCommaTrapArena.tsx",
+        "DangerZonePtCraseTrapArena.tsx",
+        "DangerZonePtTermTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": [
+        "TrapArena sem wrapper compartilhado detectado - revisar manualmente."
+      ]
+    },
+    {
+      "cluster_id": "c011",
+      "signature": "Board|props:∅|wrap:GoldenRuleSoftLensBoard|cls:∅",
+      "family": "Board",
+      "size": 3,
+      "fusion_candidate": true,
+      "files": [
+        "GoldenRuleIvAntisepsisBoard.tsx",
+        "GoldenRuleIvExcetoCommandBoard.tsx",
+        "GoldenRuleIvIntervalBoard.tsx"
+      ],
+      "shared_wrappers": [
+        "GoldenRuleSoftLensBoard"
+      ],
+      "shared_props": [],
+      "notes": [
+        "Thin SoftLens wrappers - fusao tipicamente 1 prop de hintProfile/accent."
+      ]
+    },
+    {
+      "cluster_id": "c012",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,text-xs,text-slate-900,gap-1.5,items-center",
+      "family": "Board",
+      "size": 3,
+      "fusion_candidate": true,
+      "files": [
+        "GoldenRulePtCliticRailBoard.tsx",
+        "GoldenRulePtCommaRailBoard.tsx",
+        "GoldenRulePtCraseFunnelBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c013",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,gap-2,px-2,border,gap-1,p-4",
+      "family": "Board",
+      "size": 3,
+      "fusion_candidate": true,
+      "files": [
+        "GoldenRuleMentalRapsTierBoard.tsx",
+        "GoldenRulePeriAldreteBoard.tsx",
+        "GoldenRulePeriPreopPrepBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c014",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,border,gap-2,grid,items-center,px-2",
+      "family": "ConceptMap",
+      "size": 3,
+      "fusion_candidate": false,
+      "files": [
+        "CamCertosDeckConceptMap.tsx",
+        "IstRiskRoutesDeckConceptMap.tsx",
+        "PniRulesDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c015",
+      "signature": "LogicFlow*|props:footerRule,revealMode,steps,text,theme|wrap:∅|cls:flex,rounded-full,items-center,gap-2,h-4,justify-center",
+      "family": "LogicFlow*",
+      "size": 3,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowMentalRapsClassifyTap.tsx",
+        "LogicFlowPeriPreopDecisionTap.tsx",
+        "LogicFlowPeriSrpaDecisionTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "revealMode",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c016",
+      "signature": "TrapArena|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,h-4,rounded-full,w-4,rounded-xl",
+      "family": "TrapArena",
+      "size": 3,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneMulherMamaTrapArena.tsx",
+        "DangerZoneMulherPuerperioTrapArena.tsx",
+        "DangerZoneMulherScreeningTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": [
+        "TrapArena sem wrapper compartilhado detectado - revisar manualmente."
+      ]
+    },
+    {
+      "cluster_id": "c017",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,grid,px-4,shadow-sm,text-center",
+      "family": "Board",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "GoldenRuleCamDocumentacaoBoard.tsx",
+        "GoldenRuleCamNineRightsBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c018",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,items-center,px-2,rounded-full,text-[9px",
+      "family": "Board",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "GoldenRuleMulherPrenatalBoard.tsx",
+        "GoldenRuleMulherPuerperioBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c019",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,rounded-full,border,gap-2,text-[9px,items-center",
+      "family": "Board",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "GoldenRuleMulherMamaBoard.tsx",
+        "GoldenRuleMulherPapanicolauBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c020",
+      "signature": "Chips|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,grid,text-sm,items-center,gap-2",
+      "family": "Chips",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneBiossegTrapChips.tsx",
+        "DangerZoneIstTrapChips.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c021",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,gap-2,items-center,text-sm,bg-white/90",
+      "family": "ConceptMap",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "InfusaoEvStationDeckConceptMap.tsx",
+        "IvPunctureRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c022",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,items-center,gap-2,grid,px-2",
+      "family": "ConceptMap",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "CamDocumentacaoDeckConceptMap.tsx",
+        "UrgenciasProtocolRulesDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c023",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,items-center,rounded-xl,gap-3,grid",
+      "family": "ConceptMap",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "Nr32AnnexDeckConceptMap.tsx",
+        "SpIdVerifyDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c024",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,items-center,rounded-xl,text-sm,justify-center",
+      "family": "ConceptMap",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "UrgenciasStrokeSignsDeckConceptMap.tsx",
+        "UrgenciasXabcdeRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c025",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,items-center,text-[9px,text-sm,gap-2",
+      "family": "ConceptMap",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "CamExcetoRailConceptMap.tsx",
+        "UrgenciasExcetoRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c026",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,rounded-xl,gap-2,p-3,rounded-full",
+      "family": "ConceptMap",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "MulherMammographySpectrumConceptMap.tsx",
+        "MulherScreeningSpectrumConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c027",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,border,grid,gap-2,items-center,p-4",
+      "family": "ConceptMap",
+      "size": 2,
+      "fusion_candidate": false,
+      "files": [
+        "CamHighRiskDuoDeckConceptMap.tsx",
+        "VitalsPanelConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c028",
+      "signature": "LogicFlow*|props:footerRule,steps,text,theme|wrap:∅|cls:∅",
+      "family": "LogicFlow*",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowCamDocumentacaoVfTap.tsx",
+        "LogicFlowCamVfJuggleTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c029",
+      "signature": "LogicFlow*|props:revealMode,steps,text,theme|wrap:LogicFlowStepLadder|cls:∅",
+      "family": "LogicFlow*",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowCamAltoRiscoEliminationTap.tsx",
+        "LogicFlowUrgenciasStrokeEliminationTap.tsx"
+      ],
+      "shared_wrappers": [
+        "LogicFlowStepLadder"
+      ],
+      "shared_props": [
+        "revealMode",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": [
+        "Thin StepLadder wrappers - fusao tipicamente 1 prop de accent."
+      ]
+    },
+    {
+      "cluster_id": "c030",
+      "signature": "SoftStack|props:steps,text,theme|wrap:∅|cls:flex,items-center,rounded-full,justify-center,px-6,text-sm",
+      "family": "SoftStack",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowLabVfSoftStack.tsx",
+        "LogicFlowSoftStack.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c031",
+      "signature": "TapFlow|props:footerRule,steps,text,theme|wrap:∅|cls:flex,items-center,rounded-full,justify-center,text-lg,text-slate-900",
+      "family": "TapFlow",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowPtCliticRailTapFlow.tsx",
+        "LogicFlowPtCommaRailTapFlow.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c032",
+      "signature": "TapFlow|props:steps,text,theme|wrap:∅|cls:flex,items-center,rounded-full,justify-center,bg-gradient-to-br,text-slate-900",
+      "family": "TapFlow",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "LogicFlowBurnTriageTapFlow.tsx",
+        "LogicFlowWoundPrepTapFlow.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c033",
+      "signature": "Trap|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,text-sm,border,w-full,h-4,items-center",
+      "family": "Trap",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneIvExcetoIntruderTrap.tsx",
+        "DangerZoneIvIntervalSwapTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c034",
+      "signature": "Trap|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,text-sm,border,w-full,h-4,p-4",
+      "family": "Trap",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneIvBundleBreakTrap.tsx",
+        "DangerZoneIvOrderInvertTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c035",
+      "signature": "TrapArena|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,items-center,rounded-xl,text-sm,gap-3",
+      "family": "TrapArena",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneMulherPlanejamentoTrapArena.tsx",
+        "DangerZoneMulherPrenatalTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": [
+        "TrapArena sem wrapper compartilhado detectado - revisar manualmente."
+      ]
+    },
+    {
+      "cluster_id": "c036",
+      "signature": "TrapArena|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,items-center,text-sm,gap-3,h-4",
+      "family": "TrapArena",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneCamCertosTrapArena.tsx",
+        "DangerZoneCamHighRiskTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": [
+        "TrapArena sem wrapper compartilhado detectado - revisar manualmente."
+      ]
+    },
+    {
+      "cluster_id": "c037",
+      "signature": "TrapArena|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,rounded-xl,text-sm,gap-3,items-center",
+      "family": "TrapArena",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZonePeriProtocolTrapArena.tsx",
+        "DangerZonePeriSrpaTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": [
+        "TrapArena sem wrapper compartilhado detectado - revisar manualmente."
+      ]
+    },
+    {
+      "cluster_id": "c038",
+      "signature": "TrapArena|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,text-sm,border,gap-3,rounded-xl,bg-gradient-to-br",
+      "family": "TrapArena",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneMentalRapsTrapArena.tsx",
+        "DangerZonePeriPreopTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": [
+        "TrapArena sem wrapper compartilhado detectado - revisar manualmente."
+      ]
+    },
+    {
+      "cluster_id": "c039",
+      "signature": "TrapArena|props:content,footerRule,items,theme|wrap:∅|cls:flex,items-center,border,justify-center,rounded-xl,text-sm",
+      "family": "TrapArena",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneRespiratorioSpo2TrapArena.tsx",
+        "DangerZoneUrgenciasRcpTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": [
+        "TrapArena sem wrapper compartilhado detectado - revisar manualmente."
+      ]
+    },
+    {
+      "cluster_id": "c040",
+      "signature": "TrapArena|props:content,footerRule,items,theme|wrap:∅|cls:flex,text-sm,border,py-3,px-4,w-full",
+      "family": "TrapArena",
+      "size": 2,
+      "fusion_candidate": true,
+      "files": [
+        "DangerZoneCamExcetoTrapArena.tsx",
+        "DangerZoneUrgenciasExcetoTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": [
+        "TrapArena sem wrapper compartilhado detectado - revisar manualmente."
+      ]
+    },
+    {
+      "cluster_id": "c041",
+      "signature": "Board|props:content,domain,footerRule,rows,theme|wrap:∅|cls:flex,items-center,border,gap-2,text-center,text-sm",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "CriancaSharedGoldenBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "domain",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c042",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,grid,shadow-sm,text-sm,bg-gradient-to-br",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleCamHighRiskProtocolBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c043",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,items-center,gap-2,rounded-full,text-[9px",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleMulherPartoHumanizadoBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c044",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,items-center,grid,text-xs,gap-1",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleTbPrecautionBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c045",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,items-center,px-2,rounded-full,text-[10px",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRulePniCalendarBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c046",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,items-center,px-2,rounded-full,text-center",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleMulherPlanejamentoBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c047",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,items-center,text-[10px,px-4,rounded-2xl",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleSondaMeasurementBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c048",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,rounded-xl,text-sm,gap-3,grid",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleLabPrepLensBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c049",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,text-[9px,text-xs,gap-1.5,items-center",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleBurnRuleNineBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c050",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,text-xs,gap-1.5,items-center,px-3",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRulePtTermMatrixBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c051",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,items-center,justify-center,gap-2,bg-gradient-to-br,border",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleItuBundleBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c052",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,items-center,text-center,border,gap-2,text-xs",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleAdolescentZBandBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c053",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,text-center,w-0,border,gap-2,items-center",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleMentalCrisisLadderBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c054",
+      "signature": "Board|props:content,footerRule,rows,theme|wrap:∅|cls:flex,text-sm,via-white,px-4,py-3,bg-gradient-to-br",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleUrgenciasManchesterBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c055",
+      "signature": "Board|props:footerRule,model,theme|wrap:∅|cls:flex,items-center,border,rounded-xl,text-sm,gap-2",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowPtCraseFunnelBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "model",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c056",
+      "signature": "Board|props:footerRule,model,theme|wrap:∅|cls:flex,items-center,border,rounded-xl,text-xs,gap-2",
+      "family": "Board",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowPtCliticPositionBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "model",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c057",
+      "signature": "Carousel|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,bg-gradient-to-br,h-4,justify-center,w-4",
+      "family": "Carousel",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleProtocolCarousel.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c058",
+      "signature": "Chips|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,items-center,text-sm,grid,rounded-full",
+      "family": "Chips",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZonePniTrapChips.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c059",
+      "signature": "Chips|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,items-center,text-sm,grid,rounded-xl",
+      "family": "Chips",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZonePeriVfTrapChips.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c060",
+      "signature": "Chips|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,text-sm,items-center,rounded-xl,bg-gradient-to-br",
+      "family": "Chips",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneEtiologyIntruderChips.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c061",
+      "signature": "ConceptMap|props:∅|wrap:∅|cls:∅",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "IvBundleOrbitConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [],
+      "notes": []
+    },
+    {
+      "cluster_id": "c062",
+      "signature": "ConceptMap|props:concepts,domain,footerRule,theme|wrap:∅|cls:flex,items-center,border,text-sm,bg-gradient-to-br,p-3",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "CriancaSharedConceptMaps.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "domain",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c063",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,bg-gradient-to-br,border,items-center,p-4,rounded-xl",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "OxygenProtocolDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c064",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,gap-2,bg-gradient-to-br,items-center,px-3",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "IvComplicationTissueLayersConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c065",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,gap-2,grid,items-center,px-2",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "BiossegPrecautionDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c066",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,gap-2,items-center,grid,px-2",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "PeriProtocolChecklistDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c067",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,gap-2,items-center,justify-center,p-4",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "MentalRapsNetworkRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c068",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,gap-2,items-center,justify-center,text-[9px",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "PeriPreopPhaseDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c069",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,gap-2,items-center,p-3,rounded-xl",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "MulherContraceptionSpectrumConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c070",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,gap-2,items-center,px-2,rounded-full",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "PeriSrpaMonitorDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c071",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,gap-2,items-center,rounded-full,text-[9px",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "UrgenciasShockTypesDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c072",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,grid,border-white/10,items-center,text-[9px",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "IvGaugeMatrixConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c073",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,grid,items-center,rounded-xl,shadow-sm",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "SpIncidentTaxonomyDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c074",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,items-center,gap-2,px-2,rounded-full",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "PeriVfAssertionsDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c075",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,items-center,rounded-full,gap-2,justify-center",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "UrgenciasSurvivalChainDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c076",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,items-center,rounded-full,justify-center,p-4",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "IvExcetoSpectrumConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c077",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,items-center,text-[9px,gap-3,grid",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "ColdChainHubConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c078",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,items-center,w-0,gap-2,p-4",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "MentalCrisisSignalDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c079",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,rounded-full,shadow-sm,text-sm,bg-gradient-to-br",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "UrgenciasManchesterSpectrumConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c080",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,rounded-full,text-[9px,text-sm,bg-gradient-to-br",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "UrgenciasChokingSignalDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c081",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,text-sm,bg-gradient-to-br,gap-2,items-center",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "UrgenciasPediatricRcpDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c082",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,border,text-sm,items-center,bg-gradient-to-br,overflow-hidden",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "RespiratorioAsmaDpocDuelDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c083",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,gap-2,items-center,border,ring-2,rounded-xl",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "TbVigilanceRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c084",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,bg-gradient-to-br,border,grid,rounded-xl",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "WoundStageTissueDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c085",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,bg-gradient-to-br,border,rounded-xl,grid",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "BurnDepthLayerDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c086",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,border,gap-2,grid,justify-center",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "AdolescentGrowthZRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c087",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,border,gap-2,justify-center,text-[9px",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "MulherLaborPhaseDeckConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c088",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,border,grid,text-sm,gap-2",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "UrgenciasEmergencyHubConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c089",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,border,p-4,rounded-full,text-[9px",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "IvIntervalTimelineConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c090",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,border,rounded-xl,gap-1.5,rounded-full",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "SpFallRiskRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c091",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,border,text-[9px,gap-2,justify-center",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "AdolescentPrivacyCurtainConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c092",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,rounded-full,bg-gradient-to-br,justify-center,border",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "IvCareOrbitConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c093",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,rounded-full,p-4,text-[9px,border",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "MulherGestationTimelineConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c094",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,items-center,text-slate-500,border,text-slate-300,gap-2",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "MorphingTimelineConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c095",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,text-sm,rounded-xl,border,items-center,p-4",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LabSpecimenChainConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c096",
+      "signature": "ConceptMap|props:concepts,footerRule,theme|wrap:∅|cls:flex,text-sm,shadow-sm,border,gap-3,items-center",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "AdmeJourneyRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "footerRule",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c097",
+      "signature": "ConceptMap|props:concepts,layoutVariant,theme|wrap:∅|cls:flex,w-full,border,items-center,justify-center,w-0",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "ConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "layoutVariant",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c098",
+      "signature": "ConceptMap|props:concepts,questionOptions,theme|wrap:∅|cls:flex,rounded-full,text-sm,shadow-sm,border,gap-3",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "AbsorptionSpeedRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "questionOptions",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c099",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,border,gap-3,grid,items-center,border-slate-200",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "ProcedureProtocolConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c100",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,border,gap-3,grid,items-center,shadow-md",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "SaeDocumentationConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c101",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,border,grid,bg-gradient-to-br,gap-3,via-white",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "SusLegalPillarsConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c102",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,border,items-center,text-sm,text-xs,gap-2",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "SusArt4OrbitConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c103",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,gap-2,items-center,ring-2,border,rounded-xl",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "EtiologyKingdomRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c104",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,grid,bg-white,border,border-slate-200,gap-3",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "MorphologicalConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c105",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,items-center,gap-2,ring-2,text-[9px,border",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "ItuClosedSystemRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c106",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,items-center,justify-center,rounded-full,bg-gradient-to-br,gap-2",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "SurvivalChainConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c107",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,items-center,rounded-full,p-4,gap-2,justify-center",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "VaccineTimelineConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c108",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,items-center,rounded-full,p-4,text-[9px,gap-2",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "MulherPuerperioTimelineConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c109",
+      "signature": "ConceptMap|props:concepts,theme|wrap:∅|cls:flex,shadow-sm,text-sm,border,gap-3,items-center",
+      "family": "ConceptMap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DoseEquivalenceRailConceptMap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c110",
+      "signature": "DangerZone*|props:bulletStyle,compareRevealMode,content,footerRule,items,layoutVariant,theme|wrap:DangerZoneTrapReveal|cls:flex,text-sm,p-4,border,border-red-200,text-base",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZone.tsx"
+      ],
+      "shared_wrappers": [
+        "DangerZoneTrapReveal"
+      ],
+      "shared_props": [
+        "bulletStyle",
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "layoutVariant",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c111",
+      "signature": "DangerZone*|props:bulletStyle,compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,h-full,rounded-full,text-sm,border,grid",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneTrapReveal.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "bulletStyle",
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c112",
+      "signature": "DangerZone*|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,text-sm,grid,items-center,gap-2",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneCalendarMismatch.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c113",
+      "signature": "DangerZone*|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,text-sm,grid,rounded-full,gap-2",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneNormReveal.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c114",
+      "signature": "DangerZone*|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,text-sm,items-center,text-[9px,gap-2",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneTemperatureMismatch.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c115",
+      "signature": "DangerZone*|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,gap-2,grid,items-center,text-sm,border",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneAdolescentConsentGate.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c116",
+      "signature": "DangerZone*|props:content,footerRule,items,theme|wrap:∅|cls:flex,bg-gradient-to-br,border,rounded-xl,ring-1,text-center",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneCatheterArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c117",
+      "signature": "DangerZone*|props:content,footerRule,items,theme|wrap:∅|cls:flex,border,items-center,grid,rounded-full,bg-white/90",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneLabSpecimenArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c118",
+      "signature": "DangerZone*|props:content,footerRule,items,theme|wrap:∅|cls:flex,items-center,border,grid,rounded-full,bg-white/90",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneDressingChoiceArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c119",
+      "signature": "DangerZone*|props:content,footerRule,items,theme|wrap:∅|cls:flex,items-center,justify-center,rounded-full,text-[9px,text-sm",
+      "family": "DangerZone*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneVitalsClassifyArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c120",
+      "signature": "GoldenRule*|props:content,footerRule,layoutVariant,rows,theme|wrap:GoldenRuleMeshReveal,GoldenRuleProtocolCarousel,GoldenRuleSoftLensBoard|cls:flex,w-0,items-center,w-full,justify-center,text-base",
+      "family": "GoldenRule*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRule.tsx"
+      ],
+      "shared_wrappers": [
+        "GoldenRuleMeshReveal",
+        "GoldenRuleProtocolCarousel",
+        "GoldenRuleSoftLensBoard"
+      ],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "layoutVariant",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c121",
+      "signature": "LogicFlow*|props:accentVariant,chipLabel,footerRule,steps,text,theme|wrap:∅|cls:flex,text-sm,border,items-center,justify-center,rounded-xl",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowPniVfJuggleTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "accentVariant",
+        "chipLabel",
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c122",
+      "signature": "LogicFlow*|props:currentPasso,isComplete,isTapMode,onAdvance,revealedCount,showTapHint,total|wrap:∅|cls:flex,items-center,border,gap-2,text-sm,bg-green-50",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowFooter.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "currentPasso",
+        "isComplete",
+        "isTapMode",
+        "onAdvance",
+        "revealedCount",
+        "showTapHint",
+        "total"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c123",
+      "signature": "LogicFlow*|props:footerRule,revealMode,steps,text,theme|wrap:∅|cls:flex,items-center,justify-center,rounded-xl,border,h-5",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowAdolescentZClassifyTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "revealMode",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c124",
+      "signature": "LogicFlow*|props:footerRule,revealMode,steps,text,theme|wrap:∅|cls:flex,items-center,rounded-full,gap-2,h-4,text-[10px",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowMentalCrisisDecisionTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "revealMode",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c125",
+      "signature": "LogicFlow*|props:footerRule,steps,text,theme|wrap:∅|cls:flex,border,items-center,text-sm,justify-center,rounded-xl",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowVitalsTranslateTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c126",
+      "signature": "LogicFlow*|props:footerRule,steps,text,theme|wrap:∅|cls:flex,gap-2,h-4,items-center,w-4,gap-3",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowEtiologyEliminationTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c127",
+      "signature": "LogicFlow*|props:footerRule,steps,text,theme|wrap:∅|cls:flex,h-4,items-center,justify-center,w-4,gap-2",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowPniColdChainTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c128",
+      "signature": "LogicFlow*|props:footerRule,steps,text,theme|wrap:∅|cls:flex,h-4,w-4,border-l-[4px,gap-3,items-center",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowTbVfEliminationTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c129",
+      "signature": "LogicFlow*|props:footerRule,steps,text,theme|wrap:∅|cls:flex,items-center,gap-2,h-4,justify-center,rounded-xl",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowItuExcetoTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c130",
+      "signature": "LogicFlow*|props:footerRule,steps,text,theme|wrap:∅|cls:flex,items-center,justify-center,gap-2,h-4,text-[10px",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowPniCalendarEliminationTap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c131",
+      "signature": "LogicFlow*|props:footerRule,steps,text,theme|wrap:LogicFlowFooter|cls:flex,items-center,justify-center,border,rounded-full,rounded-xl",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowAdolescentVfWeaveTap.tsx"
+      ],
+      "shared_wrappers": [
+        "LogicFlowFooter"
+      ],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c132",
+      "signature": "LogicFlow*|props:steps,text|wrap:LogicFlowFooter,LogicFlowLabVfSoftStack,LogicFlowSoftStack,LogicFlowStepLadder|cls:flex,w-0,justify-center,w-full,items-center,text-base",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlow.tsx"
+      ],
+      "shared_wrappers": [
+        "LogicFlowFooter",
+        "LogicFlowLabVfSoftStack",
+        "LogicFlowSoftStack",
+        "LogicFlowStepLadder"
+      ],
+      "shared_props": [
+        "steps",
+        "text"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c133",
+      "signature": "LogicFlow*|props:steps,text|wrap:LogicFlowStepLadder|cls:∅",
+      "family": "LogicFlow*",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowSondaChecklistTap.tsx"
+      ],
+      "shared_wrappers": [
+        "LogicFlowStepLadder"
+      ],
+      "shared_props": [
+        "steps",
+        "text"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c134",
+      "signature": "Matrix|props:concepts,theme|wrap:∅|cls:flex,shadow-sm,border,text-sm,gap-3,rounded-lg",
+      "family": "Matrix",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "SaeResponsibilityMatrix.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concepts",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c135",
+      "signature": "Matrix|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,rounded-xl,text-[9px,text-sm,gap-3",
+      "family": "Matrix",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleDressingMatchMatrix.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c136",
+      "signature": "Matrix|props:content,footerRule,rows,theme|wrap:∅|cls:flex,px-2,border,items-center,rounded-xl,text-[9px",
+      "family": "Matrix",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRulePniIntervalMatrix.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c137",
+      "signature": "MeshReveal|props:content,footerRule,rows,theme|wrap:∅|cls:flex,rounded-full,items-center,bg-gradient-to-br,border,text-sm",
+      "family": "MeshReveal",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleMeshReveal.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c138",
+      "signature": "other|props:compareRevealMode,concepts,content,footerRule,items,rows,steps,text,theme|wrap:CriancaSharedConceptMaps,CriancaSharedGoldenBoard,CriancaSharedTapFlow,CriancaSharedTrapArena|cls:∅",
+      "family": "other",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "criancaVariants.tsx"
+      ],
+      "shared_wrappers": [
+        "CriancaSharedConceptMaps",
+        "CriancaSharedGoldenBoard",
+        "CriancaSharedTapFlow",
+        "CriancaSharedTrapArena"
+      ],
+      "shared_props": [
+        "compareRevealMode",
+        "concepts",
+        "content",
+        "footerRule",
+        "items",
+        "rows",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c139",
+      "signature": "other|props:concept_a,concept_b,icon,points,theme,title|wrap:∅|cls:flex,justify-center,items-center,bg-white,p-6,rounded-full",
+      "family": "other",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "VersusArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "concept_a",
+        "concept_b",
+        "icon",
+        "points",
+        "theme",
+        "title"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c140",
+      "signature": "other|props:rule,theme,tonicIndex,word|wrap:∅|cls:flex,text-sm,border,gap-3,items-center,justify-center",
+      "family": "other",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "SyllableScanner.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "rule",
+        "theme",
+        "tonicIndex",
+        "word"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c141",
+      "signature": "Rail|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,items-center,px-2,rounded-full,text-[10px",
+      "family": "Rail",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRulePniTemperatureRail.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c142",
+      "signature": "ReferenceBoard|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,grid,items-center,px-4,rounded-xl",
+      "family": "ReferenceBoard",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleVitalsReferenceBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c143",
+      "signature": "ReferenceBoard|props:content,footerRule,rows,theme|wrap:∅|cls:flex,gap-2,px-2,border,gap-1,p-4",
+      "family": "ReferenceBoard",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRulePeriProtocolReferenceBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c144",
+      "signature": "ReferenceBoard|props:content,footerRule,rows,theme|wrap:∅|cls:flex,gap-2,px-2,border,items-center,p-4",
+      "family": "ReferenceBoard",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRulePeriVfReferenceBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c145",
+      "signature": "SoftLensBoard|props:content,footerRule,hintProfile,rows,theme|wrap:∅|cls:flex,border,px-4,rounded-xl,text-[9px,gap-3",
+      "family": "SoftLensBoard",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleSoftLensBoard.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "hintProfile",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c146",
+      "signature": "Spectrum|props:content,footerRule,rows,theme|wrap:∅|cls:flex,border,items-center,rounded-xl,text-center,gap-2",
+      "family": "Spectrum",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleAdolescentSigiloSpectrum.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c147",
+      "signature": "Spectrum|props:content,footerRule,rows,theme|wrap:∅|cls:flex,items-center,justify-center,rounded-2xl,text-sm,bg-gradient-to-br",
+      "family": "Spectrum",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "GoldenRuleEtiologyLetterSpectrum.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "rows",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c148",
+      "signature": "StepLadder|props:accent,revealMode,steps,text,theme|wrap:LogicFlowFooter|cls:flex,to-white,via-white,items-center,bg-gradient-to-br,w-full",
+      "family": "StepLadder",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowStepLadder.tsx"
+      ],
+      "shared_wrappers": [
+        "LogicFlowFooter"
+      ],
+      "shared_props": [
+        "accent",
+        "revealMode",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c149",
+      "signature": "TapFlow|props:footerRule,revealMode,steps,text,theme|wrap:∅|cls:flex,rounded-full,items-center,gap-2,h-4,justify-center",
+      "family": "TapFlow",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowPeriProtocolTapFlow.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "revealMode",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c150",
+      "signature": "TapFlow|props:footerRule,steps,text,theme|wrap:∅|cls:flex,items-center,justify-center,text-sm,h-4,w-4",
+      "family": "TapFlow",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "CriancaSharedTapFlow.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c151",
+      "signature": "TapFlow|props:footerRule,steps,text,theme|wrap:∅|cls:flex,items-center,rounded-full,bg-gradient-to-br,justify-center,text-lg",
+      "family": "TapFlow",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowPtTermMatrixTapFlow.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c152",
+      "signature": "TapFlow|props:footerRule,steps,text,theme|wrap:∅|cls:flex,items-center,rounded-full,justify-center,text-lg,bg-gradient-to-br",
+      "family": "TapFlow",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "LogicFlowPtCraseFunnelTapFlow.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "footerRule",
+        "steps",
+        "text",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c153",
+      "signature": "Trap|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,h-5,items-center,px-3,py-2",
+      "family": "Trap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneTbTransmissionTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c154",
+      "signature": "Trap|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,items-center,text-[9px,text-sm,gap-2",
+      "family": "Trap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneIvLabelSwapTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c155",
+      "signature": "Trap|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,items-center,text-sm,border,gap-3,rounded-xl",
+      "family": "Trap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneMentalCrisisCoercionTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c156",
+      "signature": "Trap|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,text-sm,border,grid,items-center,gap-2",
+      "family": "Trap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneLabPrepTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c157",
+      "signature": "Trap|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,text-sm,border,items-center,w-full,bg-gradient-to-br",
+      "family": "Trap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneIvGaugeMismatchTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c158",
+      "signature": "Trap|props:content,footerRule,items,revealMode,theme|wrap:∅|cls:flex,items-center,border,gap-1,gap-2,rounded-xl",
+      "family": "Trap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneItuCatheterTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "revealMode",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c159",
+      "signature": "Trap|props:content,footerRule,items,revealMode,theme|wrap:∅|cls:flex,items-center,text-xs,gap-2,text-center,w-0",
+      "family": "Trap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneAdolescentZThresholdTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "revealMode",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c160",
+      "signature": "Trap|props:content,footerRule,items,theme|wrap:∅|cls:flex,items-center,text-sm,border,justify-center,py-3",
+      "family": "Trap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneFarmacoClinicoTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c161",
+      "signature": "Trap|props:content,footerRule,items,theme|wrap:∅|cls:flex,text-sm,border,items-center,py-3,h-4",
+      "family": "Trap",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneUrgenciasManchesterTrap.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c162",
+      "signature": "TrapArena|props:compareRevealMode,content,domain,footerRule,items,theme|wrap:∅|cls:flex,text-sm,gap-2,items-center,rounded-xl,border",
+      "family": "TrapArena",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "CriancaSharedTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "domain",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c163",
+      "signature": "TrapArena|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,border,items-center,justify-center,rounded-full,rounded-xl",
+      "family": "TrapArena",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneMulherPartoTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c164",
+      "signature": "TrapArena|props:compareRevealMode,content,footerRule,items,theme|wrap:∅|cls:flex,text-sm,border,gap-1.5,items-center,gap-3",
+      "family": "TrapArena",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneCamDocumentacaoTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "compareRevealMode",
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c165",
+      "signature": "TrapArena|props:content,footerRule,items,pedagogicalBranch,theme|wrap:∅|cls:flex,via-white,items-center,border,text-sm,justify-center",
+      "family": "TrapArena",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneSpSafetyTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "pedagogicalBranch",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c166",
+      "signature": "TrapArena|props:content,footerRule,items,theme|wrap:∅|cls:flex,items-center,border,rounded-xl,text-[9px,text-sm",
+      "family": "TrapArena",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneBurnTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c167",
+      "signature": "TrapArena|props:content,footerRule,items,theme|wrap:∅|cls:flex,items-center,border,rounded-xl,text-sm,w-0",
+      "family": "TrapArena",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneTrabalhoPepTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    },
+    {
+      "cluster_id": "c168",
+      "signature": "TrapArena|props:content,footerRule,items,theme|wrap:∅|cls:flex,text-sm,border,items-center,py-3,h-4",
+      "family": "TrapArena",
+      "size": 1,
+      "fusion_candidate": false,
+      "files": [
+        "DangerZoneUrgenciasPediatricTrapArena.tsx"
+      ],
+      "shared_wrappers": [],
+      "shared_props": [
+        "content",
+        "footerRule",
+        "items",
+        "theme"
+      ],
+      "notes": []
+    }
+  ],
+  "singleton_count": 128,
+  "fusion_candidate_count": 38
+}

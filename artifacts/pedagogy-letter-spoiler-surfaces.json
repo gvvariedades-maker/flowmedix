@@ -1,0 +1,140 @@
+{
+  "imunizacao-completo": {
+    "n": 575,
+    "by_slide": {
+      "golden_rule": 577,
+      "concept_map": 22
+    },
+    "by_key": {
+      "value": 27,
+      "label": 552,
+      "detail": 20
+    },
+    "sample": [
+      {
+        "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4.json",
+        "slide": "golden_rule",
+        "key": "value",
+        "evidence": "Letra C — Identificação rápida de crianças que estão em atraso com suas vacinas e envio de lembretes para seus responsáveis.",
+        "path": "golden_rule.rows[4].value"
+      },
+      {
+        "slug": "adm-tec-enfermagem-imunizacao-1777103244679-1.json",
+        "slide": "golden_rule",
+        "key": "value",
+        "evidence": "Letra B — '9 meses.'",
+        "path": "golden_rule.rows[4].value"
+      },
+      {
+        "slug": "adm-tec-enfermagem-imunizacao-1779563986606-5.json",
+        "slide": "golden_rule",
+        "key": "value",
+        "evidence": "Letra C — \"Reiniciar o esquema vacinal segundo o Calendário Nacional de Vacinação para a faixa etária, anotar as doses em novo cartão substituto e orientar o a…",
+        "path": "golden_rule.rows[5].value"
+      }
+    ]
+  },
+  "vias-de-administracao-completo": {
+    "n": 235,
+    "by_slide": {
+      "golden_rule": 899,
+      "concept_map": 37
+    },
+    "by_key": {
+      "label": 890,
+      "detail": 31,
+      "footer_rule": 6,
+      "value": 3,
+      "content": 5,
+      "exam_hint": 1
+    },
+    "sample": [
+      {
+        "slug": "agirh-enfermagem-vias-de-administracao-1778968787431-0.json",
+        "slide": "golden_rule",
+        "key": "label",
+        "evidence": "Letra A",
+        "path": "golden_rule.rows[0].label"
+      },
+      {
+        "slug": "agirh-enfermagem-vias-de-administracao-1778968787431-0.json",
+        "slide": "golden_rule",
+        "key": "label",
+        "evidence": "Letra B",
+        "path": "golden_rule.rows[1].label"
+      },
+      {
+        "slug": "agirh-enfermagem-vias-de-administracao-1778968787431-0.json",
+        "slide": "golden_rule",
+        "key": "label",
+        "evidence": "Letra C",
+        "path": "golden_rule.rows[2].label"
+      }
+    ]
+  },
+  "saude-adolescente-completo": {
+    "n": 16,
+    "by_slide": {
+      "golden_rule": 7
+    },
+    "by_key": {
+      "footer_rule": 1,
+      "value": 6
+    },
+    "sample": [
+      {
+        "slug": "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7.json",
+        "slide": "golden_rule",
+        "key": "footer_rule",
+        "evidence": "A–D são temas oficiais — EXCETO = o que falta na lista",
+        "path": "golden_rule.footer_rule"
+      },
+      {
+        "slug": "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7.json",
+        "slide": "golden_rule",
+        "key": "value",
+        "evidence": "Tema estruturante — A é tema (não marque no EXCETO)",
+        "path": "golden_rule.rows[0].value"
+      },
+      {
+        "slug": "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7.json",
+        "slide": "golden_rule",
+        "key": "value",
+        "evidence": "Tema estruturante — B é tema",
+        "path": "golden_rule.rows[1].value"
+      }
+    ]
+  },
+  "farmacodinamica-e-farmacocinetica-completo": {
+    "n": 13,
+    "by_slide": {
+      "concept_map": 3
+    },
+    "by_key": {
+      "detail": 3
+    },
+    "sample": [
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2.json",
+        "slide": "concept_map",
+        "key": "detail",
+        "evidence": "Letra E — hipotireoidismo não é fator clássico via metabolismo hepático.",
+        "path": "concept_map.items[3].detail"
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8.json",
+        "slide": "concept_map",
+        "key": "detail",
+        "evidence": "Quetamina → letra A.",
+        "path": "concept_map.items[3].detail"
+      },
+      {
+        "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0.json",
+        "slide": "concept_map",
+        "key": "detail",
+        "evidence": "Letra D — absorção oral principal no delgado.",
+        "path": "concept_map.items[4].detail"
+      }
+    ]
+  }
+}

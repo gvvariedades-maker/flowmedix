@@ -19,14 +19,25 @@ export type AssuntoPresetEntry = {
   count: number;
 };
 
+export type QuickAddPresetOrigem = 'edital' | 'desempenho';
+
 export type QuickAddPreset = {
   banca?: string;
   assuntosTop3: AssuntoPresetEntry[];
   suggestedBatchSize: number;
+  /** De onde veio a seleção. `desempenho` = assuntos escolhidos pelo aluno no hub. */
+  origem?: QuickAddPresetOrigem;
+  /**
+   * Modo estrito: o lote nunca é completado com assuntos fora da seleção.
+   * Sem isto, `pickWizardBatchModulos` só prioriza e preenche o resto com o pool.
+   */
+  strict?: boolean;
 };
 
 export const WIZARD_PRESET_STORAGE_KEY = 'avant.caderno.wizardPreset';
 export const DEFAULT_WIZARD_BATCH_SIZE = 10;
+/** Teto do lote vindo do hub — abaixo do `MAX_BATCH` da API (1000). */
+export const DESEMPENHO_MAX_BATCH_SIZE = 60;
 
 const GENERIC_ASSUNTO_HINTS = [
   'Urgências e Emergências',
@@ -114,6 +125,31 @@ export function buildQuickAddPreset(
   };
 }
 
+/**
+ * Preset a partir de assuntos escolhidos no hub `/desempenho`.
+ *
+ * Sempre estrito: o caderno recebe só questões dos assuntos marcados. Se não
+ * houver questões liberadas, o lote fica vazio — a UI avisa em vez de completar
+ * com outro assunto.
+ */
+export function buildDesempenhoPreset(
+  assuntos: readonly string[],
+  modulos: ModuloTemplateRow[],
+): QuickAddPreset {
+  const counts = countAssuntos(modulos);
+  const selecionados = [...new Set(assuntos.map((a) => a.trim()).filter(Boolean))];
+
+  return {
+    origem: 'desempenho',
+    strict: true,
+    assuntosTop3: selecionados.map((titulo) => ({ titulo, count: counts.get(titulo) ?? 0 })),
+    suggestedBatchSize: Math.min(
+      Math.max(selecionados.length, 1) * DEFAULT_WIZARD_BATCH_SIZE,
+      DESEMPENHO_MAX_BATCH_SIZE,
+    ),
+  };
+}
+
 export function pickWizardBatchModulos(
   modulos: ModuloTemplateRow[],
   preset: QuickAddPreset,
@@ -121,7 +157,14 @@ export function pickWizardBatchModulos(
   let pool = modulos;
   if (preset.banca) {
     const byBanca = modulos.filter((m) => moduloMatchesBanca(m.banca, preset.banca));
-    if (byBanca.length > 0) pool = byBanca;
+    // No modo estrito, banca sem match não volta ao pool inteiro: melhor lote
+    // vazio do que caderno com questões que o aluno não pediu.
+    if (byBanca.length > 0 || preset.strict) pool = byBanca;
+  }
+
+  if (preset.strict) {
+    const titulos = new Set(preset.assuntosTop3.map((a) => a.titulo));
+    pool = pool.filter((m) => titulos.has(m.titulo_aula ?? ''));
   }
 
   const assuntoOrder = preset.assuntosTop3.map((a) => a.titulo);
@@ -156,6 +199,16 @@ export function readWizardPreset(): QuickAddPreset | null {
     return parsed;
   } catch {
     return null;
+  }
+}
+
+/** Remove o preset após consumo, para não vazar seleção antiga em outro caderno. */
+export function clearWizardPreset(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.sessionStorage.removeItem(WIZARD_PRESET_STORAGE_KEY);
+  } catch {
+    // Storage indisponível — nada a limpar.
   }
 }
 

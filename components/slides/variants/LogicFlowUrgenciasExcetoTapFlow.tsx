@@ -2,7 +2,7 @@
 
 import type { ThemeColors } from '../core/themeGenerator';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import { LogicFlowStepLadder } from './LogicFlowStepLadder';
+import { LogicIsolateShell } from '../logicFlowShells';
 
 interface LogicFlowUrgenciasExcetoTapFlowProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -11,10 +11,19 @@ interface LogicFlowUrgenciasExcetoTapFlowProps {
   footerRule?: string;
 }
 
+/** EXCETO urgências — isolate board (0 taps). */
 export function LogicFlowUrgenciasExcetoTapFlow({
   steps,
   theme,
-  revealMode = 'tap',
+  footerRule,
 }: LogicFlowUrgenciasExcetoTapFlowProps) {
-  return <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} accent="urgencias" />;
+  return (
+    <LogicIsolateShell
+      steps={steps}
+      theme={theme}
+      footerRule={footerRule}
+      eyebrow="EXCETO · Urgências"
+      title="Isolar a conduta inadequada"
+    />
+  );
 }

@@ -1,0 +1,942 @@
+{
+  "generated_at": "2026-07-26T07:40:55.801Z",
+  "bespoke_zero_slots": [
+    {
+      "slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-5",
+      "slide_index": 0,
+      "slide_type": "concept_map",
+      "subtopico": "Saúde do Adolescente",
+      "pedagogical_branch": "adolescente_antropometria",
+      "family_id": "conceito",
+      "layout_variant": "bridge",
+      "decision": "bespoke_zero_slots",
+      "mold_fallback": false,
+      "bespoke_slots_insufficient": true,
+      "subtopic_design_variant": "adolescent-growth-z-rail"
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7",
+      "slide_index": 0,
+      "slide_type": "concept_map",
+      "subtopico": "Saúde do Adolescente",
+      "pedagogical_branch": "adolescente_etica_sigilo",
+      "family_id": "legis",
+      "layout_variant": "bridge",
+      "decision": "bespoke_zero_slots",
+      "mold_fallback": false,
+      "bespoke_slots_insufficient": true,
+      "subtopic_design_variant": "adolescent-privacy-curtain"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-do-adolescente-1777104229064-3",
+      "slide_index": 0,
+      "slide_type": "concept_map",
+      "subtopico": "Saúde do Adolescente",
+      "pedagogical_branch": "adolescente_antropometria",
+      "family_id": "conceito",
+      "layout_variant": "grid",
+      "decision": "bespoke_zero_slots",
+      "mold_fallback": false,
+      "bespoke_slots_insufficient": true,
+      "subtopic_design_variant": "adolescent-growth-z-rail"
+    },
+    {
+      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+      "slide_index": 0,
+      "slide_type": "concept_map",
+      "subtopico": "Saúde do Adolescente",
+      "pedagogical_branch": "adolescente_antropometria",
+      "family_id": "conceito",
+      "layout_variant": "grid",
+      "decision": "bespoke_zero_slots",
+      "mold_fallback": false,
+      "bespoke_slots_insufficient": true,
+      "subtopic_design_variant": "adolescent-growth-z-rail"
+    }
+  ],
+  "mold_fallback_rows": [],
+  "danger_no_correct": [
+    {
+      "slug": "ivin-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-5",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447782763-2",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-5",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-0",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-1",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-4",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-5",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-nocoes-de-anatomia-1775448514037-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-8",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775448475837-6",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fepese-enfermagem-nocoes-de-anatomia-1775448491347-7",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775447762008-4",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-0",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-2",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-5",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-7",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-7",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-8",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-0",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "idesg-enfermagem-nocoes-de-anatomia-1775448275334-0",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "idesg-enfermagem-nocoes-de-anatomia-1775448291915-6",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-access-enfermagem-nocoes-de-anatomia-1775448413684-0",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-4",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-5",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-nocoes-de-anatomia-1775448413684-1",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448440742-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-4",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448291915-7",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-2",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-2",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "itame-enfermagem-nocoes-de-anatomia-1775448514037-2",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "metrocapital-enfermagem-nocoes-de-anatomia-1775448491347-6",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-4",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-5",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775447834740-2",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775447834740-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448275334-6",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448291915-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "selecon-enfermagem-nocoes-de-anatomia-1775448440742-0",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "selecon-enfermagem-nocoes-de-anatomia-1775448440742-1",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "selecon-enfermagem-nocoes-de-anatomia-1775448440742-2",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-3",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-4",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-5",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-7",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-8",
+      "slide_index": 3,
+      "reason": "items_sem_correct"
+    }
+  ],
+  "logic_not_tap": [
+    {
+      "slug": "ivin-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-5",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447782763-2",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-5",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-0",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-1",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-4",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-5",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-nocoes-de-anatomia-1775448514037-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-8",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775448475837-6",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fepese-enfermagem-nocoes-de-anatomia-1775448491347-7",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775447762008-4",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-0",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-2",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-5",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-7",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-7",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-8",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-0",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "idesg-enfermagem-nocoes-de-anatomia-1775448275334-0",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "idesg-enfermagem-nocoes-de-anatomia-1775448291915-6",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-access-enfermagem-nocoes-de-anatomia-1775448413684-0",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-4",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-5",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-nocoes-de-anatomia-1775448413684-1",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448440742-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-4",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448291915-7",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-2",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-2",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "itame-enfermagem-nocoes-de-anatomia-1775448514037-2",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "metrocapital-enfermagem-nocoes-de-anatomia-1775448491347-6",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-4",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-5",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775447834740-2",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775447834740-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448275334-6",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448291915-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "selecon-enfermagem-nocoes-de-anatomia-1775448440742-0",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "selecon-enfermagem-nocoes-de-anatomia-1775448440742-1",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "selecon-enfermagem-nocoes-de-anatomia-1775448440742-2",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-3",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-4",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-5",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-7",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    },
+    {
+      "slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-8",
+      "slide_index": 1,
+      "reveal_mode": "omitido→auto"
+    }
+  ],
+  "correlation": {
+    "danger_count": 66,
+    "logic_not_tap_count": 66,
+    "same_slug_intersection": 66,
+    "only_danger_slug_count": 0,
+    "only_logic_not_tap_slug_count": 0,
+    "intersection_slugs": [
+      "ivin-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-5",
+      "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+      "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+      "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+      "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+      "avancasp-enfermagem-nocoes-de-anatomia-1775447782763-2",
+      "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+      "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2",
+      "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4",
+      "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-5",
+      "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-0",
+      "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+      "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-1",
+      "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-4",
+      "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-5",
+      "cpcon-uepb-enfermagem-nocoes-de-anatomia-1775448514037-3",
+      "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+      "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-3"
+    ],
+    "only_danger_sample": [],
+    "only_logic_sample": []
+  },
+  "question_profiles": {
+    "four_bespoke": 3303,
+    "mixed_bespoke_family": 271,
+    "mixed_family_generic": 1643,
+    "any_generic": 1644,
+    "four_generic": 0
+  },
+  "decision_by_type": {
+    "concept_map": {
+      "generic_semantic": 847,
+      "bespoke_affinity": 3870,
+      "family_rotation": 930,
+      "bespoke_zero_slots": 4
+    },
+    "logic_flow": {
+      "family_rotation": 1922,
+      "bespoke_affinity": 3729
+    },
+    "golden_rule": {
+      "family_rotation": 721,
+      "generic_semantic": 1353,
+      "bespoke_affinity": 3577
+    },
+    "danger_zone": {
+      "family_rotation": 2204,
+      "bespoke_affinity": 3447
+    }
+  },
+  "layout": {
+    "unique_variants": 285,
+    "top5_cumulative_pct": 27.2,
+    "top10_cumulative_pct": 39.1,
+    "top20_cumulative_pct": 57.6,
+    "top25": [
+      {
+        "variant": "compare",
+        "count": 2146,
+        "pct": 9.5
+      },
+      {
+        "variant": "reference_table",
+        "count": 1353,
+        "pct": 6
+      },
+      {
+        "variant": "cards",
+        "count": 1164,
+        "pct": 5.1
+      },
+      {
+        "variant": "morphological",
+        "count": 886,
+        "pct": 3.9
+      },
+      {
+        "variant": "vertical",
+        "count": 593,
+        "pct": 2.6
+      },
+      {
+        "variant": "vitals-panel",
+        "count": 561,
+        "pct": 2.5
+      },
+      {
+        "variant": "vitals-translate-tap",
+        "count": 561,
+        "pct": 2.5
+      },
+      {
+        "variant": "vitals-reference-board",
+        "count": 561,
+        "pct": 2.5
+      },
+      {
+        "variant": "vitals-classify-arena",
+        "count": 561,
+        "pct": 2.5
+      },
+      {
+        "variant": "sae-decision-tap",
+        "count": 462,
+        "pct": 2
+      },
+      {
+        "variant": "sae-reference-board",
+        "count": 462,
+        "pct": 2
+      },
+      {
+        "variant": "norm-reveal",
+        "count": 462,
+        "pct": 2
+      },
+      {
+        "variant": "vaccine-timeline",
+        "count": 440,
+        "pct": 1.9
+      },
+      {
+        "variant": "pni-calendar-elimination-tap",
+        "count": 440,
+        "pct": 1.9
+      },
+      {
+        "variant": "pni-calendar-board",
+        "count": 440,
+        "pct": 1.9
+      },
+      {
+        "variant": "calendar-mismatch",
+        "count": 440,
+        "pct": 1.9
+      },
+      {
+        "variant": "molecular",
+        "count": 397,
+        "pct": 1.8
+      },
+      {
+        "variant": "sae-responsibility-matrix",
+        "count": 393,
+        "pct": 1.7
+      },
+      {
+        "variant": "center",
+        "count": 365,
+        "pct": 1.6
+      },
+      {
+        "variant": "bridge",
+        "count": 327,
+        "pct": 1.4
+      },
+      {
+        "variant": "lab-specimen-chain",
+        "count": 212,
+        "pct": 0.9
+      },
+      {
+        "variant": "lab-vf-soft-stack",
+        "count": 212,
+        "pct": 0.9
+      },
+      {
+        "variant": "lab-prep-lens-board",
+        "count": 212,
+        "pct": 0.9
+      },
+      {
+        "variant": "lab-specimen-arena",
+        "count": 212,
+        "pct": 0.9
+      },
+      {
+        "variant": "banner",
+        "count": 185,
+        "pct": 0.8
+      }
+    ],
+    "rare_count_le_5": 50
+  },
+  "readiness": {
+    "A": 20387,
+    "B": 459,
+    "C": 1758
+  },
+  "readiness_by_type": {
+    "concept_map": {
+      "A": 5501,
+      "B": 129,
+      "C": 21
+    },
+    "logic_flow": {
+      "A": 5557,
+      "B": 66,
+      "C": 28
+    },
+    "golden_rule": {
+      "A": 3942,
+      "B": 0,
+      "C": 1709
+    },
+    "danger_zone": {
+      "A": 5387,
+      "B": 264,
+      "C": 0
+    }
+  }
+}

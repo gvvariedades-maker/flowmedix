@@ -235,7 +235,7 @@ export default function AdminConvitesPage() {
                   onClick={() => setLinkValidDays(d)}
                   className={`rounded-xl px-3 py-2 text-xs font-black uppercase italic ${
                     linkValidDays === d
-                      ? 'bg-slate-900 text-[#BEF264]'
+                      ? 'bg-slate-900 text-[#F26522]'
                       : 'border border-slate-200 bg-slate-50 text-slate-600'
                   }`}
                 >
@@ -285,7 +285,7 @@ export default function AdminConvitesPage() {
           <button
             type="submit"
             disabled={creating}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 py-3 text-xs font-black uppercase italic text-[#BEF264] disabled:opacity-60"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 py-3 text-xs font-black uppercase italic text-[#F26522] disabled:opacity-60"
           >
             {creating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plus className="h-4 w-4" />}
             Gerar link

@@ -77,12 +77,12 @@
         },
         {
           "label": "Item I — RCP",
-          "detail": "VERDADEIRO — profundidade adulto 5 a 6 cm (AHA/MS).",
+          "detail": "Profundidade adulto 5 a 6 cm (AHA/MS).",
           "icon": "HeartPulse"
         },
         {
           "label": "Item II — queimadura",
-          "detail": "FALSO — pasta de dente agrava; lavar com água corrente abundante.",
+          "detail": "Pasta de dente agrava; lavar com água corrente abundante.",
           "icon": "Flame"
         },
         {

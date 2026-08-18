@@ -72,11 +72,6 @@
           "label": "Leitura da banca",
           "detail": "Quando o exame é de perfil lipídico, pense primeiro em soro/plasma e depois em condições de coleta.",
           "icon": "Search"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra B: soro.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Triglicerídeos em prova = biomarcador sérico; desconfie de alternativas de secreção ou excreção"

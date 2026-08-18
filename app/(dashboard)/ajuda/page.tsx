@@ -35,10 +35,9 @@ const TOC = [
   { id: 'passo-04', label: 'Ver o gabarito e ativar estudo reverso' },
   { id: 'passo-05', label: 'Avançar no NEURO-LEARNING' },
   { id: 'passo-06', label: 'Marcar como estudado' },
-  { id: 'passo-07', label: 'Acompanhar Progresso' },
-  { id: 'passo-08', label: 'Usar o Plano diário' },
-  { id: 'passo-09', label: 'Criar caderno' },
-  { id: 'passo-10', label: 'Adicionar questões e estudar caderno' },
+  { id: 'passo-07', label: 'Acompanhar Desempenho' },
+  { id: 'passo-08', label: 'Criar caderno' },
+  { id: 'passo-09', label: 'Adicionar questões e estudar caderno' },
 ] as const;
 
 const STEPS: {
@@ -128,43 +127,30 @@ const STEPS: {
     caption: 'Figura 6 — no final do NEURO, clique em “Marcar como estudado”.',
     objetivo: 'Salvar a conclusão do estudo reverso no seu histórico.',
     clique: 'Clique em “Marcar como estudado” ou, quando já estiver concluído, observe o estado “Estudo concluído”.',
-    actionHref: '/progresso',
-    actionLabel: 'Ver Progresso após estudar',
-    depois: 'Esse registro alimenta o Progresso e ajuda o Plano diário a organizar revisões.',
+    actionHref: '/desempenho',
+    actionLabel: 'Ver Desempenho após estudar',
+    depois: 'Esse registro alimenta o Desempenho e o histórico de estudo.',
   },
   {
     id: 'passo-07',
     n: '7',
-    title: 'Acompanhe seu Progresso',
+    title: 'Acompanhe seu Desempenho',
     file: 'seq-03.png',
-    alt: 'Dashboard Progresso de estudo: meta, sequência, totais, gráfico',
+    alt: 'Dashboard Desempenho: meta, sequência, totais, gráfico',
     caption: 'Figura 7 — aqui ficam meta do dia, sequência, total estudado e atividade recente.',
     objetivo: 'Ver se você está cumprindo a rotina e quais estudos já foram concluídos.',
-    clique: 'No menu lateral, clique em “Progresso”. Para voltar ao estudo, use “Voltar para a Vitrine” no topo da página.',
-    actionHref: '/progresso',
-    actionLabel: 'Abrir Progresso',
-    depois: 'Use estes números como referência diária e, para simulados, abra Desempenho.',
+    clique: 'No menu lateral, clique em “Desempenho”. Para voltar ao estudo, use “Voltar para a Vitrine” no topo da página.',
+    actionHref: '/desempenho',
+    actionLabel: 'Abrir Desempenho',
+    depois: 'Use estes números como referência diária e, para simulados, abra a aba Simulados dentro de Desempenho.',
   },
   {
     id: 'passo-08',
     n: '8',
-    title: 'Use o Plano diário',
-    file: 'seq-04.png',
-    alt: 'Plano diário: em dia, link para a vitrine no topo',
-    caption: 'Figura 8 — se não houver revisão, o AVANT enf informa que você está em dia.',
-    objetivo: 'Cumprir as revisões agendadas pela plataforma.',
-    clique: 'No menu lateral, clique em “Plano diário”. Se aparecer “Você está em dia”, use “Voltar para a Vitrine” no topo para estudar novos assuntos.',
-    actionHref: '/plano-diario',
-    actionLabel: 'Abrir Plano diário',
-    depois: 'Quando houver questões pendentes, a tela mostrará o que revisar primeiro.',
-  },
-  {
-    id: 'passo-09',
-    n: '9',
     title: 'Crie um caderno de estudo',
     file: 'seq-05.png',
     alt: 'Página Cadernos de Estudo com lista de cadernos, estatísticas e botão Novo caderno',
-    caption: 'Figura 9 — na área de cadernos você vê seus blocos de estudo; use “+ Novo caderno” para criar outro.',
+    caption: 'Figura 8 — na área de cadernos você vê seus blocos de estudo; use “+ Novo caderno” para criar outro.',
     objetivo: 'Organizar questões por prova, tema ou estratégia.',
     clique: 'No menu, entre em “Cadernos”. Para criar, clique em “+ Novo caderno”, preencha o nome (descrição é opcional) e confirme a criação.',
     actionHref: '/cadernos/novo',
@@ -172,12 +158,12 @@ const STEPS: {
     depois: 'Depois de criado, você pode adicionar questões e estudar tudo em sequência.',
   },
   {
-    id: 'passo-10',
-    n: '10',
+    id: 'passo-09',
+    n: '9',
     title: 'Adicione questões e estude o caderno',
     file: 'seq-10.png',
     alt: 'Caderno com lista, Estudar caderno e painel Adicionar questões',
-    caption: 'Figura 10 — filtre no painel da direita, use “+” para adicionar e “Estudar caderno” para começar.',
+    caption: 'Figura 9 — filtre no painel da direita, use “+” para adicionar e “Estudar caderno” para começar.',
     objetivo: 'Transformar o caderno numa lista de estudo personalizada.',
     clique: 'No painel “Adicionar questões”, use busca/filtros e clique no “+” da questão. Depois clique em “Estudar caderno”.',
     actionHref: '/cadernos',
@@ -191,7 +177,7 @@ const QUICK_START = [
   'Abra um assunto e inicie uma questão.',
   'Responda, confirme e ative o estudo reverso.',
   'Passe pelos slides NEURO e marque como estudado.',
-  'Depois acompanhe o Progresso ou organize questões em cadernos.',
+  'Depois acompanhe o Desempenho ou organize questões em cadernos.',
 ] as const;
 
 export default function AjudaPage() {
@@ -199,7 +185,7 @@ export default function AjudaPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-8 pb-6 md:px-6">
       <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-slate-600">
-        <Sparkles className="h-3.5 w-3.5 text-[#166534]" aria-hidden />
+        <Sparkles className="h-3.5 w-3.5 text-[#9A3412]" aria-hidden />
         Guia do aluno — início rápido
       </div>
       <h1 className="text-balance text-2xl font-black tracking-tight text-slate-900 md:text-4xl">Como usar o AVANT enf</h1>
@@ -237,7 +223,7 @@ export default function AjudaPage() {
         <ol className="mt-4 grid gap-3 text-sm text-slate-800 md:grid-cols-5">
           {QUICK_START.map((item, index) => (
             <li key={item} className="card-elevated p-3">
-              <span className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#166534] text-xs font-black text-white">
+              <span className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#9A3412] text-xs font-black text-white">
                 {index + 1}
               </span>
               <span className="font-semibold leading-snug">{item}</span>
@@ -257,14 +243,14 @@ export default function AjudaPage() {
           >
             <div className="grid gap-5 lg:grid-cols-[0.95fr_1.35fr] lg:items-start">
               <div>
-                <p className="text-[11px] font-black uppercase tracking-widest text-[#166534]">Passo {s.n}</p>
+                <p className="text-[11px] font-black uppercase tracking-widest text-[#9A3412]">Passo {s.n}</p>
                 <h2 className="mt-1 text-xl font-black tracking-tight text-slate-900 md:text-2xl">{s.title}</h2>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-600 md:text-base">
                   <p>
                     <strong className="text-slate-900">Objetivo:</strong> {s.objetivo}
                   </p>
                   <div className={`border-2 p-4 ${ONDE_CLICAR}`}>
-                    <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-[#166534]">
+                    <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-[#9A3412]">
                       <MousePointerClick className="h-4 w-4" aria-hidden />
                       Onde clicar
                     </p>

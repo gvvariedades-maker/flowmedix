@@ -2,15 +2,17 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Tuberculose — vigilância e controle.
- * Fonte: Manual de Recomendações para o Controle da Tuberculose no Brasil (MS).
+ * Fonte: Manual de Recomendações para o Controle da Tuberculose no Brasil — 2ª ed.
+ * (ainda publicado pelo MS como referência nacional; página atualizada 2024).
+ * @see https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/t/tuberculose/publicacoes/manual-de-recomendacoes-para-o-controle-da-tuberculose-no-brasil.pdf
  */
 export const TUBERCULOSE_MS: GuidelineTable = {
   id: 'tuberculose-ms',
-  snapshot: 'TB — notificação, BAAR e precauções',
+  snapshot: 'Manual TB MS 2ª ed. (2019; página MS 2024) + TRM-TB',
   issuer: 'Ministério da Saúde',
   title: 'Tuberculose — vigilância epidemiológica',
   year: 2019,
-  url: 'https://bvsms.saude.gov.br/bvs/publicacoes/manual_recomendacoes_controle_tuberculose_brasil_2_ed.pdf',
+  url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/t/tuberculose/publicacoes/manual-de-recomendacoes-para-o-controle-da-tuberculose-no-brasil.pdf',
   entries: [
     {
       id: 'tb-notificacao',
@@ -28,14 +30,16 @@ export const TUBERCULOSE_MS: GuidelineTable = {
     {
       id: 'tb-transmissao',
       label: 'Transmissão',
-      value: 'gotículas e aerossóis — não contato cutâneo',
+      value: 'aerossóis respiratórios — não contato cutâneo',
+      detail:
+        'Manual MS + Anvisa Protocolo 5: TB pulmonar/laríngea = precaução por aerossóis (não só gotículas).',
       sourceId: 'tuberculose-ms',
     },
     {
       id: 'tb-precaucao-bacilifero',
       label: 'TB pulmonar bacilífera',
       value: 'precaução para aerossóis + quarto adequado',
-      detail: 'Máscara respiratória conforme protocolo institucional.',
+      detail: 'N95/PFF2 + ventilação/pressão negativa conforme protocolo; máscara cirúrgica no paciente no transporte.',
       sourceId: 'tuberculose-ms',
     },
     {
@@ -101,10 +105,26 @@ export const TUBERCULOSE_MS: GuidelineTable = {
       sourceId: 'tuberculose-ms',
     },
     {
+      id: 'tb-trm-tb',
+      label: 'TRM-TB (teste rápido molecular)',
+      value: 'método de escolha para casos novos — detecta MTB e resistência à rifampicina',
+      detail:
+        'MS/Departamento de HIV/Aids/TB: resultado em ~1,5 h; 1 amostra de escarro. Cultura permanece padrão-ouro para sensibilidade ampliada; BAAR ainda usado no acompanhamento.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-iltb-tpt',
+      label: 'ILTB / TPT',
+      value: 'tratamento da infecção latente (TPT) conforme esquema MS vigente',
+      detail:
+        'Notas Informativas MS 2024–2025 (ex. NI 25/2025 rifampicina 300 mg): esquemas com isoniazida ou rifampicina — não confundir com tratamento da TB ativa (RHZE).',
+      sourceId: 'tuberculose-ms',
+    },
+    {
       id: 'tb-cultura-confirmacao',
       label: 'Cultura para M. tuberculosis',
       value: 'Padrão-ouro para confirmação e teste de sensibilidade',
-      detail: 'Complementa BAAR e teste molecular (TRM-TB); resultado demora semanas.',
+      detail: 'Complementa BAAR e TRM-TB; resultado demora semanas.',
       sourceId: 'tuberculose-ms',
     },
     {

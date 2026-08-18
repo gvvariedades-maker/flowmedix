@@ -81,6 +81,7 @@ export async function GET(request: NextRequest) {
       slug,
       layers,
       userId: auth.user.id,
+      userEmail: auth.user.email ?? null,
       isAdmin: isAdminSessionEmail(auth.user.email ?? null),
       searchParams: estudarSearchParams,
       supabase: auth.supabase,

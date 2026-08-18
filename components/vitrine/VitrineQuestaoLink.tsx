@@ -19,6 +19,8 @@ export type VitrineQuestaoLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'
   slug: string;
   /** Query da vitrine (`?banca=…&page=…`) repassada à questão. */
   estudarQuery?: string;
+  /** Prefetch de viewport do Next.js Link. Omitir = default do Next. */
+  prefetch?: boolean;
 };
 
 export function buildVitrineSlugComQuery(slug: string, estudarQuery = ''): string {
@@ -45,6 +47,7 @@ export const VitrineQuestaoLink = forwardRef<HTMLAnchorElement, VitrineQuestaoLi
       onClick,
       onPointerEnter,
       onFocus,
+      prefetch,
       ...rest
     },
     ref,
@@ -83,6 +86,7 @@ export const VitrineQuestaoLink = forwardRef<HTMLAnchorElement, VitrineQuestaoLi
       <Link
         ref={ref}
         href={href}
+        prefetch={prefetch}
         className={className}
         onClick={handleClick}
         onPointerEnter={handlePointerEnter}

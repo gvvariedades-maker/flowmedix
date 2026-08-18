@@ -1,0 +1,50 @@
+{
+  "corpus": "file:examples/questao-premium-funcern-saude-crianca-generico-hub.json",
+  "generated_at": "2026-08-04T00:08:38.386Z",
+  "system_prompt": "Você é um leitor cego avaliando material de estudo de concurso.\nVocê NÃO tem acesso ao enunciado da questão, às alternativas nem ao gabarito.\nVocê vê apenas uma tela de estudo (mapa de conceitos).\n\nTarefa: dizer qual letra de alternativa (A–E) é o gabarito da questão original,\nusando exclusivamente o texto fornecido.\n\nRegras:\n1. Só responda uma letra se o próprio texto permitir concluir a letra correta.\n2. Se o texto ensina o conteúdo sem revelar qual alternativa é a certa,\n   responda \"indeterminavel\". Essa é a resposta esperada em material bem feito.\n3. Não deduza a letra por conhecimento clínico próprio: a pergunta é o que ESTE texto entrega.\n4. \"evidencia\" deve ser um trecho copiado do texto, caractere por caractere,\n   sem reescrever nem resumir. Sem trecho literal disponível, responda \"indeterminavel\"\n   com \"evidencia\": \"\".\n\nResponda apenas JSON: {\"gabarito\": \"A\"|\"B\"|\"C\"|\"D\"|\"E\"|\"indeterminavel\", \"evidencia\": \"...\"}",
+  "prompts": [
+    {
+      "slug": "questao-premium-funcern-saude-crianca-generico-hub",
+      "correct_letter": "B",
+      "surfaces": [
+        {
+          "path": "concept_map.items[0].label",
+          "text": "Acompanhante"
+        },
+        {
+          "path": "concept_map.items[0].detail",
+          "text": "Direito da criança — ECA e humanização."
+        },
+        {
+          "path": "concept_map.items[1].label",
+          "text": "Linguagem"
+        },
+        {
+          "path": "concept_map.items[1].detail",
+          "text": "Adaptar comunicação à faixa etária."
+        },
+        {
+          "path": "concept_map.items[2].label",
+          "text": "Brincar"
+        },
+        {
+          "path": "concept_map.items[2].detail",
+          "text": "Terapia lúdica — reduz ansiedade."
+        },
+        {
+          "path": "concept_map.items[3].label",
+          "text": "Dor"
+        },
+        {
+          "path": "concept_map.items[3].detail",
+          "text": "Avaliar e tratar — escala adequada à idade."
+        },
+        {
+          "path": "concept_map.footer_rule",
+          "text": "Criança não é adulto pequeno"
+        }
+      ],
+      "user": "TELA DE ESTUDO:\n\nAcompanhante\nDireito da criança — ECA e humanização.\nLinguagem\nAdaptar comunicação à faixa etária.\nBrincar\nTerapia lúdica — reduz ansiedade.\nDor\nAvaliar e tratar — escala adequada à idade.\nCriança não é adulto pequeno"
+    }
+  ]
+}

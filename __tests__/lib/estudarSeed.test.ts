@@ -98,4 +98,13 @@ describe('estudarSeed E2E', () => {
       true,
     );
   });
+
+  it('from=revisoes (surface descontinuada) cai na navegação normal', () => {
+    const q1 = buildE2eEstudarQuestaoPayload(E2E_ESTUDAR_SLUG_1, { from: 'revisoes' }, 'full');
+    expect(q1.status).toBe('ok');
+    if (q1.status !== 'ok') return;
+    expect(q1.payload).not.toHaveProperty('fromRevisoes');
+    expect(q1.payload).not.toHaveProperty('sameStemFallback');
+    expect(q1.payload.vitrineQuerySuffix).toBe('');
+  });
 });

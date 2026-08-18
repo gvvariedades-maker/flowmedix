@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T22:47:17.781Z",
+  "lote": "atencao-basica-saude-da-familia-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

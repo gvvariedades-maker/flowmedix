@@ -65,13 +65,23 @@ export const PT_ORACOES_BRANCHES = [
   'pt_oracoes_subordinadas_generico',
 ] as const;
 
-/** Ramos Saúde do Adolescente (ética bespoke + genéricos por eixo). */
+/** Ramos Saúde do Adolescente (glanceable v2 ética + Onda 2 + antropometria). */
 export const ADOLESCENTE_BRANCHES = [
   'adolescente_etica_sigilo',
   'adolescente_antropometria',
   'adolescente_desenvolvimento',
   'adolescente_saude_mental',
   'adolescente_violencia_protecao',
+  'adolescente_generico',
+] as const;
+
+/** Ramos Adolescente com pacote glanceable / Z bespoke 4/4. */
+export const ADOLESCENTE_BESPOKE_BRANCHES = [
+  'adolescente_etica_sigilo',
+  'adolescente_antropometria',
+  'adolescente_violencia_protecao',
+  'adolescente_saude_mental',
+  'adolescente_desenvolvimento',
   'adolescente_generico',
 ] as const;
 
@@ -203,10 +213,11 @@ export const FARMACO_BRANCHES = [
   'farmaco_generico',
 ] as const;
 
-/** Ramos Farmacodinâmica com pacote bespoke 4/4 (clínico EV + ADME journey). */
+/** Ramos Farmacodinâmica com pacote bespoke 4/4 (clínico EV + ADME + cauda EXCETO). */
 export const FARMACO_BESPOKE_BRANCHES = [
   'farmaco_clinico_protocolo',
   'farmaco_pk_pd_vf',
+  'farmaco_generico',
 ] as const;
 
 /** Ramos Cálculo — regressão L3 (dose bespoke + conceito genérico; calc_generico cauda vazia no pacote). */
@@ -376,6 +387,33 @@ export const PROMOCAO_BRANCHES = [
 
 /** Promoção — molde bespoke sus-art4-orbit (Art. 4º Lei 8.080). */
 export const PROMOCAO_BESPOKE_BRANCHES = ['promocao_art4_composicao'] as const;
+
+/** Ramos Epidemiologia — regressão L3 (6 ramos; EPI_GENERIC_DESIGN até bespoke React). */
+export const EPI_BRANCHES = [
+  'epi_notificacao_compulsoria',
+  'epi_indicadores',
+  'epi_ocorrencia_agravos',
+  'epi_vigilancia_acoes',
+  'epi_cadeia_transmissao',
+  'epi_generico',
+] as const;
+
+/** Epidemiologia — bespoke React ainda pending (lista-trap / formula-rail). */
+export const EPI_BESPOKE_BRANCHES = [] as const;
+
+/** Ramos Coleta de Exames Laboratoriais — regressão L3 (7 ramos; COLETA_GENERIC_DESIGN). */
+export const COLETA_BRANCHES = [
+  'coleta_nao_sanguinea',
+  'coleta_tubos_ordem',
+  'coleta_tecnica_venosa',
+  'coleta_jejum_preparo',
+  'coleta_capilar_glicemia',
+  'coleta_hemocultura',
+  'coleta_generico',
+] as const;
+
+/** Coleta — bespoke React ainda pending. */
+export const COLETA_BESPOKE_BRANCHES = [] as const;
 
 /** Ramos História com concept_map bridge (marcos / ética COFEN). */
 export const HISTORIA_BESPOKE_BRANCHES = [
