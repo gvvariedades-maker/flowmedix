@@ -19,6 +19,29 @@ jest.mock('@/lib/api/fetch-with-auth', () => ({
   fetchWithAuth: (...args: unknown[]) => mockFetchWithAuth(...args),
 }));
 
+jest.mock('@/lib/layout/useDashboardBottomInset', () => ({
+  useDashboardBottomInset: () => ({ pageBottomPadding: 'pb-24' }),
+}));
+
+jest.mock('framer-motion', () => {
+  const React = require('react') as typeof import('react');
+  const Strip = ({ children, ...rest }: { children?: React.ReactNode; [k: string]: unknown }) => {
+    const safe: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(rest)) {
+      if (k === 'className' || k === 'style' || k === 'role' || k.startsWith('aria-') || k === 'id') {
+        safe[k] = v;
+      }
+    }
+    return React.createElement('div', safe, children);
+  };
+  return {
+    motion: { div: Strip },
+    AnimatePresence: ({ children }: { children?: React.ReactNode }) =>
+      React.createElement(React.Fragment, null, children),
+    useReducedMotion: () => true,
+  };
+});
+
 const modulos: ModuloTemplateRow[] = [
   { modulo_slug: 'vias-1', titulo_aula: 'Vias de Administração', modulo_nome: 'Farmaco', banca: 'CPCON' },
   { modulo_slug: 'vias-2', titulo_aula: 'Vias de Administração', modulo_nome: 'Farmaco', banca: 'CPCON' },
@@ -117,12 +140,14 @@ describe('NovoCadernoClient — origem desempenho (lote estrito)', () => {
     expect(mockFetchWithAuth).not.toHaveBeenCalled();
   });
 
-  it('origem edital mantém o preset do edital (sem modo estrito)', async () => {
+  it('origem edital usa wizard de 3 etapas (sem modo estrito)', async () => {
     render(<NovoCadernoClient context={buildContext({ origem: 'edital' })} />);
-    await irParaPasso2();
+    fireEvent.change(screen.getByLabelText(/Nome do caderno/), { target: { value: 'Meus erros' } });
+    fireEvent.click(screen.getByRole('button', { name: /Continuar/ }));
 
-    expect(screen.getByText(/Sua banca:/)).toBeInTheDocument();
+    expect(await screen.findByText('2 de 3')).toBeInTheDocument();
     expect(screen.queryByText('Assuntos escolhidos no seu desempenho')).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Criar e adicionar questões/ })).toBeEnabled();
+    expect(await screen.findByRole('button', { name: /Revisar/ })).toBeEnabled();
+    expect(screen.queryByRole('button', { name: /Criar e adicionar questões/ })).not.toBeInTheDocument();
   });
 });

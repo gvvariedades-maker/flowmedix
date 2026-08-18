@@ -13,8 +13,7 @@ export default async function NovoCadernoPage({
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
-  const { wizard: wizardParam, origem: origemParam } = await searchParams;
-  const wizard = wizardParam === '1';
+  const { origem: origemParam } = await searchParams;
   const origem = origemParam === 'desempenho' ? 'desempenho' : 'edital';
   const isAdmin = isAdminSessionEmail(session.user.email ?? null);
 
@@ -26,7 +25,7 @@ export default async function NovoCadernoPage({
   const editalRow = matriculatedConcursos.find((concurso) => concurso.tipo === 'edital');
 
   const context: NovoCadernoContext = {
-    wizard,
+    wizard: true,
     origem,
     edital: editalRow
       ? {
@@ -42,8 +41,10 @@ export default async function NovoCadernoPage({
       titulo_aula: m.titulo_aula,
       modulo_nome: m.modulo_nome,
       banca: m.banca,
+      avant_codigo: m.avant_codigo ?? null,
     })),
   };
 
+  // Sempre wizard. Edital: 3 etapas. Hub desempenho: lote estrito em 2 etapas. `?wizard=1` permanece compatível.
   return <NovoCadernoClient context={context} />;
 }

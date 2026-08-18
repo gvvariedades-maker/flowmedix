@@ -11,6 +11,7 @@ export type ModuloTemplateRow = {
   titulo_aula: string | null;
   modulo_nome: string | null;
   banca: string | null;
+  avant_codigo?: number | null;
 };
 
 export type AssuntoPresetEntry = {

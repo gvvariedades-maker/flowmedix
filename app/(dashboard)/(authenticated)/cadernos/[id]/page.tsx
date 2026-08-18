@@ -11,6 +11,7 @@ import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalo
 import CadernoDetailClient from './CadernoDetailClient';
 import CadernoDetailMetrics from '@/components/dashboard/cadernos/CadernoDetailMetrics';
 import { CadernoReverseStudyBadge } from '@/components/dashboard/cadernos/CadernoReverseStudyBadge';
+import { resolveCadernoSetupMode, type CadernoSetupMode } from '@/lib/cadernos/setupMode';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 
 export interface NotebookItem {
@@ -40,7 +41,7 @@ export interface CadernoDetail {
   items: NotebookItem[];
 }
 
-export type CadernoSetupMode = 'none' | 'setup' | 'done';
+export type { CadernoSetupMode };
 
 export default async function CadernoDetailPage({
   params,
@@ -51,8 +52,7 @@ export default async function CadernoDetailPage({
 }) {
   const { id } = await params;
   const { setup: setupParam } = await searchParams;
-  const setupMode: CadernoSetupMode =
-    setupParam === 'done' ? 'done' : setupParam === '1' ? 'setup' : 'none';
+  const setupMode = resolveCadernoSetupMode(setupParam);
 
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
