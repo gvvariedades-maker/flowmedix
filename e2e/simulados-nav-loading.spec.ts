@@ -17,8 +17,6 @@ const SLOW_LOADING_ASSERT_TIMEOUT_MS = SIMULADOS_NAV_PENDING_TIMEOUT_MS + 10_000
 type HubHangGate = {
   hold: Promise<void>;
   release: () => void;
-  arm: () => void;
-  armed: boolean;
   entered: number;
   held: string[];
   missed: string[];
@@ -31,23 +29,18 @@ function createHubHangGate(): HubHangGate {
   const hold = new Promise<void>((resolve) => {
     resolveHold = resolve;
   });
-  const gate: HubHangGate = {
+  return {
     hold,
-    armed: false,
     entered: 0,
     held: [],
     missed: [],
     seen: [],
-    arm() {
-      gate.armed = true;
-    },
     release() {
       if (settled) return;
       settled = true;
       resolveHold();
     },
   };
-  return gate;
 }
 
 function summarizeFlight(request: Request): string {
@@ -125,14 +118,25 @@ function isSimuladosClientFlight(request: Request): boolean {
   return looksLikeNextFlight(request) || isSimuladosRsc(request);
 }
 
+/** Document `/simulados` — em prod o bypass E2E serviria o hub na hora se o hang só pegasse RSC. */
+function isSimuladosDocumentNav(request: Request): boolean {
+  if (request.resourceType() !== 'document') return false;
+  try {
+    const pathname = new URL(request.url()).pathname;
+    return pathname === '/simulados' || pathname.startsWith('/simulados/');
+  } catch {
+    return false;
+  }
+}
+
 async function interceptSimuladosRsc(page: Page) {
   await page.route('**/simulados**', async (route) => {
     const request = route.request();
-    if (request.resourceType() === 'document' || !targetsSimuladosHub(request)) {
-      await route.continue();
-      return;
-    }
-    if (!isSimuladosRsc(request) && request.resourceType() !== 'fetch') {
+    const delayDocument = isSimuladosDocumentNav(request);
+    const delayFlight =
+      request.resourceType() !== 'document' &&
+      (isSimuladosRsc(request) || request.resourceType() === 'fetch');
+    if (!delayDocument && !delayFlight) {
       await route.continue();
       return;
     }
@@ -153,15 +157,9 @@ async function hangSimuladosRsc(page: Page, gate: HubHangGate) {
   });
   const handle = async (route: Route) => {
     const request = route.request();
-    if (
-      !gate.armed ||
-      request.resourceType() === 'document' ||
-      !isSimuladosClientFlight(request)
-    ) {
-      if (
-        request.resourceType() !== 'document' &&
-        targetsSimuladosHub(request)
-      ) {
+    const hang = isSimuladosDocumentNav(request) || isSimuladosClientFlight(request);
+    if (!hang) {
+      if (request.resourceType() !== 'document' && targetsSimuladosHub(request)) {
         gate.missed.push(summarizeFlight(request));
       }
       await route.fallback();
@@ -250,6 +248,7 @@ async function gotoEstudarDashboard(page: Page) {
   if (await closeWelcome.isVisible().catch(() => false)) {
     await closeWelcome.click();
   }
+  await expect(page.locator('html[data-theme="editorial"]')).toBeAttached({ timeout: 15_000 });
 }
 
 async function warmupSimuladosCompile(page: Page) {
@@ -326,8 +325,10 @@ test.describe('Simulados nav — loading.tsx', () => {
     const navLink = simuladosNavLocator(page, 'desktop');
     await expect(navLink).toBeVisible({ timeout: 60_000 });
     await navLink.focus();
-    await page.keyboard.press('Enter');
-    await expect(visibleSimuladosLoading(page)).toBeVisible({ timeout: 5_000 });
+    await Promise.all([
+      expect(visibleSimuladosLoading(page)).toBeVisible({ timeout: 5_000 }),
+      page.keyboard.press('Enter'),
+    ]);
     await expect(page.locator('html[data-simulados-nav-pending="true"]')).toBeAttached();
     await expect(page.locator('[data-simulados-hub="lista"]')).toBeVisible({ timeout: 20_000 });
   });
@@ -422,11 +423,13 @@ test.describe('Simulados nav — loading.tsx', () => {
       await gotoEstudarDashboard(page);
       const navLink = simuladosNavLocator(page, 'desktop');
       await expect(navLink).toBeVisible({ timeout: 60_000 });
-      gate.arm();
       await navLink.click({ noWaitAfter: true, force: true });
-      await expect(page.locator('html[data-simulados-nav-pending="true"]')).toBeAttached({
-        timeout: 15_000,
-      });
+      await expect
+        .poll(async () => page.locator('html').getAttribute('data-simulados-nav-pending'), {
+          timeout: 5_000,
+          message: `pending não marcou; entered=${gate.entered} held=${gate.held.join(' | ') || '∅'} missed=${gate.missed.join(' | ') || '∅'} seen=${gate.seen.slice(-8).join(' | ') || '∅'}`,
+        })
+        .toBe('true');
       await expect(visibleSimuladosLoading(page)).toBeVisible({ timeout: 5_000 });
       await expect
         .poll(() => gate.entered, {

@@ -1,9 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { SimuladosListClient } from '@/components/simulados/SimuladosListClient';
-
-jest.mock('@/lib/layout/useDashboardBottomInset', () => ({
-  useDashboardBottomInset: () => ({ pageBottomPadding: 'pb-24' }),
-}));
+import { SimuladosHubShell } from '@/components/simulados/SimuladosHubShell';
 
 jest.mock('next/navigation', () => ({
   useRouter: () => ({ push: jest.fn(), replace: jest.fn(), prefetch: jest.fn() }),
@@ -80,12 +77,57 @@ describe('SimuladosListClient — simulados livres', () => {
     expect(screen.getAllByText('Treino')).toHaveLength(2);
   });
 
-  it('link para missão da semana no header', () => {
-    render(<SimuladosListClient openSession={null} recentSessions={[]} />);
+  it('P0 pendente não mostra empty state mesmo sem sessão aberta', () => {
+    const { container } = render(
+      <SimuladosListClient openSession={null} recentSessions={[]} historyReady={false} />,
+    );
 
+    expect(screen.queryByRole('heading', { name: 'Nenhum simulado ainda' })).not.toBeInTheDocument();
+    expect(screen.getByTestId('simulados-history-loading')).toBeInTheDocument();
+    expect(container.querySelector('[data-simulados-enrichment="pending"]')).toBeInTheDocument();
+  });
+
+  it('erro no P1 preserva a sessão aberta e não mostra empty', () => {
+    const { container } = render(
+      <SimuladosListClient
+        openSession={openLivre}
+        recentSessions={[]}
+        historyReady
+        historyPending
+      />,
+    );
+
+    expect(screen.getByText('Prova Urgências')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Continuar simulado' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Nenhum simulado ainda' })).not.toBeInTheDocument();
+    expect(screen.getByTestId('simulados-history-loading')).toBeInTheDocument();
+    expect(container.querySelector('[data-simulados-enrichment="error"]')).toBeInTheDocument();
+  });
+
+  it('empty real só depois do P1', () => {
+    render(<SimuladosListClient openSession={null} recentSessions={[]} historyReady />);
+
+    expect(screen.getByRole('heading', { name: 'Nenhum simulado ainda' })).toBeInTheDocument();
+    expect(screen.queryByTestId('simulados-history-loading')).not.toBeInTheDocument();
+  });
+});
+
+describe('SimuladosHubShell', () => {
+  it('expõe título e CTA Novo simulado fora da lista', () => {
+    render(
+      <SimuladosHubShell>
+        <div />
+      </SimuladosHubShell>,
+    );
+
+    expect(screen.getByRole('heading', { name: 'Simulados' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Missão da semana' })).toHaveAttribute(
       'href',
       '/missao-semanal',
+    );
+    expect(screen.getByRole('link', { name: 'Novo simulado' })).toHaveAttribute(
+      'href',
+      '/simulados/novo',
     );
   });
 });

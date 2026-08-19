@@ -105,7 +105,12 @@ describe('DashboardShell mobile scroll shell', () => {
       join(process.cwd(), 'components', 'simulados', 'SimuladosListClient.tsx'),
       'utf8',
     );
-    expect(simulados).toContain('useDashboardBottomInset');
+    const simuladosShell = readFileSync(
+      join(process.cwd(), 'components', 'simulados', 'SimuladosHubShell.tsx'),
+      'utf8',
+    );
+    expect(simulados).not.toContain('useDashboardBottomInset');
+    expect(simuladosShell).toContain('DashboardMobilePage');
     expect(simulados).not.toMatch(/calc\(5rem/);
     const ajuda = readFileSync(join(process.cwd(), 'app', '(dashboard)', 'ajuda', 'page.tsx'), 'utf8');
     expect(ajuda).not.toContain('pb-20');
