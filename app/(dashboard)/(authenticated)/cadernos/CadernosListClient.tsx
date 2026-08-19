@@ -5,16 +5,14 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookMarked, BookOpen, Clock, Layers, X, Loader2, Trash2, Play, Pencil, Plus } from 'lucide-react';
 import { CadernosEmptyState } from '@/components/dashboard/cadernos/CadernosEmptyState';
-import { CadernosHeader } from '@/components/dashboard/cadernos/CadernosHeader';
+import { CadernosPacksLoadingSkeleton } from '@/components/dashboard/cadernos/CadernosListLoadingSkeleton';
 import { PacksProntosSection } from '@/components/dashboard/cadernos/PacksProntosSection';
 import { Button } from '@/components/ui/button';
 import { ProgressRing } from '@/components/ui/progress-ring';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
+import type { NotebookSummary } from '@/lib/cadernos/notebookSummary';
 import type { ResolvedPack } from '@/lib/cadernos/resolvePacks';
 import { cn } from '@/lib/utils';
-import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
-import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
-import type { NotebookSummary } from './page';
 
 function tempoRelativo(iso: string): string {
   const diff = Date.now() - new Date(iso).getTime();
@@ -128,38 +126,50 @@ function ConfirmExcluirModal({
   );
 }
 
+function ProgressRingPending() {
+  return (
+    <div
+      className="h-[52px] w-[52px] shrink-0 animate-pulse rounded-full bg-muted/50"
+      role="status"
+      aria-label="Carregando progresso do caderno"
+    />
+  );
+}
+
 export default function CadernosListClient({
   cadernos: inicial,
   editalBanca = null,
   packs = [],
+  packsReady = true,
+  progressPending = false,
 }: {
   cadernos: NotebookSummary[];
   editalBanca?: string | null;
   packs?: ResolvedPack[];
+  /** False enquanto o P1 (histórico/catálogo) ainda não chegou — não mostrar empty state. */
+  packsReady?: boolean;
+  /** Anel 0/N sem histórico seria mentira; skeleton até o enrich. */
+  progressPending?: boolean;
 }) {
-  const { pageBottomPadding } = useDashboardBottomInset('default');
   const [cadernos, setCadernos] = useState(inicial);
   const [pendingDelete, setPendingDelete] = useState<NotebookSummary | null>(null);
 
   const hasPacks = packs.length > 0;
   const hasCadernos = cadernos.length > 0;
-  const showEmptyState = !hasCadernos && !hasPacks;
+  const showEmptyState = packsReady && !hasCadernos && !hasPacks;
 
   return (
     <div
-      className={cn(DASHBOARD_PAGE_ROOT, 'bg-background', pageBottomPadding)}
       data-cadernos-hub="lista"
+      data-cadernos-enrichment={packsReady ? (progressPending ? 'error' : 'ready') : 'pending'}
     >
-      <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-        <CadernosHeader />
-      </div>
-
       <div className="mx-auto max-w-4xl space-y-8 px-4 py-6 sm:px-6 md:px-10 md:pt-8">
-        {hasPacks && <PacksProntosSection packs={packs} />}
+        {hasPacks ? <PacksProntosSection packs={packs} /> : null}
+        {!packsReady && !hasPacks ? <CadernosPacksLoadingSkeleton /> : null}
 
         {showEmptyState ? (
           <CadernosEmptyState editalBanca={editalBanca} />
-        ) : (
+        ) : hasCadernos || hasPacks ? (
           <section aria-labelledby="meus-cadernos-heading" className="space-y-4">
             <div className="flex flex-wrap items-end justify-between gap-3">
               <div>
@@ -203,7 +213,9 @@ export default function CadernosListClient({
                         )}
                       >
                         <div className="flex min-w-0 flex-1 items-start gap-4">
-                          {c.itemCount > 0 ? (
+                          {c.itemCount > 0 && progressPending ? (
+                            <ProgressRingPending />
+                          ) : c.itemCount > 0 ? (
                             <ProgressRingCaderno studied={c.studiedCount} total={c.itemCount} />
                           ) : (
                             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(242,101,34,0.25)] bg-[rgba(242,101,34,0.10)]">
@@ -222,7 +234,7 @@ export default function CadernosListClient({
                             {c.description && (
                               <p className="mt-0.5 truncate text-sm font-medium text-slate-500">{c.description}</p>
                             )}
-                            {c.studyEntryTitle && c.itemCount > 0 && (
+                            {!progressPending && c.studyEntryTitle && c.itemCount > 0 && (
                               <p className="mt-1 truncate text-xs font-semibold text-[#9A3412]">
                                 Próxima
                                 {c.studyEntryPosition != null ? ` (${c.studyEntryPosition}/${c.itemCount})` : ''}:{' '}
@@ -300,7 +312,7 @@ export default function CadernosListClient({
               </>
             ) : null}
           </section>
-        )}
+        ) : null}
       </div>
 
       <AnimatePresence>

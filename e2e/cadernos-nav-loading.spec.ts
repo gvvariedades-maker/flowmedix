@@ -89,14 +89,17 @@ function looksLikeNextFlight(request: Request): boolean {
   );
 }
 
+function cadernosPathname(request: Request): string | null {
+  try {
+    return new URL(request.url()).pathname;
+  } catch {
+    return null;
+  }
+}
+
 function targetsCadernosHub(request: Request): boolean {
   const headers = request.headers();
-  let pathname = '';
-  try {
-    pathname = new URL(request.url()).pathname;
-  } catch {
-    return false;
-  }
+  const pathname = cadernosPathname(request) ?? '';
   const nextUrl = (headers['next-url'] ?? '').split('?')[0];
   return (
     pathname === '/cadernos' ||
@@ -104,6 +107,13 @@ function targetsCadernosHub(request: Request): boolean {
     nextUrl === '/cadernos' ||
     nextUrl.startsWith('/cadernos/')
   );
+}
+
+/** Document `/cadernos` — em prod o bypass E2E serviria o hub na hora se o hang só pegasse RSC. */
+function isCadernosDocumentNav(request: Request): boolean {
+  if (request.resourceType() !== 'document') return false;
+  const pathname = cadernosPathname(request);
+  return pathname === '/cadernos' || Boolean(pathname?.startsWith('/cadernos/'));
 }
 
 /**
@@ -121,11 +131,11 @@ function isCadernosClientFlight(request: Request): boolean {
 async function interceptCadernosRsc(page: Page) {
   await page.route('**/cadernos**', async (route) => {
     const request = route.request();
-    if (request.resourceType() === 'document') {
-      await route.continue();
-      return;
-    }
-    if (!isCadernosRsc(request) && request.resourceType() !== 'fetch') {
+    const delayDocument = isCadernosDocumentNav(request);
+    const delayFlight =
+      request.resourceType() !== 'document' &&
+      (isCadernosRsc(request) || request.resourceType() === 'fetch');
+    if (!delayDocument && !delayFlight) {
       await route.continue();
       return;
     }
@@ -146,11 +156,9 @@ async function hangCadernosRsc(page: Page, gate: HubHangGate) {
   });
   const handle = async (route: Route) => {
     const request = route.request();
-    if (request.resourceType() === 'document' || !isCadernosClientFlight(request)) {
-      if (
-        request.resourceType() !== 'document' &&
-        targetsCadernosHub(request)
-      ) {
+    const hang = isCadernosDocumentNav(request) || isCadernosClientFlight(request);
+    if (!hang) {
+      if (request.resourceType() !== 'document' && targetsCadernosHub(request)) {
         gate.missed.push(summarizeFlight(request));
       }
       await route.fallback();
@@ -239,6 +247,7 @@ async function gotoEstudarDashboard(page: Page) {
   if (await closeWelcome.isVisible().catch(() => false)) {
     await closeWelcome.click();
   }
+  await expect(page.locator('html[data-theme="editorial"]')).toBeAttached({ timeout: 15_000 });
 }
 
 async function warmupCadernosCompile(page: Page) {
@@ -398,7 +407,12 @@ test.describe('Cadernos nav — loading.tsx', () => {
       const navLink = cadernosNavLocator(page, 'desktop');
       await expect(navLink).toBeVisible({ timeout: 60_000 });
       await navLink.click({ noWaitAfter: true, force: true });
-      await expect(page.locator('html[data-cadernos-nav-pending="true"]')).toBeAttached();
+      await expect
+        .poll(async () => page.locator('html').getAttribute('data-cadernos-nav-pending'), {
+          timeout: 5_000,
+          message: `pending não marcou; entered=${gate.entered} held=${gate.held.join(' | ') || '∅'} missed=${gate.missed.join(' | ') || '∅'} seen=${gate.seen.slice(-8).join(' | ') || '∅'}`,
+        })
+        .toBe('true');
       await expect(visibleCadernosLoading(page)).toBeVisible({ timeout: 5_000 });
       await expect
         .poll(() => gate.entered, {
