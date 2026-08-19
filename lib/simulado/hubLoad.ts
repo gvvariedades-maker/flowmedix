@@ -1,7 +1,9 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
+import { logger } from '@/lib/logger';
 import { normalizeSessionMode } from '@/lib/simulado/analyticsSummary';
 import { loadSimuladoHistory } from '@/lib/simulado/history';
 import { resolveSimuladoSessionKind, isAdaptiveSimuladoKind, type SimuladoSessionKind } from '@/lib/simulado/sessionKind';
+import { createSupabaseServerClient } from '@/lib/supabase/server-auth';
 
 export type SimuladoHubOpenSession = {
   id: string;
@@ -24,7 +26,11 @@ export type SimuladoHubSessionItem = {
   session_kind: SimuladoSessionKind;
 };
 
-export type SimuladosHubData = {
+export type SimuladosHubCore = {
+  openSession: SimuladoHubOpenSession | null;
+};
+
+export type SimuladosHubEnriched = {
   openSession: SimuladoHubOpenSession | null;
   recentSessions: SimuladoHubSessionItem[];
 };
@@ -38,10 +44,30 @@ type OpenSessionRow = {
   filtros?: Record<string, unknown> | null;
 };
 
-export async function loadSimuladosHubData(
+function mapOpenSession(openRow: OpenSessionRow | null): SimuladoHubOpenSession | null {
+  if (!openRow || isAdaptiveSimuladoKind(resolveSimuladoSessionKind(openRow.filtros))) {
+    return null;
+  }
+
+  return {
+    id: openRow.id,
+    total_questoes: openRow.total_questoes,
+    modo: normalizeSessionMode({
+      id: openRow.id,
+      status: openRow.status,
+      filtros: openRow.filtros ?? undefined,
+      created_at: openRow.created_at,
+    }),
+    titulo: openRow.titulo?.trim() ?? '',
+    created_at: openRow.created_at,
+    session_kind: resolveSimuladoSessionKind(openRow.filtros),
+  };
+}
+
+async function fetchOpenSession(
   supabase: SupabaseClient,
   userId: string,
-): Promise<SimuladosHubData> {
+): Promise<SimuladoHubOpenSession | null> {
   const { data: openRow, error: openError } = await supabase
     .from('simulado_sessions')
     .select('id, total_questoes, status, titulo, created_at, filtros')
@@ -55,23 +81,27 @@ export async function loadSimuladosHubData(
     throw openError;
   }
 
-  const openSession: SimuladoHubOpenSession | null =
-    openRow && !isAdaptiveSimuladoKind(resolveSimuladoSessionKind(openRow.filtros))
-      ? {
-          id: openRow.id,
-          total_questoes: openRow.total_questoes,
-          modo: normalizeSessionMode({
-            id: openRow.id,
-            status: openRow.status,
-            filtros: openRow.filtros ?? undefined,
-            created_at: openRow.created_at,
-          }),
-          titulo: openRow.titulo?.trim() ?? '',
-          created_at: openRow.created_at,
-          session_kind: resolveSimuladoSessionKind(openRow.filtros),
-        }
-      : null;
+  return mapOpenSession(openRow);
+}
 
+/**
+ * P0 da lista `/simulados`: sessão aberta (continuar).
+ * Não espera histórico — concluídos e % ficam no enrich.
+ */
+export async function loadSimuladosHubCore(userId: string): Promise<SimuladosHubCore> {
+  const supabase = await createSupabaseServerClient();
+  const openSession = await fetchOpenSession(supabase, userId);
+  return { openSession };
+}
+
+/**
+ * P1: histórico 90d concluído. Lista “Concluídos recentemente” + percentual.
+ */
+export async function loadSimuladosHubEnrichment(
+  userId: string,
+  core: SimuladosHubCore,
+): Promise<SimuladosHubEnriched> {
+  const supabase = await createSupabaseServerClient();
   const history = await loadSimuladoHistory(supabase, userId, {
     periodo: '90d',
     modo: 'todos',
@@ -84,7 +114,7 @@ export async function loadSimuladosHubData(
   });
 
   const recentSessions: SimuladoHubSessionItem[] = history.sessions
-    .filter((row) => row.id !== openSession?.id)
+    .filter((row) => row.id !== core.openSession?.id)
     .filter((row) => !isAdaptiveSimuladoKind(resolveSimuladoSessionKind(row.filtros)))
     .map((row) => ({
       id: row.id,
@@ -98,5 +128,9 @@ export async function loadSimuladosHubData(
       session_kind: resolveSimuladoSessionKind(row.filtros),
     }));
 
-  return { openSession, recentSessions };
+  return { openSession: core.openSession, recentSessions };
+}
+
+export function logSimuladosLoadError(error: unknown, userId?: string): void {
+  logger.error('Failed to load simulados hub', error, userId ? { userId } : undefined);
 }

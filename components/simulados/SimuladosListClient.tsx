@@ -11,11 +11,10 @@ import {
   Play,
 } from 'lucide-react';
 import { SimuladosEmptyState } from '@/components/simulados/SimuladosEmptyState';
-import { SimuladosHeader } from '@/components/simulados/SimuladosHeader';
+import { SimuladosHistoryLoadingSkeleton } from '@/components/simulados/SimuladosListLoadingSkeleton';
 import { adaptiveContinueCtaLabel } from '@/components/simulados/AdaptiveSimuladoSessionChip';
 import { Button } from '@/components/ui/button';
 import { NeonBadge } from '@/components/ui/neon-badge';
-import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import type { SimuladoHubOpenSession, SimuladoHubSessionItem } from '@/lib/simulado/hubLoad';
 import { sessionDisplayTitulo } from '@/lib/simulado/provaMeta';
 import type { SimuladoSessionKind } from '@/lib/simulado/sessionKind';
@@ -66,25 +65,28 @@ function sessionKindBadge(sessionKind: SimuladoSessionKind) {
 type SimuladosListClientProps = {
   openSession: SimuladoHubOpenSession | null;
   recentSessions: SimuladoHubSessionItem[];
+  /** False enquanto o P1 (histórico) ainda não chegou — não mostrar empty state. */
+  historyReady?: boolean;
+  /** Erro no P1: preserva P0 e skeleton dos recentes. */
+  historyPending?: boolean;
 };
 
-export function SimuladosListClient({ openSession, recentSessions }: SimuladosListClientProps) {
-  const { pageBottomPadding } = useDashboardBottomInset('default');
-  const isEmpty = !openSession && recentSessions.length === 0;
+export function SimuladosListClient({
+  openSession,
+  recentSessions,
+  historyReady = true,
+  historyPending = false,
+}: SimuladosListClientProps) {
+  const showEmptyState = historyReady && !historyPending && !openSession && recentSessions.length === 0;
+  const showHistorySkeleton = (!historyReady || historyPending) && recentSessions.length === 0;
 
   return (
-    <div className="bg-background" data-simulados-hub="lista">
-      <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-        <SimuladosHeader />
-      </div>
-
-      <div
-        className={cn(
-          'mx-auto max-w-4xl px-4 py-6 sm:px-6 md:px-10 md:pt-8 md:pb-8',
-          pageBottomPadding,
-        )}
-      >
-        {isEmpty ? (
+    <div
+      data-simulados-hub="lista"
+      data-simulados-enrichment={historyReady ? (historyPending ? 'error' : 'ready') : 'pending'}
+    >
+      <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 md:px-10 md:pt-8">
+        {showEmptyState ? (
           <SimuladosEmptyState />
         ) : (
           <div className="space-y-8">
@@ -136,6 +138,8 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                 </motion.div>
               </section>
             ) : null}
+
+            {showHistorySkeleton ? <SimuladosHistoryLoadingSkeleton /> : null}
 
             {recentSessions.length > 0 ? (
               <section aria-labelledby="simulados-recentes-heading">
