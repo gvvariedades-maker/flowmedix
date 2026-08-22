@@ -1,0 +1,148 @@
+{
+  "projection_version": "neuro-content-projection-v1",
+  "question_slug": "cpcon-saude-mulher-pre-natal-vf",
+  "meta": {
+    "family": "vf",
+    "subtopico": "Saúde da Mulher",
+    "pedagogical_branch": "mulher_prenatal",
+    "content_standard": "golden-v1"
+  },
+  "question_data": {
+    "instruction": "Sobre pré-natal e saúde da mulher, analise as afirmativas.\n\nI - A primeira consulta de pré-natal deve ocorrer o mais precocemente possível, idealmente no primeiro trimestre.\nII - A suplementação de ácido fólico é recomendada no período pré-concepcional e no início da gestação para redução de defeitos do tubo neural.\nIII - O tabagismo na gestação não altera desfechos fetais, sendo hábito irrelevante para o acompanhamento pré-natal.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Pré-natal — trilho gestacional",
+      "items": [
+        {
+          "label": "Marco da questão",
+          "detail": "1º trimestre — início precoce do pré-natal (assertiva I).",
+          "icon": "Calendar"
+        },
+        {
+          "label": "Ácido fólico",
+          "detail": "Pré-concepção e início da gestação — previne defeito de tubo neural (II).",
+          "icon": "Pill"
+        },
+        {
+          "label": "Consultas mínimas",
+          "detail": "6 ou mais consultas — mensal até 28 semanas (Caderno AB 32).",
+          "icon": "Heart"
+        },
+        {
+          "label": "Tabagismo",
+          "detail": "Aumenta riscos maternos e fetais — III é falsa.",
+          "icon": "Cigarette"
+        }
+      ],
+      "footer_rule": "Pré-natal precoce + ácido fólico — tabagismo importa"
+    },
+    {
+      "type": "logic_flow",
+      "steps": [
+        "Identificar formato: três afirmativas (I–III) sobre pré-natal + “É CORRETO o que se afirma em”.",
+        "Julgar I: primeira consulta no 1º trimestre → VERDADEIRA — captação precoce.",
+        "Julgar II: ácido fólico pré-concepção/início da gestação → VERDADEIRA.",
+        "Julgar III: tabagismo irrelevante na gestação → FALSA — fator de risco materno-fetal.",
+        "Montar conjunto verdadeiro: I e II apenas; III fica de fora.",
+        "Localizar alternativa B = “I e II, apenas”.",
+        "Eliminar A (só I), C (II e III com III falsa), D (inclui III), E (só III).",
+        "Marcar B.",
+        "Fixação: cessação do tabaco é orientação obrigatória na gestação."
+      ],
+      "footer_rule": "Gestação: início cedo + suplementação + fatores de risco",
+      "reveal_mode": "tap"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Caderno AB 32 — referência",
+      "content": "PRÉ-NATAL",
+      "rows": [
+        {
+          "label": "1ª consulta",
+          "value": "O mais cedo possível — ideal 1º trimestre",
+          "badge": "ok"
+        },
+        {
+          "label": "Ácido fólico",
+          "value": "Pré-concepção e início da gestação",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Consultas mínimas",
+          "value": "6 ou mais — não 4",
+          "badge": "hot"
+        },
+        {
+          "label": "TTGO 75g",
+          "value": "Entre 24 e 28 semanas — não no 1º trimestre",
+          "badge": "warn"
+        },
+        {
+          "label": "Tabagismo",
+          "value": "Fator de risco — orientar cessação",
+          "emphasis": "alert",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "III nega dano do tabaco — pegadinha clássica"
+    },
+    {
+      "type": "danger_zone",
+      "content": "PEGADINHAS — TIMING PRÉ-NATAL",
+      "items": [
+        {
+          "label": "Letra A — I, apenas",
+          "detail": "Descarta II verdadeira sobre ácido fólico.",
+          "correct": "II também é verdadeira — suplementação pré-concepção e início da gestação."
+        },
+        {
+          "label": "Letra C — II e III",
+          "detail": "Inclui III falsa (tabagismo irrelevante).",
+          "correct": "III é falsa — tabagismo aumenta riscos maternos e fetais na gestação."
+        },
+        {
+          "label": "Letra D — I, II e III",
+          "detail": "Aceita III como verdadeira.",
+          "correct": "III contradiz evidências — tabagismo é fator de risco na gestação."
+        },
+        {
+          "label": "Letra E — III, apenas",
+          "detail": "Só a afirmativa falsa sobre tabagismo.",
+          "correct": "I e II são verdadeiras — captação precoce e ácido fólico."
+        }
+      ],
+      "footer_rule": "Cruzar trimestre × exame × periodicidade — não decorar frase solta",
+      "bullet_style": "x_icon"
+    }
+  ]
+}

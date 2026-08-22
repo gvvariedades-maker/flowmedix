@@ -1,0 +1,190 @@
+{
+  "schema_version": "neuro-visual-runtime-plan-v1",
+  "plan_id": "nvp1:vunesp-saude-mulher-papanicolau:86e32e349455333e",
+  "question_slug": "vunesp-saude-mulher-papanicolau",
+  "content_hash": "sha256:f5ccc8367615c718b3dcd2994cdcb23c09882f0974e48270a2469d73119fb986",
+  "profile_hash": "sha256:86e32e349455333eddeee20b52aad29074cac3b01e4cb5ccceb8112f038396b0",
+  "catalog_version": "neurovisual-catalog-v1",
+  "renderer_contract_version": "neurovisual-shadow-preview-v1",
+  "slides": [
+    {
+      "slide_type": "concept_map",
+      "composition_id": "nv1.concept_map.critical_number",
+      "slot_bindings": [
+        {
+          "slot_id": "title",
+          "source_pointer": "/reverse_study_slides/0/slide_title",
+          "transform": "identity@1",
+          "role": "title"
+        },
+        {
+          "slot_id": "items",
+          "source_pointer": "/reverse_study_slides/0/items",
+          "transform": "object_fields@1",
+          "role": "items",
+          "fields": [
+            "label",
+            "detail",
+            "icon"
+          ]
+        },
+        {
+          "slot_id": "footer",
+          "source_pointer": "/reverse_study_slides/0/footer_rule",
+          "transform": "identity@1",
+          "role": "footer"
+        }
+      ],
+      "semantic_color_roles": [
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "neutral"
+      ],
+      "spoiler_policy": "fully_revealed",
+      "interaction_policy": "static_complete",
+      "internal_action_count": 0,
+      "initial_state": "fully_revealed",
+      "hidden_content": false,
+      "player_navigation_only": true,
+      "responsive_policy": "stack_preserve_order",
+      "accessibility_policy": "semantic_groups",
+      "motion_policy": "content_complete_without_motion"
+    },
+    {
+      "slide_type": "logic_flow",
+      "composition_id": "nv1.logic_flow.critical_number",
+      "slot_bindings": [
+        {
+          "slot_id": "steps",
+          "source_pointer": "/reverse_study_slides/1/steps",
+          "transform": "array_items@1",
+          "role": "steps"
+        },
+        {
+          "slot_id": "footer",
+          "source_pointer": "/reverse_study_slides/1/footer_rule",
+          "transform": "identity@1",
+          "role": "footer"
+        }
+      ],
+      "semantic_color_roles": [
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "neutral"
+      ],
+      "spoiler_policy": "fully_revealed",
+      "interaction_policy": "static_complete",
+      "internal_action_count": 0,
+      "initial_state": "fully_revealed",
+      "hidden_content": false,
+      "player_navigation_only": true,
+      "responsive_policy": "stack_preserve_order",
+      "accessibility_policy": "semantic_groups",
+      "motion_policy": "content_complete_without_motion"
+    },
+    {
+      "slide_type": "golden_rule",
+      "composition_id": "nv1.golden_rule.critical_number",
+      "slot_bindings": [
+        {
+          "slot_id": "title",
+          "source_pointer": "/reverse_study_slides/2/slide_title",
+          "transform": "identity@1",
+          "role": "title"
+        },
+        {
+          "slot_id": "body",
+          "source_pointer": "/reverse_study_slides/2/content",
+          "transform": "identity@1",
+          "role": "body"
+        },
+        {
+          "slot_id": "rows",
+          "source_pointer": "/reverse_study_slides/2/rows",
+          "transform": "object_fields@1",
+          "role": "rows",
+          "fields": [
+            "label",
+            "value",
+            "emphasis",
+            "badge",
+            "sv_kind",
+            "exam_hint",
+            "fixation"
+          ]
+        },
+        {
+          "slot_id": "footer",
+          "source_pointer": "/reverse_study_slides/2/footer_rule",
+          "transform": "identity@1",
+          "role": "footer"
+        }
+      ],
+      "semantic_color_roles": [
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "neutral"
+      ],
+      "spoiler_policy": "fully_revealed",
+      "interaction_policy": "static_complete",
+      "internal_action_count": 0,
+      "initial_state": "fully_revealed",
+      "hidden_content": false,
+      "player_navigation_only": true,
+      "responsive_policy": "stack_preserve_order",
+      "accessibility_policy": "semantic_groups",
+      "motion_policy": "content_complete_without_motion"
+    },
+    {
+      "slide_type": "danger_zone",
+      "composition_id": "nv1.danger_zone.critical_number",
+      "slot_bindings": [
+        {
+          "slot_id": "body",
+          "source_pointer": "/reverse_study_slides/3/content",
+          "transform": "identity@1",
+          "role": "body"
+        },
+        {
+          "slot_id": "corrections",
+          "source_pointer": "/reverse_study_slides/3/items",
+          "transform": "object_fields@1",
+          "role": "correction",
+          "fields": [
+            "label",
+            "detail",
+            "correct"
+          ]
+        },
+        {
+          "slot_id": "footer",
+          "source_pointer": "/reverse_study_slides/3/footer_rule",
+          "transform": "identity@1",
+          "role": "footer"
+        }
+      ],
+      "semantic_color_roles": [
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "neutral"
+      ],
+      "spoiler_policy": "fully_revealed",
+      "interaction_policy": "static_complete",
+      "internal_action_count": 0,
+      "initial_state": "fully_revealed",
+      "hidden_content": false,
+      "player_navigation_only": true,
+      "responsive_policy": "stack_preserve_order",
+      "accessibility_policy": "semantic_groups",
+      "motion_policy": "content_complete_without_motion"
+    }
+  ]
+}

@@ -1,0 +1,2707 @@
+{
+  "schema_version": "neuro-visual-authoring-sidecar-v1",
+  "revision": 1,
+  "state": "shadow_valid",
+  "question_slug": "cpcon-saude-mulher-pre-natal-vf",
+  "cohort_id": "saude-da-mulher-anchors-v1",
+  "source_path": "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json",
+  "projection_version": "neuro-content-projection-v1",
+  "content_hash": "sha256:2c8da2028410a694580773378e7601d12b1235956f685691b6e2610418c6b536",
+  "profile_hash": "sha256:c0341067adc56d7f8bf968e1eb2fc793829b1afeaaa8565e8ae6e8d14bd57c5d",
+  "semantic_profile": {
+    "schema_version": "neuro-semantic-profile-v1",
+    "projection_version": "neuro-profile-projection-v1",
+    "question_slug": "cpcon-saude-mulher-pre-natal-vf",
+    "cohort_id": "saude-da-mulher-anchors-v1",
+    "content_hash": "sha256:2c8da2028410a694580773378e7601d12b1235956f685691b6e2610418c6b536",
+    "profile_hash": "sha256:c0341067adc56d7f8bf968e1eb2fc793829b1afeaaa8565e8ae6e8d14bd57c5d",
+    "analyzer_version": "neurovisual-explicit-seed-analyzer-v1",
+    "source_mode": "deterministic",
+    "effective": {
+      "family": "vf",
+      "subtopic": "Saúde da Mulher",
+      "pedagogical_branch": "mulher_prenatal",
+      "learning_intent": {
+        "dominant": "sequence_validation",
+        "secondary": [
+          "risk_discrimination",
+          "threshold_recall"
+        ]
+      },
+      "spatial_error": "clinical_sequence_flattened_into_assertions",
+      "dominant_gesture": "rail",
+      "spoiler_timing": "initial_complete",
+      "critical_numbers": [
+        "first_trimester",
+        "six_or_more_consultations",
+        "weeks_24_to_28"
+      ],
+      "four_slide_strategy": {
+        "mode": "progression",
+        "metaphor": "gestational_editorial_foundation_v1"
+      },
+      "relations": [
+        "sequence",
+        "threshold",
+        "exception"
+      ],
+      "axes": [
+        "gestational_time"
+      ],
+      "poles": [
+        "recommended",
+        "risk"
+      ],
+      "ordering": "clinical_temporal",
+      "interaction_need": "none"
+    },
+    "decision_source": {
+      "family": "deterministic",
+      "subtopic": "deterministic",
+      "pedagogical_branch": "deterministic",
+      "learning_intent": "deterministic",
+      "spatial_error": "deterministic",
+      "dominant_gesture": "deterministic",
+      "spoiler_timing": "deterministic",
+      "critical_numbers": "deterministic",
+      "four_slide_strategy": "deterministic",
+      "relations": "deterministic",
+      "axes": "deterministic",
+      "poles": "deterministic",
+      "ordering": "deterministic",
+      "interaction_need": "deterministic"
+    }
+  },
+  "editorial_synthesis_authoring": {
+    "schema_version": "neuro-editorial-synthesis-v1",
+    "question_slug": "cpcon-saude-mulher-pre-natal-vf",
+    "state": "review_pending",
+    "revision": 1,
+    "reviewer_id": null,
+    "synthesis_method": "manual_source_backed",
+    "runtime_projection": [
+      {
+        "schema_version": "neuro-editorial-synthesis-v1",
+        "slide_type": "concept_map",
+        "headline": {
+          "text": "PRÉ-NATAL SEM ERRO",
+          "source_pointers": [
+            "/reverse_study_slides/0/slide_title"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "dominant_fact": {
+          "text": "1º trimestre",
+          "source_pointers": [
+            "/reverse_study_slides/0/items/0/detail"
+          ],
+          "derivation": "extractive"
+        },
+        "keywords": [
+          {
+            "text": "ÁCIDO FÓLICO",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/1/label"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "6+ CONSULTAS",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/2/detail"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "TABAGISMO",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/3/label"
+            ],
+            "derivation": "manual_source_backed"
+          }
+        ],
+        "contrast_pairs": [
+          {
+            "pair_id": "risk-not-irrelevant",
+            "left": {
+              "text": "TABAGISMO IMPORTA",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/3/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "right": {
+              "text": "NÃO É IRRELEVANTE",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/3/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "relation": "corrects"
+          }
+        ],
+        "warning": {
+          "text": "TABAGISMO AUMENTA O RISCO",
+          "source_pointers": [
+            "/reverse_study_slides/0/items/3/detail"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "mnemonic": {
+          "text": "CEDO + SUPLEMENTAR + ACOMPANHAR",
+          "source_pointers": [
+            "/reverse_study_slides/0/items/0/detail",
+            "/reverse_study_slides/0/items/1/detail",
+            "/reverse_study_slides/0/items/2/detail"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "facts": [
+          {
+            "fact_id": "early-start",
+            "label": {
+              "text": "COMECE CEDO",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/0/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "value": {
+              "text": "1º",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/0/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "unit": {
+              "text": "TRIMESTRE",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/0/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "início precoce do pré-natal",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/0/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "info",
+            "icon_id": "calendar"
+          },
+          {
+            "fact_id": "folic-acid",
+            "label": {
+              "text": "Ácido fólico",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/1/label"
+              ],
+              "derivation": "verbatim"
+            },
+            "condition": {
+              "text": "Pré-concepção e início da gestação",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/1/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "success",
+            "icon_id": "folic_pill"
+          },
+          {
+            "fact_id": "consultations",
+            "label": {
+              "text": "Consultas mínimas",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/2/label"
+              ],
+              "derivation": "verbatim"
+            },
+            "value": {
+              "text": "6+",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/2/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "unit": {
+              "text": "CONSULTAS",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/2/label"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "condition": {
+              "text": "mensal até 28 semanas",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/2/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "info",
+            "icon_id": "consultation"
+          },
+          {
+            "fact_id": "smoking-risk",
+            "label": {
+              "text": "Tabagismo",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/3/label"
+              ],
+              "derivation": "verbatim"
+            },
+            "opposition": {
+              "text": "Aumenta riscos maternos e fetais",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/3/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "no_smoking"
+          }
+        ],
+        "art_direction": {
+          "hero_role": "headline",
+          "direction": "radial",
+          "density": "balanced",
+          "primitive_sequence": [
+            "EditorialCanvas",
+            "HeadlineLockup",
+            "KeywordRibbon",
+            "CentralConceptOrbit",
+            "TimelineSpine",
+            "IconFact",
+            "MnemonicStrip"
+          ]
+        }
+      },
+      {
+        "schema_version": "neuro-editorial-synthesis-v1",
+        "slide_type": "logic_flow",
+        "headline": {
+          "text": "I + II PASSAM. III CAI.",
+          "source_pointers": [
+            "/reverse_study_slides/1/steps/1",
+            "/reverse_study_slides/1/steps/2",
+            "/reverse_study_slides/1/steps/3"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "dominant_fact": {
+          "text": "B",
+          "source_pointers": [
+            "/reverse_study_slides/1/steps/5"
+          ],
+          "derivation": "extractive"
+        },
+        "keywords": [
+          {
+            "text": "I · VERDADEIRA",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/1"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "II · VERDADEIRA",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/2"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "III · FALSA",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/3"
+            ],
+            "derivation": "manual_source_backed"
+          }
+        ],
+        "contrast_pairs": [
+          {
+            "pair_id": "assertion-three",
+            "left": {
+              "text": "TABAGISMO IRRELEVANTE",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "right": {
+              "text": "FATOR DE RISCO",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "extractive"
+            },
+            "relation": "corrects"
+          }
+        ],
+        "warning": {
+          "text": "III FICA DE FORA",
+          "source_pointers": [
+            "/reverse_study_slides/1/steps/4"
+          ],
+          "derivation": "extractive"
+        },
+        "mnemonic": {
+          "text": "I ✓  ·  II ✓  ·  III ×  →  B",
+          "source_pointers": [
+            "/reverse_study_slides/1/steps/1",
+            "/reverse_study_slides/1/steps/2",
+            "/reverse_study_slides/1/steps/3",
+            "/reverse_study_slides/1/steps/5"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "facts": [
+          {
+            "fact_id": "assertion-i",
+            "label": {
+              "text": "I",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "VERDADEIRA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "1º trimestre",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "success",
+            "icon_id": "calendar"
+          },
+          {
+            "fact_id": "assertion-ii",
+            "label": {
+              "text": "II",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/2"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "VERDADEIRA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/2"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "ácido fólico pré-concepção/início da gestação",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/2"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "success",
+            "icon_id": "folic_pill"
+          },
+          {
+            "fact_id": "assertion-iii",
+            "label": {
+              "text": "III",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "FALSA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Tabagismo é irrelevante",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "opposition": {
+              "text": "fator de risco materno-fetal",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "no_smoking"
+          },
+          {
+            "fact_id": "answer-b",
+            "label": {
+              "text": "alternativa",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/5"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "B",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/5"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "I e II, apenas",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/5"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "info",
+            "icon_id": "check_cross"
+          }
+        ],
+        "art_direction": {
+          "hero_role": "dominant_fact",
+          "direction": "convergent",
+          "density": "balanced",
+          "primitive_sequence": [
+            "EditorialCanvas",
+            "HeadlineLockup",
+            "KeywordRibbon",
+            "IconFact",
+            "ArrowPath",
+            "EditorialSticker",
+            "MnemonicStrip"
+          ]
+        }
+      },
+      {
+        "schema_version": "neuro-editorial-synthesis-v1",
+        "slide_type": "golden_rule",
+        "headline": {
+          "text": "PRÉ-NATAL EM NÚMEROS",
+          "source_pointers": [
+            "/reverse_study_slides/2/slide_title"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "dominant_fact": {
+          "text": "1º TRIMESTRE",
+          "source_pointers": [
+            "/reverse_study_slides/2/rows/0/value"
+          ],
+          "derivation": "extractive"
+        },
+        "keywords": [
+          {
+            "text": "6+ CONSULTAS",
+            "source_pointers": [
+              "/reverse_study_slides/2/rows/2/value"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "24–28 SEMANAS",
+            "source_pointers": [
+              "/reverse_study_slides/2/rows/3/value"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "ÁCIDO FÓLICO",
+            "source_pointers": [
+              "/reverse_study_slides/2/rows/1/label"
+            ],
+            "derivation": "manual_source_backed"
+          }
+        ],
+        "contrast_pairs": [
+          {
+            "pair_id": "minimum-consultations",
+            "left": {
+              "text": "6 OU MAIS",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/2/value"
+              ],
+              "derivation": "extractive"
+            },
+            "right": {
+              "text": "NÃO 4",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/2/value"
+              ],
+              "derivation": "extractive"
+            },
+            "relation": "preferred_over"
+          }
+        ],
+        "mnemonic": {
+          "text": "CEDO · 6+ · 24–28 · SEM TABACO",
+          "source_pointers": [
+            "/reverse_study_slides/2/rows/0/value",
+            "/reverse_study_slides/2/rows/2/value",
+            "/reverse_study_slides/2/rows/3/value",
+            "/reverse_study_slides/2/rows/4/value"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "facts": [
+          {
+            "fact_id": "first-consultation",
+            "label": {
+              "text": "1ª consulta",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/0/label"
+              ],
+              "derivation": "verbatim"
+            },
+            "value": {
+              "text": "1º",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/0/value"
+              ],
+              "derivation": "extractive"
+            },
+            "unit": {
+              "text": "TRIMESTRE",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/0/value"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "O mais cedo possível",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/0/value"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "info",
+            "icon_id": "calendar"
+          },
+          {
+            "fact_id": "minimum-six",
+            "label": {
+              "text": "Consultas mínimas",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/2/label"
+              ],
+              "derivation": "verbatim"
+            },
+            "value": {
+              "text": "6+",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/2/value"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "unit": {
+              "text": "CONSULTAS",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/2/label"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "opposition": {
+              "text": "não 4",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/2/value"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "success",
+            "icon_id": "consultation"
+          },
+          {
+            "fact_id": "ttgo-window",
+            "label": {
+              "text": "TTGO 75g",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/3/label"
+              ],
+              "derivation": "verbatim"
+            },
+            "value": {
+              "text": "24–28",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/3/value"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "unit": {
+              "text": "SEMANAS",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/3/value"
+              ],
+              "derivation": "extractive"
+            },
+            "exception": {
+              "text": "não no 1º trimestre",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/3/value"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "warning",
+            "icon_id": "calendar"
+          },
+          {
+            "fact_id": "folic-timing",
+            "label": {
+              "text": "Ácido fólico",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/1/label"
+              ],
+              "derivation": "verbatim"
+            },
+            "condition": {
+              "text": "Pré-concepção e início da gestação",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/1/value"
+              ],
+              "derivation": "verbatim"
+            },
+            "tone": "info",
+            "icon_id": "folic_pill"
+          },
+          {
+            "fact_id": "smoking-warning",
+            "label": {
+              "text": "Tabagismo",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/4/label"
+              ],
+              "derivation": "verbatim"
+            },
+            "opposition": {
+              "text": "Fator de risco",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/4/value"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "orientar cessação",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/4/value"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "no_smoking"
+          }
+        ],
+        "art_direction": {
+          "hero_role": "dominant_fact",
+          "direction": "horizontal",
+          "density": "balanced",
+          "primitive_sequence": [
+            "EditorialCanvas",
+            "HeadlineLockup",
+            "NumberHero",
+            "ContrastPair",
+            "IconFact",
+            "MnemonicStrip"
+          ]
+        }
+      },
+      {
+        "schema_version": "neuro-editorial-synthesis-v1",
+        "slide_type": "danger_zone",
+        "headline": {
+          "text": "NÃO CAIA NESSAS",
+          "source_pointers": [
+            "/reverse_study_slides/3/content"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "dominant_fact": {
+          "text": "III É FALSA",
+          "source_pointers": [
+            "/reverse_study_slides/3/items/1/correct"
+          ],
+          "derivation": "extractive"
+        },
+        "keywords": [
+          {
+            "text": "A",
+            "source_pointers": [
+              "/reverse_study_slides/3/items/0/label"
+            ],
+            "derivation": "extractive"
+          },
+          {
+            "text": "C",
+            "source_pointers": [
+              "/reverse_study_slides/3/items/1/label"
+            ],
+            "derivation": "extractive"
+          },
+          {
+            "text": "D",
+            "source_pointers": [
+              "/reverse_study_slides/3/items/2/label"
+            ],
+            "derivation": "extractive"
+          },
+          {
+            "text": "E",
+            "source_pointers": [
+              "/reverse_study_slides/3/items/3/label"
+            ],
+            "derivation": "extractive"
+          }
+        ],
+        "contrast_pairs": [
+          {
+            "pair_id": "option-a",
+            "left": {
+              "text": "DESCARTA II",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/0/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "right": {
+              "text": "II TAMBÉM É VERDADEIRA",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/0/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "relation": "corrects"
+          },
+          {
+            "pair_id": "option-c",
+            "left": {
+              "text": "INCLUI III FALSA",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/1/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "right": {
+              "text": "III É FALSA",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/1/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "relation": "corrects"
+          },
+          {
+            "pair_id": "option-d",
+            "left": {
+              "text": "ACEITA III",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/2/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "right": {
+              "text": "TABAGISMO É FATOR DE RISCO",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/2/correct"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "relation": "corrects"
+          },
+          {
+            "pair_id": "option-e",
+            "left": {
+              "text": "SÓ A III",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/3/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "right": {
+              "text": "I E II SÃO VERDADEIRAS",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/3/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "relation": "corrects"
+          }
+        ],
+        "warning": {
+          "text": "III É A PEGADINHA",
+          "source_pointers": [
+            "/reverse_study_slides/3/items/1/detail"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "mnemonic": {
+          "text": "I ✓  ·  II ✓  ·  III ×",
+          "source_pointers": [
+            "/reverse_study_slides/3/items/0/correct",
+            "/reverse_study_slides/3/items/1/correct",
+            "/reverse_study_slides/3/items/3/correct"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "facts": [
+          {
+            "fact_id": "trap-a",
+            "label": {
+              "text": "A",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/0/label"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Descarta II",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/0/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "II também é verdadeira",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/0/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "check_cross"
+          },
+          {
+            "fact_id": "trap-c",
+            "label": {
+              "text": "C",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/1/label"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Inclui III falsa",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/1/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "tabagismo aumenta riscos",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/1/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "no_smoking"
+          },
+          {
+            "fact_id": "trap-d",
+            "label": {
+              "text": "D",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/2/label"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Aceita III",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/2/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "tabagismo é fator de risco",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/2/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "no_smoking"
+          },
+          {
+            "fact_id": "trap-e",
+            "label": {
+              "text": "E",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/3/label"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Só a afirmativa falsa",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/3/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "I e II são verdadeiras",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/3/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "check_cross"
+          }
+        ],
+        "art_direction": {
+          "hero_role": "contrast",
+          "direction": "horizontal",
+          "density": "dense",
+          "primitive_sequence": [
+            "EditorialCanvas",
+            "HeadlineLockup",
+            "EditorialSticker",
+            "WrongRightLockup",
+            "MnemonicStrip"
+          ]
+        }
+      }
+    ]
+  },
+  "decisions": {
+    "family": {
+      "suggested_value": "vf",
+      "effective_value": "vf",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:family",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "subtopic": {
+      "suggested_value": "Saúde da Mulher",
+      "effective_value": "Saúde da Mulher",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:subtopic",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "pedagogical_branch": {
+      "suggested_value": "mulher_prenatal",
+      "effective_value": "mulher_prenatal",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:pedagogical_branch",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "learning_intent": {
+      "suggested_value": {
+        "dominant": "sequence_validation",
+        "secondary": [
+          "risk_discrimination",
+          "threshold_recall"
+        ]
+      },
+      "effective_value": {
+        "dominant": "sequence_validation",
+        "secondary": [
+          "risk_discrimination",
+          "threshold_recall"
+        ]
+      },
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:learning_intent",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "spatial_error": {
+      "suggested_value": "clinical_sequence_flattened_into_assertions",
+      "effective_value": "clinical_sequence_flattened_into_assertions",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:spatial_error",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "dominant_gesture": {
+      "suggested_value": "rail",
+      "effective_value": "rail",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:dominant_gesture",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "spoiler_timing": {
+      "suggested_value": "initial_complete",
+      "effective_value": "initial_complete",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:spoiler_timing",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "critical_numbers": {
+      "suggested_value": [
+        "first_trimester",
+        "six_or_more_consultations",
+        "weeks_24_to_28"
+      ],
+      "effective_value": [
+        "first_trimester",
+        "six_or_more_consultations",
+        "weeks_24_to_28"
+      ],
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:critical_numbers",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "four_slide_strategy": {
+      "suggested_value": {
+        "mode": "progression",
+        "metaphor": "gestational_editorial_foundation_v1"
+      },
+      "effective_value": {
+        "mode": "progression",
+        "metaphor": "gestational_editorial_foundation_v1"
+      },
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:four_slide_strategy",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "relations": {
+      "suggested_value": [
+        "sequence",
+        "threshold",
+        "exception"
+      ],
+      "effective_value": [
+        "sequence",
+        "threshold",
+        "exception"
+      ],
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:relations",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "axes": {
+      "suggested_value": [
+        "gestational_time"
+      ],
+      "effective_value": [
+        "gestational_time"
+      ],
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:axes",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "poles": {
+      "suggested_value": [
+        "recommended",
+        "risk"
+      ],
+      "effective_value": [
+        "recommended",
+        "risk"
+      ],
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:poles",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "ordering": {
+      "suggested_value": "clinical_temporal",
+      "effective_value": "clinical_temporal",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:ordering",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "interaction_need": {
+      "suggested_value": "none",
+      "effective_value": "none",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed cpcon-saude-mulher-pre-natal-vf:interaction_need",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    }
+  },
+  "versions": {
+    "analyzer": "neurovisual-explicit-seed-analyzer-v1",
+    "planner": "neurovisual-deterministic-planner-v1",
+    "compiler": "neurovisual-shadow-compiler-v1",
+    "catalog": "neurovisual-catalog-v1",
+    "renderer_contract": "neurovisual-shadow-preview-v1"
+  },
+  "candidates": [
+    {
+      "gesture_id": "rail",
+      "score": 100,
+      "rationale": "Matches the effective dominant gesture."
+    },
+    {
+      "gesture_id": "focus",
+      "score": 85,
+      "rationale": "Allowlisted fallback candidate for shadow comparison."
+    },
+    {
+      "gesture_id": "compare",
+      "score": 70,
+      "rationale": "Allowlisted fallback candidate for shadow comparison."
+    }
+  ],
+  "decision_trace": [
+    {
+      "step": "cohort_membership",
+      "result": "explicit_path_match",
+      "source_path": "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json"
+    },
+    {
+      "step": "content_projection",
+      "result": "normalized_v2",
+      "content_hash": "sha256:2c8da2028410a694580773378e7601d12b1235956f685691b6e2610418c6b536"
+    },
+    {
+      "step": "semantic_analysis",
+      "result": "explicit_seed_plus_preserved_overrides"
+    },
+    {
+      "step": "candidate_ranking",
+      "result": [
+        "rail",
+        "focus",
+        "compare"
+      ]
+    },
+    {
+      "step": "four_slide_composition",
+      "result": [
+        {
+          "slide_type": "concept_map",
+          "composition_id": "nv1.concept_map.rail"
+        },
+        {
+          "slide_type": "logic_flow",
+          "composition_id": "nv1.logic_flow.funnel"
+        },
+        {
+          "slide_type": "golden_rule",
+          "composition_id": "nv1.golden_rule.critical_number"
+        },
+        {
+          "slide_type": "danger_zone",
+          "composition_id": "nv1.danger_zone.compare"
+        }
+      ]
+    },
+    {
+      "step": "plan_compilation",
+      "result": "nvp1:cpcon-saude-mulher-pre-natal-vf:c0341067adc56d7f"
+    },
+    {
+      "step": "technical_validation",
+      "result": "pass"
+    },
+    {
+      "step": "rollout",
+      "result": "off_not_created"
+    }
+  ],
+  "constraints": {
+    "atomic_question": true,
+    "runtime_integration": false,
+    "rollout": "off",
+    "cohort_expansion": false,
+    "external_assets": false,
+    "new_gestures": false
+  },
+  "catalog_capabilities": {
+    "nv1.concept_map.isolate": {
+      "slide_type": "concept_map",
+      "gesture": "isolate",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.compare": {
+      "slide_type": "concept_map",
+      "gesture": "compare",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.deck": {
+      "slide_type": "concept_map",
+      "gesture": "deck",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.chip_body": {
+      "slide_type": "concept_map",
+      "gesture": "chip_body",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.rail": {
+      "slide_type": "concept_map",
+      "gesture": "rail",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.funnel": {
+      "slide_type": "concept_map",
+      "gesture": "funnel",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.critical_number": {
+      "slide_type": "concept_map",
+      "gesture": "critical_number",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.focus": {
+      "slide_type": "concept_map",
+      "gesture": "focus",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.logic_flow.isolate": {
+      "slide_type": "logic_flow",
+      "gesture": "isolate",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.compare": {
+      "slide_type": "logic_flow",
+      "gesture": "compare",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.deck": {
+      "slide_type": "logic_flow",
+      "gesture": "deck",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.chip_body": {
+      "slide_type": "logic_flow",
+      "gesture": "chip_body",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.rail": {
+      "slide_type": "logic_flow",
+      "gesture": "rail",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.funnel": {
+      "slide_type": "logic_flow",
+      "gesture": "funnel",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.critical_number": {
+      "slide_type": "logic_flow",
+      "gesture": "critical_number",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.focus": {
+      "slide_type": "logic_flow",
+      "gesture": "focus",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.golden_rule.isolate": {
+      "slide_type": "golden_rule",
+      "gesture": "isolate",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.compare": {
+      "slide_type": "golden_rule",
+      "gesture": "compare",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.deck": {
+      "slide_type": "golden_rule",
+      "gesture": "deck",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.chip_body": {
+      "slide_type": "golden_rule",
+      "gesture": "chip_body",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.rail": {
+      "slide_type": "golden_rule",
+      "gesture": "rail",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.funnel": {
+      "slide_type": "golden_rule",
+      "gesture": "funnel",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.critical_number": {
+      "slide_type": "golden_rule",
+      "gesture": "critical_number",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.focus": {
+      "slide_type": "golden_rule",
+      "gesture": "focus",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.danger_zone.isolate": {
+      "slide_type": "danger_zone",
+      "gesture": "isolate",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.compare": {
+      "slide_type": "danger_zone",
+      "gesture": "compare",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.deck": {
+      "slide_type": "danger_zone",
+      "gesture": "deck",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.chip_body": {
+      "slide_type": "danger_zone",
+      "gesture": "chip_body",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.rail": {
+      "slide_type": "danger_zone",
+      "gesture": "rail",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.funnel": {
+      "slide_type": "danger_zone",
+      "gesture": "funnel",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.critical_number": {
+      "slide_type": "danger_zone",
+      "gesture": "critical_number",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.focus": {
+      "slide_type": "danger_zone",
+      "gesture": "focus",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    }
+  },
+  "runtime_plan_candidate": {
+    "schema_version": "neuro-visual-runtime-plan-v1",
+    "plan_id": "nvp1:cpcon-saude-mulher-pre-natal-vf:c0341067adc56d7f",
+    "question_slug": "cpcon-saude-mulher-pre-natal-vf",
+    "content_hash": "sha256:2c8da2028410a694580773378e7601d12b1235956f685691b6e2610418c6b536",
+    "profile_hash": "sha256:c0341067adc56d7f8bf968e1eb2fc793829b1afeaaa8565e8ae6e8d14bd57c5d",
+    "catalog_version": "neurovisual-catalog-v1",
+    "renderer_contract_version": "neurovisual-shadow-preview-v1",
+    "editorial_contract_version": "neuro-editorial-synthesis-v1",
+    "slides": [
+      {
+        "slide_type": "concept_map",
+        "composition_id": "nv1.concept_map.rail",
+        "slot_bindings": [
+          {
+            "slot_id": "title",
+            "source_pointer": "/reverse_study_slides/0/slide_title",
+            "transform": "identity@1",
+            "role": "title"
+          },
+          {
+            "slot_id": "items",
+            "source_pointer": "/reverse_study_slides/0/items",
+            "transform": "object_fields@1",
+            "role": "items",
+            "fields": [
+              "label",
+              "detail",
+              "icon"
+            ]
+          },
+          {
+            "slot_id": "footer",
+            "source_pointer": "/reverse_study_slides/0/footer_rule",
+            "transform": "identity@1",
+            "role": "footer"
+          }
+        ],
+        "semantic_color_roles": [
+          "success",
+          "danger",
+          "warning",
+          "info",
+          "neutral"
+        ],
+        "spoiler_policy": "fully_revealed",
+        "interaction_policy": "static_complete",
+        "internal_action_count": 0,
+        "initial_state": "fully_revealed",
+        "hidden_content": false,
+        "player_navigation_only": true,
+        "responsive_policy": "stack_preserve_order",
+        "accessibility_policy": "semantic_groups",
+        "motion_policy": "content_complete_without_motion",
+        "editorial_synthesis": {
+          "schema_version": "neuro-editorial-synthesis-v1",
+          "slide_type": "concept_map",
+          "headline": {
+            "text": "PRÉ-NATAL SEM ERRO",
+            "source_pointers": [
+              "/reverse_study_slides/0/slide_title"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "dominant_fact": {
+            "text": "1º trimestre",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/0/detail"
+            ],
+            "derivation": "extractive"
+          },
+          "keywords": [
+            {
+              "text": "ÁCIDO FÓLICO",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/1/label"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            {
+              "text": "6+ CONSULTAS",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/2/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            {
+              "text": "TABAGISMO",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/3/label"
+              ],
+              "derivation": "manual_source_backed"
+            }
+          ],
+          "contrast_pairs": [
+            {
+              "pair_id": "risk-not-irrelevant",
+              "left": {
+                "text": "TABAGISMO IMPORTA",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/3/detail"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "right": {
+                "text": "NÃO É IRRELEVANTE",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/3/detail"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "relation": "corrects"
+            }
+          ],
+          "warning": {
+            "text": "TABAGISMO AUMENTA O RISCO",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/3/detail"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "mnemonic": {
+            "text": "CEDO + SUPLEMENTAR + ACOMPANHAR",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/0/detail",
+              "/reverse_study_slides/0/items/1/detail",
+              "/reverse_study_slides/0/items/2/detail"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "facts": [
+            {
+              "fact_id": "early-start",
+              "label": {
+                "text": "COMECE CEDO",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/0/detail"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "value": {
+                "text": "1º",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/0/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "unit": {
+                "text": "TRIMESTRE",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/0/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "início precoce do pré-natal",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/0/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "info",
+              "icon_id": "calendar"
+            },
+            {
+              "fact_id": "folic-acid",
+              "label": {
+                "text": "Ácido fólico",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/1/label"
+                ],
+                "derivation": "verbatim"
+              },
+              "condition": {
+                "text": "Pré-concepção e início da gestação",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/1/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "success",
+              "icon_id": "folic_pill"
+            },
+            {
+              "fact_id": "consultations",
+              "label": {
+                "text": "Consultas mínimas",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/2/label"
+                ],
+                "derivation": "verbatim"
+              },
+              "value": {
+                "text": "6+",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/2/detail"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "unit": {
+                "text": "CONSULTAS",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/2/label"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "condition": {
+                "text": "mensal até 28 semanas",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/2/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "info",
+              "icon_id": "consultation"
+            },
+            {
+              "fact_id": "smoking-risk",
+              "label": {
+                "text": "Tabagismo",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/3/label"
+                ],
+                "derivation": "verbatim"
+              },
+              "opposition": {
+                "text": "Aumenta riscos maternos e fetais",
+                "source_pointers": [
+                  "/reverse_study_slides/0/items/3/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "danger",
+              "icon_id": "no_smoking"
+            }
+          ],
+          "art_direction": {
+            "hero_role": "headline",
+            "direction": "radial",
+            "density": "balanced",
+            "primitive_sequence": [
+              "EditorialCanvas",
+              "HeadlineLockup",
+              "KeywordRibbon",
+              "CentralConceptOrbit",
+              "TimelineSpine",
+              "IconFact",
+              "MnemonicStrip"
+            ]
+          }
+        }
+      },
+      {
+        "slide_type": "logic_flow",
+        "composition_id": "nv1.logic_flow.funnel",
+        "slot_bindings": [
+          {
+            "slot_id": "steps",
+            "source_pointer": "/reverse_study_slides/1/steps",
+            "transform": "array_items@1",
+            "role": "steps"
+          },
+          {
+            "slot_id": "footer",
+            "source_pointer": "/reverse_study_slides/1/footer_rule",
+            "transform": "identity@1",
+            "role": "footer"
+          }
+        ],
+        "semantic_color_roles": [
+          "success",
+          "danger",
+          "warning",
+          "info",
+          "neutral"
+        ],
+        "spoiler_policy": "fully_revealed",
+        "interaction_policy": "static_complete",
+        "internal_action_count": 0,
+        "initial_state": "fully_revealed",
+        "hidden_content": false,
+        "player_navigation_only": true,
+        "responsive_policy": "stack_preserve_order",
+        "accessibility_policy": "semantic_groups",
+        "motion_policy": "content_complete_without_motion",
+        "editorial_synthesis": {
+          "schema_version": "neuro-editorial-synthesis-v1",
+          "slide_type": "logic_flow",
+          "headline": {
+            "text": "I + II PASSAM. III CAI.",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/1",
+              "/reverse_study_slides/1/steps/2",
+              "/reverse_study_slides/1/steps/3"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "dominant_fact": {
+            "text": "B",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/5"
+            ],
+            "derivation": "extractive"
+          },
+          "keywords": [
+            {
+              "text": "I · VERDADEIRA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            {
+              "text": "II · VERDADEIRA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/2"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            {
+              "text": "III · FALSA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "manual_source_backed"
+            }
+          ],
+          "contrast_pairs": [
+            {
+              "pair_id": "assertion-three",
+              "left": {
+                "text": "TABAGISMO IRRELEVANTE",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/3"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "right": {
+                "text": "FATOR DE RISCO",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/3"
+                ],
+                "derivation": "extractive"
+              },
+              "relation": "corrects"
+            }
+          ],
+          "warning": {
+            "text": "III FICA DE FORA",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/4"
+            ],
+            "derivation": "extractive"
+          },
+          "mnemonic": {
+            "text": "I ✓  ·  II ✓  ·  III ×  →  B",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/1",
+              "/reverse_study_slides/1/steps/2",
+              "/reverse_study_slides/1/steps/3",
+              "/reverse_study_slides/1/steps/5"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "facts": [
+            {
+              "fact_id": "assertion-i",
+              "label": {
+                "text": "I",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/1"
+                ],
+                "derivation": "extractive"
+              },
+              "value": {
+                "text": "VERDADEIRA",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/1"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "1º trimestre",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/1"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "success",
+              "icon_id": "calendar"
+            },
+            {
+              "fact_id": "assertion-ii",
+              "label": {
+                "text": "II",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/2"
+                ],
+                "derivation": "extractive"
+              },
+              "value": {
+                "text": "VERDADEIRA",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/2"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "ácido fólico pré-concepção/início da gestação",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/2"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "success",
+              "icon_id": "folic_pill"
+            },
+            {
+              "fact_id": "assertion-iii",
+              "label": {
+                "text": "III",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/3"
+                ],
+                "derivation": "extractive"
+              },
+              "value": {
+                "text": "FALSA",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/3"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "Tabagismo é irrelevante",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/3"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "opposition": {
+                "text": "fator de risco materno-fetal",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/3"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "danger",
+              "icon_id": "no_smoking"
+            },
+            {
+              "fact_id": "answer-b",
+              "label": {
+                "text": "alternativa",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/5"
+                ],
+                "derivation": "extractive"
+              },
+              "value": {
+                "text": "B",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/5"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "I e II, apenas",
+                "source_pointers": [
+                  "/reverse_study_slides/1/steps/5"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "info",
+              "icon_id": "check_cross"
+            }
+          ],
+          "art_direction": {
+            "hero_role": "dominant_fact",
+            "direction": "convergent",
+            "density": "balanced",
+            "primitive_sequence": [
+              "EditorialCanvas",
+              "HeadlineLockup",
+              "KeywordRibbon",
+              "IconFact",
+              "ArrowPath",
+              "EditorialSticker",
+              "MnemonicStrip"
+            ]
+          }
+        }
+      },
+      {
+        "slide_type": "golden_rule",
+        "composition_id": "nv1.golden_rule.critical_number",
+        "slot_bindings": [
+          {
+            "slot_id": "title",
+            "source_pointer": "/reverse_study_slides/2/slide_title",
+            "transform": "identity@1",
+            "role": "title"
+          },
+          {
+            "slot_id": "body",
+            "source_pointer": "/reverse_study_slides/2/content",
+            "transform": "identity@1",
+            "role": "body"
+          },
+          {
+            "slot_id": "rows",
+            "source_pointer": "/reverse_study_slides/2/rows",
+            "transform": "object_fields@1",
+            "role": "rows",
+            "fields": [
+              "label",
+              "value",
+              "emphasis",
+              "badge",
+              "sv_kind",
+              "exam_hint",
+              "fixation"
+            ]
+          },
+          {
+            "slot_id": "footer",
+            "source_pointer": "/reverse_study_slides/2/footer_rule",
+            "transform": "identity@1",
+            "role": "footer"
+          }
+        ],
+        "semantic_color_roles": [
+          "success",
+          "danger",
+          "warning",
+          "info",
+          "neutral"
+        ],
+        "spoiler_policy": "fully_revealed",
+        "interaction_policy": "static_complete",
+        "internal_action_count": 0,
+        "initial_state": "fully_revealed",
+        "hidden_content": false,
+        "player_navigation_only": true,
+        "responsive_policy": "stack_preserve_order",
+        "accessibility_policy": "semantic_groups",
+        "motion_policy": "content_complete_without_motion",
+        "editorial_synthesis": {
+          "schema_version": "neuro-editorial-synthesis-v1",
+          "slide_type": "golden_rule",
+          "headline": {
+            "text": "PRÉ-NATAL EM NÚMEROS",
+            "source_pointers": [
+              "/reverse_study_slides/2/slide_title"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "dominant_fact": {
+            "text": "1º TRIMESTRE",
+            "source_pointers": [
+              "/reverse_study_slides/2/rows/0/value"
+            ],
+            "derivation": "extractive"
+          },
+          "keywords": [
+            {
+              "text": "6+ CONSULTAS",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/2/value"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            {
+              "text": "24–28 SEMANAS",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/3/value"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            {
+              "text": "ÁCIDO FÓLICO",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/1/label"
+              ],
+              "derivation": "manual_source_backed"
+            }
+          ],
+          "contrast_pairs": [
+            {
+              "pair_id": "minimum-consultations",
+              "left": {
+                "text": "6 OU MAIS",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/2/value"
+                ],
+                "derivation": "extractive"
+              },
+              "right": {
+                "text": "NÃO 4",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/2/value"
+                ],
+                "derivation": "extractive"
+              },
+              "relation": "preferred_over"
+            }
+          ],
+          "mnemonic": {
+            "text": "CEDO · 6+ · 24–28 · SEM TABACO",
+            "source_pointers": [
+              "/reverse_study_slides/2/rows/0/value",
+              "/reverse_study_slides/2/rows/2/value",
+              "/reverse_study_slides/2/rows/3/value",
+              "/reverse_study_slides/2/rows/4/value"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "facts": [
+            {
+              "fact_id": "first-consultation",
+              "label": {
+                "text": "1ª consulta",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/0/label"
+                ],
+                "derivation": "verbatim"
+              },
+              "value": {
+                "text": "1º",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/0/value"
+                ],
+                "derivation": "extractive"
+              },
+              "unit": {
+                "text": "TRIMESTRE",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/0/value"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "O mais cedo possível",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/0/value"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "info",
+              "icon_id": "calendar"
+            },
+            {
+              "fact_id": "minimum-six",
+              "label": {
+                "text": "Consultas mínimas",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/2/label"
+                ],
+                "derivation": "verbatim"
+              },
+              "value": {
+                "text": "6+",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/2/value"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "unit": {
+                "text": "CONSULTAS",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/2/label"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "opposition": {
+                "text": "não 4",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/2/value"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "success",
+              "icon_id": "consultation"
+            },
+            {
+              "fact_id": "ttgo-window",
+              "label": {
+                "text": "TTGO 75g",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/3/label"
+                ],
+                "derivation": "verbatim"
+              },
+              "value": {
+                "text": "24–28",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/3/value"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "unit": {
+                "text": "SEMANAS",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/3/value"
+                ],
+                "derivation": "extractive"
+              },
+              "exception": {
+                "text": "não no 1º trimestre",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/3/value"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "warning",
+              "icon_id": "calendar"
+            },
+            {
+              "fact_id": "folic-timing",
+              "label": {
+                "text": "Ácido fólico",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/1/label"
+                ],
+                "derivation": "verbatim"
+              },
+              "condition": {
+                "text": "Pré-concepção e início da gestação",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/1/value"
+                ],
+                "derivation": "verbatim"
+              },
+              "tone": "info",
+              "icon_id": "folic_pill"
+            },
+            {
+              "fact_id": "smoking-warning",
+              "label": {
+                "text": "Tabagismo",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/4/label"
+                ],
+                "derivation": "verbatim"
+              },
+              "opposition": {
+                "text": "Fator de risco",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/4/value"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "orientar cessação",
+                "source_pointers": [
+                  "/reverse_study_slides/2/rows/4/value"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "danger",
+              "icon_id": "no_smoking"
+            }
+          ],
+          "art_direction": {
+            "hero_role": "dominant_fact",
+            "direction": "horizontal",
+            "density": "balanced",
+            "primitive_sequence": [
+              "EditorialCanvas",
+              "HeadlineLockup",
+              "NumberHero",
+              "ContrastPair",
+              "IconFact",
+              "MnemonicStrip"
+            ]
+          }
+        }
+      },
+      {
+        "slide_type": "danger_zone",
+        "composition_id": "nv1.danger_zone.compare",
+        "slot_bindings": [
+          {
+            "slot_id": "body",
+            "source_pointer": "/reverse_study_slides/3/content",
+            "transform": "identity@1",
+            "role": "body"
+          },
+          {
+            "slot_id": "corrections",
+            "source_pointer": "/reverse_study_slides/3/items",
+            "transform": "object_fields@1",
+            "role": "correction",
+            "fields": [
+              "label",
+              "detail",
+              "correct"
+            ]
+          },
+          {
+            "slot_id": "footer",
+            "source_pointer": "/reverse_study_slides/3/footer_rule",
+            "transform": "identity@1",
+            "role": "footer"
+          }
+        ],
+        "semantic_color_roles": [
+          "success",
+          "danger",
+          "warning",
+          "info",
+          "neutral"
+        ],
+        "spoiler_policy": "fully_revealed",
+        "interaction_policy": "static_complete",
+        "internal_action_count": 0,
+        "initial_state": "fully_revealed",
+        "hidden_content": false,
+        "player_navigation_only": true,
+        "responsive_policy": "stack_preserve_order",
+        "accessibility_policy": "semantic_groups",
+        "motion_policy": "content_complete_without_motion",
+        "editorial_synthesis": {
+          "schema_version": "neuro-editorial-synthesis-v1",
+          "slide_type": "danger_zone",
+          "headline": {
+            "text": "NÃO CAIA NESSAS",
+            "source_pointers": [
+              "/reverse_study_slides/3/content"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "dominant_fact": {
+            "text": "III É FALSA",
+            "source_pointers": [
+              "/reverse_study_slides/3/items/1/correct"
+            ],
+            "derivation": "extractive"
+          },
+          "keywords": [
+            {
+              "text": "A",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/0/label"
+              ],
+              "derivation": "extractive"
+            },
+            {
+              "text": "C",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/1/label"
+              ],
+              "derivation": "extractive"
+            },
+            {
+              "text": "D",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/2/label"
+              ],
+              "derivation": "extractive"
+            },
+            {
+              "text": "E",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/3/label"
+              ],
+              "derivation": "extractive"
+            }
+          ],
+          "contrast_pairs": [
+            {
+              "pair_id": "option-a",
+              "left": {
+                "text": "DESCARTA II",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/0/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "right": {
+                "text": "II TAMBÉM É VERDADEIRA",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/0/correct"
+                ],
+                "derivation": "extractive"
+              },
+              "relation": "corrects"
+            },
+            {
+              "pair_id": "option-c",
+              "left": {
+                "text": "INCLUI III FALSA",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/1/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "right": {
+                "text": "III É FALSA",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/1/correct"
+                ],
+                "derivation": "extractive"
+              },
+              "relation": "corrects"
+            },
+            {
+              "pair_id": "option-d",
+              "left": {
+                "text": "ACEITA III",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/2/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "right": {
+                "text": "TABAGISMO É FATOR DE RISCO",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/2/correct"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "relation": "corrects"
+            },
+            {
+              "pair_id": "option-e",
+              "left": {
+                "text": "SÓ A III",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/3/detail"
+                ],
+                "derivation": "manual_source_backed"
+              },
+              "right": {
+                "text": "I E II SÃO VERDADEIRAS",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/3/correct"
+                ],
+                "derivation": "extractive"
+              },
+              "relation": "corrects"
+            }
+          ],
+          "warning": {
+            "text": "III É A PEGADINHA",
+            "source_pointers": [
+              "/reverse_study_slides/3/items/1/detail"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "mnemonic": {
+            "text": "I ✓  ·  II ✓  ·  III ×",
+            "source_pointers": [
+              "/reverse_study_slides/3/items/0/correct",
+              "/reverse_study_slides/3/items/1/correct",
+              "/reverse_study_slides/3/items/3/correct"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          "facts": [
+            {
+              "fact_id": "trap-a",
+              "label": {
+                "text": "A",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/0/label"
+                ],
+                "derivation": "extractive"
+              },
+              "opposition": {
+                "text": "Descarta II",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/0/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "II também é verdadeira",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/0/correct"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "danger",
+              "icon_id": "check_cross"
+            },
+            {
+              "fact_id": "trap-c",
+              "label": {
+                "text": "C",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/1/label"
+                ],
+                "derivation": "extractive"
+              },
+              "opposition": {
+                "text": "Inclui III falsa",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/1/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "tabagismo aumenta riscos",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/1/correct"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "danger",
+              "icon_id": "no_smoking"
+            },
+            {
+              "fact_id": "trap-d",
+              "label": {
+                "text": "D",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/2/label"
+                ],
+                "derivation": "extractive"
+              },
+              "opposition": {
+                "text": "Aceita III",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/2/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "tabagismo é fator de risco",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/2/correct"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "danger",
+              "icon_id": "no_smoking"
+            },
+            {
+              "fact_id": "trap-e",
+              "label": {
+                "text": "E",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/3/label"
+                ],
+                "derivation": "extractive"
+              },
+              "opposition": {
+                "text": "Só a afirmativa falsa",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/3/detail"
+                ],
+                "derivation": "extractive"
+              },
+              "condition": {
+                "text": "I e II são verdadeiras",
+                "source_pointers": [
+                  "/reverse_study_slides/3/items/3/correct"
+                ],
+                "derivation": "extractive"
+              },
+              "tone": "danger",
+              "icon_id": "check_cross"
+            }
+          ],
+          "art_direction": {
+            "hero_role": "contrast",
+            "direction": "horizontal",
+            "density": "dense",
+            "primitive_sequence": [
+              "EditorialCanvas",
+              "HeadlineLockup",
+              "EditorialSticker",
+              "WrongRightLockup",
+              "MnemonicStrip"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "validation": {
+    "valid": true,
+    "failures": [],
+    "resolved_bindings": 12
+  },
+  "legacy_baseline": [
+    {
+      "slide_type": "concept_map",
+      "layout_variant": "mulher-gestation-timeline"
+    },
+    {
+      "slide_type": "logic_flow",
+      "layout_variant": "mulher-prenatal-tap-flow"
+    },
+    {
+      "slide_type": "golden_rule",
+      "layout_variant": "mulher-prenatal-board"
+    },
+    {
+      "slide_type": "danger_zone",
+      "layout_variant": "mulher-prenatal-trap-arena"
+    }
+  ],
+  "reviews": {
+    "pedagogical": {
+      "decision": "pending",
+      "reviewer_id": null
+    },
+    "visual": {
+      "decision": "pending",
+      "reviewer_id": null
+    },
+    "technical": {
+      "decision": "pass",
+      "reviewer_id": null
+    }
+  },
+  "evidence_refs": [
+    "artifacts/neurovisual/saude-da-mulher-anchors-v1/shadow-v1b-ff3f92d9d824/reports/summary.json"
+  ]
+}

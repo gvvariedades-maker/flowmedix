@@ -1,0 +1,1003 @@
+{
+  "schema_version": "neuro-visual-runtime-plan-v1",
+  "plan_id": "nvp1:admtec-saude-mulher-parto-humanizado-vf:99578c4b34fad073",
+  "question_slug": "admtec-saude-mulher-parto-humanizado-vf",
+  "content_hash": "sha256:a823af9b69fb033e4c1c1c9c1bf92383dc6584c0d02045b3df1a69130ae159cb",
+  "profile_hash": "sha256:99578c4b34fad073db1439cdeaaff3561f922f4ef616c0c29d0fc9eabe88360f",
+  "catalog_version": "neurovisual-catalog-v1",
+  "renderer_contract_version": "neurovisual-shadow-preview-v1",
+  "editorial_contract_version": "neuro-editorial-synthesis-v1",
+  "slides": [
+    {
+      "slide_type": "concept_map",
+      "composition_id": "nv1.concept_map.focus",
+      "slot_bindings": [
+        {
+          "slot_id": "title",
+          "source_pointer": "/reverse_study_slides/0/slide_title",
+          "transform": "identity@1",
+          "role": "title"
+        },
+        {
+          "slot_id": "items",
+          "source_pointer": "/reverse_study_slides/0/items",
+          "transform": "object_fields@1",
+          "role": "items",
+          "fields": [
+            "label",
+            "detail",
+            "icon"
+          ]
+        },
+        {
+          "slot_id": "footer",
+          "source_pointer": "/reverse_study_slides/0/footer_rule",
+          "transform": "identity@1",
+          "role": "footer"
+        }
+      ],
+      "semantic_color_roles": [
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "neutral"
+      ],
+      "spoiler_policy": "fully_revealed",
+      "interaction_policy": "static_complete",
+      "internal_action_count": 0,
+      "initial_state": "fully_revealed",
+      "hidden_content": false,
+      "player_navigation_only": true,
+      "responsive_policy": "stack_preserve_order",
+      "accessibility_policy": "semantic_groups",
+      "motion_policy": "content_complete_without_motion",
+      "editorial_synthesis": {
+        "schema_version": "neuro-editorial-synthesis-v1",
+        "slide_type": "concept_map",
+        "headline": {
+          "text": "PARTO COM ESCOLHA",
+          "source_pointers": [
+            "/reverse_study_slides/0/slide_title"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "dominant_fact": {
+          "text": "HUMANIZAR",
+          "source_pointers": [
+            "/reverse_study_slides/0/footer_rule"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "keywords": [
+          {
+            "text": "MOVIMENTO",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/0/detail"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "ALÍVIO",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/1/label"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "ACOMPANHANTE",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/2/label"
+            ],
+            "derivation": "extractive"
+          },
+          {
+            "text": "1–3 MIN",
+            "source_pointers": [
+              "/reverse_study_slides/0/items/3/detail"
+            ],
+            "derivation": "manual_source_backed"
+          }
+        ],
+        "contrast_pairs": [
+          {
+            "pair_id": "choice-not-rigid-protocol",
+            "left": {
+              "text": "CUIDADO INDIVIDUAL",
+              "source_pointers": [
+                "/reverse_study_slides/0/footer_rule"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "right": {
+              "text": "PROTOCOLO RÍGIDO",
+              "source_pointers": [
+                "/reverse_study_slides/0/footer_rule"
+              ],
+              "derivation": "extractive"
+            },
+            "relation": "preferred_over"
+          }
+        ],
+        "warning": {
+          "text": "ROTINA UNIVERSAL ≠ CUIDADO INDIVIDUAL",
+          "source_pointers": [
+            "/reverse_study_slides/0/footer_rule"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "mnemonic": {
+          "text": "ESCOLHER · MOVER · ACOLHER · AGUARDAR",
+          "source_pointers": [
+            "/reverse_study_slides/0/items/0/detail",
+            "/reverse_study_slides/0/items/1/detail",
+            "/reverse_study_slides/0/items/2/detail",
+            "/reverse_study_slides/0/items/3/detail"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "facts": [
+          {
+            "fact_id": "free-position",
+            "label": {
+              "text": "POSIÇÃO LIVRE",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/0/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "condition": {
+              "text": "Vertical ou lateral — não supina fixa",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/0/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "tone": "success",
+            "icon_id": "mobility"
+          },
+          {
+            "fact_id": "pain-relief",
+            "label": {
+              "text": "ALÍVIO",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/1/label"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "condition": {
+              "text": "Água morna e movimentação na dilatação",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/1/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "info",
+            "icon_id": "water_relief"
+          },
+          {
+            "fact_id": "companion",
+            "label": {
+              "text": "ACOMPANHANTE",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/2/label"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Livre escolha durante todo o trabalho de parto",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/2/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "success",
+            "icon_id": "companion"
+          },
+          {
+            "fact_id": "late-clamping",
+            "label": {
+              "text": "CLAMPEAMENTO",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/3/label"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "1–3",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/3/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "unit": {
+              "text": "MIN",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/3/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "condition": {
+              "text": "Tardio quando viável",
+              "source_pointers": [
+                "/reverse_study_slides/0/items/3/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "tone": "warning",
+            "icon_id": "cord_clamp"
+          }
+        ],
+        "art_direction": {
+          "hero_role": "dominant_fact",
+          "direction": "radial",
+          "density": "balanced",
+          "primitive_sequence": [
+            "EditorialCanvas",
+            "HeadlineLockup",
+            "KeywordRibbon",
+            "CentralConceptOrbit",
+            "IconFact",
+            "EditorialSticker",
+            "MnemonicStrip"
+          ]
+        }
+      }
+    },
+    {
+      "slide_type": "logic_flow",
+      "composition_id": "nv1.logic_flow.funnel",
+      "slot_bindings": [
+        {
+          "slot_id": "steps",
+          "source_pointer": "/reverse_study_slides/1/steps",
+          "transform": "array_items@1",
+          "role": "steps"
+        },
+        {
+          "slot_id": "footer",
+          "source_pointer": "/reverse_study_slides/1/footer_rule",
+          "transform": "identity@1",
+          "role": "footer"
+        }
+      ],
+      "semantic_color_roles": [
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "neutral"
+      ],
+      "spoiler_policy": "fully_revealed",
+      "interaction_policy": "static_complete",
+      "internal_action_count": 0,
+      "initial_state": "fully_revealed",
+      "hidden_content": false,
+      "player_navigation_only": true,
+      "responsive_policy": "stack_preserve_order",
+      "accessibility_policy": "semantic_groups",
+      "motion_policy": "content_complete_without_motion",
+      "editorial_synthesis": {
+        "schema_version": "neuro-editorial-synthesis-v1",
+        "slide_type": "logic_flow",
+        "headline": {
+          "text": "QUATRO AFIRMATIVAS. DUAS PASSAM.",
+          "source_pointers": [
+            "/reverse_study_slides/1/steps/0",
+            "/reverse_study_slides/1/steps/5"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "dominant_fact": {
+          "text": "B",
+          "source_pointers": [
+            "/reverse_study_slides/1/steps/6"
+          ],
+          "derivation": "extractive"
+        },
+        "keywords": [
+          {
+            "text": "I FALSA",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/1"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "II VERDADEIRA",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/2"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "III FALSA",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/3"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "IV VERDADEIRA",
+            "source_pointers": [
+              "/reverse_study_slides/1/steps/4"
+            ],
+            "derivation": "manual_source_backed"
+          }
+        ],
+        "contrast_pairs": [
+          {
+            "pair_id": "ctg-selective",
+            "left": {
+              "text": "INDICAÇÃO SELETIVA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "extractive"
+            },
+            "right": {
+              "text": "CTG PARA TODAS",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "relation": "corrects"
+          },
+          {
+            "pair_id": "position-choice",
+            "left": {
+              "text": "VERTICAL/LATERAL",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "extractive"
+            },
+            "right": {
+              "text": "SUPINA ÚNICA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "relation": "corrects"
+          }
+        ],
+        "warning": {
+          "text": "I E III EXAGERAM INTERVENÇÃO",
+          "source_pointers": [
+            "/reverse_study_slides/1/steps/1",
+            "/reverse_study_slides/1/steps/3"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "mnemonic": {
+          "text": "II ✓ · IV ✓ → B",
+          "source_pointers": [
+            "/reverse_study_slides/1/steps/5",
+            "/reverse_study_slides/1/steps/6"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "facts": [
+          {
+            "fact_id": "assertion-i",
+            "label": {
+              "text": "I",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "FALSA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "CTG contínuo para todas",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Indicação seletiva, não rotina universal",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/1"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "fetal_monitor"
+          },
+          {
+            "fact_id": "assertion-ii",
+            "label": {
+              "text": "II",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/2"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "VERDADEIRA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/2"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Métodos não farmacológicos na dilatação",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/2"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "success",
+            "icon_id": "water_relief"
+          },
+          {
+            "fact_id": "assertion-iii",
+            "label": {
+              "text": "III",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "FALSA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Supina única no expulsivo",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Vertical/lateral permitidas",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/3"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "mobility"
+          },
+          {
+            "fact_id": "assertion-iv",
+            "label": {
+              "text": "IV",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/4"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "VERDADEIRA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/4"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Clampeamento tardio um a três minutos",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/4"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "success",
+            "icon_id": "cord_clamp"
+          },
+          {
+            "fact_id": "answer",
+            "label": {
+              "text": "ALTERNATIVA",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/6"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "B",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/6"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "II e IV, apenas",
+              "source_pointers": [
+                "/reverse_study_slides/1/steps/6"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "warning",
+            "icon_id": "check_cross"
+          }
+        ],
+        "art_direction": {
+          "hero_role": "contrast",
+          "direction": "filtering",
+          "density": "balanced",
+          "primitive_sequence": [
+            "EditorialCanvas",
+            "HeadlineLockup",
+            "KeywordRibbon",
+            "DecisionFunnel",
+            "IconFact",
+            "MnemonicStrip"
+          ]
+        }
+      }
+    },
+    {
+      "slide_type": "golden_rule",
+      "composition_id": "nv1.golden_rule.deck",
+      "slot_bindings": [
+        {
+          "slot_id": "title",
+          "source_pointer": "/reverse_study_slides/2/slide_title",
+          "transform": "identity@1",
+          "role": "title"
+        },
+        {
+          "slot_id": "body",
+          "source_pointer": "/reverse_study_slides/2/content",
+          "transform": "identity@1",
+          "role": "body"
+        },
+        {
+          "slot_id": "rows",
+          "source_pointer": "/reverse_study_slides/2/rows",
+          "transform": "object_fields@1",
+          "role": "rows",
+          "fields": [
+            "label",
+            "value",
+            "emphasis",
+            "badge",
+            "sv_kind",
+            "exam_hint",
+            "fixation"
+          ]
+        },
+        {
+          "slot_id": "footer",
+          "source_pointer": "/reverse_study_slides/2/footer_rule",
+          "transform": "identity@1",
+          "role": "footer"
+        }
+      ],
+      "semantic_color_roles": [
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "neutral"
+      ],
+      "spoiler_policy": "fully_revealed",
+      "interaction_policy": "static_complete",
+      "internal_action_count": 0,
+      "initial_state": "fully_revealed",
+      "hidden_content": false,
+      "player_navigation_only": true,
+      "responsive_policy": "stack_preserve_order",
+      "accessibility_policy": "semantic_groups",
+      "motion_policy": "content_complete_without_motion",
+      "editorial_synthesis": {
+        "schema_version": "neuro-editorial-synthesis-v1",
+        "slide_type": "golden_rule",
+        "headline": {
+          "text": "PARTO HUMANIZADO NA PRÁTICA",
+          "source_pointers": [
+            "/reverse_study_slides/2/slide_title"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "dominant_fact": {
+          "text": "ESCOLHA + MOVIMENTO",
+          "source_pointers": [
+            "/reverse_study_slides/2/rows/0/value",
+            "/reverse_study_slides/2/rows/1/value"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "keywords": [
+          {
+            "text": "LIVRE ESCOLHA",
+            "source_pointers": [
+              "/reverse_study_slides/2/rows/0/value"
+            ],
+            "derivation": "extractive"
+          },
+          {
+            "text": "ÁGUA MORNA",
+            "source_pointers": [
+              "/reverse_study_slides/2/rows/1/value"
+            ],
+            "derivation": "extractive"
+          },
+          {
+            "text": "VERTICAL/LATERAL",
+            "source_pointers": [
+              "/reverse_study_slides/2/rows/2/value"
+            ],
+            "derivation": "manual_source_backed"
+          },
+          {
+            "text": "1–3 MIN",
+            "source_pointers": [
+              "/reverse_study_slides/2/rows/3/value"
+            ],
+            "derivation": "manual_source_backed"
+          }
+        ],
+        "contrast_pairs": [],
+        "warning": {
+          "text": "INDICAR ≠ UNIVERSALIZAR",
+          "source_pointers": [
+            "/reverse_study_slides/2/rows/4/value"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "mnemonic": {
+          "text": "CONFORTO MATERNO + SEGURANÇA FETAL SELETIVA",
+          "source_pointers": [
+            "/reverse_study_slides/2/footer_rule"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "facts": [
+          {
+            "fact_id": "companion-practice",
+            "label": {
+              "text": "ACOMPANHANTE",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/0/label"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Livre escolha — trabalho de parto",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/0/value"
+              ],
+              "derivation": "verbatim"
+            },
+            "tone": "success",
+            "icon_id": "companion"
+          },
+          {
+            "fact_id": "relief-practice",
+            "label": {
+              "text": "ALÍVIO NÃO FARMACOLÓGICO",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/1/label"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Água morna · movimentação na dilatação",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/1/value"
+              ],
+              "derivation": "verbatim"
+            },
+            "tone": "info",
+            "icon_id": "water_relief"
+          },
+          {
+            "fact_id": "position-practice",
+            "label": {
+              "text": "POSIÇÃO EXPULSIVO",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/2/label"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Vertical ou lateral — não supina fixa",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/2/value"
+              ],
+              "derivation": "verbatim"
+            },
+            "tone": "warning",
+            "icon_id": "mobility"
+          },
+          {
+            "fact_id": "clamping-practice",
+            "label": {
+              "text": "CLAMPEAMENTO TARDIO",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/3/label"
+              ],
+              "derivation": "extractive"
+            },
+            "value": {
+              "text": "1–3",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/3/value"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "unit": {
+              "text": "MIN",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/3/value"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "condition": {
+              "text": "Ferro neonatal",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/3/value"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "warning",
+            "icon_id": "cord_clamp"
+          },
+          {
+            "fact_id": "monitoring-practice",
+            "label": {
+              "text": "MONITORIZAÇÃO FCF",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/4/label"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Indicada — não rotina contínua universal",
+              "source_pointers": [
+                "/reverse_study_slides/2/rows/4/value"
+              ],
+              "derivation": "verbatim"
+            },
+            "tone": "danger",
+            "icon_id": "fetal_monitor"
+          }
+        ],
+        "art_direction": {
+          "hero_role": "dominant_fact",
+          "direction": "equivalent_units",
+          "density": "balanced",
+          "primitive_sequence": [
+            "EditorialCanvas",
+            "HeadlineLockup",
+            "KeywordRibbon",
+            "EditorialSticker",
+            "EditorialDeck",
+            "IconFact",
+            "NumberHero",
+            "MnemonicStrip"
+          ]
+        }
+      }
+    },
+    {
+      "slide_type": "danger_zone",
+      "composition_id": "nv1.danger_zone.compare",
+      "slot_bindings": [
+        {
+          "slot_id": "body",
+          "source_pointer": "/reverse_study_slides/3/content",
+          "transform": "identity@1",
+          "role": "body"
+        },
+        {
+          "slot_id": "corrections",
+          "source_pointer": "/reverse_study_slides/3/items",
+          "transform": "object_fields@1",
+          "role": "correction",
+          "fields": [
+            "label",
+            "detail",
+            "correct"
+          ]
+        },
+        {
+          "slot_id": "footer",
+          "source_pointer": "/reverse_study_slides/3/footer_rule",
+          "transform": "identity@1",
+          "role": "footer"
+        }
+      ],
+      "semantic_color_roles": [
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "neutral"
+      ],
+      "spoiler_policy": "fully_revealed",
+      "interaction_policy": "static_complete",
+      "internal_action_count": 0,
+      "initial_state": "fully_revealed",
+      "hidden_content": false,
+      "player_navigation_only": true,
+      "responsive_policy": "stack_preserve_order",
+      "accessibility_policy": "semantic_groups",
+      "motion_policy": "content_complete_without_motion",
+      "editorial_synthesis": {
+        "schema_version": "neuro-editorial-synthesis-v1",
+        "slide_type": "danger_zone",
+        "headline": {
+          "text": "NÃO UNIVERSALIZE",
+          "source_pointers": [
+            "/reverse_study_slides/3/content"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "dominant_fact": {
+          "text": "I E III SÃO FALSAS",
+          "source_pointers": [
+            "/reverse_study_slides/3/items/3/correct"
+          ],
+          "derivation": "extractive"
+        },
+        "keywords": [
+          {
+            "text": "CTG",
+            "source_pointers": [
+              "/reverse_study_slides/3/items/0/label"
+            ],
+            "derivation": "extractive"
+          },
+          {
+            "text": "SUPINA",
+            "source_pointers": [
+              "/reverse_study_slides/3/items/1/label"
+            ],
+            "derivation": "extractive"
+          }
+        ],
+        "contrast_pairs": [],
+        "warning": {
+          "text": "UNIVERSAL ≠ HUMANIZADO",
+          "source_pointers": [
+            "/reverse_study_slides/3/items/0/detail",
+            "/reverse_study_slides/3/items/1/detail"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "mnemonic": {
+          "text": "II ✓ · IV ✓ → B",
+          "source_pointers": [
+            "/reverse_study_slides/3/items/2/detail",
+            "/reverse_study_slides/3/items/3/detail"
+          ],
+          "derivation": "manual_source_backed"
+        },
+        "facts": [
+          {
+            "fact_id": "option-a",
+            "label": {
+              "text": "A",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/0/label"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Monitorização contínua para todas",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/0/detail"
+              ],
+              "derivation": "manual_source_backed"
+            },
+            "condition": {
+              "text": "Indicar conforme risco — não rotina para todas",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/0/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "fetal_monitor"
+          },
+          {
+            "fact_id": "option-c",
+            "label": {
+              "text": "C",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/1/label"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Posição supina obrigatória",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/1/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "Vertical ou lateral — mobilidade e conforto",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/1/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "mobility"
+          },
+          {
+            "fact_id": "option-d",
+            "label": {
+              "text": "D",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/2/label"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Inclui III falsa",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/2/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "III é falsa — posição vertical ou lateral",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/2/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "check_cross"
+          },
+          {
+            "fact_id": "option-e",
+            "label": {
+              "text": "E",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/3/label"
+              ],
+              "derivation": "extractive"
+            },
+            "opposition": {
+              "text": "Aceita I e III como verdadeiras",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/3/detail"
+              ],
+              "derivation": "extractive"
+            },
+            "condition": {
+              "text": "I e III são falsas — CTG não é universal; supina não é única",
+              "source_pointers": [
+                "/reverse_study_slides/3/items/3/correct"
+              ],
+              "derivation": "extractive"
+            },
+            "tone": "danger",
+            "icon_id": "check_cross"
+          }
+        ],
+        "art_direction": {
+          "hero_role": "contrast",
+          "direction": "paired_rows_compact",
+          "density": "dense",
+          "primitive_sequence": [
+            "EditorialCanvas",
+            "HeadlineLockup",
+            "EditorialSticker",
+            "WrongRightLockup",
+            "MnemonicStrip"
+          ]
+        }
+      }
+    }
+  ]
+}

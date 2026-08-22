@@ -1,0 +1,119 @@
+{
+  "schema_version": "neurovisual-cohort-manifest-v1",
+  "cohort_id": "saude-da-mulher-anchors-v1",
+  "status": "frozen",
+  "discovery": "explicit_paths_only",
+  "expected_members": 6,
+  "members": [
+    {
+      "question_slug": "cpcon-saude-mulher-pre-natal-vf",
+      "source_path": "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json",
+      "pedagogical_branch": "mulher_prenatal",
+      "semantic_seed": {
+        "learning_intent": { "dominant": "sequence_validation", "secondary": ["risk_discrimination", "threshold_recall"] },
+        "spatial_error": "clinical_sequence_flattened_into_assertions",
+        "dominant_gesture": "rail",
+        "spoiler_timing": "initial_complete",
+        "critical_numbers": ["first_trimester", "six_or_more_consultations", "weeks_24_to_28"],
+        "four_slide_strategy": { "mode": "progression", "metaphor": "gestational_editorial_foundation_v1" },
+        "relations": ["sequence", "threshold", "exception"],
+        "axes": ["gestational_time"],
+        "poles": ["recommended", "risk"],
+        "ordering": "clinical_temporal",
+        "interaction_need": "none"
+      }
+    },
+    {
+      "question_slug": "admtec-saude-mulher-parto-humanizado-vf",
+      "source_path": "examples/questao-premium-admtec-saude-mulher-parto-humanizado-vf.json",
+      "pedagogical_branch": "mulher_parto",
+      "semantic_seed": {
+        "learning_intent": { "dominant": "practice_comparison", "secondary": ["sequence_validation", "exception_detection"] },
+        "spatial_error": "recommended_and_overmedicalized_practices_blended",
+        "dominant_gesture": "compare",
+        "spoiler_timing": "initial_complete",
+        "critical_numbers": ["cord_clamping_1_to_3_minutes"],
+        "four_slide_strategy": { "mode": "contrast", "metaphor": "humanized_care_compass_v1" },
+        "relations": ["comparison", "sequence", "exception"],
+        "axes": ["care_practice"],
+        "poles": ["humanized", "universal_intervention"],
+        "ordering": "labor_phase",
+        "interaction_need": "none"
+      }
+    },
+    {
+      "question_slug": "vunesp-saude-mulher-papanicolau",
+      "source_path": "examples/questao-premium-vunesp-saude-mulher-papanicolau.json",
+      "pedagogical_branch": "mulher_papanicolau",
+      "semantic_seed": {
+        "learning_intent": { "dominant": "threshold_recall", "secondary": ["interval_comparison", "distractor_elimination"] },
+        "spatial_error": "age_range_and_interval_disconnected",
+        "dominant_gesture": "critical_number",
+        "spoiler_timing": "initial_complete",
+        "critical_numbers": ["age_25", "age_64", "three_year_interval", "two_annual_normal_tests"],
+        "four_slide_strategy": { "mode": "continuity", "metaphor": "screening_age_spectrum" },
+        "relations": ["range", "interval", "prerequisite"],
+        "axes": ["age", "screening_interval"],
+        "poles": ["eligible", "common_distractor"],
+        "ordering": "age_then_interval",
+        "interaction_need": "none"
+      }
+    },
+    {
+      "question_slug": "vunesp-saude-mulher-mamografia",
+      "source_path": "examples/questao-premium-vunesp-saude-mulher-mamografia.json",
+      "pedagogical_branch": "mulher_mama",
+      "semantic_seed": {
+        "learning_intent": { "dominant": "threshold_recall", "secondary": ["interval_comparison", "method_discrimination"] },
+        "spatial_error": "screening_window_and_frequency_disconnected",
+        "dominant_gesture": "critical_number",
+        "spoiler_timing": "initial_complete",
+        "critical_numbers": ["age_50", "age_69", "two_year_interval"],
+        "four_slide_strategy": { "mode": "continuity", "metaphor": "screening_age_spectrum" },
+        "relations": ["range", "interval", "method_hierarchy"],
+        "axes": ["age", "screening_interval"],
+        "poles": ["population_screening", "common_distractor"],
+        "ordering": "age_then_interval",
+        "interaction_need": "none"
+      }
+    },
+    {
+      "question_slug": "ms-saude-mulher-puerperio-consulta",
+      "source_path": "examples/questao-premium-ms-saude-mulher-puerperio-consulta.json",
+      "pedagogical_branch": "mulher_puerperio",
+      "semantic_seed": {
+        "learning_intent": { "dominant": "temporal_sequence", "secondary": ["threshold_recall", "care_scope"] },
+        "spatial_error": "postpartum_milestones_without_temporal_position",
+        "dominant_gesture": "rail",
+        "spoiler_timing": "initial_complete",
+        "critical_numbers": ["first_week", "day_42", "six_months"],
+        "four_slide_strategy": { "mode": "progression", "metaphor": "postpartum_zero_to_42_day_rail" },
+        "relations": ["timeline", "threshold", "care_scope"],
+        "axes": ["postpartum_time"],
+        "poles": ["timely_care", "late_or_incomplete_care"],
+        "ordering": "postpartum_temporal",
+        "interaction_need": "none"
+      }
+    },
+    {
+      "question_slug": "cpcon-saude-mulher-planejamento-vf",
+      "source_path": "examples/questao-premium-cpcon-saude-mulher-planejamento-vf.json",
+      "pedagogical_branch": "mulher_planejamento",
+      "semantic_seed": {
+        "learning_intent": { "dominant": "classification", "secondary": ["category_exclusion", "set_assembly"] },
+        "spatial_error": "contraceptive_categories_collapsed_into_one_list",
+        "dominant_gesture": "deck",
+        "spoiler_timing": "initial_complete",
+        "critical_numbers": [],
+        "four_slide_strategy": { "mode": "progression", "metaphor": "contraceptive_category_deck" },
+        "relations": ["classification", "membership", "exception"],
+        "axes": ["method_category"],
+        "poles": ["behavioral", "non_behavioral"],
+        "ordering": "assertion_order",
+        "interaction_need": "none"
+      }
+    }
+  ],
+  "excluded_universes": ["historical_manifest_246", "live_filter_268", "intersection_244"],
+  "rollout": "off"
+}

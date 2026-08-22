@@ -1,0 +1,916 @@
+{
+  "schema_version": "neuro-visual-authoring-sidecar-v1",
+  "revision": 1,
+  "state": "shadow_valid",
+  "question_slug": "ms-saude-mulher-puerperio-consulta",
+  "cohort_id": "saude-da-mulher-anchors-v1",
+  "source_path": "examples/questao-premium-ms-saude-mulher-puerperio-consulta.json",
+  "projection_version": "neuro-content-projection-v1",
+  "content_hash": "sha256:194026febd9440b859cba70538ae4b98d1d845d49c8b5900f651e195af4002a8",
+  "profile_hash": "sha256:dc7ed0d9bb29555c72a8ddb19d2f16fcbcdb97cb0cff9acfbe2eec34686504d9",
+  "semantic_profile": {
+    "schema_version": "neuro-semantic-profile-v1",
+    "projection_version": "neuro-profile-projection-v1",
+    "question_slug": "ms-saude-mulher-puerperio-consulta",
+    "cohort_id": "saude-da-mulher-anchors-v1",
+    "content_hash": "sha256:194026febd9440b859cba70538ae4b98d1d845d49c8b5900f651e195af4002a8",
+    "profile_hash": "sha256:dc7ed0d9bb29555c72a8ddb19d2f16fcbcdb97cb0cff9acfbe2eec34686504d9",
+    "analyzer_version": "neurovisual-explicit-seed-analyzer-v1",
+    "source_mode": "deterministic",
+    "effective": {
+      "family": "conceito",
+      "subtopic": "Saúde da Mulher",
+      "pedagogical_branch": "mulher_puerperio",
+      "learning_intent": {
+        "dominant": "temporal_sequence",
+        "secondary": [
+          "threshold_recall",
+          "care_scope"
+        ]
+      },
+      "spatial_error": "postpartum_milestones_without_temporal_position",
+      "dominant_gesture": "rail",
+      "spoiler_timing": "initial_complete",
+      "critical_numbers": [
+        "first_week",
+        "day_42",
+        "six_months"
+      ],
+      "four_slide_strategy": {
+        "mode": "progression",
+        "metaphor": "postpartum_zero_to_42_day_rail"
+      },
+      "relations": [
+        "timeline",
+        "threshold",
+        "care_scope"
+      ],
+      "axes": [
+        "postpartum_time"
+      ],
+      "poles": [
+        "timely_care",
+        "late_or_incomplete_care"
+      ],
+      "ordering": "postpartum_temporal",
+      "interaction_need": "none"
+    },
+    "decision_source": {
+      "family": "deterministic",
+      "subtopic": "deterministic",
+      "pedagogical_branch": "deterministic",
+      "learning_intent": "deterministic",
+      "spatial_error": "deterministic",
+      "dominant_gesture": "deterministic",
+      "spoiler_timing": "deterministic",
+      "critical_numbers": "deterministic",
+      "four_slide_strategy": "deterministic",
+      "relations": "deterministic",
+      "axes": "deterministic",
+      "poles": "deterministic",
+      "ordering": "deterministic",
+      "interaction_need": "deterministic"
+    }
+  },
+  "decisions": {
+    "family": {
+      "suggested_value": "conceito",
+      "effective_value": "conceito",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:family",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "subtopic": {
+      "suggested_value": "Saúde da Mulher",
+      "effective_value": "Saúde da Mulher",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:subtopic",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "pedagogical_branch": {
+      "suggested_value": "mulher_puerperio",
+      "effective_value": "mulher_puerperio",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:pedagogical_branch",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "learning_intent": {
+      "suggested_value": {
+        "dominant": "temporal_sequence",
+        "secondary": [
+          "threshold_recall",
+          "care_scope"
+        ]
+      },
+      "effective_value": {
+        "dominant": "temporal_sequence",
+        "secondary": [
+          "threshold_recall",
+          "care_scope"
+        ]
+      },
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:learning_intent",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "spatial_error": {
+      "suggested_value": "postpartum_milestones_without_temporal_position",
+      "effective_value": "postpartum_milestones_without_temporal_position",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:spatial_error",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "dominant_gesture": {
+      "suggested_value": "rail",
+      "effective_value": "rail",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:dominant_gesture",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "spoiler_timing": {
+      "suggested_value": "initial_complete",
+      "effective_value": "initial_complete",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:spoiler_timing",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "critical_numbers": {
+      "suggested_value": [
+        "first_week",
+        "day_42",
+        "six_months"
+      ],
+      "effective_value": [
+        "first_week",
+        "day_42",
+        "six_months"
+      ],
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:critical_numbers",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "four_slide_strategy": {
+      "suggested_value": {
+        "mode": "progression",
+        "metaphor": "postpartum_zero_to_42_day_rail"
+      },
+      "effective_value": {
+        "mode": "progression",
+        "metaphor": "postpartum_zero_to_42_day_rail"
+      },
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:four_slide_strategy",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "relations": {
+      "suggested_value": [
+        "timeline",
+        "threshold",
+        "care_scope"
+      ],
+      "effective_value": [
+        "timeline",
+        "threshold",
+        "care_scope"
+      ],
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:relations",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "axes": {
+      "suggested_value": [
+        "postpartum_time"
+      ],
+      "effective_value": [
+        "postpartum_time"
+      ],
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:axes",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "poles": {
+      "suggested_value": [
+        "timely_care",
+        "late_or_incomplete_care"
+      ],
+      "effective_value": [
+        "timely_care",
+        "late_or_incomplete_care"
+      ],
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:poles",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "ordering": {
+      "suggested_value": "postpartum_temporal",
+      "effective_value": "postpartum_temporal",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:ordering",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    },
+    "interaction_need": {
+      "suggested_value": "none",
+      "effective_value": "none",
+      "decision_source": "deterministic",
+      "precedence": "deterministic",
+      "reason": "Explicit cohort seed ms-saude-mulher-puerperio-consulta:interaction_need",
+      "author_id": null,
+      "reviewer_id": null,
+      "revision": 1,
+      "decided_at": null
+    }
+  },
+  "versions": {
+    "analyzer": "neurovisual-explicit-seed-analyzer-v1",
+    "planner": "neurovisual-deterministic-planner-v1",
+    "compiler": "neurovisual-shadow-compiler-v1",
+    "catalog": "neurovisual-catalog-v1",
+    "renderer_contract": "neurovisual-shadow-preview-v1"
+  },
+  "candidates": [
+    {
+      "gesture_id": "rail",
+      "score": 100,
+      "rationale": "Matches the effective dominant gesture."
+    },
+    {
+      "gesture_id": "focus",
+      "score": 85,
+      "rationale": "Allowlisted fallback candidate for shadow comparison."
+    },
+    {
+      "gesture_id": "compare",
+      "score": 70,
+      "rationale": "Allowlisted fallback candidate for shadow comparison."
+    }
+  ],
+  "decision_trace": [
+    {
+      "step": "cohort_membership",
+      "result": "explicit_path_match",
+      "source_path": "examples/questao-premium-ms-saude-mulher-puerperio-consulta.json"
+    },
+    {
+      "step": "content_projection",
+      "result": "normalized_v2",
+      "content_hash": "sha256:194026febd9440b859cba70538ae4b98d1d845d49c8b5900f651e195af4002a8"
+    },
+    {
+      "step": "semantic_analysis",
+      "result": "explicit_seed_plus_preserved_overrides"
+    },
+    {
+      "step": "candidate_ranking",
+      "result": [
+        "rail",
+        "focus",
+        "compare"
+      ]
+    },
+    {
+      "step": "four_slide_composition",
+      "result": [
+        {
+          "slide_type": "concept_map",
+          "composition_id": "nv1.concept_map.rail"
+        },
+        {
+          "slide_type": "logic_flow",
+          "composition_id": "nv1.logic_flow.rail"
+        },
+        {
+          "slide_type": "golden_rule",
+          "composition_id": "nv1.golden_rule.rail"
+        },
+        {
+          "slide_type": "danger_zone",
+          "composition_id": "nv1.danger_zone.rail"
+        }
+      ]
+    },
+    {
+      "step": "plan_compilation",
+      "result": "nvp1:ms-saude-mulher-puerperio-consulta:dc7ed0d9bb29555c"
+    },
+    {
+      "step": "technical_validation",
+      "result": "pass"
+    },
+    {
+      "step": "rollout",
+      "result": "off_not_created"
+    }
+  ],
+  "constraints": {
+    "atomic_question": true,
+    "runtime_integration": false,
+    "rollout": "off",
+    "cohort_expansion": false,
+    "external_assets": false,
+    "new_gestures": false
+  },
+  "catalog_capabilities": {
+    "nv1.concept_map.isolate": {
+      "slide_type": "concept_map",
+      "gesture": "isolate",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.compare": {
+      "slide_type": "concept_map",
+      "gesture": "compare",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.deck": {
+      "slide_type": "concept_map",
+      "gesture": "deck",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.chip_body": {
+      "slide_type": "concept_map",
+      "gesture": "chip_body",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.rail": {
+      "slide_type": "concept_map",
+      "gesture": "rail",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.funnel": {
+      "slide_type": "concept_map",
+      "gesture": "funnel",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.critical_number": {
+      "slide_type": "concept_map",
+      "gesture": "critical_number",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.concept_map.focus": {
+      "slide_type": "concept_map",
+      "gesture": "focus",
+      "primitives": [
+        "BoardChrome",
+        "CategoryStrip",
+        "ProtocolRailRow",
+        "CriticalNumber"
+      ]
+    },
+    "nv1.logic_flow.isolate": {
+      "slide_type": "logic_flow",
+      "gesture": "isolate",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.compare": {
+      "slide_type": "logic_flow",
+      "gesture": "compare",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.deck": {
+      "slide_type": "logic_flow",
+      "gesture": "deck",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.chip_body": {
+      "slide_type": "logic_flow",
+      "gesture": "chip_body",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.rail": {
+      "slide_type": "logic_flow",
+      "gesture": "rail",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.funnel": {
+      "slide_type": "logic_flow",
+      "gesture": "funnel",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.critical_number": {
+      "slide_type": "logic_flow",
+      "gesture": "critical_number",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.logic_flow.focus": {
+      "slide_type": "logic_flow",
+      "gesture": "focus",
+      "primitives": [
+        "LogicFocusShell",
+        "LogicRailShell",
+        "PolarityPanel",
+        "PillarDeck"
+      ]
+    },
+    "nv1.golden_rule.isolate": {
+      "slide_type": "golden_rule",
+      "gesture": "isolate",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.compare": {
+      "slide_type": "golden_rule",
+      "gesture": "compare",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.deck": {
+      "slide_type": "golden_rule",
+      "gesture": "deck",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.chip_body": {
+      "slide_type": "golden_rule",
+      "gesture": "chip_body",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.rail": {
+      "slide_type": "golden_rule",
+      "gesture": "rail",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.funnel": {
+      "slide_type": "golden_rule",
+      "gesture": "funnel",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.critical_number": {
+      "slide_type": "golden_rule",
+      "gesture": "critical_number",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.golden_rule.focus": {
+      "slide_type": "golden_rule",
+      "gesture": "focus",
+      "primitives": [
+        "BoardChrome",
+        "LabelBodyRow",
+        "CriticalNumber",
+        "AlertCallout"
+      ]
+    },
+    "nv1.danger_zone.isolate": {
+      "slide_type": "danger_zone",
+      "gesture": "isolate",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.compare": {
+      "slide_type": "danger_zone",
+      "gesture": "compare",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.deck": {
+      "slide_type": "danger_zone",
+      "gesture": "deck",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.chip_body": {
+      "slide_type": "danger_zone",
+      "gesture": "chip_body",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.rail": {
+      "slide_type": "danger_zone",
+      "gesture": "rail",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.funnel": {
+      "slide_type": "danger_zone",
+      "gesture": "funnel",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.critical_number": {
+      "slide_type": "danger_zone",
+      "gesture": "critical_number",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    },
+    "nv1.danger_zone.focus": {
+      "slide_type": "danger_zone",
+      "gesture": "focus",
+      "primitives": [
+        "BoardChrome",
+        "PolarityPanel",
+        "AlertCallout",
+        "CategoryStrip"
+      ]
+    }
+  },
+  "runtime_plan_candidate": {
+    "schema_version": "neuro-visual-runtime-plan-v1",
+    "plan_id": "nvp1:ms-saude-mulher-puerperio-consulta:dc7ed0d9bb29555c",
+    "question_slug": "ms-saude-mulher-puerperio-consulta",
+    "content_hash": "sha256:194026febd9440b859cba70538ae4b98d1d845d49c8b5900f651e195af4002a8",
+    "profile_hash": "sha256:dc7ed0d9bb29555c72a8ddb19d2f16fcbcdb97cb0cff9acfbe2eec34686504d9",
+    "catalog_version": "neurovisual-catalog-v1",
+    "renderer_contract_version": "neurovisual-shadow-preview-v1",
+    "slides": [
+      {
+        "slide_type": "concept_map",
+        "composition_id": "nv1.concept_map.rail",
+        "slot_bindings": [
+          {
+            "slot_id": "title",
+            "source_pointer": "/reverse_study_slides/0/slide_title",
+            "transform": "identity@1",
+            "role": "title"
+          },
+          {
+            "slot_id": "items",
+            "source_pointer": "/reverse_study_slides/0/items",
+            "transform": "object_fields@1",
+            "role": "items",
+            "fields": [
+              "label",
+              "detail",
+              "icon"
+            ]
+          },
+          {
+            "slot_id": "footer",
+            "source_pointer": "/reverse_study_slides/0/footer_rule",
+            "transform": "identity@1",
+            "role": "footer"
+          }
+        ],
+        "semantic_color_roles": [
+          "success",
+          "danger",
+          "warning",
+          "info",
+          "neutral"
+        ],
+        "spoiler_policy": "fully_revealed",
+        "interaction_policy": "static_complete",
+        "internal_action_count": 0,
+        "initial_state": "fully_revealed",
+        "hidden_content": false,
+        "player_navigation_only": true,
+        "responsive_policy": "stack_preserve_order",
+        "accessibility_policy": "semantic_groups",
+        "motion_policy": "content_complete_without_motion"
+      },
+      {
+        "slide_type": "logic_flow",
+        "composition_id": "nv1.logic_flow.rail",
+        "slot_bindings": [
+          {
+            "slot_id": "steps",
+            "source_pointer": "/reverse_study_slides/1/steps",
+            "transform": "array_items@1",
+            "role": "steps"
+          },
+          {
+            "slot_id": "footer",
+            "source_pointer": "/reverse_study_slides/1/footer_rule",
+            "transform": "identity@1",
+            "role": "footer"
+          }
+        ],
+        "semantic_color_roles": [
+          "success",
+          "danger",
+          "warning",
+          "info",
+          "neutral"
+        ],
+        "spoiler_policy": "fully_revealed",
+        "interaction_policy": "static_complete",
+        "internal_action_count": 0,
+        "initial_state": "fully_revealed",
+        "hidden_content": false,
+        "player_navigation_only": true,
+        "responsive_policy": "stack_preserve_order",
+        "accessibility_policy": "semantic_groups",
+        "motion_policy": "content_complete_without_motion"
+      },
+      {
+        "slide_type": "golden_rule",
+        "composition_id": "nv1.golden_rule.rail",
+        "slot_bindings": [
+          {
+            "slot_id": "title",
+            "source_pointer": "/reverse_study_slides/2/slide_title",
+            "transform": "identity@1",
+            "role": "title"
+          },
+          {
+            "slot_id": "body",
+            "source_pointer": "/reverse_study_slides/2/content",
+            "transform": "identity@1",
+            "role": "body"
+          },
+          {
+            "slot_id": "rows",
+            "source_pointer": "/reverse_study_slides/2/rows",
+            "transform": "object_fields@1",
+            "role": "rows",
+            "fields": [
+              "label",
+              "value",
+              "emphasis",
+              "badge",
+              "sv_kind",
+              "exam_hint",
+              "fixation"
+            ]
+          },
+          {
+            "slot_id": "footer",
+            "source_pointer": "/reverse_study_slides/2/footer_rule",
+            "transform": "identity@1",
+            "role": "footer"
+          }
+        ],
+        "semantic_color_roles": [
+          "success",
+          "danger",
+          "warning",
+          "info",
+          "neutral"
+        ],
+        "spoiler_policy": "fully_revealed",
+        "interaction_policy": "static_complete",
+        "internal_action_count": 0,
+        "initial_state": "fully_revealed",
+        "hidden_content": false,
+        "player_navigation_only": true,
+        "responsive_policy": "stack_preserve_order",
+        "accessibility_policy": "semantic_groups",
+        "motion_policy": "content_complete_without_motion"
+      },
+      {
+        "slide_type": "danger_zone",
+        "composition_id": "nv1.danger_zone.rail",
+        "slot_bindings": [
+          {
+            "slot_id": "body",
+            "source_pointer": "/reverse_study_slides/3/content",
+            "transform": "identity@1",
+            "role": "body"
+          },
+          {
+            "slot_id": "corrections",
+            "source_pointer": "/reverse_study_slides/3/items",
+            "transform": "object_fields@1",
+            "role": "correction",
+            "fields": [
+              "label",
+              "detail",
+              "correct"
+            ]
+          },
+          {
+            "slot_id": "footer",
+            "source_pointer": "/reverse_study_slides/3/footer_rule",
+            "transform": "identity@1",
+            "role": "footer"
+          }
+        ],
+        "semantic_color_roles": [
+          "success",
+          "danger",
+          "warning",
+          "info",
+          "neutral"
+        ],
+        "spoiler_policy": "fully_revealed",
+        "interaction_policy": "static_complete",
+        "internal_action_count": 0,
+        "initial_state": "fully_revealed",
+        "hidden_content": false,
+        "player_navigation_only": true,
+        "responsive_policy": "stack_preserve_order",
+        "accessibility_policy": "semantic_groups",
+        "motion_policy": "content_complete_without_motion"
+      }
+    ]
+  },
+  "validation": {
+    "valid": true,
+    "failures": [],
+    "resolved_bindings": 12
+  },
+  "legacy_baseline": [
+    {
+      "slide_type": "concept_map",
+      "layout_variant": "mulher-puerperio-timeline"
+    },
+    {
+      "slide_type": "logic_flow",
+      "layout_variant": "mulher-puerperio-tap-flow"
+    },
+    {
+      "slide_type": "golden_rule",
+      "layout_variant": "mulher-puerperio-board"
+    },
+    {
+      "slide_type": "danger_zone",
+      "layout_variant": "mulher-puerperio-trap-arena"
+    }
+  ],
+  "reviews": {
+    "pedagogical": {
+      "decision": "pending",
+      "reviewer_id": null
+    },
+    "visual": {
+      "decision": "pending",
+      "reviewer_id": null
+    },
+    "technical": {
+      "decision": "pass",
+      "reviewer_id": null
+    }
+  },
+  "evidence_refs": [
+    "artifacts/neurovisual/saude-da-mulher-anchors-v1/shadow-v1-ee70d545c75c/reports/summary.json"
+  ]
+}

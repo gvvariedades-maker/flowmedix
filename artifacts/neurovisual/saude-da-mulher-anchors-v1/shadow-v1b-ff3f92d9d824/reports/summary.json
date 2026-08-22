@@ -1,0 +1,185 @@
+{
+  "schema_version": "neurovisual-shadow-report-v1",
+  "cohort_id": "saude-da-mulher-anchors-v1",
+  "run_id": "shadow-v1b-ff3f92d9d824",
+  "mode": "write",
+  "rollout": "off",
+  "production_integration": false,
+  "questions_expected": 6,
+  "questions_compiled": 6,
+  "questions_written": 2,
+  "plans_valid": 6,
+  "atomic_results": [
+    {
+      "question_slug": "cpcon-saude-mulher-pre-natal-vf",
+      "plan_id": "nvp1:cpcon-saude-mulher-pre-natal-vf:c0341067adc56d7f",
+      "content_hash": "sha256:2c8da2028410a694580773378e7601d12b1235956f685691b6e2610418c6b536",
+      "profile_hash": "sha256:c0341067adc56d7f8bf968e1eb2fc793829b1afeaaa8565e8ae6e8d14bd57c5d",
+      "validation": "pass",
+      "observed_result": "legacy_rollout_off",
+      "legacy_baseline": [
+        {
+          "slide_type": "concept_map",
+          "layout_variant": "mulher-gestation-timeline"
+        },
+        {
+          "slide_type": "logic_flow",
+          "layout_variant": "mulher-prenatal-tap-flow"
+        },
+        {
+          "slide_type": "golden_rule",
+          "layout_variant": "mulher-prenatal-board"
+        },
+        {
+          "slide_type": "danger_zone",
+          "layout_variant": "mulher-prenatal-trap-arena"
+        }
+      ]
+    },
+    {
+      "question_slug": "admtec-saude-mulher-parto-humanizado-vf",
+      "plan_id": "nvp1:admtec-saude-mulher-parto-humanizado-vf:99578c4b34fad073",
+      "content_hash": "sha256:a823af9b69fb033e4c1c1c9c1bf92383dc6584c0d02045b3df1a69130ae159cb",
+      "profile_hash": "sha256:99578c4b34fad073db1439cdeaaff3561f922f4ef616c0c29d0fc9eabe88360f",
+      "validation": "pass",
+      "observed_result": "legacy_rollout_off",
+      "legacy_baseline": [
+        {
+          "slide_type": "concept_map",
+          "layout_variant": "mulher-labor-phase-deck"
+        },
+        {
+          "slide_type": "logic_flow",
+          "layout_variant": "mulher-labor-tap-flow"
+        },
+        {
+          "slide_type": "golden_rule",
+          "layout_variant": "mulher-parto-humanizado-board"
+        },
+        {
+          "slide_type": "danger_zone",
+          "layout_variant": "mulher-parto-trap-arena"
+        }
+      ]
+    },
+    {
+      "question_slug": "vunesp-saude-mulher-papanicolau",
+      "plan_id": "nvp1:vunesp-saude-mulher-papanicolau:86e32e349455333e",
+      "content_hash": "sha256:f5ccc8367615c718b3dcd2994cdcb23c09882f0974e48270a2469d73119fb986",
+      "profile_hash": "sha256:86e32e349455333eddeee20b52aad29074cac3b01e4cb5ccceb8112f038396b0",
+      "validation": "pass",
+      "observed_result": "legacy_rollout_off",
+      "legacy_baseline": [
+        {
+          "slide_type": "concept_map",
+          "layout_variant": "mulher-screening-spectrum"
+        },
+        {
+          "slide_type": "logic_flow",
+          "layout_variant": "mulher-screening-tap-flow"
+        },
+        {
+          "slide_type": "golden_rule",
+          "layout_variant": "mulher-papanicolau-board"
+        },
+        {
+          "slide_type": "danger_zone",
+          "layout_variant": "mulher-screening-trap-arena"
+        }
+      ]
+    },
+    {
+      "question_slug": "vunesp-saude-mulher-mamografia",
+      "plan_id": "nvp1:vunesp-saude-mulher-mamografia:8f1849ff26f1705b",
+      "content_hash": "sha256:61f731f6ddcff9fdc00ea49bc35e2317d49d0c23c4b2e1245356dc8b44fc343a",
+      "profile_hash": "sha256:8f1849ff26f1705bfd407b32fe1a577ab0c81812dc93dfccdbeea53e8c2ed6f9",
+      "validation": "pass",
+      "observed_result": "legacy_rollout_off",
+      "legacy_baseline": [
+        {
+          "slide_type": "concept_map",
+          "layout_variant": "mulher-mammography-spectrum"
+        },
+        {
+          "slide_type": "logic_flow",
+          "layout_variant": "mulher-mama-tap-flow"
+        },
+        {
+          "slide_type": "golden_rule",
+          "layout_variant": "mulher-mama-board"
+        },
+        {
+          "slide_type": "danger_zone",
+          "layout_variant": "mulher-mama-trap-arena"
+        }
+      ]
+    },
+    {
+      "question_slug": "ms-saude-mulher-puerperio-consulta",
+      "plan_id": "nvp1:ms-saude-mulher-puerperio-consulta:dc7ed0d9bb29555c",
+      "content_hash": "sha256:194026febd9440b859cba70538ae4b98d1d845d49c8b5900f651e195af4002a8",
+      "profile_hash": "sha256:dc7ed0d9bb29555c72a8ddb19d2f16fcbcdb97cb0cff9acfbe2eec34686504d9",
+      "validation": "pass",
+      "observed_result": "legacy_rollout_off",
+      "legacy_baseline": [
+        {
+          "slide_type": "concept_map",
+          "layout_variant": "mulher-puerperio-timeline"
+        },
+        {
+          "slide_type": "logic_flow",
+          "layout_variant": "mulher-puerperio-tap-flow"
+        },
+        {
+          "slide_type": "golden_rule",
+          "layout_variant": "mulher-puerperio-board"
+        },
+        {
+          "slide_type": "danger_zone",
+          "layout_variant": "mulher-puerperio-trap-arena"
+        }
+      ]
+    },
+    {
+      "question_slug": "cpcon-saude-mulher-planejamento-vf",
+      "plan_id": "nvp1:cpcon-saude-mulher-planejamento-vf:4dbd176e97869bae",
+      "content_hash": "sha256:91b013502dedbc2052869c947fc4ff6ced43556a2d8dfe90cb900867be7070b2",
+      "profile_hash": "sha256:4dbd176e97869bae1e33ef8aeda8d8af24fcceaddeae9b422ec14201d306f49e",
+      "validation": "pass",
+      "observed_result": "legacy_rollout_off",
+      "legacy_baseline": [
+        {
+          "slide_type": "concept_map",
+          "layout_variant": "mulher-contraception-spectrum"
+        },
+        {
+          "slide_type": "logic_flow",
+          "layout_variant": "mulher-planejamento-tap-flow"
+        },
+        {
+          "slide_type": "golden_rule",
+          "layout_variant": "mulher-planejamento-board"
+        },
+        {
+          "slide_type": "danger_zone",
+          "layout_variant": "mulher-planejamento-trap-arena"
+        }
+      ]
+    }
+  ],
+  "completed_gates": [
+    "explicit_cohort_6_of_6",
+    "jcs_sha256_hashes",
+    "runtime_payload_separation",
+    "binding_and_spoiler_validation",
+    "legacy_baseline_resolved",
+    "atomic_rollout_off_simulation"
+  ],
+  "pending_human_or_visual_gates": [
+    "isolated_desktop_mobile_preview",
+    "overflow_and_reduced_motion_capture",
+    "pedagogical_review",
+    "visual_review",
+    "approve_revise_reject_decision"
+  ]
+}

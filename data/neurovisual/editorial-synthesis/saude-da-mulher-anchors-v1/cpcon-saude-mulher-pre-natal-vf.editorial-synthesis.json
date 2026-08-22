@@ -1,0 +1,718 @@
+{
+  "schema_version": "neuro-editorial-synthesis-v1",
+  "question_slug": "cpcon-saude-mulher-pre-natal-vf",
+  "state": "review_pending",
+  "revision": 1,
+  "reviewer_id": null,
+  "synthesis_method": "manual_source_backed",
+  "runtime_projection": [
+    {
+      "schema_version": "neuro-editorial-synthesis-v1",
+      "slide_type": "concept_map",
+      "headline": {
+        "text": "PRÉ-NATAL SEM ERRO",
+        "source_pointers": ["/reverse_study_slides/0/slide_title"],
+        "derivation": "manual_source_backed"
+      },
+      "dominant_fact": {
+        "text": "1º trimestre",
+        "source_pointers": ["/reverse_study_slides/0/items/0/detail"],
+        "derivation": "extractive"
+      },
+      "keywords": [
+        {
+          "text": "ÁCIDO FÓLICO",
+          "source_pointers": ["/reverse_study_slides/0/items/1/label"],
+          "derivation": "manual_source_backed"
+        },
+        {
+          "text": "6+ CONSULTAS",
+          "source_pointers": ["/reverse_study_slides/0/items/2/detail"],
+          "derivation": "manual_source_backed"
+        },
+        {
+          "text": "TABAGISMO",
+          "source_pointers": ["/reverse_study_slides/0/items/3/label"],
+          "derivation": "manual_source_backed"
+        }
+      ],
+      "contrast_pairs": [
+        {
+          "pair_id": "risk-not-irrelevant",
+          "left": {
+            "text": "TABAGISMO IMPORTA",
+            "source_pointers": ["/reverse_study_slides/0/items/3/detail"],
+            "derivation": "manual_source_backed"
+          },
+          "right": {
+            "text": "NÃO É IRRELEVANTE",
+            "source_pointers": ["/reverse_study_slides/0/items/3/detail"],
+            "derivation": "manual_source_backed"
+          },
+          "relation": "corrects"
+        }
+      ],
+      "warning": {
+        "text": "TABAGISMO AUMENTA O RISCO",
+        "source_pointers": ["/reverse_study_slides/0/items/3/detail"],
+        "derivation": "manual_source_backed"
+      },
+      "mnemonic": {
+        "text": "CEDO + SUPLEMENTAR + ACOMPANHAR",
+        "source_pointers": [
+          "/reverse_study_slides/0/items/0/detail",
+          "/reverse_study_slides/0/items/1/detail",
+          "/reverse_study_slides/0/items/2/detail"
+        ],
+        "derivation": "manual_source_backed"
+      },
+      "facts": [
+        {
+          "fact_id": "early-start",
+          "label": {
+            "text": "COMECE CEDO",
+            "source_pointers": ["/reverse_study_slides/0/items/0/detail"],
+            "derivation": "manual_source_backed"
+          },
+          "value": {
+            "text": "1º",
+            "source_pointers": ["/reverse_study_slides/0/items/0/detail"],
+            "derivation": "extractive"
+          },
+          "unit": {
+            "text": "TRIMESTRE",
+            "source_pointers": ["/reverse_study_slides/0/items/0/detail"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "início precoce do pré-natal",
+            "source_pointers": ["/reverse_study_slides/0/items/0/detail"],
+            "derivation": "extractive"
+          },
+          "tone": "info",
+          "icon_id": "calendar"
+        },
+        {
+          "fact_id": "folic-acid",
+          "label": {
+            "text": "Ácido fólico",
+            "source_pointers": ["/reverse_study_slides/0/items/1/label"],
+            "derivation": "verbatim"
+          },
+          "condition": {
+            "text": "Pré-concepção e início da gestação",
+            "source_pointers": ["/reverse_study_slides/0/items/1/detail"],
+            "derivation": "extractive"
+          },
+          "tone": "success",
+          "icon_id": "folic_pill"
+        },
+        {
+          "fact_id": "consultations",
+          "label": {
+            "text": "Consultas mínimas",
+            "source_pointers": ["/reverse_study_slides/0/items/2/label"],
+            "derivation": "verbatim"
+          },
+          "value": {
+            "text": "6+",
+            "source_pointers": ["/reverse_study_slides/0/items/2/detail"],
+            "derivation": "manual_source_backed"
+          },
+          "unit": {
+            "text": "CONSULTAS",
+            "source_pointers": ["/reverse_study_slides/0/items/2/label"],
+            "derivation": "manual_source_backed"
+          },
+          "condition": {
+            "text": "mensal até 28 semanas",
+            "source_pointers": ["/reverse_study_slides/0/items/2/detail"],
+            "derivation": "extractive"
+          },
+          "tone": "info",
+          "icon_id": "consultation"
+        },
+        {
+          "fact_id": "smoking-risk",
+          "label": {
+            "text": "Tabagismo",
+            "source_pointers": ["/reverse_study_slides/0/items/3/label"],
+            "derivation": "verbatim"
+          },
+          "opposition": {
+            "text": "Aumenta riscos maternos e fetais",
+            "source_pointers": ["/reverse_study_slides/0/items/3/detail"],
+            "derivation": "extractive"
+          },
+          "tone": "danger",
+          "icon_id": "no_smoking"
+        }
+      ],
+      "art_direction": {
+        "hero_role": "headline",
+        "direction": "radial",
+        "density": "balanced",
+        "primitive_sequence": [
+          "EditorialCanvas",
+          "HeadlineLockup",
+          "KeywordRibbon",
+          "CentralConceptOrbit",
+          "TimelineSpine",
+          "IconFact",
+          "MnemonicStrip"
+        ]
+      }
+    },
+    {
+      "schema_version": "neuro-editorial-synthesis-v1",
+      "slide_type": "logic_flow",
+      "headline": {
+        "text": "I + II PASSAM. III CAI.",
+        "source_pointers": [
+          "/reverse_study_slides/1/steps/1",
+          "/reverse_study_slides/1/steps/2",
+          "/reverse_study_slides/1/steps/3"
+        ],
+        "derivation": "manual_source_backed"
+      },
+      "dominant_fact": {
+        "text": "B",
+        "source_pointers": ["/reverse_study_slides/1/steps/5"],
+        "derivation": "extractive"
+      },
+      "keywords": [
+        {
+          "text": "I · VERDADEIRA",
+          "source_pointers": ["/reverse_study_slides/1/steps/1"],
+          "derivation": "manual_source_backed"
+        },
+        {
+          "text": "II · VERDADEIRA",
+          "source_pointers": ["/reverse_study_slides/1/steps/2"],
+          "derivation": "manual_source_backed"
+        },
+        {
+          "text": "III · FALSA",
+          "source_pointers": ["/reverse_study_slides/1/steps/3"],
+          "derivation": "manual_source_backed"
+        }
+      ],
+      "contrast_pairs": [
+        {
+          "pair_id": "assertion-three",
+          "left": {
+            "text": "TABAGISMO IRRELEVANTE",
+            "source_pointers": ["/reverse_study_slides/1/steps/3"],
+            "derivation": "manual_source_backed"
+          },
+          "right": {
+            "text": "FATOR DE RISCO",
+            "source_pointers": ["/reverse_study_slides/1/steps/3"],
+            "derivation": "extractive"
+          },
+          "relation": "corrects"
+        }
+      ],
+      "warning": {
+        "text": "III FICA DE FORA",
+        "source_pointers": ["/reverse_study_slides/1/steps/4"],
+        "derivation": "extractive"
+      },
+      "mnemonic": {
+        "text": "I ✓  ·  II ✓  ·  III ×  →  B",
+        "source_pointers": [
+          "/reverse_study_slides/1/steps/1",
+          "/reverse_study_slides/1/steps/2",
+          "/reverse_study_slides/1/steps/3",
+          "/reverse_study_slides/1/steps/5"
+        ],
+        "derivation": "manual_source_backed"
+      },
+      "facts": [
+        {
+          "fact_id": "assertion-i",
+          "label": {
+            "text": "I",
+            "source_pointers": ["/reverse_study_slides/1/steps/1"],
+            "derivation": "extractive"
+          },
+          "value": {
+            "text": "VERDADEIRA",
+            "source_pointers": ["/reverse_study_slides/1/steps/1"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "1º trimestre",
+            "source_pointers": ["/reverse_study_slides/1/steps/1"],
+            "derivation": "extractive"
+          },
+          "tone": "success",
+          "icon_id": "calendar"
+        },
+        {
+          "fact_id": "assertion-ii",
+          "label": {
+            "text": "II",
+            "source_pointers": ["/reverse_study_slides/1/steps/2"],
+            "derivation": "extractive"
+          },
+          "value": {
+            "text": "VERDADEIRA",
+            "source_pointers": ["/reverse_study_slides/1/steps/2"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "ácido fólico pré-concepção/início da gestação",
+            "source_pointers": ["/reverse_study_slides/1/steps/2"],
+            "derivation": "extractive"
+          },
+          "tone": "success",
+          "icon_id": "folic_pill"
+        },
+        {
+          "fact_id": "assertion-iii",
+          "label": {
+            "text": "III",
+            "source_pointers": ["/reverse_study_slides/1/steps/3"],
+            "derivation": "extractive"
+          },
+          "value": {
+            "text": "FALSA",
+            "source_pointers": ["/reverse_study_slides/1/steps/3"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "Tabagismo é irrelevante",
+            "source_pointers": ["/reverse_study_slides/1/steps/3"],
+            "derivation": "manual_source_backed"
+          },
+          "opposition": {
+            "text": "fator de risco materno-fetal",
+            "source_pointers": ["/reverse_study_slides/1/steps/3"],
+            "derivation": "extractive"
+          },
+          "tone": "danger",
+          "icon_id": "no_smoking"
+        },
+        {
+          "fact_id": "answer-b",
+          "label": {
+            "text": "alternativa",
+            "source_pointers": ["/reverse_study_slides/1/steps/5"],
+            "derivation": "extractive"
+          },
+          "value": {
+            "text": "B",
+            "source_pointers": ["/reverse_study_slides/1/steps/5"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "I e II, apenas",
+            "source_pointers": ["/reverse_study_slides/1/steps/5"],
+            "derivation": "extractive"
+          },
+          "tone": "info",
+          "icon_id": "check_cross"
+        }
+      ],
+      "art_direction": {
+        "hero_role": "dominant_fact",
+        "direction": "convergent",
+        "density": "balanced",
+        "primitive_sequence": [
+          "EditorialCanvas",
+          "HeadlineLockup",
+          "KeywordRibbon",
+          "IconFact",
+          "ArrowPath",
+          "EditorialSticker",
+          "MnemonicStrip"
+        ]
+      }
+    },
+    {
+      "schema_version": "neuro-editorial-synthesis-v1",
+      "slide_type": "golden_rule",
+      "headline": {
+        "text": "PRÉ-NATAL EM NÚMEROS",
+        "source_pointers": ["/reverse_study_slides/2/slide_title"],
+        "derivation": "manual_source_backed"
+      },
+      "dominant_fact": {
+        "text": "1º TRIMESTRE",
+        "source_pointers": ["/reverse_study_slides/2/rows/0/value"],
+        "derivation": "extractive"
+      },
+      "keywords": [
+        {
+          "text": "6+ CONSULTAS",
+          "source_pointers": ["/reverse_study_slides/2/rows/2/value"],
+          "derivation": "manual_source_backed"
+        },
+        {
+          "text": "24–28 SEMANAS",
+          "source_pointers": ["/reverse_study_slides/2/rows/3/value"],
+          "derivation": "manual_source_backed"
+        },
+        {
+          "text": "ÁCIDO FÓLICO",
+          "source_pointers": ["/reverse_study_slides/2/rows/1/label"],
+          "derivation": "manual_source_backed"
+        }
+      ],
+      "contrast_pairs": [
+        {
+          "pair_id": "minimum-consultations",
+          "left": {
+            "text": "6 OU MAIS",
+            "source_pointers": ["/reverse_study_slides/2/rows/2/value"],
+            "derivation": "extractive"
+          },
+          "right": {
+            "text": "NÃO 4",
+            "source_pointers": ["/reverse_study_slides/2/rows/2/value"],
+            "derivation": "extractive"
+          },
+          "relation": "preferred_over"
+        }
+      ],
+      "mnemonic": {
+        "text": "CEDO · 6+ · 24–28 · SEM TABACO",
+        "source_pointers": [
+          "/reverse_study_slides/2/rows/0/value",
+          "/reverse_study_slides/2/rows/2/value",
+          "/reverse_study_slides/2/rows/3/value",
+          "/reverse_study_slides/2/rows/4/value"
+        ],
+        "derivation": "manual_source_backed"
+      },
+      "facts": [
+        {
+          "fact_id": "first-consultation",
+          "label": {
+            "text": "1ª consulta",
+            "source_pointers": ["/reverse_study_slides/2/rows/0/label"],
+            "derivation": "verbatim"
+          },
+          "value": {
+            "text": "1º",
+            "source_pointers": ["/reverse_study_slides/2/rows/0/value"],
+            "derivation": "extractive"
+          },
+          "unit": {
+            "text": "TRIMESTRE",
+            "source_pointers": ["/reverse_study_slides/2/rows/0/value"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "O mais cedo possível",
+            "source_pointers": ["/reverse_study_slides/2/rows/0/value"],
+            "derivation": "extractive"
+          },
+          "tone": "info",
+          "icon_id": "calendar"
+        },
+        {
+          "fact_id": "minimum-six",
+          "label": {
+            "text": "Consultas mínimas",
+            "source_pointers": ["/reverse_study_slides/2/rows/2/label"],
+            "derivation": "verbatim"
+          },
+          "value": {
+            "text": "6+",
+            "source_pointers": ["/reverse_study_slides/2/rows/2/value"],
+            "derivation": "manual_source_backed"
+          },
+          "unit": {
+            "text": "CONSULTAS",
+            "source_pointers": ["/reverse_study_slides/2/rows/2/label"],
+            "derivation": "manual_source_backed"
+          },
+          "opposition": {
+            "text": "não 4",
+            "source_pointers": ["/reverse_study_slides/2/rows/2/value"],
+            "derivation": "extractive"
+          },
+          "tone": "success",
+          "icon_id": "consultation"
+        },
+        {
+          "fact_id": "ttgo-window",
+          "label": {
+            "text": "TTGO 75g",
+            "source_pointers": ["/reverse_study_slides/2/rows/3/label"],
+            "derivation": "verbatim"
+          },
+          "value": {
+            "text": "24–28",
+            "source_pointers": ["/reverse_study_slides/2/rows/3/value"],
+            "derivation": "manual_source_backed"
+          },
+          "unit": {
+            "text": "SEMANAS",
+            "source_pointers": ["/reverse_study_slides/2/rows/3/value"],
+            "derivation": "extractive"
+          },
+          "exception": {
+            "text": "não no 1º trimestre",
+            "source_pointers": ["/reverse_study_slides/2/rows/3/value"],
+            "derivation": "extractive"
+          },
+          "tone": "warning",
+          "icon_id": "calendar"
+        },
+        {
+          "fact_id": "folic-timing",
+          "label": {
+            "text": "Ácido fólico",
+            "source_pointers": ["/reverse_study_slides/2/rows/1/label"],
+            "derivation": "verbatim"
+          },
+          "condition": {
+            "text": "Pré-concepção e início da gestação",
+            "source_pointers": ["/reverse_study_slides/2/rows/1/value"],
+            "derivation": "verbatim"
+          },
+          "tone": "info",
+          "icon_id": "folic_pill"
+        },
+        {
+          "fact_id": "smoking-warning",
+          "label": {
+            "text": "Tabagismo",
+            "source_pointers": ["/reverse_study_slides/2/rows/4/label"],
+            "derivation": "verbatim"
+          },
+          "opposition": {
+            "text": "Fator de risco",
+            "source_pointers": ["/reverse_study_slides/2/rows/4/value"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "orientar cessação",
+            "source_pointers": ["/reverse_study_slides/2/rows/4/value"],
+            "derivation": "extractive"
+          },
+          "tone": "danger",
+          "icon_id": "no_smoking"
+        }
+      ],
+      "art_direction": {
+        "hero_role": "dominant_fact",
+        "direction": "horizontal",
+        "density": "balanced",
+        "primitive_sequence": [
+          "EditorialCanvas",
+          "HeadlineLockup",
+          "NumberHero",
+          "ContrastPair",
+          "IconFact",
+          "MnemonicStrip"
+        ]
+      }
+    },
+    {
+      "schema_version": "neuro-editorial-synthesis-v1",
+      "slide_type": "danger_zone",
+      "headline": {
+        "text": "NÃO CAIA NESSAS",
+        "source_pointers": ["/reverse_study_slides/3/content"],
+        "derivation": "manual_source_backed"
+      },
+      "dominant_fact": {
+        "text": "III É FALSA",
+        "source_pointers": ["/reverse_study_slides/3/items/1/correct"],
+        "derivation": "extractive"
+      },
+      "keywords": [
+        {
+          "text": "A",
+          "source_pointers": ["/reverse_study_slides/3/items/0/label"],
+          "derivation": "extractive"
+        },
+        {
+          "text": "C",
+          "source_pointers": ["/reverse_study_slides/3/items/1/label"],
+          "derivation": "extractive"
+        },
+        {
+          "text": "D",
+          "source_pointers": ["/reverse_study_slides/3/items/2/label"],
+          "derivation": "extractive"
+        },
+        {
+          "text": "E",
+          "source_pointers": ["/reverse_study_slides/3/items/3/label"],
+          "derivation": "extractive"
+        }
+      ],
+      "contrast_pairs": [
+        {
+          "pair_id": "option-a",
+          "left": {
+            "text": "DESCARTA II",
+            "source_pointers": ["/reverse_study_slides/3/items/0/detail"],
+            "derivation": "extractive"
+          },
+          "right": {
+            "text": "II TAMBÉM É VERDADEIRA",
+            "source_pointers": ["/reverse_study_slides/3/items/0/correct"],
+            "derivation": "extractive"
+          },
+          "relation": "corrects"
+        },
+        {
+          "pair_id": "option-c",
+          "left": {
+            "text": "INCLUI III FALSA",
+            "source_pointers": ["/reverse_study_slides/3/items/1/detail"],
+            "derivation": "extractive"
+          },
+          "right": {
+            "text": "III É FALSA",
+            "source_pointers": ["/reverse_study_slides/3/items/1/correct"],
+            "derivation": "extractive"
+          },
+          "relation": "corrects"
+        },
+        {
+          "pair_id": "option-d",
+          "left": {
+            "text": "ACEITA III",
+            "source_pointers": ["/reverse_study_slides/3/items/2/detail"],
+            "derivation": "extractive"
+          },
+          "right": {
+            "text": "TABAGISMO É FATOR DE RISCO",
+            "source_pointers": ["/reverse_study_slides/3/items/2/correct"],
+            "derivation": "manual_source_backed"
+          },
+          "relation": "corrects"
+        },
+        {
+          "pair_id": "option-e",
+          "left": {
+            "text": "SÓ A III",
+            "source_pointers": ["/reverse_study_slides/3/items/3/detail"],
+            "derivation": "manual_source_backed"
+          },
+          "right": {
+            "text": "I E II SÃO VERDADEIRAS",
+            "source_pointers": ["/reverse_study_slides/3/items/3/correct"],
+            "derivation": "extractive"
+          },
+          "relation": "corrects"
+        }
+      ],
+      "warning": {
+        "text": "III É A PEGADINHA",
+        "source_pointers": ["/reverse_study_slides/3/items/1/detail"],
+        "derivation": "manual_source_backed"
+      },
+      "mnemonic": {
+        "text": "I ✓  ·  II ✓  ·  III ×",
+        "source_pointers": [
+          "/reverse_study_slides/3/items/0/correct",
+          "/reverse_study_slides/3/items/1/correct",
+          "/reverse_study_slides/3/items/3/correct"
+        ],
+        "derivation": "manual_source_backed"
+      },
+      "facts": [
+        {
+          "fact_id": "trap-a",
+          "label": {
+            "text": "A",
+            "source_pointers": ["/reverse_study_slides/3/items/0/label"],
+            "derivation": "extractive"
+          },
+          "opposition": {
+            "text": "Descarta II",
+            "source_pointers": ["/reverse_study_slides/3/items/0/detail"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "II também é verdadeira",
+            "source_pointers": ["/reverse_study_slides/3/items/0/correct"],
+            "derivation": "extractive"
+          },
+          "tone": "danger",
+          "icon_id": "check_cross"
+        },
+        {
+          "fact_id": "trap-c",
+          "label": {
+            "text": "C",
+            "source_pointers": ["/reverse_study_slides/3/items/1/label"],
+            "derivation": "extractive"
+          },
+          "opposition": {
+            "text": "Inclui III falsa",
+            "source_pointers": ["/reverse_study_slides/3/items/1/detail"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "tabagismo aumenta riscos",
+            "source_pointers": ["/reverse_study_slides/3/items/1/correct"],
+            "derivation": "extractive"
+          },
+          "tone": "danger",
+          "icon_id": "no_smoking"
+        },
+        {
+          "fact_id": "trap-d",
+          "label": {
+            "text": "D",
+            "source_pointers": ["/reverse_study_slides/3/items/2/label"],
+            "derivation": "extractive"
+          },
+          "opposition": {
+            "text": "Aceita III",
+            "source_pointers": ["/reverse_study_slides/3/items/2/detail"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "tabagismo é fator de risco",
+            "source_pointers": ["/reverse_study_slides/3/items/2/correct"],
+            "derivation": "extractive"
+          },
+          "tone": "danger",
+          "icon_id": "no_smoking"
+        },
+        {
+          "fact_id": "trap-e",
+          "label": {
+            "text": "E",
+            "source_pointers": ["/reverse_study_slides/3/items/3/label"],
+            "derivation": "extractive"
+          },
+          "opposition": {
+            "text": "Só a afirmativa falsa",
+            "source_pointers": ["/reverse_study_slides/3/items/3/detail"],
+            "derivation": "extractive"
+          },
+          "condition": {
+            "text": "I e II são verdadeiras",
+            "source_pointers": ["/reverse_study_slides/3/items/3/correct"],
+            "derivation": "extractive"
+          },
+          "tone": "danger",
+          "icon_id": "check_cross"
+        }
+      ],
+      "art_direction": {
+        "hero_role": "contrast",
+        "direction": "horizontal",
+        "density": "dense",
+        "primitive_sequence": [
+          "EditorialCanvas",
+          "HeadlineLockup",
+          "EditorialSticker",
+          "WrongRightLockup",
+          "MnemonicStrip"
+        ]
+      }
+    }
+  ]
+}
