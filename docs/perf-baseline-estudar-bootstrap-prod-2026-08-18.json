@@ -1,0 +1,75 @@
+{
+  "status": "BOOTSTRAP_DASHBOARD_MEDIDO_SEM_ACAO_ADICIONAL",
+  "captured_at": "2026-08-18T05:21:00.000Z",
+  "environment": "prod",
+  "app_url": "https://www.avant.enf.br",
+  "path": "/estudar",
+  "protocol": "primeiro documento autenticado após ociosidade; não é o clique ao hub",
+  "deploy": {
+    "id": "dpl_Hn1XtA29XnBLhBhan74mjQJP7u6F",
+    "sha": "628021416e04cce996e53eb9f502dfed6b06a85f",
+    "pr": 110,
+    "edge_region": "gru1",
+    "function_region": "iad1",
+    "compute": "fluid"
+  },
+  "samples_authenticated_document": {
+    "idle_minutes_before_first": 22,
+    "rows": [
+      {
+        "index": 1,
+        "role": "cold_after_idle",
+        "request_id": "prznf-1787030509145-447739cc075c",
+        "ttfb_ms": 3574,
+        "total_ms": 4132
+      },
+      {
+        "index": 2,
+        "role": "warm",
+        "request_id": "b5mtd-1787030514255-7f9b79394891",
+        "ttfb_ms": 1216,
+        "total_ms": 2391
+      },
+      {
+        "index": 3,
+        "role": "warm",
+        "request_id": "8n7wc-1787030518034-caca15b5e615",
+        "ttfb_ms": 1434,
+        "total_ms": 2144
+      }
+    ],
+    "cold_minus_warm_ttfb_ms": 2358,
+    "warm_ttfb_ms": [1216, 1434]
+  },
+  "dashboard_functions_12h": {
+    "cold_start_percent": 21.6,
+    "hot_percent": 75.5,
+    "prewarmed_percent": 2.9,
+    "estudar_invocations": 32,
+    "estudar_p75_duration_ms": 8000,
+    "function_ttfb_avg_ms": 250,
+    "function_ttfb_p75_ms": 211,
+    "function_ttfb_p95_ms": 797,
+    "note": "P75 Duration 8s não é TTFB nem travamento: a função pode continuar executando/streamando após o primeiro byte."
+  },
+  "init_duration_official_ms": null,
+  "init_duration_unavailable_reason": "Hobby: campo Init Duration por invocação não aparece no dashboard; vercel metrics exige Observability Plus. Não contratar Plus só por esse campo.",
+  "code_investigation": {
+    "auth_matricula_catalog_desempenho": "closed_no_change",
+    "dedupe_branch": "perf/dashboard-bootstrap-auth-dedupe",
+    "dedupe_pr": false,
+    "local_cold_next_start_mean_ttfb_ms": {
+      "main": 3201,
+      "patch": 3739,
+      "delta_ms": 538,
+      "direction": "regression"
+    }
+  },
+  "reopen_only_if": [
+    "TTFB warm > 2000 ms de forma recorrente",
+    "cold do primeiro documento > 4000–5000 ms com frequência",
+    "usuários relatarem espera real",
+    "proporção cold subir significativamente acima de 21.6%"
+  ],
+  "next": "backlog de produto; não abrir outra frente de infraestrutura"
+}

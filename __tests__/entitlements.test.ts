@@ -1,5 +1,14 @@
+jest.mock('react', () => {
+  const actual = jest.requireActual<typeof import('react')>('react');
+  return {
+    ...actual,
+    // Isola testes deste arquivo: o snapshot de matrícula não deve vazar entre cases com o mesmo userId.
+    cache: <T extends (...args: never[]) => unknown>(fn: T) => fn,
+  };
+});
+
 jest.mock('@/lib/logger', () => ({
-  logger: { error: jest.fn() },
+  logger: { error: jest.fn(), warn: jest.fn() },
 }));
 
 jest.mock('@/lib/supabase/server', () => ({
