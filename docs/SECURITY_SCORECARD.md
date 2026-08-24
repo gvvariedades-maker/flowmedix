@@ -1,20 +1,21 @@
 # Scorecard de segurança — AVANT
 
 > **Meta:** 100% deste scorecard (Next 16 + Supabase RLS + Stripe + admin por email). Não existe 100% absoluto de segurança.  
-> **Hub:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) · Threat: [`SECURITY_THREAT_MODEL.md`](SECURITY_THREAT_MODEL.md) · IR: [`SECURITY_INCIDENT_RUNBOOK.md`](SECURITY_INCIDENT_RUNBOOK.md) · Rituais: [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md)
+> **Hub:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) · RLS Closure: [`SECURITY_CLOSURE_RLS.md`](SECURITY_CLOSURE_RLS.md) · Threat: [`SECURITY_THREAT_MODEL.md`](SECURITY_THREAT_MODEL.md) · IR: [`SECURITY_INCIDENT_RUNBOOK.md`](SECURITY_INCIDENT_RUNBOOK.md) · Rituais: [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md)
 
 Atualizar status com evidência (link CI, commit, screenshot ops, data do paper drill / pentest). Itens **ops** não falham `npm run build` local se DSN/Upstash ausentes.
 
 **Última fechamento código:** 2026-07-23 — `npm run check:ship` PASS (301 suites / 2531 tests) · Security Review Stripe ledger: P0/P1/P2 = 0.
+**Fechamento formal RLS (Lote 7D):** 2026-08-24 — `RLS: PASS` · Live Supabase Production (`ozgouenqrofnvgrlgfwd`) verificado com isolamento próprio, cross-user denial, modulos enrolled-only e RPC bloqueada ([`SECURITY_CLOSURE_RLS.md`](SECURITY_CLOSURE_RLS.md)).
 
 | # | Item | Dono | Evidência | Status |
 |---|------|------|-----------|--------|
 | 1 | **Arquitetura** — `check:architecture` + `check:ship` verdes | CI / código | Local 2026-07-23: `check:ship` PASS; job `architecture-check` em [`test.yml`](../.github/workflows/test.yml) | **PASS** |
-| 2 | **RLS smoke** — `npm run smoke:rls` (+ SQL companion) | CI condicional / ops | 2026-07-23: `smoke:rls` PASS remoto (incl. `stripe_webhook_events`); job `smoke-rls` (secrets CI opcional) | **PASS** |
+| 2 | **RLS smoke / Live Proof** — `npm run smoke:rls` (+ live audit 7D.2B) | CI condicional / ops | 2026-08-24: `RLS: PASS` live em Produção (`ozgouenqrofnvgrlgfwd`) — [`SECURITY_CLOSURE_RLS.md`](SECURITY_CLOSURE_RLS.md); `smoke:rls` PASS remoto | **PASS** |
 | 3 | **Secrets / env Zod** — `validate:env`; sem secret em `NEXT_PUBLIC_*` | CI / código | `validate:env` no ship; gates `no-service-role-in-client` / `no-new-env-without-zod` | **PASS** |
 | 4 | **Headers / CSP** — `next.config.js` alinhado a auditoria | código / ops | [`AUDITORIA_DEPLOY.md`](AUDITORIA_DEPLOY.md) — headers implementados; sem lacuna P0 aberta no inventário | **PASS** |
 | 5 | **Stripe** — assinatura webhook + idempotência por `event.id` | código | `constructEvent` + ledger + migration `20260723120000` aplicada 2026-07-23 (`db:push --include-all`) + `smoke:rls` PASS (`anon_stripe_webhook_events_vazio`) | **PASS** |
-| 6 | **IDOR mínimo** — histórico / matrícula cross-user | código / CI | `__tests__/security/` (`historico-idor`, `admin-forbid-aluno`, `anon-rls-contract`) no `check:ship` | **PASS** |
+| 6 | **IDOR mínimo / Live Ownership** — histórico / matrícula cross-user | código / CI | 2026-08-24: Live proof 7D.2B PASS (own visible, cross-user 0 rows) + `__tests__/security/` (`historico-idor`, `admin-forbid-aluno`, `anon-rls-contract`) | **PASS** |
 | 7 | **Rate limit distribuído em prod** — Upstash configurado | ops | `UPSTASH_REDIS_REST_*` na Vercel Production ([`DEPLOY.md`](DEPLOY.md)) | ☐ FAIL (ops) |
 | 8 | **Sentry ativo em prod** — DSN | ops | `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN` na Vercel Production | ☐ FAIL (ops) |
 | 9 | **Supply chain** — Dependabot + `npm audit` no CI | CI | [`.github/dependabot.yml`](../.github/dependabot.yml) + job `security-audit`. **Job falha até limpar highs** (`next`, `sharp`, `ws`, `brace-expansion`, `fast-uri`, `js-yaml` — 2026-07-23) | **PASS** estrutura · ☐ FAIL audit |
