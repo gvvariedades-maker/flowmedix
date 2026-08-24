@@ -141,6 +141,7 @@ Artefatos: [`perf-baseline-2026-06-02.json`](perf-baseline-2026-06-02.json) · [
 
 - [`perf-baseline-staging-prod-2026-06-05.json`](perf-baseline-staging-prod-2026-06-05.json) — **prod** `www.avant.enf.br`, pós-merge PR #3 (`88f1d99`), `slo_checklist` completo
 - [`perf-baseline-pos-deploy-2026-06-04.json`](perf-baseline-pos-deploy-2026-06-04.json) — servidor local (sem HTTP)
+- [`perf-baseline-estudar-bootstrap-prod-2026-08-18.json`](perf-baseline-estudar-bootstrap-prod-2026-08-18.json) — **prod** primeiro documento autenticado `/estudar` (`BOOTSTRAP_DASHBOARD_MEDIDO_SEM_ACAO_ADICIONAL`): cold TTFB **3574 ms**, quente **1216 / 1434 ms**, Fluid on, cold **21,6%**. Sem PR de dedupe; não reabrir infra salvo critérios no JSON.
 
 **Checklist pós-deploy (repetir após cada release estudar/vitrine):**
 

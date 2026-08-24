@@ -17,6 +17,12 @@ import type {
 } from '@/types/database';
 import { isActiveMatriculaRow } from '@/lib/concursos/matriculaActive';
 import { filterModulosByVitrineQualityGate } from '@/lib/catalogMigration/vitrineQualityGate';
+import {
+  listMatriculaRowsForUser,
+  type MatriculaReadOptions,
+} from '@/lib/concursos/matriculaRequestSnapshot';
+
+export type { MatriculaReadOptions } from '@/lib/concursos/matriculaRequestSnapshot';
 
 function moduloPermitidoNoVinculoConcurso(
   concursoSlug: string,
@@ -41,6 +47,7 @@ export interface ConcursoMatriculaListRow {
   concurso_id: string;
   status: ConcursoMatriculaStatus | string;
   expires_at: string | null;
+  concurso?: ConcursoRow | ConcursoRow[] | null;
 }
 
 export interface ModuloEstudoListRow {
@@ -157,37 +164,30 @@ function modulosToSlugSet(modulos: ModuloEstudoListRow[]): Set<string> {
 }
 
 // isActiveMatriculaRow → lib/concursos/matriculaActive.ts
+// listMatriculaRowsForUser → lib/concursos/matriculaRequestSnapshot.ts (memo por request)
 
-async function listMatriculaRowsForUser(userId: string): Promise<ConcursoMatriculaListRow[]> {
-  const supabase = await createServerSupabase();
-  const { data, error } = await supabase
-    .from('concurso_matriculas')
-    .select('concurso_id, status, expires_at')
-    .eq('user_id', userId);
-
-  if (error) {
-    logger.error('Falha ao listar matrículas do usuário', error, { userId });
-    throw error;
-  }
-
-  return (data ?? []) as ConcursoMatriculaListRow[];
-}
-
-export async function getMatriculatedConcursoIds(userId: string): Promise<string[]> {
-  const rows = await listMatriculaRowsForUser(userId);
+export async function getMatriculatedConcursoIds(
+  userId: string,
+  options?: MatriculaReadOptions,
+): Promise<string[]> {
+  const rows = await listMatriculaRowsForUser(userId, options);
   return rows.map((row) => row.concurso_id);
 }
 
-export async function getActiveMatriculatedConcursoIds(userId: string): Promise<string[]> {
-  const rows = await listMatriculaRowsForUser(userId);
+export async function getActiveMatriculatedConcursoIds(
+  userId: string,
+  options?: MatriculaReadOptions,
+): Promise<string[]> {
+  const rows = await listMatriculaRowsForUser(userId, options);
   return rows.filter(isActiveMatriculaRow).map((row) => row.concurso_id);
 }
 
 export async function userHasActiveMatricula(
   userId: string,
   concursoId?: string,
+  options?: MatriculaReadOptions,
 ): Promise<boolean> {
-  let activeIds = await getActiveMatriculatedConcursoIds(userId);
+  let activeIds = await getActiveMatriculatedConcursoIds(userId, options);
 
   if (concursoId) {
     if (activeIds.includes(concursoId)) return true;
@@ -200,30 +200,19 @@ export async function userHasActiveMatricula(
   const synced = await syncLegacyCampinaAcessoToMatricula(supabase, userId);
   if (!synced) return false;
 
-  activeIds = await getActiveMatriculatedConcursoIds(userId);
+  activeIds = await getActiveMatriculatedConcursoIds(userId, { fresh: true });
   if (concursoId) return activeIds.includes(concursoId);
   return activeIds.length > 0;
 }
 
-export async function getMatriculatedConcursos(userId: string): Promise<ConcursoRow[]> {
-  const supabase = await createServerSupabase();
-  const { data, error } = await supabase
-    .from('concurso_matriculas')
-    .select(
-      'status, expires_at, concurso:concursos(id, slug, nome, cidade, orgao, banca, ano, cargo, tipo, status, created_at)',
-    )
-    .eq('user_id', userId);
-
-  if (error) {
-    logger.error('Falha ao listar concursos matriculados', error, { userId });
-    throw error;
-  }
-
+function concursosFromMatriculaSnapshot(
+  items: Awaited<ReturnType<typeof listMatriculaRowsForUser>>,
+): ConcursoRow[] {
   const rows: ConcursoRow[] = [];
-  for (const item of data ?? []) {
+  for (const item of items) {
     if (!isActiveMatriculaRow(item)) continue;
 
-    const concurso = item.concurso as ConcursoRow | ConcursoRow[] | null;
+    const concurso = item.concurso as ConcursoRow | ConcursoRow[] | null | undefined;
     if (Array.isArray(concurso)) {
       rows.push(...concurso);
     } else if (concurso) {
@@ -231,6 +220,14 @@ export async function getMatriculatedConcursos(userId: string): Promise<Concurso
     }
   }
   return rows;
+}
+
+export async function getMatriculatedConcursos(
+  userId: string,
+  options?: MatriculaReadOptions,
+): Promise<ConcursoRow[]> {
+  const data = await listMatriculaRowsForUser(userId, options);
+  return concursosFromMatriculaSnapshot(data);
 }
 
 export async function getConcursoBySlug(slug: string): Promise<ConcursoRow | null> {
