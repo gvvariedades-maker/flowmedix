@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+import { getAdminAssuranceLevel } from '@/lib/admin/adminAssurance';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { distributedRateLimit } from '@/lib/rate-limit';
 import { findAuthUserByEmail } from '@/lib/supabase/adminUsers';
 import { createServerSupabase } from '@/lib/supabase/server';
-import { getServerUser } from '@/lib/supabase/server-auth';
+import { getServerUser, createSupabaseServerClient } from '@/lib/supabase/server-auth';
 export async function GET(request: NextRequest) {
   try {
     if (!(await distributedRateLimit(request, { key: 'check-user', limit: 20, windowMs: 60_000 }))) {
@@ -30,6 +31,13 @@ export async function GET(request: NextRequest) {
     const isCurrentUserLoggedIn = currentUserEmail?.toLowerCase() === email.toLowerCase();
     const isAdmin = isAdminSessionEmail(currentUserEmail);
 
+    let isAdminWithAal2 = false;
+    if (isAdmin) {
+      const supabase = await createSupabaseServerClient();
+      const assurance = await getAdminAssuranceLevel(supabase);
+      isAdminWithAal2 = assurance.state === 'AAL2_VERIFIED';
+    }
+
     let user: { id: string; email?: string; created_at?: string; last_sign_in_at?: string; email_confirmed_at?: string | null } | null = null;
     let userExists = false;
 
@@ -44,8 +52,8 @@ export async function GET(request: NextRequest) {
         email_confirmed_at: authUser.email_confirmed_at,
       };
     }
-    // Caso 2: Admin consultando qualquer email - pode usar Admin API
-    else if (isAdmin) {
+    // Caso 2: Admin com AAL2 verificado consultando qualquer email - pode usar Admin API
+    else if (isAdminWithAal2) {
       try {
         const adminSupabase = await createServerSupabase();
         const { user: lookedUpUser, error: userError } = await findAuthUserByEmail(
@@ -53,7 +61,8 @@ export async function GET(request: NextRequest) {
           email.toLowerCase(),
         );
         if (!userError && lookedUpUser) {
-          user = lookedUpUser;          userExists = true;
+          user = lookedUpUser;
+          userExists = true;
         }
       } catch (adminError: unknown) {
         logger.warn('Erro ao acessar Admin API', { email, error: adminError instanceof Error ? adminError.message : adminError });

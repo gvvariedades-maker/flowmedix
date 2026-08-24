@@ -1,8 +1,11 @@
 import { redirect } from 'next/navigation';
+import { headers } from 'next/headers';
 import { AdminToastShell } from '@/components/admin/AdminToastShell';
-import { getServerUser } from '@/lib/supabase/server-auth';
+import { getServerUser, createSupabaseServerClient } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { getAdminAssuranceLevel, type AdminMfaAssuranceState } from '@/lib/admin/adminAssurance';
+import { resolveAdminLayoutRedirect } from '@/lib/admin/adminLayoutGuard';
 
 const bypassEnabled = isE2eBypassEnabled('E2E_ADMIN_BYPASS');
 
@@ -13,13 +16,28 @@ export default async function AdminLayout({
 }) {
   if (!bypassEnabled) {
     const user = await getServerUser();
+    const isAdmin = isAdminSessionEmail(user?.email);
 
-    if (!user?.email) {
-      redirect('/login');
+    let assuranceState: AdminMfaAssuranceState = 'FAIL_CLOSED';
+    if (user?.email && isAdmin) {
+      const supabase = await createSupabaseServerClient();
+      const assurance = await getAdminAssuranceLevel(supabase);
+      assuranceState = assurance.state;
     }
 
-    if (!isAdminSessionEmail(user.email)) {
-      redirect('/');
+    const headerList = await headers();
+    const currentPath = headerList.get('x-pathname');
+
+    const destination = resolveAdminLayoutRedirect({
+      user,
+      isAdmin,
+      assuranceState,
+      currentPath,
+      bypassEnabled,
+    });
+
+    if (destination) {
+      redirect(destination);
     }
   }
 
