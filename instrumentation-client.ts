@@ -6,15 +6,22 @@
  * o app continua reportando erros pelo seam `/api/client-error`.
  */
 import * as Sentry from '@sentry/nextjs';
+import { beforeSendSanitizer, beforeBreadcrumbSanitizer } from '@/lib/monitoring/sentrySanitizer';
+import { getSentryEnvironment, getSentryRelease, getEffectiveSentryDsn } from '@/lib/monitoring/sentryEnv';
 
-const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN;
+const dsn = getEffectiveSentryDsn(true);
 
 if (dsn) {
   Sentry.init({
     dsn,
+    environment: getSentryEnvironment(),
+    release: getSentryRelease(),
+    sendDefaultPii: false,
     tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
     replaysSessionSampleRate: 0,
     replaysOnErrorSampleRate: 0,
+    beforeSend: beforeSendSanitizer,
+    beforeBreadcrumb: beforeBreadcrumbSanitizer,
     enableLogs: false,
     debug: false,
   });

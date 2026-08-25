@@ -20,6 +20,17 @@ const store: RateLimitStore = {};
 
 let redisClient: Redis | null | undefined;
 let upstashFallbackWarned = false;
+const UPSTASH_ERROR_COOLDOWN_MS = 60_000;
+const lastUpstashErrorReportTime = new Map<string, number>();
+
+/**
+ * Reseta o cooldown de erro do Upstash e cache (usado para isolamento em testes unitários).
+ */
+export function _resetUpstashErrorCooldownForTesting(): void {
+  lastUpstashErrorReportTime.clear();
+  upstashFallbackWarned = false;
+}
+
 const distributedLimiterCache = new Map<string, Ratelimit>();
 
 const cleanupInterval = setInterval(() => {
@@ -80,6 +91,50 @@ function warnInMemoryFallback(endpointKey: string): void {
   });
 }
 
+function handleUpstashFailure(
+  err: unknown,
+  endpointKey: string,
+  operation: 'limit' | 'limitWithInfo',
+): void {
+  const now = Date.now();
+  const cooldownKey = `${endpointKey}:${operation}`;
+  const lastReported = lastUpstashErrorReportTime.get(cooldownKey) ?? 0;
+  const isCooldownActive = now - lastReported < UPSTASH_ERROR_COOLDOWN_MS;
+
+  const errorObj =
+    err instanceof Error
+      ? err
+      : new Error(typeof err === 'string' ? err : 'Upstash unknown error');
+
+  if (!isCooldownActive) {
+    lastUpstashErrorReportTime.set(cooldownKey, now);
+    logger.error(
+      `Falha na comunicação com Upstash Redis rate limiter (${operation}) — fallback in-memory acionado`,
+      errorObj,
+      {
+        tags: {
+          component: 'rate-limit',
+          dependency: 'upstash',
+          operation: 'limit',
+          degraded: 'true',
+          endpoint: endpointKey,
+        },
+        fingerprint: ['rate-limit', 'upstash', 'limit', endpointKey],
+        endpoint: endpointKey,
+      },
+    );
+  } else {
+    // Cooldown ativo: log local para visibilidade operacional sem gerar event storm no Sentry
+    logger.warn(
+      `Falha repetida na comunicação com Upstash Redis rate limiter (${operation}) — fallback in-memory (cooldown ativo)`,
+      {
+        endpoint: endpointKey,
+        error: errorObj.message,
+      },
+    );
+  }
+}
+
 export function getClientIp(req: Request): string {
   const forwarded = req.headers.get('x-forwarded-for');
   return forwarded ? forwarded.split(',')[0].trim() : '127.0.0.1';
@@ -122,8 +177,12 @@ export async function distributedRateLimit(
   const limiter = getDistributedLimiter(options.key, options.limit, options.windowMs);
 
   if (limiter) {
-    const { success } = await limiter.limit(identifier);
-    return success;
+    try {
+      const { success } = await limiter.limit(identifier);
+      return success;
+    } catch (err) {
+      handleUpstashFailure(err, options.key, 'limit');
+    }
   }
 
   warnInMemoryFallback(options.key);
@@ -170,12 +229,16 @@ export async function distributedRateLimitWithInfo(
   const limiter = getDistributedLimiter(options.key, options.limit, options.windowMs);
 
   if (limiter) {
-    const result = await limiter.limit(identifier);
-    return {
-      allowed: result.success,
-      remaining: result.remaining,
-      resetAt: result.reset,
-    };
+    try {
+      const result = await limiter.limit(identifier);
+      return {
+        allowed: result.success,
+        remaining: result.remaining,
+        resetAt: result.reset,
+      };
+    } catch (err) {
+      handleUpstashFailure(err, options.key, 'limitWithInfo');
+    }
   }
 
   warnInMemoryFallback(options.key);

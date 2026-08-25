@@ -102,6 +102,11 @@ const EnvSchema = z.object({
   SENTRY_AUTH_TOKEN: z.string().min(1).optional(),
   SENTRY_ORG: z.string().min(1).optional(),
   SENTRY_PROJECT: z.string().min(1).optional(),
+  SENTRY_RELEASE: z.string().min(1).optional(),
+  NEXT_PUBLIC_SENTRY_RELEASE: z.string().min(1).optional(),
+  NEXT_PUBLIC_VERCEL_ENV: z.string().min(1).optional(),
+  VERCEL_GIT_COMMIT_SHA: z.string().min(1).optional(),
+  NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA: z.string().min(1).optional(),
   /**
    * Cursor SDK — orquestrador de pipeline (`npm run pipeline:orchestrate -- --sdk`).
    * Opcional no app Next; obrigatória só ao disparar agents via SDK.
@@ -200,6 +205,11 @@ const ENV_KEYS = [
   'SENTRY_AUTH_TOKEN',
   'SENTRY_ORG',
   'SENTRY_PROJECT',
+  'SENTRY_RELEASE',
+  'NEXT_PUBLIC_SENTRY_RELEASE',
+  'NEXT_PUBLIC_VERCEL_ENV',
+  'VERCEL_GIT_COMMIT_SHA',
+  'NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA',
   'CURSOR_API_KEY',
   'CURSOR_ORCHESTRATOR_MODEL',
   'EE_V1_INSTRUMENTATION',

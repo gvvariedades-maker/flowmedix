@@ -6,14 +6,21 @@
  * e o dev local passam sem nenhuma variável Sentry configurada.
  */
 import * as Sentry from '@sentry/nextjs';
+import { beforeSendSanitizer, beforeBreadcrumbSanitizer } from '@/lib/monitoring/sentrySanitizer';
+import { getSentryEnvironment, getSentryRelease, getEffectiveSentryDsn } from '@/lib/monitoring/sentryEnv';
 
-const dsn = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
+const dsn = getEffectiveSentryDsn(false);
 
 if (dsn) {
   Sentry.init({
     dsn,
-    // Amostragem de tracing — conservadora por padrão; ajuste via env se quiser.
+    environment: getSentryEnvironment(),
+    release: getSentryRelease(),
+    sendDefaultPii: false,
+    // Amostragem de tracing — conservadora por padrão (10% em prod, 100% em dev).
     tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
+    beforeSend: beforeSendSanitizer,
+    beforeBreadcrumb: beforeBreadcrumbSanitizer,
     enableLogs: false,
     debug: false,
   });
