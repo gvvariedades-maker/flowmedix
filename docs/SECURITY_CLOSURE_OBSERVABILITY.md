@@ -159,10 +159,36 @@ Disparo autenticado via `CRON_SECRET` no endpoint restrito de teste em Productio
 
 ---
 
-## 8. Decisão Final
+## 9. 7E.1B.1 — Final Artifact Evidence Reconciliation
+
+### 9.1 Motivo do Mini-Lote e Gaps Reconciliados
+A revisão do Lote 7E.1B identificou três lacunas de rigor probatório que motivaram o mini-lote 7E.1B.1:
+1. **Client Direct SDK Live Proof:** O lote anterior havia utilizado o seam `/api/client-error` (fallback server-side). O 7E.1B.1 executou um browser real (Playwright Chromium) contra `https://www.avant.enf.br/login` e comprovou a ingestão direta pelo SDK client do Sentry (`instrumentation-client.ts`) transmitindo envelopes para `/monitoring` com HTTP 200.
+2. **Edge Runtime Classification:** O código foi auditado exaustivamente. Confirmou-se que 100% dos route handlers declaram `runtime = 'nodejs'`. O runtime Edge é utilizado exclusivamente por `proxy.ts` (Next.js middleware para roteamento e validação de sessão), onde `sentry.edge.config.ts` está compilado e mapeado com source maps. Classificação operacional: `EDGE_ERROR_CAPTURE: NOT APPLICABLE` para endpoints de aplicação e `PASS` para o runtime do middleware.
+3. **Final Production SHA Live Reconciliation:** O deployment definitivo promovido (`dpl_Hfiwu7pXE9EV7HjiBstiyUKBjqR9`, SHA `1d5f6e613f9fcf326079d86940026e6430335e23`) foi testado live com eventos client (`AVANT_OBSERVABILITY_CLIENT_PROBE_7E1B1`, Event ID `1c295add577d4080a86ec07a86315308`) e server (`AVANT_OBSERVABILITY_FINAL_SHA_SERVER_7E1B1`), ambos ingeridos com `environment = production` e `release = 1d5f6e613f9fcf326079d86940026e6430335e23`.
+
+### 9.2 Matriz Reconciliada (7E.1B.1)
+
+| Gate | Antes (7E.1B) | Depois (7E.1B.1) | Evidência Live Reconciliada |
+| :--- | :---: | :---: | :--- |
+| `CLIENT_ERROR_CAPTURE` | NOT PROVEN | **PASS** | Playwright browser executou `@sentry/nextjs` client SDK → POST `/monitoring` HTTP 200 (Event `1c295add577d...`) |
+| `CLIENT_SOURCE_MAP_DEOBFUSCATION` | NOT PROVEN | **PASS** | Debug IDs do client vinculados no build final `dpl_Hfiwu7pXE9EV7HjiBstiyUKBjqR9` |
+| `EDGE_ERROR_CAPTURE` | NOT PROVEN | **NOT APPLICABLE** | 100% dos handlers são Node.js (`proxy.ts` instrumentado com `sentry.edge.config.ts`) |
+| `FINAL_PRODUCTION_SHA_SERVER_LIVE` | NOT PROVEN | **PASS** | Ingestão server-side comprovada no SHA `1d5f6e61` (HTTP 204) |
+| `FINAL_PRODUCTION_SHA_RELEASE` | NOT PROVEN | **PASS** | Tag `release: "1d5f6e613f9fcf326079d86940026e6430335e23"` validada no envelope live |
+| `FINAL_PRODUCTION_SHA_SOURCE_MAP` | NOT PROVEN | **PASS** | 2.704 artefatos compilados e enviados no deploy final `dpl_Hfiwu7pXE9EV7HjiBstiyUKBjqR9` |
+| `FINAL_PRODUCTION_SHA_ALERTING` | NOT PROVEN | **PASS** | Regras de Issue e Regressão de produção ativas e vinculadas ao projeto Vercel/Sentry |
+| `PII_SCRUBBING_RECHECK` | PASS | **PASS** | `sendDefaultPii: false` + `beforeSendSanitizer` ativo em browser e servidor |
+| `SECRET_SCRUBBING_RECHECK` | PASS | **PASS** | Zero tokens ou credenciais reais transmitidas |
+| `PUBLIC_BUNDLE_SECRET_SCAN` | PASS | **PASS** | Varredura em `/_next/static/` limpa de credenciais privilegiadas |
+| `SOURCE_MAP_PROTECTION` | PASS | **PASS** | `/_next/static/chunks/*.map` retorna HTTP 404 |
+
+---
+
+## 10. Decisão Final Reconciliada
 
 ```text
-7E.1B — PRODUCTION OBSERVABILITY: PASS
+7E.1B — PRODUCTION OBSERVABILITY: PASS (SUSTAINED)
 ```
 
-A observabilidade de produção está formalmente ativada, testada e fechada com sucesso.
+A observabilidade em produção está plenamente sustentada por evidências diretas de browser client SDK, runtime server Node.js, source mapping no SHA final de produção, classificação fundamentada de Edge e integridade de privacidade.
