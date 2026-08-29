@@ -1,0 +1,18 @@
+{
+  "preSnapshotCount": 41,
+  "postSnapshotCount": 12,
+  "postSnapshot": [
+    "20260616170000_archive_lp_goianinha.sql",
+    "20260618120000_user_preferences_onboarding.sql",
+    "20260620120000_subtopico_guideline_registry.sql",
+    "20260720120000_questao_figures_bucket.sql",
+    "20260723120000_stripe_webhook_events.sql",
+    "20260723140000_vitrine_page_disciplina.sql",
+    "20260724180000_evidence_attempt_events.sql",
+    "20260728040000_spaced_review_fsrs_mvp.sql",
+    "20260730120000_drop_spaced_review_fsrs_mvp.sql",
+    "20260808170000_study_notebooks_source_pack_id.sql",
+    "20260811120000_historico_questoes_respondida.sql",
+    "20260814120000_historico_cache_trigger_definer.sql"
+  ]
+}

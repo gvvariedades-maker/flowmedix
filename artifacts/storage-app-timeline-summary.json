@@ -1,0 +1,134 @@
+{
+  "summary": {
+    "STORAGE_API_RECOVERY": "PASS",
+    "STORAGE_BINARY_RECOVERY": "PASS",
+    "NEXTJS_AGAINST_RESTORED_STACK": "PASS",
+    "OBSERVED_LOCAL_FULL_STACK_RECOVERY_TIME": "37.51s",
+    "PRODUCTION_RTO": "NOT_PROVEN",
+    "AUTH_BACKUP_RECOVERY": "NOT_PROVEN"
+  },
+  "timeline": {
+    "LOCAL_FULL_STACK_RESTORE_START": "2026-08-27T01:58:34.000Z",
+    "STACK_HEALTHY_TIME": "2026-08-27T01:58:50.000Z",
+    "MIGRATIONS_COMPLETE_TIME": "2026-08-27T02:01:16.000Z",
+    "DATA_COMPLETE_TIME": "2026-08-27T02:21:00.000Z",
+    "AUTH_VALIDATED_TIME": "2026-08-27T02:21:20.000Z",
+    "STORAGE_COMPLETE_TIME": "2026-08-27T05:28:38.024Z",
+    "NEXTJS_SMOKE_COMPLETE_TIME": "2026-08-27T05:28:38.028Z",
+    "LOCAL_FULL_STACK_RESTORE_COMPLETE": "2026-08-27T05:28:38.028Z"
+  },
+  "binaryAuditResults": [
+    {
+      "path": "classes-de-palavras/3352957.webp",
+      "sizeBytes": 43246,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "classes-de-palavras/3353960.webp",
+      "sizeBytes": 43246,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "classes-de-palavras/3665303.webp",
+      "sizeBytes": 15218,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "classes-de-palavras/3739268.webp",
+      "sizeBytes": 36774,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "classes-de-palavras/3793476.webp",
+      "sizeBytes": 42298,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "classes-de-palavras/3835993.webp",
+      "sizeBytes": 34292,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "classes-de-palavras/3839425.webp",
+      "sizeBytes": 36774,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "pt-backfill/3323742.webp",
+      "sizeBytes": 28910,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "pt-backfill/3554844.webp",
+      "sizeBytes": 12568,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "pt-backfill/3826754.webp",
+      "sizeBytes": 15356,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "pt-backfill/3836503.webp",
+      "sizeBytes": 36658,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "pt-backfill/3836507.webp",
+      "sizeBytes": 36658,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "pt-backfill/3840898.webp",
+      "sizeBytes": 29508,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "pt-backfill/3951882.webp",
+      "sizeBytes": 44446,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "pt-backfill/3962461.webp",
+      "sizeBytes": 20154,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    },
+    {
+      "path": "pt-backfill/3999721.webp",
+      "sizeBytes": 29270,
+      "mime": "image/webp",
+      "sha256_match": "PASS",
+      "http_status": 200
+    }
+  ]
+}

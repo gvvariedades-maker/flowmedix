@@ -1,0 +1,1255 @@
+[
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 14,
+    "keyword": "stripe",
+    "context": "CREATE TYPE public.concurso_matricula_origem AS ENUM ('cadastro', 'admin', 'upgrade', 'purchase', 'stripe_pro', 'invite');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 53,
+    "keyword": "stripe",
+    "context": "\"stripe_checkout_session_id\" text",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 79,
+    "keyword": "stripe",
+    "context": "\"gateway\" text DEFAULT 'stripe'::text NOT NULL,",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 159,
+    "keyword": "stripe",
+    "context": "ALTER TABLE public.\"acessos\" ADD CONSTRAINT \"acessos_stripe_session_unique\" UNIQUE (stripe_checkout_session_id);",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 491,
+    "keyword": "stripe",
+    "context": "WHEN concurso_matriculas.origem = 'stripe_pro' THEN concurso_matriculas.status",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 495,
+    "keyword": "stripe",
+    "context": "WHEN concurso_matriculas.origem = 'stripe_pro' THEN 'stripe_pro'",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 499,
+    "keyword": "stripe",
+    "context": "WHEN concurso_matriculas.origem = 'stripe_pro' THEN concurso_matriculas.expires_at",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1459,
+    "keyword": "webhook",
+    "context": "CREATE OR REPLACE FUNCTION public.invalidate_cache_via_webhook(table_name text, event_type text)",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1467,
+    "keyword": "webhook",
+    "context": "webhook_secret text;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1468,
+    "keyword": "webhook",
+    "context": "webhook_url text;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1471,
+    "keyword": "webhook",
+    "context": "INTO base_url, webhook_secret",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1472,
+    "keyword": "webhook",
+    "context": "FROM private.cache_webhook_config c",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1475,
+    "keyword": "webhook",
+    "context": "IF base_url IS NULL OR webhook_secret IS NULL THEN",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1476,
+    "keyword": "webhook",
+    "context": "base_url := nullif(btrim(current_setting('app.webhook_url', true)), '');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1477,
+    "keyword": "webhook",
+    "context": "webhook_secret := nullif(btrim(current_setting('app.webhook_secret', true)), '');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1480,
+    "keyword": "webhook",
+    "context": "IF base_url IS NULL OR webhook_secret IS NULL THEN",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1482,
+    "keyword": "webhook",
+    "context": "'invalidate_cache_via_webhook skipped: configure private.cache_webhook_config or GUCs app.webhook_url / app.webhook_secret. table=%, event=%',",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1488,
+    "keyword": "webhook",
+    "context": "webhook_url := regexp_replace(base_url, '/+$', '') || '/api/cache/revalidate';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1490,
+    "keyword": "net.http_post",
+    "context": "PERFORM net.http_post(",
+    "riskAssessment": "CRITICAL_EXTERNAL_CALL"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1491,
+    "keyword": "webhook",
+    "context": "url := webhook_url,",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1493,
+    "keyword": "webhook",
+    "context": "'Authorization', 'Bearer ' || webhook_secret,",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1502,
+    "keyword": "webhook",
+    "context": "RAISE LOG 'Cache invalidation triggered: url=%, table=%, event=%', webhook_url, table_name, event_type;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1810,
+    "keyword": "webhook",
+    "context": "PERFORM invalidate_cache_via_webhook('exam_contents', 'DELETE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1825,
+    "keyword": "webhook",
+    "context": "PERFORM invalidate_cache_via_webhook('exam_contents', 'INSERT');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1840,
+    "keyword": "webhook",
+    "context": "PERFORM invalidate_cache_via_webhook('exam_contents', 'UPDATE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1855,
+    "keyword": "webhook",
+    "context": "PERFORM invalidate_cache_via_webhook('flowcharts', 'DELETE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1870,
+    "keyword": "webhook",
+    "context": "PERFORM invalidate_cache_via_webhook('flowcharts', 'INSERT');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1885,
+    "keyword": "webhook",
+    "context": "PERFORM invalidate_cache_via_webhook('flowcharts', 'UPDATE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1901,
+    "keyword": "webhook",
+    "context": "PERFORM public.invalidate_cache_via_webhook('historico_questoes', 'DELETE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1917,
+    "keyword": "webhook",
+    "context": "PERFORM public.invalidate_cache_via_webhook('historico_questoes', 'INSERT');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1933,
+    "keyword": "webhook",
+    "context": "PERFORM public.invalidate_cache_via_webhook('historico_questoes', 'UPDATE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1948,
+    "keyword": "webhook",
+    "context": "PERFORM invalidate_cache_via_webhook('modulos_estudo', 'DELETE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1963,
+    "keyword": "webhook",
+    "context": "PERFORM invalidate_cache_via_webhook('modulos_estudo', 'INSERT');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 1978,
+    "keyword": "webhook",
+    "context": "PERFORM invalidate_cache_via_webhook('modulos_estudo', 'UPDATE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "line": 2107,
+    "keyword": "stripe",
+    "context": "CREATE UNIQUE INDEX IF NOT EXISTS acessos_stripe_session_unique ON public.acessos USING btree (stripe_checkout_session_id);",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260516221149_add_pro_subscription.sql",
+    "line": 1,
+    "keyword": "stripe",
+    "context": "-- Freemium AVANT Pro: origem stripe_pro, vitrine geral R$ 9,90, índice de limite diário.",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260516221149_add_pro_subscription.sql",
+    "line": 10,
+    "keyword": "stripe",
+    "context": "AND e.enumlabel = 'stripe_pro'",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260516221149_add_pro_subscription.sql",
+    "line": 12,
+    "keyword": "stripe",
+    "context": "ALTER TYPE public.concurso_matricula_origem ADD VALUE 'stripe_pro';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260523180000_revoke_public_rpc_execute.sql",
+    "line": 1,
+    "keyword": "cron",
+    "context": "-- Endurece RPCs sensíveis: apenas service_role (APIs server-side / cron).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260523180000_revoke_public_rpc_execute.sql",
+    "line": 6,
+    "keyword": "webhook",
+    "context": "REVOKE EXECUTE ON FUNCTION public.invalidate_cache_via_webhook(text, text) FROM PUBLIC, anon, authenticated;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260523180000_revoke_public_rpc_execute.sql",
+    "line": 10,
+    "keyword": "webhook",
+    "context": "GRANT EXECUTE ON FUNCTION public.invalidate_cache_via_webhook(text, text) TO service_role;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260525120000_preserve_stripe_pro_on_purchase_fulfill.sql",
+    "line": 1,
+    "keyword": "stripe",
+    "context": "-- Preserva matrícula stripe_pro quando compra avulsa conflita no mesmo (user_id, concurso_id).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260525120000_preserve_stripe_pro_on_purchase_fulfill.sql",
+    "line": 66,
+    "keyword": "stripe",
+    "context": "WHEN concurso_matriculas.origem = 'stripe_pro' THEN concurso_matriculas.status",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260525120000_preserve_stripe_pro_on_purchase_fulfill.sql",
+    "line": 70,
+    "keyword": "stripe",
+    "context": "WHEN concurso_matriculas.origem = 'stripe_pro' THEN 'stripe_pro'",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260525120000_preserve_stripe_pro_on_purchase_fulfill.sql",
+    "line": 74,
+    "keyword": "stripe",
+    "context": "WHEN concurso_matriculas.origem = 'stripe_pro' THEN concurso_matriculas.expires_at",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260525120000_preserve_stripe_pro_on_purchase_fulfill.sql",
+    "line": 82,
+    "keyword": "stripe",
+    "context": "'Marca compra como paid e concede/renova matrícula purchase com expires_at; idempotente se já paid. Compra avulsa não rebaixa matrícula stripe_pro existente.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 1,
+    "keyword": "webhook",
+    "context": "-- Harden cache invalidation webhook: require GUCs (no silent localhost fallback).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 2,
+    "keyword": "webhook",
+    "context": "-- Next.js validates Bearer with SUPABASE_WEBHOOK_SECRET (WEBHOOK_SECRET legacy fallback).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 3,
+    "keyword": "vercel",
+    "context": "-- After deploy, set once in SQL Editor (values must match Vercel):",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 4,
+    "keyword": "webhook",
+    "context": "--   ALTER DATABASE postgres SET app.webhook_url = '<NEXT_PUBLIC_APP_URL without trailing slash>';",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 5,
+    "keyword": "webhook",
+    "context": "--   ALTER DATABASE postgres SET app.webhook_secret = '<SUPABASE_WEBHOOK_SECRET>';",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 6,
+    "keyword": "webhook",
+    "context": "-- See docs/WEBHOOK_SETUP.md and supabase/scripts/set_cache_webhook_gucs.sql",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 8,
+    "keyword": "webhook",
+    "context": "CREATE OR REPLACE FUNCTION public.invalidate_cache_via_webhook(",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 19,
+    "keyword": "webhook",
+    "context": "webhook_secret text;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 20,
+    "keyword": "webhook",
+    "context": "webhook_url text;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 22,
+    "keyword": "webhook",
+    "context": "base_url := nullif(btrim(current_setting('app.webhook_url', true)), '');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 23,
+    "keyword": "webhook",
+    "context": "webhook_secret := nullif(btrim(current_setting('app.webhook_secret', true)), '');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 25,
+    "keyword": "webhook",
+    "context": "IF base_url IS NULL OR webhook_secret IS NULL THEN",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 27,
+    "keyword": "webhook",
+    "context": "'invalidate_cache_via_webhook skipped: set app.webhook_url (base URL, same host as NEXT_PUBLIC_APP_URL) and app.webhook_secret (same value as SUPABASE_WEBHOOK_SECRET). table=%, event=%',",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 33,
+    "keyword": "webhook",
+    "context": "webhook_url := regexp_replace(base_url, '/+$', '') || '/api/cache/revalidate';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 35,
+    "keyword": "net.http_post",
+    "context": "PERFORM net.http_post(",
+    "riskAssessment": "CRITICAL_EXTERNAL_CALL"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 36,
+    "keyword": "webhook",
+    "context": "url := webhook_url,",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 38,
+    "keyword": "webhook",
+    "context": "'Authorization', 'Bearer ' || webhook_secret,",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 47,
+    "keyword": "webhook",
+    "context": "RAISE LOG 'Cache invalidation triggered: url=%, table=%, event=%', webhook_url, table_name, event_type;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 51,
+    "keyword": "webhook",
+    "context": "COMMENT ON FUNCTION public.invalidate_cache_via_webhook(text, text) IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 52,
+    "keyword": "pg_net",
+    "context": "'POST /api/cache/revalidate via pg_net. Requires database GUCs app.webhook_url (base, no path) and app.webhook_secret (= SUPABASE_WEBHOOK_SECRET on Vercel). Skips with WARNING if unset.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 52,
+    "keyword": "webhook",
+    "context": "'POST /api/cache/revalidate via pg_net. Requires database GUCs app.webhook_url (base, no path) and app.webhook_secret (= SUPABASE_WEBHOOK_SECRET on Vercel). Skips with WARNING if unset.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 52,
+    "keyword": "vercel",
+    "context": "'POST /api/cache/revalidate via pg_net. Requires database GUCs app.webhook_url (base, no path) and app.webhook_secret (= SUPABASE_WEBHOOK_SECRET on Vercel). Skips with WARNING if unset.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 54,
+    "keyword": "webhook",
+    "context": "REVOKE EXECUTE ON FUNCTION public.invalidate_cache_via_webhook(text, text) FROM PUBLIC, anon, authenticated;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "line": 55,
+    "keyword": "webhook",
+    "context": "GRANT EXECUTE ON FUNCTION public.invalidate_cache_via_webhook(text, text) TO service_role;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 2,
+    "keyword": "webhook",
+    "context": "-- Configuração canônica em private.cache_webhook_config (singleton); GUCs permanecem fallback (self-hosted).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 6,
+    "keyword": "webhook",
+    "context": "CREATE TABLE IF NOT EXISTS private.cache_webhook_config (",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 13,
+    "keyword": "webhook",
+    "context": "ALTER TABLE private.cache_webhook_config ENABLE ROW LEVEL SECURITY;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 16,
+    "keyword": "webhook",
+    "context": "REVOKE ALL ON TABLE private.cache_webhook_config FROM PUBLIC, anon, authenticated;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 18,
+    "keyword": "webhook",
+    "context": "CREATE OR REPLACE FUNCTION public.invalidate_cache_via_webhook(",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 29,
+    "keyword": "webhook",
+    "context": "webhook_secret text;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 30,
+    "keyword": "webhook",
+    "context": "webhook_url text;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 33,
+    "keyword": "webhook",
+    "context": "INTO base_url, webhook_secret",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 34,
+    "keyword": "webhook",
+    "context": "FROM private.cache_webhook_config c",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 37,
+    "keyword": "webhook",
+    "context": "IF base_url IS NULL OR webhook_secret IS NULL THEN",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 38,
+    "keyword": "webhook",
+    "context": "base_url := nullif(btrim(current_setting('app.webhook_url', true)), '');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 39,
+    "keyword": "webhook",
+    "context": "webhook_secret := nullif(btrim(current_setting('app.webhook_secret', true)), '');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 42,
+    "keyword": "webhook",
+    "context": "IF base_url IS NULL OR webhook_secret IS NULL THEN",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 44,
+    "keyword": "webhook",
+    "context": "'invalidate_cache_via_webhook skipped: configure private.cache_webhook_config or GUCs app.webhook_url / app.webhook_secret. table=%, event=%',",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 50,
+    "keyword": "webhook",
+    "context": "webhook_url := regexp_replace(base_url, '/+$', '') || '/api/cache/revalidate';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 52,
+    "keyword": "net.http_post",
+    "context": "PERFORM net.http_post(",
+    "riskAssessment": "CRITICAL_EXTERNAL_CALL"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 53,
+    "keyword": "webhook",
+    "context": "url := webhook_url,",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 55,
+    "keyword": "webhook",
+    "context": "'Authorization', 'Bearer ' || webhook_secret,",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 64,
+    "keyword": "webhook",
+    "context": "RAISE LOG 'Cache invalidation triggered: url=%, table=%, event=%', webhook_url, table_name, event_type;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 68,
+    "keyword": "webhook",
+    "context": "COMMENT ON FUNCTION public.invalidate_cache_via_webhook(text, text) IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 69,
+    "keyword": "pg_net",
+    "context": "'POST /api/cache/revalidate via pg_net. Config: private.cache_webhook_config (Supabase Cloud) or GUCs app.webhook_url + app.webhook_secret.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 69,
+    "keyword": "webhook",
+    "context": "'POST /api/cache/revalidate via pg_net. Config: private.cache_webhook_config (Supabase Cloud) or GUCs app.webhook_url + app.webhook_secret.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 71,
+    "keyword": "webhook",
+    "context": "COMMENT ON TABLE private.cache_webhook_config IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 72,
+    "keyword": "webhook",
+    "context": "'Singleton: base_url = NEXT_PUBLIC_APP_URL (sem path); secret = SUPABASE_WEBHOOK_SECRET. INSERT/UPDATE só service_role ou SQL Editor.';",
+    "riskAssessment": "DML_STATEMENT"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 74,
+    "keyword": "webhook",
+    "context": "REVOKE EXECUTE ON FUNCTION public.invalidate_cache_via_webhook(text, text) FROM PUBLIC, anon, authenticated;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "line": 75,
+    "keyword": "webhook",
+    "context": "GRANT EXECUTE ON FUNCTION public.invalidate_cache_via_webhook(text, text) TO service_role;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 1,
+    "keyword": "pg_net",
+    "context": "-- Boas-vindas: INSERT em auth.users → POST /api/webhooks/auth (pg_net).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 1,
+    "keyword": "webhook",
+    "context": "-- Boas-vindas: INSERT em auth.users → POST /api/webhooks/auth (pg_net).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 3,
+    "keyword": "webhook",
+    "context": "-- Reutiliza private.cache_webhook_config (base_url + secret = SUPABASE_WEBHOOK_SECRET na Vercel).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 3,
+    "keyword": "vercel",
+    "context": "-- Reutiliza private.cache_webhook_config (base_url + secret = SUPABASE_WEBHOOK_SECRET na Vercel).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 7,
+    "keyword": "webhook",
+    "context": "CREATE OR REPLACE FUNCTION private.notify_auth_user_welcome_webhook()",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 23,
+    "keyword": "webhook",
+    "context": "webhook_secret text;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 25,
+    "keyword": "webhook",
+    "context": "webhook_url text;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 31,
+    "keyword": "webhook",
+    "context": "INTO base_url, webhook_secret",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 33,
+    "keyword": "webhook",
+    "context": "FROM private.cache_webhook_config c",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 39,
+    "keyword": "webhook",
+    "context": "IF base_url IS NULL OR webhook_secret IS NULL THEN",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 41,
+    "keyword": "webhook",
+    "context": "base_url := nullif(btrim(current_setting('app.webhook_url', true)), '');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 43,
+    "keyword": "webhook",
+    "context": "webhook_secret := nullif(btrim(current_setting('app.webhook_secret', true)), '');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 49,
+    "keyword": "webhook",
+    "context": "IF base_url IS NULL OR webhook_secret IS NULL THEN",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 53,
+    "keyword": "webhook",
+    "context": "'auth welcome webhook skipped: configure private.cache_webhook_config or GUCs app.webhook_url / app.webhook_secret. user_id=%',",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 63,
+    "keyword": "webhook",
+    "context": "webhook_url := regexp_replace(base_url, '/+$', '') || '/api/webhooks/auth';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 67,
+    "keyword": "net.http_post",
+    "context": "PERFORM net.http_post(",
+    "riskAssessment": "CRITICAL_EXTERNAL_CALL"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 69,
+    "keyword": "webhook",
+    "context": "url := webhook_url,",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 73,
+    "keyword": "webhook",
+    "context": "'x-webhook-secret', webhook_secret,",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 103,
+    "keyword": "webhook",
+    "context": "COMMENT ON FUNCTION private.notify_auth_user_welcome_webhook() IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 105,
+    "keyword": "webhook",
+    "context": "'Dispara e-mail de boas-vindas via POST /api/webhooks/auth após signup (header x-webhook-secret).';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 109,
+    "keyword": "webhook",
+    "context": "DROP TRIGGER IF EXISTS auth_users_welcome_webhook ON auth.users;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 113,
+    "keyword": "webhook",
+    "context": "CREATE TRIGGER auth_users_welcome_webhook",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "line": 119,
+    "keyword": "webhook",
+    "context": "EXECUTE FUNCTION private.notify_auth_user_welcome_webhook();",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 1,
+    "keyword": "stripe",
+    "context": "-- Ledger de idempotência Stripe: um row por event.id (service_role only).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 3,
+    "keyword": "stripe",
+    "context": "-- Conflito com status=processing → HTTP 503 (Stripe retry); processed → 200 no-op.",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 5,
+    "keyword": "webhook",
+    "context": "CREATE TABLE IF NOT EXISTS public.stripe_webhook_events (",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 5,
+    "keyword": "stripe",
+    "context": "CREATE TABLE IF NOT EXISTS public.stripe_webhook_events (",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 13,
+    "keyword": "webhook",
+    "context": "CONSTRAINT stripe_webhook_events_event_id_nonempty CHECK (char_length(event_id) > 0),",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 13,
+    "keyword": "stripe",
+    "context": "CONSTRAINT stripe_webhook_events_event_id_nonempty CHECK (char_length(event_id) > 0),",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 14,
+    "keyword": "webhook",
+    "context": "CONSTRAINT stripe_webhook_events_type_nonempty CHECK (char_length(type) > 0),",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 14,
+    "keyword": "stripe",
+    "context": "CONSTRAINT stripe_webhook_events_type_nonempty CHECK (char_length(type) > 0),",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 15,
+    "keyword": "webhook",
+    "context": "CONSTRAINT stripe_webhook_events_processed_at_when_done CHECK (",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 15,
+    "keyword": "stripe",
+    "context": "CONSTRAINT stripe_webhook_events_processed_at_when_done CHECK (",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 21,
+    "keyword": "webhook",
+    "context": "COMMENT ON TABLE public.stripe_webhook_events IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 21,
+    "keyword": "stripe",
+    "context": "COMMENT ON TABLE public.stripe_webhook_events IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 22,
+    "keyword": "webhook",
+    "context": "'Idempotência de webhooks Stripe por event.id. RLS: só service_role (createServerSupabase).';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 22,
+    "keyword": "stripe",
+    "context": "'Idempotência de webhooks Stripe por event.id. RLS: só service_role (createServerSupabase).';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 23,
+    "keyword": "webhook",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.event_id IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 23,
+    "keyword": "stripe",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.event_id IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 24,
+    "keyword": "stripe",
+    "context": "'Stripe Event.id (ex.: evt_...); PK — conflito = claim ativo ou já processado.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 25,
+    "keyword": "webhook",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.type IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 25,
+    "keyword": "stripe",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.type IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 26,
+    "keyword": "stripe",
+    "context": "'Stripe Event.type no momento do claim.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 27,
+    "keyword": "webhook",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.status IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 27,
+    "keyword": "stripe",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.status IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 29,
+    "keyword": "webhook",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.processed_at IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 29,
+    "keyword": "stripe",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.processed_at IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 31,
+    "keyword": "webhook",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.payload_hash IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 31,
+    "keyword": "stripe",
+    "context": "COMMENT ON COLUMN public.stripe_webhook_events.payload_hash IS",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 32,
+    "keyword": "stripe",
+    "context": "'SHA-256 hex opcional do raw body (auditoria; não substitui assinatura Stripe).';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 34,
+    "keyword": "webhook",
+    "context": "CREATE INDEX IF NOT EXISTS idx_stripe_webhook_events_status_created",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 34,
+    "keyword": "stripe",
+    "context": "CREATE INDEX IF NOT EXISTS idx_stripe_webhook_events_status_created",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 35,
+    "keyword": "webhook",
+    "context": "ON public.stripe_webhook_events (status, created_at DESC);",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 35,
+    "keyword": "stripe",
+    "context": "ON public.stripe_webhook_events (status, created_at DESC);",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 37,
+    "keyword": "webhook",
+    "context": "CREATE INDEX IF NOT EXISTS idx_stripe_webhook_events_type",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 37,
+    "keyword": "stripe",
+    "context": "CREATE INDEX IF NOT EXISTS idx_stripe_webhook_events_type",
+    "riskAssessment": "DDL_OR_METADATA"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 38,
+    "keyword": "webhook",
+    "context": "ON public.stripe_webhook_events (type);",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 38,
+    "keyword": "stripe",
+    "context": "ON public.stripe_webhook_events (type);",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 40,
+    "keyword": "webhook",
+    "context": "ALTER TABLE public.stripe_webhook_events ENABLE ROW LEVEL SECURITY;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 40,
+    "keyword": "stripe",
+    "context": "ALTER TABLE public.stripe_webhook_events ENABLE ROW LEVEL SECURITY;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 42,
+    "keyword": "webhook",
+    "context": "DROP POLICY IF EXISTS \"stripe_webhook_events_service_all\" ON public.stripe_webhook_events;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 42,
+    "keyword": "stripe",
+    "context": "DROP POLICY IF EXISTS \"stripe_webhook_events_service_all\" ON public.stripe_webhook_events;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 43,
+    "keyword": "webhook",
+    "context": "CREATE POLICY \"stripe_webhook_events_service_all\"",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 43,
+    "keyword": "stripe",
+    "context": "CREATE POLICY \"stripe_webhook_events_service_all\"",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 44,
+    "keyword": "webhook",
+    "context": "ON public.stripe_webhook_events",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 44,
+    "keyword": "stripe",
+    "context": "ON public.stripe_webhook_events",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 50,
+    "keyword": "webhook",
+    "context": "REVOKE ALL ON TABLE public.stripe_webhook_events FROM PUBLIC, anon, authenticated;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 50,
+    "keyword": "stripe",
+    "context": "REVOKE ALL ON TABLE public.stripe_webhook_events FROM PUBLIC, anon, authenticated;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 51,
+    "keyword": "webhook",
+    "context": "GRANT ALL ON TABLE public.stripe_webhook_events TO service_role;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "line": 51,
+    "keyword": "stripe",
+    "context": "GRANT ALL ON TABLE public.stripe_webhook_events TO service_role;",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 2,
+    "keyword": "webhook",
+    "context": "-- Live (2026-08-14): invalidate_cache_via_webhook é SECURITY DEFINER, EXECUTE só",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 5,
+    "keyword": "webhook",
+    "context": "-- permission denied for function invalidate_cache_via_webhook — a transação desfaz.",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 8,
+    "keyword": "webhook",
+    "context": "-- Não concede EXECUTE da webhook a authenticated (não vira RPC).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 18,
+    "keyword": "webhook",
+    "context": "PERFORM public.invalidate_cache_via_webhook('historico_questoes', 'INSERT');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 30,
+    "keyword": "webhook",
+    "context": "PERFORM public.invalidate_cache_via_webhook('historico_questoes', 'UPDATE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 35,
+    "keyword": "webhook",
+    "context": "-- Statement-level: um webhook por DELETE em lote (reset), não um por linha.",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 44,
+    "keyword": "webhook",
+    "context": "PERFORM public.invalidate_cache_via_webhook('historico_questoes', 'DELETE');",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 56,
+    "keyword": "webhook",
+    "context": "'AFTER INSERT ROW em historico_questoes → invalidate_cache_via_webhook. SECURITY DEFINER (owner postgres); EXECUTE revogado de anon/authenticated.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 58,
+    "keyword": "webhook",
+    "context": "'AFTER UPDATE ROW em historico_questoes → invalidate_cache_via_webhook. SECURITY DEFINER (owner postgres); EXECUTE revogado de anon/authenticated.';",
+    "riskAssessment": "DML_STATEMENT"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 60,
+    "keyword": "webhook",
+    "context": "'AFTER DELETE STATEMENT em historico_questoes → um webhook por comando (reset 1A). SECURITY DEFINER; EXECUTE revogado de anon/authenticated.';",
+    "riskAssessment": "INFO"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 66,
+    "keyword": "webhook",
+    "context": "-- Idempotente: webhook continua interna (já endurecida em 20260604185921).",
+    "riskAssessment": "COMMENT_OR_DOC"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 67,
+    "keyword": "webhook",
+    "context": "REVOKE EXECUTE ON FUNCTION public.invalidate_cache_via_webhook(text, text) FROM PUBLIC, anon, authenticated;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "line": 68,
+    "keyword": "webhook",
+    "context": "GRANT EXECUTE ON FUNCTION public.invalidate_cache_via_webhook(text, text) TO service_role;",
+    "riskAssessment": "FUNCTION_OR_TRIGGER_DEFINITION"
+  }
+]

@@ -1,0 +1,55 @@
+# Foundation do backup offsite AVANT (micro-lote 7F.3B.0F).
+# schedule: ABSENT — DAILY_CRON_ENABLED = NO
+# workflow_dispatch: PRESENT — WORKFLOW_DISPATCH_EXECUTED = NO neste lote
+# GITHUB_SECRETS_CONFIGURED = NO — não injetar secrets reais
+# STORAGE_ADAPTER_IMPLEMENTED = YES (somente --synthetic; fetcher injetável)
+# STORAGE_PRODUCTION_BYTES_CAPTURE = NOT_PROVEN
+# Nenhuma credencial Storage / R2 / service_role neste workflow
+#
+# Nomes futuros (não configurados agora; não são credenciais de Storage bytes):
+#   SUPABASE_ACCESS_TOKEN
+#   CLOUDFLARE_ACCOUNT_ID
+#   R2_ACCESS_KEY_ID
+#   R2_SECRET_ACCESS_KEY
+#   AVANT_MASTER_KEK
+name: Disaster recovery backup
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Runner mode (somente synthetic neste lote)
+        required: true
+        type: choice
+        options:
+          - synthetic
+        default: synthetic
+
+permissions:
+  contents: read
+
+concurrency:
+  group: disaster-recovery-backup
+  cancel-in-progress: false
+
+jobs:
+  synthetic-backup:
+    name: Synthetic DR backup runner
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: disaster-recovery
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run DR backup runner (synthetic)
+        run: npm run dr:backup:synthetic

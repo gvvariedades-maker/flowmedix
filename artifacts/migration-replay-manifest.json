@@ -1,0 +1,267 @@
+[
+  {
+    "file": "20260513182510_remote_schema.sql",
+    "bytes": 73674,
+    "sha256": "cc64db574c6ac3f550484eb1b7967b76cbf678473a0de5b7d0de596315301b83"
+  },
+  {
+    "file": "20260514120000_campina_grande_price_37.sql",
+    "bytes": 183,
+    "sha256": "3dfe331b36d9fad3667c57669694b91643ee7b191038757846fe60ea17fb826b"
+  },
+  {
+    "file": "20260515215223_add_concurso_builder_fields.sql",
+    "bytes": 413,
+    "sha256": "63ee1e093ff9700d04b4434fe2d09617e3dbe2d5b726542128e27dc42f8c1f12"
+  },
+  {
+    "file": "20260516174644_fix_auth_users_email_change_null.sql",
+    "bytes": 927,
+    "sha256": "26ffdaf691d8ac54ff9e4f4f5e78136f8d6ea6a36efe3d33c850eb00fb6193cf"
+  },
+  {
+    "file": "20260516221149_add_pro_subscription.sql",
+    "bytes": 594,
+    "sha256": "dd9840b5ae9631e55d9c46620f055c431b3554b9d401cf92de4cebab2d8d5031"
+  },
+  {
+    "file": "20260522064149_lp_pages.sql",
+    "bytes": 2285,
+    "sha256": "592c894e0dec6ba5945087f1e3ea6a8bb7e15c97a86935a90367df09feae0613"
+  },
+  {
+    "file": "20260522075550_lp_avant_pro.sql",
+    "bytes": 3781,
+    "sha256": "fcbcc441b1fd1e72e03de3722c038b40110fdff93baf858b4b5d36331df9957b"
+  },
+  {
+    "file": "20260522103850_lp_goianinha_data_prova.sql",
+    "bytes": 230,
+    "sha256": "fd632d4e1e9ac04e33ad01f75dd9439189a79db93b777bc467fada8a6b07a68a"
+  },
+  {
+    "file": "20260522113121_historico_questoes_user_cascade.sql",
+    "bytes": 263,
+    "sha256": "c2a0fc8ac64223f84b41ae74b9f4771ffba0007451ddbb7b0e78d5438367a61a"
+  },
+  {
+    "file": "20260522162246_email_templates.sql",
+    "bytes": 1960,
+    "sha256": "4765f02c76ba6aa934d45eaa5395d8c429e0e57f3310d0a40ab6d950387fc592"
+  },
+  {
+    "file": "20260523073728_invite_links.sql",
+    "bytes": 2686,
+    "sha256": "e2fd950953471120da940d6aa1439383e78d400d3f0dd621af0c098b523bfb68"
+  },
+  {
+    "file": "20260523120000_welcome_email_tecnico_enfermagem.sql",
+    "bytes": 814,
+    "sha256": "6d55887b3f757135ff99d3dd9dd771ab6189589891fff9d95128ab976825423c"
+  },
+  {
+    "file": "20260523180000_revoke_public_rpc_execute.sql",
+    "bytes": 839,
+    "sha256": "f83471f200a5bbb5c567dfe9c89224a9e2c77c2b92e2003e26665ed5cbdec8c6"
+  },
+  {
+    "file": "20260524100000_scale_health_metrics_rpc.sql",
+    "bytes": 2686,
+    "sha256": "e568630d9f54be91bb1a8445c0784e3924e889580902d59001652e0d6902bc97"
+  },
+  {
+    "file": "20260524120000_rpc_get_vitrine_page.sql",
+    "bytes": 9910,
+    "sha256": "4fd13ab8eb60e0d8cbb1d07c2280ec9658bd7bee4d55f65367f331d104d7787a"
+  },
+  {
+    "file": "20260524130000_rpc_get_vitrine_facets.sql",
+    "bytes": 3708,
+    "sha256": "55affc2185d9c73fc44085d47a6fa194abff28c9f414b84ac16f69af5b1808b2"
+  },
+  {
+    "file": "20260525120000_preserve_stripe_pro_on_purchase_fulfill.sql",
+    "bytes": 2282,
+    "sha256": "798d17b1360f4e814ab00b9fa9293942037ca9b4fd1b226f955d5196dc767e4d"
+  },
+  {
+    "file": "20260527114000_vitrine_rpc_q_trgm.sql",
+    "bytes": 10405,
+    "sha256": "61ee7e431c20f69c9f95ca4f1f41afd591268ff81d19a9a15ab0ee14f74fc077"
+  },
+  {
+    "file": "20260527122000_vitrine_rpc_cap_questoes_por_grupo.sql",
+    "bytes": 9827,
+    "sha256": "049c38475694ece256f30037e0f81c9ec3448d89548c285903be7d59a1858996"
+  },
+  {
+    "file": "20260527131500_vitrine_indexes_banca_titulo_trgm.sql",
+    "bytes": 1507,
+    "sha256": "833126d0472c051a03a3521b6d6d46e2ad5f794caef53b0836a6530888926aff"
+  },
+  {
+    "file": "20260527163000_simulado_sessions_and_rpc.sql",
+    "bytes": 7693,
+    "sha256": "d4b8f9f8f02b373280c2dacc2be8d83bcbf6a25c707fb650a3ee632a327d6d9f"
+  },
+  {
+    "file": "20260528040027_simulado_modes_pool_count_and_order.sql",
+    "bytes": 8331,
+    "sha256": "f6de625bd88bb7a3efacee8ea598eee20f873e25541b5defa7d4db0a57c0bc66"
+  },
+  {
+    "file": "20260528175647_simulado_analytics_retention.sql",
+    "bytes": 4916,
+    "sha256": "11e7e29cf1ebb50585c9bc3c35fb8ffb1eceaeb4f27976c522ca4e7f197a60cd"
+  },
+  {
+    "file": "20260528175704_simulado_analytics_refresh_fn.sql",
+    "bytes": 5076,
+    "sha256": "c7de797a9d07a96c3cb2d1d7fe3f13b95c411d463ac607ec7ca376dc0050febd"
+  },
+  {
+    "file": "20260529143147_multi_banca_assunto_rpc.sql",
+    "bytes": 22132,
+    "sha256": "ba322a34a37e80f495b642d51913e497488f96778621bf6a2006e038ee3ea4f6"
+  },
+  {
+    "file": "20260530055807_avant_catalog_stats_rpc.sql",
+    "bytes": 1270,
+    "sha256": "eb4671818a439e79f9b87127ffacb47c33b95074fdd3f5a0d725994f8250ff91"
+  },
+  {
+    "file": "20260531215933_vitrine_page_includes_facets.sql",
+    "bytes": 11329,
+    "sha256": "93a098742b2380dbb4d7762af920cfac6556eaa0862aa84a35594bf7b6a579d9"
+  },
+  {
+    "file": "20260601043501_simulado_prova_meta_titulo.sql",
+    "bytes": 562,
+    "sha256": "6038ddcdbb72bc35fbe3a1370152a648abf31a99fac173f6a72ce46504812fe5"
+  },
+  {
+    "file": "20260601045209_simulado_templates.sql",
+    "bytes": 2171,
+    "sha256": "851acb973d75d2050f7ac502a30f5227545e3a2c67196b823606ad3aa3f9fb58"
+  },
+  {
+    "file": "20260603004659_performance_nav_indexes.sql",
+    "bytes": 714,
+    "sha256": "5a5ffc128281d3ce28d6c63bb212613bacc549321fe1332c6581d8656842ac9d"
+  },
+  {
+    "file": "20260603011249_performance_nav_indexes.sql",
+    "bytes": 185,
+    "sha256": "c62183693316858095ceea2aaa201e244cfec7336cdacee7a089050a71cdd2a7"
+  },
+  {
+    "file": "20260603020858_create_error_reports_table.sql",
+    "bytes": 2507,
+    "sha256": "a9d7104b115fc4f3af19fb58c24a769eed1c52b6022e42f598166433e279d203"
+  },
+  {
+    "file": "20260604182908_simulado_run_retention_rpc.sql",
+    "bytes": 1770,
+    "sha256": "0d57d79255e58ddbb325db7f2189a0a798b3294d913a2e3219b75f988cc959eb"
+  },
+  {
+    "file": "20260604185803_cache_webhook_hardening.sql",
+    "bytes": 2249,
+    "sha256": "700e44fb8a452e1bb29fbc71fda5ff835b3f91008c8d699c93ec69779b0984c6"
+  },
+  {
+    "file": "20260604185921_cache_webhook_config_table.sql",
+    "bytes": 2726,
+    "sha256": "eff3b86d592dafea1a1502cc742f55238631c0e48e2f30bcaf0c90639fea83f2"
+  },
+  {
+    "file": "20260604191035_security_rpc_rls_hardening.sql",
+    "bytes": 1874,
+    "sha256": "9e2316a19a6b9be782b5f4de4b16cc3a92e99dc97ed960cefdcbd810f7480eb1"
+  },
+  {
+    "file": "20260604191239_rls_performance.sql",
+    "bytes": 6785,
+    "sha256": "2e4fa77bf28790faab361bb12025999dc1e1f32c41516b4f7d05101876a38c28"
+  },
+  {
+    "file": "20260604191246_rls_performance_initplan_policies.sql",
+    "bytes": 5297,
+    "sha256": "5fddf66619242cdb91176ca5a981c41876385afddc45bb8a91a7dcb14e5cc52b"
+  },
+  {
+    "file": "20260607131626_modulos_estudo_rls_enrolled_only.sql",
+    "bytes": 1110,
+    "sha256": "411c5cf3e3ac622573c7bd3e45d428ae156a388a8c75a1ddedba8a0febaa7271"
+  },
+  {
+    "file": "20260607131637_auth_users_welcome_webhook.sql",
+    "bytes": 2033,
+    "sha256": "2d9c4122b2064ae7b1f99c6301140280631599858311230173b703d055ce3e35"
+  },
+  {
+    "file": "20260608062533_vitrine_group_neuroslide_count.sql",
+    "bytes": 11821,
+    "sha256": "521d5931f1e36a23202789ce59aa93d19b75a25b71d035aa3fbd4ea0542e449e"
+  },
+  {
+    "file": "20260616170000_archive_lp_goianinha.sql",
+    "bytes": 152,
+    "sha256": "4ecffa6575cadbb92eea8a01ddcc8366c229ce7e8b9a5c2c26ae25164259d45b"
+  },
+  {
+    "file": "20260618120000_user_preferences_onboarding.sql",
+    "bytes": 2469,
+    "sha256": "12acec66d8f69c0340f7185fefe91c87c95b12b4ae1837c360769610d38f880e"
+  },
+  {
+    "file": "20260620120000_subtopico_guideline_registry.sql",
+    "bytes": 3813,
+    "sha256": "33e42d789f33c184873aba41d09399ebee5c1de18033b7cb6d8354bb654d4c85"
+  },
+  {
+    "file": "20260720120000_questao_figures_bucket.sql",
+    "bytes": 1497,
+    "sha256": "bc8340eddf01e25705a347fa96a0453c4ac7c37c7b61ad56527753924c898fa6"
+  },
+  {
+    "file": "20260723120000_stripe_webhook_events.sql",
+    "bytes": 2468,
+    "sha256": "030346e33685806735ddf88b6da95fac2b6b80f37e937b012a1c060b8eda0c2f"
+  },
+  {
+    "file": "20260723140000_vitrine_page_disciplina.sql",
+    "bytes": 15119,
+    "sha256": "0cfb12e1cc97c8fab77c14cb5784fc5c3e15b12710dfd4e2a709ded213d1cdc2"
+  },
+  {
+    "file": "20260724180000_evidence_attempt_events.sql",
+    "bytes": 6161,
+    "sha256": "606e2eee1d7e43c9b67fb7a4afa1c8c0916b1c9cb8d536348552f74e577fbbcf"
+  },
+  {
+    "file": "20260728040000_spaced_review_fsrs_mvp.sql",
+    "bytes": 16258,
+    "sha256": "9ba889efaaab2e6f60355736095dc9de28d4027f6f053c80e5df080c19a99ffd"
+  },
+  {
+    "file": "20260730120000_drop_spaced_review_fsrs_mvp.sql",
+    "bytes": 624,
+    "sha256": "07d20d23a4979ef23f5fc2ec5ed6caabe9a87a2069ca52a32e98f2a606de7817"
+  },
+  {
+    "file": "20260808170000_study_notebooks_source_pack_id.sql",
+    "bytes": 632,
+    "sha256": "63daf6686e4e8b6ba5adefda931e46706038100708410a5edf2b957430d88bac"
+  },
+  {
+    "file": "20260811120000_historico_questoes_respondida.sql",
+    "bytes": 16096,
+    "sha256": "7b150a60fdc5ff76f007db7d834afc85338bb2eab340a8633a661e9f4cd352aa"
+  },
+  {
+    "file": "20260814120000_historico_cache_trigger_definer.sql",
+    "bytes": 3253,
+    "sha256": "28f8d8e300417f4c5e7525360284fe67e9915fa83161235c495ee508ca9143f4"
+  }
+]

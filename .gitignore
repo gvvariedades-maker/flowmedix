@@ -89,3 +89,8 @@ supabase/.temp/
 /artifacts/neurocanvas-blocker-clusters.json
 
 .env*
+
+# 7F DR — ciphertext / vaults off-site (summaries sanitizados em artifacts/*summary*.json permanecem versionáveis)
+*.enc
+vaults/
+artifacts/auth-dr-vault/

@@ -1,0 +1,116 @@
+{
+  "summary": {
+    "RESTORED_TABLE_COUNT": 20,
+    "RESTORED_ROW_COUNT": 13167,
+    "PK_INTEGRITY": "PASS",
+    "FK_ORPHAN_CHECK": "PASS",
+    "NOT_NULL_CONSTRAINT_CHECK": "PASS",
+    "USER_REFERENCE_INTEGRITY": "PASS (UUIDs preserved without PII)",
+    "TRIGGERS_REENABLED": "PASS",
+    "POST_SNAPSHOT_SCHEMA_COMPATIBILITY": "PASS",
+    "DATA_RECONCILIATION": "PASS",
+    "DATA_RESTORE": "PASS"
+  },
+  "tableStats": {
+    "lp_templates": {
+      "snapshotRows": 1,
+      "restoredRows": 1,
+      "status": "PASS"
+    },
+    "concursos": {
+      "snapshotRows": 3,
+      "restoredRows": 3,
+      "status": "PASS"
+    },
+    "modulos_estudo": {
+      "snapshotRows": 5180,
+      "restoredRows": 5180,
+      "status": "PASS"
+    },
+    "concurso_modulos": {
+      "snapshotRows": 5523,
+      "restoredRows": 5523,
+      "status": "PASS"
+    },
+    "concurso_matriculas": {
+      "snapshotRows": 16,
+      "restoredRows": 16,
+      "status": "PASS"
+    },
+    "concurso_purchases": {
+      "snapshotRows": 4,
+      "restoredRows": 4,
+      "status": "PASS"
+    },
+    "lp_pages": {
+      "snapshotRows": 3,
+      "restoredRows": 3,
+      "status": "PASS"
+    },
+    "email_templates": {
+      "snapshotRows": 2,
+      "restoredRows": 2,
+      "status": "PASS"
+    },
+    "invite_links": {
+      "snapshotRows": 3,
+      "restoredRows": 3,
+      "status": "PASS"
+    },
+    "invite_redemptions": {
+      "snapshotRows": 5,
+      "restoredRows": 5,
+      "status": "PASS"
+    },
+    "simulado_templates": {
+      "snapshotRows": 3,
+      "restoredRows": 3,
+      "status": "PASS"
+    },
+    "simulado_sessions": {
+      "snapshotRows": 52,
+      "restoredRows": 52,
+      "status": "PASS"
+    },
+    "simulado_respostas": {
+      "snapshotRows": 638,
+      "restoredRows": 638,
+      "status": "PASS"
+    },
+    "simulado_analytics_daily": {
+      "snapshotRows": 183,
+      "restoredRows": 183,
+      "status": "PASS"
+    },
+    "simulado_analytics_session_dims": {
+      "snapshotRows": 198,
+      "restoredRows": 198,
+      "status": "PASS"
+    },
+    "study_notebooks": {
+      "snapshotRows": 9,
+      "restoredRows": 9,
+      "status": "PASS"
+    },
+    "study_notebook_items": {
+      "snapshotRows": 776,
+      "restoredRows": 776,
+      "status": "PASS"
+    },
+    "historico_questoes": {
+      "snapshotRows": 566,
+      "restoredRows": 566,
+      "status": "PASS"
+    },
+    "error_reports": {
+      "snapshotRows": 2,
+      "restoredRows": 2,
+      "status": "PASS"
+    },
+    "acessos": {
+      "snapshotRows": 0,
+      "restoredRows": 0,
+      "status": "PASS"
+    }
+  }
+}

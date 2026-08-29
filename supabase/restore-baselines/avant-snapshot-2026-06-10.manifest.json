@@ -1,0 +1,74 @@
+{
+  "name": "avant-snapshot-2026-06-10-restore-baseline",
+  "type": "RESTORE_BASELINE",
+  "declaration": "This file is a RESTORE_BASELINE for recovery drills, NOT an active Supabase migration.",
+  "snapshot_timestamp": "2026-06-10T18:13:05.226Z",
+  "baseline_schema_file": "supabase/restore-baselines/avant-snapshot-2026-06-10.schema.sql",
+  "baseline_schema_bytes": 73674,
+  "baseline_schema_sha256": "cc64db574c6ac3f550484eb1b7967b76cbf678473a0de5b7d0de596315301b83",
+  "source_provenance": "artifacts/prod-schema-inspection.json (Supabase Production baseline inspection matching 2026-06-10 snapshot)",
+  "generator_head": "88864ec6accbaad7f058f73036b94b20a2065511",
+  "post_snapshot_migration_count": 12,
+  "post_snapshot_migrations": [
+    {
+      "file": "20260616170000_archive_lp_goianinha.sql",
+      "bytes": 152,
+      "sha256": "4ecffa6575cadbb92eea8a01ddcc8366c229ce7e8b9a5c2c26ae25164259d45b"
+    },
+    {
+      "file": "20260618120000_user_preferences_onboarding.sql",
+      "bytes": 2469,
+      "sha256": "12acec66d8f69c0340f7185fefe91c87c95b12b4ae1837c360769610d38f880e"
+    },
+    {
+      "file": "20260620120000_subtopico_guideline_registry.sql",
+      "bytes": 3813,
+      "sha256": "33e42d789f33c184873aba41d09399ebee5c1de18033b7cb6d8354bb654d4c85"
+    },
+    {
+      "file": "20260720120000_questao_figures_bucket.sql",
+      "bytes": 1497,
+      "sha256": "bc8340eddf01e25705a347fa96a0453c4ac7c37c7b61ad56527753924c898fa6"
+    },
+    {
+      "file": "20260723120000_stripe_webhook_events.sql",
+      "bytes": 2468,
+      "sha256": "030346e33685806735ddf88b6da95fac2b6b80f37e937b012a1c060b8eda0c2f"
+    },
+    {
+      "file": "20260723140000_vitrine_page_disciplina.sql",
+      "bytes": 15119,
+      "sha256": "0cfb12e1cc97c8fab77c14cb5784fc5c3e15b12710dfd4e2a709ded213d1cdc2"
+    },
+    {
+      "file": "20260724180000_evidence_attempt_events.sql",
+      "bytes": 6161,
+      "sha256": "606e2eee1d7e43c9b67fb7a4afa1c8c0916b1c9cb8d536348552f74e577fbbcf"
+    },
+    {
+      "file": "20260728040000_spaced_review_fsrs_mvp.sql",
+      "bytes": 16258,
+      "sha256": "9ba889efaaab2e6f60355736095dc9de28d4027f6f053c80e5df080c19a99ffd"
+    },
+    {
+      "file": "20260730120000_drop_spaced_review_fsrs_mvp.sql",
+      "bytes": 624,
+      "sha256": "07d20d23a4979ef23f5fc2ec5ed6caabe9a87a2069ca52a32e98f2a606de7817"
+    },
+    {
+      "file": "20260808170000_study_notebooks_source_pack_id.sql",
+      "bytes": 632,
+      "sha256": "63daf6686e4e8b6ba5adefda931e46706038100708410a5edf2b957430d88bac"
+    },
+    {
+      "file": "20260811120000_historico_questoes_respondida.sql",
+      "bytes": 16096,
+      "sha256": "7b150a60fdc5ff76f007db7d834afc85338bb2eab340a8633a661e9f4cd352aa"
+    },
+    {
+      "file": "20260814120000_historico_cache_trigger_definer.sql",
+      "bytes": 3253,
+      "sha256": "28f8d8e300417f4c5e7525360284fe67e9915fa83161235c495ee508ca9143f4"
+    }
+  ]
+}
