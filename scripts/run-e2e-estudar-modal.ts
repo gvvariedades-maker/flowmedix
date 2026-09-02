@@ -35,6 +35,7 @@ const result = spawnSync(command, {
     ...process.env,
     NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE: '1',
     PLAYWRIGHT_TEST_BASE_URL: baseUrl,
+    ...(target === 'staging' ? { E2E_STAGING_OPT_IN: 'true' } : {}),
     ...(againstRemote ? { PLAYWRIGHT_SKIP_WEBSERVER: 'true' } : {}),
   },
   shell: true,

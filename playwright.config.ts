@@ -1,5 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 import { getVercelProtectionHeaders } from './lib/perf/vercelProtection';
+import { assertE2eTargetSafe } from './lib/e2e/targetSafety';
+
+const rawBaseUrl = process.env.PLAYWRIGHT_TEST_BASE_URL || 'http://localhost:3000';
+const allowStaging = process.env.E2E_STAGING_OPT_IN === 'true';
+
+// Fail-closed guard: bloqueia execução em produção e targets remotos não autorizados
+const { baseUrl: validatedBaseUrl } = assertE2eTargetSafe(rawBaseUrl, { allowStaging });
 
 const ci = !!process.env.CI;
 /**
@@ -63,7 +70,7 @@ export default defineConfig({
     : [['html'], ['list']],
 
   use: {
-    baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || 'http://localhost:3000',
+    baseURL: validatedBaseUrl,
     ...(Object.keys(vercelProtectionHeaders).length > 0
       ? { extraHTTPHeaders: vercelProtectionHeaders }
       : {}),

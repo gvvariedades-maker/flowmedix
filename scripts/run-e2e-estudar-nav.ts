@@ -33,6 +33,7 @@ const result = spawnSync(command, {
   env: {
     ...process.env,
     PLAYWRIGHT_TEST_BASE_URL: baseUrl,
+    ...(target === 'staging' ? { E2E_STAGING_OPT_IN: 'true' } : {}),
     ...(againstRemote ? { PLAYWRIGHT_SKIP_WEBSERVER: 'true' } : {}),
   },
   shell: true,
