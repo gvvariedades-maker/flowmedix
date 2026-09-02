@@ -1,0 +1,55 @@
+name: Disaster Recovery Backup
+
+on:
+  workflow_dispatch:
+    inputs:
+      sequence_id:
+        description: 'Snapshot Sequence ID (monotonic, default 2)'
+        required: false
+        default: '2'
+        type: string
+      gfs_tier:
+        description: 'GFS Retention Tier (daily, weekly, monthly)'
+        required: false
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
+          - monthly
+
+permissions:
+  contents: read
+
+concurrency:
+  group: disaster-recovery-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    name: Execute Offsite Disaster Recovery Backup
+    runs-on: ubuntu-latest
+    environment: disaster-recovery
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute Hardened Disaster Recovery Backup
+        run: npx tsx scripts/dr-backup-runner.ts --sequence=${{ inputs.sequence_id || '2' }}
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AVANT_MASTER_KEK: ${{ secrets.AVANT_MASTER_KEK }}
