@@ -26,7 +26,7 @@ export interface RunnerConfig {
   projectRef?: string;
   bucket?: string;
   gfsTier?: GfsTier;
-  sequenceId?: number;
+  sequenceId: number;
   synthetic?: boolean;
 }
 
@@ -70,6 +70,28 @@ export function validateAllowlist(
   if (!prefixMatch) {
     throw new Error(`[FAIL_CLOSED] Destination key "${objectKey}" does not match authorized GFS prefixes (daily/, weekly/, monthly/).`);
   }
+}
+
+export function validateGfsTier(tier: unknown): asserts tier is GfsTier {
+  if (typeof tier !== 'string' || !ALLOWED_GFS_TIERS.includes(tier as GfsTier)) {
+    throw new Error(
+      `[FAIL_CLOSED] Invalid GFS tier: "${tier}". Allowed tiers: ${ALLOWED_GFS_TIERS.join(', ')}.`
+    );
+  }
+}
+
+export function validateSequenceId(sequenceId: unknown): number {
+  if (
+    typeof sequenceId !== 'number' ||
+    !Number.isInteger(sequenceId) ||
+    !Number.isFinite(sequenceId) ||
+    sequenceId <= 0
+  ) {
+    throw new Error(
+      `[FAIL_CLOSED] Invalid sequence ID: "${sequenceId}". Must be a strictly positive integer (> 0).`
+    );
+  }
+  return sequenceId;
 }
 
 export function validateRequiredSecrets(config: RunnerConfig): void {
@@ -297,10 +319,11 @@ export async function executeReadOnlyQuery(
 
 export async function extractProductionBackupSet(
   token: string,
-  projectRef: string
+  projectRef: string,
+  queryExecutor = executeReadOnlyQuery
 ): Promise<BackupSetItem[]> {
   console.log('  [1/4] Querying Public Tables list via Read-Only Transaction...');
-  const publicTablesRaw = await executeReadOnlyQuery(
+  const publicTablesRaw = await queryExecutor(
     token,
     projectRef,
     `SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' AND table_type = 'BASE TABLE' ORDER BY table_name;`
@@ -311,15 +334,15 @@ export async function extractProductionBackupSet(
   const publicDataRows: Record<string, any[]> = {};
   for (const t of tableNames) {
     try {
-      const rows = await executeReadOnlyQuery(token, projectRef, `SELECT * FROM public."${t}";`);
+      const rows = await queryExecutor(token, projectRef, `SELECT * FROM public."${t}";`);
       publicDataRows[t] = rows;
-    } catch {
-      publicDataRows[t] = [];
+    } catch (err: any) {
+      throw new Error(`[FAIL_CLOSED] Failed to select from public table "${t}": ${err?.message || err}`);
     }
   }
 
   console.log('  [2/4] Querying Auth tables (users, identities, mfa_factors)...');
-  const writableColsRaw = await executeReadOnlyQuery(
+  const writableColsRaw = await queryExecutor(
     token,
     projectRef,
     `SELECT table_name, column_name FROM information_schema.columns WHERE table_schema = 'auth' AND table_name IN ('users', 'identities', 'mfa_factors') AND is_generated = 'NEVER' ORDER BY table_name, ordinal_position;`
@@ -331,13 +354,13 @@ export async function extractProductionBackupSet(
     'auth.mfa_factors': writableColsRaw.filter((c: any) => c.table_name === 'mfa_factors').map((c: any) => c.column_name)
   };
 
-  const usersData = await executeReadOnlyQuery(token, projectRef, 'SELECT * FROM auth.users ORDER BY created_at ASC;');
-  const identitiesData = await executeReadOnlyQuery(token, projectRef, 'SELECT * FROM auth.identities ORDER BY created_at ASC;');
-  const mfaFactorsData = await executeReadOnlyQuery(token, projectRef, 'SELECT * FROM auth.mfa_factors ORDER BY created_at ASC;');
+  const usersData = await queryExecutor(token, projectRef, 'SELECT * FROM auth.users ORDER BY created_at ASC;');
+  const identitiesData = await queryExecutor(token, projectRef, 'SELECT * FROM auth.identities ORDER BY created_at ASC;');
+  const mfaFactorsData = await queryExecutor(token, projectRef, 'SELECT * FROM auth.mfa_factors ORDER BY created_at ASC;');
   console.log(`    Captured Auth: ${usersData.length} users, ${identitiesData.length} identities, ${mfaFactorsData.length} MFA factors.`);
 
   console.log('  [3/4] Querying Storage objects metadata (questao-figures)...');
-  const storageObjects = await executeReadOnlyQuery(
+  const storageObjects = await queryExecutor(
     token,
     projectRef,
     `SELECT id, name, bucket_id, owner, created_at, updated_at, last_accessed_at, metadata FROM storage.objects WHERE bucket_id = 'questao-figures' ORDER BY name ASC;`
@@ -345,7 +368,7 @@ export async function extractProductionBackupSet(
   console.log(`    Captured Storage: ${storageObjects.length} figures metadata.`);
 
   console.log('  [4/4] Querying Migration ledger...');
-  const migrationLedgerRows = await executeReadOnlyQuery(
+  const migrationLedgerRows = await queryExecutor(
     token,
     projectRef,
     `SELECT * FROM supabase_migrations.schema_migrations ORDER BY version ASC;`
@@ -404,8 +427,15 @@ export async function runDrBackup(config: RunnerConfig): Promise<RunnerResult> {
   const startTime = Date.now();
   const projectRef = config.projectRef || PROD_PROJECT_REF;
   const bucket = config.bucket || CANONICAL_VAULT_BUCKET;
+
+  // Validate GFS Tier strictly (fail-closed if invalid)
+  if (config.gfsTier !== undefined) {
+    validateGfsTier(config.gfsTier);
+  }
   const gfsTier: GfsTier = config.gfsTier || 'daily';
-  const sequenceId = config.sequenceId !== undefined ? config.sequenceId : 2;
+
+  // Validate Sequence ID strictly (fail-closed if invalid, missing or non-positive)
+  const sequenceId = validateSequenceId(config.sequenceId);
 
   console.log('================================================================================');
   console.log('AVANT DISASTER RECOVERY — PRODUCTION OFF-SITE BACKUP RUNNER');
@@ -617,7 +647,29 @@ export async function runDrBackup(config: RunnerConfig): Promise<RunnerResult> {
 if (process.argv[1] && process.argv[1].endsWith('dr-backup-runner.ts')) {
   const isSynthetic = process.argv.includes('--synthetic');
   const sequenceArg = process.argv.find(a => a.startsWith('--sequence='));
-  const sequenceId = sequenceArg ? parseInt(sequenceArg.split('=')[1], 10) : 2;
+  if (!sequenceArg) {
+    console.error('[FAIL_CLOSED] Missing mandatory argument: --sequence=<positive_integer>');
+    process.exit(1);
+  }
+  const rawSequence = sequenceArg.split('=')[1];
+  const parsedSequence = Number(rawSequence);
+  try {
+    validateSequenceId(parsedSequence);
+  } catch (err: any) {
+    console.error(err.message);
+    process.exit(1);
+  }
+
+  const gfsTierArg = process.argv.find(a => a.startsWith('--gfs-tier='));
+  const rawGfsTier = gfsTierArg ? gfsTierArg.split('=')[1] : undefined;
+  if (rawGfsTier !== undefined) {
+    try {
+      validateGfsTier(rawGfsTier);
+    } catch (err: any) {
+      console.error(err.message);
+      process.exit(1);
+    }
+  }
 
   const config: RunnerConfig = {
     supabaseToken: process.env.SUPABASE_ACCESS_TOKEN || (isSynthetic ? 'synthetic_token' : ''),
@@ -625,7 +677,8 @@ if (process.argv[1] && process.argv[1].endsWith('dr-backup-runner.ts')) {
     r2AccessKeyId: process.env.R2_ACCESS_KEY_ID || (isSynthetic ? 'synthetic_key_id' : ''),
     r2SecretAccessKey: process.env.R2_SECRET_ACCESS_KEY || (isSynthetic ? 'synthetic_secret_key' : ''),
     masterKek: process.env.AVANT_MASTER_KEK || (isSynthetic ? 'synthetic-master-kek-passphrase-2026' : ''),
-    sequenceId,
+    sequenceId: parsedSequence,
+    gfsTier: rawGfsTier as GfsTier | undefined,
     synthetic: isSynthetic
   };
 

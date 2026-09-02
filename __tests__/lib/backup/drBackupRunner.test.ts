@@ -1,6 +1,9 @@
 import {
   validateAllowlist,
   validateRequiredSecrets,
+  validateGfsTier,
+  validateSequenceId,
+  extractProductionBackupSet,
   signS3Request,
   runDrBackup,
   PROD_PROJECT_REF,
@@ -134,5 +137,101 @@ describe('AVANT Disaster Recovery — 7F.3B.1 Runner & Fail-Closed Gates', () =>
     expect(() => {
       engine.decryptAndVerifyDrSnapshot(tamperedSeq);
     }).toThrow('[FAIL_CLOSED]');
+  });
+
+  test('11. Backup Completeness: fails closed when selecting from any public table fails (never converts to empty array)', async () => {
+    const mockQuery = jest.fn()
+      .mockResolvedValueOnce([{ table_name: 'questoes' }, { table_name: 'usuarios' }]) // information_schema.tables
+      .mockResolvedValueOnce([{ id: 1, slug: 'q1' }]) // SELECT * FROM public."questoes"
+      .mockRejectedValueOnce(new Error('Connection terminated by database timeout')); // SELECT * FROM public."usuarios" FAILS
+
+    await expect(
+      extractProductionBackupSet('test_token', PROD_PROJECT_REF, mockQuery)
+    ).rejects.toThrow('[FAIL_CLOSED] Failed to select from public table "usuarios": Connection terminated by database timeout');
+  });
+
+  test('12. GFS Tier validation: accepts strictly daily|weekly|monthly and rejects invalid tiers', () => {
+    expect(() => validateGfsTier('daily')).not.toThrow();
+    expect(() => validateGfsTier('weekly')).not.toThrow();
+    expect(() => validateGfsTier('monthly')).not.toThrow();
+
+    expect(() => validateGfsTier('yearly')).toThrow('[FAIL_CLOSED] Invalid GFS tier: "yearly"');
+    expect(() => validateGfsTier('hourly')).toThrow('[FAIL_CLOSED] Invalid GFS tier: "hourly"');
+    expect(() => validateGfsTier('')).toThrow('[FAIL_CLOSED] Invalid GFS tier: ""');
+    expect(() => validateGfsTier(null)).toThrow('[FAIL_CLOSED] Invalid GFS tier: "null"');
+    expect(() => validateGfsTier(123)).toThrow('[FAIL_CLOSED] Invalid GFS tier: "123"');
+  });
+
+  test('13. GFS Tier execution: weekly run binds weekly/ prefix and 35-day retention', async () => {
+    const res = await runDrBackup({
+      ...validConfig,
+      gfsTier: 'weekly',
+      sequenceId: 1001
+    });
+
+    expect(res.status).toBe('PASS');
+    expect(res.gfsTier).toBe('weekly');
+    expect(res.objectKey).toMatch(/^weekly\/dr-ozgouenqrofnvgrlgfwd-weekly-1001-/);
+    expect(res.lockRetentionDays).toBe(35);
+  });
+
+  test('14. GFS Tier execution: monthly run binds monthly/ prefix and 370-day retention', async () => {
+    const res = await runDrBackup({
+      ...validConfig,
+      gfsTier: 'monthly',
+      sequenceId: 2001
+    });
+
+    expect(res.status).toBe('PASS');
+    expect(res.gfsTier).toBe('monthly');
+    expect(res.objectKey).toMatch(/^monthly\/dr-ozgouenqrofnvgrlgfwd-monthly-2001-/);
+    expect(res.lockRetentionDays).toBe(370);
+  });
+
+  test('15. GFS Tier execution: fails closed if invalid tier is passed to runDrBackup', async () => {
+    await expect(
+      runDrBackup({
+        ...validConfig,
+        gfsTier: 'invalid-tier' as any,
+        sequenceId: 1
+      })
+    ).rejects.toThrow('[FAIL_CLOSED] Invalid GFS tier: "invalid-tier"');
+  });
+
+  test('16. Sequence ID validation: validates strictly positive integers and rejects <= 0, floats, NaN, non-numbers', () => {
+    expect(validateSequenceId(1)).toBe(1);
+    expect(validateSequenceId(2)).toBe(2);
+    expect(validateSequenceId(1001)).toBe(1001);
+
+    expect(() => validateSequenceId(0)).toThrow('[FAIL_CLOSED] Invalid sequence ID: "0". Must be a strictly positive integer (> 0).');
+    expect(() => validateSequenceId(-1)).toThrow('[FAIL_CLOSED] Invalid sequence ID: "-1". Must be a strictly positive integer (> 0).');
+    expect(() => validateSequenceId(1.5)).toThrow('[FAIL_CLOSED] Invalid sequence ID: "1.5". Must be a strictly positive integer (> 0).');
+    expect(() => validateSequenceId(NaN)).toThrow('[FAIL_CLOSED] Invalid sequence ID: "NaN". Must be a strictly positive integer (> 0).');
+    expect(() => validateSequenceId('10' as any)).toThrow('[FAIL_CLOSED] Invalid sequence ID: "10". Must be a strictly positive integer (> 0).');
+    expect(() => validateSequenceId(undefined as any)).toThrow('[FAIL_CLOSED] Invalid sequence ID: "undefined". Must be a strictly positive integer (> 0).');
+    expect(() => validateSequenceId(null as any)).toThrow('[FAIL_CLOSED] Invalid sequence ID: "null". Must be a strictly positive integer (> 0).');
+  });
+
+  test('17. Sequence ID execution: fails closed when sequenceId is missing, zero or negative (no static default)', async () => {
+    await expect(
+      runDrBackup({
+        ...validConfig,
+        sequenceId: 0
+      })
+    ).rejects.toThrow('[FAIL_CLOSED] Invalid sequence ID: "0"');
+
+    await expect(
+      runDrBackup({
+        ...validConfig,
+        sequenceId: -10
+      })
+    ).rejects.toThrow('[FAIL_CLOSED] Invalid sequence ID: "-10"');
+
+    await expect(
+      runDrBackup({
+        ...validConfig,
+        sequenceId: undefined as any
+      })
+    ).rejects.toThrow('[FAIL_CLOSED] Invalid sequence ID: "undefined"');
   });
 });
