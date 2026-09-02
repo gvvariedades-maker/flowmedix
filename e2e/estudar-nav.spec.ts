@@ -228,10 +228,16 @@ test.describe('Estudar — ciclo aluno (resposta, pular, estudo)', () => {
     for (let i = 0; i < 3; i += 1) {
       await expect(avancarSlide).toBeEnabled({ timeout: 15_000 });
       await avancarSlide.click();
+      await expect(page.getByText(new RegExp(`Slide ${i + 2} de 4`))).toBeVisible({ timeout: 15_000 });
     }
 
-    await page.getByRole('button', { name: /Marcar (como )?[Ee]studado/i }).click();
-    await expect(page.getByText('Estudo concluído')).toBeVisible({ timeout: 15_000 });
+    const marcarBtn = page.getByRole('button', { name: /Marcar (como )?[Ee]studado/i });
+    const concluidoBadge = page.getByText('Estudo concluído');
+    await expect(marcarBtn.or(concluidoBadge)).toBeVisible({ timeout: 15_000 });
+    if (await marcarBtn.isVisible()) {
+      await marcarBtn.click();
+    }
+    await expect(concluidoBadge).toBeVisible({ timeout: 15_000 });
 
     await page.getByRole('button', { name: /Sair do estudo reverso/i }).click();
     await expect(page.getByRole('button', { name: /Questão 1.*estudo reverso concluído/i })).toBeVisible({

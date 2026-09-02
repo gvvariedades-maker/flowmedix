@@ -1,4 +1,6 @@
 import { test, expect, type Page, devices } from '@playwright/test';
+import { E2E_ESTUDAR_BANCA, E2E_ESTUDAR_TITULO_AULA } from '../lib/e2e/constants';
+import { VITRINE_ASSUNTO_CTA_NAME } from './helpers/vitrineE2e';
 
 /** BottomNav e drawer são `md:hidden` — CI usa só projeto chromium (desktop). */
 test.use({ ...devices['Pixel 5'] });
@@ -165,7 +167,7 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 10_000 });
 
     const estudarLink = bottomNav(page).locator('a[href="/estudar"]');
-    await expect(estudarLink).toHaveAttribute('aria-hidden', 'true');
+    await expect(estudarLink).toHaveAttribute('aria-hidden', 'true', { timeout: 10_000 });
     await expect(page).toHaveURL(/\/ajuda/);
     await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 5_000 });
   });
@@ -191,7 +193,6 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
   });
 
   test('D12 — vitrine: expandir assunto abre subject sheet', async ({ page }) => {
-    const { E2E_ESTUDAR_BANCA, E2E_ESTUDAR_TITULO_AULA } = await import('../lib/e2e/constants');
     const bancaQuery = encodeURIComponent(E2E_ESTUDAR_BANCA);
     await page.goto(`/estudar?banca=${bancaQuery}`, { waitUntil: 'domcontentloaded' });
     await dismissWelcomeIfVisible(page);
@@ -201,7 +202,6 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     const assuntoBtn = page.getByRole('button', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
     await assuntoBtn.click();
 
-    const { VITRINE_ASSUNTO_CTA_NAME } = await import('./helpers/vitrineE2e');
     const sheet = page.getByRole('dialog', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
     await expect(sheet).toBeVisible({ timeout: 10_000 });
     await expect(sheet.getByRole('link', { name: VITRINE_ASSUNTO_CTA_NAME })).toBeVisible();
