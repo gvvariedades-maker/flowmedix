@@ -1,7 +1,7 @@
 ---
 name: avant-ui-visual
 description: >-
-  Designer de UI para o app AVANT (Next.js, Tailwind, Cyber Clinical + Editorial v2).
+  Designer de UI para o app AVANT (Next.js, Tailwind, Editorial premium v4 + tokens legado Cyber).
   Prioridade de craft: vitrine (/estudar) + player (AvantLessonPlayer) — qualidade
   micro-SaaS profissional. Use ao melhorar componentes, telas, vitrine, player,
   dashboard, design system, CSS, hierarquia visual, microinterações, polish premium
@@ -10,11 +10,13 @@ description: >-
 ---
 > **Cópia versionada (fonte Git).** Edite aqui; sincronize o runtime com `npm run sync:skills`. Exceção Elias: versionada direto em `.cursor/skills/professor-elias-santana-metodo/`. Ver `docs/SKILLS_GOVERNANCE.md`.
 
-# AVANT UI Visual — Cyber Clinical + Editorial v2
+# AVANT UI Visual — Editorial premium v4 (desfecho A)
 
-> **Rule operacional (triggers):** [`.cursor/rules/avant-ui-visual.mdc`](../../../.cursor/rules/avant-ui-visual.mdc) — ativa com `Visual:`, `Polish vitrine`, `Polish player`, `micro-SaaS`, `craft UI`. Cópia versionada: [`docs/cursor/avant-ui-visual.mdc`](../../../docs/cursor/avant-ui-visual.mdc).  
-> **Esta skill** = conhecimento detalhado; a **rule** = quando executar + checklist ship.  
+> **Autoridade:** [`AVANT-VISUAL-DIRECTION-v4.md`](../../design-system/AVANT-VISUAL-DIRECTION-v4.md) · ADR [`DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md`](../../DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md) · Spec NeuroSlides [`NEUROSLIDES-VISUAL-SPEC-v2.md`](../../design-system/NEUROSLIDES-VISUAL-SPEC-v2.md).
+> **Rule operacional (triggers):** [`.cursor/rules/avant-ui-visual.mdc`](../../../.cursor/rules/avant-ui-visual.mdc) — ativa com `Visual:`, `Polish vitrine`, `Polish player`, `micro-SaaS`, `craft UI`. Cópia versionada: [`docs/cursor/avant-ui-visual.mdc`](../../../docs/cursor/avant-ui-visual.mdc).
+> **Esta skill** = conhecimento detalhado; a **rule** = quando executar + checklist ship.
 > **Onboarding humano (hub):** [`docs/DESIGNER_FRONT_AVANT.md`](../../DESIGNER_FRONT_AVANT.md) — App UI vs NeuroSlides; ordem de leitura.
+> Tokens Cyber em `:root` = **legado** (não restaurar shell `#010409` no player).
 
 Skill derivada da VEGA, **só com o que melhora o front do app**. Stack obrigatória: Next 16, React 19, TypeScript, Tailwind 4, Radix/shadcn, Framer Motion quando já houver motion no arquivo.
 
@@ -26,9 +28,9 @@ Detalhe operacional: [`reference-microsaas-craft.md`](reference-microsaas-craft.
 
 1. Ler o componente adjacente e **estender** — não redesenhar do zero.
 2. Identificar o tema da rota:
-   - **Editorial v2** — dashboard/vitrine/player enunciado (`useEditorialTheme`, `html[data-theme='editorial']`): papel print `#FFF1E0` + laranja `#F26522` + AVANT preto / enf print (Jakarta cartaz); `.card-elevated`, `.btn-editorial-*`.
-   - **Cyber Clinical** — NeuroSlides fullscreen, preview reverso, admin escuro: fundo `#010409`, cyan neon, `.glass-panel`, `.text-neon-gradient`.
-3. Consultar capturas em `docs/auditoria-visual-v2/screenshots/avant-editorial-v2/` e backlog em `docs/auditoria-visual-v2/*-BACKLOG.md`.
+   - **Editorial v4** — dashboard/vitrine/player enunciado **e** reverso NeuroSlides (`useEditorialTheme`, `html[data-theme='editorial']`): papel `#FFF1E0` + laranja `#F26522`; `.card-elevated`, `.btn-editorial-*`. Reverso: `bg-slate-100` + Spec v2.
+   - **Cyber legado (`:root`)** — tokens ainda no CSS; demos/landing pontuais; **não** é a pele vigente do player. Admin escuro: confirmar por rota.
+3. Consultar Direction v4 + capturas em `docs/auditoria-visual-v2/screenshots/` (baseline reverso claro pode estar PENDENTE).
 4. Se a tarefa for **vitrine ou player**, seguir a seção [Vitrine + Player](#vitrine--player-prioridade-craft) e o checklist do reference.
 
 ## Craft micro-SaaS (disciplina, não clone)
@@ -37,12 +39,12 @@ Referência de **disciplina**: Stripe / Linear / Vercel — clareza, um acento, 
 
 | Princípio | No AVANT |
 |-----------|----------|
-| Monocromático + 1 acento | Editorial: slate + `#F26522` só em CTA/foco. Cyber: preto + cyan só em ação. Sem terceira cor decorativa. |
+| Monocromático + 1 acento | Editorial: creme/slate + `#F26522` só em CTA/foco. Success `#16a34a` ≠ marca. Cyber legado: só exceções confirmadas. |
 | Produto no centro | Questão, progresso, NeuroSlide real — não ilustração genérica. |
 | Menos chrome | Um CTA primário por viewport; secundário como texto/ghost. |
 | Microestados | hover, `focus-visible`, active, disabled, loading, empty, skeleton. |
 | Performance = design | Motion leve e local; sem animação decorativa em listas longas. |
-| Dois mundos | Editorial na área logada/enunciado; **cyber só no reverso** — nunca uniformizar tudo em cinza SaaS. |
+| Um mundo claro no estudo | Editorial na área logada/enunciado **e** reverso claro (desfecho A) — não “corrigir” o reverso de volta para Cyber. |
 
 ## Tokens (fonte: `app/globals.css`)
 
@@ -74,7 +76,7 @@ Bordas cyber: `border-white/10`. Editorial: `border-slate-200`.
 | Layout dashboard | `DashboardShell`, `pb-safe` / `pt-safe` |
 | Slides | `NeuroSlide` + `themeGenerator` — cores por `meta.subtopico` |
 | Vitrine | `VitrineClient`, `VitrinePageHeader`, `VitrineToolbar`, `VitrineQuickFilters`, `VitrineSubjectCard`, `VitrineResumeCard`, `VitrineProgressRing`, `VitrineQuestaoList`, `VitrinePaginationBar`, `VitrineSubjectSheet`, `VitrineCatalogStatsStrip` / `Skeleton` |
-| Player | `AvantLessonPlayer` — shell editorial → reverso cyber |
+| Player | `AvantLessonPlayer` — shell editorial → reverso **claro** (Spec v2) |
 
 Ícones: **Lucide** via `lucide-react` (não SVG inventado). Gap real / diagrama custom → skill [`svg-quality`](../svg-quality/SKILL.md) + refs [`docs/design-refs/svg-models/`](../../design-refs/svg-models/README.md) · trigger `SVG:`.
 
@@ -100,20 +102,20 @@ Componentes: `components/vitrine/*`.
 - Estados obrigatórios: skeleton (`VitrineCatalogStatsSkeleton`), empty, zero resultados de filtro.
 - Acento só no CTA/foco laranja; sem terceira cor decorativa no grid.
 
-### Player `AvantLessonPlayer` (shell editorial → reverso cyber)
+### Player `AvantLessonPlayer` (shell editorial → reverso claro)
 
 - Enunciado + alternativas dominam o viewport; chrome mínimo.
 - Alternativas: `.btn-option-editorial` + estados hover / `focus-visible` / selected / disabled.
 - Feedback pós-resposta: borda + fundo semântico (`success` / `danger`), **não** só cor de texto.
 - Um CTA primário por passo (responder / continuar); secundário como texto ou ghost.
-- NeuroSlides fullscreen: **sempre cyber** — não forçar tokens editoriais nos slides.
-- Handoff claro: área logada clara → lab escuro; contraste intencional, não “suavizar” o reverso.
+- NeuroSlides fullscreen: **pele clara** (`bg-slate-100`, Opção B) — ver Spec v2; **não** restaurar Cyber `#010409`.
+- Handoff: área logada creme → reverso slate/pastel; manter CTAs editoriais.
 
-### NeuroSlides (sempre cyber)
+### NeuroSlides (pele editorial clara — desfecho A)
 
 - Layout automático por subtópico — não adicionar `template`/`layout_variant` sem motivo.
 - `logic_flow` com `reveal_mode: "tap"` em conteúdo novo.
-- Visual de moldes: skill `avant-neuroslides-visual` quando o pedido for retenção/gesto espacial.
+- Visual de moldes: skill `avant-neuroslides-visual` + Spec v2 quando o pedido for retenção/gesto espacial.
 
 ### Landing `/` (ponte visual — não CRO)
 
@@ -123,8 +125,8 @@ Componentes: `components/vitrine/*`.
 
 ## Benchmark (por que AVANT pode ganhar)
 
-Concorrentes (Gran, Estratégia, QConcursos): light genérico, pouca identidade dark/premium.  
-AVANT diferencia com: **dark nativo no reverso**, tokens semânticos, mobile-first real, estudo reverso guiado, craft de vitrine/player no nível micro-SaaS.
+Concorrentes (Gran, Estratégia, QConcursos): light genérico, pouca identidade.
+AVANT diferencia com: **estudo reverso claro com gesto espacial**, tokens semânticos, mobile-first real, craft de vitrine/player no nível micro-SaaS.
 
 Ao propor mudança, nomeie **o que supera** (ex.: “stats compactos como Estudei, mas com progresso por assunto visível”).
 
@@ -137,20 +139,20 @@ Ao propor mudança, nomeie **o que supera** (ex.: “stats compactos como Estude
 **[VERIFICAÇÃO]** — checklist:
 - Desktop 1440 e mobile 375 (`pb-safe`, sem overflow horizontal)
 - Contraste AA e alvo de toque ≥44px
-- Tema correto na rota (editorial vs cyber)
+- Tema correto na rota (editorial / Spec v2 no reverso; Cyber só se exceção confirmada)
 - Se vitrine/player: empty + loading + um CTA primário por viewport (ver reference)
 
 ## Anti-padrões (proibidos)
 
 - ES5, HTML monolítico, zero-framework — **fora do escopo do app**
 - `bg-blue-500` / paleta Tailwind genérica fora dos tokens AVANT
-- Indigo/roxo legado na vitrine (migrar para brand editorial/cyan cyber)
+- Indigo/roxo legado na vitrine (migrar para brand editorial `#F26522`)
 - Card-dentro-de-card sem necessidade
 - Glass em `main`/`body` inteiro
 - Redesenhar componente existente em outro arquivo duplicado
 - Google Fonts / CDN externo novo
 - `console.log` — usar `logger` se precisar log server-side
-- “Linearizar” o reverso (tirar cyber dos NeuroSlides)
+- Restaurar Cyber `#010409` no reverso do player (desfecho A — pele clara é intencional)
 - Três CTAs iguais competindo no mesmo viewport
 - Feedback de acerto/erro só com cor de texto
 
@@ -166,13 +168,13 @@ Ao propor mudança, nomeie **o que supera** (ex.: “stats compactos como Estude
 
 ## Direção de cor (obrigatório)
 
-**Fonte canônica:** [`docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](../../docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md)
+**Fonte canônica:** [`docs/design-system/AVANT-VISUAL-DIRECTION-v4.md`](../../design-system/AVANT-VISUAL-DIRECTION-v4.md) · ADR [`DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md`](../../DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md)
 
 - Marca editorial: `--color-brand` `#F26522` — **não** substituir por verde legado (`#8fe020` / `#00a86b`).
-- Acerto: `--color-success` `#16a34a` — separado da marca (nunca usar brand laranja em badge de risco).
-- NeuroSlides: sempre cyber; não light mode.
+- Acerto: `--color-success` `#16a34a` — separado da marca.
+- NeuroSlides (player): pele clara Spec v2 — **não** restaurar Cyber.
 
-Se outra skill trouxer tokens `--bg`, `--brand`, `--t1`: mapear com a tabela em Visual Direction v3.
+Se outra skill trouxer tokens `--bg`, `--brand`, `--t1`: mapear com a tabela em Visual Direction **v4**.
 
 ## Referências no repo
 
@@ -185,7 +187,10 @@ Se outra skill trouxer tokens `--bg`, `--brand`, `--t1`: mapear com a tabela em 
 | `docs/LP_CONVERSA.md` | Runbook LP (`LP:`) — copy + design + conversão |
 | `docs/LP_RESEARCH_CAPABILITY_MAP.md` | Pesquisa especialistas → C1–C16 |
 | `docs/auditoria-visual-v2/LANDING-AVANT-v3.md` | Brief histórico landing `/` |
-| `docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md` | Paleta híbrida, mapeamento skills, sempre/nunca |
+| `docs/design-system/AVANT-VISUAL-DIRECTION-v4.md` | Autoridade visual vigente (desfecho A) |
+| `docs/design-system/NEUROSLIDES-VISUAL-SPEC-v2.md` | Pele NeuroSlides no player |
+| `docs/DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md` | ADR identidade v4 |
+| `docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md` | Histórico (SUPERADO) |
 | `CLAUDE.md` §3 Design system | Tokens e classes |
 | `docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md` | Escopo editorial |
 | `docs/SISTEMA_TEMAS_UNICOS.md` | Temas NeuroSlides |

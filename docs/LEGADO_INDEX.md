@@ -6,7 +6,7 @@
 >
 > **Trilho único vigente (2026-06-27):** handcraft golden-v1 por slug — ADR [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
 
-**Atualizado em:** 2026-07-20  
+**Atualizado em:** 2026-07-20
 **Conversa:** restructure-plan #3
 
 ---
@@ -81,7 +81,7 @@ Documentos de “✅ implementado em data X” — úteis para arqueologia, não
 | [`COMPARATIVO_MOCKUP_SLIDES_VS_AVANT.md`](COMPARATIVO_MOCKUP_SLIDES_VS_AVANT.md) | Análise mockup × produto |
 | [`ISSUES_PARIDADE_MOCKUP_SLIDES.md`](ISSUES_PARIDADE_MOCKUP_SLIDES.md) | Issues sugeridas a partir do comparativo |
 
-**Direção visual atual:** [`DESIGNER_FRONT_AVANT.md`](DESIGNER_FRONT_AVANT.md) (hub) · [`auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) · skill `.cursor/skills/avant-ui-visual/`
+**Direção visual atual:** [`DESIGNER_FRONT_AVANT.md`](DESIGNER_FRONT_AVANT.md) (hub) · [`design-system/AVANT-VISUAL-DIRECTION-v4.md`](design-system/AVANT-VISUAL-DIRECTION-v4.md) · [`DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md`](DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md) · skill `.cursor/skills/avant-ui-visual/` · histórico: [`AVANT-VISUAL-DIRECTION-v3.md`](auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) (SUPERADO)
 
 ---
 
@@ -153,5 +153,5 @@ Ao adicionar doc novo:
 2. Se é milestone “implementado em…” → seção 3.
 3. Atualizar [`CLAUDE.md`](../CLAUDE.md) §Referências só para docs **canônicos**.
 
-**Próxima conversa sugerida (restructure-plan #4):**  
+**Próxima conversa sugerida (restructure-plan #4):**
 `Mapeamento L3: Promoção à Saúde e Prevenção de Agravos`

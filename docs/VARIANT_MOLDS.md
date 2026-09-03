@@ -1,3 +1,8 @@
+> **Status: SUPERADO PARCIALMENTE (skin visual).** Trechos que obrigam shell Cyber Clinical (#010409 / neon) no player de NeuroSlides foram superados pelo desfecho A. Autoridade de pele: [uditoria-visual-v2/NEUROSLIDES-VISUAL-SPEC-v2.md](design-system/NEUROSLIDES-VISUAL-SPEC-v2.md) · Direction: [uditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v4.md](design-system/AVANT-VISUAL-DIRECTION-v4.md) · ADR: [DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md](DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md).
+> Seções afetadas: superfície 'cards claros sobre shell cyber' como regra de implementação do player.
+> Pedagogia (4 tipos, spoiler, barra, gesto) permanece válida nas seções não marcadas.
+
+---
 # Moldes premium de NeuroSlides — lógica de construção
 
 Leitura estimada: **~15 minutos**. Guia para criar uma **variante inédita** com alto padrão visual, interatividade e conteúdo específico de concurso — e deixá-la como **modelo replicável** (código + JSON golden + contrato para o agente).
