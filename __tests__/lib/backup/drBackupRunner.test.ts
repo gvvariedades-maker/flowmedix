@@ -13,6 +13,8 @@ import {
 } from '../../../scripts/dr-backup-runner';
 import { BackupEngine } from '../../../scripts/backup-automation';
 import crypto from 'node:crypto';
+import fs from 'node:fs';
+import path from 'node:path';
 
 describe('AVANT Disaster Recovery — 7F.3B.1 Runner & Fail-Closed Gates', () => {
   const validConfig: RunnerConfig = {
@@ -22,7 +24,8 @@ describe('AVANT Disaster Recovery — 7F.3B.1 Runner & Fail-Closed Gates', () =>
     r2SecretAccessKey: 'test_r2_secret',
     masterKek: 'test-master-kek-passphrase-2026',
     synthetic: true,
-    sequenceId: 2
+    sequenceId: 2,
+    gfsTier: 'daily'
   };
 
   test('1. Secret ausente: fails closed when any mandatory secret is missing', () => {
@@ -233,5 +236,66 @@ describe('AVANT Disaster Recovery — 7F.3B.1 Runner & Fail-Closed Gates', () =>
         sequenceId: undefined as any
       })
     ).rejects.toThrow('[FAIL_CLOSED] Invalid sequence ID: "undefined"');
+  });
+
+  test('18. Workflow Contract: workflow does not declare manual sequence_id input and derives sequence deterministically', () => {
+    const workflowPath = path.resolve(__dirname, '../../../.github/workflows/disaster-recovery-backup.yml');
+    const content = fs.readFileSync(workflowPath, 'utf8');
+
+    // Regression: sequence_id input must be completely eliminated
+    expect(content).not.toContain('sequence_id:');
+    expect(content).not.toContain('inputs.sequence_id');
+
+    // Regression: deterministic sequence derivation from run_number and run_attempt
+    expect(content).toContain('SEQUENCE=$(( ${{ github.run_number }} * 1000 + ${{ github.run_attempt }} ))');
+    expect(content).toContain('--gfs-tier="${{ inputs.gfs_tier }}"');
+  });
+
+  test('19. GFS Tier Fail-Closed: absence or undefined gfsTier fails closed (no implicit default in runner)', async () => {
+    await expect(
+      runDrBackup({
+        ...validConfig,
+        gfsTier: undefined as any
+      })
+    ).rejects.toThrow('[FAIL_CLOSED] Invalid GFS tier: "undefined"');
+
+    await expect(
+      runDrBackup({
+        ...validConfig,
+        gfsTier: '' as any
+      })
+    ).rejects.toThrow('[FAIL_CLOSED] Invalid GFS tier: ""');
+  });
+
+  test('20. GFS Tier Execution Matrix: daily, weekly, and monthly tiers pass with exact retention policies', async () => {
+    const dailyRes = await runDrBackup({
+      ...validConfig,
+      gfsTier: 'daily',
+      sequenceId: 100
+    });
+    expect(dailyRes.status).toBe('PASS');
+    expect(dailyRes.gfsTier).toBe('daily');
+    expect(dailyRes.objectKey).toMatch(/^daily\/dr-ozgouenqrofnvgrlgfwd-daily-100-/);
+    expect(dailyRes.lockRetentionDays).toBe(14);
+
+    const weeklyRes = await runDrBackup({
+      ...validConfig,
+      gfsTier: 'weekly',
+      sequenceId: 200
+    });
+    expect(weeklyRes.status).toBe('PASS');
+    expect(weeklyRes.gfsTier).toBe('weekly');
+    expect(weeklyRes.objectKey).toMatch(/^weekly\/dr-ozgouenqrofnvgrlgfwd-weekly-200-/);
+    expect(weeklyRes.lockRetentionDays).toBe(35);
+
+    const monthlyRes = await runDrBackup({
+      ...validConfig,
+      gfsTier: 'monthly',
+      sequenceId: 300
+    });
+    expect(monthlyRes.status).toBe('PASS');
+    expect(monthlyRes.gfsTier).toBe('monthly');
+    expect(monthlyRes.objectKey).toMatch(/^monthly\/dr-ozgouenqrofnvgrlgfwd-monthly-300-/);
+    expect(monthlyRes.lockRetentionDays).toBe(370);
   });
 });

@@ -25,7 +25,7 @@ export interface RunnerConfig {
   masterKek: string;
   projectRef?: string;
   bucket?: string;
-  gfsTier?: GfsTier;
+  gfsTier: GfsTier;
   sequenceId: number;
   synthetic?: boolean;
 }
@@ -428,11 +428,9 @@ export async function runDrBackup(config: RunnerConfig): Promise<RunnerResult> {
   const projectRef = config.projectRef || PROD_PROJECT_REF;
   const bucket = config.bucket || CANONICAL_VAULT_BUCKET;
 
-  // Validate GFS Tier strictly (fail-closed if invalid)
-  if (config.gfsTier !== undefined) {
-    validateGfsTier(config.gfsTier);
-  }
-  const gfsTier: GfsTier = config.gfsTier || 'daily';
+  // Validate GFS Tier strictly (fail-closed if missing, invalid, or undefined; no implicit default)
+  validateGfsTier(config.gfsTier);
+  const gfsTier: GfsTier = config.gfsTier;
 
   // Validate Sequence ID strictly (fail-closed if invalid, missing or non-positive)
   const sequenceId = validateSequenceId(config.sequenceId);
@@ -661,14 +659,16 @@ if (process.argv[1] && process.argv[1].endsWith('dr-backup-runner.ts')) {
   }
 
   const gfsTierArg = process.argv.find(a => a.startsWith('--gfs-tier='));
-  const rawGfsTier = gfsTierArg ? gfsTierArg.split('=')[1] : undefined;
-  if (rawGfsTier !== undefined) {
-    try {
-      validateGfsTier(rawGfsTier);
-    } catch (err: any) {
-      console.error(err.message);
-      process.exit(1);
-    }
+  if (!gfsTierArg) {
+    console.error('[FAIL_CLOSED] Missing mandatory argument: --gfs-tier=<daily|weekly|monthly>');
+    process.exit(1);
+  }
+  const rawGfsTier = gfsTierArg.split('=')[1];
+  try {
+    validateGfsTier(rawGfsTier);
+  } catch (err: any) {
+    console.error(err.message);
+    process.exit(1);
   }
 
   const config: RunnerConfig = {
@@ -678,7 +678,7 @@ if (process.argv[1] && process.argv[1].endsWith('dr-backup-runner.ts')) {
     r2SecretAccessKey: process.env.R2_SECRET_ACCESS_KEY || (isSynthetic ? 'synthetic_secret_key' : ''),
     masterKek: process.env.AVANT_MASTER_KEK || (isSynthetic ? 'synthetic-master-kek-passphrase-2026' : ''),
     sequenceId: parsedSequence,
-    gfsTier: rawGfsTier as GfsTier | undefined,
+    gfsTier: rawGfsTier as GfsTier,
     synthetic: isSynthetic
   };
 
