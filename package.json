@@ -6,6 +6,7 @@
     "dev": "next dev",
     "dev:webpack": "next dev --webpack",
     "build": "npm run validate:env && next build",
+    "commercial:approval-backfill-dry-run": "tsx scripts/commercial-approval-backfill-dry-run.ts",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -562,7 +563,7 @@
     "framer-motion": "^12.42.2",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.575.0",
-    "next": "^16.2.11",
+    "next": "^16.3.4",
     "next-mdx-remote": "^6.0.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
@@ -601,7 +602,7 @@
     "typescript": "^5"
   },
   "overrides": {
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "fast-uri": "^3.1.7",
     "next": {
       "postcss": "8.5.26"
@@ -610,13 +611,16 @@
       "nanoid": "3.3.18"
     },
     "gray-matter": {
-      "js-yaml": "3.15.1"
+      "js-yaml": "3.15.2"
     },
     "minimatch@3": {
-      "brace-expansion": "1.1.12"
+      "brace-expansion": "1.1.18"
     },
     "minimatch@>=9": {
       "brace-expansion": "5.0.9"
+    },
+    "@connectrpc/connect-node": {
+      "undici": "6.28.0"
     }
   }
 }
