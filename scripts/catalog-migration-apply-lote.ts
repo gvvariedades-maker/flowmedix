@@ -169,6 +169,7 @@ async function main() {
     allowInsert,
     riskApprovalGate,
     riskContext,
+    commercialApprovalStamp: riskApprovalGate,
   });
 
   const allResults = [

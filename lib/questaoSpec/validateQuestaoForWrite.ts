@@ -16,6 +16,11 @@ import {
   type GoldenContentLintIssue,
 } from '@/lib/goldenContentStandard';
 import {
+  detectUntrustedCommercialApprovalClaims,
+  stripCommercialApprovalBinding,
+  type CommercialWriteTrust,
+} from '@/lib/catalogMigration/commercialApprovalWriteBoundary';
+import {
   assertApprovalGate,
   scoreQuestaoRisk,
   type RiskResult,
@@ -38,7 +43,8 @@ export type QuestaoWriteIssueLayer =
   | 'zod'
   | 'premium_gate'
   | 'golden_v1'
-  | 'risk_approval';
+  | 'risk_approval'
+  | 'commercial_approval';
 
 export type QuestaoWriteIssue = {
   code: string;
@@ -60,6 +66,8 @@ export type ValidateQuestaoForWriteOptions = {
    */
   riskApprovalGate?: boolean;
   riskContext?: RiskScoringContext;
+  /** Default: untrusted — rejeita metadados de aprovação comercial no payload. */
+  commercialWriteTrust?: CommercialWriteTrust;
 };
 
 export type ValidateQuestaoForWriteSuccess = {
@@ -163,6 +171,18 @@ export function validateQuestaoForWrite(
     }
   }
 
+  const commercialTrust = options.commercialWriteTrust ?? 'untrusted';
+  if (commercialTrust === 'untrusted') {
+    for (const claim of detectUntrustedCommercialApprovalClaims(data)) {
+      errors.push({
+        code: claim.code,
+        message: claim.message,
+        path: claim.path,
+        severity: 'error',
+        layer: 'commercial_approval',
+      });
+    }
+  }
   const risk = scoreQuestaoRisk(data, options.riskContext);
   const riskBlockers = assertApprovalGate(data, risk);
   if (riskBlockers.length > 0) {
@@ -181,9 +201,14 @@ export function validateQuestaoForWrite(
     return { ok: false, errors, warnings, specVersion: QUESTAO_WRITE_SPEC_VERSION, risk };
   }
 
+  const sanitized =
+    commercialTrust === 'untrusted' ? stripCommercialApprovalBinding(data) : data;
+
   const payload = options.moduloSlug
-    ? ({ ...data, modulo_slug: options.moduloSlug } as ValidatedQuestao & { modulo_slug: string })
-    : data;
+    ? ({ ...sanitized, modulo_slug: options.moduloSlug } as ValidatedQuestao & {
+        modulo_slug: string;
+      })
+    : sanitized;
 
   return {
     ok: true,
