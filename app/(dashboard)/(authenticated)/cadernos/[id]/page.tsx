@@ -13,6 +13,7 @@ import CadernoDetailMetrics from '@/components/dashboard/cadernos/CadernoDetailM
 import { CadernoReverseStudyBadge } from '@/components/dashboard/cadernos/CadernoReverseStudyBadge';
 import { resolveCadernoSetupMode, type CadernoSetupMode } from '@/lib/cadernos/setupMode';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
+import { isModuloCommercialEligible } from '@/lib/catalogMigration/commercialAuthority';
 
 export interface NotebookItem {
   id: string;
@@ -108,7 +109,7 @@ export default async function CadernoDetailPage({
       ...item,
       estudada: estudadosSet.has(item.modulo_slug),
       avant_codigo: codigoPorSlug.get(item.modulo_slug) ?? null,
-      acessivel: accessibleSlugs.has(item.modulo_slug),
+      acessivel: accessibleSlugs.has(item.modulo_slug) && (isAdmin || isModuloCommercialEligible({ slug: item.modulo_slug, tituloAula: item.titulo_aula })),
     }));
 
     const slugsNoCaderno = new Set(notebookItems.map(i => i.modulo_slug));

@@ -2,6 +2,7 @@ import { unstable_cache } from 'next/cache';
 import { CACHE_CONFIG, getQuestaoBySlugCached } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 import { withPostgrestReadRetry } from '@/lib/supabaseReadRetry';
+import { isModuloCommercialEligible } from '@/lib/catalogMigration/commercialAuthority';
 
 export type VitrineResumeHint = {
   moduloSlug: string;
@@ -47,6 +48,15 @@ export async function getLastStudiedQuestaoCached(
         logger.warn('vitrine resume: módulo não encontrado para slug do histórico', {
           userId,
           slug,
+        });
+        return null;
+      }
+
+      if (!isModuloCommercialEligible({ slug, tituloAula: questao.titulo_aula })) {
+        logger.warn('vitrine resume: módulo do histórico bloqueado pela autoridade comercial', {
+          userId,
+          slug,
+          tituloAula: questao.titulo_aula,
         });
         return null;
       }

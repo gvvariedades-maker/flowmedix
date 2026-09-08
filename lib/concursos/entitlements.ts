@@ -148,9 +148,12 @@ function sortModulosByCreatedAtDesc(modulos: ModuloEstudoListRow[]): ModuloEstud
   return [...modulos].sort((a, b) => (b.created_at ?? '').localeCompare(a.created_at ?? ''));
 }
 
+import { isSlugInP0Denylist } from '@/lib/catalogMigration/p0Denylist';
+
 function finalizeAccessibleModulos(modulos: ModuloEstudoListRow[]): ModuloEstudoListRow[] {
   const sorted = sortModulosByCreatedAtDesc(dedupeModulosById(modulos));
-  const gated = filterModulosByVitrineQualityGate(sorted);
+  const nonDenied = sorted.filter((m) => !isSlugInP0Denylist(m.modulo_slug));
+  const gated = filterModulosByVitrineQualityGate(nonDenied);
   return gated.slice(0, ACCESSIBLE_MODULOS_LIMIT);
 }
 

@@ -6,6 +6,8 @@ import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
 const MAX_BATCH = 1_000;
 
+import { isModuloCommercialEligible } from '@/lib/catalogMigration/commercialAuthority';
+
 const itemInSchema = z.object({
   modulo_slug: z.string().min(1),
   titulo_aula: z.string().nullable().optional(),
@@ -71,6 +73,9 @@ export async function POST(
 
       for (const it of parsed.data.items) {
         if (seen.has(it.modulo_slug)) continue;
+        if (!isModuloCommercialEligible({ slug: it.modulo_slug, tituloAula: it.titulo_aula })) {
+          continue;
+        }
         seen.add(it.modulo_slug);
         rows.push({
           notebook_id: notebookId,
@@ -110,6 +115,13 @@ export async function POST(
 
     if (!modulo_slug) {
       return NextResponse.json({ error: 'modulo_slug obrigatório' }, { status: 400 });
+    }
+
+    if (!isModuloCommercialEligible({ slug: modulo_slug, tituloAula: titulo_aula })) {
+      return NextResponse.json(
+        { error: 'Este conteúdo não está disponível no momento.' },
+        { status: 403 }
+      );
     }
 
     const { data, error } = await supabase

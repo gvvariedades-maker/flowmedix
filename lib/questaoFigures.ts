@@ -41,6 +41,10 @@ export function getAllowedQuestaoFigureHosts(): string[] {
 
 export function isAllowedQuestaoFigureUrl(url: string): boolean {
   if (!url?.trim()) return false;
+  const trimmed = url.trim();
+  if (trimmed.startsWith('/dev/local-questao-figures/')) {
+    return true;
+  }
   try {
     const parsed = new URL(url);
     if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') return false;
