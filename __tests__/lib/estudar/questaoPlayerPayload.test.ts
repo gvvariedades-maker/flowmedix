@@ -1,3 +1,10 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+import { fingerprintConteudoJson } from '@/lib/catalogMigration/contentFingerprint';
+import { stampEfficacyContentFingerprint } from '@/lib/catalogMigration/commercialContentApproval';
+import { clearCommercialRuntimeApprovalCache } from '@/lib/catalogMigration/commercialRuntimeGate';
+
 jest.mock('@/lib/concursos/entitlements', () => ({
   userHasModuloAccess: jest.fn(),
   getAccessibleModuloSlugs: jest.fn(),
@@ -54,27 +61,38 @@ const mockGetQuestaoNavList = getQuestaoNavList as jest.MockedFunction<typeof ge
 
 const USER_ID = '550e8400-e29b-41d4-a716-446655440000';
 const SLUG = 'questao-nav-meio';
+const TITULO_AULA = 'Imunização';
 
-const conteudoJson = {
-  meta: { banca: 'FGV', topico: 'Urgências', subtopico: 'RCP' },
-  question_data: {
-    instruction: 'Assinale a alternativa correta.',
-    options: [
-      { id: 'A', text: 'Opção A', is_correct: false },
-      { id: 'B', text: 'Opção B', is_correct: true },
-    ],
-  },
-  reverse_study_slides: [{ type: 'golden_rule' as const, content: 'Regra de ouro' }],
-};
+const GOLDEN_IMUNIZACAO = JSON.parse(
+  readFileSync(
+    resolve(process.cwd(), 'examples/questao-premium-cpcon-imunizacao-intervalos-vf.json'),
+    'utf8',
+  ),
+);
 
-function mockSupabaseModuloRow() {
+/** Fixture com aprovação comercial vinculada (gate RC-004 default-on). */
+const conteudoJson = stampEfficacyContentFingerprint(
+  GOLDEN_IMUNIZACAO,
+  fingerprintConteudoJson(GOLDEN_IMUNIZACAO),
+);
+
+const conteudoJsonSemAprovacao = GOLDEN_IMUNIZACAO;
+
+function optionsSemGabarito(payload: typeof conteudoJson) {
+  return payload.question_data.options.map((option: { id: string; text: string }) => ({
+    id: option.id,
+    text: option.text,
+  }));
+}
+
+function mockSupabaseModuloRow(conteudo = conteudoJson) {
   const maybeSingle = jest.fn().mockResolvedValue({
     data: {
       id: 'mod-1',
       modulo_slug: SLUG,
-      conteudo_json: conteudoJson,
-      titulo_aula: 'Urgências',
-      modulo_nome: 'Urgências',
+      conteudo_json: conteudo,
+      titulo_aula: TITULO_AULA,
+      modulo_nome: TITULO_AULA,
       avant_codigo: 42,
     },
     error: null,
@@ -124,6 +142,7 @@ describe('patchQuestaoEstudadaInPayload', () => {
 describe('buildEstudarQuestaoPlayerPayload', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    clearCommercialRuntimeApprovalCache();
     mockGetAccessibleModuloSlugs.mockResolvedValue(new Set());
     mockEstudadosSetFromHistorico.mockReturnValue(new Set());
     mockGetHistoricoQuestoesForSlugsCached.mockResolvedValue([]);
@@ -160,8 +179,8 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
       modulo_slug: SLUG,
       conteudo_json: conteudoJson,
       banca: 'FGV',
-      titulo_aula: 'Urgências',
-      modulo_nome: 'Urgências',
+      titulo_aula: TITULO_AULA,
+      modulo_nome: TITULO_AULA,
       created_at: '2024-01-01T00:00:00.000Z',
       avant_codigo: 42,
     });
@@ -212,18 +231,29 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
     expect(result.payload.proximaSlug).toBe('questao-proxima');
     expect(result.payload.listaContexto).toEqual({ atual: 2, total: 3 });
     expect(result.payload.avantCodigo).toBe(42);
-    expect(result.payload.dados.question_data.options).toEqual([
-      { id: 'A', text: 'Opção A' },
-      { id: 'B', text: 'Opção B' },
-    ]);
+    expect(result.payload.dados.question_data.options).toEqual(optionsSemGabarito(conteudoJson));
     expect(mockCreateSupabaseServerClient).not.toHaveBeenCalled();
     expect(mockGetQuestaoNavList).toHaveBeenCalledWith(
       expect.objectContaining({
         userId: USER_ID,
         slug: SLUG,
-        tituloAula: 'Urgências',
+        tituloAula: TITULO_AULA,
       }),
     );
+  });
+
+  it('retorna forbidden com entitlement mas conteúdo sem aprovação comercial', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    const supabase = mockSupabaseModuloRow(conteudoJsonSemAprovacao);
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: SLUG,
+      userId: USER_ID,
+      supabase: supabase as never,
+    });
+
+    expect(result).toEqual({ status: 'forbidden' });
+    expect(mockGetQuestaoNavList).not.toHaveBeenCalled();
   });
 
   it('from=revisoes (surface descontinuada) cai na navegação normal', async () => {
@@ -263,8 +293,8 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
         id: 'mod-1',
         modulo_slug: 'questao-primeira',
         conteudo_json: conteudoJson,
-        titulo_aula: 'Urgências',
-        modulo_nome: 'Urgências',
+        titulo_aula: TITULO_AULA,
+        modulo_nome: TITULO_AULA,
         avant_codigo: 1,
       },
       error: null,
@@ -405,7 +435,9 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
     expect(result.status).toBe('ok');
     if (result.status !== 'ok') return;
     expect(result.payload.dados).not.toHaveProperty('reverse_study_slides');
-    expect(result.payload.dados.question_data.options).toHaveLength(2);
+    expect(result.payload.dados.question_data.options).toHaveLength(
+      conteudoJson.question_data.options.length,
+    );
   });
 
   it('repassa page da vitrine no vitrineQuerySuffix e nos slugs de navegação', async () => {
@@ -458,8 +490,8 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
         id: 'mod-1',
         modulo_slug: SLUG,
         conteudo_json: conteudoJson,
-        titulo_aula: 'Urgências',
-        modulo_nome: 'Urgências',
+        titulo_aula: TITULO_AULA,
+        modulo_nome: TITULO_AULA,
         avant_codigo: 42,
       },
       error: null,
@@ -519,8 +551,8 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
         id: 'mod-1',
         modulo_slug: SLUG,
         conteudo_json: conteudoJson,
-        titulo_aula: 'Urgências',
-        modulo_nome: 'Urgências',
+        titulo_aula: TITULO_AULA,
+        modulo_nome: TITULO_AULA,
         avant_codigo: 42,
       },
       error: null,
