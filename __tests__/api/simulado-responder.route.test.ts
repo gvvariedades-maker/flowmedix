@@ -234,9 +234,12 @@ function buildSuccessMocks(options?: {
 }
 
 describe('POST /api/simulado/responder', () => {
+  const prevGate = process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+
   beforeEach(() => {
     jest.clearAllMocks();
     clearCommercialRuntimeApprovalCache();
+    process.env.COMMERCIAL_RUNTIME_READINESS_GATE = 'true';
     mockGetUserAndClientFromBearer.mockResolvedValue({
       user: { id: USER_ID, email: 'free@test.com' },
     });
@@ -247,6 +250,11 @@ describe('POST /api/simulado/responder', () => {
       insertAttempt: jest.fn(),
     });
     mockIngestAttemptEvent.mockResolvedValue({ status: 'disabled' });
+  });
+
+  afterEach(() => {
+    if (prevGate === undefined) delete process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+    else process.env.COMMERCIAL_RUNTIME_READINESS_GATE = prevGate;
   });
 
   it('sincroniza tentativa no histórico e retorna questao_atualizada + resumo', async () => {

@@ -33,9 +33,17 @@ const conteudoJson = stampEfficacyContentFingerprint(
 const conteudoJsonSemAprovacao = GOLDEN_IMUNIZACAO;
 
 describe('buildSimuladoQuestaoPayload', () => {
+  const prevGate = process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+
   beforeEach(() => {
     jest.clearAllMocks();
     clearCommercialRuntimeApprovalCache();
+    process.env.COMMERCIAL_RUNTIME_READINESS_GATE = 'true';
+  });
+
+  afterEach(() => {
+    if (prevGate === undefined) delete process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+    else process.env.COMMERCIAL_RUNTIME_READINESS_GATE = prevGate;
   });
 
   it('retorna forbidden sem entitlement', async () => {

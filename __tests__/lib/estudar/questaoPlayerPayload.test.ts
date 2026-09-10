@@ -70,7 +70,7 @@ const GOLDEN_IMUNIZACAO = JSON.parse(
   ),
 );
 
-/** Fixture com aprovação comercial vinculada (gate RC-004 default-on). */
+/** Fixture com aprovação comercial vinculada (gate RC-004 ligado no beforeEach). */
 const conteudoJson = stampEfficacyContentFingerprint(
   GOLDEN_IMUNIZACAO,
   fingerprintConteudoJson(GOLDEN_IMUNIZACAO),
@@ -140,9 +140,12 @@ describe('patchQuestaoEstudadaInPayload', () => {
 });
 
 describe('buildEstudarQuestaoPlayerPayload', () => {
+  const prevGate = process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+
   beforeEach(() => {
     jest.clearAllMocks();
     clearCommercialRuntimeApprovalCache();
+    process.env.COMMERCIAL_RUNTIME_READINESS_GATE = 'true';
     mockGetAccessibleModuloSlugs.mockResolvedValue(new Set());
     mockEstudadosSetFromHistorico.mockReturnValue(new Set());
     mockGetHistoricoQuestoesForSlugsCached.mockResolvedValue([]);
@@ -159,6 +162,11 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
       ],
       indexAtual: 1,
     });
+  });
+
+  afterEach(() => {
+    if (prevGate === undefined) delete process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+    else process.env.COMMERCIAL_RUNTIME_READINESS_GATE = prevGate;
   });
 
   it('retorna forbidden quando logado sem entitlement', async () => {
