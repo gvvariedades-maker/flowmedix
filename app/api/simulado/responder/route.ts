@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
 import { resolveQuestionAttempt } from '@/lib/estudar/questionPayload';
+import { canServeCommercialContent } from '@/lib/catalogMigration/commercialAuthority';
 import {
   extractEvidenceClientBody,
   ingestEvidenceRouteHook,
@@ -190,6 +191,26 @@ export async function POST(request: NextRequest) {
         moduloSlug: modulo_slug,
       });
       return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
+    }
+
+    const commCheck = canServeCommercialContent({
+      isAdmin: false,
+      slug: modulo_slug,
+      tituloAula: modulo.titulo_aula,
+      conteudoJson: modulo.conteudo_json,
+    });
+
+    if (!commCheck.eligible) {
+      logger.warn('Tentativa de responder questão bloqueada comercialmente em simulado histórico', {
+        userId: auth.user.id,
+        sessionId: session_id,
+        moduloSlug: modulo_slug,
+        reason: commCheck.reason,
+      });
+      return NextResponse.json(
+        { error: 'Este conteúdo não está disponível para resposta.' },
+        { status: 403 },
+      );
     }
 
     const gabarito = resolveQuestionAttempt(modulo.conteudo_json, opcao_id);

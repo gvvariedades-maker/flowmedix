@@ -152,6 +152,11 @@ export const EfficacyContractSchema = z.object({
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/, 'auto_approved_at deve ser AAAA-MM-DD')
     .optional(),
+  /** SHA-256 do payload canônico — vínculo RC-004 runtime (opcional no JSON). */
+  approved_content_fingerprint: z
+    .string()
+    .regex(/^[a-f0-9]{64}$/, 'approved_content_fingerprint deve ser SHA-256 hex')
+    .optional(),
   sampled: z.boolean().optional(),
   transfer_targets: z.array(z.string().max(200)).max(8).optional(),
   retrieval_first: z.boolean().optional(),
@@ -172,6 +177,10 @@ export const Anchor100ApprovalSchema = z.object({
   artifact: z.string().max(300).optional(),
   risk_tier: z.enum(['baixo', 'medio', 'alto']).optional(),
   checklist_version: z.string().max(40).optional(),
+  approved_content_fingerprint: z
+    .string()
+    .regex(/^[a-f0-9]{64}$/, 'approved_content_fingerprint deve ser SHA-256 hex')
+    .optional(),
 });
 
 export const QuestaoMetaSchema = z.object({

@@ -91,12 +91,12 @@ export default defineConfig({
         timeout: 300_000,
         env: {
           ...process.env,
-          // `isE2eBypassEnabled` exige CI=true para engatar em produção (NODE_ENV=production).
-          // Sem isto, o servidor de prod redireciona tudo para /login. Espelha o ambiente do CI.
           CI: 'true',
           E2E_ADMIN_BYPASS: 'true',
           E2E_DASHBOARD_BYPASS: 'true',
           NEXT_PUBLIC_E2E_DASHBOARD_BYPASS: 'true',
+          COMMERCIAL_RUNTIME_READINESS_GATE:
+            process.env.COMMERCIAL_RUNTIME_READINESS_GATE ?? 'false',
         },
       }
     : {
@@ -111,6 +111,8 @@ export default defineConfig({
           E2E_ADMIN_BYPASS: 'true',
           E2E_DASHBOARD_BYPASS: 'true',
           NEXT_PUBLIC_E2E_DASHBOARD_BYPASS: 'true',
+          COMMERCIAL_RUNTIME_READINESS_GATE:
+            process.env.COMMERCIAL_RUNTIME_READINESS_GATE ?? 'false',
         },
       },
 });

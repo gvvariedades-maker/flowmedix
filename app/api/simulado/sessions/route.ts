@@ -6,6 +6,7 @@ import { fetchSimuladoQuestionPoolFromRpc } from '@/lib/simulado/rpc';
 import {
   fetchSimuladoQuestionPoolFromCatalog,
 } from '@/lib/simulado/poolFromCatalog';
+import { isSlugInP0Denylist } from '@/lib/catalogMigration/p0Denylist';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
@@ -263,6 +264,10 @@ export async function POST(request: NextRequest) {
       if (derivedPool.length > 0) {
         pool = derivedPool;
       }
+    }
+
+    if (!isAdmin) {
+      pool = pool.filter((item) => !isSlugInP0Denylist(item.modulo_slug));
     }
 
     if (!pool.length) {

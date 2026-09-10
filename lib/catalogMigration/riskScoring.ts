@@ -52,6 +52,8 @@ export type EfficacyContract = {
   a4_reviewer?: string;
   a4_checklist_passed?: string[];
   auto_approved_at?: string;
+  /** SHA-256 do payload canônico servido — vínculo RC-004 runtime. */
+  approved_content_fingerprint?: string;
   sampled?: boolean;
   transfer_targets?: string[];
   retrieval_first?: boolean;

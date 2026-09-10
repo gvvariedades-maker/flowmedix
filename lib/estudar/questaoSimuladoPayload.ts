@@ -2,7 +2,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import type { LessonData } from '@/types/lesson';
 import { getQuestaoBySlugCached } from '@/lib/cache';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
-import { isTituloAulaVisibleInVitrine } from '@/lib/catalogMigration/vitrineQualityGate';
+import { canServeCommercialContent } from '@/lib/catalogMigration/commercialAuthority';
 import { stripQuestionForSimulado } from '@/lib/estudar/questionPayload';
 import type { SimuladoQuestaoPayloadResponse } from '@/lib/simulado/types';
 
@@ -32,10 +32,12 @@ export async function buildSimuladoQuestaoPayload(
   }
 
   let conteudoJson: LessonData | null = null;
+  let tituloAula: string | null = null;
 
   if (isAdmin) {
     const cached = await getQuestaoBySlugCached(slug);
     conteudoJson = (cached?.conteudo_json as LessonData | undefined) ?? null;
+    tituloAula = cached?.titulo_aula ?? null;
   } else {
     const { data, error } = await supabase
       .from('modulos_estudo')
@@ -44,13 +46,20 @@ export async function buildSimuladoQuestaoPayload(
       .maybeSingle();
 
     if (error) throw error;
-    if (data?.titulo_aula && !isTituloAulaVisibleInVitrine(data.titulo_aula)) {
-      return { status: 'forbidden' };
-    }
+    tituloAula = data?.titulo_aula ?? null;
     conteudoJson = (data?.conteudo_json as LessonData | undefined) ?? null;
   }
 
   if (!conteudoJson) return { status: 'not_found' };
+
+  if (!isAdmin && !canServeCommercialContent({
+    isAdmin,
+    slug,
+    tituloAula,
+    conteudoJson,
+  }).eligible) {
+    return { status: 'forbidden' };
+  }
 
   const dados = stripQuestionForSimulado(conteudoJson);
 

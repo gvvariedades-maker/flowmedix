@@ -178,6 +178,7 @@ export function auditQuestaoReadiness(
   const writeResult = validateQuestaoForWrite(payload, {
     premiumGate: true,
     goldenLint: true,
+    commercialWriteTrust: 'runtime_read',
   });
 
   if (!writeResult.ok) {

@@ -72,6 +72,13 @@ jest.mock('@/lib/evidence/supabasePersistence', () => ({
 
 import { POST } from '@/app/api/simulado/responder/route';
 import { SIMULADO_DIAGNOSTICO_TIPO } from '@/lib/simulado/diagnosticoConstants';
+import { extractQuestaoMetaFromModulo } from '@/lib/simulado/sessionProgress';
+import { clearCommercialRuntimeApprovalCache } from '@/lib/catalogMigration/commercialRuntimeGate';
+import {
+  COMMERCIAL_APPROVED_CONTEUDO_JSON,
+  COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
+  commercialApprovedModuloEstudoRow,
+} from '@/__tests__/helpers/commercialApprovedQuestaoFixture';
 
 const USER_ID = '550e8400-e29b-41d4-a716-446655440000';
 const SESSION_ID = '33333333-3333-4333-8333-333333333333';
@@ -90,15 +97,15 @@ function buildRespostaProgressRows() {
     {
       ordem: 1,
       modulo_slug: 'questao-slug',
-      opcao_id: 'B',
-      opcao_correta_id: 'B',
+      opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
+      opcao_correta_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
       acertou: true,
       respondida_em: '2026-05-27T12:00:00.000Z',
       tempo_ms: 45000,
       modulos_estudo: {
-        banca: 'FGV',
-        modulo_nome: 'Urgências',
-        titulo_aula: 'RCP',
+        banca: COMMERCIAL_APPROVED_CONTEUDO_JSON.meta.banca as string,
+        modulo_nome: 'Imunização',
+        titulo_aula: 'Imunização',
       },
     },
     {
@@ -110,8 +117,8 @@ function buildRespostaProgressRows() {
       respondida_em: null,
       tempo_ms: null,
       modulos_estudo: {
-        banca: 'FGV',
-        modulo_nome: 'Urgências',
+        banca: COMMERCIAL_APPROVED_CONTEUDO_JSON.meta.banca as string,
+        modulo_nome: 'Imunização',
         titulo_aula: 'AVC',
       },
     },
@@ -185,21 +192,7 @@ function buildSuccessMocks(options?: {
   const progressSelect = jest.fn().mockReturnValue({ eq: progressEqSession });
 
   const moduloMaybeSingle = jest.fn().mockResolvedValue({
-    data: {
-      conteudo_json: {
-        question_data: {
-          instruction: 'Qual alternativa está correta?',
-          options: [
-            { id: 'A', text: 'A', is_correct: false },
-            { id: 'B', text: 'B', is_correct: true },
-          ],
-        },
-        meta: { banca: 'FGV', topico: 'Urgências', subtopico: 'RCP' },
-      },
-      banca: 'FGV',
-      modulo_nome: 'Urgências',
-      titulo_aula: 'RCP',
-    },
+    data: commercialApprovedModuloEstudoRow(),
     error: null,
   });
   const moduloEqId = jest.fn().mockReturnValue({ maybeSingle: moduloMaybeSingle });
@@ -241,8 +234,12 @@ function buildSuccessMocks(options?: {
 }
 
 describe('POST /api/simulado/responder', () => {
+  const prevGate = process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+
   beforeEach(() => {
     jest.clearAllMocks();
+    clearCommercialRuntimeApprovalCache();
+    process.env.COMMERCIAL_RUNTIME_READINESS_GATE = 'true';
     mockGetUserAndClientFromBearer.mockResolvedValue({
       user: { id: USER_ID, email: 'free@test.com' },
     });
@@ -253,6 +250,11 @@ describe('POST /api/simulado/responder', () => {
       insertAttempt: jest.fn(),
     });
     mockIngestAttemptEvent.mockResolvedValue({ status: 'disabled' });
+  });
+
+  afterEach(() => {
+    if (prevGate === undefined) delete process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+    else process.env.COMMERCIAL_RUNTIME_READINESS_GATE = prevGate;
   });
 
   it('sincroniza tentativa no histórico e retorna questao_atualizada + resumo', async () => {
@@ -308,20 +310,7 @@ describe('POST /api/simulado/responder', () => {
     const progressSelect = jest.fn().mockReturnValue({ eq: progressEqSession });
 
     const moduloMaybeSingle = jest.fn().mockResolvedValue({
-      data: {
-        conteudo_json: {
-          question_data: {
-            options: [
-              { id: 'A', is_correct: false },
-              { id: 'B', is_correct: true },
-            ],
-          },
-          meta: { banca: 'FGV', topico: 'Urgências', subtopico: 'RCP' },
-        },
-        banca: 'FGV',
-        modulo_nome: 'Urgências',
-        titulo_aula: 'RCP',
-      },
+      data: commercialApprovedModuloEstudoRow(),
       error: null,
     });
     const moduloEqId = jest.fn().mockReturnValue({ maybeSingle: moduloMaybeSingle });
@@ -356,7 +345,7 @@ describe('POST /api/simulado/responder', () => {
       makeRequest({
         session_id: SESSION_ID,
         modulo_slug: 'questao-slug',
-        opcao_id: 'B',
+        opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
       }),
     );
 
@@ -365,16 +354,16 @@ describe('POST /api/simulado/responder', () => {
     expect(body).toEqual({
       success: true,
       acertou: true,
-      opcao_correta_id: 'B',
+      opcao_correta_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
       session_status: 'aberto',
       questao_atualizada: {
         ordem: 1,
         modulo_slug: 'questao-slug',
         respondida: true,
-        meta: { banca: 'FGV', topico: 'Urgências', subtopico: 'RCP' },
+        meta: extractQuestaoMetaFromModulo(buildRespostaProgressRows()[0].modulos_estudo),
         acertou: true,
-        opcao_id: 'B',
-        opcao_correta_id: 'B',
+        opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
+        opcao_correta_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
         respondida_em: '2026-05-27T12:00:00.000Z',
         tempo_ms: 45000,
       },
@@ -393,7 +382,7 @@ describe('POST /api/simulado/responder', () => {
         user_id: USER_ID,
         modulo_slug: 'questao-slug',
         acertou: true,
-        banca: 'FGV',
+        banca: COMMERCIAL_APPROVED_CONTEUDO_JSON.meta.banca as string,
       }),
     );
     expect(mockRevalidateTag).toHaveBeenCalledWith('historico', { expire: 0 });
@@ -451,11 +440,15 @@ describe('POST /api/simulado/responder', () => {
           ordem: 1,
           modulo_slug: 'questao-slug',
           opcao_id: 'B',
-          opcao_correta_id: 'B',
-          acertou: true,
+          opcao_correta_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
+          acertou: false,
           respondida_em: '2026-05-27T12:00:00.000Z',
           tempo_ms: 30000,
-          modulos_estudo: { banca: 'FGV', modulo_nome: 'Urgências', titulo_aula: 'RCP' },
+          modulos_estudo: {
+            banca: COMMERCIAL_APPROVED_CONTEUDO_JSON.meta.banca as string,
+            modulo_nome: 'Imunização',
+            titulo_aula: 'Imunização',
+          },
         },
         {
           ordem: 2,
@@ -475,19 +468,7 @@ describe('POST /api/simulado/responder', () => {
     const progressSelect = jest.fn().mockReturnValue({ eq: progressEqSession });
 
     const moduloMaybeSingle = jest.fn().mockResolvedValue({
-      data: {
-        conteudo_json: {
-          question_data: {
-            options: [
-              { id: 'A', is_correct: false },
-              { id: 'B', is_correct: true },
-            ],
-          },
-        },
-        banca: 'FGV',
-        modulo_nome: 'Urgências',
-        titulo_aula: 'RCP',
-      },
+      data: commercialApprovedModuloEstudoRow(),
       error: null,
     });
     const moduloEqId = jest.fn().mockReturnValue({ maybeSingle: moduloMaybeSingle });
@@ -666,7 +647,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );
@@ -720,7 +701,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );
@@ -737,7 +718,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );
@@ -775,7 +756,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );
@@ -793,7 +774,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );
@@ -811,7 +792,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );
@@ -834,7 +815,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );
@@ -855,7 +836,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );
@@ -873,7 +854,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: 'not-a-uuid',
           conviction: 'bad',
         }),
@@ -890,7 +871,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
           user_id: 'forged',
           correct: false,
@@ -919,7 +900,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );
@@ -938,7 +919,7 @@ describe('POST /api/simulado/responder', () => {
         makeRequest({
           session_id: SESSION_ID,
           modulo_slug: 'questao-slug',
-          opcao_id: 'B',
+          opcao_id: COMMERCIAL_APPROVED_CORRECT_OPTION_ID,
           attempt_id: ATTEMPT_ID,
         }),
       );

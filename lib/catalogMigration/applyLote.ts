@@ -20,6 +20,10 @@ import {
   scoreQuestaoRisk,
   type RiskScoringContext,
 } from '@/lib/catalogMigration/riskScoring';
+import {
+  issueServerCommercialApproval,
+  stripCommercialApprovalBinding,
+} from '@/lib/catalogMigration/commercialApprovalWriteBoundary';
 import { auditAndMitigateA4Minimo } from '@/lib/catalogMigration/a4MinimoRegistry';
 
 export type ApplyLoteItem = {
@@ -41,6 +45,11 @@ export type ApplyLoteOptions = {
   riskApprovalGate?: boolean;
   /** Contexto do registry para score de risco. */
   riskContext?: RiskScoringContext;
+  /**
+   * Emite approved_content_fingerprint server-side no apply autorizado (default: false).
+   * Requer strip de metadados não confiáveis; não reintroduz aprovação revogada.
+   */
+  commercialApprovalStamp?: boolean;
 };
 
 export type ApplyLoteRowResult = {
@@ -70,9 +79,21 @@ export async function applyLoteToSupabase(
 
   const premiumGate = options.premiumGate !== false;
   const riskApprovalGate = options.riskApprovalGate === true;
+  const commercialApprovalStamp = options.commercialApprovalStamp === true;
 
   for (const item of items) {
-    const { modulo_slug: slug, payload } = item;
+    const { modulo_slug: slug } = item;
+    let { payload } = item;
+    payload = stripCommercialApprovalBinding(payload);
+
+    if (commercialApprovalStamp) {
+      const issued = issueServerCommercialApproval({
+        payload,
+        slug,
+        riskContext: options.riskContext,
+      });
+      payload = issued.payload;
+    }
 
     if (premiumGate) {
       const gateErrors = premiumGateErrors(payload);
