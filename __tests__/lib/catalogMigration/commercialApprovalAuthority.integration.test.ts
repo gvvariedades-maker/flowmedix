@@ -19,8 +19,21 @@ const GOLDEN = JSON.parse(
 );
 
 describe('APPROVAL_AUTHORITY — runtime comercial', () => {
+  const prevGate = process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
   const fp = fingerprintConteudoJson(GOLDEN);
   const risk = scoreQuestaoRisk(GOLDEN, { productionReady: true, autoApprovalEnabled: true });
+
+  beforeEach(() => {
+    process.env.COMMERCIAL_RUNTIME_READINESS_GATE = 'true';
+  });
+
+  afterEach(() => {
+    if (prevGate === undefined) {
+      delete process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+    } else {
+      process.env.COMMERCIAL_RUNTIME_READINESS_GATE = prevGate;
+    }
+  });
 
   it('rejeita auto-aprovação agent: com fingerprint (import spoof)', () => {
     const spoofed = {
