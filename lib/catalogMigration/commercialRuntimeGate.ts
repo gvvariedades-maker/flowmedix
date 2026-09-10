@@ -101,16 +101,14 @@ const DENIAL_CACHE_TTL_MS = 60_000;
 
 
 
-/** Gate RC-004 — desligável só em dev/E2E via env (nunca default em produção). */
-
+/**
+ * Gate RC-004 — opt-in explícito (merge ≠ rollout).
+ * Ausente ou false/0/off → OFF (P0 denylist e gates estruturais continuam ativos).
+ * true/1/on → ON (production_ready + ready_100 + fingerprint no runtime).
+ */
 export function isCommercialRuntimeReadinessGateEnabled(): boolean {
-
   const raw = process.env.COMMERCIAL_RUNTIME_READINESS_GATE?.trim().toLowerCase();
-
-  if (raw === 'false' || raw === '0' || raw === 'off') return false;
-
-  return true;
-
+  return raw === 'true' || raw === '1' || raw === 'on';
 }
 
 

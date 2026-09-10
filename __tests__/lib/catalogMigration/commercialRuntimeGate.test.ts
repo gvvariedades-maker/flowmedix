@@ -29,12 +29,40 @@ describe('commercialRuntimeGate (RC-004)', () => {
     else process.env.COMMERCIAL_RUNTIME_READINESS_GATE = prevGate;
   });
 
+  describe('isCommercialRuntimeReadinessGateEnabled — opt-in explícito', () => {
+    const casesOff = [undefined, 'false', '0', 'off', '', 'TRUE-ish'];
+    for (const value of casesOff) {
+      it(`OFF quando COMMERCIAL_RUNTIME_READINESS_GATE=${value ?? 'undefined'}`, () => {
+        if (value === undefined) delete process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+        else process.env.COMMERCIAL_RUNTIME_READINESS_GATE = value;
+        expect(isCommercialRuntimeReadinessGateEnabled()).toBe(false);
+      });
+    }
+
+    for (const value of ['true', '1', 'on', 'ON', ' True ']) {
+      it(`ON quando COMMERCIAL_RUNTIME_READINESS_GATE=${value}`, () => {
+        process.env.COMMERCIAL_RUNTIME_READINESS_GATE = value;
+        expect(isCommercialRuntimeReadinessGateEnabled()).toBe(true);
+      });
+    }
+  });
+
   it('desliga gate quando env COMMERCIAL_RUNTIME_READINESS_GATE=false', () => {
     process.env.COMMERCIAL_RUNTIME_READINESS_GATE = 'false';
     expect(isCommercialRuntimeReadinessGateEnabled()).toBe(false);
     const result = evaluateCommercialRuntimeApproval({
       slug: 'legacy-slug',
       conteudoJson: { question_data: { instruction: 'x', options: [] } },
+    });
+    expect(result.approved).toBe(true);
+  });
+
+  it('desliga gate quando env ausente (merge sem rollout)', () => {
+    delete process.env.COMMERCIAL_RUNTIME_READINESS_GATE;
+    expect(isCommercialRuntimeReadinessGateEnabled()).toBe(false);
+    const result = evaluateCommercialRuntimeApproval({
+      slug: 'legacy-slug',
+      conteudoJson: GOLDEN_IMUNIZACAO,
     });
     expect(result.approved).toBe(true);
   });
