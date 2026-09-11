@@ -1,10 +1,11 @@
+> **Atualização 2026-08-11:** autoridade visual vigente = [	okens/AVANT-VISUAL-DIRECTION-v4.md](../design-system/AVANT-VISUAL-DIRECTION-v4.md) (desfecho A). v3 = histórico. Spec pele NeuroSlides: [../design-system/NEUROSLIDES-VISUAL-SPEC-v2.md](../design-system/NEUROSLIDES-VISUAL-SPEC-v2.md). ADR: [../DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md](../DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md).
 # Auditoria Visual AVANT v2
 
 Benchmark de interfaces para definir um design system **editorial premium** — confiável, moderno e **exclusivo** — sem alterar lógica, fluxos ou funcionalidades do produto.
 
 **Baseline atual:** Cyber Clinical v1 (`#010409`, cyan neon, glassmorphism). Rollback: tag Git `avant/cyber-clinical-v1` — ver [`docs/design-archive/cyber-clinical-v1/README.md`](../design-archive/cyber-clinical-v1/README.md).
 
-**Escopo:** cores, tipografia, espaçamento, componentes, landing, dashboard, shell do player.  
+**Escopo:** cores, tipografia, espaçamento, componentes, landing, dashboard, shell do player.
 **Fora do escopo:** APIs, cache, RLS, JSON de questões, Estudo Reverso, simulados (lógica).
 
 ---

@@ -228,36 +228,47 @@ const supabase = await createServerSupabase(); // exige SUPABASE_SERVICE_ROLE_KE
 
 ## 3. Design system
 
-O AVANT opera com **duas skins** (mesmos tokens semânticos, valores diferentes):
+O AVANT opera com **identidade editorial premium vigente (desfecho A)** no app de estudo. Tokens Cyber em `:root` permanecem no CSS como **legado/base**, não como pele do player reverso.
 
 | Skin | Onde | Estética |
 |------|------|----------|
-| **Editorial v2.1** | Login, dashboard, vitrine, player (enunciado), modais | Papel `#FFF1E0`, laranja `#F26522`, cards brancos com sombra |
-| **Cyber Clinical** | NeuroSlides/reverso fullscreen, landing, admin | Escuro `#010409`, cyan neon `#00f2ff`, glassmorphism |
+| **Editorial v4** | Login, dashboard, vitrine, player (enunciado **e** NeuroSlides/reverso), modais | Papel `#FFF1E0`, laranja `#F26522`, cards brancos; reverso `bg-slate-100` + pastéis por tipo ([Spec v2](docs/design-system/NEUROSLIDES-VISUAL-SPEC-v2.md)) |
+| **Cyber Clinical (legado)** | Tokens `:root`, arquivo `design-archive/cyber-clinical-v1`, demos/landing pontuais | Escuro `#010409`, cyan `#00f2ff` — **não** restaurar no player |
 
-Ativação editorial: `useEditorialTheme()` → `html[data-theme='editorial']` em [`app/globals.css`](app/globals.css).  
-**Onboarding designer front (hub):** [`docs/DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) — App UI vs NeuroSlides, ordem de leitura.  
-Escopo e screenshots: [`docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md`](docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md).  
-Direção visual v3 (Clinical Study): [`docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md).  
+Ativação editorial: `useEditorialTheme()` → `html[data-theme='editorial']` em [`app/globals.css`](app/globals.css).
+**Onboarding designer front (hub):** [`docs/DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) — App UI vs NeuroSlides, ordem de leitura.
+**ADR / Direction v4:** [`docs/DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md`](docs/DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md) · [`docs/design-system/AVANT-VISUAL-DIRECTION-v4.md`](docs/design-system/AVANT-VISUAL-DIRECTION-v4.md).
+Escopo e screenshots: [`docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md`](docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md).
+Histórico (SUPERADO): [`docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md).
 Polish de UI no app: skill [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md).
 
-### Fundo global (Cyber — `:root`)
+### Fundo global (legado Cyber — `:root`)
 
-- Cor base: `#010409` (`--color-surface-0`)
-- Listras diagonais fixas em `html`/`body` — `main` e `section` devem ser **transparentes** para o padrão aparecer
+- Cor base: `#010409` (`--color-surface-0`) quando **não** há `data-theme='editorial'`
+- Em área logada, o tema editorial sobrescreve surfaces para creme `#FFF1E0`
 - Definição: [`app/globals.css`](app/globals.css)
 
-### Tokens semânticos (`:root`)
+### Tokens semânticos (`:root` — legado)
 
 | Token | Uso |
 |-------|-----|
-| `--color-surface-0` … `3` | Camadas de fundo `#010409` → `#111827` |
+| `--color-surface-0` … `3` | Camadas de fundo `#010409` → `#111827` (sem theme) |
 | `--color-border-subtle/default/strong` | Bordas `rgba(255,255,255,0.05–0.18)` |
-| `--color-brand` `#00f2ff` | Foco primário (cyan neon) |
-| `--color-success` `#00ff88` | Acerto / positivo |
-| `--color-danger` `#ff0055` | Erro / alerta (danger_zone) |
+| `--color-brand` `#00f2ff` | Cyan legado — **não** marca do app logado |
+| `--color-success` `#00ff88` | Success neon legado |
+| `--color-danger` `#ff0055` | Erro legado |
 | `--color-warning` `#ffb800` | Avisos |
 | `--color-text-primary/secondary/tertiary` | Hierarquia de texto |
+
+### Tokens editoriais (`html[data-theme='editorial']` — vigentes no estudo)
+
+| Token | Hex / uso |
+|-------|-----------|
+| `--color-surface-0` | `#FFF1E0` papel |
+| `--color-brand` | `#F26522` marca / CTA |
+| `--color-success` | `#16a34a` acerto (**≠** marca) |
+| `--color-danger` | `#dc2626` |
+| `--color-text-primary` | `#0f172a` |
 
 ### Classes utilitárias (usar em vez de inventar)
 
@@ -521,10 +532,10 @@ Normalização de legado: [`lib/reverseStudySlidesNormalize.ts`](lib/reverseStud
 
 ### Prioridade de design (automático)
 
-1. `template` ou `theme_id` explícito no slide  
-2. `layout_variant` explícito  
-3. `meta.subtopico` → `SUBTOPIC_DESIGN_MAP` ([`themeGenerator.ts`](components/slides/core/themeGenerator.ts))  
-4. `slide.subject` → `SUBJECT_THEME_MAP`  
+1. `template` ou `theme_id` explícito no slide
+2. `layout_variant` explícito
+3. `meta.subtopico` → `SUBTOPIC_DESIGN_MAP` ([`themeGenerator.ts`](components/slides/core/themeGenerator.ts))
+4. `slide.subject` → `SUBJECT_THEME_MAP`
 5. Hash da questão (fallback consistente)
 
 **Recomendado:** preencher só `meta.subtopico` com nome exato da [§9](#9-subtópicos-válidos) — omitir `template` e `layout_variant`.
@@ -643,68 +654,68 @@ Use estes nomes **exatos** em `meta.subtopico` (e repetir em cada slide). O Zod 
 
 ### 6.1 Fundamentos e Bases (4)
 
-1. História da Enfermagem  
-2. Noções de Anatomia  
-3. Noções de Fisiologia  
-4. Processo de Enfermagem  
+1. História da Enfermagem
+2. Noções de Anatomia
+3. Noções de Fisiologia
+4. Processo de Enfermagem
 
 ### 6.2 Farmacologia e Medicamentos (4)
 
-5. Farmacodinâmica e Farmacocinética  
-6. Cálculo de Administração de Medicamentos e Infusões  
-7. Vias de Administração  
-8. Cuidados na Administração de Medicamentos  
+5. Farmacodinâmica e Farmacocinética
+6. Cálculo de Administração de Medicamentos e Infusões
+7. Vias de Administração
+8. Cuidados na Administração de Medicamentos
 
 ### 6.3 Procedimentos de Enfermagem (9)
 
-9. Verificação de Sinais Vitais  
-10. Instalação e Manejo de Sondas  
-11. Oxigenoterapia e Cuidados Respiratórios  
-12. Curativos e Manejo de Feridas  
-13. Punção Venosa e Cuidados com Cateteres  
-14. Coleta de Exames Laboratoriais  
-15. Mobilização e Posicionamento do Paciente  
-16. Procedimentos Diversos  
-17. Feridas e Queimaduras  
+9. Verificação de Sinais Vitais
+10. Instalação e Manejo de Sondas
+11. Oxigenoterapia e Cuidados Respiratórios
+12. Curativos e Manejo de Feridas
+13. Punção Venosa e Cuidados com Cateteres
+14. Coleta de Exames Laboratoriais
+15. Mobilização e Posicionamento do Paciente
+16. Procedimentos Diversos
+17. Feridas e Queimaduras
 
 ### 6.4 Biossegurança e Controle de Infecção (5)
 
-18. Processamento de Artigos e Produtos de Saúde  
-19. Enfermagem em Central de Material e Esterilização (CME)  
-20. Medidas de Prevenção e Precaução de Contato  
-21. Infecções no Contexto da Biossegurança  
-22. Segurança do Paciente  
+18. Processamento de Artigos e Produtos de Saúde
+19. Enfermagem em Central de Material e Esterilização (CME)
+20. Medidas de Prevenção e Precaução de Contato
+21. Infecções no Contexto da Biossegurança
+22. Segurança do Paciente
 
 ### 6.5 Saúde Pública e Epidemiologia (4)
 
-23. Epidemiologia e Vigilância Epidemiológica  
-24. Promoção à Saúde e Prevenção de Agravos  
-25. Imunização  
-26. Atenção Básica / Saúde da Família  
+23. Epidemiologia e Vigilância Epidemiológica
+24. Promoção à Saúde e Prevenção de Agravos
+25. Imunização
+26. Atenção Básica / Saúde da Família
 
 ### 6.6 Doenças Transmissíveis (7)
 
-27. Infecções Sexualmente Transmissíveis (ISTs)  
-28. Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)  
-29. Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)  
-30. Doenças Parasitárias e Zoonoses  
-31. Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis  
-32. Questões Mescladas e Outras Doenças Agudas  
-33. Doenças Respiratórias Crônicas (Asma, DPOC)  
+27. Infecções Sexualmente Transmissíveis (ISTs)
+28. Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)
+29. Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)
+30. Doenças Parasitárias e Zoonoses
+31. Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis
+32. Questões Mescladas e Outras Doenças Agudas
+33. Doenças Respiratórias Crônicas (Asma, DPOC)
 
 ### 6.7 Especialidades Cirúrgicas e Críticas (3)
 
-34. Assistência Perioperatória (Inclui SRPA)  
-35. Enfermagem em Centro Cirúrgico  
-36. Urgências e Emergências  
+34. Assistência Perioperatória (Inclui SRPA)
+35. Enfermagem em Centro Cirúrgico
+36. Urgências e Emergências
 
 ### 6.8 Saúde Mental, do Trabalho e Ciclos de Vida (5)
 
-37. Enfermagem do Trabalho  
-38. Saúde Mental  
-39. Saúde da Criança  
-40. Saúde do Adolescente  
-41. Saúde da Mulher  
+37. Enfermagem do Trabalho
+38. Saúde Mental
+39. Saúde da Criança
+40. Saúde do Adolescente
+41. Saúde da Mulher
 
 **Total: 41 subtópicos canônicos.**
 

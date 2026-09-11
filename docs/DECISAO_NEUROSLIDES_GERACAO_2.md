@@ -1,7 +1,12 @@
+> **Status: SUPERADO PARCIALMENTE (skin visual).** Trechos que obrigam shell Cyber Clinical (#010409 / neon) no player de NeuroSlides foram superados pelo desfecho A. Autoridade de pele: [uditoria-visual-v2/NEUROSLIDES-VISUAL-SPEC-v2.md](design-system/NEUROSLIDES-VISUAL-SPEC-v2.md) · Direction: [uditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v4.md](design-system/AVANT-VISUAL-DIRECTION-v4.md) · ADR: [DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md](DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md).
+> Seções afetadas: menções a 'Skin = Cyber Clinical + cards claros' como obrigação de pele do player. Cérebro 4 tipos permanece vigente.
+> Pedagogia (4 tipos, spoiler, barra, gesto) permanece válida nas seções não marcadas.
+
+---
 # Decisão — NeuroSlides Geração 2 (Visual OS)
 
-**Data:** 2026-08-04  
-**Status:** vigente  
+**Data:** 2026-08-04
+**Status:** vigente
 **Escopo:** experiência visual dos 4 NeuroSlides (estudo reverso) no AVANT — sem alterar a gramática L1 dos tipos
 
 Complementa:
@@ -91,9 +96,9 @@ O roadmap [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](NEUROSLIDES_GERACAO_2_ROADMAP.md)
 
 ## Implicações para docs e agentes
 
-1. **Narrativa de produto / designer:** falar em “4 momentos de estudo” + Visual OS; apontar para este ADR + roadmap.  
-2. **Docs técnicos / gates:** continuar citando `concept_map` / `logic_flow` / `golden_rule` / `danger_zone`.  
-3. **Triggers Cursor:** `Design visual:` / `Molde visual:` / `Implementar molde:` / Fábrica nota-10 — sem trigger de “trocar os 4 tipos”.  
+1. **Narrativa de produto / designer:** falar em “4 momentos de estudo” + Visual OS; apontar para este ADR + roadmap.
+2. **Docs técnicos / gates:** continuar citando `concept_map` / `logic_flow` / `golden_rule` / `danger_zone`.
+3. **Triggers Cursor:** `Design visual:` / `Molde visual:` / `Implementar molde:` / Fábrica nota-10 — sem trigger de “trocar os 4 tipos”.
 4. **Mudança de schema dos 4 tipos:** exige **novo ADR** que supersede este — não é caminho padrão.
 
 ---

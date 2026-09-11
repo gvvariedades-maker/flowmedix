@@ -1,6 +1,6 @@
 ---
 description: >-
-  Ativa design UI do app AVANT (Cyber Clinical + Editorial v2) quando o usuário
+  Ativa design UI do app AVANT (Editorial premium v4; Cyber legado) quando o usuário
   enviar Visual:, Polish vitrine, Polish player, micro-SaaS, craft UI, ou pedir
   melhoria visual de vitrine/player/dashboard. Público: Técnico de Enfermagem em
   concurso — mobile-first, baixa carga cognitiva, WCAG AA.
@@ -9,10 +9,11 @@ alwaysApply: false
 
 # AVANT UI Visual — rule operacional
 
-> **Cópia versionada** — espelhar em [`.cursor/rules/avant-ui-visual.mdc`](../../.cursor/rules/avant-ui-visual.mdc).  
-> **Skill canônica:** [`docs/skills/avant-ui-visual/SKILL.md`](../skills/avant-ui-visual/SKILL.md)  
-> **Reference craft:** [`docs/skills/avant-ui-visual/reference-microsaas-craft.md`](../skills/avant-ui-visual/reference-microsaas-craft.md)  
+> **Cópia versionada** — espelhar em [`.cursor/rules/avant-ui-visual.mdc`](../../.cursor/rules/avant-ui-visual.mdc).
+> **Skill canônica:** [`docs/skills/avant-ui-visual/SKILL.md`](../skills/avant-ui-visual/SKILL.md)
+> **Reference craft:** [`docs/skills/avant-ui-visual/reference-microsaas-craft.md`](../skills/avant-ui-visual/reference-microsaas-craft.md)
 > **Onboarding designer:** [`docs/DESIGNER_FRONT_AVANT.md`](../DESIGNER_FRONT_AVANT.md)
+> **Autoridade visual:** [`AVANT-VISUAL-DIRECTION-v4.md`](../design-system/AVANT-VISUAL-DIRECTION-v4.md) · ADR [`DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md`](../DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md) · Spec [`NEUROSLIDES-VISUAL-SPEC-v2.md`](../design-system/NEUROSLIDES-VISUAL-SPEC-v2.md)
 
 Quando a mensagem contiver **`Visual:`**, **`Polish vitrine`**, **`Polish player`**, **`micro-SaaS`**, **`craft UI`**, ou pedido explícito de melhoria visual do app, executar **sem pedir modo**:
 
@@ -41,23 +42,23 @@ O usuário é **Técnico de Enfermagem** em concurso — **celular, cansado, mic
 ## 3. Antes de codar
 
 1. Estender componente adjacente — não duplicar.
-2. Tema: **Editorial v2** (vitrine/dashboard/player shell) vs **Cyber Clinical** (NeuroSlides/admin).
-3. Capturas: `docs/auditoria-visual-v2/screenshots/avant-editorial-v2/`.
+2. Tema: **Editorial v4** (vitrine/dashboard/player enunciado **e** reverso claro Spec v2). Cyber `:root` = legado / exceção pontual.
+3. Capturas: `docs/auditoria-visual-v2/screenshots/` (baseline reverso claro pode estar PENDENTE).
 4. Prioridade: vitrine → player → dashboard → landing (tokens).
 
-## 4. Tokens (`app/globals.css` + Visual Direction v3)
+## 4. Tokens (`app/globals.css` + Visual Direction v4)
 
-Editorial: `.card-elevated`, `.btn-editorial-primary`, `#F26522`.  
-Cyber: `.glass-panel`, `#010409`, cyan `#00f2ff`.  
+Editorial: `.card-elevated`, `.btn-editorial-primary`, `#F26522`; success `#16a34a` ≠ marca.
+Cyber legado: `.glass-panel`, `#010409`, cyan `#00f2ff` — **não** restaurar no player.
 Mobile: `pb-safe`, `pt-safe`. Ícones: Lucide.
 
-**Proibido:** paleta Tailwind genérica, indigo/roxo legado, glass em `main`/`body`.
+**Proibido:** paleta Tailwind genérica, indigo/roxo legado, glass em `main`/`body`, restaurar Cyber no reverso.
 
 ## 5. Superfícies
 
-**Vitrine:** stats compactos; grid 1/2/3 colunas; card com um CTA; skeleton/empty/zero-filtro.  
-**Player:** shell editorial → reverso cyber; feedback com borda+fundo; um CTA por passo.  
-**NeuroSlides:** `meta.subtopico`; retenção visual → `avant-neuroslides-visual`.
+**Vitrine:** stats compactos; grid 1/2/3 colunas; card com um CTA; skeleton/empty/zero-filtro.
+**Player:** shell editorial → reverso **claro** (Spec v2); feedback com borda+fundo; um CTA por passo.
+**NeuroSlides:** `meta.subtopico`; retenção visual → `avant-neuroslides-visual` + Spec v2.
 
 ## 6. Checklist ship
 
@@ -69,6 +70,6 @@ Mobile: `pb-safe`, `pt-safe`. Ícones: Lucide.
 
 ## 8. Anti-padrões
 
-Linearizar cyber · três CTAs no card · feedback só cor de texto · card-dentro-de-card · CDN font nova · misturar polish vitrine com molde NeuroSlides.
+Restaurar Cyber no reverso · três CTAs no card · feedback só cor de texto · card-dentro-de-card · CDN font nova · misturar polish vitrine com molde NeuroSlides.
 
 Conteúdo operacional completo: [`.cursor/rules/avant-ui-visual.mdc`](../../.cursor/rules/avant-ui-visual.mdc)
