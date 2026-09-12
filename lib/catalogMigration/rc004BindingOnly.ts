@@ -204,6 +204,54 @@ export function hashSupabaseTarget(url: string | undefined): string | null {
   }
 }
 
+const TARGET_HASH_HEX = /^[a-f0-9]{16}$/i;
+
+/** Gate operacional: CAS JSONB validado em ambiente non-prod real. */
+export function isBindingOnlyCasLiveValidated(): boolean {
+  return process.env.RC004_BINDING_ONLY_CAS_LIVE_VALIDATED === 'true';
+}
+
+export type WriterApplyModeReport =
+  | 'BLOCKED'
+  | 'ENV_ARMED_CODE_ONLY'
+  | 'CAS_LIVE_VALIDATED_PENDING_ARCHITECTURE'
+  | 'OPERATIONALLY_READY';
+
+export function resolveWriterApplyModeReport(options: {
+  allowApplyArchitecture: boolean;
+  dryRun: boolean;
+  applyRequested: boolean;
+}): WriterApplyModeReport {
+  if (!options.allowApplyArchitecture) return 'BLOCKED';
+  if (!isBindingOnlyCasLiveValidated()) return 'ENV_ARMED_CODE_ONLY';
+  const cas = discoverBindingOnlyCasPrimitive();
+  if (cas.applyImplementationStatus !== 'READY') {
+    return 'CAS_LIVE_VALIDATED_PENDING_ARCHITECTURE';
+  }
+  if (options.dryRun || !options.applyRequested) return 'ENV_ARMED_CODE_ONLY';
+  return 'OPERATIONALLY_READY';
+}
+
+export function assertExpectedSupabaseTargetHash(
+  expectedHash: string | undefined,
+  actualHash: string | null,
+): string | null {
+  const expected = expectedHash?.trim().toLowerCase();
+  if (!expected) {
+    return 'EXPECTED_SUPABASE_TARGET_HASH_REQUIRED';
+  }
+  if (!TARGET_HASH_HEX.test(expected)) {
+    return 'EXPECTED_SUPABASE_TARGET_HASH_INVALID';
+  }
+  if (!actualHash) {
+    return 'SUPABASE_TARGET_HASH_UNAVAILABLE';
+  }
+  if (expected !== actualHash.toLowerCase()) {
+    return 'SUPABASE_TARGET_HASH_MISMATCH';
+  }
+  return null;
+}
+
 function deepClone<T>(v: T): T {
   return JSON.parse(JSON.stringify(v)) as T;
 }
@@ -308,9 +356,19 @@ export async function runRc004BindingOnlyBatch(
     const payload = unwrapCatalogPayload(raw) ?? raw;
     const subtopico = resolveSubtopico(row, payload);
     const found = subtopico ? findPacoteBySubtopico(registry, subtopico) : null;
-    const riskContext = found
-      ? resolveRiskScoringContextFromPacote(found.pacote)
-      : { productionReady: true, autoApprovalEnabled: true };
+    if (!found) {
+      results.push({
+        slug,
+        status: 'failed',
+        code: 'SUBTOPIC_NOT_IN_REGISTRY',
+        detail: subtopico
+          ? `subtopico não encontrado no handcraft registry: ${subtopico}`
+          : 'meta.subtopico e titulo_aula ausentes para resolver pacote',
+      });
+      if (options.failFast) break;
+      continue;
+    }
+    const riskContext = resolveRiskScoringContextFromPacote(found.pacote);
 
     const readiness = auditQuestaoReadiness(payload as never, {
       slug,

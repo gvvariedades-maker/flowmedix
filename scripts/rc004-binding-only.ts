@@ -9,17 +9,19 @@
  * --apply exige --confirm-production-binding e arquitetura CAS aprovada (bloqueado por padrão).
  */
 import { loadEnvConfig } from '@next/env';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 loadEnvConfig(process.cwd());
 
 import { hasFlag, parseArg, requireArg } from '@/lib/catalogMigration/cliArgs';
 import {
+  assertExpectedSupabaseTargetHash,
   discoverBindingOnlyCasPrimitive,
   hashSupabaseTarget,
   isBindingOnlyApplyOperationallyAllowed,
   parseBindingOnlyManifest,
+  resolveWriterApplyModeReport,
   runRc004BindingOnlyBatch,
 } from '@/lib/catalogMigration/rc004BindingOnly';
 import {
@@ -60,6 +62,15 @@ async function main(): Promise<void> {
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
   const targetHash = hashSupabaseTarget(supabaseUrl);
+  const expectedTargetHash = parseArg('expected-supabase-target-hash');
+
+  if (!fixtureDir) {
+    const targetErr = assertExpectedSupabaseTargetHash(expectedTargetHash, targetHash);
+    if (targetErr) {
+      console.error(targetErr);
+      process.exit(1);
+    }
+  }
 
   let dataSource;
   let applySink;
@@ -113,7 +124,6 @@ async function main(): Promise<void> {
     reviewer_masked: reviewer.length <= 2 ? '**' : `${reviewer.slice(0, 1)}***`,
     approved_at: approvedAt,
     data_source: fixtureDir ? 'FIXTURE_DIR' : 'LIVE_SUPABASE',
-    supabase_target_hash: targetHash,
     cas_discovery: cas,
     totals: batch.totals,
     metrics: {
@@ -124,7 +134,13 @@ async function main(): Promise<void> {
       DIRECT_APPROVAL_PASS: directPass,
     },
     PRODUCTION_WRITES: batch.productionWrites,
-    WRITER_APPLY_MODE: allowApplyArchitecture ? 'READY' : 'BLOCKED',
+    supabase_target_hash: targetHash,
+    expected_supabase_target_hash: expectedTargetHash ?? null,
+    WRITER_APPLY_MODE: resolveWriterApplyModeReport({
+      allowApplyArchitecture,
+      dryRun,
+      applyRequested: apply,
+    }),
     results: batch.results,
   };
 

@@ -3,8 +3,11 @@ import { resolve } from 'node:path';
 import { fingerprintConteudoJson } from '@/lib/catalogMigration/contentFingerprint';
 import {
   assertBindingOnlyReviewerPolicy,
+  assertExpectedSupabaseTargetHash,
   discoverBindingOnlyCasPrimitive,
+  hashSupabaseTarget,
   parseBindingOnlyManifest,
+  resolveWriterApplyModeReport,
   runRc004BindingOnlyBatch,
   type BindingOnlyApplySink,
   type BindingOnlyDataSource,
@@ -253,5 +256,60 @@ describe('rc004BindingOnly', () => {
     expect(cas.primitive).toBe('SAFE_CONDITIONAL_UPDATE_AVAILABLE');
     expect(cas.mode).toBe('JSONB_EQUALITY_CONDITIONAL');
     expect(cas.applyImplementationStatus).toBe('BLOCKED_CAS_REQUIRES_SEPARATE_DECISION');
+  });
+
+  it('target hash mismatch fail-closed', () => {
+    const actual = hashSupabaseTarget('https://abcdefgh.supabase.co');
+    expect(assertExpectedSupabaseTargetHash('0000000000000000', actual)).toBe(
+      'SUPABASE_TARGET_HASH_MISMATCH',
+    );
+    expect(assertExpectedSupabaseTargetHash(actual!, actual)).toBeNull();
+  });
+
+  it('WRITER_APPLY_MODE BLOCKED sem env armado', () => {
+    expect(
+      resolveWriterApplyModeReport({
+        allowApplyArchitecture: false,
+        dryRun: true,
+        applyRequested: false,
+      }),
+    ).toBe('BLOCKED');
+  });
+
+  it('WRITER_APPLY_MODE ENV_ARMED_CODE_ONLY com env mas sem CAS live', () => {
+    const prev = process.env.RC004_BINDING_ONLY_APPLY_ARCHITECTURE_APPROVED;
+    process.env.RC004_BINDING_ONLY_APPLY_ARCHITECTURE_APPROVED = 'true';
+    expect(
+      resolveWriterApplyModeReport({
+        allowApplyArchitecture: true,
+        dryRun: true,
+        applyRequested: false,
+      }),
+    ).toBe('ENV_ARMED_CODE_ONLY');
+    process.env.RC004_BINDING_ONLY_APPLY_ARCHITECTURE_APPROVED = prev;
+  });
+
+  it('falha se subtopico fora do registry', async () => {
+    const slug = 'orphan-slug';
+    const orphan = {
+      ...GOLDEN,
+      meta: { ...GOLDEN.meta, subtopico: 'Subtópico Inexistente XYZ' },
+    };
+    const fp = fingerprintConteudoJson(orphan);
+    const ds: BindingOnlyDataSource = {
+      fetchRowBySlug: async () => ({
+        id: 'id-1',
+        modulo_slug: slug,
+        titulo_aula: 'Subtópico Inexistente XYZ',
+        conteudo_json: orphan,
+      }),
+    };
+    const batch = await runRc004BindingOnlyBatch(
+      { items: [{ slug, expected_content_fingerprint: fp }] },
+      ds,
+      { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+    );
+    expect(batch.totals.failed).toBe(1);
+    expect(batch.results[0].code).toBe('SUBTOPIC_NOT_IN_REGISTRY');
   });
 });
