@@ -7,6 +7,7 @@
     "dev:webpack": "next dev --webpack",
     "build": "npm run validate:env && next build",
     "commercial:approval-backfill-dry-run": "tsx scripts/commercial-approval-backfill-dry-run.ts",
+    "rc004:binding-only": "tsx scripts/rc004-binding-only.ts",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
