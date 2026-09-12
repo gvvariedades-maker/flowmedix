@@ -211,25 +211,18 @@ export function isBindingOnlyCasLiveValidated(): boolean {
   return process.env.RC004_BINDING_ONLY_CAS_LIVE_VALIDATED === 'true';
 }
 
-export type WriterApplyModeReport =
-  | 'BLOCKED'
-  | 'ENV_ARMED_CODE_ONLY'
-  | 'CAS_LIVE_VALIDATED_PENDING_ARCHITECTURE'
-  | 'OPERATIONALLY_READY';
+export type WriterApplyModeReport = 'BLOCKED' | 'READY_CODE_ONLY';
 
+/**
+ * Relatório operacional — nunca emite READY nesta fase (apply Production não homologado).
+ * BLOCKED: arquitetura de apply desarmada.
+ * READY_CODE_ONLY: código possui caminho de apply; homologação CAS/Production pendente.
+ */
 export function resolveWriterApplyModeReport(options: {
   allowApplyArchitecture: boolean;
-  dryRun: boolean;
-  applyRequested: boolean;
 }): WriterApplyModeReport {
   if (!options.allowApplyArchitecture) return 'BLOCKED';
-  if (!isBindingOnlyCasLiveValidated()) return 'ENV_ARMED_CODE_ONLY';
-  const cas = discoverBindingOnlyCasPrimitive();
-  if (cas.applyImplementationStatus !== 'READY') {
-    return 'CAS_LIVE_VALIDATED_PENDING_ARCHITECTURE';
-  }
-  if (options.dryRun || !options.applyRequested) return 'ENV_ARMED_CODE_ONLY';
-  return 'OPERATIONALLY_READY';
+  return 'READY_CODE_ONLY';
 }
 
 export function assertExpectedSupabaseTargetHash(
@@ -238,16 +231,13 @@ export function assertExpectedSupabaseTargetHash(
 ): string | null {
   const expected = expectedHash?.trim().toLowerCase();
   if (!expected) {
-    return 'EXPECTED_SUPABASE_TARGET_HASH_REQUIRED';
+    return 'RC004_BINDING_ONLY_EXPECTED_TARGET_REQUIRED';
   }
   if (!TARGET_HASH_HEX.test(expected)) {
-    return 'EXPECTED_SUPABASE_TARGET_HASH_INVALID';
+    return 'RC004_BINDING_ONLY_EXPECTED_TARGET_REQUIRED';
   }
-  if (!actualHash) {
-    return 'SUPABASE_TARGET_HASH_UNAVAILABLE';
-  }
-  if (expected !== actualHash.toLowerCase()) {
-    return 'SUPABASE_TARGET_HASH_MISMATCH';
+  if (!actualHash || expected !== actualHash.toLowerCase()) {
+    return 'RC004_BINDING_ONLY_TARGET_MISMATCH';
   }
   return null;
 }
@@ -360,7 +350,7 @@ export async function runRc004BindingOnlyBatch(
       results.push({
         slug,
         status: 'failed',
-        code: 'SUBTOPIC_NOT_IN_REGISTRY',
+        code: 'RC004_BINDING_ONLY_REGISTRY_NOT_FOUND',
         detail: subtopico
           ? `subtopico não encontrado no handcraft registry: ${subtopico}`
           : 'meta.subtopico e titulo_aula ausentes para resolver pacote',

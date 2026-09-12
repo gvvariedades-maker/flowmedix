@@ -258,38 +258,118 @@ describe('rc004BindingOnly', () => {
     expect(cas.applyImplementationStatus).toBe('BLOCKED_CAS_REQUIRES_SEPARATE_DECISION');
   });
 
-  it('target hash mismatch fail-closed', () => {
-    const actual = hashSupabaseTarget('https://abcdefgh.supabase.co');
-    expect(assertExpectedSupabaseTargetHash('0000000000000000', actual)).toBe(
-      'SUPABASE_TARGET_HASH_MISMATCH',
-    );
-    expect(assertExpectedSupabaseTargetHash(actual!, actual)).toBeNull();
+  describe('TARGET GUARD (apply-only)', () => {
+    it('apply sem expected hash => FAIL', () => {
+      const actual = hashSupabaseTarget('https://abcdefgh.supabase.co');
+      expect(assertExpectedSupabaseTargetHash(undefined, actual)).toBe(
+        'RC004_BINDING_ONLY_EXPECTED_TARGET_REQUIRED',
+      );
+      expect(assertExpectedSupabaseTargetHash('', actual)).toBe(
+        'RC004_BINDING_ONLY_EXPECTED_TARGET_REQUIRED',
+      );
+    });
+
+    it('apply com hash inválido => FAIL', () => {
+      const actual = hashSupabaseTarget('https://abcdefgh.supabase.co');
+      expect(assertExpectedSupabaseTargetHash('not-hex', actual)).toBe(
+        'RC004_BINDING_ONLY_EXPECTED_TARGET_REQUIRED',
+      );
+      expect(assertExpectedSupabaseTargetHash('abc', actual)).toBe(
+        'RC004_BINDING_ONLY_EXPECTED_TARGET_REQUIRED',
+      );
+    });
+
+    it('apply com hash divergente => FAIL', () => {
+      const actual = hashSupabaseTarget('https://abcdefgh.supabase.co');
+      expect(assertExpectedSupabaseTargetHash('0000000000000000', actual)).toBe(
+        'RC004_BINDING_ONLY_TARGET_MISMATCH',
+      );
+    });
+
+    it('apply com hash correto passa target guard e falha no próximo gate (CAS architecture)', async () => {
+      const slug = 'imunizacao-test';
+      const fp = fingerprintConteudoJson(GOLDEN);
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async () => rowFromPayload(slug, GOLDEN),
+      };
+      const actual = hashSupabaseTarget('https://abcdefgh.supabase.co');
+      expect(assertExpectedSupabaseTargetHash(actual!, actual)).toBeNull();
+
+      await expect(
+        runRc004BindingOnlyBatch(
+          { items: [{ slug, expected_content_fingerprint: fp }] },
+          ds,
+          {
+            reviewer: 'GV',
+            approvedAt: '2026-09-12',
+            dryRun: false,
+            apply: true,
+            confirmProductionBinding: true,
+            allowApplyArchitecture: false,
+          },
+        ),
+      ).rejects.toThrow(/RC004_BINDING_ONLY_APPLY_BLOCKED_CAS_UNAVAILABLE/);
+    });
+
+    it('dry-run continua sem write mesmo com apply sink presente', async () => {
+      const slug = 'imunizacao-test';
+      const fp = fingerprintConteudoJson(GOLDEN);
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async () => rowFromPayload(slug, GOLDEN),
+      };
+      const batch = await runRc004BindingOnlyBatch(
+        { items: [{ slug, expected_content_fingerprint: fp }] },
+        ds,
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+        {
+          updateConteudoJsonCas: async () => {
+            throw new Error('write não deveria ocorrer');
+          },
+          reReadRowBySlug: async () => rowFromPayload(slug, GOLDEN),
+        },
+      );
+      expect(batch.productionWrites).toBe(0);
+      expect(batch.totals.would_bind).toBe(1);
+    });
   });
 
-  it('WRITER_APPLY_MODE BLOCKED sem env armado', () => {
-    expect(
-      resolveWriterApplyModeReport({
-        allowApplyArchitecture: false,
-        dryRun: true,
-        applyRequested: false,
-      }),
-    ).toBe('BLOCKED');
+  describe('WRITER_APPLY_MODE report', () => {
+    it('architecture env false => BLOCKED', () => {
+      expect(resolveWriterApplyModeReport({ allowApplyArchitecture: false })).toBe('BLOCKED');
+    });
+
+    it('architecture env true sem homologação CAS => READY_CODE_ONLY', () => {
+      expect(resolveWriterApplyModeReport({ allowApplyArchitecture: true })).toBe('READY_CODE_ONLY');
+    });
+
+    it('nunca emite READY ou OPERATIONALLY_READY apenas por env=true', () => {
+      const modes = new Set<string>();
+      for (const allow of [false, true]) {
+        modes.add(resolveWriterApplyModeReport({ allowApplyArchitecture: allow }));
+      }
+      expect(modes.has('READY')).toBe(false);
+      expect(modes.has('OPERATIONALLY_READY')).toBe(false);
+      expect(modes.has('ENV_ARMED_CODE_ONLY')).toBe(false);
+    });
   });
 
-  it('WRITER_APPLY_MODE ENV_ARMED_CODE_ONLY com env mas sem CAS live', () => {
-    const prev = process.env.RC004_BINDING_ONLY_APPLY_ARCHITECTURE_APPROVED;
-    process.env.RC004_BINDING_ONLY_APPLY_ARCHITECTURE_APPROVED = 'true';
-    expect(
-      resolveWriterApplyModeReport({
-        allowApplyArchitecture: true,
-        dryRun: true,
-        applyRequested: false,
-      }),
-    ).toBe('ENV_ARMED_CODE_ONLY');
-    process.env.RC004_BINDING_ONLY_APPLY_ARCHITECTURE_APPROVED = prev;
-  });
+  describe('REGISTRY fail-closed', () => {
+    it('pacote conhecido => PASS', async () => {
+      const slug = 'imunizacao-known';
+      const fp = fingerprintConteudoJson(GOLDEN);
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async () => rowFromPayload(slug, GOLDEN),
+      };
+      const batch = await runRc004BindingOnlyBatch(
+        { items: [{ slug, expected_content_fingerprint: fp }] },
+        ds,
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+      );
+      expect(batch.totals.failed).toBe(0);
+      expect(batch.totals.would_bind).toBe(1);
+    });
 
-  it('falha se subtopico fora do registry', async () => {
+    it('subtópico desconhecido => FAIL_CLOSED sem fallback otimista', async () => {
     const slug = 'orphan-slug';
     const orphan = {
       ...GOLDEN,
@@ -309,7 +389,10 @@ describe('rc004BindingOnly', () => {
       ds,
       { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
     );
-    expect(batch.totals.failed).toBe(1);
-    expect(batch.results[0].code).toBe('SUBTOPIC_NOT_IN_REGISTRY');
+      expect(batch.totals.failed).toBe(1);
+      expect(batch.results[0].code).toBe('RC004_BINDING_ONLY_REGISTRY_NOT_FOUND');
+      expect(batch.results[0].stampSimulated).toBeUndefined();
+      expect(batch.productionWrites).toBe(0);
+    });
   });
 });

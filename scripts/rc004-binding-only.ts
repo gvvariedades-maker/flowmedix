@@ -64,7 +64,7 @@ async function main(): Promise<void> {
   const targetHash = hashSupabaseTarget(supabaseUrl);
   const expectedTargetHash = parseArg('expected-supabase-target-hash');
 
-  if (!fixtureDir) {
+  if (apply && !fixtureDir) {
     const targetErr = assertExpectedSupabaseTargetHash(expectedTargetHash, targetHash);
     if (targetErr) {
       console.error(targetErr);
@@ -136,11 +136,7 @@ async function main(): Promise<void> {
     PRODUCTION_WRITES: batch.productionWrites,
     supabase_target_hash: targetHash,
     expected_supabase_target_hash: expectedTargetHash ?? null,
-    WRITER_APPLY_MODE: resolveWriterApplyModeReport({
-      allowApplyArchitecture,
-      dryRun,
-      applyRequested: apply,
-    }),
+    WRITER_APPLY_MODE: resolveWriterApplyModeReport({ allowApplyArchitecture }),
     results: batch.results,
   };
 
