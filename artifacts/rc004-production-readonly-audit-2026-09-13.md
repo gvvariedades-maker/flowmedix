@@ -39,7 +39,7 @@ A auditoria read-only confirma que o merge do PR #126 (`0b8b3e30`) está deploya
 
 ### Estado operacional congelado
 
-`
+```
 RC004_CODE_IN_MAIN=YES
 RC004_BINDING_OPERATION=OFF
 RC004_COMMERCIAL_ROLLOUT=OFF
@@ -49,7 +49,7 @@ CODE_SAFETY=CONFIRMED
 AUTOMATED_BINDING_PATH=NONE_FOUND
 POST_MERGE_OPERATIONAL_AUDIT=PASS
 BASELINE=SAFE_FROZEN_OFF
-`
+```
 
 ---
 
@@ -174,12 +174,12 @@ Quando o Project Owner decidir binding real em Production, tratar como **fase no
 
 ### Autorização sugerida (futura, não vigente)
 
-`
+```
 AUTHORIZE_RC004_PRODUCTION_BINDING_PHASE1=YES
 COHORT=<delimitação explícita>
 REVIEWER=<identidade humana>
 TARGET_HASH=<hash conferido>
-`
+```
 
 ---
 
