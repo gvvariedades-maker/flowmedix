@@ -62,8 +62,17 @@ export type ModuloEstudoBindingRow = {
 export type BindingOnlyRowStatus =
   | 'would_bind'
   | 'already_bound_valid'
+  | 'already_bound_different_reviewer'
   | 'failed'
   | 'skipped';
+
+export const RC004_BINDING_ONLY_DIFFERENT_REVIEWER =
+  'RC004_BINDING_ONLY_DIFFERENT_REVIEWER';
+
+export type ExistingCommercialBindingClassification =
+  | { kind: 'already_bound_valid' }
+  | { kind: 'already_bound_different_reviewer'; existingReviewer: string }
+  | { kind: 'not_already_bound' };
 
 export type BindingOnlyRowResult = {
   slug: string;
@@ -79,16 +88,30 @@ export type BindingOnlyRowResult = {
   wouldUseCas?: boolean;
 };
 
+export type BindingOnlyBatchReport = {
+  batchAtomicity: 'PER_ITEM';
+  applyFailFast: boolean;
+  attemptedItems: number;
+  successfulWrites: number;
+  failedItems: number;
+  partialWritesCount: number;
+  abortedAfterFailure: boolean;
+  failedSlug?: string;
+  failedCode?: string;
+};
+
 export type BindingOnlyBatchResult = {
   results: BindingOnlyRowResult[];
   totals: {
     total: number;
     would_bind: number;
     already_bound_valid: number;
+    already_bound_different_reviewer: number;
     failed: number;
     skipped: number;
   };
   productionWrites: number;
+  report: BindingOnlyBatchReport;
 };
 
 export type BindingOnlyDataSource = {
@@ -268,17 +291,73 @@ function resolveSubtopico(row: ModuloEstudoBindingRow, payload: unknown): string
   return row.titulo_aula?.trim() || undefined;
 }
 
-function isAlreadyBoundValid(
+/** Apply real exige fail-fast na biblioteca; dry-run respeita --fail-fast explícito. */
+export function resolveEffectiveFailFast(options: BindingOnlyRunOptions): boolean {
+  const wantsApply = options.apply === true && !options.dryRun;
+  if (wantsApply) return true;
+  return options.failFast === true;
+}
+
+export function classifyExistingCommercialBinding(
   payload: unknown,
   expectedFp: string,
   reviewer: string,
   risk: ReturnType<typeof scoreQuestaoRisk>,
-): boolean {
+): ExistingCommercialBindingClassification {
   const approval = evaluateCommercialContentApproval(payload as never, expectedFp, risk);
-  if (!approval.approved) return false;
-  const ec = (payload as { meta?: { efficacy_contract?: { a4_reviewer?: string } } }).meta
-    ?.efficacy_contract;
-  return ec?.a4_reviewer === reviewer;
+  if (!approval.approved) {
+    return { kind: 'not_already_bound' };
+  }
+  const existingReviewer = approval.authority?.trim();
+  if (!existingReviewer) {
+    return { kind: 'not_already_bound' };
+  }
+  if (existingReviewer === reviewer.trim()) {
+    return { kind: 'already_bound_valid' };
+  }
+  return { kind: 'already_bound_different_reviewer', existingReviewer };
+}
+
+function shouldAbortAfterRow(
+  rowResult: BindingOnlyRowResult,
+  effectiveFailFast: boolean,
+  wantsApply: boolean,
+): boolean {
+  if (!effectiveFailFast) return false;
+  if (rowResult.status === 'failed') return true;
+  if (rowResult.status === 'already_bound_different_reviewer' && wantsApply) return true;
+  return false;
+}
+
+function buildBindingOnlyBatchReport(
+  manifestItemCount: number,
+  results: BindingOnlyRowResult[],
+  productionWrites: number,
+  effectiveFailFast: boolean,
+): BindingOnlyBatchReport {
+  const failedItems = results.filter((r) => r.status === 'failed').length;
+  const abortRow = [...results]
+    .reverse()
+    .find(
+      (r) =>
+        r.status === 'failed' ||
+        r.status === 'already_bound_different_reviewer',
+    );
+  const abortedAfterFailure =
+    effectiveFailFast && results.length < manifestItemCount && abortRow !== undefined;
+  const partialWritesCount = abortedAfterFailure ? productionWrites : 0;
+
+  return {
+    batchAtomicity: 'PER_ITEM',
+    applyFailFast: effectiveFailFast,
+    attemptedItems: results.length,
+    successfulWrites: productionWrites,
+    failedItems,
+    partialWritesCount,
+    abortedAfterFailure,
+    failedSlug: abortRow?.slug,
+    failedCode: abortRow?.code,
+  };
 }
 
 export async function runRc004BindingOnlyBatch(
@@ -301,6 +380,7 @@ export async function runRc004BindingOnlyBatch(
   }
 
   const wantsApply = options.apply === true && !options.dryRun;
+  const effectiveFailFast = resolveEffectiveFailFast(options);
   if (wantsApply) {
     if (!options.confirmProductionBinding) {
       throw new Error('PRODUCTION_BINDING_REQUIRES_EXPLICIT_CONFIRMATION');
@@ -313,33 +393,40 @@ export async function runRc004BindingOnlyBatch(
     }
   }
 
+  const abortIfNeeded = (rowResult: BindingOnlyRowResult): boolean => {
+    if (!shouldAbortAfterRow(rowResult, effectiveFailFast, wantsApply)) return false;
+    return true;
+  };
+
   for (const item of manifest.items) {
     const slug = item.slug;
     const expectedFp = item.expected_content_fingerprint;
 
     const row = await dataSource.fetchRowBySlug(slug);
     if (!row) {
-      results.push({
+      const rowResult: BindingOnlyRowResult = {
         slug,
         status: 'failed',
         code: 'ROW_NOT_FOUND',
         detail: 'slug ausente no data source',
-      });
-      if (options.failFast) break;
+      };
+      results.push(rowResult);
+      if (abortIfNeeded(rowResult)) break;
       continue;
     }
 
     const raw = row.conteudo_json;
     const fpPre = fingerprintConteudoJson(raw);
     if (fpPre !== expectedFp) {
-      results.push({
+      const rowResult: BindingOnlyRowResult = {
         slug,
         status: 'failed',
         code: 'EXPECTED_CONTENT_FINGERPRINT_MISMATCH',
         detail: `expected=${expectedFp.slice(0, 12)}… actual=${fpPre.slice(0, 12)}…`,
         contentFingerprint: fpPre,
-      });
-      if (options.failFast) break;
+      };
+      results.push(rowResult);
+      if (abortIfNeeded(rowResult)) break;
       continue;
     }
 
@@ -347,15 +434,16 @@ export async function runRc004BindingOnlyBatch(
     const subtopico = resolveSubtopico(row, payload);
     const found = subtopico ? findPacoteBySubtopico(registry, subtopico) : null;
     if (!found) {
-      results.push({
+      const rowResult: BindingOnlyRowResult = {
         slug,
         status: 'failed',
         code: 'RC004_BINDING_ONLY_REGISTRY_NOT_FOUND',
         detail: subtopico
           ? `subtopico não encontrado no handcraft registry: ${subtopico}`
           : 'meta.subtopico e titulo_aula ausentes para resolver pacote',
-      });
-      if (options.failFast) break;
+      };
+      results.push(rowResult);
+      if (abortIfNeeded(rowResult)) break;
       continue;
     }
     const riskContext = resolveRiskScoringContextFromPacote(found.pacote);
@@ -369,7 +457,13 @@ export async function runRc004BindingOnlyBatch(
     });
     const risk = readiness.risk ?? scoreQuestaoRisk(payload as never, riskContext);
 
-    if (isAlreadyBoundValid(payload, fpPre, options.reviewer, risk)) {
+    const existingBinding = classifyExistingCommercialBinding(
+      payload,
+      fpPre,
+      options.reviewer,
+      risk,
+    );
+    if (existingBinding.kind === 'already_bound_valid') {
       results.push({
         slug,
         status: 'already_bound_valid',
@@ -381,6 +475,24 @@ export async function runRc004BindingOnlyBatch(
         casMode: cas.mode,
         wouldUseCas: false,
       });
+      continue;
+    }
+    if (existingBinding.kind === 'already_bound_different_reviewer') {
+      const rowResult: BindingOnlyRowResult = {
+        slug,
+        status: 'already_bound_different_reviewer',
+        code: RC004_BINDING_ONLY_DIFFERENT_REVIEWER,
+        detail: `existing=${existingBinding.existingReviewer}`,
+        contentFingerprint: fpPre,
+        stampSimulated: false,
+        pedagogicalFpInvariant: true,
+        diffAllowlistPass: true,
+        directApprovalPass: true,
+        casMode: cas.mode,
+        wouldUseCas: false,
+      };
+      results.push(rowResult);
+      if (abortIfNeeded(rowResult)) break;
       continue;
     }
 
@@ -401,35 +513,37 @@ export async function runRc004BindingOnlyBatch(
     });
 
     if (!issued.stamped) {
-      results.push({
+      const rowResult: BindingOnlyRowResult = {
         slug,
         status: 'failed',
         code: 'COMMERCIAL_APPROVAL_NOT_STAMPED',
         detail: issued.reason ?? 'stamped=false',
         contentFingerprint: fpPre,
         stampSimulated: false,
-      });
-      if (options.failFast) break;
+      };
+      results.push(rowResult);
+      if (abortIfNeeded(rowResult)) break;
       continue;
     }
 
     if (issued.contentFingerprint !== fpPre) {
-      results.push({
+      const rowResult: BindingOnlyRowResult = {
         slug,
         status: 'failed',
         code: 'STAMP_FINGERPRINT_MISMATCH',
         detail: 'issued.contentFingerprint !== FP_PRE',
         contentFingerprint: fpPre,
         stampSimulated: false,
-      });
-      if (options.failFast) break;
+      };
+      results.push(rowResult);
+      if (abortIfNeeded(rowResult)) break;
       continue;
     }
 
     const patchedRaw = reconstructPatchedRaw(raw, issued.payload);
     const fpPost = fingerprintConteudoJson(patchedRaw);
     if (fpPost !== fpPre || fpPost !== expectedFp) {
-      results.push({
+      const rowResult: BindingOnlyRowResult = {
         slug,
         status: 'failed',
         code: 'PEDAGOGICAL_FINGERPRINT_CHANGED',
@@ -437,8 +551,9 @@ export async function runRc004BindingOnlyBatch(
         contentFingerprint: fpPre,
         stampSimulated: true,
         pedagogicalFpInvariant: false,
-      });
-      if (options.failFast) break;
+      };
+      results.push(rowResult);
+      if (abortIfNeeded(rowResult)) break;
       continue;
     }
 
@@ -446,7 +561,7 @@ export async function runRc004BindingOnlyBatch(
     const postPayload = unwrapCatalogPayload(patchedRaw) ?? patchedRaw;
     const diff = assertBindingOnlyDiffAllowlist(prePayload, postPayload);
     if (!diff.ok) {
-      results.push({
+      const rowResult: BindingOnlyRowResult = {
         slug,
         status: 'failed',
         code: 'BINDING_ONLY_DIFF_VIOLATION',
@@ -455,14 +570,15 @@ export async function runRc004BindingOnlyBatch(
         stampSimulated: true,
         pedagogicalFpInvariant: true,
         diffAllowlistPass: false,
-      });
-      if (options.failFast) break;
+      };
+      results.push(rowResult);
+      if (abortIfNeeded(rowResult)) break;
       continue;
     }
 
     const direct = evaluateCommercialContentApproval(issued.payload as never, fpPost, risk);
     if (!direct.approved) {
-      results.push({
+      const rowResult: BindingOnlyRowResult = {
         slug,
         status: 'failed',
         code: direct.reason ?? 'DIRECT_APPROVAL_FAILED',
@@ -472,8 +588,9 @@ export async function runRc004BindingOnlyBatch(
         pedagogicalFpInvariant: true,
         diffAllowlistPass: true,
         directApprovalPass: false,
-      });
-      if (options.failFast) break;
+      };
+      results.push(rowResult);
+      if (abortIfNeeded(rowResult)) break;
       continue;
     }
 
@@ -484,51 +601,55 @@ export async function runRc004BindingOnlyBatch(
         nextConteudoJson: patchedRaw,
       });
       if (!casResult.updated) {
-        results.push({
+        const rowResult: BindingOnlyRowResult = {
           slug,
           status: 'failed',
           code: 'CAS_CONFLICT',
           detail: casResult.error ?? 'UPDATE condicional não afetou linha',
           contentFingerprint: fpPre,
-        });
-        if (options.failFast) break;
+        };
+        results.push(rowResult);
+        if (abortIfNeeded(rowResult)) break;
         continue;
       }
       productionWrites += 1;
 
       const reRead = await applySink.reReadRowBySlug(slug);
       if (!reRead) {
-        results.push({
+        const rowResult: BindingOnlyRowResult = {
           slug,
           status: 'failed',
           code: 'POST_WRITE_VERIFICATION_FAILED',
           detail: 're-read ausente',
-        });
-        if (options.failFast) break;
+        };
+        results.push(rowResult);
+        if (abortIfNeeded(rowResult)) break;
         continue;
       }
       const persistedFp = fingerprintConteudoJson(reRead.conteudo_json);
       if (persistedFp !== expectedFp) {
-        results.push({
+        const rowResult: BindingOnlyRowResult = {
           slug,
           status: 'failed',
           code: 'POST_WRITE_VERIFICATION_FAILED',
           detail: 'fingerprint pós-write diverge',
           contentFingerprint: persistedFp,
-        });
-        if (options.failFast) break;
+        };
+        results.push(rowResult);
+        if (abortIfNeeded(rowResult)) break;
         continue;
       }
       const rePayload = unwrapCatalogPayload(reRead.conteudo_json) ?? reRead.conteudo_json;
       const postApproval = evaluateCommercialContentApproval(rePayload as never, persistedFp, risk);
       if (!postApproval.approved) {
-        results.push({
+        const rowResult: BindingOnlyRowResult = {
           slug,
           status: 'failed',
           code: 'POST_WRITE_VERIFICATION_FAILED',
           detail: postApproval.reason,
-        });
-        if (options.failFast) break;
+        };
+        results.push(rowResult);
+        if (abortIfNeeded(rowResult)) break;
         continue;
       }
     }
@@ -550,9 +671,19 @@ export async function runRc004BindingOnlyBatch(
     total: results.length,
     would_bind: results.filter((r) => r.status === 'would_bind').length,
     already_bound_valid: results.filter((r) => r.status === 'already_bound_valid').length,
+    already_bound_different_reviewer: results.filter(
+      (r) => r.status === 'already_bound_different_reviewer',
+    ).length,
     failed: results.filter((r) => r.status === 'failed').length,
     skipped: results.filter((r) => r.status === 'skipped').length,
   };
 
-  return { results, totals, productionWrites };
+  const report = buildBindingOnlyBatchReport(
+    manifest.items.length,
+    results,
+    productionWrites,
+    effectiveFailFast,
+  );
+
+  return { results, totals, productionWrites, report };
 }

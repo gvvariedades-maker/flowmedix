@@ -1,18 +1,23 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fingerprintConteudoJson } from '@/lib/catalogMigration/contentFingerprint';
+import { stampEfficacyContentFingerprint } from '@/lib/catalogMigration/commercialContentApproval';
 import {
   assertBindingOnlyReviewerPolicy,
   assertExpectedSupabaseTargetHash,
+  classifyExistingCommercialBinding,
   discoverBindingOnlyCasPrimitive,
   hashSupabaseTarget,
   parseBindingOnlyManifest,
+  RC004_BINDING_ONLY_DIFFERENT_REVIEWER,
+  resolveEffectiveFailFast,
   resolveWriterApplyModeReport,
   runRc004BindingOnlyBatch,
   type BindingOnlyApplySink,
   type BindingOnlyDataSource,
   type ModuloEstudoBindingRow,
 } from '@/lib/catalogMigration/rc004BindingOnly';
+import { scoreQuestaoRisk } from '@/lib/catalogMigration/riskScoring';
 import { isPacoteAutoApprovalEnabled, resolveRiskScoringContextFromPacote } from '@/lib/catalogMigration/rc004RiskContext';
 import { loadHandcraftRegistry } from '@/lib/catalogMigration/handcraftRegistry';
 
@@ -31,6 +36,18 @@ function rowFromPayload(slug: string, payload: unknown): ModuloEstudoBindingRow 
     conteudo_json: payload,
   };
 }
+
+function boundPayload(payload: unknown, reviewer: string): unknown {
+  const fp = fingerprintConteudoJson(payload);
+  return stampEfficacyContentFingerprint(payload as never, fp, { reviewer });
+}
+
+const APPLY_OPTS = {
+  dryRun: false,
+  apply: true,
+  confirmProductionBinding: true,
+  allowApplyArchitecture: true,
+} as const;
 
 describe('rc004BindingOnly', () => {
   it('reviewer GV passa policy', () => {
@@ -393,6 +410,316 @@ describe('rc004BindingOnly', () => {
       expect(batch.results[0].code).toBe('RC004_BINDING_ONLY_REGISTRY_NOT_FOUND');
       expect(batch.results[0].stampSimulated).toBeUndefined();
       expect(batch.productionWrites).toBe(0);
+    });
+  });
+
+  describe('M2 — rebind policy', () => {
+    it('M2-A: valid binding same reviewer => already_bound_valid, zero writes', async () => {
+      const slug = 'm2-a';
+      const bound = boundPayload(GOLDEN, 'GV');
+      const fp = fingerprintConteudoJson(bound);
+      let writeCalls = 0;
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async () => rowFromPayload(slug, bound),
+      };
+      const batch = await runRc004BindingOnlyBatch(
+        { items: [{ slug, expected_content_fingerprint: fp }] },
+        ds,
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+        {
+          updateConteudoJsonCas: async () => {
+            writeCalls += 1;
+            return { updated: true };
+          },
+          reReadRowBySlug: async () => rowFromPayload(slug, bound),
+        },
+      );
+      expect(batch.results[0]?.status).toBe('already_bound_valid');
+      expect(batch.productionWrites).toBe(0);
+      expect(writeCalls).toBe(0);
+    });
+
+    it('M2-B: valid binding different reviewer => already_bound_different_reviewer, zero writes', async () => {
+      const slug = 'm2-b';
+      const bound = boundPayload(GOLDEN, 'PC');
+      const fp = fingerprintConteudoJson(bound);
+      let writeCalls = 0;
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async () => rowFromPayload(slug, bound),
+      };
+      const batch = await runRc004BindingOnlyBatch(
+        { items: [{ slug, expected_content_fingerprint: fp }] },
+        ds,
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+        {
+          updateConteudoJsonCas: async () => {
+            writeCalls += 1;
+            return { updated: true };
+          },
+          reReadRowBySlug: async () => rowFromPayload(slug, bound),
+        },
+      );
+      expect(batch.results[0]?.status).toBe('already_bound_different_reviewer');
+      expect(batch.results[0]?.code).toBe(RC004_BINDING_ONLY_DIFFERENT_REVIEWER);
+      expect(batch.productionWrites).toBe(0);
+      expect(writeCalls).toBe(0);
+    });
+
+    it('M2-C: different reviewer em dry-run continua avaliando próximo item', async () => {
+      const slugA = 'm2-c-a';
+      const slugB = 'm2-c-b';
+      const boundA = boundPayload(GOLDEN, 'PC');
+      const fpA = fingerprintConteudoJson(boundA);
+      const fpB = fingerprintConteudoJson(GOLDEN);
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async (slug) => {
+          if (slug === slugA) return rowFromPayload(slugA, boundA);
+          if (slug === slugB) return rowFromPayload(slugB, GOLDEN);
+          return null;
+        },
+      };
+      const batch = await runRc004BindingOnlyBatch(
+        {
+          items: [
+            { slug: slugA, expected_content_fingerprint: fpA },
+            { slug: slugB, expected_content_fingerprint: fpB },
+          ],
+        },
+        ds,
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+      );
+      expect(batch.results).toHaveLength(2);
+      expect(batch.results[0]?.status).toBe('already_bound_different_reviewer');
+      expect(batch.results[1]?.status).toBe('would_bind');
+      expect(batch.productionWrites).toBe(0);
+    });
+
+    it('M2-D: different reviewer em apply aborta itens seguintes', async () => {
+      const slugA = 'm2-d-a';
+      const slugB = 'm2-d-b';
+      const boundA = boundPayload(GOLDEN, 'PC');
+      const fpA = fingerprintConteudoJson(boundA);
+      const fpB = fingerprintConteudoJson(GOLDEN);
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async (slug) => {
+          if (slug === slugA) return rowFromPayload(slugA, boundA);
+          if (slug === slugB) return rowFromPayload(slugB, GOLDEN);
+          return null;
+        },
+      };
+      const batch = await runRc004BindingOnlyBatch(
+        {
+          items: [
+            { slug: slugA, expected_content_fingerprint: fpA },
+            { slug: slugB, expected_content_fingerprint: fpB },
+          ],
+        },
+        ds,
+        { reviewer: 'GV', approvedAt: '2026-09-12', ...APPLY_OPTS },
+        {
+          updateConteudoJsonCas: async () => ({ updated: true }),
+          reReadRowBySlug: async (slug) => {
+            if (slug === slugA) return rowFromPayload(slugA, boundA);
+            return rowFromPayload(slugB, GOLDEN);
+          },
+        },
+      );
+      expect(batch.results).toHaveLength(1);
+      expect(batch.results[0]?.status).toBe('already_bound_different_reviewer');
+      expect(batch.report.abortedAfterFailure).toBe(true);
+      expect(batch.productionWrites).toBe(0);
+    });
+
+    it('M2-E: stale binding não classifica como reviewer conflict', async () => {
+      const slug = 'm2-e';
+      const fp = fingerprintConteudoJson(GOLDEN);
+      const stale = {
+        ...GOLDEN,
+        meta: {
+          ...GOLDEN.meta,
+          efficacy_contract: {
+            a4_reviewed: true,
+            a4_reviewer: 'PC',
+            approved_content_fingerprint: 'b'.repeat(64),
+            auto_approved_at: '2026-09-08',
+          },
+        },
+      };
+      const risk = scoreQuestaoRisk(GOLDEN as never);
+      expect(
+        classifyExistingCommercialBinding(stale, fp, 'GV', risk).kind,
+      ).toBe('not_already_bound');
+      const batch = await runRc004BindingOnlyBatch(
+        { items: [{ slug, expected_content_fingerprint: fp }] },
+        {
+          fetchRowBySlug: async () => rowFromPayload(slug, stale),
+        },
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+      );
+      expect(batch.results[0]?.status).not.toBe('already_bound_different_reviewer');
+      expect(batch.totals.would_bind).toBe(1);
+    });
+
+    it('M2-F: fingerprint mismatch preserva segurança existente', async () => {
+      const slug = 'm2-f';
+      const bound = boundPayload(GOLDEN, 'PC');
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async () => rowFromPayload(slug, bound),
+      };
+      const batch = await runRc004BindingOnlyBatch(
+        { items: [{ slug, expected_content_fingerprint: 'a'.repeat(64) }] },
+        ds,
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+      );
+      expect(batch.results[0]?.code).toBe('EXPECTED_CONTENT_FINGERPRINT_MISMATCH');
+      expect(batch.results[0]?.status).toBe('failed');
+    });
+  });
+
+  describe('M3 — PER_ITEM fail-fast e partial writes', () => {
+    it('M3-A: dry-run avalia item após falha do anterior', async () => {
+      const slugA = 'm3-a-miss';
+      const slugB = 'm3-a-ok';
+      const fpB = fingerprintConteudoJson(GOLDEN);
+      const batch = await runRc004BindingOnlyBatch(
+        {
+          items: [
+            { slug: slugA, expected_content_fingerprint: fpB },
+            { slug: slugB, expected_content_fingerprint: fpB },
+          ],
+        },
+        {
+          fetchRowBySlug: async (slug) =>
+            slug === slugB ? rowFromPayload(slugB, GOLDEN) : null,
+        },
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+      );
+      expect(batch.results).toHaveLength(2);
+      expect(batch.results[0]?.status).toBe('failed');
+      expect(batch.results[1]?.status).toBe('would_bind');
+      expect(batch.productionWrites).toBe(0);
+      expect(batch.report.applyFailFast).toBe(false);
+      expect(batch.report.abortedAfterFailure).toBe(false);
+    });
+
+    it('M3-B: apply aborta após primeira falha', async () => {
+      const slugA = 'm3-b-miss';
+      const slugB = 'm3-b-ok';
+      const fpB = fingerprintConteudoJson(GOLDEN);
+      const batch = await runRc004BindingOnlyBatch(
+        {
+          items: [
+            { slug: slugA, expected_content_fingerprint: fpB },
+            { slug: slugB, expected_content_fingerprint: fpB },
+          ],
+        },
+        {
+          fetchRowBySlug: async (slug) =>
+            slug === slugB ? rowFromPayload(slugB, GOLDEN) : null,
+        },
+        { reviewer: 'GV', approvedAt: '2026-09-12', ...APPLY_OPTS },
+        {
+          updateConteudoJsonCas: async () => ({ updated: true }),
+          reReadRowBySlug: async (slug) => rowFromPayload(slug, GOLDEN),
+        },
+      );
+      expect(batch.results).toHaveLength(1);
+      expect(batch.report.applyFailFast).toBe(true);
+      expect(batch.report.abortedAfterFailure).toBe(true);
+    });
+
+    it('M3-C: apply reporta partial writes após CAS_CONFLICT', async () => {
+      const slugA = 'm3-c-1';
+      const slugB = 'm3-c-2';
+      const slugC = 'm3-c-3';
+      const fp = fingerprintConteudoJson(GOLDEN);
+      const store = new Map<string, unknown>([
+        [slugA, GOLDEN],
+        [slugB, GOLDEN],
+        [slugC, GOLDEN],
+      ]);
+      let casCalls = 0;
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async (slug) => {
+          const payload = store.get(slug);
+          return payload ? rowFromPayload(slug, payload) : null;
+        },
+      };
+      const sink: BindingOnlyApplySink = {
+        updateConteudoJsonCas: async ({ nextConteudoJson, id }) => {
+          casCalls += 1;
+          if (casCalls === 1) {
+            const slug = id.replace('id-', '');
+            store.set(slug, nextConteudoJson);
+            return { updated: true };
+          }
+          return { updated: false, error: 'conflict' };
+        },
+        reReadRowBySlug: async (slug) => {
+          const payload = store.get(slug);
+          return payload ? rowFromPayload(slug, payload) : null;
+        },
+      };
+      const batch = await runRc004BindingOnlyBatch(
+        {
+          items: [
+            { slug: slugA, expected_content_fingerprint: fp },
+            { slug: slugB, expected_content_fingerprint: fp },
+            { slug: slugC, expected_content_fingerprint: fp },
+          ],
+        },
+        ds,
+        { reviewer: 'GV', approvedAt: '2026-09-12', ...APPLY_OPTS, failFast: false },
+        sink,
+      );
+      expect(batch.results).toHaveLength(2);
+      expect(batch.results[0]?.status).toBe('would_bind');
+      expect(batch.results[1]?.code).toBe('CAS_CONFLICT');
+      expect(batch.productionWrites).toBe(1);
+      expect(batch.report.successfulWrites).toBe(1);
+      expect(batch.report.partialWritesCount).toBe(1);
+      expect(batch.report.abortedAfterFailure).toBe(true);
+      expect(batch.report.failedCode).toBe('CAS_CONFLICT');
+    });
+
+    it('M3-D: apply com failFast=false ainda força effective fail-fast', () => {
+      expect(
+        resolveEffectiveFailFast({
+          reviewer: 'GV',
+          approvedAt: '2026-09-12',
+          dryRun: false,
+          apply: true,
+          failFast: false,
+        }),
+      ).toBe(true);
+      expect(
+        resolveEffectiveFailFast({
+          reviewer: 'GV',
+          approvedAt: '2026-09-12',
+          dryRun: true,
+          failFast: false,
+        }),
+      ).toBe(false);
+    });
+
+    it('M3-E: apply sem confirmação permanece fail-closed', async () => {
+      const slug = 'm3-e';
+      const fp = fingerprintConteudoJson(GOLDEN);
+      await expect(
+        runRc004BindingOnlyBatch(
+          { items: [{ slug, expected_content_fingerprint: fp }] },
+          { fetchRowBySlug: async () => rowFromPayload(slug, GOLDEN) },
+          {
+            reviewer: 'GV',
+            approvedAt: '2026-09-12',
+            dryRun: false,
+            apply: true,
+            confirmProductionBinding: false,
+            allowApplyArchitecture: true,
+            failFast: false,
+          },
+        ),
+      ).rejects.toThrow(/PRODUCTION_BINDING_REQUIRES_EXPLICIT_CONFIRMATION/);
     });
   });
 });

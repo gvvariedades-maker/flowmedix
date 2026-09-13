@@ -134,6 +134,15 @@ async function main(): Promise<void> {
       DIRECT_APPROVAL_PASS: directPass,
     },
     PRODUCTION_WRITES: batch.productionWrites,
+    BATCH_ATOMICITY: batch.report.batchAtomicity,
+    APPLY_FAIL_FAST: batch.report.applyFailFast,
+    ATTEMPTED_ITEMS: batch.report.attemptedItems,
+    SUCCESSFUL_WRITES: batch.report.successfulWrites,
+    FAILED_ITEMS: batch.report.failedItems,
+    PARTIAL_WRITES_COUNT: batch.report.partialWritesCount,
+    ABORTED_AFTER_FAILURE: batch.report.abortedAfterFailure,
+    FAILED_SLUG: batch.report.failedSlug ?? null,
+    FAILED_CODE: batch.report.failedCode ?? null,
     supabase_target_hash: targetHash,
     expected_supabase_target_hash: expectedTargetHash ?? null,
     WRITER_APPLY_MODE: resolveWriterApplyModeReport({ allowApplyArchitecture }),
@@ -154,6 +163,7 @@ async function main(): Promise<void> {
 
   const ep24Pass =
     batch.totals.failed === 0 &&
+    batch.totals.already_bound_different_reviewer === 0 &&
     batch.totals.skipped === 0 &&
     batch.totals.would_bind + batch.totals.already_bound_valid === parsed.manifest.items.length &&
     batch.productionWrites === 0;
