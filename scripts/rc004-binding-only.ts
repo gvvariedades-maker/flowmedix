@@ -21,6 +21,7 @@ import {
   hashSupabaseTarget,
   isBindingOnlyApplyOperationallyAllowed,
   parseBindingOnlyManifest,
+  resolveBindingOnlyBatchCliSuccess,
   resolveWriterApplyModeReport,
   runRc004BindingOnlyBatch,
 } from '@/lib/catalogMigration/rc004BindingOnly';
@@ -161,14 +162,13 @@ async function main(): Promise<void> {
 
   console.log(JSON.stringify({ ...report, results: batch.results.slice(0, 3) }, null, 2));
 
-  const ep24Pass =
-    batch.totals.failed === 0 &&
-    batch.totals.already_bound_different_reviewer === 0 &&
-    batch.totals.skipped === 0 &&
-    batch.totals.would_bind + batch.totals.already_bound_valid === parsed.manifest.items.length &&
-    batch.productionWrites === 0;
+  const cliSuccess = resolveBindingOnlyBatchCliSuccess(
+    dryRun ? 'DRY_RUN' : 'APPLY',
+    parsed.manifest.items.length,
+    batch,
+  );
 
-  process.exit(ep24Pass ? 0 : 1);
+  process.exit(cliSuccess ? 0 : 1);
 }
 
 main().catch((err) => {

@@ -105,4 +105,57 @@ describe('bindingOnlyDiff', () => {
     post.meta.efficacy_contract.approval_mode = 'human_required';
     expect(assertBindingOnlyDiffAllowlist(basePayload, post).ok).toBe(false);
   });
+
+  it('O — risk_factors idêntico deep-cloned => PASS', () => {
+    const pre = JSON.parse(JSON.stringify(basePayload));
+    pre.meta.efficacy_contract.risk_factors = ['dose', 'protocolo'];
+    const post = JSON.parse(JSON.stringify(pre));
+    post.meta.efficacy_contract.a4_reviewer = 'GV';
+    expect(assertBindingOnlyDiffAllowlist(pre, post).ok).toBe(true);
+  });
+
+  it('P — anchor_100 reviewer muda => FAIL', () => {
+    const pre = JSON.parse(JSON.stringify(basePayload));
+    pre.meta.anchor_100_approval = {
+      status: 'pass',
+      reviewer: 'PC',
+      reviewed_at: '2026-09-08',
+      approved_content_fingerprint: 'abc',
+    };
+    const post = JSON.parse(JSON.stringify(pre));
+    post.meta.anchor_100_approval.reviewer = 'GV';
+    expect(assertBindingOnlyDiffAllowlist(pre, post).ok).toBe(false);
+  });
+
+  it('Q — anchor_100 status muda => FAIL', () => {
+    const pre = JSON.parse(JSON.stringify(basePayload));
+    pre.meta.anchor_100_approval = { status: 'pass', reviewer: 'PC' };
+    const post = JSON.parse(JSON.stringify(pre));
+    post.meta.anchor_100_approval.status = 'pending';
+    expect(assertBindingOnlyDiffAllowlist(pre, post).ok).toBe(false);
+  });
+
+  it('R — anchor_100 fingerprint muda => FAIL', () => {
+    const pre = JSON.parse(JSON.stringify(basePayload));
+    pre.meta.anchor_100_approval = {
+      status: 'pass',
+      reviewer: 'PC',
+      approved_content_fingerprint: 'aaa',
+    };
+    const post = JSON.parse(JSON.stringify(pre));
+    post.meta.anchor_100_approval.approved_content_fingerprint = 'bbb';
+    expect(assertBindingOnlyDiffAllowlist(pre, post).ok).toBe(false);
+  });
+
+  it('S — anchor_100 idêntico deep-cloned => PASS', () => {
+    const pre = JSON.parse(JSON.stringify(basePayload));
+    pre.meta.anchor_100_approval = {
+      status: 'pass',
+      reviewer: 'PC',
+      reviewed_at: '2026-09-08',
+    };
+    const post = JSON.parse(JSON.stringify(pre));
+    post.meta.efficacy_contract.a4_reviewer = 'GV';
+    expect(assertBindingOnlyDiffAllowlist(pre, post).ok).toBe(true);
+  });
 });

@@ -176,7 +176,7 @@ async function main(): Promise<void> {
   const row1 = pass1.results[0];
   steps.push({
     name: 'PASS1_WRITER_WOULD_BIND',
-    pass: row1?.status === 'would_bind' && pass1.productionWrites === 1,
+    pass: row1?.status === 'bound' && pass1.productionWrites === 1,
     detail: JSON.stringify({ status: row1?.status, productionWrites: pass1.productionWrites, code: row1?.code }),
   });
   steps.push({

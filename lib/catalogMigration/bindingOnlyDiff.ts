@@ -34,7 +34,10 @@ export function efficacyAllowlistViolations(
 ): string[] {
   const violations: string[] = [];
   for (const k of new Set([...Object.keys(preEc), ...Object.keys(postEc)])) {
-    if (!BINDING_ONLY_ALLOWED_EFFICACY_KEYS.has(k) && preEc[k] !== postEc[k]) {
+    if (
+      !BINDING_ONLY_ALLOWED_EFFICACY_KEYS.has(k) &&
+      !deepValueEqual(preEc[k], postEc[k])
+    ) {
       violations.push(`efficacy_contract.${k} changed`);
     }
   }
@@ -78,7 +81,7 @@ export function structuralEqualIgnoringApproval(
       const preMeta = pre.meta as Record<string, unknown>;
       const postMeta = post.meta as Record<string, unknown>;
       for (const mk of new Set([...Object.keys(preMeta), ...Object.keys(postMeta)])) {
-        if (mk === 'efficacy_contract' || mk === 'anchor_100_approval') continue;
+        if (mk === 'efficacy_contract') continue;
         violations.push(
           ...structuralEqualIgnoringApproval(preMeta[mk], postMeta[mk], `${p}.${mk}`),
         );

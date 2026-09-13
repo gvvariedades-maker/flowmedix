@@ -10,9 +10,11 @@ import {
   hashSupabaseTarget,
   parseBindingOnlyManifest,
   RC004_BINDING_ONLY_DIFFERENT_REVIEWER,
+  resolveBindingOnlyBatchCliSuccess,
   resolveEffectiveFailFast,
   resolveWriterApplyModeReport,
   runRc004BindingOnlyBatch,
+  type BindingOnlyBatchResult,
   type BindingOnlyApplySink,
   type BindingOnlyDataSource,
   type ModuloEstudoBindingRow,
@@ -279,7 +281,7 @@ describe('rc004BindingOnly', () => {
       },
     );
     expect(batch.productionWrites).toBe(1);
-    expect(batch.totals.would_bind).toBe(1);
+    expect(batch.totals.bound).toBe(1);
     const ec = (stored as { meta?: { efficacy_contract?: { approved_content_fingerprint?: string } } })
       .meta?.efficacy_contract;
     expect(ec?.approved_content_fingerprint).toBe(fingerprintConteudoJson(GOLDEN));
@@ -769,7 +771,7 @@ describe('rc004BindingOnly', () => {
         sink,
       );
       expect(batch.results).toHaveLength(2);
-      expect(batch.results[0]?.status).toBe('would_bind');
+      expect(batch.results[0]?.status).toBe('bound');
       expect(batch.results[1]?.code).toBe('CAS_CONFLICT');
       expect(batch.productionWrites).toBe(1);
       expect(batch.report.successfulWrites).toBe(1);
@@ -819,7 +821,43 @@ describe('rc004BindingOnly', () => {
       expect(batch.report.abortedAfterFailure).toBe(false);
       expect(batch.report.failedSlug).toBeUndefined();
       expect(batch.report.failedCode).toBeUndefined();
-      expect(batch.totals.would_bind).toBe(3);
+      expect(batch.totals.bound).toBe(3);
+      expect(batch.totals.would_bind).toBe(0);
+    });
+
+    it('M3-F5: último item com write persistido e falha pós-write sinaliza partial write', async () => {
+      const slug = 'm3-f5';
+      const fp = fingerprintConteudoJson(GOLDEN);
+      let stored: unknown = GOLDEN;
+      const batch = await runRc004BindingOnlyBatch(
+        { items: [{ slug, expected_content_fingerprint: fp }] },
+        { fetchRowBySlug: async () => rowFromPayload(slug, stored) },
+        { reviewer: 'GV', approvedAt: '2026-09-12', ...APPLY_OPTS },
+        {
+          updateConteudoJsonCas: async ({ nextConteudoJson }) => {
+            stored = nextConteudoJson;
+            return { updated: true };
+          },
+          reReadRowBySlug: async () => ({
+            ...rowFromPayload(slug, stored),
+            conteudo_json: {
+              ...(stored as object),
+              meta: {
+                ...((stored as { meta?: object }).meta ?? {}),
+                efficacy_contract: {
+                  ...(((stored as { meta?: { efficacy_contract?: object } }).meta
+                    ?.efficacy_contract) ?? {}),
+                  approved_content_fingerprint: 'stale-fingerprint',
+                },
+              },
+            },
+          }),
+        },
+      );
+      expect(batch.productionWrites).toBe(1);
+      expect(batch.totals.failed).toBe(1);
+      expect(batch.report.partialWritesCount).toBe(1);
+      expect(batch.report.abortedAfterFailure).toBe(false);
     });
 
     it('M3-D: apply com failFast=false ainda força effective fail-fast', () => {
@@ -860,6 +898,139 @@ describe('rc004BindingOnly', () => {
           },
         ),
       ).rejects.toThrow(/PRODUCTION_BINDING_REQUIRES_EXPLICIT_CONFIRMATION/);
+    });
+  });
+
+  describe('CLI exit semantics (F1)', () => {
+    const manifestCount = 2;
+
+    function batchStub(overrides: Partial<BindingOnlyBatchResult>): BindingOnlyBatchResult {
+      return {
+        results: [],
+        productionWrites: 0,
+        report: {
+          batchAtomicity: 'PER_ITEM',
+          applyFailFast: false,
+          attemptedItems: 0,
+          successfulWrites: 0,
+          failedItems: 0,
+          partialWritesCount: 0,
+          abortedAfterFailure: false,
+        },
+        totals: {
+          total: 0,
+          would_bind: 0,
+          bound: 0,
+          already_bound_valid: 0,
+          already_bound_different_reviewer: 0,
+          failed: 0,
+          skipped: 0,
+        },
+        ...overrides,
+      };
+    }
+
+    it('dry-run sucesso com zero writes => PASS', () => {
+      expect(
+        resolveBindingOnlyBatchCliSuccess(
+          'DRY_RUN',
+          2,
+          batchStub({
+            totals: {
+              total: 2,
+              would_bind: 2,
+              bound: 0,
+              already_bound_valid: 0,
+              already_bound_different_reviewer: 0,
+              failed: 0,
+              skipped: 0,
+            },
+          }),
+        ),
+      ).toBe(true);
+    });
+
+    it('dry-run com productionWrites > 0 => FAIL', () => {
+      expect(
+        resolveBindingOnlyBatchCliSuccess(
+          'DRY_RUN',
+          1,
+          batchStub({
+            productionWrites: 1,
+            totals: {
+              total: 1,
+              would_bind: 1,
+              bound: 0,
+              already_bound_valid: 0,
+              already_bound_different_reviewer: 0,
+              failed: 0,
+              skipped: 0,
+            },
+          }),
+        ),
+      ).toBe(false);
+    });
+
+    it('apply com writes e zero falhas => PASS', () => {
+      expect(
+        resolveBindingOnlyBatchCliSuccess(
+          'APPLY',
+          2,
+          batchStub({
+            productionWrites: 2,
+            totals: {
+              total: 2,
+              would_bind: 0,
+              bound: 2,
+              already_bound_valid: 0,
+              already_bound_different_reviewer: 0,
+              failed: 0,
+              skipped: 0,
+            },
+          }),
+        ),
+      ).toBe(true);
+    });
+
+    it('apply com CAS_CONFLICT => FAIL', () => {
+      expect(
+        resolveBindingOnlyBatchCliSuccess(
+          'APPLY',
+          2,
+          batchStub({
+            productionWrites: 1,
+            totals: {
+              total: 1,
+              would_bind: 0,
+              bound: 1,
+              already_bound_valid: 0,
+              already_bound_different_reviewer: 0,
+              failed: 1,
+              skipped: 0,
+            },
+          }),
+        ),
+      ).toBe(false);
+    });
+
+    it('apply com different reviewer => FAIL', () => {
+      expect(
+        resolveBindingOnlyBatchCliSuccess(
+          'APPLY',
+          1,
+          batchStub({
+            totals: {
+              total: 1,
+              would_bind: 0,
+              bound: 0,
+              already_bound_valid: 0,
+              already_bound_different_reviewer: 1,
+              failed: 0,
+              skipped: 0,
+            },
+          }),
+        ),
+      ).toBe(false);
     });
   });
 });

@@ -61,6 +61,7 @@ export type ModuloEstudoBindingRow = {
 
 export type BindingOnlyRowStatus =
   | 'would_bind'
+  | 'bound'
   | 'already_bound_valid'
   | 'already_bound_different_reviewer'
   | 'failed'
@@ -105,6 +106,7 @@ export type BindingOnlyBatchResult = {
   totals: {
     total: number;
     would_bind: number;
+    bound: number;
     already_bound_valid: number;
     already_bound_different_reviewer: number;
     failed: number;
@@ -229,7 +231,12 @@ export function hashSupabaseTarget(url: string | undefined): string | null {
 
 const TARGET_HASH_HEX = /^[a-f0-9]{16}$/i;
 
-/** Gate operacional: CAS JSONB validado em ambiente non-prod real. */
+/**
+ * Evidência operacional de homologação CAS live (non-prod).
+ * Não é gate de apply — ver `isBindingOnlyApplyOperationallyAllowed()`.
+ * A flag documenta que Test F / harness live passou; arquitetura de apply
+ * continua exigindo `RC004_BINDING_ONLY_APPLY_ARCHITECTURE_APPROVED=true`.
+ */
 export function isBindingOnlyCasLiveValidated(): boolean {
   return process.env.RC004_BINDING_ONLY_CAS_LIVE_VALIDATED === 'true';
 }
@@ -344,7 +351,11 @@ function buildBindingOnlyBatchReport(
     effectiveFailFast &&
     results.length < manifestItemCount &&
     lastRowTriggeredAbort;
-  const partialWritesCount = abortedAfterFailure ? productionWrites : 0;
+  const batchEndedWithFailure =
+    failedItems > 0 ||
+    results.some((r) => r.status === 'already_bound_different_reviewer');
+  const partialWritesCount =
+    productionWrites > 0 && batchEndedWithFailure ? productionWrites : 0;
 
   return {
     batchAtomicity: 'PER_ITEM',
@@ -655,9 +666,9 @@ export async function runRc004BindingOnlyBatch(
 
     results.push({
       slug,
-      status: wantsApply ? 'would_bind' : 'would_bind',
+      status: wantsApply ? 'bound' : 'would_bind',
       contentFingerprint: fpPre,
-      stampSimulated: true,
+      stampSimulated: !wantsApply,
       pedagogicalFpInvariant: true,
       diffAllowlistPass: true,
       directApprovalPass: true,
@@ -669,6 +680,7 @@ export async function runRc004BindingOnlyBatch(
   const totals = {
     total: results.length,
     would_bind: results.filter((r) => r.status === 'would_bind').length,
+    bound: results.filter((r) => r.status === 'bound').length,
     already_bound_valid: results.filter((r) => r.status === 'already_bound_valid').length,
     already_bound_different_reviewer: results.filter(
       (r) => r.status === 'already_bound_different_reviewer',
@@ -685,4 +697,29 @@ export async function runRc004BindingOnlyBatch(
   );
 
   return { results, totals, productionWrites, report };
+}
+
+export type BindingOnlyCliMode = 'DRY_RUN' | 'APPLY';
+
+/** Sucesso operacional do CLI — separa dry-run (zero writes) de apply (writes permitidos). */
+export function resolveBindingOnlyBatchCliSuccess(
+  mode: BindingOnlyCliMode,
+  manifestItemCount: number,
+  batch: BindingOnlyBatchResult,
+): boolean {
+  if (batch.totals.failed > 0) return false;
+  if (batch.totals.already_bound_different_reviewer > 0) return false;
+  if (batch.totals.skipped > 0) return false;
+
+  const resolvedItems =
+    batch.totals.would_bind +
+    batch.totals.bound +
+    batch.totals.already_bound_valid;
+  if (resolvedItems !== manifestItemCount) return false;
+
+  if (mode === 'DRY_RUN') {
+    return batch.productionWrites === 0;
+  }
+
+  return true;
 }
