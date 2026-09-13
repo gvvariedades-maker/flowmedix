@@ -29,8 +29,8 @@ jobs:
       e2e: ${{ steps.filter.outputs.e2e }}
       perf: ${{ steps.filter.outputs.perf }}
     steps:
-      - uses: actions/checkout@v6
-      - uses: dorny/paths-filter@v3
+      - uses: actions/checkout@v7
+      - uses: dorny/paths-filter@v4
         id: filter
         with:
           filters: |
@@ -72,10 +72,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -99,10 +99,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -116,10 +116,10 @@ jobs:
   test-unit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -131,7 +131,7 @@ jobs:
         run: npm run test
 
       - name: Upload coverage
-        uses: codecov/codecov-action@v6
+        uses: codecov/codecov-action@v7
         continue-on-error: true
         with:
           files: ./coverage/lcov.info
@@ -143,10 +143,10 @@ jobs:
     if: github.event_name == 'push' || needs.changes.outputs.ship == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -162,10 +162,10 @@ jobs:
     if: github.event_name == 'push' || needs.changes.outputs.ship == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -181,10 +181,10 @@ jobs:
   security-audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -217,11 +217,11 @@ jobs:
 
       - name: Checkout
         if: steps.secrets.outputs.configured == 'true'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
         if: steps.secrets.outputs.configured == 'true'
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -245,10 +245,10 @@ jobs:
     env:
       CI: true
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -290,10 +290,10 @@ jobs:
     if: github.event_name == 'push' || needs.changes.outputs.perf == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
