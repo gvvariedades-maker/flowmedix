@@ -27,6 +27,11 @@ export function createBindingOnlySupabaseDataSource(
   };
 }
 
+function postgrestJsonbEqFilter(value: unknown): string {
+  if (typeof value === 'string') return value;
+  return JSON.stringify(value);
+}
+
 export function createBindingOnlySupabaseApplySink(
   supabase: SupabaseClient,
 ): BindingOnlyApplySink {
@@ -36,7 +41,7 @@ export function createBindingOnlySupabaseApplySink(
         .from('modulos_estudo')
         .update({ conteudo_json: args.nextConteudoJson })
         .eq('id', args.id)
-        .eq('conteudo_json', args.expectedConteudoJson)
+        .eq('conteudo_json', postgrestJsonbEqFilter(args.expectedConteudoJson))
         .select('id');
       if (error) {
         return { updated: false, error: error.message };
