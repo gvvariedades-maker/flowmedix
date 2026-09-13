@@ -175,7 +175,7 @@ async function main(): Promise<void> {
 
   const row1 = pass1.results[0];
   steps.push({
-    name: 'PASS1_WRITER_WOULD_BIND',
+    name: 'PASS1_WRITER_BOUND',
     pass: row1?.status === 'bound' && pass1.productionWrites === 1,
     detail: JSON.stringify({ status: row1?.status, productionWrites: pass1.productionWrites, code: row1?.code }),
   });
@@ -283,7 +283,6 @@ async function main(): Promise<void> {
     generated_at: new Date().toISOString(),
     test: 'RC004_TEST_F_BINDING_ROUNDTRIP',
     branch: 'codex/rc004-binding-only-writer',
-    head_hint: '5ba689d4',
     slug: SLUG,
     reviewer: REVIEWER,
     approved_at: APPROVED_AT,
