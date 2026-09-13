@@ -42,6 +42,23 @@ function boundPayload(payload: unknown, reviewer: string): unknown {
   return stampEfficacyContentFingerprint(payload as never, fp, { reviewer });
 }
 
+function anchorBoundPayload(payload: unknown, reviewer: string): unknown {
+  const fp = fingerprintConteudoJson(payload);
+  const meta = (payload as { meta?: Record<string, unknown> }).meta ?? {};
+  return {
+    ...(payload as object),
+    meta: {
+      ...meta,
+      anchor_100_approval: {
+        status: 'pass',
+        reviewer,
+        reviewed_at: '2026-09-08',
+        approved_content_fingerprint: fp,
+      },
+    },
+  };
+}
+
 const APPLY_OPTS = {
   dryRun: false,
   apply: true,
@@ -560,6 +577,51 @@ describe('rc004BindingOnly', () => {
       expect(batch.totals.would_bind).toBe(1);
     });
 
+    it('M2-anchor-A: anchor_100 válido same reviewer => already_bound_valid, zero writes', async () => {
+      const slug = 'm2-anchor-a';
+      const bound = anchorBoundPayload(GOLDEN, 'GV');
+      const fp = fingerprintConteudoJson(bound);
+      let writeCalls = 0;
+      const batch = await runRc004BindingOnlyBatch(
+        { items: [{ slug, expected_content_fingerprint: fp }] },
+        { fetchRowBySlug: async () => rowFromPayload(slug, bound) },
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+        {
+          updateConteudoJsonCas: async () => {
+            writeCalls += 1;
+            return { updated: true };
+          },
+          reReadRowBySlug: async () => rowFromPayload(slug, bound),
+        },
+      );
+      expect(batch.results[0]?.status).toBe('already_bound_valid');
+      expect(batch.productionWrites).toBe(0);
+      expect(writeCalls).toBe(0);
+    });
+
+    it('M2-anchor-B: anchor_100 válido different reviewer => already_bound_different_reviewer', async () => {
+      const slug = 'm2-anchor-b';
+      const bound = anchorBoundPayload(GOLDEN, 'PC');
+      const fp = fingerprintConteudoJson(bound);
+      let writeCalls = 0;
+      const batch = await runRc004BindingOnlyBatch(
+        { items: [{ slug, expected_content_fingerprint: fp }] },
+        { fetchRowBySlug: async () => rowFromPayload(slug, bound) },
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+        {
+          updateConteudoJsonCas: async () => {
+            writeCalls += 1;
+            return { updated: true };
+          },
+          reReadRowBySlug: async () => rowFromPayload(slug, bound),
+        },
+      );
+      expect(batch.results[0]?.status).toBe('already_bound_different_reviewer');
+      expect(batch.results[0]?.code).toBe(RC004_BINDING_ONLY_DIFFERENT_REVIEWER);
+      expect(batch.productionWrites).toBe(0);
+      expect(writeCalls).toBe(0);
+    });
+
     it('M2-F: fingerprint mismatch preserva segurança existente', async () => {
       const slug = 'm2-f';
       const bound = boundPayload(GOLDEN, 'PC');
@@ -600,6 +662,40 @@ describe('rc004BindingOnly', () => {
       expect(batch.productionWrites).toBe(0);
       expect(batch.report.applyFailFast).toBe(false);
       expect(batch.report.abortedAfterFailure).toBe(false);
+      expect(batch.report.failedSlug).toBeUndefined();
+      expect(batch.report.failedCode).toBeUndefined();
+      expect(batch.results[0]?.code).toBe('ROW_NOT_FOUND');
+    });
+
+    it('M3-A2: dry-run different reviewer sem abort não preenche failedSlug/failedCode', async () => {
+      const slugA = 'm3-a2-a';
+      const slugB = 'm3-a2-b';
+      const boundA = boundPayload(GOLDEN, 'PC');
+      const fpA = fingerprintConteudoJson(boundA);
+      const fpB = fingerprintConteudoJson(GOLDEN);
+      const batch = await runRc004BindingOnlyBatch(
+        {
+          items: [
+            { slug: slugA, expected_content_fingerprint: fpA },
+            { slug: slugB, expected_content_fingerprint: fpB },
+          ],
+        },
+        {
+          fetchRowBySlug: async (slug) => {
+            if (slug === slugA) return rowFromPayload(slugA, boundA);
+            if (slug === slugB) return rowFromPayload(slugB, GOLDEN);
+            return null;
+          },
+        },
+        { reviewer: 'GV', approvedAt: '2026-09-12', dryRun: true },
+      );
+      expect(batch.report.attemptedItems).toBe(2);
+      expect(batch.report.successfulWrites).toBe(0);
+      expect(batch.report.partialWritesCount).toBe(0);
+      expect(batch.report.abortedAfterFailure).toBe(false);
+      expect(batch.report.failedSlug).toBeUndefined();
+      expect(batch.report.failedCode).toBeUndefined();
+      expect(batch.results[0]?.status).toBe('already_bound_different_reviewer');
     });
 
     it('M3-B: apply aborta após primeira falha', async () => {
@@ -680,6 +776,50 @@ describe('rc004BindingOnly', () => {
       expect(batch.report.partialWritesCount).toBe(1);
       expect(batch.report.abortedAfterFailure).toBe(true);
       expect(batch.report.failedCode).toBe('CAS_CONFLICT');
+      expect(batch.report.failedSlug).toBe(slugB);
+      expect(batch.report.attemptedItems).toBe(2);
+      expect(batch.results).toHaveLength(2);
+    });
+
+    it('M3-F1: apply multi-write sucesso completo (Caso A)', async () => {
+      const slugs = ['m3-f1-a', 'm3-f1-b', 'm3-f1-c'];
+      const fp = fingerprintConteudoJson(GOLDEN);
+      const store = new Map<string, unknown>(
+        slugs.map((slug) => [slug, GOLDEN]),
+      );
+      const ds: BindingOnlyDataSource = {
+        fetchRowBySlug: async (slug) => {
+          const payload = store.get(slug);
+          return payload ? rowFromPayload(slug, payload) : null;
+        },
+      };
+      const sink: BindingOnlyApplySink = {
+        updateConteudoJsonCas: async ({ nextConteudoJson, id }) => {
+          const slug = id.replace('id-', '');
+          store.set(slug, nextConteudoJson);
+          return { updated: true };
+        },
+        reReadRowBySlug: async (slug) => {
+          const payload = store.get(slug);
+          return payload ? rowFromPayload(slug, payload) : null;
+        },
+      };
+      const batch = await runRc004BindingOnlyBatch(
+        {
+          items: slugs.map((slug) => ({ slug, expected_content_fingerprint: fp })),
+        },
+        ds,
+        { reviewer: 'GV', approvedAt: '2026-09-12', ...APPLY_OPTS },
+        sink,
+      );
+      expect(batch.report.attemptedItems).toBe(3);
+      expect(batch.report.successfulWrites).toBe(3);
+      expect(batch.productionWrites).toBe(3);
+      expect(batch.report.partialWritesCount).toBe(0);
+      expect(batch.report.abortedAfterFailure).toBe(false);
+      expect(batch.report.failedSlug).toBeUndefined();
+      expect(batch.report.failedCode).toBeUndefined();
+      expect(batch.totals.would_bind).toBe(3);
     });
 
     it('M3-D: apply com failFast=false ainda força effective fail-fast', () => {

@@ -336,15 +336,14 @@ function buildBindingOnlyBatchReport(
   effectiveFailFast: boolean,
 ): BindingOnlyBatchReport {
   const failedItems = results.filter((r) => r.status === 'failed').length;
-  const abortRow = [...results]
-    .reverse()
-    .find(
-      (r) =>
-        r.status === 'failed' ||
-        r.status === 'already_bound_different_reviewer',
-    );
+  const lastResult = results[results.length - 1];
+  const lastRowTriggeredAbort =
+    lastResult?.status === 'failed' ||
+    lastResult?.status === 'already_bound_different_reviewer';
   const abortedAfterFailure =
-    effectiveFailFast && results.length < manifestItemCount && abortRow !== undefined;
+    effectiveFailFast &&
+    results.length < manifestItemCount &&
+    lastRowTriggeredAbort;
   const partialWritesCount = abortedAfterFailure ? productionWrites : 0;
 
   return {
@@ -355,8 +354,8 @@ function buildBindingOnlyBatchReport(
     failedItems,
     partialWritesCount,
     abortedAfterFailure,
-    failedSlug: abortRow?.slug,
-    failedCode: abortRow?.code,
+    failedSlug: abortedAfterFailure ? lastResult?.slug : undefined,
+    failedCode: abortedAfterFailure ? lastResult?.code : undefined,
   };
 }
 
