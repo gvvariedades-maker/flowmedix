@@ -1,8 +1,13 @@
+> **Status: SUPERADO PARCIALMENTE (skin visual).** Trechos que obrigam shell Cyber Clinical (#010409 / neon) no player de NeuroSlides foram superados pelo desfecho A. Autoridade de pele: [uditoria-visual-v2/NEUROSLIDES-VISUAL-SPEC-v2.md](design-system/NEUROSLIDES-VISUAL-SPEC-v2.md) · Direction: [uditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v4.md](design-system/AVANT-VISUAL-DIRECTION-v4.md) · ADR: [DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md](DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md).
+> Seções afetadas: leis de produto que fixam shell Cyber no reverso.
+> Pedagogia (4 tipos, spoiler, barra, gesto) permanece válida nas seções não marcadas.
+
+---
 # NeuroSlides — Estratégia visual (primitivos + glanceable + ondas)
 
 Runbook canônico da **estratégia visual** dos NeuroSlides: idioma de mercado (cards coloridos, chip+corpo, contraste certo×errado) **sem** copiar feed/Instagram e **sem** uma variant React por print.
 
-**Governança de produto (Geração 2):** [`DECISAO_NEUROSLIDES_GERACAO_2.md`](DECISAO_NEUROSLIDES_GERACAO_2.md) — mesmo cérebro (4 `type`); novo corpo (Visual OS). Roadmap: [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](NEUROSLIDES_GERACAO_2_ROADMAP.md).  
+**Governança de produto (Geração 2):** [`DECISAO_NEUROSLIDES_GERACAO_2.md`](DECISAO_NEUROSLIDES_GERACAO_2.md) — mesmo cérebro (4 `type`); novo corpo (Visual OS). Roadmap: [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](NEUROSLIDES_GERACAO_2_ROADMAP.md).
 **Barra mínima + ratchet:** [`NEUROSLIDES_VISUAL_BAR.md`](NEUROSLIDES_VISUAL_BAR.md) — piso = [`artifacts/neuroslides-g2-demo.html`](../artifacts/neuroslides-g2-demo.html); cada molde só melhora.
 
 **Frase norte:** inspiração de retenção, não template de cópia — [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](../.cursor/skills/avant-neuroslides-visual/SKILL.md).
@@ -34,7 +39,7 @@ Runbook canônico da **estratégia visual** dos NeuroSlides: idioma de mercado (
 
 ## Camada 1 — Primitivos (fundação)
 
-Pasta: [`components/slides/primitives/`](../components/slides/primitives/).  
+Pasta: [`components/slides/primitives/`](../components/slides/primitives/).
 **Barra G2 (2026-08-04):** primitives carregam o piso visual — massa, herói (`emphasized` / `heroRing`), footer escuro de transferência. Ver [`NEUROSLIDES_VISUAL_BAR.md`](NEUROSLIDES_VISUAL_BAR.md).
 
 | Primitivo | Props essenciais | Uso típico |
@@ -204,7 +209,7 @@ Para pacotes **já** `applied` + `production_ready`. Objetivo: barra visual máx
 □ Sem ai:generate / sem promote rotineiro
 ```
 
-Ordem Fábrica: Mulher → Processo → Curativos → Imunização → Vias → Punção → Peri → CME → Mental → Trabalho.  
+Ordem Fábrica: Mulher → Processo → Curativos → Imunização → Vias → Punção → Peri → CME → Mental → Trabalho.
 Prompt canônico: [`PROMPT_FABRICA_VISUAL_G2.md`](PROMPT_FABRICA_VISUAL_G2.md) (Fábrica + P1 shells; substitui o legado `artifacts/p0-onda3-nota10-visual-prompt.md` quando ausente).
 
 ---
