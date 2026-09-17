@@ -1,6 +1,7 @@
 import { mkdirSync, writeFileSync, rmSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import {
+  canonicalJsonStringify,
   computeCandidateSha256,
   EVIDENCE_POLICY_ID,
   resolveSafeEvidenceArtifactPath,
@@ -56,6 +57,27 @@ function baseReview(overrides: Partial<AgentReviewArtifact> = {}): AgentReviewAr
     ...overrides,
   };
 }
+
+describe('computeCandidateSha256 — canonical serialization', () => {
+  it('ignora ordem de chaves em objetos', () => {
+    const a = { meta: { banca: 'X', topico: 'T' }, question_data: { instruction: 'q' } };
+    const b = { question_data: { instruction: 'q' }, meta: { topico: 'T', banca: 'X' } };
+    expect(computeCandidateSha256(a)).toBe(computeCandidateSha256(b));
+    expect(canonicalJsonStringify(a)).toBe(canonicalJsonStringify(b));
+  });
+
+  it('preserva ordem de arrays', () => {
+    const first = { items: ['a', 'b'] };
+    const second = { items: ['b', 'a'] };
+    expect(computeCandidateSha256(first)).not.toBe(computeCandidateSha256(second));
+  });
+
+  it('altera SHA quando conteúdo real muda', () => {
+    const base = { meta: { banca: 'X' }, question_data: { instruction: 'q1' } };
+    const changed = { meta: { banca: 'X' }, question_data: { instruction: 'q2' } };
+    expect(computeCandidateSha256(base)).not.toBe(computeCandidateSha256(changed));
+  });
+});
 
 describe('evidenceGovernedApproval', () => {
   const candidate = {

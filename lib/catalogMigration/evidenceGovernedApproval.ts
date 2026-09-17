@@ -94,9 +94,40 @@ export type TrustedEvidenceApproval = {
   codes: string[];
 };
 
-/** SHA-256 canônico do candidato editorial (payload JSON completo). */
+/**
+ * Serialização JSON determinística para hash de candidato:
+ * objetos com chaves ordenadas; arrays com ordem preservada; primitivos via JSON.
+ */
+export function canonicalJsonStringify(value: unknown): string {
+  if (value === null) return 'null';
+  if (value === undefined) return 'null';
+  const valueType = typeof value;
+  if (valueType === 'string' || valueType === 'number' || valueType === 'boolean') {
+    return JSON.stringify(value);
+  }
+  if (Array.isArray(value)) {
+    return `[${value.map((item) => canonicalJsonStringify(item)).join(',')}]`;
+  }
+  if (valueType === 'object') {
+    const record = value as Record<string, unknown>;
+    const keys = Object.keys(record)
+      .filter((key) => record[key] !== undefined)
+      .sort();
+    const pairs = keys.map(
+      (key) => `${JSON.stringify(key)}:${canonicalJsonStringify(record[key])}`,
+    );
+    return `{${pairs.join(',')}}`;
+  }
+  return JSON.stringify(value);
+}
+
+/** SHA-256 canônico do candidato editorial (payload normalizado, ordem de chaves irrelevante). */
 export function computeCandidateSha256(candidate: unknown): string {
-  return createHash('sha256').update(JSON.stringify(candidate ?? null), 'utf8').digest('hex');
+  const serialized =
+    candidate === undefined || candidate === null
+      ? 'null'
+      : canonicalJsonStringify(candidate);
+  return createHash('sha256').update(serialized, 'utf8').digest('hex');
 }
 
 function sha256FileHex(absPath: string): string {
