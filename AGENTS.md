@@ -37,6 +37,7 @@ Goldens copiáveis: `examples/eng/api-route-admin.example.ts` · `rsc-page-cache
 | Âncoras 100% premium (base do pacote) | `Âncoras 100%: <Subtópico>` / `Âncoras 100% premium: SUBTÓPICO:` | [`.cursor/rules/ancoras-100.mdc`](.cursor/rules/ancoras-100.mdc) · [`docs/PROMPT_ANCORAS_100.md`](docs/PROMPT_ANCORAS_100.md) · checklist [`docs/ANCHOR_CHECKLIST_100.md`](docs/ANCHOR_CHECKLIST_100.md) — ordem **0a→0b→1→2**; Fase 1C′ `Composer visual:` se visual thin; fechar só com `audit:anchor-100` `approval.status=pass` |
 | Âncoras faltantes (pré-g01) | `Criar âncoras: <Subtópico>` | skill `avant-golden-anchor-bootstrap` |
 | Progresso por pacote | — | [`data/catalog-migration/handcraft-registry.json`](data/catalog-migration/handcraft-registry.json) |
+| Revisão pedagógica P0 (evidência v2) | `Revisão pedagógica P0: P0-01 P0-02` | [`.cursor/rules/p0-pedagogical-review.mdc`](.cursor/rules/p0-pedagogical-review.mdc) · cópia [`docs/cursor/p0-pedagogical-review.mdc`](docs/cursor/p0-pedagogical-review.mdc) · [`docs/P0_PEDAGOGICAL_REVIEW_CONVERSA.md`](docs/P0_PEDAGOGICAL_REVIEW_CONVERSA.md) · [`docs/DECISAO_APROVACAO_POR_EVIDENCIA_V2.md`](docs/DECISAO_APROVACAO_POR_EVIDENCIA_V2.md) |
 
 **Nunca confundir** `applied` (handcraft no DB) com `production_ready` (vendável).
 

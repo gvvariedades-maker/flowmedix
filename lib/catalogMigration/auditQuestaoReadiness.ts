@@ -69,6 +69,7 @@ import {
 } from '@/lib/slides/pedagogicalBranch';
 import {
   assertApprovalGate,
+  requiresEvidenceApproval,
   scoreQuestaoRisk,
   type RiskResult,
 } from '@/lib/catalogMigration/riskScoring';
@@ -111,6 +112,9 @@ export type AuditQuestaoReadinessResult = {
   inferred_branch?: string;
   /** Auto-aprovação por risco — @see docs/DECISAO_AUTO_APROVACAO_RISCO.md */
   risk?: RiskResult;
+  /** EVIDENCE_GOVERNED_APPROVAL_V2 — dimensão distinta de ready_100. */
+  evidence_review_status?: 'missing' | 'pass' | 'blocked' | 'stale' | 'not_required';
+  human_escalation_required?: boolean;
 };
 
 const REQUIRED_SLIDE_TYPES = [
@@ -179,6 +183,7 @@ export function auditQuestaoReadiness(
     premiumGate: true,
     goldenLint: true,
     commercialWriteTrust: 'runtime_read',
+    mandatoryEditorialGate: false,
   });
 
   if (!writeResult.ok) {
@@ -186,6 +191,8 @@ export function auditQuestaoReadiness(
       const tier: ReadinessTier =
         err.layer === 'zod' || err.layer === 'tecconcursos'
           ? 'A1'
+          : err.layer === 'risk_approval' || err.layer === 'evidence_approval'
+            ? 'A4'
           : err.layer === 'golden_v1'
             ? 'A2'
             : err.layer === 'premium_gate' &&
@@ -203,7 +210,9 @@ export function auditQuestaoReadiness(
   const warnings = writeResult.ok ? writeResult.warnings : writeResult.warnings;
   for (const warn of warnings) {
     const tier: ReadinessTier =
-      warn.layer === 'golden_v1'
+      warn.layer === 'risk_approval' || warn.layer === 'evidence_approval'
+        ? 'A4'
+        : warn.layer === 'golden_v1'
         ? 'A2'
         : warn.code.startsWith('mold_l3') || warn.code === 'pedagogical_branch_inferred'
           ? 'A3'
@@ -614,9 +623,28 @@ export function auditQuestaoReadiness(
     checks,
     'A4',
     'risk_tier',
-    `Risco ${risk.risk_tier} → ${risk.approval_mode}` +
+    `RISK_TIER=${risk.risk_tier} APPROVAL_MODE=${risk.approval_mode}` +
       (risk.risk_factors.length > 0 ? ` [${risk.risk_factors.join(', ')}]` : '') +
       (risk.reasons[0] ? ` — ${risk.reasons[0]}` : ''),
+    'info',
+  );
+
+  const evidenceRequired = requiresEvidenceApproval(risk);
+  const evidenceReviewStatus = evidenceRequired ? 'missing' : 'not_required';
+  push(
+    checks,
+    'A4',
+    'evidence_review_status',
+    evidenceRequired
+      ? `EVIDENCE_REVIEW_STATUS=missing — alto risco exige manifest primary+adversarial (apply gate)`
+      : 'EVIDENCE_REVIEW_STATUS=not_required',
+    evidenceRequired ? 'warn' : 'info',
+  );
+  push(
+    checks,
+    'A4',
+    'human_escalation_required',
+    evidenceRequired ? 'HUMAN_ESCALATION_REQUIRED=no (até conflito/evidência insuficiente)' : 'HUMAN_ESCALATION_REQUIRED=no',
     'info',
   );
 
@@ -625,7 +653,9 @@ export function auditQuestaoReadiness(
     push(
       checks,
       'A4',
-      'risk_human_approval_required',
+      risk.approval_mode === 'evidence_required'
+        ? 'evidence_approval_required'
+        : 'risk_human_approval_required',
       msg,
       // Não bloqueia ready_100 (A4 não entra no ready_100) — bloqueia apply via assertApprovalGate.
       'warn',
@@ -654,6 +684,8 @@ export function auditQuestaoReadiness(
     pedagogical_branch: payload.meta?.pedagogical_branch,
     inferred_branch: inferredBranch,
     risk,
+    evidence_review_status: evidenceReviewStatus,
+    human_escalation_required: false,
   };
 }
 

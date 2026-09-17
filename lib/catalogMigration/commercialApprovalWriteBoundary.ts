@@ -6,6 +6,7 @@
  * no apply autorizado, após gates de risco vigentes.
  */
 import { fingerprintConteudoJson } from '@/lib/catalogMigration/contentFingerprint';
+import type { TrustedEvidenceApproval } from '@/lib/catalogMigration/evidenceGovernedApproval';
 import {
   assertApprovalGate,
   buildEfficacyContractFromRisk,
@@ -125,6 +126,7 @@ export type IssueServerCommercialApprovalInput = {
   payload: QuestaoPayload;
   slug?: string;
   riskContext?: RiskScoringContext;
+  trustedEvidence?: TrustedEvidenceApproval | null;
   /** ISO date for auto_approved_at when aplicável. */
   approvedAt?: string;
 };
@@ -144,13 +146,22 @@ export function issueServerCommercialApproval(
   input: IssueServerCommercialApprovalInput,
 ): IssueServerCommercialApprovalResult {
   const risk = scoreQuestaoRisk(input.payload, input.riskContext);
-  const blockers = assertApprovalGate(input.payload, risk);
+  const blockers = assertApprovalGate(input.payload, risk, input.trustedEvidence ?? null);
   if (blockers.length > 0) {
     return { payload: stripCommercialApprovalBinding(input.payload), stamped: false, reason: blockers[0] };
   }
 
   const base = stripCommercialApprovalBinding(input.payload);
   const fp = fingerprintConteudoJson(base);
+
+  if (risk.approval_mode === 'evidence_required' && !hasVerifiableHumanCommercialSignature(base)) {
+    return {
+      payload: base,
+      stamped: false,
+      reason: 'EVIDENCE_APPROVED_BUT_COMMERCIAL_BINDING_NOT_AUTHORIZED',
+      contentFingerprint: fp,
+    };
+  }
 
   if (hasVerifiableHumanCommercialSignature(base)) {
     const meta = { ...base.meta };
@@ -182,7 +193,11 @@ export function issueServerCommercialApproval(
     };
   }
 
-  if (risk.approval_mode !== 'human_required' && input.riskContext?.autoApprovalEnabled === true) {
+  if (
+    risk.approval_mode !== 'human_required' &&
+    risk.approval_mode !== 'evidence_required' &&
+    input.riskContext?.autoApprovalEnabled === true
+  ) {
     const autoEc = buildEfficacyContractFromRisk(risk, {
       isoDate: input.approvedAt,
     });

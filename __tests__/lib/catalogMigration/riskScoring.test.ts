@@ -2,6 +2,7 @@ import {
   assertApprovalGate,
   buildEfficacyContractFromRisk,
   hasHumanA4Signature,
+  requiresEvidenceApproval,
   requiresHumanApproval,
   scoreQuestaoRisk,
   shouldSampleForHumanReview,
@@ -61,7 +62,7 @@ function slidesMinimal() {
 }
 
 describe('scoreQuestaoRisk', () => {
-  it('BCG com dose 0,1 mL → alto / human_required', () => {
+  it('BCG com dose 0,1 mL → alto / evidence_required', () => {
     const file = path.join(
       process.cwd(),
       'examples/questao-premium-amauc-imunizacao-bcg-dose-a4.json',
@@ -70,11 +71,12 @@ describe('scoreQuestaoRisk', () => {
     const risk = scoreQuestaoRisk(payload, { productionReady: false });
 
     expect(risk.risk_tier).toBe('alto');
-    expect(risk.approval_mode).toBe('human_required');
+    expect(risk.approval_mode).toBe('evidence_required');
     expect(risk.risk_factors).toEqual(
       expect.arrayContaining(['numeric_claim_critical', 'family_high_stakes']),
     );
-    expect(requiresHumanApproval(risk)).toBe(true);
+    expect(requiresHumanApproval(risk)).toBe(false);
+    expect(requiresEvidenceApproval(risk)).toBe(true);
   });
 
   it('conceito sem número + pacote production_ready → baixo / auto', () => {
@@ -198,19 +200,26 @@ describe('scoreQuestaoRisk', () => {
 });
 
 describe('assertApprovalGate / A4', () => {
-  const altoRisk: RiskResult = {
+  const evidenceRisk: RiskResult = {
     risk_tier: 'alto',
-    approval_mode: 'human_required',
+    approval_mode: 'evidence_required',
     risk_factors: ['numeric_claim_critical'],
     reasons: ['dose'],
   };
 
-  it('bloqueia alto risco sem assinatura humana', () => {
-    const blockers = assertApprovalGate({ meta: {} }, altoRisk);
+  const killSwitchRisk: RiskResult = {
+    risk_tier: 'alto',
+    approval_mode: 'human_required',
+    risk_factors: ['numeric_claim_critical'],
+    reasons: ['auto off'],
+  };
+
+  it('bloqueia alto risco evidence_required sem evidência nem humano', () => {
+    const blockers = assertApprovalGate({ meta: {} }, evidenceRisk);
     expect(blockers.length).toBeGreaterThan(0);
   });
 
-  it('aceita a4_reviewer humano', () => {
+  it('aceita a4_reviewer humano em evidence_required (escalonamento)', () => {
     const payload = {
       meta: {
         efficacy_contract: {
@@ -220,7 +229,7 @@ describe('assertApprovalGate / A4', () => {
       },
     };
     expect(hasHumanA4Signature(payload)).toBe(true);
-    expect(assertApprovalGate(payload, altoRisk)).toEqual([]);
+    expect(assertApprovalGate(payload, evidenceRisk)).toEqual([]);
   });
 
   it('rejeita a4_reviewer agent: como assinatura humana', () => {
@@ -233,11 +242,15 @@ describe('assertApprovalGate / A4', () => {
       },
     };
     expect(hasHumanA4Signature(payload)).toBe(false);
-    expect(assertApprovalGate(payload, altoRisk).length).toBeGreaterThan(0);
+    expect(assertApprovalGate(payload, evidenceRisk).length).toBeGreaterThan(0);
   });
 
-  it('buildEfficacyContractFromRisk não auto-assina alto risco', () => {
-    const c = buildEfficacyContractFromRisk(altoRisk);
+  it('bloqueia human_required kill-switch sem assinatura', () => {
+    expect(assertApprovalGate({ meta: {} }, killSwitchRisk).length).toBeGreaterThan(0);
+  });
+
+  it('buildEfficacyContractFromRisk não auto-assina alto risco evidence_required', () => {
+    const c = buildEfficacyContractFromRisk(evidenceRisk);
     expect(c.a4_reviewed).toBe(false);
     expect(c.a4_reviewer).toBeUndefined();
   });

@@ -1,0 +1,40 @@
+---
+description: Ativa revisão pedagógica P0 por evidência (EVIDENCE_GOVERNED_APPROVAL_V2) quando o usuário enviar "Revisão pedagógica P0:" ou anexar docs/P0_PEDAGOGICAL_REVIEW_CONVERSA.md
+globs:
+alwaysApply: false
+---
+
+# Revisão pedagógica P0 — evidência v2
+
+Trigger: **`Revisão pedagógica P0: <P0 IDs>`**
+
+## Objetivo
+
+Produzir artefatos **externos** (primary + adversarial + manifest) para alto risco — **não** aprovação final do Project Owner e **não** RC004 binding.
+
+## Fluxo
+
+1. Primary agent → `docs/schemas/p0-primary-agent-review.example.json`
+2. Adversarial agent (conversa **separada**) → `docs/schemas/p0-adversarial-agent-review.example.json`
+3. Manifest → `docs/schemas/p0-evidence-manifest.example.json`
+4. Escalonamento humano opcional → `docs/schemas/p0-human-escalation-signoff.example.json`
+
+## Gates
+
+- `candidate_sha256` = hash do candidato editorial exato
+- Verificador: `lib/catalogMigration/evidenceGovernedApproval.ts`
+- Apply dry-run: `catalog:apply-lote --risk-approval-gate --evidence-manifest=<path>`
+
+## Proibido
+
+- IA no runtime do produto
+- Campos `evidence_approved` / `agent_review_passed` no payload da questão
+- Production apply, denylist removal, RC004 reopen
+- Tratar `PROJECT_OWNER_DECISION=PROCEED` como revisão clínica
+
+## Referências
+
+- [`docs/P0_PEDAGOGICAL_REVIEW_CONVERSA.md`](../P0_PEDAGOGICAL_REVIEW_CONVERSA.md)
+- [`docs/DECISAO_APROVACAO_POR_EVIDENCIA_V2.md`](../DECISAO_APROVACAO_POR_EVIDENCIA_V2.md)
+
+Independência de agentes é **procedural** (review_id/reviewer_id/hash distintos), não criptográfica.

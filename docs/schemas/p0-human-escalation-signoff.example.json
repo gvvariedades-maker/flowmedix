@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "p0_id": "P0-02",
+  "slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448440742-3",
+  "reviewed_at": "2026-09-14",
+  "reviewer": "Nome do revisor clínico",
+  "escalation_reason": "risk=alto / conflito fonte / confiança média",
+  "decision": "APPROVE",
+  "candidate_sha256": "<sha256>",
+  "PROJECT_OWNER_DECISION": "PROCEED",
+  "AUTHORIZE_PRODUCTION_APPLY": "NO",
+  "CLINICAL_CONTENT_REVIEWER": "YES"
+}

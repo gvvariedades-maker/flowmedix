@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "policy": "EVIDENCE_GOVERNED_APPROVAL_V2",
+  "items": [
+    {
+      "slug": "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
+      "candidate_sha256": "<sha256 do candidato editorial>",
+      "primary_review_path": "artifacts/evidence-reviews/P0-01_primary_review.json",
+      "adversarial_review_path": "artifacts/evidence-reviews/P0-01_adversarial_review.json"
+    }
+  ]
+}

@@ -9,6 +9,7 @@
  *   npm run catalog:apply-lote -- --lote=imunizacao-lote-02 --apply --only-slugs-file=data/catalog-migration/imunizacao-lote-02/sub01-slugs.json
  *   npm run catalog:apply-lote -- --lote=imunizacao-g07 --apply --skip-patch-branch
  *   npm run catalog:apply-lote -- --lote=vias-de-administracao-completo --apply --skip-risk-approval
+ *   npm run catalog:apply-lote -- --lote=p0-d3 --dry-run --evidence-manifest=artifacts/evidence-reviews/manifest.json
  */
 
 import { loadEnvConfig } from '@next/env';
@@ -36,6 +37,7 @@ import {
 
 function resolveRiskContextFromLote(lote: string): {
   riskApprovalGate: boolean;
+  allowSkipRiskApproval: boolean;
   riskContext: {
     productionReady: boolean;
     autoApprovalEnabled: boolean;
@@ -49,8 +51,11 @@ function resolveRiskContextFromLote(lote: string): {
   const productionReady = pacote?.production_status === 'production_ready';
   const autoEnabled = auto?.enabled === true;
   const skipRiskApproval = hasFlag('skip-risk-approval');
+  const gateOn = autoEnabled || hasFlag('risk-approval-gate');
   return {
-    riskApprovalGate: !skipRiskApproval && (autoEnabled || hasFlag('risk-approval-gate')),
+    // evidence_required / human_required nunca são desligados por --skip-risk-approval
+    riskApprovalGate: gateOn,
+    allowSkipRiskApproval: skipRiskApproval,
     riskContext: {
       productionReady,
       autoApprovalEnabled: autoEnabled || hasFlag('risk-approval-gate'),
@@ -156,11 +161,16 @@ async function main() {
   }
 
   const supabase = await createServerSupabase();
-  const { riskApprovalGate, riskContext } = resolveRiskContextFromLote(lote);
+  const { riskApprovalGate, allowSkipRiskApproval, riskContext } =
+    resolveRiskContextFromLote(lote);
+  const evidenceManifestPath = parseArg('evidence-manifest');
   if (riskApprovalGate) {
     console.log(
-      `[catalog:apply-lote] riskApprovalGate=on productionReady=${riskContext.productionReady} autoApproval=${riskContext.autoApprovalEnabled}`,
+      `[catalog:apply-lote] riskApprovalGate=on productionReady=${riskContext.productionReady} autoApproval=${riskContext.autoApprovalEnabled} skipRiskPartial=${allowSkipRiskApproval}`,
     );
+    if (evidenceManifestPath) {
+      console.log(`[catalog:apply-lote] evidenceManifest=${evidenceManifestPath}`);
+    }
   }
   const { results, appliedSlugs } = await applyLoteToSupabase(supabase, items, {
     dryRun,
@@ -170,6 +180,9 @@ async function main() {
     riskApprovalGate,
     riskContext,
     commercialApprovalStamp: riskApprovalGate,
+    evidenceManifestPath: evidenceManifestPath ?? undefined,
+    repoRoot: process.cwd(),
+    allowSkipRiskApproval,
   });
 
   const allResults = [
