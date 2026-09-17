@@ -6,6 +6,14 @@ import {
 
 export type { ValidatedQuestao };
 
+export type ValidateAndNormalizeOptions = {
+  /**
+   * Default true (omitir = gate editorial obrigatório no load).
+   * catalog:apply-lote passa false no LOAD; applyLoteToSupabase é a fronteira autoritativa.
+   */
+  mandatoryEditorialGate?: boolean;
+};
+
 export function correctOptionId(payload: unknown): string | null {
   const opts = (payload as { question_data?: { options?: { id: string; is_correct: boolean }[] } })
     ?.question_data?.options;
@@ -15,11 +23,15 @@ export function correctOptionId(payload: unknown): string | null {
 export function validateAndNormalizeQuestao(
   moduloSlug: string,
   raw: unknown,
+  options: ValidateAndNormalizeOptions = {},
 ): { ok: true; data: ValidatedQuestao } | { ok: false; reason: string } {
   const result = validateQuestaoForWrite(raw, {
     moduloSlug,
     premiumGate: false,
     goldenLint: false,
+    ...(options.mandatoryEditorialGate !== undefined
+      ? { mandatoryEditorialGate: options.mandatoryEditorialGate }
+      : {}),
   });
 
   if (!result.ok) {

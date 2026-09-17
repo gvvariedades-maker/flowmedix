@@ -139,7 +139,9 @@ async function main() {
   for (const file of files.sort()) {
     const slug = file.replace(/\.json$/, '');
     const raw = JSON.parse(readFileSync(resolve(questionsDir, file), 'utf8'));
-    const validated = validateAndNormalizeQuestao(slug, raw);
+    const validated = validateAndNormalizeQuestao(slug, raw, {
+      mandatoryEditorialGate: false,
+    });
     if (!validated.ok) {
       loadFailures.push({ file, reason: validated.reason });
       continue;
