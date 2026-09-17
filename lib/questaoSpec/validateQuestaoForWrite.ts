@@ -20,7 +20,7 @@ import {
   stripCommercialApprovalBinding,
   type CommercialWriteTrust,
 } from '@/lib/catalogMigration/commercialApprovalWriteBoundary';
-import { detectUntrustedEvidenceApprovalClaims } from '@/lib/catalogMigration/evidenceGovernedApproval';
+import { detectUntrustedEvidenceApprovalClaims } from '@/lib/catalogMigration/evidenceGovernedApprovalClaims';
 import {
   assertApprovalGate,
   requiresMandatoryEditorialApproval,
