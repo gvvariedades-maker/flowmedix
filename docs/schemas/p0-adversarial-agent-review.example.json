@@ -5,7 +5,7 @@
   "reviewer_id": "agent:adversarial-enfermagem-v1",
   "p0_id": "P0-01",
   "slug": "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
-  "candidate_sha256": "<sha256 do candidato editorial>",
+  "candidate_sha256": "<sha256 de candidate-normalized.json — domínio do apply gate>",
   "decision": "APPROVE",
   "confidence": "alta",
   "answer_verified": true,

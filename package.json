@@ -237,6 +237,7 @@
     "catalog:repair-golden-v2-spoiler": "tsx scripts/catalog-repair-golden-v2-spoiler.ts",
     "catalog:seed-lote": "tsx scripts/catalog-migration-seed-lote.ts",
     "catalog:apply-lote": "tsx scripts/catalog-migration-apply-lote.ts",
+    "p0:normalization-proof": "tsx scripts/p0-candidate-normalization-proof.ts",
     "catalog:upgrade-premium": "tsx legacy/scripts/catalog-migration-upgrade-premium.ts",
     "ai:generate": "tsx scripts/ai-generate-premium-lote.ts",
     "catalog:strip-layout-variant": "tsx scripts/catalog-migration-strip-layout-variant.ts",

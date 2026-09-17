@@ -45,5 +45,7 @@ Dispara quando: disagreement, fonte insuficiente, guideline conflitante, ambigui
 
 - `lib/catalogMigration/evidenceGovernedApproval.ts` — schemas, verifier, manifest
 - `lib/catalogMigration/riskScoring.ts` — `evidence_required`, `assertApprovalGate`
+- `lib/catalogMigration/p0CandidateNormalizationProof.ts` — prova bruto → normalizado (`SEMANTIC_CHANGE`)
+- `npm run p0:normalization-proof` — congela `candidate-normalized.json` + `normalization-diff.json`
 - `catalog:apply-lote --evidence-manifest=<path>`
-- Workflow: `Revisão pedagógica P0:` — `docs/P0_PEDAGOGICAL_REVIEW_CONVERSA.md`
+- Workflow: `Revisão pedagógica P0:` — `docs/P0_PEDAGOGICAL_REVIEW_CONVERSA.md` § Candidate freeze
