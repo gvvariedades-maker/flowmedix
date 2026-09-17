@@ -310,7 +310,7 @@ function modeFromTier(
   autoEnabled: boolean,
 ): RiskResult['approval_mode'] {
   if (!autoEnabled) return 'human_required';
-  if (tier === 'alto') return 'human_required';
+  if (tier === 'alto') return 'evidence_required';
   if (tier === 'medio') return 'auto_conditional';
   return 'auto';
 }
@@ -400,7 +400,9 @@ export function buildA4MinimoEfficacyContract(
   options?: { sampled?: boolean; isoDate?: string },
 ): EfficacyContract | null {
   if (!audit.agentA4Eligible) return null;
-  if (risk.approval_mode === 'human_required') return null;
+  if (risk.approval_mode === 'human_required' || risk.approval_mode === 'evidence_required') {
+    return null;
+  }
 
   const base = buildEfficacyContractFromRisk(risk, {
     reviewerAgent: cfg.agentId,

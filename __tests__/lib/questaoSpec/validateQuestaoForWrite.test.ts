@@ -55,6 +55,24 @@ describe('validateQuestaoForWrite — golden-v2 write spec', () => {
     expect(premiumGateErrors(viasGolden)).toHaveLength(0);
   });
 
+  it('evidence_required falha como error mesmo sem riskApprovalGate', () => {
+    const bcg = JSON.parse(
+      fs.readFileSync(
+        path.join(process.cwd(), 'examples/questao-premium-amauc-imunizacao-bcg-dose-a4.json'),
+        'utf8',
+      ),
+    );
+    const result = validateQuestaoForWrite(bcg);
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(
+        result.errors.some(
+          (e) => e.layer === 'risk_approval' && e.severity === 'error',
+        ),
+      ).toBe(true);
+    }
+  });
+
   it('molde Vias sem rows falha write spec', () => {
     const broken = JSON.parse(JSON.stringify(viasGolden)) as typeof viasGolden;
     broken.reverse_study_slides[1] = { type: 'golden_rule', content: 'só título' };

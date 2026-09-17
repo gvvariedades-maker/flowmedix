@@ -5,14 +5,20 @@
  * E a máquina não tem ground-truth (dose/conduta crítica).
  *
  * @see docs/DECISAO_AUTO_APROVACAO_RISCO.md
+ * @see docs/DECISAO_APROVACAO_POR_EVIDENCIA_V2.md
  */
 
+import type { TrustedEvidenceApproval } from '@/lib/catalogMigration/evidenceGovernedApproval';
 import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
 import { NUMERIC_CLAIM_RE } from '@/lib/goldenContentStandard';
 
 export type RiskTier = 'baixo' | 'medio' | 'alto';
 
-export type ApprovalMode = 'auto' | 'auto_conditional' | 'human_required';
+export type ApprovalMode =
+  | 'auto'
+  | 'auto_conditional'
+  | 'evidence_required'
+  | 'human_required';
 
 export type RiskFactor =
   | 'numeric_claim_critical'
@@ -191,7 +197,7 @@ function aggregateTier(factors: RiskFactor[]): RiskTier {
 
 function tierToApprovalMode(tier: RiskTier, autoEnabled: boolean): ApprovalMode {
   if (!autoEnabled) return 'human_required';
-  if (tier === 'alto') return 'human_required';
+  if (tier === 'alto') return 'evidence_required';
   if (tier === 'medio') return 'auto_conditional';
   return 'auto';
 }
@@ -219,7 +225,9 @@ export function scoreQuestaoRisk(
 
   if (family === 'calc') {
     factors.push('family_high_stakes');
-    reasons.push('family=calc — resposta é número; revisão humana obrigatória.');
+    reasons.push(
+      'family=calc — resposta numérica de alto risco; exige evidence-governed review ou escalonamento humano.',
+    );
   } else if (family === 'protocolo' && hasNumeric) {
     factors.push('family_high_stakes');
     reasons.push('family=protocolo com parâmetro numérico — alto risco clínico.');
@@ -310,6 +318,24 @@ export function requiresHumanApproval(risk: RiskResult): boolean {
   return risk.approval_mode === 'human_required';
 }
 
+/** true se o apply exige pacote de evidência (EVIDENCE_GOVERNED_APPROVAL_V2). */
+export function requiresEvidenceApproval(risk: RiskResult): boolean {
+  return risk.approval_mode === 'evidence_required';
+}
+
+/**
+ * Gate editorial obrigatório em qualquer persistência — independente de riskApprovalGate.
+ * evidence_required + human_required nunca são opt-in.
+ */
+export function requiresMandatoryEditorialApproval(risk: RiskResult): boolean {
+  return requiresEvidenceApproval(risk) || requiresHumanApproval(risk);
+}
+
+export type ApprovalGateOptions = {
+  /** Quando true, só ignora gate para auto/auto_conditional — nunca evidence/human. */
+  allowSkipRiskApproval?: boolean;
+};
+
 /**
  * Assinatura humana válida: a4_reviewed + reviewer que NÃO começa com "agent:".
  */
@@ -322,20 +348,54 @@ export function hasHumanA4Signature(payload: QuestaoLike): boolean {
 }
 
 /**
- * Gate de apply: alto risco sem assinatura humana → bloquear.
- * Retorna lista de blockers (vazia = ok).
+ * Gate de apply editorial — fail-closed.
+ * evidence_required: trusted evidence PASS ou escalonamento humano válido.
+ * human_required: assinatura humana verificável.
  */
 export function assertApprovalGate(
   payload: QuestaoLike,
   risk: RiskResult,
+  trustedEvidence?: TrustedEvidenceApproval | null,
+  options?: ApprovalGateOptions,
 ): string[] {
-  if (!requiresHumanApproval(risk)) return [];
-  if (hasHumanA4Signature(payload)) return [];
-  return [
-    `risk_tier=${risk.risk_tier}: revisão humana obrigatória antes do apply ` +
-      `(factors: ${risk.risk_factors.join(', ') || '—'}). ` +
-      `Assine meta.efficacy_contract com a4_reviewed=true e a4_reviewer humano (não agent:).`,
-  ];
+  const mode = risk.approval_mode;
+
+  if (
+    options?.allowSkipRiskApproval === true &&
+    (mode === 'auto' || mode === 'auto_conditional')
+  ) {
+    return [];
+  }
+
+  if (mode === 'auto' || mode === 'auto_conditional') {
+    return [];
+  }
+
+  if (mode === 'evidence_required') {
+    if (trustedEvidence?.status === 'PASS') {
+      return [];
+    }
+    if (hasHumanA4Signature(payload)) {
+      return [];
+    }
+    return [
+      `risk_tier=${risk.risk_tier}: approval_mode=evidence_required — exige manifest de evidência válido ` +
+        `(primary+adversarial APPROVE, fontes, claims críticos) ou escalonamento humano ` +
+        `(meta.efficacy_contract.a4_reviewed + a4_reviewer humano verificável). ` +
+        `Factors: ${risk.risk_factors.join(', ') || '—'}.`,
+    ];
+  }
+
+  if (mode === 'human_required') {
+    if (hasHumanA4Signature(payload)) return [];
+    return [
+      `risk_tier=${risk.risk_tier}: revisão humana obrigatória (kill-switch / auto_approval desligado) ` +
+        `(factors: ${risk.risk_factors.join(', ') || '—'}). ` +
+        `Assine meta.efficacy_contract com a4_reviewed=true e a4_reviewer humano (não agent:).`,
+    ];
+  }
+
+  return [`approval_mode desconhecido: ${String(mode)} — bloqueado por política.`];
 }
 
 /** Taxa de amostragem sugerida para o tier (quando auto/auto_conditional). */
@@ -386,7 +446,7 @@ export function buildEfficacyContractFromRisk(
     sampled: options?.sampled === true,
   };
 
-  if (risk.approval_mode === 'human_required') {
+  if (risk.approval_mode === 'human_required' || risk.approval_mode === 'evidence_required') {
     return {
       ...base,
       a4_reviewed: false,

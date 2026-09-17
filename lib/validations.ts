@@ -144,7 +144,9 @@ export const ContentReviewSchema = z.object({
 export const EfficacyContractSchema = z.object({
   risk_tier: z.enum(['baixo', 'medio', 'alto']).optional(),
   risk_factors: z.array(z.string().max(64)).max(20).optional(),
-  approval_mode: z.enum(['auto', 'auto_conditional', 'human_required']).optional(),
+  approval_mode: z
+    .enum(['auto', 'auto_conditional', 'evidence_required', 'human_required'])
+    .optional(),
   a4_reviewed: z.boolean().optional(),
   a4_reviewer: z.string().max(LIMITS.REVIEWER_MAX).optional(),
   a4_checklist_passed: z.array(z.string().max(40)).max(12).optional(),

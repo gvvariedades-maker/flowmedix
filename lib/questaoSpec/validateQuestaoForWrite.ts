@@ -20,8 +20,10 @@ import {
   stripCommercialApprovalBinding,
   type CommercialWriteTrust,
 } from '@/lib/catalogMigration/commercialApprovalWriteBoundary';
+import { detectUntrustedEvidenceApprovalClaims } from '@/lib/catalogMigration/evidenceGovernedApproval';
 import {
   assertApprovalGate,
+  requiresMandatoryEditorialApproval,
   scoreQuestaoRisk,
   type RiskResult,
   type RiskScoringContext,
@@ -44,7 +46,8 @@ export type QuestaoWriteIssueLayer =
   | 'premium_gate'
   | 'golden_v1'
   | 'risk_approval'
-  | 'commercial_approval';
+  | 'commercial_approval'
+  | 'evidence_approval';
 
 export type QuestaoWriteIssue = {
   code: string;
@@ -68,6 +71,11 @@ export type ValidateQuestaoForWriteOptions = {
   riskContext?: RiskScoringContext;
   /** Default: untrusted — rejeita metadados de aprovação comercial no payload. */
   commercialWriteTrust?: CommercialWriteTrust;
+  /**
+   * Default: true — evidence_required/human_required bloqueiam escrita.
+   * Readiness audit usa false (dimensão A4 separada de ready_100).
+   */
+  mandatoryEditorialGate?: boolean;
 };
 
 export type ValidateQuestaoForWriteSuccess = {
@@ -137,6 +145,24 @@ export function validateQuestaoForWrite(
     return { ok: false, errors, warnings, specVersion: QUESTAO_WRITE_SPEC_VERSION };
   }
 
+  // Antes do Zod — campos desconhecidos em meta seriam descartados pelo parse.
+  if (typeof raw === 'object' && raw !== null) {
+    for (const claim of detectUntrustedEvidenceApprovalClaims(
+      raw as { meta?: Record<string, unknown> },
+    )) {
+      errors.push({
+        code: claim.code,
+        message: claim.message,
+        path: claim.path,
+        severity: 'error',
+        layer: 'evidence_approval',
+      });
+    }
+    if (errors.length > 0) {
+      return { ok: false, errors, warnings, specVersion: QUESTAO_WRITE_SPEC_VERSION };
+    }
+  }
+
   const normalized = normalizeQuestaoSlideArrays(
     typeof raw === 'object' && raw !== null ? { ...(raw as object) } : raw,
   );
@@ -182,15 +208,28 @@ export function validateQuestaoForWrite(
         layer: 'commercial_approval',
       });
     }
+    for (const claim of detectUntrustedEvidenceApprovalClaims(data)) {
+      errors.push({
+        code: claim.code,
+        message: claim.message,
+        path: claim.path,
+        severity: 'error',
+        layer: 'evidence_approval',
+      });
+    }
   }
   const risk = scoreQuestaoRisk(data, options.riskContext);
   const riskBlockers = assertApprovalGate(data, risk);
+  const mandatoryEditorial = options.mandatoryEditorialGate !== false;
+  const enforceRiskGate =
+    (mandatoryEditorial && requiresMandatoryEditorialApproval(risk)) ||
+    options.riskApprovalGate === true;
   if (riskBlockers.length > 0) {
     const issue: QuestaoWriteIssue = {
       code: 'risk_human_approval_required',
       message: riskBlockers[0]!,
       path: 'meta.efficacy_contract',
-      severity: options.riskApprovalGate === true ? 'error' : 'warn',
+      severity: enforceRiskGate ? 'error' : 'warn',
       layer: 'risk_approval',
     };
     if (issue.severity === 'error') errors.push(issue);

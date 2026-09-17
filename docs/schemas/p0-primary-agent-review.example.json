@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "review_type": "primary",
+  "review_id": "primary-2026-09-14-p0-01",
+  "reviewer_id": "agent:primary-enfermagem-v1",
+  "p0_id": "P0-01",
+  "slug": "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
+  "candidate_sha256": "<sha256 do candidato editorial>",
+  "decision": "APPROVE",
+  "confidence": "alta",
+  "answer_verified": true,
+  "pedagogy_verified": true,
+  "source_verification": {
+    "performed": true,
+    "vigency_checked": true,
+    "applicability_checked": true,
+    "conflict_search_performed": true
+  },
+  "claims": [
+    {
+      "claim_id": "gabarito_a",
+      "claim": "Gabarito letra A — corpo/cilindro da seringa",
+      "critical": true,
+      "supported": true,
+      "source_ids": ["potter-perry-11"],
+      "notes": ""
+    }
+  ],
+  "findings": [],
+  "blockers": [],
+  "unresolved_disagreements": []
+}

@@ -6,6 +6,8 @@
 
 Complementa: [`DECISAO_QUALITY_HIBRIDA.md`](DECISAO_QUALITY_HIBRIDA.md) · [`QUALITY_LAYERS_MODEL.md`](QUALITY_LAYERS_MODEL.md) · [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md)
 
+> **Atualização 2026-09-14:** alto risco com `auto_approval.enabled=true` passou de `human_required` obrigatório para **`evidence_required`** ([`DECISAO_APROVACAO_POR_EVIDENCIA_V2.md`](DECISAO_APROVACAO_POR_EVIDENCIA_V2.md)). `human_required` permanece como kill-switch (`auto_approval.enabled=false`) e escalonamento.
+
 ---
 
 ## Decisão
@@ -22,11 +24,12 @@ O AVANT adota **auto-aprovação por risco** para revisão A4 (piloto humano):
 
 ## Modelo
 
-| `risk_tier` | `approval_mode` | Amostra humana |
-|-------------|-----------------|----------------|
-| `baixo` | `auto` | 5% |
-| `medio` | `auto_conditional` | 20% |
-| `alto` | `human_required` | 100% |
+| `risk_tier` | `approval_mode` (auto on) | Amostra / trilho |
+|-------------|---------------------------|------------------|
+| `baixo` | `auto` | 5% amostragem |
+| `medio` | `auto_conditional` | 20% amostragem |
+| `alto` | `evidence_required` | dupla revisão agente + manifest; humano = escalonamento |
+| `*` (auto off) | `human_required` | 100% assinatura humana verificável |
 
 ### Fatores críticos → `alto`
 
@@ -61,7 +64,7 @@ O AVANT adota **auto-aprovação por risco** para revisão A4 (piloto humano):
 ```
 
 Em risco baixo/médio o agente pode preencher via `buildEfficacyContractFromRisk` (`a4_reviewer: "agent:golden-v2"`).  
-Em risco alto **não** auto-assina — `assertApprovalGate` bloqueia apply.
+Em risco alto **não** auto-assina no payload — exige manifest de evidência ou escalonamento humano (`assertApprovalGate`).
 
 ---
 
