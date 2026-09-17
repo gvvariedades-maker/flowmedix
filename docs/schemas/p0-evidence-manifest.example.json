@@ -4,7 +4,7 @@
   "items": [
     {
       "slug": "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
-      "candidate_sha256": "<sha256 do candidato editorial>",
+      "candidate_sha256": "<sha256 de candidate-normalized.json — pós validateAndNormalizeQuestao + strip comercial>",
       "primary_review_path": "artifacts/evidence-reviews/P0-01_primary_review.json",
       "adversarial_review_path": "artifacts/evidence-reviews/P0-01_adversarial_review.json"
     }

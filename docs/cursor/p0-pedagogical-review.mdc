@@ -21,7 +21,8 @@ Produzir artefatos **externos** (primary + adversarial + manifest) para alto ris
 
 ## Gates
 
-- `candidate_sha256` = hash do candidato editorial exato
+- `candidate_file_sha256` = bytes do JSON bruto; `candidate_sha256` = hash do objeto **pós-normalize** (domínio do apply) — ver runbook § Candidate freeze
+- Prova: `npm run p0:normalization-proof` → `candidate-normalized.json` + `normalization-diff.json` (`SEMANTIC_CHANGE=0` para re-bind)
 - Verificador: `lib/catalogMigration/evidenceGovernedApproval.ts`
 - Apply dry-run: `catalog:apply-lote --risk-approval-gate --evidence-manifest=<path>`
 

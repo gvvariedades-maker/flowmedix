@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "ano": "2023",
+    "banca": "Instituto Consulplan",
+    "orgao": "Enfermagem / Família",
+    "prova": "Tec (Pref Nova Friburgo)",
+    "topico": "Enfermagem",
+    "subtopico": "Noções de Anatomia",
+    "cargo_header": "Técnico de enfermagem",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "anat_generico",
+    "content_review": {
+      "reviewed_at": "2026-09-07",
+      "reviewer": "p0-d3-editorial",
+      "guideline_snapshot": "IM dorsoglútea: quadrante superior externo delimitado por marcos ósseos para reduzir risco de lesão do nervo isquiático — REEUSP/SciELO; COFEN parecer ventroglútea vs dorsoglútea 2024",
+      "exam_vs_current": "Literatura atual prefere ventroglútea; a prova cobra qual nervo afastar na dorsoglútea — não alterar gabarito B",
+      "catalog_slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448440742-3",
+      "remediation_phase": "D3"
+    },
+    "sources": [
+      {
+        "id": "reeusp-im-dorsoglutea",
+        "tier": "B",
+        "issuer": "Rev Esc Enferm USP / SciELO",
+        "title": "Região deltóide e dorsoglútea — nervo ciático no quadrante",
+        "year": 2003,
+        "url": "https://www.scielo.br/j/reeusp/a/Lrr4cbSHF3FVkPDbYrJ9w5B/",
+        "covers": [
+          "quadrante superior externo",
+          "nervo ciático",
+          "dorsoglútea"
+        ]
+      },
+      {
+        "id": "cofen-parecer-vg-dg-2024",
+        "tier": "A",
+        "issuer": "COFEN / COREN-PR",
+        "title": "Parecer Técnico nº 028-2024 — IM ventroglútea x dorsoglútea",
+        "year": 2024,
+        "url": "https://ouvidoria.cofen.gov.br/coren-pr/transparencia/107930/download/PDF",
+        "covers": [
+          "nervo isquiático",
+          "dorsoglútea",
+          "marcos anatômicos"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "options": [
+      {
+        "id": "A",
+        "text": "Pudendo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Isquiático.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Isquiotibial.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Glúteo máximo.",
+        "is_correct": false
+      }
+    ],
+    "instruction": "Quando há necessidade de administrar de 3 a 4 ml de medicamento por via intramuscular, o recomendado é dividir a região dorsoglútea em quatro quadrantes.\nSendo assim, é necessário delimitar o quadrante superior externo com um triângulo ou subdividir a região glútea em quadrantes para possibilitar um adequado\ndistanciamento do nervo:"
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "IM dorsoglútea — mapa anatômico",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Anatomia"
+      },
+      "items": [
+        {
+          "label": "Comando da prova",
+          "detail": "Completar: ao dividir a dorsoglútea em quadrantes para IM de 3–4 mL, delimitar o quadrante superior externo para afastar qual nervo.",
+          "icon": "Target"
+        },
+        {
+          "label": "Região dorsoglútea",
+          "detail": "Músculo glúteo máximo — subdividida em quadrantes; o superior externo é o sítio clássico de prova.",
+          "icon": "Layers"
+        },
+        {
+          "label": "Marcos ósseos",
+          "detail": "Espinha ilíaca póstero-superior e trocanter maior do fêmur — linha imaginária entre eles delimita a zona segura.",
+          "icon": "Bone"
+        },
+        {
+          "label": "Nervo em risco",
+          "detail": "Nervo isquiático (ciático) — trajeto profundo na região glútea; punção mal localizada pode lesionar.",
+          "icon": "Zap"
+        },
+        {
+          "label": "Volume citado",
+          "detail": "3 a 4 mL na IM glútea — dentro do limite usual de prova para o sítio (até ~5 mL).",
+          "icon": "Droplets"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "Não confundir nervo isquiático com músculo glúteo máximo nem com feixe isquiotibial (posterior da coxa).",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Quadrante superior externo = afastar o nervo isquiático"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Anatomia"
+      },
+      "steps": [
+        "Comando: completar o nervo que se deve distanciar na IM dorsoglútea (3–4 mL).",
+        "Contexto: quadrante superior externo da nádega — técnica clássica de prova.",
+        "Eliminar A (pudendo): nervo pudendo — região perineal, não é o da punção glútea dorsal.",
+        "Eliminar C (isquiotibial): feixe na face posterior da coxa — não é o nervo da glútea dorsal.",
+        "Eliminar D (glúteo máximo): é o músculo-alvo da injeção, não o nervo a evitar.",
+        "Confirmar B: nervo isquiático — estrutura neural que a delimitação do quadrante busca proteger.",
+        "Fixação: Em similares, dorsoglútea = afastar isquiático; glúteo máximo é o músculo, não o nervo."
+      ],
+      "footer_rule": "Músculo = glúteo máximo | Nervo a evitar = isquiático"
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Anatomia"
+      },
+      "content": "IM DORSOGLÚTEA — SEGURANÇA NA PROVA",
+      "rows": [
+        {
+          "label": "Sítio clássico",
+          "value": "Quadrante superior externo (glúteo máximo)"
+        },
+        {
+          "label": "Marcos",
+          "value": "Espinha ilíaca póstero-superior ↔ trocanter maior"
+        },
+        {
+          "label": "Nervo a afastar",
+          "value": "Isquiático (ciático)"
+        },
+        {
+          "label": "Posição",
+          "value": "Decúbito ventral ou lateral — evitar em pé"
+        },
+        {
+          "label": "Atualização",
+          "value": "Ventroglútea é mais segura na prática — prova ainda cobra dorsoglútea"
+        }
+      ],
+      "footer_rule": "Delimitar quadrante = proteger o nervo isquiático"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Anatomia"
+      },
+      "content": "CONFUSÕES ANATÔMICAS NA IM GLÚTEA",
+      "items": [
+        {
+          "label": "Pudendo",
+          "detail": "Nervo de região perineal/genital.",
+          "correct": "Pudendo não é o nervo da punção dorsoglútea — elimine na completude."
+        },
+        {
+          "label": "Isquiotibial",
+          "detail": "Feixe na coxa posterior.",
+          "correct": "Isquiotibial fica na coxa — o enunciado pede nervo da região glútea dorsal."
+        },
+        {
+          "label": "Glúteo máximo",
+          "detail": "É o músculo, não o nervo.",
+          "correct": "Glúteo máximo é o alvo muscular — o nervo a distanciar é o isquiático."
+        },
+        {
+          "label": "Quadrante errado",
+          "detail": "Punção no quadrante inferior.",
+          "correct": "Inferior aumenta risco de lesão neural — use superior externo com marcos ósseos."
+        }
+      ],
+      "footer_rule": "Nervo ≠ músculo — isquiático é o que a banca quer afastar"
+    }
+  ]
+}
