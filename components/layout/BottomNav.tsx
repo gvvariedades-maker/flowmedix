@@ -75,7 +75,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
         ref={navRef}
         className={cn(
           MOBILE_BOTTOM_NAV_SHELL,
-          'grid min-h-[5rem] grid-cols-5 border-t border-[rgba(242,101,34,0.14)] bg-white/95 pb-safe backdrop-blur-xl',
+          'grid min-h-[5rem] grid-cols-5 border-t border-[rgba(244,90,31,0.14)] bg-white/95 pb-safe backdrop-blur-xl',
           MOBILE_BOTTOM_NAV_Z,
           mobileOverlayBlocksNav && 'pointer-events-none',
         )}

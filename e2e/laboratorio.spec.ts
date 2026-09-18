@@ -66,8 +66,10 @@ test.describe('Laboratório Admin', () => {
   });
 
   test('deve carregar a página do laboratório', async ({ page }) => {
-    // Lockup: PNGs decorativos (alt=""); o A-mark é o sinal visual estável do brand.
-    await expect(page.locator('img[src="/brand/avant-logo-a-mark.png"]').first()).toBeVisible();
+    // Golden Master V2.1: Laboratório usa AvantLogo lockup cyber (tone default) → dark lockup SVG.
+    await expect(
+      page.locator('img[src="/brand/v2.1/dark/avant-enf-lockup.svg"]').first(),
+    ).toBeVisible();
     await expect(page.getByText('Payload Input')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Aguardando Injeção' })).toBeVisible();
   });

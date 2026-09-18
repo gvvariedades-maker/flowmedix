@@ -1,5 +1,6 @@
 @config "../tailwind.config.ts";
 @import "tailwindcss";
+@import "../lib/brand/tokens/color-tokens.css";
 
 /**
  * Tipografia AVANT — escala ~+20% vs defaults Tailwind (só font-size; spacing rem intacto).
@@ -127,8 +128,8 @@
    */
   html[data-theme='editorial'] {
     color-scheme: light;
-    /* Print SERINGA — papel creme (EDITORIAL_BRAND.surface0); sem ondas/dots */
-    --color-surface-0: #FFF1E0;
+    /* V2.1 Background — papel creme (EDITORIAL_BRAND.washBg); sem ondas/dots */
+    --color-surface-0: #FFF8EF;
     --color-surface-1: #FFE8D4;
     --color-surface-2: #ffffff;
     --color-surface-3: #F0DCC8;
@@ -140,28 +141,28 @@
     --color-border-strong: #D4B396;
     /* Cards — repouso neutro; laranja só em hover/foco/ativo */
     --color-card-border: #E5C9B0;
-    --color-card-border-hover: rgba(242, 101, 34, 0.48);
-    /* EDITORIAL_BRAND — lib/brand/avantBrandPalette.ts (print) */
-    --color-brand: #F26522;
-    --color-brand-dim: rgba(242, 101, 34, 0.12);
-    --color-brand-glow: rgba(242, 101, 34, 0.22);
-    --color-brand-text: #9A3412;
-    --color-brand-wash: rgba(242, 101, 34, 0.06);
-    --color-brand-ring: rgba(242, 101, 34, 0.4);
-    --color-brand-cta-top: #FF8A3D;
-    --color-brand-cta-mid: #F26522;
-    --color-brand-cta-bottom: #D45212;
-    --color-brand-cta-hover-top: #F26522;
-    --color-brand-cta-hover-mid: #E05518;
-    --color-brand-cta-hover-bottom: #C04810;
-    /* CTA sólido editorial — hierarquia (máx. 1 preenchido acima da dobra) */
-    --color-brand-cta-solid: #C2410C;
-    --color-brand-cta-solid-hover: #9A3412;
+    --color-card-border-hover: rgba(244, 90, 31, 0.48);
+    /* EDITORIAL_BRAND V2.1 — lib/brand/avantBrandPalette.ts */
+    --color-brand: #F45A1F;
+    --color-brand-dim: rgba(244, 90, 31, 0.12);
+    --color-brand-glow: rgba(244, 90, 31, 0.22);
+    --color-brand-text: #B83A0B;
+    --color-brand-wash: rgba(244, 90, 31, 0.06);
+    --color-brand-ring: rgba(244, 90, 31, 0.4);
+    --color-brand-cta-top: #F45A1F;
+    --color-brand-cta-mid: #F45A1F;
+    --color-brand-cta-bottom: #B83A0B;
+    --color-brand-cta-hover-top: #F45A1F;
+    --color-brand-cta-hover-mid: #B83A0B;
+    --color-brand-cta-hover-bottom: #9A2F09;
+    /* CTA sólido — Orange Dark + texto branco (AA) */
+    --color-brand-cta-solid: #B83A0B;
+    --color-brand-cta-solid-hover: #9A2F09;
     --shadow-brand-cta: 0 2px 8px rgba(212, 82, 18, 0.35);
     --shadow-brand-cta-hover: 0 3px 10px rgba(192, 72, 16, 0.4);
-    --color-nav-active-bg: rgba(242, 101, 34, 0.1);
-    --color-nav-active-bar: #F26522;
-    --color-nav-active-txt: #9A3412;
+    --color-nav-active-bg: rgba(244, 90, 31, 0.1);
+    --color-nav-active-bar: #F45A1F;
+    --color-nav-active-txt: #B83A0B;
     --color-success: #16a34a;
     --color-success-dim: rgba(22, 163, 74, 0.1);
     --color-success-glow: transparent;
@@ -173,7 +174,7 @@
     --color-warning: #d97706;
     --color-warning-dim: rgba(217, 119, 6, 0.1);
     --color-warning-text: #b45309;
-    --color-text-primary: #0f172a;
+    --color-text-primary: #0E1D2D;
     /* AA em surface-0 #FFF1E0 */
     --color-text-secondary: #475569;
     --color-text-tertiary: #94a3b8;
@@ -212,23 +213,23 @@
     --color-border-strong: rgba(255, 255, 255, 0.22);
     /* Repouso neutro; marca só em hover (paridade editorial) */
     --color-card-border: rgba(255, 255, 255, 0.14);
-    --color-card-border-hover: rgba(242, 101, 34, 0.48);
+    --color-card-border-hover: rgba(244, 90, 31, 0.48);
     --shadow-editorial-sm: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
     --shadow-editorial-md: 0 4px 14px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
     --shadow-editorial-lg: 0 8px 24px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* EDITORIAL_BRAND — acento laranja (não cyber cyan) */
-    --color-brand: #F26522;
-    --color-brand-dim: rgba(242, 101, 34, 0.14);
-    --color-brand-glow: rgba(242, 101, 34, 0.22);
+    /* EDITORIAL_BRAND V2.1 — acento laranja (não cyber cyan) */
+    --color-brand: #F45A1F;
+    --color-brand-dim: rgba(244, 90, 31, 0.14);
+    --color-brand-glow: rgba(244, 90, 31, 0.22);
     --color-brand-text: #FDBA74;
-    --color-brand-wash: rgba(242, 101, 34, 0.08);
-    --color-brand-ring: rgba(242, 101, 34, 0.4);
-    --color-brand-cta-top: #FF8A3D;
-    --color-brand-cta-mid: #F26522;
-    --color-brand-cta-bottom: #D45212;
-    --color-brand-cta-hover-top: #F26522;
-    --color-brand-cta-hover-mid: #E05518;
-    --color-brand-cta-hover-bottom: #C04810;
+    --color-brand-wash: rgba(244, 90, 31, 0.08);
+    --color-brand-ring: rgba(244, 90, 31, 0.4);
+    --color-brand-cta-top: #F45A1F;
+    --color-brand-cta-mid: #F45A1F;
+    --color-brand-cta-bottom: #B83A0B;
+    --color-brand-cta-hover-top: #F45A1F;
+    --color-brand-cta-hover-mid: #B83A0B;
+    --color-brand-cta-hover-bottom: #9A2F09;
     --shadow-brand-cta: 0 2px 8px rgba(212, 82, 18, 0.35);
     --shadow-brand-cta-hover: 0 3px 10px rgba(192, 72, 16, 0.4);
     --color-success: #4ade80;
@@ -441,12 +442,12 @@
 
   .btn-option-editorial {
     @apply relative w-full rounded-xl border bg-white p-4 text-left transition-colors duration-200;
-    border-color: rgba(242, 101, 34, 0.28);
+    border-color: rgba(244, 90, 31, 0.28);
   }
 
   .btn-option-editorial:hover:not(:disabled) {
-    border-color: rgba(242, 101, 34, 0.48);
-    background-color: rgba(242, 101, 34, 0.04);
+    border-color: rgba(244, 90, 31, 0.48);
+    background-color: rgba(244, 90, 31, 0.04);
   }
 
   .btn-option-editorial:disabled {
@@ -463,11 +464,11 @@
 
   .login-auth-card {
     @apply rounded-2xl border bg-white p-6 sm:p-8;
-    border-color: rgba(242, 101, 34, 0.32);
+    border-color: rgba(244, 90, 31, 0.32);
     box-shadow:
       0 1px 2px rgba(154, 52, 18, 0.05),
       0 8px 24px rgba(154, 52, 18, 0.1),
-      0 0 0 1px rgba(242, 101, 34, 0.08);
+      0 0 0 1px rgba(244, 90, 31, 0.08);
   }
 
   .login-auth-heading {
@@ -520,8 +521,8 @@
   }
 
   .btn-editorial-secondary:hover:not(:disabled) {
-    border-color: var(--color-card-border-hover, rgba(242, 101, 34, 0.48));
-    background-color: var(--color-brand-wash, rgba(242, 101, 34, 0.06));
+    border-color: var(--color-card-border-hover, rgba(244, 90, 31, 0.48));
+    background-color: var(--color-brand-wash, rgba(244, 90, 31, 0.06));
     color: var(--color-brand-text, #9a3412);
   }
 
@@ -903,14 +904,14 @@ html[data-theme='editorial'] input.input-editorial:-internal-autofill-selected {
   0%,
   100% {
     box-shadow:
-      0 0 0 1px rgba(242, 101, 34, 0.20),
+      0 0 0 1px rgba(244, 90, 31, 0.20),
       0 4px 20px rgba(0, 0, 0, 0.35);
   }
   20%,
   45% {
     box-shadow:
-      0 0 0 1px rgba(242, 101, 34, 0.40),
-      0 4px 28px rgba(242, 101, 34, 0.12);
+      0 0 0 1px rgba(244, 90, 31, 0.40),
+      0 4px 28px rgba(244, 90, 31, 0.12);
   }
 }
 

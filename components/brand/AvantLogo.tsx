@@ -2,13 +2,12 @@
 
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { AVANT_BRAND_V21 } from '@/lib/brand/avantBrandV21Assets';
 import {
   AVANT_LOGO_ANIMATION,
   AVANT_LOGO_COLORS,
   AVANT_LOGO_DIMENSIONS,
   AVANT_LOGO_GRADIENTS,
-  AVANT_LOGO_ICON_INSET_SCALE,
-  AVANT_LOGO_PNG,
   AVANT_LOGO_SHELL_SHADOW,
   getAvantLogoLockupPadding,
   scaleAvantLogoPx,
@@ -20,8 +19,8 @@ export type { AvantLogoSizeToken } from '@/lib/brand/avantLogoConstants';
 export type AvantLogoVariant = 'lockup' | 'icon';
 
 /**
- * - `default` — cyber (shell + PNGs de marca)
- * - `light` / `brand` — editorial (PNGs de marca, sem shell)
+ * - `default` — cyber (shell + lockup escuro V2.1)
+ * - `light` / `brand` — editorial (horizontal V2.1, sem shell)
  */
 export type AvantLogoTone = 'default' | 'light' | 'brand';
 
@@ -33,18 +32,23 @@ export type AvantLogoProps = {
   href?: string;
   className?: string;
   'aria-label'?: string;
-  /**
-   * Reduz só o wordmark "AVANT enf" (e o gap até o ícone), sem afetar o
-   * ícone — usar quando o lockup precisa caber num espaço estreito (ex.:
-   * sidebar). `1` = tamanho padrão do `size`.
-   */
+  /** Escala só o lockup horizontal (sidebar estreita). `1` = padrão do `size`. */
   wordmarkScale?: number;
 };
 
-/** Card laranja + A partido branco — PNG oficial. */
+const LOCKUP_HEIGHT_BY_SIZE: Record<AvantLogoSizeToken, number> = {
+  nav: 28,
+  md: 32,
+  lg: 36,
+};
+
+function getLockupHeight(size: AvantLogoSizeToken, wordmarkScale: number): number {
+  return Math.round(LOCKUP_HEIGHT_BY_SIZE[size] * wordmarkScale);
+}
+
+/** Símbolo A oficial V2.1 — SVG congelado. */
 function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
   const iconPx = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.icon.size, size);
-  const insetPx = Math.round(iconPx * AVANT_LOGO_ICON_INSET_SCALE);
 
   return (
     <div
@@ -52,12 +56,12 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
       style={{ width: iconPx, height: iconPx }}
       aria-hidden
     >
-      {/* eslint-disable-next-line @next/next/no-img-element -- brand PNG lockup */}
+      {/* eslint-disable-next-line @next/next/no-img-element -- brand SVG master */}
       <img
-        src={AVANT_LOGO_PNG.aMark}
+        src={AVANT_BRAND_V21.symbol}
         alt=""
-        width={insetPx}
-        height={insetPx}
+        width={iconPx}
+        height={iconPx}
         className="h-full w-full select-none object-contain"
         draggable={false}
       />
@@ -65,11 +69,8 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
   );
 }
 
-/**
- * Wordmark PNG "AVANT" + "enf" oficiais.
- * Editorial: AVANT escuro; cyber: AVANT claro.
- */
-function AvantLogoWordmarkStack({
+/** Lockup horizontal oficial V2.1 — artwork proprietário (não tipografia). */
+function AvantLogoLockupArtwork({
   size,
   wordmarkScale = 1,
   tone,
@@ -79,59 +80,20 @@ function AvantLogoWordmarkStack({
   tone: AvantLogoTone;
 }) {
   const isLight = tone === 'light' || tone === 'brand';
-  const fontSize = Math.round(
-    scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.wordmark.fontSize, size) * wordmarkScale,
-  );
-  const avantH = Math.max(
-    14,
-    Math.round(fontSize * AVANT_LOGO_PNG.avantWordHeightScale),
-  );
-  const avantW = Math.round(avantH * AVANT_LOGO_PNG.avantWordAspect);
-  const enfH = Math.max(
-    11,
-    Math.round(
-      fontSize *
-        AVANT_LOGO_DIMENSIONS.subtitle.scaleOfWordmark *
-        AVANT_LOGO_PNG.enfHeightScale,
-    ),
-  );
-  const enfW = Math.round(enfH * AVANT_LOGO_PNG.enfAspect);
-  const avantSrc = isLight ? AVANT_LOGO_PNG.avantWord : AVANT_LOGO_PNG.avantWordOnDark;
+  const height = getLockupHeight(size, wordmarkScale);
+  const width = Math.round(height * AVANT_BRAND_V21.horizontalAspect);
+  const src = isLight ? AVANT_BRAND_V21.horizontal : AVANT_BRAND_V21.darkLockup;
 
   return (
-    <span
-      className="inline-flex min-w-0 shrink items-center overflow-visible"
-      style={{
-        gap: Math.max(
-          3,
-          Math.round(
-            AVANT_LOGO_DIMENSIONS.subtitle.gapFromWordmark *
-              wordmarkScale *
-              AVANT_LOGO_PNG.subtitleGapScale,
-          ),
-        ),
-        maxWidth: '100%',
-      }}
-      aria-hidden
-    >
-      {/* eslint-disable-next-line @next/next/no-img-element -- brand PNG lockup */}
+    <span className="inline-flex min-w-0 shrink items-center overflow-visible" aria-hidden>
+      {/* eslint-disable-next-line @next/next/no-img-element -- brand SVG lockup */}
       <img
-        src={avantSrc}
+        src={src}
         alt=""
-        width={avantW}
-        height={avantH}
-        className="select-none object-contain object-left"
-        style={{ height: avantH, width: 'auto', maxWidth: avantW }}
-        draggable={false}
-      />
-      {/* eslint-disable-next-line @next/next/no-img-element -- brand PNG lockup */}
-      <img
-        src={AVANT_LOGO_PNG.enf}
-        alt=""
-        width={enfW}
-        height={enfH}
-        className="select-none object-contain object-left"
-        style={{ height: enfH, width: 'auto', maxWidth: enfW }}
+        width={width}
+        height={height}
+        className="max-w-full select-none object-contain object-left"
+        style={{ height, width: 'auto', maxWidth: width }}
         draggable={false}
       />
     </span>
@@ -153,20 +115,9 @@ export function AvantLogo({
     animated ?? (variant === 'lockup' && size === 'lg' && tone === 'default');
 
   const iconOnly = variant === 'icon';
-  const lockupGap = Math.round(
-    scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.gap, size) * wordmarkScale,
-  );
 
   const lightLockup = (
-    <div
-      className="inline-flex shrink-0 items-center overflow-visible"
-      style={{
-        gap: lockupGap,
-      }}
-    >
-      <AvantLogoIcon size={size} />
-      <AvantLogoWordmarkStack size={size} wordmarkScale={wordmarkScale} tone={tone} />
-    </div>
+    <AvantLogoLockupArtwork size={size} wordmarkScale={wordmarkScale} tone={tone} />
   );
 
   const cyberLockup = (
@@ -185,7 +136,6 @@ export function AvantLogo({
       <div
         className="flex items-center"
         style={{
-          gap: lockupGap,
           padding: getAvantLogoLockupPadding(size),
           borderRadius: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.radius, size),
           background: AVANT_LOGO_COLORS.lockupInnerBg,
@@ -201,8 +151,7 @@ export function AvantLogo({
           }}
           aria-hidden
         />
-        <AvantLogoIcon size={size} />
-        <AvantLogoWordmarkStack size={size} wordmarkScale={wordmarkScale} tone={tone} />
+        <AvantLogoLockupArtwork size={size} wordmarkScale={wordmarkScale} tone={tone} />
       </div>
     </div>
   );

@@ -1,0 +1,38 @@
+{
+  "brand_version": "2.1",
+  "release": "Golden Master",
+  "symbol_status": "FROZEN",
+  "wordmark_status": "FROZEN",
+  "palette_status": "FROZEN",
+  "svg_geometry_status": "CONSISTENT",
+  "redesign_authorization": "NO",
+  "master_symbol": "brand/symbol/avant-symbol-master.svg",
+  "master_wordmark": "brand/logo/avant-enf-wordmark.svg",
+  "master_path_sha256": "24e2dab903797288620d57f98878be5cdba73c1c0d06eb479344f7dcec67f37d",
+  "master_geometry_fingerprint": "43f7d395e08ade368d7750af6ed561508e4b0a3c2fcca194399cb9e4c159718a",
+  "clear_space": {
+    "x": "H/4",
+    "rule": "minimum x on all sides"
+  },
+  "minimum_size": {
+    "digital_symbol_px": 16,
+    "digital_lockup_width_px": 120,
+    "digital_wordmark_recommended_width_px": 100,
+    "print_symbol_mm": 6,
+    "print_lockup_width_mm": 30,
+    "print_wordmark_recommended_width_mm": 25
+  },
+  "verbal_hierarchy": {
+    "institutional_signature": "Estudo que te leva mais longe.",
+    "campaign_example": "Mais que estudo. Avanço real."
+  },
+  "accessibility": {
+    "brand_orange_white_contrast_ratio": 3.318,
+    "orange_dark_white_contrast_ratio": 5.756,
+    "rule": "Brand Orange is an institutional brand color and must not automatically be used behind small white text. Use accessible UI tokens after contrast validation.",
+    "accessible_primary_action": {
+      "background": "#B83A0B",
+      "text": "#FFFFFF"
+    }
+  }
+}

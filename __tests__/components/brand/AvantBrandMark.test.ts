@@ -1,17 +1,27 @@
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   AVANT_LOGO_COLORS,
   AVANT_LOGO_SHELL_SHADOW,
 } from '@/lib/brand/avantLogoConstants';
+import { AVANT_BRAND_V21 } from '@/lib/brand/avantBrandV21Assets';
 import { EDITORIAL_BRAND } from '@/lib/brand/avantBrandPalette';
 
 const brandPath = join(process.cwd(), 'components', 'brand', 'AvantBrandMark.tsx');
 const logoPath = join(process.cwd(), 'components', 'brand', 'AvantLogo.tsx');
 const constantsPath = join(process.cwd(), 'lib', 'brand', 'avantLogoConstants.ts');
-const brandAssetsDir = join(process.cwd(), 'public', 'brand');
+const v21SymbolPath = join(process.cwd(), 'public', 'brand', 'v2.1', 'symbol', 'avant-symbol-master.svg');
+const v21HorizontalPath = join(
+  process.cwd(),
+  'public',
+  'brand',
+  'v2.1',
+  'logo',
+  'avant-enf-horizontal.svg',
+);
 const emailLogoPath = join(process.cwd(), 'emails', 'AvantLogoEmail.tsx');
 const globalsCssPath = join(process.cwd(), 'app', 'globals.css');
+const appIconPath = join(process.cwd(), 'public', 'brand', 'v2.1', 'app-icon', 'app-icon-master.svg');
 
 describe('AvantBrandMark', () => {
   it('delega a AvantLogo com escala sm→md e md→lg', () => {
@@ -22,50 +32,40 @@ describe('AvantBrandMark', () => {
     expect(source).toContain("tone={variant === 'editorial' ? 'brand' : 'default'}");
   });
 
-  it('AvantLogo usa PNGs oficiais A + AVANT + enf (lockup editorial/cyber)', () => {
+  it('AvantLogo usa assets SVG Golden Master V2.1 (sem PNG legado no lockup)', () => {
     const logo = readFileSync(logoPath, 'utf8');
-    expect(logo).toContain('AVANT_LOGO_PNG');
-    expect(logo).toContain('AVANT_LOGO_PNG.aMark');
-    expect(logo).toContain('AvantLogoWordmarkStack');
+    expect(logo).toContain('AVANT_BRAND_V21');
+    expect(logo).toContain('AVANT_BRAND_V21.horizontal');
+    expect(logo).toContain('AVANT_BRAND_V21.symbol');
     expect(logo).toContain('AVANT enf - inicio');
     expect(logo).not.toContain('avant-logo-shield.png');
     expect(logo).not.toContain('avant-logo-wordmark-raster.png');
+    expect(logo).not.toContain('AVANT_LOGO_PNG.aMark');
+    expect(logo).not.toContain('AvantLogoWordmarkStack');
     expect(logo).not.toContain('<Zap');
     expect(logo).not.toContain('⚡');
 
-    const constants = readFileSync(constantsPath, 'utf8');
-    expect(constants).toContain("aMark: '/brand/avant-logo-a-mark.png'");
-    expect(constants).toContain("avantWord: '/brand/avant-logo-avant-word.png'");
-    expect(constants).toContain("enf: '/brand/avant-logo-enf.png'");
+    expect(AVANT_BRAND_V21.horizontal).toBe('/brand/v2.1/logo/avant-enf-horizontal.svg');
+    expect(AVANT_BRAND_V21.symbol).toBe('/brand/v2.1/symbol/avant-symbol-master.svg');
   });
 
-  it('SVGs de marca usam símbolo A + print #F26522 (sem roxo legado)', () => {
-    const svgs = readdirSync(brandAssetsDir).filter((f) => f.endsWith('.svg'));
-    expect(svgs.length).toBeGreaterThan(0);
+  it('SVGs V2.1 usam Brand Orange #F45A1F (sem roxo/verde legado)', () => {
+    const symbol = readFileSync(v21SymbolPath, 'utf8');
+    expect(symbol).toContain('#F45A1F');
+    expect(symbol).not.toContain('#3018c8');
+    expect(symbol).not.toContain('#0cc93a');
 
-    for (const file of svgs) {
-      const svg = readFileSync(join(brandAssetsDir, file), 'utf8');
-      expect(svg).not.toContain('#3018c8');
-      expect(svg).not.toContain('polygon points="22,0');
-      expect(svg).not.toContain('>ENF</text>');
-    }
-
-    const symbol = readFileSync(join(brandAssetsDir, 'avant-logo-symbol.svg'), 'utf8');
-    expect(symbol).toContain('#F26522');
-    expect(symbol).toContain('AVANT enf');
-
-    const wordmarkLight = readFileSync(
-      join(brandAssetsDir, 'avant-logo-wordmark-light.svg'),
-      'utf8',
-    );
-    expect(wordmarkLight).toContain('avant-logo-wordmark-raster.png');
-    expect(wordmarkLight).toContain('AVANT enf');
+    const horizontal = readFileSync(v21HorizontalPath, 'utf8');
+    expect(horizontal).toContain('#F45A1F');
+    expect(horizontal).not.toContain('avant-logo-wordmark-raster.png');
+    expect(horizontal).not.toContain('>ENF</text>');
   });
 
-  it('AvantLogo usa AvantLogoWordmarkStack como wordmark', () => {
+  it('AvantLogo usa lockup artwork proprietário (não reconstrói wordmark por fonte)', () => {
     const logo = readFileSync(logoPath, 'utf8');
-    expect(logo).toContain('AvantLogoWordmarkStack');
-    expect(logo).toContain('function AvantLogoWordmarkStack');
+    expect(logo).toContain('AvantLogoLockupArtwork');
+    expect(logo).not.toContain('Montserrat');
+    expect(logo).not.toContain('font-family');
   });
 
   it('AvantLogoEmail usa AE no selo + wordmark "AVANT enf" (claro + print)', () => {
@@ -78,31 +78,33 @@ describe('AvantBrandMark', () => {
     expect(email).toContain('wordmarkEnf');
   });
 
-  it('rings/glows do logo usam print editorial #F26522 (não lima legado)', () => {
+  it('rings/glows do logo usam Brand Orange V2.1 (não lima legado)', () => {
+    expect(EDITORIAL_BRAND.hex).toBe('#F45A1F');
     expect(AVANT_LOGO_COLORS.iconCyberRing).toBe(EDITORIAL_BRAND.hex);
     expect(AVANT_LOGO_COLORS.iconCardBrand).toBe(EDITORIAL_BRAND.hex);
-    expect(AVANT_LOGO_COLORS.iconCardGreen).toBe(EDITORIAL_BRAND.hex);
     expect(AVANT_LOGO_COLORS.wordmarkEnf).toBe(EDITORIAL_BRAND.hex);
-    expect(AVANT_LOGO_COLORS.wordmarkEnfGreen).toBe(EDITORIAL_BRAND.hex);
-    expect(AVANT_LOGO_COLORS.wordmarkEditorial).toBe('#0f172a');
-    expect(AVANT_LOGO_COLORS.hairlineCyber).toContain('242, 101, 34');
-    expect(AVANT_LOGO_COLORS.wordmarkGlow).toContain('242, 101, 34');
-    expect(AVANT_LOGO_SHELL_SHADOW.rest).toContain('242, 101, 34');
-    expect(AVANT_LOGO_SHELL_SHADOW.peak).toContain('242, 101, 34');
-    // Metal cobre ≠ CTA print (monograma)
-    expect(AVANT_LOGO_COLORS.brandBlue).toBe('#e08f2f');
-    expect(AVANT_LOGO_COLORS.brandBlue).not.toBe(EDITORIAL_BRAND.hex);
+    expect(AVANT_LOGO_COLORS.hairlineCyber).toContain('244, 90, 31');
+    expect(AVANT_LOGO_COLORS.wordmarkGlow).toContain('244, 90, 31');
+    expect(AVANT_LOGO_SHELL_SHADOW.rest).toContain('244, 90, 31');
+    expect(AVANT_LOGO_SHELL_SHADOW.peak).toContain('244, 90, 31');
 
     const constantsSrc = readFileSync(constantsPath, 'utf8');
     expect(constantsSrc).not.toMatch(/iconCyberRing:\s*'#8fe020'/);
     expect(constantsSrc).toContain('EDITORIAL_BRAND');
 
     const globals = readFileSync(globalsCssPath, 'utf8');
-    expect(globals).toContain('rgba(242, 101, 34, 0.20)');
+    expect(globals).toContain('rgba(244, 90, 31, 0.20)');
+    expect(globals).toContain('color-tokens.css');
+    const colorTokens = readFileSync(
+      join(process.cwd(), 'lib', 'brand', 'tokens', 'color-tokens.css'),
+      'utf8',
+    );
+    expect(colorTokens).toContain('--avant-brand-orange: #F45A1F');
     expect(globals).not.toMatch(/avantLogoPulse[\s\S]*rgba\(143, 224, 32/);
 
-    const appIcon = readFileSync(join(brandAssetsDir, 'avant-app-icon.svg'), 'utf8');
-    expect(appIcon).toContain('#F26522');
+    const appIcon = readFileSync(appIconPath, 'utf8');
+    expect(appIcon).toContain('#F45A1F');
     expect(appIcon).not.toContain('fill="#0cc93a"');
+    expect(appIcon).not.toContain('#0a0a0a');
   });
 });

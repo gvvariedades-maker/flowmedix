@@ -1,0 +1,12 @@
+{
+  "brand_wordmark": {
+    "AVANT": "proprietary/custom lettering",
+    "enf": "complementary proprietary/custom lettering",
+    "recreate_from_font": false
+  },
+  "product_typography": {
+    "headings_brand_support": "Montserrat",
+    "ui_body_functional": "Inter"
+  },
+  "rule": "The wordmark is artwork. Montserrat and Inter are product-system typefaces only."
+}
