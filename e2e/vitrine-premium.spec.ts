@@ -69,7 +69,7 @@ test.describe('Vitrine premium — PR5', () => {
     expect(seen).toBe('1');
   });
 
-  test('V4 — CTA primary solid resolve #C2410C (token editorial)', async ({ page }) => {
+  test('V4 — CTA primary solid resolve #B83A0B (Brand V2.1)', async ({ page }) => {
     await gotoVitrineE2e(page, '');
 
     const bg = await page.evaluate(() => {
@@ -83,7 +83,7 @@ test.describe('Vitrine premium — PR5', () => {
       return computed;
     });
 
-    // --color-brand-cta-solid: #C2410C → rgb(194, 65, 12)
-    expect(bg.replace(/\s+/g, '')).toBe('rgb(194,65,12)');
+    // --color-brand-cta-solid: #B83A0B → rgb(184, 58, 11) (Golden Master V2.1)
+    expect(bg.replace(/\s+/g, '')).toBe('rgb(184,58,11)');
   });
 });
