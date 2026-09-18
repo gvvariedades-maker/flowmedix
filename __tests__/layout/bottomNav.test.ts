@@ -83,7 +83,7 @@ describe('BottomNav', () => {
     expect(source).not.toContain("accent: 'indigo'");
     expect(source).toContain('accent="brand"');
     expect(source).toContain('MENU_ACCENT_STYLES.brand.labelActive');
-    expect(source).toContain('border-[rgba(242,101,34,0.14)]');
+    expect(source).toContain('border-[rgba(244,90,31,0.14)]');
 
     const chip = readFileSync(
       join(process.cwd(), 'components', 'layout', 'MenuNavIconChip.tsx'),

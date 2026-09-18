@@ -43,17 +43,17 @@ export function getAvantLogoWordmarkLetterSpacing(size: AvantLogoSizeToken): num
   return Math.round(base * getAvantLogoScale(size) * 10) / 10;
 }
 
-/** RGBA do print — espelha opacidades usadas em anéis/glows do lockup. */
+/** RGBA Brand Orange V2.1 (#F45A1F) — anéis/glows do lockup cyber. */
 const BRAND_RING = {
-  hairline: 'rgba(242, 101, 34, 0.28)',
-  outer: 'rgba(242, 101, 34, 0.30)',
-  cyberHairline: 'rgba(242, 101, 34, 0.35)',
-  glow: 'rgba(242, 101, 34, 0.18)',
-  shellRest: 'rgba(242, 101, 34, 0.20)',
-  shellPeak: 'rgba(242, 101, 34, 0.40)',
-  shellPeakSoft: 'rgba(242, 101, 34, 0.12)',
-  shellMid: 'rgba(242, 101, 34, 0.35)',
-  shellDeep: 'rgba(154, 52, 18, 0.45)',
+  hairline: 'rgba(244, 90, 31, 0.28)',
+  outer: 'rgba(244, 90, 31, 0.30)',
+  cyberHairline: 'rgba(244, 90, 31, 0.35)',
+  glow: 'rgba(244, 90, 31, 0.18)',
+  shellRest: 'rgba(244, 90, 31, 0.20)',
+  shellPeak: 'rgba(244, 90, 31, 0.40)',
+  shellPeakSoft: 'rgba(244, 90, 31, 0.12)',
+  shellMid: 'rgba(244, 90, 31, 0.35)',
+  shellDeep: 'rgba(184, 58, 11, 0.45)',
 } as const;
 
 export const AVANT_LOGO_COLORS = {
@@ -254,7 +254,7 @@ export const AVANT_LOGO_ANIMATION = {
 } as const;
 
 export const AVANT_LOGO_FONT_FAMILY =
-  'var(--font-plus-jakarta-sans, "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif)';
+  'var(--font-montserrat, "Montserrat", ui-sans-serif, system-ui, sans-serif)';
 
 export function getAvantLogoLockupPadding(size: AvantLogoSizeToken = 'lg'): string {
   const s = getAvantLogoScale(size);

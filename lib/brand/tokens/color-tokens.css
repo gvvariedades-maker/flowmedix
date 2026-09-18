@@ -1,0 +1,16 @@
+:root{
+  --avant-brand-orange: #F45A1F;
+  --avant-orange-dark: #B83A0B;
+  --avant-deep-navy: #0E1D2D;
+  --avant-background: #FFF8EF;
+  --avant-surface: #FFFFFF;
+  --avant-text-primary: #0E1D2D;
+  --avant-text-secondary: #64748B;
+  --avant-support-neutral: #E6EBF0;
+  --avant-success: #21865F;
+  --avant-warning: #C98416;
+  --avant-error: #C54235;
+  /* Accessible UI alias: use Orange Dark with white for small primary-action text; Brand Orange + white is not AA for normal text. */
+  --avant-ui-primary-action-bg: var(--avant-orange-dark);
+  --avant-ui-primary-action-text: #FFFFFF;
+}

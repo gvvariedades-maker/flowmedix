@@ -50,7 +50,7 @@ export function PageHeader({
         )}
         <h1
           className={titleClassName ?? 'truncate text-2xl font-bold text-foreground'}
-          style={{ fontFamily: 'var(--font-plus-jakarta-sans)' }}
+          style={{ fontFamily: 'var(--font-montserrat)' }}
         >
           {title}
         </h1>
