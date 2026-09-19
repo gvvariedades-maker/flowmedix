@@ -102,7 +102,7 @@ Análise de prints de estudo (feed). **Salvos = princípios abaixo.** PNG extern
 
 ## 2c. Lote TE enfermagem (ago/2026 — Pré-Onda 3 Fábrica)
 
-Catálogo completo: [`artifacts/pre-onda3-print-to-primitives-catalog.md`](../../../artifacts/pre-onda3-print-to-primitives-catalog.md).  
+Catálogo completo: [`artifacts/pre-onda3-print-to-primitives-catalog.md`](../../../artifacts/pre-onda3-print-to-primitives-catalog.md).
 Runbook: [`docs/NEUROSLIDES_VISUAL_STRATEGY.md`](../../../docs/NEUROSLIDES_VISUAL_STRATEGY.md) Camadas 2b–2c + **7** (DoD Fábrica).
 
 **Glossário:** *Strategy Onda 3* = Imu EXCETO (já entregue). *Fábrica Onda 3* = nota-10 visual dos 10 pacotes TE.
@@ -217,7 +217,7 @@ Se o ramo tiver `visual_gallery` no playbook:
 | `pending` / `thin` / ausente | **Pré-passo Fábrica:** `Composer visual: <ramo>` → `ATELIER_PASS` antes de variant nova; brief + JSON + gestos ouro do banco |
 | `pilot` / `ready` | Abrir `captures_dir` (player AVANT) antes de redesenhar; Composer opcional se só polish |
 
-Índice PT: `artifacts/l3-visual-gallery-lingua-portuguesa-index.md`.  
-**Banco Composer (gesto × capture ouro):** [`artifacts/composer-visual-bank.md`](../../../artifacts/composer-visual-bank.md).  
-**Composer (orquestrador)** · **Atelier (crítica):** [`PROMPT_COMPOSER_VISUAL`](../../PROMPT_COMPOSER_VISUAL.md) · [`NEUROSLIDES_ATELIER_KIT`](../../NEUROSLIDES_ATELIER_KIT.md) · [`PROMPT_ATELIER_VISUAL`](../../PROMPT_ATELIER_VISUAL.md).  
+Índice PT: `artifacts/l3-visual-gallery-lingua-portuguesa-index.md`.
+**Banco Composer (gesto × capture ouro):** [`artifacts/composer-visual-bank.md`](../../../artifacts/composer-visual-bank.md).
+**Composer (orquestrador)** · **Atelier (crítica):** [`PROMPT_COMPOSER_VISUAL`](../../PROMPT_COMPOSER_VISUAL.md) · [`NEUROSLIDES_ATELIER_KIT`](../../NEUROSLIDES_ATELIER_KIT.md) · [`PROMPT_ATELIER_VISUAL`](../../PROMPT_ATELIER_VISUAL.md).
 Preencher após `capture:questao-review` ou prints do player anexados na conversa — **nunca** indexar posters externos (lote de inspiração de feed **não** entra na galeria). Se elevou o ouro do gesto, atualizar a linha do banco (≤2 âncoras).

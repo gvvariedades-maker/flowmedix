@@ -1,8 +1,11 @@
+> **Status: LEGADO_INTENCIONAL (arquivo histórico).** Snapshot Cyber Clinical v1 + tag Git. Não é autoridade visual vigente. Vigente: [`../../design-system/AVANT-VISUAL-DIRECTION-v4.md`](../../design-system/AVANT-VISUAL-DIRECTION-v4.md).
+
+---
 # AVANT — arquivo Cyber Clinical v1
 
 Ponto de restauração do **AVANT completo** (código + logo + marca) antes de qualquer rebrand ou landing tradicional.
 
-**Data do arquivo:** 2026-06-10  
+**Data do arquivo:** 2026-06-10
 **Tag Git:** `avant/cyber-clinical-v1`
 
 ---

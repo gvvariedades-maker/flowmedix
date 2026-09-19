@@ -1,8 +1,13 @@
+> **Status: SUPERADO.** Este documento foi preservado apenas para rastreabilidade histórica. A autoridade visual vigente está em [AVANT-VISUAL-DIRECTION-v4.md](../../design-system/AVANT-VISUAL-DIRECTION-v4.md). Para os NeuroSlides (pele), consulte [../NEUROSLIDES-VISUAL-SPEC-v2.md](../../design-system/NEUROSLIDES-VISUAL-SPEC-v2.md). Decisão: [../../DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md](../../DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md). Matriz: [../VISUAL-MIGRATION-v3-to-v4.md](../../design-system/VISUAL-MIGRATION-v3-to-v4.md).
+>
+> Partes ainda úteis como complemento histórico: referências WCAG irmãs; narrativa de duas camadas (antes do desfecho A). Marca #8fe020 e obrigação de Cyber no reverso **não** são mais autoridade.
+
+---
 # AVANT Visual Direction v3 — Clinical Study (híbrido)
 
-**Data:** 2026-06-11  
-**Status:** Editorial **v2.1 soft slate** em `globals.css` (profundidade tipo AprovaEnf, sem teal/navy)  
-**Fonte de verdade de tokens:** [`app/globals.css`](../../../app/globals.css)  
+**Data:** 2026-06-11
+**Status:** Editorial **v2.1 soft slate** em `globals.css` (profundidade tipo AprovaEnf, sem teal/navy)
+**Fonte de verdade de tokens:** [`app/globals.css`](../../../app/globals.css)
 **WCAG editorial:** [`WCAG-CONTRAST-EDITORIAL-V2.md`](./WCAG-CONTRAST-EDITORIAL-V2.md)
 
 ---
