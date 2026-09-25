@@ -1,0 +1,58 @@
+diff --git a/e2e/mobile-drawer.spec.ts b/e2e/mobile-drawer.spec.ts
+index f8cae647..7e0fdc7b 100644
+--- a/e2e/mobile-drawer.spec.ts
++++ b/e2e/mobile-drawer.spec.ts
+@@ -30,6 +30,15 @@ function maisButton(page: Page) {
+   return bottomNav(page).getByRole('button', { name: /Abrir menu|Fechar menu/ });
+ }
+ 
++/** BottomNav fica `pointer-events-none` enquanto welcome/modal bloqueia — espera interação real. */
++async function waitForBottomNavInteractive(page: Page) {
++  await page.waitForFunction(() => {
++    const nav = document.querySelector('nav[aria-label="Navegação rápida"]');
++    if (!nav) return false;
++    return window.getComputedStyle(nav).pointerEvents !== 'none';
++  });
++}
++
+ /**
+  * Drawer mobile (botão Mais). Viewport mobile forçado (CI usa só chromium/desktop).
+  * Rodar: npm run test:e2e:drawer
+@@ -162,14 +171,34 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
+ 
+   test('D9 — drawer aberto: link Estudar inerte', async ({ page }) => {
+     await page.goto('/ajuda', { waitUntil: 'domcontentloaded' });
++    await page.evaluate(() => {
++      try {
++        localStorage.setItem('avant.estudoReverso.welcomeShown', 'true');
++      } catch {
++        /* storage indisponível */
++      }
++    });
+     await dismissWelcomeIfVisible(page);
+-    await maisButton(page).click();
+-    await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 10_000 });
++    await expect(page.getByRole('button', { name: 'Fechar introdução' })).not.toBeVisible({
++      timeout: 15_000,
++    });
++
++    const drawer = page.locator('#dashboard-mobile-drawer');
++    await expect(drawer).not.toBeVisible({ timeout: 5_000 });
++
++    await waitForBottomNavInteractive(page);
++    await expect(async () => {
++      if ((await maisButton(page).getAttribute('aria-expanded')) !== 'true') {
++        await maisButton(page).click();
++      }
++      await expect(maisButton(page)).toHaveAttribute('aria-expanded', 'true');
++    }).toPass({ timeout: 15_000 });
++    await expect(drawer).toBeVisible({ timeout: 10_000 });
+ 
+     const estudarLink = bottomNav(page).locator('a[href="/estudar"]');
+     await expect(estudarLink).toHaveAttribute('aria-hidden', 'true', { timeout: 10_000 });
+     await expect(page).toHaveURL(/\/ajuda/);
+-    await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 5_000 });
++    await expect(drawer).toBeVisible({ timeout: 5_000 });
+   });
+ 
+   test('D10 — rota do drawer: botão Mais com estado ativo', async ({ page }) => {

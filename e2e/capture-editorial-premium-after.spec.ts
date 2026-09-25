@@ -8,7 +8,7 @@
  * (3–4 progresso parcial/concluído dependem de dados reais — cobertos na vitrine enfermagem)
  *
  * Rodar:
- *   npx playwright test e2e/capture-editorial-premium-after.spec.ts --project=chromium --workers=1
+ *   E2E_CAPTURE_MODE=true npx playwright test e2e/capture-editorial-premium-after.spec.ts --project=chromium --workers=1
  */
 import fs from 'fs';
 import path from 'path';
@@ -17,6 +17,11 @@ import {
   gotoVitrineE2e,
   vitrineStableLocalStorageInitScript,
 } from './helpers/vitrineE2e';
+import { skipUnlessE2eCaptureMode } from './helpers/captureModeGate';
+
+test.beforeAll(() => {
+  skipUnlessE2eCaptureMode();
+});
 
 const OUT_DIR = path.join(
   process.cwd(),

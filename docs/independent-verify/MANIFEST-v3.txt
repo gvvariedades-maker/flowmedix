@@ -1,0 +1,7 @@
+﻿EWU-HARNESS-INDEPENDENT-VERIFY-FIX-001 bundle v3 (repair cycle 1)
+Generated: 2026-09-25T01:13:53.4904935-03:00
+ZIP: EWU-HARNESS-DETERMINISM-001-independent-verify.zip
+SHA256: B64EFE4E2B76491D6937F4C76A97A2DE33D99DCF6A5AD849D40442ED4E9FB030
+Bytes: 18381
+Includes: write-independent-verify-bundle.ts + captureFreshOutput + IV-01/02 fixes
+NOT v2 (805BE59A...) nor Library 40ef05bf-...

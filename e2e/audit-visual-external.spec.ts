@@ -3,15 +3,15 @@
  * Saída: docs/auditoria-visual-v2/screenshots/{plataforma}/
  *
  * Público:
- *   PLAYWRIGHT_SKIP_WEBSERVER=true npx playwright test e2e/audit-visual-external.spec.ts --project=chromium --workers=1
+ *   E2E_CAPTURE_MODE=true PLAYWRIGHT_SKIP_WEBSERVER=true npx playwright test e2e/audit-visual-external.spec.ts --project=chromium --workers=1
  *
  * Gabarita logado (credenciais em .env.local — não commitar):
  *   GABARITA_AUDIT_EMAIL=... GABARITA_AUDIT_PASSWORD=...
- *   PLAYWRIGHT_SKIP_WEBSERVER=true npx playwright test e2e/audit-visual-external.spec.ts -g "Gabarita.*logad" --project=chromium --workers=1
+ *   E2E_CAPTURE_MODE=true PLAYWRIGHT_SKIP_WEBSERVER=true npx playwright test e2e/audit-visual-external.spec.ts -g "Gabarita.*logad" --project=chromium --workers=1
  *
  * QConcursos vitrine logada (conta free):
  *   QCONCURSOS_AUDIT_EMAIL=... QCONCURSOS_AUDIT_PASSWORD=...
- *   PLAYWRIGHT_SKIP_WEBSERVER=true npx playwright test e2e/audit-visual-external.spec.ts -g "QConcursos" --project=chromium --workers=1
+ *   E2E_CAPTURE_MODE=true PLAYWRIGHT_SKIP_WEBSERVER=true npx playwright test e2e/audit-visual-external.spec.ts -g "QConcursos" --project=chromium --workers=1
  */
 import fs from 'fs';
 import path from 'path';
@@ -57,6 +57,11 @@ import {
   type QConcursosPageInventory,
 } from './helpers/qconcursosAuditMap';
 import { captureQConcursosPlayerFlow, openQConcursosUserMenu } from './helpers/qconcursosAuditPlayer';
+import { skipUnlessE2eCaptureMode } from './helpers/captureModeGate';
+
+test.beforeAll(() => {
+  skipUnlessE2eCaptureMode();
+});
 
 loadE2eEnv();
 

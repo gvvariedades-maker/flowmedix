@@ -1,0 +1,2 @@
+# P0 evidence fixtures — canonical LF for cross-platform candidate_file_sha256 (EWU-HARNESS-DETERMINISM-001).
+__tests__/fixtures/p0-evidence/*.json text eol=lf

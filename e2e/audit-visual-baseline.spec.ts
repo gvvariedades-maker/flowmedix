@@ -3,7 +3,7 @@
  * Saída: docs/auditoria-visual-v2/screenshots/avant-baseline/
  *
  * Requer E2E_DASHBOARD_BYPASS (playwright.config webServer).
- * Executar: npx playwright test e2e/audit-visual-baseline.spec.ts --project=chromium --workers=1
+ * Executar: E2E_CAPTURE_MODE=true npx playwright test e2e/audit-visual-baseline.spec.ts --project=chromium --workers=1
  */
 import fs from 'fs';
 import path from 'path';
@@ -18,6 +18,11 @@ import {
 } from './helpers/vitrineE2e';
 import { expectLandingHeroVisible } from './helpers/landingE2e';
 import { expectGabaritoCorreto } from './helpers/playerE2e';
+import { skipUnlessE2eCaptureMode } from './helpers/captureModeGate';
+
+test.beforeAll(() => {
+  skipUnlessE2eCaptureMode();
+});
 
 const OUT_DIR = path.join(process.cwd(), 'docs/auditoria-visual-v2/screenshots/avant-baseline');
 const BANCA_QUERY = encodeURIComponent(E2E_ESTUDAR_BANCA);

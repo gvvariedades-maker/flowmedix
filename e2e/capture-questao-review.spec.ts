@@ -8,6 +8,11 @@
 import fs from 'fs';
 import path from 'path';
 import { test, expect } from '@playwright/test';
+import { skipUnlessE2eCaptureMode } from './helpers/captureModeGate';
+
+test.beforeAll(() => {
+  skipUnlessE2eCaptureMode();
+});
 
 const slug = process.env.CAPTURE_QUESTAO_SLUG ?? '';
 const source = process.env.CAPTURE_QUESTAO_SOURCE ?? 'local';

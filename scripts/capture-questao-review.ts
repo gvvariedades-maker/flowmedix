@@ -4,13 +4,9 @@
  *
  * Uso:
  *   npm run capture:questao-review -- --slug=idecan-...
- *   npm run capture:questao-review -- --slug=... --source=supabase
- *   npm run capture:questao-review -- --lote=imunizacao-g07
- *   npm run capture:questao-review -- --anchor-key=calendario_infantil
- *   npm run capture:questao-review -- --lote=imunizacao-g07 --viewport=mobile-375
  */
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync } from 'node:fs';
+import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 import {
@@ -18,6 +14,11 @@ import {
   resolveLoteReviewSlug,
 } from '@/lib/catalogMigration/captureLoteReview';
 import { parseArg } from '@/lib/catalogMigration/cliArgs';
+import { buildManualCaptureWrapperEnv } from '@/lib/e2e/captureMode';
+import {
+  findNewOrModifiedPngs,
+  snapshotPngFiles,
+} from '@/lib/harness/captureFreshOutput';
 
 function resolveSlug(): { slug: string; source: string; reason: string } {
   const explicitSlug = parseArg('slug');
@@ -52,6 +53,7 @@ function main(): void {
   const viewport = parseArg('viewport') ?? 'desktop';
   const outDir = resolve(process.cwd(), 'artifacts/questao-review', slug);
   mkdirSync(outDir, { recursive: true });
+  const pngBefore = snapshotPngFiles(outDir);
 
   const specArgs = [
     'playwright',
@@ -61,13 +63,12 @@ function main(): void {
     `--grep=${slug}`,
   ];
 
-  const env = {
-    ...process.env,
+  const env = buildManualCaptureWrapperEnv(process.env, {
     CAPTURE_QUESTAO_SLUG: slug,
     CAPTURE_QUESTAO_SOURCE: source,
     CAPTURE_QUESTAO_OUT_DIR: outDir,
     CAPTURE_QUESTAO_VIEWPORT: viewport,
-  };
+  });
 
   console.log(`[capture:questao-review] slug=${slug} source=${source} (${reason})`);
   console.log(`[capture:questao-review] viewport=${viewport}`);
@@ -86,9 +87,18 @@ function main(): void {
     return;
   }
 
-  if (existsSync(outDir)) {
-    console.log(`[capture:questao-review] PNGs em ${outDir}`);
+  const freshPngs = findNewOrModifiedPngs(outDir, pngBefore);
+  if (freshPngs.length === 0) {
+    console.error(
+      '[capture:questao-review] Nenhum PNG novo ou modificado nesta execução — stale output ou spec skipped',
+    );
+    process.exitCode = 1;
+    return;
   }
+
+  console.log(
+    `[capture:questao-review] ${freshPngs.length} PNG(s) fresh em ${outDir}: ${freshPngs.join(', ')}`,
+  );
 }
 
 main();
