@@ -34,6 +34,7 @@
     "analyze:performance": "tsx scripts/analyze-performance.ts",
     "scale:health": "tsx scripts/scale-health-check.ts",
     "smoke:rls": "tsx scripts/rls-performance-smoke.ts",
+    "smoke:rls-auth": "tsx scripts/rls-auth-smoke.ts",
     "check:architecture": "tsx scripts/check-architecture-patterns.ts",
     "check:ship": "npm run validate:env && npm run typecheck && npm run check:architecture && npm run lint && npm run test",
     "check:db-types": "tsx scripts/check-database-types-drift.ts",

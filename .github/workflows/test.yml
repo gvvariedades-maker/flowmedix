@@ -196,7 +196,7 @@ jobs:
         run: npm audit --omit=dev --audit-level=high
 
   # RLS smoke contra projeto real — só com secrets SMOKE_*; senão skip + aviso (não bloqueia clone).
-  # Secrets: SMOKE_SUPABASE_URL, SMOKE_SUPABASE_ANON_KEY, SMOKE_SUPABASE_SERVICE_ROLE_KEY
+  # Secrets: SMOKE_SUPABASE_* + SMOKE_RLS_FIXTURE_PASSWORD (AC-RLS-3 JWT)
   # Scorecard #2 · docs/DEPLOY.md § CI secrets
   smoke-rls:
     runs-on: ubuntu-latest
@@ -207,12 +207,19 @@ jobs:
           SMOKE_URL: ${{ secrets.SMOKE_SUPABASE_URL }}
           SMOKE_ANON: ${{ secrets.SMOKE_SUPABASE_ANON_KEY }}
           SMOKE_SERVICE: ${{ secrets.SMOKE_SUPABASE_SERVICE_ROLE_KEY }}
+          SMOKE_FIXTURE_PW: ${{ secrets.SMOKE_RLS_FIXTURE_PASSWORD }}
         run: |
           if [ -n "$SMOKE_URL" ] && [ -n "$SMOKE_ANON" ] && [ -n "$SMOKE_SERVICE" ]; then
             echo "configured=true" >> "$GITHUB_OUTPUT"
           else
             echo "configured=false" >> "$GITHUB_OUTPUT"
             echo "::warning::smoke-rls skipped — configure repository secrets SMOKE_SUPABASE_URL, SMOKE_SUPABASE_ANON_KEY, SMOKE_SUPABASE_SERVICE_ROLE_KEY (see docs/DEPLOY.md § CI secrets)"
+          fi
+          if [ -n "$SMOKE_FIXTURE_PW" ]; then
+            echo "auth_configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "auth_configured=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::smoke:rls-auth skipped — set SMOKE_RLS_FIXTURE_PASSWORD (fixture users A/B)"
           fi
 
       - name: Checkout
@@ -238,6 +245,15 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SMOKE_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SMOKE_SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SMOKE_SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: Run smoke:rls-auth
+        if: steps.secrets.outputs.configured == 'true' && steps.secrets.outputs.auth_configured == 'true'
+        run: npm run smoke:rls-auth
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SMOKE_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SMOKE_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SMOKE_SUPABASE_SERVICE_ROLE_KEY }}
+          SMOKE_RLS_FIXTURE_PASSWORD: ${{ secrets.SMOKE_RLS_FIXTURE_PASSWORD }}
 
   test-e2e:
     needs: changes

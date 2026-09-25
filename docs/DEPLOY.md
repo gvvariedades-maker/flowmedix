@@ -182,8 +182,11 @@ Configure em **GitHub → Settings → Secrets and variables → Actions** (stag
 | `SMOKE_SUPABASE_URL` | `NEXT_PUBLIC_SUPABASE_URL` | URL do projeto Supabase alvo do smoke |
 | `SMOKE_SUPABASE_ANON_KEY` | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Anon key (RLS anon) |
 | `SMOKE_SUPABASE_SERVICE_ROLE_KEY` | `SUPABASE_SERVICE_ROLE_KEY` | Comparação service vs anon |
+| `SMOKE_RLS_FIXTURE_PASSWORD` | `SMOKE_RLS_FIXTURE_PASSWORD` | Senha das contas fixture `smoke-rls-a@fixture.avant.ci` / `smoke-rls-b@fixture.avant.ci` (`npm run smoke:rls-auth`) |
 
-Sem os três secrets, o job `smoke-rls` emite warning e **não falha** o workflow (clone/fork sem secrets continua verde). Com secrets, falha se o smoke detectar leak RLS.
+Sem os três secrets `SMOKE_SUPABASE_*`, o job `smoke-rls` emite warning e **não falha** o workflow (clone/fork sem secrets continua verde). Com secrets, falha se o smoke detectar leak RLS. Sem `SMOKE_RLS_FIXTURE_PASSWORD`, `smoke:rls-auth` é omitido com warning (AC-RLS-3 JWT).
+
+Contas fixture são criadas/atualizadas via service role no primeiro `smoke:rls-auth`; matrícula ativa só no usuário A para um concurso com módulos; notebook de teste é removido ao final do run.
 
 SQL companion (opcional, SQL Editor): [`supabase/scripts/rls_performance_smoke.sql`](../supabase/scripts/rls_performance_smoke.sql).
 
