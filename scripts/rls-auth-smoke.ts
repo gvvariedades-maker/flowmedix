@@ -45,40 +45,37 @@ function jwtClient(url: string, anonKey: string, accessToken: string): SupabaseC
   });
 }
 
-async function findUserIdByEmail(
-  admin: SupabaseClient,
-  email: string,
-): Promise<string | null> {
-  let page = 1;
-  const perPage = 200;
-  for (;;) {
-    const { data, error } = await admin.auth.admin.listUsers({ page, perPage });
-    if (error) throw new Error(`listUsers: ${error.message}`);
-    const hit = data.users.find((u) => u.email?.toLowerCase() === email.toLowerCase());
-    if (hit) return hit.id;
-    if (data.users.length < perPage) return null;
-    page += 1;
-  }
-}
-
 async function ensureFixtureUser(
+  url: string,
+  anonKey: string,
   admin: SupabaseClient,
   email: string,
   password: string,
 ): Promise<string> {
-  const existing = await findUserIdByEmail(admin, email);
-  if (existing) {
-    const { error } = await admin.auth.admin.updateUserById(existing, { password });
-    if (error) throw new Error(`updateUser ${email}: ${error.message}`);
-    return existing;
+  const probe = createClient(url, anonKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+  const { data: signInData, error: signInErr } = await probe.auth.signInWithPassword({
+    email,
+    password,
+  });
+  if (!signInErr && signInData.user?.id) {
+    return signInData.user.id;
   }
+
   const { data, error } = await admin.auth.admin.createUser({
     email,
     password,
     email_confirm: true,
   });
-  if (error || !data.user) throw new Error(`createUser ${email}: ${error?.message ?? 'no user'}`);
-  return data.user.id;
+  if (!error && data.user?.id) return data.user.id;
+
+  const msg = error?.message ?? '';
+  if (/already|registered|exists/i.test(msg)) {
+    const retry = await probe.auth.signInWithPassword({ email, password });
+    if (retry.data.user?.id) return retry.data.user.id;
+  }
+  throw new Error(`ensureFixtureUser ${email}: ${msg || signInErr?.message || 'failed'}`);
 }
 
 async function pickConcursoWithModules(admin: SupabaseClient): Promise<string> {
@@ -148,8 +145,8 @@ async function main() {
   }
 
   const admin = await createServerSupabase();
-  const userAId = await ensureFixtureUser(admin, SMOKE_RLS_USER_A_EMAIL, password);
-  const userBId = await ensureFixtureUser(admin, SMOKE_RLS_USER_B_EMAIL, password);
+  const userAId = await ensureFixtureUser(url, anonKey, admin, SMOKE_RLS_USER_A_EMAIL, password);
+  const userBId = await ensureFixtureUser(url, anonKey, admin, SMOKE_RLS_USER_B_EMAIL, password);
   const concursoId = await pickConcursoWithModules(admin);
   await ensureEnrollmentFixture(admin, userAId, userBId, concursoId);
 
