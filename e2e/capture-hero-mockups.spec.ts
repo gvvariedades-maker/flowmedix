@@ -9,6 +9,11 @@ import fs from 'fs';
 import path from 'path';
 import { test, expect } from '@playwright/test';
 import { HERO_CAPTURE_DPR } from '../lib/marketing/heroCaptureDimensions';
+import { skipUnlessE2eCaptureMode } from './helpers/captureModeGate';
+
+test.beforeAll(() => {
+  skipUnlessE2eCaptureMode();
+});
 
 const OUT_DIR = path.join(process.cwd(), 'public/mockups');
 const CAPTURE_URL = '/dev/hero-mockups';

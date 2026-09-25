@@ -11,6 +11,11 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { expect, test, type Page } from '@playwright/test';
+import { skipUnlessE2eCaptureMode } from './helpers/captureModeGate';
+
+test.beforeAll(() => {
+  skipUnlessE2eCaptureMode();
+});
 
 const VIEWPORTS = {
   mobile: { width: 390, height: 844 },

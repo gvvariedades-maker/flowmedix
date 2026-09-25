@@ -4,9 +4,9 @@
  *
  * Requer E2E_DASHBOARD_BYPASS (playwright.config webServer ou dev com bypass).
  * Executar:
- *   npx playwright test e2e/audit-visual-editorial-v2.spec.ts --project=chromium --workers=1
+ *   E2E_CAPTURE_MODE=true npx playwright test e2e/audit-visual-editorial-v2.spec.ts --project=chromium --workers=1
  * Com dev já rodando:
- *   PLAYWRIGHT_SKIP_WEBSERVER=true npx playwright test e2e/audit-visual-editorial-v2.spec.ts --project=chromium --workers=1
+ *   E2E_CAPTURE_MODE=true PLAYWRIGHT_SKIP_WEBSERVER=true npx playwright test e2e/audit-visual-editorial-v2.spec.ts --project=chromium --workers=1
  */
 import fs from 'fs';
 import path from 'path';
@@ -21,6 +21,11 @@ import {
 } from './helpers/vitrineE2e';
 import { expectLandingHeroVisible } from './helpers/landingE2e';
 import { expectGabaritoCorreto } from './helpers/playerE2e';
+import { skipUnlessE2eCaptureMode } from './helpers/captureModeGate';
+
+test.beforeAll(() => {
+  skipUnlessE2eCaptureMode();
+});
 
 const BANCA_QUERY = encodeURIComponent(E2E_ESTUDAR_BANCA);
 

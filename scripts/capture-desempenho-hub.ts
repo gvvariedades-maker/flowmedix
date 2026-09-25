@@ -7,18 +7,20 @@
  */
 import { spawnSync } from 'node:child_process';
 
+import { buildManualCaptureWrapperEnv } from '@/lib/e2e/captureMode';
+
 const command =
   'npx playwright test e2e/capture-desempenho-hub.spec.ts --project=chromium --workers=1';
 
 const result = spawnSync(command, {
   stdio: 'inherit',
-  env: {
+  env: buildManualCaptureWrapperEnv({
     ...process.env,
     E2E_DASHBOARD_BYPASS: 'true',
     NEXT_PUBLIC_E2E_DASHBOARD_BYPASS: 'true',
     // Não herdar PLAYWRIGHT_TEST_BASE_URL de outro servidor (UI antiga / outra porta).
     PLAYWRIGHT_TEST_BASE_URL: 'http://localhost:3000',
-  },
+  }),
   shell: true,
   cwd: process.cwd(),
 });

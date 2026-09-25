@@ -6,6 +6,11 @@ import fs from 'fs';
 import path from 'path';
 import { test, type Page } from '@playwright/test';
 import { gotoVitrineE2e, vitrineStableLocalStorageInitScript } from './helpers/vitrineE2e';
+import { skipUnlessE2eCaptureMode } from './helpers/captureModeGate';
+
+test.beforeAll(() => {
+  skipUnlessE2eCaptureMode();
+});
 
 const OUT_DIR = path.join(
   process.cwd(),
