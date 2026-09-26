@@ -171,38 +171,58 @@ export class BackupEngine {
         name: 'database_public_data',
         isSensitive: true,
         frequency: 'DAILY',
-        format: 'SQL_DUMP',
-        data: Buffer.from('-- SYNTHETIC PUBLIC DATABASE DUMP WITH PII\nCREATE TABLE public.synthetic_users (id uuid, email text);\n', 'utf8')
+        format: 'JSON_TABLES',
+        data: Buffer.from(
+          JSON.stringify({
+            synthetic_users: [{ id: 'synthetic-user-1', email: 'user1@synthetic.test' }],
+          }),
+          'utf8',
+        ),
       },
       {
         name: 'auth_sensitive_vault',
         isSensitive: true,
         frequency: 'DAILY',
         format: 'JSON',
-        data: Buffer.from(JSON.stringify({
-          users: [{ id: 'synthetic-user-1', email: 'user1@synthetic.test' }],
-          identities: [{ id: 'ident-1', user_id: 'synthetic-user-1' }],
-          mfa_factors: [{ id: 'factor-1', user_id: 'synthetic-user-1', factor_type: 'totp' }]
-        }), 'utf8')
+        data: Buffer.from(
+          JSON.stringify({
+            users: [{ id: 'synthetic-user-1', email: 'user1@synthetic.test' }],
+            identities: [{ id: 'ident-1', user_id: 'synthetic-user-1' }],
+            mfa_factors: [{ id: 'factor-1', user_id: 'synthetic-user-1', factor_type: 'totp' }],
+            writableCols: {
+              'auth.users': ['id', 'email'],
+              'auth.identities': ['id', 'user_id'],
+              'auth.mfa_factors': ['id', 'user_id', 'factor_type'],
+            },
+          }),
+          'utf8',
+        ),
       },
       {
         name: 'storage_figures_archive',
         isSensitive: true,
         frequency: 'DAILY',
-        format: 'TAR_GZ',
-        data: Buffer.from('SYNTHETIC_STORAGE_BINARY_PAYLOAD_PNG_METADATA', 'utf8')
+        format: 'JSON_METADATA',
+        data: Buffer.from(
+          JSON.stringify([{ id: 'fig-1', name: 'synthetic.png', bucket_id: 'questao-figures' }]),
+          'utf8',
+        ),
       },
       {
         name: 'recovery_metadata_ledger',
         isSensitive: true,
         frequency: 'DAILY',
         format: 'JSON',
-        data: Buffer.from(JSON.stringify({
-          baseline: 'avant-snapshot-2026-06-10',
-          migration_count: 53,
-          project_id: 'synthetic-avant-dev'
-        }), 'utf8')
-      }
+        data: Buffer.from(
+          JSON.stringify({
+            baseline: 'avant-snapshot-2026-06-10',
+            migration_count: 1,
+            ledger: [{ version: '20260101000000', name: 'synthetic_migration' }],
+            project_id: 'ozgouenqrofnvgrlgfwd',
+          }),
+          'utf8',
+        ),
+      },
     ];
   }
 

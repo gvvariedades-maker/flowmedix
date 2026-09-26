@@ -46,7 +46,7 @@ describe('AVANT Backup Automation Engine — 7F.3.2 Hardened Tests', () => {
     expect(result.manifest.sequence_id).toBe(1);
     expect(result.manifest.gfs_tier).toBe('daily');
     expect(result.components.size).toBe(4);
-    expect(result.components.get('database_public_data')?.toString('utf8')).toContain('CREATE TABLE public.synthetic_users');
+    expect(result.components.get('database_public_data')?.toString('utf8')).toContain('synthetic_users');
   });
 
   describe('OFFSITE_SECURITY_ADVERSARIAL_TESTS & R2 SYNTHETIC LOCK', () => {
