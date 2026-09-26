@@ -33,6 +33,7 @@
     "db:link": "supabase link",
     "analyze:performance": "tsx scripts/analyze-performance.ts",
     "scale:health": "tsx scripts/scale-health-check.ts",
+    "scale:harness": "tsx scripts/scale-authenticated-harness.ts",
     "smoke:rls": "tsx scripts/rls-performance-smoke.ts",
     "smoke:rls-auth": "tsx scripts/rls-auth-smoke.ts",
     "check:architecture": "tsx scripts/check-architecture-patterns.ts",

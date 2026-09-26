@@ -33,9 +33,15 @@ DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix jornada 70 / 12
 
 Taxa **6 req/min/usuário ativo** = alvo conservador do **gerador de carga** (`conservative_capacity_test_target`, **não** medido em uso real; **não** derivado de `session_model`).
 
-`CAPACITY_1K_READINESS = PENDING_EVIDENCE` (envelope **DEFINED**, reparo documental v1.0.3; medição não executada)
+| Estado | Valor |
+| --- | --- |
+| `ENVELOPE_V1` | **APPROVED** (v1.0.3, SHA `0bfe0479f79954115d50451c005301b27df61cd5`) |
+| `HARNESS_AUTHENTICATED` | **IMPLEMENTED** — [`SCALE_1K_AUTHENTICATED_HARNESS.md`](./SCALE_1K_AUTHENTICATED_HARNESS.md); revisão independente pendente |
+| `CAPACITY_1K_READINESS` | `PENDING_EVIDENCE` |
+| `LOAD_TEST_AUTHORIZATION` | `NOT_GRANTED` |
+| `PRODUCTION_AUTHORIZATION` | `NOT_GRANTED` |
 
-**Owner sign-off:** pendente (`owner_signoff_required: true`).
+**Owner sign-off:** registrado em `scale-1k-workload-envelope.v1.json` → `owner_signoff` (2026-09-26). Aprovação **não** autoriza load test nem Production.
 
 ### Reparo documental (após checkpoint `99f7ac7e`)
 
@@ -58,11 +64,13 @@ Taxa **6 req/min/usuário ativo** = alvo conservador do **gerador de carga** (`c
 
 **v1.0.3 (após `7c078c0f`):** chave `api_simulado_sessions` consistente no JSON; `POST /api/registrar-tentativa` descrito como escrita server-side pós-auth (não RLS na persistência).
 
-`ENVELOPE_V1` após reparo final: aguarda verificação independente → sign-off Owner (`READY_FOR_OWNER_SIGNOFF` esperado).
-
 Não existe gate canônico `G-CAPACITY-1K`. Limiares de erro e p95 não foram inventados neste ciclo.
 
-## O que o harness mede
+## Harness autenticado (fase atual)
+
+Instrumento: `npm run scale:harness -- --validate` · runbook [`SCALE_1K_AUTHENTICATED_HARNESS.md`](./SCALE_1K_AUTHENTICATED_HARNESS.md). **Sem execução de carga** até revisão do instrumento + autorização explícita para staging.
+
+## O que o perf-smoke CI mede (legado)
 
 `scripts/perf-smoke.ts` no CI (`PERF_CONCURRENCY=20`, `PERF_DURATION_MS=20000`, app local `127.0.0.1:3000`):
 
@@ -88,8 +96,8 @@ Subir concorrência desse smoke não mede o caminho de 1.000 DAU: Auth, RLS, lei
 
 | Item | Classificação |
 | --- | --- |
-| Workload que representa 1.000 DAU | **DEFINED v1** — aguarda sign-off Owner |
-| Harness autenticado (k6 / extensão perf) | PENDING implementação |
+| Workload que representa 1.000 DAU | **APPROVED v1.0.3** |
+| Harness autenticado | Implementado (`scale:harness`); revisão independente pendente |
 | Caminho autenticado sob carga (staging) | PENDING |
 | `scale:health` no banco real | Não executado |
 | Upstash / Sentry / MFA admin em Production | CURRENT PASS não comprovado neste ciclo |

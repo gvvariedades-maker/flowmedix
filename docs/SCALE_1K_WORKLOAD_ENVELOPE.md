@@ -1,9 +1,9 @@
 # Envelope de workload — 1.000 DAU (AVANT)
 
-Versão máquina: [`scale-1k-workload-envelope.v1.json`](./scale-1k-workload-envelope.v1.json) (v1.0.3, `proposed_repaired_final`)  
-Work unit: [`EWU_SCALE_1K_READINESS_001.md`](./EWU_SCALE_1K_READINESS_001.md)
+Versão máquina: [`scale-1k-workload-envelope.v1.json`](./scale-1k-workload-envelope.v1.json) (v1.0.3, **`approved`**, SHA `0bfe0479f79954115d50451c005301b27df61cd5`)  
+Work unit: [`EWU_SCALE_1K_READINESS_001.md`](./EWU_SCALE_1K_READINESS_001.md) · Harness: [`SCALE_1K_AUTHENTICATED_HARNESS.md`](./SCALE_1K_AUTHENTICATED_HARNESS.md)
 
-**Status:** hipótese operacional; **não** substitui medição. Owner sign-off pendente.
+**Status:** baseline aprovada pelo Owner; medição de capacidade ainda **pendente**. Load test / Production **não** autorizados pela aprovação do envelope.
 
 ---
 
@@ -93,4 +93,5 @@ Staging / branch Supabase / local controlado — **sim**. Production — **não*
 
 | Campo | Valor |
 | --- | --- |
-| Owner sign-off | Pendente (`owner_signoff_required: true`) |
+| Owner sign-off | **Aprovado** 2026-09-26 (ver `owner_signoff` no JSON) |
+| Load test | **Não autorizado** até decisão explícita pós-revisão do harness |

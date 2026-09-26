@@ -2,9 +2,25 @@
   "$schema": "avant-scale-workload-envelope/v1",
   "id": "scale-1k-dau-te-enfermagem",
   "version": "1.0.3",
-  "status": "proposed_repaired_final",
+  "status": "approved",
   "repair_base_commit": "7c078c0fdbbe1b687d11ed36ff091e9e24edc2e7",
   "owner_signoff_required": true,
+  "owner_signoff": {
+    "approved_at": "2026-09-26T15:50:00-03:00",
+    "approved_by": "Owner",
+    "envelope_version": "1.0.3",
+    "git_sha": "0bfe0479f79954115d50451c005301b27df61cd5",
+    "statement": "Aprovo o envelope v1 da EWU-SCALE-1K-READINESS-001, versão 1.0.3, no SHA 0bfe0479f79954115d50451c005301b27df61cd5, como baseline de workload para implementação e posterior medição. Esta aprovação não autoriza load test nem qualquer ação em Production.",
+    "load_test_authorized": false,
+    "production_authorized": false
+  },
+  "readiness": {
+    "ENVELOPE_V1": "APPROVED",
+    "HARNESS_AUTHENTICATED": "IMPLEMENTED_PENDING_INDEPENDENT_REVIEW",
+    "CAPACITY_1K_READINESS": "PENDING_EVIDENCE",
+    "LOAD_TEST_AUTHORIZATION": "NOT_GRANTED",
+    "PRODUCTION_AUTHORIZATION": "NOT_GRANTED"
+  },
   "product": "AVANT — Técnico de Enfermagem (estudar + simulados + cadernos)",
   "target": {
     "dau": 1000,
@@ -259,6 +275,7 @@
   },
   "related_artifacts": {
     "ewu": "docs/EWU_SCALE_1K_READINESS_001.md",
+    "authenticated_harness": "docs/SCALE_1K_AUTHENTICATED_HARNESS.md",
     "perf_smoke_baseline_ci": "docs/perf-smoke-baseline-ci.json",
     "ci_run_reference": "36241740321"
   }

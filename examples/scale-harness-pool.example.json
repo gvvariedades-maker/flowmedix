@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "base_url": "https://staging.example.com",
+  "users": [
+    {
+      "pool_id": "harness-user-001",
+      "access_token": "REPLACE_WITH_SUPABASE_ACCESS_JWT",
+      "cookie_header": "sb-access-token=...; sb-refresh-token=...",
+      "default_questao_slug": "questao-exemplo-slug"
+    }
+  ]
+}
