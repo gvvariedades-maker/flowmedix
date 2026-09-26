@@ -1,0 +1,163 @@
+{
+  "$schema": "avant-scale-workload-envelope/v1",
+  "id": "scale-1k-dau-te-enfermagem",
+  "version": "1.0.0",
+  "status": "proposed",
+  "owner_signoff_required": true,
+  "product": "AVANT — Técnico de Enfermagem (estudar + simulados + cadernos)",
+  "target": {
+    "dau": 1000,
+    "definition_dau": "Usuário autenticado com pelo menos uma ação de estudo no dia (tentativa registrada, resposta em simulado ou sessão de simulado iniciada)."
+  },
+  "time_model": {
+    "timezone": "America/Sao_Paulo",
+    "peak_window_local": "19:00-22:00",
+    "share_of_daily_actions_in_peak_hour": 0.35,
+    "notes": "Concentração típica pós-trabalho/aula para público de concurso TE."
+  },
+  "concurrency_tiers": {
+    "conservative": {
+      "label": "Planejamento infra (subdimensionar evita surpresa)",
+      "peak_concurrent_users": 50,
+      "description": "~5% do DAU simultâneo no pico; útil para primeiro teste em staging."
+    },
+    "nominal": {
+      "label": "Meta de capacidade 1k DAU",
+      "peak_concurrent_users": 100,
+      "description": "~10% do DAU no pico horário; referência principal para G-CAPACITY-1K."
+    },
+    "stress": {
+      "label": "Margem antes de degradação",
+      "peak_concurrent_users": 150,
+      "description": "~15% do DAU ou pico atípico (live, promo); não é o SLA diário."
+    }
+  },
+  "session_model": {
+    "mean_session_minutes": 22,
+    "questions_per_session_mean": 12,
+    "think_time_seconds_per_question_mean": 90,
+    "pages_per_session_mean": 8
+  },
+  "traffic_model": {
+    "requests_per_active_user_per_minute_mean": 6,
+    "read_write_ratio": {
+      "reads": 0.82,
+      "writes": 0.18
+    },
+    "peak_rps_estimate": {
+      "conservative": { "mean": 5, "burst_30s": 12 },
+      "nominal": { "mean": 10, "burst_30s": 25 },
+      "stress": { "mean": 15, "burst_30s": 40 }
+    },
+    "formula": "mean_rps ≈ peak_concurrent_users × requests_per_active_user_per_minute_mean / 60"
+  },
+  "journey_mix": {
+    "description": "Peso relativo de jornadas autenticadas (soma 1.0).",
+    "estudar_player": 0.7,
+    "vitrine_navegacao": 0.12,
+    "simulado": 0.1,
+    "desempenho_cadernos": 0.05,
+    "auth_refresh_misc": 0.03
+  },
+  "authenticated_operations": {
+    "description": "Operações a exercitar no harness de carga (substitui cenários 401 do perf-smoke).",
+    "operations": [
+      {
+        "id": "auth_session_refresh",
+        "weight": 0.03,
+        "kind": "read",
+        "surface": "Supabase Auth token refresh / sessão"
+      },
+      {
+        "id": "api_vitrine_page",
+        "weight": 0.1,
+        "kind": "read",
+        "method": "GET",
+        "path": "/api/vitrine",
+        "auth": "Bearer"
+      },
+      {
+        "id": "rsc_estudar_slug",
+        "weight": 0.25,
+        "kind": "read",
+        "method": "GET",
+        "path": "/estudar/{slug}",
+        "auth": "cookie_or_bearer",
+        "notes": "RSC + cache; incluir no k6/Playwright load ou proxy HTTP com sessão."
+      },
+      {
+        "id": "api_estudar_questao",
+        "weight": 0.2,
+        "kind": "read",
+        "method": "GET",
+        "path": "/api/estudar/questao",
+        "auth": "Bearer"
+      },
+      {
+        "id": "api_aluno_registrar_tentativa",
+        "weight": 0.18,
+        "kind": "write",
+        "method": "POST",
+        "path": "/api/aluno/registrar-tentativa",
+        "auth": "Bearer",
+        "notes": "RLS em historico_questoes; invalidação de cache user."
+      },
+      {
+        "id": "api_simulado_read_write",
+        "weight": 0.1,
+        "kind": "mixed",
+        "paths": [
+          "GET /api/simulado/sessions",
+          "GET /api/simulado/questao",
+          "POST /api/simulado/responder"
+        ],
+        "auth": "Bearer"
+      },
+      {
+        "id": "desempenho_historico_read",
+        "weight": 0.05,
+        "kind": "read",
+        "surface": "RSC /api agregações de histórico",
+        "auth": "Bearer"
+      },
+      {
+        "id": "cadernos_read",
+        "weight": 0.05,
+        "kind": "read",
+        "auth": "Bearer"
+      },
+      {
+        "id": "neuroslides_static",
+        "weight": 0.04,
+        "kind": "read",
+        "notes": "Payload já em questão; sem chamada extra se questao layer inclui slides."
+      }
+    ]
+  },
+  "data_plane_expectations": {
+    "catalog_modulos_estudo_ceiling": 10000,
+    "historico_per_user_soft_ceiling": 5000,
+    "scale_health_command": "npm run scale:health -- --json",
+    "supabase": {
+      "connection_mode": "pooler_session_or_transaction",
+      "notes": "Restore DR já validou pooler us-east-1; app deve usar padrão do projeto."
+    }
+  },
+  "environments": {
+    "load_test_allowed": ["staging", "dedicated_supabase_branch", "local_with_real_supabase"],
+    "load_test_production": "forbidden_without_explicit_owner_approval"
+  },
+  "acceptance_placeholders": {
+    "description": "Preencher após baseline medido; não inventar antes do teste.",
+    "error_rate_max": null,
+    "p95_read_ms_max": null,
+    "p95_write_ms_max": null,
+    "rls_violations": 0,
+    "connection_pool_saturation": "none_observed"
+  },
+  "related_artifacts": {
+    "ewu": "docs/EWU_SCALE_1K_READINESS_001.md",
+    "perf_smoke_baseline_ci": "docs/perf-smoke-baseline-ci.json",
+    "ci_run_reference": "36241740321"
+  }
+}

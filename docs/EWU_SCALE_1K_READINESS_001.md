@@ -1,0 +1,88 @@
+# EWU-SCALE-1K-READINESS-001
+
+Diagnóstico. Sem mudança de código de produto. Sem teste de carga em Production.
+
+## Preflight
+
+| Campo | Valor |
+| --- | --- |
+| Repositório | `gvvariedades-maker/flowmedix` |
+| Candidato de capacidade | `origin/main` `d1fe4a28d39b4ec193c7914e54e593ad5522d613` |
+| Commit | `fix(dr): pooler IPv4 para restore CAS no GitHub Actions (#139)` |
+| CI | [36241740321](https://github.com/gvvariedades-maker/flowmedix/actions/runs/36241740321) success |
+| Clone local | `0657a810` à frente de `origin/main` em 1 commit (só `.gitignore` do relatório DR). Não entra no candidato. |
+| Branch protection `main` | `architecture-check`, `security-audit`, `typecheck`, `test-unit`, `build`, `lint` |
+| Não exigidos na protection | `smoke-rls`, `test-e2e`, `perf-smoke` |
+
+Jobs do run `36241740321` (todos success): `security-audit`, `test-unit`, `lint`, `smoke-rls`, `build`, `typecheck`, `test-e2e`, `perf-smoke`, `architecture-check`.
+
+## Alvo
+
+Pergunta original: cerca de **1.000 usuários ativos no dia**.
+
+**Envelope proposto (v1):** [`SCALE_1K_WORKLOAD_ENVELOPE.md`](./SCALE_1K_WORKLOAD_ENVELOPE.md) · [`scale-1k-workload-envelope.v1.json`](./scale-1k-workload-envelope.v1.json)
+
+| Parâmetro | Conservative | Nominal | Stress |
+| --- | ---: | ---: | ---: |
+| DAU | 1.000 | 1.000 | 1.000 |
+| CCU no pico (19h–22h BRT) | 50 | **100** | 150 |
+| RPS médio no pico | ~5 | **~10** | ~15 |
+| Rajada ~30s | ~12 | **~25** | ~40 |
+
+DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix ~70% player `/estudar`, leitura/escrita ~82/18.
+
+`CAPACITY_1K_READINESS = PENDING_EVIDENCE` (envelope **DEFINED**; medição ainda não executada)
+
+**Owner sign-off:** pendente no JSON (`owner_signoff_required: true`).
+
+Não existe gate canônico `G-CAPACITY-1K`. Limiares de erro e p95 não foram inventados neste ciclo.
+
+## O que o harness mede
+
+`scripts/perf-smoke.ts` no CI (`PERF_CONCURRENCY=20`, `PERF_DURATION_MS=20000`, app local `127.0.0.1:3000`):
+
+| Cenário | O que prova |
+| --- | --- |
+| `api_*_unauth` (vitrine, questão, simulado, responder) | Latência de **401** sem sessão |
+| `api_health` | No CI está com `PERF_SKIP_API_HEALTH=1` (health consulta o banco) |
+| `api_metrics` | 200 com secret de métricas |
+| `synthetic_10k_pipeline` | CPU local: filtrar 10.000 módulos sintéticos. Não fala com Supabase |
+
+Subir concorrência desse smoke não mede o caminho de 1.000 DAU: Auth, RLS, leitura de questão, gravação de histórico, próxima questão.
+
+## Evidência já ligada a um SHA
+
+| Item | Estado |
+| --- | --- |
+| CI do candidato `d1fe4a28` | PASS no run 36241740321, inclusive `smoke-rls`, `test-e2e`, `perf-smoke`, `security-audit` |
+| Supply-chain high/critical | PASS nesse run. `docs/SECURITY_SCORECARD.md` ainda descreve julho/2026 e está desatualizado |
+| RPC `refresh_subtopico_guideline_counts` | No Git: `REVOKE` de `PUBLIC`, `GRANT` só para `service_role`. Drift no banco live não foi medido |
+| G-DR-RESTORE | PASS no run 36213261055, SHA `7f9ae0b9`, `PRODUCTION_MUTATION: 0`. Não transferido para `d1fe4a28` porque `lib/backup/drRestoreDb.ts` mudou depois |
+
+## Pendente (não medido neste ciclo)
+
+| Item | Classificação |
+| --- | --- |
+| Workload que representa 1.000 DAU | **DEFINED v1** — aguarda sign-off Owner |
+| Harness autenticado (k6 / extensão perf) | PENDING implementação |
+| Caminho autenticado sob carga (staging) | PENDING |
+| `scale:health` no banco real | Não executado |
+| Upstash / Sentry / MFA admin em Production | CURRENT PASS não comprovado neste ciclo |
+| G-DR-RESTORE no SHA `d1fe4a28` | Reexecutar o drill |
+| Protection exigindo `smoke-rls`, `test-e2e`, `perf-smoke` | Ausente |
+
+Nenhum gargalo arquitetural foi provado. Nenhum rewrite é indicado por esta evidência.
+
+## Plano de medição (ainda sem executar carga)
+
+1. Owner aprova ou edita o envelope v1 (tiers 50 / 100 / 150 CCU).
+2. Ler limites do plano Supabase (conexões, CPU) sem teste de carga.
+3. Implementar e rodar cenário autenticado em staging conforme `authenticated_operations` no JSON — não aumentar só o `PERF_CONCURRENCY` dos 401.
+4. Corrigir só falha medida.
+5. Validação em Production, se ainda for necessária, só com autorização explícita do Owner.
+
+## Fora deste ciclo
+
+- Load test em `avant.enf.br`
+- Alteração de código de produto
+- Novos limiares numéricos de p95/erro
