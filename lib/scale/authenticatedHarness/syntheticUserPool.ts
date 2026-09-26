@@ -1,8 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
-
-const FORBIDDEN_HOST_SUFFIXES = ['avant.enf.br'];
+import { validateStagingTargetBinding } from '@/lib/scale/authenticatedHarness/targetBinding';
 
 export function loadSyntheticUserPool(filePath: string): SyntheticUserPoolFile {
   const absolute = resolve(process.cwd(), filePath);
@@ -21,22 +20,11 @@ export function loadSyntheticUserPool(filePath: string): SyntheticUserPoolFile {
       throw new Error(`Pool user inválido: pool_id e access_token obrigatórios (${user.pool_id ?? '?'})`);
     }
   }
-  assertBaseUrlAllowedForHarness(parsed.base_url);
-  return parsed;
-}
 
-export function assertBaseUrlAllowedForHarness(baseUrl: string): void {
-  let host: string;
-  try {
-    host = new URL(baseUrl).hostname.toLowerCase();
-  } catch {
-    throw new Error(`base_url inválida: ${baseUrl}`);
+  const binding = validateStagingTargetBinding(parsed);
+  if (!binding.ok) {
+    throw new Error(binding.reason);
   }
-  for (const suffix of FORBIDDEN_HOST_SUFFIXES) {
-    if (host === suffix || host.endsWith(`.${suffix}`)) {
-      throw new Error(
-        `base_url ${baseUrl} aponta para Production (${suffix}). Harness bloqueado até autorização explícita do Owner.`,
-      );
-    }
-  }
+
+  return parsed;
 }

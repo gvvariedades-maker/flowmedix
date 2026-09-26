@@ -1,21 +1,25 @@
 import type { ConcurrencyTierId, EnvelopeOperation } from '@/lib/scale/workloadEnvelope';
+import type { HarnessSchedulerConfig } from '@/lib/scale/authenticatedHarness/scheduler';
+import type { MaterializedHttpRequest } from '@/lib/scale/authenticatedHarness/materializeRequest';
 
 export type SyntheticUserCredentials = {
-  /** Identificador estável no pool (ex. harness-user-001). */
   pool_id: string;
-  /** JWT access token para APIs Bearer. */
   access_token: string;
-  /** Cookie header completo para rotas RSC (sessão SSR). */
   cookie_header?: string;
-  /** Slug de questão padrão para /estudar/{slug} e GET questão. */
   default_questao_slug?: string;
-  /** Sessão de simulado criada no setup (preenchido após POST sessions). */
+  default_opcao_id?: string;
   simulado_session_id?: string;
+  simulado_modulo_slug?: string;
+  supabase_refresh_token?: string;
 };
 
 export type SyntheticUserPoolFile = {
   schema_version: 1;
+  target_environment: 'staging';
+  allowed_hosts: string[];
   base_url: string;
+  supabase_url?: string;
+  supabase_anon_key?: string;
   users: SyntheticUserCredentials[];
 };
 
@@ -42,13 +46,20 @@ export type HarnessExecutionPlan = {
   setup_steps: HarnessOperationStep[];
   measured_operations: HarnessOperationStep[];
   journey_mix: Record<string, number>;
-  load_test_execution: 'forbidden' | 'not_requested';
+  scheduler: HarnessSchedulerConfig;
+  materialized_sample: MaterializedHttpRequest[];
+  readiness: {
+    HARNESS_VALIDATOR: string;
+    HARNESS_PLANNER: string;
+    HARNESS_HTTP_EXECUTOR: string;
+    HARNESS_AUTHENTICATED: string;
+  };
 };
 
-export type HarnessValidationResult = {
-  ok: boolean;
-  errors: string[];
-  warnings: string[];
+export type HarnessExecutionGate = {
+  cliExecuteFlag: boolean;
+  harnessExecuteEnv: string | undefined;
+  loadTestAuthorizedEnv: string | undefined;
 };
 
 export function mapAuthToHarnessMode(op: EnvelopeOperation): HarnessAuthMode {

@@ -89,3 +89,8 @@ supabase/.temp/
 /artifacts/neurocanvas-blocker-clusters.json
 
 .env*
+
+# Scale harness — pools reais (tokens/cookies); nunca versionar
+/scale-harness-private/
+/artifacts/scale-harness-private/
+*.scale-harness-pool.local.json
