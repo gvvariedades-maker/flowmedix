@@ -103,8 +103,8 @@ if (!sentryDsn) {
     org: process.env.SENTRY_ORG,
     project: process.env.SENTRY_PROJECT,
     authToken: process.env.SENTRY_AUTH_TOKEN,
-    // Só loga upload de source maps em CI.
-    silent: !process.env.CI,
+    // Só loga upload de source maps em CI / Vercel build.
+    silent: !process.env.CI && !process.env.VERCEL,
     // Encaminha eventos do browser por uma rota same-origin (evita ad blockers).
     tunnelRoute: '/monitoring',
     // Sem token de upload, não tente subir source maps (build local não quebra).

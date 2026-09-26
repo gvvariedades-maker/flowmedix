@@ -1,22 +1,23 @@
 # Scorecard de segurança — AVANT
 
 > **Meta:** 100% deste scorecard (Next 16 + Supabase RLS + Stripe + admin por email). Não existe 100% absoluto de segurança.  
-> **Hub:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) · Threat: [`SECURITY_THREAT_MODEL.md`](SECURITY_THREAT_MODEL.md) · IR: [`SECURITY_INCIDENT_RUNBOOK.md`](SECURITY_INCIDENT_RUNBOOK.md) · Rituais: [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md)
+> **Hub:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) · RLS Closure: [`SECURITY_CLOSURE_RLS.md`](SECURITY_CLOSURE_RLS.md) · Threat: [`SECURITY_THREAT_MODEL.md`](SECURITY_THREAT_MODEL.md) · IR: [`SECURITY_INCIDENT_RUNBOOK.md`](SECURITY_INCIDENT_RUNBOOK.md) · Rituais: [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md)
 
 Atualizar status com evidência (link CI, commit, screenshot ops, data do paper drill / pentest). Itens **ops** não falham `npm run build` local se DSN/Upstash ausentes.
 
 **Última fechamento código:** 2026-07-23 — `npm run check:ship` PASS (301 suites / 2531 tests) · Security Review Stripe ledger: P0/P1/P2 = 0.
+**Fechamento formal RLS (Lote 7D):** 2026-08-24 — `RLS: PASS` · Live Supabase Production (`ozgouenqrofnvgrlgfwd`) verificado com isolamento próprio, cross-user denial, modulos enrolled-only e RPC bloqueada ([`SECURITY_CLOSURE_RLS.md`](SECURITY_CLOSURE_RLS.md)).
 
 | # | Item | Dono | Evidência | Status |
 |---|------|------|-----------|--------|
 | 1 | **Arquitetura** — `check:architecture` + `check:ship` verdes | CI / código | Local 2026-07-23: `check:ship` PASS; job `architecture-check` em [`test.yml`](../.github/workflows/test.yml) | **PASS** |
-| 2 | **RLS smoke** — `npm run smoke:rls` (+ SQL companion) | CI condicional / ops | 2026-07-23: `smoke:rls` PASS remoto (incl. `stripe_webhook_events`); job `smoke-rls` (secrets CI opcional) | **PASS** |
+| 2 | **RLS smoke / Live Proof** — `npm run smoke:rls` (+ live audit 7D.2B) | CI condicional / ops | 2026-08-24: `RLS: PASS` live em Produção (`ozgouenqrofnvgrlgfwd`) — [`SECURITY_CLOSURE_RLS.md`](SECURITY_CLOSURE_RLS.md); `smoke:rls` PASS remoto | **PASS** |
 | 3 | **Secrets / env Zod** — `validate:env`; sem secret em `NEXT_PUBLIC_*` | CI / código | `validate:env` no ship; gates `no-service-role-in-client` / `no-new-env-without-zod` | **PASS** |
 | 4 | **Headers / CSP** — `next.config.js` alinhado a auditoria | código / ops | [`AUDITORIA_DEPLOY.md`](AUDITORIA_DEPLOY.md) — headers implementados; sem lacuna P0 aberta no inventário | **PASS** |
 | 5 | **Stripe** — assinatura webhook + idempotência por `event.id` | código | `constructEvent` + ledger + migration `20260723120000` aplicada 2026-07-23 (`db:push --include-all`) + `smoke:rls` PASS (`anon_stripe_webhook_events_vazio`) | **PASS** |
-| 6 | **IDOR mínimo** — histórico / matrícula cross-user | código / CI | `__tests__/security/` (`historico-idor`, `admin-forbid-aluno`, `anon-rls-contract`) no `check:ship` | **PASS** |
+| 6 | **IDOR mínimo / Live Ownership** — histórico / matrícula cross-user | código / CI | 2026-08-24: Live proof 7D.2B PASS (own visible, cross-user 0 rows) + `__tests__/security/` (`historico-idor`, `admin-forbid-aluno`, `anon-rls-contract`) | **PASS** |
 | 7 | **Rate limit distribuído em prod** — Upstash configurado | ops | `UPSTASH_REDIS_REST_*` na Vercel Production ([`DEPLOY.md`](DEPLOY.md)) | ☐ FAIL (ops) |
-| 8 | **Sentry ativo em prod** — DSN | ops | `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN` na Vercel Production | ☐ FAIL (ops) |
+| 8 | **Sentry ativo em prod** — DSN | ops | 2026-08-25: `SENTRY: PASS` live em Produção (`flowmedix` / release `0c57f3a1`) — source maps 2.704 arquivos, live proof server/app-router/client, privacy sanitizada ([`SECURITY_CLOSURE_OBSERVABILITY.md`](SECURITY_CLOSURE_OBSERVABILITY.md)) | **PASS** |
 | 9 | **Supply chain** — Dependabot + `npm audit` no CI | CI | [`.github/dependabot.yml`](../.github/dependabot.yml) + job `security-audit`. **Job falha até limpar highs** (`next`, `sharp`, `ws`, `brace-expansion`, `fast-uri`, `js-yaml` — 2026-07-23) | **PASS** estrutura · ☐ FAIL audit |
 | 10 | **PR zona vermelha** — Security Review §7 | processo | Review 2026-07-23 no diff ledger/migration/security tests — 0 P0/P1/P2 | **PASS** (este ciclo) |
 | 11 | **Admin** — só `requireAdminApi`; MFA no provedor | código + ops | Código: rotas admin via `requireAdminApi` + teste `admin-forbid-aluno`. **Ops:** MFA TOTP nas contas admin | **PASS** código · ☐ FAIL MFA |
@@ -68,7 +69,7 @@ Passo a passo em [`DEPLOY.md`](DEPLOY.md) § [Ops produção (scorecard)](DEPLOY
 
 | Item scorecard | Ação (evidência sem colar secrets) | Feito em |
 |----------------|-------------------------------------|----------|
-| **#8 Sentry** | Vercel Production: `SENTRY_DSN` e/ou `NEXT_PUBLIC_SENTRY_DSN`. Opcional CI: `SENTRY_AUTH_TOKEN` + `SENTRY_ORG` + `SENTRY_PROJECT` (source maps). Confirmar evento de teste no painel Sentry. Código: `instrumentation*.ts` / `sentry.*.config.ts`. | |
+| **#8 Sentry** | Vercel Production: `SENTRY_DSN` e/ou `NEXT_PUBLIC_SENTRY_DSN`. Opcional CI: `SENTRY_AUTH_TOKEN` + `SENTRY_ORG` + `SENTRY_PROJECT` (source maps). Confirmar evento de teste no painel Sentry. Código: `instrumentation*.ts` / `sentry.*.config.ts`. | 2026-08-25 (Lote 7E.1B PASS) |
 | **#7 Upstash** | Vercel Production: `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` (ou `KV_REST_API_*`). Sem isso → rate limit in-memory + warn em `validate:env`. Smoke: 11º `POST /api/pagamentos/criar-sessao` → 429. | |
 | **#11 Admin MFA** | Supabase Auth → MFA (TOTP) **obrigatório** nas contas listadas em `ADMIN_EMAIL` / `ADMIN_EMAILS`. Evidência: screenshot Settings Auth / usuário com fator ativo (sem QR). Parte código (`requireAdminApi`) já é gate de PR. | |
 | **Backup** (suporte a IR) | Supabase: backups do plano ativos; anotar RTO/RPO em [`SECURITY_INCIDENT_RUNBOOK.md`](SECURITY_INCIDENT_RUNBOOK.md) § Backup. Quem pode restaurar (papel). Não é item #1–13 isolado — bloqueia confiança do #12. | |
@@ -83,7 +84,6 @@ Passo a passo em [`DEPLOY.md`](DEPLOY.md) § [Ops produção (scorecard)](DEPLOY
 |-------------|-----|------|------|
 | #9 | Limpar `npm audit` high (`next`/`sharp`/`ws`/…) | eng | Dependabot / upgrade controlado |
 | #7 | Upstash Redis em Vercel Production | ops | [`DEPLOY.md`](DEPLOY.md) § Ops 2 |
-| #8 | `SENTRY_DSN` (e opcional source maps CI) em Production | ops | [`DEPLOY.md`](DEPLOY.md) § Ops 1 |
 | #11 | MFA TOTP nas contas `ADMIN_EMAIL` / `ADMIN_EMAILS` | ops | [`DEPLOY.md`](DEPLOY.md) § Ops 3 |
 | Backup | Confirmar backups + RTO/RPO no IR | ops | [`SECURITY_INCIDENT_RUNBOOK.md`](SECURITY_INCIDENT_RUNBOOK.md) § Backup |
 | #12 | Paper drill 1× + data no IR | ops | [`SECURITY_INCIDENT_RUNBOOK.md`](SECURITY_INCIDENT_RUNBOOK.md) § Paper drill |

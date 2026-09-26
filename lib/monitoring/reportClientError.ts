@@ -7,6 +7,8 @@
  * gerar outro erro visivel ao usuario.
  */
 
+import { sanitizeString, sanitizeUrl } from './sentrySanitizer';
+
 type ClientErrorPayload = {
   message: string;
   stack?: string;
@@ -33,18 +35,23 @@ function isDuplicate(signature: string): boolean {
  * Como o valor é inlined no build, sem DSN este bloco (e o import dinâmico do
  * Sentry) é eliminado por tree-shaking. O /api/client-error segue como fallback.
  */
-function captureToSentry(payload: ClientErrorPayload): void {
-  if (!process.env.NEXT_PUBLIC_SENTRY_DSN) return;
-  void import('@sentry/nextjs')
-    .then((Sentry) => {
-      const error = new Error(payload.message);
-      if (payload.stack) error.stack = payload.stack;
-      Sentry.captureException(error, {
-        tags: { source: payload.source ?? 'unknown', origin: 'reportClientError' },
-        extra: { digest: payload.digest, url: payload.url },
-      });
-    })
-    .catch(() => {});
+function captureToSentry(payload: ClientErrorPayload): boolean {
+  if (!process.env.NEXT_PUBLIC_SENTRY_DSN) return false;
+  try {
+    void import('@sentry/nextjs')
+      .then((Sentry) => {
+        const error = new Error(sanitizeString(payload.message));
+        if (payload.stack) error.stack = sanitizeString(payload.stack);
+        Sentry.captureException(error, {
+          tags: { source: payload.source ?? 'unknown', origin: 'reportClientError' },
+          extra: { digest: payload.digest, url: payload.url ? sanitizeUrl(payload.url) : undefined },
+        });
+      })
+      .catch(() => {});
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export function reportClientError(payload: ClientErrorPayload): void {
@@ -53,15 +60,16 @@ export function reportClientError(payload: ClientErrorPayload): void {
   const signature = `${payload.source ?? ''}:${payload.message}`;
   if (isDuplicate(signature)) return;
 
-  captureToSentry(payload);
+  const sentryReported = captureToSentry(payload);
 
   const body = JSON.stringify({
-    message: payload.message.slice(0, 2000),
-    stack: payload.stack?.slice(0, 8000),
+    message: sanitizeString(payload.message).slice(0, 2000),
+    stack: payload.stack ? sanitizeString(payload.stack).slice(0, 8000) : undefined,
     digest: payload.digest,
     source: payload.source,
-    url: payload.url ?? window.location.href,
-    userAgent: navigator.userAgent,
+    url: sanitizeUrl(payload.url ?? window.location.href),
+    userAgent: navigator.userAgent?.slice(0, 500),
+    clientSentryReported: sentryReported,
   });
 
   try {
