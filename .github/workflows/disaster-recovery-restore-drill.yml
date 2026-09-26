@@ -1,0 +1,63 @@
+name: Disaster Recovery Restore Drill
+
+on:
+  workflow_dispatch:
+    inputs:
+      r2_object_key:
+        description: 'R2 object key (e.g. daily/dr-...avantdr)'
+        required: true
+        type: string
+      apply:
+        description: 'Run physical apply on CAS (requires DR_RESTORE_DATABASE_URL secret)'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: disaster-recovery-restore-drill
+  cancel-in-progress: false
+
+jobs:
+  restore_drill:
+    name: DR restore drill (CAS)
+    runs-on: ubuntu-latest
+    environment: disaster-recovery
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: DR restore (dry-run or apply)
+        run: |
+          ARGS="--r2-key=${{ inputs.r2_object_key }} --drill-report=artifacts/dr-restore-drill.json"
+          if [ "${{ inputs.apply }}" = "true" ]; then
+            ARGS="$ARGS --apply"
+          fi
+          npx tsx scripts/dr-restore-runner.ts $ARGS
+        env:
+          AVANT_MASTER_KEK: ${{ secrets.AVANT_MASTER_KEK }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          DR_RESTORE_DATABASE_URL: ${{ secrets.DR_RESTORE_DATABASE_URL }}
+
+      - name: Upload drill report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dr-restore-drill-report
+          path: artifacts/dr-restore-drill.json
+          if-no-files-found: warn
