@@ -1,9 +1,9 @@
 # Envelope de workload — 1.000 DAU (AVANT)
 
-Versão máquina: [`scale-1k-workload-envelope.v1.json`](./scale-1k-workload-envelope.v1.json)  
+Versão máquina: [`scale-1k-workload-envelope.v1.json`](./scale-1k-workload-envelope.v1.json) (v1.0.1, `proposed_repaired`)  
 Work unit: [`EWU_SCALE_1K_READINESS_001.md`](./EWU_SCALE_1K_READINESS_001.md)
 
-**Status:** `proposed` — números derivados de heurística de produto edtech + superfícies do app; **não** substituem medição. Owner pode ajustar antes do primeiro teste.
+**Status:** hipótese operacional; **não** substitui medição. Owner sign-off pendente.
 
 ---
 
@@ -11,89 +11,74 @@ Work unit: [`EWU_SCALE_1K_READINESS_001.md`](./EWU_SCALE_1K_READINESS_001.md)
 
 | Termo | Definição |
 | --- | --- |
-| **DAU** | 1.000 usuários **autenticados** com ≥1 ação de estudo no dia (tentativa em questão, resposta em simulado ou sessão de simulado iniciada). |
-| **Não é** | 1.000 simultâneos; MAU; visitantes anônimos na landing. |
+| **DAU** | 1.000 usuários **autenticados** com ≥1 ação de estudo no dia. |
+| **Não é** | 1.000 simultâneos; MAU; anônimos na landing. |
 
 ---
 
 ## 2. Concorrência no pico (tier)
 
-Horário de referência: **19h–22h** (America/Sao_Paulo), ~35% das ações do dia na hora mais forte.
-
-| Tier | Usuários simultâneos no pico | Uso |
+| Tier | CCU no pico | Uso |
 | --- | ---: | --- |
-| **Conservative** | **50** | Primeiro teste em staging; margem de segurança. |
-| **Nominal** | **100** | Meta principal para “suportar 1k DAU”. |
-| **Stress** | **150** | Promo, live, dia de prova; não é SLA cotidiano. |
+| **Conservative** (baseline / ramp) | **50** | Primeiro teste em staging. |
+| **Nominal** | **100** | Meta “1k DAU”. |
+| **Stress** | **150** | Pico atípico. |
 
-Heurística: **5–15% do DAU** online ao mesmo tempo no pico para app de estudo assíncrono. Para 1.000 DAU → 50–150 CCU.
-
----
-
-## 3. Sessão e ritmo
-
-| Parâmetro | Valor |
-| --- | ---: |
-| Sessão média | 22 min |
-| Questões / sessão (média) | 12 |
-| Tempo de raciocínio / questão (média) | 90 s |
-| Requisições HTTP “úteis” / min / usuário ativo | ~6 |
-
-**RPS médio no pico (fórmula):**  
-`CCU × 6 / 60`
-
-| Tier | CCU | RPS médio | Rajada ~30s (×2,5) |
-| --- | ---: | ---: | ---: |
-| Conservative | 50 | ~5 | ~12 |
-| Nominal | 100 | ~10 | ~25 |
-| Stress | 150 | ~15 | ~40 |
-
-Leitura **~82%** / escrita **~18%** (tentativa, simulado, histórico).
+RPS: `CCU × 6 req/min / 60` → ~5 / ~10 / ~15 médio; rajada ~×2,5.
 
 ---
 
-## 4. Mix de jornada (autenticado)
+## 3. Autenticação (harness)
 
-| Jornada | Peso |
-| --- | ---: |
-| Player `/estudar` (questão + slides + registrar) | 70% |
-| Vitrine / navegação catálogo | 12% |
-| Simulado (sessão, questão, responder) | 10% |
-| Desempenho / cadernos | 5% |
-| Auth / refresh / misc | 3% |
-
-O `perf-smoke` atual **não** cobre este mix — só `401` em APIs sem token. O harness de capacidade deve usar **Bearer/cookie** e as operações listadas no JSON (`authenticated_operations`).
-
----
-
-## 5. Superfícies críticas (ordem de prioridade no teste)
-
-1. `POST /api/aluno/registrar-tentativa` — escrita + RLS + cache user  
-2. `GET /api/estudar/questao` — leitura pesada (payload questão)  
-3. `GET /api/vitrine` — paginação + entitlements  
-4. `GET /estudar/[slug]` — RSC (latência percebida)  
-5. `POST /api/simulado/responder` + leituras de sessão  
-6. Supabase Auth (refresh sob carga)
-
-Complementar com `npm run scale:health -- --json` no ambiente alvo (tetos 10k módulos, histórico 5k/usuário).
-
----
-
-## 6. Onde rodar o teste
-
-| Ambiente | Permitido |
+| Superfície | Mecanismo |
 | --- | --- |
-| Staging / branch Supabase dedicado / local + Supabase real controlado | Sim |
-| **Production (`avant.enf.br`)** | **Não** sem autorização explícita do Owner |
+| **API** (`/api/vitrine`, `/api/estudar/questao`, `/api/registrar-tentativa`, `/api/simulado/*`) | `Authorization: Bearer` |
+| **RSC** (`/estudar/{slug}`, `/desempenho`, `/cadernos`) | Cookies + sessão SSR (`proxy.ts` / `getServerSession`) |
+
+k6 puro cobre bem as APIs Bearer; RSC exige fluxo browser-like (ex. Playwright) ou login SSR com cookie jar.
 
 ---
 
-## 7. Próximo passo técnico (EWU fase 2)
+## 4. Mix de jornada = mix de requests
 
-1. Owner **aprovar ou editar** tiers CCU/RPS (comentário no JSON ou issue).  
-2. Implementar **um** script de carga autenticado (k6 ou extensão do harness) usando fixtures tipo `smoke:rls-auth` / contas de teste — **fora de Production**.  
-3. Medir p95 e taxa de erro; **só então** preencher `acceptance_placeholders` no JSON.  
-4. Opcional: promover gate formal **G-CAPACITY-1K** com limiares aprovados.
+Fonte de verdade: `journey_mix` (70 / 12 / 10 / 5 / 3). Cada fatia expande em HTTP conforme `journey_to_http_expansion` no JSON.
+
+| Jornada | Peso | Passos HTTP (peso dentro da jornada) |
+| --- | ---: | --- |
+| Player `/estudar` | 70% | RSC slug 35% · GET questão 35% · POST registrar 30% |
+| Vitrine | 12% | GET `/api/vitrine` |
+| Simulado | 10% | GET sessions 30% · GET questão 40% · POST responder 30% |
+| Desempenho + cadernos | 5% | RSC `/desempenho` 50% · RSC `/cadernos` 50% |
+| Auth / refresh | 3% | refresh token |
+
+**Leitura / escrita (derivado):** ~**76%** leitura · **24%** escrita (soma dos `request_weight` por `kind` no JSON). Não usar 82/18.
+
+**NeuroSlides:** embutidos no payload da questão; **sem** request HTTP independente no mix.
+
+---
+
+## 5. Superfícies críticas
+
+1. `POST /api/registrar-tentativa` — escrita, RLS, cache user  
+2. `GET /api/estudar/questao` — leitura pesada (inclui slides no payload)  
+3. `GET /api/vitrine`  
+4. `GET /estudar/{slug}` — RSC  
+5. Simulado: `GET /api/simulado/sessions`, `GET /api/simulado/questao`, `POST /api/simulado/responder`  
+6. Auth refresh sob carga  
+
+Data plane do app: **Supabase JS + Auth + PostgREST**. Pooler PostgreSQL direto = só tooling de **DR restore**, não evidência do caminho do aluno.
+
+---
+
+## 6. Onde rodar
+
+Staging / branch Supabase / local controlado — **sim**. Production — **não** sem autorização explícita do Owner.
+
+---
+
+## 7. Reparo v1.0.1 (2026-09-26)
+
+Correções após auditoria independente: rota `POST /api/registrar-tentativa`; alinhamento journey ↔ operations; read/write derivado; remoção de neuroslides do mix HTTP; auth API vs RSC; data plane vs DR pooler.
 
 ---
 
@@ -101,6 +86,4 @@ Complementar com `npm run scale:health -- --json` no ambiente alvo (tetos 10k m�
 
 | Campo | Valor |
 | --- | --- |
-| Proposto por | Agente (EWU-SCALE-1K-READINESS-001) |
-| Data | 2026-09-26 |
-| Owner sign-off | Pendente |
+| Owner sign-off | Pendente (`owner_signoff_required: true`) |

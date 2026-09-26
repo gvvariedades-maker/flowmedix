@@ -29,11 +29,24 @@ Pergunta original: cerca de **1.000 usuários ativos no dia**.
 | RPS médio no pico | ~5 | **~10** | ~15 |
 | Rajada ~30s | ~12 | **~25** | ~40 |
 
-DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix ~70% player `/estudar`, leitura/escrita ~82/18.
+DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix jornada 70 / 12 / 10 / 5 / 3; leitura/escrita **derivada ~76 / 24** das operações HTTP (ver JSON v1.0.1).
 
-`CAPACITY_1K_READINESS = PENDING_EVIDENCE` (envelope **DEFINED**; medição ainda não executada)
+`CAPACITY_1K_READINESS = PENDING_EVIDENCE` (envelope **DEFINED**, reparo documental v1.0.1; medição não executada)
 
-**Owner sign-off:** pendente no JSON (`owner_signoff_required: true`).
+**Owner sign-off:** pendente (`owner_signoff_required: true`).
+
+### Reparo documental (após checkpoint `99f7ac7e`)
+
+| Item | Correção |
+| --- | --- |
+| Rota de escrita | `POST /api/registrar-tentativa` (não `/api/aluno/...`) |
+| journey_mix ↔ operations | `journey_to_http_expansion` + `request_weight` somando 1.0 |
+| read/write | 76% / 24% derivados; removido 82/18 não derivável |
+| NeuroSlides | `embedded_payload`; fora do mix HTTP |
+| Auth | APIs Bearer; RSC cookie/session |
+| Data plane | PostgREST no app; pooler só DR tooling |
+
+`ENVELOPE_V1` após reparo: aguarda reauditoria → sign-off Owner.
 
 Não existe gate canônico `G-CAPACITY-1K`. Limiares de erro e p95 não foram inventados neste ciclo.
 
