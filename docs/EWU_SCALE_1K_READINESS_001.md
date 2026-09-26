@@ -29,7 +29,7 @@ Pergunta original: cerca de **1.000 usuários ativos no dia**.
 | RPS médio no pico | ~5 | **~10** | ~15 |
 | Rajada ~30s | ~12 | **~25** | ~40 |
 
-DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix jornada 70 / 12 / 10 / 5 / 3; **`application_data_operation_ratio` ~76 / 24** (data plane do produto, não razão GET/POST HTTP — ver JSON v1.0.2).
+DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix jornada 70 / 12 / 10 / 5 / 3; **`application_data_operation_ratio` ~76 / 24** (data plane do produto, não razão GET/POST HTTP — ver JSON v1.0.3).
 
 Taxa **6 req/min/usuário ativo** = alvo conservador do **gerador de carga** (`conservative_capacity_test_target`, **não** medido em uso real; **não** derivado de `session_model`).
 
