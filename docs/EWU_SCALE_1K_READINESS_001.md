@@ -29,9 +29,11 @@ Pergunta original: cerca de **1.000 usuários ativos no dia**.
 | RPS médio no pico | ~5 | **~10** | ~15 |
 | Rajada ~30s | ~12 | **~25** | ~40 |
 
-DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix jornada 70 / 12 / 10 / 5 / 3; leitura/escrita **derivada ~76 / 24** das operações HTTP (ver JSON v1.0.1).
+DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix jornada 70 / 12 / 10 / 5 / 3; **`application_data_operation_ratio` ~76 / 24** (data plane do produto, não razão GET/POST HTTP — ver JSON v1.0.2).
 
-`CAPACITY_1K_READINESS = PENDING_EVIDENCE` (envelope **DEFINED**, reparo documental v1.0.1; medição não executada)
+Taxa **6 req/min/usuário ativo** = alvo conservador do **gerador de carga** (`conservative_capacity_test_target`, **não** medido em uso real; **não** derivado de `session_model`).
+
+`CAPACITY_1K_READINESS = PENDING_EVIDENCE` (envelope **DEFINED**, reparo documental v1.0.2; medição não executada)
 
 **Owner sign-off:** pendente (`owner_signoff_required: true`).
 
@@ -46,7 +48,15 @@ DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix jornada 70 / 12
 | Auth | APIs Bearer; RSC cookie/session |
 | Data plane | PostgREST no app; pooler só DR tooling |
 
-`ENVELOPE_V1` após reparo: aguarda reauditoria → sign-off Owner.
+### Reparo final v1.0.2 (após `6d37df60`)
+
+| Item | Correção |
+| --- | --- |
+| 6 req/min | `load_generator.generator_target_requests_per_active_user_per_minute`; hipótese conservadora, não média observada |
+| Simulado | `POST /api/simulado/sessions` em **setup** (fixtures); steady-state medido = GET sessions/questão + POST responder |
+| 76/24 | `application_data_operation_ratio`; refresh Auth pode ser POST HTTP e ainda `kind: read` |
+
+`ENVELOPE_V1` após reparo final: aguarda verificação independente → sign-off Owner (`READY_FOR_OWNER_SIGNOFF` esperado).
 
 Não existe gate canônico `G-CAPACITY-1K`. Limiares de erro e p95 não foram inventados neste ciclo.
 

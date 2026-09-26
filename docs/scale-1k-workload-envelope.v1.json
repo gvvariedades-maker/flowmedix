@@ -1,9 +1,9 @@
 {
   "$schema": "avant-scale-workload-envelope/v1",
   "id": "scale-1k-dau-te-enfermagem",
-  "version": "1.0.1",
-  "status": "proposed_repaired",
-  "repair_base_commit": "99f7ac7e2f1cf8bab16b9d3f2b93fedab0e57989",
+  "version": "1.0.2",
+  "status": "proposed_repaired_final",
+  "repair_base_commit": "6d37df601c0ad98d74543505f52f0b19e2a5f9ef",
   "owner_signoff_required": true,
   "product": "AVANT — Técnico de Enfermagem (estudar + simulados + cadernos)",
   "target": {
@@ -37,7 +37,8 @@
     "mean_session_minutes": 22,
     "questions_per_session_mean": 12,
     "think_time_seconds_per_question_mean": 90,
-    "pages_per_session_mean": 8
+    "pages_per_session_mean": 8,
+    "notes": "Contexto pedagógico / planejamento. Não deriva automaticamente a taxa do gerador de carga (ver traffic_model.load_generator)."
   },
   "auth_model": {
     "api_routes": {
@@ -57,19 +58,24 @@
     }
   },
   "traffic_model": {
-    "requests_per_active_user_per_minute_mean": 6,
-    "read_write_ratio": {
+    "load_generator": {
+      "generator_target_requests_per_active_user_per_minute": 6,
+      "assumption_type": "conservative_capacity_test_target",
+      "measured_from_real_usage": false,
+      "notes": "Alvo deliberado do instrumento de teste (~5/10/15 RPS nos tiers). Não afirmar tráfego médio observado em produção nem derivar de session_model (22 min × 6/min ≠ 12 questões × ~3 HTTP/questão)."
+    },
+    "application_data_operation_ratio": {
       "reads": 0.76,
       "writes": 0.24,
-      "derived_from": "authenticated_operations.request_weight (soma por kind read|write)",
-      "notes": "Não usar 82/18 legado; proporção vem do mix 70/12/10/5/3 expandido em passos HTTP."
+      "derived_from": "authenticated_operations.request_weight somando kind=read|write",
+      "semantics": "Classificação de leitura/mutação no data plane do produto (histórico, respostas, catálogo). Não é razão de métodos HTTP GET/POST (ex.: auth refresh pode ser POST HTTP e ainda classificar-se como read no data plane)."
     },
     "peak_rps_estimate": {
       "conservative": { "mean": 5, "burst_30s": 12 },
       "nominal": { "mean": 10, "burst_30s": 25 },
       "stress": { "mean": 15, "burst_30s": 40 }
     },
-    "formula": "mean_rps ≈ peak_concurrent_users × requests_per_active_user_per_minute_mean / 60"
+    "formula": "mean_rps ≈ peak_concurrent_users × load_generator.generator_target_requests_per_active_user_per_minute / 60"
   },
   "journey_mix": {
     "description": "Peso relativo de jornadas (soma 1.0). Fonte de verdade para request_weight.",
@@ -90,7 +96,7 @@
       "api_vitrine_page": 0.12
     },
     "simulado_0_10": {
-      "api_simulado_sessions": 0.03,
+      "api_simulado_sessions_get": 0.03,
       "api_simulado_questao": 0.04,
       "api_simulado_responder": 0.03
     },
@@ -102,6 +108,26 @@
       "auth_session_refresh": 0.03
     }
   },
+  "simulado_harness_phases": {
+    "baseline_v1": {
+      "setup_outside_measured_window": [
+        {
+          "id": "api_simulado_sessions_create",
+          "method": "POST",
+          "path": "/api/simulado/sessions",
+          "execution_phase": "setup",
+          "auth": "Bearer",
+          "notes": "Criação de sessão, pool, RPC/fallback, simulado_sessions + respostas vinculadas — fixture por usuário sintético antes da janela medida."
+        }
+      ],
+      "measured_steady_state": [
+        "api_simulado_sessions",
+        "api_simulado_questao",
+        "api_simulado_responder"
+      ]
+    },
+    "future_scenario": "Cenário separado: criação concorrente POST /api/simulado/sessions sob carga (não misturar com baseline steady-state)."
+  },
   "embedded_payload": {
     "neuroslides_in_question": {
       "independent_http_request": false,
@@ -109,13 +135,14 @@
     }
   },
   "authenticated_operations": {
-    "description": "request_weight alinhado a journey_mix via journey_to_http_expansion.",
+    "description": "request_weight alinhado a journey_mix via journey_to_http_expansion. Campo kind = application data plane (read|write), não método HTTP.",
     "operations": [
       {
         "id": "auth_session_refresh",
         "journey": "auth_refresh_misc",
         "request_weight": 0.03,
         "kind": "read",
+        "http_method_typical": "POST",
         "surface": "Supabase Auth token refresh"
       },
       {
@@ -162,7 +189,8 @@
         "kind": "read",
         "method": "GET",
         "path": "/api/simulado/sessions",
-        "auth": "Bearer"
+        "auth": "Bearer",
+        "execution_phase": "measured"
       },
       {
         "id": "api_simulado_questao",
@@ -171,7 +199,8 @@
         "kind": "read",
         "method": "GET",
         "path": "/api/simulado/questao",
-        "auth": "Bearer"
+        "auth": "Bearer",
+        "execution_phase": "measured"
       },
       {
         "id": "api_simulado_responder",
@@ -180,7 +209,8 @@
         "kind": "write",
         "method": "POST",
         "path": "/api/simulado/responder",
-        "auth": "Bearer"
+        "auth": "Bearer",
+        "execution_phase": "measured"
       },
       {
         "id": "rsc_desempenho",

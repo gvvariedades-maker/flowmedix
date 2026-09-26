@@ -1,6 +1,6 @@
 # Envelope de workload — 1.000 DAU (AVANT)
 
-Versão máquina: [`scale-1k-workload-envelope.v1.json`](./scale-1k-workload-envelope.v1.json) (v1.0.1, `proposed_repaired`)  
+Versão máquina: [`scale-1k-workload-envelope.v1.json`](./scale-1k-workload-envelope.v1.json) (v1.0.2, `proposed_repaired_final`)  
 Work unit: [`EWU_SCALE_1K_READINESS_001.md`](./EWU_SCALE_1K_READINESS_001.md)
 
 **Status:** hipótese operacional; **não** substitui medição. Owner sign-off pendente.
@@ -24,7 +24,9 @@ Work unit: [`EWU_SCALE_1K_READINESS_001.md`](./EWU_SCALE_1K_READINESS_001.md)
 | **Nominal** | **100** | Meta “1k DAU”. |
 | **Stress** | **150** | Pico atípico. |
 
-RPS: `CCU × 6 req/min / 60` → ~5 / ~10 / ~15 médio; rajada ~×2,5.
+RPS: `CCU × generator_target (6 req/min) / 60` → ~5 / ~10 / ~15 médio; rajada ~×2,5.
+
+O **6 req/min** é alvo deliberado do instrumento de teste (`assumption_type: conservative_capacity_test_target`, `measured_from_real_usage: false`). Não representa tráfego médio medido em produção nem fecha com `session_model` (22 min × 12 questões × think time) sem um modelo HTTP explícito por questão.
 
 ---
 
@@ -51,7 +53,7 @@ Fonte de verdade: `journey_mix` (70 / 12 / 10 / 5 / 3). Cada fatia expande em HT
 | Desempenho + cadernos | 5% | RSC `/desempenho` 50% · RSC `/cadernos` 50% |
 | Auth / refresh | 3% | refresh token |
 
-**Leitura / escrita (derivado):** ~**76%** leitura · **24%** escrita (soma dos `request_weight` por `kind` no JSON). Não usar 82/18.
+**`application_data_operation_ratio` (derivado):** ~**76%** leitura · **24%** escrita (soma dos `request_weight` por `kind` = read|write no **data plane** do produto). Não confundir com proporção de métodos HTTP GET/POST (ex.: refresh de token costuma ser POST HTTP e ainda classifica-se como read). Não usar 82/18.
 
 **NeuroSlides:** embutidos no payload da questão; **sem** request HTTP independente no mix.
 
@@ -63,8 +65,9 @@ Fonte de verdade: `journey_mix` (70 / 12 / 10 / 5 / 3). Cada fatia expande em HT
 2. `GET /api/estudar/questao` — leitura pesada (inclui slides no payload)  
 3. `GET /api/vitrine`  
 4. `GET /estudar/{slug}` — RSC  
-5. Simulado: `GET /api/simulado/sessions`, `GET /api/simulado/questao`, `POST /api/simulado/responder`  
-6. Auth refresh sob carga  
+5. Simulado (janela **medida**): `GET /api/simulado/sessions`, `GET /api/simulado/questao`, `POST /api/simulado/responder`  
+6. Simulado (**setup**, fora da janela medida na baseline v1): `POST /api/simulado/sessions` (criação de sessão/fixture por usuário sintético; cenário futuro separado para criação concorrente sob carga)  
+7. Auth refresh sob carga  
 
 Data plane do app: **Supabase JS + Auth + PostgREST**. Pooler PostgreSQL direto = só tooling de **DR restore**, não evidência do caminho do aluno.
 
@@ -76,9 +79,11 @@ Staging / branch Supabase / local controlado — **sim**. Production — **não*
 
 ---
 
-## 7. Reparo v1.0.1 (2026-09-26)
+## 7. Histórico de reparo
 
-Correções após auditoria independente: rota `POST /api/registrar-tentativa`; alinhamento journey ↔ operations; read/write derivado; remoção de neuroslides do mix HTTP; auth API vs RSC; data plane vs DR pooler.
+**v1.0.1:** rota `POST /api/registrar-tentativa`; journey ↔ operations; ratio derivado; neuroslides embedded; auth API vs RSC; data plane vs DR pooler.
+
+**v1.0.2:** gerador 6 req/min como hipótese conservadora (não média observada); fases setup/measured do simulado; semântica `application_data_operation_ratio`.
 
 ---
 
