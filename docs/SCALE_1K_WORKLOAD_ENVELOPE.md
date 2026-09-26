@@ -1,6 +1,6 @@
 # Envelope de workload — 1.000 DAU (AVANT)
 
-Versão máquina: [`scale-1k-workload-envelope.v1.json`](./scale-1k-workload-envelope.v1.json) (v1.0.2, `proposed_repaired_final`)  
+Versão máquina: [`scale-1k-workload-envelope.v1.json`](./scale-1k-workload-envelope.v1.json) (v1.0.3, `proposed_repaired_final`)  
 Work unit: [`EWU_SCALE_1K_READINESS_001.md`](./EWU_SCALE_1K_READINESS_001.md)
 
 **Status:** hipótese operacional; **não** substitui medição. Owner sign-off pendente.
@@ -61,7 +61,7 @@ Fonte de verdade: `journey_mix` (70 / 12 / 10 / 5 / 3). Cada fatia expande em HT
 
 ## 5. Superfícies críticas
 
-1. `POST /api/registrar-tentativa` — escrita, RLS, cache user  
+1. `POST /api/registrar-tentativa` — escrita server-side após auth/authz; histórico, cache user e evidence (persistência via service role no servidor, não como prova de policy RLS nessa rota)  
 2. `GET /api/estudar/questao` — leitura pesada (inclui slides no payload)  
 3. `GET /api/vitrine`  
 4. `GET /estudar/{slug}` — RSC  
@@ -84,6 +84,8 @@ Staging / branch Supabase / local controlado — **sim**. Production — **não*
 **v1.0.1:** rota `POST /api/registrar-tentativa`; journey ↔ operations; ratio derivado; neuroslides embedded; auth API vs RSC; data plane vs DR pooler.
 
 **v1.0.2:** gerador 6 req/min como hipótese conservadora (não média observada); fases setup/measured do simulado; semântica `application_data_operation_ratio`.
+
+**v1.0.3:** ID `api_simulado_sessions` alinhado em `journey_to_http_expansion`; wording factual de `POST /api/registrar-tentativa` (sem “RLS” na escrita).
 
 ---
 

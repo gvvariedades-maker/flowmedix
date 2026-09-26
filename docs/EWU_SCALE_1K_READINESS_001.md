@@ -33,7 +33,7 @@ DAU = usuário autenticado com ≥1 ação de estudo no dia. Mix jornada 70 / 12
 
 Taxa **6 req/min/usuário ativo** = alvo conservador do **gerador de carga** (`conservative_capacity_test_target`, **não** medido em uso real; **não** derivado de `session_model`).
 
-`CAPACITY_1K_READINESS = PENDING_EVIDENCE` (envelope **DEFINED**, reparo documental v1.0.2; medição não executada)
+`CAPACITY_1K_READINESS = PENDING_EVIDENCE` (envelope **DEFINED**, reparo documental v1.0.3; medição não executada)
 
 **Owner sign-off:** pendente (`owner_signoff_required: true`).
 
@@ -55,6 +55,8 @@ Taxa **6 req/min/usuário ativo** = alvo conservador do **gerador de carga** (`c
 | 6 req/min | `load_generator.generator_target_requests_per_active_user_per_minute`; hipótese conservadora, não média observada |
 | Simulado | `POST /api/simulado/sessions` em **setup** (fixtures); steady-state medido = GET sessions/questão + POST responder |
 | 76/24 | `application_data_operation_ratio`; refresh Auth pode ser POST HTTP e ainda `kind: read` |
+
+**v1.0.3 (após `7c078c0f`):** chave `api_simulado_sessions` consistente no JSON; `POST /api/registrar-tentativa` descrito como escrita server-side pós-auth (não RLS na persistência).
 
 `ENVELOPE_V1` após reparo final: aguarda verificação independente → sign-off Owner (`READY_FOR_OWNER_SIGNOFF` esperado).
 

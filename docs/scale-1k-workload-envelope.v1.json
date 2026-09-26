@@ -1,9 +1,9 @@
 {
   "$schema": "avant-scale-workload-envelope/v1",
   "id": "scale-1k-dau-te-enfermagem",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "status": "proposed_repaired_final",
-  "repair_base_commit": "6d37df601c0ad98d74543505f52f0b19e2a5f9ef",
+  "repair_base_commit": "7c078c0fdbbe1b687d11ed36ff091e9e24edc2e7",
   "owner_signoff_required": true,
   "product": "AVANT — Técnico de Enfermagem (estudar + simulados + cadernos)",
   "target": {
@@ -96,7 +96,7 @@
       "api_vitrine_page": 0.12
     },
     "simulado_0_10": {
-      "api_simulado_sessions_get": 0.03,
+      "api_simulado_sessions": 0.03,
       "api_simulado_questao": 0.04,
       "api_simulado_responder": 0.03
     },
