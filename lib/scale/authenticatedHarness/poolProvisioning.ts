@@ -1,4 +1,6 @@
+import type { SupabaseClient } from '@supabase/supabase-js';
 import { loadApprovedStagingTarget } from '@/lib/scale/authenticatedHarness/approvedStagingTarget';
+import { findAuthUserByEmail } from '@/lib/supabase/adminUsers';
 
 const PRODUCTION_SUPABASE_REF = 'ozgouenqrofnvgrlgfwd';
 const PRODUCTION_APP_HOSTS = new Set(['avant.enf.br', 'www.avant.enf.br']);
@@ -62,3 +64,42 @@ export const DEFAULT_STAGING_APP_URL =
   'https://flowmedix-git-staging-gvvariedades-makers-projects.vercel.app';
 
 export const DEFAULT_STAGING_SUPABASE_URL = 'https://higsjzfigprqvldpxfwj.supabase.co';
+
+/** Serializa erros do GoTrue/PostgREST (evita stderr só `{}`). */
+export function formatHarnessProvisionError(err: unknown): string {
+  if (err instanceof Error && err.message && err.message !== '{}') {
+    const status = (err as Error & { status?: number }).status;
+    return status ? `${err.message} (status ${status})` : err.message;
+  }
+  if (typeof err === 'object' && err) {
+    const record = err as Record<string, unknown>;
+    const parts = [
+      record.message,
+      record.code,
+      record.status !== undefined ? `status ${record.status}` : null,
+      record.details,
+      record.hint,
+    ]
+      .filter((v) => typeof v === 'string' && v.trim() && v !== '{}')
+      .map((v) => String(v));
+    if (parts.length > 0) return parts.join(' | ');
+  }
+  return err instanceof Error ? err.name : JSON.stringify(err);
+}
+
+/**
+ * Resolve e-mails harness → user_id via RPC (evita listUsers perPage alto, que retorna 500 no CAS).
+ */
+export async function mapHarnessEmailsToAuthUserIds(
+  admin: SupabaseClient,
+  emails: string[],
+): Promise<Map<string, string>> {
+  const out = new Map<string, string>();
+  for (const email of emails) {
+    const normalized = email.toLowerCase();
+    const { user, error } = await findAuthUserByEmail(admin, email);
+    if (error) throw error;
+    if (user?.id) out.set(normalized, user.id);
+  }
+  return out;
+}

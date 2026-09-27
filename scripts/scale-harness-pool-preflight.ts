@@ -6,11 +6,13 @@
 import { execSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js';
 import {
   assertHarnessProvisionTargetsAllowed,
   DEFAULT_STAGING_SUPABASE_URL,
+  formatHarnessProvisionError,
   formatHarnessSyntheticEmail,
+  mapHarnessEmailsToAuthUserIds,
 } from '@/lib/scale/authenticatedHarness/poolProvisioning';
 import {
   buildSlugPreflightChecks,
@@ -59,26 +61,6 @@ function hydrateServiceRoleFromSupabaseCli(projectRef: string): void {
 function loadPool(pathRel: string): SyntheticUserPoolFile {
   const absolute = resolve(process.cwd(), pathRel);
   return JSON.parse(readFileSync(absolute, 'utf8')) as SyntheticUserPoolFile;
-}
-
-async function mapHarnessEmailsToUserIds(
-  admin: SupabaseClient,
-  emails: string[],
-): Promise<Map<string, string>> {
-  const wanted = new Set(emails.map((e) => e.toLowerCase()));
-  const out = new Map<string, string>();
-  let page = 1;
-  while (page <= 20) {
-    const { data, error } = await admin.auth.admin.listUsers({ page, perPage: 1000 });
-    if (error) throw error;
-    for (const user of data.users) {
-      const email = user.email?.toLowerCase();
-      if (email && wanted.has(email) && user.id) out.set(email, user.id);
-    }
-    if (data.users.length < 1000) break;
-    page += 1;
-  }
-  return out;
 }
 
 async function main() {
@@ -205,7 +187,7 @@ async function main() {
   const emails = Array.from({ length: pool.users.length }, (_, i) =>
     formatHarnessSyntheticEmail(batch, i, emailDomain).toLowerCase(),
   );
-  const authIdByEmail = await mapHarnessEmailsToUserIds(admin, emails);
+  const authIdByEmail = await mapHarnessEmailsToAuthUserIds(admin, emails);
   const foundInAuth = authIdByEmail.size;
 
   if (foundInAuth < pool.users.length) {
@@ -274,6 +256,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(err instanceof Error ? err.message : String(err));
+  console.error(formatHarnessProvisionError(err));
   process.exit(1);
 });

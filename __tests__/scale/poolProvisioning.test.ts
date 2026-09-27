@@ -1,6 +1,7 @@
 import {
   assertHarnessProvisionTargetsAllowed,
   formatHarnessPoolUserId,
+  formatHarnessProvisionError,
   formatHarnessSyntheticEmail,
   PoolProvisionForbiddenError,
 } from '@/lib/scale/authenticatedHarness/poolProvisioning';
@@ -22,6 +23,11 @@ describe('scale harness pool provisioning', () => {
         baseUrl: 'https://flowmedix-git-staging-gvvariedades-makers-projects.vercel.app',
       }),
     ).not.toThrow();
+  });
+
+  it('serializa AuthRetryableFetchError sem mensagem útil', () => {
+    const err = Object.assign(new Error('{}'), { status: 500, name: 'AuthRetryableFetchError' });
+    expect(formatHarnessProvisionError(err)).toContain('status 500');
   });
 
   it('formata pool_id e e-mail sintético', () => {

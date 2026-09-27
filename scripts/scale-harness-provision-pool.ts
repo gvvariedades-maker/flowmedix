@@ -22,6 +22,7 @@ import {
   DEFAULT_HARNESS_EMAIL_DOMAIN,
   DEFAULT_STAGING_SUPABASE_URL,
   formatHarnessPoolUserId,
+  formatHarnessProvisionError,
   formatHarnessSyntheticEmail,
 } from '@/lib/scale/authenticatedHarness/poolProvisioning';
 import { pickHarnessOpcaoIdFromConteudo } from '@/lib/scale/authenticatedHarness/poolQuestionFixture';
@@ -107,7 +108,7 @@ async function withAuthRateLimitRetry<T>(label: string, fn: () => Promise<T>): P
             ? String((err as { message?: unknown }).message)
             : String(err);
       if (!/rate limit/i.test(message) || attempt >= 9) {
-        throw new Error(`${label}: ${formatProvisionError(err)}`);
+        throw new Error(`${label}: ${formatHarnessProvisionError(err)}`);
       }
       const waitMs = Math.min(15_000, 1500 * (attempt + 1));
       process.stdout.write(`rate-limit, aguardando ${waitMs}ms… `);
@@ -316,20 +317,7 @@ async function main() {
   );
 }
 
-function formatProvisionError(err: unknown): string {
-  if (err instanceof Error && err.message) return err.message;
-  if (typeof err === 'object' && err) {
-    const record = err as Record<string, unknown>;
-    const status = record.status;
-    const parts = [record.message, record.code, status !== undefined ? `status ${status}` : null, record.details, record.hint]
-      .filter((v) => typeof v === 'string' && v.trim())
-      .map((v) => String(v));
-    if (parts.length > 0) return parts.join(' | ');
-  }
-  return err instanceof Error ? err.name : JSON.stringify(err);
-}
-
 main().catch((err) => {
-  console.error(formatProvisionError(err));
+  console.error(formatHarnessProvisionError(err));
   process.exit(1);
 });
