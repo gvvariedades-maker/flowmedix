@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "description": "Alvos app/Supabase autorizados para harness (fonte independente do pool). Atualizar só com decisão Owner + evidência de staging.",
+  "app_hosts": ["127.0.0.1", "localhost"],
+  "supabase_hosts": ["example.supabase.co"]
+}

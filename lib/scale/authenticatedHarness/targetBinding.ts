@@ -1,32 +1,30 @@
+import {
+  assertPoolBoundToApprovedStaging,
+  loadApprovedStagingTarget,
+  mergeApprovedHostsFromEnv,
+  type ApprovedStagingTarget,
+} from '@/lib/scale/authenticatedHarness/approvedStagingTarget';
 import type { SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
 
 export type TargetBindingValidation = { ok: true } | { ok: false; reason: string };
 
+/** @deprecated Use assertPoolBoundToApprovedStaging — pool.allowed_hosts não é autoridade. */
 export function validateStagingTargetBinding(pool: SyntheticUserPoolFile): TargetBindingValidation {
-  if (pool.target_environment !== 'staging') {
-    return {
-      ok: false,
-      reason: `target_environment deve ser "staging" (recebido: ${pool.target_environment ?? 'ausente'})`,
-    };
-  }
-  if (!Array.isArray(pool.allowed_hosts) || pool.allowed_hosts.length === 0) {
-    return { ok: false, reason: 'allowed_hosts[] obrigatório (allowlist explícita)' };
-  }
-
-  let host: string;
   try {
-    host = new URL(pool.base_url).hostname.toLowerCase();
-  } catch {
-    return { ok: false, reason: `base_url inválida: ${pool.base_url}` };
+    const approved = loadApprovedStagingTarget();
+    assertPoolBoundToApprovedStaging(pool, approved);
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, reason: err instanceof Error ? err.message : String(err) };
   }
-
-  const allowed = pool.allowed_hosts.map((h) => h.toLowerCase());
-  if (!allowed.includes(host)) {
-    return {
-      ok: false,
-      reason: `host ${host} não está em allowed_hosts (${allowed.join(', ')})`,
-    };
-  }
-
-  return { ok: true };
 }
+
+export function resolveApprovedStagingForCli(options: {
+  allowlistPath?: string;
+  extraAppHostsCsv?: string;
+}): ApprovedStagingTarget {
+  const base = loadApprovedStagingTarget(options.allowlistPath);
+  return mergeApprovedHostsFromEnv(base, options.extraAppHostsCsv);
+}
+
+export { assertPoolBoundToApprovedStaging, type ApprovedStagingTarget };

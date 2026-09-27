@@ -16,7 +16,8 @@ export type SyntheticUserCredentials = {
 export type SyntheticUserPoolFile = {
   schema_version: 1;
   target_environment: 'staging';
-  allowed_hosts: string[];
+  /** Informativo; autoridade = data/scale-harness/staging-target.allowlist.json */
+  allowed_hosts?: string[];
   base_url: string;
   supabase_url?: string;
   supabase_anon_key?: string;

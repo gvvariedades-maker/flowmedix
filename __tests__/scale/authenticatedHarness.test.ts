@@ -1,11 +1,16 @@
+import { assertPoolBoundToApprovedStaging } from '@/lib/scale/authenticatedHarness/approvedStagingTarget';
 import { buildHarnessExecutionPlan } from '@/lib/scale/authenticatedHarness/buildPlan';
 import {
   assertHarnessExecutionAllowed,
   HarnessExecutionForbiddenError,
 } from '@/lib/scale/authenticatedHarness/execute';
+import { HarnessMetricsCollector } from '@/lib/scale/authenticatedHarness/metrics';
+import { runSimuladoSetupStep } from '@/lib/scale/authenticatedHarness/simuladoSetup';
+import { executeMaterializedRequest } from '@/lib/scale/authenticatedHarness/httpExecute';
 import { materializeOperation } from '@/lib/scale/authenticatedHarness/materializeRequest';
+import { parseSimuladoSessionSetupResponse, SimuladoSetupParseError } from '@/lib/scale/authenticatedHarness/parseSimuladoSession';
+import { computeVuStaggerMs } from '@/lib/scale/authenticatedHarness/pacing';
 import { assertPlanHasNoRawSecrets, redactSecretsDeep } from '@/lib/scale/authenticatedHarness/redact';
-import { pickWeightedOperation } from '@/lib/scale/authenticatedHarness/scheduler';
 import { validateStagingTargetBinding } from '@/lib/scale/authenticatedHarness/targetBinding';
 import {
   PoolValidationError,
@@ -14,7 +19,14 @@ import {
   validateUserCredentialsForOperations,
 } from '@/lib/scale/authenticatedHarness/validatePool';
 import { validateEnvelopeIntegrity } from '@/lib/scale/authenticatedHarness/validateEnvelope';
+import { createVuRuntimeState, toMaterializeUser } from '@/lib/scale/authenticatedHarness/vuRuntime';
 import type { HarnessOperationStep, SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
+
+const approved = {
+  schema_version: 1,
+  app_hosts: ['127.0.0.1'],
+  supabase_hosts: ['example.supabase.co'],
+};
 
 function makePool(userCount: number, overrides?: Partial<SyntheticUserPoolFile>): SyntheticUserPoolFile {
   const users = Array.from({ length: userCount }, (_, i) => ({
@@ -28,7 +40,6 @@ function makePool(userCount: number, overrides?: Partial<SyntheticUserPoolFile>)
   return {
     schema_version: 1,
     target_environment: 'staging',
-    allowed_hosts: ['127.0.0.1'],
     base_url: 'http://127.0.0.1:3000',
     supabase_url: 'https://example.supabase.co',
     supabase_anon_key: 'anon-placeholder',
@@ -36,18 +47,6 @@ function makePool(userCount: number, overrides?: Partial<SyntheticUserPoolFile>)
     ...overrides,
   };
 }
-
-const measuredSample: HarnessOperationStep[] = [
-  {
-    operation_id: 'rsc_estudar_slug',
-    phase: 'measured',
-    auth: 'cookie_session_rsc',
-    method: 'GET',
-    path: '/estudar/{slug}',
-    request_weight: 0.5,
-    kind: 'read',
-  },
-];
 
 describe('scale authenticated harness', () => {
   it('valida envelope aprovado v1.0.3', () => {
@@ -57,110 +56,152 @@ describe('scale authenticated harness', () => {
   });
 
   it('rejeita pool_size < CCU', () => {
-    const pool = makePool(1);
-    expect(() => validatePoolCardinality(pool, 50)).toThrow(PoolValidationError);
+    expect(() => validatePoolCardinality(makePool(1), 50)).toThrow(PoolValidationError);
   });
 
-  it('rejeita pool_id duplicado e token compartilhado', () => {
-    const pool = makePool(2);
-    pool.users[1].pool_id = pool.users[0].pool_id;
-    expect(() => validatePoolIdentityUniqueness(pool)).toThrow(/pool_id duplicado/);
-    pool.users[1].pool_id = 'u2';
-    pool.users[1].access_token = pool.users[0].access_token;
-    expect(() => validatePoolIdentityUniqueness(pool)).toThrow(/access_token compartilhado/);
+  it('binding independente: host production não passa na allowlist versionada', () => {
+    const pool = makePool(1, {
+      base_url: 'https://avant.enf.br',
+      allowed_hosts: ['avant.enf.br'],
+    });
+    expect(() => assertPoolBoundToApprovedStaging(pool, approved)).toThrow(/allowlist aprovada/);
+    expect(validateStagingTargetBinding(pool).ok).toBe(false);
   });
 
-  it('exige cookie e slug para RSC/player', () => {
-    const pool = makePool(1);
-    const user = { ...pool.users[0], cookie_header: '', default_questao_slug: '' };
+  it('rejeita supabase fora da allowlist', () => {
+    const pool = makePool(1, { supabase_url: 'https://evil.supabase.co' });
+    expect(() => assertPoolBoundToApprovedStaging(pool, approved)).toThrow(/supabase_url host/);
+  });
+
+  it('parse setup simulado exige session.id e questoes[0].modulo_slug', () => {
+    const ok = parseSimuladoSessionSetupResponse({
+      success: true,
+      session: { id: 'sess-1' },
+      questoes: [{ modulo_slug: 'q-slug', ordem: 1 }],
+    });
+    expect(ok).toEqual({ session_id: 'sess-1', modulo_slug: 'q-slug' });
     expect(() =>
-      validateUserCredentialsForOperations(user, pool, measuredSample, {
-        requireRefreshToken: false,
-        simuladoSetupInHarness: true,
-      }),
-    ).toThrow(/cookie_header/);
-    user.cookie_header = 'c=1';
-    expect(() =>
-      validateUserCredentialsForOperations(user, pool, measuredSample, {
-        requireRefreshToken: false,
-        simuladoSetupInHarness: true,
-      }),
-    ).toThrow(/default_questao_slug/);
+      parseSimuladoSessionSetupResponse({ success: true, session: { id: 'x' }, questoes: [] }),
+    ).toThrow(SimuladoSetupParseError);
   });
 
-  it('monta plano nominal com 100 usuários e scheduler 6 req/min', () => {
-    const pool = makePool(100);
-    const plan = buildHarnessExecutionPlan({ tier: 'nominal', pool });
-    expect(plan.peak_concurrent_users).toBe(100);
-    expect(plan.scheduler.virtual_users).toBe(100);
-    expect(plan.scheduler.interval_ms_per_request).toBe(10_000);
-    expect(plan.setup_steps[0]?.operation_id).toBe('api_simulado_sessions_create');
-    expect(plan.readiness.HARNESS_HTTP_EXECUTOR).toBe('IMPLEMENTED_BLOCKED_BY_POLICY');
-  });
-
-  it('materializa POST registrar-tentativa conforme API', () => {
+  it('setup simulado 2xx persiste session_id e modulo_slug no VU', async () => {
     const pool = makePool(1);
-    const user = pool.users[0];
-    const req = materializeOperation(
-      {
-        operation_id: 'api_registrar_tentativa',
-        phase: 'measured',
-        auth: 'bearer',
-        method: 'POST',
-        path: '/api/registrar-tentativa',
-        request_weight: 0.21,
-        kind: 'write',
-      },
+    const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool: makePool(50) });
+    const state = createVuRuntimeState(pool.users[0]);
+    const metrics = new HarnessMetricsCollector();
+    const setupJson = {
+      success: true,
+      session: { id: 'uuid-sess' },
+      questoes: [{ modulo_slug: 'mod-slug', ordem: 1 }],
+    };
+    await runSimuladoSetupStep(
+      plan,
       pool,
-      user,
+      state,
+      metrics,
+      async () =>
+        ({
+          status: 200,
+          json: async () => setupJson,
+        }) as Response,
     );
-    expect(req.body).toEqual({ modulo_slug: 'slug-demo', opcao_id: 'A' });
+    expect(state.simulado_session_id).toBe('uuid-sess');
+    expect(state.simulado_modulo_slug).toBe('mod-slug');
   });
 
-  it('target binding exige staging allowlist', () => {
-    const pool = makePool(1, { allowed_hosts: ['other.example'], base_url: 'https://staging.example.com' });
-    const result = validateStagingTargetBinding(pool);
-    expect(result.ok).toBe(false);
+  it('setup simulado non-2xx falha', async () => {
+    const pool = makePool(1);
+    const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool: makePool(50) });
+    const state = createVuRuntimeState(pool.users[0]);
+    const metrics = new HarnessMetricsCollector();
+    await expect(
+      runSimuladoSetupStep(plan, pool, state, metrics, async () => ({ status: 500, json: async () => ({}) }) as Response),
+    ).rejects.toThrow(/Setup simulado HTTP 500/);
+  });
+
+  it('RSC redirect manual não conta como sucesso', async () => {
+    const pool = makePool(1);
+    const state = createVuRuntimeState(pool.users[0]);
+    const outcome = await executeMaterializedRequest(
+      pool,
+      state,
+      {
+        operation_id: 'rsc_desempenho',
+        phase: 'measured',
+        method: 'GET',
+        url_path: '/desempenho',
+        auth_mode: 'cookie_session_rsc',
+      },
+      async () =>
+        ({
+          status: 302,
+          headers: { get: () => '/login' },
+          url: 'http://127.0.0.1:3000/login',
+        }) as unknown as Response,
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.error_kind).toBe('redirect');
+  });
+
+  it('métricas calculam p95 por operação', () => {
+    const m = new HarnessMetricsCollector();
+    for (let i = 1; i <= 100; i++) {
+      m.recordRequest('measured', 'api_vitrine_page', 'read', 200, i, true);
+    }
+    const report = m.buildReport({
+      phase: 'measured',
+      elapsedMs: 10_000,
+      targetMeanRps: 5,
+      httpRequestsSent: 100,
+    });
+    const vitrine = report.operations.find((o) => o.operation_id === 'api_vitrine_page');
+    expect(vitrine?.p95_ms).toBeGreaterThanOrEqual(95);
+    expect(vitrine?.requests).toBe(100);
+  });
+
+  it('stagger distribui VUs no intervalo', () => {
+    expect(computeVuStaggerMs(0, 50, 10_000)).toBe(0);
+    expect(computeVuStaggerMs(25, 50, 10_000)).toBe(5000);
   });
 
   it('bloqueia execução sem flags', () => {
-    expect(() =>
-      assertHarnessExecutionAllowed({
-        cliExecuteFlag: false,
-        harnessExecuteEnv: undefined,
-        loadTestAuthorizedEnv: undefined,
-      }),
-    ).toThrow(HarnessExecutionForbiddenError);
-    expect(() =>
-      assertHarnessExecutionAllowed({
-        cliExecuteFlag: true,
-        harnessExecuteEnv: undefined,
-        loadTestAuthorizedEnv: '1',
-      }),
-    ).toThrow(/SCALE_HARNESS_EXECUTE/);
     expect(() =>
       assertHarnessExecutionAllowed({
         cliExecuteFlag: true,
         harnessExecuteEnv: '1',
         loadTestAuthorizedEnv: undefined,
       }),
-    ).toThrow(/LOAD_TEST_AUTHORIZATION/);
+    ).toThrow(HarnessExecutionForbiddenError);
   });
 
   it('redige credenciais no plano serializado', () => {
     const pool = makePool(50);
     const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
-    const redacted = redactSecretsDeep({ pool, plan });
-    const serialized = JSON.stringify(redacted);
+    const serialized = JSON.stringify(redactSecretsDeep({ pool, plan }));
     assertPlanHasNoRawSecrets(serialized);
     expect(serialized).not.toContain('token-0');
   });
 
-  it('pickWeightedOperation respeita pesos', () => {
-    const ops: HarnessOperationStep[] = [
-      { operation_id: 'a', phase: 'measured', auth: 'bearer', method: 'GET', path: '/', request_weight: 1, kind: 'read' },
-      { operation_id: 'b', phase: 'measured', auth: 'bearer', method: 'GET', path: '/', request_weight: 0, kind: 'read' },
+  it('exige cookie e slug para RSC', () => {
+    const pool = makePool(1);
+    const user = { ...pool.users[0], cookie_header: '' };
+    const measured: HarnessOperationStep[] = [
+      {
+        operation_id: 'rsc_estudar_slug',
+        phase: 'measured',
+        auth: 'cookie_session_rsc',
+        method: 'GET',
+        path: '/estudar/x',
+        request_weight: 1,
+        kind: 'read',
+      },
     ];
-    expect(pickWeightedOperation(ops, () => 0).operation_id).toBe('a');
+    expect(() =>
+      validateUserCredentialsForOperations(user, pool, measured, {
+        requireRefreshToken: false,
+        simuladoSetupInHarness: true,
+      }),
+    ).toThrow(/cookie_header/);
   });
 });

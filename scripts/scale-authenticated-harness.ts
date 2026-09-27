@@ -1,7 +1,7 @@
 #!/usr/bin/env tsx
 /**
  * Harness autenticado EWU-SCALE-1K-READINESS-001 — validação e plano por padrão.
- * Flags de execução lidas apenas neste CLI (fora de lib/ runtime).
+ * Flags de execução e allowlist staging: apenas neste CLI.
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -11,6 +11,7 @@ import {
   runHarnessMeasuredWindow,
 } from '@/lib/scale/authenticatedHarness/execute';
 import { assertPlanHasNoRawSecrets, redactSecretsDeep } from '@/lib/scale/authenticatedHarness/redact';
+import { resolveApprovedStagingForCli } from '@/lib/scale/authenticatedHarness/targetBinding';
 import { loadSyntheticUserPool } from '@/lib/scale/authenticatedHarness/syntheticUserPool';
 import { validateEnvelopeIntegrity } from '@/lib/scale/authenticatedHarness/validateEnvelope';
 import type { ConcurrencyTierId } from '@/lib/scale/workloadEnvelope';
@@ -31,6 +32,7 @@ function parseArgs(argv: string[]) {
   let poolFile: string | undefined;
   let outFile: string | undefined;
   let envelopePath: string | undefined;
+  let allowlistPath: string | undefined;
 
   for (const arg of argv) {
     if (arg === '--validate') validate = true;
@@ -41,19 +43,31 @@ function parseArgs(argv: string[]) {
     } else if (arg.startsWith('--pool=')) poolFile = arg.slice('--pool='.length);
     else if (arg.startsWith('--out=')) outFile = arg.slice('--out='.length);
     else if (arg.startsWith('--envelope=')) envelopePath = arg.slice('--envelope='.length);
+    else if (arg.startsWith('--staging-allowlist=')) {
+      allowlistPath = arg.slice('--staging-allowlist='.length);
+    }
   }
 
   if (!validate && !plan && !execute) validate = true;
 
-  return { tier, validate, plan, execute, poolFile, outFile, envelopePath };
+  return { tier, validate, plan, execute, poolFile, outFile, envelopePath, allowlistPath };
 }
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  const approvedStaging = resolveApprovedStagingForCli({
+    allowlistPath: args.allowlistPath,
+    extraAppHostsCsv: process.env.SCALE_HARNESS_APPROVED_STAGING_HOSTS,
+  });
 
   if (args.validate) {
     const report = validateEnvelopeIntegrity(args.envelopePath);
-    const payload = { harness: 'scale-authenticated', mode: 'validate', ...report };
+    const payload = {
+      harness: 'scale-authenticated',
+      mode: 'validate',
+      staging_allowlist_app_hosts: approvedStaging.app_hosts,
+      ...report,
+    };
     console.log(JSON.stringify(payload, null, 2));
     if (!report.ok) process.exit(1);
   }
@@ -63,7 +77,7 @@ async function main() {
       console.error('Erro: --pool=<arquivo.json> obrigatório para --plan ou --execute');
       process.exit(1);
     }
-    const pool = loadSyntheticUserPool(args.poolFile);
+    const pool = loadSyntheticUserPool(args.poolFile, approvedStaging);
     const executionPlan = buildHarnessExecutionPlan({
       tier: args.tier,
       pool,
@@ -82,7 +96,19 @@ async function main() {
 
     if (args.plan) {
       console.log(
-        JSON.stringify({ harness: 'scale-authenticated', mode: 'plan', plan: publicPlan }, null, 2),
+        JSON.stringify(
+          {
+            harness: 'scale-authenticated',
+            mode: 'plan',
+            staging_binding: {
+              app_hosts: approvedStaging.app_hosts,
+              supabase_hosts: approvedStaging.supabase_hosts,
+            },
+            plan: publicPlan,
+          },
+          null,
+          2,
+        ),
       );
     }
 
@@ -91,7 +117,9 @@ async function main() {
       assertHarnessExecutionAllowed(gate);
       const durationMs = Number(process.env.SCALE_HARNESS_DURATION_MS ?? '60000');
       const result = await runHarnessMeasuredWindow(executionPlan, pool, { durationMs });
-      console.log(JSON.stringify({ harness: 'scale-authenticated', mode: 'execute', result }, null, 2));
+      console.log(
+        JSON.stringify({ harness: 'scale-authenticated', mode: 'execute', result: redactSecretsDeep(result) }, null, 2),
+      );
     }
   }
 }

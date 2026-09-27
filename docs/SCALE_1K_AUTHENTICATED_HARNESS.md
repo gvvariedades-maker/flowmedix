@@ -2,50 +2,36 @@
 
 Envelope aprovado: v1.0.3, SHA `0bfe0479f79954115d50451c005301b27df61cd5`.
 
-## Estado (honesto)
+## Estado
 
 | Componente | Status |
 | --- | --- |
-| `ENVELOPE_V1` | **APPROVED** |
-| `HARNESS_VALIDATOR` | **IMPLEMENTED** (`--validate`) |
-| `HARNESS_PLANNER` | **IMPLEMENTED** (`--plan`, materialização, scheduler) |
-| `HARNESS_HTTP_EXECUTOR` | **IMPLEMENTED_BLOCKED_BY_POLICY** (código existe; `--execute` + env) |
-| `HARNESS_AUTHENTICATED` | **IMPLEMENTATION_IN_PROGRESS** (revisão independente pendente) |
-| `CAPACITY_1K_READINESS` | `PENDING_EVIDENCE` |
-| `LOAD_TEST_AUTHORIZATION` | `NOT_GRANTED` |
-| `PRODUCTION_AUTHORIZATION` | `NOT_GRANTED` |
+| `HARNESS_VALIDATOR` / `HARNESS_PLANNER` | **IMPLEMENTED** |
+| `HARNESS_HTTP_EXECUTOR` | **IMPLEMENTED_BLOCKED_BY_POLICY** |
+| `HARNESS_AUTHENTICATED` | **IMPLEMENTATION_IN_PROGRESS** (revisão pós-repair executor) |
+| `LOAD_TEST_AUTHORIZATION` | **NOT_GRANTED** |
 
-## Pool de usuários (baseline)
+## Target binding (independente do pool)
 
-- `pool.users.length >= peak_concurrent_users` do tier (50 / 100 / 150).
-- `pool_id` único; `access_token` único por usuário (sem reuso no baseline).
-- Rotas RSC: `cookie_header` obrigatório.
-- Player/API questão: `default_questao_slug` + `default_opcao_id` para escrita.
-- Simulado responder: `default_opcao_id`; `simulado_session_id` pré-preenchido **ou** setup `POST /api/simulado/sessions` no harness.
-- Auth refresh: `supabase_url`, `supabase_anon_key`, `supabase_refresh_token` por usuário.
+Fonte canônica: [`data/scale-harness/staging-target.allowlist.json`](../data/scale-harness/staging-target.allowlist.json).
 
-## Target (allowlist)
+O pool **não** pode autodeclarar Production: `base_url` e `supabase_url` devem bater com hosts da allowlist versionada. Opcional no CLI: `SCALE_HARNESS_APPROVED_STAGING_HOSTS` (somente no script).
 
-- `target_environment` deve ser `"staging"`.
-- `base_url` deve ter host listado em `allowed_hosts[]`.
-- Production não tem caminho executável sem mudança de política + Owner.
+## RSC baseline
 
-## Secrets
+HTTP SSR com `cookie_header` pré-provisionado; `redirect: manual` — redirect/login **não** conta como sucesso. Não substitui navegação browser completa (Playwright = cenário futuro).
 
-Pools reais somente em paths gitignored:
+## Setup simulado
 
-- `scale-harness-private/`
-- `artifacts/scale-harness-private/`
-- `*.scale-harness-pool.local.json`
-
-Exemplo versionado (placeholders): `examples/scale-harness-pool.example.json`  
-Plano local sem segredos: `examples/scale-harness-plan-pool.placeholder.json` (50 VUs fictícios).
+`POST /api/simulado/sessions` fora da janela measured; parse de `session.id` + `questoes[0].modulo_slug`; fail-fast em não-2xx.
 
 ## Scheduling
 
-- **6 req/min/VU** → intervalo médio **10 s** entre requests por VU.
-- Seleção **weighted_random** nos `request_weight` das operações measured.
-- **Setup** (criação de simulado) uma vez por VU antes da janela measured (quando `--execute` autorizado).
+Start-to-start ~6 req/min/VU, stagger inicial entre VUs, relógio measured **após** setup completo.
+
+## Métricas (quando `--execute` autorizado)
+
+Por `operation_id`: requests, successes, failures, status, latências, p50/p95/p99/max; global: achieved vs target RPS, `setup_elapsed_ms` vs `measured_elapsed_ms`. Artefatos sempre redigidos.
 
 ## Comandos (sem carga)
 
@@ -54,9 +40,4 @@ npm run scale:harness -- --validate
 npm run scale:harness -- --plan --tier=conservative --pool=examples/scale-harness-plan-pool.placeholder.json
 ```
 
-Execução HTTP: `--execute` + `SCALE_HARNESS_EXECUTE=1` + `SCALE_HARNESS_LOAD_TEST_AUTHORIZED=1` — **não usar** até revisão + autorização Owner para staging.
-
-## Código
-
-- `lib/scale/authenticatedHarness/*`
-- `scripts/scale-authenticated-harness.ts`
+Pools reais: `scale-harness-private/` ou `*.scale-harness-pool.local.json` (gitignored).

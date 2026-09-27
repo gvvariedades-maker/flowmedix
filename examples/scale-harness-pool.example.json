@@ -1,7 +1,6 @@
 {
   "schema_version": 1,
   "target_environment": "staging",
-  "allowed_hosts": ["staging.example.com"],
   "base_url": "https://staging.example.com",
   "supabase_url": "https://your-project.supabase.co",
   "users": [

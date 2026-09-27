@@ -1,9 +1,15 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import {
+  assertPoolBoundToApprovedStaging,
+  type ApprovedStagingTarget,
+} from '@/lib/scale/authenticatedHarness/approvedStagingTarget';
 import type { SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
-import { validateStagingTargetBinding } from '@/lib/scale/authenticatedHarness/targetBinding';
 
-export function loadSyntheticUserPool(filePath: string): SyntheticUserPoolFile {
+export function loadSyntheticUserPool(
+  filePath: string,
+  approved: ApprovedStagingTarget,
+): SyntheticUserPoolFile {
   const absolute = resolve(process.cwd(), filePath);
   const parsed = JSON.parse(readFileSync(absolute, 'utf8')) as SyntheticUserPoolFile;
   if (parsed.schema_version !== 1) {
@@ -21,10 +27,6 @@ export function loadSyntheticUserPool(filePath: string): SyntheticUserPoolFile {
     }
   }
 
-  const binding = validateStagingTargetBinding(parsed);
-  if (!binding.ok) {
-    throw new Error(binding.reason);
-  }
-
+  assertPoolBoundToApprovedStaging(parsed, approved);
   return parsed;
 }

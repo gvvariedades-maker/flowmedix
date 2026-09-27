@@ -1,0 +1,269 @@
+{
+  "envelope_version": "1.0.3",
+  "envelope_status": "approved",
+  "tier": "conservative",
+  "peak_concurrent_users": 50,
+  "target_mean_rps": 5,
+  "generator_requests_per_active_user_per_minute": 6,
+  "pool_size": 50,
+  "setup_steps": [
+    {
+      "operation_id": "api_simulado_sessions_create",
+      "phase": "setup",
+      "auth": "bearer",
+      "method": "POST",
+      "path": "/api/simulado/sessions",
+      "request_weight": 0,
+      "kind": "write"
+    }
+  ],
+  "measured_operations": [
+    {
+      "operation_id": "auth_session_refresh",
+      "phase": "measured",
+      "auth": "supabase_auth_refresh",
+      "method": "POST",
+      "path": "Supabase Auth token refresh",
+      "request_weight": 0.03,
+      "kind": "read"
+    },
+    {
+      "operation_id": "api_vitrine_page",
+      "phase": "measured",
+      "auth": "bearer",
+      "method": "GET",
+      "path": "/api/vitrine",
+      "request_weight": 0.12,
+      "kind": "read"
+    },
+    {
+      "operation_id": "rsc_estudar_slug",
+      "phase": "measured",
+      "auth": "cookie_session_rsc",
+      "method": "GET",
+      "path": "/estudar/{slug}",
+      "request_weight": 0.245,
+      "kind": "read"
+    },
+    {
+      "operation_id": "api_estudar_questao",
+      "phase": "measured",
+      "auth": "bearer",
+      "method": "GET",
+      "path": "/api/estudar/questao",
+      "request_weight": 0.245,
+      "kind": "read"
+    },
+    {
+      "operation_id": "api_registrar_tentativa",
+      "phase": "measured",
+      "auth": "bearer",
+      "method": "POST",
+      "path": "/api/registrar-tentativa",
+      "request_weight": 0.21,
+      "kind": "write"
+    },
+    {
+      "operation_id": "api_simulado_sessions",
+      "phase": "measured",
+      "auth": "bearer",
+      "method": "GET",
+      "path": "/api/simulado/sessions",
+      "request_weight": 0.03,
+      "kind": "read"
+    },
+    {
+      "operation_id": "api_simulado_questao",
+      "phase": "measured",
+      "auth": "bearer",
+      "method": "GET",
+      "path": "/api/simulado/questao",
+      "request_weight": 0.04,
+      "kind": "read"
+    },
+    {
+      "operation_id": "api_simulado_responder",
+      "phase": "measured",
+      "auth": "bearer",
+      "method": "POST",
+      "path": "/api/simulado/responder",
+      "request_weight": 0.03,
+      "kind": "write"
+    },
+    {
+      "operation_id": "rsc_desempenho",
+      "phase": "measured",
+      "auth": "cookie_session_rsc",
+      "method": "GET",
+      "path": "/desempenho",
+      "request_weight": 0.025,
+      "kind": "read"
+    },
+    {
+      "operation_id": "rsc_cadernos",
+      "phase": "measured",
+      "auth": "cookie_session_rsc",
+      "method": "GET",
+      "path": "/cadernos",
+      "request_weight": 0.025,
+      "kind": "read"
+    }
+  ],
+  "journey_mix": {
+    "estudar_player": 0.7,
+    "vitrine_navegacao": 0.12,
+    "simulado": 0.1,
+    "desempenho_cadernos": 0.05,
+    "auth_refresh_misc": 0.03
+  },
+  "scheduler": {
+    "virtual_users": 50,
+    "requests_per_active_user_per_minute": 6,
+    "interval_ms_per_request": 10000,
+    "selection": "weighted_random",
+    "weights": [
+      {
+        "operation_id": "auth_session_refresh",
+        "request_weight": 0.03
+      },
+      {
+        "operation_id": "api_vitrine_page",
+        "request_weight": 0.12
+      },
+      {
+        "operation_id": "rsc_estudar_slug",
+        "request_weight": 0.245
+      },
+      {
+        "operation_id": "api_estudar_questao",
+        "request_weight": 0.245
+      },
+      {
+        "operation_id": "api_registrar_tentativa",
+        "request_weight": 0.21
+      },
+      {
+        "operation_id": "api_simulado_sessions",
+        "request_weight": 0.03
+      },
+      {
+        "operation_id": "api_simulado_questao",
+        "request_weight": 0.04
+      },
+      {
+        "operation_id": "api_simulado_responder",
+        "request_weight": 0.03
+      },
+      {
+        "operation_id": "rsc_desempenho",
+        "request_weight": 0.025
+      },
+      {
+        "operation_id": "rsc_cadernos",
+        "request_weight": 0.025
+      }
+    ]
+  },
+  "materialized_sample": [
+    {
+      "operation_id": "api_simulado_sessions_create",
+      "phase": "setup",
+      "method": "POST",
+      "url_path": "/api/simulado/sessions",
+      "auth_mode": "bearer",
+      "body": {
+        "quantidade": 5,
+        "modo": "treino",
+        "ritmo_meta": "3min",
+        "forcar_novo": true
+      }
+    },
+    {
+      "operation_id": "auth_session_refresh",
+      "phase": "measured",
+      "method": "POST",
+      "url_path": "/auth/v1/token?grant_type=refresh_token",
+      "auth_mode": "supabase_auth_refresh",
+      "body": {
+        "grant_type": "refresh_token"
+      }
+    },
+    {
+      "operation_id": "api_vitrine_page",
+      "phase": "measured",
+      "method": "GET",
+      "url_path": "/api/vitrine?page=1&disciplina=enfermagem",
+      "auth_mode": "bearer"
+    },
+    {
+      "operation_id": "rsc_estudar_slug",
+      "phase": "measured",
+      "method": "GET",
+      "url_path": "/estudar/slug-demo",
+      "auth_mode": "cookie_session_rsc"
+    },
+    {
+      "operation_id": "api_estudar_questao",
+      "phase": "measured",
+      "method": "GET",
+      "url_path": "/api/estudar/questao?slug=slug-demo&layers=core&disciplina=enfermagem",
+      "auth_mode": "bearer"
+    },
+    {
+      "operation_id": "api_registrar_tentativa",
+      "phase": "measured",
+      "method": "POST",
+      "url_path": "/api/registrar-tentativa",
+      "auth_mode": "bearer",
+      "body": {
+        "modulo_slug": "slug-demo",
+        "opcao_id": "A"
+      }
+    },
+    {
+      "operation_id": "api_simulado_sessions",
+      "phase": "measured",
+      "method": "GET",
+      "url_path": "/api/simulado/sessions",
+      "auth_mode": "bearer"
+    },
+    {
+      "operation_id": "api_simulado_questao",
+      "phase": "measured",
+      "method": "GET",
+      "url_path": "/api/simulado/questao?slug=slug-demo",
+      "auth_mode": "bearer"
+    },
+    {
+      "operation_id": "api_simulado_responder",
+      "phase": "measured",
+      "method": "POST",
+      "url_path": "/api/simulado/responder",
+      "auth_mode": "bearer",
+      "body": {
+        "modulo_slug": "slug-demo",
+        "opcao_id": "A"
+      }
+    },
+    {
+      "operation_id": "rsc_desempenho",
+      "phase": "measured",
+      "method": "GET",
+      "url_path": "/desempenho",
+      "auth_mode": "cookie_session_rsc"
+    },
+    {
+      "operation_id": "rsc_cadernos",
+      "phase": "measured",
+      "method": "GET",
+      "url_path": "/cadernos",
+      "auth_mode": "cookie_session_rsc"
+    }
+  ],
+  "readiness": {
+    "HARNESS_VALIDATOR": "IMPLEMENTED",
+    "HARNESS_PLANNER": "IMPLEMENTED",
+    "HARNESS_HTTP_EXECUTOR": "IMPLEMENTED_BLOCKED_BY_POLICY",
+    "HARNESS_AUTHENTICATED": "IMPLEMENTATION_IN_PROGRESS"
+  }
+}
