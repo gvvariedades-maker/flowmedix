@@ -8,12 +8,12 @@ Envelope aprovado: v1.0.3, SHA `0bfe0479f79954115d50451c005301b27df61cd5`.
 | --- | --- |
 | `HARNESS_VALIDATOR` / `HARNESS_PLANNER` | **IMPLEMENTED** |
 | `HARNESS_HTTP_EXECUTOR` | **IMPLEMENTED_BLOCKED_BY_POLICY** |
-| `HARNESS_AUTHENTICATED` | **HARDENING** (escopo + defesa em profundidade) |
+| `HARNESS_AUTHENTICATED` | **READY_FOR_STAGING_TARGET_BINDING** (hosts versionados; load test ainda não autorizado) |
 | `LOAD_TEST_AUTHORIZATION` | **NOT_GRANTED** |
 
 ## Target binding (independente do pool)
 
-Fonte canônica e **única** autoridade de hosts: [`data/scale-harness/staging-target.allowlist.json`](../data/scale-harness/staging-target.allowlist.json).
+Fonte canônica e **única** autoridade de hosts: [`data/scale-harness/staging-target.allowlist.json`](../data/scale-harness/staging-target.allowlist.json). Binding staging (2026-09-27): [`SCALE_HARNESS_STAGING_TARGET_BINDING.md`](./SCALE_HARNESS_STAGING_TARGET_BINDING.md).
 
 Não há expansão de `app_hosts` via variável de ambiente. O pool deve usar `base_url` / `supabase_url` cujos hosts estejam na allowlist versionada (decisão do Owner).
 

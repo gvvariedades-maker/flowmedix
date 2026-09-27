@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "target_environment": "staging",
-  "base_url": "https://staging.example.com",
-  "supabase_url": "https://your-project.supabase.co",
+  "base_url": "https://flowmedix-git-staging-gvvariedades-makers-projects.vercel.app",
+  "supabase_url": "https://higsjzfigprqvldpxfwj.supabase.co",
   "users": [
     {
       "pool_id": "harness-user-001",
