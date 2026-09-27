@@ -1,14 +1,21 @@
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { assertPoolBoundToApprovedStaging } from '@/lib/scale/authenticatedHarness/approvedStagingTarget';
 import { buildHarnessExecutionPlan } from '@/lib/scale/authenticatedHarness/buildPlan';
 import {
+  assertExecuteUsesCanonicalArtifactPaths,
+  loadCanonicalArtifactBinding,
+} from '@/lib/scale/authenticatedHarness/canonicalArtifacts';
+import {
   assertHarnessExecutionGate,
+  assertScopeMatchesCanonicalArtifacts,
   assertScopeMatchesRun,
   createAuthorizedExecutionContext,
   HarnessExecutionForbiddenError,
   runHarnessMeasuredWindow,
   runHarnessMeasuredWindowAuthorized,
 } from '@/lib/scale/authenticatedHarness/execute';
-import { executeHarnessMeasuredWindowInternal } from '@/lib/scale/authenticatedHarness/executeInternal';
+import { assertGitWorktreeClean, resolveRuntimeGitShaStrict } from '@/lib/scale/authenticatedHarness/gitExecutionBinding';
 import { HarnessMetricsCollector } from '@/lib/scale/authenticatedHarness/metrics';
 import { runSimuladoSetupStep } from '@/lib/scale/authenticatedHarness/simuladoSetup';
 import { executeMaterializedRequest } from '@/lib/scale/authenticatedHarness/httpExecute';
@@ -51,7 +58,12 @@ function makePool(userCount: number, overrides?: Partial<SyntheticUserPoolFile>)
   };
 }
 
-function authorizedEnv(sha: string, tier: 'conservative' | 'nominal' | 'stress', durationMs: number): NodeJS.ProcessEnv {
+function authorizedEnv(
+  sha: string,
+  tier: 'conservative' | 'nominal' | 'stress',
+  durationMs: number,
+  canonical: ReturnType<typeof loadCanonicalArtifactBinding>,
+): NodeJS.ProcessEnv {
   return {
     ...process.env,
     SCALE_HARNESS_EXECUTE: '1',
@@ -61,6 +73,31 @@ function authorizedEnv(sha: string, tier: 'conservative' | 'nominal' | 'stress',
     SCALE_HARNESS_AUTHORIZED_APP_HOST: '127.0.0.1',
     SCALE_HARNESS_AUTHORIZED_SUPABASE_HOST: 'example.supabase.co',
     SCALE_HARNESS_AUTHORIZED_DURATION_MS: String(durationMs),
+    SCALE_HARNESS_AUTHORIZED_ENVELOPE_VERSION: canonical.envelope_version,
+    SCALE_HARNESS_AUTHORIZED_ENVELOPE_SHA256: canonical.envelope_digest_sha256,
+    SCALE_HARNESS_AUTHORIZED_ALLOWLIST_SHA256: canonical.allowlist_digest_sha256,
+    SCALE_HARNESS_AUTHORIZED_PEAK_CCU: String(canonical.peak_concurrent_users),
+    SCALE_HARNESS_AUTHORIZED_TARGET_MEAN_RPS: String(canonical.target_mean_rps),
+  };
+}
+
+function scopeFromCanonical(
+  sha: string,
+  tier: 'conservative' | 'nominal' | 'stress',
+  durationMs: number,
+  canonical: ReturnType<typeof loadCanonicalArtifactBinding>,
+) {
+  return {
+    authorized_git_sha: sha,
+    tier,
+    app_host: '127.0.0.1',
+    supabase_host: 'example.supabase.co',
+    duration_ms: durationMs,
+    envelope_version: canonical.envelope_version,
+    envelope_digest_sha256: canonical.envelope_digest_sha256,
+    allowlist_digest_sha256: canonical.allowlist_digest_sha256,
+    peak_concurrent_users: canonical.peak_concurrent_users,
+    target_mean_rps: canonical.target_mean_rps,
   };
 }
 
@@ -235,16 +272,23 @@ describe('scale authenticated harness', () => {
     ).toThrow(HarnessExecutionForbiddenError);
   });
 
+  it('execute proíbe envelope ou allowlist customizados', () => {
+    expect(() =>
+      assertExecuteUsesCanonicalArtifactPaths({ execute: true, envelopePath: '/tmp/evil.json' }),
+    ).toThrow(/envelope customizado/);
+    expect(() =>
+      assertExecuteUsesCanonicalArtifactPaths({ execute: true, allowlistPath: '/tmp/evil.json' }),
+    ).toThrow(/staging-allowlist customizado/);
+    expect(() =>
+      assertExecuteUsesCanonicalArtifactPaths({ execute: false, envelopePath: 'custom.json' }),
+    ).not.toThrow();
+  });
+
   it('escopo conservative rejeita tier stress no CLI', () => {
+    const canonical = loadCanonicalArtifactBinding('conservative');
     const pool = makePool(50);
     const planConservative = buildHarnessExecutionPlan({ tier: 'conservative', pool });
-    const scope = {
-      authorized_git_sha: 'sha-test',
-      tier: 'conservative' as const,
-      app_host: '127.0.0.1',
-      supabase_host: 'example.supabase.co',
-      duration_ms: 60_000,
-    };
+    const scope = scopeFromCanonical('sha-test', 'conservative', 60_000, canonical);
     expect(() =>
       assertScopeMatchesRun(scope, {
         runtimeGitSha: 'sha-test',
@@ -253,6 +297,7 @@ describe('scale authenticated harness', () => {
         plan: planConservative,
         pool,
         approved,
+        canonical,
       }),
     ).not.toThrow();
     expect(() =>
@@ -263,20 +308,16 @@ describe('scale authenticated harness', () => {
         plan: planConservative,
         pool,
         approved,
+        canonical,
       }),
     ).toThrow(/tier autorizado/);
   });
 
   it('rejeita SHA ou duração divergentes do escopo', () => {
+    const canonical = loadCanonicalArtifactBinding('conservative');
     const pool = makePool(50);
     const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
-    const scope = {
-      authorized_git_sha: 'sha-a',
-      tier: 'conservative' as const,
-      app_host: '127.0.0.1',
-      supabase_host: 'example.supabase.co',
-      duration_ms: 60_000,
-    };
+    const scope = scopeFromCanonical('sha-a', 'conservative', 60_000, canonical);
     expect(() =>
       assertScopeMatchesRun(scope, {
         runtimeGitSha: 'sha-b',
@@ -285,6 +326,7 @@ describe('scale authenticated harness', () => {
         plan,
         pool,
         approved,
+        canonical,
       }),
     ).toThrow(/SHA autorizado/);
     expect(() =>
@@ -295,19 +337,18 @@ describe('scale authenticated harness', () => {
         plan,
         pool,
         approved,
+        canonical,
       }),
     ).toThrow(/duration autorizada/);
   });
 
   it('rejeita app host do pool diferente do autorizado', () => {
+    const canonical = loadCanonicalArtifactBinding('conservative');
     const pool = makePool(50, { base_url: 'http://127.0.0.1:3000' });
     const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
     const scope = {
-      authorized_git_sha: 'sha',
-      tier: 'conservative' as const,
+      ...scopeFromCanonical('sha', 'conservative', 60_000, canonical),
       app_host: 'staging.example.com',
-      supabase_host: 'example.supabase.co',
-      duration_ms: 60_000,
     };
     expect(() =>
       assertScopeMatchesRun(scope, {
@@ -317,24 +358,59 @@ describe('scale authenticated harness', () => {
         plan,
         pool,
         approved,
+        canonical,
       }),
     ).toThrow(/app host autorizado/);
   });
 
+  it('rejeita digest de envelope ou allowlist divergente', () => {
+    const canonical = loadCanonicalArtifactBinding('conservative');
+    const pool = makePool(50);
+    const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
+    const scope = scopeFromCanonical('sha', 'conservative', 60_000, canonical);
+    const badEnvelope = { ...scope, envelope_digest_sha256: '0'.repeat(64) };
+    expect(() => assertScopeMatchesCanonicalArtifacts(badEnvelope, canonical, plan)).toThrow(
+      /envelope_digest/,
+    );
+    const badAllowlist = { ...scope, allowlist_digest_sha256: 'f'.repeat(64) };
+    expect(() => assertScopeMatchesCanonicalArtifacts(badAllowlist, canonical, plan)).toThrow(
+      /allowlist_digest/,
+    );
+  });
+
+  it('rejeita peak CCU ou RPS divergentes do canônico', () => {
+    const canonical = loadCanonicalArtifactBinding('conservative');
+    const pool = makePool(50);
+    const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
+    const scope = { ...scopeFromCanonical('sha', 'conservative', 60_000, canonical), peak_concurrent_users: 999 };
+    expect(() => assertScopeMatchesCanonicalArtifacts(scope, canonical, plan)).toThrow(/peak CCU/);
+  });
+
+  it('rejeita worktree sujo em execução', () => {
+    expect(() => assertGitWorktreeClean(' M lib/foo.ts\n')).toThrow(/worktree não limpo/);
+    expect(() => assertGitWorktreeClean('')).not.toThrow();
+  });
+
+  it('resolveRuntimeGitShaStrict exige git', () => {
+    expect(resolveRuntimeGitShaStrict()).toMatch(/^[0-9a-f]{40}$/);
+  });
+
   it('createAuthorizedExecutionContext exige escopo completo', () => {
+    const canonical = loadCanonicalArtifactBinding('conservative');
     const pool = makePool(50);
     const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
     const durationMs = 60_000;
     const sha = 'commit-sha-1';
     const ctx = createAuthorizedExecutionContext({
       gate: { cliExecuteFlag: true, harnessExecuteEnv: '1', loadTestAuthorizedEnv: '1' },
-      env: authorizedEnv(sha, 'conservative', durationMs),
+      env: authorizedEnv(sha, 'conservative', durationMs, canonical),
       runtimeGitSha: sha,
       cliTier: 'conservative',
       durationMs,
       plan,
       pool,
       approved,
+      canonical,
     });
     expect(ctx.scope.tier).toBe('conservative');
   });
@@ -343,25 +419,32 @@ describe('scale authenticated harness', () => {
     await expect(runHarnessMeasuredWindow()).rejects.toThrow(/runHarnessMeasuredWindow foi removido/);
   });
 
-  it('executor interno sem contexto autorizado não é o API público de política', () => {
-    expect(typeof executeHarnessMeasuredWindowInternal).toBe('function');
+  it('boundary único em execute.ts — sem módulo interno separado', () => {
+    const legacyExecutor = resolve(
+      process.cwd(),
+      'lib/scale/authenticatedHarness',
+      'executeInternal.ts',
+    );
+    expect(existsSync(legacyExecutor)).toBe(false);
     expect(typeof runHarnessMeasuredWindowAuthorized).toBe('function');
   });
 
   it('runHarnessMeasuredWindowAuthorized rejeita duration divergente do escopo', async () => {
+    const canonical = loadCanonicalArtifactBinding('conservative');
     const pool = makePool(50);
     const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
     const durationMs = 60_000;
     const sha = 'sha-x';
     const auth = createAuthorizedExecutionContext({
       gate: { cliExecuteFlag: true, harnessExecuteEnv: '1', loadTestAuthorizedEnv: '1' },
-      env: authorizedEnv(sha, 'conservative', durationMs),
+      env: authorizedEnv(sha, 'conservative', durationMs, canonical),
       runtimeGitSha: sha,
       cliTier: 'conservative',
       durationMs,
       plan,
       pool,
       approved,
+      canonical,
     });
     await expect(
       runHarnessMeasuredWindowAuthorized(auth, plan, pool, { durationMs: 30_000 }),

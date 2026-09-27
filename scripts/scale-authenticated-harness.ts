@@ -1,16 +1,23 @@
 #!/usr/bin/env tsx
 /**
  * Harness autenticado EWU-SCALE-1K-READINESS-001 — validação e plano por padrão.
- * Allowlist staging: somente arquivo versionado. Escopo de load test: env vinculado (sem --execute por padrão).
+ * --execute: envelope + allowlist canônicos versionados; escopo de load test vinculado; worktree limpo.
  */
-import { execSync } from 'node:child_process';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { buildHarnessExecutionPlan } from '@/lib/scale/authenticatedHarness/buildPlan';
 import {
+  assertExecuteUsesCanonicalArtifactPaths,
+  loadCanonicalArtifactBinding,
+} from '@/lib/scale/authenticatedHarness/canonicalArtifacts';
+import {
   createAuthorizedExecutionContext,
   runHarnessMeasuredWindowAuthorized,
 } from '@/lib/scale/authenticatedHarness/execute';
+import {
+  getGitStatusPorcelain,
+  resolveRuntimeGitShaStrict,
+} from '@/lib/scale/authenticatedHarness/gitExecutionBinding';
 import { assertPlanHasNoRawSecrets, redactSecretsDeep } from '@/lib/scale/authenticatedHarness/redact';
 import { resolveApprovedStagingForCli } from '@/lib/scale/authenticatedHarness/targetBinding';
 import { loadSyntheticUserPool } from '@/lib/scale/authenticatedHarness/syntheticUserPool';
@@ -23,14 +30,6 @@ function readHarnessExecutionGate(cliExecute: boolean) {
     harnessExecuteEnv: process.env.SCALE_HARNESS_EXECUTE,
     loadTestAuthorizedEnv: process.env.SCALE_HARNESS_LOAD_TEST_AUTHORIZED,
   };
-}
-
-function getRuntimeGitSha(): string {
-  try {
-    return execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
-  } catch {
-    return process.env.SCALE_HARNESS_RUNTIME_GIT_SHA?.trim() ?? 'unknown';
-  }
 }
 
 function parseArgs(argv: string[]) {
@@ -64,10 +63,20 @@ function parseArgs(argv: string[]) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
-  const approvedStaging = resolveApprovedStagingForCli({ allowlistPath: args.allowlistPath });
+  assertExecuteUsesCanonicalArtifactPaths({
+    execute: args.execute,
+    envelopePath: args.envelopePath,
+    allowlistPath: args.allowlistPath,
+  });
+
+  const approvedStaging = args.execute
+    ? resolveApprovedStagingForCli({})
+    : resolveApprovedStagingForCli({ allowlistPath: args.allowlistPath });
+
+  const envelopePathForPlan = args.execute ? undefined : args.envelopePath;
 
   if (args.validate) {
-    const report = validateEnvelopeIntegrity(args.envelopePath);
+    const report = validateEnvelopeIntegrity(envelopePathForPlan);
     const payload = {
       harness: 'scale-authenticated',
       mode: 'validate',
@@ -87,7 +96,7 @@ async function main() {
     const executionPlan = buildHarnessExecutionPlan({
       tier: args.tier,
       pool,
-      envelopePath: args.envelopePath,
+      envelopePath: envelopePathForPlan,
     });
 
     const publicPlan = redactSecretsDeep(executionPlan);
@@ -120,15 +129,20 @@ async function main() {
 
     if (args.execute) {
       const durationMs = Number(process.env.SCALE_HARNESS_AUTHORIZED_DURATION_MS ?? '0');
+      const canonical = loadCanonicalArtifactBinding(args.tier);
+      const runtimeGitSha = resolveRuntimeGitShaStrict();
+      const gitWorktreePorcelain = getGitStatusPorcelain();
       const auth = createAuthorizedExecutionContext({
         gate: readHarnessExecutionGate(true),
         env: process.env,
-        runtimeGitSha: getRuntimeGitSha(),
+        runtimeGitSha,
         cliTier: args.tier,
         durationMs,
         plan: executionPlan,
         pool,
         approved: approvedStaging,
+        canonical,
+        gitWorktreePorcelain,
       });
       const result = await runHarnessMeasuredWindowAuthorized(auth, executionPlan, pool, { durationMs });
       console.log(

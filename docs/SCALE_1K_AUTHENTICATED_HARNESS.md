@@ -23,15 +23,20 @@ Além de `--execute`, `SCALE_HARNESS_EXECUTE=1` e `SCALE_HARNESS_LOAD_TEST_AUTHO
 
 | Variável | Exemplo |
 | --- | --- |
-| `SCALE_HARNESS_AUTHORIZED_GIT_SHA` | SHA do commit autorizado |
+| `SCALE_HARNESS_AUTHORIZED_GIT_SHA` | SHA do commit autorizado (= `git rev-parse HEAD`, worktree limpo) |
 | `SCALE_HARNESS_AUTHORIZED_TIER` | `conservative` \| `nominal` \| `stress` |
 | `SCALE_HARNESS_AUTHORIZED_APP_HOST` | host do `base_url` do pool |
 | `SCALE_HARNESS_AUTHORIZED_SUPABASE_HOST` | host do `supabase_url` (se usado) |
 | `SCALE_HARNESS_AUTHORIZED_DURATION_MS` | duração da janela measured |
+| `SCALE_HARNESS_AUTHORIZED_ENVELOPE_VERSION` | ex.: `1.0.3` |
+| `SCALE_HARNESS_AUTHORIZED_ENVELOPE_SHA256` | digest do arquivo canônico do envelope |
+| `SCALE_HARNESS_AUTHORIZED_ALLOWLIST_SHA256` | digest da allowlist versionada |
+| `SCALE_HARNESS_AUTHORIZED_PEAK_CCU` | CCU do tier (ex. 50 conservative) |
+| `SCALE_HARNESS_AUTHORIZED_TARGET_MEAN_RPS` | RPS médio derivado do envelope |
 
-Qualquer divergência (tier, host, duração maior/diferente, SHA) **rejeita** a execução. Autorização para 50 CCU / conservative não habilita stress ou 150 CCU.
+Com `--execute`: **proibido** `--envelope` ou `--staging-allowlist` customizados; somente `docs/scale-1k-workload-envelope.v1.json` e `data/scale-harness/staging-target.allowlist.json`. Sem fallback `SCALE_HARNESS_RUNTIME_GIT_SHA`.
 
-Entrypoint HTTP: `runHarnessMeasuredWindowAuthorized` — valida target + escopo antes do executor interno.
+Entrypoint HTTP público: `runHarnessMeasuredWindowAuthorized` (implementação HTTP não exportada).
 
 ## RSC baseline (PARTIAL vs browser)
 

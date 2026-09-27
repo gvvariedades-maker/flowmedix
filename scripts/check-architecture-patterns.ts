@@ -460,6 +460,29 @@ function checkNoNewEnvWithoutZod(files: string[]): Violation[] {
   return violations;
 }
 
+/** Executor HTTP de carga não pode ser importado fora de execute.ts (boundary único). */
+function checkScaleHarnessExecutorBoundary(files: string[]): Array<{ file: string; rule: string; detail: string }> {
+  const violations: Array<{ file: string; rule: string; detail: string }> = [];
+  const allowed = new Set(['lib/scale/authenticatedHarness/execute.ts']);
+  for (const file of files) {
+    const rel = relative(ROOT, file).replace(/\\/g, '/');
+    if (!rel.startsWith('lib/') && !rel.startsWith('__tests__/')) continue;
+    if (allowed.has(rel)) continue;
+    const content = readFileSync(file, 'utf8');
+    if (
+      /from\s+['"][^'"]*executeInternal[^'"]*['"]/.test(content) ||
+      /executeHarnessMeasuredWindowInternal/.test(content)
+    ) {
+      violations.push({
+        file: rel,
+        rule: 'scale-harness-executor-boundary',
+        detail: 'Import/citação do executor HTTP interno proibido; use runHarnessMeasuredWindowAuthorized.',
+      });
+    }
+  }
+  return violations;
+}
+
 function main(): void {
   const files = walk(ROOT);
   const violations = [
@@ -471,6 +494,7 @@ function main(): void {
     ...checkNoNewEnvWithoutZod(files),
     ...checkNoTailwindArbitraryRgbaSpace(files),
     ...checkNoBrandHexOutsidePalette(files),
+    ...checkScaleHarnessExecutorBoundary(files),
   ];
 
   if (violations.length === 0) {
