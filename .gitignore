@@ -94,3 +94,4 @@ supabase/.temp/
 /scale-harness-private/
 /artifacts/scale-harness-private/
 *.scale-harness-pool.local.json
+/artifacts/scale-harness-plan*.json
