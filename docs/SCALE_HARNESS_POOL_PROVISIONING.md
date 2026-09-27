@@ -42,7 +42,9 @@ Referência de hosts: [`SCALE_HARNESS_STAGING_TARGET_BINDING.md`](./SCALE_HARNES
    ```bash
    npm run scale:harness -- --plan --tier=conservative --pool=scale-harness-private/staging-conservative-50.scale-harness-pool.local.json
    ```
-6. Smoke opcional (1 VU, manual): `GET /api/vitrine` com Bearer + bypass Vercel; `GET /estudar/{slug}` com `Cookie` + bypass, `redirect: manual`, esperar 200 (não 302 login).
+6. Matrícula fixture (autorização Owner): `npm run scale:harness:pool-matricula-fixture:staging -- --apply` → `geral` + `origem=invite` + `status=ativo` (manifest cleanup em `scale-harness-private/*.matricula-fixture.cleanup.json`).
+7. Smoke 1 VU: `npm run scale:harness:pool-smoke-one:staging` (vitrine → questão → registrar-tentativa → simulado setup/responder).
+8. Smoke manual alternativo: `GET /api/vitrine` com Bearer + bypass Vercel; `GET /estudar/{slug}` com `Cookie` + bypass, `redirect: manual`, esperar 200 (não 302 login).
 7. Guardar pool **fora do Git**; rotacionar usuários `scale.harness.*` se vazamento.
 
 ## Script automatizado (Auth + cookie SSR)

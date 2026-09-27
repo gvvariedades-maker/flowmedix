@@ -1,7 +1,10 @@
 import { materializeOperation } from '@/lib/scale/authenticatedHarness/materializeRequest';
 import type { FetchLike, HarnessHttpTransportOptions } from '@/lib/scale/authenticatedHarness/httpExecute';
 import { resolveRequestUrl } from '@/lib/scale/authenticatedHarness/httpExecute';
-import { mergeVercelProtectionHeadersForAppUrl } from '@/lib/scale/authenticatedHarness/vercelProtectionHarness';
+import {
+  createHarnessFetch,
+  mergeVercelProtectionHeadersForAppUrl,
+} from '@/lib/scale/authenticatedHarness/vercelProtectionHarness';
 import type { HarnessMetricsCollector } from '@/lib/scale/authenticatedHarness/metrics';
 import { parseSimuladoSessionSetupResponse } from '@/lib/scale/authenticatedHarness/parseSimuladoSession';
 import type { HarnessExecutionPlan, SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
@@ -28,8 +31,9 @@ export async function runSimuladoSetupStep(
   if (transport) {
     mergeVercelProtectionHeadersForAppUrl(url, headers, transport);
   }
+  const effectiveFetch = createHarnessFetch(fetchImpl, transport);
   const started = Date.now();
-  const response = await fetchImpl(url, {
+  const response = await effectiveFetch(url, {
     method: materialized.method,
     headers,
     body: JSON.stringify(materialized.body ?? {}),

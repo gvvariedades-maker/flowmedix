@@ -69,3 +69,81 @@ export function buildHarnessHttpTransport(
     approvedAppHosts: approved.app_hosts,
   };
 }
+
+export type HarnessFetchLike = (input: string, init?: RequestInit) => Promise<Response>;
+
+export function mergeSetCookieIntoCookieHeader(
+  existingCookie: string | undefined,
+  setCookieHeaders: string[],
+): string {
+  const pairs = setCookieHeaders
+    .map((raw) => raw.split(';')[0]?.trim())
+    .filter((v): v is string => Boolean(v));
+  const parts = new Set<string>();
+  if (existingCookie?.trim()) {
+    for (const chunk of existingCookie.split(';')) {
+      const trimmed = chunk.trim();
+      if (trimmed) parts.add(trimmed);
+    }
+  }
+  for (const pair of pairs) parts.add(pair);
+  return [...parts].join('; ');
+}
+
+function shouldUseVercelProtectionFetch(url: string, transport: HarnessHttpTransportOptions): boolean {
+  if (!transport.vercelProtectionBypass) return false;
+  let host: string;
+  try {
+    host = new URL(url).hostname.toLowerCase();
+  } catch {
+    return false;
+  }
+  if (host === '127.0.0.1' || host === 'localhost') return false;
+  return transport.approvedAppHosts.includes(host);
+}
+
+/**
+ * Vercel Deployment Protection: 1º request manual → cookie `_vercel_jwt`; 2º com Cookie evita redirect loop.
+ */
+export function createHarnessFetch(
+  baseFetch: HarnessFetchLike = fetch,
+  transport?: HarnessHttpTransportOptions,
+): HarnessFetchLike {
+  if (!transport?.vercelProtectionBypass) return baseFetch;
+
+  return async (input: string, init?: RequestInit) => {
+    const url = input;
+    if (!shouldUseVercelProtectionFetch(url, transport)) {
+      return baseFetch(input, init);
+    }
+
+    const headers: Record<string, string> = {
+      ...((init?.headers as Record<string, string> | undefined) ?? {}),
+    };
+    mergeVercelProtectionHeadersForAppUrl(url, headers, transport);
+
+    const probe = await baseFetch(url, { ...init, headers, redirect: 'manual' });
+    if (probe.status >= 200 && probe.status < 300) {
+      return probe;
+    }
+    if (probe.status < 300 || probe.status >= 400) {
+      return probe;
+    }
+
+    const setCookies =
+      typeof probe.headers.getSetCookie === 'function'
+        ? probe.headers.getSetCookie()
+        : [probe.headers.get('set-cookie')].filter((v): v is string => Boolean(v));
+
+    if (setCookies.length === 0) {
+      return probe;
+    }
+
+    headers.Cookie = mergeSetCookieIntoCookieHeader(headers.Cookie, setCookies);
+    return baseFetch(url, {
+      ...init,
+      headers,
+      redirect: init?.redirect ?? 'follow',
+    });
+  };
+}

@@ -37,6 +37,8 @@
     "scale:harness:provision-pool": "tsx scripts/scale-harness-provision-pool.ts",
     "scale:harness:provision-pool:staging": "tsx scripts/scale-harness-provision-pool.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
     "scale:harness:pool-preflight:staging": "tsx scripts/scale-harness-pool-preflight.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
+    "scale:harness:pool-matricula-fixture:staging": "tsx scripts/scale-harness-pool-matricula-fixture.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
+    "scale:harness:pool-smoke-one:staging": "tsx scripts/scale-harness-pool-smoke-one.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local",
     "smoke:rls": "tsx scripts/rls-performance-smoke.ts",
     "smoke:rls-auth": "tsx scripts/rls-auth-smoke.ts",
     "check:architecture": "tsx scripts/check-architecture-patterns.ts",

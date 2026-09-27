@@ -1,6 +1,7 @@
 import type { MaterializedHttpRequest } from '@/lib/scale/authenticatedHarness/materializeRequest';
 import type { SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
 import {
+  createHarnessFetch,
   mergeVercelProtectionHeadersForAppUrl,
   type HarnessHttpTransportOptions,
 } from '@/lib/scale/authenticatedHarness/vercelProtectionHarness';
@@ -89,8 +90,9 @@ export async function executeMaterializedRequest(
 ): Promise<HttpExecuteOutcome> {
   const started = Date.now();
   const url = resolveRequestUrl(pool, req);
+  const effectiveFetch = createHarnessFetch(fetchImpl, transport);
   try {
-    const response = await fetchImpl(url, buildFetchInit(req, pool, state, url, transport));
+    const response = await effectiveFetch(url, buildFetchInit(req, pool, state, url, transport));
     const latency_ms = Date.now() - started;
 
     if (req.auth_mode === 'cookie_session_rsc' && isRedirectStatus(response.status)) {
