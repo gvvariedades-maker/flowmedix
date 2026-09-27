@@ -7,7 +7,7 @@
     {
       "pool_id": "harness-user-001",
       "access_token": "REPLACE_WITH_SUPABASE_ACCESS_JWT",
-      "cookie_header": "sb-access-token=REPLACE; sb-refresh-token=REPLACE",
+      "cookie_header": "sb-higsjzfigprqvldpxfwj-auth-token=REPLACE_SSR_COOKIE_FROM_provision-pool_SCRIPT",
       "default_questao_slug": "questao-exemplo-slug",
       "default_opcao_id": "A",
       "supabase_refresh_token": "REPLACE_REFRESH"

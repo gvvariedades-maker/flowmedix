@@ -68,4 +68,4 @@ npm run scale:harness -- --validate
 npm run scale:harness -- --plan --tier=conservative --pool=examples/scale-harness-plan-pool.placeholder.json
 ```
 
-Pools reais: `scale-harness-private/` ou `*.scale-harness-pool.local.json` (gitignored).
+Pools reais: `scale-harness-private/` ou `*.scale-harness-pool.local.json` (gitignored). Provisionamento: [`SCALE_HARNESS_POOL_PROVISIONING.md`](./SCALE_HARNESS_POOL_PROVISIONING.md) · `npm run scale:harness:provision-pool:staging`.
