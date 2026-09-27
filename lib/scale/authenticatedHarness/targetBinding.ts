@@ -1,7 +1,6 @@
 import {
   assertPoolBoundToApprovedStaging,
   loadApprovedStagingTarget,
-  mergeApprovedHostsFromEnv,
   type ApprovedStagingTarget,
 } from '@/lib/scale/authenticatedHarness/approvedStagingTarget';
 import type { SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
@@ -19,12 +18,8 @@ export function validateStagingTargetBinding(pool: SyntheticUserPoolFile): Targe
   }
 }
 
-export function resolveApprovedStagingForCli(options: {
-  allowlistPath?: string;
-  extraAppHostsCsv?: string;
-}): ApprovedStagingTarget {
-  const base = loadApprovedStagingTarget(options.allowlistPath);
-  return mergeApprovedHostsFromEnv(base, options.extraAppHostsCsv);
+export function resolveApprovedStagingForCli(options: { allowlistPath?: string }): ApprovedStagingTarget {
+  return loadApprovedStagingTarget(options.allowlistPath);
 }
 
 export { assertPoolBoundToApprovedStaging, type ApprovedStagingTarget };

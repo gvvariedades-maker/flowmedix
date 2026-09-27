@@ -57,12 +57,6 @@ export type HarnessExecutionPlan = {
   };
 };
 
-export type HarnessExecutionGate = {
-  cliExecuteFlag: boolean;
-  harnessExecuteEnv: string | undefined;
-  loadTestAuthorizedEnv: string | undefined;
-};
-
 export function mapAuthToHarnessMode(op: EnvelopeOperation): HarnessAuthMode {
   if (op.id === 'auth_session_refresh') return 'supabase_auth_refresh';
   if (op.auth === 'cookie_session_rsc') return 'cookie_session_rsc';

@@ -8,22 +8,40 @@ Envelope aprovado: v1.0.3, SHA `0bfe0479f79954115d50451c005301b27df61cd5`.
 | --- | --- |
 | `HARNESS_VALIDATOR` / `HARNESS_PLANNER` | **IMPLEMENTED** |
 | `HARNESS_HTTP_EXECUTOR` | **IMPLEMENTED_BLOCKED_BY_POLICY** |
-| `HARNESS_AUTHENTICATED` | **IMPLEMENTATION_IN_PROGRESS** (revisão pós-repair executor) |
+| `HARNESS_AUTHENTICATED` | **HARDENING** (escopo + defesa em profundidade) |
 | `LOAD_TEST_AUTHORIZATION` | **NOT_GRANTED** |
 
 ## Target binding (independente do pool)
 
-Fonte canônica: [`data/scale-harness/staging-target.allowlist.json`](../data/scale-harness/staging-target.allowlist.json).
+Fonte canônica e **única** autoridade de hosts: [`data/scale-harness/staging-target.allowlist.json`](../data/scale-harness/staging-target.allowlist.json).
 
-O pool **não** pode autodeclarar Production: `base_url` e `supabase_url` devem bater com hosts da allowlist versionada. Opcional no CLI: `SCALE_HARNESS_APPROVED_STAGING_HOSTS` (somente no script).
+Não há expansão de `app_hosts` via variável de ambiente. O pool deve usar `base_url` / `supabase_url` cujos hosts estejam na allowlist versionada (decisão do Owner).
 
-## RSC baseline
+## Autorização de load test (escopo, não booleano)
 
-HTTP SSR com `cookie_header` pré-provisionado; `redirect: manual` — redirect/login **não** conta como sucesso. Não substitui navegação browser completa (Playwright = cenário futuro).
+Além de `--execute`, `SCALE_HARNESS_EXECUTE=1` e `SCALE_HARNESS_LOAD_TEST_AUTHORIZED=1`, a execução exige escopo **idêntico** ao autorizado:
+
+| Variável | Exemplo |
+| --- | --- |
+| `SCALE_HARNESS_AUTHORIZED_GIT_SHA` | SHA do commit autorizado |
+| `SCALE_HARNESS_AUTHORIZED_TIER` | `conservative` \| `nominal` \| `stress` |
+| `SCALE_HARNESS_AUTHORIZED_APP_HOST` | host do `base_url` do pool |
+| `SCALE_HARNESS_AUTHORIZED_SUPABASE_HOST` | host do `supabase_url` (se usado) |
+| `SCALE_HARNESS_AUTHORIZED_DURATION_MS` | duração da janela measured |
+
+Qualquer divergência (tier, host, duração maior/diferente, SHA) **rejeita** a execução. Autorização para 50 CCU / conservative não habilita stress ou 150 CCU.
+
+Entrypoint HTTP: `runHarnessMeasuredWindowAuthorized` — valida target + escopo antes do executor interno.
+
+## RSC baseline (PARTIAL vs browser)
+
+HTTP SSR com `cookie_header` **pré-provisionado e estático**; `redirect: manual` — redirect/login **não** conta como sucesso.
+
+Após `auth_session_refresh`, o harness atualiza `access_token` / `refresh_token` em memória no VU, mas **não** reconstitui cookies SSR. Para ensaios curtos, provisionar tokens/cookies com validade cobrindo toda a janela. Playwright completo = cenário futuro.
 
 ## Setup simulado
 
-`POST /api/simulado/sessions` fora da janela measured; parse de `session.id` + `questoes[0].modulo_slug`; fail-fast em não-2xx.
+`POST /api/simulado/sessions` fora da janela measured; parse de `session.id` + `questoes[0].modulo_slug`. HTTP 2xx com contrato inválido = **setup logical failure** (métricas + abort).
 
 ## Scheduling
 

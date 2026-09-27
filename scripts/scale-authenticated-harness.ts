@@ -1,14 +1,15 @@
 #!/usr/bin/env tsx
 /**
  * Harness autenticado EWU-SCALE-1K-READINESS-001 — validação e plano por padrão.
- * Flags de execução e allowlist staging: apenas neste CLI.
+ * Allowlist staging: somente arquivo versionado. Escopo de load test: env vinculado (sem --execute por padrão).
  */
+import { execSync } from 'node:child_process';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { buildHarnessExecutionPlan } from '@/lib/scale/authenticatedHarness/buildPlan';
 import {
-  assertHarnessExecutionAllowed,
-  runHarnessMeasuredWindow,
+  createAuthorizedExecutionContext,
+  runHarnessMeasuredWindowAuthorized,
 } from '@/lib/scale/authenticatedHarness/execute';
 import { assertPlanHasNoRawSecrets, redactSecretsDeep } from '@/lib/scale/authenticatedHarness/redact';
 import { resolveApprovedStagingForCli } from '@/lib/scale/authenticatedHarness/targetBinding';
@@ -22,6 +23,14 @@ function readHarnessExecutionGate(cliExecute: boolean) {
     harnessExecuteEnv: process.env.SCALE_HARNESS_EXECUTE,
     loadTestAuthorizedEnv: process.env.SCALE_HARNESS_LOAD_TEST_AUTHORIZED,
   };
+}
+
+function getRuntimeGitSha(): string {
+  try {
+    return execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+  } catch {
+    return process.env.SCALE_HARNESS_RUNTIME_GIT_SHA?.trim() ?? 'unknown';
+  }
 }
 
 function parseArgs(argv: string[]) {
@@ -55,10 +64,7 @@ function parseArgs(argv: string[]) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
-  const approvedStaging = resolveApprovedStagingForCli({
-    allowlistPath: args.allowlistPath,
-    extraAppHostsCsv: process.env.SCALE_HARNESS_APPROVED_STAGING_HOSTS,
-  });
+  const approvedStaging = resolveApprovedStagingForCli({ allowlistPath: args.allowlistPath });
 
   if (args.validate) {
     const report = validateEnvelopeIntegrity(args.envelopePath);
@@ -113,12 +119,24 @@ async function main() {
     }
 
     if (args.execute) {
-      const gate = readHarnessExecutionGate(true);
-      assertHarnessExecutionAllowed(gate);
-      const durationMs = Number(process.env.SCALE_HARNESS_DURATION_MS ?? '60000');
-      const result = await runHarnessMeasuredWindow(executionPlan, pool, { durationMs });
+      const durationMs = Number(process.env.SCALE_HARNESS_AUTHORIZED_DURATION_MS ?? '0');
+      const auth = createAuthorizedExecutionContext({
+        gate: readHarnessExecutionGate(true),
+        env: process.env,
+        runtimeGitSha: getRuntimeGitSha(),
+        cliTier: args.tier,
+        durationMs,
+        plan: executionPlan,
+        pool,
+        approved: approvedStaging,
+      });
+      const result = await runHarnessMeasuredWindowAuthorized(auth, executionPlan, pool, { durationMs });
       console.log(
-        JSON.stringify({ harness: 'scale-authenticated', mode: 'execute', result: redactSecretsDeep(result) }, null, 2),
+        JSON.stringify(
+          { harness: 'scale-authenticated', mode: 'execute', result: redactSecretsDeep(result) },
+          null,
+          2,
+        ),
       );
     }
   }

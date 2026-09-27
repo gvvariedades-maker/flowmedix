@@ -34,21 +34,6 @@ export function loadApprovedStagingTarget(pathFromEnv?: string): ApprovedStaging
   };
 }
 
-export function mergeApprovedHostsFromEnv(
-  base: ApprovedStagingTarget,
-  extraAppHostsCsv: string | undefined,
-): ApprovedStagingTarget {
-  if (!extraAppHostsCsv?.trim()) return base;
-  const extra = extraAppHostsCsv
-    .split(',')
-    .map((h) => h.trim().toLowerCase())
-    .filter(Boolean);
-  return {
-    ...base,
-    app_hosts: [...new Set([...base.app_hosts, ...extra])],
-  };
-}
-
 export function assertPoolBoundToApprovedStaging(
   pool: SyntheticUserPoolFile,
   approved: ApprovedStagingTarget,

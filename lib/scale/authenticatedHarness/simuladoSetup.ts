@@ -29,16 +29,25 @@ export async function runSimuladoSetupStep(
     body: JSON.stringify(materialized.body ?? {}),
   });
   const latency_ms = Date.now() - started;
-  const ok = response.status >= 200 && response.status < 300;
-  metrics.recordRequest('setup', step.operation_id, 'write', response.status, latency_ms, ok);
-  if (!ok) {
+  const httpOk = response.status >= 200 && response.status < 300;
+
+  if (!httpOk) {
+    metrics.recordRequest('setup', step.operation_id, 'write', response.status, latency_ms, false);
     metrics.recordSetupFailure();
     throw new Error(`Setup simulado HTTP ${response.status}`);
   }
-  const json = (await response.json()) as Record<string, unknown>;
-  const parsed = parseSimuladoSessionSetupResponse(
-    json as Parameters<typeof parseSimuladoSessionSetupResponse>[0],
-  );
-  state.simulado_session_id = parsed.session_id;
-  state.simulado_modulo_slug = parsed.modulo_slug;
+
+  try {
+    const json = (await response.json()) as Record<string, unknown>;
+    const parsed = parseSimuladoSessionSetupResponse(
+      json as Parameters<typeof parseSimuladoSessionSetupResponse>[0],
+    );
+    state.simulado_session_id = parsed.session_id;
+    state.simulado_modulo_slug = parsed.modulo_slug;
+    metrics.recordRequest('setup', step.operation_id, 'write', response.status, latency_ms, true);
+  } catch (err) {
+    metrics.recordRequest('setup', step.operation_id, 'write', response.status, latency_ms, false);
+    metrics.recordSetupFailure();
+    throw err;
+  }
 }
