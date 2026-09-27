@@ -5,6 +5,8 @@ const SECRET_KEYS = new Set([
   'supabase_anon_key',
   'authorization',
   'cookie',
+  'vercel_protection_bypass',
+  'vercel_automation_bypass_secret',
 ]);
 
 export function redactSecretsDeep<T>(value: T): T {
@@ -17,7 +19,12 @@ export function redactSecretsDeep<T>(value: T): T {
     for (const [key, val] of Object.entries(value as Record<string, unknown>)) {
       if (SECRET_KEYS.has(key.toLowerCase())) {
         out[key] = '<redacted>';
-      } else if (typeof val === 'string' && (key === 'Cookie' || key === 'Authorization')) {
+      } else if (
+        typeof val === 'string' &&
+        (key === 'Cookie' ||
+          key === 'Authorization' ||
+          key.toLowerCase() === 'x-vercel-protection-bypass')
+      ) {
         out[key] = '<redacted>';
       } else {
         out[key] = redactSecretsDeep(val);
@@ -35,6 +42,8 @@ export function assertPlanHasNoRawSecrets(serialized: string): void {
     /sb-refresh-token=/i,
     /"access_token"\s*:\s*"[^<]/i,
     /"cookie_header"\s*:\s*"[^<]/i,
+    /x-vercel-protection-bypass/i,
+    /VERCEL_AUTOMATION_BYPASS_SECRET/i,
   ];
   for (const pattern of forbidden) {
     if (pattern.test(serialized)) {

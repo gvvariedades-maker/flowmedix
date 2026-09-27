@@ -3,6 +3,11 @@ import { assertPoolBoundToApprovedStaging } from '@/lib/scale/authenticatedHarne
 import type { CanonicalArtifactBinding } from '@/lib/scale/authenticatedHarness/canonicalArtifacts';
 import { assertGitWorktreeClean } from '@/lib/scale/authenticatedHarness/gitExecutionBinding';
 import { HarnessExecutionForbiddenError } from '@/lib/scale/authenticatedHarness/harnessForbidden';
+import {
+  assertVercelProtectionBypassForStagingExecute,
+  buildHarnessHttpTransport,
+  type HarnessHttpTransportOptions,
+} from '@/lib/scale/authenticatedHarness/vercelProtectionHarness';
 import type { ConcurrencyTierId } from '@/lib/scale/workloadEnvelope';
 import type { HarnessExecutionPlan, SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
 
@@ -213,6 +218,7 @@ export type HarnessAuthorizedExecutionContext = {
   scope: HarnessLoadTestScope;
   approved: ApprovedStagingTarget;
   canonical: CanonicalArtifactBinding;
+  httpTransport: HarnessHttpTransportOptions;
 };
 
 export function buildAuthorizedExecutionContext(options: {
@@ -239,5 +245,12 @@ export function buildAuthorizedExecutionContext(options: {
     canonical: options.canonical,
     gitWorktreePorcelain: options.gitWorktreePorcelain,
   });
-  return { scope, approved: options.approved, canonical: options.canonical };
+  assertVercelProtectionBypassForStagingExecute(options.pool, options.approved, options.env);
+  const httpTransport = buildHarnessHttpTransport(options.pool, options.approved, options.env);
+  return {
+    scope,
+    approved: options.approved,
+    canonical: options.canonical,
+    httpTransport,
+  };
 }

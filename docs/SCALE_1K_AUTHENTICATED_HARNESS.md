@@ -8,7 +8,8 @@ Envelope aprovado: v1.0.3, SHA `0bfe0479f79954115d50451c005301b27df61cd5`.
 | --- | --- |
 | `HARNESS_VALIDATOR` / `HARNESS_PLANNER` | **IMPLEMENTED** |
 | `HARNESS_HTTP_EXECUTOR` | **IMPLEMENTED_BLOCKED_BY_POLICY** |
-| `HARNESS_AUTHENTICATED` | **READY_FOR_STAGING_TARGET_BINDING** (hosts versionados; load test ainda não autorizado) |
+| `HARNESS_AUTHENTICATED` | **READY_FOR_POOL_PREP** (staging bound + bypass Vercel no instrumento; load test ainda não autorizado) |
+| `VERCEL_PROTECTION_BYPASS_IN_HARNESS` | **IMPLEMENTED** (`VERCEL_AUTOMATION_BYPASS_SECRET` / `VERCEL_PROTECTION_BYPASS`, só runtime) |
 | `LOAD_TEST_AUTHORIZATION` | **NOT_GRANTED** |
 
 ## Target binding (independente do pool)
@@ -33,6 +34,10 @@ Além de `--execute`, `SCALE_HARNESS_EXECUTE=1` e `SCALE_HARNESS_LOAD_TEST_AUTHO
 | `SCALE_HARNESS_AUTHORIZED_ALLOWLIST_SHA256` | digest da allowlist versionada |
 | `SCALE_HARNESS_AUTHORIZED_PEAK_CCU` | CCU do tier (ex. 50 conservative) |
 | `SCALE_HARNESS_AUTHORIZED_TARGET_MEAN_RPS` | RPS médio derivado do envelope |
+
+**Vercel Deployment Protection (runtime, não entra no escopo Owner):** `VERCEL_AUTOMATION_BYPASS_SECRET` ou `VERCEL_PROTECTION_BYPASS`. Obrigatório para `--execute` quando `base_url` é o host staging `.vercel.app` canônico. Nunca commitar nem incluir em pool/plano/métricas/logs.
+
+Digests de referência (binding `c84b033` / allowlist atual): allowlist `088b5b0436d57affbee93d96009b6923df80ddb846fd2bb06a0860df9fabb93e`, envelope `07f7c3b34c29445b6c6b58b9bd73be646ae41123c07f3be0ff2018a846a85179`.
 
 Com `--execute`: **proibido** `--envelope` ou `--staging-allowlist` customizados; somente `docs/scale-1k-workload-envelope.v1.json` e `data/scale-harness/staging-target.allowlist.json`. Sem fallback `SCALE_HARNESS_RUNTIME_GIT_SHA`.
 

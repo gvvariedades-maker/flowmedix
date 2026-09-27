@@ -6,6 +6,7 @@ import {
   assertExecuteUsesCanonicalArtifactPaths,
   loadCanonicalArtifactBinding,
 } from '@/lib/scale/authenticatedHarness/canonicalArtifacts';
+import { buildAuthorizedExecutionContext } from '@/lib/scale/authenticatedHarness/executionAuthorization';
 import {
   assertHarnessExecutionGate,
   assertScopeMatchesCanonicalArtifacts,
@@ -18,7 +19,12 @@ import {
 import { assertGitWorktreeClean, resolveRuntimeGitShaStrict } from '@/lib/scale/authenticatedHarness/gitExecutionBinding';
 import { HarnessMetricsCollector } from '@/lib/scale/authenticatedHarness/metrics';
 import { runSimuladoSetupStep } from '@/lib/scale/authenticatedHarness/simuladoSetup';
-import { executeMaterializedRequest } from '@/lib/scale/authenticatedHarness/httpExecute';
+import { executeMaterializedRequest, type FetchLike } from '@/lib/scale/authenticatedHarness/httpExecute';
+import { materializeOperation } from '@/lib/scale/authenticatedHarness/materializeRequest';
+import {
+  assertVercelProtectionBypassForStagingExecute,
+  buildHarnessHttpTransport,
+} from '@/lib/scale/authenticatedHarness/vercelProtectionHarness';
 import { parseSimuladoSessionSetupResponse, SimuladoSetupParseError } from '@/lib/scale/authenticatedHarness/parseSimuladoSession';
 import { computeVuStaggerMs } from '@/lib/scale/authenticatedHarness/pacing';
 import { assertPlanHasNoRawSecrets, redactSecretsDeep } from '@/lib/scale/authenticatedHarness/redact';
@@ -457,6 +463,159 @@ describe('scale authenticated harness', () => {
     const serialized = JSON.stringify(redactSecretsDeep({ pool, plan }));
     assertPlanHasNoRawSecrets(serialized);
     expect(serialized).not.toContain('token-0');
+  });
+
+  const STAGING_VERCEL_HOST = 'flowmedix-git-staging-gvvariedades-makers-projects.vercel.app';
+  const stagingApproved = {
+    schema_version: 1 as const,
+    app_hosts: [STAGING_VERCEL_HOST],
+    supabase_hosts: ['higsjzfigprqvldpxfwj.supabase.co'],
+  };
+
+  const stagingPoolOverrides = {
+    base_url: `https://${STAGING_VERCEL_HOST}`,
+    supabase_url: 'https://higsjzfigprqvldpxfwj.supabase.co',
+  };
+
+  it('request ao app staging Vercel recebe header de protection bypass', async () => {
+    const pool = makePool(1, stagingPoolOverrides);
+    const transport = {
+      vercelProtectionBypass: 'secret-bypass-test',
+      approvedAppHosts: stagingApproved.app_hosts,
+    };
+    let capturedHeaders: Record<string, string> = {};
+    const fetchImpl: FetchLike = async (_url, init) => {
+      capturedHeaders = init?.headers as Record<string, string>;
+      return { status: 200, json: async () => ({}) } as Response;
+    };
+    const state = createVuRuntimeState(pool.users[0]);
+    const step: HarnessOperationStep = {
+      operation_id: 'api_vitrine_page',
+      phase: 'measured',
+      auth: 'bearer',
+      method: 'GET',
+      path: '/api/vitrine',
+      request_weight: 1,
+      kind: 'read',
+    };
+    const materialized = materializeOperation(step, pool, pool.users[0]);
+    await executeMaterializedRequest(pool, state, materialized, fetchImpl, transport);
+    expect(capturedHeaders['x-vercel-protection-bypass']).toBe('secret-bypass-test');
+    expect(capturedHeaders['x-vercel-set-bypass-cookie']).toBe('true');
+  });
+
+  it('setup simulado POST recebe header de protection bypass', async () => {
+    const pool = makePool(50, stagingPoolOverrides);
+    const transport = {
+      vercelProtectionBypass: 'setup-bypass-secret',
+      approvedAppHosts: stagingApproved.app_hosts,
+    };
+    let capturedHeaders: Record<string, string> = {};
+    const fetchImpl: FetchLike = async (_url, init) => {
+      capturedHeaders = init?.headers as Record<string, string>;
+      return {
+        status: 200,
+        json: async () => ({
+          success: true,
+          session: { id: 's1' },
+          questoes: [{ modulo_slug: 'mod-1' }],
+        }),
+      } as Response;
+    };
+    const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
+    const state = createVuRuntimeState(pool.users[0]);
+    const metrics = new HarnessMetricsCollector();
+    await runSimuladoSetupStep(plan, pool, state, metrics, fetchImpl, transport);
+    expect(capturedHeaders['x-vercel-protection-bypass']).toBe('setup-bypass-secret');
+  });
+
+  it('refresh Supabase não recebe header de protection bypass', async () => {
+    const pool = makePool(1, {
+      base_url: `https://${STAGING_VERCEL_HOST}`,
+      supabase_url: 'https://higsjzfigprqvldpxfwj.supabase.co',
+    });
+    const transport = {
+      vercelProtectionBypass: 'must-not-leak',
+      approvedAppHosts: stagingApproved.app_hosts,
+    };
+    let capturedHeaders: Record<string, string> = {};
+    const fetchImpl: FetchLike = async (_url, init) => {
+      capturedHeaders = init?.headers as Record<string, string>;
+      return {
+        status: 200,
+        json: async () => ({ access_token: 'new-at', refresh_token: 'new-rt' }),
+      } as Response;
+    };
+    const state = createVuRuntimeState(pool.users[0]);
+    const step: HarnessOperationStep = {
+      operation_id: 'auth_session_refresh',
+      phase: 'measured',
+      auth: 'supabase_auth_refresh',
+      method: 'POST',
+      path: '/auth/v1/token',
+      request_weight: 1,
+      kind: 'write',
+    };
+    const materialized = materializeOperation(step, pool, pool.users[0]);
+    await executeMaterializedRequest(pool, state, materialized, fetchImpl, transport);
+    expect(capturedHeaders['x-vercel-protection-bypass']).toBeUndefined();
+  });
+
+  it('execute contra staging Vercel sem bypass secret é bloqueado', () => {
+    const pool = makePool(50, stagingPoolOverrides);
+    const envSansBypass = { ...process.env };
+    delete envSansBypass.VERCEL_AUTOMATION_BYPASS_SECRET;
+    delete envSansBypass.VERCEL_PROTECTION_BYPASS;
+    expect(() => assertVercelProtectionBypassForStagingExecute(pool, stagingApproved, envSansBypass)).toThrow(
+      /VERCEL_AUTOMATION_BYPASS_SECRET/,
+    );
+
+    const canonical = loadCanonicalArtifactBinding('conservative');
+    const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
+    const durationMs = 60_000;
+    const sha = 'sha-staging-bypass';
+    const env: NodeJS.ProcessEnv = {
+      ...authorizedEnv(sha, 'conservative', durationMs, canonical),
+      SCALE_HARNESS_AUTHORIZED_APP_HOST: STAGING_VERCEL_HOST,
+      SCALE_HARNESS_AUTHORIZED_SUPABASE_HOST: 'higsjzfigprqvldpxfwj.supabase.co',
+    };
+    delete env.VERCEL_AUTOMATION_BYPASS_SECRET;
+    delete env.VERCEL_PROTECTION_BYPASS;
+    expect(() =>
+      buildAuthorizedExecutionContext({
+        gate: { cliExecuteFlag: true, harnessExecuteEnv: '1', loadTestAuthorizedEnv: '1' },
+        env,
+        runtimeGitSha: sha,
+        cliTier: 'conservative',
+        durationMs,
+        plan,
+        pool,
+        approved: stagingApproved,
+        canonical,
+      }),
+    ).toThrow(/VERCEL_AUTOMATION_BYPASS_SECRET/);
+  });
+
+  it('redige bypass Vercel em headers e bloqueia secret em artefato serializado', () => {
+    const secret = 'vercel-bypass-redact-me';
+    const redacted = redactSecretsDeep({
+      headers: { 'x-vercel-protection-bypass': secret, Accept: 'application/json' },
+    });
+    expect(redacted.headers['x-vercel-protection-bypass']).toBe('<redacted>');
+    const serialized = JSON.stringify(redacted);
+    expect(serialized).not.toContain(secret);
+    expect(() =>
+      assertPlanHasNoRawSecrets(JSON.stringify({ 'x-vercel-protection-bypass': secret })),
+    ).toThrow(/credencial/);
+  });
+
+  it('buildHarnessHttpTransport lê VERCEL_AUTOMATION_BYPASS_SECRET', () => {
+    const pool = makePool(1, { base_url: `https://${STAGING_VERCEL_HOST}` });
+    const transport = buildHarnessHttpTransport(pool, stagingApproved, {
+      ...process.env,
+      VERCEL_AUTOMATION_BYPASS_SECRET: 'from-env-secret',
+    });
+    expect(transport.vercelProtectionBypass).toBe('from-env-secret');
   });
 
   it('exige cookie e slug para RSC', () => {

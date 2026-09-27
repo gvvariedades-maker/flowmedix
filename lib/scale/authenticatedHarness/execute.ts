@@ -9,7 +9,7 @@ import {
   type HarnessExecutionGate,
   HarnessExecutionForbiddenError,
 } from '@/lib/scale/authenticatedHarness/executionAuthorization';
-import type { FetchLike } from '@/lib/scale/authenticatedHarness/httpExecute';
+import type { FetchLike, HarnessHttpTransportOptions } from '@/lib/scale/authenticatedHarness/httpExecute';
 import { executeMaterializedRequest } from '@/lib/scale/authenticatedHarness/httpExecute';
 import { materializeOperation } from '@/lib/scale/authenticatedHarness/materializeRequest';
 import { HarnessMetricsCollector } from '@/lib/scale/authenticatedHarness/metrics';
@@ -45,14 +45,15 @@ async function runAllSetup(
   states: VuRuntimeState[],
   metrics: HarnessMetricsCollector,
   fetchImpl: FetchLike,
+  transport: HarnessHttpTransportOptions,
 ): Promise<void> {
   for (const state of states) {
     if (plan.setup_steps.some((s) => s.operation_id === 'api_simulado_sessions_create')) {
-      await runSimuladoSetupStep(plan, pool, state, metrics, fetchImpl);
+      await runSimuladoSetupStep(plan, pool, state, metrics, fetchImpl, transport);
     }
     for (const step of plan.setup_steps.filter((s) => s.operation_id !== 'api_simulado_sessions_create')) {
       const materialized = materializeOperation(step, pool, toMaterializeUser(state));
-      const outcome = await executeMaterializedRequest(pool, state, materialized, fetchImpl);
+      const outcome = await executeMaterializedRequest(pool, state, materialized, fetchImpl, transport);
       metrics.recordRequest(
         'setup',
         step.operation_id,
@@ -72,7 +73,7 @@ async function runAllSetup(
 async function runMeasuredWindowHttp(
   plan: HarnessExecutionPlan,
   pool: SyntheticUserPoolFile,
-  options: { durationMs: number; fetchImpl?: FetchLike },
+  options: { durationMs: number; fetchImpl?: FetchLike; httpTransport: HarnessHttpTransportOptions },
 ): Promise<HttpExecutorResult> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const metrics = new HarnessMetricsCollector();
@@ -80,7 +81,7 @@ async function runMeasuredWindowHttp(
   const users = pool.users.slice(0, plan.peak_concurrent_users);
   const states = users.map((u) => createVuRuntimeState(u));
 
-  await runAllSetup(plan, pool, states, metrics, fetchImpl);
+  await runAllSetup(plan, pool, states, metrics, fetchImpl, options.httpTransport);
   const setupElapsed = Date.now() - setupStarted;
 
   const measuredStartedAt = Date.now();
@@ -102,7 +103,13 @@ async function runMeasuredWindowHttp(
       const op = pickWeightedOperation(plan.measured_operations);
       const step = plan.measured_operations.find((m) => m.operation_id === op.operation_id) ?? op;
       const materialized = materializeOperation(step, pool, toMaterializeUser(state));
-      const outcome = await executeMaterializedRequest(pool, state, materialized, fetchImpl);
+      const outcome = await executeMaterializedRequest(
+        pool,
+        state,
+        materialized,
+        fetchImpl,
+        options.httpTransport,
+      );
       metrics.recordRequest(
         'measured',
         step.operation_id,
@@ -155,7 +162,11 @@ export async function runHarnessMeasuredWindowAuthorized(
   if (plan.tier !== auth.scope.tier) {
     throw new HarnessExecutionForbiddenError(`plan.tier (${plan.tier}) ≠ escopo (${auth.scope.tier})`);
   }
-  return runMeasuredWindowHttp(plan, pool, options);
+  return runMeasuredWindowHttp(plan, pool, {
+    durationMs: options.durationMs,
+    fetchImpl: options.fetchImpl,
+    httpTransport: auth.httpTransport,
+  });
 }
 
 export function createAuthorizedExecutionContext(options: {

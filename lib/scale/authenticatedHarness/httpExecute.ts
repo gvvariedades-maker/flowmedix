@@ -1,6 +1,12 @@
 import type { MaterializedHttpRequest } from '@/lib/scale/authenticatedHarness/materializeRequest';
 import type { SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
+import {
+  mergeVercelProtectionHeadersForAppUrl,
+  type HarnessHttpTransportOptions,
+} from '@/lib/scale/authenticatedHarness/vercelProtectionHarness';
 import { applySupabaseRefreshResponse, type VuRuntimeState } from '@/lib/scale/authenticatedHarness/vuRuntime';
+
+export type { HarnessHttpTransportOptions };
 
 export type HttpExecuteOutcome = {
   ok: boolean;
@@ -16,6 +22,8 @@ function buildFetchInit(
   req: MaterializedHttpRequest,
   pool: SyntheticUserPoolFile,
   state: VuRuntimeState,
+  requestUrl: string,
+  transport?: HarnessHttpTransportOptions,
 ): RequestInit {
   const headers: Record<string, string> = {
     Accept: 'application/json, text/html;q=0.9',
@@ -43,6 +51,10 @@ function buildFetchInit(
       init.body = JSON.stringify(req.body);
       headers['Content-Type'] = 'application/json';
     }
+  }
+
+  if (req.auth_mode !== 'supabase_auth_refresh' && transport) {
+    mergeVercelProtectionHeadersForAppUrl(requestUrl, headers, transport);
   }
   return init;
 }
@@ -73,11 +85,12 @@ export async function executeMaterializedRequest(
   state: VuRuntimeState,
   req: MaterializedHttpRequest,
   fetchImpl: FetchLike = fetch,
+  transport?: HarnessHttpTransportOptions,
 ): Promise<HttpExecuteOutcome> {
   const started = Date.now();
   const url = resolveRequestUrl(pool, req);
   try {
-    const response = await fetchImpl(url, buildFetchInit(req, pool, state));
+    const response = await fetchImpl(url, buildFetchInit(req, pool, state, url, transport));
     const latency_ms = Date.now() - started;
 
     if (req.auth_mode === 'cookie_session_rsc' && isRedirectStatus(response.status)) {
