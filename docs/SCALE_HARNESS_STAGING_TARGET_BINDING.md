@@ -21,7 +21,7 @@ Fonte versionada: [`data/scale-harness/staging-target.allowlist.json`](../data/s
 
 ## Pendência manual (Owner / ops)
 
-1. **`SUPABASE_SERVICE_ROLE_KEY`** na Vercel (Preview, branch `staging`) — copiar do dashboard do projeto `higsjzfigprqvldpxfwj` (não commitar). Sem isso, rotas server-side/admin do preview podem falhar.
+1. **`SUPABASE_SERVICE_ROLE_KEY`** — configurada na Vercel (Preview, branch `staging`) para o projeto `higsjzfigprqvldpxfwj` (2026-09-27; valor só na Vercel).
 2. **Deployment Protection** na Vercel: se `/api/*` exigir bypass, usar `VERCEL_PROTECTION_BYPASS` no pool/harness conforme runbook perf.
 3. **Supabase Branching** no projeto Production (`ozgouen`): plano atual retorna `402` (Pro). Até upgrade, o data plane de ensaio permanece o projeto CAS.
 
