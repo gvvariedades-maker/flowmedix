@@ -97,10 +97,41 @@
       "max_ms": null
     }
   ],
+  "evidence_completeness": {
+    "operations_in_artifact": 5,
+    "operations_request_sum": 1839,
+    "http_requests_sent": 2998,
+    "request_count_gap": 1159,
+    "log_parse_status": "truncated_or_partial",
+    "envelope_measured_operation_ids_expected": [
+      "auth_session_refresh",
+      "api_vitrine_page",
+      "rsc_estudar_slug",
+      "api_estudar_questao",
+      "api_registrar_tentativa",
+      "api_simulado_sessions",
+      "api_simulado_questao",
+      "api_simulado_responder",
+      "rsc_desempenho",
+      "rsc_cadernos"
+    ],
+    "operation_ids_missing_from_artifact": [
+      "auth_session_refresh",
+      "rsc_estudar_slug",
+      "api_simulado_questao",
+      "api_simulado_responder",
+      "rsc_desempenho",
+      "rsc_cadernos"
+    ],
+    "operations_with_incomplete_latency": [
+      "api_vitrine_page"
+    ]
+  },
   "notes": [
     "Relatório sanitizado — sem tokens, cookies ou secrets.",
     "Latências derivadas do harness metrics; thresholds prospectivos não aplicados.",
-    "RUN_50_BASELINE_WORKTREE_DIGESTS: digests CRLF do checkout Windows usados na autorização runtime da 1ª execução."
+    "RUN_50_BASELINE_WORKTREE_DIGESTS: digests CRLF do checkout Windows usados na autorização runtime da 1ª execução.",
+    "EVIDENCE_GAP: soma requests por operação (1839) ≠ http_requests_sent (2998); operações ausentes ou log truncado."
   ],
   "post_baseline_study_read_sweep": {
     "source": "artifacts/scale-harness-pool-sweep-estudar-questao.json",

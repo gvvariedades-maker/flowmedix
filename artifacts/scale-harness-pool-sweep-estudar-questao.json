@@ -1,8 +1,8 @@
 {
   "mode": "scale-harness-pool-sweep-estudar-questao",
   "total": 50,
-  "http_200": 47,
-  "http_403": 3,
+  "http_200": 50,
+  "http_403": 0,
   "other_status": 0,
   "results": [
     {
@@ -71,19 +71,19 @@
     },
     {
       "pool_id": "harness-u009",
-      "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
-      "http_status": 403,
-      "ok": false,
-      "commercial_eligible": false,
-      "commercial_reason": "QUALITY_GATE_BLOCKED"
+      "default_questao_slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-0",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
     },
     {
       "pool_id": "harness-u010",
-      "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
-      "http_status": 403,
-      "ok": false,
-      "commercial_eligible": false,
-      "commercial_reason": "QUALITY_GATE_BLOCKED"
+      "default_questao_slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448291915-3",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
     },
     {
       "pool_id": "harness-u011",
@@ -127,11 +127,11 @@
     },
     {
       "pool_id": "harness-u016",
-      "default_questao_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
-      "http_status": 403,
-      "ok": false,
-      "commercial_eligible": false,
-      "commercial_reason": "QUALITY_GATE_BLOCKED"
+      "default_questao_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
     },
     {
       "pool_id": "harness-u017",
@@ -406,18 +406,5 @@
       "commercial_reason": null
     }
   ],
-  "slug_403_summary": [
-    {
-      "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
-      "vu_count": 1
-    },
-    {
-      "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
-      "vu_count": 1
-    },
-    {
-      "default_questao_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
-      "vu_count": 1
-    }
-  ]
+  "slug_403_summary": []
 }

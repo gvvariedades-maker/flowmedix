@@ -49,6 +49,16 @@ export type SanitizedBaselineReport = {
   };
   operations: SanitizedBaselineOperation[];
   notes: string[];
+  evidence_completeness: {
+    operations_in_artifact: number;
+    operations_request_sum: number;
+    http_requests_sent: number;
+    request_count_gap: number;
+    log_parse_status: 'complete' | 'truncated_or_partial';
+    envelope_measured_operation_ids_expected: string[];
+    operation_ids_missing_from_artifact: string[];
+    operations_with_incomplete_latency: string[];
+  };
   post_baseline_study_read_sweep?: {
     source: string;
     http_403: number;
@@ -189,6 +199,32 @@ export function buildSanitizedBaselineReport(options: {
     );
   }
 
+  const httpRequestsSent = Number(options.executeResult.http_requests_sent ?? 0);
+  const operationsRequestSum = operations.reduce((acc, op) => acc + op.requests, 0);
+  const envelopeMeasuredOperationIdsExpected = [
+    'auth_session_refresh',
+    'api_vitrine_page',
+    'rsc_estudar_slug',
+    'api_estudar_questao',
+    'api_registrar_tentativa',
+    'api_simulado_sessions',
+    'api_simulado_questao',
+    'api_simulado_responder',
+    'rsc_desempenho',
+    'rsc_cadernos',
+  ];
+  const presentIds = new Set(operations.map((o) => o.operation_id));
+  const operationIdsMissing = envelopeMeasuredOperationIdsExpected.filter((id) => !presentIds.has(id));
+  const incompleteLatency = operations
+    .filter((o) => o.p50_ms == null && o.requests > 0)
+    .map((o) => o.operation_id);
+  const requestGap = httpRequestsSent - operationsRequestSum;
+  if (requestGap !== 0 || operationIdsMissing.length > 0) {
+    notes.push(
+      `EVIDENCE_GAP: soma requests por operação (${operationsRequestSum}) ≠ http_requests_sent (${httpRequestsSent}); operações ausentes ou log truncado.`,
+    );
+  }
+
   return {
     schema_version: 1,
     ewu: 'EWU-SCALE-1K-READINESS-001',
@@ -200,7 +236,7 @@ export function buildSanitizedBaselineReport(options: {
     tier: 'conservative',
     peak_ccu: 50,
     measured_duration_ms: Number(options.executeResult.measured_elapsed_ms ?? 0),
-    http_requests_sent: Number(options.executeResult.http_requests_sent ?? 0),
+    http_requests_sent: httpRequestsSent,
     target_mean_rps: Number((metrics?.target_mean_rps as number) ?? 5),
     achieved_mean_rps: Number((metrics?.achieved_mean_rps as number) ?? 0),
     setup_failures: Number((metrics?.setup_failures as number) ?? 0),
@@ -218,6 +254,17 @@ export function buildSanitizedBaselineReport(options: {
         }
       : undefined,
     operations,
+    evidence_completeness: {
+      operations_in_artifact: operations.length,
+      operations_request_sum: operationsRequestSum,
+      http_requests_sent: httpRequestsSent,
+      request_count_gap: requestGap,
+      log_parse_status:
+        requestGap === 0 && operationIdsMissing.length === 0 ? 'complete' : 'truncated_or_partial',
+      envelope_measured_operation_ids_expected: envelopeMeasuredOperationIdsExpected,
+      operation_ids_missing_from_artifact: operationIdsMissing,
+      operations_with_incomplete_latency: incompleteLatency,
+    },
     notes,
     post_baseline_study_read_sweep: options.postBaselineStudyReadSweep,
   };

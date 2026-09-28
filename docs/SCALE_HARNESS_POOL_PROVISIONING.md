@@ -47,6 +47,7 @@ Referência de hosts: [`SCALE_HARNESS_STAGING_TARGET_BINDING.md`](./SCALE_HARNES
 7b. **Antes do ensaio de carga:** renovar JWT/cookie sem mudar slugs — `npm run scale:harness:pool-refresh-sessions:staging` (`--throttle-ms=1500` recomendado).
 7c. **Diagnóstico 403 estudar/questao:** sweep sequencial — `npm run scale:harness:pool-sweep-estudar-questao:staging` (rodar **após** `pool-refresh-sessions`). Baseline 50 CCU (2026-09): **3/50** VUs com `QUALITY_GATE_BLOCKED` nos slugs de questão → HTTP 403 determinístico em `GET /api/estudar/questao` (≈6,35% na op. durante carga). Correção: re-provisionar fixtures só com `commercial_eligible` ou trocar `default_questao_slug` dos VUs afetados.
 7d. Preflight exige `linked_to_geral` + `opcao_valid` + **`commercial_eligible`** (`canServeCommercialContent`).
+7d2. Reparar slugs inelegíveis no pool existente (sem recriar Auth): `npm run scale:harness:pool-repair-commercial-slugs:staging` (dry-run) → `--apply`.
 7e. Baseline sanitizado versionável: `npm run scale:harness:baseline-sanitize-report` → `artifacts/scale-harness-baseline-50-conservative.v1.json`.
 7f. Digests canônicos de `--execute` usam **bytes do blob Git** (`git show HEAD:path`), não CRLF do working tree — ver `canonicalArtifacts.ts`.
 8. Smoke manual alternativo: `GET /api/vitrine` com Bearer + bypass Vercel; `GET /estudar/{slug}` com `Cookie` + bypass, `redirect: manual`, esperar 200 (não 302 login).

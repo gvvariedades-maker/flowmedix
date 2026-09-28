@@ -25,8 +25,7 @@ import {
   formatHarnessProvisionError,
   formatHarnessSyntheticEmail,
 } from '@/lib/scale/authenticatedHarness/poolProvisioning';
-import { evaluateHarnessSlugCommercialEligibility } from '@/lib/scale/authenticatedHarness/poolCommercialEligibility';
-import { pickHarnessOpcaoIdFromConteudo } from '@/lib/scale/authenticatedHarness/poolQuestionFixture';
+import { fetchHarnessCommercialQuestionFixtures } from '@/lib/scale/authenticatedHarness/poolCommercialFixtures';
 import {
   buildSupabaseSsrCookieHeader,
   createHarnessSessionForEmail,
@@ -141,43 +140,6 @@ async function ensureHarnessAuthUser(
   throw new Error(createMsg || `createUser falhou (status ${createError.status ?? '?'})`);
 }
 
-type HarnessQuestionFixture = {
-  modulo_slug: string;
-  default_opcao_id: string;
-};
-
-async function fetchQuestionFixtures(
-  admin: ReturnType<typeof createClient>,
-  limit: number,
-): Promise<HarnessQuestionFixture[]> {
-  const { data, error } = await admin
-    .from('modulos_estudo')
-    .select('modulo_slug, titulo_aula, conteudo_json')
-    .not('modulo_slug', 'is', null)
-    .limit(Math.max(limit * 4, 50));
-  if (error) throw error;
-
-  const fixtures: HarnessQuestionFixture[] = [];
-  for (const row of data ?? []) {
-    const slug = (row as { modulo_slug?: string }).modulo_slug?.trim();
-    const conteudo = (row as { conteudo_json?: unknown }).conteudo_json;
-    const opcaoId = pickHarnessOpcaoIdFromConteudo(conteudo);
-    if (!slug || !opcaoId) continue;
-    const commercial = evaluateHarnessSlugCommercialEligibility({
-      modulo_slug: slug,
-      titulo_aula: (row as { titulo_aula?: string | null }).titulo_aula ?? null,
-      conteudo_json: conteudo,
-    });
-    if (!commercial.commercial_eligible) continue;
-    fixtures.push({ modulo_slug: slug, default_opcao_id: opcaoId });
-    if (fixtures.length >= limit) break;
-  }
-  if (fixtures.length === 0) {
-    throw new Error('Nenhum módulo com modulo_slug + opção válida — importe catálogo no CAS');
-  }
-  return fixtures;
-}
-
 async function main() {
   const args = parseArgs();
   if (!Number.isFinite(args.count) || args.count < 1 || args.count > 200) {
@@ -233,7 +195,7 @@ async function main() {
 
   const fixtures = args.dryRun
     ? [{ modulo_slug: 'dry-run-slug', default_opcao_id: 'A' }]
-    : await fetchQuestionFixtures(
+    : await fetchHarnessCommercialQuestionFixtures(
         createClient(supabaseUrl, serviceKey, {
           auth: { autoRefreshToken: false, persistSession: false },
         }),

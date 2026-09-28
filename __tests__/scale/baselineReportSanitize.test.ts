@@ -58,6 +58,7 @@ describe('baselineReportSanitize', () => {
       supabaseProjectRef: 'higsjzfigprqvldpxfwj',
     });
     expect(report.operations).toHaveLength(1);
+    expect(report.evidence_completeness.request_count_gap).toBe(90);
     expect(report.harness_git_sha).toBe('abc');
     expect(JSON.stringify(report)).not.toMatch(/access_token|cookie_header/i);
   });
