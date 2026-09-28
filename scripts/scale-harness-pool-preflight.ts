@@ -130,6 +130,7 @@ async function main() {
 
   const slugLinked = new Set<string>();
   const conteudoBySlug = new Map<string, unknown>();
+  const tituloBySlug = new Map<string, string | null>();
 
   if (concurso) {
     const { count, error: cmCountError } = await admin
@@ -142,7 +143,7 @@ async function main() {
     if (uniqueSlugs.length > 0) {
       const { data: modulos, error: modError } = await admin
         .from('modulos_estudo')
-        .select('id, modulo_slug, conteudo_json')
+        .select('id, modulo_slug, titulo_aula, conteudo_json')
         .in('modulo_slug', uniqueSlugs);
       if (modError) throw modError;
 
@@ -152,6 +153,7 @@ async function main() {
         const id = (row as { id?: string }).id;
         if (slug) {
           conteudoBySlug.set(slug, (row as { conteudo_json?: unknown }).conteudo_json);
+          tituloBySlug.set(slug, (row as { titulo_aula?: string | null }).titulo_aula ?? null);
         }
         if (id) moduloIds.push(id);
       }
@@ -176,12 +178,15 @@ async function main() {
     }
   }
 
-  const slugReport = buildSlugPreflightChecks(pool, slugLinked, conteudoBySlug, 8);
+  const slugReport = buildSlugPreflightChecks(pool, slugLinked, conteudoBySlug, tituloBySlug, 8);
   if (uniqueSlugs.length > 0 && slugLinked.size < uniqueSlugs.length) {
     blockers.push('default_questao_slug fora do pacote concurso geral');
   }
   if (uniqueSlugs.length > 0 && slugReport.opcaoValid < uniqueSlugs.length) {
     blockers.push('default_opcao_id inválido para um ou mais slugs');
+  }
+  if (uniqueSlugs.length > 0 && slugReport.commercialEligible < uniqueSlugs.length) {
+    blockers.push('default_questao_slug comercialmente inelegível (commercial authority)');
   }
 
   const emails = Array.from({ length: pool.users.length }, (_, i) =>
@@ -242,9 +247,15 @@ async function main() {
       unique_slugs: uniqueSlugs.length,
       linked_to_geral: slugLinked.size,
       opcao_valid: slugReport.opcaoValid,
+      commercial_eligible: slugReport.commercialEligible,
+      all_linked_opcao_and_commercial_valid:
+        slugLinked.size >= uniqueSlugs.length &&
+        slugReport.opcaoValid >= uniqueSlugs.length &&
+        slugReport.commercialEligible >= uniqueSlugs.length,
       all_linked_and_opcao_valid:
         slugLinked.size >= uniqueSlugs.length && slugReport.opcaoValid >= uniqueSlugs.length,
       sample_checks: slugReport.checks,
+      commercial_blockers_sample: slugReport.commercialBlockersSample,
     },
     ready_for_invite_matricula_fixture:
       hardBlockers.length === 0 && matriculaPending && foundInAuth === pool.users.length,

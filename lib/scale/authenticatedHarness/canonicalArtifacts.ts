@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { execSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { DEFAULT_STAGING_ALLOWLIST_RELATIVE_PATH } from '@/lib/scale/authenticatedHarness/approvedStagingTarget';
@@ -21,9 +22,33 @@ export type CanonicalArtifactBinding = {
   target_mean_rps: number;
 };
 
-export function sha256HexOfRepoFile(relativePath: string): string {
+/** SHA-256 dos bytes no working tree (sensível a CRLF no Windows). */
+export function sha256HexOfWorktreeFile(relativePath: string): string {
   const absolute = resolve(process.cwd(), relativePath);
   const buf = readFileSync(absolute);
+  return createHash('sha256').update(buf).digest('hex');
+}
+
+/** @deprecated Use sha256HexOfGitBlobAtRef — alias legado para worktree. */
+export function sha256HexOfRepoFile(relativePath: string): string {
+  return sha256HexOfWorktreeFile(relativePath);
+}
+
+/** SHA-256 do blob Git (portável LF; independente de core.autocrlf). */
+export function sha256HexOfGitBlobAtRef(relativePath: string, gitRef = 'HEAD'): string {
+  const posixPath = relativePath.replace(/\\/g, '/');
+  let buf: Buffer;
+  try {
+    buf = execSync(`git show ${gitRef}:${posixPath}`, {
+      encoding: 'buffer',
+      maxBuffer: 32 * 1024 * 1024,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    }) as Buffer;
+  } catch {
+    throw new HarnessExecutionForbiddenError(
+      `git show ${gitRef}:${posixPath} falhou; digest canônico exige repositório git.`,
+    );
+  }
   return createHash('sha256').update(buf).digest('hex');
 }
 
@@ -55,8 +80,8 @@ export function loadCanonicalArtifactBinding(tier: ConcurrencyTierId): Canonical
     envelope_relative_path,
     allowlist_relative_path,
     envelope_version: envelope.version,
-    envelope_digest_sha256: sha256HexOfRepoFile(envelope_relative_path),
-    allowlist_digest_sha256: sha256HexOfRepoFile(allowlist_relative_path),
+    envelope_digest_sha256: sha256HexOfGitBlobAtRef(envelope_relative_path),
+    allowlist_digest_sha256: sha256HexOfGitBlobAtRef(allowlist_relative_path),
     peak_concurrent_users: peak,
     target_mean_rps,
   };

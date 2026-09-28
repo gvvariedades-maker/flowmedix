@@ -145,12 +145,15 @@ async function main() {
         gitWorktreePorcelain,
       });
       const result = await runHarnessMeasuredWindowAuthorized(auth, executionPlan, pool, { durationMs });
+      const resultForLog = redactSecretsDeep(result);
+      if (resultForLog.metrics?.operations) {
+        resultForLog.metrics.operations = resultForLog.metrics.operations.map((op) => {
+          const { latency_ms_samples: _samples, ...rest } = op;
+          return rest;
+        });
+      }
       console.log(
-        JSON.stringify(
-          { harness: 'scale-authenticated', mode: 'execute', result: redactSecretsDeep(result) },
-          null,
-          2,
-        ),
+        JSON.stringify({ harness: 'scale-authenticated', mode: 'execute', result: resultForLog }, null, 2),
       );
     }
   }

@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "ewu": "EWU-SCALE-1K-READINESS-001",
+  "harness_git_sha": "4346ea791b070148418473e2a1aeef396cd2ae8f",
+  "app_staging_git_sha": "d1fe4a28d39b4ec193c7914e54e593ad5522d613",
+  "vercel_deploy_id": "dpl_J6XTemp4MA8RZ2xTsfTHyN4cvHEV",
+  "staging_app_host": "flowmedix-git-staging-gvvariedades-makers-projects.vercel.app",
+  "supabase_project_ref": "higsjzfigprqvldpxfwj",
+  "tier": "conservative",
+  "peak_ccu": 50,
+  "measured_duration_ms": 601264,
+  "http_requests_sent": 2998,
+  "target_mean_rps": 5,
+  "achieved_mean_rps": 4.986162484366268,
+  "setup_failures": 0,
+  "setup_elapsed_ms": 22850,
+  "canonical_artifact_digests_git_blob": {
+    "envelope_version": "1.0.3",
+    "envelope_sha256": "07f7c3b34c29445b6c6b58b9bd73be646ae41123c07f3be0ff2018a846a85179",
+    "allowlist_sha256": "088b5b0436d57affbee93d96009b6923df80ddb846fd2bb06a0860df9fabb93e"
+  },
+  "run_50_baseline_worktree_digests_crlf_windows": {
+    "envelope_sha256": "19686ec5de20d514048b13ba2c678d26e26c864bdd263932b1c6d6c5be0d43d0",
+    "allowlist_sha256": "d0025df987c8d3dfd7e8e5ed8665f1bed37f1659afccf366d0568553f3eefb45",
+    "note": "Windows working tree / CRLF — histórico do run 50 CCU baseline v1"
+  },
+  "operations": [
+    {
+      "operation_id": "api_simulado_sessions_create",
+      "kind": "setup",
+      "requests": 50,
+      "successes": 50,
+      "failures": 0,
+      "status_counts": {
+        "200": 50
+      },
+      "p50_ms": 403,
+      "p95_ms": 543,
+      "p99_ms": 2103,
+      "max_ms": 2103
+    },
+    {
+      "operation_id": "api_registrar_tentativa",
+      "kind": "write",
+      "requests": 644,
+      "successes": 644,
+      "failures": 0,
+      "status_counts": {
+        "200": 644
+      },
+      "p50_ms": 496,
+      "p95_ms": 847,
+      "p99_ms": 1902,
+      "max_ms": 4315
+    },
+    {
+      "operation_id": "api_simulado_sessions",
+      "kind": "read",
+      "requests": 91,
+      "successes": 91,
+      "failures": 0,
+      "status_counts": {
+        "200": 91
+      },
+      "p50_ms": 319,
+      "p95_ms": 453,
+      "p99_ms": 1175,
+      "max_ms": 1175
+    },
+    {
+      "operation_id": "api_estudar_questao",
+      "kind": "read",
+      "requests": 693,
+      "successes": 649,
+      "failures": 44,
+      "status_counts": {
+        "200": 649,
+        "403": 44
+      },
+      "p50_ms": 684,
+      "p95_ms": 1215,
+      "p99_ms": 2540,
+      "max_ms": 4367
+    },
+    {
+      "operation_id": "api_vitrine_page",
+      "kind": "read",
+      "requests": 361,
+      "successes": 361,
+      "failures": 0,
+      "status_counts": {
+        "200": 361
+      },
+      "p50_ms": null,
+      "p95_ms": null,
+      "p99_ms": null,
+      "max_ms": null
+    }
+  ],
+  "notes": [
+    "Relatório sanitizado — sem tokens, cookies ou secrets.",
+    "Latências derivadas do harness metrics; thresholds prospectivos não aplicados.",
+    "RUN_50_BASELINE_WORKTREE_DIGESTS: digests CRLF do checkout Windows usados na autorização runtime da 1ª execução."
+  ],
+  "post_baseline_study_read_sweep": {
+    "source": "artifacts/scale-harness-pool-sweep-estudar-questao.json",
+    "http_403": 3,
+    "http_200": 47,
+    "slug_403_summary": [
+      {
+        "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+        "vu_count": 1
+      },
+      {
+        "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+        "vu_count": 1
+      },
+      {
+        "default_questao_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+        "vu_count": 1
+      }
+    ],
+    "commercial_reason_sample": "QUALITY_GATE_BLOCKED"
+  }
+}

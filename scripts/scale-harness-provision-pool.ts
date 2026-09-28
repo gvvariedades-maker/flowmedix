@@ -25,6 +25,7 @@ import {
   formatHarnessProvisionError,
   formatHarnessSyntheticEmail,
 } from '@/lib/scale/authenticatedHarness/poolProvisioning';
+import { evaluateHarnessSlugCommercialEligibility } from '@/lib/scale/authenticatedHarness/poolCommercialEligibility';
 import { pickHarnessOpcaoIdFromConteudo } from '@/lib/scale/authenticatedHarness/poolQuestionFixture';
 import {
   buildSupabaseSsrCookieHeader,
@@ -151,7 +152,7 @@ async function fetchQuestionFixtures(
 ): Promise<HarnessQuestionFixture[]> {
   const { data, error } = await admin
     .from('modulos_estudo')
-    .select('modulo_slug, conteudo_json')
+    .select('modulo_slug, titulo_aula, conteudo_json')
     .not('modulo_slug', 'is', null)
     .limit(Math.max(limit * 4, 50));
   if (error) throw error;
@@ -159,8 +160,15 @@ async function fetchQuestionFixtures(
   const fixtures: HarnessQuestionFixture[] = [];
   for (const row of data ?? []) {
     const slug = (row as { modulo_slug?: string }).modulo_slug?.trim();
-    const opcaoId = pickHarnessOpcaoIdFromConteudo((row as { conteudo_json?: unknown }).conteudo_json);
+    const conteudo = (row as { conteudo_json?: unknown }).conteudo_json;
+    const opcaoId = pickHarnessOpcaoIdFromConteudo(conteudo);
     if (!slug || !opcaoId) continue;
+    const commercial = evaluateHarnessSlugCommercialEligibility({
+      modulo_slug: slug,
+      titulo_aula: (row as { titulo_aula?: string | null }).titulo_aula ?? null,
+      conteudo_json: conteudo,
+    });
+    if (!commercial.commercial_eligible) continue;
     fixtures.push({ modulo_slug: slug, default_opcao_id: opcaoId });
     if (fixtures.length >= limit) break;
   }

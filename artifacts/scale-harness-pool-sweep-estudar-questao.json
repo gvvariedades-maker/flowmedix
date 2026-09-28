@@ -1,0 +1,423 @@
+{
+  "mode": "scale-harness-pool-sweep-estudar-questao",
+  "total": 50,
+  "http_200": 47,
+  "http_403": 3,
+  "other_status": 0,
+  "results": [
+    {
+      "pool_id": "harness-u001",
+      "default_questao_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u002",
+      "default_questao_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u003",
+      "default_questao_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u004",
+      "default_questao_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u005",
+      "default_questao_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u006",
+      "default_questao_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u007",
+      "default_questao_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u008",
+      "default_questao_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u009",
+      "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+      "http_status": 403,
+      "ok": false,
+      "commercial_eligible": false,
+      "commercial_reason": "QUALITY_GATE_BLOCKED"
+    },
+    {
+      "pool_id": "harness-u010",
+      "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+      "http_status": 403,
+      "ok": false,
+      "commercial_eligible": false,
+      "commercial_reason": "QUALITY_GATE_BLOCKED"
+    },
+    {
+      "pool_id": "harness-u011",
+      "default_questao_slug": "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u012",
+      "default_questao_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u013",
+      "default_questao_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u014",
+      "default_questao_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u015",
+      "default_questao_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u016",
+      "default_questao_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "http_status": 403,
+      "ok": false,
+      "commercial_eligible": false,
+      "commercial_reason": "QUALITY_GATE_BLOCKED"
+    },
+    {
+      "pool_id": "harness-u017",
+      "default_questao_slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u018",
+      "default_questao_slug": "adm-tec-enfermagem-imunizacao-1777103244679-1",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u019",
+      "default_questao_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u020",
+      "default_questao_slug": "adm-tec-enfermagem-imunizacao-1779564031957-5",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u021",
+      "default_questao_slug": "adm-tec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-6",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u022",
+      "default_questao_slug": "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-8",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u023",
+      "default_questao_slug": "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-9",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u024",
+      "default_questao_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775448586547-3",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u025",
+      "default_questao_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775501962697-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u026",
+      "default_questao_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-7",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u027",
+      "default_questao_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-0",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u028",
+      "default_questao_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-3",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u029",
+      "default_questao_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-4",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u030",
+      "default_questao_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-3",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u031",
+      "default_questao_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u032",
+      "default_questao_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056129848-4",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u033",
+      "default_questao_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056129848-5",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u034",
+      "default_questao_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u035",
+      "default_questao_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u036",
+      "default_questao_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u037",
+      "default_questao_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u038",
+      "default_questao_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u039",
+      "default_questao_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u040",
+      "default_questao_slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u041",
+      "default_questao_slug": "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u042",
+      "default_questao_slug": "adm-tec-enfermagem-saude-da-mulher-1777104306781-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u043",
+      "default_questao_slug": "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u044",
+      "default_questao_slug": "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u045",
+      "default_questao_slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u046",
+      "default_questao_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u047",
+      "default_questao_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u048",
+      "default_questao_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u049",
+      "default_questao_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    },
+    {
+      "pool_id": "harness-u050",
+      "default_questao_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "http_status": 200,
+      "ok": true,
+      "commercial_eligible": true,
+      "commercial_reason": null
+    }
+  ],
+  "slug_403_summary": [
+    {
+      "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+      "vu_count": 1
+    },
+    {
+      "default_questao_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+      "vu_count": 1
+    },
+    {
+      "default_questao_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "vu_count": 1
+    }
+  ]
+}
