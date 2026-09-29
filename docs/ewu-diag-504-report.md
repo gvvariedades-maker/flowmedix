@@ -15,7 +15,8 @@ Relatório canônico do diagnóstico pós clean-50 FAIL.
 | CI `17646d42` (workflow 36589159675) | **PASS** (incl. `test-e2e`, `perf-smoke`) |
 | CI `a04ffc1e` (workflow 36591743613) | **FAIL** — `test-unit`: contrato `phaseTimer` em `questao.test.ts` |
 | CI `b1067bb5` (workflow 36593902930) | **PASS** |
-| CI `766d9a66` | **PENDING** (pipeline em andamento no momento do registro; não antecipar PASS) |
+| CI `766d9a66` (workflow 36608660030) | **PASS** (incl. `test-e2e`, `perf-smoke`) |
+| CI `0035d702` (workflow 36610661842) | **PASS** |
 | Phase timing (emit imediato + `request_id`) | **SHIPPED** (`a04ffc1e`); log em **WARN** no preview (`766d9a66`) |
 | Staging diagnostic deploy | **DONE** — ver § STAGING_DIAGNOSTIC_DEPLOY |
 | Runtime phase correlation (pós-deploy) | **PASS** (amostra `request_id` nos Runtime Logs) |
@@ -92,7 +93,6 @@ Probe sequencial pós-deploy diagnóstico: **5/5 HTTP 200**. Confirma staging fu
 
 ## Próxima ordem (sem load test)
 
-1. Aguardar CI **`766d9a66`** até término (não antecipar PASS).
-2. Restabelecer consulta Runtime Logs na janela histórica clean-50 `2026-09-28T19:40–19:52Z` (billing/team), se ainda necessário para 504 do ensaio.
-3. Supabase: ampliar fontes (`postgres_logs`, pool) no intervalo do clean-50 ou dashboard quando MCP retornar vazio.
-4. Decisão Owner para novo clean-50 (`LOAD_TEST_AUTHORIZATION`) — usar `request_id` / fases nos logs sob carga autorizada.
+1. Restabelecer consulta Runtime Logs na janela histórica clean-50 `2026-09-28T19:40–19:52Z` (billing/team), se ainda necessário para 504 do ensaio.
+2. Supabase: ampliar fontes (`postgres_logs`, pool) no intervalo do clean-50 ou dashboard quando MCP retornar vazio.
+3. Decisão Owner para novo clean-50 (`LOAD_TEST_AUTHORIZATION`) — instrumentação staging pronta; correlacionar `request_id` / fases quando a request degradar (~300 s).
