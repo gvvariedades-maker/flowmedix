@@ -12,7 +12,8 @@ Relatório canônico do diagnóstico pós clean-50 FAIL.
 | Window/drain telemetry | PASS |
 | Evidence accounting (measured vs setup) | PASS |
 | Sequential staging probe | PASS |
-| CI | PASS |
+| CI (`17646d42` / workflow em andamento) | **PENDING** (aguardar `test-e2e` / `perf-smoke`) |
+| Phase timing (emit imediato + `request_id`) | **SHIPPED** (patch pós-`17646d42`) |
 | `VERCEL_RUNTIME_LOG_EVIDENCE` | **BLOCKED_BY_LOG_ACCESS** |
 | Supabase interval evidence | INSUFFICIENT |
 | Upstream root cause | **OPEN** |
@@ -61,8 +62,10 @@ Todas **200** (health ~3,2s; vitrine ~2,7s; estudar ~1,3s; registrar ~0,6s; simu
 ## Instrumentação por fases (código)
 
 - Flag operacional: `SCALE_STUDY_API_PHASE_TIMING=1` (allowlist em `check-architecture-patterns`; não entra em `lib/env.ts`).
-- Eventos: `study_api_route_timing` (`auth_ms`, `payload_build_ms`, `route_total_ms`) e `study_api_phase_timing` (`entitlement_ms`, `modulo_fetch_ms`, `nav_catalog_ms`, `payload_build_total_ms`).
-- **Requer deploy staging** com a flag para aparecer em Runtime Logs.
+- Correlação: `request_id` (UUID) comum a todos os eventos da invocação.
+- Eventos imediatos: `study_api_phase` com `phase` (`auth` | `entitlement` | `modulo_fetch` | `nav_catalog` | `payload`), `boundary` (`start` | `end`), `elapsed_ms` no `end`.
+- Falha: `study_api_phase_failure` com `last_completed_phase`, `route_total_ms`, `error_class` (sem user id / token / cookie).
+- **Requer deploy staging** com a flag para aparecer em Runtime Logs; útil para localizar hang (ex.: `nav_catalog` `start` sem `end` correspondente).
 
 ## Próxima ordem (sem load test)
 

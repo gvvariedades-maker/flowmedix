@@ -13,7 +13,7 @@ import {
 import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { canServeCommercialContent } from '@/lib/catalogMigration/commercialAuthority';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
-import { logStudyApiPhaseTiming } from '@/lib/estudar/studyApiPhaseTiming';
+import type { StudyApiPhaseTimer } from '@/lib/estudar/studyApiPhaseTiming';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
 import {
   ESTUDAR_QUESTAO_LAYERS_DEFAULT,
@@ -66,6 +66,8 @@ export type BuildEstudarQuestaoPlayerPayloadInput = {
   isAdmin?: boolean;
   /** Cliente com sessão do usuário (API Bearer). Se omitido no RSC, usa cookies via `createSupabaseServerClient`. */
   supabase?: SupabaseClient;
+  /** DIAG-504: fases emitidas imediatamente (opt-in via flag na API). */
+  phaseTimer?: StudyApiPhaseTimer;
 };
 
 async function historicoForSlugsSafe(
@@ -106,10 +108,7 @@ export async function buildEstudarQuestaoPlayerPayload(
 async function buildEstudarQuestaoPlayerPayloadImpl(
   input: BuildEstudarQuestaoPlayerPayloadInput,
 ): Promise<EstudarQuestaoBuildResult> {
-  const phaseStartedAt = Date.now();
-  let entitlementMs = 0;
-  let moduloFetchMs = 0;
-  let navCatalogMs = 0;
+  const phaseTimer = input.phaseTimer;
   const {
     slug,
     userId,
@@ -134,7 +133,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
   }
 
   if (!isAdmin) {
-    const entitlementStartedAt = Date.now();
+    phaseTimer?.phaseStart('entitlement');
     try {
       let hasAccess = await userHasModuloAccess(userId, slug);
       if (!hasAccess) {
@@ -142,19 +141,19 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
         hasAccess = pacote.has(slug);
       }
       if (!hasAccess) {
-        entitlementMs = Date.now() - entitlementStartedAt;
+        phaseTimer?.phaseEnd('entitlement', { status: 'forbidden' });
         return { status: 'forbidden' };
       }
-      entitlementMs = Date.now() - entitlementStartedAt;
+      phaseTimer?.phaseEnd('entitlement');
     } catch (err) {
-      entitlementMs = Date.now() - entitlementStartedAt;
+      phaseTimer?.phaseEnd('entitlement', { status: 'error' });
       if (isDataServiceUnavailableError(err)) throw err;
       logger.error('Falha ao verificar acesso ao módulo', err, { userId, slug });
       throw new DataServiceUnavailableError();
     }
   }
 
-  const moduloFetchStartedAt = Date.now();
+  phaseTimer?.phaseStart('modulo_fetch');
   if (isAdmin) {
     atual = (await getQuestaoBySlugCached(slug)) as ModuloAtualRow | null;
   } else {
@@ -174,7 +173,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     }
     atual = data as ModuloAtualRow | null;
   }
-  moduloFetchMs = Date.now() - moduloFetchStartedAt;
+  phaseTimer?.phaseEnd('modulo_fetch');
 
   if (!atual) return { status: 'not_found' };
 
@@ -203,6 +202,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     return supabase;
   };
 
+  phaseTimer?.phaseStart('nav_catalog');
   if (fromCaderno && cadernoId && userId) {
     const db = await ensureSupabase();
 
@@ -222,6 +222,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     }
     if (!notebook) {
       logger.warn('Caderno inexistente ou sem acesso', { userId, cadernoId });
+      phaseTimer?.phaseEnd('nav_catalog', { status: 'not_found' });
       return { status: 'not_found' };
     }
 
@@ -270,7 +271,6 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
       atual.modulo_nome ||
       '';
 
-    const navStartedAt = Date.now();
     const nav = await getQuestaoNavList({
       userId: userId ?? undefined,
       slug,
@@ -282,12 +282,13 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
         q: vitrineQ || undefined,
       },
     });
-    navCatalogMs = Date.now() - navStartedAt;
 
     lista = nav.lista;
     questoesDoAssunto = nav.questoesDoAssunto;
   }
+  phaseTimer?.phaseEnd('nav_catalog');
 
+  phaseTimer?.phaseStart('payload');
   const indexAtual = lista.findIndex((item) => item.modulo_slug === slug);
   const anteriorSlug = indexAtual > 0 ? lista[indexAtual - 1].modulo_slug : null;
   const proximaSlug =
@@ -332,15 +333,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     vitrineQuerySuffix: suffix,
   });
 
-  logStudyApiPhaseTiming('study_api_phase_timing', {
-    route: '/api/estudar/questao',
-    slug,
-    status: 'ok',
-    entitlement_ms: entitlementMs,
-    modulo_fetch_ms: moduloFetchMs,
-    nav_catalog_ms: navCatalogMs,
-    payload_build_total_ms: Date.now() - phaseStartedAt,
-  });
+  phaseTimer?.phaseEnd('payload', { status: 'ok' });
 
   return { status: 'ok', payload };
 }
