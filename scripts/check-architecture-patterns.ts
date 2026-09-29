@@ -76,6 +76,7 @@ const LEGACY_ENV_ALLOWLIST = new Set([
   'PERF_TARGET',
   'VERCEL_AUTOMATION_BYPASS_SECRET',
   'VERCEL_PROTECTION_BYPASS',
+  'SCALE_STUDY_API_PHASE_TIMING',
 ]);
 
 /** Plataforma / Node — não exigem entrada em lib/env.ts. */

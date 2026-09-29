@@ -13,6 +13,7 @@ import {
 import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { canServeCommercialContent } from '@/lib/catalogMigration/commercialAuthority';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
+import { logStudyApiPhaseTiming } from '@/lib/estudar/studyApiPhaseTiming';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
 import {
   ESTUDAR_QUESTAO_LAYERS_DEFAULT,
@@ -105,6 +106,10 @@ export async function buildEstudarQuestaoPlayerPayload(
 async function buildEstudarQuestaoPlayerPayloadImpl(
   input: BuildEstudarQuestaoPlayerPayloadInput,
 ): Promise<EstudarQuestaoBuildResult> {
+  const phaseStartedAt = Date.now();
+  let entitlementMs = 0;
+  let moduloFetchMs = 0;
+  let navCatalogMs = 0;
   const {
     slug,
     userId,
@@ -129,20 +134,27 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
   }
 
   if (!isAdmin) {
+    const entitlementStartedAt = Date.now();
     try {
       let hasAccess = await userHasModuloAccess(userId, slug);
       if (!hasAccess) {
         const pacote = await getAccessibleModuloSlugs(userId);
         hasAccess = pacote.has(slug);
       }
-      if (!hasAccess) return { status: 'forbidden' };
+      if (!hasAccess) {
+        entitlementMs = Date.now() - entitlementStartedAt;
+        return { status: 'forbidden' };
+      }
+      entitlementMs = Date.now() - entitlementStartedAt;
     } catch (err) {
+      entitlementMs = Date.now() - entitlementStartedAt;
       if (isDataServiceUnavailableError(err)) throw err;
       logger.error('Falha ao verificar acesso ao módulo', err, { userId, slug });
       throw new DataServiceUnavailableError();
     }
   }
 
+  const moduloFetchStartedAt = Date.now();
   if (isAdmin) {
     atual = (await getQuestaoBySlugCached(slug)) as ModuloAtualRow | null;
   } else {
@@ -162,6 +174,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     }
     atual = data as ModuloAtualRow | null;
   }
+  moduloFetchMs = Date.now() - moduloFetchStartedAt;
 
   if (!atual) return { status: 'not_found' };
 
@@ -257,6 +270,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
       atual.modulo_nome ||
       '';
 
+    const navStartedAt = Date.now();
     const nav = await getQuestaoNavList({
       userId: userId ?? undefined,
       slug,
@@ -268,6 +282,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
         q: vitrineQ || undefined,
       },
     });
+    navCatalogMs = Date.now() - navStartedAt;
 
     lista = nav.lista;
     questoesDoAssunto = nav.questoesDoAssunto;
@@ -315,6 +330,16 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     listaContexto,
     avantCodigo: avantCodigoAluno,
     vitrineQuerySuffix: suffix,
+  });
+
+  logStudyApiPhaseTiming('study_api_phase_timing', {
+    route: '/api/estudar/questao',
+    slug,
+    status: 'ok',
+    entitlement_ms: entitlementMs,
+    modulo_fetch_ms: moduloFetchMs,
+    nav_catalog_ms: navCatalogMs,
+    payload_build_total_ms: Date.now() - phaseStartedAt,
   });
 
   return { status: 'ok', payload };

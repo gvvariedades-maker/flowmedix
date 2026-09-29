@@ -2,7 +2,7 @@
 
 Relatório canônico do diagnóstico pós clean-50 FAIL.
 
-**Artefatos:** `artifacts/scale-harness-pool-probe-sequential.json` (versionado). Relatório sanitizado do clean-50 falho: `artifacts/scale-harness-baseline-50-conservative-clean-37e26915.v1.json` — **local/gitignored** até decisão explícita Owner para versionar como evidência negativa.
+**Artefatos:** `artifacts/scale-harness-pool-probe-sequential.json` · `artifacts/ewu-diag-504-log-evidence.json` (tentativas Vercel/Supabase sanitizadas) · relatório sanitizado FAIL clean-50: `artifacts/scale-harness-baseline-50-conservative-clean-37e26915.v1.json` (versionado como evidência negativa, sem secrets).
 
 ## Veredito Work Unit
 
@@ -56,12 +56,17 @@ Relatório canônico do diagnóstico pós clean-50 FAIL.
 
 ## Probes 1 VU (2026-09-29)
 
-Todas **200** (health 1,7s; vitrine 4,7s; estudar 2,1s; registrar 0,9s; simulado 0,7s). Confirma staging funcional em carga unitária; **não** explica falha concorrente.
+Todas **200** (health ~3,2s; vitrine ~2,7s; estudar ~1,3s; registrar ~0,6s; simulado ~0,9s — rerun pós instrumentação). Confirma staging funcional em carga unitária; **não** explica falha concorrente.
+
+## Instrumentação por fases (código)
+
+- Flag operacional: `SCALE_STUDY_API_PHASE_TIMING=1` (allowlist em `check-architecture-patterns`; não entra em `lib/env.ts`).
+- Eventos: `study_api_route_timing` (`auth_ms`, `payload_build_ms`, `route_total_ms`) e `study_api_phase_timing` (`entitlement_ms`, `modulo_fetch_ms`, `nav_catalog_ms`, `payload_build_total_ms`).
+- **Requer deploy staging** com a flag para aparecer em Runtime Logs.
 
 ## Próxima ordem (sem load test)
 
-1. Runtime Logs Vercel (acesso team) + Supabase/Postgres no mesmo intervalo.
-2. Se insuficiente: instrumentação por fases em staging (auth, entitlement, modulo, nav, historico, total) — deploy dirigido.
-3. CI + probes 1 VU.
-4. Decisão Owner para novo clean-50.
-5. Opcional: versionar artefato sanitizado FAIL após ordem explícita.
+1. Restabelecer acesso Runtime Logs Vercel (billing/team) + repetir consulta na janela `2026-09-28T19:40–19:52Z`.
+2. Supabase: ampliar fontes (`postgres_logs`, pool) no mesmo intervalo ou usar dashboard quando MCP retornar vazio.
+3. Deploy staging com `SCALE_STUDY_API_PHASE_TIMING=1` e amostra manual 1 VU sob carga leve.
+4. Decisão Owner para novo clean-50 (`LOAD_TEST_AUTHORIZATION`).

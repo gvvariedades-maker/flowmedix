@@ -11,6 +11,7 @@ import { recordPerformance } from '@/lib/metrics';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { buildE2eEstudarQuestaoPayload } from '@/lib/e2e/estudarSeed';
 import { isE2eEstudarSlug } from '@/lib/e2e/constants';
+import { logStudyApiPhaseTiming } from '@/lib/estudar/studyApiPhaseTiming';
 
 /** Headers para cache L0 no Service Worker (Vary: Authorization). */
 function estudarQuestaoApiCacheHeaders(): HeadersInit {
@@ -62,7 +63,9 @@ export async function GET(request: NextRequest) {
       });
     }
 
+    const authStartedAt = Date.now();
     const auth = await getUserAndClientFromBearer(request);
+    const authMs = Date.now() - authStartedAt;
     if (!auth) {
       recordPerformance(endpoint, method, Date.now() - requestStartedAt, false);
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
@@ -86,9 +89,10 @@ export async function GET(request: NextRequest) {
       searchParams: estudarSearchParams,
       supabase: auth.supabase,
     });
+    const payloadBuildMs = Date.now() - buildStartedAt;
     logEstudarNavApiBuild({
       slug,
-      durationMs: Date.now() - buildStartedAt,
+      durationMs: payloadBuildMs,
       status: result.status,
     });
     logApiStrategy({
@@ -103,7 +107,17 @@ export async function GET(request: NextRequest) {
       },
     });
     const cached = result.status === 'ok';
-    recordPerformance(endpoint, method, Date.now() - requestStartedAt, cached);
+    const routeTotalMs = Date.now() - requestStartedAt;
+    recordPerformance(endpoint, method, routeTotalMs, cached);
+
+    logStudyApiPhaseTiming('study_api_route_timing', {
+      route: endpoint,
+      slug,
+      status: result.status,
+      auth_ms: authMs,
+      payload_build_ms: payloadBuildMs,
+      route_total_ms: routeTotalMs,
+    });
 
     if (result.status === 'forbidden') {
       return NextResponse.json({ error: 'Sem acesso a este módulo' }, { status: 403 });

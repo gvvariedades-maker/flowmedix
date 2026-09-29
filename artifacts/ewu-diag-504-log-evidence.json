@@ -1,0 +1,47 @@
+﻿{
+  "schema_version": 1,
+  "ewu": "EWU-SCALE-1K-READINESS-001-DIAG-504",
+  "generated_at": "2026-09-29T13:55:00Z",
+  "target_window_utc": {
+    "start": "2026-09-28T19:40:00Z",
+    "end": "2026-09-28T19:52:00Z"
+  },
+  "vercel": {
+    "project_id": "prj_JQl6DT8ZO9ZS5U605ArlChAWdzXN",
+    "team_id": "team_XIpT0h00cn8EPNIACpffDsff",
+    "deployment_id": "dpl_J6XTemp4MA8RZ2xTsfTHyN4cvHEV",
+    "staging_app_host": "flowmedix-git-staging-gvvariedades-makers-projects.vercel.app",
+    "runtime_logs_api": {
+      "status": "BLOCKED",
+      "error_name": "ExceedsBillingLimitError",
+      "http_status": 400,
+      "attempted_at": "2026-09-29T13:50:00Z",
+      "note": "Falha na API de consulta de logs; nao implica erro dentro das Functions no intervalo do load test."
+    }
+  },
+  "supabase": {
+    "project_ref": "higsjzfigprqvldpxfwj",
+    "query_logs_clickhouse": {
+      "status": "INSUFFICIENT",
+      "sql_summary": "SELECT source, count() FROM logs GROUP BY source (janela alvo)",
+      "row_count": 0,
+      "attempted_at": "2026-09-29T13:50:00Z"
+    }
+  },
+  "staging_probe_sequential_1vu": {
+    "status": "PASS",
+    "script": "scale:harness:pool-probe-sequential:staging",
+    "attempted_at": "2026-09-29T13:51:00Z",
+    "artifact": "artifacts/scale-harness-pool-probe-sequential.json",
+    "all_operations_http_200": true
+  },
+  "phase_timing_instrumentation": {
+    "status": "SHIPPED_CODE",
+    "flag": "SCALE_STUDY_API_PHASE_TIMING=1",
+    "events": ["study_api_route_timing", "study_api_phase_timing"],
+    "deploy_required": true,
+    "note": "Ativar em staging apos merge/deploy para correlacionar fases no Runtime Logs."
+  },
+  "load_test_authorization": "NOT_GRANTED",
+  "clean_50_decision": "NO_NEW_EXECUTE_WITHOUT_OWNER"
+}
