@@ -49,9 +49,11 @@ export type SanitizedBaselineReport = {
   };
   operations: SanitizedBaselineOperation[];
   notes: string[];
+  window_telemetry?: Record<string, unknown>;
   evidence_completeness: {
     operations_in_artifact: number;
-    operations_request_sum: number;
+    measured_operations_request_sum: number;
+    setup_operations_request_sum: number;
     http_requests_sent: number;
     request_count_gap: number;
     log_parse_status: 'complete' | 'truncated_or_partial';
@@ -200,7 +202,11 @@ export function buildSanitizedBaselineReport(options: {
   }
 
   const httpRequestsSent = Number(options.executeResult.http_requests_sent ?? 0);
-  const operationsRequestSum = operations.reduce((acc, op) => acc + op.requests, 0);
+  const measuredOperations = operations.filter((op) => op.kind !== 'setup');
+  const operationsRequestSum = measuredOperations.reduce((acc, op) => acc + op.requests, 0);
+  const setupOperationsRequestSum = operations
+    .filter((op) => op.kind === 'setup')
+    .reduce((acc, op) => acc + op.requests, 0);
   const envelopeMeasuredOperationIdsExpected = [
     'auth_session_refresh',
     'api_vitrine_page',
@@ -254,9 +260,11 @@ export function buildSanitizedBaselineReport(options: {
         }
       : undefined,
     operations,
+    window_telemetry: options.executeResult.window_telemetry as Record<string, unknown> | undefined,
     evidence_completeness: {
       operations_in_artifact: operations.length,
-      operations_request_sum: operationsRequestSum,
+      measured_operations_request_sum: operationsRequestSum,
+      setup_operations_request_sum: setupOperationsRequestSum,
       http_requests_sent: httpRequestsSent,
       request_count_gap: requestGap,
       log_parse_status:

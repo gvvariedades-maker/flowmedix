@@ -13,10 +13,12 @@ import type { FetchLike, HarnessHttpTransportOptions } from '@/lib/scale/authent
 import { executeMaterializedRequest } from '@/lib/scale/authenticatedHarness/httpExecute';
 import { materializeOperation } from '@/lib/scale/authenticatedHarness/materializeRequest';
 import { HarnessMetricsCollector } from '@/lib/scale/authenticatedHarness/metrics';
+import { MeasuredWindowTelemetryCollector } from '@/lib/scale/authenticatedHarness/measuredWindowTelemetry';
 import { computeVuStaggerMs, sleepUntilNextStartToStart } from '@/lib/scale/authenticatedHarness/pacing';
 import { pickWeightedOperation } from '@/lib/scale/authenticatedHarness/scheduler';
 import { runSimuladoSetupStep } from '@/lib/scale/authenticatedHarness/simuladoSetup';
 import type { ConcurrencyTierId } from '@/lib/scale/workloadEnvelope';
+import type { MeasuredWindowTelemetry } from '@/lib/scale/authenticatedHarness/measuredWindowTelemetry';
 import type { HarnessExecutionPlan, SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
 import { createVuRuntimeState, toMaterializeUser, type VuRuntimeState } from '@/lib/scale/authenticatedHarness/vuRuntime';
 
@@ -35,6 +37,7 @@ export type HttpExecutorResult = {
   setup_elapsed_ms: number;
   measured_elapsed_ms: number;
   http_requests_sent: number;
+  window_telemetry: MeasuredWindowTelemetry;
   metrics: ReturnType<HarnessMetricsCollector['buildReport']>;
   notes: string;
 };
@@ -88,6 +91,7 @@ async function runMeasuredWindowHttp(
   const measuredEndAt = measuredStartedAt + options.durationMs;
   const intervalMs = plan.scheduler.interval_ms_per_request;
   let httpRequestsSent = 0;
+  const windowTelemetry = new MeasuredWindowTelemetryCollector(measuredStartedAt, options.durationMs);
 
   const vuLoops = states.map(async (state, vuIndex) => {
     const stagger = computeVuStaggerMs(vuIndex, states.length, intervalMs);
@@ -103,6 +107,7 @@ async function runMeasuredWindowHttp(
       const op = pickWeightedOperation(plan.measured_operations);
       const step = plan.measured_operations.find((m) => m.operation_id === op.operation_id) ?? op;
       const materialized = materializeOperation(step, pool, toMaterializeUser(state));
+      windowTelemetry.markRequestStart();
       const outcome = await executeMaterializedRequest(
         pool,
         state,
@@ -110,6 +115,7 @@ async function runMeasuredWindowHttp(
         fetchImpl,
         options.httpTransport,
       );
+      windowTelemetry.markRequestEnd();
       metrics.recordRequest(
         'measured',
         step.operation_id,
@@ -125,6 +131,7 @@ async function runMeasuredWindowHttp(
 
   await Promise.all(vuLoops);
   const measuredElapsed = Date.now() - measuredStartedAt;
+  const windowTelemetryReport = windowTelemetry.finalize(measuredElapsed);
 
   const report = metrics.buildReport({
     phase: 'measured',
@@ -138,6 +145,7 @@ async function runMeasuredWindowHttp(
     setup_elapsed_ms: setupElapsed,
     measured_elapsed_ms: measuredElapsed,
     http_requests_sent: httpRequestsSent,
+    window_telemetry: windowTelemetryReport,
     metrics: report,
     notes:
       'Setup fora da janela measured; RSC=cookie estático pré-provisionado (refresh não reescreve cookie SSR).',

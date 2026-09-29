@@ -42,6 +42,7 @@
     "scale:harness:pool-refresh-sessions:staging": "tsx scripts/scale-harness-pool-refresh-sessions.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
     "scale:harness:pool-sweep-estudar-questao:staging": "tsx scripts/scale-harness-pool-sweep-estudar-questao.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
     "scale:harness:pool-repair-commercial-slugs:staging": "tsx scripts/scale-harness-pool-repair-commercial-slugs.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
+    "scale:harness:pool-probe-sequential:staging": "tsx scripts/scale-harness-pool-probe-sequential.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local",
     "scale:harness:baseline-sanitize-report": "tsx scripts/scale-harness-baseline-sanitize-report.ts",
     "smoke:rls": "tsx scripts/rls-performance-smoke.ts",
     "smoke:rls-auth": "tsx scripts/rls-auth-smoke.ts",
