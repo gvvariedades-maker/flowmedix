@@ -1,38 +1,67 @@
 # EWU-SCALE-1K-READINESS-001-DIAG-504
 
-Relatório canônico do diagnóstico pós clean-50 FAIL. Ver também `artifacts/scale-harness-pool-probe-sequential.json` e artefato sanitizado local `artifacts/scale-harness-baseline-50-conservative-clean-37e26915.v1.json` (não commitado).
+Relatório canônico do diagnóstico pós clean-50 FAIL.
 
-## Veredito
+**Artefatos:** `artifacts/scale-harness-pool-probe-sequential.json` (versionado). Relatório sanitizado do clean-50 falho: `artifacts/scale-harness-baseline-50-conservative-clean-37e26915.v1.json` — **local/gitignored** até decisão explícita Owner para versionar como evidência negativa.
 
-- `CLEAN_50_CONSERVATIVE` = **FAIL_CAPACITY_RUN**
-- `CONSERVATIVE_CAPACITY` = **UNSTABLE / ROOT_CAUSE_PENDING**
-- `LOAD_TEST_AUTHORIZATION` = **CONSUMED**; nova carga = **NOT_GRANTED**
+## Veredito Work Unit
 
-## Métricas do clean-50 (sanitizado)
+| Item | Status |
+|------|--------|
+| Diagnostic instrumentation | PASS |
+| Window/drain telemetry | PASS |
+| Evidence accounting (measured vs setup) | PASS |
+| Sequential staging probe | PASS |
+| CI | PASS |
+| `VERCEL_RUNTIME_LOG_EVIDENCE` | **BLOCKED_BY_LOG_ACCESS** |
+| Supabase interval evidence | INSUFFICIENT |
+| Upstream root cause | **OPEN** |
+| `CONSERVATIVE_CAPACITY` | UNSTABLE / ROOT_CAUSE_PENDING |
+| `LOAD_TEST_AUTHORIZATION` | NOT_GRANTED (consumida no clean-50) |
+
+## Métricas do clean-50 (sanitizado local)
 
 | Campo | Valor |
 |-------|--------|
-| measured_elapsed_ms | 698953 |
+| measured_elapsed_ms | 698953 (~99s drain além de 600000 ms autorizados) |
 | http_requests_sent | 566 |
-| achieved_mean_rps | ~0,81 |
+| achieved_mean_rps (legado) | ~0,81 |
 | setup_failures | 0 |
-| measured ops request sum | 566 (setup 50 separado) |
+| measured ops request sum | 566 |
 
-504 com p95 ~300s em `api_estudar_questao`, `api_registrar_tentativa`, `api_vitrine_page`, `api_simulado_responder` — compatível com timeout de Function Vercel (300s); causa upstream **não comprovada** nesta WU.
+**Leitura de RPS:** o executor é **sequencial por VU** (espera a request terminar antes da próxima). Requests ~300 s bloqueiam o VU; com dezenas de 504, o `achieved_mean_rps` legado (completions / wall-clock incluindo drain) **não** é a métrica principal — usar `window_telemetry`: `request_start_rate_rps`, `completion_rate_during_window_rps`, `in_flight_at_window_end`, `drain_elapsed_ms`.
 
-## Logs
+## Root cause (linguagem precisa)
 
-- Vercel Runtime Logs (deploy `dpl_J6XTemp4MA8RZ2xTsfTHyN4cvHEV`, janela 2026-09-28 ~19:40–19:52 UTC): API **ExceedsBillingLimitError**.
-- Supabase higsjz `query_logs`: sem dados úteis no intervalo via MCP.
+| Afirmação | Status |
+|-----------|--------|
+| 504 com latência ~300 s no run | **PROVEN** |
+| Degradação sob concorrência (50 CCU) | **PROVEN** |
+| Timeout de Function (~300 s) como mecanismo final do 504 | **STRONG_HYPOTHESIS** |
+| Causa upstream (Supabase/PostgREST/pool/query) | **UNKNOWN** |
+
+**Não** aumentar `maxDuration` para mascarar.
+
+## Evidência de logs
+
+### Vercel Runtime Logs
+
+- Tentativa via API MCP no DIAG: falha na **obtenção** dos logs (`ExceedsBillingLimitError` na API de consulta) — **não** evidência de que `ExceedsBillingLimitError` ocorreu dentro das Functions durante o load test.
+- Verificação Owner via conector: **403 Not authorized** para o team — `VERCEL_RUNTIME_LOG_EVIDENCE = BLOCKED_BY_LOG_ACCESS`.
+- Janela alvo: deploy `dpl_J6XTemp4MA8RZ2xTsfTHyN4cvHEV`, **2026-09-28 ~19:40–19:52 UTC**. Correlacionar 504 por route, duration, request/invocation id, `FUNCTION_INVOCATION_TIMEOUT` quando o acesso for restabelecido.
+
+### Supabase higsjz
+
+`query_logs` via MCP: **insuficiente** no intervalo (sem correlação Postgres/PostgREST). Production `ozgouen`: não consultado.
 
 ## Probes 1 VU (2026-09-29)
 
-`npm run scale:harness:pool-probe-sequential:staging` — todas rotas **200** (latência sub-5s).
+Todas **200** (health 1,7s; vitrine 4,7s; estudar 2,1s; registrar 0,9s; simulado 0,7s). Confirma staging funcional em carga unitária; **não** explica falha concorrente.
 
-## Harness
+## Próxima ordem (sem load test)
 
-`window_telemetry` separa janela autorizada vs drain (commit DIAG). Instrumentação de fases em `/api/estudar/questao` = proposta para deploy dirigido (auth, entitlement, modulo, nav, total).
-
-## Sequência Owner
-
-DIAG → logs Vercel/Supabase manuais → repair → CI → probes → nova autorização → clean-50.
+1. Runtime Logs Vercel (acesso team) + Supabase/Postgres no mesmo intervalo.
+2. Se insuficiente: instrumentação por fases em staging (auth, entitlement, modulo, nav, historico, total) — deploy dirigido.
+3. CI + probes 1 VU.
+4. Decisão Owner para novo clean-50.
+5. Opcional: versionar artefato sanitizado FAIL após ordem explícita.

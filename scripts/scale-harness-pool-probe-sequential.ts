@@ -82,8 +82,14 @@ async function main() {
   const plan = buildHarnessExecutionPlan({ tier: 'conservative', pool });
   const metrics = new HarnessMetricsCollector();
 
-  const results: Array<{ operation_id: string; status: number; latency_ms: number; ok: boolean }> =
-    [];
+  const results: Array<{
+    operation_id: string;
+    status: number;
+    latency_ms: number;
+    ok: boolean;
+    error_kind?: string;
+    error_message?: string;
+  }> = [];
 
   const health = await probeGet(pool, transport, '/api/health', 'none');
   results.push({ operation_id: 'api_health', ...health, ok: health.status === 200 });
@@ -118,8 +124,8 @@ async function main() {
     ok: regOut.ok,
   });
 
+  const simStarted = Date.now();
   try {
-    const simStarted = Date.now();
     await runSimuladoSetupStep(plan, pool, state, metrics, harnessFetch, transport);
     results.push({
       operation_id: 'api_simulado_sessions_create',
@@ -128,11 +134,16 @@ async function main() {
       ok: true,
     });
   } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    const httpMatch = message.match(/HTTP (\d{3})\b/);
+    const status = httpMatch ? Number.parseInt(httpMatch[1], 10) : 0;
     results.push({
       operation_id: 'api_simulado_sessions_create',
-      status: 401,
-      latency_ms: 0,
+      status,
+      latency_ms: Date.now() - simStarted,
       ok: false,
+      error_kind: httpMatch ? 'http_status' : 'setup_error',
+      error_message: message.slice(0, 200),
     });
   }
 
