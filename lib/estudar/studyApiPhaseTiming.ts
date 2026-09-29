@@ -11,7 +11,8 @@ export function logStudyApiPhaseTiming(
   fields: Record<string, string | number | boolean | null | undefined>,
 ): void {
   if (!isStudyApiPhaseTimingEnabled()) return;
-  logger.info(event, fields);
+  // Preview/production: `logger.info` é suprimido — WARN para Runtime Logs DIAG-504.
+  logger.warn(event, fields);
 }
 
 export type StudyApiPhaseName =
