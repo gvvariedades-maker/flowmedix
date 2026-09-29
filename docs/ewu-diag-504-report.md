@@ -17,6 +17,8 @@ Relatório canônico do diagnóstico pós clean-50 FAIL.
 | CI `b1067bb5` (workflow 36593902930) | **PASS** |
 | CI `766d9a66` (workflow 36608660030) | **PASS** (incl. `test-e2e`, `perf-smoke`) |
 | CI `0035d702` (workflow 36610661842) | **PASS** |
+| CI `f335ad97` (workflow 36618458905) | **PASS** (incl. `test-e2e`, `perf-smoke`) |
+| `CURRENT_SHA_CI` (`f335ad97`) | **PASS** |
 | Phase timing (emit imediato + `request_id`) | **SHIPPED** (`a04ffc1e`); log em **WARN** no preview (`766d9a66`) |
 | Staging diagnostic deploy | **DONE** — ver § STAGING_DIAGNOSTIC_DEPLOY |
 | Runtime phase correlation (pós-deploy) | **PASS** (amostra `request_id` nos Runtime Logs) |
