@@ -13,15 +13,19 @@ Relatório canônico do diagnóstico pós clean-50 FAIL.
 | Evidence accounting (measured vs setup) | PASS |
 | Sequential staging probe | PASS |
 | CI `17646d42` (workflow 36589159675) | **PASS** (incl. `test-e2e`, `perf-smoke`) |
-| CI `a04ffc1e` (workflow 36591743613) | **FAIL** — `test-unit`: contrato `phaseTimer` em `questao.test.ts` (repair de teste pendente no próximo SHA) |
-| Phase timing (emit imediato + `request_id`) | **SHIPPED** (`a04ffc1e`) |
-| `VERCEL_RUNTIME_LOG_EVIDENCE` | **BLOCKED_BY_LOG_ACCESS** |
+| CI `a04ffc1e` (workflow 36591743613) | **FAIL** — `test-unit`: contrato `phaseTimer` em `questao.test.ts` |
+| CI `b1067bb5` (workflow 36593902930) | **PASS** |
+| CI `766d9a66` | **PENDING** (pipeline em andamento no momento do registro; não antecipar PASS) |
+| Phase timing (emit imediato + `request_id`) | **SHIPPED** (`a04ffc1e`); log em **WARN** no preview (`766d9a66`) |
+| Staging diagnostic deploy | **DONE** — ver § STAGING_DIAGNOSTIC_DEPLOY |
+| Runtime phase correlation (pós-deploy) | **PASS** (amostra `request_id` nos Runtime Logs) |
+| `VERCEL_RUNTIME_LOG_EVIDENCE` (janela clean-50 2026-09-28) | **BLOCKED_BY_LOG_ACCESS** / billing na consulta histórica |
 | Supabase interval evidence | INSUFFICIENT |
 | Upstream root cause | **OPEN** |
 | `CONSERVATIVE_CAPACITY` | UNSTABLE / ROOT_CAUSE_PENDING |
 | `LOAD_TEST_AUTHORIZATION` | NOT_GRANTED (consumida no clean-50) |
 
-## Métricas do clean-50 (sanitizado local)
+## Métricas do clean-50 (baseline FAIL versionado)
 
 | Campo | Valor |
 |-------|--------|
@@ -48,17 +52,35 @@ Relatório canônico do diagnóstico pós clean-50 FAIL.
 
 ### Vercel Runtime Logs
 
-- Tentativa via API MCP no DIAG: falha na **obtenção** dos logs (`ExceedsBillingLimitError` na API de consulta) — **não** evidência de que `ExceedsBillingLimitError` ocorreu dentro das Functions durante o load test.
-- Verificação Owner via conector: **403 Not authorized** para o team — `VERCEL_RUNTIME_LOG_EVIDENCE = BLOCKED_BY_LOG_ACCESS`.
-- Janela alvo: deploy `dpl_J6XTemp4MA8RZ2xTsfTHyN4cvHEV`, **2026-09-28 ~19:40–19:52 UTC**. Correlacionar 504 por route, duration, request/invocation id, `FUNCTION_INVOCATION_TIMEOUT` quando o acesso for restabelecido.
+- Janela **histórica** do clean-50 (`dpl_J6XTemp4MA8RZ2xTsfTHyN4cvHEV`, **2026-09-28 ~19:40–19:52 UTC**): consulta MCP falhou com `ExceedsBillingLimitError` / acesso team **403** — **não** confundir com erro dentro das Functions no load test.
+- **Pós-deploy diagnóstico** (`dpl_BF6oQcTmbjF8SgjbNSq8rm5g69e4`): eventos `study_api_phase` visíveis em WARN no `GET /api/estudar/questao` com `request_id` correlacionável (amostra na § STAGING_DIAGNOSTIC_DEPLOY).
 
 ### Supabase higsjz
 
 `query_logs` via MCP: **insuficiente** no intervalo (sem correlação Postgres/PostgREST). Production `ozgouen`: não consultado.
 
+## STAGING_DIAGNOSTIC_DEPLOY
+
+| Campo | Valor |
+|-------|--------|
+| Initial diagnostic SHA | `b1067bb5303a6105ef8e4458dcb033d56da638cf` |
+| Operational hotfix SHA | `766d9a66936c45764d4388e2e7596541e49f9713` |
+| Hotfix reason | `logger.info` suprimido no Preview com `NODE_ENV=production`; phase timing passou a `logger.warn` para observabilidade diagnóstica |
+| Active deploy | `dpl_BF6oQcTmbjF8SgjbNSq8rm5g69e4` |
+| Alias | `flowmedix-git-staging-gvvariedades-makers-projects.vercel.app` |
+| Phase timing flag | `SCALE_STUDY_API_PHASE_TIMING=1` (Preview, branch `staging`) |
+| 1 VU probe | **5/5 HTTP 200** (após `pool-refresh-sessions` quando JWT expirado) |
+| Sample `request_id` | `08e25d1e-54b6-4b94-90c5-184c2fd3aa45` |
+| auth | 122 ms |
+| entitlement | 238 ms |
+| modulo_fetch | 107 ms |
+| nav_catalog | 388 ms |
+| payload | 0 ms |
+| Runtime phase correlation | **PASS** |
+
 ## Probes 1 VU (2026-09-29)
 
-Todas **200** (health ~3,2s; vitrine ~2,7s; estudar ~1,3s; registrar ~0,6s; simulado ~0,9s — rerun pós instrumentação). Confirma staging funcional em carga unitária; **não** explica falha concorrente.
+Probe sequencial pós-deploy diagnóstico: **5/5 HTTP 200**. Confirma staging funcional em carga unitária com instrumentação ativa; **não** explica falha concorrente do clean-50.
 
 ## Instrumentação por fases (código)
 
@@ -66,11 +88,11 @@ Todas **200** (health ~3,2s; vitrine ~2,7s; estudar ~1,3s; registrar ~0,6s; simu
 - Correlação: `request_id` (UUID) comum a todos os eventos da invocação.
 - Eventos imediatos: `study_api_phase` com `phase` (`auth` | `entitlement` | `modulo_fetch` | `nav_catalog` | `payload`), `boundary` (`start` | `end`), `elapsed_ms` no `end`.
 - Falha: `study_api_phase_failure` com `last_completed_phase`, `route_total_ms`, `error_class` (sem user id / token / cookie).
-- **Requer deploy staging** com a flag para aparecer em Runtime Logs; útil para localizar hang (ex.: `nav_catalog` `start` sem `end` correspondente).
+- Deploy staging com flag **concluído** (`766d9a66` no alias acima). Eventos em **WARN** no Runtime Logs do preview; útil para localizar hang (ex.: `nav_catalog` `start` sem `end` correspondente).
 
 ## Próxima ordem (sem load test)
 
-1. Restabelecer acesso Runtime Logs Vercel (billing/team) + repetir consulta na janela `2026-09-28T19:40–19:52Z`.
-2. Supabase: ampliar fontes (`postgres_logs`, pool) no mesmo intervalo ou usar dashboard quando MCP retornar vazio.
-3. Deploy staging com `SCALE_STUDY_API_PHASE_TIMING=1` e amostra manual 1 VU sob carga leve.
-4. Decisão Owner para novo clean-50 (`LOAD_TEST_AUTHORIZATION`).
+1. Aguardar CI **`766d9a66`** até término (não antecipar PASS).
+2. Restabelecer consulta Runtime Logs na janela histórica clean-50 `2026-09-28T19:40–19:52Z` (billing/team), se ainda necessário para 504 do ensaio.
+3. Supabase: ampliar fontes (`postgres_logs`, pool) no intervalo do clean-50 ou dashboard quando MCP retornar vazio.
+4. Decisão Owner para novo clean-50 (`LOAD_TEST_AUTHORIZATION`) — usar `request_id` / fases nos logs sob carga autorizada.
