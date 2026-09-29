@@ -12,8 +12,9 @@ Relatório canônico do diagnóstico pós clean-50 FAIL.
 | Window/drain telemetry | PASS |
 | Evidence accounting (measured vs setup) | PASS |
 | Sequential staging probe | PASS |
-| CI (`17646d42` / workflow em andamento) | **PENDING** (aguardar `test-e2e` / `perf-smoke`) |
-| Phase timing (emit imediato + `request_id`) | **SHIPPED** (patch pós-`17646d42`) |
+| CI `17646d42` (workflow 36589159675) | **PASS** (incl. `test-e2e`, `perf-smoke`) |
+| CI `a04ffc1e` (workflow 36591743613) | **FAIL** — `test-unit`: contrato `phaseTimer` em `questao.test.ts` (repair de teste pendente no próximo SHA) |
+| Phase timing (emit imediato + `request_id`) | **SHIPPED** (`a04ffc1e`) |
 | `VERCEL_RUNTIME_LOG_EVIDENCE` | **BLOCKED_BY_LOG_ACCESS** |
 | Supabase interval evidence | INSUFFICIENT |
 | Upstream root cause | **OPEN** |
