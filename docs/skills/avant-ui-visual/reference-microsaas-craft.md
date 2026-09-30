@@ -1,15 +1,15 @@
 # Reference — Craft micro-SaaS (vitrine + player)
 
-Complemento de [`SKILL.md`](SKILL.md). Use ao polishar **vitrine** (`/estudar`) ou **player** (`AvantLessonPlayer`).  
-Objetivo: área logada com disciplina de produto (Stripe/Linear/Vercel) **sem** apagar o diferencial cyber do reverso.
+Complemento de [`SKILL.md`](SKILL.md). Use ao polishar **vitrine** (`/estudar`) ou **player** (`AvantLessonPlayer`).
+Objetivo: área logada com disciplina de produto (Stripe/Linear/Vercel) **e** reverso NeuroSlides claro alinhado à Spec v2 (desfecho A).
 
 **Onboarding designer:** [`docs/DESIGNER_FRONT_AVANT.md`](../../DESIGNER_FRONT_AVANT.md) · **Rule operacional:** [`.cursor/rules/avant-ui-visual.mdc`](../../../.cursor/rules/avant-ui-visual.mdc) (triggers + checklist §6) · cópia: [`docs/cursor/avant-ui-visual.mdc`](../../../docs/cursor/avant-ui-visual.mdc).
 
 ## Ordem de polish
 
-1. Vitrine — cards + toolbar + estados  
-2. Player — shell editorial (enunciado/alternativas/feedback)  
-3. Handoff enunciado → NeuroSlides (cyber intacto)  
+1. Vitrine — cards + toolbar + estados
+2. Player — shell editorial (enunciado/alternativas/feedback)
+3. Handoff enunciado → NeuroSlides (pele clara Spec v2)
 4. Depois: dashboard/analytics, landing (só tokens)
 
 ---
@@ -76,14 +76,14 @@ O usuário do AVANT é **Técnico em Enfermagem estudando para concurso**, não 
 
 ### Checklist ship — vitrine
 
-- [ ] 1440 e 375: sem overflow horizontal; `pb-safe` / `pt-safe` ok  
-- [ ] Contraste AA em título, meta e texto secundário  
-- [ ] CTA do card: um só, label canônico, brand editorial  
-- [ ] Progresso visível no card fechado  
-- [ ] Toolbar + quick filters usáveis no polegar (mobile)  
-- [ ] Skeleton / empty / zero-filtro cobertos  
-- [ ] Sem terceira cor decorativa no grid  
-- [ ] Sem card-dentro-de-card desnecessário  
+- [ ] 1440 e 375: sem overflow horizontal; `pb-safe` / `pt-safe` ok
+- [ ] Contraste AA em título, meta e texto secundário
+- [ ] CTA do card: um só, label canônico, brand editorial
+- [ ] Progresso visível no card fechado
+- [ ] Toolbar + quick filters usáveis no polegar (mobile)
+- [ ] Skeleton / empty / zero-filtro cobertos
+- [ ] Sem terceira cor decorativa no grid
+- [ ] Sem card-dentro-de-card desnecessário
 
 ---
 
@@ -110,24 +110,24 @@ O usuário do AVANT é **Técnico em Enfermagem estudando para concurso**, não 
 | Tipografia | Hierarquia estável: instrução > opções > meta; não misturar 4 tamanhos |
 | Motion | 200–300ms no feedback; respeitar `useReducedMotion` |
 
-### Regras — handoff cyber
+### Regras — handoff reverso claro (Spec v2)
 
 | Regra | Critério |
 |-------|----------|
-| Reverso | Fullscreen cyber (`#010409`); tokens editoriais **fora** dos slides |
+| Reverso | Fullscreen claro (`bg-slate-100`); CTAs `.btn-editorial-*`; ver NEUROSLIDES-VISUAL-SPEC-v2 |
 | Contraste | Transição clara → escuro intencional (não “suavizar” o lab) |
 | Moldes | Não forçar `template` / `layout_variant`; `meta.subtopico` + ramo L3 |
 | Gesto | `logic_flow` novo com `reveal_mode: "tap"` |
 
 ### Checklist ship — player
 
-- [ ] 1440 e 375: enunciado legível; alternativas ≥44px de toque  
-- [ ] Focus ring visível no teclado  
-- [ ] Feedback acerto/erro com fundo/borda  
-- [ ] Um CTA primário por estado (`pergunta` / `gabarito` / entrada no estudo)  
-- [ ] Reverso permanece cyber (cyan/neon, sem `#F26522` / brand editorial nos slides)  
-- [ ] Reduced motion não quebra fluxo  
-- [ ] Sem overflow no mobile com zoom de leitura  
+- [ ] 1440 e 375: enunciado legível; alternativas ≥44px de toque
+- [ ] Focus ring visível no teclado
+- [ ] Feedback acerto/erro com fundo/borda
+- [ ] Um CTA primário por estado (`pergunta` / `gabarito` / entrada no estudo)
+- [ ] Reverso permanece claro (Spec v2); não restaurar Cyber `#010409`
+- [ ] Reduced motion não quebra fluxo
+- [ ] Sem overflow no mobile com zoom de leitura
 
 ---
 
@@ -146,13 +146,13 @@ O usuário do AVANT é **Técnico em Enfermagem estudando para concurso**, não 
 
 ## Anti-padrões craft (extras)
 
-- Linearizar o AVANT inteiro (tirar cyber do reverso)  
-- KPI hero na vitrine que empurra assuntos para baixo da dobra  
-- Três botões iguais (`Iniciar` + `Ver` + `Detalhes`) no mesmo card  
-- Feedback só com `text-green-600` / `text-red-600`  
-- Skeleton genérico cinza sem respeitar `.card-elevated` / raio editorial  
-- Glassmorphism na vitrine light  
-- Copiar landing copy para labels de UI do app  
+- Restaurar Cyber no reverso do player (desfecho A proíbe)
+- KPI hero na vitrine que empurra assuntos para baixo da dobra
+- Três botões iguais (`Iniciar` + `Ver` + `Detalhes`) no mesmo card
+- Feedback só com `text-green-600` / `text-red-600`
+- Skeleton genérico cinza sem respeitar `.card-elevated` / raio editorial
+- Glassmorphism na vitrine light
+- Copiar landing copy para labels de UI do app
 
 ---
 

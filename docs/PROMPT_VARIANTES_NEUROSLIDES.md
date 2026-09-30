@@ -1,3 +1,8 @@
+> **Status: SUPERADO PARCIALMENTE (skin visual).** Trechos que obrigam shell Cyber Clinical (#010409 / neon) no player de NeuroSlides foram superados pelo desfecho A. Autoridade de pele: [uditoria-visual-v2/NEUROSLIDES-VISUAL-SPEC-v2.md](design-system/NEUROSLIDES-VISUAL-SPEC-v2.md) · Direction: [uditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v4.md](design-system/AVANT-VISUAL-DIRECTION-v4.md) · ADR: [DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md](DECISAO_VISUAL_EDITORIAL_PREMIUM_V4.md).
+> Seções afetadas: Skin visual Cyber Clinical / referências a Direction v3 como autoridade de shell.
+> Pedagogia (4 tipos, spoiler, barra, gesto) permanece válida nas seções não marcadas.
+
+---
 # Prompt — Design de variantes NeuroSlides (alta retenção)
 
 **Público:** designers instrucionais, agentes de IA, revisores de conteúdo, devs antes de implementar moldes React.
@@ -396,7 +401,7 @@ Para cada solicitação, entregue **um pacote 4/4** e **grave o artefato** em:
 
 ## BRIEF DE VARIANTES — [Subtópico canônico] / [Ramo pedagógico]
 
-**Path:** `artifacts/l3-brief-<pacote_prefix>-<branch_id>.md`  
+**Path:** `artifacts/l3-brief-<pacote_prefix>-<branch_id>.md`
 **Decisão L3:** `molde_redesign` | `molde_inedito` (este prompt **não** se aplica a `ok_generico`)
 
 ### 0. Questão âncora
