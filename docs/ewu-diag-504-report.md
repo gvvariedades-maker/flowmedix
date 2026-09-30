@@ -17,8 +17,8 @@ Relatório canônico do diagnóstico pós clean-50 FAIL.
 | CI `b1067bb5` (workflow 36593902930) | **PASS** |
 | CI `766d9a66` (workflow 36608660030) | **PASS** (incl. `test-e2e`, `perf-smoke`) |
 | CI `0035d702` (workflow 36610661842) | **PASS** |
-| CI `f335ad97` (workflow 36618458905) | **PASS** (incl. `test-e2e`, `perf-smoke`) |
-| `CURRENT_SHA_CI` (`f335ad97`) | **PASS** |
+| CI `f335ad97` (workflow 36618458905) | **PASS** (incl. `test-e2e`, `perf-smoke`) — **último SHA de código/CI registrado aqui** |
+| Doc-only `8e04fafc` (workflow 36621980388) | 1ª exec.: **FAIL** só `build` (`next/font`/Turbopack); rerun do job `build` no mesmo SHA → **SUCCESS** (falha tratada como transitória). CI detalhado só no GitHub; não usar `CURRENT_SHA_CI` neste doc |
 | Phase timing (emit imediato + `request_id`) | **SHIPPED** (`a04ffc1e`); log em **WARN** no preview (`766d9a66`) |
 | Staging diagnostic deploy | **DONE** — ver § STAGING_DIAGNOSTIC_DEPLOY |
 | Runtime phase correlation (pós-deploy) | **PASS** (amostra `request_id` nos Runtime Logs) |
