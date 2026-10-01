@@ -129,9 +129,22 @@ Probe sequencial pós-deploy diagnóstico: **5/5 HTTP 200**. Confirma staging fu
 
 Detalhe sanitizado: `artifacts/ewu-diag-504-log-evidence.json` → `latest_run`.
 
+## Clean-50 após corte de invalidação (`9138e617`)
+
+Tentativa deixa de revalidar `historico` global e `user-{id}` (vitrine/nav). Staging `dpl_2wGUkQvWTXHiTcD1FkkrWxwSWWbK`. Artefato: `artifacts/scale-harness-baseline-50-conservative-clean-9138e617.v1.json`. Probe 1 VU antes do ensaio: 5/5 HTTP 200.
+
+| Métrica | `8685261c` | `9138e617` |
+|---------|------------|------------|
+| HTTP measured | 520 | 875 |
+| request_start_rate_rps | 0,87 | 1,46 |
+| achieved_mean_rps | 0,63 | 0,98 |
+| `api_vitrine_page` p50 | 29,9 s | **3,6 s** |
+| 504 vitrine / estudar / registrar / responder | 6 / 10 / 0 / 3 | 4 / 4 / 9 / 4 |
+
+**Leitura:** a fila de catálogo aliviou (mais requests na janela; p50 da vitrine caiu uma ordem de grandeza). A cauda ~300 s **permanece** (21×504 + 500s novos). Alvo de 5 RPS **não** foi atingido. `CONSERVATIVE_CAPACITY` segue UNSTABLE. Próximo alvo: custo da RPC `get_vitrine_page` / contenção Postgres sob 50 CCU, não `maxDuration`.
+
 ## Próxima ordem (engenharia, sem mascarar timeout)
 
-1. Amostra manual ou export: Runtime Logs WARN com `study_api_phase` em request 504 — identificar última fase com `start` sem `end` (`nav_catalog` vs `modulo_fetch` vs `entitlement`).
-2. Perfil de `/api/vitrine` e `api_registrar_tentativa` (p95 ~225 s no run `8685261c`) — mesmo padrão de fila sob 50 CCU.
-3. Supabase: queries lentas / pool no dashboard no intervalo acima (MCP não expôs `duration` em `postgrest_logs` neste schema).
-4. **Não** merge de capacidade nem aumento de `maxDuration` até root cause fechada; PR #140 permanece decisão Owner explícita.
+1. Perfil da RPC `get_vitrine_page` e do POST `registrar-tentativa` na cauda (p95 ainda ~300 s em `9138e617`).
+2. Supabase: queries lentas / pool no dashboard na janela do ensaio `9138e617`.
+3. **Não** merge de capacidade nem aumento de `maxDuration` até a cauda fechar; PR #140 permanece decisão Owner explícita.

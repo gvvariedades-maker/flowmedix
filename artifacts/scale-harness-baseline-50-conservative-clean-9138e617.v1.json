@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "ewu": "EWU-SCALE-1K-READINESS-001",
+  "harness_git_sha": "9138e61710afefc6f7595fdad583d7c1718bc51c",
+  "app_staging_git_sha": "9138e61710afefc6f7595fdad583d7c1718bc51c",
+  "vercel_deploy_id": "dpl_2wGUkQvWTXHiTcD1FkkrWxwSWWbK",
+  "staging_app_host": "flowmedix-git-staging-gvvariedades-makers-projects.vercel.app",
+  "supabase_project_ref": "higsjzfigprqvldpxfwj",
+  "tier": "conservative",
+  "peak_ccu": 50,
+  "measured_duration_ms": 894217,
+  "http_requests_sent": 875,
+  "target_mean_rps": 5,
+  "achieved_mean_rps": 0.9785096906008274,
+  "setup_failures": 0,
+  "setup_elapsed_ms": 26335,
+  "canonical_artifact_digests_git_blob": {
+    "envelope_version": "1.0.3",
+    "envelope_sha256": "07f7c3b34c29445b6c6b58b9bd73be646ae41123c07f3be0ff2018a846a85179",
+    "allowlist_sha256": "088b5b0436d57affbee93d96009b6923df80ddb846fd2bb06a0860df9fabb93e"
+  },
+  "run_50_baseline_worktree_digests_crlf_windows": {
+    "envelope_sha256": "19686ec5de20d514048b13ba2c678d26e26c864bdd263932b1c6d6c5be0d43d0",
+    "allowlist_sha256": "d0025df987c8d3dfd7e8e5ed8665f1bed37f1659afccf366d0568553f3eefb45",
+    "note": "Windows working tree / CRLF — histórico do run 50 CCU baseline v1"
+  },
+  "operations": [
+    {
+      "operation_id": "api_simulado_sessions_create",
+      "kind": "setup",
+      "requests": 50,
+      "successes": 50,
+      "failures": 0,
+      "status_counts": {
+        "200": 50
+      },
+      "p50_ms": 450,
+      "p95_ms": 986,
+      "p99_ms": 2155,
+      "max_ms": 2155
+    },
+    {
+      "operation_id": "api_simulado_sessions",
+      "kind": "read",
+      "requests": 22,
+      "successes": 22,
+      "failures": 0,
+      "status_counts": {
+        "200": 22
+      },
+      "p50_ms": 11362,
+      "p95_ms": 64204,
+      "p99_ms": 97311,
+      "max_ms": 97311
+    },
+    {
+      "operation_id": "api_simulado_questao",
+      "kind": "read",
+      "requests": 31,
+      "successes": 28,
+      "failures": 3,
+      "status_counts": {
+        "200": 28,
+        "403": 1,
+        "500": 2
+      },
+      "p50_ms": 34010,
+      "p95_ms": 277472,
+      "p99_ms": 294511,
+      "max_ms": 294511
+    },
+    {
+      "operation_id": "api_vitrine_page",
+      "kind": "read",
+      "requests": 120,
+      "successes": 114,
+      "failures": 6,
+      "status_counts": {
+        "200": 114,
+        "500": 2,
+        "504": 4
+      },
+      "p50_ms": 3603,
+      "p95_ms": 222877,
+      "p99_ms": 300265,
+      "max_ms": 300402
+    },
+    {
+      "operation_id": "api_estudar_questao",
+      "kind": "read",
+      "requests": 198,
+      "successes": 191,
+      "failures": 7,
+      "status_counts": {
+        "200": 191,
+        "500": 3,
+        "504": 4
+      },
+      "p50_ms": 30235,
+      "p95_ms": 226755,
+      "p99_ms": 300404,
+      "max_ms": 300420
+    },
+    {
+      "operation_id": "api_registrar_tentativa",
+      "kind": "write",
+      "requests": 178,
+      "successes": 166,
+      "failures": 12,
+      "status_counts": {
+        "200": 166,
+        "500": 3,
+        "504": 9
+      },
+      "p50_ms": 38312,
+      "p95_ms": 300264,
+      "p99_ms": 300412,
+      "max_ms": 300535
+    },
+    {
+      "operation_id": "rsc_estudar_slug",
+      "kind": "read",
+      "requests": 219,
+      "successes": 219,
+      "failures": 0,
+      "status_counts": {
+        "200": 219
+      },
+      "p50_ms": 9998,
+      "p95_ms": 46303,
+      "p99_ms": 86209,
+      "max_ms": 118625
+    },
+    {
+      "operation_id": "rsc_cadernos",
+      "kind": "read",
+      "requests": 28,
+      "successes": 28,
+      "failures": 0,
+      "status_counts": {
+        "200": 28
+      },
+      "p50_ms": 6357,
+      "p95_ms": 53338,
+      "p99_ms": 57492,
+      "max_ms": 57492
+    },
+    {
+      "operation_id": "api_simulado_responder",
+      "kind": "write",
+      "requests": 30,
+      "successes": 26,
+      "failures": 4,
+      "status_counts": {
+        "200": 26,
+        "504": 4
+      },
+      "p50_ms": 84002,
+      "p95_ms": 300319,
+      "p99_ms": 300405,
+      "max_ms": 300405
+    },
+    {
+      "operation_id": "rsc_desempenho",
+      "kind": "read",
+      "requests": 27,
+      "successes": 27,
+      "failures": 0,
+      "status_counts": {
+        "200": 27
+      },
+      "p50_ms": 6411,
+      "p95_ms": 53440,
+      "p99_ms": 91326,
+      "max_ms": 91326
+    },
+    {
+      "operation_id": "auth_session_refresh",
+      "kind": "read",
+      "requests": 22,
+      "successes": 22,
+      "failures": 0,
+      "status_counts": {
+        "200": 22
+      },
+      "p50_ms": 3987,
+      "p95_ms": 30354,
+      "p99_ms": 35845,
+      "max_ms": 35845
+    }
+  ],
+  "window_telemetry": {
+    "authorized_window_ms": 600000,
+    "wall_clock_measured_elapsed_ms": 894217,
+    "drain_elapsed_ms": 294217,
+    "request_starts_during_window": 875,
+    "request_completions_during_window": 825,
+    "request_completions_after_window": 50,
+    "in_flight_at_window_end": 50,
+    "request_start_rate_rps": 1.4583333333333333,
+    "completion_rate_during_window_rps": 1.375,
+    "final_completion_rate_rps": 0.9785096906008274
+  },
+  "evidence_completeness": {
+    "operations_in_artifact": 11,
+    "measured_operations_request_sum": 875,
+    "setup_operations_request_sum": 50,
+    "http_requests_sent": 875,
+    "request_count_gap": 0,
+    "log_parse_status": "complete",
+    "envelope_measured_operation_ids_expected": [
+      "auth_session_refresh",
+      "api_vitrine_page",
+      "rsc_estudar_slug",
+      "api_estudar_questao",
+      "api_registrar_tentativa",
+      "api_simulado_sessions",
+      "api_simulado_questao",
+      "api_simulado_responder",
+      "rsc_desempenho",
+      "rsc_cadernos"
+    ],
+    "operation_ids_missing_from_artifact": [],
+    "operations_with_incomplete_latency": []
+  },
+  "notes": [
+    "Relatório sanitizado — sem tokens, cookies ou secrets.",
+    "Latências derivadas do harness metrics; thresholds prospectivos não aplicados.",
+    "RUN_50_BASELINE_WORKTREE_DIGESTS: digests CRLF do checkout Windows usados na autorização runtime da 1ª execução."
+  ],
+  "post_baseline_study_read_sweep": {
+    "source": "artifacts/scale-harness-pool-sweep-estudar-questao.json",
+    "http_403": 0,
+    "http_200": 50,
+    "slug_403_summary": [],
+    "commercial_reason_sample": null
+  }
+}
