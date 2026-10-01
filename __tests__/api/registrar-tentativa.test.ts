@@ -20,6 +20,7 @@ jest.mock('next/cache', () => ({
 
 jest.mock('@/lib/cache', () => ({
   CACHE_REVALIDATE_IMMEDIATE: { expire: 0 },
+  invalidateHistoricoUserCache: jest.fn(),
 }));
 
 const mockGetUserAndClientFromBearer = jest.fn();

@@ -154,11 +154,8 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
   }
 
   phaseTimer?.phaseStart('modulo_fetch');
-  if (isAdmin) {
-    atual = (await getQuestaoBySlugCached(slug)) as ModuloAtualRow | null;
-  } else {
-    const { createServerSupabase } = await import('@/lib/supabase/server');
-    supabase = input.supabase ?? (await createServerSupabase());
+  if (!isAdmin && input.supabase) {
+    supabase = input.supabase;
     const { data, error } = await supabase
       .from('modulos_estudo')
       .select(
@@ -172,6 +169,10 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
       throw new DataServiceUnavailableError();
     }
     atual = data as ModuloAtualRow | null;
+  } else {
+    // API de estudo não passa o client do aluno: JSON da questão é estável e
+    // compartilhado entre VUs (TTL 10 min). Entitlement continua antes deste fetch.
+    atual = (await getQuestaoBySlugCached(slug)) as ModuloAtualRow | null;
   }
   phaseTimer?.phaseEnd('modulo_fetch');
 

@@ -2,7 +2,7 @@
 
 Relatório canônico do diagnóstico pós clean-50 FAIL.
 
-**Artefatos:** `artifacts/scale-harness-pool-probe-sequential.json` · `artifacts/ewu-diag-504-log-evidence.json` (tentativas Vercel/Supabase sanitizadas) · relatório sanitizado FAIL clean-50: `artifacts/scale-harness-baseline-50-conservative-clean-37e26915.v1.json` (versionado como evidência negativa, sem secrets).
+**Artefatos:** `artifacts/scale-harness-pool-probe-sequential.json` · `artifacts/ewu-diag-504-log-evidence.json` (tentativas Vercel/Supabase sanitizadas) · relatórios sanitizados FAIL clean-50: `artifacts/scale-harness-baseline-50-conservative-clean-37e26915.v1.json` (2026-09-28) · `artifacts/scale-harness-baseline-50-conservative-clean-8685261c.v1.json` (2026-10-01, staging `8685261c`).
 
 ## Veredito Work Unit
 
@@ -23,7 +23,9 @@ Relatório canônico do diagnóstico pós clean-50 FAIL.
 | Staging diagnostic deploy | **DONE** — ver § STAGING_DIAGNOSTIC_DEPLOY |
 | Runtime phase correlation (pós-deploy) | **PASS** (amostra `request_id` nos Runtime Logs) |
 | `VERCEL_RUNTIME_LOG_EVIDENCE` (janela clean-50 2026-09-28) | **BLOCKED_BY_LOG_ACCESS** / billing na consulta histórica |
-| Supabase interval evidence | INSUFFICIENT |
+| `VERCEL_RUNTIME_LOG_EVIDENCE` (clean-50 `8685261c`, 2026-10-01) | **PASS** (group_by status/route; 504 alinhado ao harness) |
+| `study_api_phase` correlável no clean-50 `8685261c` | **INCONCLUSIVE** (full-text timeout; 504 sem `study_api_phase_failure`) |
+| Supabase interval evidence | **PARTIAL** (volume por source; sem linha ERROR/pgbouncer wait no filtro usado) |
 | Upstream root cause | **OPEN** |
 | `CONSERVATIVE_CAPACITY` | UNSTABLE / ROOT_CAUSE_PENDING |
 | `LOAD_TEST_AUTHORIZATION` | NOT_GRANTED (consumida no clean-50) |
@@ -93,8 +95,43 @@ Probe sequencial pós-deploy diagnóstico: **5/5 HTTP 200**. Confirma staging fu
 - Falha: `study_api_phase_failure` com `last_completed_phase`, `route_total_ms`, `error_class` (sem user id / token / cookie).
 - Deploy staging com flag **concluído** (`766d9a66` no alias acima). Eventos em **WARN** no Runtime Logs do preview; útil para localizar hang (ex.: `nav_catalog` `start` sem `end` correspondente).
 
-## Próxima ordem (sem load test)
+## Clean-50 pós-DIAG (2026-10-01, staging `8685261c`)
 
-1. Restabelecer consulta Runtime Logs na janela histórica clean-50 `2026-09-28T19:40–19:52Z` (billing/team), se ainda necessário para 504 do ensaio.
-2. Supabase: ampliar fontes (`postgres_logs`, pool) no intervalo do clean-50 ou dashboard quando MCP retornar vazio.
-3. Decisão Owner para novo clean-50 (`LOAD_TEST_AUTHORIZATION`) — instrumentação staging pronta; correlacionar `request_id` / fases quando a request degradar (~300 s).
+| Campo | Valor |
+|-------|--------|
+| Deploy | `dpl_CRSzarWfjWtLKSmKq3Bno6ojWUck` |
+| App SHA | `8685261c30f466985c18b7bb8ab9fa907073280d` |
+| Janela UTC (approx.) | `2026-10-01T12:58–13:14` |
+| Artefato harness | `artifacts/scale-harness-baseline-50-conservative-clean-8685261c.v1.json` |
+| achieved_mean_rps | ~0,63 (alvo 5) |
+| 504 measured (harness) | `api_estudar_questao` 10 · `api_vitrine_page` 6 · `api_simulado_responder` 3 |
+
+### Correlação Vercel Runtime Logs (MCP, mesma janela)
+
+| Agrupamento | Resultado |
+|-------------|-----------|
+| `statusCode` | 200×536 · **504×19** · 403×1 |
+| `route` (só 504) | `/api/estudar/questao` **10** · `/api/vitrine` **6** · `/api/simulado/responder` **3** |
+
+**Leitura:** contagem **1:1** com o relatório sanitizado do harness — confirma 504 na borda Vercel, não artefato do executor.
+
+### `study_api_phase` / `request_id`
+
+- Flag `SCALE_STUDY_API_PHASE_TIMING=1` ativa no Preview branch `staging` (Vercel).
+- Busca full-text `study_api_phase` / `request_id` na janela do ensaio: **timeout** na API de logs (volume alto); `study_api_phase_failure` sem linhas retornadas.
+- **Hipótese:** invocações que viram 504 (~300 s) são cortadas pela plataforma **sem** `logRouteFailure` no app; diagnóstico fino exige amostra manual no dashboard (filtrar WARN + rota) ou reduzir concorrência para capturar `start` sem `end` da última fase.
+
+### Supabase higsjz (ClickHouse, mesma janela)
+
+- Volume: `edge_logs` ~5,7k · `postgrest_logs` ~533 · `postgres_logs` ~165 · `pgbouncer_logs` ~128.
+- Linhas com ERROR explícito em `postgres_logs` / wait-timeout em `pgbouncer_logs`: **0** na query usada.
+- **Causa upstream em DB:** ainda **NOT_DETERMINED** (não prova ausência de contenção; só que o sinal não apareceu nesses filtros).
+
+Detalhe sanitizado: `artifacts/ewu-diag-504-log-evidence.json` → `latest_run`.
+
+## Próxima ordem (engenharia, sem mascarar timeout)
+
+1. Amostra manual ou export: Runtime Logs WARN com `study_api_phase` em request 504 — identificar última fase com `start` sem `end` (`nav_catalog` vs `modulo_fetch` vs `entitlement`).
+2. Perfil de `/api/vitrine` e `api_registrar_tentativa` (p95 ~225 s no run `8685261c`) — mesmo padrão de fila sob 50 CCU.
+3. Supabase: queries lentas / pool no dashboard no intervalo acima (MCP não expôs `duration` em `postgrest_logs` neste schema).
+4. **Não** merge de capacidade nem aumento de `maxDuration` até root cause fechada; PR #140 permanece decisão Owner explícita.

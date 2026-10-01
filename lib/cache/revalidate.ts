@@ -16,6 +16,16 @@ import {
  */
 export const CACHE_REVALIDATE_IMMEDIATE = { expire: 0 } as const;
 
+/**
+ * Tag só do histórico daquele aluno.
+ * Tentativas não devem usar `historico` (global) nem `user-{id}`: essas tags
+ * também cobrem vitrine e catálogo de navegação (~milhares de módulos) e,
+ * sob concorrência, cada POST dispara releitura completa no Postgres.
+ */
+export function historicoUserTag(userId: string): string {
+  return `historico-user-${userId}`;
+}
+
 export async function revalidateCache(tags: string[]) {
   const { revalidateTag } = await import('next/cache');
 
@@ -59,13 +69,7 @@ export const invalidateHistoricoCache = () =>
   revalidateCache(['historico', 'analytics', 'vitrine-page']);
 
 export const invalidateHistoricoUserCache = (userId: string) =>
-  revalidateCache([
-    'historico',
-    'analytics',
-    `user-${userId}`,
-    getVitrinePageUserTag(userId),
-    getVitrineFacetsUserTag(userId),
-  ]);
+  revalidateCache([historicoUserTag(userId)]);
 
 export const invalidateNotebookActivationCache = (userId: string) =>
   revalidateCache(['notebook-activation', 'user', `user-${userId}`]);

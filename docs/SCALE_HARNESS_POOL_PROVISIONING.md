@@ -12,7 +12,7 @@ Runbook para montar o arquivo **gitignored** usado por `npm run scale:harness --
 | Catálogo | Pelo menos 1 `slug` em `modulos_estudo` no CAS (script distribui slugs entre VUs). |
 | Env local | `NEXT_PUBLIC_SUPABASE_*` + `SUPABASE_SERVICE_ROLE_KEY` apontando para **higsjz**. |
 | Staging app URL | `.env.staging.local` com `PERF_BASE_URL` (ou `NEXT_PUBLIC_APP_URL`) = alias Vercel staging. |
-| Vercel bypass | `VERCEL_AUTOMATION_BYPASS_SECRET` no shell — **não** vai no JSON do pool (só runtime do harness). |
+| Vercel bypass | `VERCEL_AUTOMATION_BYPASS_SECRET` ou `VERCEL_PROTECTION_BYPASS` no shell — **não** vai no JSON do pool (só runtime do `--execute`). O `vercel env pull` em `.env.harness-pool.local` **não** inclui bypass; carregar também `.env.staging.local` antes do harness. |
 | Autorização | `LOAD_TEST_AUTHORIZATION` = NOT_GRANTED até Owner; este doc não autoriza `--execute`. |
 
 Referência de hosts: [`SCALE_HARNESS_STAGING_TARGET_BINDING.md`](./SCALE_HARNESS_STAGING_TARGET_BINDING.md).

@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { revalidateTag } from 'next/cache';
-import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
+import { invalidateHistoricoUserCache } from '@/lib/cache';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { resolveE2eEstudarAttempt } from '@/lib/e2e/estudarSeed';
 import { isE2eEstudarSlug } from '@/lib/e2e/constants';
@@ -222,8 +221,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Erro ao registrar tentativa' }, { status: 500 });
     }
 
-    revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
-    revalidateTag(`user-${user.id}`, CACHE_REVALIDATE_IMMEDIATE);
+    await invalidateHistoricoUserCache(user.id);
 
     const evidence = await ingestEvidenceRouteHook({
       supabase: supabase as unknown as EvidenceSupabaseClientLike,

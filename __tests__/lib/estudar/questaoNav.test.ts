@@ -5,6 +5,7 @@ jest.mock('next/cache', () => ({
 
 jest.mock('@/lib/cache', () => ({
   getHistoricoQuestoesForSlugsCached: jest.fn(),
+  getAccessibleModulosForNavCached: jest.fn(),
   estudadosSetFromHistorico: (
     historico: { modulo_slug: string; estudo_reverso_concluido: boolean }[],
   ) =>
@@ -15,21 +16,17 @@ jest.mock('@/lib/cache', () => ({
     ),
 }));
 
-jest.mock('@/lib/concursos/entitlements', () => ({
-  fetchAccessibleModulosForNav: jest.fn(),
-}));
-
 import {
   getHistoricoQuestoesForSlugsCached,
+  getAccessibleModulosForNavCached,
 } from '@/lib/cache';
-import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import {
   getQuestaoNavList,
   vitrineFiltersToSqlNavFilters,
 } from '@/lib/estudar/questaoNav';
 
-const mockFetchNav = fetchAccessibleModulosForNav as jest.MockedFunction<
-  typeof fetchAccessibleModulosForNav
+const mockFetchNav = getAccessibleModulosForNavCached as jest.MockedFunction<
+  typeof getAccessibleModulosForNavCached
 >;
 const mockHistorico = getHistoricoQuestoesForSlugsCached as jest.MockedFunction<
   typeof getHistoricoQuestoesForSlugsCached

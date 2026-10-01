@@ -1,7 +1,7 @@
-﻿{
+{
   "schema_version": 1,
   "ewu": "EWU-SCALE-1K-READINESS-001-DIAG-504",
-  "generated_at": "2026-09-29T13:55:00Z",
+  "generated_at": "2026-10-01T13:23:22.620Z",
   "target_window_utc": {
     "start": "2026-09-28T19:40:00Z",
     "end": "2026-09-28T19:52:00Z"
@@ -38,10 +38,135 @@
   "phase_timing_instrumentation": {
     "status": "SHIPPED_CODE",
     "flag": "SCALE_STUDY_API_PHASE_TIMING=1",
-    "events": ["study_api_route_timing", "study_api_phase_timing"],
+    "events": [
+      "study_api_route_timing",
+      "study_api_phase_timing"
+    ],
     "deploy_required": true,
     "note": "Ativar em staging apos merge/deploy para correlacionar fases no Runtime Logs."
   },
-  "load_test_authorization": "NOT_GRANTED",
-  "clean_50_decision": "NO_NEW_EXECUTE_WITHOUT_OWNER"
+  "load_test_authorization": "OWNER_MANDATE_2026-10-01",
+  "clean_50_decision": "EXECUTED_8685261c",
+  "latest_run": {
+    "harness_artifact": "artifacts/scale-harness-baseline-50-conservative-clean-8685261c.v1.json",
+    "app_git_sha": "8685261c30f466985c18b7bb8ab9fa907073280d",
+    "harness_git_sha": "8685261c30f466985c18b7bb8ab9fa907073280d",
+    "window_utc": {
+      "start": "2026-10-01T12:58:37Z",
+      "end": "2026-10-01T13:14:00Z",
+      "note": "Pool refresh ended ~12:58:37Z; execute measured+drain ~824s wall clock"
+    },
+    "vercel_deploy_id": "dpl_CRSzarWfjWtLKSmKq3Bno6ojWUck",
+    "harness_http_504": {
+      "api_estudar_questao": 10,
+      "api_vitrine_page": 6,
+      "api_simulado_responder": 3
+    },
+    "vercel_runtime_logs_group_by": {
+      "status": "PASS",
+      "queried_at": "2026-10-01T15:25:00Z",
+      "window_utc": {
+        "start": "2026-10-01T12:55:00Z",
+        "end": "2026-10-01T13:20:00Z"
+      },
+      "status_code_counts": {
+        "200": 536,
+        "403": 1,
+        "504": 19
+      },
+      "http_504_by_route": {
+        "/api/estudar/questao": 10,
+        "/api/vitrine": 6,
+        "/api/simulado/responder": 3
+      },
+      "correlation_note": "504 por rota bate 1:1 com contagem measured do harness (19 total)."
+    },
+    "study_api_phase_text_search": {
+      "status": "INCONCLUSIVE",
+      "reason": "get_runtime_logs full-text (study_api_phase / request_id) timeout na janela; group_by status/route OK.",
+      "flag_vercel_preview_staging": "SCALE_STUDY_API_PHASE_TIMING=1 (confirmado filter_project_envs, branch staging)"
+    },
+    "supabase_higsjz_clickhouse": {
+      "status": "PARTIAL",
+      "window_utc": {
+        "start": "2026-10-01T12:58:00Z",
+        "end": "2026-10-01T13:14:00Z"
+      },
+      "log_volume_by_source": {
+        "edge_logs": 5729,
+        "auth_logs": 760,
+        "postgrest_logs": 533,
+        "postgres_logs": 165,
+        "pgbouncer_logs": 128
+      },
+      "postgres_error_lines": 0,
+      "pgbouncer_wait_timeout_lines": 0,
+      "root_cause_from_db_logs": "NOT_DETERMINED"
+    },
+    "achieved_mean_rps": 0.631,
+    "target_mean_rps": 5,
+    "upstream_root_cause": "OPEN"
+  },
+  "runs": [
+    {
+      "harness_artifact": "artifacts/scale-harness-baseline-50-conservative-clean-8685261c.v1.json",
+      "app_git_sha": "8685261c30f466985c18b7bb8ab9fa907073280d",
+      "harness_git_sha": "8685261c30f466985c18b7bb8ab9fa907073280d",
+      "window_utc": {
+        "start": "2026-10-01T12:58:37Z",
+        "end": "2026-10-01T13:14:00Z",
+        "note": "Pool refresh ended ~12:58:37Z; execute measured+drain ~824s wall clock"
+      },
+      "vercel_deploy_id": "dpl_CRSzarWfjWtLKSmKq3Bno6ojWUck",
+      "harness_http_504": {
+        "api_estudar_questao": 10,
+        "api_vitrine_page": 6,
+        "api_simulado_responder": 3
+      },
+      "vercel_runtime_logs_group_by": {
+        "status": "PASS",
+        "queried_at": "2026-10-01T15:25:00Z",
+        "window_utc": {
+          "start": "2026-10-01T12:55:00Z",
+          "end": "2026-10-01T13:20:00Z"
+        },
+        "status_code_counts": {
+          "200": 536,
+          "403": 1,
+          "504": 19
+        },
+        "http_504_by_route": {
+          "/api/estudar/questao": 10,
+          "/api/vitrine": 6,
+          "/api/simulado/responder": 3
+        },
+        "correlation_note": "504 por rota bate 1:1 com contagem measured do harness (19 total)."
+      },
+      "study_api_phase_text_search": {
+        "status": "INCONCLUSIVE",
+        "reason": "get_runtime_logs full-text (study_api_phase / request_id) timeout na janela; group_by status/route OK.",
+        "flag_vercel_preview_staging": "SCALE_STUDY_API_PHASE_TIMING=1 (confirmado filter_project_envs, branch staging)"
+      },
+      "supabase_higsjz_clickhouse": {
+        "status": "PARTIAL",
+        "window_utc": {
+          "start": "2026-10-01T12:58:00Z",
+          "end": "2026-10-01T13:14:00Z"
+        },
+        "log_volume_by_source": {
+          "edge_logs": 5729,
+          "auth_logs": 760,
+          "postgrest_logs": 533,
+          "postgres_logs": 165,
+          "pgbouncer_logs": 128
+        },
+        "postgres_error_lines": 0,
+        "pgbouncer_wait_timeout_lines": 0,
+        "root_cause_from_db_logs": "NOT_DETERMINED"
+      },
+      "achieved_mean_rps": 0.631,
+      "target_mean_rps": 5,
+      "upstream_root_cause": "OPEN"
+    }
+  ]
 }

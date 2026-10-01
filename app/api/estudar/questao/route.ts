@@ -91,7 +91,6 @@ export async function GET(request: NextRequest) {
       userEmail: auth.user.email ?? null,
       isAdmin: isAdminSessionEmail(auth.user.email ?? null),
       searchParams: estudarSearchParams,
-      supabase: auth.supabase,
       phaseTimer,
     });
     const payloadBuildMs = Date.now() - buildStartedAt;
