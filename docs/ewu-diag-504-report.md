@@ -162,8 +162,25 @@ Chamada isolada da RPC (usuário harness 001): **3429 ms → 297 ms**. Payload d
 
 **Leitura:** o custo da RPC era o detonador dos 504. Sob 50 CCU a vitrine fica na casa de segundos no p95. O POST de tentativa não estoura mais a função, mas a cauda (p95 122 s) ainda segura o VU e o start rate fica em 3,57 contra o alvo 5. `api_simulado_responder`: 8×403 (não 504), p95 ainda alto. `CONSERVATIVE_CAPACITY` segue UNSTABLE. **Não** aumentar `maxDuration`.
 
+## Clean-50 após cache no POST de tentativa (`b227418a`)
+
+`registrar-tentativa` lê `conteudo_json` por `getQuestaoBySlugCached` e não reconta cota quando o gate já devolve `isPro: true`. Staging `dpl_5y5Emjqy7oaudX7CoxST9DovyGdi`. Artefato: `artifacts/scale-harness-baseline-50-conservative-clean-b227418a.v1.json`. SQL da vitrine continua o do ensaio anterior.
+
+| Métrica | app `9138e617` + SQL | `b227418a` |
+|---------|----------------------|------------|
+| HTTP measured | 2140 | 2165 |
+| request_start_rate_rps | 3,57 | 3,61 |
+| achieved_mean_rps | 2,85 | 2,95 |
+| drain_elapsed_ms | 150216 | 134118 |
+| `api_registrar_tentativa` | 456×200; p50 581 ms; p95 **122 s** | **438×200**; p50 585 ms; p95 **65 s**; max 142 s |
+| `api_estudar_questao` | p95 56 s | p95 **47 s**; 533×200 |
+| `api_vitrine_page` | p50 384 ms; p95 6,2 s | p50 367 ms; p95 7,7 s; 246×200 |
+| 504 measured | 0 | **0** |
+
+**Leitura:** a mediana do POST já estava saudável; o cache cortou o p95 pela metade e não moveu o start rate (3,6 contra alvo 5). A cauda restante está espalhada (estudar p95 ~47 s, simulado p95 ~85 s, máximo da vitrine ainda >2 min em outlier). `CONSERVATIVE_CAPACITY` segue UNSTABLE. **Não** aumentar `maxDuration`.
+
 ## Próxima ordem (engenharia, sem mascarar timeout)
 
-1. POST `registrar-tentativa`: JSON da questão pelo cache de slug (sem detoast por tentativa) e sem recontagem de cota quando `assertCanAnswerQuestion` já devolve `isPro: true`. Medir de novo no staging depois do deploy.
-2. Cauda de `api_estudar_questao` (p95 56 s) e 403 do simulado — separado do 504 da vitrine.
-3. **Não** merge de capacidade nem aumento de `maxDuration` até a cauda fechar; PR #140 permanece decisão Owner explícita.
+1. Cauda compartilhada sob 50 CCU (estudar, simulado, outlier da vitrine) — não é mais o detoast da RPC nem o JSON por tentativa.
+2. 403 residuais de `api_simulado_responder` (3 neste ensaio).
+3. **Não** merge de capacidade nem aumento de `maxDuration` até o start rate chegar perto de 5; PR #140 permanece decisão Owner explícita.
