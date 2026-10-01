@@ -141,10 +141,29 @@ Tentativa deixa de revalidar `historico` global e `user-{id}` (vitrine/nav). Sta
 | `api_vitrine_page` p50 | 29,9 s | **3,6 s** |
 | 504 vitrine / estudar / registrar / responder | 6 / 10 / 0 / 3 | 4 / 4 / 9 / 4 |
 
-**Leitura:** a fila de catálogo aliviou (mais requests na janela; p50 da vitrine caiu uma ordem de grandeza). A cauda ~300 s **permanece** (21×504 + 500s novos). Alvo de 5 RPS **não** foi atingido. `CONSERVATIVE_CAPACITY` segue UNSTABLE. Próximo alvo: custo da RPC `get_vitrine_page` / contenção Postgres sob 50 CCU, não `maxDuration`.
+**Leitura:** a fila de catálogo aliviou (mais requests na janela; p50 da vitrine caiu uma ordem de grandeza). A cauda ~300 s **permanece** (21×504 + 500s novos). Alvo de 5 RPS **não** foi atingido. `CONSERVATIVE_CAPACITY` segue UNSTABLE.
+
+## Clean-50 com `get_vitrine_page` sem detoast (app `9138e617` + SQL CAS)
+
+Coluna gerada `modulos_estudo.neuroslide_count` e função `get_vitrine_page` reescrita no CAS `higsjz` (sem ler `conteudo_json` só para contar slides). O binário Vercel **não** mudou: alias ainda `dpl_2wGUkQvWTXHiTcD1FkkrWxwSWWbK` / `9138e617`. Harness local `6291bfb7`. Artefato: `artifacts/scale-harness-baseline-50-conservative-clean-9138e617-sql-neuroslide.v1.json`.
+
+Chamada isolada da RPC (usuário harness 001): **3429 ms → 297 ms**. Payload da página continua ~436 KB.
+
+| Métrica | `9138e617` (antes do SQL) | mesmo app + SQL |
+|---------|---------------------------|-----------------|
+| HTTP measured | 875 | **2140** |
+| request_start_rate_rps | 1,46 | **3,57** |
+| achieved_mean_rps | 0,98 | **2,85** |
+| drain_elapsed_ms | ~294000 | **150216** |
+| `api_vitrine_page` | p50 3,6 s; 504×4 | **264/264 HTTP 200**; p50 **384 ms**; p95 **6,2 s** |
+| `api_estudar_questao` | p50 ~30 s; 504×4 | **548/548 HTTP 200**; p50 **605 ms**; p95 **56 s** |
+| `api_registrar_tentativa` | p95 ~300 s; 504×9 | **456/456 HTTP 200**; p50 **581 ms**; p95 **122 s**; max **223 s** |
+| 504 measured | 21 | **0** |
+
+**Leitura:** o custo da RPC era o detonador dos 504. Sob 50 CCU a vitrine fica na casa de segundos no p95. O POST de tentativa não estoura mais a função, mas a cauda (p95 122 s) ainda segura o VU e o start rate fica em 3,57 contra o alvo 5. `api_simulado_responder`: 8×403 (não 504), p95 ainda alto. `CONSERVATIVE_CAPACITY` segue UNSTABLE. **Não** aumentar `maxDuration`.
 
 ## Próxima ordem (engenharia, sem mascarar timeout)
 
-1. Perfil da RPC `get_vitrine_page` e do POST `registrar-tentativa` na cauda (p95 ainda ~300 s em `9138e617`).
-2. Supabase: queries lentas / pool no dashboard na janela do ensaio `9138e617`.
+1. POST `registrar-tentativa`: JSON da questão pelo cache de slug (sem detoast por tentativa) e sem recontagem de cota quando `assertCanAnswerQuestion` já devolve `isPro: true`. Medir de novo no staging depois do deploy.
+2. Cauda de `api_estudar_questao` (p95 56 s) e 403 do simulado — separado do 504 da vitrine.
 3. **Não** merge de capacidade nem aumento de `maxDuration` até a cauda fechar; PR #140 permanece decisão Owner explícita.

@@ -35,7 +35,7 @@ export const FREEMIUM_SIMULADOS_PERSONALIZADOS_DESCRIPTION =
   '1 simulado diagnóstico ao entrar e 1 missão semanal personalizada após 7 dias de cadastro';
 
 export type AssertCanAnswerResult =
-  | { allowed: true }
+  | { allowed: true; isPro?: boolean }
   | { allowed: false; resetEm: string };
 
 export interface FreemiumDayBounds {
