@@ -11,6 +11,7 @@ jest.mock('@/lib/cache', () => ({
   getQuestaoBySlugCached: jest.fn(),
   getHistoricoQuestoesForSlugsCached: jest.fn(() => []),
   estudadosSetFromHistorico: jest.fn(() => new Set()),
+  getAccessibleModulosForNavCached: jest.fn(async () => []),
 }));
 
 import {
