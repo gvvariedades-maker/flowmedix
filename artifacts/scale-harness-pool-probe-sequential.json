@@ -1,0 +1,38 @@
+{
+  "mode": "scale-harness-pool-probe-sequential",
+  "pool_id": "harness-u001",
+  "probed_at": "2026-09-29T13:51:21.924Z",
+  "results": [
+    {
+      "operation_id": "api_health",
+      "path": "/api/health",
+      "status": 200,
+      "latency_ms": 3167,
+      "ok": true
+    },
+    {
+      "operation_id": "api_vitrine_page",
+      "status": 200,
+      "latency_ms": 2745,
+      "ok": true
+    },
+    {
+      "operation_id": "api_estudar_questao",
+      "status": 200,
+      "latency_ms": 1320,
+      "ok": true
+    },
+    {
+      "operation_id": "api_registrar_tentativa",
+      "status": 200,
+      "latency_ms": 607,
+      "ok": true
+    },
+    {
+      "operation_id": "api_simulado_sessions_create",
+      "status": 200,
+      "latency_ms": 893,
+      "ok": true
+    }
+  ]
+}

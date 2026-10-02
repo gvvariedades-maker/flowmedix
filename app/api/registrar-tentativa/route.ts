@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { revalidateTag } from 'next/cache';
-import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
+import { getQuestaoBySlugCached, invalidateHistoricoUserCache } from '@/lib/cache';
+import { DataServiceUnavailableError } from '@/lib/dataServiceError';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { resolveE2eEstudarAttempt } from '@/lib/e2e/estudarSeed';
 import { isE2eEstudarSlug } from '@/lib/e2e/constants';
@@ -16,7 +16,6 @@ import {
   FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
   getFreemiumDayBounds,
   isFreemiumUnlimitedEmail,
-  isUserPro,
 } from '@/lib/freemium';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { moduloAccessOptionsFromEmail } from '@/lib/concursos/studyAccess';
@@ -130,23 +129,24 @@ export async function POST(request: NextRequest) {
 
     const isReplay = historicoExistente != null;
 
-    // Metadados canônicos antes do gate: a classificação FSRS da tentativa exige meta.
-    const { data: modulo, error: moduloError } = await supabase
-      .from('modulos_estudo')
-      .select('conteudo_json')
-      .eq('modulo_slug', modulo_slug)
-      .maybeSingle();
-
-    if (moduloError) {
-      logger.error('Failed to load question for attempt', moduloError, { modulo_slug });
-      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 500 });
+    // JSON da questão vem do cache de 10 min (mesma tag do player). Evita detoast
+    // de conteudo_json em toda tentativa sob concorrência.
+    let conteudoJson: unknown;
+    try {
+      const cached = await getQuestaoBySlugCached(modulo_slug);
+      if (!cached) {
+        return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
+      }
+      conteudoJson = cached.conteudo_json;
+    } catch (error) {
+      if (error instanceof DataServiceUnavailableError) {
+        logger.error('Failed to load question for attempt', error, { modulo_slug });
+        return NextResponse.json({ error: 'Questão não encontrada' }, { status: 500 });
+      }
+      throw error;
     }
 
-    if (!modulo) {
-      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
-    }
-
-    const canonical = extractCanonicalQuestionMeta(modulo.conteudo_json);
+    const canonical = extractCanonicalQuestionMeta(conteudoJson);
 
     // Replay não conta na cota do plano gratuito (não gera nova questão).
     if (!isReplay) {
@@ -158,12 +158,9 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      if (!isFreemiumUnlimitedEmail(user.email)) {
-        const [recheck, isPro] = await Promise.all([
-          countQuestoesHojeForUser(user.id),
-          isUserPro(user.id),
-        ]);
-        if (!isPro && recheck >= FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT) {
+      if (!gate.isPro && !isFreemiumUnlimitedEmail(user.email)) {
+        const recheck = await countQuestoesHojeForUser(user.id);
+        if (recheck >= FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT) {
           const { resetEm } = getFreemiumDayBounds();
           return NextResponse.json(
             { limiteAtingido: true, resetEm: resetEm.toISOString(), allowed: false },
@@ -173,7 +170,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const gabarito = resolveQuestionAttempt(modulo.conteudo_json, opcao_id);
+    const gabarito = resolveQuestionAttempt(conteudoJson, opcao_id);
     if (!gabarito) {
       return NextResponse.json({ error: 'Alternativa inválida' }, { status: 400 });
     }
@@ -222,8 +219,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Erro ao registrar tentativa' }, { status: 500 });
     }
 
-    revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
-    revalidateTag(`user-${user.id}`, CACHE_REVALIDATE_IMMEDIATE);
+    await invalidateHistoricoUserCache(user.id);
 
     const evidence = await ingestEvidenceRouteHook({
       supabase: supabase as unknown as EvidenceSupabaseClientLike,
@@ -233,7 +229,7 @@ export async function POST(request: NextRequest) {
       question_id: modulo_slug,
       selected_alternative: opcao_id,
       correct: acertou,
-      conteudo_json: modulo.conteudo_json,
+      conteudo_json: conteudoJson,
       client_body: extractEvidenceClientBody(body as Record<string, unknown>),
       e2e_instrumentation: false,
       log_route_label: 'registrar-tentativa',

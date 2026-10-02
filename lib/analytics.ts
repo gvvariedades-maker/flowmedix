@@ -8,6 +8,7 @@ import { logger } from './logger';
 import { DataServiceUnavailableError, isDataServiceUnavailableError } from './dataServiceError';
 import { unstable_cache } from 'next/cache';
 import { CACHE_CONFIG } from './cache';
+import { historicoUserTag } from './cache/revalidate';
 import { SCALE_LIMITS } from './scale/constants';
 import { withPostgrestReadRetry } from './supabaseReadRetry';
 
@@ -126,7 +127,7 @@ export async function getHistoricoCompleto(userId: string): Promise<HistoricoQue
     [cacheKey],
     {
       ...CACHE_CONFIG.USER,
-      tags: ['analytics', 'historico', `user-${userId}`],
+      tags: ['analytics', 'historico', `user-${userId}`, historicoUserTag(userId)],
     },
   )();
 }

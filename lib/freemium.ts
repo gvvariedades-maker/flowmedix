@@ -255,11 +255,11 @@ export async function assertCanAnswerQuestion(
   userEmail?: string | null,
 ): Promise<AssertCanAnswerResult> {
   if (isFreemiumUnlimitedEmail(userEmail)) {
-    return { allowed: true };
+    return { allowed: true, isPro: true };
   }
 
   if (await isUserPro(userId)) {
-    return { allowed: true };
+    return { allowed: true, isPro: true };
   }
 
   const questoesHoje = await countQuestoesHojeForUser(userId);
@@ -268,7 +268,7 @@ export async function assertCanAnswerQuestion(
     return { allowed: false, resetEm: resetEm.toISOString() };
   }
 
-  return { allowed: true };
+  return { allowed: true, isPro: false };
 }
 
 /**

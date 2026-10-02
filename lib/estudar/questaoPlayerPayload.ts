@@ -13,6 +13,7 @@ import {
 import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { canServeCommercialContent } from '@/lib/catalogMigration/commercialAuthority';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
+import type { StudyApiPhaseTimer } from '@/lib/estudar/studyApiPhaseTiming';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
 import {
   ESTUDAR_QUESTAO_LAYERS_DEFAULT,
@@ -65,6 +66,8 @@ export type BuildEstudarQuestaoPlayerPayloadInput = {
   isAdmin?: boolean;
   /** Cliente com sessão do usuário (API Bearer). Se omitido no RSC, usa cookies via `createSupabaseServerClient`. */
   supabase?: SupabaseClient;
+  /** DIAG-504: fases emitidas imediatamente (opt-in via flag na API). */
+  phaseTimer?: StudyApiPhaseTimer;
 };
 
 async function historicoForSlugsSafe(
@@ -105,6 +108,7 @@ export async function buildEstudarQuestaoPlayerPayload(
 async function buildEstudarQuestaoPlayerPayloadImpl(
   input: BuildEstudarQuestaoPlayerPayloadInput,
 ): Promise<EstudarQuestaoBuildResult> {
+  const phaseTimer = input.phaseTimer;
   const {
     slug,
     userId,
@@ -129,25 +133,29 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
   }
 
   if (!isAdmin) {
+    phaseTimer?.phaseStart('entitlement');
     try {
       let hasAccess = await userHasModuloAccess(userId, slug);
       if (!hasAccess) {
         const pacote = await getAccessibleModuloSlugs(userId);
         hasAccess = pacote.has(slug);
       }
-      if (!hasAccess) return { status: 'forbidden' };
+      if (!hasAccess) {
+        phaseTimer?.phaseEnd('entitlement', { status: 'forbidden' });
+        return { status: 'forbidden' };
+      }
+      phaseTimer?.phaseEnd('entitlement');
     } catch (err) {
+      phaseTimer?.phaseEnd('entitlement', { status: 'error' });
       if (isDataServiceUnavailableError(err)) throw err;
       logger.error('Falha ao verificar acesso ao módulo', err, { userId, slug });
       throw new DataServiceUnavailableError();
     }
   }
 
-  if (isAdmin) {
-    atual = (await getQuestaoBySlugCached(slug)) as ModuloAtualRow | null;
-  } else {
-    const { createServerSupabase } = await import('@/lib/supabase/server');
-    supabase = input.supabase ?? (await createServerSupabase());
+  phaseTimer?.phaseStart('modulo_fetch');
+  if (!isAdmin && input.supabase) {
+    supabase = input.supabase;
     const { data, error } = await supabase
       .from('modulos_estudo')
       .select(
@@ -161,7 +169,12 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
       throw new DataServiceUnavailableError();
     }
     atual = data as ModuloAtualRow | null;
+  } else {
+    // API de estudo não passa o client do aluno: JSON da questão é estável e
+    // compartilhado entre VUs (TTL 10 min). Entitlement continua antes deste fetch.
+    atual = (await getQuestaoBySlugCached(slug)) as ModuloAtualRow | null;
   }
+  phaseTimer?.phaseEnd('modulo_fetch');
 
   if (!atual) return { status: 'not_found' };
 
@@ -190,6 +203,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     return supabase;
   };
 
+  phaseTimer?.phaseStart('nav_catalog');
   if (fromCaderno && cadernoId && userId) {
     const db = await ensureSupabase();
 
@@ -209,6 +223,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     }
     if (!notebook) {
       logger.warn('Caderno inexistente ou sem acesso', { userId, cadernoId });
+      phaseTimer?.phaseEnd('nav_catalog', { status: 'not_found' });
       return { status: 'not_found' };
     }
 
@@ -272,7 +287,9 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     lista = nav.lista;
     questoesDoAssunto = nav.questoesDoAssunto;
   }
+  phaseTimer?.phaseEnd('nav_catalog');
 
+  phaseTimer?.phaseStart('payload');
   const indexAtual = lista.findIndex((item) => item.modulo_slug === slug);
   const anteriorSlug = indexAtual > 0 ? lista[indexAtual - 1].modulo_slug : null;
   const proximaSlug =
@@ -316,6 +333,8 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     avantCodigo: avantCodigoAluno,
     vitrineQuerySuffix: suffix,
   });
+
+  phaseTimer?.phaseEnd('payload', { status: 'ok' });
 
   return { status: 'ok', payload };
 }

@@ -5,7 +5,7 @@ import { NextRequest } from 'next/server';
 
 const mockGetUserAndClientFromBearer = jest.fn();
 const mockCreateServerSupabase = jest.fn();
-const mockRevalidateTag = jest.fn();
+const mockInvalidateHistoricoUserCache = jest.fn();
 const mockAssertCanAnswerSimuladoQuestion = jest.fn();
 
 jest.mock('@/lib/logger', () => ({
@@ -25,12 +25,9 @@ jest.mock('@/lib/e2e/simuladoSeed', () => ({
   answerE2eSimuladoQuestion: jest.fn(),
 }));
 
-jest.mock('next/cache', () => ({
-  revalidateTag: (...args: unknown[]) => mockRevalidateTag(...args),
-}));
-
 jest.mock('@/lib/cache', () => ({
   CACHE_REVALIDATE_IMMEDIATE: { expire: 0 },
+  invalidateHistoricoUserCache: (...args: unknown[]) => mockInvalidateHistoricoUserCache(...args),
 }));
 
 jest.mock('@/lib/supabase/api-request-user', () => ({
@@ -385,8 +382,7 @@ describe('POST /api/simulado/responder', () => {
         banca: COMMERCIAL_APPROVED_CONTEUDO_JSON.meta.banca as string,
       }),
     );
-    expect(mockRevalidateTag).toHaveBeenCalledWith('historico', { expire: 0 });
-    expect(mockRevalidateTag).toHaveBeenCalledWith(`user-${USER_ID}`, { expire: 0 });
+    expect(mockInvalidateHistoricoUserCache).toHaveBeenCalledWith(USER_ID);
     expect(mockIngestAttemptEvent).not.toHaveBeenCalled();
   });
 
@@ -572,7 +568,7 @@ describe('POST /api/simulado/responder', () => {
       error: 'Questão já respondida para esta sessão',
     });
     expect(historicoInsert).not.toHaveBeenCalled();
-    expect(mockRevalidateTag).not.toHaveBeenCalled();
+    expect(mockInvalidateHistoricoUserCache).not.toHaveBeenCalled();
     expect(mockIngestAttemptEvent).not.toHaveBeenCalled();
   });
 

@@ -3,6 +3,7 @@
  * Fallback explícito quando `EE_V1_INSTRUMENTATION` está off — P0 (histórico) segue.
  */
 
+import { historicoUserTag } from '@/lib/cache/revalidate';
 import type {
   AttemptSeriesData,
   AttemptSeriesDay,
@@ -237,7 +238,7 @@ async function getCachedRegularPracticeEvents(userId: string): Promise<LedgerRea
     [cacheKey],
     {
       ...CACHE_CONFIG.USER,
-      tags: ['analytics', 'historico', 'evidence', `user-${userId}`],
+      tags: ['analytics', 'historico', 'evidence', `user-${userId}`, historicoUserTag(userId)],
     },
   )();
 }

@@ -47,6 +47,7 @@ import {
 
 import {
   CACHE_REVALIDATE_IMMEDIATE,
+  historicoUserTag,
   revalidateCache,
   invalidateModulosCache,
   invalidateUserModulosCache,
@@ -62,6 +63,7 @@ import {
 
 export {
   CACHE_REVALIDATE_IMMEDIATE,
+  historicoUserTag,
   revalidateCache,
   invalidateModulosCache,
   invalidateUserModulosCache,
@@ -635,7 +637,7 @@ export async function getHistoricoQuestoesForSlugsCached(
     [cacheKey],
     {
       ...CACHE_CONFIG.USER,
-      tags: ['historico', 'user', `user-${userId}`],
+      tags: ['historico', 'user', `user-${userId}`, historicoUserTag(userId)],
     },
   )();
 }
@@ -679,7 +681,7 @@ export async function getHistoricoQuestoesCached(userId?: string) {
     [cacheKey],
     {
       ...CACHE_CONFIG.USER,
-      tags: ['historico', 'user', userId ? `user-${userId}` : 'global'],
+      tags: ['historico', 'user', userId ? `user-${userId}` : 'global', historicoUserTag(userId)],
     }
   )();
 }

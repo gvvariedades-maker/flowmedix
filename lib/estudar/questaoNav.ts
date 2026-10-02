@@ -7,8 +7,8 @@ import {
   getHistoricoQuestoesForSlugsCached,
   estudadosSetFromHistorico,
   getModulosEstudoCached,
+  getAccessibleModulosForNavCached,
 } from '@/lib/cache';
-import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import {
   buildVitrineFilteredSlugList,
   filterModulosLikeVitrine,
@@ -72,7 +72,7 @@ async function listaPorAssuntoSemVitrine(
 
   if (userId) {
     try {
-      const modulos = (await fetchAccessibleModulosForNav(userId, {
+      const modulos = (await getAccessibleModulosForNavCached(userId, {
         titulo_aula: tituloAula,
       })) as ModuloEstudoRow[];
       return listaModulosQuestaoPorTituloAulaNoCatalogo(modulos, tituloAula);
@@ -108,7 +108,7 @@ async function fetchModulosForVitrineNav(
 
   const sqlFilters = vitrineFiltersToSqlNavFilters(filters);
   try {
-    return (await fetchAccessibleModulosForNav(userId, sqlFilters)) as ModuloEstudoRow[];
+    return (await getAccessibleModulosForNavCached(userId, sqlFilters ?? {})) as ModuloEstudoRow[];
   } catch (e) {
     if (isDataServiceUnavailableError(e)) return [];
     throw e;

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "description": "Alvos autorizados para harness EWU-SCALE-1K (decisão 2026-09-27). App=Vercel branch staging; Supabase=projeto CAS/DR (higsjz), não Production (ozgouen).",
+  "app_hosts": [
+    "flowmedix-git-staging-gvvariedades-makers-projects.vercel.app",
+    "127.0.0.1",
+    "localhost"
+  ],
+  "supabase_hosts": ["higsjzfigprqvldpxfwj.supabase.co"],
+  "owner_binding": {
+    "decision_at": "2026-09-27",
+    "vercel_git_branch": "staging",
+    "app_staging_host": "flowmedix-git-staging-gvvariedades-makers-projects.vercel.app",
+    "supabase_staging_host": "higsjzfigprqvldpxfwj.supabase.co",
+    "supabase_staging_project_ref": "higsjzfigprqvldpxfwj",
+    "production_supabase_excluded": "ozgouenqrofnvgrlgfwd",
+    "notes": "Supabase Branching no projeto Production requer Pro (402). Data plane de carga usa clone CAS/RC-004 com schema AVANT."
+  }
+}

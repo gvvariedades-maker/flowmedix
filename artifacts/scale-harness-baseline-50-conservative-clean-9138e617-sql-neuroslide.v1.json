@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "ewu": "EWU-SCALE-1K-READINESS-001",
+  "harness_git_sha": "6291bfb7cb6b47cb0b1e7a5a79b784eb0f0dabc7",
+  "app_staging_git_sha": "9138e61710afefc6f7595fdad583d7c1718bc51c",
+  "vercel_deploy_id": "dpl_2wGUkQvWTXHiTcD1FkkrWxwSWWbK",
+  "staging_app_host": "flowmedix-git-staging-gvvariedades-makers-projects.vercel.app",
+  "supabase_project_ref": "higsjzfigprqvldpxfwj",
+  "tier": "conservative",
+  "peak_ccu": 50,
+  "measured_duration_ms": 750216,
+  "http_requests_sent": 2140,
+  "target_mean_rps": 5,
+  "achieved_mean_rps": 2.8525118099320728,
+  "setup_failures": 0,
+  "setup_elapsed_ms": 37618,
+  "canonical_artifact_digests_git_blob": {
+    "envelope_version": "1.0.3",
+    "envelope_sha256": "07f7c3b34c29445b6c6b58b9bd73be646ae41123c07f3be0ff2018a846a85179",
+    "allowlist_sha256": "088b5b0436d57affbee93d96009b6923df80ddb846fd2bb06a0860df9fabb93e"
+  },
+  "run_50_baseline_worktree_digests_crlf_windows": {
+    "envelope_sha256": "19686ec5de20d514048b13ba2c678d26e26c864bdd263932b1c6d6c5be0d43d0",
+    "allowlist_sha256": "d0025df987c8d3dfd7e8e5ed8665f1bed37f1659afccf366d0568553f3eefb45",
+    "note": "Windows working tree / CRLF — histórico do run 50 CCU baseline v1"
+  },
+  "operations": [
+    {
+      "operation_id": "api_simulado_sessions_create",
+      "kind": "setup",
+      "requests": 50,
+      "successes": 50,
+      "failures": 0,
+      "status_counts": {
+        "200": 50
+      },
+      "p50_ms": 412,
+      "p95_ms": 3569,
+      "p99_ms": 3860,
+      "max_ms": 3860
+    },
+    {
+      "operation_id": "api_simulado_responder",
+      "kind": "write",
+      "requests": 58,
+      "successes": 50,
+      "failures": 8,
+      "status_counts": {
+        "200": 50,
+        "403": 8
+      },
+      "p50_ms": 760,
+      "p95_ms": 157565,
+      "p99_ms": 179146,
+      "max_ms": 179146
+    },
+    {
+      "operation_id": "api_registrar_tentativa",
+      "kind": "write",
+      "requests": 456,
+      "successes": 456,
+      "failures": 0,
+      "status_counts": {
+        "200": 456
+      },
+      "p50_ms": 581,
+      "p95_ms": 122272,
+      "p99_ms": 181842,
+      "max_ms": 222895
+    },
+    {
+      "operation_id": "api_estudar_questao",
+      "kind": "read",
+      "requests": 548,
+      "successes": 548,
+      "failures": 0,
+      "status_counts": {
+        "200": 548
+      },
+      "p50_ms": 605,
+      "p95_ms": 56152,
+      "p99_ms": 136149,
+      "max_ms": 213290
+    },
+    {
+      "operation_id": "api_vitrine_page",
+      "kind": "read",
+      "requests": 264,
+      "successes": 264,
+      "failures": 0,
+      "status_counts": {
+        "200": 264
+      },
+      "p50_ms": 384,
+      "p95_ms": 6238,
+      "p99_ms": 17088,
+      "max_ms": 140082
+    },
+    {
+      "operation_id": "rsc_estudar_slug",
+      "kind": "read",
+      "requests": 509,
+      "successes": 509,
+      "failures": 0,
+      "status_counts": {
+        "200": 509
+      },
+      "p50_ms": 746,
+      "p95_ms": 30269,
+      "p99_ms": 49871,
+      "max_ms": 127291
+    },
+    {
+      "operation_id": "rsc_desempenho",
+      "kind": "read",
+      "requests": 46,
+      "successes": 46,
+      "failures": 0,
+      "status_counts": {
+        "200": 46
+      },
+      "p50_ms": 767,
+      "p95_ms": 35830,
+      "p99_ms": 117332,
+      "max_ms": 117332
+    },
+    {
+      "operation_id": "rsc_cadernos",
+      "kind": "read",
+      "requests": 46,
+      "successes": 46,
+      "failures": 0,
+      "status_counts": {
+        "200": 46
+      },
+      "p50_ms": 819,
+      "p95_ms": 21146,
+      "p99_ms": 26963,
+      "max_ms": 26963
+    },
+    {
+      "operation_id": "auth_session_refresh",
+      "kind": "read",
+      "requests": 70,
+      "successes": 70,
+      "failures": 0,
+      "status_counts": {
+        "200": 70
+      },
+      "p50_ms": 487,
+      "p95_ms": 26250,
+      "p99_ms": 30622,
+      "max_ms": 30622
+    },
+    {
+      "operation_id": "api_simulado_questao",
+      "kind": "read",
+      "requests": 85,
+      "successes": 80,
+      "failures": 5,
+      "status_counts": {
+        "200": 80,
+        "403": 5
+      },
+      "p50_ms": 625,
+      "p95_ms": 114035,
+      "p99_ms": 149490,
+      "max_ms": 149490
+    },
+    {
+      "operation_id": "api_simulado_sessions",
+      "kind": "read",
+      "requests": 58,
+      "successes": 58,
+      "failures": 0,
+      "status_counts": {
+        "200": 58
+      },
+      "p50_ms": 352,
+      "p95_ms": 20490,
+      "p99_ms": 113952,
+      "max_ms": 113952
+    }
+  ],
+  "window_telemetry": {
+    "authorized_window_ms": 600000,
+    "wall_clock_measured_elapsed_ms": 750216,
+    "drain_elapsed_ms": 150216,
+    "request_starts_during_window": 2140,
+    "request_completions_during_window": 2090,
+    "request_completions_after_window": 50,
+    "in_flight_at_window_end": 50,
+    "request_start_rate_rps": 3.566666666666667,
+    "completion_rate_during_window_rps": 3.4833333333333334,
+    "final_completion_rate_rps": 2.8525118099320728
+  },
+  "evidence_completeness": {
+    "operations_in_artifact": 11,
+    "measured_operations_request_sum": 2140,
+    "setup_operations_request_sum": 50,
+    "http_requests_sent": 2140,
+    "request_count_gap": 0,
+    "log_parse_status": "complete",
+    "envelope_measured_operation_ids_expected": [
+      "auth_session_refresh",
+      "api_vitrine_page",
+      "rsc_estudar_slug",
+      "api_estudar_questao",
+      "api_registrar_tentativa",
+      "api_simulado_sessions",
+      "api_simulado_questao",
+      "api_simulado_responder",
+      "rsc_desempenho",
+      "rsc_cadernos"
+    ],
+    "operation_ids_missing_from_artifact": [],
+    "operations_with_incomplete_latency": []
+  },
+  "notes": [
+    "Relatório sanitizado — sem tokens, cookies ou secrets.",
+    "Latências derivadas do harness metrics; thresholds prospectivos não aplicados.",
+    "RUN_50_BASELINE_WORKTREE_DIGESTS: digests CRLF do checkout Windows usados na autorização runtime da 1ª execução."
+  ],
+  "post_baseline_study_read_sweep": {
+    "source": "artifacts/scale-harness-pool-sweep-estudar-questao.json",
+    "http_403": 0,
+    "http_200": 50,
+    "slug_403_summary": [],
+    "commercial_reason_sample": null
+  }
+}

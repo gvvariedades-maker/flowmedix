@@ -33,6 +33,17 @@
     "db:link": "supabase link",
     "analyze:performance": "tsx scripts/analyze-performance.ts",
     "scale:health": "tsx scripts/scale-health-check.ts",
+    "scale:harness": "tsx scripts/scale-authenticated-harness.ts",
+    "scale:harness:provision-pool": "tsx scripts/scale-harness-provision-pool.ts",
+    "scale:harness:provision-pool:staging": "tsx scripts/scale-harness-provision-pool.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
+    "scale:harness:pool-preflight:staging": "tsx scripts/scale-harness-pool-preflight.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
+    "scale:harness:pool-matricula-fixture:staging": "tsx scripts/scale-harness-pool-matricula-fixture.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
+    "scale:harness:pool-smoke-one:staging": "tsx scripts/scale-harness-pool-smoke-one.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local",
+    "scale:harness:pool-refresh-sessions:staging": "tsx scripts/scale-harness-pool-refresh-sessions.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
+    "scale:harness:pool-sweep-estudar-questao:staging": "tsx scripts/scale-harness-pool-sweep-estudar-questao.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
+    "scale:harness:pool-repair-commercial-slugs:staging": "tsx scripts/scale-harness-pool-repair-commercial-slugs.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local --supabase-project-ref=higsjzfigprqvldpxfwj",
+    "scale:harness:pool-probe-sequential:staging": "tsx scripts/scale-harness-pool-probe-sequential.ts --target=staging --env-file=scale-harness-private/.env.harness-pool.local",
+    "scale:harness:baseline-sanitize-report": "tsx scripts/scale-harness-baseline-sanitize-report.ts",
     "smoke:rls": "tsx scripts/rls-performance-smoke.ts",
     "smoke:rls-auth": "tsx scripts/rls-auth-smoke.ts",
     "check:architecture": "tsx scripts/check-architecture-patterns.ts",
@@ -621,7 +632,7 @@
   },
   "overrides": {
     "sharp": "^0.35.4",
-    "fast-uri": "^3.1.7",
+    "fast-uri": "^3.1.8",
     "next": {
       "postcss": "8.5.26"
     },
@@ -632,13 +643,13 @@
       "js-yaml": "3.15.2"
     },
     "minimatch@3": {
-      "brace-expansion": "1.1.18"
+      "brace-expansion": "1.1.21"
     },
     "minimatch@>=9": {
-      "brace-expansion": "5.0.9"
+      "brace-expansion": "5.0.12"
     },
     "@connectrpc/connect-node": {
-      "undici": "6.28.0"
+      "undici": "6.29.0"
     }
   }
 }

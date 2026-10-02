@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "target_environment": "staging",
+  "base_url": "https://flowmedix-git-staging-gvvariedades-makers-projects.vercel.app",
+  "supabase_url": "https://higsjzfigprqvldpxfwj.supabase.co",
+  "users": [
+    {
+      "pool_id": "harness-user-001",
+      "access_token": "REPLACE_WITH_SUPABASE_ACCESS_JWT",
+      "cookie_header": "sb-higsjzfigprqvldpxfwj-auth-token=REPLACE_SSR_COOKIE_FROM_provision-pool_SCRIPT",
+      "default_questao_slug": "questao-exemplo-slug",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "REPLACE_REFRESH"
+    }
+  ]
+}

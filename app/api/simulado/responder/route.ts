@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { revalidateTag } from 'next/cache';
-import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
+import { invalidateHistoricoUserCache } from '@/lib/cache';
 import { resolveQuestionAttempt } from '@/lib/estudar/questionPayload';
 import { canServeCommercialContent } from '@/lib/catalogMigration/commercialAuthority';
 import {
@@ -299,8 +298,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Erro ao sincronizar histórico' }, { status: 500 });
     }
 
-    revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
-    revalidateTag(`user-${auth.user.id}`, CACHE_REVALIDATE_IMMEDIATE);
+    await invalidateHistoricoUserCache(auth.user.id);
 
     const evidence = await ingestEvidenceRouteHook({
       supabase: supabase as unknown as EvidenceSupabaseClientLike,

@@ -1,0 +1,412 @@
+{
+  "schema_version": 1,
+  "target_environment": "staging",
+  "allowed_hosts": [
+    "127.0.0.1"
+  ],
+  "base_url": "http://127.0.0.1:3000",
+  "supabase_url": "https://example.supabase.co",
+  "supabase_anon_key": "anon-placeholder",
+  "users": [
+    {
+      "pool_id": "u001",
+      "access_token": "token-0",
+      "cookie_header": "cookie=0",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-0"
+    },
+    {
+      "pool_id": "u002",
+      "access_token": "token-1",
+      "cookie_header": "cookie=1",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-1"
+    },
+    {
+      "pool_id": "u003",
+      "access_token": "token-2",
+      "cookie_header": "cookie=2",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-2"
+    },
+    {
+      "pool_id": "u004",
+      "access_token": "token-3",
+      "cookie_header": "cookie=3",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-3"
+    },
+    {
+      "pool_id": "u005",
+      "access_token": "token-4",
+      "cookie_header": "cookie=4",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-4"
+    },
+    {
+      "pool_id": "u006",
+      "access_token": "token-5",
+      "cookie_header": "cookie=5",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-5"
+    },
+    {
+      "pool_id": "u007",
+      "access_token": "token-6",
+      "cookie_header": "cookie=6",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-6"
+    },
+    {
+      "pool_id": "u008",
+      "access_token": "token-7",
+      "cookie_header": "cookie=7",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-7"
+    },
+    {
+      "pool_id": "u009",
+      "access_token": "token-8",
+      "cookie_header": "cookie=8",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-8"
+    },
+    {
+      "pool_id": "u010",
+      "access_token": "token-9",
+      "cookie_header": "cookie=9",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-9"
+    },
+    {
+      "pool_id": "u011",
+      "access_token": "token-10",
+      "cookie_header": "cookie=10",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-10"
+    },
+    {
+      "pool_id": "u012",
+      "access_token": "token-11",
+      "cookie_header": "cookie=11",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-11"
+    },
+    {
+      "pool_id": "u013",
+      "access_token": "token-12",
+      "cookie_header": "cookie=12",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-12"
+    },
+    {
+      "pool_id": "u014",
+      "access_token": "token-13",
+      "cookie_header": "cookie=13",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-13"
+    },
+    {
+      "pool_id": "u015",
+      "access_token": "token-14",
+      "cookie_header": "cookie=14",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-14"
+    },
+    {
+      "pool_id": "u016",
+      "access_token": "token-15",
+      "cookie_header": "cookie=15",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-15"
+    },
+    {
+      "pool_id": "u017",
+      "access_token": "token-16",
+      "cookie_header": "cookie=16",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-16"
+    },
+    {
+      "pool_id": "u018",
+      "access_token": "token-17",
+      "cookie_header": "cookie=17",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-17"
+    },
+    {
+      "pool_id": "u019",
+      "access_token": "token-18",
+      "cookie_header": "cookie=18",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-18"
+    },
+    {
+      "pool_id": "u020",
+      "access_token": "token-19",
+      "cookie_header": "cookie=19",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-19"
+    },
+    {
+      "pool_id": "u021",
+      "access_token": "token-20",
+      "cookie_header": "cookie=20",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-20"
+    },
+    {
+      "pool_id": "u022",
+      "access_token": "token-21",
+      "cookie_header": "cookie=21",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-21"
+    },
+    {
+      "pool_id": "u023",
+      "access_token": "token-22",
+      "cookie_header": "cookie=22",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-22"
+    },
+    {
+      "pool_id": "u024",
+      "access_token": "token-23",
+      "cookie_header": "cookie=23",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-23"
+    },
+    {
+      "pool_id": "u025",
+      "access_token": "token-24",
+      "cookie_header": "cookie=24",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-24"
+    },
+    {
+      "pool_id": "u026",
+      "access_token": "token-25",
+      "cookie_header": "cookie=25",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-25"
+    },
+    {
+      "pool_id": "u027",
+      "access_token": "token-26",
+      "cookie_header": "cookie=26",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-26"
+    },
+    {
+      "pool_id": "u028",
+      "access_token": "token-27",
+      "cookie_header": "cookie=27",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-27"
+    },
+    {
+      "pool_id": "u029",
+      "access_token": "token-28",
+      "cookie_header": "cookie=28",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-28"
+    },
+    {
+      "pool_id": "u030",
+      "access_token": "token-29",
+      "cookie_header": "cookie=29",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-29"
+    },
+    {
+      "pool_id": "u031",
+      "access_token": "token-30",
+      "cookie_header": "cookie=30",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-30"
+    },
+    {
+      "pool_id": "u032",
+      "access_token": "token-31",
+      "cookie_header": "cookie=31",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-31"
+    },
+    {
+      "pool_id": "u033",
+      "access_token": "token-32",
+      "cookie_header": "cookie=32",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-32"
+    },
+    {
+      "pool_id": "u034",
+      "access_token": "token-33",
+      "cookie_header": "cookie=33",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-33"
+    },
+    {
+      "pool_id": "u035",
+      "access_token": "token-34",
+      "cookie_header": "cookie=34",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-34"
+    },
+    {
+      "pool_id": "u036",
+      "access_token": "token-35",
+      "cookie_header": "cookie=35",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-35"
+    },
+    {
+      "pool_id": "u037",
+      "access_token": "token-36",
+      "cookie_header": "cookie=36",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-36"
+    },
+    {
+      "pool_id": "u038",
+      "access_token": "token-37",
+      "cookie_header": "cookie=37",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-37"
+    },
+    {
+      "pool_id": "u039",
+      "access_token": "token-38",
+      "cookie_header": "cookie=38",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-38"
+    },
+    {
+      "pool_id": "u040",
+      "access_token": "token-39",
+      "cookie_header": "cookie=39",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-39"
+    },
+    {
+      "pool_id": "u041",
+      "access_token": "token-40",
+      "cookie_header": "cookie=40",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-40"
+    },
+    {
+      "pool_id": "u042",
+      "access_token": "token-41",
+      "cookie_header": "cookie=41",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-41"
+    },
+    {
+      "pool_id": "u043",
+      "access_token": "token-42",
+      "cookie_header": "cookie=42",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-42"
+    },
+    {
+      "pool_id": "u044",
+      "access_token": "token-43",
+      "cookie_header": "cookie=43",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-43"
+    },
+    {
+      "pool_id": "u045",
+      "access_token": "token-44",
+      "cookie_header": "cookie=44",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-44"
+    },
+    {
+      "pool_id": "u046",
+      "access_token": "token-45",
+      "cookie_header": "cookie=45",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-45"
+    },
+    {
+      "pool_id": "u047",
+      "access_token": "token-46",
+      "cookie_header": "cookie=46",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-46"
+    },
+    {
+      "pool_id": "u048",
+      "access_token": "token-47",
+      "cookie_header": "cookie=47",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-47"
+    },
+    {
+      "pool_id": "u049",
+      "access_token": "token-48",
+      "cookie_header": "cookie=48",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-48"
+    },
+    {
+      "pool_id": "u050",
+      "access_token": "token-49",
+      "cookie_header": "cookie=49",
+      "default_questao_slug": "slug-demo",
+      "default_opcao_id": "A",
+      "supabase_refresh_token": "refresh-49"
+    }
+  ]
+}

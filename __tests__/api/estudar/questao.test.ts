@@ -184,7 +184,11 @@ describe('GET /api/estudar/questao', () => {
         assunto: ['Urgências'],
         q: undefined,
       },
-      supabase: expect.any(Object),
+      phaseTimer: expect.objectContaining({
+        requestId: expect.any(String),
+        slug: SLUG,
+        route: '/api/estudar/questao',
+      }),
     });
     expect(mockRecordPerformance).toHaveBeenCalledWith('/api/estudar/questao', 'GET', expect.any(Number), true);
   });

@@ -18,8 +18,11 @@ jest.mock('next/cache', () => ({
   revalidateTag: jest.fn(),
 }));
 
+const mockGetQuestaoBySlugCached = jest.fn();
 jest.mock('@/lib/cache', () => ({
   CACHE_REVALIDATE_IMMEDIATE: { expire: 0 },
+  invalidateHistoricoUserCache: jest.fn(),
+  getQuestaoBySlugCached: jest.fn((...args: unknown[]) => mockGetQuestaoBySlugCached(...args)),
 }));
 
 const mockGetUserAndClientFromBearer = jest.fn();
@@ -104,6 +107,7 @@ describe('POST /api/registrar-tentativa', () => {
     mockCountQuestoesHojeForUser.mockResolvedValue(0);
     mockIsFreemiumUnlimitedEmail.mockReturnValue(true);
     mockIsUserPro.mockResolvedValue(false);
+    mockGetQuestaoBySlugCached.mockImplementation(async () => ({ conteudo_json: conteudoJson }));
     mockCreateSupabaseEvidencePersistence.mockReturnValue({ findAttemptById: jest.fn(), insertAttempt: jest.fn() });
     mockIngestAttemptEvent.mockResolvedValue({ status: 'disabled' });
   });
@@ -128,6 +132,9 @@ describe('POST /api/registrar-tentativa', () => {
       .fn()
       .mockResolvedValue({ error: options?.persistError ? { message: 'db fail' } : null });
     const update = jest.fn().mockReturnValue({ eq: updateEq });
+    mockGetQuestaoBySlugCached.mockResolvedValue({
+      conteudo_json: options?.conteudoJson ?? conteudoJson,
+    });
     const moduloMaybeSingle = jest.fn().mockResolvedValue({
       data: { conteudo_json: options?.conteudoJson ?? conteudoJson },
       error: null,
@@ -233,6 +240,31 @@ describe('POST /api/registrar-tentativa', () => {
           respondida: true,
         }),
       );
+    });
+
+    it('não reconta a cota diária quando o gate já marcou Pro', async () => {
+      mockIsFreemiumUnlimitedEmail.mockReturnValue(false);
+      mockAssertCanAnswerQuestion.mockResolvedValue({ allowed: true, isPro: true });
+      mockModuloFetch();
+
+      const response = await POST(makeRequest({ modulo_slug: SLUG, opcao_id: 'B' }));
+
+      expect(response.status).toBe(200);
+      expect(mockCountQuestoesHojeForUser).not.toHaveBeenCalled();
+      expect(mockIsUserPro).not.toHaveBeenCalled();
+    });
+
+    it('reconta a cota só no plano gratuito', async () => {
+      mockIsFreemiumUnlimitedEmail.mockReturnValue(false);
+      mockAssertCanAnswerQuestion.mockResolvedValue({ allowed: true, isPro: false });
+      mockCountQuestoesHojeForUser.mockResolvedValue(5);
+      mockModuloFetch();
+
+      const response = await POST(makeRequest({ modulo_slug: SLUG, opcao_id: 'B' }));
+
+      expect(response.status).toBe(403);
+      expect(mockCountQuestoesHojeForUser).toHaveBeenCalledWith(USER_ID);
+      expect(mockIsUserPro).not.toHaveBeenCalled();
     });
 
     it('retorna acertou false quando a opção escolhida está errada', async () => {

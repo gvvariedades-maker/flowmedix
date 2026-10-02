@@ -1,0 +1,285 @@
+{
+  "$schema": "avant-scale-workload-envelope/v1",
+  "id": "scale-1k-dau-te-enfermagem",
+  "version": "1.0.3",
+  "status": "approved",
+  "repair_base_commit": "7c078c0fdbbe1b687d11ed36ff091e9e24edc2e7",
+  "owner_signoff_required": true,
+  "owner_signoff": {
+    "approved_at": "2026-09-26T15:50:00-03:00",
+    "approved_by": "Owner",
+    "envelope_version": "1.0.3",
+    "git_sha": "0bfe0479f79954115d50451c005301b27df61cd5",
+    "statement": "Aprovo o envelope v1 da EWU-SCALE-1K-READINESS-001, versão 1.0.3, no SHA 0bfe0479f79954115d50451c005301b27df61cd5, como baseline de workload para implementação e posterior medição. Esta aprovação não autoriza load test nem qualquer ação em Production.",
+    "load_test_authorized": false,
+    "production_authorized": false
+  },
+  "readiness": {
+    "ENVELOPE_V1": "APPROVED",
+    "HARNESS_VALIDATOR": "IMPLEMENTED",
+    "HARNESS_PLANNER": "IMPLEMENTED",
+    "HARNESS_HTTP_EXECUTOR": "IMPLEMENTED_BLOCKED_BY_POLICY",
+    "HARNESS_AUTHENTICATED": "IMPLEMENTATION_IN_PROGRESS",
+    "CAPACITY_1K_READINESS": "PENDING_EVIDENCE",
+    "LOAD_TEST_AUTHORIZATION": "NOT_GRANTED",
+    "PRODUCTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "product": "AVANT — Técnico de Enfermagem (estudar + simulados + cadernos)",
+  "target": {
+    "dau": 1000,
+    "definition_dau": "Usuário autenticado com pelo menos uma ação de estudo no dia (tentativa registrada, resposta em simulado ou sessão de simulado iniciada)."
+  },
+  "time_model": {
+    "timezone": "America/Sao_Paulo",
+    "peak_window_local": "19:00-22:00",
+    "share_of_daily_actions_in_peak_hour": 0.35,
+    "notes": "Concentração típica pós-trabalho/aula para público de concurso TE."
+  },
+  "concurrency_tiers": {
+    "conservative": {
+      "label": "Baseline / ramp (menor carga)",
+      "peak_concurrent_users": 50,
+      "description": "~5% do DAU simultâneo no pico; primeiro teste em staging."
+    },
+    "nominal": {
+      "label": "Meta de capacidade 1k DAU",
+      "peak_concurrent_users": 100,
+      "description": "~10% do DAU no pico horário; referência principal para G-CAPACITY-1K."
+    },
+    "stress": {
+      "label": "Margem antes de degradação",
+      "peak_concurrent_users": 150,
+      "description": "~15% do DAU ou pico atípico (live, promo); não é o SLA diário."
+    }
+  },
+  "session_model": {
+    "mean_session_minutes": 22,
+    "questions_per_session_mean": 12,
+    "think_time_seconds_per_question_mean": 90,
+    "pages_per_session_mean": 8,
+    "notes": "Contexto pedagógico / planejamento. Não deriva automaticamente a taxa do gerador de carga (ver traffic_model.load_generator)."
+  },
+  "auth_model": {
+    "api_routes": {
+      "mechanism": "Authorization: Bearer <access_token>",
+      "examples": [
+        "/api/vitrine",
+        "/api/estudar/questao",
+        "/api/registrar-tentativa",
+        "/api/simulado/*"
+      ],
+      "code_reference": "getUserAndClientFromBearer() em route handlers"
+    },
+    "rsc_routes": {
+      "mechanism": "Sessão Supabase SSR via cookies (proxy.ts → getServerSession())",
+      "examples": ["/estudar/{slug}", "/desempenho", "/cadernos"],
+      "harness_note": "Simular browser/cookie jar ou Playwright; k6 puro não cobre RSC sem fluxo de login SSR."
+    }
+  },
+  "traffic_model": {
+    "load_generator": {
+      "generator_target_requests_per_active_user_per_minute": 6,
+      "assumption_type": "conservative_capacity_test_target",
+      "measured_from_real_usage": false,
+      "notes": "Alvo deliberado do instrumento de teste (~5/10/15 RPS nos tiers). Não afirmar tráfego médio observado em produção nem derivar de session_model (22 min × 6/min ≠ 12 questões × ~3 HTTP/questão)."
+    },
+    "application_data_operation_ratio": {
+      "reads": 0.76,
+      "writes": 0.24,
+      "derived_from": "authenticated_operations.request_weight somando kind=read|write",
+      "semantics": "Classificação de leitura/mutação no data plane do produto (histórico, respostas, catálogo). Não é razão de métodos HTTP GET/POST (ex.: auth refresh pode ser POST HTTP e ainda classificar-se como read no data plane)."
+    },
+    "peak_rps_estimate": {
+      "conservative": { "mean": 5, "burst_30s": 12 },
+      "nominal": { "mean": 10, "burst_30s": 25 },
+      "stress": { "mean": 15, "burst_30s": 40 }
+    },
+    "formula": "mean_rps ≈ peak_concurrent_users × load_generator.generator_target_requests_per_active_user_per_minute / 60"
+  },
+  "journey_mix": {
+    "description": "Peso relativo de jornadas (soma 1.0). Fonte de verdade para request_weight.",
+    "estudar_player": 0.7,
+    "vitrine_navegacao": 0.12,
+    "simulado": 0.1,
+    "desempenho_cadernos": 0.05,
+    "auth_refresh_misc": 0.03
+  },
+  "journey_to_http_expansion": {
+    "description": "Como cada fatia de journey_mix vira request_weight (soma 1.0).",
+    "estudar_player_0_70": {
+      "rsc_estudar_slug": 0.245,
+      "api_estudar_questao": 0.245,
+      "api_registrar_tentativa": 0.21
+    },
+    "vitrine_navegacao_0_12": {
+      "api_vitrine_page": 0.12
+    },
+    "simulado_0_10": {
+      "api_simulado_sessions": 0.03,
+      "api_simulado_questao": 0.04,
+      "api_simulado_responder": 0.03
+    },
+    "desempenho_cadernos_0_05": {
+      "rsc_desempenho": 0.025,
+      "rsc_cadernos": 0.025
+    },
+    "auth_refresh_misc_0_03": {
+      "auth_session_refresh": 0.03
+    }
+  },
+  "simulado_harness_phases": {
+    "baseline_v1": {
+      "setup_outside_measured_window": [
+        {
+          "id": "api_simulado_sessions_create",
+          "method": "POST",
+          "path": "/api/simulado/sessions",
+          "execution_phase": "setup",
+          "auth": "Bearer",
+          "notes": "Criação de sessão, pool, RPC/fallback, simulado_sessions + respostas vinculadas — fixture por usuário sintético antes da janela medida."
+        }
+      ],
+      "measured_steady_state": [
+        "api_simulado_sessions",
+        "api_simulado_questao",
+        "api_simulado_responder"
+      ]
+    },
+    "future_scenario": "Cenário separado: criação concorrente POST /api/simulado/sessions sob carga (não misturar com baseline steady-state)."
+  },
+  "embedded_payload": {
+    "neuroslides_in_question": {
+      "independent_http_request": false,
+      "notes": "Slides vêm no payload de /api/estudar/questao (ou camadas do player); não entram no denominador de request_weight."
+    }
+  },
+  "authenticated_operations": {
+    "description": "request_weight alinhado a journey_mix via journey_to_http_expansion. Campo kind = application data plane (read|write), não método HTTP.",
+    "operations": [
+      {
+        "id": "auth_session_refresh",
+        "journey": "auth_refresh_misc",
+        "request_weight": 0.03,
+        "kind": "read",
+        "http_method_typical": "POST",
+        "surface": "Supabase Auth token refresh"
+      },
+      {
+        "id": "api_vitrine_page",
+        "journey": "vitrine_navegacao",
+        "request_weight": 0.12,
+        "kind": "read",
+        "method": "GET",
+        "path": "/api/vitrine",
+        "auth": "Bearer"
+      },
+      {
+        "id": "rsc_estudar_slug",
+        "journey": "estudar_player",
+        "request_weight": 0.245,
+        "kind": "read",
+        "method": "GET",
+        "path": "/estudar/{slug}",
+        "auth": "cookie_session_rsc"
+      },
+      {
+        "id": "api_estudar_questao",
+        "journey": "estudar_player",
+        "request_weight": 0.245,
+        "kind": "read",
+        "method": "GET",
+        "path": "/api/estudar/questao",
+        "auth": "Bearer"
+      },
+      {
+        "id": "api_registrar_tentativa",
+        "journey": "estudar_player",
+        "request_weight": 0.21,
+        "kind": "write",
+        "method": "POST",
+        "path": "/api/registrar-tentativa",
+        "auth": "Bearer",
+        "notes": "historico_questoes, entitlement, cache user, evidence."
+      },
+      {
+        "id": "api_simulado_sessions",
+        "journey": "simulado",
+        "request_weight": 0.03,
+        "kind": "read",
+        "method": "GET",
+        "path": "/api/simulado/sessions",
+        "auth": "Bearer",
+        "execution_phase": "measured"
+      },
+      {
+        "id": "api_simulado_questao",
+        "journey": "simulado",
+        "request_weight": 0.04,
+        "kind": "read",
+        "method": "GET",
+        "path": "/api/simulado/questao",
+        "auth": "Bearer",
+        "execution_phase": "measured"
+      },
+      {
+        "id": "api_simulado_responder",
+        "journey": "simulado",
+        "request_weight": 0.03,
+        "kind": "write",
+        "method": "POST",
+        "path": "/api/simulado/responder",
+        "auth": "Bearer",
+        "execution_phase": "measured"
+      },
+      {
+        "id": "rsc_desempenho",
+        "journey": "desempenho_cadernos",
+        "request_weight": 0.025,
+        "kind": "read",
+        "method": "GET",
+        "path": "/desempenho",
+        "auth": "cookie_session_rsc"
+      },
+      {
+        "id": "rsc_cadernos",
+        "journey": "desempenho_cadernos",
+        "request_weight": 0.025,
+        "kind": "read",
+        "method": "GET",
+        "path": "/cadernos",
+        "auth": "cookie_session_rsc"
+      }
+    ]
+  },
+  "data_plane_expectations": {
+    "catalog_modulos_estudo_ceiling": 10000,
+    "historico_per_user_soft_ceiling": 5000,
+    "scale_health_command": "npm run scale:health -- --json",
+    "app_data_access": {
+      "stack": "Supabase JS client + Auth + PostgREST (HTTPS)",
+      "notes": "Fluxos do aluno em produção; sem conexão PostgreSQL direta no app."
+    },
+    "direct_pg_pooler": {
+      "scope": "dr_restore_tooling_only",
+      "notes": "Pooler validado no drill G-DR-RESTORE (lib/backup/drRestoreDb.ts) não caracteriza o data plane do app."
+    }
+  },
+  "environments": {
+    "load_test_allowed": ["staging", "dedicated_supabase_branch", "local_with_real_supabase"],
+    "load_test_production": "forbidden_without_explicit_owner_approval"
+  },
+  "acceptance_placeholders": {
+    "description": "Preencher após baseline medido; não inventar antes do teste.",
+    "error_rate_max": null,
+    "p95_read_ms_max": null,
+    "p95_write_ms_max": null,
+    "rls_violations": 0,
+    "connection_pool_saturation": "none_observed"
+  },
+  "related_artifacts": {
+    "ewu": "docs/EWU_SCALE_1K_READINESS_001.md",
+    "authenticated_harness": "docs/SCALE_1K_AUTHENTICATED_HARNESS.md",
+    "perf_smoke_baseline_ci": "docs/perf-smoke-baseline-ci.json",
+    "ci_run_reference": "36241740321"
+  }
+}

@@ -11,6 +11,7 @@ import { recordPerformance } from '@/lib/metrics';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { buildE2eEstudarQuestaoPayload } from '@/lib/e2e/estudarSeed';
 import { isE2eEstudarSlug } from '@/lib/e2e/constants';
+import { StudyApiPhaseTimer } from '@/lib/estudar/studyApiPhaseTiming';
 
 /** Headers para cache L0 no Service Worker (Vary: Authorization). */
 function estudarQuestaoApiCacheHeaders(): HeadersInit {
@@ -24,6 +25,8 @@ export async function GET(request: NextRequest) {
   const requestStartedAt = Date.now();
   const endpoint = '/api/estudar/questao';
   const method = 'GET';
+  let phaseTimer: StudyApiPhaseTimer | undefined;
+  let slugForTiming: string | undefined;
   try {
     const raw = searchParamsToQueryRecord(request.nextUrl.searchParams);
     const parsed = EstudarQuestaoQuerySchema.safeParse(raw);
@@ -37,6 +40,7 @@ export async function GET(request: NextRequest) {
 
     const { slug, layers, from, caderno_id, bancas, assuntos, q, page, disciplina } =
       parsed.data;
+    slugForTiming = slug;
 
     const estudarSearchParams = {
       from,
@@ -62,7 +66,10 @@ export async function GET(request: NextRequest) {
       });
     }
 
+    phaseTimer = new StudyApiPhaseTimer({ slug, route: endpoint });
+    phaseTimer.phaseStart('auth');
     const auth = await getUserAndClientFromBearer(request);
+    phaseTimer.phaseEnd('auth', { ok: auth != null });
     if (!auth) {
       recordPerformance(endpoint, method, Date.now() - requestStartedAt, false);
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
@@ -84,11 +91,12 @@ export async function GET(request: NextRequest) {
       userEmail: auth.user.email ?? null,
       isAdmin: isAdminSessionEmail(auth.user.email ?? null),
       searchParams: estudarSearchParams,
-      supabase: auth.supabase,
+      phaseTimer,
     });
+    const payloadBuildMs = Date.now() - buildStartedAt;
     logEstudarNavApiBuild({
       slug,
-      durationMs: Date.now() - buildStartedAt,
+      durationMs: payloadBuildMs,
       status: result.status,
     });
     logApiStrategy({
@@ -103,7 +111,8 @@ export async function GET(request: NextRequest) {
       },
     });
     const cached = result.status === 'ok';
-    recordPerformance(endpoint, method, Date.now() - requestStartedAt, cached);
+    const routeTotalMs = Date.now() - requestStartedAt;
+    recordPerformance(endpoint, method, routeTotalMs, cached);
 
     if (result.status === 'forbidden') {
       return NextResponse.json({ error: 'Sem acesso a este módulo' }, { status: 403 });
@@ -116,10 +125,13 @@ export async function GET(request: NextRequest) {
       headers: estudarQuestaoApiCacheHeaders(),
     });
   } catch (error) {
+    phaseTimer?.logRouteFailure(error);
     recordPerformance(endpoint, method, Date.now() - requestStartedAt, false);
     logger.error('Falha em GET /api/estudar/questao', error, {
       durationMs: Date.now() - requestStartedAt,
       strategy: 'builder',
+      ...(phaseTimer ? { requestId: phaseTimer.requestId } : {}),
+      ...(slugForTiming ? { slug: slugForTiming } : {}),
     });
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 });
   }
