@@ -179,6 +179,18 @@ Chamada isolada da RPC (usuário harness 001): **3429 ms → 297 ms**. Payload d
 
 **Leitura:** a mediana do POST já estava saudável; o cache cortou o p95 pela metade e não moveu o start rate (3,6 contra alvo 5). A cauda restante está espalhada (estudar p95 ~47 s, simulado p95 ~85 s, máximo da vitrine ainda >2 min em outlier). `CONSERVATIVE_CAPACITY` segue UNSTABLE. **Não** aumentar `maxDuration`.
 
+## HTTP 400 no refresh e 403 no simulado (`b227418a`)
+
+| Operação | app `9138e617` + SQL (pool recém-renovado) | `b227418a` (mesmo arquivo de pool, sem renovar de novo) |
+|----------|-----------------------------------------------|----------------------------------------------------------|
+| `auth_session_refresh` | **70/70 HTTP 200**; p50 487 ms; p95 26 s | **38×200 e 45×400**; p50 503 ms; p95 10 s; max 16 s |
+| `api_simulado_questao` | 80×200, 5×403 | 78×200, 6×403 |
+| `api_simulado_responder` | 50×200, 8×403 | 71×200, 3×403 |
+
+**400:** o GoTrue queima o refresh token a cada HTTP 200. O harness atualizava o token só na memória do VU. O ensaio seguinte releu o JSON do pool e reenviou tokens já usados. Por isso o primeiro ensaio ficou 70/70 e o segundo, sem `pool-refresh-sessions`, ficou 45×400. A latência desses 400 fica na casa de 0,5–16 s: **não** segura o VU nem explica a taxa de ~3,6/s. Correção: gravar `access_token` e `refresh_token` rotacionados em `scale-harness-private/*.json` a cada 200. O arquivo queimado por esses dois ensaios precisa de um `pool-refresh-sessions` antes do próximo `--execute`.
+
+**403:** a mesma ordem de grandeza nos dois ensaios, então não é efeito do token queimado. `GET /api/simulado/questao` devolve 403 quando o payload é `forbidden` (acesso ou gate comercial). `POST /api/simulado/responder` devolve 403 no gate comercial ou na cota freemium. A criação da sessão só tira a denylist P0. É falha de contrato do simulado, separada da cauda de latência.
+
 ## Próxima ordem (engenharia, sem mascarar timeout)
 
 1. Cauda compartilhada sob 50 CCU (estudar, simulado, outlier da vitrine) — não é mais o detoast da RPC nem o JSON por tentativa.

@@ -5,6 +5,8 @@ import {
   mergeVercelProtectionHeadersForAppUrl,
   type HarnessHttpTransportOptions,
 } from '@/lib/scale/authenticatedHarness/vercelProtectionHarness';
+import { logger } from '@/lib/logger';
+import type { RotatedPoolSession } from '@/lib/scale/authenticatedHarness/persistPoolSession';
 import { applySupabaseRefreshResponse, type VuRuntimeState } from '@/lib/scale/authenticatedHarness/vuRuntime';
 
 export type { HarnessHttpTransportOptions };
@@ -87,6 +89,7 @@ export async function executeMaterializedRequest(
   req: MaterializedHttpRequest,
   fetchImpl: FetchLike = fetch,
   transport?: HarnessHttpTransportOptions,
+  onSessionRotated?: (update: RotatedPoolSession) => void | Promise<void>,
 ): Promise<HttpExecuteOutcome> {
   const started = Date.now();
   const url = resolveRequestUrl(pool, req);
@@ -110,7 +113,23 @@ export async function executeMaterializedRequest(
     if (ok && req.auth_mode === 'supabase_auth_refresh') {
       try {
         const json = (await response.json()) as { access_token?: string; refresh_token?: string };
+        const rotatedAccess = json.access_token?.trim();
+        const rotatedRefresh = json.refresh_token?.trim();
         applySupabaseRefreshResponse(state, json);
+        if (onSessionRotated && rotatedAccess && rotatedRefresh) {
+          try {
+            await onSessionRotated({
+              pool_id: state.poolUser.pool_id,
+              access_token: rotatedAccess,
+              supabase_refresh_token: rotatedRefresh,
+            });
+          } catch (error) {
+            logger.warn('Falha ao gravar sessão rotacionada do harness', {
+              pool_id: state.poolUser.pool_id,
+              error_class: error instanceof Error ? error.name : 'unknown',
+            });
+          }
+        }
       } catch {
         return { ok: false, status: response.status, latency_ms, error_kind: 'parse' };
       }

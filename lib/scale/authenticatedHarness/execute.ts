@@ -11,6 +11,10 @@ import {
 } from '@/lib/scale/authenticatedHarness/executionAuthorization';
 import type { FetchLike, HarnessHttpTransportOptions } from '@/lib/scale/authenticatedHarness/httpExecute';
 import { executeMaterializedRequest } from '@/lib/scale/authenticatedHarness/httpExecute';
+import {
+  persistRotatedPoolSession,
+  type RotatedPoolSession,
+} from '@/lib/scale/authenticatedHarness/persistPoolSession';
 import { materializeOperation } from '@/lib/scale/authenticatedHarness/materializeRequest';
 import { HarnessMetricsCollector } from '@/lib/scale/authenticatedHarness/metrics';
 import { MeasuredWindowTelemetryCollector } from '@/lib/scale/authenticatedHarness/measuredWindowTelemetry';
@@ -76,7 +80,12 @@ async function runAllSetup(
 async function runMeasuredWindowHttp(
   plan: HarnessExecutionPlan,
   pool: SyntheticUserPoolFile,
-  options: { durationMs: number; fetchImpl?: FetchLike; httpTransport: HarnessHttpTransportOptions },
+  options: {
+    durationMs: number;
+    fetchImpl?: FetchLike;
+    httpTransport: HarnessHttpTransportOptions;
+    persistPoolSessionFile?: string;
+  },
 ): Promise<HttpExecutorResult> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const metrics = new HarnessMetricsCollector();
@@ -92,6 +101,9 @@ async function runMeasuredWindowHttp(
   const intervalMs = plan.scheduler.interval_ms_per_request;
   let httpRequestsSent = 0;
   const windowTelemetry = new MeasuredWindowTelemetryCollector(measuredStartedAt, options.durationMs);
+  const onSessionRotated = options.persistPoolSessionFile
+    ? (update: RotatedPoolSession) => persistRotatedPoolSession(options.persistPoolSessionFile as string, update)
+    : undefined;
 
   const vuLoops = states.map(async (state, vuIndex) => {
     const stagger = computeVuStaggerMs(vuIndex, states.length, intervalMs);
@@ -114,6 +126,7 @@ async function runMeasuredWindowHttp(
         materialized,
         fetchImpl,
         options.httpTransport,
+        onSessionRotated,
       );
       windowTelemetry.markRequestEnd();
       metrics.recordRequest(
@@ -159,7 +172,7 @@ export async function runHarnessMeasuredWindowAuthorized(
   auth: HarnessAuthorizedExecutionContext,
   plan: HarnessExecutionPlan,
   pool: SyntheticUserPoolFile,
-  options: { durationMs: number; fetchImpl?: FetchLike },
+  options: { durationMs: number; fetchImpl?: FetchLike; persistPoolSessionFile?: string },
 ): Promise<HttpExecutorResult> {
   assertPoolBoundToApprovedStaging(pool, auth.approved);
   if (options.durationMs !== auth.scope.duration_ms) {
@@ -174,6 +187,7 @@ export async function runHarnessMeasuredWindowAuthorized(
     durationMs: options.durationMs,
     fetchImpl: options.fetchImpl,
     httpTransport: auth.httpTransport,
+    persistPoolSessionFile: options.persistPoolSessionFile,
   });
 }
 

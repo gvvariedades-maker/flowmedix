@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { assertPoolBoundToApprovedStaging } from '@/lib/scale/authenticatedHarness/approvedStagingTarget';
 import { buildHarnessExecutionPlan } from '@/lib/scale/authenticatedHarness/buildPlan';
@@ -20,6 +20,7 @@ import { assertGitWorktreeClean, resolveRuntimeGitShaStrict } from '@/lib/scale/
 import { HarnessMetricsCollector } from '@/lib/scale/authenticatedHarness/metrics';
 import { runSimuladoSetupStep } from '@/lib/scale/authenticatedHarness/simuladoSetup';
 import { executeMaterializedRequest, type FetchLike } from '@/lib/scale/authenticatedHarness/httpExecute';
+import { persistRotatedPoolSession } from '@/lib/scale/authenticatedHarness/persistPoolSession';
 import { materializeOperation } from '@/lib/scale/authenticatedHarness/materializeRequest';
 import {
   assertVercelProtectionBypassForStagingExecute,
@@ -27,6 +28,7 @@ import {
 } from '@/lib/scale/authenticatedHarness/vercelProtectionHarness';
 import { parseSimuladoSessionSetupResponse, SimuladoSetupParseError } from '@/lib/scale/authenticatedHarness/parseSimuladoSession';
 import { computeVuStaggerMs } from '@/lib/scale/authenticatedHarness/pacing';
+import { createVuRuntimeState } from '@/lib/scale/authenticatedHarness/vuRuntime';
 import { assertPlanHasNoRawSecrets, redactSecretsDeep } from '@/lib/scale/authenticatedHarness/redact';
 import { resolveApprovedStagingForCli, validateStagingTargetBinding } from '@/lib/scale/authenticatedHarness/targetBinding';
 import {
@@ -35,7 +37,6 @@ import {
   validateUserCredentialsForOperations,
 } from '@/lib/scale/authenticatedHarness/validatePool';
 import { validateEnvelopeIntegrity } from '@/lib/scale/authenticatedHarness/validateEnvelope';
-import { createVuRuntimeState } from '@/lib/scale/authenticatedHarness/vuRuntime';
 import type { HarnessOperationStep, SyntheticUserPoolFile } from '@/lib/scale/authenticatedHarness/types';
 
 const approved = {
@@ -559,6 +560,80 @@ describe('scale authenticated harness', () => {
     const materialized = materializeOperation(step, pool, pool.users[0]);
     await executeMaterializedRequest(pool, state, materialized, fetchImpl, transport);
     expect(capturedHeaders['x-vercel-protection-bypass']).toBeUndefined();
+    expect(state.access_token).toBe('new-at');
+    expect(state.supabase_refresh_token).toBe('new-rt');
+  });
+
+  it('refresh 200 grava o token rotacionado e o próximo POST usa o novo', async () => {
+    const dir = resolve(process.cwd(), 'scale-harness-private');
+    mkdirSync(dir, { recursive: true });
+    const file = resolve(dir, `persist-pool-session-${process.pid}.json`);
+    const pool = makePool(2);
+    writeFileSync(file, `${JSON.stringify(pool, null, 2)}\n`, 'utf8');
+    const state = createVuRuntimeState(pool.users[0]);
+    const bodies: string[] = [];
+    const fetchImpl: FetchLike = async (_url, init) => {
+      bodies.push(String(init?.body ?? ''));
+      const sent = JSON.parse(String(init?.body)) as { refresh_token?: string };
+      return {
+        status: 200,
+        json: async () => ({
+          access_token: `at-${sent.refresh_token}`,
+          refresh_token: `rt-next-${sent.refresh_token}`,
+        }),
+      } as Response;
+    };
+    const step: HarnessOperationStep = {
+      operation_id: 'auth_session_refresh',
+      phase: 'measured',
+      auth: 'supabase_auth_refresh',
+      method: 'POST',
+      path: '/auth/v1/token',
+      request_weight: 1,
+      kind: 'write',
+    };
+    try {
+      const first = materializeOperation(step, pool, pool.users[0]);
+      await executeMaterializedRequest(pool, state, first, fetchImpl, undefined, (update) =>
+        persistRotatedPoolSession(file, update),
+      );
+      const second = materializeOperation(step, pool, {
+        ...pool.users[0],
+        access_token: state.access_token,
+        supabase_refresh_token: state.supabase_refresh_token,
+      });
+      await executeMaterializedRequest(pool, state, second, fetchImpl);
+      const saved = JSON.parse(readFileSync(file, 'utf8')) as SyntheticUserPoolFile;
+      expect(saved.users[0]?.supabase_refresh_token).toBe('rt-next-refresh-0');
+      expect(saved.users[0]?.access_token).toBe('at-refresh-0');
+      expect(saved.users[1]?.supabase_refresh_token).toBe('refresh-1');
+      expect(JSON.parse(bodies[1] ?? '{}')).toMatchObject({ refresh_token: 'rt-next-refresh-0' });
+    } finally {
+      rmSync(file, { force: true });
+    }
+  });
+
+  it('refresh 400 não substitui o token em memória', async () => {
+    const pool = makePool(1);
+    const state = createVuRuntimeState(pool.users[0]);
+    const step: HarnessOperationStep = {
+      operation_id: 'auth_session_refresh',
+      phase: 'measured',
+      auth: 'supabase_auth_refresh',
+      method: 'POST',
+      path: '/auth/v1/token',
+      request_weight: 1,
+      kind: 'write',
+    };
+    const outcome = await executeMaterializedRequest(
+      pool,
+      state,
+      materializeOperation(step, pool, pool.users[0]),
+      async () => ({ status: 400, json: async () => ({ error: 'invalid_grant' }) }) as Response,
+    );
+    expect(outcome.ok).toBe(false);
+    expect(outcome.status).toBe(400);
+    expect(state.supabase_refresh_token).toBe('refresh-0');
   });
 
   it('execute contra staging Vercel sem bypass secret é bloqueado', () => {

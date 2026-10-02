@@ -144,7 +144,10 @@ async function main() {
         canonical,
         gitWorktreePorcelain,
       });
-      const result = await runHarnessMeasuredWindowAuthorized(auth, executionPlan, pool, { durationMs });
+      const result = await runHarnessMeasuredWindowAuthorized(auth, executionPlan, pool, {
+        durationMs,
+        persistPoolSessionFile: args.poolFile,
+      });
       const resultForLog = redactSecretsDeep(result);
       if (resultForLog.metrics?.operations) {
         resultForLog.metrics.operations = resultForLog.metrics.operations.map((op) => {
