@@ -568,7 +568,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.1.19",
     "@react-email/components": "^1.0.12",
-    "@sentry/nextjs": "^10.67.0",
+    "@sentry/nextjs": "^10.75.2",
     "@supabase/ssr": "^0.12.3",
     "@supabase/supabase-js": "^2.98.0",
     "@tanstack/react-virtual": "^3.14.8",
