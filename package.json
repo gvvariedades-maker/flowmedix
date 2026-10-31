@@ -593,7 +593,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@cursor/sdk": "^1.0.24",
+    "@cursor/sdk": "^1.2.0",
     "@emnapi/core": "1.11.2",
     "@emnapi/runtime": "1.11.2",
     "@playwright/test": "^1.61.1",
